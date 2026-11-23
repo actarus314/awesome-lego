@@ -1,0 +1,1055 @@
+[category]
+id = "shops"
+name_en = "Shops"
+name_fr = "Boutiques"
+summary_en = "Online and physical shops selling official LEGO, alternative brick brands and general goods to customers in Europe, with delivery to France noted when established."
+summary_fr = "Boutiques en ligne et en magasin vendant du LEGO officiel, des marques de briques alternatives et des produits généralistes à des clients en Europe, avec la livraison vers la France indiquée lorsqu'elle est établie."
+
+[[category.groups]]
+id = "official-lego"
+name_en = "Official LEGO"
+name_fr = "LEGO officiel"
+
+[[category.groups]]
+id = "alternative-brands"
+name_en = "Alternative brands"
+name_fr = "Marques alternatives"
+
+[[category.groups]]
+id = "general-retailers"
+name_en = "General retailers"
+name_fr = "Généralistes"
+
+[[resource]]
+id = "lego-com-fr"
+name = "LEGO.com (France)"
+url = "https://www.lego.com/fr-fr"
+group = "official-lego"
+featured = true
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Direct sales by the manufacturer"
+business_model_fr = "Vente directe du fabricant"
+summary_en = "Manufacturer's store for France: full catalogue, exclusives, gift cards, Pick a Brick. Delivers only to addresses in France."
+summary_fr = "Boutique du fabricant pour la France : catalogue complet, exclusivités, cartes-cadeaux, Pick a Brick. Livraison uniquement vers des adresses en France."
+strengths_en = ["Shipping 5.95 € up to 55 €, free from 55 €; standard delivery 2 to 5 working days; 1-day delivery at 15 €", "Exclusives and recent sets; 90-day returns on orders placed between 1 November and 24 December", "Per a third-party survey, cheapest for 19 % of the sets it sells"]
+strengths_fr = ["Port de 5.95 € jusqu'à 55 €, gratuit dès 55 € ; livraison standard de 2 à 5 jours ouvrables ; livraison en 1 jour à 15 €", "Exclusivités et sets récents ; retour sous 90 jours pour les commandes passées entre le 1er novembre et le 24 décembre", "Selon un relevé tiers, la moins chère sur 19 % des sets vendus"]
+weaknesses_en = ["Sold at reference price: per a third-party survey only 2 % of sets are below the official price, against 21 to 28 % at large retailers", "No delivery to post office boxes, hotels, parcel forwarding services, Monaco, Andorra or overseas territories"]
+weaknesses_fr = ["Vente au tarif de référence : selon un relevé tiers, 2 % des sets seulement sont sous le prix officiel, contre 21 à 28 % chez les grandes enseignes", "Pas de livraison vers les boîtes postales, hôtels, services de réexpédition, Monaco, Andorre et l'outre-mer"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lego.com/fr-fr/page/shipping-handling"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://planet-brick.com/bons-plans/ou-acheter-lego-moins-cher/"
+date = "2026-09-15"
+kind = "third-party"
+
+[[resource]]
+id = "ltoys"
+name = "LToys"
+url = "https://www.ltoys.lu/fr"
+group = "official-lego"
+featured = true
+covers = ["official", "alternative"]
+languages = ["fr", "en", "de"]
+countries = ["LU", "FR", "BE", "DE", "NL", "AT"]
+ships_to_france = true
+access = "free"
+business_model_en = "Online and physical store"
+business_model_fr = "Boutique en ligne et magasin"
+summary_en = "Luxembourg specialist (LTOYS S.A R.L., founded 2017, store in Niederanven): more than 1000 official LEGO items, plus COBI, CaDA, Pantasy, Lumibricks, Blokees and die-cast cars."
+summary_fr = "Spécialiste luxembourgeois (LTOYS S.A R.L., fondée en 2017, magasin à Niederanven) : plus de 1000 articles LEGO officiel, plus COBI, CaDA, Pantasy, Lumibricks, Blokees et voitures miniatures."
+strengths_en = ["Free standard delivery from 100 € to France, Luxembourg, Belgium, Germany, the Netherlands and Austria; standard 3 to 6 days, premium 1 to 3 days", "Prices include taxes; older sets and compatible brands in stock", "Physical store open Tuesday to Saturday, 10:00 to 18:00"]
+strengths_fr = ["Livraison standard gratuite dès 100 € vers la France, le Luxembourg, la Belgique, l'Allemagne, les Pays-Bas et l'Autriche ; standard de 3 à 6 jours, premium de 1 à 3 jours", "Prix taxes comprises ; sets anciens et marques compatibles en stock", "Magasin ouvert du mardi au samedi, de 10 h à 18 h"]
+weaknesses_en = ["Shipping cost under 100 € not published on the page read", "Per a third-party survey, no discount on official LEGO (1 % of sets below the official price)"]
+weaknesses_fr = ["Port sous 100 € non publié sur la page lue", "Selon un relevé tiers, aucune remise sur LEGO officiel (1 % des sets sous le prix officiel)"]
+size_en = "More than 1000 official LEGO items (as stated by the shop)"
+size_fr = "Plus de 1000 articles LEGO officiel (déclaration de la boutique)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.ltoys.lu/fr"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://planet-brick.com/bons-plans/ou-acheter-lego-moins-cher/"
+date = "2026-09-15"
+kind = "third-party"
+
+[[resource]]
+id = "baustein-store"
+name = "Baustein Store"
+url = "https://bausteinstore.de"
+group = "official-lego"
+covers = ["official"]
+languages = ["de"]
+countries = ["DE", "FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Online store"
+business_model_fr = "Boutique en ligne"
+summary_en = "German online store selling official LEGO and delivering across the European Union and Monaco by DHL."
+summary_fr = "Boutique allemande de LEGO officiel livrant dans toute l'Union européenne et à Monaco par DHL."
+strengths_en = ["Delivery to France in 3 to 4 days with tracking", "No minimum order, shipping not folded into product prices (as stated by the shop)"]
+strengths_fr = ["Livraison vers la France en 3 à 4 jours avec suivi", "Pas de minimum de commande, port non intégré aux prix des produits (déclaration de la boutique)"]
+weaknesses_en = ["Flat shipping of 16.49 € per order to the EU, against 4.99 € within Germany: high for a small order; no free shipping threshold"]
+weaknesses_fr = ["Port forfaitaire de 16.49 € par commande vers l'Union européenne, contre 4.99 € en Allemagne : élevé pour une petite commande ; pas de seuil de gratuité"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://bausteinstore.de/versand/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "duo-idee-spiel"
+name = "idee+spiel (duo idee+spiel)"
+url = "https://www.ideeundspiel.com"
+group = "official-lego"
+covers = ["official"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Online shop of a retail cooperative"
+business_model_fr = "Boutique en ligne d'une coopérative de détaillants"
+summary_en = "Online shop of the German toy retail cooperative duo idee+spiel (duo and idee+spiel merged on 1 January 2026). Delivery to France not established."
+summary_fr = "Boutique en ligne de la coopérative allemande de détaillants de jouets duo idee+spiel (fusion de duo et idee+spiel au 1er janvier 2026). Livraison vers la France non établie."
+strengths_en = ["Cooperative of about 640 shareholders and more than 1000 affiliated stores in Germany, Austria, Belgium and Italy (as stated by the cooperative)", "Third-party price check on 2026-11-09: 32.47 € for a set with a recommended price of 44.99 €"]
+strengths_fr = ["Coopérative d'environ 640 associés et de plus de 1000 points de vente affiliés en Allemagne, Autriche, Belgique et Italie (déclaration de la coopérative)", "Relevé tiers du 09/11/2026 : 32.47 € pour un set au prix conseillé de 44.99 €"]
+weaknesses_en = ["Shipping to France not published on the pages read; a price comparator lists 5.90 € for Germany only"]
+weaknesses_fr = ["Livraison vers la France non publiée sur les pages lues ; un comparateur indique 5.90 € pour l'Allemagne seulement"]
+size_en = "About 640 shareholders, more than 1000 affiliated stores"
+size_fr = "Environ 640 associés, plus de 1000 points de vente affiliés"
+status = "active"
+last_activity = "2026-11-09"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://www.ideeundspiel.com/l/ueber-uns/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brickguide.de/21588-1_lego-minecraft-der-fuchs"
+date = "2026-11-09"
+kind = "third-party"
+
+[[resource]]
+id = "brickmo"
+name = "Brickmo"
+url = "https://www.brickmo.com/fr/"
+group = "alternative-brands"
+covers = ["official", "alternative"]
+languages = ["de", "fr", "en"]
+countries = ["AT", "FR", "DE"]
+ships_to_france = true
+access = "free"
+business_model_en = "Online store"
+business_model_fr = "Boutique en ligne"
+summary_en = "Austrian online store (Scalemo GmbH) selling official LEGO and alternative brands (Cobi, CaDA, Sluban, Wange, Xingbao, Jekca). Site available in French."
+summary_fr = "Boutique autrichienne (Scalemo GmbH) de LEGO officiel et de marques alternatives (Cobi, CaDA, Sluban, Wange, Xingbao, Jekca). Site disponible en français."
+strengths_en = ["Published shipping to France: 9.95 € by DHL or 10.95 € by GLS", "Often among the lowest prices on some official LEGO sets (third-party price check, 2026-10-22)"]
+strengths_fr = ["Port vers la France publié : 9.95 € par DHL ou 10.95 € par GLS", "Souvent parmi les prix les plus bas sur certains sets LEGO officiel (relevé tiers du 22/10/2026)"]
+weaknesses_en = ["Surcharge of 3.50 € on orders under 24 € on top of the usual shipping", "Weak Trustpilot scores on few reviews: 3.4 on 10 (English) and 3.6 on 12 (French), as read by the first pass"]
+weaknesses_fr = ["Supplément de 3.50 € sous 24 € de commande, en plus du port habituel", "Notes Trustpilot faibles sur peu d'avis : 3.4 sur 10 (anglais) et 3.6 sur 12 (français), relevé de la première passe"]
+status = "active"
+last_activity = "2026-08-27"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.brickmo.com/fr/frais-d-envoi"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://fr.trustpilot.com/review/brickmo.com"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "kbs-shop"
+name = "KBS Shop"
+url = "https://kbs-shop.com"
+group = "alternative-brands"
+featured = true
+covers = ["alternative"]
+languages = ["de", "fr", "en"]
+countries = ["DE", "FR", "BE"]
+ships_to_france = true
+access = "free"
+business_model_en = "Online store"
+business_model_fr = "Boutique en ligne"
+summary_en = "German online store for technical and remote-controlled bricks: Mould King, CaDA, Reobrix, Wange, Jie Star, Panlos."
+summary_fr = "Boutique allemande de briques techniques et télécommandées : Mould King, CaDA, Reobrix, Wange, Jie Star, Panlos."
+strengths_en = ["Shipping to France 4.95 €, delivery 1 to 3 days; orders processed within 12 working hours", "Missing parts sent free of charge, 30-day returns (as stated by the first pass)", "Trustpilot-type rating 4.73 on 712 reviews on Trusted Shops (figure supplied, not re-checked)"]
+strengths_fr = ["Port vers la France de 4.95 €, délai de 1 à 3 jours ; commandes traitées sous 12 heures ouvrables", "Pièces manquantes envoyées gratuitement, retour sous 30 jours (relevé de la première passe)", "Trusted Shops 4.73 sur 712 avis (chiffre fourni, non revérifié)"]
+weaknesses_en = ["Catalogue centred on technical and remote-controlled models, little architecture", "Free-shipping threshold for France not published (99 € for Germany)"]
+weaknesses_fr = ["Catalogue centré sur le technique et le télécommandé, peu d'architecture", "Seuil de port offert pour la France non publié (99 € pour l'Allemagne)"]
+size_en = "349 sets (as stated by the first pass)"
+size_fr = "349 sets (relevé de la première passe)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://kbs-shop.com/pages/versand-lieferung"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "bausteinreich"
+name = "Bausteinreich"
+url = "https://www.bausteinreich.de"
+group = "alternative-brands"
+covers = ["alternative"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Online store"
+business_model_fr = "Boutique en ligne"
+summary_en = "Berlin online store (Lonestar-Bricks GmbH) for alternative bricks: Mould King, Cobi, Wange, Sembo, Balody and others; own warehouse in Berlin."
+summary_fr = "Boutique berlinoise (Lonestar-Bricks GmbH) de briques alternatives : Mould King, Cobi, Wange, Sembo, Balody et d'autres ; entrepôt propre à Berlin."
+strengths_en = ["Dispatch on the next working day by DHL", "Free shipping from 50 € within Germany; 14-day returns", "Rating 4.7 out of 5 on 499 reviews shown on the home page (first pass, not re-read)"]
+strengths_fr = ["Expédition le jour ouvrable suivant par DHL", "Port offert dès 50 € en Allemagne ; retour sous 14 jours", "Note de 4.7 sur 5 pour 499 avis affichés sur la page d'accueil (première passe, non relu)"]
+weaknesses_en = ["Shipping to France not published and cost not published (9.95 € estimated, as for the listed EU countries); the page asks to contact the shop if a country is not connected", "No pre-orders and no restocking of unavailable items"]
+weaknesses_fr = ["Livraison vers la France non publiée et port non publié (9.95 € estimé, comme pour les pays de l'Union européenne listés) ; la page invite à contacter la boutique si le pays n'est pas relié", "Pas de précommande ni de réassort des articles indisponibles"]
+status = "active"
+last_activity = "2026-11-17"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.bausteinreich.de/policies/shipping-policy"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.bausteinreich.de/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "bluebrixx-shop"
+name = "BlueBrixx"
+url = "https://www.bluebrixx.com/fr/"
+group = "alternative-brands"
+featured = true
+covers = ["alternative"]
+languages = ["fr", "de", "en"]
+countries = ["DE", "FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Brand and retailer"
+business_model_fr = "Marque et distributeur"
+summary_en = "Brand and retailer (BB Service GmbH, Wiesbaden): own sets under licences not held by LEGO (Star Trek, Stargate, RoboCop, emergency vehicles), plus CaDA, Cobi and Xingbao."
+summary_fr = "Marque et distributeur (BB Service GmbH, Wiesbaden) : sets propres sous licences que LEGO ne détient pas (Star Trek, Stargate, RoboCop, véhicules d'urgence), plus CaDA, Cobi et Xingbao."
+strengths_en = ["Shipping to France 9.95 €, free from 99 €; European VAT included", "Original licences not available from official LEGO", "Missing parts replaced free of charge (first pass)"]
+strengths_fr = ["Port vers la France de 9.95 €, offert dès 99 € ; TVA européenne incluse", "Licences originales introuvables chez LEGO officiel", "Pièces manquantes remplacées gratuitement (première passe)"]
+weaknesses_en = ["Independent test of March 2026: uneven colours, variable clutch power, few printed parts (third party, not re-read)", "Hybrid role (brand and reseller of other brands); possible withdrawal of minifigure sets linked to a dispute with the LEGO group (not re-read)", "The help page gives a 199 € free-shipping threshold for Germany against 99 € on the legal page"]
+weaknesses_fr = ["Test indépendant de mars 2026 : teintes irrégulières, force d'emboîtement variable, peu de pièces imprimées (tiers, non relu)", "Rôle hybride (marque et revendeur d'autres marques) ; risque de retrait de sets de figurines lié à un litige avec le groupe LEGO (non relu)", "La page d'aide indique un seuil de gratuité de 199 € pour l'Allemagne contre 99 € sur la page légale"]
+status = "active"
+last_activity = "2026-10-14"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.bluebrixx.com/fr/informations-legales/livraison-et-paiement/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://labriquelibre.fr/marques/bluebrixx/"
+date = "2026-09-25"
+kind = "third-party"
+
+[[resource]]
+id = "spielzeug-fuchs"
+name = "Spielzeug-Fuchs"
+url = "https://spielzeug-fuchs.de"
+group = "alternative-brands"
+covers = ["alternative"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Online store"
+business_model_fr = "Boutique en ligne"
+summary_en = "German online store for alternative bricks: more than 2000 sets from more than 20 brands (COBI, CaDA, Mould King, Pantasy, Lumibricks, Reobrix)."
+summary_fr = "Boutique allemande de briques alternatives : plus de 2000 sets de plus de 20 marques (COBI, CaDA, Mould King, Pantasy, Lumibricks, Reobrix)."
+strengths_en = ["Large catalogue: COBI 517 sets, Mould King 258, CaDA 207, Pantasy 189 (home page counts)", "Dispatch by DHL; delivery 1 to 3 working days"]
+strengths_fr = ["Catalogue large : COBI 517 sets, Mould King 258, CaDA 207, Pantasy 189 (comptes de la page d'accueil)", "Expédition par DHL ; livraison de 1 à 3 jours ouvrables"]
+weaknesses_en = ["Shipping page gives 4.95 € per order and free shipping from 50 € within Germany; shipping to France not published", "Content site mixed with the shop"]
+weaknesses_fr = ["La page de livraison indique 4.95 € par commande et un port offert dès 50 € en Allemagne ; livraison vers la France non publiée", "Site de contenu mêlé à la boutique"]
+size_en = "More than 2000 sets, more than 20 brands"
+size_fr = "Plus de 2000 sets, plus de 20 marques"
+status = "active"
+last_activity = "2026-10-10"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://spielzeug-fuchs.de/versandarten/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://spielzeug-fuchs.de/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "brickcoast"
+name = "Brickcoast"
+url = "https://brickcoast.de"
+group = "alternative-brands"
+covers = ["official", "alternative"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Online store and physical store"
+business_model_fr = "Boutique en ligne et magasin"
+summary_en = "Retailer in Castrop-Rauxel (Steinebande GmbH) of official LEGO, Mould King and Cobi. Site not readable in this pass; data from the first pass."
+summary_fr = "Détaillant de Castrop-Rauxel (Steinebande GmbH) de LEGO officiel, Mould King et Cobi. Site non lisible lors de cette passe ; données de la première passe."
+strengths_en = ["Review rating 4.6 on 27 reviews (erfahrungen.app, 2026-10-27)"]
+strengths_fr = ["Note de 4.6 sur 27 avis (erfahrungen.app, 27/10/2026)"]
+weaknesses_en = ["Delivery outside Germany only on request per a price-comparison listing: not suited to a direct order to France", "One very negative verified review about service"]
+weaknesses_fr = ["Livraison hors Allemagne uniquement sur demande selon un comparateur : non adapté à une commande directe vers la France", "Un avis vérifié très négatif sur le service"]
+status = "active"
+last_activity = "2026-10-27"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://geizhals.de/merchants/brickcoast-de"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://erfahrungen.app/erfahrung/brickcoast.de"
+date = "2026-10-27"
+kind = "third-party"
+
+[[resource]]
+id = "brickparts-nl"
+name = "Brickparts.nl"
+url = "https://brickparts.nl"
+group = "alternative-brands"
+covers = ["alternative", "parts"]
+languages = ["nl"]
+countries = ["NL", "BE", "DE"]
+access = "free"
+business_model_en = "Online store"
+business_model_fr = "Boutique en ligne"
+summary_en = "Dutch online store (Kuinre) for sets and parts. Whether it is the 'Brickparts' of the original request is not confirmed."
+summary_fr = "Boutique néerlandaise (Kuinre) de sets et de pièces. Son identité avec le « Brickparts » de la demande initiale n'est pas confirmée."
+strengths_en = ["Orders before 15:30 shipped the same day when in stock", "Free shipping from 75 € in the Netherlands and from 125 € in Belgium and Germany"]
+strengths_fr = ["Commandes avant 15 h 30 expédiées le jour même si en stock", "Port offert dès 75 € aux Pays-Bas et dès 125 € en Belgique et en Allemagne"]
+weaknesses_en = ["France not named: other countries on request, cost calculated at checkout"]
+weaknesses_fr = ["France non nommée : autres pays sur demande, tarif calculé à la caisse"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brickparts.nl/bestel-betaal-ontvang/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "mister-brixx"
+name = "Mister Brixx"
+url = "https://www.misterbrixx.de"
+group = "alternative-brands"
+covers = ["official", "alternative"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Online store and physical store"
+business_model_fr = "Boutique en ligne et magasin"
+summary_en = "Duisburg shop selling official LEGO, Mould King, CaDA, Reobrix, Panlos, Cobi; buys and resells LEGO."
+summary_fr = "Boutique de Duisbourg : LEGO officiel, Mould King, CaDA, Reobrix, Panlos, Cobi ; rachat et revente de LEGO."
+strengths_en = ["Free shipping from 150 € (shown on the home page)", "Wide catalogue with sale prices shown on the home page"]
+strengths_fr = ["Port offert dès 150 € (affiché en page d'accueil)", "Catalogue large, prix soldés affichés en page d'accueil"]
+weaknesses_en = ["Shipping conditions page not readable by the tools: delivery to France not established", "Reviews: 5.0 on 70 Google reviews (2026-10-19, single portal, not re-read)"]
+weaknesses_fr = ["Page des conditions d'expédition illisible par les outils : livraison vers la France non établie", "Avis : 5.0 sur 70 avis Google (19/10/2026, un seul portail, non relu)"]
+status = "active"
+last_activity = "2026-10-19"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://www.misterbrixx.de/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "brickeez"
+name = "Brickeez"
+url = "https://www.brickeez.com"
+group = "alternative-brands"
+featured = true
+covers = ["official", "alternative"]
+languages = ["fr"]
+countries = ["FR", "BE"]
+ships_to_france = true
+access = "free"
+business_model_en = "Online store"
+business_model_fr = "Boutique en ligne"
+summary_en = "French online store (Hérault): new official LEGO, Lumibricks, Pantasy, COBI, CaDA."
+summary_fr = "Boutique française (Hérault) : LEGO officiel neuf, Lumibricks, Pantasy, COBI, CaDA."
+strengths_en = ["Dispatch from France in 1 to 2 working days", "Pick-up point 4.99 € then free from 20 €; Colissimo home 9.99 €, 4.99 € from 150 €, free from 300 €", "Prices in euros, VAT included, no customs"]
+strengths_fr = ["Expédition depuis la France sous 1 à 2 jours ouvrés", "Point relais à 4.99 € puis gratuit dès 20 € ; Colissimo à domicile 9.99 €, 4.99 € dès 150 €, gratuit dès 300 €", "Prix en euros, TVA comprise, sans douane"]
+weaknesses_en = ["Reviews on the site carry no numeric rating; one customer reports a gift card not received (first pass)", "Delivery times are indicative and not guaranteed, except Chronopost express (24 to 48 hours)"]
+weaknesses_fr = ["Avis du site sans note chiffrée ; un client signale un cadeau d'achat non reçu (première passe)", "Délais indicatifs et non garantis, sauf la livraison express Chronopost (24 à 48 heures)"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.brickeez.com/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://labriquelibre.fr/marques/pantasy/"
+date = "2026-09-25"
+kind = "third-party"
+
+[[resource]]
+id = "blouge-brick-store"
+name = "Blouge Brick Store"
+url = "https://blouge-brickstore.fr"
+group = "alternative-brands"
+covers = ["alternative"]
+languages = ["fr"]
+countries = ["FR", "BE", "LU"]
+ships_to_france = true
+access = "free"
+business_model_en = "Online store"
+business_model_fr = "Boutique en ligne"
+summary_en = "Lille online store of compatible bricks (Pantasy, CaDA, LOZ, FunWhole); products stated to meet CE and EN71 standards, sets delivered in sealed original boxes."
+summary_fr = "Boutique lilloise de briques compatibles (Pantasy, CaDA, LOZ, FunWhole) ; produits annoncés conformes aux normes CE et EN71, sets livrés en boîte d'origine scellée."
+strengths_en = ["Free pick-up point delivery from 55 € in France, Belgium and Luxembourg (first pass, not re-read)", "Stock in France; home delivery 2 to 4 working days (first pass)", "Products come mainly from China or Poland, stated on the FAQ"]
+strengths_fr = ["Livraison en point relais offerte dès 55 € en France, Belgique et Luxembourg (première passe, non relu)", "Stock en France ; livraison à domicile de 2 à 4 jours ouvrables (première passe)", "Produits venant principalement de Chine ou de Pologne, indiqué dans la foire aux questions"]
+weaknesses_en = ["Small business founded in 2023", "Rating 4.9 on 75 reviews displayed on the shop's own site: not independent"]
+weaknesses_fr = ["Petite structure fondée en 2023", "Note de 4.9 sur 75 avis affichés sur le site de la boutique : non indépendants"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://blouge-brickstore.fr/pages/faq"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "barweer"
+name = "Barweer"
+url = "https://www.barweer.com"
+group = "alternative-brands"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Direct sales by the brand"
+business_model_fr = "Vente directe par la marque"
+summary_en = "Chinese brand selling modular and film-themed sets directly, with warehouses in China, the United States and Europe."
+summary_fr = "Marque chinoise de sets modulaires et de sets sous licence cinéma, vendant en direct, avec entrepôts en Chine, aux États-Unis et en Europe."
+strengths_en = ["From US and EU warehouses: average delivery 3 to 7 days; shipping fee at checkout includes all costs, no extra taxes or duties", "Worldwide shipping, country-specific price shown at checkout", "After-sales service within 15 days of delivery"]
+strengths_fr = ["Depuis les entrepôts américain et européen : livraison moyenne de 3 à 7 jours ; port affiché à la caisse tout compris, sans taxes ni droits supplémentaires", "Livraison dans le monde, prix par pays affiché à la caisse", "Service après-vente sous 15 jours après livraison"]
+weaknesses_en = ["From the China warehouse: 10 to 18 working days by air, 35 to 60 by sea", "Automatic trust scores reported unfavourably by a third party (FranceVerif, ScamDoc), not re-read"]
+weaknesses_fr = ["Depuis l'entrepôt en Chine : 10 à 18 jours ouvrables par avion, 35 à 60 par mer", "Scores de confiance automatiques jugés défavorables par un tiers (FranceVerif, ScamDoc), non relus"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.barweer.com/pages/shipping-policy"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://labriquelibre.fr/guides/verifier-boutique-briques-fiable/"
+date = "2026-10-28"
+kind = "third-party"
+
+[[resource]]
+id = "afobrick"
+name = "AFOBrick"
+url = "https://afobrick.com"
+group = "alternative-brands"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Online store shipping from China"
+business_model_fr = "Boutique expédiant depuis la Chine"
+summary_en = "Online store shipping from China by air; sets without original box, in bags."
+summary_fr = "Boutique expédiant depuis la Chine par avion ; sets sans boîte d'origine, en sachets."
+strengths_en = ["Free shipping to France stated, 10 to 15 days; prices stated to include VAT for the European Union"]
+strengths_fr = ["Livraison gratuite vers la France annoncée, 10 à 15 jours ; prix annoncés avec TVA pour l'Union européenne"]
+weaknesses_en = ["Contradiction: prices with VAT, but customs or VAT payments are the customer's if due", "Other countries 15 to 25 days; no original box; no independent reviews found"]
+weaknesses_fr = ["Contradiction : prix avec TVA, mais frais de douane ou de TVA à la charge du client s'ils sont dus", "Autres pays de 15 à 25 jours ; pas de boîte d'origine ; avis indépendants non trouvés"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://afobrick.com/pages/shipping-policy"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "joygobricks"
+name = "JoyGobricks"
+url = "https://joygobricks.com"
+group = "alternative-brands"
+covers = ["alternative", "parts"]
+languages = ["en"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Online store shipping from China"
+business_model_fr = "Boutique expédiant depuis la Chine"
+summary_en = "Reseller of Gobricks parts and sets; ships from China."
+summary_fr = "Revendeur de pièces et sets Gobricks ; expédie depuis la Chine."
+strengths_en = ["European VAT included in prices; missing or damaged parts sent free of charge", "Reshipment arranged if no delivery after 45 days"]
+strengths_fr = ["TVA européenne incluse dans les prix ; pièces manquantes ou abîmées envoyées gratuitement", "Réexpédition si colis non reçu après 45 jours"]
+weaknesses_en = ["Processing 5 to 10 working days, then 4 to 17 days to European countries", "Shipping cost depends on weight; France rate not published; no independent reviews found"]
+weaknesses_fr = ["Traitement de 5 à 10 jours ouvrables puis 4 à 17 jours vers les pays européens", "Port selon le poids ; tarif France non publié ; avis indépendants non trouvés"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://joygobricks.com/pages/shipping-policy"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "chowbrick"
+name = "ChowBrick"
+url = "https://www.chowbrick.com"
+group = "alternative-brands"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Online store shipping from China"
+business_model_fr = "Boutique expédiant depuis la Chine"
+summary_en = "Online store shipping from China to the rest of the world."
+summary_fr = "Boutique expédiant depuis la Chine vers le reste du monde."
+strengths_en = ["Compensation of 1.2 times the price paid in store credit if tracking stalls for more than 60 days", "Under 2 kg: standard about 8 to 12 days, economic about 12 to 25 days"]
+strengths_fr = ["Compensation de 1.2 fois le prix payé en crédit boutique si le suivi stagne plus de 60 jours", "Moins de 2 kg : standard d'environ 8 à 12 jours, économique d'environ 12 à 25 jours"]
+weaknesses_en = ["Large items by sea freight: 40 to 70 days", "Items of one order often tracked separately; EU duties included in shipping not re-confirmed; no independent reviews found"]
+weaknesses_fr = ["Gros articles par fret maritime : 40 à 70 jours", "Articles d'une même commande souvent suivis séparément ; droits européens inclus dans le port non reconfirmés ; avis indépendants non trouvés"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.chowbrick.com/art/shipping-amp-order-tracking_a0003.html"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "ywobb"
+name = "YWOBB"
+url = "https://yourwobb.com"
+group = "alternative-brands"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Online store"
+business_model_fr = "Boutique en ligne"
+summary_en = "Multi-brand store (CaDA, Quan Guan, Xinyu), prices in US dollars; some CaDA sets offered as 'EU warehouse' versions."
+summary_fr = "Boutique multimarque (CaDA, Quan Guan, Xinyu), prix en dollars ; certains sets CaDA proposés en version « entrepôt européen »."
+strengths_en = ["EU warehouse versions with original box on some CaDA sets"]
+strengths_fr = ["Versions « entrepôt européen » avec boîte d'origine sur certains sets CaDA"]
+weaknesses_en = ["Prices in US dollars; shipping conditions to France not read; no independent reviews found", "Site notes that MOC sets are not assembly-verified by the factory"]
+weaknesses_fr = ["Prix en dollars ; conditions d'expédition vers la France non lues ; avis indépendants non trouvés", "Le site indique que les sets MOC ne sont pas vérifiés à l'assemblage par l'usine"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://yourwobb.com/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "mygobricks-brickbulk"
+name = "MyGoBricks (Brickbulk)"
+url = "https://mygobricks.com"
+group = "alternative-brands"
+covers = ["alternative", "parts"]
+languages = ["en", "fr"]
+countries = ["international"]
+access = "free"
+business_model_en = "Online store"
+business_model_fr = "Boutique en ligne"
+summary_en = "Authorised distributor of Gobricks bulk parts and sets; French version (bricksbulk.fr) run by SOUFEEL INTERNATIONAL TRADING CO., LIMITED, Beckenham, United Kingdom. Reported renaming to Brickbulk."
+summary_fr = "Distributeur agréé de pièces Gobricks en vrac et de sets ; version française (bricksbulk.fr) exploitée par SOUFEEL INTERNATIONAL TRADING CO., LIMITED, Beckenham, Royaume-Uni. Changement de nom en Brickbulk signalé."
+strengths_en = ["Trustpilot 4.4 on 24 reviews (2026-11-03, first pass)", "Order by parts list (Rebrickable, Studio) per first pass"]
+strengths_fr = ["Trustpilot 4.4 sur 24 avis (03/11/2026, première passe)", "Commande par liste de pièces (Rebrickable, Studio) selon la première passe"]
+weaknesses_en = ["Recent review reports an undelivered order and unanswered emails (2026-10-27)", "A customer in Germany paid 13.32 € in customs fees", "Shipping to France not published"]
+weaknesses_fr = ["Un avis récent signale une commande non livrée et des courriels sans réponse (27/10/2026)", "Un client en Allemagne a payé 13.32 € de frais de douane", "Livraison vers la France non publiée"]
+status = "active"
+last_activity = "2026-10-30"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://bricksbulk.fr/pages/contact-us"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://au.trustpilot.com/review/mygobricks.com"
+date = "2026-11-03"
+kind = "third-party"
+
+[[resource]]
+id = "warbrix"
+name = "Warbrix.fr"
+url = "https://www.warbrix.fr"
+group = "alternative-brands"
+covers = ["alternative"]
+languages = ["fr", "en"]
+countries = ["FR", "MC"]
+ships_to_france = true
+access = "free"
+business_model_en = "Online store"
+business_model_fr = "Boutique en ligne"
+summary_en = "French online store of COBI and Reobrix, stating it was the first distributor to introduce COBI in France (2012)."
+summary_fr = "Boutique française de COBI et Reobrix, qui se déclare premier distributeur de COBI en France (2012)."
+strengths_en = ["Shipping to France and Monaco 5 € per order up to 69 €, free from 69 €", "Discounted items with damaged boxes, about 10 % off"]
+strengths_fr = ["Port vers la France et Monaco de 5 € par commande jusqu'à 69 €, offert dès 69 €", "Articles à boîte abîmée soldés, environ 10 % de remise"]
+weaknesses_en = ["Narrow range: mainly COBI and Reobrix", "No independent reviews read"]
+weaknesses_fr = ["Gamme étroite : principalement COBI et Reobrix", "Avis indépendants non lus"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.warbrix.fr/en"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "cobi-europe"
+name = "COBI Europe (official store)"
+url = "https://cobi.com/fr-fr"
+group = "alternative-brands"
+covers = ["alternative"]
+languages = ["fr", "en"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Direct sales by the brand"
+business_model_fr = "Vente directe par la marque"
+summary_en = "Official online store of the Polish manufacturer COBI S.A. (Warsaw), shipping across the European Union; historical military models, licensed cars, ships and aircraft."
+summary_fr = "Boutique en ligne officielle du fabricant polonais COBI S.A. (Varsovie), livrant dans toute l'Union européenne ; modèles militaires historiques, voitures sous licence, navires et avions."
+strengths_en = ["Official source for new releases, restocks and a missing-parts service", "Parcels ship from within the European Union: no import customs for France (third-party guide)"]
+strengths_fr = ["Source officielle pour les nouveautés, réassorts et service de pièces manquantes", "Colis expédiés depuis l'Union européenne : pas de douane à l'import pour la France (guide tiers)"]
+weaknesses_en = ["Shipping cost calculated at checkout, not published; a third-party guide reports free shipping from 89 € in the European Union", "Single brand"]
+weaknesses_fr = ["Port calculé à la caisse, non publié ; un guide tiers indique le port offert dès 89 € dans l'Union européenne", "Une seule marque"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://cobi.com/fr-fr/pages/faq"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://labriquelibre.fr/marques/cobi/"
+date = "2026-09-25"
+kind = "third-party"
+
+[[resource]]
+id = "amazon-fr"
+name = "Amazon.fr"
+url = "https://www.amazon.fr"
+group = "general-retailers"
+covers = ["official", "alternative"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Marketplace and direct sales"
+business_model_fr = "Place de marché et vente directe"
+summary_en = "General marketplace: official LEGO sold directly and by third parties; a few alternative brands. Page not readable by the tools (anti-bot challenge, not bypassed); data from the first pass."
+summary_fr = "Place de marché généraliste : LEGO officiel vendu en direct et par des tiers ; quelques marques alternatives. Page non lue par les outils (défi anti-robot, non contourné) ; données de la première passe."
+strengths_en = ["Per a third-party survey (2026-09-15), lowest price on 48 % of tracked LEGO sets, median discount 28 % below the official price", "Free delivery from 35 € or with Prime (third-party guide)"]
+strengths_fr = ["Selon un relevé tiers (15/09/2026), prix le plus bas sur 48 % des sets LEGO suivis, remise médiane de 28 % sous le prix officiel", "Livraison offerte dès 35 € ou avec Prime (guide tiers)"]
+weaknesses_en = ["Prices change several times a day; third-party sellers sometimes above the official price"]
+weaknesses_fr = ["Prix changeant plusieurs fois par jour ; vendeurs tiers parfois au-dessus du prix officiel"]
+status = "active"
+last_activity = "2026-09-15"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://planet-brick.com/bons-plans/ou-acheter-lego-moins-cher/"
+date = "2026-09-15"
+kind = "third-party"
+
+[[resource]]
+id = "alternate-fr"
+name = "Alternate (alternate.fr)"
+url = "https://www.alternate.fr/Jouets/LEGO"
+group = "general-retailers"
+featured = true
+covers = ["official"]
+languages = ["fr", "de"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Online store"
+business_model_fr = "Boutique en ligne"
+summary_en = "German electronics retailer (Alternate GmbH) with a large official LEGO range delivered to France."
+summary_fr = "Revendeur allemand d'informatique (Alternate GmbH) avec un large rayon LEGO officiel livré en France."
+strengths_en = ["Per a third-party survey, 99 % of sets below the official price, cheapest on 39 % of sets, median discount 26.8 %", "Trustpilot 4.3 on 1396 reviews (2026-11-14, first pass)"]
+strengths_fr = ["Selon un relevé tiers, 99 % des sets sous le prix officiel, la moins chère sur 39 % des sets, remise médiane de 26.8 %", "Trustpilot 4.3 sur 1396 avis (14/11/2026, première passe)"]
+weaknesses_en = ["Standard shipping 10.98 € per parcel, cited as high; individually shipped goods charged per parcel", "No pick-up point; slow after-sales service in recent reviews (first pass)"]
+weaknesses_fr = ["Port standard de 10.98 € par colis, cité comme élevé ; marchandises expédiées séparément facturées par colis", "Pas de point relais ; service après-vente lent dans des avis récents (première passe)"]
+status = "active"
+last_activity = "2026-11-20"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.alternate.fr/AIDE/Envoi-livraison"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://planet-brick.com/bons-plans/ou-acheter-lego-moins-cher/"
+date = "2026-09-15"
+kind = "third-party"
+
+[[resource]]
+id = "galaxus-fr"
+name = "Galaxus (galaxus.fr)"
+url = "https://www.galaxus.fr"
+group = "general-retailers"
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Online store and marketplace"
+business_model_fr = "Boutique en ligne et place de marché"
+summary_en = "Large general online store (Digitec Galaxus AG, Switzerland) with a marketplace and a wide LEGO catalogue."
+summary_fr = "Grande boutique généraliste en ligne (Digitec Galaxus AG, Suisse) avec place de marché et catalogue LEGO très large."
+strengths_en = ["Free shipping to France from 39 €, otherwise 3.90 €; in-stock items shipped by DHL then handed to La Poste / Colissimo"]
+strengths_fr = ["Livraison gratuite en France dès 39 €, sinon 3.90 € ; produits en stock expédiés par DHL puis remis à La Poste / Colissimo"]
+weaknesses_en = ["Per a third-party survey, median discount only 9.5 %, 69 % of sets below the official price (third-party seller products)", "Third-party sellers may ship with other carriers and separate fees"]
+weaknesses_fr = ["Selon un relevé tiers, remise médiane de 9.5 % seulement, 69 % des sets sous le prix officiel (produits de vendeurs tiers)", "Les vendeurs tiers peuvent expédier avec d'autres transporteurs, frais distincts"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.galaxus.fr/fr/guide/28"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://planet-brick.com/bons-plans/ou-acheter-lego-moins-cher/"
+date = "2026-09-15"
+kind = "third-party"
+
+[[resource]]
+id = "joybuy-fr"
+name = "Joybuy France"
+url = "https://www.joybuy.fr"
+group = "general-retailers"
+featured = true
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Marketplace and direct sales"
+business_model_fr = "Place de marché et vente directe"
+summary_en = "Marketplace and direct sales of the JD.com group, opened in France on 2026-03-16, with LEGO among launch brands."
+summary_fr = "Place de marché et vente directe du groupe JD.com, ouverte en France le 16/03/2026, avec LEGO parmi les marques de lancement."
+strengths_en = ["Free shipping from 29 €, otherwise 3.99 € (items sold and shipped by Joybuy)", "Per a third-party survey, 97 % of sets below the official price, median discount 23.6 %", "Trustpilot 4.6 on 20086 reviews (2026-11-23, first pass)"]
+strengths_fr = ["Livraison offerte dès 29 €, sinon 3.99 € (produits vendus et expédiés par Joybuy)", "Selon un relevé tiers, 97 % des sets sous le prix officiel, remise médiane de 23.6 %", "Trustpilot 4.6 sur 20086 avis (23/11/2026, première passe)"]
+weaknesses_en = ["Recent retailer (March 2026); delays and damaged parcels cited in reviews (first pass)", "Third-party sellers have separate shipping fees, calculated separately"]
+weaknesses_fr = ["Enseigne récente (mars 2026) ; retards et colis abîmés cités dans les avis (première passe)", "Les vendeurs tiers ont des frais de port distincts, calculés séparément"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.joybuy.fr/help/shipping-fee"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://planet-brick.com/bons-plans/ou-acheter-lego-moins-cher/"
+date = "2026-09-15"
+kind = "third-party"
+
+[[resource]]
+id = "kidinn"
+name = "Kidinn"
+url = "https://www.tradeinn.com/kidinn/fr"
+group = "general-retailers"
+covers = ["official"]
+languages = ["fr", "en", "es"]
+countries = ["FR", "ES"]
+ships_to_france = true
+access = "free"
+business_model_en = "Online store"
+business_model_fr = "Boutique en ligne"
+summary_en = "Children's clothing and toy store of the Tradeinn group (Spain) with a LEGO range, shipped from Spain."
+summary_fr = "Boutique de vêtements et jouets pour enfants du groupe Tradeinn (Espagne) avec rayon LEGO, expédiée depuis l'Espagne."
+strengths_en = ["Verified Reviews 4.6 on 931 reviews; Trustpilot 4.1 on 3731 reviews (first pass, not re-read)", "Prices include VAT; pick-up point, Colissimo, GLS and DHL options"]
+strengths_fr = ["Avis Vérifiés 4.6 sur 931 avis ; Trustpilot 4.1 sur 3731 avis (première passe, non relu)", "Prix TVA comprise ; options point relais, Colissimo, GLS et DHL"]
+weaknesses_en = ["No free-shipping threshold read; cost calculated at the basket, not published", "Damaged parcels and unclear delivery times in reviews; not a LEGO specialist"]
+weaknesses_fr = ["Aucun seuil de gratuité lu ; port calculé au panier, non publié", "Colis abîmés et délais imprécis dans des avis ; non spécialiste de LEGO"]
+status = "active"
+last_activity = "2026-11-11"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.tradeinn.com/kidinn/en/help/st"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "cdiscount"
+name = "Cdiscount"
+url = "https://www.cdiscount.com"
+group = "general-retailers"
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Retail chain, online and in store"
+business_model_fr = "Enseigne, en ligne et en magasin"
+summary_en = "French general retailer, direct sales and marketplace. Not re-read in this pass."
+summary_fr = "Généraliste français, vente directe et place de marché. Non relu lors de cette passe."
+strengths_en = ["Per a third-party survey, median discount 25 %, 92 % of sets below the official price", "Trustpilot 4.1 on 290179 reviews (2026-11-22, first pass)"]
+strengths_fr = ["Selon un relevé tiers, remise médiane de 25 %, 92 % des sets sous le prix officiel", "Trustpilot 4.1 sur 290179 avis (22/11/2026, première passe)"]
+weaknesses_en = ["Cheapest on only 10 % of sets (third-party survey)", "Reviews cite logistics, packaging and delays"]
+weaknesses_fr = ["Moins chère sur 10 % des sets seulement (relevé tiers)", "Avis citant la logistique, les emballages et les délais"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://planet-brick.com/bons-plans/ou-acheter-lego-moins-cher/"
+date = "2026-09-15"
+kind = "third-party"
+
+[[resource]]
+id = "carrefour"
+name = "Carrefour (direct sales and Marketplace)"
+url = "https://www.carrefour.fr"
+group = "general-retailers"
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Retail chain, online and in store"
+business_model_fr = "Enseigne, en ligne et en magasin"
+summary_en = "Supermarket chain; direct sales are distinct from the Marketplace."
+summary_fr = "Grande distribution ; la vente directe est distincte de la Marketplace."
+strengths_en = ["Direct sales: per a third-party survey 97 % of sets below the official price, median discount 21.3 %"]
+strengths_fr = ["Vente directe : selon un relevé tiers, 97 % des sets sous le prix officiel, remise médiane de 21.3 %"]
+weaknesses_en = ["Marketplace: median discount 4.5 %, 42 % of sets above the official price (third-party survey)", "Shipping and customer reviews not read"]
+weaknesses_fr = ["Marketplace : remise médiane de 4.5 %, 42 % des sets au-dessus du prix officiel (relevé tiers)", "Port et avis clients non relevés"]
+status = "active"
+last_activity = "2026-09-15"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://planet-brick.com/bons-plans/ou-acheter-lego-moins-cher/"
+date = "2026-09-15"
+kind = "third-party"
+
+[[resource]]
+id = "e-leclerc"
+name = "E.Leclerc"
+url = "https://www.e.leclerc"
+group = "general-retailers"
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Retail chain, online and in store"
+business_model_fr = "Enseigne, en ligne et en magasin"
+summary_en = "Supermarket chain, online and in store."
+summary_fr = "Grande distribution, en ligne et en magasin."
+strengths_en = ["Highest median discount of the third-party survey: 28.2 %, 97 % of sets below the official price"]
+strengths_fr = ["Remise médiane la plus forte du relevé tiers : 28.2 %, 97 % des sets sous le prix officiel"]
+weaknesses_en = ["Shorter LEGO catalogue, cheapest on 7 % of sets", "Shipping, delivery times and reviews not read; loyalty credit not deducted by comparators"]
+weaknesses_fr = ["Catalogue LEGO plus court, la moins chère sur 7 % des sets", "Port, délais et avis non relevés ; cagnotte de fidélité non déduite par les comparateurs"]
+status = "active"
+last_activity = "2026-09-15"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://planet-brick.com/bons-plans/ou-acheter-lego-moins-cher/"
+date = "2026-09-15"
+kind = "third-party"
+
+[[resource]]
+id = "smyths-toys-fr"
+name = "Smyths Toys France"
+url = "https://www.smythstoys.com/fr/fr-fr"
+group = "general-retailers"
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Retail chain, online and in store"
+business_model_fr = "Enseigne, en ligne et en magasin"
+summary_en = "Toy specialist of the Irish Smyths group, online and in store in France."
+summary_fr = "Spécialiste du jouet du groupe irlandais Smyths, en ligne et en magasin en France."
+strengths_en = ["Per a third-party survey, median discount 25 %, 95 % of sets below the official price"]
+strengths_fr = ["Selon un relevé tiers, remise médiane de 25 %, 95 % des sets sous le prix officiel"]
+weaknesses_en = ["Trustpilot 2.2 on 4874 reviews (2026-11-17) for the www.smythstoys.com domain; link to the French version not established", "No price feed at comparators: prices not automatically comparable"]
+weaknesses_fr = ["Trustpilot 2.2 sur 4874 avis (17/11/2026) pour le domaine www.smythstoys.com ; rattachement à la version française non établi", "Pas de flux de prix chez les comparateurs : prix non comparables automatiquement"]
+status = "active"
+last_activity = "2026-11-17"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://planet-brick.com/bons-plans/ou-acheter-lego-moins-cher/"
+date = "2026-09-15"
+kind = "third-party"
+
+[[resource]]
+id = "king-jouet"
+name = "King Jouet"
+url = "https://www.king-jouet.com"
+group = "general-retailers"
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Retail chain, online and in store"
+business_model_fr = "Enseigne, en ligne et en magasin"
+summary_en = "French toy chain, online and in store."
+summary_fr = "Chaîne française de jouets, en ligne et en magasin."
+strengths_en = ["Trustpilot 3.9 on 102746 reviews (2026-11-12, first pass)"]
+strengths_fr = ["Trustpilot 3.9 sur 102746 avis (12/11/2026, première passe)"]
+weaknesses_en = ["No price feed at comparators; shipping and delivery times not read"]
+weaknesses_fr = ["Pas de flux de prix chez les comparateurs ; port et délais non relevés"]
+status = "active"
+last_activity = "2026-11-12"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://brickmitri.com/comparateur-lego/"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "fnac"
+name = "Fnac"
+url = "https://www.fnac.com"
+group = "general-retailers"
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Retail chain, online and in store"
+business_model_fr = "Enseigne, en ligne et en magasin"
+summary_en = "French cultural and technical retailer with a LEGO range."
+summary_fr = "Distributeur culturel et technique français avec rayon LEGO."
+strengths_en = ["Prices present in comparator feeds; Trustpilot 4.0 on 30879 reviews (2026-11-22, first pass)"]
+strengths_fr = ["Prix présents dans les flux de comparateurs ; Trustpilot 4.0 sur 30879 avis (22/11/2026, première passe)"]
+weaknesses_en = ["29 % one-star reviews; cancelled orders and customer service criticised", "LEGO discount and shipping not read"]
+weaknesses_fr = ["29 % d'avis à une étoile ; commandes annulées et service client critiqués", "Remise et port LEGO non relevés"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://brickmitri.com/comparateur-lego/"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "cultura"
+name = "Cultura"
+url = "https://www.cultura.com"
+group = "general-retailers"
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Retail chain, online and in store"
+business_model_fr = "Enseigne, en ligne et en magasin"
+summary_en = "French cultural and creative-leisure retailer with a LEGO range."
+summary_fr = "Distributeur culturel et de loisirs créatifs français avec rayon LEGO."
+strengths_en = ["Prices present in comparator feeds"]
+strengths_fr = ["Prix présents dans les flux de comparateurs"]
+weaknesses_en = ["Trustpilot 1.6 on 938 reviews, old reading (2025-07-27), 78 % one-star: lost orders, one parcel per item, stock-outs; figure possibly outdated"]
+weaknesses_fr = ["Trustpilot 1.6 sur 938 avis, relevé ancien (27/07/2025), 78 % d'avis à une étoile : commandes perdues, un colis par article, ruptures ; chiffre peut-être périmé"]
+status = "active"
+last_activity = "2025-09-06"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://brickmitri.com/comparateur-lego/"
+date = "2026-11-23"
+kind = "third-party"

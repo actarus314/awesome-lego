@@ -1,0 +1,855 @@
+[category]
+id = "tools"
+name_en = "Tools, APIs and open projects"
+name_fr = "Outils, API et projets libres"
+summary_en = "Design software, apps, APIs, open data and open-source projects around LEGO and compatible bricks."
+summary_fr = "Logiciels de conception, applications, API, données ouvertes et projets libres autour de LEGO et des briques compatibles."
+
+[[category.groups]]
+id = "design-software"
+name_en = "Design software"
+name_fr = "Logiciels de conception"
+
+[[category.groups]]
+id = "apps"
+name_en = "Apps"
+name_fr = "Applications"
+
+[[category.groups]]
+id = "apis-and-data"
+name_en = "APIs and open data"
+name_fr = "API et données ouvertes"
+
+[[category.groups]]
+id = "open-source"
+name_en = "Open-source projects"
+name_fr = "Projets libres"
+
+[[resource]]
+id = "rebrickable-api-v3"
+name = "Rebrickable API v3"
+url = "https://rebrickable.com/api/"
+group = "apis-and-data"
+featured = true
+covers = ["official", "parts", "minifigures", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "REST interface to the official LEGO catalog (sets, parts, minifigures, themes, colors) and to Rebrickable user collections."
+summary_fr = "Interface REST du catalogue LEGO officiel (sets, pièces, figurines, thèmes, couleurs) et des collections des comptes Rebrickable."
+strengths_en = ["Free key generated from the profile", "Commercial use allowed with credit to the source", "Read and write access to user collections"]
+strengths_fr = ["Clé gratuite générée depuis le profil", "Usage commercial autorisé avec mention de la source", "Lecture et écriture des collections des utilisateurs"]
+weaknesses_en = ["About one request per second per account; HTTP 429 beyond, temporary address ban on insistence", "No prices: left to BrickLink and Brick Owl", "The documentation recommends the CSV files for volume"]
+weaknesses_fr = ["Environ une requête par seconde et par compte ; erreur 429 au-delà, bannissement temporaire d'adresse en cas d'insistance", "Pas de prix : renvoyés à BrickLink et Brick Owl", "La documentation recommande les fichiers CSV pour les gros volumes"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://rebrickable.com/api/v3/docs/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://rebrickable.com/api/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "rebrickable-csv-downloads"
+name = "Rebrickable catalog CSV downloads"
+url = "https://rebrickable.com/downloads/"
+group = "apis-and-data"
+covers = ["official", "parts", "minifigures", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Daily archive of CSV files: themes, colors, parts, elements, sets, minifigures, inventories, and identifier mappings to Brickset, BrickLink, Brick Owl, LEGO and LDraw."
+summary_fr = "Archive quotidienne de fichiers CSV : thèmes, couleurs, pièces, éléments, sets, figurines, inventaires, correspondances d'identifiants avec Brickset, BrickLink, Brick Owl, LEGO et LDraw."
+strengths_en = ["Free, no key, no rate limit; daily update", "Identifier mappings between catalogs"]
+strengths_fr = ["Gratuit, sans clé ni limite de débit ; mise à jour quotidienne", "Correspondances d'identifiants entre catalogues"]
+weaknesses_en = ["Official LEGO sets, parts and minifigures only; no prices", "Scraping of site pages is forbidden by the terms"]
+weaknesses_fr = ["Sets, pièces et figurines LEGO officiels uniquement ; pas de prix", "L'extraction des pages du site est interdite par les conditions"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://rebrickable.com/downloads/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://rebrickable.com/blog/921/admin-update/"
+date = "2026-04-30"
+kind = "official"
+
+[[resource]]
+id = "brickset-api-v3"
+name = "Brickset API v3"
+url = "https://brickset.com/article/52666/brickset-web-services"
+group = "apis-and-data"
+featured = true
+covers = ["official", "instructions", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "JSON and SOAP interface to the Brickset catalog: sets, extra images, instructions, reviews, member collections (read and write)."
+summary_fr = "Interface JSON et SOAP du catalogue Brickset : sets, images supplémentaires, instructions, avis, collections des membres (lecture et écriture)."
+strengths_en = ["Free key for a logged-in account", "Recommended retail prices by country (United Kingdom, United States, Canada, Germany)", "Instructions, reviews and extra images per set"]
+strengths_fr = ["Clé gratuite pour un compte connecté", "Prix de vente conseillés par pays (Royaume-Uni, États-Unis, Canada, Allemagne)", "Instructions, avis et images supplémentaires par set"]
+weaknesses_en = ["Initial limit of 100 calls per day per key; increase on request", "Documentation inconsistent: the introduction counts only getSets, the 19 November 2026 change log says the daily limit applies to all calls", "No resale price data"]
+weaknesses_fr = ["Plafond initial de 100 appels par jour et par clé ; augmentation sur demande", "Documentation contradictoire : l'introduction ne compte que getSets, le journal du 19/11/2026 indique que la limite journalière s'applique à tous les appels", "Pas de prix de revente"]
+status = "active"
+last_activity = "2026-11-19"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickset.com/article/52666/brickset-web-services"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brickset.com/article/52664/api-v3-documentation"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "bricklink-api"
+name = "BrickLink API"
+url = "https://www.bricklink.com/v3/api.page"
+group = "apis-and-data"
+featured = true
+covers = ["official", "alternative", "parts", "second-hand", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "REST interface to the BrickLink marketplace: catalog, price guide, store inventories, orders, messages, feedback."
+summary_fr = "Interface REST de la place de marché BrickLink : catalogue, guide de prix, inventaires de boutique, commandes, messages, évaluations."
+strengths_en = ["Only large-scale source of resale prices for parts and sets", "Free key and secret on account login", "5000 calls per day by default"]
+strengths_fr = ["Seule source de prix de revente de pièces et sets à grande échelle", "Clé et secret gratuits à la connexion au compte", "5000 appels par jour par défaut"]
+weaknesses_en = ["OAuth 1.0 signature; tokens bound to declared fixed IP addresses", "No planned increase of the daily limit (administrator message, 9 June 2023)", "Official pages render without content in a plain reader: read through the static wiki and help-center copy"]
+weaknesses_fr = ["Signature OAuth 1.0 ; jetons liés à des adresses IP fixes déclarées", "Pas de relèvement prévu du plafond journalier (message d'un administrateur, 09/06/2023)", "Pages officielles sans contenu dans un lecteur simple : lues via le wiki statique et la copie du centre d'aide"]
+status = "active"
+last_activity = "2026-11-18"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://static.bricklink.com/alpha/default/api_wiki.html"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.bricklink.com/help.asp?helpID=2436"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://www.bricklink.com/message.asp?ID=1414804"
+date = "2023-06-09"
+kind = "forum"
+
+[[resource]]
+id = "brick-owl-api"
+name = "Brick Owl API"
+url = "https://www.brickowl.com/api_docs"
+group = "apis-and-data"
+covers = ["official", "alternative", "parts", "second-hand", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "REST interface to the Brick Owl marketplace: catalog, identifier mapping, availability and prices (on authorization), store inventories and orders."
+summary_fr = "Interface REST de la place de marché Brick Owl : catalogue, correspondance d'identifiants, disponibilités et prix (sur autorisation), inventaires et commandes de boutique."
+strengths_en = ["Free key with an account", "600 requests per minute for most methods", "Identifier mapping (set, element, BrickLink) openly available"]
+strengths_fr = ["Clé gratuite avec un compte", "600 requêtes par minute pour la plupart des méthodes", "Correspondance d'identifiants (set, élément, BrickLink) en accès libre"]
+weaknesses_en = ["Availability, prices and inventories need a catalog permission granted by the administration on request (a 17 September 2026 forum post shows a pending refusal)", "Per-method daily quotas; attribution with link required"]
+weaknesses_fr = ["Disponibilités, prix et inventaires exigent l'autorisation « catalogue » accordée sur demande (un message de forum du 17/09/2026 montre un refus en attente)", "Quotas journaliers par méthode ; attribution avec lien obligatoire"]
+status = "active"
+last_activity = "2026-09-17"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.brickowl.com/api_docs"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.brickowl.com/forum/thread/17793"
+date = "2026-09-17"
+kind = "forum"
+
+[[resource]]
+id = "brickeconomy-api"
+name = "BrickEconomy API v1"
+url = "https://www.brickeconomy.com/api-reference"
+group = "apis-and-data"
+covers = ["official", "minifigures", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "paid"
+business_model_en = "Premium subscription"
+business_model_fr = "Abonnement Premium"
+summary_en = "REST interface for valuation: set and minifigure records with estimated values, search, personal collection (read and write), value summary."
+summary_fr = "Interface REST de valorisation : fiche de set ou de figurine avec valeurs estimées, recherche, collection personnelle (lecture et écriture), synthèse de valeur."
+strengths_en = ["Only permitted automated access to the site data", "Estimated values and forecasts, responses cached 24 hours"]
+strengths_fr = ["Seule voie autorisée d'accès automatisé aux données du site", "Valeurs estimées et prévisions, réponses mises en cache 24 heures"]
+weaknesses_en = ["Premium members only", "100 requests per day, per-minute caps", "Scraping forbidden by the terms, with bans"]
+weaknesses_fr = ["Réservé aux membres Premium", "100 requêtes par jour, plafonds par minute", "Extraction interdite par les conditions, avec bannissement"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.brickeconomy.com/api-reference"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.brickeconomy.com/premium"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "brickfact-mcp"
+name = "Brickfact public MCP server"
+url = "https://mcp.brickfact.com/mcp"
+group = "apis-and-data"
+covers = ["official", "data"]
+languages = ["en", "de", "fr"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Read-only MCP server: set search, records, retailer offers with shipping, comparison and recorded price history across nine markets, including France."
+summary_fr = "Serveur MCP en lecture seule : recherche de sets, fiches, offres de revendeurs avec frais de port, comparaison et historique de prix constatés sur neuf marchés, dont la France."
+strengths_en = ["No key or account; 11 read-only tools", "Delivered prices in euros for France", "Public agent-skill repository (brickfact-com/agent-skills)"]
+strengths_fr = ["Sans clé ni compte ; 11 outils en lecture seule", "Prix livrés en euros pour la France", "Dépôt public d'une compétence d'agent (brickfact-com/agent-skills)"]
+weaknesses_en = ["Per-client rate limit (HTTP 429), no promise of lasting free access", "Stock always unverified; price history only since 12 October 2026"]
+weaknesses_fr = ["Limitation de débit par client (erreur 429), sans promesse de gratuité durable", "Stock toujours non vérifié ; historique des prix seulement depuis le 12/10/2026"]
+status = "active"
+last_activity = "2026-11-09"
+checked = "2026-11-23"
+confidence = "medium"
+github = "brickfact-com/agent-skills"
+
+[[resource.sources]]
+url = "https://brickfact.com/blog/guidebooks/lego-api"
+date = "2026-11-03"
+kind = "official"
+
+[[resource.sources]]
+url = "https://github.com/brickfact-com/agent-skills"
+date = "2026-11-09"
+kind = "read"
+
+[[resource]]
+id = "brick-directory-mcp"
+name = "Brick Directory MCP server"
+url = "https://brick.directory/"
+group = "apis-and-data"
+covers = ["official", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+summary_en = "Third-party remote MCP server federating Rebrickable, BrickLink, Brickset, BrickEconomy and Brick Owl, with Rebrickable collection management."
+summary_fr = "Serveur MCP distant tiers fédérant Rebrickable, BrickLink, Brickset, BrickEconomy et Brick Owl, avec gestion de la collection Rebrickable."
+strengths_en = ["OAuth connection from several AI assistants", "Combines catalog, BrickLink prices and Brickset reviews"]
+strengths_fr = ["Connexion OAuth depuis plusieurs assistants d'IA", "Combine catalogue, prix BrickLink et avis Brickset"]
+weaknesses_en = ["Users' service keys are entrusted to the site", "Operator, licence and code not verified; the Rebrickable terms forbid AI model training"]
+weaknesses_fr = ["Les clés de chaque service sont confiées au site", "Exploitant, licence et code non vérifiés ; les conditions de Rebrickable interdisent l'entraînement de modèles d'IA"]
+status = "slow"
+last_activity = "2025-12-14"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://brick.directory/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brick.directory/blog/2025/12/14/connect-claude-desktop-to-lego-collection/"
+date = "2025-12-14"
+kind = "indexed"
+
+[[resource]]
+id = "brickognize"
+name = "Brickognize"
+url = "https://brickognize.com/"
+group = "apis-and-data"
+featured = true
+covers = ["official", "parts", "minifigures"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Image search for LEGO parts, minifigures, sets and sticker sheets from a photo; free API without key used by several open-source collection tools."
+summary_fr = "Recherche par image de pièces, figurines, sets et planches d'autocollants LEGO à partir d'une photo ; API gratuite sans clé utilisée par plusieurs outils libres de collection."
+strengths_en = ["Catalog of 125 thousand items, accuracy of 98.5 percent as stated by the site", "Identifiers matched to Brick Owl and Rebrickable"]
+strengths_fr = ["Catalogue de 125 mille éléments, précision de 98.5 pour cent selon le site", "Identifiants mis en correspondance avec Brick Owl et Rebrickable"]
+weaknesses_en = ["Accuracy figures are the site's own claim, not verified", "Terms of the free API not read"]
+weaknesses_fr = ["Chiffres de précision déclarés par le site, non vérifiés", "Conditions de l'API gratuite non lues"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brickognize.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickognize.com/about"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "ldraw"
+name = "LDraw open standard and parts library"
+url = "https://www.ldraw.org/"
+group = "apis-and-data"
+featured = true
+covers = ["official", "parts", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Open format for digital LEGO models and official parts library, basis of LeoCAD, LDView, LPub3D and Studio export."
+summary_fr = "Format ouvert de modèles LEGO numériques et bibliothèque de pièces officielle, base de LeoCAD, LDView, LPub3D et de l'export de Studio."
+strengths_en = ["Free and redistributable; the library contains 17230 unique shapes or patterned parts as stated on the home page", "Mapping to Rebrickable"]
+strengths_fr = ["Gratuit et redistribuable ; la bibliothèque compte 17230 formes ou pièces décorées uniques selon la page d'accueil", "Correspondance avec Rebrickable"]
+weaknesses_en = ["Geometry only: no catalog or price API", "Mixed licences depending on the part author"]
+weaknesses_fr = ["Géométrie uniquement : ni catalogue ni prix", "Licences mixtes selon l'auteur de la pièce"]
+size_en = "17230 unique shapes or patterned parts"
+size_fr = "17230 formes ou pièces décorées uniques"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.ldraw.org/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.ldraw.org/legal-info"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "bricklink-studio"
+name = "BrickLink Studio"
+url = "https://www.bricklink.com/v3/studio/download.page"
+group = "design-software"
+featured = true
+covers = ["official", "alternative", "parts", "custom-builds", "instructions"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Free 3D design software for LEGO models with BrickLink parts list, instruction editor and photorealistic rendering."
+summary_fr = "Logiciel gratuit de conception 3D de modèles LEGO avec liste de pièces BrickLink, éditeur d'instructions et rendu photoréaliste."
+strengths_en = ["Free, Windows and macOS, no mandatory account", "BrickLink catalog integration: costs, wanted lists, LDraw export"]
+strengths_fr = ["Gratuit, Windows et macOS, sans compte obligatoire", "Intégration du catalogue BrickLink : coûts, listes de souhaits, export LDraw"]
+weaknesses_en = ["Proprietary, English only, no Linux version", "Download page renders without content in a plain reader; version 2.26.10 of 27 October 2026 from help center and indexed sources"]
+weaknesses_fr = ["Propriétaire, anglais seulement, pas de version Linux", "Page de téléchargement sans contenu dans un lecteur simple ; version 2.26.10 du 27/10/2026 d'après le centre d'aide et des sources indexées"]
+status = "active"
+last_activity = "2026-10-27"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.bricklink.com/help.asp?helpID=2449"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://en.wikipedia.org/wiki/BrickLink_Studio"
+date = "2026-10-29"
+kind = "indexed"
+
+[[resource]]
+id = "leocad"
+name = "LeoCAD"
+url = "https://www.leocad.org/"
+group = "design-software"
+featured = true
+covers = ["official", "parts", "custom-builds", "instructions"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Open-source CAD program for virtual LEGO models based on the LDraw library, for Windows, macOS and Linux."
+summary_fr = "Logiciel libre de CAO pour modèles LEGO virtuels sur la bibliothèque LDraw, pour Windows, macOS et Linux."
+strengths_en = ["Free and open source; reads and writes LDR and MPD files", "Handles large models and multi-step instructions"]
+strengths_fr = ["Gratuit et libre ; lit et écrit les fichiers LDR et MPD", "Gère les grands modèles et les instructions en plusieurs étapes"]
+weaknesses_en = ["Licence stated as GPL version 2 in the README only; none in repository metadata", "182 open issues"]
+weaknesses_fr = ["Licence GPL version 2 indiquée dans le README seulement, absente des métadonnées du dépôt", "182 anomalies ouvertes"]
+size_en = "2904 GitHub stars"
+size_fr = "2904 étoiles GitHub"
+status = "active"
+last_activity = "2026-11-21"
+checked = "2026-11-23"
+confidence = "medium"
+github = "leozide/leocad"
+
+[[resource.sources]]
+url = "https://www.leocad.org/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://github.com/leozide/leocad"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "ldcad"
+name = "LDCad"
+url = "https://www.melkert.net/LDCad"
+group = "design-software"
+covers = ["official", "parts", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Multiplatform LDraw editor for editing virtual LEGO model documents in real time."
+summary_fr = "Éditeur LDraw multiplateforme pour modifier des documents de modèles LEGO virtuels en temps réel."
+strengths_en = ["Free; cited by the community awesome list", "Real-time editing"]
+strengths_fr = ["Gratuit ; cité par la liste communautaire awesome", "Édition en temps réel"]
+weaknesses_en = ["Date of the last release not found on the home page", "Source code not located"]
+weaknesses_fr = ["Date de la dernière version absente de la page d'accueil", "Code source non localisé"]
+status = "slow"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://www.melkert.net/LDCad"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "lpub3d"
+name = "LPub3D"
+url = "https://trevorsandy.github.io/lpub3d/"
+group = "design-software"
+covers = ["official", "instructions", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Open-source WYSIWYG editor for LEGO-style digital building instructions from LDraw files, with PDF, image, POV-Ray, STL and parts list export."
+summary_fr = "Éditeur libre WYSIWYG de notices de montage numériques de style LEGO à partir de fichiers LDraw, avec export PDF, images, POV-Ray, STL et liste de pièces."
+strengths_en = ["Free; many export formats including BrickLink XML and CSV", "Rendering through POV-Ray and Blender"]
+strengths_fr = ["Gratuit ; nombreux formats d'export dont BrickLink XML et CSV", "Rendu par POV-Ray et Blender"]
+weaknesses_en = ["Last activity 30 June 2026 as noted in the first survey, not re-read at the source", "Repository not opened"]
+weaknesses_fr = ["Dernière activité du 30/06/2026 relevée par la première recherche, non relue à la source", "Dépôt non ouvert"]
+status = "active"
+last_activity = "2026-06-30"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://trevorsandy.github.io/lpub3d/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "ldview"
+name = "LDView"
+url = "https://github.com/tcobbs/ldview"
+group = "design-software"
+covers = ["official", "parts"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Real-time 3D viewer for LDraw models (Windows, macOS, Linux)."
+summary_fr = "Visionneuse 3D temps réel de modèles LDraw (Windows, macOS, Linux)."
+strengths_en = ["Free; 117 GitHub stars, 28 open issues", "Dual licence choice stated (GPL version 2 or MIT)"]
+strengths_fr = ["Gratuit ; 117 étoiles GitHub, 28 anomalies ouvertes", "Choix de licence annoncé (GPL version 2 ou MIT)"]
+weaknesses_en = ["Viewer only, no editing", "Last commit date not readable; 15 November 2026 from the first survey"]
+weaknesses_fr = ["Visionneuse seulement, sans édition", "Date du dernier commit illisible ; 15/11/2026 d'après la première recherche"]
+status = "active"
+last_activity = "2026-11-15"
+checked = "2026-11-23"
+confidence = "medium"
+github = "tcobbs/ldview"
+
+[[resource.sources]]
+url = "https://github.com/tcobbs/ldview"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "mecabricks"
+name = "Mecabricks"
+url = "https://www.mecabricks.com/"
+group = "design-software"
+covers = ["official", "alternative", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+access = "freemium"
+summary_en = "In-browser 3D LEGO model editor with Blender add-on for photorealistic renders and a BrickLink parts list export."
+summary_fr = "Éditeur 3D de modèles LEGO dans le navigateur, avec extension Blender pour des rendus photoréalistes et export de liste de pièces BrickLink."
+strengths_en = ["No installation; community gallery with recent models on the home page", "Blender add-on"]
+strengths_fr = ["Sans installation ; galerie communautaire avec modèles récents sur la page d'accueil", "Extension Blender"]
+weaknesses_en = ["Pricing tiers not verified", "Operator not identified in the pages read"]
+weaknesses_fr = ["Offres tarifaires non vérifiées", "Exploitant non identifié dans les pages lues"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.mecabricks.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "lego-builder-app"
+name = "LEGO Builder"
+url = "https://www.lego.com/en-us/builder-app"
+group = "apps"
+featured = true
+covers = ["official", "instructions"]
+languages = ["en", "fr", "de"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Official LEGO app for interactive 3D building instructions with zoom, rotation and shared building, plus a collection of past instructions."
+summary_fr = "Application officielle LEGO d'instructions 3D interactives (zoom, rotation, construction à plusieurs) avec bibliothèque d'instructions anciennes."
+strengths_en = ["Free; version 4.4.0 of 12 November 2026 on the App Store per first survey", "More than 10 million downloads as stated"]
+strengths_fr = ["Gratuit ; version 4.4.0 du 12/11/2026 sur l'App Store selon la première recherche", "Plus de 10 millions de téléchargements selon l'éditeur"]
+weaknesses_en = ["Official LEGO sets only"]
+weaknesses_fr = ["Sets LEGO officiels uniquement"]
+status = "active"
+last_activity = "2026-11-12"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/builder-app"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "brick-search-app"
+name = "Brick Search"
+url = "https://bricksearch.app/"
+group = "apps"
+featured = true
+covers = ["official", "minifigures"]
+languages = ["en"]
+countries = ["international"]
+access = "freemium"
+business_model_en = "Premium subscription"
+business_model_fr = "Abonnement premium"
+summary_en = "Mobile app (iOS, Android) scanning collectible minifigure QR codes, with collection tracking, wish list, set archive and price comparison by country."
+summary_fr = "Application mobile (iOS, Android) lisant les codes QR des figurines à collectionner, avec suivi de collection, liste de souhaits, archive de sets et comparaison de prix par pays."
+strengths_en = ["Offline scanning of several boxes; archive of more than 10000 sets", "Syncs with Brickset"]
+strengths_fr = ["Lecture hors ligne de plusieurs boîtes ; archive de plus de 10000 sets", "Synchronisation avec Brickset"]
+weaknesses_en = ["12 free scans, premium features paid", "Store stock estimates rely on member scan data"]
+weaknesses_fr = ["12 lectures gratuites, fonctions premium payantes", "Estimations de stock en magasin fondées sur les lectures des membres"]
+status = "active"
+last_activity = "2026-05-29"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://bricksearch.app/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "mybricks-app"
+name = "myBricks"
+url = "https://mybricks.app/"
+group = "apps"
+covers = ["official"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+summary_en = "iOS app to browse the Brickset catalog, search by number, name, theme or barcode, and track owned and wanted sets with a Brickset account."
+summary_fr = "Application iOS de consultation du catalogue Brickset : recherche par numéro, nom, thème ou code-barres, suivi des sets possédés et souhaités avec un compte Brickset."
+strengths_en = ["Barcode lookup", "Linked to Brickset collections"]
+strengths_fr = ["Recherche par code-barres", "Liée aux collections Brickset"]
+weaknesses_en = ["iOS only on the home page; Brickset lists a separate Android app named My Bricks", "No date on the page"]
+weaknesses_fr = ["iOS seulement sur la page d'accueil ; Brickset cite une application Android distincte nommée My Bricks", "Page non datée"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://mybricks.app/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickset.com/article/131478/app-directory"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickfact-app"
+name = "Brickfact app"
+url = "https://brickfact.com/blog/guides/brickfact-app-the-best-tool-for-every-lego-fan"
+group = "apps"
+covers = ["official", "data"]
+languages = ["en", "de", "fr"]
+countries = ["international"]
+access = "free-account"
+summary_en = "Brickfact companion app for collection tracking, value, offers, price alerts and price history, sharing an account with the website."
+summary_fr = "Application de Brickfact pour le suivi de collection, la valeur, les offres, les alertes de prix et l'historique, avec compte commun avec le site."
+strengths_en = ["Price alerts and history", "Common account with the website"]
+strengths_fr = ["Alertes de prix et historique", "Compte commun avec le site"]
+weaknesses_en = ["Only a blog page read; store listing not checked"]
+weaknesses_fr = ["Seule une page de blog lue ; fiche de magasin d'applications non vérifiée"]
+status = "active"
+last_activity = "2026-11-02"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brickfact.com/blog/guides/brickfact-app-the-best-tool-for-every-lego-fan"
+date = "2026-11-02"
+kind = "third-party"
+
+[[resource]]
+id = "instabrick"
+name = "Instabrick"
+url = "https://www.instabrick.org/"
+group = "apps"
+covers = ["official", "parts", "minifigures", "second-hand"]
+languages = ["en"]
+countries = ["international"]
+access = "freemium"
+summary_en = "AI identification of LEGO bricks and minifigures with cloud inventory, BrickLink sync, a fee-free marketplace and a sorting scanner."
+summary_fr = "Identification de pièces et figurines LEGO par IA avec inventaire en ligne, synchronisation BrickLink, place de marché sans frais et scanner de tri."
+strengths_en = ["BrickLink store synchronisation", "Price history graphs"]
+strengths_fr = ["Synchronisation de boutique BrickLink", "Graphiques d'historique de prix"]
+weaknesses_en = ["Pricing and activity date not found", "Claims on the home page (users, images) not verified"]
+weaknesses_fr = ["Tarifs et date d'activité non trouvés", "Chiffres de la page d'accueil (utilisateurs, images) non vérifiés"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.instabrick.org/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brick-work"
+name = "Brick Work"
+url = "https://github.com/Ulef1005/brick-work"
+group = "open-source"
+covers = ["official", "parts"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Self-hosted collection app: set copies, loose parts, missing-parts workbench, BrickLink orders, REST API, command line and MCP server."
+summary_fr = "Application web auto-hébergée de collection : exemplaires de sets, pièces en vrac, atelier de pièces manquantes, commandes BrickLink, API REST, ligne de commande et serveur MCP."
+strengths_en = ["MIT licence; catalog built from the public Rebrickable download, no key", "Created 15 October 2026, MIT, Docker image"]
+strengths_fr = ["Licence MIT ; catalogue construit depuis le téléchargement public de Rebrickable, sans clé", "Créé le 15/10/2026, MIT, image Docker"]
+weaknesses_en = ["Young project: 2 stars, 78 open issues", "Single user; not designed for the open Internet; large share of automated commits"]
+weaknesses_fr = ["Projet jeune : 2 étoiles, 78 anomalies ouvertes", "Utilisateur unique ; non prévu pour Internet ouvert ; forte part de commits automatisés"]
+size_en = "2 GitHub stars"
+size_fr = "2 étoiles GitHub"
+status = "active"
+last_activity = "2026-11-09"
+checked = "2026-11-23"
+confidence = "medium"
+github = "Ulef1005/brick-work"
+
+[[resource.sources]]
+url = "https://github.com/Ulef1005/brick-work"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "bricktracker"
+name = "BrickTracker (ssmiller25 mirror)"
+url = "https://github.com/ssmiller25/bricktracker"
+group = "open-source"
+covers = ["official", "parts", "minifigures"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Web app tracking sets, parts, minifigures and missing pieces through the Rebrickable API; mirror of a Gitea repository by FrederikBaerentsen."
+summary_fr = "Application web de suivi de sets, pièces, figurines et pièces manquantes via l'API Rebrickable ; miroir d'un dépôt Gitea de FrederikBaerentsen."
+strengths_en = ["MIT licence, Docker, wish list", "Cited in the community awesome list"]
+strengths_fr = ["Licence MIT, Docker, liste de souhaits", "Citée dans la liste communautaire awesome"]
+weaknesses_en = ["Mirror only; the original Gitea repository is the source", "Rebrickable key required; 12 stars"]
+weaknesses_fr = ["Miroir seulement ; le dépôt Gitea d'origine est la source", "Clé Rebrickable nécessaire ; 12 étoiles"]
+size_en = "12 GitHub stars"
+size_fr = "12 étoiles GitHub"
+status = "slow"
+last_activity = "2024-12-29"
+checked = "2026-11-23"
+confidence = "medium"
+github = "ssmiller25/bricktracker"
+
+[[resource.sources]]
+url = "https://github.com/ssmiller25/bricktracker"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickhoard"
+name = "BrickHoard"
+url = "https://github.com/ZehJulianLp/brickhoard"
+group = "open-source"
+covers = ["official", "parts"]
+languages = ["de", "en"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Flask self-hosted app with Rebrickable set lists, parts checklists and printable missing-parts sheets; German-language interface."
+summary_fr = "Application Flask auto-hébergée : listes de sets Rebrickable, listes de contrôle de pièces, fiches de pièces manquantes imprimables ; interface en allemand."
+strengths_en = ["MIT licence", "Created 11 August 2026"]
+strengths_fr = ["Licence MIT", "Créé le 11/08/2026"]
+weaknesses_en = ["1 star, single maintainer", "Rebrickable password entry to obtain a token (deleted immediately according to the text)"]
+weaknesses_fr = ["1 étoile, un seul mainteneur", "Saisie du mot de passe Rebrickable pour obtenir un jeton (supprimé aussitôt selon le texte)"]
+size_en = "1 GitHub star"
+size_fr = "1 étoile GitHub"
+status = "active"
+last_activity = "2026-08-11"
+checked = "2026-11-23"
+confidence = "low"
+github = "ZehJulianLp/brickhoard"
+
+[[resource.sources]]
+url = "https://github.com/ZehJulianLp/brickhoard"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "nupplo-se"
+name = "Nupplo SE (formerly Brickfolio)"
+url = "https://github.com/Melle79/nupplo"
+group = "open-source"
+covers = ["official", "parts", "minifigures"]
+languages = ["de", "en"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Self-hosted installable web app: photo identification through Brickognize, family collection, prices and contents through BrickLink and Rebrickable."
+summary_fr = "Application web installable auto-hébergée : identification par photo via Brickognize, collection familiale, prix et contenus via BrickLink et Rebrickable."
+strengths_en = ["Docker, daily backups", "Photo recognition"]
+strengths_fr = ["Docker, sauvegardes quotidiennes", "Reconnaissance par photo"]
+weaknesses_en = ["Personal BrickLink and Rebrickable keys required", "Licence displayed as Other by GitHub; README states MIT; 1 star"]
+weaknesses_fr = ["Clés BrickLink et Rebrickable personnelles requises", "Licence affichée « Other » par GitHub ; le README indique MIT ; 1 étoile"]
+size_en = "1 GitHub star"
+size_fr = "1 étoile GitHub"
+status = "active"
+last_activity = "2026-07-08"
+checked = "2026-11-23"
+confidence = "low"
+github = "Melle79/nupplo"
+
+[[resource.sources]]
+url = "https://github.com/Melle79/nupplo"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickstore"
+name = "BrickStore"
+url = "https://github.com/rgriebl/brickstore"
+group = "open-source"
+featured = true
+covers = ["official", "alternative", "parts", "second-hand"]
+languages = ["en", "de", "es", "sv", "fr"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Offline BrickLink inventory management tool for Windows, macOS, Linux, iOS and Android."
+summary_fr = "Outil hors ligne de gestion d'inventaires BrickLink pour Windows, macOS, Linux, iOS et Android."
+strengths_en = ["GPL version 3; interface in five languages including French", "Mass upload XML, price guide pricing, order download"]
+strengths_fr = ["GPL version 3 ; interface en cinq langues dont le français", "XML de téléversement en masse, prix d'après le guide de prix, téléchargement des commandes"]
+weaknesses_en = ["149 open issues", "Aimed at BrickLink sellers rather than set choice"]
+weaknesses_fr = ["149 anomalies ouvertes", "Orienté vendeurs BrickLink plus que choix d'un set"]
+size_en = "175 GitHub stars"
+size_fr = "175 étoiles GitHub"
+status = "active"
+last_activity = "2026-09-12"
+checked = "2026-11-23"
+confidence = "high"
+github = "rgriebl/brickstore"
+
+[[resource.sources]]
+url = "https://github.com/rgriebl/brickstore"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.brickstore.dev/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "bricks-mcp-wendehals"
+name = "bricks-mcp (wendehals)"
+url = "https://github.com/wendehals/bricks-mcp"
+group = "open-source"
+covers = ["official", "parts", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "MCP server in Go for the Rebrickable API: set overview, parts, user sets and lists."
+summary_fr = "Serveur MCP en Go pour l'API Rebrickable : vue d'un set, pièces, sets et listes d'un utilisateur."
+strengths_en = ["Eclipse Public License 2.0"]
+strengths_fr = ["Licence Eclipse Public 2.0"]
+weaknesses_en = ["0 stars, created 24 October 2025; Rebrickable key required"]
+weaknesses_fr = ["0 étoile, créé le 24/10/2025 ; clé Rebrickable requise"]
+size_en = "0 GitHub stars"
+size_fr = "0 étoile GitHub"
+status = "slow"
+last_activity = "2025-10-24"
+checked = "2026-11-23"
+confidence = "medium"
+github = "wendehals/bricks-mcp"
+
+[[resource.sources]]
+url = "https://github.com/wendehals/bricks-mcp"
+date = "2026-11-23"
+kind = "read"

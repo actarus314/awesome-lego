@@ -1,0 +1,36 @@
+name: Refresh metrics
+on:
+  schedule:
+    - cron: "41 3 * * 1"   # weekly
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.13"
+      - name: Refresh data/metrics.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/refresh.py > refresh-report.md
+      - name: Open or update the pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git diff --quiet data/metrics.json && { echo "No change"; exit 0; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C automatic/metrics
+          git add data/metrics.json
+          git commit -m "Metrics refresh / Mise à jour des mesures $(date +%F)"
+          git push --force origin automatic/metrics
+          gh pr view automatic/metrics --json state -q .state 2>/dev/null | grep -q OPEN \
+            && gh pr edit automatic/metrics --body-file refresh-report.md \
+            || gh pr create --head automatic/metrics --title "Metrics refresh / Mise à jour des mesures" --body-file refresh-report.md --label automatic

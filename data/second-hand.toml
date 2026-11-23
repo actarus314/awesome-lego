@@ -1,0 +1,1411 @@
+[category]
+id = "second-hand"
+name_en = "Second-hand, parts, custom builds and accessories"
+name_fr = "Occasion, pièces détachées, créations originales et accessoires"
+summary_en = "Where to buy used sets and loose parts, find custom builds and instructions, and services such as lighting, display cases and sorting."
+summary_fr = "Où acheter des sets d'occasion et des pièces détachées, trouver des créations originales et des instructions, et services tels que l'éclairage, les vitrines et le tri."
+
+[[category.groups]]
+id = "marketplaces"
+name_en = "Marketplaces and classified ads"
+name_fr = "Places de marché et petites annonces"
+
+[[category.groups]]
+id = "second-hand-shops"
+name_en = "Second-hand and refurbished shops"
+name_fr = "Boutiques d'occasion et de reconditionné"
+
+[[category.groups]]
+id = "communities"
+name_en = "Community buy and sell spaces"
+name_fr = "Espaces communautaires d'achat et de vente"
+
+[[category.groups]]
+id = "parts-and-custom-builds"
+name_en = "Parts, custom builds and instructions"
+name_fr = "Pièces, créations originales et instructions"
+
+[[category.groups]]
+id = "services-and-accessories"
+name_en = "Services and accessories (lighting, display, sorting, data)"
+name_fr = "Services et accessoires (éclairage, vitrines, tri, données)"
+
+[[resource]]
+id = "bricklink-marketplace"
+name = "BrickLink"
+url = "https://www.bricklink.com/"
+group = "marketplaces"
+featured = true
+covers = ["official", "second-hand", "parts", "minifigures", "instructions", "data"]
+languages = ["en", "fr"]
+countries = ["international"]
+access = "free"
+business_model_en = "Seller commission"
+business_model_fr = "Commission vendeur"
+summary_en = "Specialised marketplace for new and used official LEGO sets, parts, minifigures and instructions, with a catalogue and a price guide based on past sales."
+summary_fr = "Place de marché spécialisée de sets, pièces, figurines et notices LEGO officiel, neufs ou d'occasion, avec un catalogue et un guide des prix fondé sur les ventes passées."
+strengths_en = [
+  "Very detailed catalogue (item numbers, colours, variants)",
+  "Wanted lists and inventory of each set",
+  "Public API for catalogue and price guide (OAuth, account key)",
+]
+strengths_fr = [
+  "Catalogue très précis (références, couleurs, variantes)",
+  "Listes de recherche et inventaire de chaque set",
+  "API publique pour le catalogue et le guide des prix (OAuth, clé de compte)",
+]
+weaknesses_en = [
+  "Site temporarily unavailable on 2026-11-23: the maintenance page announces a return aimed at 2026-11-24 after an investigation of unusual activity",
+  "Shipping is charged shop by shop, so an order split across many shops costs more",
+]
+weaknesses_fr = [
+  "Site temporairement indisponible le 2026-11-23 : la page de maintenance annonce un retour visé au 2026-11-24 après une enquête sur une activité inhabituelle",
+  "Le port est facturé boutique par boutique : une commande éclatée coûte plus cher",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.bricklink.com/v3/main.page"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://static.bricklink.com/alpha/default/api_wiki.html"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brickollect.fr/bricklink-vs-ebay/"
+date = "2026-11-17"
+kind = "third-party"
+
+[[resource]]
+id = "brick-owl-marketplace"
+name = "Brick Owl"
+url = "https://www.brickowl.com/"
+group = "marketplaces"
+covers = ["official", "second-hand", "parts", "minifigures"]
+languages = ["en", "fr"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Seller commission"
+business_model_fr = "Commission vendeur"
+summary_en = "Independent marketplace for LEGO parts, minifigures and sets, an alternative to BrickLink, with a catalogue searchable by part number or set number."
+summary_fr = "Place de marché indépendante de pièces, figurines et sets LEGO, alternative à BrickLink, avec un catalogue interrogeable par numéro de pièce ou de set."
+strengths_en = [
+  "Catalogue lookup by item number or set number, with a set parts list",
+  "Wishlists and a multi-shop catalogue cart",
+  "API with account key",
+]
+strengths_fr = [
+  "Recherche au catalogue par numéro de pièce ou de set, avec la liste des pièces d'un set",
+  "Listes de souhaits et panier multi-boutiques",
+  "API avec clé de compte",
+]
+weaknesses_en = [
+  "Fewer shops than BrickLink, so rare parts are less often available (third-party article)",
+  "Shipping and import duties depend on each shop",
+]
+weaknesses_fr = [
+  "Moins de boutiques que BrickLink : pièces rares moins souvent disponibles (article tiers)",
+  "Port et droits d'importation propres à chaque boutique",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.brickowl.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.brickowl.com/api_docs"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://yellowbrickroad.shop/brick-owl-vs-bricklink-for-buyers/"
+date = "2026-11-08"
+kind = "third-party"
+
+[[resource]]
+id = "ebay-fr"
+name = "eBay.fr"
+url = "https://www.ebay.fr/"
+group = "marketplaces"
+featured = true
+covers = ["official", "alternative", "second-hand", "parts", "minifigures"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Fees included in the price for private sellers"
+business_model_fr = "Frais inclus dans le prix pour les vendeurs particuliers"
+summary_en = "General marketplace where private and professional sellers list complete sets, lots and bulk bricks, sealed or used."
+summary_fr = "Place de marché généraliste où particuliers et professionnels vendent sets complets, lots et vrac, scellés ou non."
+strengths_en = [
+  "Sold-items filter to estimate a price",
+  "Large choice of lots and bulk",
+  "Customer guarantee and buyer protection",
+]
+strengths_fr = [
+  "Filtre des objets vendus pour estimer un prix",
+  "Grand choix de lots et de vrac",
+  "Garantie client et protection acheteurs",
+]
+weaknesses_en = [
+  "From 2026-09-01 a mandatory buyer protection fee is included in the price when buying from private sellers in France or Italy",
+  "Quality of listings varies widely",
+]
+weaknesses_fr = [
+  "Depuis le 2026-09-01, des frais obligatoires de protection acheteurs sont inclus dans le prix pour les achats auprès de vendeurs particuliers en France ou en Italie",
+  "Qualité des annonces très variable",
+]
+status = "active"
+last_activity = "2026-09-01"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.ebay.fr/help/buying/paying-items/frais-de-protection-de-lacheteur?id=5594"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickollect.fr/bricklink-vs-ebay/"
+date = "2026-11-17"
+kind = "third-party"
+
+[[resource]]
+id = "vinted"
+name = "Vinted"
+url = "https://www.vinted.fr/"
+group = "marketplaces"
+featured = true
+covers = ["official", "second-hand", "minifigures"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free-account"
+business_model_en = "Buyer fee"
+business_model_fr = "Frais acheteur"
+summary_en = "Peer-to-peer marketplace used for small recent sets, minifigures and quick purchases from a mobile application."
+summary_fr = "Place de marché entre particuliers, utilisée pour de petits sets récents, des figurines et des achats rapides depuis une application."
+strengths_en = [
+  "Easy for small recent sets and price comparison",
+  "Refund policy for items bought from non-professional sellers that are lost, damaged or not as described",
+]
+strengths_fr = [
+  "Pratique pour les petits sets récents et la comparaison de prix",
+  "Politique de remboursement pour les articles perdus, abîmés ou non conformes achetés auprès de vendeurs non professionnels",
+]
+weaknesses_en = [
+  "Buyer fee generally 5 % + 0.70 €, taxes included, added at payment",
+  "Sellers are rarely specialists: completeness, minifigures and photos need checking",
+]
+weaknesses_fr = [
+  "Frais acheteur généralement 5 % + 0.70 €, taxes comprises, ajoutés au paiement",
+  "Vendeurs rarement spécialistes : complétude, figurines et photos à vérifier",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.vinted.fr/help/342-frais-de-protection-acheteurs-sur-vinted"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "leboncoin"
+name = "Leboncoin"
+url = "https://www.leboncoin.fr/"
+group = "marketplaces"
+featured = true
+covers = ["official", "alternative", "second-hand", "parts", "minifigures"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+summary_en = "French classified ads site: sets, large lots, bulk and family collections, with hand-over in person possible."
+summary_fr = "Site français de petites annonces : sets, gros lots, vrac et collections familiales, remise en main propre possible."
+strengths_en = [
+  "Hand-over in person: check before paying, no shipping",
+  "339511 ads on the LEGO brand page on 2026-11-23",
+  "Direct negotiation, useful for large lots",
+]
+strengths_fr = [
+  "Remise en main propre : vérification avant paiement, pas de port",
+  "339511 annonces sur la page de la marque LEGO le 2026-11-23",
+  "Négociation directe, utile pour les gros lots",
+]
+weaknesses_en = [
+  "Non-LEGO copies, missing parts and swapped minifigures are reported",
+  "Shipped purchases use a paid secured transaction",
+]
+weaknesses_fr = [
+  "Copies non LEGO, pièces manquantes et figurines remplacées signalées",
+  "Les achats livrés passent par une transaction sécurisée payante",
+]
+size_en = "339511 ads"
+size_fr = "339511 annonces"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.leboncoin.fr/c/jeux_jouets/games_and_toys_brand:lego"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://brickland.fr/ou-acheter-des-lego-doccasion-en-toute-securite/"
+date = "2026-05-06"
+kind = "third-party"
+
+[[resource]]
+id = "catawiki"
+name = "Catawiki"
+url = "https://www.catawiki.com/fr"
+group = "marketplaces"
+covers = ["official", "second-hand", "parts"]
+languages = ["fr", "en", "nl", "de"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+summary_en = "Curated online auctions of LEGO sets, lots, parts and vintage items."
+summary_fr = "Enchères en ligne sélectionnées de sets, lots, pièces et pièces vintage LEGO."
+strengths_en = [
+  "Vintage and rare sets",
+  "Weekly themed LEGO auctions curated by experts",
+]
+strengths_fr = [
+  "Sets vintage et rares",
+  "Enchères thématiques hebdomadaires sélectionnées par des experts",
+]
+weaknesses_en = [
+  "A buyer protection fee applies on top of the winning bid, plus shipping",
+  "Import duties and taxes possible depending on the seller",
+]
+weaknesses_fr = [
+  "Des frais de protection acheteur s'ajoutent à l'enchère gagnante, ainsi que le port",
+  "Droits et taxes à l'importation possibles selon le vendeur",
+]
+size_en = "826 objects in the LEGO collection on 2026-11-23"
+size_fr = "826 objets dans la collection LEGO le 2026-11-23"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.catawiki.com/en/c/1461-lego"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.catawiki.com/fr/help/fees/how-does-the-buyer-protection-fee-work"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "marktplaats"
+name = "Marktplaats"
+url = "https://www.marktplaats.nl/"
+group = "marketplaces"
+covers = ["official", "second-hand"]
+languages = ["nl"]
+countries = ["NL"]
+access = "free"
+summary_en = "Dutch classified ads site owned by eBay, with complete sets from private sellers."
+summary_fr = "Site néerlandais de petites annonces, propriété d'eBay, avec des sets complets de particuliers."
+strengths_en = [
+  "Large volume of private listings in the Netherlands",
+]
+strengths_fr = [
+  "Grand volume d'annonces de particuliers aux Pays-Bas",
+]
+weaknesses_en = [
+  "Site in Dutch",
+  "Shipping through the platform is described for the Netherlands; shipping abroad depends on each seller",
+]
+weaknesses_fr = [
+  "Site en néerlandais",
+  "L'envoi via la plateforme est décrit pour les Pays-Bas ; l'envoi à l'étranger dépend de chaque vendeur",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://www.marktplaats.nl/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://help.marktplaats.nl/articles/nl_NL/Knowledge/hoe-werkt-direct-kopen-voor-verkopers"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "kleinanzeigen"
+name = "Kleinanzeigen"
+url = "https://www.kleinanzeigen.de/"
+group = "marketplaces"
+covers = ["official", "second-hand"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+summary_en = "German classified ads site (formerly eBay Kleinanzeigen) with used sets from private sellers, many Technic and City sets."
+summary_fr = "Site allemand de petites annonces (anciennement eBay Kleinanzeigen) avec des sets d'occasion de particuliers, nombreux Technic et City."
+strengths_en = [
+  "Large volume of listings, sometimes low prices",
+]
+strengths_fr = [
+  "Gros volume d'annonces, prix parfois bas",
+]
+weaknesses_en = [
+  "Secured payment with shipping and buyer protection only inside Germany; shipping abroad happens outside the platform without protection",
+  "Site in German",
+]
+weaknesses_fr = [
+  "Paiement sécurisé avec envoi et protection acheteur seulement en Allemagne ; envoi à l'étranger hors plateforme, sans protection",
+  "Site en allemand",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.kleinanzeigen.de/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://themen.kleinanzeigen.de/lasst-uns-sicher-handeln/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.monsterdealz.de/magazin/kleinanzeigen-versand"
+date = "2026-09-17"
+kind = "third-party"
+
+[[resource]]
+id = "klodivo"
+name = "klodivo"
+url = "https://klodivo.com/fr"
+group = "marketplaces"
+covers = ["official", "second-hand", "parts", "minifigures", "instructions"]
+languages = ["fr", "en", "da", "de", "sv", "nl", "pl", "it", "es", "pt", "fi", "cs"]
+countries = ["international"]
+access = "free"
+business_model_en = "Fee of 2.5 % per sale, paid by sellers"
+business_model_fr = "Frais de 2.5 % par vente, payés par les vendeurs"
+summary_en = "Recent marketplace of independent LEGO shops and collectors: sets, minifigures, parts and instructions, with one payment across several shops."
+summary_fr = "Place de marché récente de boutiques indépendantes et de collectionneurs : sets, figurines, pièces et notices, avec un seul paiement pour plusieurs boutiques."
+strengths_en = [
+  "One cart across shops, each shop's shipping shown before payment",
+  "Import of wanted lists in BrickLink XML or Rebrickable CSV",
+  "Price guide and wishlists",
+]
+strengths_fr = [
+  "Panier unique multi-boutiques, port de chaque boutique affiché avant paiement",
+  "Import de listes de souhaits en BrickLink XML ou CSV Rebrickable",
+  "Guide des prix et listes de souhaits",
+]
+weaknesses_en = [
+  "Young service run by a sole proprietorship in Næstved, Denmark: size and reliability not established",
+  "Founder seller programme: 1.5 % fee instead of 2.5 % for the first 50 shops until 2027-03-01 (47 places left on 2026-11-23)",
+]
+weaknesses_fr = [
+  "Service jeune exploité par une entreprise individuelle à Næstved (Danemark) : taille et fiabilité non établies",
+  "Programme vendeur fondateur : 1.5 % de frais au lieu de 2.5 % pour les 50 premières boutiques jusqu'au 2027-03-01 (47 places restantes le 2026-11-23)",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://klodivo.com/fr/about"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://klodivo.com/fr"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "de-brickplaats"
+name = "De BrickPlaats"
+url = "https://brickplaats.nl/"
+group = "second-hand-shops"
+covers = ["official", "second-hand", "parts", "minifigures", "custom-builds", "instructions"]
+languages = ["nl", "en"]
+countries = ["NL"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Dutch shop in Oss with new sealed and checked used sets, parts, minifigures and a few custom builds."
+summary_fr = "Boutique néerlandaise à Oss : sets neufs scellés et d'occasion contrôlés, pièces, figurines et quelques créations originales."
+strengths_en = [
+  "Used sets checked before sale",
+  "Several themes including vintage, instructions and BrickLink Designer Program",
+]
+strengths_fr = [
+  "Sets d'occasion contrôlés avant la vente",
+  "Plusieurs thèmes dont vintage, notices et BrickLink Designer Program",
+]
+weaknesses_en = [
+  "Main site in Dutch",
+  "Free shipping threshold of 75 € shown without country; shipping to France not established",
+]
+weaknesses_fr = [
+  "Site principal en néerlandais",
+  "Seuil de livraison gratuite de 75 € affiché sans précision du pays ; port vers la France non établi",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brickplaats.nl/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickplaats.nl/blogs/nieuws/gebruikte-lego-sets-kopen"
+date = "2026-08-11"
+kind = "read"
+
+[[resource]]
+id = "brickland"
+name = "Brickland"
+url = "https://brickland.fr/"
+group = "second-hand-shops"
+featured = true
+covers = ["official", "second-hand", "parts", "minifigures"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "French shop of refurbished LEGO: sets checked piece by piece, bulk, minifigures and baseplates; collection buy-back."
+summary_fr = "Boutique française de LEGO reconditionné : sets contrôlés pièce par pièce, vrac, figurines et plaques ; rachat de collections."
+strengths_en = [
+  "Inventory checked piece by piece",
+  "236 Google reviews displayed on the home page",
+  "Also new sets, bulk by the kilo, rental and buy-back",
+]
+strengths_fr = [
+  "Inventaire contrôlé pièce par pièce",
+  "236 avis Google affichés sur la page d'accueil",
+  "Aussi sets neufs, vrac au kilo, location et rachat",
+]
+weaknesses_en = [
+  "Review figures are those displayed by the shop itself",
+]
+weaknesses_fr = [
+  "Chiffres d'avis affichés par la boutique elle-même",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickland.fr/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickland.fr/ou-acheter-des-lego-doccasion-en-toute-securite/"
+date = "2026-05-06"
+kind = "third-party"
+
+[[resource]]
+id = "brickplus"
+name = "BrickPlus"
+url = "https://brickplus.fr/"
+group = "second-hand-shops"
+featured = true
+covers = ["official", "second-hand", "minifigures", "parts"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Online shop based in Paris 5 selling new and verified used LEGO sets and minifigures, with buy-back."
+summary_fr = "Boutique en ligne basée à Paris 5, vendant des sets et figurines LEGO neufs et d'occasion vérifiés, avec rachat."
+strengths_en = [
+  "Condition, contents and presence of box or instructions stated per set",
+  "Free delivery to a pick-up point from 85 €, free home delivery from 500 € (Europe only)",
+  "Retired sets and hard-to-find minifigures",
+]
+strengths_fr = [
+  "État, contenu et présence de la boîte ou de la notice indiqués par set",
+  "Livraison en point relais offerte dès 85 €, à domicile dès 500 € (Europe uniquement)",
+  "Sets retirés et figurines difficiles à trouver",
+]
+weaknesses_en = [
+  "No physical shop",
+  "Figures such as 5/5 and more than 800 customers are self-declared",
+]
+weaknesses_fr = [
+  "Pas de magasin physique",
+  "Chiffres tels que 5/5 et plus de 800 clients déclarés par le site lui-même",
+]
+size_en = "More than 1500 sets bought back and resold (self-declared)"
+size_fr = "Plus de 1500 sets rachetés et revendus (déclaré par le site)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brickplus.fr/brickplus-informations/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brickplus.fr/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "retrobriques"
+name = "Retrobriques"
+url = "https://www.retrobriques.com/"
+group = "second-hand-shops"
+covers = ["official", "second-hand"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "French shop of new and used LEGO sets browsable by theme and release year (before 2010 to 2024), with a used section."
+summary_fr = "Boutique française de sets LEGO neufs et d'occasion, classés par thème et année de sortie (avant 2010 à 2024), avec une rubrique d'occasion."
+strengths_en = [
+  "Navigation by release year and theme",
+  "Prices shown in the listing",
+]
+strengths_fr = [
+  "Navigation par année de sortie et par thème",
+  "Prix affichés dans les listes",
+]
+weaknesses_en = [
+  "Independent reviews and shipping terms not checked",
+]
+weaknesses_fr = [
+  "Avis indépendants et conditions de livraison non vérifiés",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://www.retrobriques.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "rebloxe"
+name = "Rebloxe"
+url = "https://www.rebloxe.com/fr-fr"
+group = "second-hand-shops"
+covers = ["official", "second-hand"]
+languages = ["fr", "en"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Shop of used LEGO sets checked piece by piece, with condition grades (used, damaged box) and adult-oriented themes."
+summary_fr = "Boutique de sets LEGO d'occasion vérifiés pièce par pièce, avec grades d'état (occasion, boîte abîmée) et thèmes pour adultes."
+strengths_en = [
+  "Condition grades and condition guide",
+  "Free worldwide delivery without minimum and free returns within 14 days (as displayed)",
+  "Prices in euros",
+]
+strengths_fr = [
+  "Grades d'état et guide des états",
+  "Livraison gratuite dans le monde sans minimum et retours gratuits sous 14 jours (selon le site)",
+  "Prix en euros",
+]
+weaknesses_en = [
+  "Country of the operator not established",
+  "No independent review found",
+]
+weaknesses_fr = [
+  "Pays de l'exploitant non établi",
+  "Aucun avis indépendant relevé",
+]
+size_en = "About 4980 sets (sum of the price brackets)"
+size_fr = "Environ 4980 sets (somme des tranches de prix)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://www.rebloxe.com/fr-fr"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "reliczone"
+name = "Reliczone"
+url = "https://reliczone.fr/collections/lego"
+group = "second-hand-shops"
+covers = ["official", "second-hand", "minifigures"]
+languages = ["fr", "en"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "French online shop of vintage used LEGO sets, bricks and minifigures."
+summary_fr = "Boutique en ligne française de sets, briques et figurines LEGO d'occasion et vintage."
+strengths_en = [
+  "Shipping from France, from 3 € by Mondial Relay",
+  "41 products in stock on the LEGO collection page on 2026-11-23",
+]
+strengths_fr = [
+  "Livraison depuis la France, dès 3 € en Mondial Relay",
+  "41 produits en stock sur la collection LEGO le 2026-11-23",
+]
+weaknesses_en = [
+  "Highest price on the collection page is 29.99 €: small sets and lots",
+  "Guarantees and reviews not checked",
+]
+weaknesses_fr = [
+  "Prix le plus élevé de la collection : 29.99 € : petits sets et lots",
+  "Garanties et avis non vérifiés",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://reliczone.fr/collections/lego"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "reddit-legomarket"
+name = "r/Legomarket"
+url = "https://www.reddit.com/r/Legomarket/"
+group = "communities"
+covers = ["official", "second-hand"]
+languages = ["en"]
+countries = ["US"]
+access = "free-account"
+summary_en = "Subreddit for selling, buying and trading LEGO; the page could not be read directly."
+summary_fr = "Sous-forum de vente, d'achat et d'échange de LEGO ; la page n'a pas pu être lue directement."
+strengths_en = [
+  "Public posts, sellers identifiable by account",
+]
+strengths_fr = [
+  "Annonces publiques, vendeurs identifiables par leur compte",
+]
+weaknesses_en = [
+  "United States-centred (payment, shipping)",
+  "Fraud risk; no payment protection",
+]
+weaknesses_fr = [
+  "Centré sur les États-Unis (paiement, port)",
+  "Risque de fraude ; aucune protection de paiement",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+subreddit = "Legomarket"
+
+[[resource.sources]]
+url = "https://www.brickdiscovery.com/tools/reddit-legomarket/"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "techlug-vente-achat"
+name = "TechLUG, buy and sell section"
+url = "https://www.techlug.fr/Forum/viewforum.php?f=6"
+group = "communities"
+covers = ["official", "second-hand", "custom-builds"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "French LEGO forum section for buying and selling, with a seller white list and black list thread (2008 to 2017)."
+summary_fr = "Section d'achat et de vente d'un forum LEGO francophone, avec un fil de liste blanche et noire de vendeurs (2008 à 2017)."
+strengths_en = [
+  "French-speaking community, identifiable sellers",
+]
+strengths_fr = [
+  "Communauté francophone, vendeurs identifiables",
+]
+weaknesses_en = [
+  "Low activity: last message on 2026-03-25",
+  "No payment protection",
+]
+weaknesses_fr = [
+  "Activité faible : dernier message le 2026-03-25",
+  "Pas de protection de paiement",
+]
+status = "slow"
+last_activity = "2026-03-25"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.techlug.fr/Forum/viewforum.php?f=6"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "pick-a-brick"
+name = "Pick a Brick (LEGO.com)"
+url = "https://www.lego.com/fr-fr/pick-and-build/pick-a-brick"
+group = "parts-and-custom-builds"
+featured = true
+covers = ["official", "parts", "minifigures"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop of the brand owner"
+business_model_fr = "Boutique du détenteur de la marque"
+summary_en = "New individual parts sold by LEGO, ordered on the French LEGO.com site."
+summary_fr = "Pièces neuves à l'unité vendues par LEGO, commandées sur le site LEGO.com France."
+strengths_en = [
+  "Authentic new parts",
+]
+strengths_fr = [
+  "Pièces authentiques neuves",
+]
+weaknesses_en = [
+  "Pick a Brick orders may carry extra fees compared with the standard 5.95 € delivery (free from 55 €)",
+  "LEGO.com France delivers to French addresses only",
+]
+weaknesses_fr = [
+  "Les commandes Pick a Brick peuvent comporter des frais supplémentaires par rapport à la livraison standard à 5.95 € (gratuite dès 55 €)",
+  "LEGO.com France livre uniquement des adresses en France",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.lego.com/fr-fr/page/shipping-handling"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "toypro"
+name = "ToyPro"
+url = "https://www.toypro.com/fr"
+group = "parts-and-custom-builds"
+featured = true
+covers = ["official", "parts", "minifigures"]
+languages = ["fr", "en", "nl", "de"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Dutch shop of new genuine LEGO parts, minifigures and sets."
+summary_fr = "Boutique néerlandaise de pièces LEGO authentiques neuves, de figurines et de sets."
+strengths_en = [
+  "Large choice of parts",
+  "Free shipping to France from 150 € of parts and minifigures",
+  "Prices including VAT",
+]
+strengths_fr = [
+  "Grand choix de pièces",
+  "Livraison gratuite vers la France dès 150 € de pièces et figurines",
+  "Prix TVA comprise",
+]
+weaknesses_en = [
+  "Shipping to France from 5.99 € by letter (up to 400 g); parcels above",
+  "Free shipping does not apply to complete sets",
+  "Service fee of 1.95 € under 15 €",
+]
+weaknesses_fr = [
+  "Port vers la France dès 5.99 € en courrier (jusqu'à 400 g) ; colis au-delà",
+  "Livraison gratuite non applicable aux sets complets",
+  "Frais de service de 1.95 € sous 15 €",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.toypro.com/fr/page/21/expedition-et-livraison"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickwith"
+name = "Brickwith (formerly Webrick)"
+url = "https://www.brickwith.com/en"
+group = "parts-and-custom-builds"
+covers = ["alternative", "parts", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Shop of compatible bulk parts made by GoBricks for custom builds; webrick.com now redirects to brickwith.com."
+summary_fr = "Boutique de pièces compatibles en vrac fabriquées par GoBricks pour créations originales ; webrick.com redirige désormais vers brickwith.com."
+strengths_en = [
+  "Delivery from China reported at 5 working days to the United Kingdom without customs charges (forum, 2026-08-23)",
+  "Parts in colours outside the LEGO range",
+]
+strengths_fr = [
+  "Livraison depuis la Chine rapportée à 5 jours ouvrés vers le Royaume-Uni sans frais de douane (forum, 2026-08-23)",
+  "Pièces dans des couleurs hors gamme LEGO",
+]
+weaknesses_en = [
+  "Made-to-order colours can take about a month (one forum report)",
+  "Shop content is not readable without scripts: details unverified",
+]
+weaknesses_fr = [
+  "Couleurs fabriquées à la demande : environ un mois (un témoignage de forum)",
+  "Contenu de la boutique illisible sans scripts : détails non vérifiés",
+]
+status = "active"
+last_activity = "2026-08-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.brickwith.com/en"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.eurobricks.com/forum/forums/topic/213867-brickwith-experiences/"
+date = "2026-08-23"
+kind = "forum"
+
+[[resource]]
+id = "buymebricks"
+name = "BuyMeBricks"
+url = "https://buymebricks.com/"
+group = "parts-and-custom-builds"
+featured = true
+covers = ["alternative", "parts", "custom-builds", "instructions"]
+languages = ["en", "fr"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop (La Briquette SAS)"
+business_model_fr = "Boutique (La Briquette SAS)"
+summary_en = "Shop of GoBricks compatible parts run by a French company: part lists imported from Studio, Rebrickable or BrickLink, and custom build kits with PDF instructions."
+summary_fr = "Boutique de pièces compatibles GoBricks exploitée par une société française : listes de pièces importées de Studio, Rebrickable ou BrickLink, et kits de créations originales avec notice PDF."
+strengths_en = [
+  "One shipment for a whole part list",
+  "65 countries, more than 41000 parts and colours, free shipping from 50 dollars",
+]
+strengths_fr = [
+  "Un seul envoi pour toute une liste de pièces",
+  "65 pays, plus de 41000 pièces et couleurs, livraison gratuite dès 50 dollars",
+]
+weaknesses_en = [
+  "Shipping from China: 2 to 4 weeks door to door to Europe",
+  "Import duties possible",
+]
+weaknesses_fr = [
+  "Envoi depuis la Chine : 2 à 4 semaines porte à porte vers l'Europe",
+  "Droits d'importation possibles",
+]
+size_en = "More than 41000 parts and colours"
+size_fr = "Plus de 41000 pièces et couleurs"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://buymebricks.com/faq"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "buildamoc"
+name = "BuildaMOC"
+url = "https://buildamoc.com/"
+group = "parts-and-custom-builds"
+covers = ["custom-builds", "parts", "instructions"]
+languages = ["en"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Complete kits of custom builds by independent designers, made only of original LEGO elements with the designer's instructions; custom kits for companies."
+summary_fr = "Kits complets de créations originales de créateurs indépendants, en éléments LEGO d'origine uniquement avec les instructions du créateur ; kits sur mesure pour entreprises."
+strengths_en = [
+  "One box with parts and instructions",
+  "At least 10 % of each kit goes to the designer",
+  "Original LEGO elements only",
+]
+strengths_fr = [
+  "Une boîte avec pièces et instructions",
+  "Au moins 10 % de chaque kit reversé au créateur",
+  "Éléments LEGO d'origine uniquement",
+]
+weaknesses_en = [
+  "Shipping cost to France not established",
+]
+weaknesses_fr = [
+  "Frais de port vers la France non établis",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://buildamoc.com/pages/about"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "openstuds"
+name = "OpenStuds and BrickVault"
+url = "https://www.openstuds.com/"
+group = "parts-and-custom-builds"
+covers = ["custom-builds", "instructions"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Marketplace of digital custom build instructions and parts lists; BrickVault is a smaller hand-curated sister site."
+summary_fr = "Place de marché de notices numériques de créations originales et de listes de pièces ; BrickVault est un site frère plus petit et sélectionné à la main."
+strengths_en = [
+  "Self-serve uploads by designers",
+  "Downloads to build with compatible parts",
+]
+strengths_fr = [
+  "Dépôt libre par les créateurs",
+  "Téléchargements à construire avec des pièces compatibles",
+]
+weaknesses_en = [
+  "Digital files only, no parts sold directly (as described)",
+]
+weaknesses_fr = [
+  "Fichiers numériques uniquement, pas de pièces vendues directement (selon la description)",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.openstuds.com/wiki/faq"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "bobby-brix"
+name = "Bobby Brix"
+url = "https://store.bobbybrix.com/"
+group = "parts-and-custom-builds"
+covers = ["custom-builds", "alternative", "official", "instructions"]
+languages = ["en"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Slovak shop of custom build kits, retired LEGO sets and GoBricks kits."
+summary_fr = "Boutique slovaque de kits de créations originales, de sets LEGO retirés et de kits GoBricks."
+strengths_en = [
+  "Items shipped from Bratislava: from 3.50 €, 3 to 5 business days",
+  "GoBricks kits ship free worldwide",
+]
+strengths_fr = [
+  "Articles expédiés de Bratislava : dès 3.50 €, 3 à 5 jours ouvrables",
+  "Kits GoBricks expédiés gratuitement dans le monde",
+]
+weaknesses_en = [
+  "GoBricks kits ship from China: 10 to 20 business days",
+]
+weaknesses_fr = [
+  "Kits GoBricks expédiés de Chine : 10 à 20 jours ouvrables",
+]
+status = "slow"
+last_activity = "2026-06-04"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://store.bobbybrix.com/blogs/news/bobby-brix-shipping-explained-new-calculator-two-streams-and-where-we-ship-to"
+date = "2026-06-04"
+kind = "official"
+
+[[resource]]
+id = "moc-brick-land"
+name = "MOC Brick Land"
+url = "https://mocbrickland.com/"
+group = "parts-and-custom-builds"
+covers = ["custom-builds", "alternative"]
+languages = ["en"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Shop of custom build kits made of compatible bricks."
+summary_fr = "Boutique de kits de créations originales en briques compatibles."
+strengths_en = [
+  "Free shipping from 50 dollars (shipping page, previous reading)",
+]
+strengths_fr = [
+  "Livraison gratuite dès 50 dollars (page de livraison, lecture précédente)",
+]
+weaknesses_en = [
+  "Site unreachable from the review environment on 2026-11-23: nothing re-verified",
+  "Customs duties not covered",
+]
+weaknesses_fr = [
+  "Site inaccessible depuis l'environnement de revue le 2026-11-23 : rien revérifié",
+  "Droits de douane non couverts",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://mocbrickland.com/shipping-delivery/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "brickmania"
+name = "Brickmania"
+url = "https://www.brickmania.com/"
+group = "parts-and-custom-builds"
+covers = ["custom-builds", "official"]
+languages = ["en"]
+countries = ["US"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "American shop of custom military and historical building kits, with BrickArms weapons."
+summary_fr = "Boutique américaine de kits militaires et historiques en briques et d'armes BrickArms."
+strengths_en = [
+  "Limited preorder restocks and seasonal discounts (Black Friday until 2026-12-01)",
+]
+strengths_fr = [
+  "Réassorts limités en précommande et remises saisonnières (Black Friday jusqu'au 2026-12-01)",
+]
+weaknesses_en = [
+  "Shipping to Europe not checked",
+  "Independent reviews mixed (previous reading)",
+]
+weaknesses_fr = [
+  "Livraison vers l'Europe non vérifiée",
+  "Avis indépendants mitigés (lecture précédente)",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.brickmania.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "lego-building-instructions"
+name = "Official LEGO building instructions"
+url = "https://www.lego.com/fr-fr/service/buildinginstructions"
+group = "parts-and-custom-builds"
+featured = true
+covers = ["official", "instructions"]
+languages = ["fr", "en"]
+countries = ["international"]
+access = "free"
+summary_en = "Official LEGO page to find the instructions of a set by name or number, and the LEGO Builder application."
+summary_fr = "Page officielle de LEGO pour retrouver les instructions d'un set par nom ou numéro, et application LEGO Builder."
+strengths_en = [
+  "Search by set number or name",
+  "LEGO Builder application with instructions of old and new sets",
+]
+strengths_fr = [
+  "Recherche par numéro ou nom de set",
+  "Application LEGO Builder avec instructions de sets anciens et récents",
+]
+weaknesses_en = [
+  "Official sets only",
+]
+weaknesses_fr = [
+  "Sets LEGO officiel uniquement",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lego.com/fr-fr/service/buildinginstructions"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "lightailing-briksmax"
+name = "Lightailing and Briksmax"
+url = "https://www.lightailing.com/fr"
+group = "services-and-accessories"
+featured = true
+covers = ["official"]
+languages = ["fr", "en"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "LED light kits for specific LEGO sets, sold as kits without the set."
+summary_fr = "Kits d'éclairage à LED pour des sets LEGO précis, vendus sans le set."
+strengths_en = [
+  "Search by set number",
+  "Several versions per set (Briksmax 2.0, remote control, RGB, sound)",
+]
+strengths_fr = [
+  "Recherche par numéro de set",
+  "Plusieurs versions par set (Briksmax 2.0, télécommande, RVB, sonore)",
+]
+weaknesses_en = [
+  "Kits are designed for one set each",
+  "Shipping from China: import duties possible",
+]
+weaknesses_fr = [
+  "Kits conçus pour un seul set chacun",
+  "Envoi depuis la Chine : droits d'importation possibles",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.lightailing.com/fr/pages/faq"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.merlinsbriques.fr/articles/lightailing-75353-briksmax-75352-vergleich-und-review/"
+date = "2025-09-17"
+kind = "third-party"
+
+[[resource]]
+id = "light-my-bricks"
+name = "Light My Bricks"
+url = "https://www.lightmybricks.com/"
+group = "services-and-accessories"
+covers = ["official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Shop of lighting kits for LEGO sets, with numbered instructions."
+summary_fr = "Boutique de kits d'éclairage pour sets LEGO, avec instructions numérotées."
+strengths_en = [
+  "Kits researched per set, instructions modelled on LEGO guides (as stated)",
+]
+strengths_fr = [
+  "Kits conçus par set, instructions calquées sur les guides LEGO (selon le site)",
+]
+weaknesses_en = [
+  "Operator, shipping to France and prices not checked (United States version of the site)",
+]
+weaknesses_fr = [
+  "Exploitant, livraison vers la France et prix non vérifiés (version États-Unis du site)",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://www.lightmybricks.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "vitrinefactory"
+name = "VitrineFactory"
+url = "https://vitrinefactory.com/"
+group = "services-and-accessories"
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "French maker of cast acrylic display cases for LEGO sets, with a made-to-measure configurator."
+summary_fr = "Fabricant français de vitrines en acrylique coulé pour sets LEGO, avec configurateur sur mesure."
+strengths_en = [
+  "Cast PMMA (Altuglas), UV resistant, made in France (as stated)",
+  "Catalogue by set and custom dimensions",
+]
+strengths_fr = [
+  "PMMA coulé (Altuglas), résistant aux UV, fabrication française (selon le site)",
+  "Catalogue par set et dimensions sur mesure",
+]
+weaknesses_en = [
+  "Prices and lead times not checked",
+]
+weaknesses_fr = [
+  "Prix et délais non vérifiés",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://vitrinefactory.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "kadris-art"
+name = "Kadris Art"
+url = "https://www.kadris-art.com/collections/plexiglas"
+group = "services-and-accessories"
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Snap-fit acrylic display cubes for one set, with a printed backdrop."
+summary_fr = "Cubes de présentation en plexiglas emboîtables pour un set, avec décor imprimé."
+strengths_en = [
+  "No visible screws or magnets",
+  "Design made for each set",
+]
+strengths_fr = [
+  "Ni vis ni aimants apparents",
+  "Décor conçu pour chaque set",
+]
+weaknesses_en = [
+  "Prices and lead times not checked",
+]
+weaknesses_fr = [
+  "Prix et délais non vérifiés",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.kadris-art.com/collections/plexiglas"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "briquesabrac"
+name = "BriquesaBrac"
+url = "https://www.briquesabrac.com/vitrines-ensembles-lego"
+group = "services-and-accessories"
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "French-made cast acrylic display cases for LEGO sets."
+summary_fr = "Vitrines en plexiglas coulé de fabrication française pour sets LEGO."
+strengths_en = [
+  "Made in France, UV resistant (as stated)",
+  "Prices seen from 98.99 € to 134.99 €",
+]
+strengths_fr = [
+  "Fabrication française, résistance aux UV (selon le site)",
+  "Prix relevés de 98.99 € à 134.99 €",
+]
+weaknesses_en = [
+  "Other terms not checked",
+]
+weaknesses_fr = [
+  "Autres conditions non vérifiées",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://www.briquesabrac.com/vitrines-ensembles-lego"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "wicked-brick"
+name = "Wicked Brick"
+url = "https://www.wickedbrick.com/"
+group = "services-and-accessories"
+featured = true
+covers = ["official", "minifigures"]
+languages = ["en", "fr"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Made-to-order acrylic display cases and stands for LEGO sets and minifigures, with a European store."
+summary_fr = "Vitrines et supports acryliques fabriqués à la commande pour sets et figurines LEGO, avec une boutique pour l'Europe."
+strengths_en = [
+  "Large catalogue by set (for example the 75192 case at 261.95 € to 347.95 € on 2026-11-23)",
+  "European version of the store in euros",
+]
+strengths_fr = [
+  "Grand catalogue par set (par exemple vitrine du 75192 à 261.95 € à 347.95 € le 2026-11-23)",
+  "Version européenne de la boutique en euros",
+]
+weaknesses_en = [
+  "Made to order: lead time to check before a Christmas gift",
+]
+weaknesses_fr = [
+  "Fabriqué à la commande : délai à vérifier avant un cadeau de Noël",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.wickedbrick.com/fr-eu"
+date = "2026-11-23"
+kind = "read"

@@ -1,0 +1,1592 @@
+[category]
+id = "comparators"
+name_en = "Price comparators and set databases"
+name_fr = "Comparateurs de prix et bases de sets"
+summary_en = "Sites that compare set prices across shops, catalogue sets and parts, track secondary-market value or gather deals, for official LEGO and alternative brands."
+summary_fr = "Sites qui comparent les prix des sets entre boutiques, cataloguent sets et pièces, suivent la valeur sur le marché secondaire ou rassemblent les bons plans, pour LEGO officiel et marques alternatives."
+
+[[category.groups]]
+id = "price-comparators"
+name_en = "Price comparators"
+name_fr = "Comparateurs de prix"
+
+[[category.groups]]
+id = "set-databases"
+name_en = "Set and parts databases"
+name_fr = "Bases de sets et de pièces"
+
+[[category.groups]]
+id = "value-tracking"
+name_en = "Value and investment tracking"
+name_fr = "Suivi de valeur et d'investissement"
+
+# ---------------------------------------------------------------- price comparators
+
+[[resource]]
+id = "brick-broker"
+name = "Brick Broker"
+url = "https://brick-broker.com/"
+group = "price-comparators"
+featured = true
+covers = ["official", "alternative"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "Price comparator covering official LEGO and about 95 alternative brands in one search, with offers deliverable to France. Published by Kadris, a sole proprietorship based in France."
+summary_fr = "Comparateur de prix couvrant LEGO officiel et environ 95 marques alternatives dans une même recherche, avec des offres livrables en France. Édité par Kadris, entreprise individuelle établie en France."
+strengths_en = [
+  "Official LEGO and about 95 alternative brands in the same search",
+  "Median of 3 merchants per alternative-brand set in a sample of 709 sets",
+  "Collection date shown on each offer; offers not seen for seven days are removed according to the site",
+  "Price alert by email for each set without an account; followed list with an account",
+  "Price history over 90 days and discount tracking against launch price",
+  "Android and iPhone applications with barcode scanner",
+]
+strengths_fr = [
+  "LEGO officiel et environ 95 marques alternatives dans la même recherche",
+  "Médiane de 3 marchands par set de marque alternative dans un échantillon de 709 sets",
+  "Date de relevé affichée par offre ; les offres non revues depuis sept jours sont retirées selon le site",
+  "Alerte de prix par courriel pour chaque set sans compte ; liste suivie avec un compte",
+  "Historique de prix sur 90 jours et suivi des remises par rapport au prix de lancement",
+  "Applications Android et iPhone avec lecteur de codes-barres",
+]
+weaknesses_en = [
+  "Shipping shown as free for Brickmo (incorrect for France), and for KBS Shop and Bausteinreich (not confirmed)",
+  "No filter by size or by brick type; dimensions only on the set page",
+  "Outdated offers at some merchants (Barweer)",
+  "Brand comparison articles without cited sources",
+  "No Amazon price is collected; a link opens the Amazon page",
+]
+weaknesses_fr = [
+  "Port affiché comme offert pour Brickmo (faux pour la France), KBS Shop et Bausteinreich (non confirmé)",
+  "Aucun filtre par taille ni par type de briques ; dimensions seulement sur la fiche du set",
+  "Offres périmées chez certains marchands (Barweer)",
+  "Articles de comparaison de marques sans sources citées",
+  "Aucun prix Amazon relevé ; un lien ouvre la page Amazon",
+]
+size_en = "42003 sets, 95 brands; 595 sets with an in-stock offer from a merchant delivering to France on 2026-11-23"
+size_fr = "42003 sets, 95 marques ; 595 sets avec une offre en stock chez un marchand livrant en France le 23/11/2026"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brick-broker.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brick-broker.com/a-propos"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickfact"
+name = "Brickfact"
+url = "https://brickfact.com/"
+group = "price-comparators"
+covers = ["official"]
+languages = ["en", "de", "fr", "nl"]
+countries = ["international"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "Price comparator for official LEGO sets with regional sites (USD, GBP, CHF, EUR), secondary-market value of sealed sets and a collection tracker shared with its application."
+summary_fr = "Comparateur de prix de sets LEGO officiel avec sites régionaux (USD, GBP, CHF, EUR), valeur marchande des sets scellés sur le marché secondaire et suivi de collection partagé avec son application."
+strengths_en = [
+  "Shipping shown per offer: amount, free, or marked as excluding shipping",
+  "Price history and lowest price over 30 days",
+  "Public MCP server, no key required",
+  "Price notification through the application",
+  "Sealed market value measured daily and part-out value",
+  "llms.txt file published",
+]
+strengths_fr = [
+  "Port par offre : montant, gratuit ou signalé « hors livraison »",
+  "Historique de prix et prix le plus bas sur 30 jours",
+  "Serveur MCP public, sans clé",
+  "Notification de prix par l'application",
+  "Valeur marchande des sets scellés mesurée chaque jour et valeur de démontage",
+  "Fichier llms.txt publié",
+]
+weaknesses_en = [
+  "Official LEGO only; alternative brands appear only in articles",
+  "Database page lists 3406 sets compared at 6 shops (US site read, prices in USD)",
+  "Market value missing for some sets",
+]
+weaknesses_fr = [
+  "LEGO officiel seul ; les marques alternatives n'apparaissent que dans des articles",
+  "La page de la base de données indique 3406 sets comparés chez 6 boutiques (site américain lu, prix en USD)",
+  "Valeur marchande absente pour certains sets",
+]
+size_en = "3406 sets compared at 6 shops (US site)"
+size_fr = "3406 sets comparés chez 6 boutiques (site américain)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickfact.com/llms.txt"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickfact.com/database"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "planet-brick"
+name = "Planet-Brick"
+url = "https://planet-brick.com/"
+group = "price-comparators"
+covers = ["official", "alternative", "custom-builds", "instructions"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "French price comparator for building bricks, sets, ready-to-build custom kits, instructions and accessories, limited to brands linked to a merchant delivering to France. Run by the company BRICKSBIZ."
+summary_fr = "Comparateur de prix français de briques de construction, sets, kits de créations originales, instructions et accessoires, limité aux marques rattachées à un marchand livrant en France. Porté par la société BRICKSBIZ."
+strengths_en = [
+  "A brand is listed only if a merchant delivers it to France",
+  "Merchants collected 1 to 9 times a day; collection date shown per offer",
+  "Promotion codes integrated",
+]
+strengths_fr = [
+  "Une marque n'est listée que si un marchand la livre en France",
+  "Marchands relevés de 1 à 9 fois par jour ; date du relevé affichée par offre",
+  "Codes promotionnels intégrés",
+]
+weaknesses_en = [
+  "Mould King announced in the FAQ but no product page found on 2026-11-23",
+  "Official LEGO: 2249 items only; MEGA, Reobrix and LESDIY marked as coming soon",
+  "History, alerts and API not established",
+  "Footer contact details (address in Indiana, USA; Vietnamese phone prefix) inconsistent with a French publisher",
+]
+weaknesses_fr = [
+  "Mould King annoncé dans la FAQ mais sans fiche trouvée le 23/11/2026",
+  "LEGO officiel : 2249 articles seulement ; MEGA, Reobrix et LESDIY signalés « disponible bientôt »",
+  "Historique, alertes et API non établis",
+  "Coordonnées du pied de page (adresse dans l'Indiana, États-Unis ; indicatif téléphonique vietnamien) incohérentes avec un éditeur français",
+]
+size_en = "2890 products on 2026-11-23: official LEGO 2249, COBI 948, Pantasy 494, CaDA 307"
+size_fr = "2890 produits le 23/11/2026 : LEGO officiel 2249, COBI 948, Pantasy 494, CaDA 307"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://planet-brick.com/marques/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://planet-brick.com/a-propos/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "la-brique-libre"
+name = "La Brique Libre"
+url = "https://labriquelibre.fr/"
+group = "price-comparators"
+covers = ["official", "alternative", "news"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "Comparator and editorial guide to brick brands (LEGO, Pantasy, Lumibricks, CaDA, BlueBrixx) with prices from verified shops."
+summary_fr = "Comparateur et guide éditorial des marques de briques (LEGO, Pantasy, Lumibricks, CaDA, BlueBrixx) avec les prix de boutiques vérifiées."
+strengths_en = [
+  "Price per piece shown and ranking of best price per piece",
+  "Editorial guide \"La Briquologie\" (AliExpress purchases, VAT, 3 euro customs duty per category since July 2026; article of 2026-08-20)",
+  "France delivery cost given per brand (BlueBrixx 9.95 euros, free from 99 euros)",
+]
+strengths_fr = [
+  "Prix par pièce affiché et classement des meilleurs prix par pièce",
+  "Guide éditorial « La Briquologie » (achats sur AliExpress, TVA, droit de douane de 3 euros par catégorie depuis juillet 2026 ; article du 20/08/2026)",
+  "Livraison France indiquée par marque (BlueBrixx 9.95 euros, offerte dès 99 euros)",
+]
+weaknesses_en = [
+  "Small catalogue: 381 sets measured on 2026-11-23",
+  "COBI and Mould King: brand page only, not tracked",
+  "Official LEGO: 20 tracked sets only",
+]
+weaknesses_fr = [
+  "Petit catalogue : 381 sets mesurés le 23/11/2026",
+  "COBI et Mould King : fiche marque seulement, non suivis",
+  "LEGO officiel : 20 sets suivis seulement",
+]
+size_en = "381 sets (2026-11-23)"
+size_fr = "381 sets (23/11/2026)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://labriquelibre.fr/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://labriquelibre.fr/marques/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickmitri"
+name = "Brickmitri"
+url = "https://brickmitri.com/comparateur-lego/"
+group = "price-comparators"
+featured = true
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "Price comparator for official LEGO only, built from affiliate feeds of French retailers; no account required."
+summary_fr = "Comparateur de prix 100 % LEGO officiel, alimenté par les flux d'affiliation des enseignes françaises ; aucun compte requis."
+strengths_en = [
+  "Product price or delivered price, shipping included, at the user's choice",
+  "Price history per retailer; price alert by email without an account",
+  "Amazon re-read hourly; collection time shown on each offer",
+  "Safeguards: an offer more than 50 percent above the official LEGO price is folded; unknown shipping never ranks first",
+]
+strengths_fr = [
+  "Prix produit ou prix livré, port compris, au choix",
+  "Historique de prix par enseigne ; alerte par courriel sans compte",
+  "Amazon relu toutes les heures ; heure du relevé affichée par offre",
+  "Garde-fous : offre à plus de 50 % au-dessus du tarif LEGO officiel repliée ; port inconnu jamais classé premier",
+]
+weaknesses_en = [
+  "Official LEGO only",
+  "Smyths Toys and King Jouet: search link without price",
+  "Prices come from affiliate networks: retailers absent from them are not covered",
+]
+weaknesses_fr = [
+  "LEGO officiel seul",
+  "Smyths Toys et King Jouet : lien de recherche sans prix",
+  "Prix issus des régies d'affiliation : les enseignes qui en sont absentes ne sont pas couvertes",
+]
+size_en = "1384 sets, 14 retailers"
+size_fr = "1384 sets, 14 enseignes"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickmitri.com/comparateur-lego/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "avenue-de-la-brique"
+name = "Avenue de la Brique"
+url = "https://www.avenuedelabrique.com/"
+group = "price-comparators"
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "Price comparator specialised in official LEGO, gathering French online shops."
+summary_fr = "Comparateur de prix spécialisé LEGO officiel regroupant les boutiques en ligne françaises."
+strengths_en = [
+  "Prices updated several times a day according to the home page",
+  "Pages by release year",
+]
+strengths_fr = [
+  "Prix actualisés plusieurs fois par jour selon la page d'accueil",
+  "Pages par année de sortie",
+]
+weaknesses_en = [
+  "Number of sets, history, alerts and shipping not established (home page and one yearly page only)",
+  "Update frequency is a claim of the site, no date shown on offers",
+]
+weaknesses_fr = [
+  "Nombre de sets, historique, alertes et port non établis (page d'accueil et une page annuelle seulement)",
+  "Fréquence de mise à jour déclarée par le site, aucune date affichée sur les offres",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://www.avenuedelabrique.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "bricksvalue"
+name = "BricksValue"
+url = "https://bricksvalue.com/fr"
+group = "price-comparators"
+covers = ["official"]
+languages = ["fr", "de", "en"]
+countries = ["FR", "DE", "US"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "Daily price comparator for official LEGO with tracking of sets about to be retired by LEGO and price per piece; variants for France, Germany and the United States."
+summary_fr = "Comparateur quotidien de prix LEGO officiel avec suivi des retraits annoncés par LEGO et prix par pièce ; variantes France, Allemagne et États-Unis."
+strengths_en = [
+  "France variant compares 16 retailers daily",
+  "Retirement tracking: 279 sets flagged as about to be retired on 2026-11-23",
+  "Price per piece shown",
+]
+strengths_fr = [
+  "Variante France : 16 enseignes comparées chaque jour",
+  "Suivi des retraits : 279 sets signalés « bientôt retirés » le 23/11/2026",
+  "Prix par pièce affiché",
+]
+weaknesses_en = [
+  "Official LEGO only",
+  "Price history, alerts, API and shipping not established",
+]
+weaknesses_fr = [
+  "LEGO officiel seul",
+  "Historique de prix, alertes, API et port non établis",
+]
+size_en = "16 retailers (France variant)"
+size_fr = "16 enseignes (variante France)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://bricksvalue.com/fr"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "bricktracker-eu"
+name = "BrickTracker.eu"
+url = "https://bricktracker.eu/fr"
+group = "price-comparators"
+covers = ["official"]
+languages = ["fr", "nl", "de", "en"]
+countries = ["NL", "BE", "DE", "FR"]
+access = "free-account"
+summary_en = "Price comparator for official LEGO with full price history and alerts (price drop, back in stock, target price) on a free account."
+summary_fr = "Comparateur de prix LEGO officiel avec historique complet et alertes (baisse, retour en stock, prix cible) sur compte gratuit."
+strengths_en = [
+  "89 shops compared in the Netherlands, Belgium, Germany and France",
+  "Alerts for price drop, back in stock and target price",
+]
+strengths_fr = [
+  "89 boutiques comparées aux Pays-Bas, en Belgique, en Allemagne et en France",
+  "Alertes de baisse, de retour en stock et de prix cible",
+]
+weaknesses_en = [
+  "Account required for alerts",
+  "Official LEGO only",
+  "Shipping included in price not established",
+]
+weaknesses_fr = [
+  "Compte requis pour les alertes",
+  "LEGO officiel seul",
+  "Port compris dans le prix non établi",
+]
+size_en = "89 shops"
+size_fr = "89 boutiques"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://bricktracker.eu/fr"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "lakea"
+name = "Lakea"
+url = "https://lakea.net/?lang=fr"
+group = "price-comparators"
+featured = true
+covers = ["official", "parts", "minifigures"]
+languages = ["fr", "en", "de", "nl"]
+countries = ["international"]
+access = "free"
+business_model_en = "Affiliate links, declared without effect on ranking"
+business_model_fr = "Liens d'affiliation, déclarés sans effet sur le classement"
+summary_en = "Independent comparator for official LEGO based on its own price collection, also covering parts, minifigures and display cases."
+summary_fr = "Comparateur indépendant LEGO officiel fondé sur ses propres relevés de prix, couvrant aussi pièces, minifigurines et vitrines."
+strengths_en = [
+  "Price measurements kept over time (about 11.27 million, tracked since April 2026)",
+  "Commission declared to play no part in ranking; limits of the measurement documented",
+  "Single bricks and minifigures priced, which most comparators do not do",
+]
+strengths_fr = [
+  "Relevés de prix conservés (environ 11.27 millions, suivi depuis avril 2026)",
+  "Commission déclarée sans effet sur le classement ; limites de mesure documentées",
+  "Pièces et minifigurines à l'unité comparées, ce que la plupart des comparateurs ne font pas",
+]
+weaknesses_en = [
+  "Recent: tracking since April 2026, short history",
+  "Alternative brands not covered",
+  "Shipping, alerts and API not established",
+]
+weaknesses_fr = [
+  "Récent : suivi depuis avril 2026, historique court",
+  "Marques alternatives non couvertes",
+  "Port, alertes et API non établis",
+]
+size_en = "21675 sets, 138 shops, 7509 parts, 7243 minifigures, 1434 display cases"
+size_fr = "21675 sets, 138 boutiques, 7509 pièces, 7243 minifigurines, 1434 vitrines"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://lakea.net/?lang=fr"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "altbrickscan"
+name = "AltBrickScan"
+url = "https://altbrickscan.com/fr-FR/"
+group = "price-comparators"
+covers = ["official", "alternative"]
+languages = ["fr", "en"]
+countries = ["international"]
+access = "free"
+summary_en = "Multi-brand comparator announced as showing prices with delivery to the chosen country, price history and email alert. Described as a prototype."
+summary_fr = "Comparateur multimarque annoncé avec prix livraison comprise vers le pays choisi, historique de prix et alerte par courriel. Décrit comme un prototype."
+strengths_en = [
+  "Delivery to France included in the price, as announced",
+  "History and alert below a threshold, as announced",
+]
+strengths_fr = [
+  "Livraison vers la France comprise dans le prix, selon l'annonce",
+  "Historique et alerte sous seuil, selon l'annonce",
+]
+weaknesses_en = [
+  "An earlier reading reported sample data flagged as provisional for the prototype; not reproduced on 2026-11-23",
+  "No coverage figure published",
+]
+weaknesses_fr = [
+  "Une lecture antérieure a relevé des données d'exemple signalées comme provisoires pour le prototype ; non reproduit le 23/11/2026",
+  "Aucun chiffre de couverture publié",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://altbrickscan.com/fr-FR/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickwatch"
+name = "Brickwatch"
+url = "https://www.brickwatch.net/fr-FR/"
+group = "price-comparators"
+covers = ["official"]
+languages = ["fr", "en", "nl"]
+countries = ["NL", "FR", "GB"]
+access = "free-account"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "Price watch for official LEGO at several retailers, published by Kiobi BV (Netherlands), with France and United Kingdom variants."
+summary_fr = "Suivi des prix LEGO officiel chez plusieurs détaillants, édité par Kiobi BV (Pays-Bas), avec variantes France et Royaume-Uni."
+strengths_en = [
+  "Price history and discount against the official price",
+  "Email notification at each price change of a watched set",
+]
+strengths_fr = [
+  "Historique des prix et remise par rapport au prix public",
+  "Notification par courriel à chaque changement de prix d'un set surveillé",
+]
+weaknesses_en = [
+  "Terms of use forbid robots, scripts and scraping: no automated collection",
+  "Registration required for some functions",
+  "No public API",
+]
+weaknesses_fr = [
+  "Conditions d'utilisation interdisant robots, scripts et aspiration : aucune collecte automatisée",
+  "Inscription requise pour certaines fonctions",
+  "Pas d'API publique",
+]
+size_en = "7033 sets (France variant)"
+size_fr = "7033 sets (variante France)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.brickwatch.net/en-GB/about"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.brickwatch.net/fr-FR/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickyes"
+name = "Brickyes"
+url = "https://www.brickyes.com/nl-nl/lego"
+group = "price-comparators"
+covers = ["official"]
+languages = ["nl"]
+countries = ["NL"]
+access = "free"
+summary_en = "Dutch price comparator for in-stock official LEGO, shipping included, with a watchlist and email alerts."
+summary_fr = "Comparateur de prix néerlandais LEGO officiel en stock, port compris, avec liste de surveillance et alertes par courriel."
+strengths_en = [
+  "Shipping included in prices",
+  "Watchlist with price alerts by email",
+  "Flag for sets about to be retired",
+]
+strengths_fr = [
+  "Port compris dans les prix",
+  "Liste de surveillance avec alertes de prix par courriel",
+  "Signalement des sets bientôt retirés",
+]
+weaknesses_en = [
+  "Dutch interface; Dutch offers, delivery to France not established",
+  "Official LEGO only",
+]
+weaknesses_fr = [
+  "Interface néerlandaise ; offres néerlandaises, livraison en France non établie",
+  "LEGO officiel seul",
+]
+size_en = "2995 sets"
+size_fr = "2995 sets"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.brickyes.com/nl-nl/lego"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "bricksdeal"
+name = "BricksDeal"
+url = "https://bricksdeal.com/de-en"
+group = "price-comparators"
+covers = ["official"]
+languages = ["en", "de", "nl"]
+countries = ["NL", "BE", "DE"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "Price comparator for official LEGO by set number, with shops in the Netherlands, Belgium and Germany."
+summary_fr = "Comparateur de prix LEGO officiel par numéro de set, avec des boutiques aux Pays-Bas, en Belgique et en Allemagne."
+strengths_en = [
+  "Comparison by set number",
+  "Comparison with the official price and the lowest price of the previous 90 days, per the earlier reading",
+  "Price alert by email, per the earlier reading",
+]
+strengths_fr = [
+  "Comparaison par numéro de set",
+  "Comparaison au prix public et au plus bas des 90 jours précédents, selon la lecture antérieure",
+  "Alerte de prix par courriel, selon la lecture antérieure",
+]
+weaknesses_en = [
+  "Shops in the Netherlands, Belgium and Germany only: France not covered",
+  "Official LEGO only",
+]
+weaknesses_fr = [
+  "Boutiques aux Pays-Bas, en Belgique et en Allemagne seulement : France non couverte",
+  "LEGO officiel seul",
+]
+size_en = "17519 sets"
+size_fr = "17519 sets"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://bricksdeal.com/de-en"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "klockometr"
+name = "Klockometr"
+url = "https://klockometr.pl/"
+group = "price-comparators"
+covers = ["official"]
+languages = ["pl"]
+countries = ["PL"]
+access = "free"
+summary_en = "Polish price history and comparator for official LEGO, with a five-level assessment of each offer against the previous 365 days and the median of offers for retired sets. Useful as a method reference; Polish market only."
+summary_fr = "Historique de prix et comparateur polonais LEGO officiel, avec évaluation de l'offre sur cinq niveaux comparée aux 365 derniers jours et médiane des offres des sets retirés. Utile comme référence de méthode ; marché polonais seulement."
+strengths_en = [
+  "Daily collection kept permanently",
+  "Published method: median rather than average, number of cheaper days shown",
+  "Planned retirement dates taken from the Brickset catalogue",
+]
+strengths_fr = [
+  "Relevé quotidien conservé définitivement",
+  "Méthode publiée : médiane plutôt que moyenne, nombre de jours moins chers affiché",
+  "Dates de retrait prévues issues du catalogue Brickset",
+]
+weaknesses_en = [
+  "Polish market (zloty): outside the France scope",
+  "Official LEGO only",
+]
+weaknesses_fr = [
+  "Marché polonais (zloty) : hors périmètre France",
+  "LEGO officiel seul",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://klockometr.pl/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickmerge"
+name = "Brickmerge"
+url = "https://www.brickmerge.de/"
+group = "price-comparators"
+covers = ["official"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "German price comparator for official LEGO since 2014, with price alert, discount alert and price history."
+summary_fr = "Comparateur de prix allemand LEGO officiel depuis 2014, avec alerte de prix, alerte de remise et historique."
+strengths_en = [
+  "Free price alert and discount alert",
+  "Daily comparison of dozens of German online merchants",
+  "Retirement tracking and discount against the official price",
+]
+strengths_fr = [
+  "Alerte de prix et alerte de remise gratuites",
+  "Comparaison quotidienne de dizaines de marchands en ligne allemands",
+  "Suivi des fins de vie et remise par rapport au prix public",
+]
+weaknesses_en = [
+  "German merchants: delivery to France not established",
+  "Official LEGO only",
+]
+weaknesses_fr = [
+  "Marchands allemands : livraison en France non établie",
+  "LEGO officiel seul",
+]
+size_en = "more than 7000 sets"
+size_fr = "plus de 7000 sets"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.brickmerge.de/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brick-tracker-de"
+name = "Brick-Tracker.de"
+url = "https://www.brick-tracker.de/"
+group = "price-comparators"
+covers = ["official"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+summary_en = "German price comparator for official LEGO with price alert, wish list, collection tool, a market analysis of retiring sets and a marketplace announced as new."
+summary_fr = "Comparateur de prix allemand LEGO officiel avec alerte de prix, liste de souhaits, outil de collection, analyse de marché des sets en fin de vie et place de marché annoncée comme nouvelle."
+strengths_en = [
+  "Market analysis filterable by retirement year, theme, price and piece count",
+  "Price chart per set and price alert",
+]
+strengths_fr = [
+  "Analyse de marché filtrable par année de fin de vie, thème, prix et nombre de pièces",
+  "Graphique de prix par set et alerte de prix",
+]
+weaknesses_en = [
+  "German merchants only: delivery to France not established",
+  "Official LEGO only",
+]
+weaknesses_fr = [
+  "Marchands allemands seulement : livraison en France non établie",
+  "LEGO officiel seul",
+]
+size_en = "6760 sets, 415419 prices, more than 50 shops"
+size_fr = "6760 sets, 415419 prix, plus de 50 boutiques"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.brick-tracker.de/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.brick-tracker.de/lego-marktanalyse.php"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickguide-de"
+name = "brickguide.de"
+url = "https://brickguide.de/"
+group = "price-comparators"
+covers = ["official"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+summary_en = "German comparator, set base and collection manager for official LEGO, with prices from merchant feeds and a price history."
+summary_fr = "Comparateur, base de sets et gestion de collection allemands pour LEGO officiel, avec prix issus des flux marchands et historique."
+strengths_en = [
+  "Price shown both excluding and including shipping",
+  "Price history",
+]
+strengths_fr = [
+  "Prix affiché hors port et port compris",
+  "Historique de prix",
+]
+weaknesses_en = [
+  "Offers for 3891 sets only, from 16 merchants",
+  "German merchants: delivery to France not established",
+]
+weaknesses_fr = [
+  "Offres pour 3891 sets seulement, de 16 marchands",
+  "Marchands allemands : livraison en France non établie",
+]
+size_en = "3891 sets with offers, 16 merchants"
+size_fr = "3891 sets avec offres, 16 marchands"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brickguide.de/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "temple-of-bricks"
+name = "Temple of Bricks"
+url = "https://www.templeofbricks.com/fr/"
+group = "price-comparators"
+covers = ["official", "minifigures", "second-hand"]
+languages = ["fr", "en"]
+countries = ["international"]
+access = "free"
+summary_en = "Price comparator for official LEGO sets and minifigures, secondary market included, with prices filtered by the country the merchant ships to."
+summary_fr = "Comparateur de prix de sets et de minifigurines LEGO officiel, marché secondaire compris, avec prix filtrés par pays de livraison du marchand."
+strengths_en = [
+  "More than 17000 sets and 19000 minifigures",
+  "Prices filtered by shipping country",
+  "Secondary-market prices for retired sets",
+]
+strengths_fr = [
+  "Plus de 17000 sets et 19000 minifigurines",
+  "Prix filtrés par pays de livraison",
+  "Prix du marché secondaire pour les sets retirés",
+]
+weaknesses_en = [
+  "Prices shown excluding shipping",
+  "Alternative brands not covered",
+  "History and alerts not established; publisher not identified",
+]
+weaknesses_fr = [
+  "Prix affichés hors port",
+  "Marques alternatives non couvertes",
+  "Historique et alertes non établis ; éditeur non identifié",
+]
+size_en = "more than 17000 sets, 19000 minifigures"
+size_fr = "plus de 17000 sets, 19000 minifigurines"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.templeofbricks.com/fr/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "toysetfox"
+name = "ToySetFox"
+url = "https://toysetfox.com/fr-fr/guides/alternatives-a-lego"
+group = "price-comparators"
+covers = ["alternative"]
+languages = ["fr", "de", "nl", "en"]
+countries = ["FR", "DE", "NL"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "General toy-set comparator by manufacturer set number (Playmobil, Schleich, COBI and others) with guides on alternative brick brands. Official LEGO sets were not seen in the catalogue."
+summary_fr = "Comparateur généraliste de jeux et sets par numéro du fabricant (Playmobil, Schleich, COBI et autres) avec des guides sur les marques de briques alternatives. Sets LEGO officiel non vus dans le catalogue."
+strengths_en = [
+  "Comparison by set number, manufacturer price shown when published",
+  "Guide on alternatives to LEGO updated on 2026-09-30",
+  "Declares that it neither sells nor tests products",
+]
+strengths_fr = [
+  "Comparaison par numéro de set, prix du fabricant affiché quand il est publié",
+  "Guide sur les alternatives à LEGO mis à jour le 30/09/2026",
+  "Déclare ne rien vendre ni tester",
+]
+weaknesses_en = [
+  "Brick-brand coverage is a small part of a general toy catalogue; size not established",
+  "Offers seen in the French guide come from a single shop (KidInn)",
+]
+weaknesses_fr = [
+  "Couverture des marques de briques limitée dans un catalogue généraliste de jouets ; taille non établie",
+  "Offres vues dans le guide français issues d'une seule boutique (KidInn)",
+]
+status = "active"
+last_activity = "2026-09-30"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://toysetfox.com/fr-fr/guides/alternatives-a-lego"
+date = "2026-09-30"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://toysetfox.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "toy-links"
+name = "Toy-Links"
+url = "https://toy-links.com/mouldking"
+group = "price-comparators"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Set lists by alternative brand (Mould King page read) with price comparison and availability filter. The site root returned an HTTP 525 error on 2026-11-23."
+summary_fr = "Listes de sets par marque alternative (page Mould King lue) avec comparaison de prix et filtre de disponibilité. La racine du site a renvoyé une erreur HTTP 525 le 23/11/2026."
+strengths_en = [
+  "Filter on sets still available",
+  "Lists by brand theme",
+]
+strengths_fr = [
+  "Filtre sur les sets encore disponibles",
+  "Listes par thème de marque",
+]
+weaknesses_en = [
+  "Site root unreachable (HTTP 525) on 2026-11-23; only one brand page read",
+  "Countries of the offers and update dates not established",
+]
+weaknesses_fr = [
+  "Racine du site inaccessible (HTTP 525) le 23/11/2026 ; une seule page de marque lue",
+  "Pays des offres et dates de mise à jour non établis",
+]
+status = "active"
+checked = "2026-11-23"
+last_activity = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://toy-links.com/mouldking"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "idealo"
+name = "idealo"
+url = "https://www.idealo.fr/"
+group = "price-comparators"
+covers = ["official"]
+languages = ["fr", "de", "en"]
+countries = ["FR", "DE"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "General price comparator with a LEGO category: offers per set, price chart and reviews. The French LEGO category was read on 2026-11-23."
+summary_fr = "Comparateur de prix généraliste avec une catégorie LEGO : offres par set, graphique de prix et avis. La catégorie LEGO française a été lue le 23/11/2026."
+strengths_en = [
+  "Many offers per set (18 for the Notre-Dame de Paris set 21061)",
+  "Filters by age, piece count and adult sets",
+  "Price evolution chart",
+]
+strengths_fr = [
+  "Nombreuses offres par set (18 pour le set Notre-Dame de Paris 21061)",
+  "Filtres par âge, nombre de pièces et sets adultes",
+  "Graphique d'évolution du prix",
+]
+weaknesses_en = [
+  "Alternative brands not seen in the LEGO category",
+  "General catalogue: not specialised in sets, includes toys of all ages",
+]
+weaknesses_fr = [
+  "Marques alternatives non vues dans la catégorie LEGO",
+  "Catalogue généraliste : non spécialisé en sets, inclut des jouets de tous âges",
+]
+size_en = "5893 products in the LEGO box set category (idealo.fr)"
+size_fr = "5893 produits dans la catégorie coffret LEGO (idealo.fr)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.idealo.fr/cat/9552/lego.html"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "ledenicheur"
+name = "LeDénicheur"
+url = "https://ledenicheur.fr/"
+group = "price-comparators"
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "General French price comparator with a LEGO category listing sets with best price."
+summary_fr = "Comparateur de prix généraliste français avec une catégorie LEGO listant les sets avec leur meilleur prix."
+strengths_en = [
+  "Best price and discount shown per set",
+  "Adult age range shown for adult sets",
+]
+strengths_fr = [
+  "Meilleur prix et remise affichés par set",
+  "Tranche d'âge adulte indiquée pour les sets adultes",
+]
+weaknesses_en = [
+  "Few sets with reviews; no alternative brands seen",
+  "History, alerts and shipping not established",
+]
+weaknesses_fr = [
+  "Peu de fiches avec avis ; pas de marques alternatives vues",
+  "Historique, alertes et port non établis",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://ledenicheur.fr/c/lego"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "geizhals"
+name = "Geizhals"
+url = "https://geizhals.at/"
+group = "price-comparators"
+covers = ["official", "alternative"]
+languages = ["de"]
+countries = ["AT", "DE"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "Austrian and German general comparator with a LEGO category and a separate category for alternative brick brands (CaDA, Cobi and others)."
+summary_fr = "Comparateur généraliste autrichien et allemand avec une catégorie LEGO et une catégorie distincte pour les marques de briques alternatives (CaDA, Cobi et autres)."
+strengths_en = [
+  "Separate category for alternative brands",
+  "Variants per set and price change indicator",
+  "Option to include shipping, with the Austrian parcel tax when passed on by the merchant",
+]
+strengths_fr = [
+  "Catégorie distincte pour les marques alternatives",
+  "Variantes par set et indicateur de variation de prix",
+  "Option port compris, avec la taxe de colis autrichienne quand le marchand la répercute",
+]
+weaknesses_en = [
+  "Austrian and German merchants: delivery to France not established",
+  "Direct reading is blocked by a Cloudflare challenge according to an earlier test; only indexed pages were used",
+]
+weaknesses_fr = [
+  "Marchands autrichiens et allemands : livraison en France non établie",
+  "Lecture directe bloquée par un défi Cloudflare selon un test antérieur ; seules des pages indexées ont servi",
+]
+size_en = "5006 LEGO products and 1946 brick products of other brands (geizhals.at)"
+size_fr = "5006 produits LEGO et 1946 produits de briques d'autres marques (geizhals.at)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://geizhals.at/?cat=spzglego"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://geizhals.at/?cat=spzgbuk"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "verobricks"
+name = "VERObricks"
+url = "https://verobricks.com/"
+group = "price-comparators"
+covers = ["official", "alternative"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "German price comparator for building-brick sets (LEGO, COBI, BlueBrixx, CaDA, Mould King, Reobrix and others). It is the price comparison formerly under the reBricker name; reBricker remains a sorting and used-brick service."
+summary_fr = "Comparateur de prix allemand de sets de briques (LEGO, COBI, BlueBrixx, CaDA, Mould King, Reobrix et autres). C'est le comparateur autrefois sous le nom reBricker ; reBricker reste un service de tri et de briques d'occasion."
+strengths_en = [
+  "Final prices including shipping to Germany, no registration",
+  "Price alert per set, price history charts and 90-day low flag",
+  "Several alternative brands compared in the same search",
+]
+strengths_fr = [
+  "Prix finaux port compris vers l'Allemagne, sans inscription",
+  "Alerte de prix par set, graphiques d'historique et signalement du plus bas sur 90 jours",
+  "Plusieurs marques alternatives comparées dans la même recherche",
+]
+weaknesses_en = [
+  "Shipping computed for Germany: France delivery not established",
+  "Figures published by the site itself, not checked independently",
+]
+weaknesses_fr = [
+  "Port calculé pour l'Allemagne : livraison en France non établie",
+  "Chiffres publiés par le site lui-même, non vérifiés de façon indépendante",
+]
+size_en = "more than 17000 sets, 60 manufacturers, more than 190 shops"
+size_fr = "plus de 17000 sets, 60 fabricants, plus de 190 boutiques"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://verobricks.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "comparobrick"
+name = "ComparoBrick"
+url = "https://www.comparobrick.fr/"
+group = "price-comparators"
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "French price comparator dedicated to official LEGO sets, identified by set number and barcode, with French merchants only."
+summary_fr = "Comparateur de prix français dédié aux sets LEGO officiel, identifiés par numéro et code-barres, avec des marchands français seulement."
+strengths_en = [
+  "Sets identified by number and barcode to avoid confusion between versions",
+  "Filters by theme, piece count, age, exclusivity and release year",
+  "Covers advent calendars, retailer exclusives and promotional bags",
+]
+strengths_fr = [
+  "Sets identifiés par numéro et code-barres pour éviter les confusions entre versions",
+  "Filtres par thème, nombre de pièces, âge, exclusivité et année de sortie",
+  "Couvre calendriers de l'Avent, exclusivités d'enseigne et sachets promotionnels",
+]
+weaknesses_en = [
+  "Official LEGO only",
+  "Shipping treatment contradictory: the about page says prices exclude shipping, the home page says shipping is included",
+]
+weaknesses_fr = [
+  "LEGO officiel seul",
+  "Traitement du port contradictoire : la page à propos indique des prix hors port, la page d'accueil du port compris",
+]
+size_en = "10615 sets"
+size_fr = "10615 sets"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.comparobrick.fr/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.comparobrick.fr/pages/a-propos"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "chez-emil"
+name = "Chez Emil"
+url = "https://chezemil.fr/"
+group = "price-comparators"
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "French multi-category price tracker (official LEGO, consumer electronics, video games) with merchant offers grouped per product and price history."
+summary_fr = "Suivi de prix français multicatégorie (LEGO officiel, high-tech, jeux vidéo) avec offres marchands regroupées par produit et historique des prix."
+strengths_en = [
+  "Offers from several merchants grouped on one page",
+  "Record low and median shown to judge a promotion",
+]
+strengths_fr = [
+  "Offres de plusieurs marchands regroupées sur une même fiche",
+  "Record et médiane affichés pour juger une promotion",
+]
+weaknesses_en = [
+  "General site: LEGO is one of three catalogues",
+  "Publisher, shipping, alerts and merchant list not established",
+]
+weaknesses_fr = [
+  "Site généraliste : LEGO est l'un des trois catalogues",
+  "Éditeur, port, alertes et liste des marchands non établis",
+]
+size_en = "1570 official LEGO sets tracked"
+size_fr = "1570 sets LEGO officiel suivis"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://chezemil.fr/"
+date = "2026-11-23"
+kind = "read"
+
+# ---------------------------------------------------------------- deal communities
+
+[[resource]]
+id = "brickset"
+name = "Brickset"
+url = "https://brickset.com/"
+group = "set-databases"
+featured = true
+covers = ["official", "minifigures", "parts", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+summary_en = "Reference database of official LEGO sets since 1997 (minifigures, parts, colours, inventories), with collection tracking, reviews, news and lists of discounts at retailers."
+summary_fr = "Base de référence des sets LEGO officiel depuis 1997 (minifigurines, pièces, couleurs, inventaires), avec suivi de collection, avis, actualités et listes de remises chez les détaillants."
+strengths_en = [
+  "23674 sets and other items in the database",
+  "API v3 returning JSON; CSV export of the collection",
+  "Lists of discounts and new products at online retailers",
+]
+strengths_fr = [
+  "23674 sets et autres articles en base",
+  "API v3 en JSON ; export CSV de la collection",
+  "Listes de remises et de nouveautés chez les détaillants en ligne",
+]
+weaknesses_en = [
+  "API key required for every method; only getSets calls count against the quota",
+  "No secondary-market prices (third-party comparison)",
+  "No alternative brands",
+]
+weaknesses_fr = [
+  "Clé d'API requise pour chaque méthode ; seuls les appels getSets comptent dans le quota",
+  "Pas de prix du marché secondaire (comparatif tiers)",
+  "Pas de marques alternatives",
+]
+size_en = "23674 sets and other items"
+size_fr = "23674 sets et autres articles"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickset.com/sets"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickset.com/article/52664/api-v3-documentation"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "rebrickable"
+name = "Rebrickable"
+url = "https://rebrickable.com/"
+group = "set-databases"
+featured = true
+covers = ["official", "custom-builds", "instructions", "parts", "minifigures", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+summary_en = "Database of official sets, parts and fan-designed custom builds with instructions; shows which creations can be built with the parts a user owns."
+summary_fr = "Base de sets officiels, de pièces et de créations originales de fans avec instructions ; indique quelles créations se construisent avec les pièces possédées."
+strengths_en = [
+  "Catalogue of official sets, parts and minifigures as CSV files, updated daily, free with attribution",
+  "API v3 with a personal key",
+  "More than 206000 custom builds",
+  "Import and export with BrickLink, Brick Owl and Brickset",
+]
+strengths_fr = [
+  "Catalogue des sets, pièces et minifigurines officiels en fichiers CSV, mis à jour chaque jour, libre avec attribution",
+  "API v3 avec clé personnelle",
+  "Plus de 206000 créations originales",
+  "Import et export avec BrickLink, Brick Owl et Brickset",
+]
+weaknesses_en = [
+  "Scraping of web pages is forbidden by the terms; use the CSV files or the API",
+  "No alternative-brand catalogue (official LEGO only in the downloads)",
+]
+weaknesses_fr = [
+  "Aspiration des pages interdite par les conditions ; utiliser les fichiers CSV ou l'API",
+  "Pas de catalogue de marques alternatives (LEGO officiel seul dans les téléchargements)",
+]
+size_en = "more than 206000 custom builds"
+size_fr = "plus de 206000 créations originales"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://rebrickable.com/downloads/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://rebrickable.com/api/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "brick-news-sets"
+name = "Brick Set Database (brick.news)"
+url = "https://brick.news/sets"
+group = "set-databases"
+covers = ["official", "alternative"]
+languages = ["en", "de"]
+countries = ["international"]
+access = "free-account"
+summary_en = "Set database for official LEGO and alternative brands (Lumibricks, Mattel MEGA, Pantasy, COBI, CaDA) with piece count, release status, price and retirement date."
+summary_fr = "Base de sets LEGO officiel et marques alternatives (Lumibricks, Mattel MEGA, Pantasy, COBI, CaDA) avec nombre de pièces, statut, prix et date de retrait."
+strengths_en = [
+  "Available or retired status per set",
+  "Deal alerts and collection tracking on a free account",
+]
+strengths_fr = [
+  "Statut disponible ou retiré par set",
+  "Alertes d'offres et suivi de collection sur compte gratuit",
+]
+weaknesses_en = [
+  "Account required for collection and alerts",
+  "Database size not published; publisher not identified",
+]
+weaknesses_fr = [
+  "Compte requis pour la collection et les alertes",
+  "Taille de la base non publiée ; éditeur non identifié",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brick.news/sets"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "setdb"
+name = "SetDB (Merlins Steine)"
+url = "https://www.merlinsbricks.com/setdb/"
+group = "set-databases"
+featured = true
+covers = ["official", "alternative", "minifigures", "parts", "news"]
+languages = ["de", "en"]
+countries = ["international"]
+access = "free"
+summary_en = "Set database of the independent German brick magazine Merlins Steine (merlinssteine.de, English edition Merlins Bricks): sets of many brands, minifigures and parts, next to reviews, news and a weekly podcast. The magazine declares no brand ambassador programme and no banner advertising."
+summary_fr = "Base de sets du magazine allemand indépendant Merlins Steine (merlinssteine.de, édition anglaise Merlins Bricks) : sets de nombreuses marques, minifigurines et pièces, à côté de tests, d'actualités et d'un podcast hebdomadaire. Le magazine déclare ne participer à aucun programme d'ambassadeurs de marque et n'afficher aucune bannière publicitaire."
+strengths_en = [
+  "39690 sets from 92 brands, including LEGO, Cobi, BlueBrixx, Lumibricks, Pantasy and CaDA",
+  "17561 minifigures and 42256 bricks and parts",
+  "Reviews and a weekly news podcast on the same site",
+]
+strengths_fr = [
+  "39690 sets de 92 marques, dont LEGO, Cobi, BlueBrixx, Lumibricks, Pantasy et CaDA",
+  "17561 minifigurines et 42256 briques et pièces",
+  "Tests et podcast d'actualités hebdomadaire sur le même site",
+]
+weaknesses_en = [
+  "Magazine content mainly in German; the database also exists in English",
+  "No price comparison seen on the pages read (an earlier description as a comparator was not confirmed)",
+]
+weaknesses_fr = [
+  "Contenu du magazine principalement en allemand ; la base existe aussi en anglais",
+  "Aucune comparaison de prix vue sur les pages lues (une description antérieure comme comparateur n'a pas été confirmée)",
+]
+size_en = "39690 sets, 92 brands"
+size_fr = "39690 sets, 92 marques"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://merlinssteine.de/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.merlinsbricks.com/setdb/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "other-bricks"
+name = "other-bricks.com"
+url = "https://other-bricks.com/de/"
+group = "set-databases"
+covers = ["alternative"]
+languages = ["de", "en"]
+countries = ["international"]
+access = "free"
+summary_en = "Reference platform for sets of brands other than official LEGO, with comparison, prices and ranking guides in English."
+summary_fr = "Plateforme de référence des sets hors LEGO officiel, avec comparaison, prix et classements en anglais."
+strengths_en = [
+  "2446 sets from 32 brands, including brands absent from French comparators (Reobrix, Xingbao, Keeppley, Sluban, Jaki)",
+  "Ranking guides updated through 2026-11-07 (largest sets per brand)",
+]
+strengths_fr = [
+  "2446 sets de 32 marques, dont des marques absentes des comparateurs français (Reobrix, Xingbao, Keeppley, Sluban, Jaki)",
+  "Classements mis à jour jusqu'au 07/11/2026 (plus grands sets par marque)",
+]
+weaknesses_en = [
+  "Prices in dollars and euros mixed in the extracts read",
+  "Countries of offers not established",
+]
+weaknesses_fr = [
+  "Prix en dollars et en euros mélangés dans les extraits lus",
+  "Pays des offres non établis",
+]
+size_en = "2446 sets, 32 brands"
+size_fr = "2446 sets, 32 marques"
+status = "active"
+last_activity = "2026-11-07"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://other-bricks.com/de/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brick4"
+name = "Brick4.com"
+url = "https://brick4.com/"
+group = "set-databases"
+covers = ["official", "alternative"]
+languages = ["zh"]
+countries = ["CN"]
+access = "free"
+summary_en = "Chinese index of bricks from Chinese brands, linking each official LEGO set to its copies and equivalents, with box and built-model dimensions and a stud-size compatibility criterion."
+summary_fr = "Index chinois des briques des marques chinoises, reliant chaque set LEGO officiel à ses copies et équivalents, avec dimensions de la boîte et du modèle monté et critère de compatibilité par taille de tenon."
+strengths_en = [
+  "Concordance between official LEGO set numbers and equivalents from Chinese brands",
+  "Launch prices in yuan and dollars, box and built-model dimensions, weight",
+]
+strengths_fr = [
+  "Concordance entre numéros de sets LEGO officiel et équivalents des marques chinoises",
+  "Prix de lancement en yuan et en dollars, dimensions de la boîte et du modèle monté, poids",
+]
+weaknesses_en = [
+  "Interface in Chinese only",
+  "No merchant prices seen",
+  "Includes copies of official LEGO sets, which are outside a quality-brand scope",
+]
+weaknesses_fr = [
+  "Interface uniquement en chinois",
+  "Aucun prix marchand vu",
+  "Inclut des copies de sets LEGO officiel, hors d'un périmètre de marques de qualité",
+]
+status = "active"
+last_activity = "2026-11-21"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brick4.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brick4.com/brand/1"
+date = "2026-11-21"
+kind = "indexed"
+
+[[resource]]
+id = "brickdb"
+name = "BrickDb"
+url = "https://www.brickdb.de/"
+group = "set-databases"
+covers = ["official", "minifigures", "parts"]
+languages = ["de", "en", "fr"]
+countries = ["international"]
+access = "free"
+business_model_en = "Labelled affiliate links and voluntary support"
+business_model_fr = "Liens d'affiliation signalés et soutien volontaire"
+summary_en = "Free catalogue and collection manager for official LEGO sets, minifigures and parts with barcode scanning, set price comparison and market values showing their sample size. Started in September 2026 in Germany; applications for several platforms."
+summary_fr = "Catalogue et gestion de collection gratuits pour sets, minifigurines et pièces LEGO officiel, avec lecture de codes-barres, comparaison des prix des sets et valeurs de marché indiquant leur échantillon. Lancé en septembre 2026 en Allemagne ; applications pour plusieurs plateformes."
+strengths_en = [
+  "Browsing without an account",
+  "Market value with the number of sales behind it; no figure shown below five sales",
+  "Catalogue refreshed nightly from Rebrickable data",
+]
+strengths_fr = [
+  "Consultation sans compte",
+  "Valeur de marché avec le nombre de ventes sous-jacent ; aucun chiffre sous cinq ventes",
+  "Catalogue actualisé chaque nuit depuis les données de Rebrickable",
+]
+weaknesses_en = [
+  "Very recent project (September 2026), no long track record",
+  "Country coverage of offers not established",
+]
+weaknesses_fr = [
+  "Projet très récent (septembre 2026), sans historique durable",
+  "Couverture par pays des offres non établie",
+]
+size_en = "20411 sets, 17363 minifigures, 64955 parts (press release of 2026-11-07)"
+size_fr = "20411 sets, 17363 minifigurines, 64955 pièces (communiqué du 07/11/2026)"
+status = "active"
+last_activity = "2026-11-07"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.brickdb.de/about/press"
+date = "2026-11-07"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.brickdb.de/"
+date = "2026-11-23"
+kind = "read"
+
+# ---------------------------------------------------------------- value and investment tracking
+
+[[resource]]
+id = "brickeconomy"
+name = "BrickEconomy"
+url = "https://www.brickeconomy.com/"
+group = "value-tracking"
+featured = true
+covers = ["official", "minifigures", "second-hand"]
+languages = ["en"]
+countries = ["international"]
+access = "freemium"
+summary_en = "Database of official LEGO sets and minifigures devoted to secondary-market value estimates and machine-learning growth forecasts."
+summary_fr = "Base de sets et de minifigurines LEGO officiel dédiée à l'estimation de valeur sur le marché secondaire et à la prévision de croissance par apprentissage automatique."
+strengths_en = [
+  "Value history, retirement dates, theme analysis",
+  "REST API v1 for Premium members: personal key, 100 requests a day",
+  "Import from Brickset, Rebrickable, BrickPicker and CSV",
+]
+strengths_fr = [
+  "Historique de valeur, dates de retrait, analyse par thème",
+  "API REST v1 pour les membres Premium : clé personnelle, 100 requêtes par jour",
+  "Import depuis Brickset, Rebrickable, BrickPicker et CSV",
+]
+weaknesses_en = [
+  "Values are model estimates (machine learning), not a feed of paid prices; the site's own list of price sources is stated to be outdated",
+  "Terms of use forbid robots, scripts and scraping, including on public pages; the API is the only permitted route",
+  "English interface only",
+]
+weaknesses_fr = [
+  "Valeurs estimées par modèle (apprentissage automatique), non un flux de prix payés ; la liste de sources de prix du site est déclarée non à jour",
+  "Conditions d'utilisation interdisant robots, scripts et aspiration, y compris sur les pages publiques ; l'API est la seule voie permise",
+  "Interface en anglais seulement",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.brickeconomy.com/faqs"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.brickeconomy.com/about"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.brickeconomy.com/api-reference"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "brickpicker"
+name = "BrickPicker"
+url = "https://brickpicker.com/"
+group = "value-tracking"
+covers = ["official", "minifigures", "second-hand"]
+languages = ["en"]
+countries = ["US"]
+access = "freemium"
+business_model_en = "Premium subscription"
+business_model_fr = "Abonnement Premium"
+summary_en = "LEGO investing platform: price guide based on completed sales, part-out value, portfolio tracking, retirement watch and deal alerts. Free to browse without an account; advanced tools in Premium."
+summary_fr = "Plateforme d'investissement LEGO : guide des prix fondé sur les ventes réalisées, valeur de démontage, suivi de portefeuille, veille des retraits et alertes d'offres. Consultation libre sans compte ; outils avancés en Premium."
+strengths_en = [
+  "Minifigure price guide covering more than 17000 minifigures",
+  "Portfolio priced every morning, 19 currencies supported",
+  "CSV or JSON history export (Premium)",
+]
+strengths_fr = [
+  "Guide de prix couvrant plus de 17000 minifigurines",
+  "Portefeuille valorisé chaque matin, 19 devises prises en charge",
+  "Export CSV ou JSON de l'historique (Premium)",
+]
+weaknesses_en = [
+  "Reference price guide based on the US market; other countries have only native Amazon and LEGO.com offers at launch (Canada, United Kingdom, Australia, Germany, France, Italy)",
+  "Interface in English only at launch; full history and advanced tools reserved for Premium",
+]
+weaknesses_fr = [
+  "Guide de prix de référence fondé sur le marché américain ; les autres pays n'ont que les offres natives d'Amazon et de LEGO.com au lancement (Canada, Royaume-Uni, Australie, Allemagne, France, Italie)",
+  "Interface en anglais seulement au lancement ; historique complet et outils avancés réservés à Premium",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickpicker.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickpicker.com/features/market-data"
+date = "2026-11-23"
+kind = "official"

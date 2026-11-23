@@ -1,0 +1,519 @@
+[category]
+id = "directories"
+name_en = "Existing directories and lists"
+name_fr = "Annuaires et listes existants"
+summary_en = "Existing directories, awesome lists and lists of channels and brands about LEGO and compatible bricks."
+summary_fr = "Annuaires, listes awesome et listes de chaînes et de marques existants sur LEGO et les briques compatibles."
+
+[[category.groups]]
+id = "awesome-lists"
+name_en = "Awesome lists"
+name_fr = "Listes awesome"
+
+[[category.groups]]
+id = "site-directories"
+name_en = "Site directories"
+name_fr = "Annuaires de sites"
+
+[[category.groups]]
+id = "channel-lists"
+name_en = "Channel and podcast lists"
+name_fr = "Listes de chaînes et de podcasts"
+
+[[category.groups]]
+id = "brand-lists"
+name_en = "Brand lists"
+name_fr = "Listes de marques"
+
+[[resource]]
+id = "awesome-lego-ad-si"
+name = "awesome-lego (ad-si)"
+url = "https://github.com/ad-si/awesome-lego"
+group = "awesome-lists"
+featured = true
+covers = ["official", "custom-builds", "instructions", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Community awesome list of LEGO software, archives, libraries, marketplaces, channels, books, blogs and games."
+summary_fr = "Liste awesome communautaire de logiciels, archives, bibliothèques, places de marché, chaînes, livres, blogs et jeux LEGO."
+strengths_en = ["CC0 licence, 442 stars, 60 commits", "Covers LDraw, LeoCAD, LDCad, LPub, Mecabricks, Studio"]
+strengths_fr = ["Licence CC0, 442 étoiles, 60 commits", "Couvre LDraw, LeoCAD, LDCad, LPub, Mecabricks, Studio"]
+weaknesses_en = ["Not oriented to prices or purchase; no alternative brands", "Several old entries (Peeron, minifigure catalog 1975 to 2015)"]
+weaknesses_fr = ["Non orientée prix ou achat ; pas de marques alternatives", "Plusieurs entrées anciennes (Peeron, catalogue de figurines 1975 à 2015)"]
+size_en = "About 90 entries in 17 sections"
+size_fr = "Environ 90 entrées en 17 sections"
+status = "active"
+last_activity = "2026-11-02"
+checked = "2026-11-23"
+confidence = "medium"
+github = "ad-si/awesome-lego"
+
+[[resource.sources]]
+url = "https://github.com/ad-si/awesome-lego"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "awesome-lego-brickventory"
+name = "awesome-lego (brickventory)"
+url = "https://github.com/brickventory/awesome-lego"
+group = "awesome-lists"
+covers = ["official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Short awesome list of official LEGO links, marketplaces, resources and software."
+summary_fr = "Courte liste awesome de liens LEGO officiels, places de marché, ressources et logiciels."
+strengths_en = ["Lists Digital Designer, Brickfact, Brickset, Rebrickable"]
+strengths_fr = ["Cite Digital Designer, Brickfact, Brickset, Rebrickable"]
+weaknesses_en = ["12 stars; last update 27 April 2023 as recorded; mentions Digital Designer as outdated", "No alternative brands or European comparators"]
+weaknesses_fr = ["12 étoiles ; dernière mise à jour du 27/04/2023 relevée ; cite Digital Designer comme obsolète", "Ni marques alternatives ni comparateurs européens"]
+status = "inactive"
+last_activity = "2023-04-27"
+checked = "2026-11-23"
+confidence = "medium"
+github = "brickventory/awesome-lego"
+
+[[resource.sources]]
+url = "https://github.com/brickventory/awesome-lego"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "awesome-lego-machine-learning"
+name = "awesome-lego-machine-learning"
+url = "https://github.com/360er0/awesome-lego-machine-learning"
+group = "awesome-lists"
+covers = ["parts", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Curated list of machine-learning resources applied to LEGO bricks: part classification, datasets, applications such as Brickognize."
+summary_fr = "Liste de ressources d'apprentissage automatique appliquées aux briques LEGO : classification de pièces, jeux de données, applications dont Brickognize."
+strengths_en = ["535 stars; created 3 February 2022"]
+strengths_fr = ["535 étoiles ; créée le 03/02/2022"]
+weaknesses_en = ["Technical niche; last update 6 April 2025 as recorded in the first survey, not re-read"]
+weaknesses_fr = ["Créneau technique ; dernière mise à jour du 06/04/2025 relevée par la première recherche, non relue"]
+status = "inactive"
+last_activity = "2025-04-06"
+checked = "2026-11-23"
+confidence = "medium"
+github = "360er0/awesome-lego-machine-learning"
+
+[[resource.sources]]
+url = "https://github.com/360er0/awesome-lego-machine-learning"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickmap"
+name = "BrickMap"
+url = "https://brickmap.info/"
+group = "site-directories"
+covers = ["official", "alternative", "parts", "second-hand", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Directory of LEGO-related business and service websites by category."
+summary_fr = "Annuaire de sites commerciaux et de services liés à LEGO, par catégorie."
+strengths_en = ["926 unique sites, 66 categories, 1315 entries by category as stated"]
+strengths_fr = ["926 sites uniques, 66 catégories, 1315 entrées par catégorie selon le site"]
+weaknesses_en = ["Last update observed 26 January 2016 (first survey); likely outdated", "Focused on American and European shops"]
+weaknesses_fr = ["Dernière mise à jour observée le 26/01/2016 (première recherche) ; probablement périmé", "Centré sur les boutiques américaines et européennes"]
+size_en = "926 unique sites, 66 categories"
+size_fr = "926 sites uniques, 66 catégories"
+status = "archived"
+last_activity = "2016-01-26"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brickmap.info/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brick-discovery"
+name = "Brick Discovery"
+url = "https://www.brickdiscovery.com/buy-sell-invest/"
+group = "site-directories"
+covers = ["official", "alternative", "second-hand", "custom-builds", "minifigures"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Curated directory of LEGO communities, shops, marketplaces, price trackers and tools with tags and free or paid labels."
+summary_fr = "Annuaire commenté de communautés, boutiques, places de marché, suivis de prix et outils LEGO, avec étiquettes et mention gratuit ou payant."
+strengths_en = ["Includes European entries (AFOLs of Luxembourg, 1000steine.de)", "Only directory found citing Brickwatch"]
+strengths_fr = ["Contient des entrées européennes (AFOLs of Luxembourg, 1000steine.de)", "Seul annuaire trouvé citant Brickwatch"]
+weaknesses_en = ["No update date shown", "United States shops over-represented in the excerpt read"]
+weaknesses_fr = ["Aucune date de mise à jour affichée", "Boutiques américaines très présentes dans l'extrait lu"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.brickdiscovery.com/buy-sell-invest/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "eurobricks-site-directory"
+name = "Eurobricks LEGO Site Directory"
+url = "https://www.eurobricks.com/forum/forums/topic/38481-lego-site-directory/"
+group = "site-directories"
+covers = ["official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Forum thread of 2010 intended as an overview of every LEGO-related website."
+summary_fr = "Fil de forum de 2010 visant un aperçu de tous les sites liés à LEGO."
+strengths_en = ["Historical reference of the 2010 community"]
+strengths_fr = ["Référence historique de la communauté de 2010"]
+weaknesses_en = ["Opening post dated 7 February 2010; obsolete, many links likely dead"]
+weaknesses_fr = ["Message initial du 07/02/2010 ; obsolète, nombreux liens probablement morts"]
+status = "archived"
+last_activity = "2010-02-07"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.eurobricks.com/forum/forums/topic/38481-lego-site-directory/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickset-app-directory"
+name = "Brickset app directory"
+url = "https://brickset.com/article/131478/app-directory"
+group = "site-directories"
+covers = ["official", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Brickset list of apps, websites, code libraries and utilities that use its API, grouped by iOS, Android, websites and other."
+summary_fr = "Liste Brickset des applications, sites, bibliothèques de code et utilitaires qui utilisent son API, par iOS, Android, sites et autres."
+strengths_en = ["Maintained by the catalog operator; includes a Discord bot, a Rust crate and an Obsidian plugin"]
+strengths_fr = ["Tenue par l'exploitant du catalogue ; contient un robot Discord, une bibliothèque Rust et un plugin Obsidian"]
+weaknesses_en = ["No update date on the page", "Limited to API users"]
+weaknesses_fr = ["Aucune date de mise à jour sur la page", "Limitée aux utilisateurs de l'API"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brickset.com/article/131478/app-directory"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "deparkatre-associations"
+name = "Deparkatre clubs and associations directory"
+url = "https://deparkatre.fr/associations"
+group = "site-directories"
+featured = true
+covers = ["official", "custom-builds", "news"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "French-language directory of LEGO user groups, clubs and online communities in France, Europe and elsewhere, with national, regional and local scope."
+summary_fr = "Annuaire francophone de clubs, groupes d'utilisateurs et communautés en ligne LEGO en France, en Europe et ailleurs, de portée nationale, régionale et locale."
+strengths_en = ["About 77 clubs: 9 national, 20 regional, 48 local", "Marks entries whose activity needs checking"]
+strengths_fr = ["Environ 77 clubs : 9 nationaux, 20 régionaux, 48 locaux", "Signale les entrées dont l'activité reste à vérifier"]
+weaknesses_en = ["No update date shown; some entries flagged unverified by the directory itself"]
+weaknesses_fr = ["Aucune date de mise à jour affichée ; certaines entrées signalées non vérifiées par l'annuaire lui-même"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://deparkatre.fr/associations"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "lego-fan-colab-communities"
+name = "LEGO Fan CoLab community directory"
+url = "https://fancolab.lego.com/communities/"
+group = "site-directories"
+featured = true
+covers = ["official", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Official LEGO directory of recognised fan communities, including French associations."
+summary_fr = "Annuaire officiel LEGO des communautés de fans reconnues, dont des associations françaises."
+strengths_en = ["Official source; includes French entries such as Brick Team Aquitaine"]
+strengths_fr = ["Source officielle ; contient des entrées françaises comme Brick Team Aquitaine"]
+weaknesses_en = ["Limited to communities recognised by LEGO", "No update date read"]
+weaknesses_fr = ["Limité aux communautés reconnues par LEGO", "Aucune date de mise à jour lue"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://fancolab.lego.com/communities/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "spielzeug-fuchs-price-platforms"
+name = "Spielzeug-Fuchs: price comparison platforms for building bricks"
+url = "https://spielzeug-fuchs.de/klemmbaustein-preisvergleichsplattformen/"
+group = "site-directories"
+covers = ["official", "alternative"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+summary_en = "German-language guide with a table of price comparison platforms for LEGO and compatible bricks (Brickfact, BrickLink, Brickmerge, BrickEconomy and others)."
+summary_fr = "Guide en allemand avec tableau des plateformes de comparaison de prix pour LEGO et briques compatibles (Brickfact, BrickLink, Brickmerge, BrickEconomy et d'autres)."
+strengths_en = ["Published 13 July 2025, updated 10 October 2026 as recorded in the first survey"]
+strengths_fr = ["Publié le 13/07/2025, mis à jour le 10/10/2026 selon la première recherche"]
+weaknesses_en = ["Page not re-read in this review; publisher is a retailer-affiliated blog"]
+weaknesses_fr = ["Page non relue pendant cette revue ; éditeur de type blog commercial"]
+status = "active"
+last_activity = "2026-10-10"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://spielzeug-fuchs.de/klemmbaustein-preisvergleichsplattformen/"
+date = "2026-10-10"
+kind = "indexed"
+
+[[resource]]
+id = "bricktubed-channels"
+name = "BrickTubed channel directory"
+url = "https://bricktubed.com/channels/"
+group = "channel-lists"
+featured = true
+covers = ["official", "alternative", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Directory of LEGO YouTube channels with subscribers, views, video count, country, last video and active status; a podcast page also exists."
+summary_fr = "Annuaire de chaînes YouTube LEGO avec abonnés, vues, nombre de vidéos, pays, dernière vidéo et statut ; une page de podcasts existe aussi."
+strengths_en = ["429 channels, updated 27 July 2026 as stated", "Last video date per channel"]
+strengths_fr = ["429 chaînes, mis à jour le 27/07/2026 selon la page", "Date de la dernière vidéo par chaîne"]
+weaknesses_en = ["Global scope, few French or German channels flagged", "Update about four months old"]
+weaknesses_fr = ["Portée mondiale, peu de chaînes françaises ou allemandes signalées", "Mise à jour datant d'environ quatre mois"]
+size_en = "429 channels"
+size_fr = "429 chaînes"
+status = "active"
+last_activity = "2026-07-27"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://bricktubed.com/channels/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "deparkatre-influenceurs"
+name = "Deparkatre LEGO influencer directory"
+url = "https://deparkatre.fr/influenceurs"
+group = "channel-lists"
+featured = true
+covers = ["official", "alternative", "news"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "French-language directory of LEGO YouTube channels, Instagram accounts, blogs and other creators, with an interactive map."
+summary_fr = "Annuaire francophone de chaînes YouTube, comptes Instagram, blogs et autres créateurs LEGO, avec carte interactive."
+strengths_en = ["30 YouTube channels, 30 Instagram accounts, 93 other profiles as shown", "Includes FrosTiize, Lego Leader, HelloBricks, Mister Bricks"]
+strengths_fr = ["30 chaînes YouTube, 30 comptes Instagram, 93 autres profils selon la page", "Contient FrosTiize, Lego Leader, HelloBricks, Mister Bricks"]
+weaknesses_en = ["No update date shown", "Mostly official-LEGO content, little on alternative brands"]
+weaknesses_fr = ["Aucune date de mise à jour affichée", "Surtout du contenu LEGO officiel, peu sur les marques alternatives"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://deparkatre.fr/influenceurs"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "quelug-youtube-channels"
+name = "QuéLUG thread: interesting YouTube channels"
+url = "https://forums.quelug.org/t/canaux-youtube-interessants/3294"
+group = "channel-lists"
+covers = ["official", "custom-builds"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "French-language forum thread where members recommend LEGO YouTube channels (Mabrikville, Brickmitri, Brick Science)."
+summary_fr = "Fil de forum francophone où des membres recommandent des chaînes YouTube LEGO (Mabrikville, Brickmitri, Brick Science)."
+strengths_en = ["Recommendations from a French user group"]
+strengths_fr = ["Recommandations d'un groupe d'utilisateurs français"]
+weaknesses_en = ["Seven posts, created 7 April 2024; last post May 2024"]
+weaknesses_fr = ["Sept messages, créé le 07/04/2024 ; dernier message en mai 2024"]
+status = "inactive"
+last_activity = "2024-05-04"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://forums.quelug.org/t/canaux-youtube-interessants/3294"
+date = "2024-04-07"
+kind = "forum"
+
+[[resource]]
+id = "feedspot-lego-podcasts"
+name = "Feedspot LEGO podcasts"
+url = "https://podcast.feedspot.com/lego_podcasts/"
+group = "channel-lists"
+covers = ["official", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Automated ranking list of LEGO podcasts."
+summary_fr = "Liste de classement automatisée de podcasts LEGO."
+strengths_en = ["59 podcasts as listed in the first survey"]
+strengths_fr = ["59 podcasts selon la première recherche"]
+weaknesses_en = ["Page not re-read in this review; update date of 31 October 2026 from first survey only"]
+weaknesses_fr = ["Page non relue pendant cette revue ; date de mise à jour du 31/10/2026 issue de la seule première recherche"]
+status = "active"
+last_activity = "2026-10-31"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://podcast.feedspot.com/lego_podcasts/"
+date = "2026-10-31"
+kind = "indexed"
+
+[[resource]]
+id = "wikipedia-de-klemmbausteinhersteller"
+name = "Liste von Klemmbausteinherstellern (German Wikipedia)"
+url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
+group = "brand-lists"
+featured = true
+covers = ["official", "alternative"]
+languages = ["de"]
+countries = ["international"]
+access = "free"
+summary_en = "Table of LEGO-compatible brick manufacturers with set maker, brick maker, stud pitch and remarks."
+summary_fr = "Tableau des fabricants de briques compatibles LEGO avec fabricant des sets, fabricant des briques, pas de tenon et remarques."
+strengths_en = ["Distinguishes set maker from brick maker", "Page dated 27 September 2026"]
+strengths_fr = ["Distingue fabricant des sets et fabricant des briques", "Page datée du 27/09/2026"]
+weaknesses_en = ["German only", "Encyclopedic, no prices or quality ratings"]
+weaknesses_fr = ["En allemand uniquement", "Encyclopédique, sans prix ni évaluation de qualité"]
+status = "active"
+last_activity = "2026-09-27"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
+date = "2026-09-27"
+kind = "read"
+
+[[resource]]
+id = "steine-kanal-hersteller-lexikon"
+name = "Klemmbaustein Hersteller Lexikon (Steine-Kanal)"
+url = "https://www.steine-kanal.de/klemmbaustein-hersteller-lexikon/"
+group = "brand-lists"
+covers = ["official", "alternative"]
+languages = ["de"]
+countries = ["international"]
+access = "free"
+summary_en = "German-language lexicon of established brick manufacturers by country with themes and notes; excludes copy brands."
+summary_fr = "Lexique en allemand de fabricants de briques établis, par pays, avec thèmes et remarques ; exclut les marques de copies."
+strengths_en = ["About 100 brands including European ones (Cobi, BlueBrixx, Modbrix, OpenBricks)", "Published 29 October 2025, updated 7 November 2025"]
+strengths_fr = ["Une centaine de marques dont européennes (Cobi, BlueBrixx, Modbrix, OpenBricks)", "Publié le 29/10/2025, mis à jour le 07/11/2025"]
+weaknesses_en = ["Short notes only; no update since 7 November 2025 observed"]
+weaknesses_fr = ["Notes courtes seulement ; aucune mise à jour depuis le 07/11/2025 observée"]
+status = "slow"
+last_activity = "2025-11-07"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.steine-kanal.de/klemmbaustein-hersteller-lexikon/"
+date = "2025-11-07"
+kind = "read"
+
+[[resource]]
+id = "spielzeug-fuchs-hersteller"
+name = "Klemmbaustein Hersteller (Spielzeug-Fuchs)"
+url = "https://spielzeug-fuchs.de/klemmbaustein-hersteller/"
+group = "brand-lists"
+covers = ["official", "alternative"]
+languages = ["de"]
+countries = ["international"]
+access = "free"
+summary_en = "German-language table of brick brands with set maker, brick maker, country and remarks."
+summary_fr = "Tableau en allemand de marques de briques avec fabricant des sets, fabricant des briques, pays et remarques."
+strengths_en = ["Brick-maker column helps identify shared factories"]
+strengths_fr = ["La colonne du fabricant des briques aide à repérer les usines communes"]
+weaknesses_en = ["Undated page"]
+weaknesses_fr = ["Page non datée"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://spielzeug-fuchs.de/klemmbaustein-hersteller/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "other-bricks-brands"
+name = "other-bricks.com brands"
+url = "https://other-bricks.com/en/brands/"
+group = "brand-lists"
+featured = true
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Brand pages comparing building block brands by origin, quality and collection size, with set counts."
+summary_fr = "Pages de marques comparant les marques de briques par origine, qualité et taille de gamme, avec nombre de sets."
+strengths_en = ["32 brands with set counts (CaDA 101, DK 129, Eikee 44)"]
+strengths_fr = ["32 marques avec nombre de sets (CaDA 101, DK 129, Eikee 44)"]
+weaknesses_en = ["Brand count smaller than German lists", "Update date not shown"]
+weaknesses_fr = ["Moins de marques que les listes allemandes", "Date de mise à jour non affichée"]
+size_en = "32 brands"
+size_fr = "32 marques"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://other-bricks.com/en/brands/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "baustein-info-welt-des-steins"
+name = "Welt des Steins (baustein.info)"
+url = "https://baustein.info/welt-des-steins/"
+group = "brand-lists"
+covers = ["alternative"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+summary_en = "German-language overview of brick brands that reached the German market, without claim to completeness."
+summary_fr = "Aperçu en allemand des marques de briques arrivées sur le marché allemand, sans prétention à l'exhaustivité."
+strengths_en = ["Lists each brand with at least one product on the German market"]
+strengths_fr = ["Liste chaque marque ayant au moins un produit sur le marché allemand"]
+weaknesses_en = ["Published 9 March 2022; not updated since as far as observed"]
+weaknesses_fr = ["Publié le 09/03/2022 ; sans mise à jour observée depuis"]
+status = "inactive"
+last_activity = "2022-03-09"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://baustein.info/welt-des-steins/"
+date = "2022-03-09"
+kind = "indexed"

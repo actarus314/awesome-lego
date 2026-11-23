@@ -1,0 +1,1101 @@
+[category]
+id = "community"
+name_en = "Communities and written media"
+name_fr = "Communautés et médias écrits"
+summary_en = "Forums, subreddits, wikis, news and review sites, deal communities and chat servers about official LEGO and alternative bricks."
+summary_fr = "Forums, sous-reddits, wikis, sites d'actualité et de tests, communautés de bons plans et serveurs de discussion sur LEGO officiel et les briques alternatives."
+
+[[category.groups]]
+id = "news-and-reviews"
+name_en = "News and reviews"
+name_fr = "Actualités et tests"
+
+[[category.groups]]
+id = "forums"
+name_en = "Forums"
+name_fr = "Forums"
+
+[[category.groups]]
+id = "reddit"
+name_en = "Reddit"
+name_fr = "Reddit"
+
+[[category.groups]]
+id = "wikis"
+name_en = "Wikis"
+name_fr = "Wikis"
+
+[[category.groups]]
+id = "deals"
+name_en = "Deals"
+name_fr = "Bons plans"
+
+[[category.groups]]
+id = "chat-and-social"
+name_en = "Chat and social"
+name_fr = "Discussion et réseaux"
+
+[[resource]]
+id = "hothbricks"
+name = "Hoth Bricks"
+url = "https://www.hothbricks.com/"
+group = "news-and-reviews"
+featured = true
+covers = ["official", "news"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "French-language LEGO news site: new sets, reviews, contests, rumours, deals and sets about to retire."
+summary_fr = "Site d'actualité LEGO en français : nouveautés, tests, concours, rumeurs, bons plans et sets bientôt retirés."
+strengths_en = ["Several articles per day (latest 23 November 2026)", "Sections for retiring sets, deals and best sellers", "RSS feed"]
+strengths_fr = ["Plusieurs articles par jour (dernier le 23 novembre 2026)", "Rubriques sets bientôt retirés, bons plans et meilleures ventes", "Flux RSS"]
+weaknesses_en = ["Official LEGO only; alternative brands not covered"]
+weaknesses_fr = ["LEGO officiel uniquement ; marques alternatives non couvertes"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://www.hothbricks.com/feed/"
+
+[[resource.sources]]
+url = "https://www.hothbricks.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.hothbricks.com/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "hellobricks"
+name = "HelloBricks"
+url = "https://www.hellobricks.com/"
+group = "news-and-reviews"
+covers = ["official", "news"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "French-language LEGO blog: news, reviews, rumours and custom builds, with a glossary of fan vocabulary."
+summary_fr = "Blog LEGO en français : actualité, tests, rumeurs et créations originales, avec un lexique du vocabulaire des fans."
+strengths_en = ["Active: last feed item 20 November 2026", "Monthly new-set lists and promotion coverage"]
+strengths_fr = ["Actif : dernier élément du flux le 20 novembre 2026", "Listes mensuelles de nouveautés et suivi des promotions"]
+weaknesses_en = ["Official LEGO only; alternative brands not covered"]
+weaknesses_fr = ["LEGO officiel uniquement ; marques alternatives non couvertes"]
+status = "active"
+last_activity = "2026-11-20"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://www.hellobricks.com/feed/"
+
+[[resource.sources]]
+url = "https://www.hellobricks.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.hellobricks.com/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickonaute"
+name = "Brickonaute"
+url = "https://brickonaute.fr/"
+group = "news-and-reviews"
+covers = ["official", "news"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "French-language LEGO blog with news, reader and staff reviews, deals and a small forum."
+summary_fr = "Blog LEGO en français avec actualités, tests de la rédaction et des lecteurs, promotions et un petit forum."
+strengths_en = ["Active blog: article of 21 November 2026; counts 2125 news items and 836 reviews", "Reader reviews and vintage mini-reviews"]
+strengths_fr = ["Blog actif : article du 21 novembre 2026 ; 2125 actualités et 836 tests comptés", "Tests de lecteurs et mini-critiques anciennes"]
+weaknesses_en = ["Forum modest: 564 topics and 6430 messages, latest posts 6 months old or more", "Alternative brands not covered in the pages read"]
+weaknesses_fr = ["Forum modeste : 564 sujets et 6430 messages, derniers messages vieux de 6 mois ou plus", "Marques alternatives absentes des pages lues"]
+size_en = "Forum: 564 topics, 6430 messages"
+size_fr = "Forum : 564 sujets, 6430 messages"
+status = "active"
+last_activity = "2026-11-21"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://brickonaute.fr/feed/"
+
+[[resource.sources]]
+url = "https://brickonaute.fr/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickonaute.fr/forum/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brothers-brick"
+name = "The Brothers Brick"
+url = "https://www.brothers-brick.com/"
+group = "news-and-reviews"
+featured = true
+covers = ["official", "news", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "LEGO news, reviews and fan creations blog; describes itself as the world's number one source."
+summary_fr = "Blog d'actualités, de tests et de créations de fans LEGO ; se présente comme la première source mondiale."
+strengths_en = ["Active: items of 20 and 22 November 2026", "Showcase of fan creations"]
+strengths_fr = ["Actif : éléments des 20 et 22 novembre 2026", "Mise en avant de créations de fans"]
+weaknesses_en = ["Review sets are supplied by the LEGO Group (disclosed)", "Alternative brands not covered"]
+weaknesses_fr = ["Sets de test fournis par le groupe LEGO (mention de transparence)", "Marques alternatives non couvertes"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://www.brothers-brick.com/feed/"
+
+[[resource.sources]]
+url = "https://www.brothers-brick.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.brothers-brick.com/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "new-elementary"
+name = "New Elementary"
+url = "https://www.newelementary.com/"
+group = "news-and-reviews"
+featured = true
+covers = ["official", "parts", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "LEGO.com affiliate link"
+business_model_fr = "Lien d'affiliation LEGO.com"
+summary_en = "Site on LEGO parts, sets and building techniques, with tracking of Pick a Brick prices and new parts in sets."
+summary_fr = "Site sur les pièces, sets et techniques de construction LEGO, avec suivi des prix Pick a Brick et des nouvelles pièces dans les sets."
+strengths_en = ["Post of 23 November 2026: Pick a Brick price change in Europe on 24 November 2026 (1604 elements, 20 to 50 percent lower)"]
+strengths_fr = ["Article du 23 novembre 2026 : changement des prix Pick a Brick en Europe le 24 novembre 2026 (1604 éléments, de 20 à 50 pour cent moins chers)"]
+weaknesses_en = ["Centred on parts and techniques rather than choosing a set"]
+weaknesses_fr = ["Centré sur les pièces et les techniques plutôt que sur le choix d'un set"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.newelementary.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "jays-brick-blog"
+name = "Jay's Brick Blog"
+url = "https://jaysbrickblog.com/"
+group = "news-and-reviews"
+covers = ["official", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Affiliate links and advertising"
+business_model_fr = "Liens d'affiliation et publicité"
+summary_en = "LEGO news, reviews and deals blog with monthly lists of retiring sets."
+summary_fr = "Blog d'actualités, de tests et de promotions LEGO avec des listes mensuelles de sets retirés."
+strengths_en = ["Several posts per day on the pages read", "Retiring-sets lists"]
+strengths_fr = ["Plusieurs articles par jour sur les pages lues", "Listes de sets retirés"]
+weaknesses_en = ["Alternative brands not covered", "Activity date taken from the page, no feed with dates"]
+weaknesses_fr = ["Marques alternatives non couvertes", "Date d'activité relevée sur la page, flux sans dates"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://jaysbrickblog.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brick-fanatics"
+name = "Brick Fanatics"
+url = "https://www.brickfanatics.com/"
+group = "news-and-reviews"
+covers = ["official", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Affiliate links and advertising"
+business_model_fr = "Liens d'affiliation et publicité"
+summary_en = "LEGO news, reviews and deals site relaying LEGO Insiders offers."
+summary_fr = "Site d'actualités, de tests et de bons plans LEGO qui relaie les offres LEGO Insiders."
+strengths_en = ["Several items per day (latest 23 November 2026)"]
+strengths_fr = ["Plusieurs éléments par jour (dernier le 23 novembre 2026)"]
+weaknesses_en = ["Many commercial banners", "Alternative brands mostly not covered (some Lumibricks and Mattel theme pages)", "Home page blocks automated readers with a challenge; read through another reader"]
+weaknesses_fr = ["Nombreux bandeaux commerciaux", "Marques alternatives peu couvertes (quelques pages Lumibricks et Mattel)", "La page d'accueil bloque les lecteurs automatisés par un défi ; lue par un autre lecteur"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+feed = "https://www.brickfanatics.com/feed/"
+
+[[resource.sources]]
+url = "https://www.brickfanatics.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "promobricks"
+name = "Promobricks"
+url = "https://www.promobricks.de/"
+group = "news-and-reviews"
+covers = ["official", "alternative", "news"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "Independent German-language online magazine on construction bricks: LEGO news, reviews and deals since 2013, extended to Mattel Brick Shop, Revell Brick System, Lumibricks and Bryx."
+summary_fr = "Magazine en ligne indépendant en allemand sur les briques de construction : actualités, tests et offres LEGO depuis 2013, élargi à Mattel Brick Shop, Revell Brick System, Lumibricks et Bryx."
+strengths_en = ["Several items per day (latest 23 November 2026)", "Event calendar, retiring-set lists, podcast"]
+strengths_fr = ["Plusieurs éléments par jour (dernier le 23 novembre 2026)", "Calendrier d'événements, listes de sets retirés, podcast"]
+weaknesses_en = ["Offer-oriented content; transparency note on commercial links", "Coverage of other brands recent and limited to a few"]
+weaknesses_fr = ["Contenu orienté offres ; mention de transparence sur les liens commerciaux", "Couverture des autres marques récente et limitée à quelques-unes"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://www.promobricks.de/feed/"
+
+[[resource.sources]]
+url = "https://www.promobricks.de/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.promobricks.de/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "zusammengebaut"
+name = "Zusammengebaut"
+url = "https://www.zusammengebaut.com/"
+group = "news-and-reviews"
+covers = ["official", "news"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+summary_en = "German-language LEGO news, new-release and review site; also organises a LEGO exhibition (Fritzlar, 21 and 22 November 2026)."
+summary_fr = "Site allemand d'actualités, de nouveautés et de tests LEGO ; organise aussi une exposition LEGO (Fritzlar, les 21 et 22 novembre 2026)."
+strengths_en = ["Several posts per week (latest 22 November 2026)", "Coverage of the November 2026 BrickLink outage"]
+strengths_fr = ["Plusieurs articles par semaine (dernier le 22 novembre 2026)", "Suivi de la panne de BrickLink de novembre 2026"]
+weaknesses_en = ["Alternative brands not covered", "Home page shows a browser check to automated readers; read through another reader"]
+weaknesses_fr = ["Marques alternatives non couvertes", "La page d'accueil affiche un contrôle de navigateur aux lecteurs automatisés ; lue par un autre lecteur"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.zusammengebaut.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "merlins-bricks"
+name = "Merlins Bricks (Merlins Steine)"
+url = "https://www.merlinsbricks.com/"
+group = "news-and-reviews"
+featured = true
+covers = ["official", "alternative", "data", "news"]
+languages = ["en", "de", "fr"]
+countries = ["international"]
+access = "free"
+business_model_en = "Affiliate links, supporter programme"
+business_model_fr = "Liens d'affiliation, programme de soutien"
+summary_en = "Independent platform of set reviews for all brands (German version merlinssteine.de): reviews archive, weekly podcast and SetDB, a database of more than 39000 sets."
+summary_fr = "Plateforme indépendante de tests de sets de toutes marques (version allemande merlinssteine.de) : archive de tests, podcast hebdomadaire et SetDB, base de plus de 39000 sets."
+strengths_en = ["Systematic reviews of alternative brands, with an archive by brand", "Review published 21 November 2026; transparency report page", "Interface in German, English and French"]
+strengths_fr = ["Tests systématiques des marques alternatives, avec une archive par marque", "Test publié le 21 novembre 2026 ; page de rapport de transparence", "Interface en allemand, anglais et français"]
+weaknesses_en = ["Affiliation links declared (BlueBrixx, Amazon and others)", "Content mostly German and English"]
+weaknesses_fr = ["Liens d'affiliation déclarés (BlueBrixx, Amazon et autres)", "Contenu surtout en allemand et en anglais"]
+size_en = "SetDB: more than 39000 sets"
+size_fr = "SetDB : plus de 39000 sets"
+status = "active"
+last_activity = "2026-11-21"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://www.merlinsbricks.com/index.xml"
+
+[[resource.sources]]
+url = "https://www.merlinsbricks.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.merlinssteine.de/communityreviews/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "klemmbausteinlyrik"
+name = "Klemmbausteinlyrik"
+url = "https://klemmbausteinlyrik.de/"
+group = "news-and-reviews"
+covers = ["official", "news"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+summary_en = "German-language blog and weekly podcast on LEGO from an adult fan's point of view, since 2011."
+summary_fr = "Blog et podcast hebdomadaire en allemand sur LEGO du point de vue d'un adulte amateur, depuis 2011."
+strengths_en = ["Running since 2011; feed item of 16 November 2026"]
+strengths_fr = ["Actif depuis 2011 ; élément du flux du 16 novembre 2026"]
+weaknesses_en = ["Partly audio format", "Alternative brands not covered in the pages read"]
+weaknesses_fr = ["Format en partie audio", "Marques alternatives absentes des pages lues"]
+status = "active"
+last_activity = "2026-11-16"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://klemmbausteinlyrik.de/feed/"
+
+[[resource.sources]]
+url = "https://klemmbausteinlyrik.de/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://klemmbausteinlyrik.de/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brick-news"
+name = "brick.news"
+url = "https://brick.news/"
+group = "news-and-reviews"
+covers = ["official", "alternative", "news", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "LEGO news, reviews and guides site with a searchable set database that includes third-party brands (Lumibricks, Mattel, Pantasy, COBI)."
+summary_fr = "Site d'actualités, de tests et de guides LEGO avec une base de sets consultable incluant des marques tierces (Lumibricks, Mattel, Pantasy, COBI)."
+strengths_en = ["Several items per day (latest 23 November 2026)", "Third-party set database"]
+strengths_fr = ["Plusieurs éléments par jour (dernier le 23 novembre 2026)", "Base de sets de marques tierces"]
+weaknesses_en = ["Little known; quality of reviews not assessed"]
+weaknesses_fr = ["Peu connu ; qualité des tests non évaluée"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+feed = "https://brick.news/feed/"
+
+[[resource.sources]]
+url = "https://brick.news/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brick.news/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "thebrickblogger"
+name = "theBrickBlogger"
+url = "https://thebrickblogger.com/"
+group = "news-and-reviews"
+covers = ["official", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "LEGO blog with picks, reviews and deals."
+summary_fr = "Blog LEGO avec sélections, avis et offres."
+strengths_en = ["Feed item of 21 November 2026"]
+strengths_fr = ["Élément du flux du 21 novembre 2026"]
+weaknesses_en = ["Deal-oriented"]
+weaknesses_fr = ["Orienté offres"]
+status = "active"
+last_activity = "2026-11-21"
+checked = "2026-11-23"
+confidence = "medium"
+feed = "https://thebrickblogger.com/feed/"
+
+[[resource.sources]]
+url = "https://thebrickblogger.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://thebrickblogger.com/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "the-brick-fan"
+name = "The Brick Fan"
+url = "https://www.thebrickfan.com/"
+group = "news-and-reviews"
+covers = ["official", "news"]
+languages = ["en"]
+countries = ["US"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "LEGO news, reviews and discussion site, with weekly tracking of LEGO Ideas projects."
+summary_fr = "Site d'actualités, de tests et de discussions LEGO, avec suivi hebdomadaire des projets LEGO Ideas."
+strengths_en = ["Several items per day (latest 23 November 2026)", "Large LEGO Ideas archive"]
+strengths_fr = ["Plusieurs éléments par jour (dernier le 23 novembre 2026)", "Large archive LEGO Ideas"]
+weaknesses_en = ["United States orientation: dollar prices, Amazon US links"]
+weaknesses_fr = ["Orientation États-Unis : prix en dollars, liens Amazon US"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://www.thebrickfan.com/feed/"
+
+[[resource.sources]]
+url = "https://www.thebrickfan.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.thebrickfan.com/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickreport-competitors"
+name = "BrickReport: LEGO competitors"
+url = "https://www.brickreport.io/blog/lego-competitors"
+group = "news-and-reviews"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "Guide comparing alternatives to LEGO (Mattel, Lumibricks, Pantasy, COBI, CaDA, Mould King and others) with strengths and trade-offs per brand."
+summary_fr = "Guide comparant les alternatives à LEGO (Mattel, Lumibricks, Pantasy, COBI, CaDA, Mould King et autres) avec avantages et contreparties par marque."
+strengths_en = ["Published 12 September 2026, updated 4 November 2026"]
+strengths_fr = ["Publié le 12 septembre 2026, mis à jour le 4 novembre 2026"]
+weaknesses_en = ["Affiliate links disclosed (Amazon Associate)", "Author signs with initials only"]
+weaknesses_fr = ["Liens d'affiliation déclarés (Amazon Associate)", "Auteur identifié par ses seules initiales"]
+status = "active"
+last_activity = "2026-11-04"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.brickreport.io/blog/lego-competitors"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "klemmbaustein-com"
+name = "Klemmbaustein.com"
+url = "https://klemmbaustein.com/"
+group = "news-and-reviews"
+covers = ["alternative", "official", "news"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "German-language guide and review site on construction bricks for adults (BlueBrixx, CaDA, COBI, Mould King, Pantasy), with product listings and long-form brand experience reports."
+summary_fr = "Site allemand de guides et de tests sur les briques de construction pour adultes (BlueBrixx, CaDA, COBI, Mould King, Pantasy), avec fiches produits et retours d'expérience détaillés par marque."
+strengths_en = ["Brand-by-brand reports, e.g. COBI after four years (13 November 2025)", "Feed item of 23 November 2026"]
+strengths_fr = ["Retours par marque, par exemple COBI après quatre ans (13 novembre 2025)", "Élément du flux du 23 novembre 2026"]
+weaknesses_en = ["Pages are largely commercial product listings with affiliate links", "Operator not identified in the pages read"]
+weaknesses_fr = ["Pages en grande partie constituées de fiches produits avec liens d'affiliation", "Exploitant non identifié dans les pages lues"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+feed = "https://klemmbaustein.com/feed/"
+
+[[resource.sources]]
+url = "https://klemmbaustein.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://klemmbaustein.com/cobi-erfahrungen/"
+date = "2025-11-13"
+kind = "indexed"
+
+[[resource]]
+id = "eurobricks"
+name = "Eurobricks Forums"
+url = "https://www.eurobricks.com/forum/"
+group = "forums"
+featured = true
+covers = ["official", "alternative", "custom-builds", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+business_model_en = "Free; registration required to post"
+business_model_fr = "Gratuit ; inscription requise pour écrire"
+summary_en = "General English-language forum for adult fans of LEGO, with sections on custom builds, reviews and marketplace, and a section on alternative brands."
+summary_fr = "Forum anglophone généraliste des fans adultes de LEGO, avec des rubriques sur les créations originales, les tests et les échanges, et une rubrique sur les marques alternatives."
+strengths_en = ["Large archive of discussions and builds; posts from the previous day on the portal", "Dedicated section for alternative brands (reported, not re-read)"]
+strengths_fr = ["Large archive de discussions et de réalisations ; messages de la veille sur le portail", "Rubrique dédiée aux marques alternatives (signalée, non relue)"]
+weaknesses_en = ["Alternative-brand section is small compared with the rest of the forum (earlier count: about 1.2 thousand messages)", "Automated readers meet an anti-robot challenge on the home page"]
+weaknesses_fr = ["Rubrique des marques alternatives réduite par rapport au reste du forum (relevé antérieur : environ 1.2 millier de messages)", "Les lecteurs automatisés rencontrent un défi anti-robot sur la page d'accueil"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.eurobricks.com/forum/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "freelug"
+name = "FreeLUG"
+url = "https://www.freelug.org/"
+group = "forums"
+featured = true
+covers = ["official", "custom-builds"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Non-profit association; free reading"
+business_model_fr = "Association à but non lucratif ; lecture libre"
+summary_en = "French national association of LEGO fans since 2003, with a Discourse forum, exhibitions and meeting reports."
+summary_fr = "Association nationale française de passionnés de LEGO depuis 2003, avec un forum Discourse, des expositions et des comptes rendus de rencontres."
+strengths_en = ["Forum with a category for box reviews, creations, CAD and current promotions", "Exhibitions and regional network of members"]
+strengths_fr = ["Forum avec une catégorie pour les tests de boîtes, créations, CAO et promotions en cours", "Expositions et réseau régional de membres"]
+weaknesses_en = ["Centred on creations and exhibitions rather than choosing a set", "Alternative brands not covered in the categories read", "Main site protected by an anti-robot service; only the forum was read directly"]
+weaknesses_fr = ["Centré sur les créations et les expositions plutôt que sur le choix d'un set", "Marques alternatives absentes des catégories lues", "Site principal protégé par un service anti-robot ; seul le forum a été lu directement"]
+size_en = "About 116 topics across three categories (forum, 23 November 2026)"
+size_fr = "Environ 116 sujets répartis en trois catégories (forum, 23 novembre 2026)"
+status = "active"
+last_activity = "2026-11-12"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://forum.freelug.org/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.freelug.org/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "brickpirate"
+name = "BrickPirate"
+url = "https://www.brickpirate.net/"
+group = "forums"
+covers = ["official", "custom-builds"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free-account"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "French-language LEGO blog and forum with a gallery of member creations."
+summary_fr = "Blog et forum francophones sur LEGO avec une galerie de créations de membres."
+strengths_en = ["Forum back online since 9 November 2026 at a new address (/new_forum)", "Long-running site with a RSS feed"]
+strengths_fr = ["Forum de nouveau en ligne depuis le 9 novembre 2026 à une nouvelle adresse (/new_forum)", "Site ancien avec flux RSS"]
+weaknesses_en = ["Blog posts are rare: previous article dated 6 June 2026", "Forum size not published"]
+weaknesses_fr = ["Articles de blog rares : article précédent daté du 6 juin 2026", "Taille du forum non publiée"]
+status = "slow"
+last_activity = "2026-11-09"
+checked = "2026-11-23"
+confidence = "medium"
+feed = "https://www.brickpirate.net/feed/"
+
+[[resource.sources]]
+url = "https://www.brickpirate.net/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "1000steine-forum"
+name = "1000steine.de forum"
+url = "https://www.1000steine.de/de/gemeinschaft/forum/"
+group = "forums"
+covers = ["official", "alternative", "second-hand", "custom-builds", "parts"]
+languages = ["de"]
+countries = ["DE"]
+access = "free-account"
+business_model_en = "Free; paid supporter tier"
+business_model_fr = "Gratuit ; formule payante de soutien"
+summary_en = "Independent German-language LEGO fan platform: forum, chat, classifieds and galleries."
+summary_fr = "Plateforme germanophone indépendante de fans de LEGO : forum, chat, petites annonces et galeries."
+strengths_en = ["Large forum: about 228856 entries in 36325 topics in the general section", "Section for other manufacturers and clones (Cobi, Sluban, Enlighten, Xingbao): 1094 entries in 107 topics", "Posts dated 15 November 2026 and the previous day"]
+strengths_fr = ["Grand forum : environ 228856 messages dans 36325 sujets dans la section générale", "Rubrique des autres fabricants et des clones (Cobi, Sluban, Enlighten, Xingbao) : 1094 messages dans 107 sujets", "Messages datés du 15 novembre 2026 et de la veille"]
+weaknesses_en = ["Forum is centred on official LEGO; the alternative-brand section is small and little active (latest post seen 25 July 2026)", "Some sections need a paid or free account to read"]
+weaknesses_fr = ["Forum centré sur LEGO officiel ; la rubrique des marques alternatives est petite et peu active (dernier message vu le 25 juillet 2026)", "Certaines rubriques exigent un compte, gratuit ou payant"]
+size_en = "228856 entries in 36325 topics (general section)"
+size_fr = "228856 messages dans 36325 sujets (section générale)"
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.1000steine.de/de/gemeinschaft/forum/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "hardware-fr-compatible-bricks"
+name = "HardWare.fr: compatible bricks topic"
+url = "https://forum.hardware.fr/hfr/Discussions/Loisirs/briques-construction-compatibles-sujet_119659_1.htm"
+group = "forums"
+featured = true
+covers = ["alternative"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Long-running French forum topic on LEGO-compatible brick brands (started 16 December 2021), with a maintained introduction on brands, compatibility and after-sales service."
+summary_fr = "Long sujet de forum français sur les marques de briques compatibles LEGO (ouvert le 16 décembre 2021), avec une introduction tenue à jour sur les marques, la compatibilité et le service après-vente."
+strengths_en = ["32 pages of discussion; posts dated 6 November 2026", "Experience reports on Mould King, CaDA, BlueBrixx and others in French"]
+strengths_fr = ["32 pages de discussion ; messages datés du 6 novembre 2026", "Retours d'expérience sur Mould King, CaDA, BlueBrixx et d'autres, en français"]
+weaknesses_en = ["Single topic inside a general hardware forum, not a dedicated site", "Reading is linear; no index by brand"]
+weaknesses_fr = ["Sujet unique dans un forum généraliste de matériel informatique, pas un site dédié", "Lecture linéaire ; pas d'index par marque"]
+status = "active"
+last_activity = "2026-11-06"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://forum.hardware.fr/hfr/Discussions/Loisirs/briques-construction-compatibles-sujet_119659_1.htm"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://forum.hardware.fr/hfr/Discussions/Loisirs/briques-construction-compatibles-sujet_119659_32.htm"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "reddit-lego"
+name = "r/lego"
+url = "https://www.reddit.com/r/lego/"
+group = "reddit"
+covers = ["official", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, content not read directly"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, contenu non lu directement"
+summary_en = "General English-language subreddit on LEGO: news, photos and discussion; sales and trades are sent to other subreddits."
+summary_fr = "Sous-reddit généraliste en anglais sur LEGO : actualités, photos et discussions ; ventes et échanges renvoyés vers d'autres sous-reddits."
+strengths_en = ["Largest LEGO audience on Reddit (size not verified)"]
+strengths_fr = ["Plus grande audience LEGO sur Reddit (taille non vérifiée)"]
+weaknesses_en = ["Alternative brands off topic", "Not read directly; activity and size unverified"]
+weaknesses_fr = ["Marques alternatives hors sujet", "Non lu directement ; activité et taille non vérifiées"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+subreddit = "lego"
+
+[[resource.sources]]
+url = "https://www.reddit.com/r/lego/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "reddit-legodeal"
+name = "r/legodeal"
+url = "https://www.reddit.com/r/legodeal/"
+group = "reddit"
+covers = ["official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, content not read directly"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, contenu non lu directement"
+summary_en = "Subreddit for submitting LEGO deals with a weekly discussion thread."
+summary_fr = "Sous-reddit de soumission de promotions LEGO avec un fil de discussion hebdomadaire."
+strengths_en = ["Weekly thread (latest reported 23 November 2026 in the first search)"]
+strengths_fr = ["Fil hebdomadaire (dernier signalé le 23 novembre 2026 lors de la première recherche)"]
+weaknesses_en = ["United States oriented (Walmart, Target, Amazon US): little use for France", "Not read directly"]
+weaknesses_fr = ["Orienté États-Unis (Walmart, Target, Amazon US) : peu utile pour la France", "Non lu directement"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+subreddit = "legodeal"
+
+[[resource.sources]]
+url = "https://www.reddit.com/r/legodeal/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "reddit-legoleak"
+name = "r/Legoleak"
+url = "https://www.reddit.com/r/Legoleak/"
+group = "reddit"
+covers = ["official", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, content not read directly"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, contenu non lu directement"
+summary_en = "Subreddit for leaked images and information on upcoming LEGO sets."
+summary_fr = "Sous-reddit de fuites d'images et d'informations sur les prochains sets LEGO."
+strengths_en = ["Early information on upcoming sets"]
+strengths_fr = ["Informations précoces sur les prochains sets"]
+weaknesses_en = ["Reliability of leaks varies", "Not read directly; size and activity unverified"]
+weaknesses_fr = ["Fiabilité variable des fuites", "Non lu directement ; taille et activité non vérifiées"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+subreddit = "Legoleak"
+
+[[resource.sources]]
+url = "https://www.reddit.com/r/Legoleak/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "reddit-lepin"
+name = "r/lepin"
+url = "https://www.reddit.com/r/lepin/"
+group = "reddit"
+covers = ["alternative", "minifigures"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, content not read directly"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, contenu non lu directement"
+summary_en = "Unofficial subreddit on alternative building bricks and minifigures, with guides and a shop-rating thread in the sidebar."
+summary_fr = "Sous-reddit non officiel sur les briques et minifigurines alternatives, avec des guides et un fil de notation des boutiques dans la barre latérale."
+strengths_en = ["Main alternative-brick community indexed: about 128 thousand members, created 11 September 2016", "About 406 posts in October 2026 (third-party statistics)"]
+strengths_fr = ["Principale communauté de briques alternatives indexée : environ 128 mille membres, créée le 11 septembre 2016", "Environ 406 messages en octobre 2026 (statistiques tierces)"]
+weaknesses_en = ["Opinions mixed; activity down 43 percent against October 2025 (third-party statistics)", "Figures from third-party trackers, not read from Reddit"]
+weaknesses_fr = ["Avis hétérogènes ; activité en baisse de 43 pour cent par rapport à octobre 2025 (statistiques tierces)", "Chiffres de sites de suivi tiers, non relevés sur Reddit"]
+size_en = "About 128 thousand members (third-party tracker, November 2026)"
+size_fr = "Environ 128 mille membres (site de suivi tiers, novembre 2026)"
+status = "active"
+last_activity = "2026-10-31"
+checked = "2026-11-23"
+confidence = "medium"
+subreddit = "lepin"
+
+[[resource.sources]]
+url = "https://kissmypost.com/subreddit/lepin"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource.sources]]
+url = "https://redditli.st/subreddit/lepin"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "reddit-mouldking"
+name = "r/MouldKing"
+url = "https://www.reddit.com/r/MouldKing/"
+group = "reddit"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, content not read directly"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, contenu non lu directement"
+summary_en = "Subreddit for Mould King fans, open to CaDA, Happy Build and other brands."
+summary_fr = "Sous-reddit des fans de Mould King, ouvert à CaDA, Happy Build et d'autres marques."
+strengths_en = ["Dedicated to one of the largest alternative brands"]
+strengths_fr = ["Dédié à l'une des principales marques alternatives"]
+weaknesses_en = ["Size not published; threads seen date from 2023; activity unverified"]
+weaknesses_fr = ["Taille non publiée ; fils vus datant de 2023 ; activité non vérifiée"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+subreddit = "MouldKing"
+
+[[resource.sources]]
+url = "https://www.reddit.com/r/MouldKing/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "reddit-altbricks"
+name = "r/ALTbricks"
+url = "https://www.reddit.com/r/ALTbricks/"
+group = "reddit"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, content not read directly"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, contenu non lu directement"
+summary_en = "Subreddit on buying, collecting and building alternative bricks (Mould King, Sluban, Reobrix, CaDA, Pantasy), moderated by a YouTube reviewer."
+summary_fr = "Sous-reddit sur l'achat, la collection et la construction de briques alternatives (Mould King, Sluban, Reobrix, CaDA, Pantasy), modéré par un créateur de vidéos."
+strengths_en = ["Only alternative brands"]
+strengths_fr = ["Uniquement des marques alternatives"]
+weaknesses_en = ["Moderated by a video reviewer with a commercial interest in the topic", "Size and activity not verified"]
+weaknesses_fr = ["Modéré par un créateur de vidéos ayant un intérêt dans le sujet", "Taille et activité non vérifiées"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+subreddit = "ALTbricks"
+
+[[resource.sources]]
+url = "https://www.reddit.com/r/ALTbricks/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "reddit-klemmbausteine"
+name = "r/klemmbausteine"
+url = "https://www.reddit.com/r/klemmbausteine/"
+group = "reddit"
+covers = ["official", "alternative"]
+languages = ["de"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, content not read directly"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, contenu non lu directement"
+summary_en = "German-language subreddit on construction bricks of all brands; Lepin-type counterfeits banned."
+summary_fr = "Sous-reddit en allemand sur les briques de construction de toutes marques ; contrefaçons de type Lepin interdites."
+strengths_en = ["Comparison threads on manufacturers (Cobi, CaDA, Mould King, BlueBrixx)"]
+strengths_fr = ["Fils comparatifs sur les fabricants (Cobi, CaDA, Mould King, BlueBrixx)"]
+weaknesses_en = ["Small community; an old count showed 982 members; current size unknown"]
+weaknesses_fr = ["Petite communauté ; un ancien relevé indiquait 982 membres ; taille actuelle inconnue"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+subreddit = "klemmbausteine"
+
+[[resource.sources]]
+url = "https://www.reddit.com/r/klemmbausteine/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "reddit-legofrance"
+name = "r/LegoFrance"
+url = "https://www.reddit.com/r/LegoFrance/"
+group = "reddit"
+covers = ["official"]
+languages = ["fr"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, content not read directly"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, contenu non lu directement"
+summary_en = "French-language LEGO subreddit."
+summary_fr = "Sous-reddit LEGO en français."
+strengths_en = ["Only French-language LEGO subreddit found"]
+strengths_fr = ["Seul sous-reddit LEGO francophone repéré"]
+weaknesses_en = ["Size and activity not established"]
+weaknesses_fr = ["Taille et activité non établies"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+subreddit = "LegoFrance"
+
+[[resource.sources]]
+url = "https://www.reddit.com/r/LegoFrance/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "reddit-buildingblocks"
+name = "r/buildingblocks"
+url = "https://www.reddit.com/r/buildingblocks/"
+group = "reddit"
+covers = ["official", "alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, content not read directly"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, contenu non lu directement"
+summary_en = "Subreddit for building blocks of all brands, LEGO and alternatives."
+summary_fr = "Sous-reddit sur les briques de construction de toutes marques, LEGO et alternatives."
+strengths_en = ["About 21 thousand members and 273 posts in October 2026 (third-party tracker)"]
+strengths_fr = ["Environ 21 mille membres et 273 messages en octobre 2026 (site de suivi tiers)"]
+weaknesses_en = ["Figures from a third-party tracker, not read from Reddit"]
+weaknesses_fr = ["Chiffres d'un site de suivi tiers, non relevés sur Reddit"]
+size_en = "About 21 thousand members (third-party tracker, November 2026)"
+size_fr = "Environ 21 mille membres (site de suivi tiers, novembre 2026)"
+status = "active"
+last_activity = "2026-10-31"
+checked = "2026-11-23"
+confidence = "low"
+subreddit = "buildingblocks"
+
+[[resource.sources]]
+url = "https://kissmypost.com/subreddit/buildingblocks"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "brickipedia"
+name = "Brickipedia"
+url = "https://en.brickimedia.org/wiki/Main_Page"
+group = "wikis"
+featured = true
+covers = ["official", "data", "instructions"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; content under Creative Commons Attribution-ShareAlike"
+business_model_fr = "Gratuit ; contenu sous licence Creative Commons Attribution - Partage dans les mêmes conditions"
+summary_en = "Collaborative encyclopedia of official LEGO: sets, themes, minifigures and history; founded 29 January 2006."
+summary_fr = "Encyclopédie collaborative de LEGO officiel : sets, thèmes, minifigurines et histoire ; fondée le 29 janvier 2006."
+strengths_en = ["30157 content pages and 108324 uploaded files", "Recent changes on 23 November 2026"]
+strengths_fr = ["30157 pages de contenu et 108324 fichiers téléversés", "Modifications récentes le 23 novembre 2026"]
+weaknesses_en = ["Only 4 users active in the last 30 days", "A second wiki of the same origin exists on Fandom", "No alternative brands"]
+weaknesses_fr = ["Seulement 4 utilisateurs actifs au cours des 30 derniers jours", "Un second wiki de même origine existe sur Fandom", "Aucune marque alternative"]
+size_en = "30157 articles"
+size_fr = "30157 articles"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://en.brickimedia.org/w/index.php?title=Special:RecentChanges&feed=atom"
+
+[[resource.sources]]
+url = "https://en.brickimedia.org/wiki/Special:Statistics"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://en.brickimedia.org/wiki/Brickipedia:About"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "dealabs-lego"
+name = "Dealabs: LEGO group"
+url = "https://www.dealabs.com/groupe/lego"
+group = "deals"
+featured = true
+covers = ["official"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "French deal community: LEGO promotions posted, voted and commented by members, from LEGO.com and French retailers."
+summary_fr = "Communauté française de bons plans : promotions LEGO publiées, votées et commentées par les membres, chez LEGO.com et les enseignes françaises."
+strengths_en = ["Posts and discussions dated 23 November 2026 (Black Week)", "RSS feed per group"]
+strengths_fr = ["Offres et discussions datées du 23 novembre 2026 (Black Week)", "Flux RSS par groupe"]
+weaknesses_en = ["Individual offers only, no systematic comparison", "Monetised links (disclosed by the site)", "Few alternative-brand deals"]
+weaknesses_fr = ["Offres ponctuelles, pas de comparaison systématique", "Liens monétisés (signalés par le site)", "Peu d'offres de marques alternatives"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://www.dealabs.com/rss/groupe/lego"
+
+[[resource.sources]]
+url = "https://www.dealabs.com/groupe/lego"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.dealabs.com/rss/groupe/lego-commentes"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "mydealz-lego"
+name = "mydealz: LEGO group"
+url = "https://www.mydealz.de/gruppe/lego"
+group = "deals"
+covers = ["official", "alternative"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "German deal community: LEGO offers posted and commented by members (Amazon, Smyths Toys, Alternate and others)."
+summary_fr = "Communauté allemande de bons plans : offres LEGO publiées et commentées par les membres (Amazon, Smyths Toys, Alternate et autres)."
+strengths_en = ["Posts dated 23 November 2026 in the group feed", "RSS feed"]
+strengths_fr = ["Offres datées du 23 novembre 2026 dans le flux du groupe", "Flux RSS"]
+weaknesses_en = ["Individual offers only; no price history across retailers", "Commission links (disclosed by the site)"]
+weaknesses_fr = ["Offres ponctuelles ; pas d'historique de prix entre enseignes", "Liens à commission (signalés par le site)"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://www.mydealz.de/rss/gruppe/lego"
+
+[[resource.sources]]
+url = "https://www.mydealz.de/gruppe/lego"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.mydealz.de/rss/gruppe/lego"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickset-discord"
+name = "Brickset forum (Discord)"
+url = "https://brickset.com/forum"
+group = "chat-and-social"
+covers = ["official"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "The Brickset forum is hosted on Discord, with a Facebook group, for adult fans of LEGO."
+summary_fr = "Le forum de Brickset est hébergé sur Discord, avec un groupe Facebook, pour les fans adultes de LEGO."
+strengths_en = ["Official forum of the Brickset database"]
+strengths_fr = ["Forum officiel de la base de données Brickset"]
+weaknesses_en = ["Not indexable and unreadable without an account; no archive", "Size and activity not published", "No alternative-brand coverage announced"]
+weaknesses_fr = ["Non indexable et illisible sans compte ; pas d'archive", "Taille et activité non publiées", "Aucune couverture des marques alternatives annoncée"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://brickset.com/forum"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "merlins-discord"
+name = "Merlins Steine community (Discord)"
+url = "https://www.merlinssteine.de/communityreviews/"
+group = "chat-and-social"
+covers = ["official", "alternative", "instructions"]
+languages = ["de"]
+countries = ["DE"]
+access = "free-account"
+business_model_en = "Free; affiliation links on the site"
+business_model_fr = "Gratuit ; liens d'affiliation sur le site"
+summary_en = "Discord community around BlueBrixx, Cobi, CaDA, LEGO, Wange and Xingbao: experience reports, build help, searches for sets, parts and instructions."
+summary_fr = "Communauté Discord autour de BlueBrixx, Cobi, CaDA, LEGO, Wange et Xingbao : retours d'expérience, aide au montage, recherche de sets, de pièces et d'instructions."
+strengths_en = ["Explicit coverage of alternative brands", "First-hand community reviews published on the site (feed item of 16 October 2026)"]
+strengths_fr = ["Couverture explicite des marques alternatives", "Tests communautaires de première main publiés sur le site (élément du flux du 16 octobre 2026)"]
+weaknesses_en = ["Discord: not indexable, account required; size not published"]
+weaknesses_fr = ["Discord : non indexable, compte requis ; taille non publiée"]
+status = "active"
+last_activity = "2026-10-16"
+checked = "2026-11-23"
+confidence = "medium"
+feed = "https://www.merlinssteine.de/communityreviews/index.xml"
+
+[[resource.sources]]
+url = "https://www.merlinssteine.de/communityreviews/"
+date = "2026-11-23"
+kind = "read"

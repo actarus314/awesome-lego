@@ -1,0 +1,979 @@
+[category]
+id = "brands"
+name_en = "Brands and manufacturers"
+name_fr = "Marques et fabricants"
+summary_en = "Official LEGO, European and Chinese alternative brands, toy-industry entrants, brick manufacturers and other building formats, with country and brick maker where established."
+summary_fr = "LEGO officiel, marques alternatives européennes et chinoises, groupes de jouets, fabricants de briques et autres formats de construction, avec pays et fabricant des briques lorsqu'il est établi."
+
+[[category.groups]]
+id = "official-lego"
+name_en = "Official LEGO"
+name_fr = "LEGO officiel"
+
+[[category.groups]]
+id = "european-alternatives"
+name_en = "European alternatives"
+name_fr = "Alternatives européennes"
+
+[[category.groups]]
+id = "chinese-alternatives"
+name_en = "Chinese alternatives"
+name_fr = "Alternatives chinoises"
+
+[[category.groups]]
+id = "toy-industry-brands"
+name_en = "Toy and model-kit companies"
+name_fr = "Groupes de jouets et de maquettes"
+
+[[category.groups]]
+id = "manufacturers"
+name_en = "Brick manufacturers and suppliers"
+name_fr = "Fabricants et fournisseurs de briques"
+
+[[category.groups]]
+id = "other-formats"
+name_en = "Other formats"
+name_fr = "Autres formats"
+
+[[resource]]
+id = "lego"
+name = "LEGO"
+url = "https://www.lego.com/fr-fr"
+group = "official-lego"
+featured = true
+covers = ["official", "minifigures"]
+languages = ["fr", "en", "de"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Official online shop with a loyalty programme (LEGO Insiders)"
+business_model_fr = "Boutique en ligne officielle avec programme de fidélité (LEGO Insiders)"
+summary_en = "Denmark. Original maker of the 8 mm stud brick system, with an adult range (Icons, Technic, Botanicals, Art) and the largest licence portfolio. The French shop lists adult sets and a LEGO Ideas Godzilla set due on 27 November 2026."
+summary_fr = "Danemark. Fabricant d'origine du système de briques à tenons de 8 mm, avec une gamme adulte (Icons, Technic, Botanicals, Art) et le plus grand portefeuille de licences. La boutique française affiche des sets adultes et un set LEGO Ideas Godzilla annoncé pour le 27 novembre 2026."
+strengths_en = ["Consistent parts and mature instructions, replacement-part service (Brickfact, 2026-08-24)", "Licences include Star Wars, Marvel, DC, Harry Potter, Disney, Minecraft (BrickReport, 2026-10-08)", "Member prices valid 21 to 26 November 2026 on the French shop"]
+strengths_fr = ["Régularité des pièces, notices abouties, service de remplacement de pièces (Brickfact, 24/08/2026)", "Licences : Star Wars, Marvel, DC, Harry Potter, Disney, Minecraft (BrickReport, 08/10/2026)", "Prix membres valables du 21 au 26 novembre 2026 sur la boutique française"]
+weaknesses_en = ["Higher price than alternatives for a comparable piece count (Brickfact, 2026-08-24)", "Licences change every year (BrickReport, 2026-10-08)"]
+weaknesses_fr = ["Prix plus élevé que les alternatives pour un nombre de pièces équivalent (Brickfact, 24/08/2026)", "Les licences changent chaque année (BrickReport, 08/10/2026)"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lego.com/fr-fr"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickfact.com/fr-fr/blog/briques/reobrix-vs-lego"
+date = "2026-08-24"
+kind = "third-party"
+
+[[resource.sources]]
+url = "https://www.brickreport.io/blog/lego-alternatives-licensed-themes"
+date = "2026-11-10"
+kind = "third-party"
+
+[[resource]]
+id = "cobi"
+name = "COBI"
+url = "https://cobi.com/fr-fr"
+group = "european-alternatives"
+featured = true
+covers = ["alternative"]
+languages = ["fr", "en", "pl", "de"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Official online shop (COBI Europe)"
+business_model_fr = "Boutique en ligne officielle (COBI Europe)"
+summary_en = "Poland. Maker of compatible bricks with its own factory in Mielec, specialised in historical and military models (tanks, aircraft, ships) and licensed vehicles. The European shop is active with a French interface and prices in euros."
+summary_fr = "Pologne. Fabricant de briques compatibles avec usine propre à Mielec, spécialisé dans les modèles historiques et militaires (chars, avions, navires) et les véhicules sous licence. La boutique européenne est active, en français et en euros."
+strengths_en = ["Own bricks, produced in the European Union; most parts printed, stickers only in exceptions (Bricktimer, 2026-07-08)", "Firm clutch power gives stable display models (Galaxus, 2026-03-31)", "Licences include Boeing, Lockheed Martin, Maserati, Opel (Galaxus, 2026-03-31)"]
+strengths_fr = ["Briques propres, produites dans l'Union européenne ; la plupart des pièces imprimées, autocollants seulement en exception (Bricktimer, 08/07/2026)", "Serrage ferme, modèles d'exposition stables (Galaxus, 31/03/2026)", "Licences : Boeing, Lockheed Martin, Maserati, Opel (Galaxus, 31/03/2026)"]
+weaknesses_en = ["Firm clutch power makes corrections tedious (Bricktimer, 2026-07-08)", "Narrow range outside military and historical vehicles (BrickReport, 2026-09-12)"]
+weaknesses_fr = ["Serrage ferme, corrections laborieuses (Bricktimer, 08/07/2026)", "Choix étroit hors militaire et véhicules historiques (BrickReport, 12/09/2026)"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://cobi.com/fr-fr"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://bricktimer.de/blogs/news-aus-der-werkstatt/klemmbaustein-marken-vergleich"
+date = "2026-07-08"
+kind = "third-party"
+
+[[resource.sources]]
+url = "https://www.galaxus.de/de/page/klemmbausteine-fuer-erwachsene-die-spannendsten-alternativen-zu-lego-41668"
+date = "2026-03-31"
+kind = "third-party"
+
+[[resource]]
+id = "bluebrixx"
+name = "BlueBrixx"
+url = "https://www.bluebrixx.com/fr/"
+group = "european-alternatives"
+featured = true
+covers = ["alternative", "parts"]
+languages = ["fr", "de", "en"]
+countries = ["FR", "DE"]
+ships_to_france = true
+access = "free"
+business_model_en = "Own brand and online shop; also resells sets of other brands"
+business_model_fr = "Marque propre et boutique en ligne ; revend aussi des sets d'autres marques"
+summary_en = "Germany (BB Service GmbH). Brand and shop for architecture, trains, medieval, vehicles and licences (BlueBrixx Pro for adults). Bricks come from several Chinese manufacturers; design and distribution are in Germany."
+summary_fr = "Allemagne (BB Service GmbH). Marque et boutique : architecture, trains, médiéval, véhicules et licences (BlueBrixx Pro pour adultes). Les briques viennent de plusieurs fabricants chinois ; conception et distribution en Allemagne."
+strengths_en = ["Delivery to France 9.95 €, 3 to 5 working days, payment by Carte Bancaire (shipping page)", "Licences include Stargate; new Stargate Advent calendar listed on the French home page", "Delivers to all European Union countries (help centre, 2026-10-14)"]
+strengths_fr = ["Livraison en France 9.95 €, 3 à 5 jours ouvrés, paiement par Carte Bancaire (page livraison)", "Licences dont Stargate ; calendrier de l'Avent Stargate en vitrine sur la page d'accueil française", "Livraison dans tous les pays de l'Union européenne (centre d'aide, 14/10/2026)"]
+weaknesses_en = ["Bricks from several sources: irregular shades and clutch power possible (GameStar, 2026-11-20)", "Free-shipping threshold unclear: 99 € on the French shipping page, 199 € in the help centre for Germany; to check at checkout", "Sets can leave the range without notice after licence or legal disputes"]
+weaknesses_fr = ["Briques de sources multiples : teintes et serrage parfois irréguliers (GameStar, 20/11/2026)", "Seuil de livraison offerte flou : 99 € sur la page de livraison française, 199 € dans le centre d'aide pour l'Allemagne ; à vérifier au paiement", "Des sets peuvent quitter la gamme sans préavis après un litige de licence ou juridique"]
+status = "active"
+last_activity = "2026-10-14"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.bluebrixx.com/fr/informations-legales/livraison-et-paiement/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://bluebrixx.zendesk.com/hc/de/articles/36981182189981-Versand-Lieferzeiten-und-Sendungsverfolgung"
+date = "2026-10-14"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.gamestar.de/artikel/beste-klemmbausteine-2026-lego-bluebrixx-lumibricks-alternativen,3451687.html"
+date = "2026-11-20"
+kind = "third-party"
+
+[[resource]]
+id = "brixies"
+name = "Brixies"
+url = "https://brixies.de/"
+group = "european-alternatives"
+covers = ["alternative"]
+languages = ["de", "en"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Official online shop"
+business_model_fr = "Boutique en ligne officielle"
+summary_en = "Germany. 4 mm micro-bricks (monuments, postcards) and a Plus range compatible with LEGO (licensed Fendt, Claas and Deutz-Fahr tractors, themed worlds). A Black Week sale runs 23 to 30 November 2026."
+summary_fr = "Allemagne. Micro-briques de 4 mm (monuments, cartes postales) et gamme Plus compatible LEGO (tracteurs sous licence Fendt, Claas, Deutz-Fahr, mondes thématiques). Une vente Black Week court du 23 au 30 novembre 2026."
+strengths_en = ["5-year warranty and free replacement parts (source file, official page)", "Licensed agricultural vehicles rarely found elsewhere"]
+strengths_fr = ["Garantie de 5 ans et pièces de rechange gratuites (fiche source, page officielle)", "Véhicules agricoles sous licence rares ailleurs"]
+weaknesses_en = ["Delivery to France not verified; free shipping announced for Germany only", "Brick manufacturer not established"]
+weaknesses_fr = ["Livraison en France non vérifiée ; livraison gratuite annoncée pour l'Allemagne seulement", "Fabricant des briques non établi"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brixies.de/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "bryx"
+name = "BRYX"
+url = "https://bryxtoys.com/"
+group = "european-alternatives"
+covers = ["alternative"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Own brand, online shop"
+business_model_fr = "Marque propre, boutique en ligne"
+summary_en = "Germany (Berlin). Compatible brand with official licences from football clubs (21 stadium sets, 298 to 6162 bricks), landmarks and about 400 single parts sold individually. Sets are designed in Berlin; logos are printed, not stuck."
+summary_fr = "Allemagne (Berlin). Marque compatible avec licences officielles de clubs de football (21 stades, 298 à 6162 briques), monuments et environ 400 pièces vendues à l'unité. Sets conçus à Berlin ; logos imprimés et non collés."
+strengths_en = ["Licences from German football clubs", "Printed parts instead of stickers", "Single bricks available from one piece"]
+strengths_fr = ["Licences de clubs de football allemands", "Pièces imprimées plutôt qu'autocollants", "Briques vendues à l'unité"]
+weaknesses_en = ["Shipping from Germany; delivery to France not verified", "Brick manufacturer not established; free-shipping threshold shown as 79 € and 100 € on different pages"]
+weaknesses_fr = ["Expédition depuis l'Allemagne ; livraison en France non vérifiée", "Fabricant des briques non établi ; seuil de livraison offerte affiché à 79 € et à 100 € selon les pages"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://bryxtoys.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://bryxtoys.com/produkt-kategorie/sports/stadien/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "cada"
+name = "CaDA (Double Eagle)"
+url = "https://cadatoys.com/"
+group = "chinese-alternatives"
+featured = true
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Official online shop"
+business_model_fr = "Boutique en ligne officielle"
+summary_en = "China (Shantou), Double Eagle group, which also makes the bricks. Technic-style cars, often motorised or remote-controlled and licensed (Master series at 1:8), plus space and military models."
+summary_fr = "Chine (Shantou), groupe Double Eagle, qui fabrique aussi les briques. Voitures de type Technic, souvent motorisées ou télécommandées et sous licence (série Master au 1:8), ainsi que des modèles spatiaux et militaires."
+strengths_en = ["Licences include Mercedes-AMG, Lamborghini, Land Rover (Galaxus, 2026-03-31)", "Functions usually found only in LEGO Technic at a lower price (Bricktimer, 2026-07-08)"]
+strengths_fr = ["Licences : Mercedes-AMG, Lamborghini, Land Rover (Galaxus, 31/03/2026)", "Fonctions que l'on ne trouve d'ordinaire que chez LEGO Technic, à prix inférieur (Bricktimer, 08/07/2026)"]
+weaknesses_en = ["Hard builds, stiff pins, sometimes unclear instructions (BrickReport, 2026-09-12)", "Own motors not documented as compatible with official LEGO electronics (Brick by Brick, 2026-10-06)", "Shipping terms to France not stated on the shipping page; prices shown in dollars"]
+weaknesses_fr = ["Montages difficiles, broches dures, notices parfois confuses (BrickReport, 12/09/2026)", "Moteurs propres non documentés comme compatibles avec l'électronique LEGO officiel (Brick by Brick, 06/10/2026)", "Conditions de livraison vers la France non indiquées sur la page de livraison ; prix affichés en dollars"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://cadatoys.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://cadatoys.com/shipping-policy/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
+date = "2026-09-27"
+kind = "third-party"
+
+[[resource]]
+id = "mould-king"
+name = "Mould King"
+url = "https://mouldkingcorp.com/"
+group = "chinese-alternatives"
+featured = true
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Official online shop (mouldkingcorp.com); other shops also claim to be official"
+business_model_fr = "Boutique en ligne officielle (mouldkingcorp.com) ; d'autres boutiques se disent aussi officielles"
+summary_en = "China (Shantou). Very large motorised Technic models, cranes, vehicles and trains at a very low price per piece. Bricks come mostly from GoBricks. Black Friday sale of 10 % runs 20 November to 1 December 2026."
+summary_fr = "Chine (Shantou). Très grands modèles Technic motorisés, grues, véhicules et trains à très faible prix par pièce. Briques surtout de GoBricks. Soldes Black Friday de 10 % du 20 novembre au 1er décembre 2026."
+strengths_en = ["Free standard delivery to France in 15 to 25 days, VAT included, shipped from China (shipping page)", "Lowest price per piece for very large motorised sets (BrickReport, 2026-09-12)", "Bricks from GoBricks, firm clutch and consistent colours (GameStar, 2026-11-20)"]
+strengths_fr = ["Livraison standard gratuite en France en 15 à 25 jours, TVA incluse, expédition depuis la Chine (page livraison)", "Prix par pièce le plus bas pour de très grands sets motorisés (BrickReport, 12/09/2026)", "Briques GoBricks, serrage ferme et couleurs régulières (GameStar, 20/11/2026)"]
+weaknesses_en = ["Past use of community designs without paying authors; mostly licensed designs now (baustein.info, 2022-03-09)", "Few licences and few printed parts (GameStar, 2026-11-20)", "Power Functions-type electronics, not Powered Up (Brick by Brick, 2026-10-06)"]
+weaknesses_fr = ["Anciens designs de la communauté repris sans rémunérer les auteurs ; désormais surtout sous licence (baustein.info, 09/03/2022)", "Peu de licences et peu de pièces imprimées (GameStar, 20/11/2026)", "Électronique de type Power Functions, pas Powered Up (Brick by Brick, 06/10/2026)"]
+status = "active"
+last_activity = "2026-11-20"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://mouldkingcorp.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://mouldkingcorp.com/pages/shipping-policy"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.gamestar.de/artikel/beste-klemmbausteine-2026-lego-bluebrixx-lumibricks-alternativen,3451687,seite2.html"
+date = "2026-11-20"
+kind = "third-party"
+
+[[resource]]
+id = "reobrix"
+name = "Reobrix"
+url = "https://reobrix.fr/fr_FR/index"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["fr", "en"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Official European Union online shop"
+business_model_fr = "Boutique en ligne officielle de l'Union européenne"
+summary_en = "China; the French shop is the official European Union store, shipping from Poland. Large mechanical and display models: ships, construction machines, motorbikes, trains, buildings. Its home page presents ship models up to 108 cm long."
+summary_fr = "Chine ; la boutique française est la boutique officielle de l'Union européenne, expédiée depuis la Pologne. Grandes maquettes mécaniques et d'exposition : navires, engins de chantier, motos, trains, bâtiments. La page d'accueil présente des navires jusqu'à 108 cm de long."
+strengths_en = ["French-language shop with shipping from Poland (official page)", "Useful for large subjects absent from the official LEGO catalogue (Brickfact, 2026-08-24)"]
+strengths_fr = ["Boutique en français avec expédition depuis la Pologne (page officielle)", "Utile pour de grands sujets absents du catalogue LEGO officiel (Brickfact, 24/08/2026)"]
+weaknesses_en = ["Quality and service vary by set and seller; remote control and app are proprietary (Brickfact, 2026-08-24)", "Fewer independent reviews than other brands (Brick by Brick, 2026-10-06)", "Set maker named as Shantou Juhang Toy Technology by a third-party list only (Spielzeug-Fuchs)"]
+weaknesses_fr = ["Qualité et service variables selon le set et le vendeur ; télécommande et application propres (Brickfact, 24/08/2026)", "Moins d'avis indépendants que pour les autres marques (Brick by Brick, 06/10/2026)", "Fabricant des sets nommé Shantou Juhang Toy Technology par une seule liste tierce (Spielzeug-Fuchs)"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://reobrix.fr/fr_FR/index"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickfact.com/fr-fr/blog/briques/reobrix-vs-lego"
+date = "2026-08-24"
+kind = "third-party"
+
+[[resource]]
+id = "pantasy"
+name = "Pantasy"
+url = "https://www.pantasy.com/"
+group = "chinese-alternatives"
+featured = true
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Official online shop"
+business_model_fr = "Boutique en ligne officielle"
+summary_en = "China (Guangdong Pinqi Culture and Technology). Modular buildings, retro objects, flowers and licences with printed parts, aimed at adult collectors. Bricks come from GoBricks."
+summary_fr = "Chine (Guangdong Pinqi Culture and Technology). Bâtiments modulaires, objets rétro, fleurs et licences avec pièces imprimées, pour collectionneurs adultes. Briques de GoBricks."
+strengths_en = ["Delivery to France 10 to 15 business days, shipping fee 4.99 to 14.99 dollars, free with the European Union option (shipping policy updated July 2026)", "Printed parts and curated licensed themes (Bricktimer, 2026-07-08)"]
+strengths_fr = ["Livraison en France sous 10 à 15 jours ouvrés, frais de 4.99 à 14.99 dollars, gratuits avec l'option Union européenne (politique de livraison mise à jour en juillet 2026)", "Pièces imprimées et thèmes sous licence choisis (Bricktimer, 08/07/2026)"]
+weaknesses_en = ["Short-lived licences: Garfield and Peanuts removed from the shop (BrickReport, 2026-09-12)", "Prices in the upper-middle range among alternatives (Bricktimer, 2026-07-08)"]
+weaknesses_fr = ["Licences éphémères : Garfield et Peanuts retirés de la boutique (BrickReport, 12/09/2026)", "Prix dans le haut de la moyenne des alternatives (Bricktimer, 08/07/2026)"]
+status = "active"
+last_activity = "2026-07-01"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.pantasy.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.pantasy.com/pages/shipping-policy"
+date = "2026-07-01"
+kind = "official"
+
+[[resource.sources]]
+url = "https://bricktimer.de/blogs/news-aus-der-werkstatt/klemmbaustein-marken-vergleich"
+date = "2026-07-08"
+kind = "third-party"
+
+[[resource]]
+id = "lumibricks"
+name = "Lumibricks (formerly Funwhole)"
+url = "https://www.lumibricks.com/"
+group = "chinese-alternatives"
+featured = true
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Official online shop"
+business_model_fr = "Boutique en ligne officielle"
+summary_en = "China (Guangzhou). Complete sets of buildings and scenes with integrated light, in 13 collections including Cyberpunk Neoncity and the Blade Runner 2049 licence. Funwhole was renamed Lumibricks in 2025."
+summary_fr = "Chine (Canton). Sets complets de bâtiments et de scènes avec éclairage intégré, en 13 collections dont Cyberpunk Neoncity et la licence Blade Runner 2049. Funwhole a été renommée Lumibricks en 2025."
+strengths_en = ["Delivery to France from the German warehouse in 3 to 6 working days (shipping policy)", "Printed parts without stickers and 2-year warranty, free replacement of missing parts (official site)"]
+strengths_fr = ["Livraison en France depuis l'entrepôt allemand en 3 à 6 jours ouvrés (politique de livraison)", "Pièces imprimées sans autocollants, garantie de 2 ans, remplacement gratuit des pièces manquantes (site officiel)"]
+weaknesses_en = ["Single licence: Blade Runner 2049 (BrickReport, 2026-10-08)", "Brick manufacturer disputed between sources: not established"]
+weaknesses_fr = ["Une seule licence : Blade Runner 2049 (BrickReport, 08/10/2026)", "Fabricant des briques contesté entre sources : non établi"]
+status = "active"
+last_activity = "2026-09-29"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lumibricks.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.lumibricks.com/pages/shipping-policy"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
+date = "2026-09-27"
+kind = "third-party"
+
+[[resource]]
+id = "jmbricklayer"
+name = "JMBricklayer"
+url = "https://www.jmbricklayer.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Official online shop"
+business_model_fr = "Boutique en ligne officielle"
+summary_en = "China. Fantasy creatures, dragons, ships, art in bricks and hand-crank kinetic mechanisms for adult collectors; ship models include Black Pearl, Queen Anne's Revenge and Bismarck."
+summary_fr = "Chine. Créatures fantastiques, dragons, navires, art en briques et mécanismes cinétiques à manivelle pour collectionneurs adultes ; maquettes de navires dont Black Pearl, Queen Anne's Revenge et Bismarck."
+strengths_en = ["Original kinetic mechanisms and clear instructions (Planet-Brick, 2026-08-13)", "Ships to France with weight-based fees; warehouses in Germany, United States, United Kingdom, Canada (source file, official page)"]
+strengths_fr = ["Mécanismes cinétiques originaux et notices claires (Planet-Brick, 13/08/2026)", "Livre la France avec frais selon le poids ; entrepôts en Allemagne, aux États-Unis, au Royaume-Uni, au Canada (fiche source, page officielle)"]
+weaknesses_en = ["Long thin parts are more flexible; remote controls and app are proprietary (Brick by Brick, 2026-10-06)"]
+weaknesses_fr = ["Pièces longues et fines plus souples ; télécommandes et application propres (Brick by Brick, 06/10/2026)"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.jmbricklayer.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "xingbao"
+name = "Xingbao"
+url = "https://xingbaostore.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+ships_to_france = true
+access = "free"
+business_model_en = "Official online shop"
+business_model_fr = "Boutique en ligne officielle"
+summary_en = "China (Shantou), operated by Guangdong Xingbao Electronics Technology, founded in December 2016. Large architecture, Chinese-style scenes, vehicles, military and designs of community builders. Has its own parts production; supplies BlueBrixx Pro and other brands."
+summary_fr = "Chine (Shantou), exploitée par Guangdong Xingbao Electronics Technology, fondée en décembre 2016. Grande architecture, scènes de style chinois, véhicules, militaire et créations de la communauté. Production de pièces propre ; fournit BlueBrixx Pro et d'autres marques."
+strengths_en = ["Own parts production, unlike sister brands that buy bricks (baustein.info, 2022-03-09)", "France is listed among shipped countries (shipping policy)", "Bricks judged close to LEGO in 2024 on BlueBrixx Pro Stargate sets (Seven Star Bricks, 2024-06-04)"]
+strengths_fr = ["Production de pièces propre, contrairement à des marques sœurs qui achètent leurs briques (baustein.info, 09/03/2022)", "La France figure parmi les pays livrés (politique de livraison)", "Briques jugées proches de LEGO en 2024 sur les sets Stargate de BlueBrixx Pro (Seven Star Bricks, 04/06/2024)"]
+weaknesses_en = ["Launched in 2017 by the group that owned Lepin, which was convicted in China for copying LEGO sets (Brickfinder, 2017-04-08; LEGO, 2020-01-20); current company materials present an independent history", "Shipping policy page still carries COVID-19 era text"]
+weaknesses_fr = ["Lancée en 2017 par le groupe propriétaire de Lepin, condamné en Chine pour la copie de sets LEGO (Brickfinder, 08/04/2017 ; LEGO, 20/01/2020) ; les documents actuels de l'entreprise présentent une histoire indépendante", "La page de livraison contient encore un texte datant de la période COVID-19"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://xingbaostore.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://xingbaostore.com/shipping-policy/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://baustein.info/welt-des-steins/"
+date = "2022-03-09"
+kind = "third-party"
+
+[[resource.sources]]
+url = "https://www.brickfinder.net/2017/04/08/china-bricks-company-officially-making-afol-designed-sets/"
+date = "2017-04-08"
+kind = "third-party"
+
+[[resource]]
+id = "jiestar"
+name = "JIE STAR (with GULY)"
+url = "https://www.jiestartoys.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Official international shop operated by Hong Kong Zhile Trading; wholesale and custom manufacturing offered"
+business_model_fr = "Boutique internationale officielle exploitée par Hong Kong Zhile Trading ; vente en gros et fabrication sur mesure proposées"
+summary_en = "China. Brand of Guangdong JieXing Toys Industrial (founded 1998), with its own injection moulding. Streets, buildings, vehicles, aircraft, mechas and flowers; sub-brands include GULY (1:8 supercars, motorcycles), iBlock, Xbert, TKTWO, ZOIN and JIQI. GULY also runs its own shops (gulytoys.com, gulybricks.com)."
+summary_fr = "Chine. Marque de Guangdong JieXing Toys Industrial (fondée en 1998), avec moulage par injection propre. Rues, bâtiments, véhicules, avions, mechas et fleurs ; sous-marques : GULY (supercars au 1:8, motos), iBlock, Xbert, TKTWO, ZOIN et JIQI. GULY exploite aussi ses propres boutiques (gulytoys.com, gulybricks.com)."
+strengths_en = ["Large catalogue by category (156 vehicles, 153 decor items listed)", "Company identity stated on the official site, resolving contradictory third-party attributions"]
+strengths_fr = ["Catalogue large par catégorie (156 véhicules, 153 objets de décoration listés)", "Identité de l'entreprise indiquée sur le site officiel, ce qui tranche entre des attributions tierces contradictoires"]
+weaknesses_en = ["Delivery to France not verified", "Few independent usage reviews found"]
+weaknesses_fr = ["Livraison en France non vérifiée", "Peu d'avis d'usage indépendants trouvés"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.jiestartoys.com/about"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.jiestartoys.com/products"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://gulytoys.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "sembo-block"
+name = "Sembo Block"
+url = "https://www.sembo-block.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "China (Sembo Toys). Architecture, street scenes, military and cars; bricks partly its own, partly GoBricks."
+summary_fr = "Chine (Sembo Toys). Architecture, scènes de rue, militaire et voitures ; briques en partie propres, en partie GoBricks."
+strengths_en = ["Named by GoBricks representatives among its client brands (Seven Star Bricks, 2024-06-04)"]
+strengths_fr = ["Citée par des représentants de GoBricks parmi ses marques clientes (Seven Star Bricks, 04/06/2024)"]
+weaknesses_en = ["Official site could not be read by the tools used (read errors on 2026-11-23): range, shop and delivery not verified", "Mixed brick origin (Wikipedia German list, 2026-09-27)"]
+weaknesses_fr = ["Site officiel non lisible avec les outils utilisés (erreurs de lecture le 23/11/2026) : gamme, boutique et livraison non vérifiées", "Origine mixte des briques (liste Wikipédia allemand, 27/09/2026)"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
+date = "2026-09-27"
+kind = "third-party"
+
+[[resource]]
+id = "keeppley"
+name = "Keeppley (Qman)"
+url = "https://c-en.qmjm.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en", "zh"]
+countries = ["international"]
+access = "free"
+summary_en = "China (Guangdong Qman Industry Toys, producing original blocks since 1994). Keeppley is the licensed line launched in 2019: Sanrio, Hello Kitty, Doraemon, Naruto, Detective Conan, Pokemon; Qman also sells under its own name."
+summary_fr = "Chine (Guangdong Qman Industry Toys, blocs originaux depuis 1994). Keeppley est la gamme sous licence lancée en 2019 : Sanrio, Hello Kitty, Doraemon, Naruto, Détective Conan, Pokémon ; Qman vend aussi sous son propre nom."
+strengths_en = ["Contract licences for animation characters (BrickReport, 2026-10-08)", "Own manufacturing company with a team of over 100 in research and development (official site)"]
+strengths_fr = ["Licences de personnages d'animation sous contrat (BrickReport, 08/10/2026)", "Entreprise fabricante, équipe de plus de 100 personnes en recherche et développement (site officiel)"]
+weaknesses_en = ["Pokemon licence limited to Asia (BrickReport, 2026-10-08)", "Former domain keeppley.com unreadable; shop and delivery to France not verified"]
+weaknesses_fr = ["Licence Pokémon limitée à l'Asie (BrickReport, 08/10/2026)", "Ancien domaine keeppley.com illisible ; boutique et livraison en France non vérifiées"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://c-en.qmjm.com/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://c-en.qmjm.com/en/product/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "wange"
+name = "Wange"
+url = "http://www.wangetoys.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en", "zh"]
+countries = ["international"]
+access = "free"
+summary_en = "China (Shantou Wange Educational Material Sci-Tech). Manufacturer and brand focused on landmark architecture (Sydney Opera House, Space Needle, Capitol), cars and police sets, at low prices. The official site is served over http only."
+summary_fr = "Chine (Shantou Wange Educational Material Sci-Tech). Fabricant et marque centrée sur l'architecture de monuments (opéra de Sydney, Space Needle, Capitole), voitures et police, à petits prix. Le site officiel n'est servi qu'en http."
+strengths_en = ["Own manufacturer of its bricks (Wikipedia German list, 2026-09-27)", "Recommended when budget is tight (BrickPlan, 2026-07-26)"]
+strengths_fr = ["Fabricant de ses propres briques (liste Wikipédia allemand, 27/09/2026)", "Recommandée quand le budget est serré (BrickPlan, 26/07/2026)"]
+weaknesses_en = ["Official site is a manufacturer catalogue; no direct shop read", "Reseller site wange.store presents itself as official and sells other brands: not used as source"]
+weaknesses_fr = ["Le site officiel est un catalogue de fabricant ; aucune boutique directe lue", "Le site revendeur wange.store se présente comme officiel et vend d'autres marques : non retenu comme source"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "http://hk.wangetoys.com/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
+date = "2026-09-27"
+kind = "third-party"
+
+[[resource]]
+id = "mork"
+name = "Mork (XMork)"
+url = "http://www.morktoys.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en", "zh"]
+countries = ["international"]
+access = "free"
+summary_en = "China (Shantou Chenghai XMORK Blocks Toy Factory, since 2020, successor of UrGe). Original and licensed sets of the MOC type, with a white-label service."
+summary_fr = "Chine (Shantou Chenghai XMORK Blocks Toy Factory, depuis 2020, successeur d'UrGe). Sets originaux et sous licence de type créations de la communauté, avec service en marque blanche."
+strengths_en = ["Original and licensed designs (Latericius shop description)"]
+strengths_fr = ["Designs originaux et sous licence (description de la boutique Latericius)"]
+weaknesses_en = ["Brick maker disputed: MZ Model (Xingbao) per Wikipedia German list, own bricks per a reseller; not established", "Official site returned almost no readable content; hard to find on international markets"]
+weaknesses_fr = ["Fabricant des briques contesté : MZ Model (Xingbao) selon la liste Wikipédia allemand, briques propres selon un revendeur ; non établi", "Le site officiel n'a renvoyé presque aucun contenu lisible ; difficile à trouver sur les marchés internationaux"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "http://www.morktoys.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
+date = "2026-09-27"
+kind = "third-party"
+
+[[resource]]
+id = "rastar"
+name = "Rastar"
+url = "https://www.rastar.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en", "zh"]
+countries = ["international"]
+access = "free"
+summary_en = "China (Rastar Group, listed toy and games company). Licensed car models in bricks: Pagani Huayra BC at 1:8 (3068 pieces, remote control), Maserati MC20, Audi R8, Hummer EV. Bricks reportedly from GoBricks."
+summary_fr = "Chine (groupe Rastar, société cotée de jouets et de jeux). Voitures sous licence en briques : Pagani Huayra BC au 1:8 (3068 pièces, télécommande), Maserati MC20, Audi R8, Hummer EV. Briques de GoBricks selon une source."
+strengths_en = ["Manufacturer licences from car makers (Pagani) stated on product pages"]
+strengths_fr = ["Licences de constructeurs automobiles (Pagani) indiquées sur les fiches produit"]
+weaknesses_en = ["Corporate site, no direct shop for the brick range read", "Instructions shared between remote-control and manual versions, hard to read (simplythebest-mag, 2024-03-10)"]
+weaknesses_fr = ["Site d'entreprise, aucune boutique directe pour la gamme de briques lue", "Notice commune aux versions télécommandée et manuelle, peu lisible (simplythebest-mag, 10/03/2024)"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://www.rastar.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.rastar.com/html/toys-pc-en/products/AssembleSeries/Bricks/2023/0525/3545.html"
+date = "2023-05-25"
+kind = "official"
+
+[[resource]]
+id = "im-master"
+name = "iM.Master"
+url = "https://www.immasterstore.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "China. Remote-controlled and app-controlled cars and engineering models at 1:10 with colour-changing paint (9826-2: 2036 pieces, 300 dollars). The store states it is the official iM.Master shop."
+summary_fr = "Chine. Voitures et modèles d'ingénierie télécommandés et pilotés par application au 1:10, à peinture à reflets changeants (9826-2 : 2036 pièces, 300 dollars). La boutique se déclare boutique officielle iM.Master."
+strengths_en = ["Ranked first in a 2024 comparison for look and driving, drift noted (simplythebest-mag, 2024-03-10)"]
+strengths_fr = ["Classée première d'un comparatif de 2024 pour l'aspect et la conduite, dérive remarquée (simplythebest-mag, 10/03/2024)"]
+weaknesses_en = ["Motor assembly delicate (simplythebest-mag, 2024-03-10)", "The brand domain immastertech.com returned an anti-bot verification page and was not read", "Unauthorised dealers selling counterfeits are warned about by a reseller"]
+weaknesses_fr = ["Montage du moteur délicat (simplythebest-mag, 10/03/2024)", "Le domaine de la marque immastertech.com a renvoyé une page de vérification anti-robot et n'a pas été lu", "Un revendeur met en garde contre des distributeurs non autorisés vendant des contrefaçons"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://www.immasterstore.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "nifeliz"
+name = "Nifeliz"
+url = "https://www.nifeliz.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "China (Shantou). Technic, adult decoration, flowers and machines. The brand site describes its own factory in Shantou with three workshops (August 2024) and announces a Black Friday sale for 27 to 30 November 2026."
+summary_fr = "Chine (Shantou). Technic, décoration adulte, fleurs et machines. Le site de la marque décrit une usine propre à Shantou avec trois ateliers (août 2024) et annonce des soldes Black Friday du 27 au 30 novembre 2026."
+strengths_en = ["Good instructions and support, low prices (Tiny Workshops, 2023-10-10)"]
+strengths_fr = ["Bonne notice, bon support, prix bas (Tiny Workshops, 10/10/2023)"]
+weaknesses_en = ["Quality varies by set (Tiny Workshops, 2023-10-10)", "Earlier claim that the brand has no factory contradicts the brand's own page"]
+weaknesses_fr = ["Qualité variable selon le set (Tiny Workshops, 10/10/2023)", "L'affirmation antérieure d'une absence d'usine contredit la page de la marque"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.nifeliz.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.nifeliz.com/2024/08/27/production-process-nifeliz-standard/"
+date = "2024-08-27"
+kind = "official"
+
+[[resource]]
+id = "sluban"
+name = "Sluban"
+url = "https://slubanbricks.com/de"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["de", "en", "cs"]
+countries = ["international"]
+access = "free"
+summary_en = "China, with European distribution in the Netherlands (Sluban Europe). Military, city, aircraft and mecha sets at low prices, mostly for play rather than adult display."
+summary_fr = "Chine, avec distribution européenne aux Pays-Bas (Sluban Europe). Sets militaires, ville, avions et mechas à petits prix, orientés jeu plus qu'exposition adulte."
+strengths_en = ["Low prices; theme range covering military, aviation, space (official site)"]
+strengths_fr = ["Prix bas ; thèmes militaire, aviation, espace (site officiel)"]
+weaknesses_en = ["Mostly play and children orientation", "Delivery to France not verified"]
+weaknesses_fr = ["Orientation surtout jeu et enfants", "Livraison en France non vérifiée"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://slubanbricks.com/de"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "wiseblock"
+name = "WISEBLOCK"
+url = "https://www.wiseblock-alpha.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Shop of the WISEBLOCK brand, with Assassin's Creed sets (Jackdaw, Havana Harbour, Ezio, 1269 pieces for the Jackdaw Voyage edition at 89.90 dollars) and other themes. Orders ship from the United States; origin of the company is not stated on the pages read."
+summary_fr = "Boutique de la marque WISEBLOCK, avec des sets Assassin's Creed (Jackdaw, port de La Havane, Ezio, 1269 pièces pour l'édition Voyage du Jackdaw à 89.90 dollars) et d'autres thèmes. Les commandes sont expédiées depuis les États-Unis ; l'origine de l'entreprise n'est pas indiquée sur les pages lues."
+strengths_en = ["Assassin's Creed licence (BrickReport, 2026-10-08)"]
+strengths_fr = ["Licence Assassin's Creed (BrickReport, 08/10/2026)"]
+weaknesses_en = ["Duties and import fees may be payable on delivery outside the United States", "Domain name suffix suggests a secondary shop; official status not confirmed"]
+weaknesses_fr = ["Droits et frais d'importation possibles à la livraison hors des États-Unis", "Le suffixe du nom de domaine évoque une boutique secondaire ; statut officiel non confirmé"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://www.wiseblock-alpha.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.wiseblock-alpha.com/products/jackdawvoyage-edition"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "mattel-brick-shop"
+name = "Mattel Brick Shop (MEGA)"
+url = "https://shopping.mattel.com/de-de/collections/bausteine-sets"
+group = "toy-industry-brands"
+featured = true
+covers = ["alternative"]
+languages = ["de", "fr", "en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Official Mattel online shop"
+business_model_fr = "Boutique en ligne officielle de Mattel"
+summary_en = "United States (Mattel). Adult line launched in 2025: licensed Hot Wheels cars (Lamborghini, Audi, Honda, Aston Martin), Masters of the Universe, Halo, Xbox. MEGA Bloks remains the children's range. The German shop lists Hot Wheels Racer Series 1 as coming soon."
+summary_fr = "États-Unis (Mattel). Ligne adulte lancée en 2025 : voitures Hot Wheels sous licence (Lamborghini, Audi, Honda, Aston Martin), Masters of the Universe, Halo, Xbox. MEGA Bloks reste la gamme enfants. La boutique allemande annonce la série Hot Wheels Racer 1 comme bientôt disponible."
+strengths_en = ["Metal parts, a 1:64 die-cast model in each set, fair price per piece (Bricktimer, 2026-07-08)", "Hot Wheels Racer series at 4.99 euros announced for January 2027 (Mattel, 2026-11-05)"]
+strengths_fr = ["Pièces en métal, un modèle moulé au 1:64 dans chaque set, prix par pièce correct (Bricktimer, 08/07/2026)", "Série Hot Wheels Racer à 4.99 euros annoncée pour janvier 2027 (Mattel, 05/11/2026)"]
+weaknesses_en = ["Young, still small range; strong clutch makes corrections slow (Bricktimer, 2026-07-08)", "Pokemon licence ended in December 2025 (BrickReport, 2026-10-08)"]
+weaknesses_fr = ["Gamme récente et encore réduite ; serrage fort, corrections lentes (Bricktimer, 08/07/2026)", "Licence Pokémon terminée en décembre 2025 (BrickReport, 08/10/2026)"]
+status = "active"
+last_activity = "2026-11-05"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://shopping.mattel.com/de-de/collections/bausteine-sets"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://bricktimer.de/blogs/news-aus-der-werkstatt/klemmbaustein-marken-vergleich"
+date = "2026-07-08"
+kind = "third-party"
+
+[[resource]]
+id = "revell-brick-system"
+name = "Revell Brick System"
+url = "https://revell.com/collections/brick-system"
+group = "toy-industry-brands"
+featured = true
+covers = ["alternative"]
+languages = ["de", "en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Official Revell online shop"
+business_model_fr = "Boutique en ligne officielle de Revell"
+summary_en = "Germany. Brick line of the plastic model-kit maker, aimed at adults and launched in 2025 with the submarine from Das Boot (6483 pieces, 1:56). 2026 additions: V-22 Osprey (3730 pieces), Spitfire Mk.II Iron Maiden (2802), F-14A Tomcat Top Gun (2687) and Cutty Sark (7325 pieces, 549 euros)."
+summary_fr = "Allemagne. Gamme de briques du fabricant de maquettes en plastique, destinée aux adultes et lancée en 2025 avec le sous-marin de Das Boot (6483 pièces, 1:56). Ajouts de 2026 : V-22 Osprey (3730 pièces), Spitfire Mk.II Iron Maiden (2802), F-14A Tomcat Top Gun (2687) et Cutty Sark (7325 pièces, 549 euros)."
+strengths_en = ["Fully printed sets and licensed subjects (steine-kanal.de, 2026-02-01)", "Scale-model approach for adult display (Spielwarenmesse, 2026)"]
+strengths_fr = ["Sets entièrement imprimés et sujets sous licence (steine-kanal.de, 01/02/2026)", "Approche maquette à l'échelle pour l'exposition adulte (Spielwarenmesse, 2026)"]
+weaknesses_en = ["High prices (205 to 549 euros)", "Brick manufacturer not established; delivery to France not verified"]
+weaknesses_fr = ["Prix élevés (205 à 549 euros)", "Fabricant des briques non établi ; livraison en France non vérifiée"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://revell.com/collections/brick-system"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.steine-kanal.de/revell-brick-system-top-gun-f-14a-tomcat-v-22-osprey-und-iron-maiden-spitfire-neu-2026/"
+date = "2026-02-01"
+kind = "third-party"
+
+[[resource]]
+id = "gobricks"
+name = "GoBricks (Shantou Golds Precision Technology)"
+url = "https://gobricks.net/"
+group = "manufacturers"
+featured = true
+covers = ["parts", "alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Parts retail and manufacturing for other brands"
+business_model_fr = "Vente de pièces au détail et fabrication pour d'autres marques"
+summary_en = "China (Shantou, Guangdong). Parts manufacturer regarded as the community reference for alternative bricks, founded in 2017, with 327 injection machines and a stated 10 billion pieces per year. Supplies Mould King, Pantasy and other brands, and sells parts individually."
+summary_fr = "Chine (Shantou, Guangdong). Fabricant de pièces considéré comme la référence de la communauté pour les briques alternatives, fondé en 2017, avec 327 presses à injection et 10 milliards de pièces par an annoncées. Fournit Mould King, Pantasy et d'autres marques, et vend des pièces à l'unité."
+strengths_en = ["High clutch and consistent colours (GameStar, 2026-11-20)", "2000+ own moulds and 50+ colours stated on the shop (official site)", "Capacity and machine count reported by a machinery supplier (Haitian, 2026-03-12)"]
+strengths_fr = ["Serrage élevé et couleurs régulières (GameStar, 20/11/2026)", "Plus de 2000 moules propres et plus de 50 couleurs annoncés sur la boutique (site officiel)", "Capacité et nombre de presses rapportés par un fournisseur de machines (Haitian, 12/03/2026)"]
+weaknesses_en = ["Firmer clutch than LEGO, tiring on very large sets (Seven Star Bricks, 2024-06-04)", "Company names vary between sources (Golds, Gooders, Gaodes)"]
+weaknesses_fr = ["Serrage plus ferme que LEGO, fatigant sur de très grands sets (Seven Star Bricks, 04/06/2024)", "Noms d'entreprise variables selon les sources (Golds, Gooders, Gaodes)"]
+status = "active"
+last_activity = "2026-03-12"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://gobricks.net/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://newsroom.haitian.com/customer-stories-en/golds-precision-behind-10-billion-building-blocks/"
+date = "2026-03-12"
+kind = "third-party"
+
+[[resource.sources]]
+url = "https://baustein.info/welt-des-steins/"
+date = "2022-03-09"
+kind = "third-party"
+
+[[resource]]
+id = "panlos"
+name = "Panlos"
+url = "http://www.panlos.com/"
+group = "manufacturers"
+covers = ["parts", "alternative"]
+languages = ["zh", "en"]
+countries = ["international"]
+access = "free"
+summary_en = "China (Shantou Chenghai Huada Toy). Brick manufacturer with its own parts and a showroom in Shantou; brand sets sold under its name. Supplies Kiddicraft (Dark Side Bricks, Germany) and, since about 2021, the Playtive Clippys of Lidl."
+summary_fr = "Chine (Shantou Chenghai Huada Toy). Fabricant de briques aux pièces propres, avec salle d'exposition à Shantou ; sets vendus sous son nom. Fournit Kiddicraft (Dark Side Bricks, Allemagne) et, depuis 2021 environ, les Playtive Clippys de Lidl."
+strengths_en = ["Own bricks covering most current LEGO parts (Modellbau-Wiki)", "Colour, fit and clutch quality triangle stated by the maker (official site)"]
+strengths_fr = ["Briques propres couvrant la plupart des pièces LEGO actuelles (Modellbau-Wiki)", "Triangle qualité couleur, ajustement et serrage annoncé par le fabricant (site officiel)"]
+weaknesses_en = ["Official site read in Chinese; no direct international shop found", "Individual parts source not known (Modellbau-Wiki)"]
+weaknesses_fr = ["Site officiel lu en chinois ; aucune boutique internationale directe trouvée", "Source de pièces à l'unité inconnue (Modellbau-Wiki)"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "http://www.panlos.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.modellbau-wiki.de/wiki/Panlos"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource.sources]]
+url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
+date = "2026-09-27"
+kind = "third-party"
+
+[[resource]]
+id = "blokees"
+name = "Blokees"
+url = "https://blokees.com/"
+group = "other-formats"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "China. Articulated assemble-and-pose figures and vehicles under licence (Transformers, Ultraman, Naruto, DC, Jurassic Park), outside the 8 mm stud system. DC Champion Class Batman: Hush figures are open for pre-order."
+summary_fr = "Chine. Figurines et véhicules articulés à assembler sous licence (Transformers, Ultraman, Naruto, DC, Jurassic Park), hors du système à tenons de 8 mm. Les figurines DC Champion Class Batman: Hush sont en précommande."
+strengths_en = ["Licences Transformers and Ultraman (BrickReport, 2026-10-08)"]
+strengths_fr = ["Licences Transformers et Ultraman (BrickReport, 08/10/2026)"]
+weaknesses_en = ["Not compatible with the 8 mm stud brick system"]
+weaknesses_fr = ["Non compatible avec le système de briques à tenons de 8 mm"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://blokees.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "loz"
+name = "LOZ"
+url = "https://loz-mini.com/en"
+group = "other-formats"
+covers = ["alternative"]
+languages = ["en", "zh"]
+countries = ["international"]
+access = "free"
+summary_en = "China; the official site is operated from Hong Kong (I-Had Creation). Micro-blocks and Diamond Blocks of 4 to 6 mm (food shops, street scenes, characters), not compatible with the 8 mm pitch."
+summary_fr = "Chine ; le site officiel est exploité depuis Hong Kong (I-Had Creation). Micro-blocs et Diamond Blocks de 4 à 6 mm (échoppes, scènes de rue, personnages), non compatibles avec le pas de 8 mm."
+strengths_en = ["Small display models and licensed city collections (official site)"]
+strengths_fr = ["Petits modèles d'exposition et collections urbaines sous licence (site officiel)"]
+weaknesses_en = ["Pitch of 4 to 6 mm: incompatible with LEGO (Wikipedia German list, 2026-09-27)", "Prices in Hong Kong dollars; delivery to France not verified"]
+weaknesses_fr = ["Pas de 4 à 6 mm : incompatible avec LEGO (liste Wikipédia allemand, 27/09/2026)", "Prix en dollars de Hong Kong ; livraison en France non vérifiée"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://loz-mini.com/en"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
+date = "2026-09-27"
+kind = "third-party"
+
+[[resource]]
+id = "nanoblock"
+name = "nanoblock (Kawada)"
+url = "https://www.kawada-toys.com/en/brand/nanoblock/"
+group = "other-formats"
+featured = true
+covers = ["alternative"]
+languages = ["en", "ja"]
+countries = ["international"]
+access = "free"
+business_model_en = "Brand page of the maker Kawada; sets sold by retailers"
+business_model_fr = "Page de marque du fabricant Kawada ; sets vendus par des revendeurs"
+summary_en = "Japan (Kawada). Micro-blocks whose smallest piece measures 4 mm by 4 mm by 5 mm, on sale since October 2008: animals, landmarks, ships and castles, with an Advanced Hobby series for adults. Not compatible with the 8 mm stud system."
+summary_fr = "Japon (Kawada). Micro-blocs dont la plus petite pièce mesure 4 mm sur 4 mm sur 5 mm, en vente depuis octobre 2008 : animaux, monuments, navires et châteaux, avec une série Advanced Hobby pour adultes. Non compatibles avec le système à tenons de 8 mm."
+strengths_en = ["More than 32 million units sold by October 2018 (maker's history page)", "Flagship store in Tokyo Skytree Town (official site)"]
+strengths_fr = ["Plus de 32 millions d'unités vendues en octobre 2018 (page d'histoire du fabricant)", "Boutique principale à Tokyo Skytree Town (site officiel)"]
+weaknesses_en = ["No direct online shop on the brand page; retail through distributors", "Not compatible with the 8 mm stud system"]
+weaknesses_fr = ["Pas de boutique en ligne directe sur la page de marque ; vente par des distributeurs", "Non compatibles avec le système à tenons de 8 mm"]
+status = "active"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.kawada-toys.com/en/brand/nanoblock/about/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://kawada-toys.com/en/brand/nanoblock/history/"
+date = "2026-11-23"
+kind = "read"
