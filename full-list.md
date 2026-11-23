@@ -79,7 +79,7 @@ Every resource, including inactive and dead ones, generated from [`data/`](data/
 
 <br>
 
-<img src="media/icons/brands.svg" width="36" height="36" align="left" alt="">
+<img src="media/icons/brands.svg" width="40" height="40" align="left" vspace="14" hspace="4" alt="">
 
 ## Brands and manufacturers
 
@@ -134,7 +134,7 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 <br>
 
-<img src="media/icons/shops.svg" width="36" height="36" align="left" alt="">
+<img src="media/icons/shops.svg" width="40" height="40" align="left" vspace="14" hspace="4" alt="">
 
 ## Shops
 
@@ -182,7 +182,7 @@ Online and physical shops selling official LEGO, alternative brick brands and ge
 
 <br>
 
-<img src="media/icons/comparators.svg" width="36" height="36" align="left" alt="">
+<img src="media/icons/comparators.svg" width="40" height="40" align="left" vspace="14" hspace="4" alt="">
 
 ## Price comparators and databases
 
@@ -234,7 +234,7 @@ Sites that compare set prices across shops, catalogue sets and parts, track seco
 
 <br>
 
-<img src="media/icons/second-hand.svg" width="36" height="36" align="left" alt="">
+<img src="media/icons/second-hand.svg" width="40" height="40" align="left" vspace="14" hspace="4" alt="">
 
 ## Second-hand, parts and accessories
 
@@ -290,7 +290,7 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 
 <br>
 
-<img src="media/icons/community.svg" width="36" height="36" align="left" alt="">
+<img src="media/icons/community.svg" width="40" height="40" align="left" vspace="14" hspace="4" alt="">
 
 ## Communities and news
 
@@ -351,7 +351,7 @@ Forums, subreddits, wikis, news and review sites, deal communities and chat serv
 
 <br>
 
-<img src="media/icons/video.svg" width="36" height="36" align="left" alt="">
+<img src="media/icons/video.svg" width="40" height="40" align="left" vspace="14" hspace="4" alt="">
 
 ## YouTube and podcasts
 
@@ -410,7 +410,7 @@ English- and French-language YouTube channels and podcasts: reviews of official 
 
 <br>
 
-<img src="media/icons/events.svg" width="36" height="36" align="left" alt="">
+<img src="media/icons/events.svg" width="40" height="40" align="left" vspace="14" hspace="4" alt="">
 
 ## Events
 
@@ -472,7 +472,7 @@ Conventions, fan exhibitions, artist shows, public competitions and calendars li
 
 <br>
 
-<img src="media/icons/places.svg" width="36" height="36" align="left" alt="">
+<img src="media/icons/places.svg" width="40" height="40" align="left" vspace="14" hspace="4" alt="">
 
 ## Places to visit
 
@@ -533,7 +533,7 @@ Venues of the brick world that can be visited: official LEGO venues and stores, 
 
 <br>
 
-<img src="media/icons/clubs.svg" width="36" height="36" align="left" alt="">
+<img src="media/icons/clubs.svg" width="40" height="40" align="left" vspace="14" hspace="4" alt="">
 
 ## Clubs and associations
 
@@ -586,7 +586,7 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 
 <br>
 
-<img src="media/icons/learning.svg" width="36" height="36" align="left" alt="">
+<img src="media/icons/learning.svg" width="40" height="40" align="left" vspace="14" hspace="4" alt="">
 
 ## Learning
 
@@ -656,7 +656,7 @@ Guides, glossaries, history, compatibility and legal references, education and c
 
 <br>
 
-<img src="media/icons/tools.svg" width="36" height="36" align="left" alt="">
+<img src="media/icons/tools.svg" width="40" height="40" align="left" vspace="14" hspace="4" alt="">
 
 ## Tools and APIs
 
@@ -703,7 +703,7 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 
 <br>
 
-<img src="media/icons/directories.svg" width="36" height="36" align="left" alt="">
+<img src="media/icons/directories.svg" width="40" height="40" align="left" vspace="14" hspace="4" alt="">
 
 ## Other directories and lists
 

@@ -156,7 +156,7 @@ def readme(cats, m, lang, kind="readme"):
     seen = {}
 
     def icon(cid):
-        return f'<img src="media/icons/{cid}.svg" width="36" height="36" align="left" alt="">' if (ROOT / "media" / "icons" / f"{cid}.svg").exists() else ""
+        return f'<img src="media/icons/{cid}.svg" width="40" height="40" align="left" vspace="14" hspace="4" alt="">' if (ROOT / "media" / "icons" / f"{cid}.svg").exists() else ""
 
     def uniq(name):  # GitHub suffixes repeated heading anchors with -1, -2…
         a = anchor(name)
