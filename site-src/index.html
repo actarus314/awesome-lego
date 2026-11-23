@@ -98,14 +98,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
 </div></header>
 <main class="wrap" id="top">
 <section class="hero"><div><h1>{{TITLE}}</h1><p>{{TAGLINE}}</p></div><div class="kpis" id="kpis"></div></section>
-<h2 id="map" data-t="map"></h2><p class="lead" data-t="map_lead"></p><div class="map" id="mapgrid"></div>
+<h2 id="map" data-t="map"></h2><p class="lead" data-t="map_lead"></p><div class="map" id="mapgrid"></div><div class="key" id="mapkey"></div>
 <h2 id="charts" data-t="charts"></h2><p class="lead" data-t="charts_lead"></p><div class="charts" id="chartgrid"></div>
 <h2 id="directory" data-t="nav_dir"></h2>
 <div class="bar"><div class="row"><input type="search" id="q" autocomplete="off"><span class="count" id="count"></span><button class="btn" id="reset" type="button" data-t="reset"></button></div>
 <div class="row chips" id="f-cat"></div><div class="row chips" id="f-cov"></div><div class="row chips" id="f-misc"></div></div>
 <div id="list"></div>
 </main>
-<footer><div class="wrap"><span id="built"></span><span><a href="https://github.com/{{REPO}}/blob/main/CONTRIBUTING.md" data-t="contribute"></a> · <a href="https://github.com/{{REPO}}/issues/new/choose" data-t="report"></a> · <a href="https://github.com/{{REPO}}/blob/main/LICENSE">CC BY-NC-SA 4.0</a></span></div></footer>
+<footer><div class="wrap"><span id="built"></span><span><a href="https://github.com/{{REPO}}/blob/main/contributing.md" data-t="contribute"></a> · <a href="https://github.com/{{REPO}}/issues/new/choose" data-t="report"></a> · <a href="https://github.com/{{REPO}}/blob/main/LICENSE">CC BY-NC-SA 4.0</a></span></div></footer>
 <div id="tip" role="tooltip"></div>
 <script id="data" type="application/json">{{DATA}}</script>
 <script>
@@ -168,6 +168,7 @@ const spans=(()=>{const n=C.map(c=>R.filter(r=>r.cat===c.id).length),out=[];let 
  const res=[];let acc=[];for(const s of out){if(acc.reduce((a,b)=>a+b,0)+s>12&&acc.length){res.push(acc);acc=[]}acc.push(s)}if(acc.length)res.push(acc);
  return res.flatMap(r=>{const s=r.reduce((a,b)=>a+b,0);const k=r.map(x=>Math.max(2,Math.round(x*12/s)));let d=12-k.reduce((a,b)=>a+b,0);k[k.length-1]+=d;return k})})();
 function drawMap(){mg.innerHTML=C.map((c,i)=>{const rs=R.filter(r=>r.cat===c.id);return `<button class="tile${st.cat===c.id?' on':''}" style="--span:${spans[i]}" data-cat="${c.id}"><span class="label">${esc(c.groups.filter(g=>rs.some(r=>r.group===g.id)).map(g=>g[L]).join(' · '))}</span><h3>${esc(c[L])}</h3><span class="n">${rs.length}</span><span class="studs">${rs.map(r=>`<i class="stud ${world(r)}${r.status==='active'?'':' dim'}" data-tip="${esc(r.name)}"></i>`).join('')}</span></button>`}).join('')}
+document.getElementById('mapkey').innerHTML=[['official',t('official')],['both',L==='fr'?'les deux':'both'],['alternative',t('alternative')],['',L==='fr'?'autre':'other'],['official dim',L==='fr'?'pâle : pas active':'faded: not active']].map(([c,n])=>`<span><i class="stud ${c}" style="display:inline-block;margin-right:5px;vertical-align:-1px"></i>${n}</span>`).join('');
 mg.onclick=e=>{const b=e.target.closest('[data-cat]');if(!b)return;st.cat=st.cat===b.dataset.cat?null:b.dataset.cat;update();document.getElementById('directory').scrollIntoView({behavior:'smooth'})};
 // charts
 const NS='http://www.w3.org/2000/svg';

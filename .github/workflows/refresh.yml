@@ -29,8 +29,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -C automatic/metrics
           git add data/metrics.json
-          git commit -m "Metrics refresh / Mise à jour des mesures $(date +%F)"
+          git commit -m "Metrics refresh $(date +%F)"
           git push --force origin automatic/metrics
           gh pr view automatic/metrics --json state -q .state 2>/dev/null | grep -q OPEN \
             && gh pr edit automatic/metrics --body-file refresh-report.md \
-            || gh pr create --head automatic/metrics --title "Metrics refresh / Mise à jour des mesures" --body-file refresh-report.md --label automatic
+            || gh pr create --head automatic/metrics --title "Metrics refresh" --body-file refresh-report.md --label automatic

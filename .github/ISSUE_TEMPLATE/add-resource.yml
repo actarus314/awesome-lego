@@ -1,43 +1,43 @@
-name: Add a resource / Ajouter une ressource
-description: Suggest a website, shop, brand, channel, community or tool / Proposer un site, une boutique, une marque, une chaîne, une communauté ou un outil
-title: "Add / Ajout : "
+name: Add a resource
+description: Suggest a website, shop, brand, channel, community or tool
+title: "Add: "
 labels: ["new resource"]
 body:
   - type: input
     id: url
     attributes:
-      label: Address / Adresse
+      label: Address
       placeholder: https://
     validations:
       required: true
   - type: dropdown
     id: category
     attributes:
-      label: Category / Catégorie
+      label: Category
       options:
-        - Brands / Marques
-        - Shops / Boutiques
-        - Price comparators and set databases / Comparateurs et bases de sets
-        - Second-hand, parts and services / Occasion, pièces et services
-        - Communities and media / Communautés et médias
-        - Videos and podcasts / Vidéos et podcasts
-        - Tools, data and open source / Outils, données et logiciels libres
-        - Directories / Annuaires
+        - Brands
+        - Shops
+        - Price comparators and set databases
+        - Second-hand, parts and services
+        - Communities and media
+        - Videos and podcasts
+        - Tools, data and open source
+        - Directories
     validations:
       required: true
   - type: textarea
     id: why
     attributes:
-      label: What it is and why it belongs here / Ce que c'est et pourquoi elle a sa place ici
-      description: Facts, with a link that supports them / Des faits, avec un lien qui les appuie
+      label: What it is and why it belongs here
+      description: Facts, with a link that supports them
     validations:
       required: true
   - type: checkboxes
     id: checks
     attributes:
-      label: Checks / Vérifications
+      label: Checks
       options:
-        - label: Not already in the list / Pas déjà dans la liste
+        - label: Not already in the list
           required: true
-        - label: No affiliate or referral link / Aucun lien d'affiliation ou de parrainage
+        - label: No affiliate or referral link
           required: true

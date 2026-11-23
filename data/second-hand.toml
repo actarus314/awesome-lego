@@ -55,11 +55,9 @@ strengths_fr = [
   "API publique pour le catalogue et le guide des prix (OAuth, clé de compte)",
 ]
 weaknesses_en = [
-  "Site temporarily unavailable on 2026-11-23: the maintenance page announces a return aimed at 2026-11-24 after an investigation of unusual activity",
   "Shipping is charged shop by shop, so an order split across many shops costs more",
 ]
 weaknesses_fr = [
-  "Site temporairement indisponible le 2026-11-23 : la page de maintenance annonce un retour visé au 2026-11-24 après une enquête sur une activité inhabituelle",
   "Le port est facturé boutique par boutique : une commande éclatée coûte plus cher",
 ]
 status = "active"
@@ -160,11 +158,11 @@ strengths_fr = [
   "Garantie client et protection acheteurs",
 ]
 weaknesses_en = [
-  "From 2026-09-01 a mandatory buyer protection fee is included in the price when buying from private sellers in France or Italy",
+  "Since 1 September 2026 a mandatory buyer protection fee is included in the price when buying from private sellers in France or Italy",
   "Quality of listings varies widely",
 ]
 weaknesses_fr = [
-  "Depuis le 2026-09-01, des frais obligatoires de protection acheteurs sont inclus dans le prix pour les achats auprès de vendeurs particuliers en France ou en Italie",
+  "Depuis le 1er septembre 2026, des frais obligatoires de protection acheteurs sont inclus dans le prix pour les achats auprès de vendeurs particuliers en France ou en Italie",
   "Qualité des annonces très variable",
 ]
 status = "active"
@@ -238,12 +236,10 @@ summary_en = "French classified ads site: sets, large lots, bulk and family coll
 summary_fr = "Site français de petites annonces : sets, gros lots, vrac et collections familiales, remise en main propre possible."
 strengths_en = [
   "Hand-over in person: check before paying, no shipping",
-  "339511 ads on the LEGO brand page on 2026-11-23",
   "Direct negotiation, useful for large lots",
 ]
 strengths_fr = [
   "Remise en main propre : vérification avant paiement, pas de port",
-  "339511 annonces sur la page de la marque LEGO le 2026-11-23",
   "Négociation directe, utile pour les gros lots",
 ]
 weaknesses_en = [
@@ -282,7 +278,7 @@ countries = ["international"]
 ships_to_france = true
 access = "free"
 summary_en = "Curated online auctions of LEGO sets, lots, parts and vintage items."
-summary_fr = "Enchères en ligne sélectionnées de sets, lots, pièces et pièces vintage LEGO."
+summary_fr = "Enchères en ligne sélectionnées de sets, lots, pièces et objets vintage LEGO."
 strengths_en = [
   "Vintage and rare sets",
   "Weekly themed LEGO auctions curated by experts",
@@ -299,8 +295,8 @@ weaknesses_fr = [
   "Des frais de protection acheteur s'ajoutent à l'enchère gagnante, ainsi que le port",
   "Droits et taxes à l'importation possibles selon le vendeur",
 ]
-size_en = "826 objects in the LEGO collection on 2026-11-23"
-size_fr = "826 objets dans la collection LEGO le 2026-11-23"
+size_en = "826 objects in the LEGO collection"
+size_fr = "826 objets dans la collection LEGO"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
@@ -426,11 +422,9 @@ strengths_fr = [
 ]
 weaknesses_en = [
   "Young service run by a sole proprietorship in Næstved, Denmark: size and reliability not established",
-  "Founder seller programme: 1.5 % fee instead of 2.5 % for the first 50 shops until 2027-03-01 (47 places left on 2026-11-23)",
 ]
 weaknesses_fr = [
   "Service jeune exploité par une entreprise individuelle à Næstved (Danemark) : taille et fiabilité non établies",
-  "Programme vendeur fondateur : 1.5 % de frais au lieu de 2.5 % pour les 50 premières boutiques jusqu'au 2027-03-01 (47 places restantes le 2026-11-23)",
 ]
 status = "active"
 last_activity = "2026-11-23"
@@ -508,12 +502,12 @@ summary_en = "French shop of refurbished LEGO: sets checked piece by piece, bulk
 summary_fr = "Boutique française de LEGO reconditionné : sets contrôlés pièce par pièce, vrac, figurines et plaques ; rachat de collections."
 strengths_en = [
   "Inventory checked piece by piece",
-  "236 Google reviews displayed on the home page",
+  "Google reviews displayed on the home page",
   "Also new sets, bulk by the kilo, rental and buy-back",
 ]
 strengths_fr = [
   "Inventaire contrôlé pièce par pièce",
-  "236 avis Google affichés sur la page d'accueil",
+  "Avis Google affichés sur la page d'accueil",
   "Aussi sets neufs, vrac au kilo, location et rachat",
 ]
 weaknesses_en = [
@@ -685,18 +679,16 @@ summary_en = "French online shop of vintage used LEGO sets, bricks and minifigur
 summary_fr = "Boutique en ligne française de sets, briques et figurines LEGO d'occasion et vintage."
 strengths_en = [
   "Shipping from France, from 3 € by Mondial Relay",
-  "41 products in stock on the LEGO collection page on 2026-11-23",
 ]
 strengths_fr = [
   "Livraison depuis la France, dès 3 € en Mondial Relay",
-  "41 produits en stock sur la collection LEGO le 2026-11-23",
 ]
 weaknesses_en = [
-  "Highest price on the collection page is 29.99 €: small sets and lots",
+  "Collection made of small sets and lots",
   "Guarantees and reviews not checked",
 ]
 weaknesses_fr = [
-  "Prix le plus élevé de la collection : 29.99 € : petits sets et lots",
+  "Collection composée de petits sets et de lots",
   "Garanties et avis non vérifiés",
 ]
 status = "active"
@@ -719,7 +711,7 @@ languages = ["en"]
 countries = ["US"]
 access = "free-account"
 summary_en = "Subreddit for selling, buying and trading LEGO; the page could not be read directly."
-summary_fr = "Sous-forum de vente, d'achat et d'échange de LEGO ; la page n'a pas pu être lue directement."
+summary_fr = "Sous-reddit de vente, d'achat et d'échange de LEGO ; la page n'a pas pu être lue directement."
 strengths_en = [
   "Public posts, sellers identifiable by account",
 ]
@@ -763,11 +755,11 @@ strengths_fr = [
   "Communauté francophone, vendeurs identifiables",
 ]
 weaknesses_en = [
-  "Low activity: last message on 2026-03-25",
+  "Low activity",
   "No payment protection",
 ]
 weaknesses_fr = [
-  "Activité faible : dernier message le 2026-03-25",
+  "Activité faible",
   "Pas de protection de paiement",
 ]
 status = "slow"
@@ -837,12 +829,12 @@ summary_fr = "Boutique néerlandaise de pièces LEGO authentiques neuves, de fig
 strengths_en = [
   "Large choice of parts",
   "Free shipping to France from 150 € of parts and minifigures",
-  "Prices including VAT",
+  "Prices including taxes",
 ]
 strengths_fr = [
   "Grand choix de pièces",
   "Livraison gratuite vers la France dès 150 € de pièces et figurines",
-  "Prix TVA comprise",
+  "Prix taxes comprises",
 ]
 weaknesses_en = [
   "Shipping to France from 5.99 € by letter (up to 400 g); parcels above",
@@ -1086,11 +1078,11 @@ strengths_fr = [
   "Livraison gratuite dès 50 dollars (page de livraison, lecture précédente)",
 ]
 weaknesses_en = [
-  "Site unreachable from the review environment on 2026-11-23: nothing re-verified",
+  "Site unreachable from the review environment: nothing re-verified",
   "Customs duties not covered",
 ]
 weaknesses_fr = [
-  "Site inaccessible depuis l'environnement de revue le 2026-11-23 : rien revérifié",
+  "Site inaccessible depuis l'environnement de revue : rien revérifié",
   "Droits de douane non couverts",
 ]
 status = "active"
@@ -1117,10 +1109,10 @@ business_model_fr = "Boutique"
 summary_en = "American shop of custom military and historical building kits, with BrickArms weapons."
 summary_fr = "Boutique américaine de kits militaires et historiques en briques et d'armes BrickArms."
 strengths_en = [
-  "Limited preorder restocks and seasonal discounts (Black Friday until 2026-12-01)",
+  "Limited preorder restocks and seasonal discounts",
 ]
 strengths_fr = [
-  "Réassorts limités en précommande et remises saisonnières (Black Friday jusqu'au 2026-12-01)",
+  "Réassorts limités en précommande et remises saisonnières",
 ]
 weaknesses_en = [
   "Shipping to Europe not checked",
@@ -1161,7 +1153,7 @@ strengths_fr = [
   "Application LEGO Builder avec instructions de sets anciens et récents",
 ]
 weaknesses_en = [
-  "Official sets only",
+  "Official LEGO sets only",
 ]
 weaknesses_fr = [
   "Sets LEGO officiel uniquement",
@@ -1387,18 +1379,18 @@ business_model_fr = "Boutique"
 summary_en = "Made-to-order acrylic display cases and stands for LEGO sets and minifigures, with a European store."
 summary_fr = "Vitrines et supports acryliques fabriqués à la commande pour sets et figurines LEGO, avec une boutique pour l'Europe."
 strengths_en = [
-  "Large catalogue by set (for example the 75192 case at 261.95 € to 347.95 € on 2026-11-23)",
+  "Large catalogue by set (for example the 75192 case)",
   "European version of the store in euros",
 ]
 strengths_fr = [
-  "Grand catalogue par set (par exemple vitrine du 75192 à 261.95 € à 347.95 € le 2026-11-23)",
+  "Grand catalogue par set (par exemple vitrine du 75192)",
   "Version européenne de la boutique en euros",
 ]
 weaknesses_en = [
-  "Made to order: lead time to check before a Christmas gift",
+  "Made to order: lead time to check before ordering",
 ]
 weaknesses_fr = [
-  "Fabriqué à la commande : délai à vérifier avant un cadeau de Noël",
+  "Fabriqué à la commande : délai à vérifier avant de commander",
 ]
 status = "active"
 last_activity = "2026-11-23"

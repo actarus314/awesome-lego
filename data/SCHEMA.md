@@ -1,7 +1,6 @@
-# Data schema / Format des données
+# Data schema
 
-One TOML file per category in `data/`. Every user-facing text exists in English (`_en`) and French (`_fr`).
-Un fichier TOML par catégorie dans `data/`. Chaque texte affiché existe en anglais (`_en`) et en français (`_fr`).
+One TOML file per category in `data/`. Every text shown on the website exists in English (`_en`) and French (`_fr`); the README and the full list use English.
 
 ```toml
 [category]
@@ -52,9 +51,9 @@ date = "2026-11-23"                      # publication or update date of the sou
 kind = "official"                        # official | read (page read at the source) | indexed (search snippet, cache) | third-party | forum
 ```
 
-Writing rules / Règles d'écriture :
+Writing rules:
 - Impersonal, factual, short. No marketing words. Facts not verified are left out or marked in `confidence`.
 - Numbers: decimal point, no thousands separator (`42003`, `4.95 €`).
-- French: « LEGO officiel » for the brand; English: "official LEGO". Proper names keep their form (LEGO Ideas, LEGO.com).
+- English: "official LEGO" for the brand; French: « LEGO officiel ». Proper names keep their form (LEGO Ideas, LEGO.com).
 - No abbreviations except proper names and technical terms (API, CSV, RSS). Write "custom builds" / « créations originales » rather than MOC.
 - Prices including taxes.

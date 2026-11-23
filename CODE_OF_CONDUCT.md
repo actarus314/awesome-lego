@@ -1,5 +1,3 @@
-[Version française](CODE_OF_CONDUCT.fr.md)
-
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge

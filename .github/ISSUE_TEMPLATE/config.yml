@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Questions and ideas / Questions et idées
+  - name: Questions and ideas
     url: https://github.com/actarus314/awesome-lego/discussions
-    about: Discussions, in English or French / Discussions, en anglais ou en français
-  - name: Security / Sécurité
+    about: Discussions, in English or French
+  - name: Security
     url: https://github.com/actarus314/awesome-lego/security/advisories/new
-    about: Private report / Signalement privé
+    about: Private report
