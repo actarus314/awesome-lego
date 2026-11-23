@@ -18,8 +18,8 @@ SITE = ROOT / "site"
 REPO = "actarus314/awesome-lego"
 PAGES = "https://actarus314.github.io/awesome-lego/"
 LANGS = ("en", "fr")
-ORDER = ["brands", "shops", "comparators", "second-hand", "community", "video", "tools", "directories"]
-COVERS = {"official", "alternative", "second-hand", "parts", "custom-builds", "minifigures", "instructions", "news", "data"}
+ORDER = ["brands", "shops", "comparators", "second-hand", "community", "video", "events", "places", "clubs", "learning", "tools", "directories"]
+COVERS = {"official", "alternative", "second-hand", "parts", "custom-builds", "minifigures", "instructions", "news", "data", "events", "places", "clubs", "learning"}
 ACCESS = {"free", "free-account", "freemium", "paid"}
 STATUS = {"active", "slow", "inactive", "archived", "dead"}
 CONFIDENCE = {"high", "medium", "low"}
@@ -52,7 +52,7 @@ def fail(errors):
 def load():
     cats, errors, ids = [], [], {}
     for path in sorted(DATA.glob("*.toml")):
-        if path.stem == "metrics":
+        if path.stem in ("metrics", "journeys"):
             continue
         try:
             d = tomllib.load(open(path, "rb"))
@@ -142,7 +142,8 @@ def readme(cats, m, lang, kind="readme"):
     title = T["title"][lang] if kind == "readme" else "Awesome LEGO: full list"
     badge = " [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)" if kind == "readme" else ""
     keep = (lambda r: r.get("featured")) if kind == "readme" else (lambda r: True)
-    out = [f"# {title}{badge}", "", f"> {T['tagline'][lang]}", "",
+    logo = [f'<a href="{PAGES}"><img src="media/logo.svg" align="right" width="120" alt="Awesome LEGO logo"></a>', ""] if kind == "readme" else []
+    out = [f"# {title}{badge}", "", *logo, f"> {T['tagline'][lang]}", "",
            f"[{T['site'][lang]}]({PAGES}) · [{T['site_fr'][lang]}]({PAGES}fr/)", "",
            MORE[kind][lang], "", f"## {T['contents'][lang]}", ""]
     seen = {}
@@ -182,6 +183,9 @@ def readme(cats, m, lang, kind="readme"):
                 if status != "active":
                     marks += " Status: " + {"slow": "no update for 6 months", "inactive": "no update for a year"}.get(status, status) + "."
                 desc = r["summary_" + lang].strip()
+                if kind == "readme":  # awesome style: one short sentence
+                    parts = re.split(r"(?<=[a-z0-9)])\.\s+(?=[A-Z])", desc)
+                    desc = parts[0] if len(parts[0]) >= 45 or len(parts) == 1 else parts[0] + ". " + parts[1]  # "Denmark." alone says too little
                 if not desc.endswith("."):
                     desc += "."
                 out.append(f"- [{r['name']}]({r['url']}) - {desc}{(' ' + marks.strip()) if marks.strip() else ''}")
@@ -236,7 +240,12 @@ def site_data(cats, m):
     categories = [{"id": c["category"]["id"], "en": c["category"]["name_en"], "fr": c["category"]["name_fr"],
                    "summary": {lang: c["category"].get("summary_" + lang, "") for lang in LANGS},
                    "groups": [{"id": g["id"], "en": g["name_en"], "fr": g["name_fr"]} for g in c["category"].get("groups", [])]} for c in cats]
-    return {"built": dt.date.today().isoformat(), "categories": categories, "resources": rows,
+    ids = {r["id"] for r in rows}
+    journeys = tomllib.load(open(DATA / "journeys.toml", "rb")).get("journey", []) if (DATA / "journeys.toml").exists() else []
+    missing = [f"journeys.toml: {j['id']}: unknown resource {i}" for j in journeys for i in j["resources"] if i not in ids]
+    if missing:
+        fail(missing)
+    return {"built": dt.date.today().isoformat(), "categories": categories, "resources": rows, "journeys": journeys,
             "brands": [{"id": k, "name": v["name"]} for k, v in terms.items()]}
 
 
@@ -276,6 +285,9 @@ def main():
     (SITE / "fr").mkdir(parents=True, exist_ok=True)
     (SITE / "index.html").write_text(page("en", data), encoding="utf-8")
     (SITE / "fr" / "index.html").write_text(page("fr", data), encoding="utf-8")
+    (SITE / "media").mkdir(exist_ok=True)
+    for f in (ROOT / "media").glob("*"):
+        (SITE / "media" / f.name).write_bytes(f.read_bytes())
     (SITE / "data.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     print("✓ site/index.html, site/fr/index.html, site/data.json")
 

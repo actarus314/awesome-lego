@@ -1,5 +1,7 @@
 # Awesome LEGO [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
+<a href="https://actarus314.github.io/awesome-lego/"><img src="media/logo.svg" align="right" width="120" alt="Awesome LEGO logo"></a>
+
 > Interlocking plastic construction bricks, from the official LEGO system to compatible brands.
 
 [Website with search, filters and charts](https://actarus314.github.io/awesome-lego/) · [French version of the website](https://actarus314.github.io/awesome-lego/fr/)
@@ -60,28 +62,28 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 ### European alternatives
 
-- [BlueBrixx](https://www.bluebrixx.com/fr/) - Germany (BB Service GmbH). Brand and shop for architecture, trains, medieval, vehicles and licences (BlueBrixx Pro for adults). Bricks come from several Chinese manufacturers; design and distribution are in Germany. Covers alternative brands.
-- [COBI](https://cobi.com/fr-fr) - Poland. Maker of compatible bricks with its own factory in Mielec, specialised in historical and military models (tanks, aircraft, ships) and licensed vehicles. The European shop is active with a French interface and prices in euros. Covers alternative brands.
+- [BlueBrixx](https://www.bluebrixx.com/fr/) - Germany (BB Service GmbH). Brand and shop for architecture, trains, medieval, vehicles and licences (BlueBrixx Pro for adults). Covers alternative brands.
+- [COBI](https://cobi.com/fr-fr) - Poland. Maker of compatible bricks with its own factory in Mielec, specialised in historical and military models (tanks, aircraft, ships) and licensed vehicles. Covers alternative brands.
 
 ### Chinese alternatives
 
-- [CaDA (Double Eagle)](https://cadatoys.com/) - China (Shantou), Double Eagle group, which also makes the bricks. Technic-style cars, often motorised or remote-controlled and licensed (Master series at 1:8), plus space and military models. Covers alternative brands.
-- [Lumibricks (formerly Funwhole)](https://www.lumibricks.com/) - China (Guangzhou). Complete sets of buildings and scenes with integrated light, in 13 collections including Cyberpunk Neoncity and the Blade Runner 2049 licence. Funwhole was renamed Lumibricks in 2025. Covers alternative brands.
-- [Mould King](https://mouldkingcorp.com/) - China (Shantou). Very large motorised Technic models, cranes, vehicles and trains at a very low price per piece. Bricks come mostly from GoBricks. Covers alternative brands.
-- [Pantasy](https://www.pantasy.com/) - China (Guangdong Pinqi Culture and Technology). Modular buildings, retro objects, flowers and licences with printed parts, aimed at adult collectors. Bricks come from GoBricks. Covers alternative brands.
+- [CaDA (Double Eagle)](https://cadatoys.com/) - China (Shantou), Double Eagle group, which also makes the bricks. Covers alternative brands.
+- [Lumibricks (formerly Funwhole)](https://www.lumibricks.com/) - China (Guangzhou). Complete sets of buildings and scenes with integrated light, in 13 collections including Cyberpunk Neoncity and the Blade Runner 2049 licence. Covers alternative brands.
+- [Mould King](https://mouldkingcorp.com/) - China (Shantou). Very large motorised Technic models, cranes, vehicles and trains at a very low price per piece. Covers alternative brands.
+- [Pantasy](https://www.pantasy.com/) - China (Guangdong Pinqi Culture and Technology). Covers alternative brands.
 
 ### Toy and model-kit companies
 
-- [Mattel Brick Shop (MEGA)](https://shopping.mattel.com/de-de/collections/bausteine-sets) - United States (Mattel). Adult line launched in 2025: licensed Hot Wheels cars (Lamborghini, Audi, Honda, Aston Martin), Masters of the Universe, Halo, Xbox. MEGA Bloks remains the children's range. Covers alternative brands.
+- [Mattel Brick Shop (MEGA)](https://shopping.mattel.com/de-de/collections/bausteine-sets) - United States (Mattel). Adult line launched in 2025: licensed Hot Wheels cars (Lamborghini, Audi, Honda, Aston Martin), Masters of the Universe, Halo, Xbox. Covers alternative brands.
 - [Revell Brick System](https://revell.com/collections/brick-system) - Germany. Brick line of the plastic model-kit maker, aimed at adults and launched in 2025 with the submarine from Das Boot (6483 pieces, 1:56). 2026 additions: V-22 Osprey (3730 pieces), Spitfire Mk.II Iron Maiden (2802), F-14A Tomcat Top Gun (2687) and Cutty Sark (7325 pieces, 549 euros). Covers alternative brands.
 
 ### Brick manufacturers and suppliers
 
-- [GoBricks (Shantou Golds Precision Technology)](https://gobricks.net/) - China (Shantou, Guangdong). Parts manufacturer regarded as the community reference for alternative bricks, founded in 2017, with 327 injection machines and a stated 10 billion pieces per year. Supplies Mould King, Pantasy and other brands, and sells parts individually. Covers alternative brands.
+- [GoBricks (Shantou Golds Precision Technology)](https://gobricks.net/) - China (Shantou, Guangdong). Parts manufacturer regarded as the community reference for alternative bricks, founded in 2017, with 327 injection machines and a stated 10 billion pieces per year. Covers alternative brands.
 
 ### Other formats
 
-- [nanoblock (Kawada)](https://www.kawada-toys.com/en/brand/nanoblock/) - Japan (Kawada). Micro-blocks whose smallest piece measures 4 mm by 4 mm by 5 mm, on sale since October 2008: animals, landmarks, ships and castles, with an Advanced Hobby series for adults. Not compatible with the 8 mm stud system. Covers alternative brands.
+- [nanoblock (Kawada)](https://www.kawada-toys.com/en/brand/nanoblock/) - Japan (Kawada). Micro-blocks whose smallest piece measures 4 mm by 4 mm by 5 mm, on sale since October 2008: animals, landmarks, ships and castles, with an Advanced Hobby series for adults. Covers alternative brands.
 
 ## Shops
 
@@ -107,7 +109,7 @@ Sites that compare set prices across shops, catalogue sets and parts, track seco
 
 ### Price comparators
 
-- [Brick Broker](https://brick-broker.com/) - Price comparator covering official LEGO and about 95 alternative brands in one search, with offers deliverable to France. Published by Kadris, a sole proprietorship based in France. Covers official LEGO and alternative brands.
+- [Brick Broker](https://brick-broker.com/) - Price comparator covering official LEGO and about 95 alternative brands in one search, with offers deliverable to France. Covers official LEGO and alternative brands.
 - [Brickmitri](https://brickmitri.com/comparateur-lego/) - Price comparator for official LEGO only, built from affiliate feeds of French retailers; no account required. Covers official LEGO.
 - [Lakea](https://lakea.net/?lang=fr) - Independent comparator for official LEGO based on its own price collection, also covering parts, minifigures and display cases. Covers official LEGO.
 
@@ -115,7 +117,7 @@ Sites that compare set prices across shops, catalogue sets and parts, track seco
 
 - [Brickset](https://brickset.com/) - Reference database of official LEGO sets since 1997 (minifigures, parts, colours, inventories), with collection tracking, reviews, news and lists of discounts at retailers. Covers official LEGO.
 - [Rebrickable](https://rebrickable.com/) - Database of official sets, parts and fan-designed custom builds with instructions; shows which creations can be built with the parts a user owns. Covers official LEGO.
-- [SetDB (Merlins Steine)](https://www.merlinsbricks.com/setdb/) - Set database of the independent German brick magazine Merlins Steine (merlinssteine.de, English edition Merlins Bricks): sets of many brands, minifigures and parts, next to reviews, news and a weekly podcast. The magazine declares no brand ambassador programme and no banner advertising. Covers official LEGO and alternative brands.
+- [SetDB (Merlins Steine)](https://www.merlinsbricks.com/setdb/) - Set database of the independent German brick magazine Merlins Steine (merlinssteine.de, English edition Merlins Bricks): sets of many brands, minifigures and parts, next to reviews, news and a weekly podcast. Covers official LEGO and alternative brands.
 
 ### Value and investment tracking
 

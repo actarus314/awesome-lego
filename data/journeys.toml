@@ -1,0 +1,36 @@
+# Where to start: one need, the few best resources for it (ids from data/*.toml). Shown on the website.
+[[journey]]
+id = "buy"
+title_en = "Buy a set, official LEGO or alternative"
+title_fr = "Acheter un set, LEGO officiel ou alternative"
+resources = ["brick-broker", "brickmitri", "lego-com-fr", "kbs-shop", "bluebrixx-shop"]
+
+[[journey]]
+id = "reviews"
+title_en = "Judge an alternative brand"
+title_fr = "Juger une marque alternative"
+resources = ["merlins-bricks", "the-laser-symphony", "jangs-other-bricks", "hardware-fr-compatible-bricks"]
+
+[[journey]]
+id = "second-hand"
+title_en = "Buy second-hand or retired sets"
+title_fr = "Acheter d'occasion ou un set retiré"
+resources = ["bricklink-marketplace", "vinted", "leboncoin", "brickland", "brickplus"]
+
+[[journey]]
+id = "create"
+title_en = "Design and build your own models"
+title_fr = "Concevoir et construire ses propres modèles"
+resources = ["rebrickable", "bricklink-studio", "pick-a-brick", "brickognize"]
+
+[[journey]]
+id = "news"
+title_en = "Follow the news and reviews"
+title_fr = "Suivre l'actualité et les tests"
+resources = ["hothbricks", "brothers-brick", "new-elementary", "jangbricks"]
+
+[[journey]]
+id = "value"
+title_en = "Know what a set is worth"
+title_fr = "Connaître la valeur d'un set"
+resources = ["brickeconomy", "brickset", "setdb"]

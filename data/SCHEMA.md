@@ -22,7 +22,7 @@ url = "https://brick-broker.com/"        # canonical home page, https
 group = "price-comparators"              # one of category.groups
 featured = true                          # optional: listed in the README selection (best of its group)
 aliases = ["Funwhole"]                   # optional, brands: other names the brand goes by, used to find mentions
-covers = ["official", "alternative"]     # official | alternative | second-hand | parts | custom-builds | minifigures | instructions | news | data
+covers = ["official", "alternative"]     # official | alternative | second-hand | parts | custom-builds | minifigures | instructions | news | data | events | places | clubs | learning
 languages = ["fr", "en"]                 # ISO 639-1 codes of the interface or content
 countries = ["FR"]                       # ISO 3166-1 alpha-2 codes served, or ["international"]
 ships_to_france = true                   # shops only; omit when not relevant
@@ -45,6 +45,10 @@ github = "owner/repo"                    # optional: for automatic stars and las
 youtube_channel_id = "UC…"               # optional: for automatic last-video updates (public RSS feed)
 subreddit = "lepin"                      # optional: for automatic activity updates
 feed = "https://…/feed"                  # optional: RSS or Atom feed of the resource
+city = "Billund"                         # optional: places, events, clubs
+next_date = "2027-06-12"                 # optional, events: start of the next edition (ISO date)
+recurrence_en = "Every June"             # optional, events: how often it happens
+recurrence_fr = "Chaque juin"
 
 [[resource.sources]]                     # at least one; the page that supports the entry
 url = "https://brick-broker.com/a-propos"
