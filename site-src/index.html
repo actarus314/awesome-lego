@@ -9,7 +9,7 @@
 <meta property="og:image" content="https://actarus314.github.io/awesome-lego/media/social.png"><meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" hreflang="en" href="https://actarus314.github.io/awesome-lego/">
 <link rel="alternate" hreflang="fr" href="https://actarus314.github.io/awesome-lego/fr/">
-<link rel="alternate" type="application/atom+xml" title="Awesome LEGO: changes" href="https://actarus314.github.io/awesome-lego/feed.xml">
+<link rel="alternate" type="application/atom+xml" title="{{FEEDTITLE}}" href="https://actarus314.github.io/awesome-lego/{{FEEDPATH}}feed.xml">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='10' width='28' height='18' rx='3' fill='%23e3a008'/%3E%3Crect x='7' y='5' width='7' height='6' rx='2' fill='%23e3a008'/%3E%3Crect x='18' y='5' width='7' height='6' rx='2' fill='%23e3a008'/%3E%3C/svg%3E">
 <script>/* language: the English home page sends a French-speaking browser to /fr/, unless a language was chosen with the button */
 try{if('{{LANG}}'==='en'){const l=localStorage.getItem('lang');if(l==='fr'||(!l&&/^fr\b/i.test((navigator.languages||[navigator.language])[0]||'')))location.replace('fr/'+location.search+location.hash)}}catch(e){}</script>
@@ -166,7 +166,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
 <div class="insights"><section class="panel wide" id="v-passion"></section><section class="panel" id="v-blind"></section><section class="panel" id="v-pulse"></section><section class="panel" id="v-brands"></section></div>
 </div>
 </main>
-<footer><div class="wrap"><span id="built"></span><span><a href="https://github.com/{{REPO}}/blob/main/contributing.md" data-t="contribute"></a> · <a href="https://github.com/{{REPO}}/issues/new/choose" data-t="report"></a> · <a href="https://github.com/{{REPO}}/blob/main/LICENSE">CC BY-NC-SA 4.0</a></span></div></footer>
+<footer><div class="wrap"><span id="built"></span><span><a href="https://github.com/{{REPO}}/blob/main/contributing.md" data-t="contribute"></a> · <a href="https://github.com/{{REPO}}/issues/new/choose" data-t="report"></a> · <a href="feed.xml" type="application/atom+xml" data-t="feed"></a> · <a href="https://github.com/{{REPO}}/blob/main/LICENSE">CC BY-NC-SA 4.0</a></span></div></footer>
 <div id="tip" role="tooltip"></div>
 <script>/* MiniSearch 7.2.0, MIT licence, see site-src/vendor/minisearch-LICENSE.txt */
 {{MINISEARCH}}</script>
@@ -201,7 +201,7 @@ p_title:{en:'Last sign of life',fr:'Dernier signe de vie'},
 p_note:{en:'Ring: a resource silent for 6 months, at its last post, video or commit. Bar: resources active in the last 6 months.',fr:'Cercle : ressource muette depuis 6 mois, à son dernier article, sa dernière vidéo ou son dernier commit. Barre : ressources actives depuis 6 mois.'},
 p_recent:{en:'last 6 months',fr:'6 derniers mois'},
 intl:{en:'international',fr:'international'},events:{en:'events',fr:'événements'},places:{en:'places',fr:'lieux'},clubs:{en:'clubs',fr:'clubs'},learning:{en:'learning',fr:'savoir'},
-country_all:{en:'All countries',fr:'Tous les pays'},last_act:{en:'last activity',fr:'dernière activité le'},next:{en:'Next edition:',fr:'Prochaine édition :'},
+country_all:{en:'All countries',fr:'Tous les pays'},feed:{en:'Feed (RSS)',fr:'Flux (RSS)'},last_act:{en:'last activity',fr:'dernière activité le'},next:{en:'Next edition:',fr:'Prochaine édition :'},
 pa_title:{en:'Where the passion is',fr:'Où vit la passion'},
 pa_note:{en:'Sources: official LEGO Fan CoLab directory, read on {d}; World Bank population, {y}. Logarithmic axes; the line is the average rate of the countries shown. With one or two communities, a small country\'s position says little.{x}',
  fr:'Sources : annuaire officiel LEGO Fan CoLab, lu le {d} ; population de la Banque mondiale, {y}. Axes logarithmiques ; la ligne est le taux moyen des pays présents. Avec une ou deux communautés, la place d\'un petit pays dit peu de chose.{x}'},

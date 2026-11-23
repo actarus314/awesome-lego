@@ -71,6 +71,7 @@ size_fr = "12000 m², 25 millions de briques (selon le site)"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Billund"
 
@@ -115,6 +116,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -157,6 +159,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -201,6 +204,7 @@ size_fr = "914 m² de surface totale, 504 m² de surface de vente (Guinness Worl
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 city = "London"
 
@@ -244,6 +248,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Paris"
 
@@ -287,6 +292,7 @@ size_fr = "Bruxelles : plus de 3000 m², 12 zones d'activités, plus de 2 millio
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -339,6 +345,7 @@ size_fr = "23 LEGOLAND Discovery Centers listés sur legoland.com"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -385,6 +392,7 @@ size_fr = "11 parcs et 1 parc aquatique"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -427,6 +435,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Billund"
 
@@ -470,6 +479,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Windsor"
 
@@ -513,6 +523,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Günzburg"
 
@@ -561,6 +572,7 @@ size_fr = "5 musées, plus de 9000 modèles (selon le site)"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Prague"
 
@@ -604,6 +616,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Tábor"
 
@@ -646,6 +659,7 @@ size_fr = "570 m²"
 status = "active"
 last_activity = "2026-11-04"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Binningen"
 
@@ -695,6 +709,7 @@ size_fr = "Plus de 500 m² sur trois étages, environ 1.6 million de briques"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Eckental"
 
@@ -738,6 +753,7 @@ size_fr = "Plus d'un million de briques (selon l'annonce)"
 status = "active"
 last_activity = "2026-06-26"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 city = "Bad Birnbach"
 
@@ -786,6 +802,7 @@ size_fr = "200 m², 650000 pièces LEGO et 170000 pièces K'NEX"
 status = "active"
 last_activity = "2026-11-01"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Valras-Plage"
 
@@ -831,6 +848,7 @@ size_fr = "Environ 300 m² après agrandissement (site tiers)"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Maasmechelen"
 
@@ -873,6 +891,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Marina di Campo"
 
@@ -920,6 +939,7 @@ size_fr = "18 zones thématiques, plus d'un million de briques (selon le site)"
 status = "active"
 last_activity = "2025-05-18"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 city = "Capoterra"
 
@@ -960,6 +980,7 @@ size_fr = "Plus de 14000 figurines, 700 sets (selon le site)"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Kraków"
 
@@ -998,6 +1019,7 @@ size_fr = "Environ 5 millions de briques (selon le site)"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 city = "Milton Keynes"
 
@@ -1041,6 +1063,7 @@ size_fr = "3 lieux listés"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1084,6 +1107,7 @@ size_fr = "39 magasins en Allemagne (4 juin 2026), 4 en Autriche"
 status = "active"
 last_activity = "2026-09-11"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1135,6 +1159,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-07-28"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Chambéry, Annecy"
 
@@ -1179,6 +1204,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Saint-Orens-de-Gameville"
 
@@ -1221,6 +1247,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Saint-Malo"
 
@@ -1257,6 +1284,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-07-08"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Montpellier"
 
@@ -1293,6 +1321,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 city = "Saint-Martin-Bellevue"
 
@@ -1330,6 +1359,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Marcillat-en-Combraille"
 
@@ -1372,6 +1402,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 city = "Paderborn"
 
@@ -1417,6 +1448,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-09"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Bingley"
 
@@ -1463,6 +1495,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 city = "Sheffield"
 
@@ -1504,6 +1537,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Liège"
 
@@ -1540,6 +1574,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-14"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 city = "Limburg an der Lahn"
 
@@ -1576,6 +1611,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-03-11"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 city = "Rothenburg ob der Tauber"
 
@@ -1617,6 +1653,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 city = "Höhr-Grenzhausen"
 
@@ -1656,6 +1693,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2025-01-30"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 city = "Vedène"
 

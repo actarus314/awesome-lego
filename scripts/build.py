@@ -33,6 +33,7 @@ T = {  # interface strings
                 "fr": "Briques de construction en plastique à emboîter, du système LEGO officiel aux marques compatibles."},
     "site_tagline": {"en": "The best of the brick world for adult builders, in official LEGO and compatible brands.",
                      "fr": "Le meilleur du monde de la brique pour les adultes qui construisent, en LEGO officiel comme en marques compatibles."},
+    "feed": {"en": "Feed of new resources (RSS)", "fr": "Flux des nouveautés (RSS)"},
     "contents": {"en": "Contents", "fr": "Sommaire"},
     "contributing": {"en": "Contributing", "fr": "Contribuer"},
     "contrib_text": {"en": "Additions and corrections are welcome: read [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them."},
@@ -74,7 +75,7 @@ def load():
             elif r["id"] in ids:
                 errors.append(f"{w}: id already used in {ids[r['id']]}")
             ids[r.get("id")] = where
-            for k in ("name", "url", "group", "summary_en", "summary_fr", "status", "checked", "confidence"):
+            for k in ("name", "url", "group", "summary_en", "summary_fr", "status", "checked", "added", "confidence"):
                 if not r.get(k):
                     errors.append(f"{w}: {k} missing")
             if not re.match(r"https?://", str(r.get("url", ""))):
@@ -151,7 +152,7 @@ def readme(cats, m, lang, kind="readme"):
     keep = (lambda r: r.get("featured")) if kind == "readme" else (lambda r: True)
     logo = [f'<a href="{PAGES}"><img src="media/logo.svg" align="right" width="120" alt="Awesome LEGO logo"></a>', ""] if kind == "readme" else []
     out = [f"# {title}{badge}", "", *logo, f"> {T['tagline'][lang]}", "",
-           f"**[{T['site'][lang]}]({PAGES})** · [{T['site_fr'][lang]}]({PAGES}fr/)", "",
+           f"**[{T['site'][lang]}]({PAGES})** · [{T['site_fr'][lang]}]({PAGES}fr/) · [{T['feed'][lang]}]({PAGES}feed.xml)", "",
            *([f'<p align="center"><a href="{PAGES}"><img src="media/site-preview.png" width="880" alt="The website: a map of the brick world, a directory with search and filters, and findings"></a></p>', ""] if kind == "readme" else []),
            MORE[kind][lang], "", f"## {T['contents'][lang]}", ""]
     seen = {}
@@ -284,22 +285,62 @@ def page(lang, data):
     return (tpl.replace("{{LANG}}", lang).replace("{{OTHER}}", other)
                .replace("{{TITLE}}", html.escape(T["title"][lang])).replace("{{TAGLINE}}", html.escape(T["site_tagline"][lang]))
                .replace("{{MINISEARCH}}", (ROOT / "site-src" / "vendor" / "minisearch.min.js").read_text(encoding="utf-8"))
+               .replace("{{FEEDTITLE}}", html.escape(FEED_T["title"][lang])).replace("{{FEEDPATH}}", "fr/" if lang == "fr" else "")
                .replace("{{DATA}}", blob).replace("{{REPO}}", REPO).replace("{{VERSION}}", data["version"]))
 
 
-def feed():
-    """Atom feed of the versions, from CHANGELOG.md: one item per version, newest first."""
-    text = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
-    items = re.findall(r"(?m)^## v(\d+\.\d+) — (\d{4}-\d{2}-\d{2})\n(.*?)(?=^## v|^# v|\Z)", text, re.S)[:30]
-    esc = lambda x: html.escape(x.strip(), quote=False)
-    entries = "".join(
-        f"<entry><title>v{v}</title><id>https://github.com/{REPO}/releases/tag/v{v}</id>"
-        f"<link href=\"https://github.com/{REPO}/releases/tag/v{v}\"/><updated>{d}T00:00:00Z</updated>"
-        f"<content type=\"text\">{esc(body)}</content></entry>" for v, d, body in items)
-    updated = items[0][1] if items else dt.date.today().isoformat()
-    return (f'<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Awesome LEGO: changes</title>'
-            f'<id>{PAGES}feed.xml</id><link href="{PAGES}"/><link rel="self" href="{PAGES}feed.xml"/>'
+BASELINE = "2026-11-23"  # the directory's first day: its entries make one opening item, not 400 separate ones
+FEED_T = {
+    "title": {"en": "Awesome LEGO: new in the directory", "fr": "Awesome LEGO : nouveautés de l'annuaire"},
+    "new": {"en": "New", "fr": "Nouveau"},
+    "next": {"en": "Next edition", "fr": "Prochaine édition"},
+    "open": {"en": "Awesome LEGO opens with {n} resources", "fr": "Awesome LEGO ouvre avec {n} ressources"},
+    "open_body": {"en": "{n} resources of the brick world, each checked at its source: brands, shops, prices, second-hand, communities, videos, events, places, clubs, learning and tools.",
+                  "fr": "{n} ressources du monde de la brique, chacune vérifiée à sa source : marques, boutiques, prix, occasion, communautés, vidéos, événements, lieux, clubs, savoir et outils."},
+}
+
+
+def atom(title, self_url, site_url, items):
+    """items: (id, title, link, date, text), newest first."""
+    esc = lambda x: html.escape(str(x).strip(), quote=True)
+    entries = "".join(f"<entry><title>{esc(t)}</title><id>{esc(i)}</id><link href=\"{esc(l)}\"/><updated>{d}T00:00:00Z</updated>"
+                      f"<content type=\"text\">{esc(x)}</content></entry>" for i, t, l, d, x in items)
+    updated = items[0][3] if items else dt.date.today().isoformat()
+    return (f'<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>{esc(title)}</title>'
+            f'<id>{self_url}</id><link href="{site_url}"/><link rel="self" href="{self_url}"/>'
             f'<updated>{updated}T00:00:00Z</updated><author><name>Awesome LEGO</name></author>{entries}</feed>\n')
+
+
+def content_feed(cats, lang):
+    """What readers follow: entries added to the directory and announced editions of events, in one language."""
+    site = PAGES + ("fr/" if lang == "fr" else "")
+    today = dt.date.today().isoformat()
+    items, base = [], 0
+    for c in cats:
+        cname = c["category"]["name_" + lang]
+        for r in c["resources"]:
+            link = f"{site}#entry={r['id']}"
+            if str(r["added"]) <= BASELINE:
+                base += 1
+            else:
+                items.append((f"{site}#added-{r['id']}", f"{FEED_T['new'][lang]} · {cname} · {r['name']}", link, str(r["added"]), r["summary_" + lang]))
+            if r.get("next_date") and str(r["next_date"]) >= today:
+                when = ".".join(reversed(str(r["next_date"]).split("-")))  # DD.MM.YYYY
+                where = f" · {r['city']}" if r.get("city") else ""
+                items.append((f"{site}#next-{r['id']}-{r['next_date']}", f"{FEED_T['next'][lang]} · {r['name']} · {when.replace('.', '/')}{where}",
+                              link, str(r["checked"]), r["summary_" + lang]))
+    if base:
+        items.append((f"{site}#opening", FEED_T["open"][lang].format(n=base), site, BASELINE, FEED_T["open_body"][lang].format(n=base)))
+    items.sort(key=lambda x: (x[3], x[1]), reverse=True)
+    return atom(FEED_T["title"][lang], site + "feed.xml", site, items[:60])
+
+
+def changes_feed():
+    """For whoever follows the development: one item per version, from CHANGELOG.md."""
+    text = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    found = re.findall(r"(?m)^## v(\d+\.\d+) — (\d{4}-\d{2}-\d{2})\n(.*?)(?=^## v|^# v|\Z)", text, re.S)[:30]
+    items = [(f"https://github.com/{REPO}/releases/tag/v{v}", f"v{v}", f"https://github.com/{REPO}/releases/tag/v{v}", d, body) for v, d, body in found]
+    return atom("Awesome LEGO: changes", PAGES + "changes.xml", f"https://github.com/{REPO}", items)
 
 
 def issue_form(cats):
@@ -360,7 +401,9 @@ def main():
     (SITE / "fr").mkdir(parents=True, exist_ok=True)
     (SITE / "index.html").write_text(page("en", data), encoding="utf-8")
     (SITE / "fr" / "index.html").write_text(page("fr", data), encoding="utf-8")
-    (SITE / "feed.xml").write_text(feed(), encoding="utf-8")
+    (SITE / "feed.xml").write_text(content_feed(cats, "en"), encoding="utf-8")
+    (SITE / "fr" / "feed.xml").write_text(content_feed(cats, "fr"), encoding="utf-8")
+    (SITE / "changes.xml").write_text(changes_feed(), encoding="utf-8")
     for f in (ROOT / "media").rglob("*"):
         if f.is_file():
             out = SITE / f.relative_to(ROOT)

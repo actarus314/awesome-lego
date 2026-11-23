@@ -2,6 +2,9 @@
 
 # v1.x — Bilingual directory of the brick world, from brands and shops to events, places, clubs and know-how: resources checked at their source, best-of README, website with map, journeys and findings, automatic updates.
 
+## v1.13 — 2026-11-23
+The website's feed now follows the content, in each language: new resources and announced event editions (`feed.xml`, `fr/feed.xml`); the feed of versions moves to `changes.xml`. Each entry carries the date it entered the directory (`added`), and the feed is linked from the footer and the README.
+
 ## v1.12 — 2026-11-23
 Website: the English home page sends a browser set to French to the French page, until a language is chosen with the language button; the theme already follows the browser until one is chosen.
 

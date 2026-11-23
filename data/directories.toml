@@ -46,6 +46,7 @@ size_fr = "Environ 90 entrées en 17 sections"
 status = "active"
 last_activity = "2026-11-02"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 github = "ad-si/awesome-lego"
 
@@ -72,6 +73,7 @@ weaknesses_fr = ["Peu maintenue ; cite Digital Designer comme obsolète", "Ni ma
 status = "inactive"
 last_activity = "2023-04-27"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 github = "brickventory/awesome-lego"
 
@@ -98,6 +100,7 @@ weaknesses_fr = ["Créneau technique"]
 status = "inactive"
 last_activity = "2025-04-06"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 github = "360er0/awesome-lego-machine-learning"
 
@@ -126,6 +129,7 @@ size_fr = "926 sites uniques, 66 catégories"
 status = "archived"
 last_activity = "2016-01-26"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -151,6 +155,7 @@ weaknesses_fr = ["Aucune date de mise à jour affichée", "Boutiques américaine
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -176,6 +181,7 @@ weaknesses_fr = ["Message initial du 07/02/2010 ; obsolète, nombreux liens prob
 status = "archived"
 last_activity = "2010-02-07"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -201,6 +207,7 @@ weaknesses_fr = ["Aucune date de mise à jour sur la page", "Limitée aux utilis
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -227,6 +234,7 @@ weaknesses_fr = ["Aucune date de mise à jour affichée ; certaines entrées sig
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -253,6 +261,7 @@ weaknesses_fr = ["Limité aux communautés reconnues par LEGO", "Aucune date de 
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -278,6 +287,7 @@ weaknesses_fr = ["Page non relue pendant cette revue ; éditeur de type blog com
 status = "active"
 last_activity = "2026-10-10"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -306,6 +316,7 @@ size_fr = "429 chaînes"
 status = "active"
 last_activity = "2026-07-27"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -332,6 +343,7 @@ weaknesses_fr = ["Aucune date de mise à jour affichée", "Surtout du contenu LE
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -358,6 +370,7 @@ weaknesses_fr = ["Sept messages, créé le 07/04/2024 ; dernier message en mai 2
 status = "inactive"
 last_activity = "2024-05-04"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -383,6 +396,7 @@ weaknesses_fr = ["Page non relue pendant cette revue"]
 status = "active"
 last_activity = "2026-10-31"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -409,6 +423,7 @@ weaknesses_fr = ["En allemand uniquement", "Encyclopédique, sans prix ni évalu
 status = "active"
 last_activity = "2026-09-27"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -434,6 +449,7 @@ weaknesses_fr = ["Notes courtes seulement ; aucune mise à jour depuis le 07/11/
 status = "slow"
 last_activity = "2025-11-07"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -459,6 +475,7 @@ weaknesses_fr = ["Page non datée"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -487,6 +504,7 @@ size_fr = "32 marques"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -512,6 +530,7 @@ weaknesses_fr = ["Publié le 09/03/2022 ; sans mise à jour observée depuis"]
 status = "inactive"
 last_activity = "2022-03-09"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -537,6 +556,7 @@ weaknesses_fr = ["Date des chiffres non indiquée", "Inclut des chaînes destin�
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -562,6 +582,7 @@ weaknesses_fr = ["Aucune date de publication sur la page", "La page d'accueil bl
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]

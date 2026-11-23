@@ -52,6 +52,7 @@ size_fr = "Environ 80 associations listées (non comptées exactement)"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -81,6 +82,7 @@ weaknesses_fr = ["Forum, lettre d'information et certains avantages réservés a
 status = "active"
 last_activity = "2026-08-12"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -112,6 +114,7 @@ weaknesses_fr = ["Site principalement en néerlandais"]
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -139,6 +142,7 @@ size_fr = "Environ 600 membres (annuaire du Fan CoLab)"
 status = "active"
 last_activity = "2026-09-17"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -169,6 +173,7 @@ weaknesses_fr = ["Site uniquement en suédois"]
 status = "active"
 last_activity = "2026-11-14"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -200,6 +205,7 @@ weaknesses_fr = ["Adhésion nécessaire pour rejoindre l'association"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -226,6 +232,7 @@ weaknesses_fr = ["Site uniquement en espagnol"]
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -256,6 +263,7 @@ weaknesses_fr = ["Site illisible lors de la vérification ; dernier message de f
 status = "slow"
 last_activity = "2025-12-19"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -286,6 +294,7 @@ weaknesses_fr = ["Site uniquement en polonais"]
 status = "active"
 last_activity = "2026-11-09"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -311,6 +320,7 @@ weaknesses_fr = ["Site uniquement en néerlandais"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -338,6 +348,7 @@ size_fr = "Plus de 150 membres"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -365,6 +376,7 @@ size_fr = "Environ 100 membres"
 status = "active"
 last_activity = "2026-10-24"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Wien"
 
@@ -391,6 +403,7 @@ weaknesses_fr = ["Activité centrée sur les expositions dans sa région"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -417,6 +430,7 @@ weaknesses_fr = ["Conditions d'adhésion absentes de la page d'accueil"]
 status = "active"
 last_activity = "2026-11-21"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -442,6 +456,7 @@ weaknesses_fr = ["Portée régionale"]
 status = "active"
 last_activity = "2026-11-02"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -472,6 +487,7 @@ weaknesses_fr = ["La page d'accueil est interactive et contient peu de texte lis
 status = "active"
 last_activity = "2026-10-27"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -503,6 +519,7 @@ weaknesses_fr = ["Page d'accueil vue seulement par un index de recherche ; une a
 status = "active"
 last_activity = "2026-11-15"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -534,6 +551,7 @@ weaknesses_fr = ["Site principalement en allemand"]
 status = "active"
 last_activity = "2026-11-01"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -559,6 +577,7 @@ weaknesses_fr = ["Petit groupe local, site uniquement en allemand"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 city = "Karlsruhe"
 
@@ -585,6 +604,7 @@ weaknesses_fr = ["Lieu précisé uniquement sur Meetup"]
 status = "active"
 last_activity = "2026-11-09"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "London"
 
@@ -612,6 +632,7 @@ weaknesses_fr = ["Les échanges se tiennent dans des groupes Facebook et Discord
 status = "active"
 last_activity = "2026-08-31"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -637,6 +658,7 @@ weaknesses_fr = ["Portée régionale"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -662,6 +684,7 @@ weaknesses_fr = ["Hors d'Europe"]
 status = "active"
 last_activity = "2026-10-25"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -693,6 +716,7 @@ weaknesses_fr = ["Hors d'Europe"]
 status = "active"
 last_activity = "2026-10-06"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -718,6 +742,7 @@ weaknesses_fr = ["Thème étroit"]
 status = "active"
 last_activity = "2026-09-22"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -746,6 +771,7 @@ weaknesses_fr = ["Forum et Discord réservés aux membres", "Site uniquement en 
 status = "active"
 last_activity = "2026-09-05"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Niederkreuzstetten"
 
@@ -782,6 +808,7 @@ weaknesses_fr = ["Faible volume : les sujets récents viennent d'un seul membre"
 status = "active"
 last_activity = "2026-11-06"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -814,6 +841,7 @@ size_fr = "Exposition de Rouen du 26 mars au 4 avril 2027 (selon l'index)"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 city = "Le Grand-Quevilly"
 next_date = "2027-03-26"
@@ -849,6 +877,7 @@ weaknesses_fr = ["Échelle locale"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Le Perray-en-Yvelines"
 next_date = "2026-11-28"
@@ -878,6 +907,7 @@ weaknesses_fr = ["Actualités surtout sur Facebook"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 city = "Rennes"
 recurrence_en = "Several events per year"
@@ -906,6 +936,7 @@ weaknesses_fr = ["Forum uniquement en norvégien"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -936,6 +967,7 @@ weaknesses_fr = ["Forum uniquement en finnois", "La page d'accueil bloque les le
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -961,6 +993,7 @@ weaknesses_fr = ["Dernier message du forum d'actualités en janvier 2025", "Dern
 status = "active"
 last_activity = "2026-10-30"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -986,6 +1019,7 @@ weaknesses_fr = ["Publications du portail moins fréquentes (flux mis à jour le
 status = "active"
 last_activity = "2026-06-03"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 feed = "https://comunidade0937.com/portal/feed/"
 
@@ -1019,6 +1053,7 @@ size_fr = "Plus de 60 membres"
 status = "active"
 last_activity = "2026-10-15"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1056,6 +1091,7 @@ size_fr = "6 membres"
 status = "slow"
 last_activity = "2026-05-12"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 feed = "https://noppenbahner.de/feed/"
 
@@ -1090,6 +1126,7 @@ size_fr = "13 constructeurs (entretien d'un site tiers, avril 2026)"
 status = "slow"
 last_activity = "2026-04-22"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]

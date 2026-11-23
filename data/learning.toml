@@ -55,6 +55,7 @@ weaknesses_fr = ["Anglais uniquement"]
 status = "active"
 last_activity = "2026-10-31"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -80,6 +81,7 @@ weaknesses_fr = ["Le dernier élément daté visible sur la page d'accueil remon
 status = "inactive"
 last_activity = "2020-11-30"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -106,6 +108,7 @@ weaknesses_fr = ["Dernier article vu daté d'avril 2025"]
 status = "inactive"
 last_activity = "2025-04-03"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -137,6 +140,7 @@ weaknesses_fr = ["Anglais uniquement", "Centré sur Technic"]
 status = "active"
 last_activity = "2026-07-24"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -161,6 +165,7 @@ weaknesses_en = ["English only", "Page dates not shown"]
 weaknesses_fr = ["Anglais uniquement", "Dates des pages non affichées"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -187,6 +192,7 @@ weaknesses_fr = ["La qualité des réponses varie ; certaines datent de 2013 à 
 status = "active"
 last_activity = "2026-11-03"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -212,6 +218,7 @@ weaknesses_fr = ["Anglais uniquement", "Glossaire non daté"]
 status = "active"
 last_activity = "2026-11-07"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -241,6 +248,7 @@ weaknesses_en = ["Page not dated; some entries describe older situations"]
 weaknesses_fr = ["Page non datée ; certaines entrées décrivent des situations anciennes"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -265,6 +273,7 @@ weaknesses_en = ["Published by a shop", "Page not dated"]
 weaknesses_fr = ["Publié par une boutique", "Page non datée"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -289,6 +298,7 @@ weaknesses_en = ["Concerns official LEGO pieces; other brands may differ"]
 weaknesses_fr = ["Concerne les pièces LEGO officielles ; les autres marques peuvent différer"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -313,6 +323,7 @@ weaknesses_en = ["Says nothing about other manufacturers' materials"]
 weaknesses_fr = ["Ne dit rien des matériaux des autres fabricants"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -338,6 +349,7 @@ weaknesses_en = ["Concerns the shape of the brick only, not copies of sets, logo
 weaknesses_fr = ["Ne concerne que la forme de la brique, pas les copies de sets, de logos ou d'emballages", "Texte juridique, pas un guide d'achat"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -367,6 +379,7 @@ weaknesses_en = ["Collaborative text, may change"]
 weaknesses_fr = ["Texte collaboratif, susceptible de changer"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -391,6 +404,7 @@ weaknesses_en = ["Brand owner's viewpoint"]
 weaknesses_fr = ["Point de vue du titulaire de la marque"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -415,6 +429,7 @@ weaknesses_en = ["General page, not specific to bricks"]
 weaknesses_fr = ["Page générale, non spécifique aux briques"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -445,6 +460,7 @@ weaknesses_fr = ["Portée générale, précise ne porter aucune appréciation su
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -470,6 +486,7 @@ weaknesses_en = ["Company viewpoint"]
 weaknesses_fr = ["Point de vue de l'entreprise"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -499,6 +516,7 @@ weaknesses_en = ["Index page with editorial comments of the museum"]
 weaknesses_fr = ["Page d'index avec des commentaires éditoriaux du musée"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -523,6 +541,7 @@ weaknesses_en = ["Technical legal text", "Expired"]
 weaknesses_fr = ["Texte juridique technique", "Expiré"]
 status = "archived"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -548,6 +567,7 @@ weaknesses_fr = ["Texte collaboratif, susceptible de changer"]
 status = "active"
 last_activity = "2026-11-16"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -574,6 +594,7 @@ weaknesses_fr = ["Daté de 2018"]
 status = "archived"
 last_activity = "2018-01-29"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -599,6 +620,7 @@ weaknesses_fr = ["Daté de 2019"]
 status = "archived"
 last_activity = "2019-02-07"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -624,6 +646,7 @@ weaknesses_fr = ["Destiné aux écoles et aux enseignants, pas aux constructeurs
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -654,6 +677,7 @@ weaknesses_fr = ["Le partenariat avec LEGO Education s'arrête après 2026-2027"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 recurrence_en = "Yearly season, August to spring"
 recurrence_fr = "Saison annuelle, d'août au printemps"
@@ -686,6 +710,7 @@ weaknesses_fr = ["Calendrier de la saison publié dans la section ressources, pa
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 recurrence_en = "Yearly season"
 recurrence_fr = "Saison annuelle"
@@ -718,6 +743,7 @@ weaknesses_fr = ["Ne couvre que l'espace germanophone"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 recurrence_en = "Yearly season"
 recurrence_fr = "Saison annuelle"
@@ -750,6 +776,7 @@ weaknesses_fr = ["Sélection et production décidées par LEGO"]
 status = "active"
 last_activity = "2026-11-10"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -786,6 +813,7 @@ size_fr = "145 numéros parus au 30 octobre 2026 (Exact Editions compte 146 num�
 status = "active"
 last_activity = "2026-10-30"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -821,6 +849,7 @@ weaknesses_fr = ["Publication terminée ; l'adresse est l'annonce de l'éditeur 
 status = "archived"
 last_activity = "2026-07-22"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -851,6 +880,7 @@ weaknesses_fr = ["Publication récente, fondée par une seule personne"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -886,6 +916,7 @@ weaknesses_fr = ["Publication terminée ; l'adresse web renvoie vers un ancien s
 status = "dead"
 last_activity = "2026-06-04"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -917,6 +948,7 @@ weaknesses_fr = ["Anglais uniquement", "Livres vendus ; livres numériques dispo
 status = "active"
 last_activity = "2026-09-30"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -942,6 +974,7 @@ weaknesses_fr = ["Daté de 2016 ; les pièces Technic ultérieures et le systèm
 status = "active"
 last_activity = "2016-10-21"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -972,6 +1005,7 @@ weaknesses_en = ["Most titles target children"]
 weaknesses_fr = ["La plupart des titres visent les enfants"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1004,6 +1038,7 @@ size_en = "27 professionals: 4 Americas, 14 Europe and Middle East, 9 Asia-Pacif
 size_fr = "27 professionnels : 4 Amériques, 14 Europe et Moyen-Orient, 9 Asie-Pacifique"
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1029,6 +1064,7 @@ weaknesses_fr = ["Surtout un calendrier d'expositions"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1059,6 +1095,7 @@ weaknesses_fr = ["Chiffres fournis par l'artiste"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1089,6 +1126,7 @@ weaknesses_fr = ["Chiffres de fréquentation différents selon les pages du site
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 city = "Edinburgh"
 
@@ -1120,6 +1158,7 @@ weaknesses_fr = ["Site commercial, peu de contenu pédagogique"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1144,6 +1183,7 @@ weaknesses_en = ["Site pages are undated"]
 weaknesses_fr = ["Pages du site non datées"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1173,6 +1213,7 @@ weaknesses_en = ["Commercial site"]
 weaknesses_fr = ["Site commercial"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1202,6 +1243,7 @@ weaknesses_en = ["Commercial site", "Site pages are undated"]
 weaknesses_fr = ["Site commercial", "Pages du site non datées"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1231,6 +1273,7 @@ weaknesses_en = ["Only the shop is an official site; no biography page read"]
 weaknesses_fr = ["Seule la boutique est un site officiel ; aucune page de biographie lue"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1262,6 +1305,7 @@ size_en = "61 profiles in three sections (20, 14, 27)"
 size_fr = "61 fiches en trois sections (20, 14, 27)"
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1288,6 +1332,7 @@ weaknesses_fr = ["Prix et modèles de contenants relevés sur le marché des Ét
 status = "active"
 last_activity = "2026-05-17"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1313,6 +1358,7 @@ weaknesses_fr = ["Les kits testés ont été fournis par un fabricant"]
 status = "active"
 last_activity = "2025-12-27"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1338,6 +1384,7 @@ weaknesses_fr = ["Publié par une boutique ; conseils généraux, moins détaill
 status = "slow"
 last_activity = "2024-07-27"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1364,6 +1411,7 @@ weaknesses_fr = ["Daté de 2009 (mis à jour en 2018) ; résultats de la méthod
 status = "inactive"
 last_activity = "2018-12-29"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1389,6 +1437,7 @@ weaknesses_fr = ["La page d'accueil bloque les lecteurs automatisés par un déf
 status = "active"
 last_activity = "2026-11-09"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1414,6 +1463,7 @@ weaknesses_fr = ["Dernière modification datée trouvée : version 1.5 (7 juille
 status = "inactive"
 last_activity = "2021-07-07"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1452,6 +1502,7 @@ weaknesses_fr = ["Instructions et kits payants"]
 status = "active"
 last_activity = "2026-11-12"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 youtube_channel_id = "UCYPBfLx3dgMxW60CY9u7uUQ"
 

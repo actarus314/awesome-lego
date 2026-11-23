@@ -2,7 +2,7 @@
 
 > Interlocking plastic construction bricks, from the official LEGO system to compatible brands.
 
-**[Explore the website: every resource, with search, filters and a map](https://actarus314.github.io/awesome-lego/)** · [French version of the website](https://actarus314.github.io/awesome-lego/fr/)
+**[Explore the website: every resource, with search, filters and a map](https://actarus314.github.io/awesome-lego/)** · [French version of the website](https://actarus314.github.io/awesome-lego/fr/) · [Feed of new resources (RSS)](https://actarus314.github.io/awesome-lego/feed.xml)
 
 Every resource, including inactive and dead ones, generated from [`data/`](data/). The selection of the best is in the [README](README.md).
 

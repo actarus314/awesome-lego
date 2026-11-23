@@ -51,6 +51,7 @@ weaknesses_fr = ["Environ une requête par seconde et par compte ; erreur 429 au
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -83,6 +84,7 @@ weaknesses_fr = ["Sets, pièces et figurines LEGO officiels uniquement ; pas de 
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -116,6 +118,7 @@ weaknesses_fr = ["Plafond initial de 100 appels par jour et par clé ; augmentat
 status = "active"
 last_activity = "2026-11-19"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -149,6 +152,7 @@ weaknesses_fr = ["Signature OAuth 1.0 ; jetons liés à des adresses IP fixes d�
 status = "active"
 last_activity = "2026-11-18"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -186,6 +190,7 @@ weaknesses_fr = ["Disponibilités, prix et inventaires exigent l'autorisation «
 status = "active"
 last_activity = "2026-09-17"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -218,6 +223,7 @@ weaknesses_fr = ["Réservé aux membres Premium", "100 requêtes par jour, plafo
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -250,6 +256,7 @@ weaknesses_fr = ["Limitation de débit par client (erreur 429), sans promesse de
 status = "active"
 last_activity = "2026-11-09"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 github = "brickfact-com/agent-skills"
 
@@ -282,6 +289,7 @@ weaknesses_fr = ["Les clés de service des utilisateurs sont confiées au site",
 status = "slow"
 last_activity = "2025-12-14"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -315,6 +323,7 @@ weaknesses_fr = ["Chiffres de précision déclarés par le site, non vérifiés"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -350,6 +359,7 @@ size_fr = "17230 formes ou pièces décorées uniques"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -383,6 +393,7 @@ weaknesses_fr = ["Propriétaire, anglais seulement, pas de version Linux", "Page
 status = "active"
 last_activity = "2026-10-27"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -416,6 +427,7 @@ weaknesses_fr = ["Licence GPL version 2 indiquée dans le README seulement, abse
 status = "active"
 last_activity = "2026-11-21"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 github = "leozide/leocad"
 
@@ -449,6 +461,7 @@ weaknesses_fr = ["Date de la dernière version absente de la page d'accueil", "C
 status = "slow"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -476,6 +489,7 @@ weaknesses_fr = ["Activité non relue à la source", "Dépôt non ouvert"]
 status = "active"
 last_activity = "2026-06-30"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -503,6 +517,7 @@ weaknesses_fr = ["Visionneuse seulement, sans édition", "Date du dernier commit
 status = "active"
 last_activity = "2026-11-15"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 github = "tcobbs/ldview"
 
@@ -529,6 +544,7 @@ weaknesses_fr = ["Offres tarifaires non vérifiées", "Exploitant non identifié
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -556,6 +572,7 @@ weaknesses_fr = ["Sets LEGO officiels uniquement"]
 status = "active"
 last_activity = "2026-11-12"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -585,6 +602,7 @@ weaknesses_fr = ["12 lectures gratuites, fonctions premium payantes", "Estimatio
 status = "active"
 last_activity = "2026-05-29"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -610,6 +628,7 @@ weaknesses_fr = ["iOS seulement sur la page d'accueil ; Brickset cite une applic
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -640,6 +659,7 @@ weaknesses_fr = ["Seule une page de blog lue ; fiche de magasin d'applications n
 status = "active"
 last_activity = "2026-11-02"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -666,6 +686,7 @@ weaknesses_fr = ["Tarifs et date d'activité non trouvés", "Chiffres de la page
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -693,6 +714,7 @@ weaknesses_fr = ["Projet jeune", "Utilisateur unique ; non prévu pour Internet 
 status = "active"
 last_activity = "2026-11-09"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 github = "Ulef1005/brick-work"
 
@@ -721,6 +743,7 @@ weaknesses_fr = ["Miroir seulement ; le dépôt Gitea d'origine est la source", 
 status = "slow"
 last_activity = "2024-12-29"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 github = "ssmiller25/bricktracker"
 
@@ -749,6 +772,7 @@ weaknesses_fr = ["Un seul mainteneur", "Saisie du mot de passe Rebrickable pour 
 status = "active"
 last_activity = "2026-08-11"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 github = "ZehJulianLp/brickhoard"
 
@@ -777,6 +801,7 @@ weaknesses_fr = ["Clés BrickLink et Rebrickable personnelles requises", "Licenc
 status = "active"
 last_activity = "2026-07-08"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 github = "Melle79/nupplo"
 
@@ -806,6 +831,7 @@ weaknesses_fr = ["Orienté vendeurs BrickLink plus que choix d'un set"]
 status = "active"
 last_activity = "2026-09-12"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 github = "rgriebl/brickstore"
 
@@ -839,6 +865,7 @@ weaknesses_fr = ["Créé le 24/10/2025 ; clé Rebrickable requise"]
 status = "slow"
 last_activity = "2025-10-24"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 github = "wendehals/bricks-mcp"
 
@@ -867,6 +894,7 @@ weaknesses_fr = ["Des avis des boutiques d'applications signalent des erreurs de
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -897,6 +925,7 @@ weaknesses_fr = ["Projet récent d'un seul développeur (article du 2026-06-13)"
 status = "active"
 last_activity = "2026-06-13"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -927,6 +956,7 @@ weaknesses_fr = ["Les composants communiquent sans authentification : réseau pr
 status = "inactive"
 last_activity = "2025-09-01"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 github = "BrickSortingMachine/BrickSortingMachine"
 
@@ -958,6 +988,7 @@ weaknesses_fr = ["Travail en cours ; documentation non évaluée"]
 status = "slow"
 last_activity = "2025-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 github = "basicallysource/sorter"
 
@@ -985,6 +1016,7 @@ weaknesses_en = ["Reads sealed boxes only, not loose figures", "Series coverage 
 weaknesses_fr = ["Lit seulement les boîtes fermées, pas les figurines libres", "Couverture des séries dépendante des codes collectés après chaque sortie"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1016,6 +1048,7 @@ weaknesses_en = ["Reads sealed boxes only"]
 weaknesses_fr = ["Lit seulement les boîtes fermées"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1048,6 +1081,7 @@ weaknesses_fr = ["Précision et nombre d'utilisateurs fournis par le site, non v
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1075,6 +1109,7 @@ weaknesses_fr = ["Les photos sont envoyées aux serveurs de l'exploitant pour id
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1103,6 +1138,7 @@ weaknesses_fr = ["Remplace le micrologiciel officiel du hub (une procédure de r
 status = "active"
 last_activity = "2026-11-14"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 github = "pybricks/pybricks-micropython"
 
@@ -1143,6 +1179,7 @@ size_fr = "109 étoiles"
 status = "slow"
 last_activity = "2026-05-06"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 github = "Novakasa/brickrail"
 
@@ -1178,6 +1215,7 @@ size_fr = "142 étoiles"
 status = "inactive"
 last_activity = "2024-06-11"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 github = "imurvai/brickcontroller2"
 
@@ -1213,6 +1251,7 @@ size_fr = "525 étoiles"
 status = "slow"
 last_activity = "2026-03-29"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 github = "nathankellenicki/node-poweredup"
 
@@ -1248,6 +1287,7 @@ size_fr = "665 étoiles"
 status = "inactive"
 last_activity = "2024-12-14"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 github = "ev3dev/ev3dev"
 
@@ -1283,6 +1323,7 @@ size_fr = "Version 3.0.00, révision r17"
 status = "inactive"
 last_activity = "2019-02-08"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 github = "LEGO/lego-ble-wireless-protocol-docs"
 

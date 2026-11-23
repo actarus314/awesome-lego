@@ -5,7 +5,7 @@ This list aims to be complete, accurate and current. Every entry is checked at i
 **Suggest without editing files:** open an issue with the [Add a resource](../../issues/new?template=add-resource.yml) or [Fix an entry](../../issues/new?template=fix-entry.yml) form. A maintainer writes the entry.
 
 **Edit the data yourself:**
-1. Edit the TOML file of the category in [`data/`](data/), following [`data/SCHEMA.md`](data/SCHEMA.md). `README.md`, `full-list.md`, `data/metrics.json` and the category list of the issue form are generated: do not edit them by hand.
+1. Edit the TOML file of the category in [`data/`](data/), following [`data/SCHEMA.md`](data/SCHEMA.md); a new entry gets `added` set to the day it enters the directory (it feeds the site's feed of new resources). `README.md`, `full-list.md`, `data/metrics.json` and the category list of the issue form are generated: do not edit them by hand.
 2. Run `python3 scripts/build.py` (Python 3.11 or later, no dependency) and commit the regenerated files with the data.
 3. Open a pull request. The maintainer adds the version number and the CHANGELOG entry when merging. Checks validate the data, build the site and test the links.
 

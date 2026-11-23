@@ -42,6 +42,7 @@ weaknesses_fr = ["Vente au tarif de référence : selon un relevé tiers, 2 % de
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -78,6 +79,7 @@ size_fr = "Plus de 1000 articles LEGO officiel (déclaration de la boutique)"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -111,6 +113,7 @@ weaknesses_fr = ["Port forfaitaire de 16.49 € par commande vers l'Union europ�
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -140,6 +143,7 @@ size_fr = "Environ 640 associés, plus de 1000 points de vente affiliés"
 status = "active"
 last_activity = "2026-11-09"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -173,6 +177,7 @@ weaknesses_fr = ["Supplément de 3.50 € sous 24 € de commande, en plus du po
 status = "active"
 last_activity = "2026-08-27"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -209,6 +214,7 @@ size_fr = "349 sets (relevé de la première passe)"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -236,6 +242,7 @@ weaknesses_fr = ["Livraison vers la France non publiée et port non publié (9.9
 status = "active"
 last_activity = "2026-11-17"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -270,6 +277,7 @@ weaknesses_fr = ["Test indépendant de mars 2026 : teintes irrégulières, force
 status = "active"
 last_activity = "2026-10-14"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -305,6 +313,7 @@ size_fr = "Plus de 2000 sets, plus de 20 marques"
 status = "active"
 last_activity = "2026-10-10"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -337,6 +346,7 @@ weaknesses_fr = ["Livraison hors Allemagne uniquement sur demande selon un compa
 status = "active"
 last_activity = "2026-10-27"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -369,6 +379,7 @@ weaknesses_fr = ["France non nommée : autres pays sur demande, tarif calculé �
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -396,6 +407,7 @@ weaknesses_fr = ["Page des conditions d'expédition illisible par les outils : l
 status = "active"
 last_activity = "2026-10-19"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -425,6 +437,7 @@ weaknesses_fr = ["Avis du site sans note chiffrée ; un client signale une carte
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -458,6 +471,7 @@ weaknesses_fr = ["Petite structure fondée en 2023", "Note de 4.9 sur 75 avis af
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -486,6 +500,7 @@ weaknesses_fr = ["Depuis l'entrepôt en Chine : 10 à 18 jours ouvrables par avi
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -519,6 +534,7 @@ weaknesses_fr = ["Contradiction : prix taxes comprises, mais droits de douane ou
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -547,6 +563,7 @@ weaknesses_fr = ["Traitement de 5 à 10 jours ouvrables puis 4 à 17 jours vers 
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -575,6 +592,7 @@ weaknesses_fr = ["Gros articles par fret maritime : 40 à 70 jours", "Articles d
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -602,6 +620,7 @@ weaknesses_fr = ["Prix en dollars ; conditions d'expédition vers la France non 
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -629,6 +648,7 @@ weaknesses_fr = ["Un avis récent signale une commande non livrée et des courri
 status = "active"
 last_activity = "2026-10-30"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -662,6 +682,7 @@ weaknesses_fr = ["Gamme étroite : principalement COBI et Reobrix", "Avis indép
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -690,6 +711,7 @@ weaknesses_fr = ["Port calculé à la caisse, non publié ; un guide tiers indiq
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -723,6 +745,7 @@ weaknesses_fr = ["Prix changeant plusieurs fois par jour ; vendeurs tiers parfoi
 status = "active"
 last_activity = "2026-09-15"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -752,6 +775,7 @@ weaknesses_fr = ["Port standard de 10.98 € par colis, cité comme élevé ; ma
 status = "active"
 last_activity = "2026-11-20"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -785,6 +809,7 @@ weaknesses_fr = ["Selon un relevé tiers, remise médiane de 9.5 % seulement, 69
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -819,6 +844,7 @@ weaknesses_fr = ["Enseigne récente (mars 2026) ; retards et colis abîmés cit�
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -852,6 +878,7 @@ weaknesses_fr = ["Aucun seuil de gratuité lu ; port calculé au panier, non pub
 status = "active"
 last_activity = "2026-11-11"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -880,6 +907,7 @@ weaknesses_fr = ["Moins chère sur 10 % des sets seulement (relevé tiers)", "Av
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -908,6 +936,7 @@ weaknesses_fr = ["Marketplace : remise médiane de 4.5 %, 42 % des sets au-dessu
 status = "active"
 last_activity = "2026-09-15"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -936,6 +965,7 @@ weaknesses_fr = ["Catalogue LEGO plus court, la moins chère sur 7 % des sets", 
 status = "active"
 last_activity = "2026-09-15"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -964,6 +994,7 @@ weaknesses_fr = ["Trustpilot 2.2 sur 4874 avis (17/11/2026) pour le domaine www.
 status = "active"
 last_activity = "2026-11-17"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -992,6 +1023,7 @@ weaknesses_fr = ["Pas de flux de prix chez les comparateurs ; port et délais no
 status = "active"
 last_activity = "2026-11-12"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -1020,6 +1052,7 @@ weaknesses_fr = ["29 % d'avis à une étoile ; commandes annulées et service cl
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -1048,6 +1081,7 @@ weaknesses_fr = ["Trustpilot 1.6 sur 938 avis, relevé ancien (27/07/2025), 78 %
 status = "active"
 last_activity = "2025-09-06"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -1075,6 +1109,7 @@ size_fr = "Environ 250 sets et 50000 pièces (selon la boutique)"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]

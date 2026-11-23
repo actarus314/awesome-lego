@@ -78,6 +78,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -130,6 +131,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -182,6 +184,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-09-01"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -228,6 +231,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -269,6 +273,7 @@ size_fr = "339511 annonces"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -314,6 +319,7 @@ size_fr = "826 objets dans la collection LEGO"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -354,6 +360,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -394,6 +401,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -443,6 +451,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -487,6 +496,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -534,6 +544,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -584,6 +595,7 @@ size_fr = "Plus de 1500 sets rachetés et revendus (déclaré par le site)"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -627,6 +639,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -671,6 +684,7 @@ size_fr = "Environ 4980 sets (somme des tranches de prix)"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -710,6 +724,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -745,6 +760,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 subreddit = "Legomarket"
 
@@ -781,6 +797,7 @@ weaknesses_fr = [
 status = "slow"
 last_activity = "2026-03-25"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -820,6 +837,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -865,6 +883,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -905,6 +924,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-08-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -953,6 +973,7 @@ size_fr = "Plus de 41000 pièces et couleurs"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -993,6 +1014,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1028,6 +1050,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1066,6 +1089,7 @@ weaknesses_fr = [
 status = "slow"
 last_activity = "2026-06-04"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1104,6 +1128,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -1141,6 +1166,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1177,6 +1203,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1218,6 +1245,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1258,6 +1286,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -1296,6 +1325,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1335,6 +1365,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1373,6 +1404,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -1412,6 +1444,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1439,6 +1472,7 @@ weaknesses_fr = ["L'acrylique ne protège pas le modèle exposé des UV (indiqu�
 status = "active"
 last_activity = "2026-11-14"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1467,6 +1501,7 @@ weaknesses_fr = ["Livraison vers la France, droits et prix non vérifiés"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1494,6 +1529,7 @@ weaknesses_fr = ["Livraison vers la France et prix non vérifiés"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1522,6 +1558,7 @@ weaknesses_fr = ["Prix et délais non vérifiés"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1550,6 +1587,7 @@ weaknesses_fr = ["Exploitant et pays d'origine non vérifiés", "Kits indépenda
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1577,6 +1615,7 @@ weaknesses_fr = ["Exploitant non vérifié", "Kits indépendants, non officiels"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1605,6 +1644,7 @@ weaknesses_fr = ["Livraison vers la France et droits non vérifiés"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1632,6 +1672,7 @@ weaknesses_fr = ["Boutique des États-Unis ; livraison vers la France non vérif
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -1664,6 +1705,7 @@ weaknesses_fr = ["Prix en dollars américains ; livraison vers l'Europe non vér
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1691,6 +1733,7 @@ weaknesses_fr = ["Prix en dollars américains ; livraison vers l'Europe non vér
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1718,6 +1761,7 @@ weaknesses_fr = ["Boutique réglée sur les États-Unis et le dollar américain 
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1746,6 +1790,7 @@ weaknesses_fr = ["Prix en livres sterling", "Droits et frais pour l'Union europ�
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1773,6 +1818,7 @@ weaknesses_fr = ["Note de 4.86 étoiles sur 946 avis fournie par la boutique, no
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1801,6 +1847,7 @@ weaknesses_fr = ["Entreprise récente (2023)", "Seuil de livraison offerte pour 
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1828,6 +1875,7 @@ weaknesses_en = ["Site in German only", "Shipping to France not checked"]
 weaknesses_fr = ["Site en allemand uniquement", "Livraison vers la France non vérifiée"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1855,6 +1903,7 @@ weaknesses_fr = ["Site surtout en néerlandais", "Origine des pièces imprimées
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1881,6 +1930,7 @@ weaknesses_en = ["Shipping conditions and printing method not read", "Single-con
 weaknesses_fr = ["Conditions de livraison et procédé d'impression non lus", "Petite entreprise à contact unique"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -1907,6 +1957,7 @@ weaknesses_en = ["Personalisation details read only in a search snippet", "Prici
 weaknesses_fr = ["Détails de la personnalisation lus seulement dans un extrait de recherche", "Prix des articles imprimés non vérifiés"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1941,6 +1992,7 @@ weaknesses_fr = ["Délai de 3 semaines indiqué sur une fiche lue", "Produits no
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1973,6 +2025,7 @@ weaknesses_fr = ["Prix en livres sterling ; livraison vers la France non vérifi
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -2000,6 +2053,7 @@ weaknesses_fr = ["Pays de l'exploitant non indiqué sur les pages lues", "Impres
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -2027,6 +2081,7 @@ weaknesses_fr = ["Refuse les motifs de franchises, de marques et de minifigurine
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -2052,6 +2107,7 @@ weaknesses_fr = ["Pas spécifique à LEGO", "Contenu des annonces non lu : la pa
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -2079,6 +2135,7 @@ size_fr = "497 annonces de sets pour adultes, 49 sets promotionnels, 33 sets de 
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -2104,6 +2161,7 @@ weaknesses_fr = ["Pas spécifique à LEGO"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -2129,6 +2187,7 @@ weaknesses_fr = ["Pas spécifique à LEGO"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -2154,6 +2213,7 @@ weaknesses_fr = ["Pas spécifique à LEGO"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -2179,6 +2239,7 @@ weaknesses_fr = ["Pas spécifique à LEGO"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -2208,6 +2269,7 @@ weaknesses_fr = ["Lecture directe du site bloquée (403), contenu lu par un inde
 status = "active"
 last_activity = "2026-11-04"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -2240,6 +2302,7 @@ weaknesses_fr = ["Stocks arrivant par conteneurs en vagues selon les régions (b
 status = "active"
 last_activity = "2026-06-03"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -2273,6 +2336,7 @@ weaknesses_fr = ["Voie en plastique pour trains à batterie : pas de voie 9V, ch
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -2311,6 +2375,7 @@ weaknesses_fr = ["Usage non commercial uniquement", "Instructions seulement : pa
 status = "active"
 last_activity = "2026-11-21"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 feed = "https://open-l-gauge.eu/feed/"
 
@@ -2348,6 +2413,7 @@ weaknesses_en = ["No dated content found: activity not established", "Direct rea
 weaknesses_fr = ["Aucun contenu daté trouvé : activité non établie", "La lecture directe rencontre une page de vérification, contenu lu par un index de recherche"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]

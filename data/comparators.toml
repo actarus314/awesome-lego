@@ -71,6 +71,7 @@ size_fr = "42003 sets, 95 marques"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -127,6 +128,7 @@ size_fr = "3406 sets comparés chez 6 boutiques (site américain)"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -179,6 +181,7 @@ size_fr = "2890 produits : LEGO officiel 2249, COBI 948, Pantasy 494, CaDA 307"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -228,6 +231,7 @@ size_fr = "381 sets"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -281,6 +285,7 @@ size_fr = "1384 sets, 14 enseignes"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -321,6 +326,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -364,6 +370,7 @@ size_fr = "16 enseignes (variante France)"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -405,6 +412,7 @@ size_fr = "89 boutiques"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -452,6 +460,7 @@ size_fr = "21675 sets, 138 boutiques, 7509 pièces, 7243 minifigurines, 1434 vit
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -489,6 +498,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -532,6 +542,7 @@ size_fr = "7033 sets (variante France)"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -578,6 +589,7 @@ size_fr = "2995 sets"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -621,6 +633,7 @@ size_fr = "17519 sets"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -661,6 +674,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -705,6 +719,7 @@ size_fr = "plus de 7000 sets"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -744,6 +759,7 @@ size_fr = "6760 sets, 415419 prix, plus de 50 boutiques"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -788,6 +804,7 @@ size_fr = "3891 sets avec offres, 16 marchands"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -831,6 +848,7 @@ size_fr = "plus de 17000 sets, 19000 minifigurines"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -872,6 +890,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-09-30"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -913,6 +932,7 @@ weaknesses_fr = [
 ]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 last_activity = "2026-11-23"
 confidence = "low"
 
@@ -957,6 +977,7 @@ size_fr = "5893 produits dans la catégorie coffret LEGO (idealo.fr)"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -996,6 +1017,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -1039,6 +1061,7 @@ size_fr = "5006 produits LEGO et 1946 produits de briques d'autres marques (geiz
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1087,6 +1110,7 @@ size_fr = "plus de 17000 sets, 60 fabricants, plus de 190 boutiques"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1130,6 +1154,7 @@ size_fr = "10615 sets"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1175,6 +1200,7 @@ size_fr = "1570 sets LEGO officiel suivis"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -1222,6 +1248,7 @@ size_fr = "23674 sets et autres articles"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1272,6 +1299,7 @@ size_fr = "plus de 206000 créations originales"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1314,6 +1342,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1356,6 +1385,7 @@ size_fr = "39690 sets, 92 marques"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1400,6 +1430,7 @@ size_fr = "2446 sets, 32 marques"
 status = "active"
 last_activity = "2026-11-07"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1439,6 +1470,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-21"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1487,6 +1519,7 @@ size_fr = "20411 sets, 17363 minifigurines, 64955 pièces"
 status = "active"
 last_activity = "2026-11-07"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1536,6 +1569,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1587,6 +1621,7 @@ weaknesses_fr = [
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1617,6 +1652,7 @@ weaknesses_fr = ["Historique des prix non vérifié", "Lecture directe bloquée 
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1642,6 +1678,7 @@ weaknesses_fr = ["Pas spécifique à LEGO", "Pages de la catégorie LEGO non lue
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -1669,6 +1706,7 @@ size_fr = "5713 sets, 35413 prix, 89 distributeurs danois"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -1694,6 +1732,7 @@ weaknesses_fr = ["Pas spécifique à LEGO"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]

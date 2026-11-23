@@ -57,6 +57,7 @@ weaknesses_fr = ["Prix plus élevé que les alternatives pour un nombre de pièc
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -96,6 +97,7 @@ weaknesses_fr = ["Serrage ferme, corrections laborieuses (Bricktimer, 08/07/2026
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -135,6 +137,7 @@ weaknesses_fr = ["Briques de sources multiples : teintes et serrage parfois irr�
 status = "active"
 last_activity = "2026-10-14"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -172,6 +175,7 @@ weaknesses_fr = ["Livraison en France non vérifiée ; livraison gratuite annonc
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -199,6 +203,7 @@ weaknesses_fr = ["Expédition depuis l'Allemagne ; livraison en France non véri
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -233,6 +238,7 @@ weaknesses_fr = ["Montages difficiles, broches dures, notices parfois confuses (
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -272,6 +278,7 @@ weaknesses_fr = ["Anciens designs de la communauté repris sans rémunérer les 
 status = "active"
 last_activity = "2026-11-20"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -310,6 +317,7 @@ weaknesses_fr = ["Qualité et service variables selon le set et le vendeur ; té
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -344,6 +352,7 @@ weaknesses_fr = ["Licences éphémères : Garfield et Peanuts retirés de la bou
 status = "active"
 last_activity = "2026-07-01"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -383,6 +392,7 @@ weaknesses_fr = ["Une seule licence : Blade Runner 2049 (BrickReport, 08/10/2026
 status = "active"
 last_activity = "2026-09-29"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
@@ -421,6 +431,7 @@ weaknesses_fr = ["Pièces longues et fines plus souples ; télécommandes et app
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -450,6 +461,7 @@ weaknesses_fr = ["Lancée en 2017 par le groupe propriétaire de Lepin, condamn�
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -492,6 +504,7 @@ weaknesses_fr = ["Livraison en France non vérifiée", "Peu d'avis d'usage indé
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -527,6 +540,7 @@ weaknesses_en = ["Official site could not be read by the tools used: range, shop
 weaknesses_fr = ["Site officiel non lisible avec les outils utilisés : gamme, boutique et livraison non vérifiées", "Origine mixte des briques (liste Wikipédia allemand, 27/09/2026)"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -551,6 +565,7 @@ weaknesses_en = ["Pokemon licence limited to Asia (BrickReport, 2026-10-08)", "F
 weaknesses_fr = ["Licence Pokémon limitée à l'Asie (BrickReport, 08/10/2026)", "Ancien domaine keeppley.com illisible ; boutique et livraison en France non vérifiées"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -580,6 +595,7 @@ weaknesses_en = ["Official site is a manufacturer catalogue; no direct shop read
 weaknesses_fr = ["Le site officiel est un catalogue de fabricant ; aucune boutique directe lue", "Le site revendeur wange.store se présente comme officiel et vend d'autres marques : non retenu comme source"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -609,6 +625,7 @@ weaknesses_en = ["Brick maker disputed: MZ Model (Xingbao) per Wikipedia German 
 weaknesses_fr = ["Fabricant des briques contesté : MZ Model (Xingbao) selon la liste Wikipédia allemand, briques propres selon un revendeur ; non établi", "Le site officiel n'a renvoyé presque aucun contenu lisible ; difficile à trouver sur les marchés internationaux"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -638,6 +655,7 @@ weaknesses_en = ["Corporate site, no direct shop for the brick range read", "Ins
 weaknesses_fr = ["Site d'entreprise, aucune boutique directe pour la gamme de briques lue", "Notice commune aux versions télécommandée et manuelle, peu lisible (simplythebest-mag, 10/03/2024)"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -667,6 +685,7 @@ weaknesses_en = ["Motor assembly delicate (simplythebest-mag, 2024-03-10)", "The
 weaknesses_fr = ["Montage du moteur délicat (simplythebest-mag, 10/03/2024)", "Le domaine de la marque immastertech.com a renvoyé une page de vérification anti-robot et n'a pas été lu", "Un revendeur met en garde contre des distributeurs non autorisés vendant des contrefaçons"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -693,6 +712,7 @@ weaknesses_fr = ["Qualité variable selon le set (Tiny Workshops, 10/10/2023)", 
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -722,6 +742,7 @@ weaknesses_en = ["Mostly play and children orientation", "Delivery to France not
 weaknesses_fr = ["Orientation surtout jeu et enfants", "Livraison en France non vérifiée"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -746,6 +767,7 @@ weaknesses_en = ["Duties and import fees may be payable on delivery outside the 
 weaknesses_fr = ["Droits et frais d'importation possibles à la livraison hors des États-Unis", "Le suffixe du nom de domaine évoque une boutique secondaire ; statut officiel non confirmé"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -781,6 +803,7 @@ weaknesses_fr = ["Gamme récente et encore réduite ; serrage fort, corrections 
 status = "active"
 last_activity = "2026-11-05"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -816,6 +839,7 @@ weaknesses_fr = ["Prix élevés (205 à 549 euros)", "Fabricant des briques non 
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -849,6 +873,7 @@ weaknesses_fr = ["Serrage plus ferme que LEGO, fatigant sur de très grands sets
 status = "active"
 last_activity = "2026-03-12"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -883,6 +908,7 @@ weaknesses_en = ["Official site read in Chinese; no direct international shop fo
 weaknesses_fr = ["Site officiel lu en chinois ; aucune boutique internationale directe trouvée", "Source de pièces à l'unité inconnue (Modellbau-Wiki)"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -918,6 +944,7 @@ weaknesses_fr = ["Non compatible avec le système de briques à tenons de 8 mm"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
@@ -942,6 +969,7 @@ weaknesses_en = ["Pitch of 4 to 6 mm: incompatible with LEGO (Wikipedia German l
 weaknesses_fr = ["Pas de 4 à 6 mm : incompatible avec LEGO (liste Wikipédia allemand, 27/09/2026)", "Prix en dollars de Hong Kong ; livraison en France non vérifiée"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
@@ -973,6 +1001,7 @@ weaknesses_en = ["No direct online shop on the brand page; retail through distri
 weaknesses_fr = ["Pas de boutique en ligne directe sur la page de marque ; vente par des distributeurs", "Non compatibles avec le système à tenons de 8 mm"]
 status = "active"
 checked = "2026-11-23"
+added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
