@@ -1,0 +1,41 @@
+name: Data fixes
+on:
+  schedule:
+    - cron: "29 4 * * 2"   # weekly, Tuesdays
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: data-fixes
+  cancel-in-progress: false
+jobs:
+  fixes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.15"
+      - name: Find mechanical fixes (addresses moved for good, past event dates)
+        run: python3 scripts/autofix.py --write > fixes.md
+      - name: Rebuild the generated files and check them
+        run: python3 scripts/build.py && python3 scripts/build.py --check
+      - name: Open or update the pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          if git diff --quiet -- data README.md full-list.md; then echo "Nothing to fix."; exit 0; fi
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -q -B auto/data-fixes
+          git add data README.md full-list.md
+          git commit -qm "Data fixes: addresses moved for good, past event dates"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" auto/data-fixes
+          printf '%s\n\n%s\n' "Mechanical fixes found by scripts/autofix.py. Each line is checked by a person before merging." "$(cat fixes.md)" > body.md
+          n=$(gh pr list --head auto/data-fixes --state open --json number -q '.[0].number')
+          if [ -n "$n" ]; then gh pr edit "$n" --body-file body.md; else gh pr create --head auto/data-fixes --base main --title "Data fixes" --label automatic --body-file body.md; fi

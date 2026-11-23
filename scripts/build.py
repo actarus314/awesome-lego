@@ -37,7 +37,7 @@ T = {  # interface strings
     "contributing": {"en": "Contributing", "fr": "Contribuer"},
     "contrib_text": {"en": "Additions and corrections are welcome: read [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them."},
     "site_fr": {"en": "French version of the website", "fr": "Version française du site"},
-    "site": {"en": "Website with search, filters and charts", "fr": "Site avec recherche, filtres et graphiques"},
+    "site": {"en": "Explore the website: every resource, with search, filters and a map", "fr": "Explorer le site : toutes les ressources, avec recherche, filtres et carte"},
     "updated": {"en": "Updated", "fr": "Mis à jour"},
     "resources": {"en": "resources", "fr": "ressources"},
 }
@@ -151,7 +151,8 @@ def readme(cats, m, lang, kind="readme"):
     keep = (lambda r: r.get("featured")) if kind == "readme" else (lambda r: True)
     logo = [f'<a href="{PAGES}"><img src="media/logo.svg" align="right" width="120" alt="Awesome LEGO logo"></a>', ""] if kind == "readme" else []
     out = [f"# {title}{badge}", "", *logo, f"> {T['tagline'][lang]}", "",
-           f"[{T['site'][lang]}]({PAGES}) · [{T['site_fr'][lang]}]({PAGES}fr/)", "",
+           f"**[{T['site'][lang]}]({PAGES})** · [{T['site_fr'][lang]}]({PAGES}fr/)", "",
+           *([f'<p align="center"><a href="{PAGES}"><img src="media/site-preview.png" width="880" alt="The website: a map of the brick world, a directory with search and filters, and findings"></a></p>', ""] if kind == "readme" else []),
            MORE[kind][lang], "", f"## {T['contents'][lang]}", ""]
     seen = {}
 
@@ -232,6 +233,8 @@ def mentions(r, terms):
 def site_data(cats, m):
     rows = []
     terms = brand_terms(cats)
+    lines = {m.group(1): f"data/{p.name}#L{s[:m.start()].count(chr(10)) + 1}" for p in DATA.glob("*.toml")
+             for s in [p.read_text(encoding="utf-8")] for m in re.finditer(r'(?m)^id = "([^"]+)"', s)}
     for c in cats:
         cat = c["category"]
         gnames = {g["id"]: {"en": g["name_en"], "fr": g["name_fr"]} for g in cat.get("groups", [])}
@@ -247,6 +250,7 @@ def site_data(cats, m):
                              "weaknesses": r.get("weaknesses_" + lang, []), "size": r.get("size_" + lang, ""),
                              "model": r.get("business_model_" + lang, ""), "group": gnames.get(r["group"], {}).get(lang, r["group"])}
             row["checked"] = str(row["checked"])
+            row["line"] = lines.get(r["id"])  # the entry in its data file, for "all sources" on GitHub
             row["brands"] = [] if cat["id"] == "brands" else mentions(r, terms)
             rows.append(row)
     categories = [{"id": c["category"]["id"], "en": c["category"]["name_en"], "fr": c["category"]["name_fr"],
@@ -283,6 +287,21 @@ def page(lang, data):
                .replace("{{DATA}}", blob).replace("{{REPO}}", REPO).replace("{{VERSION}}", data["version"]))
 
 
+def feed():
+    """Atom feed of the versions, from CHANGELOG.md: one item per version, newest first."""
+    text = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    items = re.findall(r"(?m)^## v(\d+\.\d+) — (\d{4}-\d{2}-\d{2})\n(.*?)(?=^## v|^# v|\Z)", text, re.S)[:30]
+    esc = lambda x: html.escape(x.strip(), quote=False)
+    entries = "".join(
+        f"<entry><title>v{v}</title><id>https://github.com/{REPO}/releases/tag/v{v}</id>"
+        f"<link href=\"https://github.com/{REPO}/releases/tag/v{v}\"/><updated>{d}T00:00:00Z</updated>"
+        f"<content type=\"text\">{esc(body)}</content></entry>" for v, d, body in items)
+    updated = items[0][1] if items else dt.date.today().isoformat()
+    return (f'<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Awesome LEGO: changes</title>'
+            f'<id>{PAGES}feed.xml</id><link href="{PAGES}"/><link rel="self" href="{PAGES}feed.xml"/>'
+            f'<updated>{updated}T00:00:00Z</updated><author><name>Awesome LEGO</name></author>{entries}</feed>\n')
+
+
 def main():
     cats, errors = load()
     if errors:
@@ -307,6 +326,7 @@ def main():
     (SITE / "fr").mkdir(parents=True, exist_ok=True)
     (SITE / "index.html").write_text(page("en", data), encoding="utf-8")
     (SITE / "fr" / "index.html").write_text(page("fr", data), encoding="utf-8")
+    (SITE / "feed.xml").write_text(feed(), encoding="utf-8")
     for f in (ROOT / "media").rglob("*"):
         if f.is_file():
             out = SITE / f.relative_to(ROOT)

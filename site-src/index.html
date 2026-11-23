@@ -9,6 +9,7 @@
 <meta property="og:image" content="https://actarus314.github.io/awesome-lego/media/social.png"><meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" hreflang="en" href="https://actarus314.github.io/awesome-lego/">
 <link rel="alternate" hreflang="fr" href="https://actarus314.github.io/awesome-lego/fr/">
+<link rel="alternate" type="application/atom+xml" title="Awesome LEGO: changes" href="https://actarus314.github.io/awesome-lego/feed.xml">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='10' width='28' height='18' rx='3' fill='%23e3a008'/%3E%3Crect x='7' y='5' width='7' height='6' rx='2' fill='%23e3a008'/%3E%3Crect x='18' y='5' width='7' height='6' rx='2' fill='%23e3a008'/%3E%3C/svg%3E">
 <script>try{const t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
 <style>
@@ -62,6 +63,8 @@ h2{font-size:22px;margin:44px 0 6px;letter-spacing:-.01em;border-left:4px solid 
 .insights{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
 @media (max-width:1180px){.insights{grid-template-columns:1fr}}
 .panel.wide{grid-column:1/-1}
+.blind{display:flex;flex-direction:column;gap:4px}.bl{display:grid;grid-template-columns:minmax(90px,150px) 1fr 40px;gap:10px;align-items:center;background:none;border:0;padding:3px 0;color:var(--fg);font:13px system-ui,sans-serif;text-align:left;cursor:pointer}
+.bl:hover .bb i{background:var(--fg)}.bb{height:12px;background:var(--sunk);border-radius:3px;overflow:hidden}.bb i{display:block;height:100%;background:var(--seq);border-radius:3px}.bv{font-variant-numeric:tabular-nums;color:var(--muted);text-align:right}
 .passion{display:block;max-width:100%}.passion text{fill:var(--muted);font:13px system-ui,sans-serif}.passion .ax{fill:var(--faint);font-size:12px}.passion .lb{fill:var(--fg);font-size:12px}
 #f-country{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:8px;padding:4px 8px;font:600 13px system-ui,sans-serif;max-width:100%}
 #f-country.on{border-color:var(--f-opt);box-shadow:inset 0 0 0 1px var(--f-opt)}
@@ -158,7 +161,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
 </div>
 <div id="view-ins" hidden>
 <h2 data-t="ins"></h2><p class="lead" data-t="ins_lead"></p>
-<div class="insights"><section class="panel wide" id="v-passion"></section><section class="panel" id="v-brands"></section><section class="panel" id="v-pulse"></section></div>
+<div class="insights"><section class="panel wide" id="v-passion"></section><section class="panel" id="v-blind"></section><section class="panel" id="v-brands"></section><section class="panel" id="v-pulse"></section></div>
 </div>
 </main>
 <footer><div class="wrap"><span id="built"></span><span><a href="https://github.com/{{REPO}}/blob/main/contributing.md" data-t="contribute"></a> · <a href="https://github.com/{{REPO}}/issues/new/choose" data-t="report"></a> · <a href="https://github.com/{{REPO}}/blob/main/LICENSE">CC BY-NC-SA 4.0</a></span></div></footer>
@@ -202,7 +205,10 @@ pa_title:{en:'Where the passion is',fr:'Où vit la passion'},
 pa_note:{en:'Sources: official LEGO Fan CoLab directory, read on {d}; World Bank population, {y}. Logarithmic axes; the line is the average rate of the countries shown. With one or two communities, a small country\'s position says little.{x}',
  fr:'Sources : annuaire officiel LEGO Fan CoLab, lu le {d} ; population de la Banque mondiale, {y}. Axes logarithmiques ; la ligne est le taux moyen des pays présents. Avec une ou deux communautés, la place d\'un petit pays dit peu de chose.{x}'},
 pa_nopop:{en:' Not shown, no population figure: ',fr:' Absent faute de population : '},
-pa_pop:{en:'population',fr:'population'},pa_n:{en:'recognized communities',fr:'communautés reconnues'}
+pa_pop:{en:'population',fr:'population'},
+bl_title:{en:'Blind spots of this directory',fr:'Angles morts de l\'annuaire'},
+bl_note:{en:'Entries of this directory per fan community recognized by LEGO, for countries with 3 communities or more. A short bar is a country where fans are many and this directory is thin. A bar filters the directory by country.',fr:'Fiches de l\'annuaire par communauté de fans reconnue par LEGO, pour les pays qui en comptent au moins 3. Une barre courte : beaucoup de fans, peu de fiches. Une barre filtre l\'annuaire par pays.'},
+bl_none:{en:'No entry at all',fr:'Aucune fiche'},pa_n:{en:'recognized communities',fr:'communautés reconnues'}
 };
 const t=k=>(S[k]||{})[L]||k;
 document.querySelectorAll('[data-t]').forEach(e=>e.textContent=t(e.dataset.t));
@@ -261,7 +267,7 @@ document.getElementById('reset').onclick=document.getElementById('reset2').oncli
 function card(r,showCat){const x=r[L];const tags=[...(r.covers||[]).filter(c=>c!==r.cat).map(c=>`<span class="tag ${c}">${t(c)}</span>`),(r.status!=='active'?`<span class="tag st-${r.status}">${t('st_'+r.status)}</span>`:''),(r.languages||[]).length?`<span class="tag">${esc(r.languages.join(' · ').toUpperCase())}</span>`:'',r.access?`<span class="tag">${t(r.access)}</span>`:''].join('');
  const m=r.metrics||{};const extra=[r.next?t('next')+' '+fmt(r.next):'',r.city||'',x.size,m.stars!=null?'★ '+m.stars:'',x.model].filter(Boolean).map(esc).join(' · ');
  return `<article class="card" id="r-${r.id}"><div class="h"><a href="${esc(r.url)}" rel="noopener">${r.featured?'<span class="star" aria-hidden="true">★ </span>':''}${esc(r.name)}</a><span class="g">${esc(showCat?catName(r.cat):x.group)}</span></div><p class="s">${esc(x.summary)}</p>${extra?`<div class="src">${extra}</div>`:''}<div class="tags">${tags}</div>`+
- ((x.strengths.length||x.weaknesses.length)?`<details><summary>${t('strengths')} · ${t('weaknesses')}</summary>${x.strengths.length?`<ul class="plus">${x.strengths.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`:''}${x.weaknesses.length?`<ul class="minus">${x.weaknesses.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`:''}<div class="src">${t('sources')} : ${r.sources.map((s,i)=>`<a href="${esc(s.url)}" rel="noopener">${i+1}</a>`).join('')} · ${t('checked')} ${fmt(r.checked)}${r.last?' · '+t('last_act')+' '+fmt(r.last):''}</div></details>`:'')+`</article>`}
+ ((x.strengths.length||x.weaknesses.length)?`<details><summary>${t('strengths')} · ${t('weaknesses')}</summary>${x.strengths.length?`<ul class="plus">${x.strengths.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`:''}${x.weaknesses.length?`<ul class="minus">${x.weaknesses.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`:''}<div class="src">${t('sources')} : ${r.sources.slice(0,3).map((s,i)=>`<a href="${esc(s.url)}" rel="noopener">${i+1}</a>`).join('')}${r.sources.length>3&&r.line?`<a href="https://github.com/{{REPO}}/blob/main/${r.line}" rel="noopener">+${r.sources.length-3}</a>`:''}</div></details>`:'')+`</article>`}
 const COLS=[['name',t('c_name'),r=>r.name],['cat',t('c_cat'),r=>catName(r.cat)],['scope',t('c_scope'),r=>(r.covers||[]).filter(c=>c==='official'||c==='alternative').map(t).join(', ')],['lang',t('c_lang'),r=>(r.languages||[]).join(' ').toUpperCase(),'opt'],['status',t('c_status'),r=>t('st_'+r.status),'opt'],['last',t('c_last'),r=>r.last||'','n'],['stars',t('c_stars'),r=>(r.metrics||{}).stars??-1,'n opt']];
 function drawTable(rs){if(st.sort){const c=COLS.find(c=>c[0]===st.sort.k),d=st.sort.d;rs.sort((a,b)=>{const x=c[2](a),y=c[2](b);return (typeof x==='number'?x-y:String(x).localeCompare(String(y)))*d})}
  return `<table class="dt"><thead><tr>${COLS.map(c=>`<th data-k="${c[0]}" class="${(c[3]||'').includes('opt')?'opt':''}"${st.sort&&st.sort.k===c[0]?` aria-sort="${st.sort.d>0?'ascending':'descending'}"`:''}>${c[1]}</th>`).join('')}</tr></thead><tbody>${rs.map(r=>`<tr data-go="${r.id}"><td><a href="${esc(r.url)}" rel="noopener">${r.featured?'★ ':''}${esc(r.name)}</a></td><td>${esc(catName(r.cat))}</td><td>${esc(COLS[2][2](r))}</td><td class="opt">${esc(COLS[3][2](r))}</td><td class="opt">${esc(COLS[4][2](r))}</td><td class="n">${fmt(r.last)}</td><td class="n opt">${(r.metrics||{}).stars??''}</td></tr>`).join('')}</tbody></table>`}
@@ -339,7 +345,15 @@ function vPassion(){const el=document.getElementById('v-passion'),P=D.passion;if
  const xn=nopop.length?t('pa_nopop')+nopop.map(r=>`${cname(r.c)} (${r.n})`).join(', ')+'.':'';
  el.innerHTML=`<h3>${t('pa_title')}</h3><p class="take">${esc(take)}</p>${s}</svg><p class="note">${esc(t('pa_note').replace('{d}',fmt(P.date)).replace('{y}',P.pop_year).replace('{x}',xn))}</p>`;
  el.onclick=e=>{const p=e.target.closest('[data-c]');if(!p)return;toDir();resetAll();st.country=p.dataset.c;update();document.getElementById('directory').scrollIntoView({behavior:'smooth'})}}
-let drawn=false;function drawInsights(){vPassion();vBrands();vPulse();drawn=true}
+// insight 4: where this directory is thin compared with where the fans are
+function vBlind(){const el=document.getElementById('v-blind'),P=D.passion;if(!el)return;if(!P){el.remove();return}
+ const cnt=Object.fromEntries(CTRY);const rows=P.rows.filter(r=>r.n>=3).map(r=>({c:r.c,n:r.n,e:cnt[r.c]||0,k:(cnt[r.c]||0)/r.n})).sort((a,b)=>a.k-b.k||b.n-a.n);
+ const none=rows.filter(r=>!r.e),some=rows.filter(r=>r.e),max=Math.max(...some.map(r=>r.k),1),lw=L==='fr'?'fiches':'entries',cw=L==='fr'?'communautés':'communities';
+ const thin=some.slice(0,3).map(r=>`${cname(r.c)} (${r.e} ${lw}, ${r.n} ${cw})`).join(', ');
+ const take=L==='fr'?`Les angles morts : ${thin}${none.length?`, et aucune fiche pour ${none.map(r=>cname(r.c)).join(', ')}`:''}.`:`Blind spots: ${thin}${none.length?`, and no entry at all for ${none.map(r=>cname(r.c)).join(', ')}`:''}.`;
+ el.innerHTML=`<h3>${t('bl_title')}</h3><p class="take">${esc(take)}</p><div class="blind">${some.map(r=>`<button type="button" class="bl" data-c="${r.c}" data-tip="${esc(cname(r.c))} · ${r.e} ${lw} · ${r.n} ${cw}"><span class="bn">${esc(cname(r.c))}</span><span class="bb"><i style="width:${Math.max(2,100*r.k/max)}%"></i></span><span class="bv">${r.k.toFixed(1)}</span></button>`).join('')}</div><p class="note">${t('bl_note')}</p>`;
+ el.onclick=e=>{const b=e.target.closest('[data-c]');if(!b)return;toDir();resetAll();st.country=b.dataset.c;update();document.getElementById('directory').scrollIntoView({behavior:'smooth'})}}
+let drawn=false;function drawInsights(){vPassion();vBlind();vBrands();vPulse();drawn=true}
 let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{if(!vi.hidden){vPulse();vPassion()}},150)});
 // two views: directory (map and list) and findings; the address keeps the view
 const vd=document.getElementById('view-dir'),vi=document.getElementById('view-ins');
@@ -354,7 +368,8 @@ function nActive(){return st.cat.size+st.cov.size+['featured','active','fr'].fil
 function update(all=true){const n=nActive();ft.textContent=t('filters')+(n?` (${n})`:'');drawFilters();drawList();if(all)drawMap();writeHash()}
 document.getElementById('journeys').innerHTML=(D.journeys||[]).map(j=>`<div class="jr"><h3>${esc(j['title_'+L])}</h3><ul>${j.resources.map(id=>R.find(r=>r.id===id)).filter(Boolean).map(r=>`<li><a href="#" data-go="${r.id}">${esc(r.name)}</a></li>`).join('')}</ul></div>`).join('');
 document.getElementById('journeys').onclick=e=>{const a=e.target.closest('[data-go]');if(a){e.preventDefault();openEntry(a.dataset.go)}};
-readHash();update();show(location.hash==='#findings'?'ins':'dir');
+const landing=new URLSearchParams(location.hash.slice(1)).get('entry');  // #entry=<id>: a link to one entry (feed, outside pages)
+readHash();update();show(location.hash==='#findings'?'ins':'dir');if(landing)openEntry(landing);
 })();
 </script>
 </body>

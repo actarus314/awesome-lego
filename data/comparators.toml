@@ -195,6 +195,7 @@ kind = "read"
 id = "la-brique-libre"
 name = "La Brique Libre"
 url = "https://labriquelibre.fr/"
+feed = "https://labriquelibre.fr/rss.xml"
 group = "price-comparators"
 covers = ["official", "alternative", "news"]
 languages = ["fr"]
@@ -291,6 +292,7 @@ kind = "read"
 id = "avenue-de-la-brique"
 name = "Avenue de la Brique"
 url = "https://www.avenuedelabrique.com/"
+feed = "https://www.avenuedelabrique.com/rss/actualites.rss"
 group = "price-comparators"
 covers = ["official"]
 languages = ["fr"]
@@ -414,6 +416,7 @@ kind = "read"
 id = "lakea"
 name = "Lakea"
 url = "https://lakea.net/?lang=fr"
+feed = "https://lakea.net/rss.xml"
 group = "price-comparators"
 featured = true
 covers = ["official", "parts", "minifigures"]
@@ -629,6 +632,7 @@ kind = "read"
 id = "klockometr"
 name = "Klockometr"
 url = "https://klockometr.pl/"
+feed = "https://klockometr.pl/feed/"
 group = "price-comparators"
 covers = ["official"]
 languages = ["pl"]
@@ -668,6 +672,7 @@ kind = "read"
 id = "brickmerge"
 name = "Brickmerge"
 url = "https://www.brickmerge.de/"
+feed = "https://www.brickmerge.de/rss_aktuell.xml"
 group = "price-comparators"
 covers = ["official"]
 languages = ["de"]
@@ -1141,6 +1146,7 @@ kind = "read"
 id = "chez-emil"
 name = "Chez Emil"
 url = "https://chezemil.fr/"
+feed = "https://chezemil.fr/feed/"
 group = "price-comparators"
 covers = ["official"]
 languages = ["fr"]
@@ -1182,6 +1188,7 @@ kind = "read"
 id = "brickset"
 name = "Brickset"
 url = "https://brickset.com/"
+feed = "https://brickset.com/feed/"
 group = "set-databases"
 featured = true
 covers = ["official", "minifigures", "parts", "news"]
@@ -1231,6 +1238,7 @@ kind = "official"
 id = "rebrickable"
 name = "Rebrickable"
 url = "https://rebrickable.com/"
+feed = "https://rebrickable.com/blog/rss/"
 group = "set-databases"
 featured = true
 covers = ["official", "custom-builds", "instructions", "parts", "minifigures", "data"]
@@ -1590,3 +1598,105 @@ kind = "read"
 url = "https://brickpicker.com/features/market-data"
 date = "2026-11-23"
 kind = "official"
+
+[[resource]]
+id = "promoklocki"
+name = "promoklocki.pl"
+url = "https://promoklocki.pl/"
+group = "price-comparators"
+covers = ["official", "data"]
+languages = ["pl"]
+countries = ["PL"]
+access = "free"
+summary_en = "Polish price comparator and catalogue for LEGO sets, with pages for the lowest prices in the official LEGO shop, retirements, a promotions calendar and Polish catalogues."
+summary_fr = "Comparateur de prix et catalogue polonais de sets LEGO, avec des pages sur les prix les plus bas de la boutique LEGO officielle, les retraits, un calendrier des promotions et les catalogues polonais."
+strengths_en = ["Price per piece shown for each set", "Pre-order sets for 2027 already listed"]
+strengths_fr = ["Prix par pièce indiqué pour chaque set", "Sets 2027 en précommande déjà listés"]
+weaknesses_en = ["Price history not verified", "Direct reading blocked by a Cloudflare challenge; read through another reader"]
+weaknesses_fr = ["Historique des prix non vérifié", "Lecture directe bloquée par un défi Cloudflare ; lu par un autre lecteur"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://promoklocki.pl/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "ceneo"
+name = "Ceneo"
+url = "https://www.ceneo.pl/"
+group = "price-comparators"
+covers = ["official"]
+languages = ["pl"]
+countries = ["PL"]
+access = "free"
+summary_en = "General Polish price comparison service, usable for LEGO sets across Polish online shops."
+summary_fr = "Service généraliste polonais de comparaison de prix, utilisable pour des sets LEGO dans les boutiques en ligne polonaises."
+strengths_en = ["General Polish comparator covering many shops"]
+strengths_fr = ["Comparateur généraliste polonais couvrant de nombreuses boutiques"]
+weaknesses_en = ["Not specific to LEGO", "LEGO category pages not read"]
+weaknesses_fr = ["Pas spécifique à LEGO", "Pages de la catégorie LEGO non lues"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.ceneo.pl/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickzone-dk"
+name = "brickzone"
+url = "https://brickzone.dk/"
+group = "price-comparators"
+covers = ["official", "data"]
+languages = ["da"]
+countries = ["DK"]
+access = "free"
+summary_en = "Danish price comparator for LEGO sets with price history, a price barometer and a list of Black Friday offers priced below the year's lowest price."
+summary_fr = "Comparateur de prix danois de sets LEGO avec historique des prix, baromètre de prix et liste d'offres Black Friday inférieures au prix le plus bas de l'année."
+strengths_en = ["Price history for each set", "Black Friday list limited to offers below the lowest price of the year"]
+strengths_fr = ["Historique des prix pour chaque set", "Liste Black Friday limitée aux offres inférieures au prix le plus bas de l'année"]
+weaknesses_en = ["Danish retailers only", "Other Danish comparators (Klodstjek, Klodserne.dk) not compared"]
+weaknesses_fr = ["Distributeurs danois uniquement", "Autres comparateurs danois (Klodstjek, Klodserne.dk) non comparés"]
+size_en = "5713 sets, 35413 prices, 89 Danish retailers"
+size_fr = "5713 sets, 35413 prix, 89 distributeurs danois"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickzone.dk/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "prisjakt-se"
+name = "Prisjakt"
+url = "https://www.prisjakt.nu/c/lego"
+group = "price-comparators"
+covers = ["official"]
+languages = ["sv"]
+countries = ["SE"]
+access = "free"
+summary_en = "Swedish general price comparison service with a LEGO category listing sets with age range, piece count and lowest price, and editorial buying guides."
+summary_fr = "Service suédois généraliste de comparaison de prix avec une catégorie LEGO listant les sets avec âge, nombre de pièces et prix le plus bas, et des guides d'achat éditoriaux."
+strengths_en = ["Piece count and age range shown per set", "Same service exists for Denmark and Norway"]
+strengths_fr = ["Nombre de pièces et âge indiqués par set", "Même service pour le Danemark et la Norvège"]
+weaknesses_en = ["Not specific to LEGO"]
+weaknesses_fr = ["Pas spécifique à LEGO"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.prisjakt.nu/c/lego"
+date = "2026-11-23"
+kind = "read"

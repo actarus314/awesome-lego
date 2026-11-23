@@ -4,7 +4,9 @@
 
 > Interlocking plastic construction bricks, from the official LEGO system to compatible brands.
 
-[Website with search, filters and charts](https://actarus314.github.io/awesome-lego/) · [French version of the website](https://actarus314.github.io/awesome-lego/fr/)
+**[Explore the website: every resource, with search, filters and a map](https://actarus314.github.io/awesome-lego/)** · [French version of the website](https://actarus314.github.io/awesome-lego/fr/)
+
+<p align="center"><a href="https://actarus314.github.io/awesome-lego/"><img src="media/site-preview.png" width="880" alt="The website: a map of the brick world, a directory with search and filters, and findings"></a></p>
 
 Only the best of each group is listed here. The [full list](full-list.md) has every resource, including inactive and dead ones.
 
@@ -29,6 +31,9 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
   - [Second-hand and refurbished shops](#second-hand-and-refurbished-shops)
   - [Parts, custom builds and instructions](#parts-custom-builds-and-instructions)
   - [Services and accessories (lighting, display, sorting, data)](#services-and-accessories-lighting-display-sorting-data)
+  - [Custom minifigures and accessories](#custom-minifigures-and-accessories)
+  - [Decals and stickers](#decals-and-stickers)
+  - [Motors, controllers and track](#motors-controllers-and-track)
 - [Communities and news](#communities-and-news)
   - [News and reviews](#news-and-reviews)
   - [Forums](#forums)
@@ -61,6 +66,7 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
   - [Apps](#apps)
   - [APIs and open data](#apis-and-open-data)
   - [Open-source projects](#open-source-projects)
+  - [Programming, control and robotics](#programming-control-and-robotics)
 - [Other directories and lists](#other-directories-and-lists)
   - [Awesome lists](#awesome-lists)
   - [Site directories](#site-directories)
@@ -168,13 +174,30 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 
 - [BuyMeBricks](https://buymebricks.com/) - Shop of GoBricks compatible parts run by a French company: part lists imported from Studio, Rebrickable or BrickLink, and custom build kits with PDF instructions. Covers alternative brands.
 - [Official LEGO building instructions](https://www.lego.com/fr-fr/service/buildinginstructions) - Official LEGO page to find the instructions of a set by name or number, and the LEGO Builder application. Covers official LEGO.
+- [Open L-Gauge](https://open-l-gauge.eu/) - Community library of free LEGO train model instructions, among them German locomotives (Baureihe 152, 185, 189, Vectron).
 - [Pick a Brick (LEGO.com)](https://www.lego.com/fr-fr/pick-and-build/pick-a-brick) - New individual parts sold by LEGO, ordered on the French LEGO.com site. Covers official LEGO.
 - [ToyPro](https://www.toypro.com/fr) - Dutch shop of new genuine LEGO parts, minifigures and sets. Covers official LEGO.
 
 ### Services and accessories (lighting, display, sorting, data)
 
+- [Bright My Bricks](https://brightmybricks.com/) - Shop of LED light kits, each designed for one LEGO set (570 kits stated), with lighting components, acrylic displays and a kit request form. Covers official LEGO.
 - [Lightailing and Briksmax](https://www.lightailing.com/fr) - LED light kits for specific LEGO sets, sold as kits without the set. Covers official LEGO.
+- [Stick N' Bricks](https://sticknbricks.com/) - French maker of frames for LEGO minifigures (25x25, 30x40 and 50x50 cm formats), frame backgrounds and custom stickers.
 - [Wicked Brick](https://www.wickedbrick.com/) - Made-to-order acrylic display cases and stands for LEGO sets and minifigures, with a European store. Covers official LEGO.
+
+### Custom minifigures and accessories
+
+- [Brick Manufacture](https://brick-manufacture.com/en) - Hamburg workshop, active since 2023, printing and assembling personalized LEGO minifigures and bricks in house; site in four languages with a country selector including France.
+- [Minifigs.me](https://minifigs.me/) - British shop of custom minifigures printed onto genuine LEGO parts, with small builds and frames; ships worldwide from the United Kingdom.
+
+### Decals and stickers
+
+- [BrickStickerShop](https://www.brickstickershop.com/) - Dutch shop of replacement and custom vinyl stickers for LEGO sets and builds, vector drawn, with ink calibrated to brick colours; ships worldwide.
+
+### Motors, controllers and track
+
+- [BuWizz](https://buwizz.com/) - Slovenian maker of Bluetooth controllers with a rechargeable battery and of motors for LEGO Technic, System and train models, driven from a phone application.
+- [Trixbrix](https://trixbrix.eu/en/) - Polish maker of plastic track compatible with LEGO train track: curves from R24 to R184, many switch types, ballast plates, bridges, UV-printed tiles and automation parts (train detection, motorised points, signals).
 
 <br>
 
@@ -196,6 +219,7 @@ Forums, subreddits, wikis, news and review sites, deal communities and chat serv
 - [Eurobricks Forums](https://www.eurobricks.com/forum/) - General English-language forum for adult fans of LEGO, with sections on custom builds, reviews and marketplace, and a section on alternative brands. Covers official LEGO and alternative brands.
 - [FreeLUG](https://www.freelug.org/) - French national association of LEGO fans since 2003, with a Discourse forum, exhibitions and meeting reports. Covers official LEGO.
 - [HardWare.fr: compatible bricks topic](https://forum.hardware.fr/hfr/Discussions/Loisirs/briques-construction-compatibles-sujet_119659_1.htm) - Long-running French forum topic on LEGO-compatible brick brands (started 16 December 2021), with a maintained introduction on brands, compatibility and after-sales service. Covers alternative brands.
+- [TechLug.fr forum](https://www.techlug.fr/Forum/) - French-speaking forum on LEGO Technic and Mindstorms: news, set discussions, modifications of official sets, custom builds and a section on theory of mechanisms and gearing. Covers official LEGO.
 
 ### Wikis
 
@@ -310,6 +334,7 @@ Guides, glossaries, history, compatibility and legal references, education and c
 ### Guides and reference
 
 - [Brick Architect](https://brickarchitect.com/) - Independent site by an architect and author: online LEGO Parts Guide, LEGO Storage Guide, set reviews and monthly news roundups. Covers official LEGO.
+- [BrickNerd storage guide](https://bricknerd.com/home/an-opinionated-guide-to-lego-storage-containers-and-cost-5-25-23) - Opinionated guide by an adult fan on sorting loose parts and choosing containers, with a cost comparison of drawer units.
 
 ### Compatibility, materials and law
 
@@ -327,6 +352,7 @@ Guides, glossaries, history, compatibility and legal references, education and c
 ### Artists and designers
 
 - [LEGO Certified Professionals (official LEGO list)](https://www.lego.com/en-us/aboutus/lego-certified-professionals) - Official list of adult builders officially recognised by LEGO who run a business with bricks, by region, with the rules on what they may build for clients. Covers official LEGO.
+- [Nico71's Technic Creations](https://www.nico71.fr/) - French independent LEGO Technic designer, a mechanical engineer: motorised vehicles and machines, PDF instructions, custom kits, videos explaining design choices and commissioned models for companies.
 
 <br>
 
@@ -356,6 +382,10 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 ### Open-source projects
 
 - [BrickStore](https://github.com/rgriebl/brickstore) - Offline BrickLink inventory management tool for Windows, macOS, Linux, iOS and Android. Covers official LEGO and alternative brands.
+
+### Programming, control and robotics
+
+- [Pybricks](https://pybricks.com/) - Python and block coding for LEGO smart hubs (Technic, City, BOOST, MINDSTORMS, SPIKE): programs are stored on the hub and run without a phone, with a web editor, a reference manual and projects for official sets. Covers official LEGO.
 
 <br>
 

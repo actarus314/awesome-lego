@@ -30,6 +30,21 @@ id = "services-and-accessories"
 name_en = "Services and accessories (lighting, display, sorting, data)"
 name_fr = "Services et accessoires (éclairage, vitrines, tri, données)"
 
+[[category.groups]]
+id = "custom-minifigures-and-accessories"
+name_en = "Custom minifigures and accessories"
+name_fr = "Minifigurines et accessoires sur mesure"
+
+[[category.groups]]
+id = "decals-and-stickers"
+name_en = "Decals and stickers"
+name_fr = "Autocollants et décalcomanies"
+
+[[category.groups]]
+id = "motors-and-track"
+name_en = "Motors, controllers and track"
+name_fr = "Moteurs, contrôleurs et voies"
+
 [[resource]]
 id = "bricklink-marketplace"
 name = "BrickLink"
@@ -488,6 +503,7 @@ kind = "read"
 id = "brickland"
 name = "Brickland"
 url = "https://brickland.fr/"
+feed = "https://brickland.fr/feed/"
 group = "second-hand-shops"
 featured = true
 covers = ["official", "second-hand", "parts", "minifigures"]
@@ -534,6 +550,7 @@ kind = "third-party"
 id = "brickplus"
 name = "BrickPlus"
 url = "https://brickplus.fr/"
+feed = "https://brickplus.fr/feed/"
 group = "second-hand-shops"
 covers = ["official", "second-hand", "minifigures", "parts"]
 languages = ["fr"]
@@ -665,6 +682,7 @@ kind = "read"
 id = "reliczone"
 name = "Reliczone"
 url = "https://reliczone.fr/collections/lego"
+feed = "https://reliczone.fr/collections/lego.atom"
 group = "second-hand-shops"
 covers = ["official", "second-hand", "minifigures"]
 languages = ["fr", "en"]
@@ -1289,6 +1307,7 @@ kind = "read"
 id = "kadris-art"
 name = "Kadris Art"
 url = "https://www.kadris-art.com/collections/plexiglas"
+feed = "https://www.kadris-art.com/collections/plexiglas.atom"
 group = "services-and-accessories"
 covers = ["official"]
 languages = ["fr"]
@@ -1399,3 +1418,946 @@ confidence = "medium"
 url = "https://www.wickedbrick.com/fr-eu"
 date = "2026-11-23"
 kind = "read"
+
+[[resource]]
+id = "sora-lego"
+name = "sora.de"
+url = "https://www.sora.de/sammelwelten/lego/"
+group = "services-and-accessories"
+covers = ["official"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "German maker of made-to-measure clear acrylic covers for LEGO sets, delivered as a screw-together kit with a price configurator."
+summary_fr = "Fabricant allemand de vitrines en acrylique transparent sur mesure pour sets LEGO, livrées en kit à visser, avec configurateur de prix."
+strengths_en = ["Dismountable, spare parts available (as stated)", "Made in Germany (as stated)"]
+strengths_fr = ["Démontable, pièces de rechange disponibles (selon le site)", "Fabrication en Allemagne (selon le site)"]
+weaknesses_en = ["Acrylic does not block UV for the displayed model (stated by the shop)", "Site in German only"]
+weaknesses_fr = ["L'acrylique ne protège pas le modèle exposé des UV (indiqué par la boutique)", "Site en allemand uniquement"]
+status = "active"
+last_activity = "2026-11-14"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.sora.de/sammelwelten/lego/"
+date = "2026-11-14"
+kind = "read"
+
+[[resource]]
+id = "brick-in-it"
+name = "Brick In It"
+url = "https://brick-in-it.com/collections/lego-display-cases"
+feed = "https://brick-in-it.com/collections/lego-display-cases.atom"
+group = "services-and-accessories"
+covers = ["official"]
+languages = ["en"]
+countries = ["GB", "international"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "UK maker of acrylic display cases for LEGO sets, tabletop and wall-mounted, with wall mounts and a custom size option."
+summary_fr = "Fabricant britannique de vitrines en acrylique pour sets LEGO, de table ou murales, avec supports muraux et option sur mesure."
+strengths_en = ["Search by set number; 453 products listed", "Worldwide shipping stated"]
+strengths_fr = ["Recherche par numéro de set ; 453 produits listés", "Envoi dans le monde indiqué"]
+weaknesses_en = ["Delivery to France, duties and prices not checked"]
+weaknesses_fr = ["Livraison vers la France, droits et prix non vérifiés"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brick-in-it.com/collections/lego-display-cases"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "minifigures-display"
+name = "Minifigures Display"
+url = "https://www.minifiguresdisplay.com/en-us"
+group = "services-and-accessories"
+covers = ["minifigures"]
+languages = ["en"]
+countries = ["ES", "international"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Display frames for LEGO minifigures, designed and manufactured in Barcelona since 2014, by collectible series, theme or custom layout."
+summary_fr = "Cadres de présentation pour figurines LEGO, conçus et fabriqués à Barcelone depuis 2014, par série à collectionner, thème ou disposition personnalisée."
+strengths_en = ["Frames per minifigure series and theme", "Create-your-frame option"]
+strengths_fr = ["Cadres par série de figurines et par thème", "Option de cadre personnalisé"]
+weaknesses_en = ["Delivery to France and prices not checked"]
+weaknesses_fr = ["Livraison vers la France et prix non vérifiés"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.minifiguresdisplay.com/en-us"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "sticknbricks"
+name = "Stick N' Bricks"
+url = "https://sticknbricks.com/"
+group = "services-and-accessories"
+featured = true
+covers = ["minifigures"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "French maker of frames for LEGO minifigures (25x25, 30x40 and 50x50 cm formats), frame backgrounds and custom stickers."
+summary_fr = "Fabricant français de cadres pour figurines LEGO (formats 25x25, 30x40 et 50x50 cm), fonds de cadre et stickers personnalisés."
+strengths_en = ["Frames by theme and series", "Made in France, artisanal (as stated)"]
+strengths_fr = ["Cadres par thème et par série", "Fabrication artisanale en France (selon le site)"]
+weaknesses_en = ["Prices and delivery times not checked"]
+weaknesses_fr = ["Prix et délais non vérifiés"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://sticknbricks.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "bright-my-bricks"
+name = "Bright My Bricks"
+url = "https://brightmybricks.com/"
+group = "services-and-accessories"
+featured = true
+covers = ["official"]
+languages = ["en", "fr", "de"]
+countries = ["international"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Shop of LED light kits, each designed for one LEGO set (570 kits stated), with lighting components, acrylic displays and a kit request form."
+summary_fr = "Boutique de kits d'éclairage à LED, chacun conçu pour un set LEGO (570 kits annoncés), avec composants d'éclairage, vitrines en acrylique et formulaire de demande de kit."
+strengths_en = ["Site in English, French and German", "Free shipping from 80 EUR (as displayed)"]
+strengths_fr = ["Site en anglais, français et allemand", "Livraison gratuite dès 80 EUR (selon le site)"]
+weaknesses_en = ["Operator and country of origin not checked", "Independent kits, not official LEGO"]
+weaknesses_fr = ["Exploitant et pays d'origine non vérifiés", "Kits indépendants, non officiels"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brightmybricks.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "game-of-bricks-eu"
+name = "Game of Bricks EU"
+url = "https://gameofbricks.eu/"
+group = "services-and-accessories"
+covers = ["official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "European shop of LED light kits for LEGO sets, with wall mounts for LEGO cars, lighting accessories and a set number finder."
+summary_fr = "Boutique européenne de kits d'éclairage à LED pour sets LEGO, avec supports muraux pour voitures LEGO, accessoires d'éclairage et recherche par numéro de set."
+strengths_en = ["Taxes included in displayed prices", "Two-year warranty stated"]
+strengths_fr = ["Taxes comprises dans les prix affichés", "Garantie de deux ans indiquée"]
+weaknesses_en = ["Operator not checked", "Independent kits, not official LEGO"]
+weaknesses_fr = ["Exploitant non vérifié", "Kits indépendants, non officiels"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://gameofbricks.eu/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickstuff"
+name = "Brickstuff"
+url = "https://www.brickstuff.com/"
+feed = "https://www.brickstuff.com/blog/feed/"
+group = "services-and-accessories"
+covers = ["custom-builds"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Family business in Minnesota making small modular lights, sound modules and video screens for LEGO sets and custom builds, with guides and user forums."
+summary_fr = "Entreprise familiale du Minnesota fabriquant de petits éclairages modulaires, modules sonores et écrans vidéo pour sets LEGO et créations originales, avec guides et forums."
+strengths_en = ["Parts work together, from starter kits to bulk", "Guides and user forums"]
+strengths_fr = ["Les pièces sont compatibles entre elles, des kits de départ au vrac", "Guides et forums d'utilisateurs"]
+weaknesses_en = ["Shipping to France and duties not checked"]
+weaknesses_fr = ["Livraison vers la France et droits non vérifiés"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.brickstuff.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickcessories"
+name = "Brickcessories"
+url = "https://brickcessories.com/"
+group = "services-and-accessories"
+covers = ["parts"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Shop of display solutions and accessories including do-it-yourself plywood brick sorter kits with trays of varying hole sizes."
+summary_fr = "Boutique de solutions d'exposition et d'accessoires, dont des kits de trieuses de briques en contreplaqué à assembler, avec plateaux à trous de tailles variées."
+strengths_en = ["Sorter kit in 6 mm Baltic birch plywood (product page)"]
+strengths_fr = ["Kit de trieuse en contreplaqué de bouleau de la Baltique de 6 mm (page produit)"]
+weaknesses_en = ["United States shop; shipping to France not checked"]
+weaknesses_fr = ["Boutique des États-Unis ; livraison vers la France non vérifiée"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://brickcessories.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickcessories.com/products/14-6-tray-brick-sorter-kit"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "bricktactical"
+name = "BrickTactical"
+url = "https://bricktactical.com/"
+group = "custom-minifigures-and-accessories"
+covers = ["custom-builds", "minifigures", "parts"]
+languages = ["en"]
+countries = ["US"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "American maker of injection-molded weapons, helmets, vests and accessories for LEGO-compatible minifigures, and printer of minifigures on genuine LEGO parts."
+summary_fr = "Fabricant américain d'armes, casques, gilets et accessoires moulés par injection pour minifigurines compatibles LEGO, et imprimeur de minifigurines sur pièces LEGO authentiques."
+strengths_en = ["Molded parts in ABS plastic, made in the United States, each design tested on real minifigures (as stated by the maker)", "Printed minifigures use genuine LEGO parts"]
+strengths_fr = ["Pièces moulées en ABS, fabriquées aux États-Unis, chaque modèle testé sur de vraies minifigurines (selon le fabricant)", "Minifigurines imprimées sur pièces LEGO authentiques"]
+weaknesses_en = ["Prices in US dollars; shipping to Europe not checked", "Military and weapon themes dominate the range"]
+weaknesses_fr = ["Prix en dollars américains ; livraison vers l'Europe non vérifiée", "Gammes dominées par les thèmes militaires et les armes"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://bricktactical.com/pages/about"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickwarriors"
+name = "BrickWarriors"
+url = "https://www.brickwarriors.com/"
+group = "custom-minifigures-and-accessories"
+covers = ["custom-builds", "minifigures", "parts"]
+languages = ["en"]
+countries = ["US"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "American producer of custom accessories for minifigures (weapons, armor, helmets, heads, capes) in ABS plastic, founded in 2011."
+summary_fr = "Producteur américain d'accessoires sur mesure pour minifigurines (armes, armures, casques, têtes, capes) en plastique ABS, fondé en 2011."
+strengths_en = ["Range of more than 400 items across ancient, medieval, WW2 and science-fiction themes (as published)", "Volume discounts shown on the site"]
+strengths_fr = ["Gamme de plus de 400 articles : antique, médiéval, Seconde Guerre mondiale, science-fiction (selon le site)", "Remises de volume affichées sur le site"]
+weaknesses_en = ["Prices in US dollars; shipping to Europe not checked"]
+weaknesses_fr = ["Prix en dollars américains ; livraison vers l'Europe non vérifiée"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.brickwarriors.com/about-us/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "citizen-brick"
+name = "Citizen Brick"
+url = "https://citizenbrick.com/"
+group = "custom-minifigures-and-accessories"
+covers = ["custom-builds", "minifigures", "parts"]
+languages = ["en"]
+countries = ["US"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "American maker of custom printed minifigures and bricks since 2010, with injection-molded parts and a custom printing service for businesses."
+summary_fr = "Fabricant américain de minifigurines et de briques imprimées sur mesure depuis 2010, avec des pièces moulées par injection et un service d'impression pour entreprises."
+strengths_en = ["Original designs rather than licensed characters", "Catalog with injection-molded parts, accessories and mini building kits"]
+strengths_fr = ["Créations originales plutôt que personnages sous licence", "Catalogue avec pièces moulées par injection, accessoires et petits kits de construction"]
+weaknesses_en = ["Store set to United States and US dollars; shipping to Europe not checked"]
+weaknesses_fr = ["Boutique réglée sur les États-Unis et le dollar américain ; livraison vers l'Europe non vérifiée"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://citizenbrick.com/pages/about-us"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "minifigs-me"
+name = "Minifigs.me"
+url = "https://minifigs.me/"
+group = "custom-minifigures-and-accessories"
+featured = true
+covers = ["custom-builds", "minifigures", "parts"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "British shop of custom minifigures printed onto genuine LEGO parts, with small builds and frames; ships worldwide from the United Kingdom."
+summary_fr = "Boutique britannique de minifigurines sur mesure imprimées sur pièces LEGO authentiques, avec petites constructions et cadres ; expédie dans le monde depuis le Royaume-Uni."
+strengths_en = ["Shipping worldwide with 2 to 5 days of processing (as stated on the site)", "Customisable figures offered"]
+strengths_fr = ["Expédition dans le monde avec 2 à 5 jours de préparation (selon le site)", "Figurines personnalisables proposées"]
+weaknesses_en = ["Prices in pounds sterling", "Duties and fees for the European Union not checked"]
+weaknesses_fr = ["Prix en livres sterling", "Droits et frais pour l'Union européenne non vérifiés"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://minifigs.me/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "hall-of-bricks"
+name = "Hall of Bricks"
+url = "https://hallofbricks.shop/"
+group = "custom-minifigures-and-accessories"
+covers = ["custom-builds", "minifigures"]
+languages = ["de", "en"]
+countries = ["DE", "international"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "German studio making custom minifigures since 2012, printed in house with UV printers on original LEGO elements; ships worldwide."
+summary_fr = "Studio allemand de minifigurines sur mesure depuis 2012, imprimées sur place par impression UV sur éléments LEGO d'origine ; expédie dans le monde."
+strengths_en = ["Prices in euros", "Own designs (western, zombie, science-fiction) rather than copies of licensed characters, with some Star Wars-style customs"]
+strengths_fr = ["Prix en euros", "Créations propres (western, zombies, science-fiction), avec quelques figurines de style Star Wars"]
+weaknesses_en = ["Customer rating of 4.86 stars on 946 reviews is the shop's own figure, not checked"]
+weaknesses_fr = ["Note de 4.86 étoiles sur 946 avis fournie par la boutique, non vérifiée"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://hallofbricks.shop/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brick-manufacture"
+name = "Brick Manufacture"
+url = "https://brick-manufacture.com/en"
+group = "custom-minifigures-and-accessories"
+featured = true
+covers = ["custom-builds", "minifigures"]
+languages = ["de", "en", "fr", "es"]
+countries = ["DE", "FR", "international"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Hamburg workshop, active since 2023, printing and assembling personalized LEGO minifigures and bricks in house; site in four languages with a country selector including France."
+summary_fr = "Atelier de Hambourg, actif depuis 2023, qui imprime et assemble sur place des minifigurines et briques LEGO personnalisées ; site en quatre langues avec sélecteur de pays incluant la France."
+strengths_en = ["Site available in French", "Free shipping from 59 euros for Germany (as stated)"]
+strengths_fr = ["Site disponible en français", "Livraison offerte dès 59 euros pour l'Allemagne (selon le site)"]
+weaknesses_en = ["Young business (2023)", "Free-shipping threshold for France not checked"]
+weaknesses_fr = ["Entreprise récente (2023)", "Seuil de livraison offerte pour la France non vérifié"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brick-manufacture.com/en/pages/about-us"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "minifiguren-com"
+name = "minifiguren.com"
+url = "https://www.minifiguren.com/"
+feed = "https://www.minifiguren.com/rss.xml"
+group = "custom-minifigures-and-accessories"
+covers = ["custom-builds", "minifigures", "parts"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "German shop of configurable minifigures personalized by UV digital printing on original LEGO parts (names, text, graphics), plus printed bricks and tiles and single parts."
+summary_fr = "Boutique allemande de minifigurines configurables personnalisées par impression numérique UV sur pièces LEGO d'origine (noms, textes, graphiques), avec briques et tuiles imprimées et pièces à l'unité."
+strengths_en = ["Online configurator for heads, hair, torsos and legs", "Prices published in euros"]
+strengths_fr = ["Configurateur en ligne pour têtes, cheveux, torses et jambes", "Prix publiés en euros"]
+weaknesses_en = ["Site in German only", "Shipping to France not checked"]
+weaknesses_fr = ["Site en allemand uniquement", "Livraison vers la France non vérifiée"]
+status = "active"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.minifiguren.com/Individuelle-Minifiguren"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "bedrukjeblokje"
+name = "Bedrukjeblokje"
+url = "https://bedrukjeblokje.nl/"
+group = "custom-minifigures-and-accessories"
+covers = ["custom-builds", "minifigures", "parts"]
+languages = ["nl", "en"]
+countries = ["NL", "international"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Dutch shop printing user designs (photo, logo, text) onto LEGO parts such as torsos and tiles, with an online designer, and selling printed and collectible minifigures."
+summary_fr = "Boutique néerlandaise qui imprime des motifs fournis (photo, logo, texte) sur des pièces LEGO telles que torses et tuiles, avec un outil de conception en ligne, et vend des minifigurines imprimées et de collection."
+strengths_en = ["Shipping advertised at 3.95 euros for the Netherlands and 4.95 euros for Europe", "Personalised white torso offered from 4.95 euros"]
+strengths_fr = ["Expédition annoncée à 3.95 euros pour les Pays-Bas et 4.95 euros pour l'Europe", "Torse blanc personnalisé proposé à partir de 4.95 euros"]
+weaknesses_en = ["Site mostly in Dutch", "Origin of the printed parts not stated on the pages read"]
+weaknesses_fr = ["Site surtout en néerlandais", "Origine des pièces imprimées non indiquée sur les pages lues"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://bedrukjeblokje.nl/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "pepe-bricks"
+name = "Pepe Bricks"
+url = "https://www.pepebricks.com/"
+group = "custom-minifigures-and-accessories"
+covers = ["custom-builds", "minifigures", "parts"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Slovak shop of custom printed minifigures, torsos, heads, shields and tiles on classic space, castle and game themes, with prices in euros."
+summary_fr = "Boutique slovaque de minifigurines, torses, têtes, boucliers et tuiles imprimés sur mesure, sur les thèmes espace classique, château et jeux, avec prix en euros."
+strengths_en = ["Classic space themes (Blacktron, M:Tron, Ice Planet) printed as separate torsos, legs and heads", "Prices in euros"]
+strengths_fr = ["Thèmes de l'espace classique (Blacktron, M:Tron, Planète de glace) imprimés en torses, jambes et têtes séparés", "Prix en euros"]
+weaknesses_en = ["Shipping conditions and printing method not read", "Single-contact small business"]
+weaknesses_fr = ["Conditions de livraison et procédé d'impression non lus", "Petite entreprise à contact unique"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://www.pepebricks.com/minifigures"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "briquestore"
+name = "Briquestore"
+url = "https://www.briquestore.fr/"
+group = "custom-minifigures-and-accessories"
+covers = ["official", "parts", "minifigures", "custom-builds"]
+languages = ["fr", "en", "es", "de", "it"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "French online shop of new LEGO minifigures and single parts (founded 2015, Charente-Maritime), with a figure composer and a personalisation service by UV printing."
+summary_fr = "Boutique française de minifigurines et pièces LEGO neuves à l'unité (fondée en 2015, Charente-Maritime), avec un composeur de figurines et un service de personnalisation par impression UV."
+strengths_en = ["Delivery free from 55 euros in France (as stated)", "Figures and parts searchable by theme"]
+strengths_fr = ["Livraison offerte dès 55 euros en France (selon le site)", "Figurines et pièces classées par thème"]
+weaknesses_en = ["Personalisation details read only in a search snippet", "Pricing of printed items not checked"]
+weaknesses_fr = ["Détails de la personnalisation lus seulement dans un extrait de recherche", "Prix des articles imprimés non vérifiés"]
+status = "active"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.briquestore.fr/fr/content/4-a-propos"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.briquestore.fr/en/1426-compose-your-figure"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "brickstickershop"
+name = "BrickStickerShop"
+url = "https://www.brickstickershop.com/"
+feed = "https://www.brickstickershop.com/ExportBestanden/RSS.php?Type=product"
+group = "decals-and-stickers"
+featured = true
+covers = ["custom-builds", "parts"]
+languages = ["en"]
+countries = ["NL", "international"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Dutch shop of replacement and custom vinyl stickers for LEGO sets and builds, vector drawn, with ink calibrated to brick colours; ships worldwide."
+summary_fr = "Boutique néerlandaise d'autocollants de remplacement et sur mesure en vinyle pour sets et constructions LEGO, dessinés en vectoriel, avec encre calibrée sur les couleurs des briques ; expédie dans le monde."
+strengths_en = ["Replacement sheets for old sets by theme and year", "Prices shown with and without value-added tax"]
+strengths_fr = ["Planches de remplacement pour anciens sets, par thème et année", "Prix affichés avec et sans taxe"]
+weaknesses_en = ["Delivery time of 3 weeks shown on a product page read", "Not official LEGO products (as stated by the shop)"]
+weaknesses_fr = ["Délai de 3 semaines indiqué sur une fiche lue", "Produits non officiels LEGO (selon la boutique)"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.brickstickershop.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.brickstickershop.com/Replacement-Sticker-for-Set-6399-Airport-Shuttle"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "ultimate-collector-stickers"
+name = "Ultimate Collector Stickers"
+url = "https://www.ultimatecollectorstickers.co.uk/"
+group = "decals-and-stickers"
+covers = ["custom-builds", "parts"]
+languages = ["en"]
+countries = ["GB"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "British shop of die-cut, colour-matched stickers in the style of LEGO Ultimate Collector Series sets, with a custom design and printing service from 20 pounds."
+summary_fr = "Boutique britannique d'autocollants découpés aux couleurs ajustées dans le style des sets LEGO Ultimate Collector Series, avec un service de conception et d'impression sur mesure à partir de 20 livres."
+strengths_en = ["Custom service covers design, printing and cutting, with a quote after contact", "Professional printing in CMYK inks (as stated)"]
+strengths_fr = ["Service sur mesure couvrant conception, impression et découpe, avec devis après contact", "Impression professionnelle en encres CMJN (selon le site)"]
+weaknesses_en = ["Prices in pounds sterling; shipping to France not checked"]
+weaknesses_fr = ["Prix en livres sterling ; livraison vers la France non vérifiée"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.ultimatecollectorstickers.co.uk/customs"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "forwartsticker"
+name = "ForwartSticker"
+url = "https://forwartsticker.com/"
+group = "decals-and-stickers"
+covers = ["custom-builds", "parts"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "Shop of die-cut self-adhesive stickers for LEGO sets and custom builds designed with MOC designers, with a custom design and printing service, single copies included."
+summary_fr = "Boutique d'autocollants adhésifs prédécoupés pour sets LEGO et créations originales, conçus avec des concepteurs de créations, avec un service sur mesure, exemplaire unique compris."
+strengths_en = ["Worldwide shipping; refund guarantee stated", "Sheets for community models and Icons sets, priced in euros"]
+strengths_fr = ["Expédition dans le monde ; garantie de remboursement annoncée", "Planches pour modèles de la communauté et sets Icons, prix en euros"]
+weaknesses_en = ["Country of the operator not stated on the pages read", "Custom prints excluded from the stock guarantee"]
+weaknesses_fr = ["Pays de l'exploitant non indiqué sur les pages lues", "Impressions sur mesure exclues de la garantie de stock"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://forwartsticker.com/about-us/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "moc-sticker-shop"
+name = "The MOC Sticker Shop"
+url = "https://themocstickershop.com/"
+group = "decals-and-stickers"
+covers = ["custom-builds", "parts"]
+languages = ["en"]
+countries = ["GB", "international"]
+access = "free"
+business_model_en = "Shop"
+business_model_fr = "Boutique"
+summary_en = "British shop of hand-drawn vinyl decals for modular scenes and custom builds, with a custom service drawn to the tile sizes sent by the customer."
+summary_fr = "Boutique britannique de décalcomanies en vinyle dessinées à la main pour scènes modulaires et créations originales, avec un service sur mesure dessiné aux dimensions des tuiles fournies."
+strengths_en = ["Custom jobs from 5 pounds for one design, proof before printing", "Delivery to the European Union, Norway and Switzerland at 4.95 pounds (as stated)"]
+strengths_fr = ["Travaux sur mesure à partir de 5 livres pour un motif, épreuve avant impression", "Livraison vers l'Union européenne, la Norvège et la Suisse à 4.95 livres (selon le site)"]
+weaknesses_en = ["Refuses franchise, brand and minifigure artwork", "Import taxes may be collected on delivery"]
+weaknesses_fr = ["Refuse les motifs de franchises, de marques et de minifigurines", "Taxes d'importation possibles à la livraison"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://themocstickershop.com/custom-stickers"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "wallapop"
+name = "Wallapop"
+url = "https://www.wallapop.com/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["es"]
+countries = ["ES"]
+access = "free"
+summary_en = "General classifieds application and website in Spain, searchable by keyword for LEGO sets and loose parts."
+summary_fr = "Application et site de petites annonces généralistes en Espagne, avec recherche par mot-clé pour des sets et pièces LEGO."
+strengths_en = ["Large Spanish user base"]
+strengths_fr = ["Large base d'utilisateurs en Espagne"]
+weaknesses_en = ["Not specific to LEGO", "Listing content not read: the search page returned no readable text"]
+weaknesses_fr = ["Pas spécifique à LEGO", "Contenu des annonces non lu : la page de recherche n'a renvoyé aucun texte lisible"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://www.wallapop.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "afols-nl"
+name = "afols.nl"
+url = "https://afols.nl/"
+group = "communities"
+covers = ["second-hand", "news"]
+languages = ["nl"]
+countries = ["NL"]
+access = "free-account"
+summary_en = "Dutch forum and marketplace for adult LEGO fans: members buy, sell and look for sets, promotional gifts with purchase and play-theme sets."
+summary_fr = "Forum et place de marché néerlandais pour fans adultes de LEGO : les membres achètent, vendent et recherchent des sets, des cadeaux promotionnels et des sets de thèmes de jeu."
+strengths_en = ["Free membership", "Members verify themselves with a payment of one cent", "Wanted ads besides offers"]
+strengths_fr = ["Inscription gratuite", "Vérification des membres par un paiement d'un cent", "Annonces de recherche en plus des offres"]
+weaknesses_en = ["Small community compared with Marktplaats", "Date of the last listing not visible"]
+weaknesses_fr = ["Petite communauté comparée à Marktplaats", "Date de la dernière annonce non visible"]
+size_en = "497 listings of sets for adults, 49 promotional sets, 33 play-theme sets"
+size_fr = "497 annonces de sets pour adultes, 49 sets promotionnels, 33 sets de thèmes de jeu"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://afols.nl/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "2dehands-be"
+name = "2dehands"
+url = "https://www.2dehands.be/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["nl"]
+countries = ["BE"]
+access = "free"
+summary_en = "General classifieds platform for new and second-hand goods in Flanders, searchable by keyword for LEGO."
+summary_fr = "Plateforme généraliste de petites annonces de biens neufs et d'occasion en Flandre, avec recherche par mot-clé pour LEGO."
+strengths_en = ["Main general classifieds in Dutch-speaking Belgium"]
+strengths_fr = ["Principale plateforme généraliste en Belgique néerlandophone"]
+weaknesses_en = ["Not specific to LEGO"]
+weaknesses_fr = ["Pas spécifique à LEGO"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.2dehands.be/q/lego/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "blocket-se"
+name = "Blocket"
+url = "https://www.blocket.se/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["sv"]
+countries = ["SE"]
+access = "free"
+summary_en = "General classifieds platform in Sweden; a keyword search for LEGO returns listings of sets and parts."
+summary_fr = "Plateforme généraliste de petites annonces en Suède ; une recherche par mot-clé pour LEGO renvoie des annonces de sets et de pièces."
+strengths_en = ["Main general classifieds in Sweden"]
+strengths_fr = ["Principale plateforme généraliste en Suède"]
+weaknesses_en = ["Not specific to LEGO"]
+weaknesses_fr = ["Pas spécifique à LEGO"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.blocket.se/annonser/hela_sverige?q=lego"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "dba-dk"
+name = "DBA"
+url = "https://www.dba.dk/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["da"]
+countries = ["DK"]
+access = "free"
+summary_en = "General classifieds platform in Denmark; a keyword search for LEGO returns listings of sets and parts."
+summary_fr = "Plateforme généraliste de petites annonces en Danemark ; une recherche par mot-clé pour LEGO renvoie des annonces de sets et de pièces."
+strengths_en = ["Main general classifieds in Denmark"]
+strengths_fr = ["Principale plateforme généraliste en Danemark"]
+weaknesses_en = ["Not specific to LEGO"]
+weaknesses_fr = ["Pas spécifique à LEGO"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.dba.dk/soeg/?soeg=lego"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "finn-no"
+name = "FINN.no"
+url = "https://www.finn.no/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["no"]
+countries = ["NO"]
+access = "free"
+summary_en = "General classifieds platform in Norway; a keyword search for LEGO returns listings of sets and parts."
+summary_fr = "Plateforme généraliste de petites annonces en Norvège ; une recherche par mot-clé pour LEGO renvoie des annonces de sets et de pièces."
+strengths_en = ["Main general classifieds in Norway"]
+strengths_fr = ["Principale plateforme généraliste en Norvège"]
+weaknesses_en = ["Not specific to LEGO"]
+weaknesses_fr = ["Pas spécifique à LEGO"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.finn.no/recommerce/forsale/search?q=lego"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "buwizz"
+name = "BuWizz"
+url = "https://buwizz.com/"
+feed = "https://buwizz.com/feed/"
+group = "motors-and-track"
+featured = true
+covers = ["parts"]
+languages = ["en", "sl"]
+countries = ["international"]
+access = "paid"
+business_model_en = "Shop; crowdfunding campaigns on Kickstarter"
+business_model_fr = "Boutique ; campagnes de financement participatif sur Kickstarter"
+summary_en = "Slovenian maker of Bluetooth controllers with a rechargeable battery and of motors for LEGO Technic, System and train models, driven from a phone application. BuWizz 4.0 Ultra was announced on Kickstarter on 4 November 2026."
+summary_fr = "Fabricant slovène de contrôleurs Bluetooth à batterie rechargeable et de moteurs pour modèles LEGO Technic, System et trains, pilotés depuis une application mobile. BuWizz 4.0 Ultra a été annoncé sur Kickstarter le 4 novembre 2026."
+strengths_en = ["BuWizz 3.0 Pro drives Power Functions, 9V and Powered Up motors", "Replaceable battery, USB-C charging", "Recommended by Eurobricks members for trains and models"]
+strengths_fr = ["BuWizz 3.0 Pro pilote des moteurs Power Functions, 9V et Powered Up", "Batterie remplaçable, recharge USB-C", "Recommandé par des membres d'Eurobricks pour les trains et les modèles"]
+weaknesses_en = ["Direct reading of the site blocked (403), content read through a search index", "Shipping to France and tax-inclusive prices not checked", "4.0 Ultra delivery estimated for February 2027 (Kickstarter)"]
+weaknesses_fr = ["Lecture directe du site bloquée (403), contenu lu par un index de recherche", "Livraison vers la France et prix taxes comprises non vérifiés", "Livraison du 4.0 Ultra estimée en février 2027 (Kickstarter)"]
+status = "active"
+last_activity = "2026-11-04"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://buwizz.com/shop/buwizz-4-0-ultra/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://brickset.com/article/135926/buwizz-4-0-launches-on-kickstarter"
+date = "2026-11-04"
+kind = "third-party"
+
+[[resource]]
+id = "fx-bricks"
+name = "Fx Bricks"
+url = "https://shop.fxbricks.com/"
+group = "motors-and-track"
+covers = ["parts"]
+languages = ["en"]
+countries = ["international"]
+access = "paid"
+business_model_en = "Shop; fulfilment in the European Union through JB Spielwaren"
+business_model_fr = "Boutique ; expédition dans l'Union européenne par JB Spielwaren"
+summary_en = "Canadian maker of L-Gauge train products: Fx Track metal track compatible with the 9V system (wide curves, switches), PFx Brick light and sound controller, and the Fx 9V electrical system launched on 3 June 2026."
+summary_fr = "Fabricant canadien de produits pour trains L-Gauge : voie métallique Fx Track compatible avec le système 9V (courbes larges, aiguillages), contrôleur de lumière et de son PFx Brick, et système électrique Fx 9V lancé le 3 juin 2026."
+strengths_en = ["Metal track compatible with LEGO 9V accessories", "Fx 9V lets existing trains draw power from the track instead of a battery box (as stated)", "European fulfilment by JB Spielwaren (as stated)"]
+strengths_fr = ["Voie métallique compatible avec les accessoires LEGO 9V", "Fx 9V permet aux trains existants de s'alimenter par la voie plutôt qu'un boîtier à piles (selon le fabricant)", "Expédition européenne par JB Spielwaren (selon le fabricant)"]
+weaknesses_en = ["Stock arrives by shipping container in waves by region (blog of 3 June 2026)", "Several track items listed as sold out in the search index"]
+weaknesses_fr = ["Stocks arrivant par conteneurs en vagues selon les régions (blog du 3 juin 2026)", "Plusieurs voies indiquées en rupture dans l'index de recherche"]
+status = "active"
+last_activity = "2026-06-03"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://shop.fxbricks.com/blogs/news/new-products-available"
+date = "2026-06-03"
+kind = "read"
+
+[[resource.sources]]
+url = "https://shop.fxbricks.com/pages/about"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "trixbrix"
+name = "Trixbrix"
+url = "https://trixbrix.eu/en/"
+group = "motors-and-track"
+featured = true
+covers = ["parts"]
+languages = ["en", "de"]
+countries = ["international"]
+access = "paid"
+business_model_en = "Shop; made and shipped from Poland"
+business_model_fr = "Boutique ; fabriqué et expédié depuis la Pologne"
+summary_en = "Polish maker of plastic track compatible with LEGO train track: curves from R24 to R184, many switch types, ballast plates, bridges, UV-printed tiles and automation parts (train detection, motorised points, signals)."
+summary_fr = "Fabricant polonais de voie en plastique compatible avec la voie de train LEGO : courbes de R24 à R184, nombreux types d'aiguillages, plaques de ballast, ponts, tuiles imprimées en UV et éléments d'automatisation (détection de trains, aiguillages motorisés, signaux)."
+strengths_en = ["Delivery from Poland in 2 to 4 working days within the European Union (as stated)", "Beginner's guide covering radius numbers and switch selection", "Global sponsor of the Brick Train Awards 2026"]
+strengths_fr = ["Livraison depuis la Pologne en 2 à 4 jours ouvrés dans l'Union européenne (selon le site)", "Guide du débutant sur les rayons de courbure et le choix des aiguillages", "Sponsor mondial des Brick Train Awards 2026"]
+weaknesses_en = ["Plastic track for battery-powered trains: no 9V track, a choice the maker explains on its site", "Prices and shipping to France not checked"]
+weaknesses_fr = ["Voie en plastique pour trains à batterie : pas de voie 9V, choix expliqué par le fabricant sur son site", "Prix et livraison vers la France non vérifiés"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://trixbrix.eu/en/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://trixbrix.eu/en/9v-track"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://www.bricktrainawards.com/winners/brick-train-awards-2026/"
+date = "2026-10-09"
+kind = "read"
+
+[[resource]]
+id = "open-l-gauge"
+name = "Open L-Gauge"
+url = "https://open-l-gauge.eu/"
+group = "parts-and-custom-builds"
+featured = true
+covers = ["instructions", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free downloads under CC BY-NC-SA 4.0"
+business_model_fr = "Téléchargements gratuits sous licence CC BY-NC-SA 4.0"
+summary_en = "Community library of free LEGO train model instructions, among them German locomotives (Baureihe 152, 185, 189, Vectron). Models are shared under CC BY-NC-SA 4.0, with a resources page on track, electronics and digital building."
+summary_fr = "Bibliothèque communautaire d'instructions gratuites de modèles de trains LEGO, dont des locomotives allemandes (Baureihe 152, 185, 189, Vectron). Les modèles sont partagés sous licence CC BY-NC-SA 4.0, avec une page de ressources sur les voies, l'électronique et la construction numérique."
+strengths_en = ["Models added on 7 and 21 November 2026", "Licence protects designers against commercial resale", "Resources page listing track makers, controllers and software"]
+strengths_fr = ["Modèles ajoutés les 7 et 21 novembre 2026", "La licence protège les concepteurs contre la revente commerciale", "Page de ressources listant fabricants de voies, contrôleurs et logiciels"]
+weaknesses_en = ["Non-commercial use only", "Instructions only: no parts supply"]
+weaknesses_fr = ["Usage non commercial uniquement", "Instructions seulement : pas de fourniture de pièces"]
+status = "active"
+last_activity = "2026-11-21"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://open-l-gauge.eu/feed/"
+
+[[resource.sources]]
+url = "https://open-l-gauge.eu/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://open-l-gauge.eu/feed/"
+date = "2026-11-21"
+kind = "read"
+
+[[resource.sources]]
+url = "https://open-l-gauge.eu/resources/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "train-moc"
+name = "train-moc"
+url = "https://train-moc.com/"
+group = "parts-and-custom-builds"
+covers = ["instructions", "custom-builds"]
+languages = ["fr"]
+countries = ["FR"]
+access = "paid"
+business_model_en = "Sale of plans; subscription offer for a built locomotive"
+business_model_fr = "Vente de plans ; offre de souscription pour une locomotive montée"
+summary_en = "French site selling plans of French railway models built 8 studs wide, designed for 9V systems, with a practical page on 9V track and a subscription for a built SNCF BB25525 locomotive."
+summary_fr = "Site français vendant des plans de matériel ferroviaire français construit sur 8 tenons de large, conçus pour les systèmes 9V, avec une page pratique sur la voie 9V et une souscription pour une locomotive BB25525 de la SNCF montée."
+strengths_en = ["French prototypes", "Guide comparing 9V, Power Functions and Powered Up, with sources of 9V track"]
+strengths_fr = ["Matériel français", "Guide comparant 9V, Power Functions et Powered Up, avec des sources de voie 9V"]
+weaknesses_en = ["No dated content found: activity not established", "Direct reading meets a verification page, content read through a search index"]
+weaknesses_fr = ["Aucun contenu daté trouvé : activité non établie", "La lecture directe rencontre une page de vérification, contenu lu par un index de recherche"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://train-moc.com/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://www.train-moc.com/trucs-train-9v.html"
+date = "2026-11-23"
+kind = "indexed"
+
+# ---------------------------------------------------------------- learning

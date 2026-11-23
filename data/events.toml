@@ -175,6 +175,7 @@ kind = "indexed"
 id = "brickcon"
 name = "BrickCon"
 url = "https://www.brickcon.org/"
+feed = "https://www.brickcon.org/index.xml"
 group = "conventions"
 covers = ["events", "official"]
 languages = ["en"]
@@ -209,6 +210,7 @@ kind = "official"
 id = "brickvention"
 name = "Brickvention"
 url = "https://www.brickvention.melbourne/"
+feed = "https://www.brickvention.melbourne/feed/"
 group = "conventions"
 covers = ["events", "official"]
 languages = ["en"]
@@ -310,6 +312,7 @@ kind = "official"
 id = "bricktopia-world"
 name = "Bricktopia World"
 url = "https://bricktopia-world.com/"
+feed = "https://bricktopia-world.com/feed/"
 group = "conventions"
 covers = ["events", "official"]
 languages = ["nl", "en"]
@@ -378,6 +381,7 @@ kind = "third-party"
 id = "great-western-brick-show"
 name = "Great Western Brick Show"
 url = "https://greatwesternbrickshow.co.uk/"
+feed = "https://greatwesternbrickshow.co.uk/feed/"
 group = "conventions"
 covers = ["events", "official"]
 languages = ["en"]
@@ -587,6 +591,7 @@ kind = "third-party"
 id = "lux-brixembourg"
 name = "Brixembourg"
 url = "https://www.brixembourg.com/"
+feed = "https://www.brixembourg.com/blog-feed.xml"
 group = "conventions"
 covers = ["events", "official", "alternative"]
 languages = ["de", "en", "fr"]
@@ -689,6 +694,7 @@ kind = "official"
 id = "bricks-and-friends"
 name = "Bricks and Friends"
 url = "https://bricksandfriends.wordpress.com/"
+feed = "https://bricksandfriends.wordpress.com/feed/"
 group = "conventions"
 covers = ["events", "official"]
 languages = ["de"]
@@ -751,6 +757,7 @@ kind = "official"
 id = "steinchenwelt"
 name = "SteinCHenwelt"
 url = "https://steinchenwelt.ch/"
+feed = "https://steinchenwelt.ch/feed/"
 group = "conventions"
 covers = ["events", "official"]
 languages = ["de"]
@@ -1034,6 +1041,7 @@ kind = "indexed"
 id = "hothbricks-expos"
 name = "hothbricks: expositions et événements LEGO"
 url = "https://www.hothbricks.com/expos/"
+feed = "https://www.hothbricks.com/expos/feed/"
 group = "calendars"
 featured = true
 covers = ["events", "official"]
@@ -1085,6 +1093,7 @@ kind = "read"
 id = "freelug-calendrier-2027"
 name = "FreeLUG: calendrier des expositions 2027"
 url = "https://forum.freelug.org/t/calendrier-des-expositions-lego-prevues-pour-2027-toutes-associations/3629"
+feed = "https://forum.freelug.org/t/calendrier-des-expositions-lego-prevues-pour-2027-toutes-associations/3629.rss"
 group = "calendars"
 covers = ["events", "official", "alternative"]
 languages = ["fr"]
@@ -1263,6 +1272,7 @@ kind = "read"
 id = "stonewars-events"
 name = "Stonewars: LEGO events and exhibitions"
 url = "https://www.stonewars.de/events/"
+feed = "https://www.stonewars.de/events/feed/"
 group = "calendars"
 covers = ["events", "official", "alternative"]
 languages = ["de"]
@@ -1333,3 +1343,86 @@ confidence = "medium"
 url = "https://www.brickdb.fr/events?country=FR"
 date = "2026-11-23"
 kind = "read"
+
+[[resource]]
+id = "bauspielbahn-treffen"
+name = "Bauspielbahn-Treffen (BSBT)"
+url = "https://lbrick.de/bauspielbahn-treffen/"
+group = "conventions"
+covers = ["events", "clubs"]
+languages = ["de", "en"]
+countries = ["DE"]
+access = "paid"
+business_model_en = "Paid admission; exhibitors apply and pay a participation fee"
+business_model_fr = "Entrée payante ; les exposants candidatent et paient une participation"
+summary_en = "Yearly meeting of LEGO train builders in the old tram depot of Schkeuditz near Leipzig, organised by LBRICK e.V.: a shared layout of about 700 square metres, described by the organiser as the largest LEGO train fan event in Europe."
+summary_fr = "Rencontre annuelle de constructeurs de trains LEGO dans l'ancien dépôt de tramways de Schkeuditz près de Leipzig, organisée par LBRICK e.V. : un réseau commun d'environ 700 mètres carrés, décrit par l'organisateur comme le plus grand événement européen de fans de trains LEGO."
+strengths_en = ["Eighth edition held from 31 July to 2 August 2026", "Night running on Saturday evening and a building table for visitors", "Exhibitors must show own builds, not set models; third-party track and motors allowed"]
+strengths_fr = ["Huitième édition tenue du 31 juillet au 2 août 2026", "Circulation de nuit le samedi soir et table de construction pour les visiteurs", "Les exposants doivent présenter des créations originales, pas des modèles de sets ; voies et moteurs de fabricants tiers admis"]
+weaknesses_en = ["Guest drivers not possible", "2026 admission: 6 € adults (from 14 years), 3 € children (7 to 13 years)"]
+weaknesses_fr = ["Pas de conducteurs invités", "Entrée 2026 : 6 € adultes (dès 14 ans), 3 € enfants (7 à 13 ans)"]
+size_en = "About 700 square metres"
+size_fr = "Environ 700 mètres carrés"
+status = "active"
+last_activity = "2026-08-02"
+checked = "2026-11-23"
+confidence = "high"
+city = "Schkeuditz"
+next_date = "2027-08-13"
+recurrence_en = "Every summer, Friday to Sunday (13 to 15 August 2027)"
+recurrence_fr = "Chaque été, du vendredi au dimanche (13 au 15 août 2027)"
+
+[[resource.sources]]
+url = "https://lbrick.de/bauspielbahn-treffen/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://lbrick.de/bauspielbahn-treffen-aussteller"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://www.steine-kanal.de/lbrick-bauspielbahntreffen-2026-alle-infos-zum-diesjaehrigen-lego-eisenbahn-event/"
+date = "2026-07-21"
+kind = "third-party"
+
+[[resource]]
+id = "brick-train-awards"
+name = "Brick Train Awards"
+url = "https://www.bricktrainawards.com/"
+group = "competitions"
+covers = ["events"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Yearly online awards for LEGO and compatible brick train builders, in 17 categories including three for teenagers, judged by members of the train community and organised by LEGO UK Railway. 915 entries in 2026."
+summary_fr = "Concours annuel en ligne pour les constructeurs de trains en briques LEGO et compatibles, en 17 catégories dont trois pour adolescents, jugé par des membres de la communauté des trains et organisé par LEGO UK Railway. 915 participations en 2026."
+strengths_en = ["Free entry, up to 3 models per category", "Winners listed per region and globally, with sixth edition in 2026", "Supported by clubs in the Netherlands, Germany, Australia, the United States and Canada"]
+strengths_fr = ["Participation gratuite, jusqu'à 3 modèles par catégorie", "Gagnants par région et au niveau mondial, sixième édition en 2026", "Soutenu par des clubs des Pays-Bas, d'Allemagne, d'Australie, des États-Unis et du Canada"]
+weaknesses_en = ["Virtual competition: no public exhibition", "Entries accepted only in September (1 to 30 September 2027 for the next edition)"]
+weaknesses_fr = ["Concours virtuel : pas d'exposition publique", "Participations acceptées uniquement en septembre (du 1er au 30 septembre 2027 pour la prochaine édition)"]
+size_en = "915 entries in 2026"
+size_fr = "915 participations en 2026"
+status = "active"
+last_activity = "2026-10-09"
+checked = "2026-11-23"
+confidence = "high"
+next_date = "2027-09-01"
+recurrence_en = "Entries every September, winners announced in autumn"
+recurrence_fr = "Participations chaque septembre, résultats annoncés à l'automne"
+
+[[resource.sources]]
+url = "https://www.bricktrainawards.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.bricktrainawards.com/winners/brick-train-awards-2026/"
+date = "2026-10-09"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.lukrailway.co.uk/podcast/brick-train-awards-2026-winners/"
+date = "2026-10-09"
+kind = "third-party"

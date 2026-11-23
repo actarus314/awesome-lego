@@ -39,6 +39,7 @@ name_fr = "Artistes et créateurs"
 id = "brick-architect"
 name = "Brick Architect"
 url = "https://brickarchitect.com/"
+feed = "https://brickarchitect.com/feed/"
 group = "guides"
 featured = true
 covers = ["learning", "official"]
@@ -90,6 +91,7 @@ kind = "read"
 id = "brick-builders-handbook"
 name = "Brick Builder's Handbook"
 url = "https://brickbuildershandbook.com/"
+feed = "https://brickbuildershandbook.com/feed/"
 group = "guides"
 covers = ["learning", "official"]
 languages = ["en"]
@@ -120,6 +122,7 @@ kind = "read"
 id = "sariel"
 name = "Sariel.pl"
 url = "https://sariel.pl/"
+feed = "https://sariel.pl/rss"
 group = "guides"
 covers = ["learning", "official"]
 languages = ["en"]
@@ -169,6 +172,7 @@ kind = "read"
 id = "bricks-stackexchange"
 name = "Bricks Stack Exchange"
 url = "https://bricks.stackexchange.com/"
+feed = "https://bricks.stackexchange.com/feeds"
 group = "guides"
 covers = ["learning", "official", "alternative"]
 languages = ["en"]
@@ -555,6 +559,7 @@ kind = "indexed"
 id = "loc-lego-patent-law"
 name = "Library of Congress: 60 years of Lego and Danish patent law"
 url = "https://blogs.loc.gov/law/2018/01/60-years-of-lego-building-blocks-and-danish-patent-law/"
+feed = "https://blogs.loc.gov/law/2018/01/60-years-of-lego-building-blocks-and-danish-patent-law/feed/"
 group = "history"
 covers = ["learning"]
 languages = ["en"]
@@ -761,6 +766,7 @@ kind = "read"
 id = "blocks-magazine"
 name = "Blocks magazine"
 url = "https://blocksmag.com/"
+feed = "https://blocksmag.com/feed/"
 group = "books-and-magazines"
 featured = true
 covers = ["learning", "official", "news"]
@@ -952,6 +958,7 @@ kind = "read"
 id = "dk-lego-books"
 name = "DK: LEGO books"
 url = "https://dk.com/en-us/collections/lego-books"
+feed = "https://dk.com/en-us/collections/lego-books.atom"
 group = "books-and-magazines"
 covers = ["learning", "official"]
 languages = ["en"]
@@ -1261,3 +1268,201 @@ confidence = "medium"
 url = "https://deparkatre.fr/en/lego-creators"
 date = "2026-11-23"
 kind = "read"
+
+[[resource]]
+id = "bricknerd-storage-guide"
+name = "BrickNerd storage guide"
+url = "https://bricknerd.com/home/an-opinionated-guide-to-lego-storage-containers-and-cost-5-25-23"
+group = "guides"
+featured = true
+covers = ["learning"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Opinionated guide by an adult fan on sorting loose parts and choosing containers, with a cost comparison of drawer units."
+summary_fr = "Guide personnel d'un adulte constructeur sur le tri des pièces en vrac et le choix des contenants, avec une comparaison des coûts des meubles à tiroirs."
+strengths_en = ["Compares drawer unit types by volume and price", "Explains why very small compartments slow down sorting"]
+strengths_fr = ["Compare les meubles à tiroirs par volume et par prix", "Explique pourquoi des compartiments très petits ralentissent le tri"]
+weaknesses_en = ["Prices and container models are those of the United States market"]
+weaknesses_fr = ["Prix et modèles de contenants relevés sur le marché des États-Unis"]
+status = "active"
+last_activity = "2026-05-17"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://bricknerd.com/home/an-opinionated-guide-to-lego-storage-containers-and-cost-5-25-23"
+date = "2026-05-17"
+kind = "read"
+
+[[resource]]
+id = "bricknerd-lighting-guide"
+name = "BrickNerd lighting lessons"
+url = "https://bricknerd.com/home/lego-lighting-lessons-making-sets-and-mocs-merry-and-bright-12-26-22"
+group = "guides"
+covers = ["learning"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Hands-on article on installing LED lighting kits in LEGO sets and custom builds, with the three types of lighting products."
+summary_fr = "Article pratique sur l'installation de kits d'éclairage à LED dans des sets LEGO et des créations originales, avec les trois types de produits d'éclairage."
+strengths_en = ["Installation walkthrough of a set lighting kit", "Describes custom lighting from individual components"]
+strengths_fr = ["Pas à pas d'installation d'un kit pour un set", "Décrit l'éclairage sur mesure à partir de composants"]
+weaknesses_en = ["Kits tested were supplied by a manufacturer"]
+weaknesses_fr = ["Les kits testés ont été fournis par un fabricant"]
+status = "active"
+last_activity = "2025-12-27"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://bricknerd.com/home/lego-lighting-lessons-making-sets-and-mocs-merry-and-bright-12-26-22"
+date = "2025-12-27"
+kind = "read"
+
+[[resource]]
+id = "spielzeug-fuchs-sortieren"
+name = "Spielzeug-Fuchs: LEGO sortieren"
+url = "https://spielzeug-fuchs.de/lego-sortieren-leicht-gemacht/"
+group = "guides"
+covers = ["learning"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+summary_en = "German-language guide to sorting bricks: workspace, sorting boxes, drawer systems and labels."
+summary_fr = "Guide en allemand sur le tri des briques : espace de travail, boîtes de tri, meubles à tiroirs et étiquettes."
+strengths_en = ["Covers small-parts cabinets, sorting boxes and drawer systems"]
+strengths_fr = ["Couvre les magasins de petites pièces, boîtes de tri et meubles à tiroirs"]
+weaknesses_en = ["Published by a shop; general advice, less detailed than specialist guides"]
+weaknesses_fr = ["Publié par une boutique ; conseils généraux, moins détaillés que les guides spécialisés"]
+status = "slow"
+last_activity = "2024-07-27"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://spielzeug-fuchs.de/lego-sortieren-leicht-gemacht/"
+date = "2024-07-27"
+kind = "read"
+
+[[resource]]
+id = "brothers-brick-yellowed-bricks"
+name = "The Brothers Brick: cleaning yellowed bricks"
+url = "https://www.brothers-brick.com/2009/08/30/how-to-clean-yellowed-lego-bricks-to-make-classic-space-sets-look-new-news/"
+feed = "https://www.brothers-brick.com/2009/08/30/how-to-clean-yellowed-lego-bricks-to-make-classic-space-sets-look-new-news/feed/"
+group = "guides"
+covers = ["learning"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Article on restoring the colour of yellowed white bricks, plus a dust-cleaning tip with a dry paint brush."
+summary_fr = "Article sur la restauration de la couleur des briques blanches jaunies, avec une astuce de dépoussiérage au pinceau sec."
+strengths_en = ["Complements the official LEGO cleaning page, which does not cover yellowing"]
+strengths_fr = ["Complète la page de nettoyage de LEGO officiel, qui ne traite pas du jaunissement"]
+weaknesses_en = ["Dated 2009 (updated 2018); results of the method not verified here"]
+weaknesses_fr = ["Daté de 2009 (mis à jour en 2018) ; résultats de la méthode non vérifiés ici"]
+status = "inactive"
+last_activity = "2018-12-29"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.brothers-brick.com/2009/08/30/how-to-clean-yellowed-lego-bricks-to-make-classic-space-sets-look-new-news/"
+date = "2018-12-29"
+kind = "read"
+
+[[resource]]
+id = "hispabrick-magazine"
+name = "HispaBrick Magazine"
+url = "https://hispabrickmagazine.com/"
+group = "books-and-magazines"
+covers = ["learning", "news"]
+languages = ["es", "en"]
+countries = ["ES"]
+access = "free"
+summary_en = "Free magazine and blog about building with LEGO, started in 2008 by Spanish adult fans, published in Spanish and English editions with identical content."
+summary_fr = "Magazine et blog gratuits sur la construction LEGO, lancés en 2008 par des fans adultes espagnols, publiés en éditions espagnole et anglaise au contenu identique."
+strengths_en = ["Issues free to download", "Interviews, reviews and press releases on the blog"]
+strengths_fr = ["Numéros téléchargeables gratuitement", "Entretiens, tests et communiqués sur le blog"]
+weaknesses_en = ["Home page blocks automated readers with a challenge; read through another reader"]
+weaknesses_fr = ["La page d'accueil bloque les lecteurs automatisés par un défi ; lue par un autre lecteur"]
+status = "active"
+last_activity = "2026-11-09"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://hispabrickmagazine.com/index-en.php"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "lgms"
+name = "L-Gauge Modular System (LGMS)"
+url = "https://lgms.org/"
+group = "guides"
+covers = ["learning", "clubs"]
+languages = ["en"]
+countries = ["US"]
+access = "free"
+summary_en = "Modular standard for collaborative LEGO train layouts used at United States conventions: modules of at least 3 by 3 baseplates, double-track mainline with minimum radius R104, clearances, rules for the layout coordinator. Version 1.5 released on 7 July 2021."
+summary_fr = "Standard modulaire pour les réseaux collaboratifs de trains LEGO utilisé dans les conventions américaines : modules d'au moins 3 par 3 plaques de base, ligne principale à double voie de rayon minimal R104, gabarits, règles du coordinateur de réseau. Version 1.5 publiée le 7 juillet 2021."
+strengths_en = ["Downloadable standard document", "Adopted by some clubs, for example RenLUG; adapted in French by FreeLUG"]
+strengths_fr = ["Document de standard téléchargeable", "Adopté par certains clubs, par exemple RenLUG ; adapté en français par FreeLUG"]
+weaknesses_en = ["Latest dated change found is version 1.5 (7 July 2021); the event list on the home page ends in November 2025", "Dimensions in inches; makes no provision for electrified track"]
+weaknesses_fr = ["Dernière modification datée trouvée : version 1.5 (7 juillet 2021) ; la liste d'événements de l'accueil s'arrête en novembre 2025", "Dimensions en pouces ; aucune disposition pour la voie électrifiée"]
+status = "inactive"
+last_activity = "2021-07-07"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://lgms.org/standards/"
+date = "2021-07-07"
+kind = "read"
+
+[[resource.sources]]
+url = "https://lgms.org/about/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.freelug.fr/spip.php?article3108="
+date = "2021-12-29"
+kind = "third-party"
+
+[[resource]]
+id = "nico71"
+name = "Nico71's Technic Creations"
+url = "https://www.nico71.fr/"
+group = "artists"
+featured = true
+covers = ["learning", "instructions", "custom-builds"]
+languages = ["en", "fr"]
+countries = ["international"]
+access = "freemium"
+business_model_en = "Free videos; PDF instructions and custom kits for sale"
+business_model_fr = "Vidéos gratuites ; instructions PDF et kits sur mesure à la vente"
+summary_en = "French independent LEGO Technic designer, a mechanical engineer: motorised vehicles and machines, PDF instructions, custom kits, videos explaining design choices and commissioned models for companies."
+summary_fr = "Concepteur indépendant français de LEGO Technic, ingénieur en mécanique : véhicules et machines motorisés, instructions PDF, kits sur mesure, vidéos expliquant les choix de conception et modèles réalisés sur commande pour des entreprises."
+strengths_en = ["Videos with design explanations, with remote control by Powered Up or BuWizz", "Posts on 7 and 12 November 2026 (French review of BuWizz 4.0, new instructions)"]
+strengths_fr = ["Vidéos d'explication de conception, avec pilotage par Powered Up ou BuWizz", "Publications des 7 et 12 novembre 2026 (test en français de BuWizz 4.0, nouvelles instructions)"]
+weaknesses_en = ["Instructions and kits are paid"]
+weaknesses_fr = ["Instructions et kits payants"]
+status = "active"
+last_activity = "2026-11-12"
+checked = "2026-11-23"
+confidence = "high"
+youtube_channel_id = "UCYPBfLx3dgMxW60CY9u7uUQ"
+
+[[resource.sources]]
+url = "https://www.nico71.fr/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCYPBfLx3dgMxW60CY9u7uUQ"
+date = "2026-11-07"
+kind = "read"
+
+# ------------------------------------------------------------------ events

@@ -25,6 +25,11 @@ id = "open-source"
 name_en = "Open-source projects"
 name_fr = "Projets libres"
 
+[[category.groups]]
+id = "programming-and-control"
+name_en = "Programming, control and robotics"
+name_fr = "Programmation, pilotage et robotique"
+
 [[resource]]
 id = "rebrickable-api-v3"
 name = "Rebrickable API v3"
@@ -262,6 +267,7 @@ kind = "read"
 id = "brick-directory-mcp"
 name = "Brick Directory MCP server"
 url = "https://brick.directory/"
+feed = "https://brick.directory/feed.xml"
 group = "apis-and-data"
 covers = ["official", "data"]
 languages = ["en"]
@@ -561,6 +567,7 @@ kind = "official"
 id = "brick-search-app"
 name = "Brick Search"
 url = "https://bricksearch.app/"
+feed = "https://bricksearch.app/feed/"
 group = "apps"
 featured = true
 covers = ["official", "minifigures"]
@@ -644,6 +651,7 @@ kind = "third-party"
 id = "instabrick"
 name = "Instabrick"
 url = "https://www.instabrick.org/"
+feed = "https://www.instabrick.org/rss.xml"
 group = "apps"
 covers = ["official", "parts", "minifigures", "second-hand"]
 languages = ["en"]
@@ -838,3 +846,454 @@ github = "wendehals/bricks-mcp"
 url = "https://github.com/wendehals/bricks-mcp"
 date = "2026-11-23"
 kind = "read"
+
+[[resource]]
+id = "pileometer"
+name = "Pile[o]meter"
+url = "https://pileometer.app/"
+group = "apps"
+covers = ["parts"]
+languages = ["en"]
+countries = ["international"]
+access = "freemium"
+business_model_en = "In-app subscription"
+business_model_fr = "Abonnement intégré"
+summary_en = "Mobile app and storage system from the makers of Brickit: scans photos of loose parts to build a digital catalogue of what is owned."
+summary_fr = "Application mobile et système de rangement des créateurs de Brickit : lit des photos de pièces en vrac pour constituer un catalogue numérique de la collection."
+strengths_en = ["Available on iOS and Android", "Manual correction of scan results"]
+strengths_fr = ["Disponible sur iOS et Android", "Correction manuelle des résultats de lecture"]
+weaknesses_en = ["Store reviews report recognition errors and a limited free tier", "Not an official LEGO product"]
+weaknesses_fr = ["Des avis des boutiques d'applications signalent des erreurs de reconnaissance et une offre gratuite limitée", "Produit non officiel"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://pileometer.app/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://apps.apple.com/us/app/pileometer-by-brickit/id6590601507"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "bricklog"
+name = "Bricklog"
+url = "https://bricklog.co/"
+group = "apps"
+covers = ["parts", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+summary_en = "Web collection tracker on the Rebrickable catalogue: owned sets, aggregated parts inventory, storage-location tags, missing parts and loose-part matching."
+summary_fr = "Suivi de collection en ligne sur le catalogue Rebrickable : sets possédés, inventaire cumulé des pièces, étiquettes d'emplacement de rangement, pièces manquantes et correspondance des pièces en vrac."
+strengths_en = ["Catalogue browsable without account", "Sign-in by emailed code, no password"]
+strengths_fr = ["Catalogue consultable sans compte", "Connexion par code envoyé par courriel, sans mot de passe"]
+weaknesses_en = ["Recent project by one developer (blog post of 2026-06-13)"]
+weaknesses_fr = ["Projet récent d'un seul développeur (article du 2026-06-13)"]
+status = "active"
+last_activity = "2026-06-13"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://bricklog.co/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://bricklog.co/blog/why-i-built-bricklog"
+date = "2026-06-13"
+kind = "read"
+
+[[resource]]
+id = "brick-sorting-machine"
+name = "BrickSortingMachine"
+url = "https://bricksortingmachine.com"
+group = "open-source"
+covers = ["parts"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "DIY plans (scanner, electronics) and open-source software stack for an automated LEGO brick sorting machine, with a classification web service."
+summary_fr = "Plans de construction (scanner, électronique) et logiciel libre pour une machine de tri automatique de briques LEGO, avec un service web de classification."
+strengths_en = ["Licence GNU GPL v3", "Overview article of influential sorting machines"]
+strengths_fr = ["Licence GNU GPL v3", "Article de synthèse sur les machines de tri de référence"]
+weaknesses_en = ["Components communicate without authentication: private network only (stated by the project)", "Project effort, not a product"]
+weaknesses_fr = ["Les composants communiquent sans authentification : réseau privé uniquement (indiqué par le projet)", "Projet de bricoleur, pas un produit"]
+status = "inactive"
+last_activity = "2025-09-01"
+checked = "2026-11-23"
+confidence = "medium"
+github = "BrickSortingMachine/BrickSortingMachine"
+
+[[resource.sources]]
+url = "https://github.com/BrickSortingMachine/BrickSortingMachine/commits/main"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://bricksortingmachine.com"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "basicallysource-sorter"
+name = "basicallysource sorter"
+url = "https://github.com/basicallysource/sorter"
+group = "open-source"
+covers = ["parts"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Open repository of a LEGO sorting machine project using machine learning, developed by a group of makers."
+summary_fr = "Dépôt ouvert d'un projet de machine de tri LEGO fondé sur l'apprentissage automatique, développé par un groupe de bricoleurs."
+strengths_en = ["Active commits in November 2025", "Project page at basically.website"]
+strengths_fr = ["Commits actifs en novembre 2025", "Page du projet sur basically.website"]
+weaknesses_en = ["Work in progress; documentation not assessed"]
+weaknesses_fr = ["Travail en cours ; documentation non évaluée"]
+status = "slow"
+last_activity = "2025-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+github = "basicallysource/sorter"
+
+[[resource.sources]]
+url = "https://github.com/basicallysource/sorter/commits/main"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "omgbricks"
+name = "omgbricks"
+url = "https://omgbricks.com/"
+group = "apps"
+covers = ["official", "minifigures", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free app"
+business_model_fr = "Application gratuite"
+summary_en = "Mobile app that reads the data code under Collectible Minifigures boxes to show the figure inside, with a collection tracker and a set database."
+summary_fr = "Application mobile qui lit le code sous les boîtes de minifigurines à collectionner pour montrer la figurine à l'intérieur, avec suivi de collection et base de sets."
+strengths_en = ["Ranked first on iPhone and joint first on Android in an independent test of November 2024 (Brickset)", "Works without an internet connection in that test"]
+strengths_fr = ["Première sur iPhone et à égalité sur Android dans un test indépendant de novembre 2024 (Brickset)", "Fonctionne sans connexion dans ce test"]
+weaknesses_en = ["Reads sealed boxes only, not loose figures", "Series coverage depends on codes collected after each release"]
+weaknesses_fr = ["Lit seulement les boîtes fermées, pas les figurines libres", "Couverture des séries dépendante des codes collectés après chaque sortie"]
+status = "active"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://omgbricks.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickset.com/article/116444/which-minifig-scanning-app-should-you-use"
+date = "2024-11-30"
+kind = "third-party"
+
+[[resource]]
+id = "minifig-scan"
+name = "Minifig Scan"
+url = "https://pacolabs.com/MinifigScan/"
+group = "apps"
+covers = ["official", "minifigures"]
+languages = ["en"]
+countries = ["international"]
+access = "freemium"
+business_model_en = "Free with in-app purchases"
+business_model_fr = "Gratuit avec achats intégrés"
+summary_en = "Mobile app that scans the data code on Collectible Minifigures boxes, several at once, with collection counters and a blind mode that flags duplicates without revealing figures."
+summary_fr = "Application mobile qui scanne le code des boîtes de minifigurines à collectionner, plusieurs à la fois, avec compteurs de collection et mode aveugle signalant les doublons sans révéler les figurines."
+strengths_en = ["Joint first on Android and second on iPhone in the Brickset test of November 2024", "Supported series listed on the developer page, up to the Shrek Series"]
+strengths_fr = ["Premier ex aequo sur Android et deuxième sur iPhone dans le test Brickset de novembre 2024", "Séries prises en charge listées par le développeur, jusqu'à la série Shrek"]
+weaknesses_en = ["Reads sealed boxes only"]
+weaknesses_fr = ["Lit seulement les boîtes fermées"]
+status = "active"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://pacolabs.com/MinifigScan/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickset.com/article/116444/which-minifig-scanning-app-should-you-use"
+date = "2024-11-30"
+kind = "third-party"
+
+[[resource]]
+id = "brickscan"
+name = "BrickScan"
+url = "https://brickscan.com/"
+group = "apps"
+covers = ["official", "minifigures", "parts", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "freemium"
+business_model_en = "App, pricing not read"
+business_model_fr = "Application, tarifs non lus"
+summary_en = "Phone app identifying loose minifigures and parts from a photo, with exports to BrickStore and similar inventory software (formerly BrickMonkey)."
+summary_fr = "Application mobile identifiant minifigurines et pièces libres à partir d'une photo, avec export vers BrickStore et logiciels d'inventaire similaires (anciennement BrickMonkey)."
+strengths_en = ["Covers 16000 figures and 76000 parts according to the site", "XML export for inventory tools"]
+strengths_fr = ["Couvre 16000 figurines et 76000 pièces selon le site", "Export XML pour les outils d'inventaire"]
+weaknesses_en = ["Accuracy and user figures are the site's own claims", "Aimed at resellers; custom figures not identified"]
+weaknesses_fr = ["Précision et nombre d'utilisateurs fournis par le site, non vérifiés", "Destinée aux revendeurs ; figurines sur mesure non identifiées"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brickscan.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brick-deals-identify-minifigure"
+name = "Brick.Deals minifigure identifier"
+url = "https://brick.deals/tools/identify-minifigure"
+group = "apps"
+covers = ["official", "minifigures", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free tool"
+business_model_fr = "Outil gratuit"
+summary_en = "Web tool that suggests catalog matches for a photo of one assembled minifigure and lists the sets it appears in; the user confirms the match."
+summary_fr = "Outil web qui propose des correspondances du catalogue pour la photo d'une minifigurine assemblée et indique les sets où elle apparaît ; l'utilisateur confirme la correspondance."
+strengths_en = ["Works in the browser, no installation", "Close variants kept separate and left to the user to choose"]
+strengths_fr = ["Fonctionne dans le navigateur, sans installation", "Variantes proches distinguées et laissées au choix de l'utilisateur"]
+weaknesses_en = ["Photos are sent to the operator's servers for identification", "Accuracy not published on the page read"]
+weaknesses_fr = ["Les photos sont envoyées aux serveurs de l'exploitant pour identification", "Précision non publiée sur la page lue"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brick.deals/tools/identify-minifigure"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "pybricks"
+name = "Pybricks"
+url = "https://pybricks.com/"
+group = "programming-and-control"
+featured = true
+covers = ["official", "learning"]
+languages = ["en"]
+countries = ["international"]
+access = "freemium"
+business_model_en = "Python coding free and open source; block coding for project supporters"
+business_model_fr = "Programmation en Python gratuite et libre ; programmation par blocs pour les soutiens du projet"
+summary_en = "Python and block coding for LEGO smart hubs (Technic, City, BOOST, MINDSTORMS, SPIKE): programs are stored on the hub and run without a phone, with a web editor, a reference manual and projects for official sets."
+summary_fr = "Programmation en Python et par blocs pour les hubs LEGO (Technic, City, BOOST, MINDSTORMS, SPIKE) : les programmes sont enregistrés sur le hub et s'exécutent sans téléphone, avec un éditeur web, un manuel de référence et des projets pour des sets LEGO officiels."
+strengths_en = ["Same code across hubs of different themes", "Open-source firmware with commits on 14 November 2026", "Guide for train builders and projects by set"]
+strengths_fr = ["Même code pour les hubs de thèmes différents", "Micrologiciel libre avec des contributions le 14 novembre 2026", "Guide pour les constructeurs de trains et projets par set"]
+weaknesses_en = ["Replaces the official hub firmware (a restore procedure exists)", "Block coding reserved to supporters", "iPhone and iPad not supported, Firefox without Bluetooth"]
+weaknesses_fr = ["Remplace le micrologiciel officiel du hub (une procédure de restauration existe)", "Programmation par blocs réservée aux soutiens", "iPhone et iPad non pris en charge, Firefox sans Bluetooth"]
+status = "active"
+last_activity = "2026-11-14"
+checked = "2026-11-23"
+confidence = "high"
+github = "pybricks/pybricks-micropython"
+
+[[resource.sources]]
+url = "https://pybricks.com/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://pybricks.com/learn/getting-started/what-do-you-need/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://github.com/pybricks/pybricks-micropython/commits/master.atom"
+date = "2026-11-14"
+kind = "read"
+
+[[resource]]
+id = "brickrail"
+name = "Brickrail"
+url = "https://github.com/Novakasa/brickrail"
+group = "programming-and-control"
+covers = ["official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free, open source (MIT licence)"
+business_model_fr = "Gratuit, libre (licence MIT)"
+summary_en = "Desktop software to automate LEGO Powered Up train layouts: virtual layout, routing and block detection with colour sensors, hubs running Pybricks. Only LEGO hubs, motors and sensors are required besides a computer with Bluetooth."
+summary_fr = "Logiciel de bureau pour automatiser des réseaux de trains LEGO Powered Up : réseau virtuel, itinéraires et détection de cantons par capteurs de couleur, hubs sous Pybricks. Seuls des hubs, moteurs et capteurs LEGO sont nécessaires en plus d'un ordinateur avec Bluetooth."
+strengths_en = ["Layout can be tested virtually before running physical trains", "Wiki with a get-started guide", "Discord server mentioned in the repository"]
+strengths_fr = ["Réseau testable virtuellement avant de faire rouler les trains", "Wiki avec un guide de démarrage", "Serveur Discord mentionné dans le dépôt"]
+weaknesses_en = ["Windows and Linux only", "About 7 to 8 simultaneous Bluetooth connections on a Windows computer", "BOOST Move Hub incompatible; MINDSTORMS hub less tested"]
+weaknesses_fr = ["Windows et Linux uniquement", "Environ 7 à 8 connexions Bluetooth simultanées sur un ordinateur Windows", "Hub BOOST Move incompatible ; hub MINDSTORMS moins testé"]
+size_en = "109 stars"
+size_fr = "109 étoiles"
+status = "slow"
+last_activity = "2026-05-06"
+checked = "2026-11-23"
+confidence = "high"
+github = "Novakasa/brickrail"
+
+[[resource.sources]]
+url = "https://github.com/Novakasa/brickrail"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://github.com/Novakasa/brickrail/commits/master.atom"
+date = "2026-05-06"
+kind = "read"
+
+[[resource]]
+id = "brickcontroller2"
+name = "BrickController 2"
+url = "https://github.com/imurvai/brickcontroller2"
+group = "programming-and-control"
+covers = ["official", "parts"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free, open source"
+business_model_fr = "Gratuit, libre"
+summary_en = "Mobile application (Android, iOS) that controls LEGO creations with a Bluetooth gamepad through SBrick, BuWizz 1 to 3, Powered Up, BOOST, Technic hub, WeDo 2.0 and Circuit Cubes receivers; Power Functions infrared on Android devices with an emitter."
+summary_fr = "Application mobile (Android, iOS) qui pilote des créations LEGO avec une manette Bluetooth via des récepteurs SBrick, BuWizz 1 à 3, Powered Up, BOOST, hub Technic, WeDo 2.0 et Circuit Cubes ; infrarouge Power Functions sur les appareils Android dotés d'un émetteur."
+strengths_en = ["One application for receivers of several makers", "Gamepad control, mentioned by Eurobricks members for driving models"]
+strengths_fr = ["Une seule application pour les récepteurs de plusieurs fabricants", "Pilotage à la manette, cité par des membres d'Eurobricks pour conduire des modèles"]
+weaknesses_en = ["Last commit on the default branch on 11 June 2024", "67 open issues", "Mould King receivers not listed in the README"]
+weaknesses_fr = ["Dernière contribution sur la branche principale le 11 juin 2024", "67 signalements ouverts", "Récepteurs Mould King absents de la liste du README"]
+size_en = "142 stars"
+size_fr = "142 étoiles"
+status = "inactive"
+last_activity = "2024-06-11"
+checked = "2026-11-23"
+confidence = "medium"
+github = "imurvai/brickcontroller2"
+
+[[resource.sources]]
+url = "https://github.com/imurvai/brickcontroller2"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://github.com/imurvai/brickcontroller2/commits/master.atom"
+date = "2024-06-11"
+kind = "read"
+
+[[resource]]
+id = "node-poweredup"
+name = "node-poweredup"
+url = "https://github.com/nathankellenicki/node-poweredup"
+group = "programming-and-control"
+covers = ["official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free, open source (MIT licence)"
+business_model_fr = "Gratuit, libre (licence MIT)"
+summary_en = "JavaScript and TypeScript module controlling Powered Up devices from Node.js over Bluetooth: WeDo 2.0, BOOST, Powered Up, Technic Control+, SPIKE Prime and Essential, MINDSTORMS Robot Inventor, Duplo trains."
+summary_fr = "Module JavaScript et TypeScript pilotant des appareils Powered Up depuis Node.js par Bluetooth : WeDo 2.0, BOOST, Powered Up, Technic Control+, SPIKE Prime et Essential, MINDSTORMS Robot Inventor, trains Duplo."
+strengths_en = ["Documentation site and examples", "Version 10.1.0 published in January 2026"]
+strengths_fr = ["Site de documentation et exemples", "Version 10.1.0 publiée en janvier 2026"]
+weaknesses_en = ["Control from a connected computer, programs do not run on the hub (see Pybricks)", "Last commit on 29 March 2026"]
+weaknesses_fr = ["Pilotage depuis un ordinateur connecté, les programmes ne s'exécutent pas sur le hub (voir Pybricks)", "Dernière contribution le 29 mars 2026"]
+size_en = "525 stars"
+size_fr = "525 étoiles"
+status = "slow"
+last_activity = "2026-03-29"
+checked = "2026-11-23"
+confidence = "high"
+github = "nathankellenicki/node-poweredup"
+
+[[resource.sources]]
+url = "https://github.com/nathankellenicki/node-poweredup"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://github.com/nathankellenicki/node-poweredup/commits/master.atom"
+date = "2026-03-29"
+kind = "read"
+
+[[resource]]
+id = "ev3dev"
+name = "ev3dev"
+url = "https://www.ev3dev.org/"
+group = "programming-and-control"
+covers = ["official", "learning"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free, open source (GNU GPL v2)"
+business_model_fr = "Gratuit, libre (GNU GPL v2)"
+summary_en = "Debian Linux operating system started from a microSD card on LEGO MINDSTORMS EV3 and compatible platforms (BrickPi, PiStorms), with libraries for Python, Java, Go, C++, Rust and other languages. Historical reference for programming Mindstorms EV3."
+summary_fr = "Système Debian Linux lancé depuis une carte microSD sur LEGO MINDSTORMS EV3 et plateformes compatibles (BrickPi, PiStorms), avec des bibliothèques pour Python, Java, Go, C++, Rust et d'autres langages. Référence historique pour programmer le Mindstorms EV3."
+strengths_en = ["Does not touch the EV3 firmware: removing the card restores the original behaviour", "Programming languages page with a project list"]
+strengths_fr = ["Ne touche pas au micrologiciel de l'EV3 : retirer la carte rétablit le comportement d'origine", "Page des langages de programmation avec une liste de projets"]
+weaknesses_en = ["Last commit on the stretch branch on 14 December 2024", "The buster version is described as alpha in the documentation", "Pybricks version 2 for EV3 is included in the stable image"]
+weaknesses_fr = ["Dernière contribution sur la branche stretch le 14 décembre 2024", "La version buster est décrite comme alpha dans la documentation", "Pybricks version 2 pour EV3 est inclus dans l'image stable"]
+size_en = "665 stars"
+size_fr = "665 étoiles"
+status = "inactive"
+last_activity = "2024-12-14"
+checked = "2026-11-23"
+confidence = "medium"
+github = "ev3dev/ev3dev"
+
+[[resource.sources]]
+url = "https://www.ev3dev.org/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://github.com/ev3dev/ev3dev/commits/ev3dev-stretch.atom"
+date = "2024-12-14"
+kind = "read"
+
+[[resource]]
+id = "lego-wireless-protocol"
+name = "LEGO Wireless Protocol 3.0 documentation"
+url = "https://lego.github.io/lego-ble-wireless-protocol-docs/"
+group = "apis-and-data"
+covers = ["official", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free"
+business_model_fr = "Gratuit"
+summary_en = "Documentation published by LEGO of the Bluetooth Low Energy protocol of its smart hubs: one GATT service to read hub information and to drive the motors and sensors connected to the ports."
+summary_fr = "Documentation publiée par LEGO du protocole Bluetooth Low Energy de ses hubs : un service GATT pour lire les informations du hub et piloter les moteurs et capteurs branchés aux ports."
+strengths_en = ["Official source, with a glossary of motor and sensor terms"]
+strengths_fr = ["Source officielle, avec un glossaire des termes de moteurs et de capteurs"]
+weaknesses_en = ["Last commit on 8 February 2019: later hubs and firmware not verified against this document"]
+weaknesses_fr = ["Dernière contribution le 8 février 2019 : hubs et micrologiciels plus récents non vérifiés par rapport à ce document"]
+size_en = "Version 3.0.00, revision r17"
+size_fr = "Version 3.0.00, révision r17"
+status = "inactive"
+last_activity = "2019-02-08"
+checked = "2026-11-23"
+confidence = "medium"
+github = "LEGO/lego-ble-wireless-protocol-docs"
+
+[[resource.sources]]
+url = "https://lego.github.io/lego-ble-wireless-protocol-docs/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://github.com/LEGO/lego-ble-wireless-protocol-docs/commits/master.atom"
+date = "2019-02-08"
+kind = "read"
+
+# ------------------------------------------------------------- second-hand
