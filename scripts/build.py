@@ -307,6 +307,7 @@ def atom(title, self_url, site_url, items):
     updated = items[0][3] if items else dt.date.today().isoformat()
     return (f'<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>{esc(title)}</title>'
             f'<id>{self_url}</id><link href="{site_url}"/><link rel="self" href="{self_url}"/>'
+            f'<icon>{PAGES}media/favicon.png</icon><logo>{PAGES}media/apple-touch-icon.png</logo>'
             f'<updated>{updated}T00:00:00Z</updated><author><name>Awesome LEGO</name></author>{entries}</feed>\n')
 
 
@@ -403,6 +404,7 @@ def main():
     (SITE / "feed.xml").write_text(content_feed(cats, "en"), encoding="utf-8")
     (SITE / "fr" / "feed.xml").write_text(content_feed(cats, "fr"), encoding="utf-8")
     (SITE / "changes.xml").write_text(changes_feed(), encoding="utf-8")
+    (SITE / "favicon.ico").write_bytes((ROOT / "media" / "favicon.ico").read_bytes())  # readers that look for <site>/favicon.ico
     for f in (ROOT / "media").rglob("*"):
         if f.is_file():
             out = SITE / f.relative_to(ROOT)

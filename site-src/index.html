@@ -10,7 +10,9 @@
 <link rel="alternate" hreflang="en" href="https://actarus314.github.io/awesome-lego/">
 <link rel="alternate" hreflang="fr" href="https://actarus314.github.io/awesome-lego/fr/">
 <link rel="alternate" type="application/atom+xml" title="{{FEEDTITLE}}" href="https://actarus314.github.io/awesome-lego/{{FEEDPATH}}feed.xml">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='10' width='28' height='18' rx='3' fill='%23e3a008'/%3E%3Crect x='7' y='5' width='7' height='6' rx='2' fill='%23e3a008'/%3E%3Crect x='18' y='5' width='7' height='6' rx='2' fill='%23e3a008'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="https://actarus314.github.io/awesome-lego/media/logo.svg">
+<link rel="icon" type="image/png" sizes="64x64" href="https://actarus314.github.io/awesome-lego/media/favicon.png">
+<link rel="apple-touch-icon" href="https://actarus314.github.io/awesome-lego/media/apple-touch-icon.png">
 <script>/* language: the English home page sends a French-speaking browser to /fr/, unless a language was chosen with the button */
 try{if('{{LANG}}'==='en'){const l=localStorage.getItem('lang');if(l==='fr'||(!l&&/^fr\b/i.test((navigator.languages||[navigator.language])[0]||'')))location.replace('fr/'+location.search+location.hash)}}catch(e){}</script>
 <script>try{const t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
@@ -238,6 +240,9 @@ ms.addAll(R.map(r=>({id:r.id,name:r.name,summary:r[L].summary,strengths:r[L].str
  covers:(r.covers||[]).map(t).join(' '),countries:(r.countries||[]).map(cname).join(' '),size:r[L].size,brands:(r.brands||[]).map(brandName).join(' ')})));
 const st={cat:new Set(),cov:new Set(),active:false,fr:false,featured:false,country:'',q:'',view:'cards',sort:null};
 const CTRY=Object.entries(R.flatMap(r=>(r.countries||[]).filter(c=>c!=='international')).reduce((a,c)=>(a[c]=(a[c]||0)+1,a),{})).sort((a,b)=>b[1]-a[1]||cname(a[0]).localeCompare(cname(b[0])));
+// the visitor's language (browser), then English, then the others: everyone finds what they can read first, nothing is hidden
+const VL=(((navigator.languages||[navigator.language])[0]||L).slice(0,2).toLowerCase());
+const lrank=r=>{const l=r.languages||[];return l.includes(VL)?0:l.includes('en')?1:2};
 const toggle=(set,v)=>set.has(v)?set.delete(v):set.add(v);
 let hits=null;
 const covers=['official','alternative','second-hand','parts','custom-builds','instructions','news','data'];
@@ -278,7 +283,7 @@ function drawList(){const rs=R.filter(r=>match(r));document.getElementById('coun
  if(st.view==='table'){root.style.setProperty('--bar-h',(document.querySelector('.bar').offsetHeight+56)+'px');if(hits&&!st.sort)rs.sort((a,b)=>hits.get(b.id)-hits.get(a.id));list.innerHTML=drawTable(rs);return}
  if(hits){rs.sort((a,b)=>hits.get(b.id)-hits.get(a.id));list.innerHTML=`<section class="cat"><h3>${t('ranked')} <span class="count">${rs.length}</span></h3><div class="grid">${rs.map(r=>card(r,true)).join('')}</div></section>`;return}
  list.innerHTML=C.map(c=>{const cr=rs.filter(r=>r.cat===c.id);if(!cr.length)return'';
-  cr.sort((a,b)=>(c.groups.findIndex(g=>g.id===a.group)-c.groups.findIndex(g=>g.id===b.group))||a.name.localeCompare(b.name));
+  cr.sort((a,b)=>(c.groups.findIndex(g=>g.id===a.group)-c.groups.findIndex(g=>g.id===b.group))||(lrank(a)-lrank(b))||a.name.localeCompare(b.name));
   return `<section class="cat"><h3>${ci(c.id)}${esc(c[L])} <span class="count">${cr.length}</span></h3><div class="grid">${cr.map(r=>card(r,false)).join('')}</div></section>`}).join('')}
 function toDir(){if(location.hash==='#findings')history.pushState(null,'',location.pathname+location.search);show('dir')}
 function openEntry(id){toDir();resetAll();st.view='cards';update();const el=document.getElementById('r-'+id);if(!el)return;const d=el.querySelector('details');if(d)d.open=true;document.querySelectorAll('.card.focus').forEach(c=>c.classList.remove('focus'));el.classList.add('focus');root.style.setProperty('--bar-h',(document.querySelector('.bar').offsetHeight+56)+'px');el.scrollIntoView({behavior:'smooth',block:'start'})}

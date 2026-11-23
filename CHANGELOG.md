@@ -2,6 +2,9 @@
 
 # v1.x — Bilingual directory of the brick world, from brands and shops to events, places, clubs and know-how: resources checked at their source, best-of README, website with map, journeys and findings, automatic updates.
 
+## v1.16 — 2026-11-23
+Website: within each group, entries in the visitor's browser language come first, then English, then the others; nothing is hidden. Real icon files (PNG, ICO, Apple touch icon) replace the inline one, and the feeds carry their icon, so feed readers show it.
+
 ## v1.15 — 2026-11-23
 23 national references added where fans are many and the directory was thin: conventions, clubs, news sites and price comparators of the United States, Canada, Australia, New Zealand, South Africa and Italy; 522 resources in all.
 
