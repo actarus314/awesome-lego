@@ -1,7 +1,7 @@
 [category]
 id = "events"
-name_en = "Events of the brick world"
-name_fr = "Événements du monde de la brique"
+name_en = "Events"
+name_fr = "Événements"
 summary_en = "Conventions, fan exhibitions, artist shows, public competitions and calendars listing brick events by country."
 summary_fr = "Conventions, expositions de fans, expositions d'artistes, concours publics et calendriers recensant les événements de la brique par pays."
 

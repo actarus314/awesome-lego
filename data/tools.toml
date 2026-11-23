@@ -1,7 +1,7 @@
 [category]
 id = "tools"
-name_en = "Tools, APIs and open projects"
-name_fr = "Outils, API et projets libres"
+name_en = "Tools and APIs"
+name_fr = "Outils et API"
 summary_en = "Design software, apps, APIs, open data and open-source projects around LEGO and compatible bricks."
 summary_fr = "Logiciels de conception, applications, API, données ouvertes et projets libres autour de LEGO et des briques compatibles."
 
@@ -535,7 +535,6 @@ id = "lego-builder-app"
 name = "LEGO Builder"
 url = "https://www.lego.com/en-us/builder-app"
 group = "apps"
-featured = true
 covers = ["official", "instructions"]
 languages = ["en", "fr", "de"]
 countries = ["international"]

@@ -2,6 +2,9 @@
 
 # v1.x — Bilingual directory of the brick world, from brands and shops to events, places, clubs and know-how: resources checked at their source, best-of README, website with map, journeys and findings, automatic updates.
 
+## v1.5 — 2026-11-23
+README and website: one icon per category, shorter category names and texts, softer day colours (brick red for official LEGO, amber for alternative brands), one colour per filter family, the alternative-brand chart in the interface teal, and the entry reached from a stud, a journey or a dot stays highlighted. README selection reviewed: 91 entries (nanoblock, eBay, BrickPlus, Brick Me Up Scottie, Frostiize and the LEGO Builder app out; the LEGO Store directory in).
+
 ## v1.4 — 2026-11-23
 Four new categories checked at their source: events (42), places (38), clubs (30) and learning (44), 402 resources in all and 96 in the README; three journeys follow them (visit, meet, understand), event cards show their next edition and a country filter joins the criteria. New finding "Where the passion is": fan communities recognized by LEGO (Fan CoLab, 178 in 45 countries) against World Bank population, by country.
 

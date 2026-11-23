@@ -31,8 +31,8 @@ T = {  # interface strings
     "title": {"en": "Awesome LEGO", "fr": "Awesome LEGO"},
     "tagline": {"en": "Interlocking plastic construction bricks, from the official LEGO system to compatible brands.",
                 "fr": "Briques de construction en plastique à emboîter, du système LEGO officiel aux marques compatibles."},
-    "site_tagline": {"en": "Brands, shops, prices, second-hand, communities, videos, events, places, clubs, know-how and tools for adult builders of official LEGO and compatible bricks.",
-                     "fr": "Marques, boutiques, prix, occasion, communautés, vidéos, événements, lieux, clubs, savoir et outils pour les adultes qui construisent en LEGO officiel et en briques compatibles."},
+    "site_tagline": {"en": "The best of the brick world for adult builders, in official LEGO and compatible brands.",
+                     "fr": "Le meilleur du monde de la brique pour les adultes qui construisent, en LEGO officiel comme en marques compatibles."},
     "contents": {"en": "Contents", "fr": "Sommaire"},
     "contributing": {"en": "Contributing", "fr": "Contribuer"},
     "contrib_text": {"en": "Additions and corrections are welcome: read [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them."},
@@ -175,8 +175,11 @@ def readme(cats, m, lang, kind="readme"):
         if not any(keep(r) for r in c["resources"]):
             continue
         out += ["", f"## {cat['name_' + lang]}", ""]
+        icon = f'<img src="media/icons/{cat["id"]}.svg" width="44" height="44" align="left" alt="">' if (ROOT / "media" / "icons" / f"{cat['id']}.svg").exists() else ""
         if cat.get("summary_" + lang):
-            out += [cat["summary_" + lang], ""]
+            out += [f"{icon} {cat['summary_' + lang]}".strip(), ""]
+        if icon:
+            out += ['<br clear="left">', ""]
         for g in cat.get("groups", []):
             rs = [r for r in c["resources"] if r["group"] == g["id"] and keep(r) and r["url"] not in listed]
             listed.update(r["url"] for r in rs)  # one link once per file (awesome-lint: double-link)
@@ -303,9 +306,11 @@ def main():
     (SITE / "fr").mkdir(parents=True, exist_ok=True)
     (SITE / "index.html").write_text(page("en", data), encoding="utf-8")
     (SITE / "fr" / "index.html").write_text(page("fr", data), encoding="utf-8")
-    (SITE / "media").mkdir(exist_ok=True)
-    for f in (ROOT / "media").glob("*"):
-        (SITE / "media" / f.name).write_bytes(f.read_bytes())
+    for f in (ROOT / "media").rglob("*"):
+        if f.is_file():
+            out = SITE / f.relative_to(ROOT)
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_bytes(f.read_bytes())
     (SITE / "data.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     print("✓ site/index.html, site/fr/index.html, site/data.json")
 

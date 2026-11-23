@@ -1,7 +1,7 @@
 [category]
 id = "second-hand"
-name_en = "Second-hand, parts, custom builds and accessories"
-name_fr = "Occasion, pièces détachées, créations originales et accessoires"
+name_en = "Second-hand, parts and accessories"
+name_fr = "Occasion, pièces et accessoires"
 summary_en = "Where to buy used sets and loose parts, find custom builds and instructions, and services such as lighting, display cases and sorting."
 summary_fr = "Où acheter des sets d'occasion et des pièces détachées, trouver des créations originales et des instructions, et services tels que l'éclairage, les vitrines et le tri."
 
@@ -137,7 +137,6 @@ id = "ebay-fr"
 name = "eBay.fr"
 url = "https://www.ebay.fr/"
 group = "marketplaces"
-featured = true
 covers = ["official", "alternative", "second-hand", "parts", "minifigures"]
 languages = ["fr"]
 countries = ["FR"]
@@ -536,7 +535,6 @@ id = "brickplus"
 name = "BrickPlus"
 url = "https://brickplus.fr/"
 group = "second-hand-shops"
-featured = true
 covers = ["official", "second-hand", "minifigures", "parts"]
 languages = ["fr"]
 countries = ["FR"]

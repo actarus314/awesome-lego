@@ -955,7 +955,6 @@ id = "nanoblock"
 name = "nanoblock (Kawada)"
 url = "https://www.kawada-toys.com/en/brand/nanoblock/"
 group = "other-formats"
-featured = true
 covers = ["alternative"]
 languages = ["en", "ja"]
 countries = ["international"]

@@ -1,7 +1,7 @@
 [category]
 id = "video"
-name_en = "YouTube channels and podcasts"
-name_fr = "Chaînes YouTube et podcasts"
+name_en = "YouTube and podcasts"
+name_fr = "YouTube et podcasts"
 summary_en = "English- and French-language YouTube channels and podcasts: reviews of official LEGO and alternative brands, builds and news."
 summary_fr = "Chaînes YouTube et podcasts en anglais et en français : tests de LEGO officiel et de marques alternatives, constructions et actualité."
 
@@ -546,7 +546,6 @@ id = "brick-me-up-scottie"
 name = "Brick Me Up Scottie"
 url = "https://www.youtube.com/@BrickMeUpScottie"
 group = "alternative-brand-reviews"
-featured = true
 covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
@@ -945,7 +944,6 @@ id = "frostiize"
 name = "FrosTiize"
 url = "https://www.youtube.com/@FrosTiize"
 group = "news"
-featured = true
 covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
