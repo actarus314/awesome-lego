@@ -479,11 +479,6 @@ url = "https://baustein.info/welt-des-steins/"
 date = "2022-03-09"
 kind = "third-party"
 
-[[resource.sources]]
-url = "https://www.brickfinder.net/2017/04/08/china-bricks-company-officially-making-afol-designed-sets/"
-date = "2017-04-08"
-kind = "third-party"
-
 [[resource]]
 id = "jiestar"
 name = "JIE STAR (with GULY)"

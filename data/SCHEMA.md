@@ -40,6 +40,7 @@ size_fr = "42003 sets, 95 marques"
 status = "active"                        # active | slow (no update for 6 months) | inactive (12 months) | archived | dead
 last_activity = "2026-11-23"             # ISO date of the last observed activity (post, video, commit, price update)
 checked = "2026-11-23"                   # ISO date of the last verification of this entry
+added = "2026-11-23"                     # ISO date the entry entered the directory, set once and never changed (content feed)
 confidence = "high"                      # high: read at the source | medium: indexed or third-party | low: single weak source
 github = "owner/repo"                    # optional: for automatic stars and last-commit updates
 youtube_channel_id = "UC…"               # optional: for automatic last-video updates (public RSS feed)
@@ -50,7 +51,7 @@ next_date = "2027-06-12"                 # optional, events: start of the next e
 recurrence_en = "Every June"             # optional, events: how often it happens
 recurrence_fr = "Chaque juin"
 
-[[resource.sources]]                     # at least one; the page that supports the entry
+[[resource.sources]]                     # one to three, the strongest; a newer reading replaces the oldest source instead of adding a fourth
 url = "https://brick-broker.com/a-propos"
 date = "2026-11-23"                      # publication or update date of the source, else the reading date
 kind = "official"                        # official | read (page read at the source) | indexed (search snippet, cache) | third-party | forum

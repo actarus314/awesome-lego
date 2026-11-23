@@ -89,6 +89,20 @@ def selection_check(rows):
     return out
 
 
+def coverage_gaps(rows):
+    """Where fans are many and this directory is thin (data/backend/clubs-by-country.json)."""
+    f = ROOT / "data" / "backend" / "clubs-by-country.json"
+    if not f.exists():
+        return []
+    n = json.loads(f.read_text(encoding="utf-8"))["countries"]
+    entries = {}
+    for r, _ in rows:
+        for c in r.get("countries", []):
+            entries[c] = entries.get(c, 0) + 1
+    return [f"{c} ({entries.get(c, 0)} entries, {k} communities)" for c, k in sorted(n.items(), key=lambda x: -x[1])
+            if k >= 3 and entries.get(c, 0) <= k]
+
+
 def main():
     old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
     new, failed, archived, stale, unfeature = {}, [], [], [], []
@@ -136,6 +150,9 @@ def main():
         lines.append("- Archived on GitHub, to review : " + ", ".join(archived))
     if unfeature:
         lines.append("- In the README selection but no longer eligible (inactive for 6 months, archived or weak source), to remove from the selection : " + ", ".join(unfeature))
+    gaps = coverage_gaps(rows)
+    if gaps:
+        lines.append("- Coverage gaps (countries with 3 or more fan communities recognized by LEGO and at most one entry per community) : " + ", ".join(gaps))
     swaps = selection_check(rows)
     if swaps:
         lines.append("- Selection check (score out of 9: activity, confidence, sources read, French reader), selected entry far below an unselected one of its group : " + "; ".join(swaps))

@@ -78,6 +78,8 @@ def load():
             for k in ("name", "url", "group", "summary_en", "summary_fr", "status", "checked", "added", "confidence"):
                 if not r.get(k):
                     errors.append(f"{w}: {k} missing")
+            if len(r.get("sources", [])) > 3:  # the best three; a newer reading replaces the oldest instead of piling up
+                errors.append(f"{w}: more than 3 sources")
             if not re.match(r"https?://", str(r.get("url", ""))):
                 errors.append(f"{w}: url must start with https:// or http://")
             u = re.sub(r"^https?://(www\.)?", "", str(r.get("url", "")).rstrip("/").lower())
@@ -234,8 +236,6 @@ def mentions(r, terms):
 def site_data(cats, m):
     rows = []
     terms = brand_terms(cats)
-    lines = {m.group(1): f"data/{p.name}#L{s[:m.start()].count(chr(10)) + 1}" for p in DATA.glob("*.toml")
-             for s in [p.read_text(encoding="utf-8")] for m in re.finditer(r'(?m)^id = "([^"]+)"', s)}
     for c in cats:
         cat = c["category"]
         gnames = {g["id"]: {"en": g["name_en"], "fr": g["name_fr"]} for g in cat.get("groups", [])}
@@ -251,7 +251,6 @@ def site_data(cats, m):
                              "weaknesses": r.get("weaknesses_" + lang, []), "size": r.get("size_" + lang, ""),
                              "model": r.get("business_model_" + lang, ""), "group": gnames.get(r["group"], {}).get(lang, r["group"])}
             row["checked"] = str(row["checked"])
-            row["line"] = lines.get(r["id"])  # the entry in its data file, for "all sources" on GitHub
             row["brands"] = [] if cat["id"] == "brands" else mentions(r, terms)
             rows.append(row)
     categories = [{"id": c["category"]["id"], "en": c["category"]["name_en"], "fr": c["category"]["name_fr"],

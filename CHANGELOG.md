@@ -2,6 +2,9 @@
 
 # v1.x — Bilingual directory of the brick world, from brands and shops to events, places, clubs and know-how: resources checked at their source, best-of README, website with map, journeys and findings, automatic updates.
 
+## v1.14 — 2026-11-23
+Website: the dates of the data (last check at the source, last activity reading) move to the top of the page, sources are shown by site name, and an entry reached by a link stays below the filter bar. Data: at most three sources per entry; the "Blind spots" finding leaves the website for the weekly report, where it lists the countries to cover.
+
 ## v1.13 — 2026-11-23
 The website's feed now follows the content, in each language: new resources and announced event editions (`feed.xml`, `fr/feed.xml`); the feed of versions moves to `changes.xml`. Each entry carries the date it entered the directory (`added`), and the feed is linked from the footer and the README.
 
