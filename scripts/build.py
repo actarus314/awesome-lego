@@ -155,8 +155,11 @@ def readme(cats, m, lang, kind="readme"):
            MORE[kind][lang], "", f"## {T['contents'][lang]}", ""]
     seen = {}
 
-    def uniq(name):  # GitHub suffixes repeated heading anchors with -1, -2…
-        a = anchor(name)
+    def icon(cid):
+        return f'<img src="media/icons/{cid}.svg" width="32" height="32" alt="">' if (ROOT / "media" / "icons" / f"{cid}.svg").exists() else ""
+
+    def uniq(name, lead=""):  # GitHub suffixes repeated heading anchors with -1, -2…
+        a = lead + anchor(name)  # a heading that starts with an image keeps its leading space: "-name"
         n = seen.get(a, 0)
         seen[a] = n + 1
         return a if n == 0 else f"{a}-{n}"
@@ -165,7 +168,7 @@ def readme(cats, m, lang, kind="readme"):
         if not any(keep(r) for r in c["resources"]):
             continue
         name = c["category"][f"name_{lang}"]
-        out.append(f"- [{name}](#{uniq(name)})")
+        out.append(f"- [{name}](#{uniq(name, '-' if icon(c['category']['id']) else '')})")
         for g in c["category"].get("groups", []):
             if any(r["group"] == g["id"] and keep(r) for r in c["resources"]):
                 out.append(f"  - [{g['name_' + lang]}](#{uniq(g['name_' + lang])})")
@@ -174,12 +177,9 @@ def readme(cats, m, lang, kind="readme"):
         cat = c["category"]
         if not any(keep(r) for r in c["resources"]):
             continue
-        out += ["", f"## {cat['name_' + lang]}", ""]
-        icon = f'<img src="media/icons/{cat["id"]}.svg" width="44" height="44" align="left" alt="">' if (ROOT / "media" / "icons" / f"{cat['id']}.svg").exists() else ""
+        out += ["", "<br>", "", f"## {(icon(cat['id']) + ' ') if icon(cat['id']) else ''}{cat['name_' + lang]}", ""]
         if cat.get("summary_" + lang):
-            out += [f"{icon} {cat['summary_' + lang]}".strip(), ""]
-        if icon:
-            out += ['<br clear="left">', ""]
+            out += [cat["summary_" + lang], ""]
         for g in cat.get("groups", []):
             rs = [r for r in c["resources"] if r["group"] == g["id"] and keep(r) and r["url"] not in listed]
             listed.update(r["url"] for r in rs)  # one link once per file (awesome-lint: double-link)
