@@ -38,8 +38,6 @@ T = {  # interface strings
     "contrib_text": {"en": "Additions and corrections are welcome: read [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them."},
     "site_fr": {"en": "French version of the website", "fr": "Version française du site"},
     "site": {"en": "Website with search, filters and charts", "fr": "Site avec recherche, filtres et graphiques"},
-    "legend": {"en": "🧱 official LEGO · 🔶 alternative brands · ⚠️ inactive or archived · 💀 dead (kept for reference)",
-               "fr": "🧱 LEGO officiel · 🔶 marques alternatives · ⚠️ inactive ou archivée · 💀 morte (gardée pour référence)"},
     "updated": {"en": "Updated", "fr": "Mis à jour"},
     "resources": {"en": "resources", "fr": "ressources"},
 }
@@ -146,7 +144,7 @@ def readme(cats, m, lang, kind="readme"):
     keep = (lambda r: r.get("featured")) if kind == "readme" else (lambda r: True)
     out = [f"# {title}{badge}", "", f"> {T['tagline'][lang]}", "",
            f"[{T['site'][lang]}]({PAGES}) · [{T['site_fr'][lang]}]({PAGES}fr/)", "",
-           MORE[kind][lang], "", f"{T['legend'][lang]}", "", f"## {T['contents'][lang]}", ""]
+           MORE[kind][lang], "", f"## {T['contents'][lang]}", ""]
     seen = {}
 
     def uniq(name):  # GitHub suffixes repeated heading anchors with -1, -2…
@@ -179,12 +177,14 @@ def readme(cats, m, lang, kind="readme"):
             out += [f"### {g['name_' + lang]}", ""]
             for r in sorted(rs, key=lambda r: r["name"].lower()):
                 status = r["status"]  # declared status: generated files stay stable between data changes
-                marks = ("🧱" if "official" in r.get("covers", []) else "") + ("🔶" if "alternative" in r.get("covers", []) else "")
-                marks += "⚠️" if status in ("inactive", "archived") else "💀" if status == "dead" else ""
+                worlds = [w for k, w in (("official", "official LEGO"), ("alternative", "alternative brands")) if k in r.get("covers", [])]
+                marks = (f"Covers {' and '.join(worlds)}." if worlds else "")
+                if status != "active":
+                    marks += " Status: " + {"slow": "no update for 6 months", "inactive": "no update for a year"}.get(status, status) + "."
                 desc = r["summary_" + lang].strip()
                 if not desc.endswith("."):
                     desc += "."
-                out.append(f"- [{r['name']}]({r['url']}) - {desc}{(' ' + marks) if marks else ''}")
+                out.append(f"- [{r['name']}]({r['url']}) - {desc}{(' ' + marks.strip()) if marks.strip() else ''}")
             out.append("")
     out += [f"## {T['contributing'][lang]}", "", T["contrib_text"][lang], ""]
     return "\n".join(out).replace("\n\n\n", "\n\n")
