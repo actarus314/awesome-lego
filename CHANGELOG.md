@@ -2,6 +2,9 @@
 
 # v1.x — Bilingual directory of the brick world, from brands and shops to events, places, clubs and know-how: resources checked at their source, best-of README, website with map, journeys and findings, automatic updates.
 
+## v1.8 — 2026-11-23
+README: each category icon sits on its heading line and categories are spaced apart. Website: the date after "checked" now reads "last activity".
+
 ## v1.7 — 2026-11-23
 Website: category icons come back in the headings of the directory list, not on the map tiles.
 

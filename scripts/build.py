@@ -156,7 +156,7 @@ def readme(cats, m, lang, kind="readme"):
     seen = {}
 
     def icon(cid):
-        return f'<img src="media/icons/{cid}.svg" width="40" height="40" align="left" vspace="14" hspace="4" alt="">' if (ROOT / "media" / "icons" / f"{cid}.svg").exists() else ""
+        return f'<img src="media/icons/heading/{cid}.svg" width="40" height="56" align="left" hspace="4" alt="">' if (ROOT / "media" / "icons" / "heading" / f"{cid}.svg").exists() else ""  # heading/: same icons with a transparent top margin, so the floated icon lines up with the heading text
 
     def uniq(name):  # GitHub suffixes repeated heading anchors with -1, -2…
         a = anchor(name)
