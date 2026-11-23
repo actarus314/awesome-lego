@@ -2,6 +2,9 @@
 
 # v1.x — Bilingual directory of the brick world, from brands and shops to events, places, clubs and know-how: resources checked at their source, best-of README, website with map, journeys and findings, automatic updates.
 
+## v1.12 — 2026-11-23
+Website: the English home page sends a browser set to French to the French page, until a language is chosen with the language button; the theme already follows the browser until one is chosen.
+
 ## v1.11 — 2026-11-23
 Findings laid out in balanced columns, the oldest silent resources of a category grouped in one counted ring, and the map's subtitle removed. Every build now checks that MAINTENANCE.md and data/SCHEMA.md still name each workflow, schedule, controlled word and backend file, and regenerates the category list of the "Add a resource" form, which still listed the 8 first categories.
 
