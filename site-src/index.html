@@ -107,7 +107,7 @@ table.dt{width:100%;border-collapse:collapse;background:var(--card);border:1px s
 .dt td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}.dt tr:hover td{background:var(--sunk)}
 .dt td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}.dt a{font-weight:600;text-decoration:none;color:var(--fg)}
 @media (max-width:900px){.dt .opt{display:none}}
-.cat{margin-top:26px}.cat>h3{font-size:19px;margin:0 0 4px}.cat>p{margin:0 0 12px;color:var(--muted)}
+.cat{margin-top:26px}.cat>h3{font-size:19px;margin:0 0 10px;display:flex;align-items:center;gap:0}.cat>h3 .count{margin-left:12px;font:600 12px var(--mono);color:var(--muted);background:var(--sunk);border:1px solid var(--line);border-radius:999px;padding:1px 9px}.cat>p{margin:0 0 12px;color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:10px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:8px}
 .card.focus{border-color:var(--hi);box-shadow:0 0 0 3px var(--hi),0 10px 28px -12px rgba(0,0,0,.35);background:color-mix(in srgb,var(--hi) 7%,var(--card));animation:pop .5s ease-out}
@@ -129,13 +129,15 @@ footer{margin:60px 0 0;padding:24px 0 40px;border-top:1px solid var(--line);colo
 footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
 #tip{position:fixed;z-index:50;pointer-events:none;background:var(--fg);color:var(--bg);padding:6px 9px;border-radius:7px;font-size:13px;max-width:300px;opacity:0;transition:opacity .08s}
 @media (max-width:980px){.hero{grid-template-columns:1fr}.tile{grid-column:span 6 !important}}
+#fams{display:flex;flex-direction:column;gap:8px}#ftoggle,#reset2{display:none}
+@media (max-width:640px){#ftoggle{display:inline-flex}#fams{display:none;max-height:62vh;overflow:auto;padding-bottom:4px}.bar.open #fams{display:flex}#ftoggle[aria-expanded=true]{border-color:var(--accent);color:var(--accent)}.bar input[type=search]{min-width:0;flex-basis:100%}#reset,.count .cw{display:none}#reset2{display:inline-flex;align-self:flex-start}.bar .row{gap:6px}}
 @media (max-width:640px){.brand span{display:none}header.top .wrap{gap:8px}nav.tabs a{padding:6px 7px}.tools .btn{padding:0 7px}.tile{grid-column:span 12 !important}.kpi b{font-size:22px}.fam{grid-template-columns:1fr;gap:4px}.fam>.label{padding-top:0}.pill{display:none}}
 </style>
 </head>
 <body>
 <header class="top"><div class="wrap">
 <a class="brand" href="#top" aria-label="Home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="10" width="28" height="18" rx="3" fill="#e3a008"/><rect x="7" y="5" width="7" height="6" rx="2" fill="#e3a008"/><rect x="18" y="5" width="7" height="6" rx="2" fill="#e3a008"/><rect x="2" y="22" width="28" height="6" fill="#000" opacity=".12"/></svg><span data-t="short"></span></a>
-<nav class="tabs" aria-label="Views"><a href="#" data-view="dir" data-t="nav_dir"></a><a href="#findings" data-view="ins" data-t="nav_ins"></a></nav>
+<nav class="tabs" aria-label="Views"><a href="#map" data-view="dir" data-t="nav_dir"></a><a href="#findings" data-view="ins" data-t="nav_ins"></a></nav>
 <div class="tools"><a class="pill" href="https://github.com/{{REPO}}/blob/main/CHANGELOG.md">v{{VERSION}}</a><a class="btn" href="{{OTHER}}" data-t="other"></a><a class="btn" href="https://github.com/{{REPO}}" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a><button class="btn" id="theme" type="button"></button></div>
 </div></header>
 <main class="wrap" id="top">
@@ -145,11 +147,13 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
 <h2 id="map" data-t="map"></h2><p class="lead" data-t="map_lead"></p><div class="map" id="mapgrid"></div><div class="key" id="mapkey"></div>
 <h2 id="directory" data-t="nav_dir"></h2>
 <div class="bar">
-<div class="row"><input type="search" id="q" autocomplete="off"><span class="count" id="count"></span><span class="seg" role="group" id="viewsw"><button type="button" data-v="cards" data-t="v_cards"></button><button type="button" data-v="table" data-t="v_table"></button></span><button class="btn" id="reset" type="button" data-t="reset"></button></div>
+<div class="row"><input type="search" id="q" autocomplete="off"><span class="count" id="count"></span><span class="seg" role="group" id="viewsw"><button type="button" data-v="cards" data-t="v_cards"></button><button type="button" data-v="table" data-t="v_table"></button></span><button class="btn" id="reset" type="button" data-t="reset"></button><button class="btn" id="ftoggle" type="button" aria-expanded="false" aria-controls="fams"></button></div>
+<div id="fams">
 <div class="fam"><span class="label" data-t="f_cat"></span><div class="chips" id="f-cat"></div></div>
 <div class="fam cov"><span class="label" data-t="f_cov"></span><div class="chips" id="f-cov"></div></div>
 <div class="fam opt"><span class="label" data-t="f_opt"></span><div class="chips" id="f-misc"></div></div>
-</div>
+<button class="btn" id="reset2" type="button" data-t="reset"></button>
+</div></div>
 <div id="list"></div>
 </div>
 <div id="view-ins" hidden>
@@ -172,7 +176,7 @@ map_lead:{en:'One stud per resource: click it to open its entry.',fr:'Un tenon p
 ins:{en:'What the directory reveals',fr:'Ce que révèle l\'annuaire'},
 ins_lead:{en:'Computed from the data at each update. Click a cell or a dot to see the resources behind it.',fr:'Calculé depuis les données à chaque mise à jour. Un clic sur une case ou un point montre les ressources concernées.'},
 reset:{en:'Show all',fr:'Tout afficher'},start:{en:'Where to start',fr:'Par où commencer'},v_cards:{en:'Cards',fr:'Cartes'},v_table:{en:'Table',fr:'Tableau'},c_name:{en:'Name',fr:'Nom'},c_cat:{en:'Category',fr:'Catégorie'},c_scope:{en:'Scope',fr:'Périmètre'},c_lang:{en:'Languages',fr:'Langues'},c_status:{en:'Status',fr:'Statut'},c_last:{en:'Last activity',fr:'Dernière activité'},c_stars:{en:'Stars',fr:'Étoiles'},search:{en:'Search a name, a brand, a country, a feature…',fr:'Chercher un nom, une marque, un pays, une fonction…'},
-f_cat:{en:'Categories',fr:'Catégories'},f_cov:{en:'Scope',fr:'Périmètre'},f_opt:{en:'Criteria',fr:'Critères'},
+f_cat:{en:'Categories',fr:'Catégories'},filters:{en:'Filters',fr:'Filtres'},f_cov:{en:'Scope',fr:'Périmètre'},f_opt:{en:'Criteria',fr:'Critères'},
 contribute:{en:'Contribute',fr:'Contribuer'},report:{en:'Report an error',fr:'Signaler une erreur'},
 resources:{en:'resources',fr:'ressources'},categories:{en:'categories',fr:'catégories'},active:{en:'active in the last 6 months',fr:'actives depuis 6 mois'},
 languages:{en:'languages',fr:'langues'},shown:{en:'shown',fr:'affichées'},none:{en:'No resource matches.',fr:'Aucune ressource ne correspond.'},
@@ -253,7 +257,7 @@ fm.onclick=e=>{const b=e.target.closest('[data-m]');if(b){st[b.dataset.m]=!st[b.
 function setQuery(v){st.q=v;q.value=v;const s=v.trim();hits=s?new Map(ms.search(s).map(h=>[h.id,h.score])):null}
 let qt;q.oninput=()=>{clearTimeout(qt);qt=setTimeout(()=>{setQuery(q.value);update(false)},120)};
 function resetAll(){st.cat.clear();st.cov.clear();st.active=st.fr=st.featured=false;st.country='';setQuery('')}
-document.getElementById('reset').onclick=()=>{resetAll();update()};
+document.getElementById('reset').onclick=document.getElementById('reset2').onclick=()=>{resetAll();update()};
 function card(r,showCat){const x=r[L];const tags=[...(r.covers||[]).filter(c=>c!==r.cat).map(c=>`<span class="tag ${c}">${t(c)}</span>`),(r.status!=='active'?`<span class="tag st-${r.status}">${t('st_'+r.status)}</span>`:''),(r.languages||[]).length?`<span class="tag">${esc(r.languages.join(' · ').toUpperCase())}</span>`:'',r.access?`<span class="tag">${t(r.access)}</span>`:''].join('');
  const m=r.metrics||{};const extra=[r.next?t('next')+' '+fmt(r.next):'',r.city||'',x.size,m.stars!=null?'★ '+m.stars:'',x.model].filter(Boolean).map(esc).join(' · ');
  return `<article class="card" id="r-${r.id}"><div class="h"><a href="${esc(r.url)}" rel="noopener">${r.featured?'<span class="star" aria-hidden="true">★ </span>':''}${esc(r.name)}</a><span class="g">${esc(showCat?catName(r.cat):x.group)}</span></div><p class="s">${esc(x.summary)}</p>${extra?`<div class="src">${extra}</div>`:''}<div class="tags">${tags}</div>`+
@@ -263,7 +267,7 @@ function drawTable(rs){if(st.sort){const c=COLS.find(c=>c[0]===st.sort.k),d=st.s
  return `<table class="dt"><thead><tr>${COLS.map(c=>`<th data-k="${c[0]}" class="${(c[3]||'').includes('opt')?'opt':''}"${st.sort&&st.sort.k===c[0]?` aria-sort="${st.sort.d>0?'ascending':'descending'}"`:''}>${c[1]}</th>`).join('')}</tr></thead><tbody>${rs.map(r=>`<tr data-go="${r.id}"><td><a href="${esc(r.url)}" rel="noopener">${r.featured?'★ ':''}${esc(r.name)}</a></td><td>${esc(catName(r.cat))}</td><td>${esc(COLS[2][2](r))}</td><td class="opt">${esc(COLS[3][2](r))}</td><td class="opt">${esc(COLS[4][2](r))}</td><td class="n">${fmt(r.last)}</td><td class="n opt">${(r.metrics||{}).stars??''}</td></tr>`).join('')}</tbody></table>`}
 document.getElementById('list').addEventListener('click',e=>{const h=e.target.closest('th[data-k]');if(h){const k=h.dataset.k;st.sort=!st.sort||st.sort.k!==k?{k,d:1}:st.sort.d>0?{k,d:-1}:null;drawList();return}const row=e.target.closest('tr[data-go]');if(row&&!e.target.closest('a')){st.view='cards';openEntry(row.dataset.go)}});
 document.getElementById('viewsw').onclick=e=>{const b=e.target.closest('[data-v]');if(b){st.view=b.dataset.v;update(false)}};
-function drawList(){const rs=R.filter(r=>match(r));document.getElementById('count').textContent=rs.length+' / '+R.length+' '+t('shown');const list=document.getElementById('list');
+function drawList(){const rs=R.filter(r=>match(r));document.getElementById('count').innerHTML=rs.length+' / '+R.length+'<span class="cw"> '+t('shown')+'</span>';const list=document.getElementById('list');
  document.querySelectorAll('#viewsw [data-v]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===st.view));
  if(!rs.length){list.innerHTML=`<div class="empty">${t('none')}</div>`;return}
  if(st.view==='table'){root.style.setProperty('--bar-h',(document.querySelector('.bar').offsetHeight+56)+'px');if(hits&&!st.sort)rs.sort((a,b)=>hits.get(b.id)-hits.get(a.id));list.innerHTML=drawTable(rs);return}
@@ -340,10 +344,14 @@ let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{if(!vi
 // two views: directory (map and list) and findings; the address keeps the view
 const vd=document.getElementById('view-dir'),vi=document.getElementById('view-ins');
 function show(view){const ins=view==='ins';vd.hidden=ins;vi.hidden=!ins;document.querySelectorAll('nav.tabs a').forEach(a=>a.toggleAttribute('aria-current',a.dataset.view===view)&&a.setAttribute('aria-current','page'));if(ins&&!drawn)drawInsights();else if(ins){vPulse();vPassion()}}
+document.querySelector('nav.tabs a[data-view=dir]').onclick=e=>{e.preventDefault();toDir();writeHash();document.getElementById('map').scrollIntoView({behavior:'smooth'})};
 addEventListener('hashchange',()=>{if(location.hash==='#findings')show('ins');else if(!vd.hidden===false)show('dir')});
 function writeHash(){if(location.hash==='#findings')return;const p=new URLSearchParams();if(st.q.trim())p.set('q',st.q.trim());if(st.cat.size)p.set('cat',[...st.cat].join(','));if(st.cov.size)p.set('scope',[...st.cov].join(','));const cr=['featured','active','fr'].filter(k=>st[k]);if(cr.length)p.set('crit',cr.join(','));if(st.country)p.set('country',st.country);if(st.view!=='cards')p.set('view',st.view);const h=p.toString();history.replaceState(null,'',h?'#'+h:location.pathname+location.search)}
 function readHash(){const h=location.hash.slice(1);if(!h||h==='findings')return;const p=new URLSearchParams(h);(p.get('cat')||'').split(',').filter(Boolean).forEach(c=>st.cat.add(c));(p.get('scope')||'').split(',').filter(Boolean).forEach(c=>st.cov.add(c));(p.get('crit')||'').split(',').forEach(k=>{if(k in st&&typeof st[k]==='boolean')st[k]=true});if(p.get('country'))st.country=p.get('country');if(p.get('view')==='table')st.view='table';if(p.get('q'))setQuery(p.get('q'))}
-function update(all=true){drawFilters();drawList();if(all)drawMap();writeHash()}
+const ft=document.getElementById('ftoggle'),bar=document.querySelector('.bar');
+ft.onclick=()=>{const o=bar.classList.toggle('open');ft.setAttribute('aria-expanded',o)};
+function nActive(){return st.cat.size+st.cov.size+['featured','active','fr'].filter(k=>st[k]).length+(st.country?1:0)}
+function update(all=true){const n=nActive();ft.textContent=t('filters')+(n?` (${n})`:'');drawFilters();drawList();if(all)drawMap();writeHash()}
 document.getElementById('journeys').innerHTML=(D.journeys||[]).map(j=>`<div class="jr"><h3>${esc(j['title_'+L])}</h3><ul>${j.resources.map(id=>R.find(r=>r.id===id)).filter(Boolean).map(r=>`<li><a href="#" data-go="${r.id}">${esc(r.name)}</a></li>`).join('')}</ul></div>`).join('');
 document.getElementById('journeys').onclick=e=>{const a=e.target.closest('[data-go]');if(a){e.preventDefault();openEntry(a.dataset.go)}};
 readHash();update();show(location.hash==='#findings'?'ins':'dir');
