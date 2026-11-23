@@ -10,58 +10,58 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
 
 ## Contents
 
-- [<img src="media/icons/brands.svg" width="32" height="32" alt=""> Brands and manufacturers](#-brands-and-manufacturers)
+- [Brands and manufacturers](#brands-and-manufacturers)
   - [Official LEGO](#official-lego)
   - [European alternatives](#european-alternatives)
   - [Chinese alternatives](#chinese-alternatives)
   - [Toy and model-kit companies](#toy-and-model-kit-companies)
   - [Brick manufacturers and suppliers](#brick-manufacturers-and-suppliers)
-- [<img src="media/icons/shops.svg" width="32" height="32" alt=""> Shops](#-shops)
+- [Shops](#shops)
   - [Official LEGO](#official-lego-1)
   - [Alternative brands](#alternative-brands)
   - [General retailers](#general-retailers)
-- [<img src="media/icons/comparators.svg" width="32" height="32" alt=""> Price comparators and databases](#-price-comparators-and-databases)
+- [Price comparators and databases](#price-comparators-and-databases)
   - [Price comparators](#price-comparators)
   - [Set and parts databases](#set-and-parts-databases)
   - [Value and investment tracking](#value-and-investment-tracking)
-- [<img src="media/icons/second-hand.svg" width="32" height="32" alt=""> Second-hand, parts and accessories](#-second-hand-parts-and-accessories)
+- [Second-hand, parts and accessories](#second-hand-parts-and-accessories)
   - [Marketplaces and classified ads](#marketplaces-and-classified-ads)
   - [Second-hand and refurbished shops](#second-hand-and-refurbished-shops)
   - [Parts, custom builds and instructions](#parts-custom-builds-and-instructions)
   - [Services and accessories (lighting, display, sorting, data)](#services-and-accessories-lighting-display-sorting-data)
-- [<img src="media/icons/community.svg" width="32" height="32" alt=""> Communities and news](#-communities-and-news)
+- [Communities and news](#communities-and-news)
   - [News and reviews](#news-and-reviews)
   - [Forums](#forums)
   - [Wikis](#wikis)
   - [Deals](#deals)
-- [<img src="media/icons/video.svg" width="32" height="32" alt=""> YouTube and podcasts](#-youtube-and-podcasts)
+- [YouTube and podcasts](#youtube-and-podcasts)
   - [Official LEGO reviews](#official-lego-reviews)
   - [Alternative brand reviews](#alternative-brand-reviews)
   - [Building and custom builds](#building-and-custom-builds)
   - [News and community](#news-and-community)
   - [Podcasts](#podcasts)
-- [<img src="media/icons/events.svg" width="32" height="32" alt=""> Events](#-events)
+- [Events](#events)
   - [Conventions and fan events](#conventions-and-fan-events)
   - [Competitions](#competitions)
   - [Event calendars](#event-calendars)
-- [<img src="media/icons/places.svg" width="32" height="32" alt=""> Places to visit](#-places-to-visit)
+- [Places to visit](#places-to-visit)
   - [Official LEGO venues and stores](#official-lego-venues-and-stores)
   - [Museums and permanent exhibitions](#museums-and-permanent-exhibitions)
   - [Physical shops (alternative brands and used bricks)](#physical-shops-alternative-brands-and-used-bricks)
-- [<img src="media/icons/clubs.svg" width="32" height="32" alt=""> Clubs and associations](#-clubs-and-associations)
+- [Clubs and associations](#clubs-and-associations)
   - [National clubs](#national-clubs)
-- [<img src="media/icons/learning.svg" width="32" height="32" alt=""> Learning](#-learning)
+- [Learning](#learning)
   - [Guides and reference](#guides-and-reference)
   - [Compatibility, materials and law](#compatibility-materials-and-law)
   - [History](#history)
   - [Books and magazines](#books-and-magazines)
   - [Artists and designers](#artists-and-designers)
-- [<img src="media/icons/tools.svg" width="32" height="32" alt=""> Tools and APIs](#-tools-and-apis)
+- [Tools and APIs](#tools-and-apis)
   - [Design software](#design-software)
   - [Apps](#apps)
   - [APIs and open data](#apis-and-open-data)
   - [Open-source projects](#open-source-projects)
-- [<img src="media/icons/directories.svg" width="32" height="32" alt=""> Other directories and lists](#-other-directories-and-lists)
+- [Other directories and lists](#other-directories-and-lists)
   - [Awesome lists](#awesome-lists)
   - [Site directories](#site-directories)
   - [Channel and podcast lists](#channel-and-podcast-lists)
@@ -69,7 +69,9 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
 
 <br>
 
-## <img src="media/icons/brands.svg" width="32" height="32" alt=""> Brands and manufacturers
+<img src="media/icons/brands.svg" width="36" height="36" align="left" alt="">
+
+## Brands and manufacturers
 
 Official LEGO, European and Chinese alternative brands, toy-industry entrants, brick manufacturers and other building formats, with country and brick maker where established.
 
@@ -100,7 +102,9 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 <br>
 
-## <img src="media/icons/shops.svg" width="32" height="32" alt=""> Shops
+<img src="media/icons/shops.svg" width="36" height="36" align="left" alt="">
+
+## Shops
 
 Online and physical shops selling official LEGO, alternative brick brands and general goods to customers in Europe, with delivery to France noted when established.
 
@@ -120,7 +124,9 @@ Online and physical shops selling official LEGO, alternative brick brands and ge
 
 <br>
 
-## <img src="media/icons/comparators.svg" width="32" height="32" alt=""> Price comparators and databases
+<img src="media/icons/comparators.svg" width="36" height="36" align="left" alt="">
+
+## Price comparators and databases
 
 Sites that compare set prices across shops, catalogue sets and parts, track secondary-market value or gather deals, for official LEGO and alternative brands.
 
@@ -142,7 +148,9 @@ Sites that compare set prices across shops, catalogue sets and parts, track seco
 
 <br>
 
-## <img src="media/icons/second-hand.svg" width="32" height="32" alt=""> Second-hand, parts and accessories
+<img src="media/icons/second-hand.svg" width="36" height="36" align="left" alt="">
+
+## Second-hand, parts and accessories
 
 Where to buy used sets and loose parts, find custom builds and instructions, and services such as lighting, display cases and sorting.
 
@@ -170,7 +178,9 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 
 <br>
 
-## <img src="media/icons/community.svg" width="32" height="32" alt=""> Communities and news
+<img src="media/icons/community.svg" width="36" height="36" align="left" alt="">
+
+## Communities and news
 
 Forums, subreddits, wikis, news and review sites, deal communities and chat servers about official LEGO and alternative bricks.
 
@@ -197,7 +207,9 @@ Forums, subreddits, wikis, news and review sites, deal communities and chat serv
 
 <br>
 
-## <img src="media/icons/video.svg" width="32" height="32" alt=""> YouTube and podcasts
+<img src="media/icons/video.svg" width="36" height="36" align="left" alt="">
+
+## YouTube and podcasts
 
 English- and French-language YouTube channels and podcasts: reviews of official LEGO and alternative brands, builds and news.
 
@@ -229,7 +241,9 @@ English- and French-language YouTube channels and podcasts: reviews of official 
 
 <br>
 
-## <img src="media/icons/events.svg" width="32" height="32" alt=""> Events
+<img src="media/icons/events.svg" width="36" height="36" align="left" alt="">
+
+## Events
 
 Conventions, fan exhibitions, artist shows, public competitions and calendars listing brick events by country.
 
@@ -250,7 +264,9 @@ Conventions, fan exhibitions, artist shows, public competitions and calendars li
 
 <br>
 
-## <img src="media/icons/places.svg" width="32" height="32" alt=""> Places to visit
+<img src="media/icons/places.svg" width="36" height="36" align="left" alt="">
+
+## Places to visit
 
 Venues of the brick world that can be visited: official LEGO venues and stores, theme parks, museums and permanent exhibitions, physical shops for alternative brands and used bricks, and cafés with bricks.
 
@@ -271,7 +287,9 @@ Venues of the brick world that can be visited: official LEGO venues and stores, 
 
 <br>
 
-## <img src="media/icons/clubs.svg" width="32" height="32" alt=""> Clubs and associations
+<img src="media/icons/clubs.svg" width="36" height="36" align="left" alt="">
+
+## Clubs and associations
 
 User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan CoLab recognition programme to national and local clubs in Europe.
 
@@ -283,7 +301,9 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 
 <br>
 
-## <img src="media/icons/learning.svg" width="32" height="32" alt=""> Learning
+<img src="media/icons/learning.svg" width="36" height="36" align="left" alt="">
+
+## Learning
 
 Guides, glossaries, history, compatibility and legal references, education and competitions, books, magazines and recognised brick artists.
 
@@ -310,7 +330,9 @@ Guides, glossaries, history, compatibility and legal references, education and c
 
 <br>
 
-## <img src="media/icons/tools.svg" width="32" height="32" alt=""> Tools and APIs
+<img src="media/icons/tools.svg" width="36" height="36" align="left" alt="">
+
+## Tools and APIs
 
 Design software, apps, APIs, open data and open-source projects around LEGO and compatible bricks.
 
@@ -337,7 +359,9 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 
 <br>
 
-## <img src="media/icons/directories.svg" width="32" height="32" alt=""> Other directories and lists
+<img src="media/icons/directories.svg" width="36" height="36" align="left" alt="">
+
+## Other directories and lists
 
 Existing directories, awesome lists and lists of channels and brands about LEGO and compatible bricks.
 
