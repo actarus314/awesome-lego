@@ -2,6 +2,9 @@
 
 # v1.x — Bilingual directory of the brick world, from brands and shops to events, places, clubs and know-how: resources checked at their source, best-of README, website with map, journeys and findings, automatic updates.
 
+## v1.11 — 2026-11-23
+Findings laid out in balanced columns, the oldest silent resources of a category grouped in one counted ring, and the map's subtitle removed. Every build now checks that MAINTENANCE.md and data/SCHEMA.md still name each workflow, schedule, controlled word and backend file, and regenerates the category list of the "Add a resource" form, which still listed the 8 first categories.
+
 ## v1.10 — 2026-11-23
 97 resources added where the directory was thin: storage, display and lighting, trains, Technic and programming (Pybricks, BuWizz), custom minifigures and stickers, Italy, Spain, Poland, Benelux, the Nordics and thirteen subreddits; 499 in all, 103 in the README, which now opens on a preview of the website. Automation: subreddits read through the Arctic Shift archive, 62 site feeds found, daily measurements kept on a history branch, a weekly "Data fixes" pull request, a selection score in the weekly report; website: Atom feed of versions, #entry= links, a "Blind spots" finding, cards without dates and with at most three sources.
 

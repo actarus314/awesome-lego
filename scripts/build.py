@@ -302,8 +302,41 @@ def feed():
             f'<updated>{updated}T00:00:00Z</updated><author><name>Awesome LEGO</name></author>{entries}</feed>\n')
 
 
+def issue_form(cats):
+    """The "Add a resource" form, with the category list taken from the data."""
+    path = ROOT / ".github" / "ISSUE_TEMPLATE" / "add-resource.yml"
+    text = path.read_text(encoding="utf-8")
+    opts = "".join(f"        - {c['category']['name_en']}\n" for c in cats)
+    return re.sub(r"(label: Category\n      options:\n)(?:        - [^\n]*\n)+", lambda m: m.group(1) + opts, text, count=1)
+
+
+def check_docs():
+    """The documents that describe the data and the automation must name what exists."""
+    errors = []
+    schema = (DATA / "SCHEMA.md").read_text(encoding="utf-8")
+    for name, words in (("covers", COVERS), ("access", ACCESS), ("status", STATUS), ("kind", KINDS)):
+        line = next((l for l in schema.splitlines() if l.startswith(f"{name} = ")), "")
+        missing = sorted(w for w in words if not re.search(rf"\b{re.escape(w)}\b", line))
+        if missing:
+            errors.append(f"data/SCHEMA.md: the `{name}` line does not list {', '.join(missing)}")
+    for f in sorted((DATA / "backend").glob("*.json")):
+        if f"`{f.name}`" not in schema:
+            errors.append(f"data/SCHEMA.md: data/backend/{f.name} is not described")
+    maint = (ROOT / "MAINTENANCE.md").read_text(encoding="utf-8")
+    for wf in sorted((ROOT / ".github" / "workflows").glob("*.yml")):
+        y = wf.read_text(encoding="utf-8")
+        name = re.search(r"(?m)^name: (.+)$", y).group(1).strip()
+        if f"**{name}**" not in maint:
+            errors.append(f"MAINTENANCE.md: workflow **{name}** ({wf.name}) is not described")
+        for mi, h in re.findall(r'cron: "(\d+) (\d+) ', y):
+            if f"{int(h):02d}:{int(mi):02d}" not in maint:
+                errors.append(f"MAINTENANCE.md: the time {int(h):02d}:{int(mi):02d} of **{name}** is missing")
+    return errors
+
+
 def main():
     cats, errors = load()
+    errors += check_docs()
     if errors:
         fail(errors)
     m = metrics()
@@ -311,6 +344,7 @@ def main():
     if not re.search(rf"^## v{re.escape(version)} — \d{{4}}-\d{{2}}-\d{{2}}$", (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), re.M):
         fail([f"CHANGELOG.md has no '## v{version} — YYYY-MM-DD' section for VERSION {version}"])
     texts = {f: readme(cats, m, lang, kind) for (kind, lang), f in FILES.items()}
+    texts[".github/ISSUE_TEMPLATE/add-resource.yml"] = issue_form(cats)
     print(f"✓ v{version}: {sum(len(c['resources']) for c in cats)} resources in {len(cats)} categories")
     if "--check" in sys.argv:
         stale = [f for f, t in texts.items() if not (ROOT / f).exists() or (ROOT / f).read_text(encoding="utf-8") != t]

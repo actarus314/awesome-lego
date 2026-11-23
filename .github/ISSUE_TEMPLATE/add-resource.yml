@@ -1,5 +1,5 @@
 name: Add a resource
-description: Suggest a website, shop, brand, channel, community or tool
+description: Suggest a website, shop, brand, channel, community, event, place, club or tool
 title: "Add: "
 labels: ["new resource"]
 body:
@@ -15,14 +15,18 @@ body:
     attributes:
       label: Category
       options:
-        - Brands
+        - Brands and manufacturers
         - Shops
-        - Price comparators and set databases
-        - Second-hand, parts and services
-        - Communities and media
-        - Videos and podcasts
-        - Tools, data and open source
-        - Directories
+        - Price comparators and databases
+        - Second-hand, parts and accessories
+        - Communities and news
+        - YouTube and podcasts
+        - Events
+        - Places to visit
+        - Clubs and associations
+        - Learning
+        - Tools and APIs
+        - Other directories and lists
     validations:
       required: true
   - type: textarea
