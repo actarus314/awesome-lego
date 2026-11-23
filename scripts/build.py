@@ -168,7 +168,8 @@ def readme(cats, m, lang, kind="readme"):
         if not any(keep(r) for r in c["resources"]):
             continue
         name = c["category"][f"name_{lang}"]
-        out.append(f"- [{name}](#{uniq(name, '-' if icon(c['category']['id']) else '')})")
+        ic = icon(c["category"]["id"])
+        out.append(f"- [{(ic + ' ') if ic else ''}{name}](#{uniq(name, '-' if ic else '')})")  # awesome-lint: ToC text equals heading text
         for g in c["category"].get("groups", []):
             if any(r["group"] == g["id"] and keep(r) for r in c["resources"]):
                 out.append(f"  - [{g['name_' + lang]}](#{uniq(g['name_' + lang])})")
