@@ -190,8 +190,33 @@ def readme(cats, m, lang, kind="readme"):
     return "\n".join(out).replace("\n\n\n", "\n\n")
 
 
+def brand_terms(cats):
+    """Names a brand goes by: its name, the names in brackets ('Lumibricks (formerly Funwhole)') and its `aliases`."""
+    out = {}
+    for c in cats:
+        if c["category"]["id"] != "brands":
+            continue
+        for r in c["resources"]:
+            if "official" in r.get("covers", []):
+                continue
+            main = re.sub(r"\s*\(.*?\)", "", r["name"]).strip()
+            extra = re.findall(r"\((?:formerly |with )?([^)]+)\)", r["name"])
+            terms = [main] + [t for t in extra if len(t) > 2 and not re.search(r"[a-z]{3,} [A-Z]", t) or t.isupper()]
+            terms += r.get("aliases", [])
+            out[r["id"]] = {"name": main, "terms": [t for t in dict.fromkeys(terms) if t]}
+    return out
+
+
+def mentions(r, terms):
+    text = " ".join([r["name"], r["summary_en"], *r.get("strengths_en", []), *r.get("weaknesses_en", []), r.get("size_en", "")])
+    def found(t, exact):  # a short all-capitals other name (MEGA) must match its case
+        return re.search(rf"(?<![\w-]){re.escape(t)}(?![\w-])", text, 0 if exact else re.I)
+    return [b for b, v in terms.items() if any(found(t, i > 0 and t.isupper()) for i, t in enumerate(v["terms"]))]
+
+
 def site_data(cats, m):
     rows = []
+    terms = brand_terms(cats)
     for c in cats:
         cat = c["category"]
         gnames = {g["id"]: {"en": g["name_en"], "fr": g["name_fr"]} for g in cat.get("groups", [])}
@@ -206,11 +231,13 @@ def site_data(cats, m):
                              "weaknesses": r.get("weaknesses_" + lang, []), "size": r.get("size_" + lang, ""),
                              "model": r.get("business_model_" + lang, ""), "group": gnames.get(r["group"], {}).get(lang, r["group"])}
             row["checked"] = str(row["checked"])
+            row["brands"] = [] if cat["id"] == "brands" else mentions(r, terms)
             rows.append(row)
     categories = [{"id": c["category"]["id"], "en": c["category"]["name_en"], "fr": c["category"]["name_fr"],
                    "summary": {lang: c["category"].get("summary_" + lang, "") for lang in LANGS},
                    "groups": [{"id": g["id"], "en": g["name_en"], "fr": g["name_fr"]} for g in c["category"].get("groups", [])]} for c in cats]
-    return {"built": dt.date.today().isoformat(), "categories": categories, "resources": rows}
+    return {"built": dt.date.today().isoformat(), "categories": categories, "resources": rows,
+            "brands": [{"id": k, "name": v["name"]} for k, v in terms.items()]}
 
 
 def page(lang, data):
@@ -219,6 +246,7 @@ def page(lang, data):
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     return (tpl.replace("{{LANG}}", lang).replace("{{OTHER}}", other)
                .replace("{{TITLE}}", html.escape(T["title"][lang])).replace("{{TAGLINE}}", html.escape(T["site_tagline"][lang]))
+               .replace("{{MINISEARCH}}", (ROOT / "site-src" / "vendor" / "minisearch.min.js").read_text(encoding="utf-8"))
                .replace("{{DATA}}", blob).replace("{{REPO}}", REPO).replace("{{VERSION}}", data["version"]))
 
 

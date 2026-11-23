@@ -21,6 +21,7 @@ name = "Brick Broker"
 url = "https://brick-broker.com/"        # canonical home page, https
 group = "price-comparators"              # one of category.groups
 featured = true                          # optional: listed in the README selection (best of its group)
+aliases = ["Funwhole"]                   # optional, brands: other names the brand goes by, used to find mentions
 covers = ["official", "alternative"]     # official | alternative | second-hand | parts | custom-builds | minifigures | instructions | news | data
 languages = ["fr", "en"]                 # ISO 639-1 codes of the interface or content
 countries = ["FR"]                       # ISO 3166-1 alpha-2 codes served, or ["international"]

@@ -213,6 +213,7 @@ kind = "read"
 
 [[resource]]
 id = "cada"
+aliases = ["Double Eagle"]
 name = "CaDA (Double Eagle)"
 url = "https://cadatoys.com/"
 group = "chinese-alternatives"
@@ -509,6 +510,7 @@ kind = "read"
 
 [[resource]]
 id = "sembo-block"
+aliases = ["Sembo"]
 name = "Sembo Block"
 url = "https://www.sembo-block.com/"
 group = "chinese-alternatives"
@@ -756,6 +758,7 @@ kind = "read"
 
 [[resource]]
 id = "mattel-brick-shop"
+aliases = ["Mattel"]
 name = "Mattel Brick Shop (MEGA)"
 url = "https://shopping.mattel.com/de-de/collections/bausteine-sets"
 group = "toy-industry-brands"
@@ -789,6 +792,7 @@ kind = "third-party"
 
 [[resource]]
 id = "revell-brick-system"
+aliases = ["Revell"]
 name = "Revell Brick System"
 url = "https://revell.com/collections/brick-system"
 group = "toy-industry-brands"
