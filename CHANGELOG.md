@@ -2,6 +2,9 @@
 
 # v1.x — Bilingual directory of the brick world, from brands and shops to events, places, clubs and know-how: resources checked at their source, best-of README, website with map, journeys and findings, automatic updates.
 
+## v1.6 — 2026-11-23
+Website: the day theme becomes "Bleu jour", the daylight counterpart of the night palette (pale blue grid, navy text, blue interface); category icons stay in the README only.
+
 ## v1.5 — 2026-11-23
 README and website: one icon per category, shorter category names and texts, softer day colours (brick red for official LEGO, amber for alternative brands), one colour per filter family, the alternative-brand chart in the interface teal, and the entry reached from a stud, a journey or a dot stays highlighted. README selection reviewed: 91 entries (nanoblock, eBay, BrickPlus, Brick Me Up Scottie, Frostiize and the LEGO Builder app out; the LEGO Store directory in).
 

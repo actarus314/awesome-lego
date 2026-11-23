@@ -12,14 +12,14 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='10' width='28' height='18' rx='3' fill='%23e3a008'/%3E%3Crect x='7' y='5' width='7' height='6' rx='2' fill='%23e3a008'/%3E%3Crect x='18' y='5' width='7' height='6' rx='2' fill='%23e3a008'/%3E%3C/svg%3E">
 <script>try{const t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
 <style>
-/* light: warm paper, teal interface, official LEGO brick red against alternative amber; dark: "Bleu" night palette (navy, cyan links, yellow highlights) */
+/* light: "Bleu jour", day counterpart of the night palette (pale blue grid, navy text, blue interface), official LEGO brick red against alternative amber; dark: "Bleu" night palette (navy, cyan links, yellow highlights) */
 :root{color-scheme:light dark;
---bg:light-dark(#f6f4ef,#071b2f);--card:light-dark(#ffffff,#0c2640);--sunk:light-dark(#eeebe3,#061627);--line:light-dark(#ddd8cc,#1f3d5b);
---fg:light-dark(#1d232a,#e9f2fb);--muted:light-dark(#4f5a65,#b3cbe3);--faint:light-dark(#85919d,#7f9cba);
---accent:light-dark(#0f6b5c,#7fd4ff);--on-accent:light-dark(#ffffff,#04192c);--hi:light-dark(#e3a008,#ffd166);
+--bg:light-dark(#eaf2fa,#071b2f);--card:light-dark(#ffffff,#0c2640);--sunk:light-dark(#dfeaf5,#061627);--line:light-dark(#c9d9ea,#1f3d5b);
+--fg:light-dark(#0c2640,#e9f2fb);--muted:light-dark(#3d5875,#b3cbe3);--faint:light-dark(#6f8aa6,#7f9cba);
+--accent:light-dark(#0a6aa1,#7fd4ff);--on-accent:light-dark(#ffffff,#04192c);--hi:light-dark(#e3a008,#ffd166);
 --official:light-dark(#b8453a,#ff8f8f);--alt:light-dark(#d9a21b,#ffd166);--alt-ink:light-dark(#8a6400,#ffd166);--other:light-dark(#7a8692,#6f8fae);
---seq:light-dark(#0f6b5c,#7fd4ff);--f-cat:light-dark(#0f6b5c,#7fd4ff);--f-cov:light-dark(#2f5f8f,#c3b5ff);--f-opt:light-dark(#3b4651,#7ee8a6);--ok:light-dark(#1f7a3e,#7ee8a6);--warn:light-dark(#a35d00,#ff9d7a);--bad:light-dark(#a3231b,#ff8f8f);
---grid:light-dark(transparent,rgba(255,255,255,.028));
+--seq:light-dark(#0a6aa1,#7fd4ff);--f-cat:light-dark(#0a6aa1,#7fd4ff);--f-cov:light-dark(#0f6b5c,#c3b5ff);--f-opt:light-dark(#3b4651,#7ee8a6);--ok:light-dark(#1f7a3e,#7ee8a6);--warn:light-dark(#a35d00,#ff9d7a);--bad:light-dark(#a3231b,#ff8f8f);
+--grid:light-dark(rgba(12,38,64,.045),rgba(255,255,255,.028));
 --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;--r:12px;--maxw:1400px}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box}html{scroll-padding-top:4.5rem}
@@ -43,7 +43,7 @@ nav.tabs a[aria-current=page]{color:var(--fg);box-shadow:inset 0 -2px 0 var(--hi
 .hero h1{font-size:clamp(28px,4vw,44px);line-height:1.05;margin:0 0 10px;letter-spacing:-.02em}
 .hero p{margin:0;color:var(--muted);font-size:17px}
 .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.kpi{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--r);padding:12px 14px}
 .kpi b{display:block;font:750 28px/1.1 system-ui,sans-serif;font-variant-numeric:tabular-nums}
 .label,.kpi span{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
 h2{font-size:22px;margin:44px 0 6px;letter-spacing:-.01em;border-left:4px solid var(--hi);padding-left:.7rem}
@@ -51,7 +51,6 @@ h2{font-size:22px;margin:44px 0 6px;letter-spacing:-.01em;border-left:4px solid 
 .map{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
 .tile{grid-column:span var(--span,3);background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:8px;cursor:pointer;min-height:120px}
 .tile:hover,.tile.on{border-color:var(--accent)}.tile.on{box-shadow:0 0 0 2px var(--accent) inset}
-.ci{width:22px;height:22px;vertical-align:-5px;margin-right:8px;border-radius:5px}
 .tile h3{margin:0;font-size:16px}.tile .n{font:750 30px/1 system-ui,sans-serif;font-variant-numeric:tabular-nums}
 .studs{display:flex;flex-wrap:wrap;gap:4px;margin-top:auto}
 .stud{display:block;width:13px;height:13px;border-radius:50%;background:var(--other);border:0;padding:0;cursor:pointer;flex:none}
@@ -203,7 +202,6 @@ pa_pop:{en:'population',fr:'population'},pa_n:{en:'recognized communities',fr:'c
 const t=k=>(S[k]||{})[L]||k;
 document.querySelectorAll('[data-t]').forEach(e=>e.textContent=t(e.dataset.t));
 const R=D.resources,C=D.categories,catName=id=>(C.find(c=>c.id===id)||{})[L]||id,shortCat=id=>catName(id).split(/[,(]/)[0].replace(/ (et|and) .*/,'');
-const ci=id=>`<img class="ci" src="${L==='fr'?'../':''}media/icons/${id}.svg" alt="">`;
 const fmt=d=>d?d.split('-').reverse().join('/'):'';
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fold=s=>String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
@@ -270,14 +268,14 @@ function drawList(){const rs=R.filter(r=>match(r));document.getElementById('coun
  if(hits){rs.sort((a,b)=>hits.get(b.id)-hits.get(a.id));list.innerHTML=`<section class="cat"><h3>${t('ranked')} <span class="count">${rs.length}</span></h3><div class="grid">${rs.map(r=>card(r,true)).join('')}</div></section>`;return}
  list.innerHTML=C.map(c=>{const cr=rs.filter(r=>r.cat===c.id);if(!cr.length)return'';
   cr.sort((a,b)=>(c.groups.findIndex(g=>g.id===a.group)-c.groups.findIndex(g=>g.id===b.group))||a.name.localeCompare(b.name));
-  return `<section class="cat"><h3>${ci(c.id)}${esc(c[L])} <span class="count">${cr.length}</span></h3><div class="grid">${cr.map(r=>card(r,false)).join('')}</div></section>`}).join('')}
+  return `<section class="cat"><h3>${esc(c[L])} <span class="count">${cr.length}</span></h3><div class="grid">${cr.map(r=>card(r,false)).join('')}</div></section>`}).join('')}
 function toDir(){if(location.hash==='#findings')history.pushState(null,'',location.pathname+location.search);show('dir')}
 function openEntry(id){toDir();resetAll();st.view='cards';update();const el=document.getElementById('r-'+id);if(!el)return;const d=el.querySelector('details');if(d)d.open=true;document.querySelectorAll('.card.focus').forEach(c=>c.classList.remove('focus'));el.classList.add('focus');el.scrollIntoView({behavior:'smooth',block:'center'})}
 function focusOn(cat,query){toDir();resetAll();if(cat)st.cat.add(cat);setQuery(query||'');update();document.getElementById('directory').scrollIntoView({behavior:'smooth'})}
 const mg=document.getElementById('mapgrid');
 const spans=(()=>{const n=C.map(c=>R.filter(r=>r.cat===c.id).length),tot=n.reduce((a,b)=>a+b,0),raw=n.map(v=>Math.max(2,Math.round(24*v/tot)));const rows=[];let acc=[];for(const s of raw){if(acc.reduce((a,b)=>a+b,0)+s>12&&acc.length){rows.push(acc);acc=[]}acc.push(s)}if(acc.length)rows.push(acc);
  return rows.flatMap(r=>{const s=r.reduce((a,b)=>a+b,0),k=r.map(x=>Math.max(2,Math.round(x*12/s)));k[k.length-1]+=12-k.reduce((a,b)=>a+b,0);return k})})();
-function drawMap(){mg.innerHTML=C.map((c,i)=>{const rs=R.filter(r=>r.cat===c.id);return `<div class="tile${st.cat.has(c.id)?' on':''}" style="--span:${spans[i]}" data-cat="${c.id}" role="button" tabindex="0" aria-pressed="${st.cat.has(c.id)}"><h3>${ci(c.id)}${esc(c[L])}</h3><span class="n">${rs.length}</span><span class="studs">${rs.map(r=>`<button type="button" class="stud ${world(r)}${r.status==='active'?'':' dim'}" data-go="${r.id}" data-tip="${esc(r.name)}" aria-label="${esc(r.name)}"></button>`).join('')}</span></div>`}).join('')}
+function drawMap(){mg.innerHTML=C.map((c,i)=>{const rs=R.filter(r=>r.cat===c.id);return `<div class="tile${st.cat.has(c.id)?' on':''}" style="--span:${spans[i]}" data-cat="${c.id}" role="button" tabindex="0" aria-pressed="${st.cat.has(c.id)}"><h3>${esc(c[L])}</h3><span class="n">${rs.length}</span><span class="studs">${rs.map(r=>`<button type="button" class="stud ${world(r)}${r.status==='active'?'':' dim'}" data-go="${r.id}" data-tip="${esc(r.name)}" aria-label="${esc(r.name)}"></button>`).join('')}</span></div>`}).join('')}
 mg.onclick=e=>{const s=e.target.closest('[data-go]');if(s){openEntry(s.dataset.go);return}const b=e.target.closest('[data-cat]');if(!b)return;toggle(st.cat,b.dataset.cat);update();document.getElementById('directory').scrollIntoView({behavior:'smooth'})};
 mg.onkeydown=e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('.tile')){e.preventDefault();e.target.click()}};
 document.getElementById('mapkey').innerHTML=[['official',t('official')],['both',t('both')],['alternative',t('alternative')],['',t('otherw')],['official dim',t('dim')]].map(([c,n])=>`<span><i class="stud ${c}"></i>${n}</span>`).join('');
