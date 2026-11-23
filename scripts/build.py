@@ -155,6 +155,9 @@ def readme(cats, m, lang, kind="readme"):
            MORE[kind][lang], "", f"## {T['contents'][lang]}", ""]
     seen = {}
 
+    def icon(cid):
+        return f'<img src="media/icons/heading/{cid}.svg" width="40" height="56" align="left" hspace="4" alt="">' if (ROOT / "media" / "icons" / "heading" / f"{cid}.svg").exists() else ""  # heading/: same icons with a transparent top margin, so the floated icon lines up with the heading text
+
     def uniq(name):  # GitHub suffixes repeated heading anchors with -1, -2…
         a = anchor(name)
         n = seen.get(a, 0)
@@ -174,12 +177,10 @@ def readme(cats, m, lang, kind="readme"):
         cat = c["category"]
         if not any(keep(r) for r in c["resources"]):
             continue
-        out += ["", f"## {cat['name_' + lang]}", ""]
-        icon = f'<img src="media/icons/{cat["id"]}.svg" width="44" height="44" align="left" alt="">' if (ROOT / "media" / "icons" / f"{cat['id']}.svg").exists() else ""
+        # the icon floats left of the heading: inside the heading, awesome-lint and GitHub disagree on its anchor
+        out += ["", "<br>", "", *([icon(cat["id"]), ""] if icon(cat["id"]) else []), f"## {cat['name_' + lang]}", ""]
         if cat.get("summary_" + lang):
-            out += [f"{icon} {cat['summary_' + lang]}".strip(), ""]
-        if icon:
-            out += ['<br clear="left">', ""]
+            out += [cat["summary_" + lang], ""]
         for g in cat.get("groups", []):
             rs = [r for r in c["resources"] if r["group"] == g["id"] and keep(r) and r["url"] not in listed]
             listed.update(r["url"] for r in rs)  # one link once per file (awesome-lint: double-link)

@@ -77,11 +77,13 @@ Every resource, including inactive and dead ones, generated from [`data/`](data/
   - [Channel and podcast lists](#channel-and-podcast-lists)
   - [Brand lists](#brand-lists)
 
+<br>
+
+<img src="media/icons/heading/brands.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Brands and manufacturers
 
-<img src="media/icons/brands.svg" width="44" height="44" align="left" alt=""> Official LEGO, European and Chinese alternative brands, toy-industry entrants, brick manufacturers and other building formats, with country and brick maker where established.
-
-<br clear="left">
+Official LEGO, European and Chinese alternative brands, toy-industry entrants, brick manufacturers and other building formats, with country and brick maker where established.
 
 ### Official LEGO
 
@@ -130,11 +132,13 @@ Every resource, including inactive and dead ones, generated from [`data/`](data/
 - [LOZ](https://loz-mini.com/en) - China; the official site is operated from Hong Kong (I-Had Creation). Micro-blocks and Diamond Blocks of 4 to 6 mm (food shops, street scenes, characters), not compatible with the 8 mm pitch. Covers alternative brands.
 - [nanoblock (Kawada)](https://www.kawada-toys.com/en/brand/nanoblock/) - Japan (Kawada). Micro-blocks whose smallest piece measures 4 mm by 4 mm by 5 mm, on sale since October 2008: animals, landmarks, ships and castles, with an Advanced Hobby series for adults. Not compatible with the 8 mm stud system. Covers alternative brands.
 
+<br>
+
+<img src="media/icons/heading/shops.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Shops
 
-<img src="media/icons/shops.svg" width="44" height="44" align="left" alt=""> Online and physical shops selling official LEGO, alternative brick brands and general goods to customers in Europe, with delivery to France noted when established.
-
-<br clear="left">
+Online and physical shops selling official LEGO, alternative brick brands and general goods to customers in Europe, with delivery to France noted when established.
 
 ### Official LEGO
 
@@ -176,11 +180,13 @@ Every resource, including inactive and dead ones, generated from [`data/`](data/
 - [King Jouet](https://www.king-jouet.com) - French toy chain, online and in store, selling official LEGO. Covers official LEGO.
 - [Smyths Toys France](https://www.smythstoys.com/fr/fr-fr) - Toy specialist of the Irish Smyths group, online and in store in France, with a LEGO range. Covers official LEGO.
 
+<br>
+
+<img src="media/icons/heading/comparators.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Price comparators and databases
 
-<img src="media/icons/comparators.svg" width="44" height="44" align="left" alt=""> Sites that compare set prices across shops, catalogue sets and parts, track secondary-market value or gather deals, for official LEGO and alternative brands.
-
-<br clear="left">
+Sites that compare set prices across shops, catalogue sets and parts, track secondary-market value or gather deals, for official LEGO and alternative brands.
 
 ### Price comparators
 
@@ -226,11 +232,13 @@ Every resource, including inactive and dead ones, generated from [`data/`](data/
 - [BrickEconomy](https://www.brickeconomy.com/) - Database of official LEGO sets and minifigures devoted to secondary-market value estimates and machine-learning growth forecasts. Covers official LEGO.
 - [BrickPicker](https://brickpicker.com/) - LEGO investing platform: price guide based on completed sales, part-out value, portfolio tracking, retirement watch and deal alerts. Free to browse without an account; advanced tools in Premium. Covers official LEGO.
 
+<br>
+
+<img src="media/icons/heading/second-hand.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Second-hand, parts and accessories
 
-<img src="media/icons/second-hand.svg" width="44" height="44" align="left" alt=""> Where to buy used sets and loose parts, find custom builds and instructions, and services such as lighting, display cases and sorting.
-
-<br clear="left">
+Where to buy used sets and loose parts, find custom builds and instructions, and services such as lighting, display cases and sorting.
 
 ### Marketplaces and classified ads
 
@@ -280,11 +288,13 @@ Every resource, including inactive and dead ones, generated from [`data/`](data/
 - [VitrineFactory](https://vitrinefactory.com/) - French maker of cast acrylic display cases for LEGO sets, with a made-to-measure configurator. Covers official LEGO.
 - [Wicked Brick](https://www.wickedbrick.com/) - Made-to-order acrylic display cases and stands for LEGO sets and minifigures, with a European store. Covers official LEGO.
 
+<br>
+
+<img src="media/icons/heading/community.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Communities and news
 
-<img src="media/icons/community.svg" width="44" height="44" align="left" alt=""> Forums, subreddits, wikis, news and review sites, deal communities and chat servers about official LEGO and alternative bricks.
-
-<br clear="left">
+Forums, subreddits, wikis, news and review sites, deal communities and chat servers about official LEGO and alternative bricks.
 
 ### News and reviews
 
@@ -339,11 +349,13 @@ Every resource, including inactive and dead ones, generated from [`data/`](data/
 - [Brickset forum (Discord)](https://brickset.com/forum) - The Brickset forum is hosted on Discord, with a Facebook group, for adult fans of LEGO. Covers official LEGO.
 - [Merlins Steine community (Discord)](https://www.merlinssteine.de/communityreviews/) - Discord community around BlueBrixx, Cobi, CaDA, LEGO, Wange and Xingbao: experience reports, build help, searches for sets, parts and instructions. Covers official LEGO and alternative brands.
 
+<br>
+
+<img src="media/icons/heading/video.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## YouTube and podcasts
 
-<img src="media/icons/video.svg" width="44" height="44" align="left" alt=""> English- and French-language YouTube channels and podcasts: reviews of official LEGO and alternative brands, builds and news.
-
-<br clear="left">
+English- and French-language YouTube channels and podcasts: reviews of official LEGO and alternative brands, builds and news.
 
 ### Official LEGO reviews
 
@@ -396,11 +408,13 @@ Every resource, including inactive and dead ones, generated from [`data/`](data/
 - [The Bricks King Podcast](https://www.spreaker.com/podcast/the-bricks-king-podcast-lego--4920139) - Podcast with interviews of LEGO artists and reviews of recent models. Status: no update for 6 months.
 - [The Hidden Bricks](https://creators.spotify.com/pod/profile/the-hidden-bricks/) - LEGO podcast on set news, reviews and stories from the building community.
 
+<br>
+
+<img src="media/icons/heading/events.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Events
 
-<img src="media/icons/events.svg" width="44" height="44" align="left" alt=""> Conventions, fan exhibitions, artist shows, public competitions and calendars listing brick events by country.
-
-<br clear="left">
+Conventions, fan exhibitions, artist shows, public competitions and calendars listing brick events by country.
 
 ### Conventions and fan events
 
@@ -456,11 +470,13 @@ Every resource, including inactive and dead ones, generated from [`data/`](data/
 - [Stonewars: LEGO events and exhibitions](https://www.stonewars.de/events/) - German LEGO news site with an overview of exhibitions, events and fairs in Germany, Austria and Switzerland, and reports on them. Covers official LEGO and alternative brands.
 - [swiss-brick: LEGO events 2026/27](https://www.swiss-brick.com/lego-events-und-ausstellungen/) - List of LEGO exhibitions and trading fairs in Switzerland, Germany and Austria, with Swiss events first. Covers official LEGO and alternative brands.
 
+<br>
+
+<img src="media/icons/heading/places.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Places to visit
 
-<img src="media/icons/places.svg" width="44" height="44" align="left" alt=""> Venues of the brick world that can be visited: official LEGO venues and stores, theme parks, museums and permanent exhibitions, physical shops for alternative brands and used bricks, and cafés with bricks.
-
-<br clear="left">
+Venues of the brick world that can be visited: official LEGO venues and stores, theme parks, museums and permanent exhibitions, physical shops for alternative brands and used bricks, and cafés with bricks.
 
 ### Official LEGO venues and stores
 
@@ -515,11 +531,13 @@ Every resource, including inactive and dead ones, generated from [`data/`](data/
 - [D-Brick Café](https://www.d-brick.com/) - Independent LEGO shop and café in Liège (rue de la Boucherie 1): new and used sets, built at the table on a tray without time limit or taken away. Workshops and parties. Not affiliated with the LEGO Group. Covers official LEGO.
 - [HeartBrickCafé](https://heartbrickcafe.de/) - LEGO shop with a café area in Rothenburg ob der Tauber (Rödergasse 18), opened in September 2025 by an authorised LEGO dealer: current sets, retired sets from his own collection and bought collections, rare minifigures, a children's corner. Covers official LEGO.
 
+<br>
+
+<img src="media/icons/heading/clubs.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Clubs and associations
 
-<img src="media/icons/clubs.svg" width="44" height="44" align="left" alt=""> User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan CoLab recognition programme to national and local clubs in Europe.
-
-<br clear="left">
+User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan CoLab recognition programme to national and local clubs in Europe.
 
 ### Networks and directories
 
@@ -566,11 +584,13 @@ Every resource, including inactive and dead ones, generated from [`data/`](data/
 
 - [BioniLUG](https://www.bionilug.com/) - Online user group for fans of Bionicle and Constraction, recognized by the LEGO Group, with member spotlights and displays at fan conventions. Covers official LEGO.
 
+<br>
+
+<img src="media/icons/heading/learning.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Learning
 
-<img src="media/icons/learning.svg" width="44" height="44" align="left" alt=""> Guides, glossaries, history, compatibility and legal references, education and competitions, books, magazines and recognised brick artists.
-
-<br clear="left">
+Guides, glossaries, history, compatibility and legal references, education and competitions, books, magazines and recognised brick artists.
 
 ### Guides and reference
 
@@ -634,11 +654,13 @@ Every resource, including inactive and dead ones, generated from [`data/`](data/
 - [The Brickman (Ryan McNaught)](https://www.thebrickman.com/) - Australian team of brick artists led by Ryan McNaught, LEGO Certified Professional; exhibitions and model commissions. He has been a judge of LEGO Masters Australia since 2019. Covers official LEGO.
 - [Warren Elsmore](https://www.warrenelsmore.com/) - Edinburgh brick artist and company, established for nearly 20 years: touring exhibitions (Brick City, Brick Wonders, Brick History, Brick Flicks, Brick Dinos, Brick Journeys) and commissions. Covers official LEGO.
 
+<br>
+
+<img src="media/icons/heading/tools.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Tools and APIs
 
-<img src="media/icons/tools.svg" width="44" height="44" align="left" alt=""> Design software, apps, APIs, open data and open-source projects around LEGO and compatible bricks.
-
-<br clear="left">
+Design software, apps, APIs, open data and open-source projects around LEGO and compatible bricks.
 
 ### Design software
 
@@ -679,11 +701,13 @@ Every resource, including inactive and dead ones, generated from [`data/`](data/
 - [BrickTracker (ssmiller25 mirror)](https://github.com/ssmiller25/bricktracker) - Web app tracking sets, parts, minifigures and missing pieces through the Rebrickable API; mirror of a Gitea repository by FrederikBaerentsen. Covers official LEGO. Status: no update for 6 months.
 - [Nupplo SE (formerly Brickfolio)](https://github.com/Melle79/nupplo) - Self-hosted installable web app: photo identification through Brickognize, family collection, prices and contents through BrickLink and Rebrickable. Covers official LEGO.
 
+<br>
+
+<img src="media/icons/heading/directories.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Other directories and lists
 
-<img src="media/icons/directories.svg" width="44" height="44" align="left" alt=""> Existing directories, awesome lists and lists of channels and brands about LEGO and compatible bricks.
-
-<br clear="left">
+Existing directories, awesome lists and lists of channels and brands about LEGO and compatible bricks.
 
 ### Awesome lists
 

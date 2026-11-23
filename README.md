@@ -67,11 +67,13 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
   - [Channel and podcast lists](#channel-and-podcast-lists)
   - [Brand lists](#brand-lists)
 
+<br>
+
+<img src="media/icons/heading/brands.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Brands and manufacturers
 
-<img src="media/icons/brands.svg" width="44" height="44" align="left" alt=""> Official LEGO, European and Chinese alternative brands, toy-industry entrants, brick manufacturers and other building formats, with country and brick maker where established.
-
-<br clear="left">
+Official LEGO, European and Chinese alternative brands, toy-industry entrants, brick manufacturers and other building formats, with country and brick maker where established.
 
 ### Official LEGO
 
@@ -98,11 +100,13 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
 
 - [GoBricks (Shantou Golds Precision Technology)](https://gobricks.net/) - China (Shantou, Guangdong). Parts manufacturer regarded as the community reference for alternative bricks, founded in 2017, with 327 injection machines and a stated 10 billion pieces per year. Covers alternative brands.
 
+<br>
+
+<img src="media/icons/heading/shops.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Shops
 
-<img src="media/icons/shops.svg" width="44" height="44" align="left" alt=""> Online and physical shops selling official LEGO, alternative brick brands and general goods to customers in Europe, with delivery to France noted when established.
-
-<br clear="left">
+Online and physical shops selling official LEGO, alternative brick brands and general goods to customers in Europe, with delivery to France noted when established.
 
 ### Official LEGO
 
@@ -118,11 +122,13 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
 - [Alternate (alternate.fr)](https://www.alternate.fr/Jouets/LEGO) - German electronics retailer (Alternate GmbH) with a large official LEGO range delivered to France. Covers official LEGO.
 - [Joybuy France](https://www.joybuy.fr) - Marketplace and direct sales of the JD.com group, opened in France on 2026-03-16, with LEGO among launch brands. Covers official LEGO.
 
+<br>
+
+<img src="media/icons/heading/comparators.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Price comparators and databases
 
-<img src="media/icons/comparators.svg" width="44" height="44" align="left" alt=""> Sites that compare set prices across shops, catalogue sets and parts, track secondary-market value or gather deals, for official LEGO and alternative brands.
-
-<br clear="left">
+Sites that compare set prices across shops, catalogue sets and parts, track secondary-market value or gather deals, for official LEGO and alternative brands.
 
 ### Price comparators
 
@@ -140,11 +146,13 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
 
 - [BrickEconomy](https://www.brickeconomy.com/) - Database of official LEGO sets and minifigures devoted to secondary-market value estimates and machine-learning growth forecasts. Covers official LEGO.
 
+<br>
+
+<img src="media/icons/heading/second-hand.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Second-hand, parts and accessories
 
-<img src="media/icons/second-hand.svg" width="44" height="44" align="left" alt=""> Where to buy used sets and loose parts, find custom builds and instructions, and services such as lighting, display cases and sorting.
-
-<br clear="left">
+Where to buy used sets and loose parts, find custom builds and instructions, and services such as lighting, display cases and sorting.
 
 ### Marketplaces and classified ads
 
@@ -168,11 +176,13 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
 - [Lightailing and Briksmax](https://www.lightailing.com/fr) - LED light kits for specific LEGO sets, sold as kits without the set. Covers official LEGO.
 - [Wicked Brick](https://www.wickedbrick.com/) - Made-to-order acrylic display cases and stands for LEGO sets and minifigures, with a European store. Covers official LEGO.
 
+<br>
+
+<img src="media/icons/heading/community.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Communities and news
 
-<img src="media/icons/community.svg" width="44" height="44" align="left" alt=""> Forums, subreddits, wikis, news and review sites, deal communities and chat servers about official LEGO and alternative bricks.
-
-<br clear="left">
+Forums, subreddits, wikis, news and review sites, deal communities and chat servers about official LEGO and alternative bricks.
 
 ### News and reviews
 
@@ -195,11 +205,13 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
 
 - [Dealabs: LEGO group](https://www.dealabs.com/groupe/lego) - French deal community: LEGO promotions posted, voted and commented by members, from LEGO.com and French retailers. Covers official LEGO.
 
+<br>
+
+<img src="media/icons/heading/video.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## YouTube and podcasts
 
-<img src="media/icons/video.svg" width="44" height="44" align="left" alt=""> English- and French-language YouTube channels and podcasts: reviews of official LEGO and alternative brands, builds and news.
-
-<br clear="left">
+English- and French-language YouTube channels and podcasts: reviews of official LEGO and alternative brands, builds and news.
 
 ### Official LEGO reviews
 
@@ -227,11 +239,13 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
 - [Back 2 Brick LEGO Podcast](https://back2brick.buzzsprout.com/) - Podcast hosted by an adult fan: LEGO news, custom builds and interviews with LEGO designers, with a weekly news recap on Fridays.
 - [Briques en Vrac](https://www.vodio.fr/vodiotheque/c/1753/briques-en-vrac-actualites-et-nouveautes-lego/) - French-language podcast on LEGO news and new releases. Covers official LEGO.
 
+<br>
+
+<img src="media/icons/heading/events.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Events
 
-<img src="media/icons/events.svg" width="44" height="44" align="left" alt=""> Conventions, fan exhibitions, artist shows, public competitions and calendars listing brick events by country.
-
-<br clear="left">
+Conventions, fan exhibitions, artist shows, public competitions and calendars listing brick events by country.
 
 ### Conventions and fan events
 
@@ -248,11 +262,13 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
 - [hothbricks: expositions et événements LEGO](https://www.hothbricks.com/expos/) - Agenda of LEGO exhibitions in France, Belgium and Switzerland, plus international events where LEGO is present. Covers official LEGO.
 - [steine-kanal: Veranstaltungskalender](https://www.steine-kanal.de/veranstaltungskalender-2027-alle-lego-fan-veranstaltungen-und-boersen-im-uberblick/) - Yearly calendar of LEGO fan events and trading fairs by month, with a separate section for exhibitions using bricks of other manufacturers; permanent museums are added. Covers official LEGO and alternative brands.
 
+<br>
+
+<img src="media/icons/heading/places.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Places to visit
 
-<img src="media/icons/places.svg" width="44" height="44" align="left" alt=""> Venues of the brick world that can be visited: official LEGO venues and stores, theme parks, museums and permanent exhibitions, physical shops for alternative brands and used bricks, and cafés with bricks.
-
-<br clear="left">
+Venues of the brick world that can be visited: official LEGO venues and stores, theme parks, museums and permanent exhibitions, physical shops for alternative brands and used bricks, and cafés with bricks.
 
 ### Official LEGO venues and stores
 
@@ -269,11 +285,13 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
 
 - [Time For Bricks](https://www.timeforbricks.fr/) - French shops in Chambéry (since 2023) and Annecy (opened in July 2026) selling about thirty alternative brick brands compatible with standard bricks, with free building tables and a hot drink corner in Annecy. Covers alternative brands.
 
+<br>
+
+<img src="media/icons/heading/clubs.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Clubs and associations
 
-<img src="media/icons/clubs.svg" width="44" height="44" align="left" alt=""> User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan CoLab recognition programme to national and local clubs in Europe.
-
-<br clear="left">
+User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan CoLab recognition programme to national and local clubs in Europe.
 
 ### National clubs
 
@@ -281,11 +299,13 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
 - [Brickish](https://brickish.org/) - UK-wide club of adult fans of LEGO, active since 2002 and described by itself as the first user group in the country; local meet-ups, public shows and a members-only forum. Covers official LEGO.
 - [ItLUG](https://www.itlug.org/) - Italian LEGO Users Group: national association of adult LEGO fans founded in 1999 and legally constituted in November 2010, with a forum, national events and local exhibitions. Covers official LEGO.
 
+<br>
+
+<img src="media/icons/heading/learning.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Learning
 
-<img src="media/icons/learning.svg" width="44" height="44" align="left" alt=""> Guides, glossaries, history, compatibility and legal references, education and competitions, books, magazines and recognised brick artists.
-
-<br clear="left">
+Guides, glossaries, history, compatibility and legal references, education and competitions, books, magazines and recognised brick artists.
 
 ### Guides and reference
 
@@ -308,11 +328,13 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
 
 - [LEGO Certified Professionals (official LEGO list)](https://www.lego.com/en-us/aboutus/lego-certified-professionals) - Official list of adult builders officially recognised by LEGO who run a business with bricks, by region, with the rules on what they may build for clients. Covers official LEGO.
 
+<br>
+
+<img src="media/icons/heading/tools.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Tools and APIs
 
-<img src="media/icons/tools.svg" width="44" height="44" align="left" alt=""> Design software, apps, APIs, open data and open-source projects around LEGO and compatible bricks.
-
-<br clear="left">
+Design software, apps, APIs, open data and open-source projects around LEGO and compatible bricks.
 
 ### Design software
 
@@ -335,11 +357,13 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
 
 - [BrickStore](https://github.com/rgriebl/brickstore) - Offline BrickLink inventory management tool for Windows, macOS, Linux, iOS and Android. Covers official LEGO and alternative brands.
 
+<br>
+
+<img src="media/icons/heading/directories.svg" width="40" height="56" align="left" hspace="4" alt="">
+
 ## Other directories and lists
 
-<img src="media/icons/directories.svg" width="44" height="44" align="left" alt=""> Existing directories, awesome lists and lists of channels and brands about LEGO and compatible bricks.
-
-<br clear="left">
+Existing directories, awesome lists and lists of channels and brands about LEGO and compatible bricks.
 
 ### Awesome lists
 
