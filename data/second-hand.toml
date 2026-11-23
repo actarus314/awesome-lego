@@ -2427,3 +2427,34 @@ date = "2026-11-23"
 kind = "indexed"
 
 # ---------------------------------------------------------------- learning
+
+[[resource]]
+id = "brickville"
+name = "Brickville"
+url = "https://brickville.com.au/"
+group = "second-hand-shops"
+covers = ["official", "second-hand"]
+languages = ["en"]
+countries = ["AU", "NZ"]
+access = "free"
+summary_en = "Melbourne LEGO store selling retired, vintage and pre-loved sets (checked for completeness by the shop), new sets and minifigures, online with prices in Australian and New Zealand dollars."
+summary_fr = "Boutique LEGO de Melbourne vendant des sets retirés, anciens et d'occasion (vérifiés pour leur complétude par la boutique), des sets neufs et des minifigurines, en ligne avec prix en dollars australiens et néo-zélandais."
+strengths_en = ["Large catalogue of retired and vintage sets", "Physical store in Kensington, Victoria"]
+strengths_fr = ["Large catalogue de sets retirés et anciens", "Boutique physique à Kensington, Victoria"]
+weaknesses_en = ["Collector prices for retired sets", "Shipping destinations not verified"]
+weaknesses_fr = ["Prix de collection pour les sets retirés", "Destinations de livraison non vérifiées"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brickville.com.au/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickville.co.nz/"
+date = "2026-11-23"
+kind = "read"

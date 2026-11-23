@@ -206,6 +206,7 @@ Sites that compare set prices across shops, catalogue sets and parts, track seco
 - [BricksDeal](https://bricksdeal.com/de-en) - Price comparator for official LEGO by set number, with shops in the Netherlands, Belgium and Germany. Covers official LEGO.
 - [BricksValue](https://bricksvalue.com/fr) - Daily price comparator for official LEGO with tracking of sets about to be retired by LEGO and price per piece; variants for France, Germany and the United States. Covers official LEGO.
 - [BrickTracker.eu](https://bricktracker.eu/fr) - Price comparator for official LEGO with full price history and alerts (price drop, back in stock, target price) on a free account. Covers official LEGO.
+- [BrickTurtle](https://brickturtle.com.au/) - Independent Australian price comparison for LEGO sets: prices from more than 20 Australian retailers side by side, price history, retiring-soon list and email price-drop alerts. Covers official LEGO.
 - [Brickwatch](https://www.brickwatch.net/fr-FR/) - Price watch for official LEGO at several retailers, published by Kiobi BV (Netherlands), with France and United Kingdom variants. Covers official LEGO.
 - [Brickyes](https://www.brickyes.com/nl-nl/lego) - Dutch price comparator for in-stock official LEGO, shipping included, with a watchlist and email alerts. Covers official LEGO.
 - [brickzone](https://brickzone.dk/) - Danish price comparator for LEGO sets with price history, a price barometer and a list of Black Friday offers priced below the year's lowest price. Covers official LEGO.
@@ -218,6 +219,7 @@ Sites that compare set prices across shops, catalogue sets and parts, track seco
 - [La Brique Libre](https://labriquelibre.fr/) - Comparator and editorial guide to brick brands (LEGO, Pantasy, Lumibricks, CaDA, BlueBrixx) with prices from verified shops. Covers official LEGO and alternative brands.
 - [Lakea](https://lakea.net/?lang=fr) - Independent comparator for official LEGO based on its own price collection, also covering parts, minifigures and display cases. Covers official LEGO.
 - [LeDénicheur](https://ledenicheur.fr/) - General French price comparator with a LEGO category listing sets with best price. Covers official LEGO.
+- [LEGO Price Tracker](https://legopricetracker.co.nz/) - Price comparison and history for LEGO sets in New Zealand, Australia, Canada and the United States, with retailer pages, retiring-soon list, watchlist and collection tracking. Covers official LEGO.
 - [Planet-Brick](https://planet-brick.com/) - French price comparator for building bricks, sets, ready-to-build custom kits, instructions and accessories, limited to brands linked to a merchant delivering to France. Run by the company BRICKSBIZ. Covers official LEGO and alternative brands.
 - [Prisjakt](https://www.prisjakt.nu/c/lego) - Swedish general price comparison service with a LEGO category listing sets with age range, piece count and lowest price, and editorial buying guides. Covers official LEGO.
 - [promoklocki.pl](https://promoklocki.pl/) - Polish price comparator and catalogue for LEGO sets, with pages for the lowest prices in the official LEGO shop, retirements, a promotions calendar and Polish catalogues. Covers official LEGO.
@@ -270,6 +272,7 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 
 - [Brickland](https://brickland.fr/) - French shop of refurbished LEGO: sets checked piece by piece, bulk, minifigures and baseplates; collection buy-back. Covers official LEGO.
 - [BrickPlus](https://brickplus.fr/) - Online shop based in Paris 5 selling new and verified used LEGO sets and minifigures, with buy-back. Covers official LEGO.
+- [Brickville](https://brickville.com.au/) - Melbourne LEGO store selling retired, vintage and pre-loved sets (checked for completeness by the shop), new sets and minifigures, online with prices in Australian and New Zealand dollars. Covers official LEGO.
 - [De BrickPlaats](https://brickplaats.nl/) - Dutch shop in Oss with new sealed and checked used sets, parts, minifigures and a few custom builds. Covers official LEGO.
 - [Rebloxe](https://www.rebloxe.com/fr-fr) - Shop of used LEGO sets checked piece by piece, with condition grades (used, damaged box) and adult-oriented themes. Covers official LEGO.
 - [Reliczone](https://reliczone.fr/collections/lego) - French online shop of vintage used LEGO sets, bricks and minifigures. Covers official LEGO.
@@ -352,7 +355,10 @@ Forums, subreddits, wikis, news and review sites, deal communities and chat serv
 - [Bouwsteentjes.info](https://bouwsteentjes.info/) - Dutch-language LEGO news site for the Benelux, recognised by the LEGO Group as fan media, with news, reviews, deals and promotions. Covers official LEGO.
 - [Brick Fanatics](https://www.brickfanatics.com/) - LEGO news, reviews and deals site relaying LEGO Insiders offers. Covers official LEGO.
 - [Brick Model Railroader](https://brickmodelrailroader.com/) - Blog on LEGO trains since January 2017 (news, events, building articles on scale, gearing and clubs) and store for train parts. Hosts the free download of all 15 issues of the RAILBRICKS magazine (2008 to 2014). Status: no update for 6 months.
+- [Brick News](https://www.bricknews.com.au/) - Australian LEGO news site founded in Cairns: upcoming sets, leaks and rumours, events, competitions and sales, with monthly prize draws.
+- [Brick.it Magazine](https://www.brickitmagazine.com/) - Italian LEGO news site and magazine: daily news, weekly LEGO Ideas review updates, event reports and a magazine whose issue 28 came out in August 2026.
 - [brick.news](https://brick.news/) - LEGO news, reviews and guides site with a searchable set database that includes third-party brands (Lumibricks, Mattel, Pantasy, COBI). Covers official LEGO and alternative brands.
+- [BrickNerd](https://bricknerd.com/) - United States blog on the LEGO fan community: deep dives, builder interviews, custom-build showcases, building techniques and event reports, including Canadian and Australian conventions.
 - [Brickonaute](https://brickonaute.fr/) - French-language LEGO blog with news, reader and staff reviews, deals and a small forum. Covers official LEGO.
 - [BrickReport: LEGO competitors](https://www.brickreport.io/blog/lego-competitors) - Guide comparing alternatives to LEGO (Mattel, Lumibricks, Pantasy, COBI, CaDA, Mould King and others) with strengths and trade-offs per brand. Covers alternative brands.
 - [elCatalejo](https://elcatalejo.es/) - Spanish LEGO news site for fans of all ages: news, offers, retiring sets, an investment section and a guide for new readers. Covers official LEGO.
@@ -384,6 +390,7 @@ Forums, subreddits, wikis, news and review sites, deal communities and chat serv
 - [Eurobricks: LEGO Train Tech](https://www.eurobricks.com/forum/forums/forum/122-lego-train-tech/) - Train section of Eurobricks: official sets, custom locomotives and rolling stock, track geometry, 9V, Power Functions and Powered Up electronics, third-party controllers and track. Covers official LEGO.
 - [FreeLUG](https://www.freelug.org/) - French national association of LEGO fans since 2003, with a Discourse forum, exhibitions and meeting reports. Covers official LEGO.
 - [HardWare.fr: compatible bricks topic](https://forum.hardware.fr/hfr/Discussions/Loisirs/briques-construction-compatibles-sujet_119659_1.htm) - Long-running French forum topic on LEGO-compatible brick brands (started 16 December 2021), with a maintained introduction on brands, compatibility and after-sales service. Covers alternative brands.
+- [LEGO Forum Italia](https://legoforum.forumcommunity.net/) - Italian-language forum with sections on set reviews, shop news, BrickLink usage, part identification, custom builds, Italian AFOL groups, scam reports and monthly build contests.
 - [TechLug.fr forum](https://www.techlug.fr/Forum/) - French-speaking forum on LEGO Technic and Mindstorms: news, set discussions, modifications of official sets, custom builds and a section on theory of mechanisms and gearing. Covers official LEGO.
 
 ### Reddit
@@ -421,6 +428,7 @@ Forums, subreddits, wikis, news and review sites, deal communities and chat serv
 - [Dealabs: LEGO group](https://www.dealabs.com/groupe/lego) - French deal community: LEGO promotions posted, voted and commented by members, from LEGO.com and French retailers. Covers official LEGO.
 - [Il Mastro Costruttore](https://www.ilmastrocostruttore.it/) - Italian LEGO news and deals site: promotions on the official LEGO shop and retailers, LEGO Insiders weekends, new sets and a list of sets about to retire. Covers official LEGO.
 - [mydealz: LEGO group](https://www.mydealz.de/gruppe/lego) - German deal community: LEGO offers posted and commented by members (Amazon, Smyths Toys, Alternate and others). Covers official LEGO and alternative brands.
+- [Toys N Bricks](https://www.toysnbricks.com/) - Canadian LEGO news and deals site: daily lists of sales at Amazon Canada, Walmart Canada and LEGO.com, Insiders weekend and Black Friday promotions, with RSS, email, WhatsApp and Discord alerts. Covers official LEGO.
 
 ### Chat and social
 
@@ -502,14 +510,18 @@ Conventions, fan exhibitions, artist shows, public competitions and calendars li
 - [Brick Mania Antwerpen](https://www.belug.be/brickmania/antwerpen/) - Largest LEGO exhibition in Belgium, organised by the Belgian LEGO User Group BeLUG at Antwerp Expo, with layouts, a Great Ball Contraption, workshops and sales. Covers official LEGO.
 - [BrickCon](https://www.brickcon.org/) - Convention of adult fans of LEGO in Bellevue, Washington, billed as the longest-running LEGO fan convention, with a two-day public exhibition. Proceeds fund a nonprofit for children's education. Covers official LEGO.
 - [BrickFair](https://www.brickfair.com/) - Touring LEGO fan expo in the United States, with a convention for exhibitors and public days of custom builds, group builds and shopping. Covers official LEGO.
+- [Brickfair South Africa](https://www.brickfair.co.za/) - Annual LEGO fan exhibition in Pretoria, in the hallways of Menlyn Shopping Centre in front of the LEGO Certified Store, with more than 200 exhibits and competitions in nine categories.
 - [Bricking Bavaria](https://brickingbavaria-fanevent.de/) - Exhibition of LEGO fan builds organised by the association Bricking Bavaria, with an adult-fan day before the public days. The 2026 edition moved from Fürth to the Messe Augsburg. Covers official LEGO.
 - [Brickish Weekend](https://www.spacecentre.co.uk/whats-on/brickish-weekend/) - LEGO fan weekend at the National Space Centre in Leicester, with fan builds from across the United Kingdom, in partnership with the club Brickish and Fairy Bricks. Covers official LEGO.
+- [Brickomanie](https://brickomanie.ca/en) - LEGO fan convention and public exhibition in Laval, near Montreal, bilingual French and English, with a Brickfilm Festival and games during the adult convention.
 - [Bricks and Friends](https://bricksandfriends.wordpress.com/) - LEGO fan exhibition and trading area at the Motorworld in Cologne, run since 2021, with an own custom-builds club. Covers official LEGO.
+- [Bricks in the Six](https://bricksinthe6.ca/) - Convention and public exhibition of LEGO fans in the Toronto area, presented by the organisers as the largest LEGO fan event in Canada, with workshops and building games mainly aimed at adults.
 - [Bricktastic](https://bricktastic.org/) - Largest recognised LEGO fan event in the United Kingdom, held in Manchester for the charity Fairy Bricks, with exhibitors, a giant mosaic, brick pits and independent retailers. Covers official LEGO.
 - [Bricktopia World](https://bricktopia-world.com/) - International LEGO fan event organised by Dutchbricks in the MECC Maastricht; the second edition moves to a larger hall. Covers official LEGO.
 - [Brickvention](https://www.brickvention.melbourne/) - Australian LEGO fan convention in Melbourne: a Friday convention day for adult fans and two public exhibition days at the Royal Exhibition Building. Covers official LEGO.
 - [Brickworld](https://brickworld.com/) - Organiser of LEGO fan expos in the United States: Chicago (Schaumburg) with a recognised fan convention from Wednesday to Sunday, and Indianapolis. Covers official LEGO.
 - [Brixembourg](https://www.brixembourg.com/) - Exhibition and marketplace for LEGO and other building bricks in Junglinster, Luxembourg, organised since 2019 by the association Brixembourg; the site also runs a news section and an event calendar for the Greater Region. Covers official LEGO and alternative brands.
+- [Brixpo](https://www.brixpo.com.au/) - South Australia's largest fan-run LEGO event since 2019, organised by volunteers of the Southern Bricks LEGO User Group in Adelaide.
 - [Edinbrick](https://www.brickm8.org/edinbrick) - Charity LEGO display show in Edinburgh run by BrickM8 for Fairy Bricks, presented as the largest in Scotland; a second hall is added for 2027. Covers official LEGO.
 - [Fana'Briques](https://expo.fanabriques.fr/fr/) - Large LEGO exhibition at the Parc des expositions in Colmar, organised by volunteers of the association Fanabriques, with dioramas, mosaics, new and second-hand LEGO shops and artists' stalls. Covers official LEGO.
 - [Great Western Brick Show](https://greatwesternbrickshow.co.uk/) - Flagship show of the UK club Brickish, held since 2002 in the STEAM museum in Swindon, with robot battles and a long Great Ball Contraption. Covers official LEGO.
@@ -517,12 +529,14 @@ Conventions, fan exhibitions, artist shows, public competitions and calendars li
 - [LEGO House AFOL Day](https://event.legohouse.com/) - Official two-day event for adult fans at the LEGO House in Billund, held around the Skærbæk Fan Weekend, with designer talks, signings and special purchases. Covers official LEGO.
 - [LEGO World Utrecht](https://www.legoworld.nl/) - Family event organised by the LEGO Group in the Jaarbeurs in Utrecht during the autumn holiday, with official themed areas, talks and a fan zone showing builds by selected adult fans. Covers official LEGO.
 - [Lëtzbrick](https://www.afol.lu/) - Public LEGO fan exhibition in Wasserbillig, Luxembourg, organised by the recognised fan community AFOL.lu. Covers official LEGO.
+- [Northern Bricks](https://northernbricks.ca/) - LEGO fan convention in Edmonton, Alberta, run by the Northern Alberta LEGO Users Group at the Alberta Aviation Museum, with an adult builders' area and public days.
 - [Paredes de Coura Fan Weekend](https://fanweekend.pt/) - Three-day international gathering of adult fans of LEGO in northern Portugal, hosted by Comunidade 0937, with accommodation, meals, workshops and an adult-fan lounge included. Covers official LEGO.
 - [Skærbæk Fan Weekend](https://www.fanweekend.dk/) - International convention of adult fans of LEGO in southern Jutland, 80 km south of Billund, with a public exhibition of custom builds on the Saturday and Sunday. Covers official LEGO.
 - [SteinCHenwelt](https://steinchenwelt.ch/) - Swiss LEGO exhibition at the Enter Technikwelt in Derendingen, whose site also lists LEGO events and trading fairs in Switzerland. Covers official LEGO.
 
 ### Exhibitions: clubs and artists
 
+- [BrickUniverse](https://www.brickuniverseusa.com/) - Touring LEGO fan exhibition in United States cities, run by a family company since 2014, with creations by professional and amateur builders, build zones and vendors.
 - [Landébrick](https://www.cdp29.fr/fr/agenda/view/1043/landebrick/) - LEGO festival at the Landévennec abbey in Finistère, organised with Brickouest; the 2026 edition on fortified constructions was the fifth. Covers official LEGO.
 
 ### Competitions
@@ -642,14 +656,18 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 - [Palikkatakomo](https://www.palikkatakomo.org/) - Finnish LEGO fan community and forum since 2008, supported by the registered association Palikkatakomo ry, a LEGO recognised user group, with exhibitions and building contests.
 - [PLUG - Associação Portuguesa de Utilizadores de LEGO](https://forum.plug.pt/) - Portuguese association of LEGO users with a forum for custom builds, events and general discussion, and a board for a LEGO ambassador.
 - [Swebrick](https://swebrick.se/) - Swedish non-profit association and forum for adult LEGO fans, with a monthly build vote, meet-ups and an annual main event. Covers official LEGO.
+- [zaLUG](https://www.zalug.co.za/) - South African LEGO user group of adult fans based in Gauteng: meetings every second month with talks, swap table and build games, and an annual display at Clearwater Mall.
 
 ### Regional and local clubs
 
 - [AFOL Stammtisch Karlsruhe](https://www.afol-stammtisch-ka.de/) - Open regional gathering of brick fans around Karlsruhe with regular Stammtisch, exhibitions and project pages; collectors, custom builders and newcomers welcome. Covers official LEGO.
+- [AuckLUG](https://www.aucklug.co.nz/) - Auckland LEGO User Group: monthly meetings, build challenges, members' displays at shows and charity events, and the annual Auckland Brick Show, described by the group as the biggest LEGO show in the city.
+- [BayLUG](https://baylug.org/) - Bay Area LEGO Users Group, founded in 1998, with about 200 members of all ages, public meetings and displays in the San Francisco Bay Area; its train club BayLTC focuses on LEGO trains.
 - [Brick Alley](https://www.brickalleylug.co.uk/) - User group for adult fans of LEGO in North East England, with monthly meet-ups, collaborative displays and exhibitions such as Discovery Brick Show (Newcastle, since 2018) and Shildon Brick Show (since 2016). Covers official LEGO.
 - [Bricking Bavaria e.V.](https://www.bricking-bavaria.de/) - Bavarian LEGO association organizing regular Stammtisch meetings open to everyone and the Bricking Bavaria exhibition in Augsburg. Covers official LEGO.
 - [Brickouest](https://brickouest.fr/) - Association of LEGO fans of western France, recognised by the LEGO Group, publishing a calendar and a map of its exhibitions and workshops. Covers official LEGO.
 - [Briques Unies](https://briques-unies.org/) - French non-profit association (loi 1901) founded in 2018 in the Drôme, recognized by the LEGO Group, organizing 100 percent LEGO exhibitions, play areas and workshops. Covers official LEGO.
+- [BrisBricks](https://brisbricks.org/) - Recognised LEGO user group of Brisbane that runs the BrisBricks Chandler fan event and the BBX Fan Expo, Queensland's largest LEGO fan event according to the group.
 - [BRISY](https://brisy.fr/) - Association of adult fans of LEGO in the Yvelines organising the Expo 100% Briques in Le Perray-en-Yvelines and taking part in other exhibitions and workshops. Covers official LEGO.
 - [Ch'ti LUG](https://chtilug.fr/) - LEGO user group of northern France (Nord and Pas-de-Calais) organizing the Ch'ti Brick exhibitions in several towns each year. Covers official LEGO.
 - [Dutchbricks](https://www.dutchbricks.nl/) - Association of the Dutch and Belgian Limburg Euroregion founded in 2015, recognized by the LEGO Group, organizer of the Bricktopia events. Covers official LEGO.
@@ -660,7 +678,11 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 - [LUG'Est](https://lugest.fr/) - Association (loi 1901) created in 2014 in Bourgogne-Franche-Comté, recognized by the LEGO Group, organizing exhibitions, hospital workshops and charity events. Covers official LEGO.
 - [NELUG - New England LEGO Users Group](https://www.nelug.org/) - Regional group of adult LEGO fans in the north-east of the United States, formed in August 1999, with a forum, displays and large exhibitions. Covers official LEGO.
 - [QuéLUG](https://www.quelug.org/) - Association of LEGO fans of Quebec, in French, with quarterly meetings, a forum, group orders and attendance at Canadian exhibitions. Covers official LEGO.
+- [SydLUG](https://www.sydlug.com/) - Sydney LEGO Users Group, stated to be Sydney's only recognised LUG, with members across Greater Sydney, the Central Coast and Wollongong, monthly meetups in Croydon and charity displays.
 - [Tartan LUG](https://www.tartanlug.com/) - Scottish user group for adult fans of LEGO, with public shows, collaborative builds and meet-ups, focused on charity fundraising; first public show in July 2015. Covers official LEGO.
+- [ToroLUG](https://torolug.ca/) - Toronto LEGO User Group for adult fans over 18: regular meetings, collaborative displays and individual creations shown at conventions and shows in Ontario and beyond.
+- [ToscanaBricks](https://www.toscanabricks.it/) - LEGO users group of Tuscany, recognised by the LEGO Group since 2014, organiser of Bricks in Florence Festival (ninth edition on 14-15 November 2026) and of the Prato Brick Show.
+- [Well-LUG](https://www.well-lug.nz/) - Wellington LEGO User Group with four branches (Wellington, Palmerston North, Hawke's Bay, Whanganui), organiser of New Zealand's brick shows and of its AFOL day, which draws fans from across New Zealand and Australia.
 
 ### Clubs for alternative brands
 
@@ -670,6 +692,7 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 ### Online clubs
 
 - [BioniLUG](https://www.bionilug.com/) - Online user group for fans of Bionicle and Constraction, recognized by the LEGO Group, with member spotlights and displays at fan conventions. Covers official LEGO.
+- [SAFOLs](https://www.safols.co.za/) - South African Fans of LEGO: recognised online community created in 2017 around a Facebook group of about 3000 members, with a website of set reviews, competitions and a list of local BrickLink stores. Status: no update for 6 months.
 
 <br>
 

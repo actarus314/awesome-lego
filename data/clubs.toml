@@ -1140,3 +1140,297 @@ date = "2026-04-22"
 kind = "third-party"
 
 # ------------------------------------------------------------------- tools
+
+[[resource]]
+id = "baylug"
+name = "BayLUG"
+url = "https://baylug.org/"
+feed = "https://baylug.org/feed/"
+group = "regional-clubs"
+covers = ["clubs"]
+languages = ["en"]
+countries = ["US"]
+access = "free-account"
+summary_en = "Bay Area LEGO Users Group, founded in 1998, with about 200 members of all ages, public meetings and displays in the San Francisco Bay Area; its train club BayLTC focuses on LEGO trains."
+summary_fr = "Bay Area LEGO Users Group, fondé en 1998, environ 200 membres de tous âges, réunions publiques et expositions dans la baie de San Francisco ; son club de trains BayLTC se consacre aux trains LEGO."
+strengths_en = ["One of the oldest United States groups", "Public meetings with building contests and trading"]
+strengths_fr = ["L'un des plus anciens groupes des États-Unis", "Réunions publiques avec concours de construction et échanges"]
+weaknesses_en = ["Members of all ages, not only adults", "Regional scope"]
+weaknesses_fr = ["Membres de tous âges, pas seulement des adultes", "Portée régionale"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "high"
+city = "San Francisco Bay Area"
+
+[[resource.sources]]
+url = "https://baylug.org/frequently-asked-questions/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://baylug.org/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "torolug"
+name = "ToroLUG"
+url = "https://torolug.ca/"
+feed = "https://torolug.ca/feed/"
+group = "regional-clubs"
+covers = ["clubs", "events"]
+languages = ["en"]
+countries = ["CA"]
+access = "free-account"
+summary_en = "Toronto LEGO User Group for adult fans over 18: regular meetings, collaborative displays and individual creations shown at conventions and shows in Ontario and beyond."
+summary_fr = "Toronto LEGO User Group pour adultes fans de plus de 18 ans : réunions régulières, expositions collaboratives et créations individuelles présentées dans des conventions et salons en Ontario et au-delà."
+strengths_en = ["Public events calendar for the 2026 season", "Adults only"]
+strengths_fr = ["Calendrier public d'événements pour la saison 2026", "Réservé aux adultes"]
+weaknesses_en = ["Direct reading refused by the server (not acceptable response); read through a search index"]
+weaknesses_fr = ["Lecture directe refusée par le serveur (réponse non acceptable) ; lu via un index de recherche"]
+status = "active"
+last_activity = "2026-11-07"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "medium"
+city = "Toronto"
+
+[[resource.sources]]
+url = "https://torolug.ca/about-us/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://torolug.ca/events/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "brisbricks"
+name = "BrisBricks"
+url = "https://brisbricks.org/"
+feed = "https://brisbricks.org/feed/"
+group = "regional-clubs"
+covers = ["clubs", "events"]
+languages = ["en"]
+countries = ["AU"]
+access = "free-account"
+summary_en = "Recognised LEGO user group of Brisbane that runs the BrisBricks Chandler fan event and the BBX Fan Expo, Queensland's largest LEGO fan event according to the group."
+summary_fr = "Groupe d'utilisateurs LEGO reconnu de Brisbane, qui organise l'événement de fans BrisBricks Chandler et la BBX Fan Expo, plus grand événement LEGO de fans du Queensland selon le groupe."
+strengths_en = ["Chandler 2026 reported more than 7000 visitors (tenth edition)", "Library display group and monthly social nights"]
+strengths_fr = ["Chandler 2026 : plus de 7000 visiteurs annoncés (dixième édition)", "Groupe d'expositions en bibliothèque et soirées mensuelles"]
+weaknesses_en = ["Queensland scope", "Visitor figures from the group itself"]
+weaknesses_fr = ["Portée limitée au Queensland", "Chiffres de fréquentation issus du groupe lui-même"]
+status = "active"
+last_activity = "2026-07-03"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "high"
+city = "Brisbane"
+
+[[resource.sources]]
+url = "https://brisbricks.org/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brisbricks.org/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "sydlug"
+name = "SydLUG"
+url = "https://www.sydlug.com/"
+group = "regional-clubs"
+covers = ["clubs", "events"]
+languages = ["en"]
+countries = ["AU"]
+access = "free-account"
+summary_en = "Sydney LEGO Users Group, stated to be Sydney's only recognised LUG, with members across Greater Sydney, the Central Coast and Wollongong, monthly meetups in Croydon and charity displays."
+summary_fr = "Sydney LEGO Users Group, indiqué comme le seul groupe reconnu de Sydney, avec des membres dans le Grand Sydney, la Central Coast et Wollongong, des rencontres mensuelles à Croydon et des expositions caritatives."
+strengths_en = ["Recognised within the LEGO Ambassador Network", "Also runs a convention in Wollongong announced on its home page"]
+strengths_fr = ["Reconnu dans le LEGO Ambassador Network", "Organise aussi une convention à Wollongong annoncée sur sa page d'accueil"]
+weaknesses_en = ["Home page is undated; last activity not observed precisely"]
+weaknesses_fr = ["Page d'accueil non datée ; dernière activité non observée précisément"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "medium"
+city = "Sydney"
+
+[[resource.sources]]
+url = "https://www.sydlug.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "well-lug"
+name = "Well-LUG"
+url = "https://www.well-lug.nz/"
+feed = "https://www.well-lug.nz/blog-feed.xml"
+group = "regional-clubs"
+covers = ["clubs", "events"]
+languages = ["en"]
+countries = ["NZ"]
+access = "paid"
+business_model_en = "Annual membership fee (adults and teenagers); free associate status"
+business_model_fr = "Cotisation annuelle (adultes et adolescents) ; statut d'associé gratuit"
+summary_en = "Wellington LEGO User Group with four branches (Wellington, Palmerston North, Hawke's Bay, Whanganui), organiser of New Zealand's brick shows and of its AFOL day, which draws fans from across New Zealand and Australia."
+summary_fr = "Wellington LEGO User Group avec quatre antennes (Wellington, Palmerston North, Hawke's Bay, Whanganui), organisateur de salons de la brique néo-zélandais et de sa journée AFOL, qui réunit des fans de toute la Nouvelle-Zélande et d'Australie."
+strengths_en = ["Next club days published for all four branches", "Brick show results and charity donations documented"]
+strengths_fr = ["Prochaines journées de club publiées pour les quatre antennes", "Résultats des salons et dons caritatifs documentés"]
+weaknesses_en = ["Lower North Island base"]
+weaknesses_fr = ["Implantation dans le sud de l'île du Nord"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "high"
+city = "Wellington"
+
+[[resource.sources]]
+url = "https://www.well-lug.nz/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.well-lug.nz/afol-day"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "aucklug"
+name = "AuckLUG"
+url = "https://www.aucklug.co.nz/"
+group = "regional-clubs"
+covers = ["clubs", "events"]
+languages = ["en"]
+countries = ["NZ"]
+access = "paid"
+business_model_en = "Annual membership fee"
+business_model_fr = "Cotisation annuelle"
+summary_en = "Auckland LEGO User Group: monthly meetings, build challenges, members' displays at shows and charity events, and the annual Auckland Brick Show, described by the group as the biggest LEGO show in the city."
+summary_fr = "Auckland LEGO User Group : réunions mensuelles, défis de construction, expositions de membres dans des salons et événements caritatifs, et Auckland Brick Show annuel, décrit par le groupe comme le plus grand salon LEGO de la ville."
+strengths_en = ["Active for over a decade", "Quarterly buy-and-sell events for members"]
+strengths_fr = ["Actif depuis plus de dix ans", "Ventes et échanges trimestriels entre membres"]
+weaknesses_en = ["Auckland scope", "Home page is undated; last activity not observed precisely"]
+weaknesses_fr = ["Portée limitée à Auckland", "Page d'accueil non datée ; dernière activité non observée précisément"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "medium"
+city = "Auckland"
+
+[[resource.sources]]
+url = "https://www.aucklug.co.nz/membership"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://fancolab.lego.com/communities/406-auckland-lego-user-group-aucklug/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "zalug"
+name = "zaLUG"
+url = "https://www.zalug.co.za/"
+feed = "https://www.zalug.co.za/feed/"
+group = "national-clubs"
+covers = ["clubs", "events"]
+languages = ["en"]
+countries = ["ZA"]
+access = "paid"
+business_model_en = "Annual membership fee of 600 ZAR, approval by the committee"
+business_model_fr = "Cotisation annuelle de 600 ZAR, validation par le comité"
+summary_en = "South African LEGO user group of adult fans based in Gauteng: meetings every second month with talks, swap table and build games, and an annual display at Clearwater Mall."
+summary_fr = "Groupe sud-africain d'utilisateurs LEGO, adultes fans, basé dans le Gauteng : réunions tous les deux mois avec exposés, table d'échange et jeux de construction, et exposition annuelle au centre Clearwater Mall."
+strengths_en = ["Stated first recognised LUG of South Africa (CapeLUG links page)", "Fifty-nine members exhibited at Clearwater Mall in 2023"]
+strengths_fr = ["Présenté comme premier groupe reconnu d'Afrique du Sud (page de liens de CapeLUG)", "Cinquante-neuf membres ont exposé à Clearwater Mall en 2023"]
+weaknesses_en = ["Gauteng-centred despite the national name"]
+weaknesses_fr = ["Centré sur le Gauteng malgré le nom national"]
+status = "active"
+last_activity = "2026-11-04"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "high"
+city = "Gauteng"
+
+[[resource.sources]]
+url = "https://www.zalug.co.za/about-zalug/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.zalug.co.za/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "safols"
+name = "SAFOLs"
+url = "https://www.safols.co.za/"
+feed = "https://www.safols.co.za/feed/"
+group = "online-clubs"
+covers = ["clubs", "news"]
+languages = ["en"]
+countries = ["ZA"]
+access = "free"
+summary_en = "South African Fans of LEGO: recognised online community created in 2017 around a Facebook group of about 3000 members, with a website of set reviews, competitions and a list of local BrickLink stores."
+summary_fr = "South African Fans of LEGO : communauté en ligne reconnue, créée en 2017 autour d'un groupe Facebook d'environ 3000 membres, avec un site de tests de sets, des concours et une liste de boutiques BrickLink locales."
+strengths_en = ["Directory of South African BrickLink stores (article of March 2024)", "Competitions with prizes for adults and children"]
+strengths_fr = ["Annuaire des boutiques BrickLink sud-africaines (article de mars 2024)", "Concours avec prix pour adultes et enfants"]
+weaknesses_en = ["Website feed quiet since March 2026; most activity is on Facebook", "Member count stated by the group"]
+weaknesses_fr = ["Flux du site calme depuis mars 2026 ; l'activité se passe surtout sur Facebook", "Nombre de membres indiqué par le groupe"]
+status = "slow"
+last_activity = "2026-03-13"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.safols.co.za/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.safols.co.za/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "toscanabricks"
+name = "ToscanaBricks"
+url = "https://www.toscanabricks.it/"
+group = "regional-clubs"
+covers = ["clubs", "events"]
+languages = ["it"]
+countries = ["IT"]
+access = "free-account"
+summary_en = "LEGO users group of Tuscany, recognised by the LEGO Group since 2014, organiser of Bricks in Florence Festival (ninth edition on 14-15 November 2026) and of the Prato Brick Show."
+summary_fr = "Groupe d'utilisateurs LEGO de Toscane, reconnu par le groupe LEGO depuis 2014, organisateur du Bricks in Florence Festival (neuvième édition les 14 et 15 novembre 2026) et du Prato Brick Show."
+strengths_en = ["Bricks in Florence Festival: more than 100 exhibitors announced for 2026", "Charity donations of LEGO boxes with Fairy Bricks"]
+strengths_fr = ["Bricks in Florence Festival : plus de 100 exposants annoncés en 2026", "Dons de boîtes LEGO avec Fairy Bricks"]
+weaknesses_en = ["Direct reading blocked by a challenge page, not bypassed; read through a search index"]
+weaknesses_fr = ["Lecture directe bloquée par une page de défi, non contournée ; lu via un index de recherche"]
+status = "active"
+last_activity = "2026-11-08"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "medium"
+city = "Florence"
+
+[[resource.sources]]
+url = "https://www.toscanabricks.it/toscanabricks/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://toscananews.net/bricks-in-florence-festival-torna-il-festival-dedicato-al-mondo-lego/"
+date = "2026-11-08"
+kind = "third-party"

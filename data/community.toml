@@ -1978,3 +1978,157 @@ subreddit = "legoideas"
 url = "https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=legoideas&limit=1&sort=desc"
 date = "2026-11-23"
 kind = "third-party"
+
+[[resource]]
+id = "bricknerd"
+name = "BrickNerd"
+url = "https://bricknerd.com/"
+feed = "https://bricknerd.com/home?format=rss"
+group = "news-and-reviews"
+covers = ["news"]
+languages = ["en"]
+countries = ["US"]
+access = "free"
+summary_en = "United States blog on the LEGO fan community: deep dives, builder interviews, custom-build showcases, building techniques and event reports, including Canadian and Australian conventions."
+summary_fr = "Blog américain sur la communauté des fans LEGO : analyses de fond, entretiens avec des constructeurs, présentations de créations originales, techniques de construction et comptes rendus d'événements, dont des conventions canadiennes et australiennes."
+strengths_en = ["Written by fan builders, not by a retailer", "Covers adult-fan events across North America and Australia"]
+strengths_fr = ["Rédigé par des constructeurs fans, pas par un distributeur", "Couvre les événements d'adultes fans en Amérique du Nord et en Australie"]
+weaknesses_en = ["Few posts per week; no set-release news focus"]
+weaknesses_fr = ["Quelques articles par semaine ; peu centré sur l'actualité des sorties"]
+status = "active"
+last_activity = "2026-11-13"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://bricknerd.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brick-news-australia"
+name = "Brick News"
+url = "https://www.bricknews.com.au/"
+feed = "https://www.bricknews.com.au/blog-feed.xml"
+group = "news-and-reviews"
+covers = ["news"]
+languages = ["en"]
+countries = ["AU"]
+access = "freemium"
+business_model_en = "Optional paid membership for monthly draws"
+business_model_fr = "Abonnement payant facultatif pour des tirages mensuels"
+summary_en = "Australian LEGO news site founded in Cairns: upcoming sets, leaks and rumours, events, competitions and sales, with monthly prize draws."
+summary_fr = "Site australien d'actualités LEGO fondé à Cairns : sets à venir, fuites et rumeurs, événements, concours et promotions, avec des tirages mensuels."
+strengths_en = ["Australian events and sales coverage", "Public RSS feed"]
+strengths_fr = ["Couverture des événements et promotions australiens", "Flux RSS public"]
+weaknesses_en = ["Not affiliated with the LEGO Group (stated)", "Draws and paid membership are part of the model"]
+weaknesses_fr = ["Sans affiliation avec le groupe LEGO (indiqué)", "Tirages et abonnement payant font partie du modèle"]
+status = "active"
+last_activity = "2026-11-17"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.bricknews.com.au/about-us"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.bricknews.com.au/blog-feed.xml"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "toys-n-bricks"
+name = "Toys N Bricks"
+url = "https://www.toysnbricks.com/"
+group = "deals"
+covers = ["news", "official"]
+languages = ["en"]
+countries = ["CA"]
+access = "free"
+business_model_en = "Affiliate links"
+business_model_fr = "Liens d'affiliation"
+summary_en = "Canadian LEGO news and deals site: daily lists of sales at Amazon Canada, Walmart Canada and LEGO.com, Insiders weekend and Black Friday promotions, with RSS, email, WhatsApp and Discord alerts."
+summary_fr = "Site canadien d'actualités et de bons plans LEGO : listes quotidiennes de promotions chez Amazon Canada, Walmart Canada et LEGO.com, promotions du week-end Insiders et du Black Friday, avec alertes par flux RSS, courriel, WhatsApp et Discord."
+strengths_en = ["Daily posts", "Dedicated Canada section"]
+strengths_fr = ["Publications quotidiennes", "Rubrique dédiée au Canada"]
+weaknesses_en = ["Direct reading blocked by a challenge page, not bypassed; read through a search index", "Content centred on promotions"]
+weaknesses_fr = ["Lecture directe bloquée par une page de défi, non contournée ; lu via un index de recherche", "Contenu centré sur les promotions"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.toysnbricks.com/category/lego-sales-canada/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://www.toysnbricks.com/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "lego-forum-italia"
+name = "LEGO Forum Italia"
+url = "https://legoforum.forumcommunity.net/"
+group = "forums"
+covers = ["news", "parts"]
+languages = ["it"]
+countries = ["IT"]
+access = "free-account"
+summary_en = "Italian-language forum with sections on set reviews, shop news, BrickLink usage, part identification, custom builds, Italian AFOL groups, scam reports and monthly build contests."
+summary_fr = "Forum en italien avec des rubriques sur les tests de sets, l'actualité des boutiques, l'usage de BrickLink, l'identification de pièces, les créations originales, les groupes AFOL italiens, les signalements d'arnaques et des concours de construction mensuels."
+strengths_en = ["Long-running archive, widely used by Italian builders", "Italian guide to BrickLink and a scam-reporting section"]
+strengths_fr = ["Archive ancienne, très utilisée par les constructeurs italiens", "Guide BrickLink en italien et rubrique de signalement d'arnaques"]
+weaknesses_en = ["Some sections reserved to approved members", "Direct reading returned an error (503); read through a search index"]
+weaknesses_fr = ["Certaines rubriques réservées aux membres validés", "La lecture directe a renvoyé une erreur (503) ; lu via un index de recherche"]
+status = "active"
+last_activity = "2026-08-08"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://legoforum.forumcommunity.net/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "brick-it-magazine"
+name = "Brick.it Magazine"
+url = "https://www.brickitmagazine.com/"
+feed = "https://www.brickitmagazine.com/feed/"
+group = "news-and-reviews"
+covers = ["news"]
+languages = ["it"]
+countries = ["IT"]
+access = "freemium"
+business_model_en = "Free website; paid subscription for the printed and digital magazine"
+business_model_fr = "Site gratuit ; abonnement payant pour le magazine imprimé et numérique"
+summary_en = "Italian LEGO news site and magazine: daily news, weekly LEGO Ideas review updates, event reports and a magazine whose issue 28 came out in August 2026."
+summary_fr = "Site et magazine italiens d'actualités LEGO : actualités quotidiennes, suivi hebdomadaire des projets LEGO Ideas, comptes rendus d'événements et magazine dont le numéro 28 est paru en août 2026."
+strengths_en = ["Daily posts", "Printed and digital magazine"]
+strengths_fr = ["Publications quotidiennes", "Magazine imprimé et numérique"]
+weaknesses_en = ["Subscription needed for the magazine"]
+weaknesses_fr = ["Abonnement nécessaire pour le magazine"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.brickitmagazine.com/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.brickitmagazine.com/"
+date = "2026-11-23"
+kind = "read"

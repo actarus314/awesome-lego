@@ -1739,3 +1739,69 @@ confidence = "medium"
 url = "https://www.prisjakt.nu/c/lego"
 date = "2026-11-23"
 kind = "read"
+
+[[resource]]
+id = "brickturtle"
+name = "BrickTurtle"
+url = "https://brickturtle.com.au/"
+group = "price-comparators"
+covers = ["official", "data"]
+languages = ["en"]
+countries = ["AU"]
+access = "free-account"
+business_model_en = "Affiliate links from some retailers"
+business_model_fr = "Liens d'affiliation de certains distributeurs"
+summary_en = "Independent Australian price comparison for LEGO sets: prices from more than 20 Australian retailers side by side, price history, retiring-soon list and email price-drop alerts."
+summary_fr = "Comparateur de prix australien indépendant pour les sets LEGO : prix de plus de 20 distributeurs australiens côte à côte, historique de prix, liste des sets bientôt retirés et alertes par courriel."
+strengths_en = ["Price history and drop alerts", "Ranking not influenced by commissions (stated)"]
+strengths_fr = ["Historique des prix et alertes de baisse", "Classement non influencé par les commissions (indiqué)"]
+weaknesses_en = ["Young site: about page published in July 2026", "Account needed for alerts"]
+weaknesses_fr = ["Site récent : page À propos publiée en juillet 2026", "Compte nécessaire pour les alertes"]
+size_en = "1537 sets, 20+ retailers (home page)"
+size_fr = "1537 sets, plus de 20 distributeurs (page d'accueil)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickturtle.com.au/about"
+date = "2026-08-04"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickturtle.com.au/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "lego-price-tracker-nz"
+name = "LEGO Price Tracker"
+url = "https://legopricetracker.co.nz/"
+group = "price-comparators"
+covers = ["official", "data"]
+languages = ["en"]
+countries = ["NZ", "AU", "CA", "US"]
+access = "free-account"
+summary_en = "Price comparison and history for LEGO sets in New Zealand, Australia, Canada and the United States, with retailer pages, retiring-soon list, watchlist and collection tracking."
+summary_fr = "Comparateur et historique de prix des sets LEGO pour la Nouvelle-Zélande, l'Australie, le Canada et les États-Unis, avec pages par distributeur, liste des sets bientôt retirés, liste de suivi et suivi de collection."
+strengths_en = ["Only comparator found that covers New Zealand retailers such as Kmart, The Warehouse and Mighty Ape", "Deals ranked against each set's own price history"]
+strengths_fr = ["Seul comparateur trouvé couvrant des distributeurs néo-zélandais comme Kmart, The Warehouse et Mighty Ape", "Promotions classées par rapport à l'historique de prix de chaque set"]
+weaknesses_en = ["Operator not identified on the pages read", "Account needed for watchlist and collection"]
+weaknesses_fr = ["Exploitant non identifié sur les pages lues", "Compte nécessaire pour la liste de suivi et la collection"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://legopricetracker.co.nz/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://legopricetracker.co.nz/retailers/the-warehouse"
+date = "2026-11-23"
+kind = "indexed"

@@ -1470,3 +1470,223 @@ kind = "read"
 url = "https://www.lukrailway.co.uk/podcast/brick-train-awards-2026-winners/"
 date = "2026-10-09"
 kind = "third-party"
+
+[[resource]]
+id = "brickuniverse"
+name = "BrickUniverse"
+url = "https://www.brickuniverseusa.com/"
+group = "exhibitions"
+covers = ["events"]
+languages = ["en"]
+countries = ["US"]
+access = "paid"
+business_model_en = "Paid public tickets"
+business_model_fr = "Billets publics payants"
+summary_en = "Touring LEGO fan exhibition in United States cities, run by a family company since 2014, with creations by professional and amateur builders, build zones and vendors."
+summary_fr = "Exposition itinérante de fans LEGO dans des villes des États-Unis, tenue par une entreprise familiale depuis 2014, avec des créations de constructeurs professionnels et amateurs, des zones de construction et des vendeurs."
+strengths_en = ["Several cities per year, so one date is usually within reach", "Open call for exhibitors, professional and amateur"]
+strengths_fr = ["Plusieurs villes par an, donc une date souvent accessible", "Appel ouvert aux exposants, professionnels et amateurs"]
+weaknesses_en = ["Aimed at families rather than at an adult builders' convention", "Announced dates cover only a few cities at a time"]
+weaknesses_fr = ["Destiné aux familles plutôt qu'à une convention d'adultes constructeurs", "Les dates annoncées ne couvrent que quelques villes à la fois"]
+size_en = "Stated: over 250 events since 2014"
+size_fr = "Indiqué : plus de 250 événements depuis 2014"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "medium"
+next_date = "2027-01-23"
+recurrence_en = "Touring, several cities per year"
+recurrence_fr = "Itinérant, plusieurs villes par an"
+
+[[resource.sources]]
+url = "https://www.brickuniverseusa.com/about"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.brickuniverseusa.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "bricks-in-the-six"
+name = "Bricks in the Six"
+url = "https://bricksinthe6.ca/"
+feed = "https://bricksinthe6.ca/feed/"
+group = "conventions"
+covers = ["events"]
+languages = ["en"]
+countries = ["CA"]
+access = "paid"
+business_model_en = "Registration fee for exhibitors and attendees; public tickets"
+business_model_fr = "Frais d'inscription pour exposants et participants ; billets publics"
+summary_en = "Convention and public exhibition of LEGO fans in the Toronto area, presented by the organisers as the largest LEGO fan event in Canada, with workshops and building games mainly aimed at adults."
+summary_fr = "Convention et exposition publique de fans LEGO dans la région de Toronto, présentée par les organisateurs comme le plus grand événement de fans LEGO du Canada, avec ateliers et jeux de construction surtout destinés aux adultes."
+strengths_en = ["Five-day format with exhibitor days before the public days", "Registration cost published (110 CAD for the 2026 edition)"]
+strengths_fr = ["Format de cinq jours avec jours exposants avant les jours publics", "Tarif d'inscription publié (110 CAD pour l'édition 2026)"]
+weaknesses_en = ["Size claim comes from the organisers", "No date announced yet for the next edition"]
+weaknesses_fr = ["Affirmation de taille émanant des organisateurs", "Aucune date annoncée pour l'édition suivante"]
+size_en = "2026 edition: 11-15 November, Mississauga"
+size_fr = "Édition 2026 : 11-15 novembre, Mississauga"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "medium"
+city = "Mississauga"
+recurrence_en = "Every November"
+recurrence_fr = "Chaque novembre"
+
+[[resource.sources]]
+url = "https://bricksinthe6.ca/convention/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://bricksinthe6.ca/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "northern-bricks"
+name = "Northern Bricks"
+url = "https://northernbricks.ca/"
+group = "conventions"
+covers = ["events"]
+languages = ["en"]
+countries = ["CA"]
+access = "paid"
+business_model_en = "Paid public tickets; separate registration for adult exhibitors"
+business_model_fr = "Billets publics payants ; inscription séparée des exposants adultes"
+summary_en = "LEGO fan convention in Edmonton, Alberta, run by the Northern Alberta LEGO Users Group at the Alberta Aviation Museum, with an adult builders' area and public days."
+summary_fr = "Convention de fans LEGO à Edmonton, en Alberta, organisée par le Northern Alberta LEGO Users Group au Alberta Aviation Museum, avec un espace pour adultes constructeurs et des jours publics."
+strengths_en = ["Edition dates published a year ahead", "More than 300 creations announced for the public days"]
+strengths_fr = ["Dates de l'édition publiées un an à l'avance", "Plus de 300 créations annoncées pour les jours publics"]
+weaknesses_en = ["Western Canada only"]
+weaknesses_fr = ["Ouest canadien uniquement"]
+size_en = "2027 edition: 13-16 May"
+size_fr = "Édition 2027 : 13-16 mai"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "high"
+city = "Edmonton"
+next_date = "2027-05-13"
+recurrence_en = "Yearly, in May"
+recurrence_fr = "Chaque année, en mai"
+
+[[resource.sources]]
+url = "https://northernbricks.ca/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickomanie"
+name = "Brickomanie"
+url = "https://brickomanie.ca/en"
+group = "conventions"
+covers = ["events"]
+languages = ["en", "fr"]
+countries = ["CA"]
+access = "paid"
+business_model_en = "Paid public tickets; separate registration for adult fans"
+business_model_fr = "Billets publics payants ; inscription séparée des adultes fans"
+summary_en = "LEGO fan convention and public exhibition in Laval, near Montreal, bilingual French and English, with a Brickfilm Festival and games during the adult convention."
+summary_fr = "Convention et exposition publique de fans LEGO à Laval, près de Montréal, bilingue français et anglais, avec un festival de films en briques et des jeux pendant la convention des adultes."
+strengths_en = ["Only major bilingual Canadian convention listed", "Convention days before the public weekend"]
+strengths_fr = ["Seule grande convention canadienne bilingue recensée", "Jours de convention avant le week-end public"]
+weaknesses_en = ["Site needs JavaScript; read through a search index, not directly", "Public ticket details not yet published for 2027"]
+weaknesses_fr = ["Site nécessitant JavaScript ; lu via un index de recherche, pas en direct", "Détails des billets publics pas encore publiés pour 2027"]
+size_en = "10th edition: convention 12-15 August 2027, public 14-15 August"
+size_fr = "10e édition : convention du 12 au 15 août 2027, public les 14 et 15 août"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "medium"
+city = "Laval"
+next_date = "2027-08-12"
+recurrence_en = "Yearly, in August"
+recurrence_fr = "Chaque année, en août"
+
+[[resource.sources]]
+url = "https://brickomanie.ca/en"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://www.marilug.ca/events/lego-fan-conventions"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "brixpo"
+name = "Brixpo"
+url = "https://www.brixpo.com.au/"
+group = "conventions"
+covers = ["events"]
+languages = ["en"]
+countries = ["AU"]
+access = "paid"
+business_model_en = "Paid public tickets"
+business_model_fr = "Billets publics payants"
+summary_en = "South Australia's largest fan-run LEGO event since 2019, organised by volunteers of the Southern Bricks LEGO User Group in Adelaide."
+summary_fr = "Plus grand événement LEGO de fans d'Australie-Méridionale depuis 2019, organisé par des bénévoles du Southern Bricks LEGO User Group à Adélaïde."
+strengths_en = ["Edition 2026 sold out", "Second Australian fan event after Brickvention in a different state"]
+strengths_fr = ["Édition 2026 complète", "Deuxième événement de fans australien après Brickvention, dans un autre État"]
+weaknesses_en = ["No date announced for the next edition", "Size claim comes from the organisers"]
+weaknesses_fr = ["Aucune date annoncée pour l'édition suivante", "Affirmation de taille émanant des organisateurs"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "medium"
+city = "Adelaide"
+recurrence_en = "Yearly"
+recurrence_fr = "Chaque année"
+
+[[resource.sources]]
+url = "https://www.brixpo.com.au/event-info.html"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.brixpo.com.au/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickfair-south-africa"
+name = "Brickfair South Africa"
+url = "https://www.brickfair.co.za/"
+feed = "https://www.brickfair.co.za/feed/"
+group = "conventions"
+covers = ["events"]
+languages = ["en"]
+countries = ["ZA"]
+access = "free"
+business_model_en = "Free public entry; partner: LEGO Certified Stores in South Africa"
+business_model_fr = "Entrée publique gratuite ; partenaire : LEGO Certified Stores d'Afrique du Sud"
+summary_en = "Annual LEGO fan exhibition in Pretoria, in the hallways of Menlyn Shopping Centre in front of the LEGO Certified Store, with more than 200 exhibits and competitions in nine categories."
+summary_fr = "Exposition annuelle de fans LEGO à Pretoria, dans les galeries du centre commercial Menlyn devant le LEGO Certified Store, avec plus de 200 exposants et des concours en neuf catégories."
+strengths_en = ["Free entry", "Exhibitor registration open to LUG members and independents"]
+strengths_fr = ["Entrée gratuite", "Inscription des exposants ouverte aux membres de clubs et aux indépendants"]
+weaknesses_en = ["Mall venue, short two-day format", "No date announced for 2027"]
+weaknesses_fr = ["Lieu dans un centre commercial, format court de deux jours", "Aucune date annoncée pour 2027"]
+size_en = "2026 edition: 24-25 October"
+size_fr = "Édition 2026 : 24-25 octobre"
+status = "active"
+last_activity = "2026-10-25"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "high"
+city = "Pretoria"
+recurrence_en = "Yearly, in October"
+recurrence_fr = "Chaque année, en octobre"
+
+[[resource.sources]]
+url = "https://www.brickfair.co.za/"
+date = "2026-11-23"
+kind = "read"
