@@ -7,7 +7,7 @@ This list aims to be complete, accurate and current. Every entry is checked at i
 **Edit the data yourself:**
 1. Edit the TOML file of the category in [`data/`](data/), following [`data/SCHEMA.md`](data/SCHEMA.md). `README.md`, `full-list.md` and `data/metrics.json` are generated: do not edit them by hand.
 2. Run `python3 scripts/build.py` (Python 3.11 or later, no dependency) and commit the regenerated files with the data.
-3. Open a pull request. Checks validate the data, build the site and test the links.
+3. Open a pull request. The maintainer adds the version number and the CHANGELOG entry when merging. Checks validate the data, build the site and test the links.
 
 **Selection:** the README lists only entries marked `featured = true`, the best of each group; the [full list](full-list.md) keeps every entry, inactive and dead ones included. See [MAINTENANCE.md](MAINTENANCE.md).
 

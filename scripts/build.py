@@ -2,7 +2,7 @@
 """Validate data/*.toml, write README.md (entries marked `featured`) and full-list.md
 (every entry), and build the bilingual GitHub Pages site (site/).
 
-Usage: python3 scripts/build.py [--check]   (standard library only, Python 3.11+)
+Usage: python3 scripts/build.py [--check | --site-only]   (standard library only, Python 3.11+)
 """
 import datetime as dt
 import html
@@ -219,7 +219,7 @@ def page(lang, data):
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     return (tpl.replace("{{LANG}}", lang).replace("{{OTHER}}", other)
                .replace("{{TITLE}}", html.escape(T["title"][lang])).replace("{{TAGLINE}}", html.escape(T["site_tagline"][lang]))
-               .replace("{{DATA}}", blob).replace("{{REPO}}", REPO))
+               .replace("{{DATA}}", blob).replace("{{REPO}}", REPO).replace("{{VERSION}}", data["version"]))
 
 
 def main():
@@ -227,17 +227,22 @@ def main():
     if errors:
         fail(errors)
     m = metrics()
+    version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+    if not re.search(rf"^## v{re.escape(version)} — \d{{4}}-\d{{2}}-\d{{2}}$", (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), re.M):
+        fail([f"CHANGELOG.md has no '## v{version} — YYYY-MM-DD' section for VERSION {version}"])
     texts = {f: readme(cats, m, lang, kind) for (kind, lang), f in FILES.items()}
-    print(f"✓ {sum(len(c['resources']) for c in cats)} resources in {len(cats)} categories")
+    print(f"✓ v{version}: {sum(len(c['resources']) for c in cats)} resources in {len(cats)} categories")
     if "--check" in sys.argv:
         stale = [f for f, t in texts.items() if not (ROOT / f).exists() or (ROOT / f).read_text(encoding="utf-8") != t]
         if stale:
             fail([f"{f} is out of date: run python3 scripts/build.py and commit it" for f in stale])
         return
-    for f, t in texts.items():
-        (ROOT / f).write_text(t, encoding="utf-8")
-    print("✓ " + ", ".join(texts))
+    if "--site-only" not in sys.argv:
+        for f, t in texts.items():
+            (ROOT / f).write_text(t, encoding="utf-8")
+        print("✓ " + ", ".join(texts))
     data = site_data(cats, m)
+    data["version"] = version
     (SITE / "fr").mkdir(parents=True, exist_ok=True)
     (SITE / "index.html").write_text(page("en", data), encoding="utf-8")
     (SITE / "fr" / "index.html").write_text(page("fr", data), encoding="utf-8")

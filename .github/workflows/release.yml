@@ -1,0 +1,26 @@
+name: Release
+on:
+  push:
+    branches: [main]
+    paths: [VERSION]
+permissions:
+  contents: read
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Tag and GitHub release from CHANGELOG.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          v="v$(tr -d '[:space:]' < VERSION)"
+          if gh release view "$v" >/dev/null 2>&1; then echo "$v already released"; exit 0; fi
+          awk -v h="## $v " 'index($0,h)==1{f=1;next} /^## v/{f=0} /^# /{f=0} f' CHANGELOG.md > notes.md
+          [ -s notes.md ] || { echo "No CHANGELOG section for $v"; exit 1; }
+          gh release create "$v" --target "$GITHUB_SHA" --title "$v" --notes-file notes.md

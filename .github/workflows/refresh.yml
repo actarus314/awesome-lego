@@ -1,4 +1,4 @@
-name: Refresh metrics
+name: Data report
 on:
   schedule:
     - cron: "41 3 * * 1"   # weekly
@@ -6,31 +6,25 @@ on:
 permissions:
   contents: read
 jobs:
-  refresh:
+  report:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pull-requests: write
+      issues: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.15"
-      - name: Refresh data/metrics.json
+      - name: Read activity data and write the report
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 scripts/refresh.py > refresh-report.md
-      - name: Open or update the pull request
+        run: python3 scripts/refresh.py > report.md
+      - name: Open or update the report issue
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
         run: |
-          git diff --quiet data/metrics.json && { echo "No change"; exit 0; }
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch -C automatic/metrics
-          git add data/metrics.json
-          git commit -m "Metrics refresh $(date +%F)"
-          git push --force origin automatic/metrics
-          gh pr view automatic/metrics --json state -q .state 2>/dev/null | grep -q OPEN \
-            && gh pr edit automatic/metrics --body-file refresh-report.md \
-            || gh pr create --head automatic/metrics --title "Metrics refresh" --body-file refresh-report.md --label automatic
+          n=$(gh issue list --label automatic --state open --search "Weekly data report in:title" --json number -q '.[0].number')
+          if [ -n "$n" ]; then gh issue edit "$n" --body-file report.md; else gh issue create --title "Weekly data report" --label automatic --body-file report.md; fi
