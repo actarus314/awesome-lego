@@ -171,6 +171,7 @@ def readme(cats, m, lang, kind="readme"):
         for g in c["category"].get("groups", []):
             if any(r["group"] == g["id"] and keep(r) for r in c["resources"]):
                 out.append(f"  - [{g['name_' + lang]}](#{uniq(g['name_' + lang])})")
+    listed = set()
     for c in cats:
         cat = c["category"]
         if not any(keep(r) for r in c["resources"]):
@@ -179,7 +180,8 @@ def readme(cats, m, lang, kind="readme"):
         if cat.get("summary_" + lang):
             out += [cat["summary_" + lang], ""]
         for g in cat.get("groups", []):
-            rs = [r for r in c["resources"] if r["group"] == g["id"] and keep(r)]
+            rs = [r for r in c["resources"] if r["group"] == g["id"] and keep(r) and r["url"] not in listed]
+            listed.update(r["url"] for r in rs)  # one link once per file (awesome-lint: double-link)
             if not rs:
                 continue
             out += [f"### {g['name_' + lang]}", ""]

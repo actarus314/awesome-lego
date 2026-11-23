@@ -58,7 +58,7 @@ LEGO officiel, marques alternatives européennes et chinoises, groupes de jouets
 
 ### LEGO officiel
 
-- [LEGO](https://www.lego.com/fr-fr) - Danemark. Fabricant d'origine du système de briques à tenons de 8 mm, avec une gamme adulte (Icons, Technic, Botanicals, Art) et le plus grand portefeuille de licences. La boutique française affiche des sets adultes et un set LEGO Ideas Godzilla annoncé pour le 27 novembre 2026. 🧱
+- [LEGO](https://www.lego.com/fr-fr) - Danemark. Fabricant d'origine du système de briques à tenons de 8 mm, avec une gamme adulte (Icons, Technic, Botanicals, Art) et le plus grand portefeuille de licences. 🧱
 
 ### Alternatives européennes
 
@@ -69,12 +69,12 @@ LEGO officiel, marques alternatives européennes et chinoises, groupes de jouets
 
 - [CaDA (Double Eagle)](https://cadatoys.com/) - Chine (Shantou), groupe Double Eagle, qui fabrique aussi les briques. Voitures de type Technic, souvent motorisées ou télécommandées et sous licence (série Master au 1:8), ainsi que des modèles spatiaux et militaires. 🔶
 - [Lumibricks (formerly Funwhole)](https://www.lumibricks.com/) - Chine (Canton). Sets complets de bâtiments et de scènes avec éclairage intégré, en 13 collections dont Cyberpunk Neoncity et la licence Blade Runner 2049. Funwhole a été renommée Lumibricks en 2025. 🔶
-- [Mould King](https://mouldkingcorp.com/) - Chine (Shantou). Très grands modèles Technic motorisés, grues, véhicules et trains à très faible prix par pièce. Briques surtout de GoBricks. Soldes Black Friday de 10 % du 20 novembre au 1er décembre 2026. 🔶
+- [Mould King](https://mouldkingcorp.com/) - Chine (Shantou). Très grands modèles Technic motorisés, grues, véhicules et trains à très faible prix par pièce. Briques surtout de GoBricks. 🔶
 - [Pantasy](https://www.pantasy.com/) - Chine (Guangdong Pinqi Culture and Technology). Bâtiments modulaires, objets rétro, fleurs et licences avec pièces imprimées, pour collectionneurs adultes. Briques de GoBricks. 🔶
 
 ### Groupes de jouets et de maquettes
 
-- [Mattel Brick Shop (MEGA)](https://shopping.mattel.com/de-de/collections/bausteine-sets) - États-Unis (Mattel). Ligne adulte lancée en 2025 : voitures Hot Wheels sous licence (Lamborghini, Audi, Honda, Aston Martin), Masters of the Universe, Halo, Xbox. MEGA Bloks reste la gamme enfants. La boutique allemande annonce la série Hot Wheels Racer 1 comme bientôt disponible. 🔶
+- [Mattel Brick Shop (MEGA)](https://shopping.mattel.com/de-de/collections/bausteine-sets) - États-Unis (Mattel). Ligne adulte lancée en 2025 : voitures Hot Wheels sous licence (Lamborghini, Audi, Honda, Aston Martin), Masters of the Universe, Halo, Xbox. MEGA Bloks reste la gamme enfants. 🔶
 - [Revell Brick System](https://revell.com/collections/brick-system) - Allemagne. Gamme de briques du fabricant de maquettes en plastique, destinée aux adultes et lancée en 2025 avec le sous-marin de Das Boot (6483 pièces, 1:56). Ajouts de 2026 : V-22 Osprey (3730 pièces), Spitfire Mk.II Iron Maiden (2802), F-14A Tomcat Top Gun (2687) et Cutty Sark (7325 pièces, 549 euros). 🔶
 
 ### Fabricants et fournisseurs de briques
@@ -91,12 +91,10 @@ Boutiques en ligne et en magasin vendant du LEGO officiel, des marques de brique
 
 ### LEGO officiel
 
-- [LEGO.com (France)](https://www.lego.com/fr-fr) - Boutique du fabricant pour la France : catalogue complet, exclusivités, cartes-cadeaux, Pick a Brick. Livraison uniquement vers des adresses en France. 🧱
 - [LToys](https://www.ltoys.lu/fr) - Spécialiste luxembourgeois (LTOYS S.A R.L., fondée en 2017, magasin à Niederanven) : plus de 1000 articles LEGO officiel, plus COBI, CaDA, Pantasy, Lumibricks, Blokees et voitures miniatures. 🧱🔶
 
 ### Marques alternatives
 
-- [BlueBrixx](https://www.bluebrixx.com/fr/) - Marque et distributeur (BB Service GmbH, Wiesbaden) : sets propres sous licences que LEGO ne détient pas (Star Trek, Stargate, RoboCop, véhicules d'urgence), plus CaDA, Cobi et Xingbao. 🔶
 - [Brickeez](https://www.brickeez.com) - Boutique française (Hérault) : LEGO officiel neuf, Lumibricks, Pantasy, COBI, CaDA. 🧱🔶
 - [KBS Shop](https://kbs-shop.com) - Boutique allemande de briques techniques et télécommandées : Mould King, CaDA, Reobrix, Wange, Jie Star, Panlos. 🔶
 

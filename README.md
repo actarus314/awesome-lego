@@ -58,7 +58,7 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 ### Official LEGO
 
-- [LEGO](https://www.lego.com/fr-fr) - Denmark. Original maker of the 8 mm stud brick system, with an adult range (Icons, Technic, Botanicals, Art) and the largest licence portfolio. The French shop lists adult sets and a LEGO Ideas Godzilla set due on 27 November 2026. 🧱
+- [LEGO](https://www.lego.com/fr-fr) - Denmark. Original maker of the 8 mm stud brick system, with an adult range (Icons, Technic, Botanicals, Art) and the largest licence portfolio. 🧱
 
 ### European alternatives
 
@@ -69,12 +69,12 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 - [CaDA (Double Eagle)](https://cadatoys.com/) - China (Shantou), Double Eagle group, which also makes the bricks. Technic-style cars, often motorised or remote-controlled and licensed (Master series at 1:8), plus space and military models. 🔶
 - [Lumibricks (formerly Funwhole)](https://www.lumibricks.com/) - China (Guangzhou). Complete sets of buildings and scenes with integrated light, in 13 collections including Cyberpunk Neoncity and the Blade Runner 2049 licence. Funwhole was renamed Lumibricks in 2025. 🔶
-- [Mould King](https://mouldkingcorp.com/) - China (Shantou). Very large motorised Technic models, cranes, vehicles and trains at a very low price per piece. Bricks come mostly from GoBricks. Black Friday sale of 10 % runs 20 November to 1 December 2026. 🔶
+- [Mould King](https://mouldkingcorp.com/) - China (Shantou). Very large motorised Technic models, cranes, vehicles and trains at a very low price per piece. Bricks come mostly from GoBricks. 🔶
 - [Pantasy](https://www.pantasy.com/) - China (Guangdong Pinqi Culture and Technology). Modular buildings, retro objects, flowers and licences with printed parts, aimed at adult collectors. Bricks come from GoBricks. 🔶
 
 ### Toy and model-kit companies
 
-- [Mattel Brick Shop (MEGA)](https://shopping.mattel.com/de-de/collections/bausteine-sets) - United States (Mattel). Adult line launched in 2025: licensed Hot Wheels cars (Lamborghini, Audi, Honda, Aston Martin), Masters of the Universe, Halo, Xbox. MEGA Bloks remains the children's range. The German shop lists Hot Wheels Racer Series 1 as coming soon. 🔶
+- [Mattel Brick Shop (MEGA)](https://shopping.mattel.com/de-de/collections/bausteine-sets) - United States (Mattel). Adult line launched in 2025: licensed Hot Wheels cars (Lamborghini, Audi, Honda, Aston Martin), Masters of the Universe, Halo, Xbox. MEGA Bloks remains the children's range. 🔶
 - [Revell Brick System](https://revell.com/collections/brick-system) - Germany. Brick line of the plastic model-kit maker, aimed at adults and launched in 2025 with the submarine from Das Boot (6483 pieces, 1:56). 2026 additions: V-22 Osprey (3730 pieces), Spitfire Mk.II Iron Maiden (2802), F-14A Tomcat Top Gun (2687) and Cutty Sark (7325 pieces, 549 euros). 🔶
 
 ### Brick manufacturers and suppliers
@@ -91,12 +91,10 @@ Online and physical shops selling official LEGO, alternative brick brands and ge
 
 ### Official LEGO
 
-- [LEGO.com (France)](https://www.lego.com/fr-fr) - Manufacturer's store for France: full catalogue, exclusives, gift cards, Pick a Brick. Delivers only to addresses in France. 🧱
 - [LToys](https://www.ltoys.lu/fr) - Luxembourg specialist (LTOYS S.A R.L., founded 2017, store in Niederanven): more than 1000 official LEGO items, plus COBI, CaDA, Pantasy, Lumibricks, Blokees and die-cast cars. 🧱🔶
 
 ### Alternative brands
 
-- [BlueBrixx](https://www.bluebrixx.com/fr/) - Brand and retailer (BB Service GmbH, Wiesbaden): own sets under licences not held by LEGO (Star Trek, Stargate, RoboCop, emergency vehicles), plus CaDA, Cobi and Xingbao. 🔶
 - [Brickeez](https://www.brickeez.com) - French online store (Hérault): new official LEGO, Lumibricks, Pantasy, COBI, CaDA. 🧱🔶
 - [KBS Shop](https://kbs-shop.com) - German online store for technical and remote-controlled bricks: Mould King, CaDA, Reobrix, Wange, Jie Star, Panlos. 🔶
 

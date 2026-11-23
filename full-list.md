@@ -61,12 +61,12 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 ### Official LEGO
 
-- [LEGO](https://www.lego.com/fr-fr) - Denmark. Original maker of the 8 mm stud brick system, with an adult range (Icons, Technic, Botanicals, Art) and the largest licence portfolio. The French shop lists adult sets and a LEGO Ideas Godzilla set due on 27 November 2026. 🧱
+- [LEGO](https://www.lego.com/fr-fr) - Denmark. Original maker of the 8 mm stud brick system, with an adult range (Icons, Technic, Botanicals, Art) and the largest licence portfolio. 🧱
 
 ### European alternatives
 
 - [BlueBrixx](https://www.bluebrixx.com/fr/) - Germany (BB Service GmbH). Brand and shop for architecture, trains, medieval, vehicles and licences (BlueBrixx Pro for adults). Bricks come from several Chinese manufacturers; design and distribution are in Germany. 🔶
-- [Brixies](https://brixies.de/) - Germany. 4 mm micro-bricks (monuments, postcards) and a Plus range compatible with LEGO (licensed Fendt, Claas and Deutz-Fahr tractors, themed worlds). A Black Week sale runs 23 to 30 November 2026. 🔶
+- [Brixies](https://brixies.de/) - Germany. 4 mm micro-bricks (monuments, postcards) and a Plus range compatible with LEGO (licensed Fendt, Claas and Deutz-Fahr tractors, themed worlds). 🔶
 - [BRYX](https://bryxtoys.com/) - Germany (Berlin). Compatible brand with official licences from football clubs (21 stadium sets, 298 to 6162 bricks), landmarks and about 400 single parts sold individually. Sets are designed in Berlin; logos are printed, not stuck. 🔶
 - [COBI](https://cobi.com/fr-fr) - Poland. Maker of compatible bricks with its own factory in Mielec, specialised in historical and military models (tanks, aircraft, ships) and licensed vehicles. The European shop is active with a French interface and prices in euros. 🔶
 
@@ -78,9 +78,9 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 - [JMBricklayer](https://www.jmbricklayer.com/) - China. Fantasy creatures, dragons, ships, art in bricks and hand-crank kinetic mechanisms for adult collectors; ship models include Black Pearl, Queen Anne's Revenge and Bismarck. 🔶
 - [Keeppley (Qman)](https://c-en.qmjm.com/) - China (Guangdong Qman Industry Toys, producing original blocks since 1994). Keeppley is the licensed line launched in 2019: Sanrio, Hello Kitty, Doraemon, Naruto, Detective Conan, Pokemon; Qman also sells under its own name. 🔶
 - [Lumibricks (formerly Funwhole)](https://www.lumibricks.com/) - China (Guangzhou). Complete sets of buildings and scenes with integrated light, in 13 collections including Cyberpunk Neoncity and the Blade Runner 2049 licence. Funwhole was renamed Lumibricks in 2025. 🔶
-- [Mork (XMork)](http://www.morktoys.com/) - China (Shantou Chenghai XMORK Blocks Toy Factory, since 2020, successor of UrGe). Original and licensed sets of the MOC type, with a white-label service. 🔶
-- [Mould King](https://mouldkingcorp.com/) - China (Shantou). Very large motorised Technic models, cranes, vehicles and trains at a very low price per piece. Bricks come mostly from GoBricks. Black Friday sale of 10 % runs 20 November to 1 December 2026. 🔶
-- [Nifeliz](https://www.nifeliz.com/) - China (Shantou). Technic, adult decoration, flowers and machines. The brand site describes its own factory in Shantou with three workshops (August 2024) and announces a Black Friday sale for 27 to 30 November 2026. 🔶
+- [Mork (XMork)](http://www.morktoys.com/) - China (Shantou Chenghai XMORK Blocks Toy Factory, since 2020, successor of UrGe). Original and licensed sets of the custom-build type, with a white-label service. 🔶
+- [Mould King](https://mouldkingcorp.com/) - China (Shantou). Very large motorised Technic models, cranes, vehicles and trains at a very low price per piece. Bricks come mostly from GoBricks. 🔶
+- [Nifeliz](https://www.nifeliz.com/) - China (Shantou). Technic, adult decoration, flowers and machines. The brand site describes its own factory in Shantou with three workshops (August 2024). 🔶
 - [Pantasy](https://www.pantasy.com/) - China (Guangdong Pinqi Culture and Technology). Modular buildings, retro objects, flowers and licences with printed parts, aimed at adult collectors. Bricks come from GoBricks. 🔶
 - [Rastar](https://www.rastar.com/) - China (Rastar Group, listed toy and games company). Licensed car models in bricks: Pagani Huayra BC at 1:8 (3068 pieces, remote control), Maserati MC20, Audi R8, Hummer EV. Bricks reportedly from GoBricks. 🔶
 - [Reobrix](https://reobrix.fr/fr_FR/index) - China; the French shop is the official European Union store, shipping from Poland. Large mechanical and display models: ships, construction machines, motorbikes, trains, buildings. Its home page presents ship models up to 108 cm long. 🔶
@@ -92,7 +92,7 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 ### Toy and model-kit companies
 
-- [Mattel Brick Shop (MEGA)](https://shopping.mattel.com/de-de/collections/bausteine-sets) - United States (Mattel). Adult line launched in 2025: licensed Hot Wheels cars (Lamborghini, Audi, Honda, Aston Martin), Masters of the Universe, Halo, Xbox. MEGA Bloks remains the children's range. The German shop lists Hot Wheels Racer Series 1 as coming soon. 🔶
+- [Mattel Brick Shop (MEGA)](https://shopping.mattel.com/de-de/collections/bausteine-sets) - United States (Mattel). Adult line launched in 2025: licensed Hot Wheels cars (Lamborghini, Audi, Honda, Aston Martin), Masters of the Universe, Halo, Xbox. MEGA Bloks remains the children's range. 🔶
 - [Revell Brick System](https://revell.com/collections/brick-system) - Germany. Brick line of the plastic model-kit maker, aimed at adults and launched in 2025 with the submarine from Das Boot (6483 pieces, 1:56). 2026 additions: V-22 Osprey (3730 pieces), Spitfire Mk.II Iron Maiden (2802), F-14A Tomcat Top Gun (2687) and Cutty Sark (7325 pieces, 549 euros). 🔶
 
 ### Brick manufacturers and suppliers
@@ -102,7 +102,7 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 ### Other formats
 
-- [Blokees](https://blokees.com/) - China. Articulated assemble-and-pose figures and vehicles under licence (Transformers, Ultraman, Naruto, DC, Jurassic Park), outside the 8 mm stud system. DC Champion Class Batman: Hush figures are open for pre-order. 🔶
+- [Blokees](https://blokees.com/) - China. Articulated assemble-and-pose figures and vehicles under licence (Transformers, Ultraman, Naruto, DC, Jurassic Park), outside the 8 mm stud system. 🔶
 - [LOZ](https://loz-mini.com/en) - China; the official site is operated from Hong Kong (I-Had Creation). Micro-blocks and Diamond Blocks of 4 to 6 mm (food shops, street scenes, characters), not compatible with the 8 mm pitch. 🔶
 - [nanoblock (Kawada)](https://www.kawada-toys.com/en/brand/nanoblock/) - Japan (Kawada). Micro-blocks whose smallest piece measures 4 mm by 4 mm by 5 mm, on sale since October 2008: animals, landmarks, ships and castles, with an Advanced Hobby series for adults. Not compatible with the 8 mm stud system. 🔶
 
@@ -114,7 +114,6 @@ Online and physical shops selling official LEGO, alternative brick brands and ge
 
 - [Baustein Store](https://bausteinstore.de) - German online store selling official LEGO and delivering across the European Union and Monaco by DHL. 🧱
 - [idee+spiel (duo idee+spiel)](https://www.ideeundspiel.com) - Online shop of the German toy retail cooperative duo idee+spiel (duo and idee+spiel merged on 1 January 2026). Delivery to France not established. 🧱
-- [LEGO.com (France)](https://www.lego.com/fr-fr) - Manufacturer's store for France: full catalogue, exclusives, gift cards, Pick a Brick. Delivers only to addresses in France. 🧱
 - [LToys](https://www.ltoys.lu/fr) - Luxembourg specialist (LTOYS S.A R.L., founded 2017, store in Niederanven): more than 1000 official LEGO items, plus COBI, CaDA, Pantasy, Lumibricks, Blokees and die-cast cars. 🧱🔶
 
 ### Alternative brands
@@ -123,13 +122,11 @@ Online and physical shops selling official LEGO, alternative brick brands and ge
 - [Barweer](https://www.barweer.com) - Chinese brand selling modular and film-themed sets directly, with warehouses in China, the United States and Europe. 🔶
 - [Bausteinreich](https://www.bausteinreich.de) - Berlin online store (Lonestar-Bricks GmbH) for alternative bricks: Mould King, Cobi, Wange, Sembo, Balody and others; own warehouse in Berlin. 🔶
 - [Blouge Brick Store](https://blouge-brickstore.fr) - Lille online store of compatible bricks (Pantasy, CaDA, LOZ, FunWhole); products stated to meet CE and EN71 standards, sets delivered in sealed original boxes. 🔶
-- [BlueBrixx](https://www.bluebrixx.com/fr/) - Brand and retailer (BB Service GmbH, Wiesbaden): own sets under licences not held by LEGO (Star Trek, Stargate, RoboCop, emergency vehicles), plus CaDA, Cobi and Xingbao. 🔶
 - [Brickcoast](https://brickcoast.de) - Retailer in Castrop-Rauxel (Steinebande GmbH) of official LEGO, Mould King and Cobi. Site not readable in this pass; data from the first pass. 🧱🔶
 - [Brickeez](https://www.brickeez.com) - French online store (Hérault): new official LEGO, Lumibricks, Pantasy, COBI, CaDA. 🧱🔶
 - [Brickmo](https://www.brickmo.com/fr/) - Austrian online store (Scalemo GmbH) selling official LEGO and alternative brands (Cobi, CaDA, Sluban, Wange, Xingbao, Jekca). Site available in French. 🧱🔶
 - [Brickparts.nl](https://brickparts.nl) - Dutch online store (Kuinre) for sets and parts. Whether it is the 'Brickparts' of the original request is not confirmed. 🔶
 - [ChowBrick](https://www.chowbrick.com) - Online store shipping from China to the rest of the world. 🔶
-- [COBI Europe (official store)](https://cobi.com/fr-fr) - Official online store of the Polish manufacturer COBI S.A. (Warsaw), shipping across the European Union; historical military models, licensed cars, ships and aircraft. 🔶
 - [JoyGobricks](https://joygobricks.com) - Reseller of Gobricks parts and sets; ships from China. 🔶
 - [KBS Shop](https://kbs-shop.com) - German online store for technical and remote-controlled bricks: Mould King, CaDA, Reobrix, Wange, Jie Star, Panlos. 🔶
 - [Mister Brixx](https://www.misterbrixx.de) - Duisburg shop selling official LEGO, Mould King, CaDA, Reobrix, Panlos, Cobi; buys and resells LEGO. 🧱🔶
