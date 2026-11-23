@@ -241,7 +241,7 @@ def site_data(cats, m):
         gnames = {g["id"]: {"en": g["name_en"], "fr": g["name_fr"]} for g in cat.get("groups", [])}
         for r in c["resources"]:
             status, last = effective(r, m)
-            row = {k: r.get(k) for k in ("id", "name", "url", "covers", "languages", "countries", "access", "confidence", "checked", "github", "subreddit", "featured", "city")}
+            row = {k: r.get(k) for k in ("id", "name", "url", "covers", "languages", "countries", "access", "confidence", "checked", "github", "subreddit", "featured", "city", "ships_to_france")}
             row["next"] = str(r["next_date"]) if r.get("next_date") and str(r["next_date"]) >= dt.date.today().isoformat() else None  # past dates are dropped at each daily build
             row.update(cat=cat["id"], group=r["group"], status=status, last=last,
                        metrics=m.get(r["id"], {}),
@@ -258,7 +258,8 @@ def site_data(cats, m):
                    "groups": [{"id": g["id"], "en": g["name_en"], "fr": g["name_fr"]} for g in c["category"].get("groups", [])]} for c in cats]
     ids = {r["id"] for r in rows}
     journeys = tomllib.load(open(DATA / "journeys.toml", "rb")).get("journey", []) if (DATA / "journeys.toml").exists() else []
-    missing = [f"journeys.toml: {j['id']}: unknown resource {i}" for j in journeys for i in j["resources"] if i not in ids]
+    missing = [f"journeys.toml: {j['id']}: unknown resource {i}" for j in journeys for i in j["resources"] + j.get("always", []) if i not in ids]
+    missing += [f"journeys.toml: {j['id']}: scope must be country, language or global" for j in journeys if j.get("scope") not in ("country", "language", "global")]
     if missing:
         fail(missing)
     return {"built": dt.date.today().isoformat(), "categories": categories, "resources": rows, "journeys": journeys,

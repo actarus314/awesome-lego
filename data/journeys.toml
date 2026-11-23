@@ -1,54 +1,67 @@
-# Where to start: one need, the few best resources for it (ids from data/*.toml). Shown on the website.
+# "Where to start": one ranked list per need. The website keeps, in this order, the first 5 that suit the visitor:
+# scope "country": international entries and those of the visitor's country (from the browser; for France, also shops that deliver there);
+# scope "language": entries in the visitor's language or in English; scope "global": all. `always`: shown whatever the visitor.
+
 [[journey]]
 id = "buy"
 title_en = "Buy a set, official LEGO or alternative"
 title_fr = "Acheter un set, LEGO officiel ou alternative"
-resources = ["brick-broker", "brickmitri", "lego-com-fr", "kbs-shop", "bluebrixx-shop"]
+scope = "country"
+resources = ["brick-broker", "brickmitri", "lego-com-fr", "brickmerge", "ltoys", "kbs-shop", "bluebrixx-shop", "baustein-store", "bricksdeal", "promoklocki", "brickzone-dk", "prisjakt-se", "brickitalia", "brickturtle", "lego-price-tracker-nz", "brickfact", "lakea", "cobi-europe"]
 
 [[journey]]
 id = "reviews"
 title_en = "Judge an alternative brand"
 title_fr = "Juger une marque alternative"
-resources = ["merlins-bricks", "the-laser-symphony", "jangs-other-bricks", "hardware-fr-compatible-bricks"]
+scope = "language"
+resources = ["merlins-bricks", "the-laser-symphony", "hardware-fr-compatible-bricks", "klemmbaustein-com", "jangs-other-bricks", "brickmeet", "seven-star-bricks", "monster-brick-reviews"]
 
 [[journey]]
 id = "second-hand"
 title_en = "Buy second-hand or retired sets"
 title_fr = "Acheter d'occasion ou un set retiré"
-resources = ["bricklink-marketplace", "vinted", "leboncoin", "brickland", "brickplus"]
+scope = "country"
+resources = ["leboncoin", "vinted", "kleinanzeigen", "2dehands-be", "blocket-se", "dba-dk", "finn-no", "bricklink-marketplace", "brick-owl-marketplace", "catawiki"]
 
 [[journey]]
 id = "create"
 title_en = "Design and build your own models"
 title_fr = "Concevoir et construire ses propres modèles"
+scope = "global"
 resources = ["rebrickable", "bricklink-studio", "pick-a-brick", "brickognize"]
 
 [[journey]]
 id = "news"
 title_en = "Follow the news and reviews"
 title_fr = "Suivre l'actualité et les tests"
-resources = ["hothbricks", "brothers-brick", "new-elementary", "jangbricks"]
+scope = "language"
+resources = ["hothbricks", "promobricks", "zusammengebaut", "orangeteam-lug", "elcatalejo", "fani-klockow", "bouwsteentjes", "kostkoviny", "brothers-brick", "new-elementary", "jangbricks", "brick-fanatics"]
 
 [[journey]]
 id = "value"
 title_en = "Know what a set is worth"
 title_fr = "Connaître la valeur d'un set"
+scope = "global"
 resources = ["brickeconomy", "brickset", "setdb"]
 
 [[journey]]
 id = "visit"
 title_en = "Visit a place"
 title_fr = "Visiter un lieu"
-resources = ["lego-house", "legoland-parks", "museum-of-bricks", "frankensteins-klemmbaustein-museum", "palais-de-la-maquette", "time-for-bricks"]
+scope = "country"
+resources = ["lego-house", "palais-de-la-maquette", "lego-store-paris-les-halles", "time-for-bricks", "frankensteins-klemmbaustein-museum", "legoland-deutschland", "merlins-steine-permanent-exhibitions", "lebrickgo", "museum-of-bricks", "railway-brick-museum", "elbabrick", "bricks-and-figs", "legoland-windsor", "lego-store-locator", "legoland-parks"]
+always = ["lego-house"]
 
 [[journey]]
 id = "meet"
 title_en = "Meet other fans"
 title_fr = "Rencontrer d'autres fans"
-resources = ["avenue-de-la-brique-expositions", "avenue-de-la-brique-associations", "freelug", "skaerbaek-fan-weekend", "lego-fan-colab-communities"]
+scope = "country"
+resources = ["avenue-de-la-brique-associations", "freelug", "avenue-de-la-brique-expositions", "fanabriques", "steine-kanal-veranstaltungskalender", "stonewars-events", "bricking-bavaria", "lgoe", "brickish", "bricks-mcgee-uk-ireland-events", "belug", "brick-mania-antwerp", "lowlug", "bricktopia-world", "itlug", "ale-spain", "lugpol", "byggepladen", "swebrick", "brikkelauget", "palikkatakomo", "plug-pt", "brickworld", "northern-bricks", "brickvention", "zalug", "lego-fan-colab-communities", "skaerbaek-fan-weekend", "fan-colab-events"]
 
 [[journey]]
 id = "learn"
 title_en = "Understand bricks and their history"
 title_fr = "Comprendre la brique et son histoire"
-resources = ["brick-architect", "lego-history", "cjeu-lego-juris", "blocks-magazine"]
+scope = "language"
+resources = ["hellobricks-lexique", "spielzeug-fuchs-lexikon", "brick-architect", "lego-history", "cjeu-lego-juris", "blocks-magazine", "sariel"]

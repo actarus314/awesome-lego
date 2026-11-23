@@ -66,6 +66,6 @@ Writing rules:
 
 ## Other data files
 
-- `data/journeys.toml`: the "Where to start" needs of the website, each with a title in both languages and a list of resource ids (`[[journey]]` with `id`, `title_en`, `title_fr`, `resources`). An unknown id fails the build.
+- `data/journeys.toml`: the "Where to start" needs of the website (`[[journey]]` with `id`, `title_en`, `title_fr`, `scope`, `resources`, optional `always`). `resources` is one ranked list mixing international and local entries; the website keeps, in this order, the first 5 that suit the visitor: `scope = "country"` keeps international entries and those of the visitor's country (from the browser; for France, also entries with `ships_to_france`), `scope = "language"` keeps entries in the visitor's language or in English, `scope = "global"` keeps all; ids in `always` are kept for everyone. An unknown id or scope fails the build.
 - `data/backend/`: figures used by the findings but not listed as entries, each file with its `source`, its reading `date` and its source `kind`. `clubs-by-country.json`: fan communities per country (ISO 3166-1 alpha-2) in the official LEGO Fan CoLab directory. `population.json`: World Bank population (SP.POP.TOTL) of the same countries.
 - `data/metrics.json`: local cache of the last activity reading, written by `scripts/refresh.py`.

@@ -366,7 +366,12 @@ const ft=document.getElementById('ftoggle'),bar=document.querySelector('.bar');
 ft.onclick=()=>{const o=bar.classList.toggle('open');ft.setAttribute('aria-expanded',o)};
 function nActive(){return st.cat.size+st.cov.size+['featured','active'].filter(k=>st[k]).length+st.langs.size+(st.country?1:0)}
 function update(all=true){const n=nActive();ft.textContent=t('filters')+(n?` (${n})`:'');drawFilters();drawList();if(all)drawMap();writeHash()}
-document.getElementById('journeys').innerHTML=(D.journeys||[]).map(j=>`<div class="jr"><h3>${esc(j['title_'+L])}</h3><ul>${j.resources.map(id=>R.find(r=>r.id===id)).filter(Boolean).map(r=>`<li><a href="#" data-go="${r.id}">${esc(r.name)}</a></li>`).join('')}</ul></div>`).join('');
+// "Where to start": each need keeps the first 5 entries of its ranked list that suit the visitor (data/journeys.toml)
+const VC=(()=>{const tags=navigator.languages||[navigator.language];for(const t of tags){const m=/^[a-z]{2,3}-([A-Z]{2})$/i.exec(t||'');if(m)return m[1].toUpperCase()}
+ return {fr:'FR',de:'DE',it:'IT',es:'ES',nl:'NL',pl:'PL',pt:'PT',da:'DK',sv:'SE',nb:'NO',no:'NO',fi:'FI',cs:'CZ'}[VL]||''})();
+const suits=(j,r)=>{if((j.always||[]).includes(r.id)||j.scope==='global')return true;const c=r.countries||[],l=r.languages||[];
+ return j.scope==='language'?(l.includes(VL)||l.includes('en')):(c.includes('international')||(VC&&c.includes(VC))||(VC==='FR'&&r.ships_to_france))};
+document.getElementById('journeys').innerHTML=(D.journeys||[]).map(j=>`<div class="jr"><h3>${esc(j['title_'+L])}</h3><ul>${j.resources.map(id=>R.find(r=>r.id===id)).filter(r=>r&&suits(j,r)).slice(0,5).map(r=>`<li><a href="#" data-go="${r.id}">${esc(r.name)}</a></li>`).join('')}</ul></div>`).join('');
 document.getElementById('journeys').onclick=e=>{const a=e.target.closest('[data-go]');if(a){e.preventDefault();openEntry(a.dataset.go)}};
 const landing=new URLSearchParams(location.hash.slice(1)).get('entry');  // #entry=<id>: a link to one entry (feed, outside pages)
 readHash();update();show(location.hash==='#findings'?'ins':'dir');if(landing)openEntry(landing);

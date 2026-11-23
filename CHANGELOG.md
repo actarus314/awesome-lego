@@ -2,6 +2,9 @@
 
 # v1.x — Bilingual directory of the brick world, from brands and shops to events, places, clubs and know-how: resources checked at their source, best-of README, website with map, journeys and findings, automatic updates.
 
+## v1.18 — 2026-11-23
+Website: "Where to start" adapts to the visitor. Each need keeps one ranked list mixing international and local entries, and the page shows the first five that suit the visitor's country (buying, second-hand, visiting, meeting fans) or language (news, reviews, learning), from the browser.
+
 ## v1.17 — 2026-11-23
 Website: "In French" gives way to one button per language, combinable: the visitor's browser language, the page language and English (for example "In German" and "In English"), kept in the address as `lang=`.
 
