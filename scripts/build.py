@@ -243,7 +243,9 @@ def site_data(cats, m):
 def page(lang, data):
     tpl = (ROOT / "site-src" / "index.html").read_text(encoding="utf-8")
     other = "fr/" if lang == "en" else "../"
-    blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    other_lang = "fr" if lang == "en" else "en"
+    lean = dict(data, resources=[{k: v for k, v in r.items() if k != other_lang} for r in data["resources"]])  # each page carries its own language only
+    blob = json.dumps(lean, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     return (tpl.replace("{{LANG}}", lang).replace("{{OTHER}}", other)
                .replace("{{TITLE}}", html.escape(T["title"][lang])).replace("{{TAGLINE}}", html.escape(T["site_tagline"][lang]))
                .replace("{{MINISEARCH}}", (ROOT / "site-src" / "vendor" / "minisearch.min.js").read_text(encoding="utf-8"))
