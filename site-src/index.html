@@ -51,6 +51,7 @@ h2{font-size:22px;margin:44px 0 6px;letter-spacing:-.01em;border-left:4px solid 
 .map{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
 .tile{grid-column:span var(--span,3);background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:8px;cursor:pointer;min-height:120px}
 .tile:hover,.tile.on{border-color:var(--accent)}.tile.on{box-shadow:0 0 0 2px var(--accent) inset}
+.ci{width:22px;height:22px;vertical-align:-4px;margin-right:9px;border-radius:5px}
 .tile h3{margin:0;font-size:16px}.tile .n{font:750 30px/1 system-ui,sans-serif;font-variant-numeric:tabular-nums}
 .studs{display:flex;flex-wrap:wrap;gap:4px;margin-top:auto}
 .stud{display:block;width:13px;height:13px;border-radius:50%;background:var(--other);border:0;padding:0;cursor:pointer;flex:none}
@@ -202,6 +203,7 @@ pa_pop:{en:'population',fr:'population'},pa_n:{en:'recognized communities',fr:'c
 const t=k=>(S[k]||{})[L]||k;
 document.querySelectorAll('[data-t]').forEach(e=>e.textContent=t(e.dataset.t));
 const R=D.resources,C=D.categories,catName=id=>(C.find(c=>c.id===id)||{})[L]||id,shortCat=id=>catName(id).split(/[,(]/)[0].replace(/ (et|and) .*/,'');
+const ci=id=>`<img class="ci" src="${L==='fr'?'../':''}media/icons/${id}.svg" alt="">`;  // category icon, directory list only
 const fmt=d=>d?d.split('-').reverse().join('/'):'';
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fold=s=>String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
@@ -268,7 +270,7 @@ function drawList(){const rs=R.filter(r=>match(r));document.getElementById('coun
  if(hits){rs.sort((a,b)=>hits.get(b.id)-hits.get(a.id));list.innerHTML=`<section class="cat"><h3>${t('ranked')} <span class="count">${rs.length}</span></h3><div class="grid">${rs.map(r=>card(r,true)).join('')}</div></section>`;return}
  list.innerHTML=C.map(c=>{const cr=rs.filter(r=>r.cat===c.id);if(!cr.length)return'';
   cr.sort((a,b)=>(c.groups.findIndex(g=>g.id===a.group)-c.groups.findIndex(g=>g.id===b.group))||a.name.localeCompare(b.name));
-  return `<section class="cat"><h3>${esc(c[L])} <span class="count">${cr.length}</span></h3><div class="grid">${cr.map(r=>card(r,false)).join('')}</div></section>`}).join('')}
+  return `<section class="cat"><h3>${ci(c.id)}${esc(c[L])} <span class="count">${cr.length}</span></h3><div class="grid">${cr.map(r=>card(r,false)).join('')}</div></section>`}).join('')}
 function toDir(){if(location.hash==='#findings')history.pushState(null,'',location.pathname+location.search);show('dir')}
 function openEntry(id){toDir();resetAll();st.view='cards';update();const el=document.getElementById('r-'+id);if(!el)return;const d=el.querySelector('details');if(d)d.open=true;document.querySelectorAll('.card.focus').forEach(c=>c.classList.remove('focus'));el.classList.add('focus');el.scrollIntoView({behavior:'smooth',block:'center'})}
 function focusOn(cat,query){toDir();resetAll();if(cat)st.cat.add(cat);setQuery(query||'');update();document.getElementById('directory').scrollIntoView({behavior:'smooth'})}

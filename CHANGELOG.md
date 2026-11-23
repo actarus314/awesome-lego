@@ -2,6 +2,9 @@
 
 # v1.x — Bilingual directory of the brick world, from brands and shops to events, places, clubs and know-how: resources checked at their source, best-of README, website with map, journeys and findings, automatic updates.
 
+## v1.7 — 2026-11-23
+Website: category icons come back in the headings of the directory list, not on the map tiles.
+
 ## v1.6 — 2026-11-23
 Website: the day theme becomes "Bleu jour", the daylight counterpart of the night palette (pale blue grid, navy text, blue interface); category icons stay in the README only.
 
