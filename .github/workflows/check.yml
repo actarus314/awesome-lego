@@ -14,7 +14,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
-          python-version: "3.13"
+          python-version: "3.15"
       - name: Validate data and check that generated files are up to date
         run: python3 scripts/build.py --check
       - name: Build the site
