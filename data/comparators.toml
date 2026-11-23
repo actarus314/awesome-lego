@@ -66,8 +66,8 @@ weaknesses_fr = [
   "Articles de comparaison de marques sans sources citées",
   "Aucun prix Amazon relevé ; un lien ouvre la page Amazon",
 ]
-size_en = "42003 sets, 95 brands; 595 sets with an in-stock offer from a merchant delivering to France on 2026-11-23"
-size_fr = "42003 sets, 95 marques ; 595 sets avec une offre en stock chez un marchand livrant en France le 23/11/2026"
+size_en = "42003 sets, 95 brands"
+size_fr = "42003 sets, 95 marques"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
@@ -114,7 +114,7 @@ strengths_fr = [
 ]
 weaknesses_en = [
   "Official LEGO only; alternative brands appear only in articles",
-  "Database page lists 3406 sets compared at 6 shops (US site read, prices in USD)",
+  "Database page lists 3406 sets compared at 6 shops (United States site read, prices in USD)",
   "Market value missing for some sets",
 ]
 weaknesses_fr = [
@@ -122,7 +122,7 @@ weaknesses_fr = [
   "La page de la base de données indique 3406 sets comparés chez 6 boutiques (site américain lu, prix en USD)",
   "Valeur marchande absente pour certains sets",
 ]
-size_en = "3406 sets compared at 6 shops (US site)"
+size_en = "3406 sets compared at 6 shops (United States site)"
 size_fr = "3406 sets comparés chez 6 boutiques (site américain)"
 status = "active"
 last_activity = "2026-11-23"
@@ -163,19 +163,19 @@ strengths_fr = [
   "Codes promotionnels intégrés",
 ]
 weaknesses_en = [
-  "Mould King announced in the FAQ but no product page found on 2026-11-23",
-  "Official LEGO: 2249 items only; MEGA, Reobrix and LESDIY marked as coming soon",
+  "Mould King announced in the frequently asked questions but no product page found",
+  "Official LEGO: 2249 items only",
   "History, alerts and API not established",
-  "Footer contact details (address in Indiana, USA; Vietnamese phone prefix) inconsistent with a French publisher",
+  "Footer contact details (address in Indiana, United States; Vietnamese phone prefix) inconsistent with a French publisher",
 ]
 weaknesses_fr = [
-  "Mould King annoncé dans la FAQ mais sans fiche trouvée le 23/11/2026",
-  "LEGO officiel : 2249 articles seulement ; MEGA, Reobrix et LESDIY signalés « disponible bientôt »",
+  "Mould King annoncé dans la foire aux questions mais sans fiche trouvée",
+  "LEGO officiel : 2249 articles seulement",
   "Historique, alertes et API non établis",
   "Coordonnées du pied de page (adresse dans l'Indiana, États-Unis ; indicatif téléphonique vietnamien) incohérentes avec un éditeur français",
 ]
-size_en = "2890 products on 2026-11-23: official LEGO 2249, COBI 948, Pantasy 494, CaDA 307"
-size_fr = "2890 produits le 23/11/2026 : LEGO officiel 2249, COBI 948, Pantasy 494, CaDA 307"
+size_en = "2890 products: official LEGO 2249, COBI 948, Pantasy 494, CaDA 307"
+size_fr = "2890 produits : LEGO officiel 2249, COBI 948, Pantasy 494, CaDA 307"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
@@ -204,26 +204,26 @@ summary_en = "Comparator and editorial guide to brick brands (LEGO, Pantasy, Lum
 summary_fr = "Comparateur et guide éditorial des marques de briques (LEGO, Pantasy, Lumibricks, CaDA, BlueBrixx) avec les prix de boutiques vérifiées."
 strengths_en = [
   "Price per piece shown and ranking of best price per piece",
-  "Editorial guide \"La Briquologie\" (AliExpress purchases, VAT, 3 euro customs duty per category since July 2026; article of 2026-08-20)",
+  "Editorial guide \"La Briquologie\" (AliExpress purchases, taxes and customs duties)",
   "France delivery cost given per brand (BlueBrixx 9.95 euros, free from 99 euros)",
 ]
 strengths_fr = [
   "Prix par pièce affiché et classement des meilleurs prix par pièce",
-  "Guide éditorial « La Briquologie » (achats sur AliExpress, TVA, droit de douane de 3 euros par catégorie depuis juillet 2026 ; article du 20/08/2026)",
+  "Guide éditorial « La Briquologie » (achats sur AliExpress, taxes et droits de douane)",
   "Livraison France indiquée par marque (BlueBrixx 9.95 euros, offerte dès 99 euros)",
 ]
 weaknesses_en = [
-  "Small catalogue: 381 sets measured on 2026-11-23",
+  "Small catalogue: 381 sets",
   "COBI and Mould King: brand page only, not tracked",
   "Official LEGO: 20 tracked sets only",
 ]
 weaknesses_fr = [
-  "Petit catalogue : 381 sets mesurés le 23/11/2026",
+  "Petit catalogue : 381 sets",
   "COBI et Mould King : fiche marque seulement, non suivis",
   "LEGO officiel : 20 sets suivis seulement",
 ]
-size_en = "381 sets (2026-11-23)"
-size_fr = "381 sets (23/11/2026)"
+size_en = "381 sets"
+size_fr = "381 sets"
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
@@ -341,12 +341,12 @@ summary_en = "Daily price comparator for official LEGO with tracking of sets abo
 summary_fr = "Comparateur quotidien de prix LEGO officiel avec suivi des retraits annoncés par LEGO et prix par pièce ; variantes France, Allemagne et États-Unis."
 strengths_en = [
   "France variant compares 16 retailers daily",
-  "Retirement tracking: 279 sets flagged as about to be retired on 2026-11-23",
+  "Tracking of sets about to be retired",
   "Price per piece shown",
 ]
 strengths_fr = [
   "Variante France : 16 enseignes comparées chaque jour",
-  "Suivi des retraits : 279 sets signalés « bientôt retirés » le 23/11/2026",
+  "Suivi des sets bientôt retirés",
   "Prix par pièce affiché",
 ]
 weaknesses_en = [
@@ -425,22 +425,22 @@ business_model_fr = "Liens d'affiliation, déclarés sans effet sur le classemen
 summary_en = "Independent comparator for official LEGO based on its own price collection, also covering parts, minifigures and display cases."
 summary_fr = "Comparateur indépendant LEGO officiel fondé sur ses propres relevés de prix, couvrant aussi pièces, minifigurines et vitrines."
 strengths_en = [
-  "Price measurements kept over time (about 11.27 million, tracked since April 2026)",
+  "Price measurements kept over time (tracked since April 2026)",
   "Commission declared to play no part in ranking; limits of the measurement documented",
   "Single bricks and minifigures priced, which most comparators do not do",
 ]
 strengths_fr = [
-  "Relevés de prix conservés (environ 11.27 millions, suivi depuis avril 2026)",
+  "Relevés de prix conservés (suivi depuis avril 2026)",
   "Commission déclarée sans effet sur le classement ; limites de mesure documentées",
   "Pièces et minifigurines à l'unité comparées, ce que la plupart des comparateurs ne font pas",
 ]
 weaknesses_en = [
-  "Recent: tracking since April 2026, short history",
+  "Tracking only since April 2026",
   "Alternative brands not covered",
   "Shipping, alerts and API not established",
 ]
 weaknesses_fr = [
-  "Récent : suivi depuis avril 2026, historique court",
+  "Suivi depuis avril 2026 seulement",
   "Marques alternatives non couvertes",
   "Port, alertes et API non établis",
 ]
@@ -476,11 +476,11 @@ strengths_fr = [
   "Historique et alerte sous seuil, selon l'annonce",
 ]
 weaknesses_en = [
-  "An earlier reading reported sample data flagged as provisional for the prototype; not reproduced on 2026-11-23",
+  "An earlier reading reported sample data flagged as provisional for the prototype; not reproduced in the latest reading",
   "No coverage figure published",
 ]
 weaknesses_fr = [
-  "Une lecture antérieure a relevé des données d'exemple signalées comme provisoires pour le prototype ; non reproduit le 23/11/2026",
+  "Une lecture antérieure a relevé des données d'exemple signalées comme provisoires pour le prototype ; non reproduit à la dernière lecture",
   "Aucun chiffre de couverture publié",
 ]
 status = "active"
@@ -716,8 +716,8 @@ covers = ["official"]
 languages = ["de"]
 countries = ["DE"]
 access = "free"
-summary_en = "German price comparator for official LEGO with price alert, wish list, collection tool, a market analysis of retiring sets and a marketplace announced as new."
-summary_fr = "Comparateur de prix allemand LEGO officiel avec alerte de prix, liste de souhaits, outil de collection, analyse de marché des sets en fin de vie et place de marché annoncée comme nouvelle."
+summary_en = "German price comparator for official LEGO with price alert, wish list, collection tool, and a market analysis of retiring sets."
+summary_fr = "Comparateur de prix allemand LEGO officiel avec alerte de prix, liste de souhaits, outil de collection et analyse de marché des sets en fin de vie."
 strengths_en = [
   "Market analysis filterable by retirement year, theme, price and piece count",
   "Price chart per set and price alert",
@@ -848,12 +848,12 @@ summary_en = "General toy-set comparator by manufacturer set number (Playmobil, 
 summary_fr = "Comparateur généraliste de jeux et sets par numéro du fabricant (Playmobil, Schleich, COBI et autres) avec des guides sur les marques de briques alternatives. Sets LEGO officiel non vus dans le catalogue."
 strengths_en = [
   "Comparison by set number, manufacturer price shown when published",
-  "Guide on alternatives to LEGO updated on 2026-09-30",
+  "Guide on alternatives to LEGO",
   "Declares that it neither sells nor tests products",
 ]
 strengths_fr = [
   "Comparaison par numéro de set, prix du fabricant affiché quand il est publié",
-  "Guide sur les alternatives à LEGO mis à jour le 30/09/2026",
+  "Guide sur les alternatives à LEGO",
   "Déclare ne rien vendre ni tester",
 ]
 weaknesses_en = [
@@ -888,8 +888,8 @@ covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-summary_en = "Set lists by alternative brand (Mould King page read) with price comparison and availability filter. The site root returned an HTTP 525 error on 2026-11-23."
-summary_fr = "Listes de sets par marque alternative (page Mould King lue) avec comparaison de prix et filtre de disponibilité. La racine du site a renvoyé une erreur HTTP 525 le 23/11/2026."
+summary_en = "Set lists by alternative brand (Mould King page read) with price comparison and availability filter."
+summary_fr = "Listes de sets par marque alternative (page Mould King lue) avec comparaison de prix et filtre de disponibilité."
 strengths_en = [
   "Filter on sets still available",
   "Lists by brand theme",
@@ -899,11 +899,11 @@ strengths_fr = [
   "Listes par thème de marque",
 ]
 weaknesses_en = [
-  "Site root unreachable (HTTP 525) on 2026-11-23; only one brand page read",
+  "Only one brand page read",
   "Countries of the offers and update dates not established",
 ]
 weaknesses_fr = [
-  "Racine du site inaccessible (HTTP 525) le 23/11/2026 ; une seule page de marque lue",
+  "Une seule page de marque lue",
   "Pays des offres et dates de mise à jour non établis",
 ]
 status = "active"
@@ -927,15 +927,15 @@ countries = ["FR", "DE"]
 access = "free"
 business_model_en = "Affiliate links"
 business_model_fr = "Liens d'affiliation"
-summary_en = "General price comparator with a LEGO category: offers per set, price chart and reviews. The French LEGO category was read on 2026-11-23."
-summary_fr = "Comparateur de prix généraliste avec une catégorie LEGO : offres par set, graphique de prix et avis. La catégorie LEGO française a été lue le 23/11/2026."
+summary_en = "General price comparator with a LEGO category: offers per set, price chart and reviews."
+summary_fr = "Comparateur de prix généraliste avec une catégorie LEGO : offres par set, graphique de prix et avis."
 strengths_en = [
-  "Many offers per set (18 for the Notre-Dame de Paris set 21061)",
+  "Many offers per set",
   "Filters by age, piece count and adult sets",
   "Price evolution chart",
 ]
 strengths_fr = [
-  "Nombreuses offres par set (18 pour le set Notre-Dame de Paris 21061)",
+  "Nombreuses offres par set",
   "Filtres par âge, nombre de pièces et sets adultes",
   "Graphique d'évolution du prix",
 ]
@@ -1373,11 +1373,11 @@ summary_en = "Reference platform for sets of brands other than official LEGO, wi
 summary_fr = "Plateforme de référence des sets hors LEGO officiel, avec comparaison, prix et classements en anglais."
 strengths_en = [
   "2446 sets from 32 brands, including brands absent from French comparators (Reobrix, Xingbao, Keeppley, Sluban, Jaki)",
-  "Ranking guides updated through 2026-11-07 (largest sets per brand)",
+  "Ranking guides (largest sets per brand)",
 ]
 strengths_fr = [
   "2446 sets de 32 marques, dont des marques absentes des comparateurs français (Reobrix, Xingbao, Keeppley, Sluban, Jaki)",
-  "Classements mis à jour jusqu'au 07/11/2026 (plus grands sets par marque)",
+  "Classements (plus grands sets par marque)",
 ]
 weaknesses_en = [
   "Prices in dollars and euros mixed in the extracts read",
@@ -1467,15 +1467,15 @@ strengths_fr = [
   "Catalogue actualisé chaque nuit depuis les données de Rebrickable",
 ]
 weaknesses_en = [
-  "Very recent project (September 2026), no long track record",
+  "Project started in September 2026",
   "Country coverage of offers not established",
 ]
 weaknesses_fr = [
-  "Projet très récent (septembre 2026), sans historique durable",
+  "Projet lancé en septembre 2026",
   "Couverture par pays des offres non établie",
 ]
-size_en = "20411 sets, 17363 minifigures, 64955 parts (press release of 2026-11-07)"
-size_fr = "20411 sets, 17363 minifigurines, 64955 pièces (communiqué du 07/11/2026)"
+size_en = "20411 sets, 17363 minifigures, 64955 parts"
+size_fr = "20411 sets, 17363 minifigurines, 64955 pièces"
 status = "active"
 last_activity = "2026-11-07"
 checked = "2026-11-23"
@@ -1569,12 +1569,12 @@ strengths_fr = [
   "Export CSV ou JSON de l'historique (Premium)",
 ]
 weaknesses_en = [
-  "Reference price guide based on the US market; other countries have only native Amazon and LEGO.com offers at launch (Canada, United Kingdom, Australia, Germany, France, Italy)",
-  "Interface in English only at launch; full history and advanced tools reserved for Premium",
+  "Reference price guide based on the United States market; other countries have only native Amazon and LEGO.com offers (Canada, United Kingdom, Australia, Germany, France, Italy)",
+  "Interface in English only; full history and advanced tools reserved for Premium",
 ]
 weaknesses_fr = [
-  "Guide de prix de référence fondé sur le marché américain ; les autres pays n'ont que les offres natives d'Amazon et de LEGO.com au lancement (Canada, Royaume-Uni, Australie, Allemagne, France, Italie)",
-  "Interface en anglais seulement au lancement ; historique complet et outils avancés réservés à Premium",
+  "Guide de prix de référence fondé sur le marché américain ; les autres pays n'ont que les offres natives d'Amazon et de LEGO.com (Canada, Royaume-Uni, Australie, Allemagne, France, Italie)",
+  "Interface en anglais seulement ; historique complet et outils avancés réservés à Premium",
 ]
 status = "active"
 last_activity = "2026-11-23"

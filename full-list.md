@@ -2,9 +2,9 @@
 
 > Interlocking plastic construction bricks, from the official LEGO system to compatible brands.
 
-[Version française](liste-complete.md) · [Website with search, filters and charts](https://actarus314.github.io/awesome-lego/)
+[Website with search, filters and charts](https://actarus314.github.io/awesome-lego/) · [French version of the website](https://actarus314.github.io/awesome-lego/fr/)
 
-Full list, generated from [`data/`](data/): every resource, including inactive and dead ones. The selection of the best is in the [README](README.md).
+Every resource, including inactive and dead ones, generated from [`data/`](data/). The selection of the best is in the [README](README.md).
 
 🧱 official LEGO · 🔶 alternative brands · ⚠️ inactive or archived · 💀 dead (kept for reference)
 
@@ -74,7 +74,7 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 - [CaDA (Double Eagle)](https://cadatoys.com/) - China (Shantou), Double Eagle group, which also makes the bricks. Technic-style cars, often motorised or remote-controlled and licensed (Master series at 1:8), plus space and military models. 🔶
 - [iM.Master](https://www.immasterstore.com/) - China. Remote-controlled and app-controlled cars and engineering models at 1:10 with colour-changing paint (9826-2: 2036 pieces, 300 dollars). The store states it is the official iM.Master shop. 🔶
-- [JIE STAR (with GULY)](https://www.jiestartoys.com/) - China. Brand of Guangdong JieXing Toys Industrial (founded 1998), with its own injection moulding. Streets, buildings, vehicles, aircraft, mechas and flowers; sub-brands include GULY (1:8 supercars, motorcycles), iBlock, Xbert, TKTWO, ZOIN and JIQI. GULY also runs its own shops (gulytoys.com, gulybricks.com). 🔶
+- [JIE STAR (with GULY)](https://www.jiestartoys.com/) - China. Brand of Guangdong JieXing Toys Industrial (founded 1998), with its own injection moulding. Streets, buildings, vehicles, aircraft, mechas and flowers; sub-brands include GULY (1:8 supercars, motorcycles), iBlock, Xbert, TKTWO, ZOIN and JIQI; GULY also runs its own shops (gulytoys.com, gulybricks.com). 🔶
 - [JMBricklayer](https://www.jmbricklayer.com/) - China. Fantasy creatures, dragons, ships, art in bricks and hand-crank kinetic mechanisms for adult collectors; ship models include Black Pearl, Queen Anne's Revenge and Bismarck. 🔶
 - [Keeppley (Qman)](https://c-en.qmjm.com/) - China (Guangdong Qman Industry Toys, producing original blocks since 1994). Keeppley is the licensed line launched in 2019: Sanrio, Hello Kitty, Doraemon, Naruto, Detective Conan, Pokemon; Qman also sells under its own name. 🔶
 - [Lumibricks (formerly Funwhole)](https://www.lumibricks.com/) - China (Guangzhou). Complete sets of buildings and scenes with integrated light, in 13 collections including Cyberpunk Neoncity and the Blade Runner 2049 licence. Funwhole was renamed Lumibricks in 2025. 🔶
@@ -83,7 +83,7 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 - [Nifeliz](https://www.nifeliz.com/) - China (Shantou). Technic, adult decoration, flowers and machines. The brand site describes its own factory in Shantou with three workshops (August 2024). 🔶
 - [Pantasy](https://www.pantasy.com/) - China (Guangdong Pinqi Culture and Technology). Modular buildings, retro objects, flowers and licences with printed parts, aimed at adult collectors. Bricks come from GoBricks. 🔶
 - [Rastar](https://www.rastar.com/) - China (Rastar Group, listed toy and games company). Licensed car models in bricks: Pagani Huayra BC at 1:8 (3068 pieces, remote control), Maserati MC20, Audi R8, Hummer EV. Bricks reportedly from GoBricks. 🔶
-- [Reobrix](https://reobrix.fr/fr_FR/index) - China; the French shop is the official European Union store, shipping from Poland. Large mechanical and display models: ships, construction machines, motorbikes, trains, buildings. Its home page presents ship models up to 108 cm long. 🔶
+- [Reobrix](https://reobrix.fr/fr_FR/index) - China; the French shop is the official European Union store, shipping from Poland. Large mechanical and display models: ships, construction machines, motorbikes, trains, buildings; its home page presents ship models up to 108 cm long. 🔶
 - [Sembo Block](https://www.sembo-block.com/) - China (Sembo Toys). Architecture, street scenes, military and cars; bricks partly its own, partly GoBricks. 🔶
 - [Sluban](https://slubanbricks.com/de) - China, with European distribution in the Netherlands (Sluban Europe). Military, city, aircraft and mecha sets at low prices, mostly for play rather than adult display. 🔶
 - [Wange](http://www.wangetoys.com/) - China (Shantou Wange Educational Material Sci-Tech). Manufacturer and brand focused on landmark architecture (Sydney Opera House, Space Needle, Capitol), cars and police sets, at low prices. The official site is served over http only. 🔶
@@ -126,29 +126,29 @@ Online and physical shops selling official LEGO, alternative brick brands and ge
 - [Brickeez](https://www.brickeez.com) - French online store (Hérault): new official LEGO, Lumibricks, Pantasy, COBI, CaDA. 🧱🔶
 - [Brickmo](https://www.brickmo.com/fr/) - Austrian online store (Scalemo GmbH) selling official LEGO and alternative brands (Cobi, CaDA, Sluban, Wange, Xingbao, Jekca). Site available in French. 🧱🔶
 - [Brickparts.nl](https://brickparts.nl) - Dutch online store (Kuinre) for sets and parts. Whether it is the 'Brickparts' of the original request is not confirmed. 🔶
-- [ChowBrick](https://www.chowbrick.com) - Online store shipping from China to the rest of the world. 🔶
-- [JoyGobricks](https://joygobricks.com) - Reseller of Gobricks parts and sets; ships from China. 🔶
+- [ChowBrick](https://www.chowbrick.com) - Online store of alternative bricks shipping from China to the rest of the world. 🔶
+- [JoyGobricks](https://joygobricks.com) - Reseller of GoBricks parts and sets; ships from China. 🔶
 - [KBS Shop](https://kbs-shop.com) - German online store for technical and remote-controlled bricks: Mould King, CaDA, Reobrix, Wange, Jie Star, Panlos. 🔶
 - [Mister Brixx](https://www.misterbrixx.de) - Duisburg shop selling official LEGO, Mould King, CaDA, Reobrix, Panlos, Cobi; buys and resells LEGO. 🧱🔶
-- [MyGoBricks (Brickbulk)](https://mygobricks.com) - Authorised distributor of Gobricks bulk parts and sets; French version (bricksbulk.fr) run by SOUFEEL INTERNATIONAL TRADING CO., LIMITED, Beckenham, United Kingdom. Reported renaming to Brickbulk. 🔶
+- [MyGoBricks (Brickbulk)](https://mygobricks.com) - Authorised distributor of GoBricks bulk parts and sets; French version (bricksbulk.fr) run by SOUFEEL INTERNATIONAL TRADING CO., LIMITED, Beckenham, United Kingdom. Reported renaming to Brickbulk. 🔶
 - [Spielzeug-Fuchs](https://spielzeug-fuchs.de) - German online store for alternative bricks: more than 2000 sets from more than 20 brands (COBI, CaDA, Mould King, Pantasy, Lumibricks, Reobrix). 🔶
 - [Warbrix.fr](https://www.warbrix.fr) - French online store of COBI and Reobrix, stating it was the first distributor to introduce COBI in France (2012). 🔶
-- [YWOBB](https://yourwobb.com) - Multi-brand store (CaDA, Quan Guan, Xinyu), prices in US dollars; some CaDA sets offered as 'EU warehouse' versions. 🔶
+- [YWOBB](https://yourwobb.com) - Multi-brand store (CaDA, Quan Guan, Xinyu), prices in United States dollars; some CaDA sets offered as 'European Union warehouse' versions. 🔶
 
 ### General retailers
 
 - [Alternate (alternate.fr)](https://www.alternate.fr/Jouets/LEGO) - German electronics retailer (Alternate GmbH) with a large official LEGO range delivered to France. 🧱
 - [Amazon.fr](https://www.amazon.fr) - General marketplace: official LEGO sold directly and by third parties; a few alternative brands. Page not readable by the tools (anti-bot challenge, not bypassed); data from the first pass. 🧱🔶
-- [Carrefour (direct sales and Marketplace)](https://www.carrefour.fr) - Supermarket chain; direct sales are distinct from the Marketplace. 🧱
+- [Carrefour (direct sales and Marketplace)](https://www.carrefour.fr) - Supermarket chain selling LEGO; direct sales are distinct from the Marketplace. 🧱
 - [Cdiscount](https://www.cdiscount.com) - French general retailer, direct sales and marketplace. Not re-read in this pass. 🧱
 - [Cultura](https://www.cultura.com) - French cultural and creative-leisure retailer with a LEGO range. 🧱
-- [E.Leclerc](https://www.e.leclerc) - Supermarket chain, online and in store. 🧱
+- [E.Leclerc](https://www.e.leclerc) - Supermarket chain, online and in store, with a LEGO catalogue. 🧱
 - [Fnac](https://www.fnac.com) - French cultural and technical retailer with a LEGO range. 🧱
 - [Galaxus (galaxus.fr)](https://www.galaxus.fr) - Large general online store (Digitec Galaxus AG, Switzerland) with a marketplace and a wide LEGO catalogue. 🧱
 - [Joybuy France](https://www.joybuy.fr) - Marketplace and direct sales of the JD.com group, opened in France on 2026-03-16, with LEGO among launch brands. 🧱
 - [Kidinn](https://www.tradeinn.com/kidinn/fr) - Children's clothing and toy store of the Tradeinn group (Spain) with a LEGO range, shipped from Spain. 🧱
-- [King Jouet](https://www.king-jouet.com) - French toy chain, online and in store. 🧱
-- [Smyths Toys France](https://www.smythstoys.com/fr/fr-fr) - Toy specialist of the Irish Smyths group, online and in store in France. 🧱
+- [King Jouet](https://www.king-jouet.com) - French toy chain, online and in store, selling official LEGO. 🧱
+- [Smyths Toys France](https://www.smythstoys.com/fr/fr-fr) - Toy specialist of the Irish Smyths group, online and in store in France, with a LEGO range. 🧱
 
 ## Price comparators and set databases
 
@@ -159,7 +159,7 @@ Sites that compare set prices across shops, catalogue sets and parts, track seco
 - [AltBrickScan](https://altbrickscan.com/fr-FR/) - Multi-brand comparator announced as showing prices with delivery to the chosen country, price history and email alert. Described as a prototype. 🧱🔶
 - [Avenue de la Brique](https://www.avenuedelabrique.com/) - Price comparator specialised in official LEGO, gathering French online shops. 🧱
 - [Brick Broker](https://brick-broker.com/) - Price comparator covering official LEGO and about 95 alternative brands in one search, with offers deliverable to France. Published by Kadris, a sole proprietorship based in France. 🧱🔶
-- [Brick-Tracker.de](https://www.brick-tracker.de/) - German price comparator for official LEGO with price alert, wish list, collection tool, a market analysis of retiring sets and a marketplace announced as new. 🧱
+- [Brick-Tracker.de](https://www.brick-tracker.de/) - German price comparator for official LEGO with price alert, wish list, collection tool, and a market analysis of retiring sets. 🧱
 - [Brickfact](https://brickfact.com/) - Price comparator for official LEGO sets with regional sites (USD, GBP, CHF, EUR), secondary-market value of sealed sets and a collection tracker shared with its application. 🧱
 - [brickguide.de](https://brickguide.de/) - German comparator, set base and collection manager for official LEGO, with prices from merchant feeds and a price history. 🧱
 - [Brickmerge](https://www.brickmerge.de/) - German price comparator for official LEGO since 2014, with price alert, discount alert and price history. 🧱
@@ -172,14 +172,14 @@ Sites that compare set prices across shops, catalogue sets and parts, track seco
 - [Chez Emil](https://chezemil.fr/) - French multi-category price tracker (official LEGO, consumer electronics, video games) with merchant offers grouped per product and price history. 🧱
 - [ComparoBrick](https://www.comparobrick.fr/) - French price comparator dedicated to official LEGO sets, identified by set number and barcode, with French merchants only. 🧱
 - [Geizhals](https://geizhals.at/) - Austrian and German general comparator with a LEGO category and a separate category for alternative brick brands (CaDA, Cobi and others). 🧱🔶
-- [idealo](https://www.idealo.fr/) - General price comparator with a LEGO category: offers per set, price chart and reviews. The French LEGO category was read on 2026-11-23. 🧱
+- [idealo](https://www.idealo.fr/) - General price comparator with a LEGO category: offers per set, price chart and reviews. 🧱
 - [Klockometr](https://klockometr.pl/) - Polish price history and comparator for official LEGO, with a five-level assessment of each offer against the previous 365 days and the median of offers for retired sets. Useful as a method reference; Polish market only. 🧱
 - [La Brique Libre](https://labriquelibre.fr/) - Comparator and editorial guide to brick brands (LEGO, Pantasy, Lumibricks, CaDA, BlueBrixx) with prices from verified shops. 🧱🔶
 - [Lakea](https://lakea.net/?lang=fr) - Independent comparator for official LEGO based on its own price collection, also covering parts, minifigures and display cases. 🧱
 - [LeDénicheur](https://ledenicheur.fr/) - General French price comparator with a LEGO category listing sets with best price. 🧱
 - [Planet-Brick](https://planet-brick.com/) - French price comparator for building bricks, sets, ready-to-build custom kits, instructions and accessories, limited to brands linked to a merchant delivering to France. Run by the company BRICKSBIZ. 🧱🔶
 - [Temple of Bricks](https://www.templeofbricks.com/fr/) - Price comparator for official LEGO sets and minifigures, secondary market included, with prices filtered by the country the merchant ships to. 🧱
-- [Toy-Links](https://toy-links.com/mouldking) - Set lists by alternative brand (Mould King page read) with price comparison and availability filter. The site root returned an HTTP 525 error on 2026-11-23. 🔶
+- [Toy-Links](https://toy-links.com/mouldking) - Set lists by alternative brand (Mould King page read) with price comparison and availability filter. 🔶
 - [ToySetFox](https://toysetfox.com/fr-fr/guides/alternatives-a-lego) - General toy-set comparator by manufacturer set number (Playmobil, Schleich, COBI and others) with guides on alternative brick brands. Official LEGO sets were not seen in the catalogue. 🔶
 - [VERObricks](https://verobricks.com/) - German price comparator for building-brick sets (LEGO, COBI, BlueBrixx, CaDA, Mould King, Reobrix and others). It is the price comparison formerly under the reBricker name; reBricker remains a sorting and used-brick service. 🧱🔶
 
@@ -271,7 +271,7 @@ Forums, subreddits, wikis, news and review sites, deal communities and chat serv
 - [The Brick Fan](https://www.thebrickfan.com/) - LEGO news, reviews and discussion site, with weekly tracking of LEGO Ideas projects. 🧱
 - [The Brothers Brick](https://www.brothers-brick.com/) - LEGO news, reviews and fan creations blog; describes itself as the world's number one source. 🧱
 - [theBrickBlogger](https://thebrickblogger.com/) - LEGO blog with picks, reviews and deals. 🧱
-- [Zusammengebaut](https://www.zusammengebaut.com/) - German-language LEGO news, new-release and review site; also organises a LEGO exhibition (Fritzlar, 21 and 22 November 2026). 🧱
+- [Zusammengebaut](https://www.zusammengebaut.com/) - German-language LEGO news, new-release and review site; also organises a LEGO exhibition in Fritzlar. 🧱
 
 ### Forums
 
@@ -316,7 +316,7 @@ English- and French-language YouTube channels and podcasts: reviews of official 
 - [Ashnflash](https://www.youtube.com/@Ashnflash) - Daily LEGO news, reveals, minifigure and set reviews. 🧱
 - [Brickmitri](https://www.youtube.com/@brickmitri) - French-language LEGO news and set reviews; the channel describes itself as an independent medium. 🧱
 - [Hoth Bricks](https://www.youtube.com/@hoth_bricks) - French-language LEGO news and set reviews with euro prices; the channel is linked to the hothbricks.com site. 🧱
-- [JANGBRiCKS](https://www.youtube.com/@JANGBRiCKS) - Set reviews and reveals of official LEGO sets by an adult fan; the channel description states unsponsored content and recent titles carry a #NotAd tag. 🧱
+- [JANGBRiCKS](https://www.youtube.com/@JANGBRiCKS) - Set reviews and reveals of official LEGO sets by an adult fan; the channel description states unsponsored content and titles carry a #NotAd tag. 🧱
 - [Lego Leader](https://www.youtube.com/@LegoLeader) - French-language channel on LEGO Star Wars and custom builds; set reviews, deals and news. Declares itself an independent fan channel. 🧱
 - [MandRproductions](https://www.youtube.com/@MandRproductions) - Reviews of LEGO Star Wars, Harry Potter and Architecture sets by an adult fan, including retired sets. 🧱
 - [New Elementary](https://www.youtube.com/@NewElementary) - New LEGO pieces and colours, set reviews, building techniques and interviews with designers. 🧱
@@ -327,8 +327,8 @@ English- and French-language YouTube channels and podcasts: reviews of official 
 
 - [Brick Me Up Scottie](https://www.youtube.com/@BrickMeUpScottie) - Reviews of unique, high-quality sets from alternative brands such as Pantasy. 🔶
 - [BrickMeet](https://www.youtube.com/@BrickMeet) - Speed-build reviews of military and vehicle sets, mainly Cobi, CaDA, Panlos and Mould King; the author also runs German and English blogs. 🧱🔶
-- [CurKymBrickBuilds](https://www.youtube.com/@curkymbrickbuilds) - Set builds and reviews by a husband-and-wife team covering LEGO and other brick brands; a Black Friday LEGO deals video was posted in November 2026. 🧱🔶
-- [GodOfTheBricks](https://www.youtube.com/@godofthebricks) - French-language channel on LEGO and alternative bricks: stop-motion, large projects and rare sets; recent episodes build LesDIY castle sets. 🧱🔶
+- [CurKymBrickBuilds](https://www.youtube.com/@curkymbrickbuilds) - Set builds and reviews by a husband-and-wife team covering LEGO and other brick brands. 🧱🔶
+- [GodOfTheBricks](https://www.youtube.com/@godofthebricks) - French-language channel on LEGO and alternative bricks: stop-motion, large projects and rare sets. 🧱🔶
 - [JANG's Other Bricks](https://www.youtube.com/@JANGsOtherBricks) - Non-sponsored reviews of brick-built construction toys from many brands, run by the author of JANGBRiCKS. 🧱🔶
 - [Mark Builds BRIX](https://www.youtube.com/@markbuildsbrix) - Live builds and reviews of alternative brick sets (Lumibricks, Pantasy, Barweer). 🔶
 - [Monster Brick Reviews](https://www.youtube.com/@MonsterBrickReviews) - Unboxings, reviews and build impressions of sets beyond LEGO; the channel published a ranking of 32 alternative brands in August 2026. 🔶
@@ -347,7 +347,7 @@ English- and French-language YouTube channels and podcasts: reviews of official 
 
 - [Beyond the Brick](https://www.youtube.com/@BeyondtheBrick) - LEGO news and reveal coverage; the channel states it began in November 2011 as an audio-only podcast and sells merchandise. 🧱
 - [Brickonaute](https://www.youtube.com/@Brickonaute) - YouTube channel of the French-language LEGO news and review blog brickonaute.fr: new releases, tests and set information. 🧱
-- [Briquefan](https://www.youtube.com/channel/UCeohvTWYjZDOubRaSIlpBCQ) - French-language show about LEGO fans and their community; recent uploads cover a charity campaign and a fan-film story rather than set tests.
+- [Briquefan](https://www.youtube.com/channel/UCeohvTWYjZDOubRaSIlpBCQ) - French-language show about LEGO fans and their community.
 - [FrosTiize](https://www.youtube.com/@FrosTiize) - French-language LEGO content creator: challenges, tier lists, set reviews and news. 🧱
 - [Jay's Brick Blog](https://www.youtube.com/@Jaysbrickblog) - YouTube channel of the Jay's Brick Blog LEGO blog: speed builds, reviews and reveal videos. 🧱
 
@@ -371,15 +371,15 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 - [BrickLink Studio](https://www.bricklink.com/v3/studio/download.page) - Free 3D design software for LEGO models with BrickLink parts list, instruction editor and photorealistic rendering. 🧱🔶
 - [LDCad](https://www.melkert.net/LDCad) - Multiplatform LDraw editor for editing virtual LEGO model documents in real time. 🧱
 - [LDView](https://github.com/tcobbs/ldview) - Real-time 3D viewer for LDraw models (Windows, macOS, Linux). 🧱
-- [LeoCAD](https://www.leocad.org/) - Open-source CAD program for virtual LEGO models based on the LDraw library, for Windows, macOS and Linux. 🧱
-- [LPub3D](https://trevorsandy.github.io/lpub3d/) - Open-source WYSIWYG editor for LEGO-style digital building instructions from LDraw files, with PDF, image, POV-Ray, STL and parts list export. 🧱
+- [LeoCAD](https://www.leocad.org/) - Open-source computer-aided design program for virtual LEGO models based on the LDraw library, for Windows, macOS and Linux. 🧱
+- [LPub3D](https://trevorsandy.github.io/lpub3d/) - Open-source what-you-see-is-what-you-get editor for LEGO-style digital building instructions from LDraw files, with PDF, image, POV-Ray, STL and parts list export. 🧱
 - [Mecabricks](https://www.mecabricks.com/) - In-browser 3D LEGO model editor with Blender add-on for photorealistic renders and a BrickLink parts list export. 🧱🔶
 
 ### Apps
 
 - [Brick Search](https://bricksearch.app/) - Mobile app (iOS, Android) scanning collectible minifigure QR codes, with collection tracking, wish list, set archive and price comparison by country. 🧱
 - [Brickfact app](https://brickfact.com/blog/guides/brickfact-app-the-best-tool-for-every-lego-fan) - Brickfact companion app for collection tracking, value, offers, price alerts and price history, sharing an account with the website. 🧱
-- [Instabrick](https://www.instabrick.org/) - AI identification of LEGO bricks and minifigures with cloud inventory, BrickLink sync, a fee-free marketplace and a sorting scanner. 🧱
+- [Instabrick](https://www.instabrick.org/) - Artificial intelligence identification of LEGO bricks and minifigures with cloud inventory, BrickLink sync, a fee-free marketplace and a sorting scanner. 🧱
 - [LEGO Builder](https://www.lego.com/en-us/builder-app) - Official LEGO app for interactive 3D building instructions with zoom, rotation and shared building, plus a collection of past instructions. 🧱
 - [myBricks](https://mybricks.app/) - iOS app to browse the Brickset catalog, search by number, name, theme or barcode, and track owned and wanted sets with a Brickset account. 🧱
 
@@ -442,4 +442,4 @@ Existing directories, awesome lists and lists of channels and brands about LEGO 
 
 ## Contributing
 
-Additions and corrections are welcome: read [CONTRIBUTING.md](CONTRIBUTING.md). Entries live in [`data/`](data/); this file is generated.
+Additions and corrections are welcome: read [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them.

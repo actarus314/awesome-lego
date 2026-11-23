@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
-"""Validate data/*.toml, write README.md, README.fr.md, full-list.md, liste-complete.md,
-and build the GitHub Pages site (site/). README files list the entries marked
-`featured`; full-list.md and liste-complete.md list them all.
-Valide data/*.toml, écrit README.md, README.fr.md, full-list.md, liste-complete.md,
-et construit le site GitHub Pages (site/). Les README listent les entrées marquées
-`featured` ; full-list.md et liste-complete.md les listent toutes.
+"""Validate data/*.toml, write README.md (entries marked `featured`) and full-list.md
+(every entry), and build the bilingual GitHub Pages site (site/).
 
 Usage: python3 scripts/build.py [--check]   (standard library only, Python 3.11+)
 """
@@ -31,7 +27,7 @@ KINDS = {"official", "read", "indexed", "third-party", "forum"}
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 ID = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 
-T = {  # interface strings / textes de l'interface
+T = {  # interface strings
     "title": {"en": "Awesome LEGO", "fr": "Awesome LEGO"},
     "tagline": {"en": "Interlocking plastic construction bricks, from the official LEGO system to compatible brands.",
                 "fr": "Briques de construction en plastique à emboîter, du système LEGO officiel aux marques compatibles."},
@@ -39,9 +35,8 @@ T = {  # interface strings / textes de l'interface
                      "fr": "Marques, boutiques, comparateurs, occasion, communautés, vidéos et outils pour les adultes qui construisent en LEGO officiel et en briques compatibles."},
     "contents": {"en": "Contents", "fr": "Sommaire"},
     "contributing": {"en": "Contributing", "fr": "Contribuer"},
-    "contrib_text": {"en": "Additions and corrections are welcome: read [CONTRIBUTING.md](CONTRIBUTING.md). Entries live in [`data/`](data/); this file is generated.",
-                     "fr": "Ajouts et corrections bienvenus : lire [CONTRIBUTING.md](CONTRIBUTING.md). Les entrées sont dans [`data/`](data/) ; ce fichier est généré."},
-    "other_lang": {"en": "Version française", "fr": "English version"},
+    "contrib_text": {"en": "Additions and corrections are welcome: read [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them."},
+    "site_fr": {"en": "French version of the website", "fr": "Version française du site"},
     "site": {"en": "Website with search, filters and charts", "fr": "Site avec recherche, filtres et graphiques"},
     "legend": {"en": "🧱 official LEGO · 🔶 alternative brands · ⚠️ inactive or archived · 💀 dead (kept for reference)",
                "fr": "🧱 LEGO officiel · 🔶 marques alternatives · ⚠️ inactive ou archivée · 💀 morte (gardée pour référence)"},
@@ -140,20 +135,17 @@ def anchor(s):
     return re.sub(r"[^a-z0-9 -]", "", s.lower().replace("’", "").replace("'", "")).strip().replace(" ", "-")
 
 
-FILES = {("readme", "en"): "README.md", ("readme", "fr"): "README.fr.md", ("full", "en"): "full-list.md", ("full", "fr"): "liste-complete.md"}
-MORE = {"readme": {"en": "Only the best of each group is listed here. The [full list](full-list.md) also has the other resources, including inactive and dead ones.",
-                   "fr": "Seul le meilleur de chaque groupe figure ici. La [liste complète](liste-complete.md) donne aussi les autres ressources, inactives et mortes comprises."},
-        "full": {"en": "Full list, generated from [`data/`](data/): every resource, including inactive and dead ones. The selection of the best is in the [README](README.md).",
-                 "fr": "Liste complète, générée depuis [`data/`](data/) : toutes les ressources, inactives et mortes comprises. La sélection du meilleur est dans le [README](README.fr.md)."}}
+FILES = {("readme", "en"): "README.md", ("full", "en"): "full-list.md"}
+MORE = {"readme": {"en": "Only the best of each group is listed here. The [full list](full-list.md) has every resource, including inactive and dead ones."},
+        "full": {"en": "Every resource, including inactive and dead ones, generated from [`data/`](data/). The selection of the best is in the [README](README.md)."}}
 
 
 def readme(cats, m, lang, kind="readme"):
-    other = FILES[(kind, "fr" if lang == "en" else "en")]
-    title = T["title"][lang] if kind == "readme" else ("Awesome LEGO: full list" if lang == "en" else "Awesome LEGO : liste complète")
+    title = T["title"][lang] if kind == "readme" else "Awesome LEGO: full list"
     badge = " [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)" if kind == "readme" else ""
     keep = (lambda r: r.get("featured")) if kind == "readme" else (lambda r: True)
     out = [f"# {title}{badge}", "", f"> {T['tagline'][lang]}", "",
-           f"[{T['other_lang'][lang]}]({other}) · [{T['site'][lang]}]({PAGES}{'' if lang == 'en' else 'fr/'})", "",
+           f"[{T['site'][lang]}]({PAGES}) · [{T['site_fr'][lang]}]({PAGES}fr/)", "",
            MORE[kind][lang], "", f"{T['legend'][lang]}", "", f"## {T['contents'][lang]}", ""]
     seen = {}
 

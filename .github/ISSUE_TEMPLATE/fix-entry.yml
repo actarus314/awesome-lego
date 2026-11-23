@@ -1,22 +1,22 @@
-name: Fix an entry / Corriger une entrée
-description: Broken link, outdated or wrong information / Lien mort, information périmée ou fausse
-title: "Fix / Correction : "
+name: Fix an entry
+description: Broken link, outdated or wrong information
+title: "Fix: "
 labels: ["correction"]
 body:
   - type: input
     id: entry
     attributes:
-      label: Entry name / Nom de l'entrée
+      label: Entry name
     validations:
       required: true
   - type: textarea
     id: problem
     attributes:
-      label: What is wrong, and the correct information / Ce qui est faux, et l'information juste
+      label: What is wrong, and the correct information
     validations:
       required: true
   - type: input
     id: source
     attributes:
-      label: Source (link) / Source (lien)
+      label: Source (link)
       placeholder: https://

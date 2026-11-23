@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Refresh automatic metrics in data/metrics.json (standard library only).
-Met à jour les mesures automatiques de data/metrics.json (bibliothèque standard seule).
 
 - GitHub repositories (`github`): stars, archived flag, date of the last push (API, GITHUB_TOKEN if set).
 - YouTube channels (`youtube_channel_id`): date of the last video (public RSS feed).
@@ -88,16 +87,16 @@ def main():
             if checked and (TODAY - dt.date.fromisoformat(checked)).days > 365:
                 stale.append(f"{r['id']} ({checked})")
     OUT.write_text(json.dumps(new, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
-    lines = [f"Automatic refresh / Mise à jour automatique : {TODAY.isoformat()}", "",
-             f"- Measured / Mesurées : {len(new)}"]
+    lines = [f"Automatic refresh : {TODAY.isoformat()}", "",
+             f"- Measured : {len(new)}"]
     if archived:
-        lines.append("- Archived on GitHub, to review / Archivées sur GitHub, à revoir : " + ", ".join(archived))
+        lines.append("- Archived on GitHub, to review : " + ", ".join(archived))
     if unfeature:
-        lines.append("- In the README selection but no longer eligible (inactive for 6 months, archived or weak source), to remove from the selection / Dans la sélection du README mais plus éligibles (inactives depuis 6 mois, archivées ou source faible), à retirer de la sélection : " + ", ".join(unfeature))
+        lines.append("- In the README selection but no longer eligible (inactive for 6 months, archived or weak source), to remove from the selection : " + ", ".join(unfeature))
     if stale:
-        lines.append("- Not checked by hand for more than a year / Non vérifiées à la main depuis plus d'un an : " + ", ".join(stale))
+        lines.append("- Not checked by hand for more than a year : " + ", ".join(stale))
     if failed:
-        lines.append("- Read failures (previous values kept) / Échecs de lecture (valeurs précédentes gardées) : " + ", ".join(failed))
+        lines.append("- Read failures (previous values kept) : " + ", ".join(failed))
     print("\n".join(lines))
     return 0
 

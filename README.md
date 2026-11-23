@@ -2,9 +2,9 @@
 
 > Interlocking plastic construction bricks, from the official LEGO system to compatible brands.
 
-[Version française](README.fr.md) · [Website with search, filters and charts](https://actarus314.github.io/awesome-lego/)
+[Website with search, filters and charts](https://actarus314.github.io/awesome-lego/) · [French version of the website](https://actarus314.github.io/awesome-lego/fr/)
 
-Only the best of each group is listed here. The [full list](full-list.md) also has the other resources, including inactive and dead ones.
+Only the best of each group is listed here. The [full list](full-list.md) has every resource, including inactive and dead ones.
 
 🧱 official LEGO · 🔶 alternative brands · ⚠️ inactive or archived · 💀 dead (kept for reference)
 
@@ -183,7 +183,7 @@ English- and French-language YouTube channels and podcasts: reviews of official 
 ### Official LEGO reviews
 
 - [Brickmitri](https://www.youtube.com/@brickmitri) - French-language LEGO news and set reviews; the channel describes itself as an independent medium. 🧱
-- [JANGBRiCKS](https://www.youtube.com/@JANGBRiCKS) - Set reviews and reveals of official LEGO sets by an adult fan; the channel description states unsponsored content and recent titles carry a #NotAd tag. 🧱
+- [JANGBRiCKS](https://www.youtube.com/@JANGBRiCKS) - Set reviews and reveals of official LEGO sets by an adult fan; the channel description states unsponsored content and titles carry a #NotAd tag. 🧱
 - [RacingBrick](https://www.youtube.com/@RacingBrick) - Detailed building reviews of LEGO Technic and vehicle sets, with Powered Up tutorials. 🧱
 - [Tiago Catarino](https://www.youtube.com/@TiagoCatarino) - Set reviews by a former official LEGO designer, with building tips. 🧱
 
@@ -215,7 +215,7 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 ### Design software
 
 - [BrickLink Studio](https://www.bricklink.com/v3/studio/download.page) - Free 3D design software for LEGO models with BrickLink parts list, instruction editor and photorealistic rendering. 🧱🔶
-- [LeoCAD](https://www.leocad.org/) - Open-source CAD program for virtual LEGO models based on the LDraw library, for Windows, macOS and Linux. 🧱
+- [LeoCAD](https://www.leocad.org/) - Open-source computer-aided design program for virtual LEGO models based on the LDraw library, for Windows, macOS and Linux. 🧱
 
 ### Apps
 
@@ -259,4 +259,4 @@ Existing directories, awesome lists and lists of channels and brands about LEGO 
 
 ## Contributing
 
-Additions and corrections are welcome: read [CONTRIBUTING.md](CONTRIBUTING.md). Entries live in [`data/`](data/); this file is generated.
+Additions and corrections are welcome: read [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them.
