@@ -286,6 +286,7 @@ kind = "third-party"
 id = "spielzeug-fuchs"
 name = "Spielzeug-Fuchs"
 url = "https://spielzeug-fuchs.de"
+feed = "https://spielzeug-fuchs.de/feed/"
 group = "alternative-brands"
 covers = ["alternative"]
 languages = ["de"]
@@ -1053,3 +1054,30 @@ confidence = "low"
 url = "https://brickmitri.com/comparateur-lego/"
 date = "2026-11-23"
 kind = "third-party"
+
+[[resource]]
+id = "brickitalia"
+name = "Brickitalia"
+url = "https://www.brickitalia.com/"
+group = "official-lego"
+covers = ["official", "parts", "minifigures"]
+languages = ["it"]
+countries = ["IT"]
+access = "free"
+summary_en = "Italian online shop for LEGO sets, loose parts and minifigures, aimed at collectors and builders."
+summary_fr = "Boutique en ligne italienne de sets LEGO, de pièces détachées et de minifigures, destinée aux collectionneurs et aux constructeurs."
+strengths_en = ["Loose parts and minifigures besides sets", "Black Friday promotion announced until 27 November 2026"]
+strengths_fr = ["Pièces détachées et minifigures en plus des sets", "Promotion Black Friday annoncée jusqu'au 27 novembre 2026"]
+weaknesses_en = ["Delivery conditions outside Italy not read"]
+weaknesses_fr = ["Conditions de livraison hors d'Italie non lues"]
+size_en = "About 250 sets and 50000 parts (as published by the shop)"
+size_fr = "Environ 250 sets et 50000 pièces (selon la boutique)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.brickitalia.com/"
+date = "2026-11-23"
+kind = "read"

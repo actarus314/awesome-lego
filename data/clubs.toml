@@ -63,6 +63,7 @@ kind = "read"
 id = "brickish"
 name = "Brickish"
 url = "https://brickish.org/"
+feed = "https://brickish.org/feed/"
 group = "national-clubs"
 featured = true
 covers = ["clubs", "official", "events"]
@@ -210,6 +211,7 @@ kind = "official"
 id = "ale-spain"
 name = "ALE! Asociación Cultural de Aficionados a LEGO"
 url = "https://www.alebricks.com/"
+feed = "https://www.alebricks.com/feed/"
 group = "national-clubs"
 covers = ["clubs", "official", "events"]
 languages = ["es"]
@@ -400,6 +402,7 @@ kind = "official"
 id = "chti-lug"
 name = "Ch'ti LUG"
 url = "https://chtilug.fr/"
+feed = "https://www.chtilug.fr/feed/"
 group = "regional-clubs"
 covers = ["clubs", "official", "events"]
 languages = ["fr"]
@@ -485,6 +488,7 @@ kind = "third-party"
 id = "french-brick-idf"
 name = "French'Brick - Île-de-France"
 url = "https://frenchbrickidf.forumgaming.fr/"
+feed = "https://frenchbrickidf.forumgaming.fr/feed/?f=27"
 group = "regional-clubs"
 covers = ["clubs", "official", "events"]
 languages = ["fr"]
@@ -515,6 +519,7 @@ kind = "third-party"
 id = "bricking-bavaria-club"
 name = "Bricking Bavaria e.V."
 url = "https://www.bricking-bavaria.de/"
+feed = "https://www.bricking-bavaria.de/feed/"
 group = "regional-clubs"
 covers = ["clubs", "official", "events"]
 languages = ["de", "en"]
@@ -592,6 +597,7 @@ kind = "official"
 id = "tartan-lug"
 name = "Tartan LUG"
 url = "https://www.tartanlug.com/"
+feed = "https://www.tartanlug.com/feed/"
 group = "regional-clubs"
 covers = ["clubs", "official", "events"]
 languages = ["en"]
@@ -672,6 +678,7 @@ kind = "official"
 id = "nelug"
 name = "NELUG - New England LEGO Users Group"
 url = "https://www.nelug.org/"
+feed = "https://www.nelug.org/backend/events.rss"
 group = "regional-clubs"
 covers = ["clubs", "official", "events"]
 languages = ["en"]
@@ -722,6 +729,7 @@ kind = "official"
 id = "der-helfende-stein"
 name = "Der helfende Stein"
 url = "https://derhelfendestein.at/"
+feed = "https://derhelfendestein.at/feed/"
 group = "alternative-brand-clubs"
 covers = ["clubs", "alternative", "official", "events"]
 languages = ["de"]
@@ -826,6 +834,7 @@ kind = "indexed"
 id = "brisy-expo-100-briques"
 name = "BRISY"
 url = "https://brisy.fr/"
+feed = "https://brisy.fr/feed/"
 group = "regional-clubs"
 covers = ["clubs", "official"]
 languages = ["fr"]
@@ -878,3 +887,219 @@ recurrence_fr = "Plusieurs événements par an"
 url = "https://brickouest.fr/"
 date = "2026-11-23"
 kind = "official"
+
+[[resource]]
+id = "brikkelauget"
+name = "Brikkelauget"
+url = "https://www.brikkelauget.no/"
+group = "national-clubs"
+covers = ["clubs", "events", "second-hand"]
+languages = ["no"]
+countries = ["NO"]
+access = "free"
+summary_en = "Norwegian group of adult LEGO fans, described as the largest in Norway, with a public forum including a buy and sell section."
+summary_fr = "Groupe norvégien de fans adultes de LEGO, présenté comme le plus grand de Norvège, avec un forum public comprenant une section achat et vente."
+strengths_en = ["Active forum (topic replies on 23 November 2026)", "Buy and sell section"]
+strengths_fr = ["Forum actif (réponses le 23 novembre 2026)", "Section achat et vente"]
+weaknesses_en = ["Forum in Norwegian only"]
+weaknesses_fr = ["Forum uniquement en norvégien"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://forum.brikkelauget.no/latest.json"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.brikkelauget.no/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "palikkatakomo"
+name = "Palikkatakomo"
+url = "https://www.palikkatakomo.org/"
+group = "national-clubs"
+covers = ["clubs", "events"]
+languages = ["fi"]
+countries = ["FI"]
+access = "free"
+summary_en = "Finnish LEGO fan community and forum since 2008, supported by the registered association Palikkatakomo ry, a LEGO recognised user group, with exhibitions and building contests."
+summary_fr = "Communauté et forum finlandais de fans de LEGO depuis 2008, soutenus par l'association Palikkatakomo ry, groupe d'utilisateurs reconnu par LEGO, avec expositions et concours de construction."
+strengths_en = ["Active forum with contests and collaborative builds", "Exhibition information (Jyväskylä November 2026, Helsinki 2027)"]
+strengths_fr = ["Forum actif avec concours et réalisations collectives", "Informations sur les expositions (Jyväskylä novembre 2026, Helsinki 2027)"]
+weaknesses_en = ["Forum in Finnish only", "Home page blocks automated readers with a challenge; read through another reader"]
+weaknesses_fr = ["Forum uniquement en finnois", "La page d'accueil bloque les lecteurs automatisés par un défi ; lue par un autre lecteur"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.palikkatakomo.org/forum/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "plug-pt"
+name = "PLUG - Associação Portuguesa de Utilizadores de LEGO"
+url = "https://forum.plug.pt/"
+group = "national-clubs"
+covers = ["clubs", "events"]
+languages = ["pt", "en"]
+countries = ["PT"]
+access = "free"
+summary_en = "Portuguese association of LEGO users with a forum for custom builds, events and general discussion, and a board for a LEGO ambassador."
+summary_fr = "Association portugaise d'utilisateurs LEGO avec un forum sur les créations originales, les événements et la discussion générale, et un espace pour un ambassadeur LEGO."
+strengths_en = ["Large archive of custom build topics (3659 topics)", "English-language board for non-Portuguese speakers"]
+strengths_fr = ["Vaste archive de sujets sur les créations originales (3659 sujets)", "Espace en anglais pour les non-lusophones"]
+weaknesses_en = ["News board last post January 2025", "Reviews board last post February 2022", "Home page blocks automated readers with a challenge; read through another reader"]
+weaknesses_fr = ["Dernier message du forum d'actualités en janvier 2025", "Dernier message du forum de tests en février 2022", "La page d'accueil bloque les lecteurs automatisés par un défi ; lue par un autre lecteur"]
+status = "active"
+last_activity = "2026-10-30"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://forum.plug.pt/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "comunidade-0937"
+name = "Comunidade 0937"
+url = "https://comunidade0937.com/portal/"
+group = "national-clubs"
+covers = ["clubs", "events"]
+languages = ["pt"]
+countries = ["PT"]
+access = "free"
+summary_en = "Portuguese LEGO fan group founded in 2006 that organises exhibitions and meetings and runs an online discussion forum; it announces the Paredes de Coura Fan Weekend."
+summary_fr = "Groupe portugais de fans de LEGO fondé en 2006 qui organise des expositions et rencontres et tient un forum de discussion ; il annonce le Paredes de Coura Fan Weekend."
+strengths_en = ["Forum with a monthly custom build selection", "Organiser of a yearly fan weekend"]
+strengths_fr = ["Forum avec une sélection mensuelle de créations originales", "Organisateur d'un week-end de fans annuel"]
+weaknesses_en = ["Portal posts less frequent (feed last updated 3 June 2026)"]
+weaknesses_fr = ["Publications du portail moins fréquentes (flux mis à jour le 3 juin 2026)"]
+status = "active"
+last_activity = "2026-06-03"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://comunidade0937.com/portal/feed/"
+
+[[resource.sources]]
+url = "https://comunidade0937.com/portal/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://comunidade0937.com/portal/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "lukr"
+name = "LUKR: LEGO UK Railway"
+url = "https://www.lukrailway.co.uk/"
+group = "national-clubs"
+covers = ["clubs", "learning", "events"]
+languages = ["en"]
+countries = ["GB"]
+access = "free"
+summary_en = "United Kingdom LEGO train club founded in summer 2017 with more than 60 members, exhibiting as LNUR (north) and LSUR (south). Publishes railway building standards, a list of LEGO train clubs worldwide, a podcast and news, and organises the Brick Train Awards."
+summary_fr = "Club britannique de trains LEGO fondé à l'été 2017, de plus de 60 membres, exposant sous les noms LNUR (nord) et LSUR (sud). Publie des standards de construction ferroviaire, une liste des clubs de trains LEGO dans le monde, un podcast et des actualités, et organise les Brick Train Awards."
+strengths_en = ["Standards page covering layouts, track geometry, ballasting and loading gauge", "Worldwide list of LEGO train clubs, by continent and country", "Guide to LEGO track planning software (June 2026)"]
+strengths_fr = ["Page de standards couvrant les modules, la géométrie des voies, le ballast et le gabarit", "Liste mondiale des clubs de trains LEGO, par continent et par pays", "Guide des logiciels de planification de voies LEGO (juin 2026)"]
+weaknesses_en = ["Models largely based on British prototypes, as stated by the club", "The club list is described by LUKR as incomplete"]
+weaknesses_fr = ["Modèles surtout inspirés de matériel britannique, selon le club", "La liste des clubs est décrite par LUKR comme incomplète"]
+size_en = "More than 60 members"
+size_fr = "Plus de 60 membres"
+status = "active"
+last_activity = "2026-10-15"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lukrailway.co.uk/news/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.lukrailway.co.uk/standards/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.lukrailway.co.uk/lego-train-clubs-worldwide/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "noppenbahner"
+name = "Noppenbahner"
+url = "https://noppenbahner.de/"
+group = "national-clubs"
+covers = ["clubs", "events", "instructions"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+summary_en = "German group of six adult LEGO train builders working in scale 1:45 (models about 8 studs wide). Organises the yearly Noppenbahner L-Gauge Meeting in Wörrstadt and co-founded Open L-Gauge."
+summary_fr = "Groupe allemand de six constructeurs adultes de trains LEGO à l'échelle 1:45 (modèles larges d'environ 8 tenons). Organise chaque année la Noppenbahner L-Gauge Meeting à Wörrstadt et a cofondé Open L-Gauge."
+strengths_en = ["Meeting of 2 and 3 May 2026 with about 20 exhibitors from Germany, the Netherlands, Austria, France and Switzerland", "Detailed reports with layout plans for each edition since 2022"]
+strengths_fr = ["Rencontre des 2 et 3 mai 2026 avec une vingtaine d'exposants d'Allemagne, des Pays-Bas, d'Autriche, de France et de Suisse", "Comptes rendus détaillés avec plans de réseau pour chaque édition depuis 2022"]
+weaknesses_en = ["Site in German only", "Latest post on 12 May 2026; dates of the 2027 meeting not announced at the reading date"]
+weaknesses_fr = ["Site uniquement en allemand", "Dernier article le 12 mai 2026 ; dates de la rencontre 2027 non annoncées à la date de lecture"]
+size_en = "6 members"
+size_fr = "6 membres"
+status = "slow"
+last_activity = "2026-05-12"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://noppenbahner.de/feed/"
+
+[[resource.sources]]
+url = "https://noppenbahner.de/das-team/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://noppenbahner.de/2026/05/12/nlgm-2026-das-wars/"
+date = "2026-05-12"
+kind = "read"
+
+[[resource]]
+id = "llmtc"
+name = "LLMTC: LowLands L-Gauge Model Train Club"
+url = "https://llmtc.nl/"
+feed = "https://llmtc.nl/feed/"
+group = "national-clubs"
+covers = ["clubs", "events"]
+languages = ["en", "nl"]
+countries = ["NL"]
+access = "free"
+summary_en = "Dutch club of LEGO train builders in scale 1:45, with modular layouts built to the MILS standard and a yearly display at LEGO World in Utrecht."
+summary_fr = "Club néerlandais de constructeurs de trains LEGO à l'échelle 1:45, avec des réseaux modulaires construits selon le standard MILS et une exposition annuelle à LEGO World à Utrecht."
+strengths_en = ["Interview of April 2026 describing the 2025 layout shown at LEGO World", "Links page to other LEGO train clubs"]
+strengths_fr = ["Entretien d'avril 2026 décrivant le réseau présenté à LEGO World en 2025", "Page de liens vers d'autres clubs de trains LEGO"]
+weaknesses_en = ["Own site rarely updated: pages last modified in November 2025", "Club size taken from a third-party interview"]
+weaknesses_fr = ["Site propre rarement mis à jour : pages modifiées en dernier en novembre 2025", "Taille du club tirée d'un entretien d'un site tiers"]
+size_en = "13 builders (third-party interview, April 2026)"
+size_fr = "13 constructeurs (entretien d'un site tiers, avril 2026)"
+status = "slow"
+last_activity = "2026-04-22"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://llmtc.nl/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://bricknerd.com/home/model-trains-in-a-miniature-world-exploring-lego-world-in-the-netherlands-4-22-26"
+date = "2026-04-22"
+kind = "third-party"
+
+# ------------------------------------------------------------------- tools

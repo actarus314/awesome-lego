@@ -201,6 +201,7 @@ kind = "read"
 id = "jays-brick-blog"
 name = "Jay's Brick Blog"
 url = "https://jaysbrickblog.com/"
+feed = "https://jaysbrickblog.com/feed/"
 group = "news-and-reviews"
 covers = ["official", "news"]
 languages = ["en"]
@@ -289,6 +290,7 @@ kind = "read"
 id = "zusammengebaut"
 name = "Zusammengebaut"
 url = "https://www.zusammengebaut.com/"
+feed = "https://www.zusammengebaut.com/feed/"
 group = "news-and-reviews"
 covers = ["official", "news"]
 languages = ["de"]
@@ -629,6 +631,7 @@ kind = "read"
 id = "1000steine-forum"
 name = "1000steine.de forum"
 url = "https://www.1000steine.de/de/gemeinschaft/forum/"
+feed = "https://www.1000steine.de/de/gemeinschaft/forum/rss.xml"
 group = "forums"
 covers = ["official", "alternative", "second-hand", "custom-builds", "parts"]
 languages = ["de"]
@@ -821,7 +824,8 @@ strengths_en = ["Dedicated to one of the largest alternative brands"]
 strengths_fr = ["Dédié à l'une des principales marques alternatives"]
 weaknesses_en = ["Size not published; threads seen date from 2023; activity unverified"]
 weaknesses_fr = ["Taille non publiée ; fils vus datant de 2023 ; activité non vérifiée"]
-status = "active"
+status = "inactive"
+last_activity = "2024-12-24"
 checked = "2026-11-23"
 confidence = "low"
 subreddit = "MouldKing"
@@ -848,7 +852,8 @@ strengths_en = ["Only alternative brands"]
 strengths_fr = ["Uniquement des marques alternatives"]
 weaknesses_en = ["Moderated by a video reviewer with a commercial interest in the topic", "Size and activity not verified"]
 weaknesses_fr = ["Modéré par un créateur de vidéos ayant un intérêt dans le sujet", "Taille et activité non vérifiées"]
-status = "active"
+status = "slow"
+last_activity = "2026-07-13"
 checked = "2026-11-23"
 confidence = "low"
 subreddit = "ALTbricks"
@@ -902,7 +907,8 @@ strengths_en = ["Only French-language LEGO subreddit found"]
 strengths_fr = ["Seul sous-reddit LEGO francophone repéré"]
 weaknesses_en = ["Size and activity not established"]
 weaknesses_fr = ["Taille et activité non établies"]
-status = "active"
+status = "inactive"
+last_activity = "2024-12-16"
 checked = "2026-11-23"
 confidence = "low"
 subreddit = "LegoFrance"
@@ -1099,3 +1105,814 @@ feed = "https://www.merlinssteine.de/communityreviews/index.xml"
 url = "https://www.merlinssteine.de/communityreviews/"
 date = "2026-11-23"
 kind = "read"
+
+[[resource]]
+id = "reddit-legostorage"
+name = "r/LegoStorage"
+url = "https://www.reddit.com/r/LegoStorage/"
+group = "reddit"
+covers = ["learning"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Subreddit for sorting and storage setups, container links and reviews."
+summary_fr = "Sous-reddit consacré aux systèmes de tri et de rangement, liens de contenants et avis."
+strengths_en = ["Dedicated to sorting and storage, with photos of setups"]
+strengths_fr = ["Dédié au tri et au rangement, avec photos d'installations"]
+weaknesses_en = ["Page blocked to automated reading; figures from search snippets only"]
+weaknesses_fr = ["Page bloquée à la lecture automatisée ; chiffres issus d'extraits de recherche uniquement"]
+size_en = "54000 subscribers (search snippet)"
+size_fr = "54000 abonnés (extrait de recherche)"
+status = "active"
+last_activity = "2025-04-10"
+checked = "2026-11-23"
+confidence = "low"
+subreddit = "LegoStorage"
+
+[[resource.sources]]
+url = "https://www.reddit.com/r/LegoStorage/comments/1jvpy9j/found_this_lego_sorting_guide_and_i_love_it_so/"
+date = "2025-04-10"
+kind = "indexed"
+
+[[resource]]
+id = "eurobricks-minifig-customisation-workshop"
+name = "Eurobricks Minifig Customisation Workshop"
+url = "https://www.eurobricks.com/forum/forums/forum/90-minifig-customisation-workshop/"
+group = "forums"
+covers = ["custom-builds", "minifigures"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+business_model_en = "Free; registration required to post"
+business_model_fr = "Gratuit ; inscription requise pour écrire"
+summary_en = "Eurobricks section for minifigure and part customising: techniques, work in progress, products, and tutorials on decals and printing."
+summary_fr = "Rubrique d'Eurobricks consacrée à la personnalisation de minifigurines et de pièces : techniques, travaux en cours, produits et tutoriels sur les décalcomanies et l'impression."
+strengths_en = ["Tutorials on making and applying decals", "Index and guidelines topic for customisers"]
+strengths_fr = ["Tutoriels de fabrication et d'application de décalcomanies", "Sujet d'index et de règles pour les personnalisateurs"]
+weaknesses_en = ["Automated readers meet an anti-robot challenge: content read only from search results", "Latest topics seen in the index date from 2025"]
+weaknesses_fr = ["Les lecteurs automatisés rencontrent un défi anti-robot : contenu lu seulement dans les résultats de recherche", "Derniers sujets vus dans l'index datant de 2025"]
+status = "slow"
+checked = "2026-11-23"
+confidence = "low"
+
+[[resource.sources]]
+url = "https://www.eurobricks.com/forum/forums/forum/90-minifig-customisation-workshop/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://www.eurobricks.com/forum/forums/topic/12324-minifig-customisation-index-and-guidelines/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "reddit-legocustoms"
+name = "r/LEGOcustoms"
+url = "https://www.reddit.com/r/LEGOcustoms/"
+group = "reddit"
+covers = ["custom-builds", "minifigures"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, content not read directly"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, contenu non lu directement"
+summary_en = "Subreddit for custom LEGO minifigures and custom builds, including sourcing of custom parts and accessories."
+summary_fr = "Sous-reddit pour les minifigurines et créations originales LEGO sur mesure, y compris la recherche de pièces et d'accessoires personnalisés."
+strengths_en = ["Customiser-focused, unlike general LEGO subreddits"]
+strengths_fr = ["Centré sur la personnalisation, contrairement aux sous-reddits LEGO généraux"]
+weaknesses_en = ["Size and activity not verified"]
+weaknesses_fr = ["Taille et activité non vérifiées"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+subreddit = "LEGOcustoms"
+
+[[resource.sources]]
+url = "https://www.reddit.com/r/LEGOcustoms/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "reddit-customfigs"
+name = "r/customfigs"
+url = "https://www.reddit.com/r/customfigs/"
+group = "reddit"
+covers = ["minifigures"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, content not read directly"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, contenu non lu directement"
+summary_en = "Subreddit dedicated to custom LEGO minifigures, with requests for designers and help finding parts."
+summary_fr = "Sous-reddit consacré aux minifigurines LEGO sur mesure, avec demandes de concepteurs et aide à la recherche de pièces."
+strengths_en = ["Customiser-focused, unlike general LEGO subreddits"]
+strengths_fr = ["Centré sur la personnalisation, contrairement aux sous-reddits LEGO généraux"]
+weaknesses_en = ["Size and activity not verified"]
+weaknesses_fr = ["Taille et activité non vérifiées"]
+status = "active"
+checked = "2026-11-23"
+confidence = "low"
+subreddit = "customfigs"
+
+[[resource.sources]]
+url = "https://www.reddit.com/r/customfigs/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "orangeteam-lug"
+name = "OrangeTeam LUG"
+url = "https://www.orangeteamlug.it/"
+group = "news-and-reviews"
+covers = ["news", "clubs", "events"]
+languages = ["it"]
+countries = ["IT"]
+access = "free"
+summary_en = "Website of an Italian LEGO user group of adult fans: news, set reviews, custom builds, tutorials, a forum and an event calendar, written by volunteers."
+summary_fr = "Site d'un groupe d'utilisateurs LEGO italien d'adultes fans : actualités, tests de sets, créations originales, tutoriels, forum et calendrier d'événements, rédigés par des bénévoles."
+strengths_en = ["Reviews and tutorials written by builders", "Event announcements, including exhibitions in 2026 and 2027"]
+strengths_fr = ["Tests et tutoriels rédigés par des constructeurs", "Annonces d'événements, dont des expositions en 2026 et 2027"]
+weaknesses_en = ["Amateur site without a fixed publication rhythm (stated by the site)", "Home page blocks automated readers with a challenge; read through another reader"]
+weaknesses_fr = ["Site amateur sans rythme de publication fixe (indiqué par le site)", "La page d'accueil bloque les lecteurs automatisés par un défi ; lue par un autre lecteur"]
+status = "active"
+last_activity = "2026-11-03"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.orangeteamlug.it/news"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.orangeteamlug.it/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "il-mastro-costruttore"
+name = "Il Mastro Costruttore"
+url = "https://www.ilmastrocostruttore.it/"
+group = "deals"
+covers = ["official", "news"]
+languages = ["it"]
+countries = ["IT"]
+access = "free"
+summary_en = "Italian LEGO news and deals site: promotions on the official LEGO shop and retailers, LEGO Insiders weekends, new sets and a list of sets about to retire."
+summary_fr = "Site italien d'actualités et de bons plans LEGO : promotions de la boutique LEGO officielle et de distributeurs, week-ends LEGO Insiders, nouveaux sets et liste des sets bientôt retirés."
+strengths_en = ["Updated list of retiring sets for 2026 and 2027", "Daily posts"]
+strengths_fr = ["Liste à jour des sets retirés en 2026 et 2027", "Publications quotidiennes"]
+weaknesses_en = ["Content centred on promotions rather than reviews"]
+weaknesses_fr = ["Contenu centré sur les promotions plutôt que sur les tests"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://www.ilmastrocostruttore.it/feed/"
+
+[[resource.sources]]
+url = "https://www.ilmastrocostruttore.it/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.ilmastrocostruttore.it/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "elcatalejo"
+name = "elCatalejo"
+url = "https://elcatalejo.es/"
+group = "news-and-reviews"
+covers = ["official", "news"]
+languages = ["es"]
+countries = ["ES"]
+access = "free"
+summary_en = "Spanish LEGO news site for fans of all ages: news, offers, retiring sets, an investment section and a guide for new readers."
+summary_fr = "Site espagnol d'actualités LEGO pour fans de tous âges : actualités, offres, sets retirés, rubrique investissement et guide pour les nouveaux lecteurs."
+strengths_en = ["Dedicated pages for retiring sets, modular buildings and trains", "Several posts per week"]
+strengths_fr = ["Pages dédiées aux sets retirés, aux bâtiments modulaires et aux trains", "Plusieurs articles par semaine"]
+weaknesses_en = ["Mixes editorial content and offers"]
+weaknesses_fr = ["Mélange contenu éditorial et offres"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://elcatalejo.es/feed/"
+
+[[resource.sources]]
+url = "https://elcatalejo.es/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://elcatalejo.es/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "todobrick"
+name = "TodoBrick"
+url = "https://todobrick.com/"
+feed = "https://todobrick.com/feed/"
+group = "news-and-reviews"
+covers = ["official", "news"]
+languages = ["es"]
+countries = ["ES"]
+access = "free"
+summary_en = "Spanish LEGO site run by two fans: news, rumours, set reviews and lists of where to buy exclusive sets in Spanish shops."
+summary_fr = "Site LEGO espagnol tenu par deux fans : actualités, rumeurs, tests de sets et listes des boutiques espagnoles où acheter les sets exclusifs."
+strengths_en = ["List of exclusive sets by Spanish shop", "Lists of retiring sets and of all modular buildings"]
+strengths_fr = ["Liste des sets exclusifs par boutique espagnole", "Listes des sets retirés et de tous les bâtiments modulaires"]
+weaknesses_en = ["Publication dates not visible in the page read", "Home page blocks automated readers with a challenge; read through another reader"]
+weaknesses_fr = ["Dates de publication non visibles dans la page lue", "La page d'accueil bloque les lecteurs automatisés par un défi ; lue par un autre lecteur"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://todobrick.com/blog/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "fani-klockow"
+name = "Fani Klocków"
+url = "https://faniklockow.pl/"
+group = "news-and-reviews"
+covers = ["official", "news"]
+languages = ["pl"]
+countries = ["PL"]
+access = "free"
+summary_en = "Polish LEGO news site with sections for news, investment, deals, video and sets for adults, plus an application comparing prices and tracking collections."
+summary_fr = "Site polonais d'actualités LEGO avec rubriques actualités, investissement, bons plans, vidéo et sets pour adultes, et une application de comparaison de prix et de suivi de collection."
+strengths_en = ["Several posts per day", "Price comparison application at app.faniklockow.pl"]
+strengths_fr = ["Plusieurs articles par jour", "Application de comparaison de prix sur app.faniklockow.pl"]
+weaknesses_en = ["Investment angle on part of the content"]
+weaknesses_fr = ["Angle investissement sur une partie du contenu"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://faniklockow.pl/feed/"
+
+[[resource.sources]]
+url = "https://faniklockow.pl/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://app.faniklockow.pl/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "bouwsteentjes"
+name = "Bouwsteentjes.info"
+url = "https://bouwsteentjes.info/"
+group = "news-and-reviews"
+covers = ["official", "news"]
+languages = ["nl"]
+countries = ["NL", "BE"]
+access = "free"
+summary_en = "Dutch-language LEGO news site for the Benelux, recognised by the LEGO Group as fan media, with news, reviews, deals and promotions."
+summary_fr = "Site d'actualités LEGO néerlandophone pour le Benelux, reconnu par le groupe LEGO comme média de fans, avec actualités, tests, offres et promotions."
+strengths_en = ["Pages for deals and gifts with purchase", "Reviews and theme pages"]
+strengths_fr = ["Pages d'offres et de cadeaux avec achat", "Tests et pages par thème"]
+weaknesses_en = ["Last post read dated 10 October 2026"]
+weaknesses_fr = ["Dernier article lu daté du 10 octobre 2026"]
+status = "active"
+last_activity = "2026-10-10"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://bouwsteentjes.info/feed/"
+
+[[resource.sources]]
+url = "https://bouwsteentjes.info/feed/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://bouwsteentjes.info/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "kostkoviny"
+name = "Kostkoviny"
+url = "https://kostkoviny.cz/"
+group = "news-and-reviews"
+covers = ["official", "news"]
+languages = ["cs"]
+countries = ["CZ"]
+access = "free"
+summary_en = "Czech LEGO news site covering new sets, reviews, discounts and investment, with coverage of 2027 City and Speed Champions ranges."
+summary_fr = "Site tchèque d'actualités LEGO couvrant nouveaux sets, tests, réductions et investissement, avec les gammes City et Speed Champions 2027."
+strengths_en = ["Prices in Czech koruna", "Dedicated reviews section"]
+strengths_fr = ["Prix en couronnes tchèques", "Rubrique de tests dédiée"]
+weaknesses_en = ["No RSS feed found (address /feed/ returns an error)"]
+weaknesses_fr = ["Aucun flux RSS trouvé (l'adresse /feed/ renvoie une erreur)"]
+status = "active"
+last_activity = "2026-11-19"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://kostkoviny.cz/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "eurobricks-train-tech"
+name = "Eurobricks: LEGO Train Tech"
+url = "https://www.eurobricks.com/forum/forums/forum/122-lego-train-tech/"
+group = "forums"
+covers = ["official", "custom-builds", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+business_model_en = "Free; registration required to post; automated readers meet an anti-robot challenge"
+business_model_fr = "Gratuit ; inscription requise pour écrire ; les lecteurs automatisés rencontrent un défi anti-robot"
+summary_en = "Train section of Eurobricks: official sets, custom locomotives and rolling stock, track geometry, 9V, Power Functions and Powered Up electronics, third-party controllers and track."
+summary_fr = "Rubrique trains d'Eurobricks : sets LEGO officiels, locomotives et wagons originaux, géométrie des voies, électronique 9V, Power Functions et Powered Up, contrôleurs et voies de fabricants tiers."
+strengths_en = ["Index topic \"Central Station\" and a registry of members", "Threads on Fx Track, SBrick, Powered Up and 9V maintenance", "Topic of 21 November 2026 presenting an open-source controller application"]
+strengths_fr = ["Sujet d'index « Central Station » et registre des membres", "Fils sur Fx Track, SBrick, Powered Up et l'entretien du 9V", "Sujet du 21 novembre 2026 présentant une application de pilotage libre"]
+weaknesses_en = ["Content read through a search index only, direct reading blocked", "English only"]
+weaknesses_fr = ["Contenu lu uniquement par un index de recherche, lecture directe bloquée", "Anglais uniquement"]
+size_en = "7201 topics, 117.7 thousand posts"
+size_fr = "7201 sujets, 117.7 milliers de messages"
+status = "active"
+last_activity = "2026-11-21"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.eurobricks.com/forum/forums/forum/122-lego-train-tech/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://www.eurobricks.com/forum/forums/topic/214506-app-noppenexpress-%E2%80%93-open-source-android-controller-for-powered-up-sbrick-buwizz-circuit-cubes-mould-king-more/"
+date = "2026-11-21"
+kind = "forum"
+
+[[resource]]
+id = "eurobricks-technic"
+name = "Eurobricks: LEGO Technic, Mindstorms, Model Team and Scale Modeling"
+url = "https://www.eurobricks.com/forum/forums/forum/115-lego-technic-mindstorms-model-team-and-scale-modeling/"
+group = "forums"
+covers = ["official", "custom-builds", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+business_model_en = "Free; registration required to post; automated readers meet an anti-robot challenge"
+business_model_fr = "Gratuit ; inscription requise pour écrire ; les lecteurs automatisés rencontrent un défi anti-robot"
+summary_en = "Eurobricks section on advanced construction: Technic custom builds with motorisation and gearboxes, Mindstorms and programmable LEGO, scale models, yearly set discussions and a thread on BuWizz."
+summary_fr = "Rubrique d'Eurobricks sur la construction avancée : créations originales Technic avec motorisation et boîtes de vitesses, Mindstorms et LEGO programmable, maquettes à l'échelle, discussions annuelles sur les sets et un fil sur BuWizz."
+strengths_en = ["Index topic with FAQ, reviews, contest index and a section on third-party parts", "Technic discussions of 2027 sets, including the fiftieth anniversary of Technic"]
+strengths_fr = ["Sujet d'index avec foire aux questions, tests, index des concours et rubrique sur les pièces tierces", "Discussions sur les sets Technic 2027, dont le cinquantième anniversaire de Technic"]
+weaknesses_en = ["Content read through a search index only, direct reading blocked", "English only"]
+weaknesses_fr = ["Contenu lu uniquement par un index de recherche, lecture directe bloquée", "Anglais uniquement"]
+size_en = "18097 topics, 432.9 thousand posts (forum overview)"
+size_fr = "18097 sujets, 432.9 milliers de messages (aperçu du forum)"
+status = "active"
+last_activity = "2026-11-14"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.eurobricks.com/forum/forums/forum/115-lego-technic-mindstorms-model-team-and-scale-modeling/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://www.eurobricks.com/forum/forums/topic/81075-lego-technic-mindstorms-model-team-and-scale-modeling-index/"
+date = "2013-04-01"
+kind = "forum"
+
+[[resource]]
+id = "techlug-forum"
+name = "TechLug.fr forum"
+url = "https://www.techlug.fr/Forum/"
+group = "forums"
+featured = true
+covers = ["official", "custom-builds", "news"]
+languages = ["fr", "en"]
+countries = ["FR"]
+access = "free"
+summary_en = "French-speaking forum on LEGO Technic and Mindstorms: news, set discussions, modifications of official sets, custom builds and a section on theory of mechanisms and gearing."
+summary_fr = "Forum francophone sur LEGO Technic et Mindstorms : actualités, discussions sur les sets, modifications de sets officiels, créations originales et rubrique de théorie sur les mécanismes et les engrenages."
+strengths_en = ["Section for Technic custom builds with 2363 topics and 47293 messages", "Section on modifications of official sets (610 topics), including motorisation", "News section with a message dated 10 November 2026"]
+strengths_fr = ["Rubrique de créations originales Technic de 2363 sujets et 47293 messages", "Rubrique de modifications de sets officiels (610 sujets), dont la motorisation", "Rubrique d'actualités avec un message du 10 novembre 2026"]
+weaknesses_en = ["English section reduced (21 topics, last message in 2019)", "Technic competitions section last message in 2015", "The site also covers LEGO Star Wars"]
+weaknesses_fr = ["Rubrique anglaise réduite (21 sujets, dernier message en 2019)", "Rubrique des concours Technic dont le dernier message date de 2015", "Le site couvre aussi LEGO Star Wars"]
+size_en = "2336 topics in the members section; Technic sections counted above"
+size_fr = "2336 sujets dans la rubrique des membres ; rubriques Technic comptées ci-dessus"
+status = "active"
+last_activity = "2026-11-10"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.techlug.fr/Forum/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "l-gauge-wiki"
+name = "L-Gauge"
+url = "https://l-gauge.org/wiki/index.php?title=Main_Page"
+group = "wikis"
+covers = ["official", "learning"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Wiki on L-Gauge, the LEGO System train hobby with a track gauge of 5 studs: track elements and geometry, reference track configurations, loading gauge, wheels, wheelbase, couplers, modular standards, motors, powertrain and lighting."
+summary_fr = "Wiki sur le L-Gauge, le loisir des trains LEGO System à écartement de 5 tenons : éléments et géométrie des voies, configurations de référence, gabarit, roues, empattement, attelages, standards modulaires, moteurs, transmission et éclairage."
+strengths_en = ["Descriptive reference built from the practice of LEGO train clubs", "Reference track configurations grouped by type (junctions, S-bends, return curves)"]
+strengths_fr = ["Référence descriptive issue de la pratique des clubs de trains LEGO", "Configurations de voies de référence classées par type (embranchements, courbes en S, boucles de retour)"]
+weaknesses_en = ["Not an official or binding standard, as stated by the wiki", "Small wiki: 2 registered users and last edit on 17 February 2026"]
+weaknesses_fr = ["Pas un standard officiel ni contraignant, selon le wiki lui-même", "Petit wiki : 2 comptes enregistrés et dernière modification le 17 février 2026"]
+size_en = "246 pages, 221 images"
+size_fr = "246 pages, 221 images"
+status = "slow"
+last_activity = "2026-02-17"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://l-gauge.org/wiki/index.php?title=Main_Page"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://l-gauge.org/wiki/api.php?action=query&list=recentchanges&rclimit=3&rcprop=title%7Ctimestamp&format=json"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brick-model-railroader"
+name = "Brick Model Railroader"
+url = "https://brickmodelrailroader.com/"
+group = "news-and-reviews"
+covers = ["news", "instructions", "parts", "learning"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free blog; store with instruction kits, decals, couplers and wheel sets"
+business_model_fr = "Blog gratuit ; boutique de kits d'instructions, décalcomanies, attelages et jeux de roues"
+summary_en = "Blog on LEGO trains since January 2017 (news, events, building articles on scale, gearing and clubs) and store for train parts. Hosts the free download of all 15 issues of the RAILBRICKS magazine (2008 to 2014)."
+summary_fr = "Blog sur les trains LEGO depuis janvier 2017 (actualités, événements, articles de construction sur l'échelle, les engrenages et les clubs) et boutique de pièces pour trains. Héberge le téléchargement gratuit des 15 numéros du magazine RAILBRICKS (2008 à 2014)."
+strengths_en = ["Complete RAILBRICKS archive, free", "Articles on scale conversion and on the L-Gauge community"]
+strengths_fr = ["Archive complète de RAILBRICKS, gratuite", "Articles sur la conversion d'échelle et sur la communauté L-Gauge"]
+weaknesses_en = ["Post of 26 October 2026 by the founder reports shipping delays and an undecided future for the blog and the store", "Before that post, the latest blog posts seen date from 2023"]
+weaknesses_fr = ["Message du 26 octobre 2026 du fondateur signalant des retards d'expédition et un avenir incertain pour le blog et la boutique", "Avant ce message, les derniers articles vus datent de 2023"]
+status = "slow"
+last_activity = "2026-10-26"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickmodelrailroader.com/index.php/2026/10/26/what-is-going-on-with-brick-model-railroader/"
+date = "2026-10-26"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickmodelrailroader.com/index.php/download-railbricks/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "the-lego-car-blog"
+name = "The Lego Car Blog"
+url = "https://thelegocarblog.com/"
+group = "news-and-reviews"
+covers = ["news", "custom-builds", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Blog on LEGO cars: Technic and System vehicles by community builders, many motorised with Power Functions, Powered Up or BuWizz, plus set news and reviews."
+summary_fr = "Blog sur les voitures LEGO : véhicules Technic et System de constructeurs de la communauté, souvent motorisés avec Power Functions, Powered Up ou BuWizz, avec actualités et tests de sets."
+strengths_en = ["Several posts per week, latest on 21 November 2026", "Review of BuWizz 3.0 Pro and BuWizz Motor", "Interview series with builders (Master MOCers)"]
+strengths_fr = ["Plusieurs articles par semaine, dernier le 21 novembre 2026", "Test de BuWizz 3.0 Pro et du moteur BuWizz", "Série d'entretiens avec des constructeurs (Master MOCers)"]
+weaknesses_en = ["Vehicles only"]
+weaknesses_fr = ["Véhicules uniquement"]
+status = "active"
+last_activity = "2026-11-21"
+checked = "2026-11-23"
+confidence = "high"
+feed = "https://thelegocarblog.com/feed/"
+
+[[resource.sources]]
+url = "https://thelegocarblog.com/feed/"
+date = "2026-11-21"
+kind = "read"
+
+[[resource.sources]]
+url = "https://thelegocarblog.com/2022/04/27/buwizz-3-0-pro-buwizz-motor-review/"
+date = "2022-04-27"
+kind = "read"
+
+# ------------------------------------------------------------------- clubs
+
+[[resource]]
+id = "reddit-legotechnic"
+name = "r/LEGOtechnic"
+url = "https://www.reddit.com/r/legotechnic/"
+group = "reddit"
+covers = ["official", "parts"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, figures read from the Arctic Shift archive"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, chiffres lus dans l'archive Arctic Shift"
+summary_en = "Subreddit on LEGO Technic: builds, motorisation, set discussion and custom builds."
+summary_fr = "Sous-reddit sur LEGO Technic : constructions, motorisation, discussion des sets et créations originales."
+strengths_en = ["Active: 242 posts in 30 days (read 2026-11-23)"]
+strengths_fr = ["Actif : 242 messages en 30 jours (relevé du 2026-11-23)"]
+weaknesses_en = ["Member count is a February 2025 snapshot; Reddit not read directly"]
+weaknesses_fr = ["Nombre de membres issu d'un instantané de février 2025 ; Reddit non lu directement"]
+size_en = "At least 40141 members (February 2025 snapshot)"
+size_fr = "Au moins 40141 membres (instantané de février 2025)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+subreddit = "legotechnic"
+
+[[resource.sources]]
+url = "https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=legotechnic&limit=1&sort=desc"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "reddit-legotrains"
+name = "r/LEGOtrains"
+url = "https://www.reddit.com/r/LEGOtrains/"
+group = "reddit"
+covers = ["official", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, figures read from the Arctic Shift archive"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, chiffres lus dans l'archive Arctic Shift"
+summary_en = "Subreddit on LEGO trains, track layouts and Power Functions or Powered Up motorisation."
+summary_fr = "Sous-reddit sur les trains LEGO, les circuits et la motorisation Power Functions ou Powered Up."
+strengths_en = ["Active: 193 posts in 30 days (read 2026-11-23)"]
+strengths_fr = ["Actif : 193 messages en 30 jours (relevé du 2026-11-23)"]
+weaknesses_en = ["Member count is a February 2025 snapshot; Reddit not read directly"]
+weaknesses_fr = ["Nombre de membres issu d'un instantané de février 2025 ; Reddit non lu directement"]
+size_en = "At least 23760 members (February 2025 snapshot)"
+size_fr = "Au moins 23760 membres (instantané de février 2025)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+subreddit = "LEGOtrains"
+
+[[resource.sources]]
+url = "https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=LEGOtrains&limit=1&sort=desc"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "reddit-afol"
+name = "r/AFOL"
+url = "https://www.reddit.com/r/AFOL/"
+group = "reddit"
+covers = ["official", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, figures read from the Arctic Shift archive"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, chiffres lus dans l'archive Arctic Shift"
+summary_en = "General subreddit for adult fans of LEGO: collections, builds and hobby discussion."
+summary_fr = "Sous-reddit généraliste des fans adultes de LEGO : collections, constructions et discussions sur le loisir."
+strengths_en = ["Active: 247 posts in 30 days (read 2026-11-23)"]
+strengths_fr = ["Actif : 247 messages en 30 jours (relevé du 2026-11-23)"]
+weaknesses_en = ["Member count is a February 2025 snapshot; Reddit not read directly"]
+weaknesses_fr = ["Nombre de membres issu d'un instantané de février 2025 ; Reddit non lu directement"]
+size_en = "At least 32404 members (February 2025 snapshot)"
+size_fr = "Au moins 32404 membres (instantané de février 2025)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+subreddit = "AFOL"
+
+[[resource.sources]]
+url = "https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=AFOL&limit=1&sort=desc"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "reddit-legoinvesting"
+name = "r/legoinvesting"
+url = "https://www.reddit.com/r/legoinvesting/"
+group = "reddit"
+covers = ["official", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, figures read from the Arctic Shift archive"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, chiffres lus dans l'archive Arctic Shift"
+summary_en = "Subreddit on LEGO sets as an investment: retirement dates, discounts and resale prices; mostly United States deals."
+summary_fr = "Sous-reddit sur les sets LEGO comme placement : fins de commercialisation, remises et prix de revente ; surtout des offres américaines."
+strengths_en = ["Active: 189 posts in 30 days (read 2026-11-23)"]
+strengths_fr = ["Actif : 189 messages en 30 jours (relevé du 2026-11-23)"]
+weaknesses_en = ["Member count is a February 2025 snapshot; Reddit not read directly"]
+weaknesses_fr = ["Nombre de membres issu d'un instantané de février 2025 ; Reddit non lu directement"]
+size_en = "At least 5025 members (February 2025 snapshot)"
+size_fr = "Au moins 5025 membres (instantané de février 2025)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+subreddit = "legoinvesting"
+
+[[resource.sources]]
+url = "https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=legoinvesting&limit=1&sort=desc"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "reddit-legouk"
+name = "r/LegoUK"
+url = "https://www.reddit.com/r/LegoUK/"
+group = "reddit"
+covers = ["official", "news"]
+languages = ["en"]
+countries = ["GB"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, figures read from the Arctic Shift archive"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, chiffres lus dans l'archive Arctic Shift"
+summary_en = "United Kingdom subreddit on LEGO: deals, sets and discussion in pounds sterling."
+summary_fr = "Sous-reddit britannique sur LEGO : promotions, sets et discussions en livres sterling."
+strengths_en = ["Active: 158 posts in 30 days (read 2026-11-23)"]
+strengths_fr = ["Actif : 158 messages en 30 jours (relevé du 2026-11-23)"]
+weaknesses_en = ["Member count is a February 2025 snapshot; Reddit not read directly"]
+weaknesses_fr = ["Nombre de membres issu d'un instantané de février 2025 ; Reddit non lu directement"]
+size_en = "At least 6489 members (February 2025 snapshot)"
+size_fr = "Au moins 6489 membres (instantané de février 2025)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+subreddit = "LegoUK"
+
+[[resource.sources]]
+url = "https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=LegoUK&limit=1&sort=desc"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "reddit-bricklink"
+name = "r/BrickLink"
+url = "https://www.reddit.com/r/Bricklink/"
+group = "reddit"
+covers = ["second-hand", "parts"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, figures read from the Arctic Shift archive"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, chiffres lus dans l'archive Arctic Shift"
+summary_en = "Subreddit on the BrickLink marketplace: orders, sellers, parts and Studio."
+summary_fr = "Sous-reddit sur la place de marché BrickLink : commandes, vendeurs, pièces et Studio."
+strengths_en = ["Active: 237 posts in 30 days (read 2026-11-23)"]
+strengths_fr = ["Actif : 237 messages en 30 jours (relevé du 2026-11-23)"]
+weaknesses_en = ["Member count is a February 2025 snapshot; Reddit not read directly"]
+weaknesses_fr = ["Nombre de membres issu d'un instantané de février 2025 ; Reddit non lu directement"]
+size_en = "At least 11204 members (February 2025 snapshot)"
+size_fr = "Au moins 11204 membres (instantané de février 2025)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+subreddit = "Bricklink"
+
+[[resource.sources]]
+url = "https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=Bricklink&limit=1&sort=desc"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "reddit-cobiblocks"
+name = "r/Cobi"
+url = "https://www.reddit.com/r/cobiblocks/"
+group = "reddit"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, figures read from the Arctic Shift archive"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, chiffres lus dans l'archive Arctic Shift"
+summary_en = "Subreddit for Cobi, the Polish brick brand: military and vehicle sets, haul and build photos."
+summary_fr = "Sous-reddit de Cobi, marque polonaise de briques : sets militaires et véhicules, photos d'achats et de constructions."
+strengths_en = ["Active: 165 posts in 30 days (read 2026-11-23)"]
+strengths_fr = ["Actif : 165 messages en 30 jours (relevé du 2026-11-23)"]
+weaknesses_en = ["Member count is a February 2025 snapshot; Reddit not read directly"]
+weaknesses_fr = ["Nombre de membres issu d'un instantané de février 2025 ; Reddit non lu directement"]
+size_en = "At least 6719 members (February 2025 snapshot)"
+size_fr = "Au moins 6719 membres (instantané de février 2025)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+subreddit = "cobiblocks"
+
+[[resource.sources]]
+url = "https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=cobiblocks&limit=1&sort=desc"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "reddit-bluebrixx"
+name = "r/BlueBrixx"
+url = "https://www.reddit.com/r/bluebrixx/"
+group = "reddit"
+covers = ["alternative"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, figures read from the Arctic Shift archive"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, chiffres lus dans l'archive Arctic Shift"
+summary_en = "German-language subreddit on BlueBrixx sets, sale weeks and build instructions."
+summary_fr = "Sous-reddit en allemand sur les sets BlueBrixx, les semaines de promotion et les notices."
+strengths_en = ["Active: 117 posts in 30 days (read 2026-11-23)"]
+strengths_fr = ["Actif : 117 messages en 30 jours (relevé du 2026-11-23)"]
+weaknesses_en = ["Member count is a February 2025 snapshot; Reddit not read directly"]
+weaknesses_fr = ["Nombre de membres issu d'un instantané de février 2025 ; Reddit non lu directement"]
+size_en = "At least 1408 members (February 2025 snapshot)"
+size_fr = "Au moins 1408 membres (instantané de février 2025)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+subreddit = "bluebrixx"
+
+[[resource.sources]]
+url = "https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=bluebrixx&limit=1&sort=desc"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "reddit-legominifigure"
+name = "r/LegoMinifigure"
+url = "https://www.reddit.com/r/LegoMinifigure/"
+group = "reddit"
+covers = ["official", "minifigures"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, figures read from the Arctic Shift archive"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, chiffres lus dans l'archive Arctic Shift"
+summary_en = "Subreddit on LEGO minifigures: collectible series, custom figures and identification."
+summary_fr = "Sous-reddit sur les minifigurines LEGO : séries à collectionner, figurines personnalisées et identification."
+strengths_en = ["Active: 300 or more posts in 30 days (read 2026-11-23)"]
+strengths_fr = ["Actif : 300 ou plus messages en 30 jours (relevé du 2026-11-23)"]
+weaknesses_en = ["Member count is a February 2025 snapshot; Reddit not read directly"]
+weaknesses_fr = ["Nombre de membres issu d'un instantané de février 2025 ; Reddit non lu directement"]
+size_en = "At least 8677 members (February 2025 snapshot)"
+size_fr = "Au moins 8677 membres (instantané de février 2025)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+subreddit = "LegoMinifigure"
+
+[[resource.sources]]
+url = "https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=LegoMinifigure&limit=1&sort=desc"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "reddit-legoideas"
+name = "r/legoideas"
+url = "https://www.reddit.com/r/legoideas/"
+group = "reddit"
+covers = ["official", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Free; Reddit blocks automated readers, figures read from the Arctic Shift archive"
+business_model_fr = "Gratuit ; Reddit bloque les lecteurs automatisés, chiffres lus dans l'archive Arctic Shift"
+summary_en = "Subreddit on LEGO Ideas: fan projects, reviews and set announcements."
+summary_fr = "Sous-reddit sur LEGO Ideas : projets de fans, votes et annonces de sets."
+strengths_en = ["Active: 300 or more posts in 30 days (read 2026-11-23)"]
+strengths_fr = ["Actif : 300 ou plus messages en 30 jours (relevé du 2026-11-23)"]
+weaknesses_en = ["Member count is a February 2025 snapshot; Reddit not read directly"]
+weaknesses_fr = ["Nombre de membres issu d'un instantané de février 2025 ; Reddit non lu directement"]
+size_en = "At least 15021 members (February 2025 snapshot)"
+size_fr = "Au moins 15021 membres (instantané de février 2025)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+subreddit = "legoideas"
+
+[[resource.sources]]
+url = "https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=legoideas&limit=1&sort=desc"
+date = "2026-11-23"
+kind = "third-party"

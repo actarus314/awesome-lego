@@ -343,6 +343,7 @@ kind = "read"
 id = "quelug-youtube-channels"
 name = "QuéLUG thread: interesting YouTube channels"
 url = "https://forums.quelug.org/t/canaux-youtube-interessants/3294"
+feed = "https://forums.quelug.org/t/canaux-youtube-interessants/3294.rss"
 group = "channel-lists"
 covers = ["official", "custom-builds"]
 languages = ["fr"]
@@ -517,3 +518,53 @@ confidence = "medium"
 url = "https://baustein.info/welt-des-steins/"
 date = "2022-03-09"
 kind = "indexed"
+
+[[resource]]
+id = "promoklocki-youtuberzy"
+name = "Polscy LEGO Youtuberzy (promoklocki.pl)"
+url = "https://promoklocki.pl/polscy-lego-youtuberzy"
+group = "channel-lists"
+covers = ["news", "learning"]
+languages = ["pl"]
+countries = ["PL"]
+access = "free"
+summary_en = "List of Polish YouTube channels about LEGO with subscriber, video and view counts, sortable by subscribers."
+summary_fr = "Liste de chaînes YouTube polonaises sur LEGO avec nombre d'abonnés, de vidéos et de vues, triable par abonnés."
+strengths_en = ["Counts published per channel", "Includes small channels"]
+strengths_fr = ["Chiffres publiés pour chaque chaîne", "Inclut de petites chaînes"]
+weaknesses_en = ["Date of the counts not stated", "Includes channels aimed at children"]
+weaknesses_fr = ["Date des chiffres non indiquée", "Inclut des chaînes destinées aux enfants"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://promoklocki.pl/polscy-lego-youtuberzy"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "kostky-eu"
+name = "Kostky.eu"
+url = "https://kostky.eu/"
+group = "site-directories"
+covers = ["news", "data"]
+languages = ["cs"]
+countries = ["CZ", "SK"]
+access = "free"
+summary_en = "Czech directory of practical LEGO websites: Czech blogs, a forum registered as a user group, marketplaces, set databases, global blogs and a section on where to buy LEGO in Czechia."
+summary_fr = "Annuaire tchèque de sites LEGO pratiques : blogs tchèques, forum enregistré comme groupe d'utilisateurs, places de marché, bases de sets, blogs internationaux et section sur où acheter du LEGO en Tchéquie."
+strengths_en = ["Short annotation for each site", "Section on where to buy LEGO in Czechia"]
+strengths_fr = ["Courte note pour chaque site", "Section sur où acheter du LEGO en Tchéquie"]
+weaknesses_en = ["No publication date on the page", "Home page blocks automated readers with a challenge; read through another reader"]
+weaknesses_fr = ["Aucune date de publication sur la page", "La page d'accueil bloque les lecteurs automatisés par un défi ; lue par un autre lecteur"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://kostky.eu/"
+date = "2026-11-23"
+kind = "read"
