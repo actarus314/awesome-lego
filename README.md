@@ -41,6 +41,22 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
   - [Building and custom builds](#building-and-custom-builds)
   - [News and community](#news-and-community)
   - [Podcasts](#podcasts)
+- [Events of the brick world](#events-of-the-brick-world)
+  - [Conventions and fan events](#conventions-and-fan-events)
+  - [Competitions](#competitions)
+  - [Event calendars](#event-calendars)
+- [Physical places](#physical-places)
+  - [Official LEGO venues and stores](#official-lego-venues-and-stores)
+  - [Museums and permanent exhibitions](#museums-and-permanent-exhibitions)
+  - [Physical shops (alternative brands and used bricks)](#physical-shops-alternative-brands-and-used-bricks)
+- [Clubs and fan associations](#clubs-and-fan-associations)
+  - [National clubs](#national-clubs)
+- [Learning and understanding bricks](#learning-and-understanding-bricks)
+  - [Guides and reference](#guides-and-reference)
+  - [Compatibility, materials and law](#compatibility-materials-and-law)
+  - [History](#history)
+  - [Books and magazines](#books-and-magazines)
+  - [Artists and designers](#artists-and-designers)
 - [Tools, APIs and open projects](#tools-apis-and-open-projects)
   - [Design software](#design-software)
   - [Apps](#apps)
@@ -207,6 +223,78 @@ English- and French-language YouTube channels and podcasts: reviews of official 
 
 - [Back 2 Brick LEGO Podcast](https://back2brick.buzzsprout.com/) - Podcast hosted by an adult fan: LEGO news, custom builds and interviews with LEGO designers, with a weekly news recap on Fridays.
 - [Briques en Vrac](https://www.vodio.fr/vodiotheque/c/1753/briques-en-vrac-actualites-et-nouveautes-lego/) - French-language podcast on LEGO news and new releases. Covers official LEGO.
+
+## Events of the brick world
+
+Conventions, fan exhibitions, artist shows, public competitions and calendars listing brick events by country.
+
+### Conventions and fan events
+
+- [Brick Mania Antwerpen](https://www.belug.be/brickmania/antwerpen/) - Largest LEGO exhibition in Belgium, organised by the Belgian LEGO User Group BeLUG at Antwerp Expo, with layouts, a Great Ball Contraption, workshops and sales. Covers official LEGO.
+- [Fana'Briques](https://expo.fanabriques.fr/fr/) - Large LEGO exhibition at the Parc des expositions in Colmar, organised by volunteers of the association Fanabriques, with dioramas, mosaics, new and second-hand LEGO shops and artists' stalls. Covers official LEGO.
+- [Skærbæk Fan Weekend](https://www.fanweekend.dk/) - International convention of adult fans of LEGO in southern Jutland, 80 km south of Billund, with a public exhibition of custom builds on the Saturday and Sunday. Covers official LEGO.
+
+### Competitions
+
+- [LEGO Ideas challenges](https://ideas.lego.com/challenges) - Official building challenges on the LEGO Ideas platform, with prizes of sets and, for some, a path to an official product. Covers official LEGO.
+
+### Event calendars
+
+- [hothbricks: expositions et événements LEGO](https://www.hothbricks.com/expos/) - Agenda of LEGO exhibitions in France, Belgium and Switzerland, plus international events where LEGO is present. Covers official LEGO.
+- [steine-kanal: Veranstaltungskalender](https://www.steine-kanal.de/veranstaltungskalender-2027-alle-lego-fan-veranstaltungen-und-boersen-im-uberblick/) - Yearly calendar of LEGO fan events and trading fairs by month, with a separate section for exhibitions using bricks of other manufacturers; permanent museums are added. Covers official LEGO and alternative brands.
+
+## Physical places
+
+Venues of the brick world that can be visited: official LEGO venues and stores, theme parks, museums and permanent exhibitions, physical shops for alternative brands and used bricks, and cafés with bricks.
+
+### Official LEGO venues and stores
+
+- [LEGO House](https://legohouse.com/en-gb) - Official LEGO experience centre in Billund, Denmark, with four Experience Zones, a historical collection of the LEGO Group and the brick, a LEGO Store and restaurants. Covers official LEGO.
+
+### Museums and permanent exhibitions
+
+- [Frankensteins Klemmbaustein Museum](https://frankensteins.de/) - Museum in Eckental near Nuremberg showing LEGO and compatible brands (COBI, Mould King, Wange, Cada, Reobrix, Sembo and others), with a large main layout, special exhibitions, a building room, a shop and a café. Opened in October 2021. Covers official LEGO and alternative brands.
+- [Museum of Bricks](https://museumofbricks.cz/) - Private LEGO museum with five sites in Czechia (Prague flagship on Národní třída, Kutná Hora, Špindlerův Mlýn, Poděbrady, Hatě near Znojmo), built on the collection of Miloš Křeček. Covers official LEGO.
+- [Palais de la Maquette - Musée du Jouet](https://www.palaisdelamaquette.com/) - Toy museum in Valras-Plage (Hérault) with giant animated LEGO and K'NEX models on 200 m²: seaside resort, harbour, medieval town, amusement park. Covers official LEGO.
+
+### Physical shops (alternative brands and used bricks)
+
+- [Time For Bricks](https://www.timeforbricks.fr/) - French shops in Chambéry (since 2023) and Annecy (opened in July 2026) selling about thirty alternative brick brands compatible with standard bricks, with free building tables and a hot drink corner in Annecy. Covers alternative brands.
+
+## Clubs and fan associations
+
+User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan CoLab recognition programme to national and local clubs in Europe.
+
+### National clubs
+
+- [BeLUG](https://www.belug.be/) - Belgian LEGO User Group: club for adult LEGO builders and collectors, independent of the LEGO Group, taking part in fairs in Belgium and abroad and organizing Brick Mania. Covers official LEGO.
+- [Brickish](https://brickish.org/) - UK-wide club of adult fans of LEGO, active since 2002 and described by itself as the first user group in the country; local meet-ups, public shows and a members-only forum. Covers official LEGO.
+- [ItLUG](https://www.itlug.org/) - Italian LEGO Users Group: national association of adult LEGO fans founded in 1999 and legally constituted in November 2010, with a forum, national events and local exhibitions. Covers official LEGO.
+
+## Learning and understanding bricks
+
+Guides, glossaries, history, compatibility and legal references, education and competitions, books, magazines and recognised brick artists.
+
+### Guides and reference
+
+- [Brick Architect](https://brickarchitect.com/) - Independent site by an architect and author: online LEGO Parts Guide, LEGO Storage Guide, set reviews and monthly news roundups. Covers official LEGO.
+
+### Compatibility, materials and law
+
+- [Court of Justice judgment C-48/09 P, Lego Juris v OHIM](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A62009CJ0048) - Judgment of 14 September 2010: the three-dimensional shape of a LEGO brick cannot be registered as a trade mark, as it consists of a shape necessary to obtain a technical result. Covers official LEGO and alternative brands.
+
+### History
+
+- [LEGO History (official LEGO)](https://www.lego.com/en-us/history) - Official chronology of the LEGO Group from 1890, with articles on the Automatic Binding Bricks (1949), Kiddicraft and the stud and tube principle (patent application of 28 January 1958). Covers official LEGO.
+
+### Books and magazines
+
+- [Blocks magazine](https://blocksmag.com/) - Monthly magazine for adult fans of LEGO, 116 pages, published in the United Kingdom since November 2014 by Silverback Publishing. Covers official LEGO.
+- [No Starch Press: LEGO books](https://nostarch.com/catalog/lego) - Publisher catalogue of unofficial LEGO books for builders: technique, Technic, robotics, lighting, trains and art. Covers official LEGO.
+
+### Artists and designers
+
+- [LEGO Certified Professionals (official LEGO list)](https://www.lego.com/en-us/aboutus/lego-certified-professionals) - Official list of adult builders officially recognised by LEGO who run a business with bricks, by region, with the rules on what they may build for clients. Covers official LEGO.
 
 ## Tools, APIs and open projects
 

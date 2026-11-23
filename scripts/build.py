@@ -31,8 +31,8 @@ T = {  # interface strings
     "title": {"en": "Awesome LEGO", "fr": "Awesome LEGO"},
     "tagline": {"en": "Interlocking plastic construction bricks, from the official LEGO system to compatible brands.",
                 "fr": "Briques de construction en plastique à emboîter, du système LEGO officiel aux marques compatibles."},
-    "site_tagline": {"en": "Brands, shops, price comparators, second-hand, communities, videos and tools for adult builders of official LEGO and compatible bricks.",
-                     "fr": "Marques, boutiques, comparateurs, occasion, communautés, vidéos et outils pour les adultes qui construisent en LEGO officiel et en briques compatibles."},
+    "site_tagline": {"en": "Brands, shops, prices, second-hand, communities, videos, events, places, clubs, know-how and tools for adult builders of official LEGO and compatible bricks.",
+                     "fr": "Marques, boutiques, prix, occasion, communautés, vidéos, événements, lieux, clubs, savoir et outils pour les adultes qui construisent en LEGO officiel et en briques compatibles."},
     "contents": {"en": "Contents", "fr": "Sommaire"},
     "contributing": {"en": "Contributing", "fr": "Contribuer"},
     "contrib_text": {"en": "Additions and corrections are welcome: read [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them."},
@@ -50,7 +50,7 @@ def fail(errors):
 
 
 def load():
-    cats, errors, ids = [], [], {}
+    cats, errors, ids, urls = [], [], {}, {}
     for path in sorted(DATA.glob("*.toml")):
         if path.stem in ("metrics", "journeys"):
             continue
@@ -79,6 +79,11 @@ def load():
                     errors.append(f"{w}: {k} missing")
             if not re.match(r"https?://", str(r.get("url", ""))):
                 errors.append(f"{w}: url must start with https:// or http://")
+            u = re.sub(r"^https?://(www\.)?", "", str(r.get("url", "")).rstrip("/").lower())
+            # A brand and its own shop may share a URL; nothing else may.
+            if u in urls and {urls[u][1], path.stem} != {"brands", "shops"}:
+                errors.append(f"{w}: url already used by {urls[u][0]}")
+            urls[u] = (r.get("id"), path.stem)
             if r.get("group") not in groups:
                 errors.append(f"{w}: group '{r.get('group')}' not in category.groups")
             if set(r.get("covers", [])) - COVERS:
@@ -126,6 +131,8 @@ def effective(r, m):
     if status in ("active", "slow", "inactive") and last:
         days = (dt.date.today() - dt.date.fromisoformat(last)).days
         status = "active" if days <= 183 else "slow" if days <= 365 else "inactive"
+    if status in ("slow", "inactive") and str(r.get("next_date") or "") >= dt.date.today().isoformat():
+        status = "active"  # a recurring event with an announced next edition is alive between editions
     return status, last
 
 
@@ -226,7 +233,8 @@ def site_data(cats, m):
         gnames = {g["id"]: {"en": g["name_en"], "fr": g["name_fr"]} for g in cat.get("groups", [])}
         for r in c["resources"]:
             status, last = effective(r, m)
-            row = {k: r.get(k) for k in ("id", "name", "url", "covers", "languages", "countries", "access", "confidence", "checked", "github", "subreddit", "featured")}
+            row = {k: r.get(k) for k in ("id", "name", "url", "covers", "languages", "countries", "access", "confidence", "checked", "github", "subreddit", "featured", "city")}
+            row["next"] = str(r["next_date"]) if r.get("next_date") and str(r["next_date"]) >= dt.date.today().isoformat() else None  # past dates are dropped at each daily build
             row.update(cat=cat["id"], group=r["group"], status=status, last=last,
                        metrics=m.get(r["id"], {}),
                        sources=[{"url": s["url"], "date": str(s["date"]), "kind": s["kind"]} for s in r.get("sources", [])])
@@ -246,7 +254,17 @@ def site_data(cats, m):
     if missing:
         fail(missing)
     return {"built": dt.date.today().isoformat(), "categories": categories, "resources": rows, "journeys": journeys,
-            "brands": [{"id": k, "name": v["name"]} for k, v in terms.items()]}
+            "brands": [{"id": k, "name": v["name"]} for k, v in terms.items()], "passion": passion()}
+
+
+def passion():
+    """Recognized fan communities per country against population (backend data, not shown as entries)."""
+    cf, pf = DATA / "backend" / "clubs-by-country.json", DATA / "backend" / "population.json"
+    if not (cf.exists() and pf.exists()):
+        return None
+    c, p = json.loads(cf.read_text(encoding="utf-8")), json.loads(pf.read_text(encoding="utf-8"))
+    return {"source": c["source"], "date": c["date"], "pop_source": p["source"], "pop_year": p["year"],
+            "rows": [{"c": k, "n": n, "pop": p["population"].get(k)} for k, n in c["countries"].items()]}
 
 
 def page(lang, data):

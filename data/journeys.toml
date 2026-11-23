@@ -34,3 +34,21 @@ id = "value"
 title_en = "Know what a set is worth"
 title_fr = "Connaître la valeur d'un set"
 resources = ["brickeconomy", "brickset", "setdb"]
+
+[[journey]]
+id = "visit"
+title_en = "Visit a place"
+title_fr = "Visiter un lieu"
+resources = ["lego-house", "legoland-parks", "museum-of-bricks", "frankensteins-klemmbaustein-museum", "palais-de-la-maquette", "time-for-bricks"]
+
+[[journey]]
+id = "meet"
+title_en = "Meet other fans"
+title_fr = "Rencontrer d'autres fans"
+resources = ["avenue-de-la-brique-expositions", "avenue-de-la-brique-associations", "freelug", "skaerbaek-fan-weekend", "lego-fan-colab-communities"]
+
+[[journey]]
+id = "learn"
+title_en = "Understand bricks and their history"
+title_fr = "Comprendre la brique et son histoire"
+resources = ["brick-architect", "lego-history", "cjeu-lego-juris", "blocks-magazine"]

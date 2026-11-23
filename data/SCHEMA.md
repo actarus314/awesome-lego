@@ -62,3 +62,9 @@ Writing rules:
 - English: "official LEGO" for the brand; French: « LEGO officiel ». Proper names keep their form (LEGO Ideas, LEGO.com).
 - No abbreviations except proper names and technical terms (API, CSV, RSS). Write "custom builds" / « créations originales » rather than MOC.
 - Prices including taxes.
+
+## Other data files
+
+- `data/journeys.toml`: the "Where to start" needs of the website, each with a title in both languages and a list of resource ids (`[[journey]]` with `id`, `title_en`, `title_fr`, `resources`). An unknown id fails the build.
+- `data/backend/`: figures used by the findings but not listed as entries, each file with its `source`, its reading `date` and its source `kind`. `clubs-by-country.json`: fan communities per country (ISO 3166-1 alpha-2) in the official LEGO Fan CoLab directory. `population.json`: World Bank population (SP.POP.TOTL) of the same countries.
+- `data/metrics.json`: local cache of the last activity reading, written by `scripts/refresh.py`.

@@ -60,11 +60,16 @@ h2{font-size:22px;margin:44px 0 6px;letter-spacing:-.01em;border-left:4px solid 
 .key .stud{display:inline-block;width:11px;height:11px;margin-right:6px;vertical-align:-1px;cursor:default}
 .insights{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
 @media (max-width:1180px){.insights{grid-template-columns:1fr}}
+.panel.wide{grid-column:1/-1}
+.passion{display:block;max-width:100%}.passion text{fill:var(--muted);font:13px system-ui,sans-serif}.passion .ax{fill:var(--faint);font-size:12px}.passion .lb{fill:var(--fg);font-size:12px}
+#f-country{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:8px;padding:4px 8px;font:600 13px system-ui,sans-serif;max-width:100%}
+#f-country.on{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;min-width:0}
 .panel h3{margin:0 0 4px;font-size:17px}.panel .take{margin:0 0 14px;color:var(--fg);font-size:15px}
 .panel .note{margin:12px 0 0;color:var(--muted);font-size:13px}
 .heat{display:grid;gap:3px;font-size:13px;align-items:stretch}
-.heat .h{font:600 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--faint);align-self:end;padding:0 0 4px;text-align:center;overflow-wrap:anywhere}
+.heat .h{font:600 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--faint);align-self:end;padding:0 0 4px;text-align:center;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:normal;word-break:normal}
+@media (max-width:640px){.heat .h{letter-spacing:0;font-size:10px}}
 .heat .rn{padding:3px 8px 3px 0;color:var(--fg);overflow-wrap:anywhere;align-self:center}
 .heat .c{border-radius:5px;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;min-height:26px;border:0;cursor:pointer;font:600 13px system-ui,sans-serif;color:var(--fg)}
 .heat .c.z{background:transparent;border:1px dashed var(--line);color:var(--faint);cursor:default;font-weight:400}
@@ -144,7 +149,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
 </div>
 <div id="view-ins" hidden>
 <h2 data-t="ins"></h2><p class="lead" data-t="ins_lead"></p>
-<div class="insights"><section class="panel" id="v-brands"></section><section class="panel" id="v-pulse"></section></div>
+<div class="insights"><section class="panel wide" id="v-passion"></section><section class="panel" id="v-brands"></section><section class="panel" id="v-pulse"></section></div>
 </div>
 </main>
 <footer><div class="wrap"><span id="built"></span><span><a href="https://github.com/{{REPO}}/blob/main/contributing.md" data-t="contribute"></a> · <a href="https://github.com/{{REPO}}/issues/new/choose" data-t="report"></a> · <a href="https://github.com/{{REPO}}/blob/main/LICENSE">CC BY-NC-SA 4.0</a></span></div></footer>
@@ -182,7 +187,13 @@ b_none:{en:'Named nowhere else',fr:'Citées nulle part ailleurs'},
 p_title:{en:'Pulse: last sign of life',fr:'Pouls : dernier signe de vie'},
 p_note:{en:'Last observed activity: post, video, commit or price update. Each ring is a resource silent for 6 months or more, placed at its last activity; the grey bar counts the resources active in the last 6 months.',fr:'Dernière activité observée : article, vidéo, commit ou mise à jour de prix. Chaque cercle est une ressource muette depuis 6 mois ou plus, placée à sa dernière activité ; la barre grise compte les ressources actives depuis 6 mois.'},
 p_recent:{en:'last 6 months',fr:'6 derniers mois'},
-intl:{en:'international',fr:'international'}
+intl:{en:'international',fr:'international'},events:{en:'events',fr:'événements'},places:{en:'places',fr:'lieux'},clubs:{en:'clubs',fr:'clubs'},learning:{en:'learning',fr:'savoir'},
+country_all:{en:'All countries',fr:'Tous les pays'},next:{en:'Next edition:',fr:'Prochaine édition :'},
+pa_title:{en:'Where the passion is',fr:'Où vit la passion'},
+pa_note:{en:'Fan communities recognized by LEGO (official Fan CoLab directory, read on {d}) against population (World Bank, {y}). Both axes are logarithmic. The line is the average rate of the countries shown: a country above it has more communities than its size predicts. With one or two communities, the position of a small country says little. The directory lists recognized communities only, not every club. A dot filters this directory by country.{x}',
+ fr:'Communautés de fans reconnues par LEGO (annuaire officiel Fan CoLab, lu le {d}) face à la population (Banque mondiale, {y}). Les deux axes sont logarithmiques. La ligne est le taux moyen des pays présents : un pays au-dessus compte plus de communautés que sa taille ne le laisse attendre. Avec une ou deux communautés, la place d\'un petit pays dit peu de chose. L\'annuaire ne liste que les communautés reconnues, pas tous les clubs. Un point filtre cet annuaire par pays.{x}'},
+pa_nopop:{en:' Without population figure: ',fr:' Sans chiffre de population : '},
+pa_pop:{en:'population',fr:'population'},pa_n:{en:'recognized communities',fr:'communautés reconnues'}
 };
 const t=k=>(S[k]||{})[L]||k;
 document.querySelectorAll('[data-t]').forEach(e=>e.textContent=t(e.dataset.t));
@@ -210,7 +221,8 @@ const ms=new MiniSearch({fields:['name','summary','strengths','weaknesses','grou
  processTerm:w=>fold(w),searchOptions:{boost:{name:4,brands:3,group:2},prefix:true,fuzzy:0.2,combineWith:'AND'}});
 ms.addAll(R.map(r=>({id:r.id,name:r.name,summary:r[L].summary,strengths:r[L].strengths.join(' '),weaknesses:r[L].weaknesses.join(' '),group:r[L].group,
  covers:(r.covers||[]).map(t).join(' '),countries:(r.countries||[]).map(cname).join(' '),size:r[L].size,brands:(r.brands||[]).map(brandName).join(' ')})));
-const st={cat:new Set(),cov:new Set(),active:false,fr:false,featured:false,q:'',view:'cards',sort:null};
+const st={cat:new Set(),cov:new Set(),active:false,fr:false,featured:false,country:'',q:'',view:'cards',sort:null};
+const CTRY=Object.entries(R.flatMap(r=>(r.countries||[]).filter(c=>c!=='international')).reduce((a,c)=>(a[c]=(a[c]||0)+1,a),{})).sort((a,b)=>b[1]-a[1]||cname(a[0]).localeCompare(cname(b[0])));
 const toggle=(set,v)=>set.has(v)?set.delete(v):set.add(v);
 let hits=null;
 const covers=['official','alternative','second-hand','parts','custom-builds','instructions','news','data'];
@@ -220,22 +232,24 @@ function match(r,skip){
  if(st.active&&r.status!=='active')return false;
  if(st.fr&&!(r.languages||[]).includes('fr'))return false;
  if(st.featured&&!r.featured)return false;
+ if(st.country&&!(r.countries||[]).includes(st.country))return false;
  if(hits&&!hits.has(r.id))return false;
  return true}
 const fc=document.getElementById('f-cat'),fv=document.getElementById('f-cov'),fm=document.getElementById('f-misc'),q=document.getElementById('q');q.placeholder=t('search');
 function drawFilters(){
  fc.innerHTML=C.map(c=>`<button class="chip${st.cat.has(c.id)?' on':''}" data-cat="${c.id}" aria-pressed="${st.cat.has(c.id)}">${esc(c[L])}<span class="c">${R.filter(r=>r.cat===c.id&&match(r,'cat')).length}</span></button>`).join('');
  fv.innerHTML=covers.map(c=>`<button class="chip${st.cov.has(c)?' on':''}" data-cov="${c}" aria-pressed="${st.cov.has(c)}">${t(c)}<span class="c">${R.filter(r=>(r.covers||[]).includes(c)&&match(r,'cov')).length}</span></button>`).join('');
- fm.innerHTML=[['featured',t('featured')],['active',t('only_active')],['fr',t('in_fr')]].map(([k,l])=>`<button class="chip${st[k]?' on':''}" data-m="${k}" aria-pressed="${st[k]}">${l}</button>`).join('')}
+ fm.innerHTML=[['featured',t('featured')],['active',t('only_active')],['fr',t('in_fr')]].map(([k,l])=>`<button class="chip${st[k]?' on':''}" data-m="${k}" aria-pressed="${st[k]}">${l}</button>`).join('')+`<select id="f-country" class="${st.country?'on':''}" aria-label="${t('country_all')}"><option value="">${t('country_all')}</option>${CTRY.map(([c,n])=>`<option value="${c}"${st.country===c?' selected':''}>${esc(cname(c))} (${n})</option>`).join('')}</select>`}
 fc.onclick=e=>{const b=e.target.closest('[data-cat]');if(b){toggle(st.cat,b.dataset.cat);update()}};
 fv.onclick=e=>{const b=e.target.closest('[data-cov]');if(b){const c=b.dataset.cov;st.cov.has(c)?st.cov.delete(c):st.cov.add(c);update()}};
+fm.onchange=e=>{if(e.target.id==='f-country'){st.country=e.target.value;update()}};
 fm.onclick=e=>{const b=e.target.closest('[data-m]');if(b){st[b.dataset.m]=!st[b.dataset.m];update()}};
 function setQuery(v){st.q=v;q.value=v;const s=v.trim();hits=s?new Map(ms.search(s).map(h=>[h.id,h.score])):null}
 let qt;q.oninput=()=>{clearTimeout(qt);qt=setTimeout(()=>{setQuery(q.value);update(false)},120)};
-function resetAll(){st.cat.clear();st.cov.clear();st.active=st.fr=st.featured=false;setQuery('')}
+function resetAll(){st.cat.clear();st.cov.clear();st.active=st.fr=st.featured=false;st.country='';setQuery('')}
 document.getElementById('reset').onclick=()=>{resetAll();update()};
-function card(r,showCat){const x=r[L];const tags=[...(r.covers||[]).map(c=>`<span class="tag ${c}">${t(c)}</span>`),(r.status!=='active'?`<span class="tag st-${r.status}">${t('st_'+r.status)}</span>`:''),(r.languages||[]).length?`<span class="tag">${esc(r.languages.join(' · ').toUpperCase())}</span>`:'',r.access?`<span class="tag">${t(r.access)}</span>`:''].join('');
- const m=r.metrics||{};const extra=[x.size,m.stars!=null?'★ '+m.stars:'',x.model].filter(Boolean).map(esc).join(' · ');
+function card(r,showCat){const x=r[L];const tags=[...(r.covers||[]).filter(c=>c!==r.cat).map(c=>`<span class="tag ${c}">${t(c)}</span>`),(r.status!=='active'?`<span class="tag st-${r.status}">${t('st_'+r.status)}</span>`:''),(r.languages||[]).length?`<span class="tag">${esc(r.languages.join(' · ').toUpperCase())}</span>`:'',r.access?`<span class="tag">${t(r.access)}</span>`:''].join('');
+ const m=r.metrics||{};const extra=[r.next?t('next')+' '+fmt(r.next):'',r.city||'',x.size,m.stars!=null?'★ '+m.stars:'',x.model].filter(Boolean).map(esc).join(' · ');
  return `<article class="card" id="r-${r.id}"><div class="h"><a href="${esc(r.url)}" rel="noopener">${r.featured?'<span class="star" aria-hidden="true">★ </span>':''}${esc(r.name)}</a><span class="g">${esc(showCat?catName(r.cat):x.group)}</span></div><p class="s">${esc(x.summary)}</p>${extra?`<div class="src">${extra}</div>`:''}<div class="tags">${tags}</div>`+
  ((x.strengths.length||x.weaknesses.length)?`<details><summary>${t('strengths')} · ${t('weaknesses')}</summary>${x.strengths.length?`<ul class="plus">${x.strengths.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`:''}${x.weaknesses.length?`<ul class="minus">${x.weaknesses.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`:''}<div class="src">${t('sources')} : ${r.sources.map((s,i)=>`<a href="${esc(s.url)}" rel="noopener">${i+1}</a>`).join('')} · ${t('checked')} ${fmt(r.checked)}${r.last?' · ⟳ '+fmt(r.last):''}</div></details>`:'')+`</article>`}
 const COLS=[['name',t('c_name'),r=>r.name],['cat',t('c_cat'),r=>catName(r.cat)],['scope',t('c_scope'),r=>(r.covers||[]).filter(c=>c==='official'||c==='alternative').map(t).join(', ')],['lang',t('c_lang'),r=>(r.languages||[]).join(' ').toUpperCase(),'opt'],['status',t('c_status'),r=>t('st_'+r.status),'opt'],['last',t('c_last'),r=>r.last||'','n'],['stars',t('c_stars'),r=>(r.metrics||{}).stars??-1,'n opt']];
@@ -275,29 +289,54 @@ function vBrands(){const el=document.getElementById('v-brands');
 // insight 2: pulse. Dormant resources (no activity for 6 months) one by one; the active ones counted per category
 function vPulse(){const el=document.getElementById('v-pulse');const cats=C.map(c=>c.id),today=new Date(D.built),from=new Date(today);from.setMonth(from.getMonth()-24);
  const six=new Date(today);six.setMonth(six.getMonth()-6);
- const W=Math.max(320,el.clientWidth-40),lw=Math.min(170,W*.3),x0=lw+14,xs=x0+(W-x0-90)*0.82,x1=W-90,rh=34,H=cats.length*rh+30,X=d=>x0+(xs-x0)*Math.max(0,Math.min(1,(d-from)/(six-from)));
+ const W=Math.max(300,el.clientWidth-40),lw=Math.min(170,W*.36),cut=v=>v.length*7.6>lw?v.slice(0,Math.max(4,Math.floor(lw/7.6)-1))+'…':v,x0=lw+14,x1=W-90,xs=Math.min(x0+(W-x0-90)*0.82,x1-70),rh=34,H=cats.length*rh+30,X=d=>x0+(xs-x0)*Math.max(0,Math.min(1,(d-from)/(six-from)));
  const old=R.filter(r=>r.last&&new Date(r.last)<six),nolast=R.filter(r=>!r.last).length;
  const top=Object.entries(old.reduce((a,r)=>(a[r.cat]=(a[r.cat]||0)+1,a),{})).sort((a,b)=>b[1]-a[1])[0];
  const take=L==='fr'?`${old.length} ressources n'ont montré aucun signe de vie depuis 6 mois${top?`, surtout parmi les ${shortCat(top[0]).toLowerCase()} (${top[1]})`:''} ; ${nolast} n'ont pas de date observable.`
   :`${old.length} resources have shown no sign of life for 6 months${top?`, mostly among ${shortCat(top[0]).toLowerCase()} (${top[1]})`:''}; ${nolast} have no observable date.`;
  let s=`<svg class="pulse" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t('p_title'))}">`;
  s+=`<rect x="${xs}" y="2" width="${x1-xs}" height="${H-26}" fill="var(--sunk)" rx="4"/><text class="ax" x="${(xs+x1)/2}" y="${H-6}" text-anchor="middle">${t('p_recent')}</text>`;
- for(const k of [0,6,12]){const d=new Date(from);d.setMonth(d.getMonth()+k);s+=`<text class="ax" x="${X(d)}" y="${H-6}" text-anchor="${k?'middle':'start'}">${k?'':'≤ '}${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getFullYear()).slice(2)}</text>`}
- cats.forEach((c,i)=>{const y=14+i*rh,rs=R.filter(r=>r.cat===c&&r.last);s+=`<text x="${lw}" y="${y+5}" text-anchor="end">${esc(shortCat(c))}</text><line x1="${x0}" x2="${xs}" y1="${y}" y2="${y}" stroke="var(--line)"/>`;
+ for(const k of (W<520?[0]:[0,6,12])){const d=new Date(from);d.setMonth(d.getMonth()+k);s+=`<text class="ax" x="${X(d)}" y="${H-6}" text-anchor="${k?'middle':'start'}">${k?'':'≤ '}${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getFullYear()).slice(2)}</text>`}
+ cats.forEach((c,i)=>{const y=14+i*rh,rs=R.filter(r=>r.cat===c&&r.last);s+=`<text x="${lw}" y="${y+5}" text-anchor="end">${esc(cut(shortCat(c)))}</text><line x1="${x0}" x2="${xs}" y1="${y}" y2="${y}" stroke="var(--line)"/>`;
   const placed=[];rs.filter(r=>new Date(r.last)<six).sort((a,b)=>a.last<b.last?-1:1).forEach(r=>{const x=X(new Date(r.last));let dy=0;for(const k of [0,-9,9,-18,18]){if(!placed.some(p=>Math.abs(p.x-x)<10&&p.dy===k)){dy=k;break}}placed.push({x,dy});
    s+=`<circle cx="${x}" cy="${y+dy}" r="5.5" fill="var(--card)" stroke="var(--warn)" stroke-width="2.5" data-go="${r.id}" data-tip="${esc(r.name)} · ${fmt(r.last)}" style="cursor:pointer"/>`});
   const n=rs.filter(r=>new Date(r.last)>=six).length,bw=(x1-xs-30)*n/Math.max(1,...cats.map(cc=>R.filter(r=>r.cat===cc&&r.last&&new Date(r.last)>=six).length));
   s+=`<rect x="${xs+6}" y="${y-6}" width="${bw}" height="12" rx="3" fill="var(--other)" data-tip="${esc(shortCat(c))} · ${n}"/><text class="ax" x="${xs+10+bw}" y="${y+4}">${n}</text>`});
  el.innerHTML=`<h3>${t('p_title')}</h3><p class="take">${esc(take)}</p>${s}</svg><p class="note">${t('p_note')}</p>`;
  el.onclick=e=>{const p=e.target.closest('[data-go]');if(p)openEntry(p.dataset.go)}}
-let drawn=false;function drawInsights(){vBrands();vPulse();drawn=true}
-let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{if(!vi.hidden)vPulse()},150)});
+// insight 3: recognized fan communities against population, by country (backend data)
+function vPassion(){const el=document.getElementById('v-passion'),P=D.passion;if(!el)return;if(!P){el.remove();return}
+ const rows=P.rows.filter(r=>r.pop),nopop=P.rows.filter(r=>!r.pop),avg=rows.reduce((a,r)=>a+r.n,0)/rows.reduce((a,r)=>a+r.pop,0);
+ const has=new Set(CTRY.map(c=>c[0])),f=x=>x.toFixed(1),lg=Math.log10;
+ const rated=rows.map(r=>({...r,k:r.n/r.pop/avg}));
+ const top=rated.filter(r=>r.n>=3).sort((a,b)=>b.k-a.k).slice(0,3),low=rated.filter(r=>r.pop>=4e7&&r.k<1).sort((a,b)=>a.k-b.k);
+ const list=a=>a.map(r=>`${cname(r.c)} (×${f(r.k)})`).join(', ');
+ const take=L==='fr'?`Rapportés à leur population, ${list(top)} comptent le plus de communautés de fans reconnues. ${low.length} grands pays restent sous la moyenne : ${low.map(r=>cname(r.c)).join(', ')}.`
+  :`Relative to population, ${list(top)} have the most recognized fan communities. ${low.length} large countries stay below the average: ${low.map(r=>cname(r.c)).join(', ')}.`;
+ const W=Math.max(320,el.clientWidth-40),H=Math.min(420,Math.max(280,W*.42)),ml=44,mr=16,mt=10,mb=40;
+ const X=v=>ml+(W-ml-mr)*(lg(v)-lg(3e5))/(lg(5e8)-lg(3e5)),Y=v=>mt+(H-mt-mb)*(1-(Math.log2(v)-Math.log2(.8))/(Math.log2(80)-Math.log2(.8)));
+ let s=`<svg class="passion" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t('pa_title'))}"><defs><clipPath id="pc"><rect x="${ml}" y="${mt}" width="${W-ml-mr}" height="${H-mt-mb}"/></clipPath></defs>`;
+ for(const v of [1e6,1e7,1e8])s+=`<line x1="${X(v)}" x2="${X(v)}" y1="${mt}" y2="${H-mb}" stroke="var(--line)"/><text class="ax" x="${X(v)}" y="${H-mb+16}" text-anchor="middle">${v/1e6} M</text>`;
+ for(const v of [1,2,5,10,20,50])s+=`<line x1="${ml}" x2="${W-mr}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/><text class="ax" x="${ml-6}" y="${Y(v)+4}" text-anchor="end">${v}</text>`;
+ s+=`<text class="ax" x="${W-mr}" y="${H-4}" text-anchor="end">${t('pa_pop')} →</text><text class="ax" x="${ml}" y="${mt+12}" dx="6">↑ ${t('pa_n')}</text>`;
+ s+=`<line clip-path="url(#pc)" x1="${X(3e5)}" y1="${Y(avg*3e5)}" x2="${X(5e8)}" y2="${Y(avg*5e8)}" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4"/>`;
+ const placed=[],boxes=[],lab=[];
+ rated.sort((a,b)=>b.n-a.n||b.pop-a.pop).forEach(r=>{const x=X(r.pop);let y=Y(r.n);for(const k of [0,-7,7,-14,14]){if(!placed.some(p=>Math.abs(p.x-x)<9&&Math.abs(p.y-(y+k))<9)){y+=k;break}}placed.push({x,y});
+  const go=has.has(r.c);s+=`<circle cx="${x}" cy="${y}" r="5.5" fill="${r.k>=1?'var(--accent)':'var(--other)'}" stroke="var(--card)" stroke-width="2"${go?` data-c="${r.c}" style="cursor:pointer"`:''} data-tip="${esc(cname(r.c))} · ${r.n} · ×${f(r.k)}"/>`;
+  if(r.n>=(W<600?10:3))lab.push({r,x,y})});
+ const hit=(bx,by,w)=>boxes.some(b=>bx<b.x+b.w&&bx+w>b.x&&by<b.y+13&&by+13>b.y)||placed.some(p=>p.x+6>bx&&p.x-6<bx+w&&p.y+6>by&&p.y-6<by+13);
+ lab.forEach(({r,x,y})=>{const w=cname(r.c).length*6.8;for(const [dx,dy,a] of [[9,4,'start'],[-9,4,'end'],[0,-10,'middle'],[0,19,'middle'],[9,-9,'start'],[-9,-9,'end'],[9,17,'start'],[-9,17,'end']]){const bx=a==='start'?x+dx:a==='end'?x+dx-w:x-w/2,by=y+dy-11;if(bx<ml||bx+w>W-mr||by<mt)continue;if(!hit(bx,by,w)){boxes.push({x:bx,y:by,w});s+=`<text class="lb" x="${x+dx}" y="${y+dy}" text-anchor="${a}">${esc(cname(r.c))}</text>`;break}}});
+ const xn=nopop.length?t('pa_nopop')+nopop.map(r=>`${cname(r.c)} (${r.n})`).join(', ')+'.':'';
+ el.innerHTML=`<h3>${t('pa_title')}</h3><p class="take">${esc(take)}</p>${s}</svg><p class="note">${esc(t('pa_note').replace('{d}',fmt(P.date)).replace('{y}',P.pop_year).replace('{x}',xn))}</p>`;
+ el.onclick=e=>{const p=e.target.closest('[data-c]');if(!p)return;toDir();resetAll();st.country=p.dataset.c;update();document.getElementById('directory').scrollIntoView({behavior:'smooth'})}}
+let drawn=false;function drawInsights(){vPassion();vBrands();vPulse();drawn=true}
+let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{if(!vi.hidden){vPulse();vPassion()}},150)});
 // two views: directory (map and list) and findings; the address keeps the view
 const vd=document.getElementById('view-dir'),vi=document.getElementById('view-ins');
-function show(view){const ins=view==='ins';vd.hidden=ins;vi.hidden=!ins;document.querySelectorAll('nav.tabs a').forEach(a=>a.toggleAttribute('aria-current',a.dataset.view===view)&&a.setAttribute('aria-current','page'));if(ins&&!drawn)drawInsights();if(ins)vPulse()}
+function show(view){const ins=view==='ins';vd.hidden=ins;vi.hidden=!ins;document.querySelectorAll('nav.tabs a').forEach(a=>a.toggleAttribute('aria-current',a.dataset.view===view)&&a.setAttribute('aria-current','page'));if(ins&&!drawn)drawInsights();else if(ins){vPulse();vPassion()}}
 addEventListener('hashchange',()=>{if(location.hash==='#findings')show('ins');else if(!vd.hidden===false)show('dir')});
-function writeHash(){if(location.hash==='#findings')return;const p=new URLSearchParams();if(st.q.trim())p.set('q',st.q.trim());if(st.cat.size)p.set('cat',[...st.cat].join(','));if(st.cov.size)p.set('scope',[...st.cov].join(','));const cr=['featured','active','fr'].filter(k=>st[k]);if(cr.length)p.set('crit',cr.join(','));if(st.view!=='cards')p.set('view',st.view);const h=p.toString();history.replaceState(null,'',h?'#'+h:location.pathname+location.search)}
-function readHash(){const h=location.hash.slice(1);if(!h||h==='findings')return;const p=new URLSearchParams(h);(p.get('cat')||'').split(',').filter(Boolean).forEach(c=>st.cat.add(c));(p.get('scope')||'').split(',').filter(Boolean).forEach(c=>st.cov.add(c));(p.get('crit')||'').split(',').forEach(k=>{if(k in st&&typeof st[k]==='boolean')st[k]=true});if(p.get('view')==='table')st.view='table';if(p.get('q'))setQuery(p.get('q'))}
+function writeHash(){if(location.hash==='#findings')return;const p=new URLSearchParams();if(st.q.trim())p.set('q',st.q.trim());if(st.cat.size)p.set('cat',[...st.cat].join(','));if(st.cov.size)p.set('scope',[...st.cov].join(','));const cr=['featured','active','fr'].filter(k=>st[k]);if(cr.length)p.set('crit',cr.join(','));if(st.country)p.set('country',st.country);if(st.view!=='cards')p.set('view',st.view);const h=p.toString();history.replaceState(null,'',h?'#'+h:location.pathname+location.search)}
+function readHash(){const h=location.hash.slice(1);if(!h||h==='findings')return;const p=new URLSearchParams(h);(p.get('cat')||'').split(',').filter(Boolean).forEach(c=>st.cat.add(c));(p.get('scope')||'').split(',').filter(Boolean).forEach(c=>st.cov.add(c));(p.get('crit')||'').split(',').forEach(k=>{if(k in st&&typeof st[k]==='boolean')st[k]=true});if(p.get('country'))st.country=p.get('country');if(p.get('view')==='table')st.view='table';if(p.get('q'))setQuery(p.get('q'))}
 function update(all=true){drawFilters();drawList();if(all)drawMap();writeHash()}
 document.getElementById('journeys').innerHTML=(D.journeys||[]).map(j=>`<div class="jr"><h3>${esc(j['title_'+L])}</h3><ul>${j.resources.map(id=>R.find(r=>r.id===id)).filter(Boolean).map(r=>`<li><a href="#" data-go="${r.id}">${esc(r.name)}</a></li>`).join('')}</ul></div>`).join('');
 document.getElementById('journeys').onclick=e=>{const a=e.target.closest('[data-go]');if(a){e.preventDefault();openEntry(a.dataset.go)}};

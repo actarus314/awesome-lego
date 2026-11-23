@@ -1,0 +1,1665 @@
+[category]
+id = "places"
+name_en = "Physical places"
+name_fr = "Lieux physiques"
+summary_en = "Venues of the brick world that can be visited: official LEGO venues and stores, theme parks, museums and permanent exhibitions, physical shops for alternative brands and used bricks, and cafés with bricks."
+summary_fr = "Lieux du monde de la brique que l'on peut visiter : sites et magasins LEGO officiels, parcs à thème, musées et expositions permanentes, boutiques physiques de marques alternatives et de briques d'occasion, cafés avec des briques."
+
+[[category.groups]]
+id = "official-venues"
+name_en = "Official LEGO venues and stores"
+name_fr = "Sites et magasins LEGO officiels"
+
+[[category.groups]]
+id = "theme-parks"
+name_en = "Theme parks"
+name_fr = "Parcs à thème"
+
+[[category.groups]]
+id = "museums-and-exhibitions"
+name_en = "Museums and permanent exhibitions"
+name_fr = "Musées et expositions permanentes"
+
+[[category.groups]]
+id = "physical-shops"
+name_en = "Physical shops (alternative brands and used bricks)"
+name_fr = "Boutiques physiques (marques alternatives et briques d'occasion)"
+
+[[category.groups]]
+id = "cafes-and-bars"
+name_en = "Cafés and play spaces"
+name_fr = "Cafés et espaces de jeu"
+
+# ---------------------------------------------------------------- official venues
+
+[[resource]]
+id = "lego-house"
+name = "LEGO House"
+url = "https://legohouse.com/en-gb"
+group = "official-venues"
+featured = true
+covers = ["official", "places"]
+languages = ["en", "da", "de"]
+countries = ["DK"]
+access = "paid"
+business_model_en = "Paid admission, on-site LEGO Store, restaurants"
+business_model_fr = "Entrée payante, LEGO Store et restaurants sur place"
+summary_en = "Official LEGO experience centre in Billund, Denmark, with four Experience Zones, a historical collection of the LEGO Group and the brick, a LEGO Store and restaurants. Adults are welcome with or without children."
+summary_fr = "Centre d'expérience LEGO officiel à Billund (Danemark), avec quatre zones d'expérience, une collection historique du groupe LEGO et de la brique, un LEGO Store et des restaurants. Les adultes sont les bienvenus, avec ou sans enfants."
+strengths_en = [
+  "Historical collection on the LEGO Group and the brick",
+  "Products sold only on site, in the LEGO Store",
+  "Workshops such as the LEGO Masters Academy and guided tours, including a package with a LEGO Factory visit",
+  "Next to LEGOLAND Billund, with combined tickets",
+]
+strengths_fr = [
+  "Collection historique sur le groupe LEGO et la brique",
+  "Produits vendus uniquement sur place, dans le LEGO Store",
+  "Ateliers comme la LEGO Masters Academy et visites guidées, dont une formule avec visite de l'usine LEGO",
+  "À côté de LEGOLAND Billund, avec billets combinés",
+]
+weaknesses_en = [
+  "Located in Billund, far from most large cities",
+  "Advance booking recommended; visit of the Experience Zones takes 3 to 4 hours on average",
+]
+weaknesses_fr = [
+  "Situé à Billund, loin de la plupart des grandes villes",
+  "Réservation à l'avance recommandée ; la visite des zones d'expérience dure en moyenne 3 à 4 heures",
+]
+size_en = "12000 m², 25 million bricks (as published)"
+size_fr = "12000 m², 25 millions de briques (selon le site)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Billund"
+
+[[resource.sources]]
+url = "https://legohouse.com/en-gb"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://legohouse.com/en-gb/plan-your-visit/faq"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "lego-store-locator"
+name = "LEGO Stores directory"
+url = "https://www.lego.com/fr-fr/stores"
+group = "official-venues"
+covers = ["official", "places"]
+languages = ["fr", "en", "de"]
+countries = ["international"]
+access = "free"
+business_model_en = "Stores operated by the LEGO Group"
+business_model_fr = "Magasins exploités par le groupe LEGO"
+summary_en = "Official directory of LEGO Stores, with a page per store (address, opening hours, features such as Pick and Build wall, Build a Minifigure, LEGO Insiders). Certified Stores run by partners are marked in the same directory."
+summary_fr = "Annuaire officiel des LEGO Stores, avec une page par magasin (adresse, horaires, services comme le mur Choisis et construis, Construis une figurine, LEGO Insiders). Les Certified Stores exploités par des partenaires sont signalés dans le même annuaire."
+strengths_en = [
+  "Single entry point for all official LEGO Stores, with hours and features per store",
+  "Store pages state whether the LEGO Insiders rewards programme applies",
+]
+strengths_fr = [
+  "Point d'entrée unique pour tous les LEGO Stores officiels, avec horaires et services par magasin",
+  "Chaque fiche indique si le programme de récompenses LEGO Insiders s'applique",
+]
+weaknesses_en = [
+  "The directory is loaded by script: page content could not be read without it, only individual store pages were read",
+]
+weaknesses_fr = [
+  "L'annuaire se charge par script : son contenu n'a pas pu être lu sans lui, seules des fiches de magasin ont été lues",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.lego.com/fr-fr/stores/store/paris-les-halles"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/service/help-topics/article/lego-insiders-participating-partners-and-locations"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "lego-certified-stores"
+name = "LEGO Certified Stores"
+url = "https://www.lego.com/en-us/service/help-topics/article/lego-certified-stores"
+group = "official-venues"
+covers = ["official", "places"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+business_model_en = "Stores run by local partners under licence from the LEGO Group"
+business_model_fr = "Magasins exploités par des partenaires locaux sous licence du groupe LEGO"
+summary_en = "Official help page on LEGO Certified Stores, branded LEGO stores run by local partners, with the list of countries where they exist. They appear in the LEGO Stores directory with a yellow label."
+summary_fr = "Page d'aide officielle sur les LEGO Certified Stores, magasins sous enseigne LEGO exploités par des partenaires locaux, avec la liste des pays où ils existent. Ils apparaissent dans l'annuaire des LEGO Stores avec une étiquette jaune."
+strengths_en = [
+  "Official reference on what a Certified Store is and where they exist",
+]
+strengths_fr = [
+  "Référence officielle sur ce qu'est un Certified Store et où ils se trouvent",
+]
+weaknesses_en = [
+  "LEGO gift cards and LEGO promotions are not valid there, and LEGO Insiders points cannot be earned or redeemed",
+  "Content of the page only seen through a search snippet",
+]
+weaknesses_fr = [
+  "Cartes-cadeaux LEGO et promotions LEGO non valables, points LEGO Insiders ni gagnés ni utilisables",
+  "Contenu de la page vu uniquement par un extrait de recherche",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/service/help-topics/article/lego-certified-stores"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/service/help-topics/article/lego-insiders-participating-partners-and-locations"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "lego-store-leicester-square"
+name = "LEGO Store Leicester Square"
+url = "https://www.lego.com/en-gb/stores/store/lsq"
+group = "official-venues"
+covers = ["official", "places"]
+languages = ["en"]
+countries = ["GB"]
+access = "free"
+business_model_en = "Flagship store operated by the LEGO Group"
+business_model_fr = "Magasin amiral exploité par le groupe LEGO"
+summary_en = "Flagship official LEGO Store in London, reopened in August 2022 as the largest LEGO Store in the world according to the LEGO Group, with large London-themed models, a Mosaic Maker and a Minifigure Factory."
+summary_fr = "Magasin amiral LEGO officiel à Londres, rouvert en août 2022 comme le plus grand LEGO Store du monde selon le groupe LEGO, avec de grands modèles sur le thème de Londres, un Mosaic Maker et une Minifigure Factory."
+strengths_en = [
+  "Largest assortment of LEGO products of any store, including items sold only there",
+  "Personalisation studio: mosaic portrait and minifigure",
+]
+strengths_fr = [
+  "Plus grand assortiment de produits LEGO de tous les magasins, dont des articles vendus uniquement sur place",
+  "Atelier de personnalisation : portrait en mosaïque et figurine",
+]
+weaknesses_en = [
+  "In central London, a tourist area: high footfall",
+]
+weaknesses_fr = [
+  "En plein centre de Londres, zone touristique : forte fréquentation",
+]
+size_en = "914 m² of floor area, 504 m² of sales floor (Guinness World Records, from the LEGO Group)"
+size_fr = "914 m² de surface totale, 504 m² de surface de vente (Guinness World Records, d'après le groupe LEGO)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+city = "London"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/aboutus/news/2022/august/lego-store-in-leicester-square"
+date = "2022-08-10"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.guinnessworldrecords.com/world-records/476519-largest-lego-store"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "lego-store-paris-les-halles"
+name = "LEGO Store Paris Les Halles"
+url = "https://www.lego.com/fr-fr/stores/store/paris-les-halles"
+group = "official-venues"
+covers = ["official", "places"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Store operated by the LEGO Group"
+business_model_fr = "Magasin exploité par le groupe LEGO"
+summary_en = "Official LEGO Store at 1 Passage de la Canopée, Paris 1er, with a Pick and Build wall, Build a Minifigure, a demonstration table and the LEGO Insiders programme. Open every day, Sunday included."
+summary_fr = "LEGO Store officiel au 1 passage de la Canopée, Paris 1er, avec un mur Choisis et construis, Construis une figurine, une table de démonstration et le programme LEGO Insiders. Ouvert tous les jours, dimanche compris."
+strengths_en = [
+  "Central Paris location, opening hours 10:00 to 20:30 from Monday to Saturday and 10:00 to 20:00 on Sunday",
+  "Insiders points earned and redeemed, early access to launches",
+]
+strengths_fr = [
+  "Emplacement central à Paris, horaires de 10:00 à 20:30 du lundi au samedi et de 10:00 à 20:00 le dimanche",
+  "Points Insiders gagnés et utilisables, accès anticipé aux lancements",
+]
+weaknesses_en = [
+  "Other LEGO Stores in the Paris area exist (for example Les 4 Temps); only this one was checked in detail",
+]
+weaknesses_fr = [
+  "D'autres LEGO Stores existent en région parisienne (par exemple Les 4 Temps) ; seul celui-ci a été examiné en détail",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Paris"
+
+[[resource.sources]]
+url = "https://www.lego.com/fr-fr/stores/store/paris-les-halles"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "lego-discovery-centres"
+name = "LEGO Discovery Centre"
+url = "https://www.legodiscoverycentre.com/"
+group = "official-venues"
+aliases = ["LEGO Discovery Center"]
+covers = ["official", "places"]
+languages = ["en", "fr", "de", "nl"]
+countries = ["BE", "DE", "US"]
+access = "paid"
+business_model_en = "Paid admission, annual passes, parties, shop and café"
+business_model_fr = "Entrée payante, abonnements annuels, anniversaires, boutique et café"
+summary_en = "Official indoor LEGO play centres under the new LEGO Discovery Centre name: Brussels and Hamburg in Europe, Atlanta, Boston and Washington DC in North America. The LEGO Group acquired the LEGOLAND Discovery Centres and LEGO Discovery Centres from Merlin Entertainments on 28 February 2026."
+summary_fr = "Centres de jeu LEGO officiels en intérieur sous le nouveau nom LEGO Discovery Centre : Bruxelles et Hambourg en Europe, Atlanta, Boston et Washington DC en Amérique du Nord. Le groupe LEGO a racheté les LEGOLAND Discovery Centres et LEGO Discovery Centres à Merlin Entertainments le 28 février 2026."
+strengths_en = [
+  "Hamburg runs LEGO After Work evenings reserved for adult LEGO fans",
+  "Miniland models of local landmarks, rides, 4D cinema",
+]
+strengths_fr = [
+  "Hambourg organise des soirées LEGO After Work réservées aux adultes fans de LEGO",
+  "Modèles Miniland de monuments locaux, attractions, cinéma 4D",
+]
+weaknesses_en = [
+  "Aimed mainly at children aged 2 to 12 with their families (Brussels)",
+  "Brussels centre closed from 30 November to 2 December 2026 for updates",
+]
+weaknesses_fr = [
+  "Destiné surtout aux enfants de 2 à 12 ans avec leur famille (Bruxelles)",
+  "Centre de Bruxelles fermé du 30 novembre au 2 décembre 2026 pour mises à jour",
+]
+size_en = "Brussels: more than 3000 m², 12 activity zones, more than 2 million bricks"
+size_fr = "Bruxelles : plus de 3000 m², 12 zones d'activités, plus de 2 millions de briques"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.legodiscoverycentre.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legodiscoverycentre.com/hamburg/en/plan-your-visit/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://www.legodiscoverycentre.com/brussels/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "legoland-discovery-centers"
+name = "LEGOLAND Discovery Centers"
+url = "https://www.legolanddiscoverycenter.com/"
+group = "official-venues"
+aliases = ["LEGOLAND Discovery Centre"]
+covers = ["official", "places"]
+languages = ["en", "de", "nl"]
+countries = ["international"]
+access = "paid"
+business_model_en = "Paid admission, annual passes, parties"
+business_model_fr = "Entrée payante, abonnements annuels, anniversaires"
+summary_en = "Indoor LEGO attractions still under the LEGOLAND Discovery Centre name: in Europe Berlin, Oberhausen, Scheveningen (Netherlands) and Manchester, plus centres in North America, Asia and Australia, listed on legoland.com. Birmingham has its own page on the legolanddiscoverycentre.com site."
+summary_fr = "Attractions LEGO en intérieur qui portent encore le nom LEGOLAND Discovery Centre : en Europe Berlin, Oberhausen, Scheveningen (Pays-Bas) et Manchester, plus des centres en Amérique du Nord, en Asie et en Australie, listés sur legoland.com. Birmingham a sa propre page sur le site legolanddiscoverycentre.com."
+strengths_en = [
+  "Several European centres in or near large cities",
+  "Standard format: build stations, Miniland, 4D cinema, rides",
+]
+strengths_fr = [
+  "Plusieurs centres européens dans ou près de grandes villes",
+  "Format identique : ateliers de construction, Miniland, cinéma 4D, attractions",
+]
+weaknesses_en = [
+  "Aimed at families with young children, not at adult builders",
+  "Brand and site naming in transition after the acquisition by the LEGO Group in February 2026; the home page of this site shows no readable content without scripts",
+]
+weaknesses_fr = [
+  "Destiné aux familles avec de jeunes enfants, pas aux constructeurs adultes",
+  "Noms de marque et de site en transition après le rachat par le groupe LEGO en février 2026 ; la page d'accueil de ce site n'affiche aucun contenu lisible sans script",
+]
+size_en = "23 LEGOLAND Discovery Centers listed on legoland.com"
+size_fr = "23 LEGOLAND Discovery Centers listés sur legoland.com"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.legoland.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legolanddiscoverycentre.com/birmingham/"
+date = "2026-11-23"
+kind = "read"
+
+# ---------------------------------------------------------------- theme parks
+
+[[resource]]
+id = "legoland-parks"
+name = "LEGOLAND parks (official list)"
+url = "https://www.legoland.com/"
+group = "theme-parks"
+covers = ["official", "places"]
+languages = ["en"]
+countries = ["international"]
+access = "paid"
+business_model_en = "Paid admission, hotels"
+business_model_fr = "Entrée payante, hôtels"
+summary_en = "Official list of the eleven LEGOLAND parks: Billund, California, Deutschland, Dubai, Florida, Japan, Korea, Malaysia, New York, Shanghai and Windsor, plus the LEGOLAND Water Park at Gardaland in Italy. Entry point to each park's site."
+summary_fr = "Liste officielle des onze parcs LEGOLAND : Billund, Californie, Allemagne, Dubaï, Floride, Japon, Corée, Malaisie, New York, Shanghai et Windsor, plus le LEGOLAND Water Park de Gardaland en Italie. Point d'entrée vers le site de chaque parc."
+strengths_en = [
+  "One list for all parks, with links to the park sites",
+  "Three parks in Europe: Billund, Windsor and Deutschland; no park in France",
+]
+strengths_fr = [
+  "Une seule liste pour tous les parcs, avec liens vers les sites des parcs",
+  "Trois parcs en Europe : Billund, Windsor et Allemagne ; aucun parc en France",
+]
+weaknesses_en = [
+  "Aimed at families with children, not at adult builders",
+]
+weaknesses_fr = [
+  "Destiné aux familles avec enfants, pas aux constructeurs adultes",
+]
+size_en = "11 parks and 1 water park"
+size_fr = "11 parcs et 1 parc aquatique"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.legoland.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/service/help-topics/article/legoland-locations-around-the-world"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "legoland-billund"
+name = "LEGOLAND Billund Resort"
+url = "https://www.legoland.dk/"
+group = "theme-parks"
+covers = ["official", "places"]
+languages = ["da", "en", "de"]
+countries = ["DK"]
+access = "paid"
+business_model_en = "Paid admission, season passes, hotels"
+business_model_fr = "Entrée payante, abonnements de saison, hôtels"
+summary_en = "The original LEGOLAND park, opened in 1968 in Billund, next to LEGO House. Open in winter for Christmas events; season passes for 2027 on sale."
+summary_fr = "Le LEGOLAND d'origine, ouvert en 1968 à Billund, à côté de LEGO House. Ouvert en hiver pour des événements de Noël ; abonnements de saison 2027 en vente."
+strengths_en = [
+  "Birthplace of the LEGOLAND concept, more than 80 million bricks according to the park",
+  "Combined tickets with LEGO House",
+]
+strengths_fr = [
+  "Lieu de naissance du concept LEGOLAND, plus de 80 millions de briques selon le parc",
+  "Billets combinés avec LEGO House",
+]
+weaknesses_en = [
+  "Aimed at families with children",
+]
+weaknesses_fr = [
+  "Destiné aux familles avec enfants",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Billund"
+
+[[resource.sources]]
+url = "https://www.legoland.dk/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://en.wikipedia.org/wiki/Legoland"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "legoland-windsor"
+name = "LEGOLAND Windsor Resort"
+url = "https://www.legoland.co.uk/"
+group = "theme-parks"
+covers = ["official", "places"]
+languages = ["en"]
+countries = ["GB"]
+access = "paid"
+business_model_en = "Paid admission, annual passes, hotel"
+business_model_fr = "Entrée payante, abonnements annuels, hôtel"
+summary_en = "LEGOLAND park near London, opened in 1996, with more than 55 rides and attractions according to the park, a themed hotel and Christmas events."
+summary_fr = "Parc LEGOLAND près de Londres, ouvert en 1996, avec plus de 55 attractions selon le parc, un hôtel à thème et des événements de Noël."
+strengths_en = [
+  "Easy to combine with a stay in London",
+  "Themed hotel rooms, short-break packages",
+]
+strengths_fr = [
+  "Facile à associer à un séjour à Londres",
+  "Chambres d'hôtel à thème, formules de court séjour",
+]
+weaknesses_en = [
+  "Aimed at families with children",
+]
+weaknesses_fr = [
+  "Destiné aux familles avec enfants",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Windsor"
+
+[[resource.sources]]
+url = "https://www.legoland.co.uk/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://en.wikipedia.org/wiki/Legoland"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "legoland-deutschland"
+name = "LEGOLAND Deutschland Resort"
+url = "https://www.legoland.de/"
+group = "theme-parks"
+covers = ["official", "places"]
+languages = ["de"]
+countries = ["DE"]
+access = "paid"
+business_model_en = "Paid admission, annual passes, hotel and holiday village"
+business_model_fr = "Entrée payante, abonnements annuels, hôtel et village de vacances"
+summary_en = "LEGOLAND park in Günzburg, Bavaria. Winter opening on selected dates from 28 November 2026 to 10 January 2027; the park announces its 25th anniversary season for 2027."
+summary_fr = "Parc LEGOLAND à Günzburg (Bavière). Ouverture hivernale à des dates choisies du 28 novembre 2026 au 10 janvier 2027 ; le parc annonce sa saison du 25e anniversaire en 2027."
+strengths_en = [
+  "Closest LEGOLAND park to eastern France",
+  "Adjacent holiday village with themed cottages",
+]
+strengths_fr = [
+  "LEGOLAND le plus proche de l'est de la France",
+  "Village de vacances attenant avec chalets à thème",
+]
+weaknesses_en = [
+  "Aimed at families with children; site in German only",
+]
+weaknesses_fr = [
+  "Destiné aux familles avec enfants ; site en allemand uniquement",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Günzburg"
+
+[[resource.sources]]
+url = "https://www.legoland.de/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://legolandinflorida.com/all-legoland-parks/"
+date = "2026-11-23"
+kind = "third-party"
+
+# ---------------------------------------------------------------- museums and exhibitions
+
+[[resource]]
+id = "museum-of-bricks"
+name = "Museum of Bricks"
+url = "https://museumofbricks.cz/"
+group = "museums-and-exhibitions"
+featured = true
+covers = ["official", "places"]
+languages = ["cs", "en", "de"]
+countries = ["CZ"]
+access = "paid"
+business_model_en = "Paid admission, museum shop"
+business_model_fr = "Entrée payante, boutique du musée"
+summary_en = "Private LEGO museum with five sites in Czechia (Prague flagship on Národní třída, Kutná Hora, Špindlerův Mlýn, Poděbrady, Hatě near Znojmo), built on the collection of Miloš Křeček. Not run by the LEGO Group."
+summary_fr = "Musée LEGO privé avec cinq sites en Tchéquie (site principal à Prague, avenue Národní, Kutná Hora, Špindlerův Mlýn, Poděbrady, Hatě près de Znojmo), fondé sur la collection de Miloš Křeček. Non exploité par le groupe LEGO."
+strengths_en = [
+  "Very large collection of original sets, with a Guinness World Records entry for 6005 sets",
+  "Prague site open every day, 10:00 to 20:00, with a shop selling limited editions",
+]
+strengths_fr = [
+  "Très grande collection de sets originaux, inscrite au Guinness World Records pour 6005 sets",
+  "Site de Prague ouvert tous les jours de 10:00 à 20:00, avec une boutique d'éditions limitées",
+]
+weaknesses_en = [
+  "Collection size is stated differently across pages (more than 9000 models on the home page, 6751 sets on the history page)",
+]
+weaknesses_fr = [
+  "La taille de la collection varie selon les pages (plus de 9000 modèles en page d'accueil, 6751 sets en page d'histoire)",
+]
+size_en = "5 museums, more than 9000 models (as published)"
+size_fr = "5 musées, plus de 9000 modèles (selon le site)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Prague"
+
+[[resource.sources]]
+url = "https://museumofbricks.cz/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://prague.eu/en/objevujte/museum-of-bricks/"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "muzeum-lega-tabor"
+name = "Muzeum LEGA Tábor"
+url = "https://brickmuzeumtabor.cz/"
+group = "museums-and-exhibitions"
+covers = ["official", "places"]
+languages = ["cs", "en"]
+countries = ["CZ"]
+access = "paid"
+business_model_en = "Paid admission, shop"
+business_model_fr = "Entrée payante, boutique"
+summary_en = "Private LEGO museum in the historic centre of Tábor, Czechia, open since July 2012, from the collection of one collector. Themed halls (Architecture, Technic, Ideas), a Star Wars light display and a shop."
+summary_fr = "Musée LEGO privé dans le centre historique de Tábor (Tchéquie), ouvert depuis juillet 2012, issu de la collection d'une collectionneuse. Salles thématiques (Architecture, Technic, Ideas), exposition lumineuse Star Wars et boutique."
+strengths_en = [
+  "More than 3 million bricks and hundreds of models on more than 200 m²",
+  "Oldest exhibits include wooden toys from the 1940s and 1950s",
+]
+strengths_fr = [
+  "Plus de 3 millions de briques et des centaines de modèles sur plus de 200 m²",
+  "Parmi les plus anciens objets : jouets en bois des années 1940 et 1950",
+]
+weaknesses_en = [
+  "Closed on weekdays from September to June",
+]
+weaknesses_fr = [
+  "Fermé en semaine de septembre à juin",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Tábor"
+
+[[resource.sources]]
+url = "https://brickmuzeumtabor.cz/en/about-us/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "lebrickgo"
+name = "LEbrickGO Museum"
+url = "https://www.lebrickgo.ch/"
+group = "museums-and-exhibitions"
+covers = ["official", "places"]
+languages = ["de"]
+countries = ["CH"]
+access = "paid"
+business_model_en = "Paid admission, museum shop"
+business_model_fr = "Entrée payante, boutique du musée"
+summary_en = "Private LEGO museum in Binningen near Basel, open since 2017, showing sets from every decade, rotating guest displays of fan creations and a shop. Not related to the LEGO Group."
+summary_fr = "Musée LEGO privé à Binningen près de Bâle, ouvert depuis 2017, avec des sets de chaque décennie, des vitrines invitées renouvelées de créations de fans et une boutique. Sans lien avec le groupe LEGO."
+strengths_en = [
+  "570 m² of museum space, with a Technic table to test models and a children's building corner",
+  "Awarded the 2025 cultural prize of the municipality of Binningen",
+  "Close to the French and German borders",
+]
+strengths_fr = [
+  "570 m² d'espace muséal, avec une table Technic pour essayer des modèles et un coin de construction pour enfants",
+  "Prix culturel 2025 de la commune de Binningen",
+  "Proche des frontières française et allemande",
+]
+weaknesses_en = [
+  "Closed on Mondays; admission in Swiss francs",
+]
+weaknesses_fr = [
+  "Fermé le lundi ; entrée en francs suisses",
+]
+size_en = "570 m²"
+size_fr = "570 m²"
+status = "active"
+last_activity = "2026-11-04"
+checked = "2026-11-23"
+confidence = "high"
+city = "Binningen"
+
+[[resource.sources]]
+url = "https://www.lebrickgo.ch/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.lebrickgo.ch/de/Infos/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "frankensteins-klemmbaustein-museum"
+name = "Frankensteins Klemmbaustein Museum"
+url = "https://frankensteins.de/"
+group = "museums-and-exhibitions"
+featured = true
+covers = ["official", "alternative", "places"]
+languages = ["de"]
+countries = ["DE"]
+access = "paid"
+business_model_en = "Paid admission, museum shop and online shop, café"
+business_model_fr = "Entrée payante, boutique du musée et boutique en ligne, café"
+summary_en = "Museum in Eckental near Nuremberg showing LEGO and compatible brands (COBI, Mould King, Wange, Cada, Reobrix, Sembo and others), with a large main layout, special exhibitions, a building room, a shop and a café. Opened in October 2021."
+summary_fr = "Musée à Eckental près de Nuremberg présentant du LEGO et des marques compatibles (COBI, Mould King, Wange, Cada, Reobrix, Sembo et d'autres), avec une grande maquette principale, des expositions spéciales, une salle de construction, une boutique et un café. Ouvert en octobre 2021."
+strengths_en = [
+  "One of the few museums that show alternative brands next to LEGO",
+  "Building room with sorted and unsorted bricks, own creations can be bought",
+  "Historical COBI collection",
+]
+strengths_fr = [
+  "L'un des rares musées qui montrent des marques alternatives à côté de LEGO",
+  "Salle de construction avec briques triées et en vrac, créations personnelles achetables",
+  "Collection historique COBI",
+]
+weaknesses_en = [
+  "Open only some days of the week, hours differ in winter",
+]
+weaknesses_fr = [
+  "Ouvert seulement certains jours, horaires différents en hiver",
+]
+size_en = "More than 500 m² on three floors, about 1.6 million bricks"
+size_fr = "Plus de 500 m² sur trois étages, environ 1.6 million de briques"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Eckental"
+
+[[resource.sources]]
+url = "https://frankensteins.de/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.nn.de/region/erlangen-hoechstadt/viel-mehr-als-lego-klemmbaustein-museum-in-eckental-feiert-am-3-oktober-jubilaum-1.14431584"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "brick-haus"
+name = "BRICK HAUS Klemmbaustein-Museum"
+url = "https://www.brick-brick.de/"
+group = "museums-and-exhibitions"
+covers = ["official", "alternative", "places"]
+languages = ["de"]
+countries = ["DE"]
+access = "paid"
+business_model_en = "Paid admission"
+business_model_fr = "Entrée payante"
+summary_en = "Brick museum in Bad Birnbach, Bavaria, announced to open on 1 July 2026, turning the travelling brick exhibition format into a permanent show with building competitions and life-size brick sets for photos."
+summary_fr = "Musée de briques à Bad Birnbach (Bavière), dont l'ouverture était annoncée pour le 1er juillet 2026, qui transforme le format des expositions itinérantes en exposition permanente, avec concours de construction et décors grandeur nature en briques pour les photos."
+strengths_en = [
+  "More than one million bricks: City, Star Wars, Castle, Western, Pirates, large map of Bavaria",
+]
+strengths_fr = [
+  "Plus d'un million de briques : City, Star Wars, Château, Western, Pirates, grande carte de la Bavière",
+]
+weaknesses_en = [
+  "Site content not readable (title only): opening, address and prices not confirmed at the source",
+]
+weaknesses_fr = [
+  "Contenu du site illisible (titre seulement) : ouverture, adresse et tarifs non confirmés à la source",
+]
+size_en = "More than one million bricks (as announced)"
+size_fr = "Plus d'un million de briques (selon l'annonce)"
+status = "active"
+last_activity = "2026-06-26"
+checked = "2026-11-23"
+confidence = "low"
+city = "Bad Birnbach"
+
+[[resource.sources]]
+url = "https://www.steine-kanal.de/klemmbaustein-museum-brick-haus-eroeffnung-am-01-juli-2026-im-bayerischen-bad-birnbach/"
+date = "2026-06-26"
+kind = "third-party"
+
+[[resource.sources]]
+url = "https://www.merlinssteine.de/dauerausstellungen/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "palais-de-la-maquette"
+name = "Palais de la Maquette - Musée du Jouet"
+url = "https://www.palaisdelamaquette.com/"
+group = "museums-and-exhibitions"
+featured = true
+covers = ["official", "places"]
+languages = ["fr"]
+countries = ["FR"]
+access = "paid"
+business_model_en = "Paid admission, point of sale"
+business_model_fr = "Entrée payante, point de vente"
+summary_en = "Toy museum in Valras-Plage (Hérault) with giant animated LEGO and K'NEX models on 200 m²: seaside resort, harbour, medieval town, amusement park. Building tables available for up to one hour after the visit."
+summary_fr = "Musée du jouet à Valras-Plage (Hérault) avec des maquettes géantes animées en LEGO et K'NEX sur 200 m² : station balnéaire, port, cité médiévale, parc d'attractions. Tables de construction à disposition jusqu'à une heure après la visite."
+strengths_en = [
+  "Only French museum of this kind, according to the museum",
+  "650000 LEGO pieces and 170000 K'NEX pieces on show (tourist office); two Guinness World Records mentions",
+]
+strengths_fr = [
+  "Seul musée de ce type en France, selon le musée",
+  "650000 pièces LEGO et 170000 pièces K'NEX exposées (office de tourisme) ; deux mentions au Guinness World Records",
+]
+weaknesses_en = [
+  "Not accessible to wheelchairs",
+  "Opening hours reduced outside school holidays (weekends, 13:30 to 18:00 from November to December 2026); outdated website",
+]
+weaknesses_fr = [
+  "Non accessible aux fauteuils roulants",
+  "Horaires réduits hors vacances (week-ends de 13:30 à 18:00 de novembre à décembre 2026) ; site web daté",
+]
+size_en = "200 m², 650000 LEGO pieces and 170000 K'NEX pieces"
+size_fr = "200 m², 650000 pièces LEGO et 170000 pièces K'NEX"
+status = "active"
+last_activity = "2026-11-01"
+checked = "2026-11-23"
+confidence = "high"
+city = "Valras-Plage"
+
+[[resource.sources]]
+url = "https://www.palaisdelamaquette.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.beziers-mediterranee.com/patrimoine-culturel/le-palais-de-la-maquette-musee-du-jouet/"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "railway-brick-museum"
+name = "Railway Brick Museum"
+url = "https://www.railway-brickmuseum.eu/"
+group = "museums-and-exhibitions"
+covers = ["official", "places"]
+languages = ["nl", "en"]
+countries = ["BE"]
+access = "paid"
+business_model_en = "Paid admission, museum shop"
+business_model_fr = "Entrée payante, boutique du musée"
+summary_en = "LEGO museum in a former bakery in Leut (Maasmechelen, Belgium), opened in 2021 around more than 50 years of LEGO trains, with themed landscapes where visitors start the trains, a seasonal exhibition, a mosaic wall and a shop with new and used LEGO."
+summary_fr = "Musée LEGO installé dans une ancienne boulangerie à Leut (Maasmechelen, Belgique), ouvert en 2021 autour de plus de 50 ans de trains LEGO, avec des paysages thématiques où le visiteur lance les trains, une exposition de saison, un mur de mosaïque et une boutique de LEGO neuf et d'occasion."
+strengths_en = [
+  "Focus on LEGO trains, with a new Brick City layout in preparation",
+  "Seasonal exhibition changing four times a year",
+]
+strengths_fr = [
+  "Spécialisé dans les trains LEGO, avec une nouvelle maquette Brick City en préparation",
+  "Exposition de saison renouvelée quatre fois par an",
+]
+weaknesses_en = [
+  "Open Friday to Sunday outside school holidays; card payment not possible according to a third-party listing",
+]
+weaknesses_fr = [
+  "Ouvert du vendredi au dimanche hors vacances scolaires ; paiement par carte impossible selon un site tiers",
+]
+size_en = "About 300 m² after extension (third-party listing)"
+size_fr = "Environ 300 m² après agrandissement (site tiers)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Maasmechelen"
+
+[[resource.sources]]
+url = "https://railway-brickmuseum.eu/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://museumsatlas.com/fr/belgique/musee/railway-brick-museum/"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "elbabrick"
+name = "ElbaBrick"
+url = "https://www.elbabrick.it/"
+group = "museums-and-exhibitions"
+covers = ["official", "places"]
+languages = ["it", "fr", "en"]
+countries = ["IT"]
+access = "paid"
+business_model_en = "Paid admission, used-brick shop"
+business_model_fr = "Entrée payante, boutique de briques d'occasion"
+summary_en = "Permanent LEGO exhibition-museum on Elba island, in the former aquarium of Marina di Campo: hundreds of official sets from the first bricks to the latest releases, dioramas, original creations and two play areas. Private initiative, not linked to the LEGO Group."
+summary_fr = "Exposition-musée LEGO permanente sur l'île d'Elbe, dans l'ancien aquarium de Marina di Campo : des centaines de sets officiels des premières briques aux dernières nouveautés, dioramas, créations originales et deux espaces de jeu. Initiative privée, sans lien avec le groupe LEGO."
+strengths_en = [
+  "Open every day, 10:00 to 13:00 and 15:00 to 19:00, continuous opening on bad-weather days",
+]
+strengths_fr = [
+  "Ouvert tous les jours, de 10:00 à 13:00 et de 15:00 à 19:00, ouverture continue les jours de mauvais temps",
+]
+weaknesses_en = [
+  "Island location; opening hours outside the summer season not stated on the site",
+]
+weaknesses_fr = [
+  "Situé sur une île ; horaires hors saison estivale non précisés sur le site",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Marina di Campo"
+
+[[resource.sources]]
+url = "https://www.elbabrick.it/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.infoelba.com/sports-free-time/enjoyment-relaxation/elbabrick/"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "karalisbrick"
+name = "Karalisbrick Museo del Mattoncino"
+url = "https://www.karalisbrick.com/en/home-en/"
+group = "museums-and-exhibitions"
+covers = ["official", "places"]
+languages = ["it", "en"]
+countries = ["IT"]
+access = "paid"
+business_model_en = "Cultural association, paid admission"
+business_model_fr = "Association culturelle, entrée payante"
+summary_en = "Brick museum founded in Cagliari in April 2021 by builder Maurizio Lampis, with 18 themed areas and more than one million bricks. After years as a travelling exhibition in Sardinia it states that it has a permanent home in Capoterra."
+summary_fr = "Musée de briques fondé à Cagliari en avril 2021 par le constructeur Maurizio Lampis, avec 18 zones thématiques et plus d'un million de briques. Après plusieurs années d'exposition itinérante en Sardaigne, il indique avoir un lieu permanent à Capoterra."
+strengths_en = [
+  "Houses the main dioramas of Maurizio Lampis (Trevi Fountain, St. Mark's Square, Cathedral of Trani)",
+  "Life-size 1:1 British phone booth",
+]
+strengths_fr = [
+  "Réunit les principaux dioramas de Maurizio Lampis (fontaine de Trevi, place Saint-Marc, cathédrale de Trani)",
+  "Cabine téléphonique britannique grandeur nature",
+]
+weaknesses_en = [
+  "Permanent site recently established: opening hours and address not confirmed",
+  "Home page could be read through a reader tool only, not with a direct request",
+]
+weaknesses_fr = [
+  "Site permanent récemment établi : horaires et adresse non confirmés",
+  "Page d'accueil lisible seulement par un outil de lecture, pas par requête directe",
+]
+size_en = "18 themed areas, more than 1 million bricks (as published)"
+size_fr = "18 zones thématiques, plus d'un million de briques (selon le site)"
+status = "active"
+last_activity = "2025-05-18"
+checked = "2026-11-23"
+confidence = "medium"
+city = "Capoterra"
+
+[[resource.sources]]
+url = "https://www.karalisbrick.com/en/home-en/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "bricks-and-figs"
+name = "Bricks & Figs"
+url = "https://bricksandfigs.pl/en/"
+group = "museums-and-exhibitions"
+covers = ["official", "places"]
+languages = ["en", "pl"]
+countries = ["PL"]
+access = "paid"
+business_model_en = "Paid admission, shop, café"
+business_model_fr = "Entrée payante, boutique, café"
+summary_en = "Private museum in Kraków focused on LEGO minifigures and sets: more than 14000 minifigures and 700 original sets, with a café and a shop. Not affiliated with the LEGO Group."
+summary_fr = "Musée privé à Cracovie centré sur les figurines et les sets LEGO : plus de 14000 figurines et 700 sets originaux, avec un café et une boutique. Non affilié au groupe LEGO."
+strengths_en = [
+  "Collection centred on minifigures, with rare items such as gold prototypes and Comic-Con exclusives",
+  "Open every day, 10:00 to 20:00",
+]
+strengths_fr = [
+  "Collection centrée sur les figurines, avec des pièces rares comme des prototypes dorés et des exclusivités Comic-Con",
+  "Ouvert tous les jours de 10:00 à 20:00",
+]
+weaknesses_en = [
+  "Claims such as largest in the world and review counts come from the museum itself",
+]
+weaknesses_fr = [
+  "Les affirmations comme « plus grand du monde » et les nombres d'avis viennent du musée lui-même",
+]
+size_en = "More than 14000 minifigures, 700 sets (as published)"
+size_fr = "Plus de 14000 figurines, 700 sets (selon le site)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Kraków"
+
+[[resource.sources]]
+url = "https://bricksandfigs.pl/en/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickz-museum"
+name = "Brickz Museum"
+url = "https://brickzmuseum.com/"
+group = "museums-and-exhibitions"
+covers = ["official", "places"]
+languages = ["en"]
+countries = ["GB"]
+access = "paid"
+business_model_en = "Paid admission"
+business_model_fr = "Entrée payante"
+summary_en = "LEGO museum in Milton Keynes, opened in April 2025, with large builds (pirates, Star Wars, underwater creatures), a history of LEGO and items made for Asian and US markets. Not affiliated with the LEGO Group."
+summary_fr = "Musée LEGO à Milton Keynes, ouvert en avril 2025, avec de grandes constructions (pirates, Star Wars, créatures sous-marines), une histoire de LEGO et des articles conçus pour les marchés asiatique et américain. Non affilié au groupe LEGO."
+strengths_en = [
+  "Large builds mostly behind glass, history section on the company",
+]
+strengths_fr = [
+  "Grandes constructions surtout sous vitrine, section d'histoire de l'entreprise",
+]
+weaknesses_en = [
+  "Recent venue; the figure of five million bricks is stated by the museum",
+]
+weaknesses_fr = [
+  "Lieu récent ; le chiffre de cinq millions de briques vient du musée",
+]
+size_en = "About 5 million bricks (as published)"
+size_fr = "Environ 5 millions de briques (selon le site)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+city = "Milton Keynes"
+
+[[resource.sources]]
+url = "https://brickzmuseum.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.bbc.co.uk/news/articles/cq5z34wnv72o"
+date = "2025-03-05"
+kind = "third-party"
+
+[[resource]]
+id = "merlins-steine-permanent-exhibitions"
+name = "Merlins Steine: permanent exhibitions"
+url = "https://www.merlinssteine.de/dauerausstellungen/"
+group = "museums-and-exhibitions"
+covers = ["official", "alternative", "places"]
+languages = ["de"]
+countries = ["DE", "CH", "AT"]
+access = "free"
+business_model_en = "Independent site financed by affiliate links"
+business_model_fr = "Site indépendant financé par des liens d'affiliation"
+summary_en = "German-language list of places with permanent brick exhibitions and museums in Germany, Switzerland, Austria and central Europe. Readers can report missing venues by email."
+summary_fr = "Liste en allemand des lieux d'expositions permanentes et de musées de briques en Allemagne, en Suisse, en Autriche et en Europe centrale. Les lecteurs peuvent signaler un lieu manquant par courriel."
+strengths_en = [
+  "Dedicated to permanent venues, kept apart from short-lived events",
+]
+strengths_fr = [
+  "Consacrée aux lieux permanents, distincts des événements éphémères",
+]
+weaknesses_en = [
+  "Short list: three venues read on 23 November 2026 (LEGO House, LEbrickGO, BRICK HAUS); Frankensteins and Czech museums not listed",
+]
+weaknesses_fr = [
+  "Liste courte : trois lieux lus le 23 novembre 2026 (LEGO House, LEbrickGO, BRICK HAUS) ; Frankensteins et musées tchèques absents",
+]
+size_en = "3 venues listed"
+size_fr = "3 lieux listés"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.merlinssteine.de/dauerausstellungen/"
+date = "2026-11-23"
+kind = "read"
+
+# ---------------------------------------------------------------- physical shops
+
+[[resource]]
+id = "bluebrixx-stores"
+name = "BlueBrixx Stores"
+url = "https://www.bluebrixx.com/de/stores/"
+group = "physical-shops"
+covers = ["alternative", "places"]
+languages = ["de"]
+countries = ["DE", "AT"]
+access = "free"
+business_model_en = "Own-brand retail stores, including mega-stores and outlet stores"
+business_model_fr = "Magasins de la marque, dont des mégastores et des magasins d'usine"
+summary_en = "Store locator of the German alternative brand BlueBrixx: shops in shopping centres in Germany and Austria, also stocking COBI, Mould King, Funwhole, Reobrix and Pantasy. Austrian network started in June 2025. No store in France was found."
+summary_fr = "Localisateur des magasins de la marque alternative allemande BlueBrixx : boutiques en centres commerciaux en Allemagne et en Autriche, qui vendent aussi COBI, Mould King, Funwhole, Reobrix et Pantasy. Le réseau autrichien a démarré en juin 2025. Aucun magasin en France n'a été trouvé."
+strengths_en = [
+  "Largest physical network of an alternative brand found in Europe: 39 stores in Germany on 4 June 2026 according to an enthusiast site",
+  "Several mega-stores, opening hours and addresses on one page",
+]
+strengths_fr = [
+  "Plus grand réseau physique d'une marque alternative trouvé en Europe : 39 magasins en Allemagne au 4 juin 2026 selon un site de passionnés",
+  "Plusieurs mégastores, horaires et adresses sur une seule page",
+]
+weaknesses_en = [
+  "Stores open, close and move regularly",
+  "The locator list is loaded by script and was empty when read: store list taken from third-party pages",
+]
+weaknesses_fr = [
+  "Des magasins ouvrent, ferment et déménagent régulièrement",
+  "La liste du localisateur se charge par script et était vide à la lecture : liste des magasins tirée de pages tierces",
+]
+size_en = "39 stores in Germany (4 June 2026), 4 in Austria"
+size_fr = "39 magasins en Allemagne (4 juin 2026), 4 en Autriche"
+status = "active"
+last_activity = "2026-09-11"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.steine-kanal.de/bluebrixx-stores-uebersicht/"
+date = "2026-06-04"
+kind = "third-party"
+
+[[resource.sources]]
+url = "https://www.5min.at/klagenfurt/5202609111554/klemmbausteine-fuer-gross-und-klein-neuer-store-in-klagenfurt/"
+date = "2026-09-11"
+kind = "third-party"
+
+[[resource.sources]]
+url = "https://www.bluebrixx.com/de/stores/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "time-for-bricks"
+name = "Time For Bricks"
+url = "https://www.timeforbricks.fr/"
+group = "physical-shops"
+featured = true
+covers = ["alternative", "places"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Retail shops and online shop"
+business_model_fr = "Boutiques et boutique en ligne"
+summary_en = "French shops in Chambéry (since 2023) and Annecy (opened in July 2026) selling about thirty alternative brick brands compatible with standard bricks, with free building tables and a hot drink corner in Annecy."
+summary_fr = "Boutiques françaises à Chambéry (depuis 2023) et Annecy (ouverte en juillet 2026) qui vendent une trentaine de marques de briques alternatives compatibles avec les briques standards, avec tables de construction gratuites et coin boissons chaudes à Annecy."
+strengths_en = [
+  "Wide choice of alternative brands in one place, prices from 1.99 € to 249 €",
+  "Test and compare bricks on site; some kits sold only in the Chambéry shop",
+]
+strengths_fr = [
+  "Large choix de marques alternatives en un lieu, prix de 1.99 € à 249 €",
+  "Essai et comparaison des briques sur place ; certains kits vendus uniquement à Chambéry",
+]
+weaknesses_en = [
+  "Limited opening days (closed Monday and Sunday)",
+  "Claim of 100 % European brands comes from the shop; delivery by Mondial Relay",
+]
+weaknesses_fr = [
+  "Jours d'ouverture limités (fermé le lundi et le dimanche)",
+  "L'affirmation de marques 100 % européennes vient de la boutique ; livraison par Mondial Relay",
+]
+status = "active"
+last_activity = "2026-07-28"
+checked = "2026-11-23"
+confidence = "high"
+city = "Chambéry, Annecy"
+
+[[resource.sources]]
+url = "https://www.timeforbricks.fr/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://cabinet-hermes.fr/time-for-bricks-ouvre-une-nouvelle-boutique-a-annecy-avec-le-groupe-cabinet-hermes"
+date = "2026-07-28"
+kind = "third-party"
+
+[[resource]]
+id = "toysngo-cobi-store"
+name = "Toysngo COBI Store"
+url = "https://www.toysngo.com/"
+group = "physical-shops"
+covers = ["alternative", "places"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop and online shop, official COBI distributor for France according to the site"
+business_model_fr = "Boutique et boutique en ligne, distributeur officiel COBI pour la France selon le site"
+summary_en = "COBI-only shop in Saint-Orens-de-Gameville near Toulouse, with more than 150 m² of assembled models on display, free click and collect and an online shop. First opened in August 2020."
+summary_fr = "Boutique 100 % COBI à Saint-Orens-de-Gameville près de Toulouse, avec plus de 150 m² de modèles montés exposés, retrait gratuit en magasin et boutique en ligne. Ouverte pour la première fois en août 2020."
+strengths_en = [
+  "Models shown assembled, boxes handed over at the checkout",
+  "More than 2500 boxes in stock according to the site",
+]
+strengths_fr = [
+  "Modèles exposés montés, boîtes remises en caisse",
+  "Plus de 2500 boîtes en stock selon le site",
+]
+weaknesses_en = [
+  "Single brand only; open Tuesday to Saturday",
+]
+weaknesses_fr = [
+  "Une seule marque ; ouvert du mardi au samedi",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Saint-Orens-de-Gameville"
+
+[[resource.sources]]
+url = "https://www.toysngo.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://actu.fr/occitanie/saint-orens-de-gameville_31506/une-premiere-mondiale-dans-le-lauragais-avec-l-ouverture-d-un-magasin-de-jeux-de-construction-cobi_35896943.html"
+date = "2020-09-05"
+kind = "third-party"
+
+[[resource]]
+id = "enjeu-briques"
+name = "Enjeu Briques"
+url = "https://enjeubriques.fr/"
+group = "physical-shops"
+covers = ["official", "alternative", "second-hand", "places"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop inside the Sortilèges l'Annexe store, with buying back of used LEGO"
+business_model_fr = "Boutique au sein du magasin Sortilèges l'Annexe, avec rachat de LEGO d'occasion"
+summary_en = "Brick shop in Saint-Malo, inside the 250 m² Sortilèges l'Annexe store: used LEGO sets, new sets from alternative brands (Pantasy, Mould King, Wange), parts, minifigures, buying back of collections, a play room and activities."
+summary_fr = "Boutique de briques à Saint-Malo, au sein du magasin Sortilèges l'Annexe de 250 m² : sets LEGO d'occasion, sets neufs de marques alternatives (Pantasy, Mould King, Wange), pièces, figurines, rachat de collections, salle de jeu et animations."
+strengths_en = [
+  "Used and alternative-brand sets in the same shop, items reservable online and collected in store",
+]
+strengths_fr = [
+  "Sets d'occasion et de marques alternatives dans la même boutique, articles réservables en ligne et retirables en magasin",
+]
+weaknesses_en = [
+  "Opening hours not stated on the home page",
+]
+weaknesses_fr = [
+  "Horaires non indiqués en page d'accueil",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Saint-Malo"
+
+[[resource.sources]]
+url = "https://enjeubriques.fr/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "la-boite-a-briques"
+name = "La Boîte à Briques"
+url = "https://laboiteabriques.com/"
+group = "physical-shops"
+covers = ["official", "second-hand", "parts", "places"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Used LEGO shop, buying back of collections by appointment"
+business_model_fr = "Boutique de LEGO d'occasion, rachat de collections sur rendez-vous"
+summary_en = "Used LEGO shop of 55 m² in Montpellier (8 rue Balard): complete sets, minifigures and loose parts. Buys collections of any condition by appointment only, after estimate."
+summary_fr = "Boutique de LEGO d'occasion de 55 m² à Montpellier (8 rue Balard) : sets complets, figurines et pièces détachées. Rachète des lots en tout état, uniquement sur rendez-vous après estimation."
+strengths_en = [
+  "Search service for specific sets, themes or missing parts, also for customers far from Montpellier",
+]
+strengths_fr = [
+  "Service de recherche de sets, thèmes ou pièces manquantes, y compris pour les clients éloignés de Montpellier",
+]
+weaknesses_en = [
+  "Irregular opening hours, summer hours changing week by week: check before travelling",
+]
+weaknesses_fr = [
+  "Horaires irréguliers, horaires d'été variables d'une semaine à l'autre : vérifier avant de se déplacer",
+]
+status = "active"
+last_activity = "2026-07-08"
+checked = "2026-11-23"
+confidence = "high"
+city = "Montpellier"
+
+[[resource.sources]]
+url = "https://laboiteabriques.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickfun-1974"
+name = "Brickfun 1974"
+url = "https://www.brickfun-1974.fr/"
+group = "physical-shops"
+covers = ["official", "second-hand", "parts", "minifigures", "places"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Used LEGO shop"
+business_model_fr = "Boutique de LEGO d'occasion"
+summary_en = "Used LEGO shop at Saint-Martin-Bellevue near Annecy: single parts, used sets and minifigures. Open Wednesday, Friday and Saturday from 14:00 to 18:00."
+summary_fr = "Boutique de LEGO d'occasion à Saint-Martin-Bellevue près d'Annecy : pièces à l'unité, sets d'occasion et figurines. Ouverte mercredi, vendredi et samedi de 14:00 à 18:00."
+strengths_en = [
+  "Parts sold by the piece, rare in physical shops",
+]
+strengths_fr = [
+  "Pièces vendues à l'unité, rare en boutique physique",
+]
+weaknesses_en = [
+  "Three half-days of opening per week; a business listing gives different days (Wednesday and Saturday)",
+]
+weaknesses_fr = [
+  "Trois demi-journées d'ouverture par semaine ; une fiche d'entreprise indique d'autres jours (mercredi et samedi)",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+city = "Saint-Martin-Bellevue"
+
+[[resource.sources]]
+url = "https://www.brickfun-1974.fr/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "autour-des-briques"
+name = "Autour des Briques"
+url = "https://autourdesbriques.fr/"
+group = "physical-shops"
+covers = ["official", "alternative", "parts", "places"]
+languages = ["fr"]
+countries = ["FR"]
+ships_to_france = true
+access = "free"
+business_model_en = "Shop and online shop"
+business_model_fr = "Boutique et boutique en ligne"
+summary_en = "Shop in Marcillat-en-Combraille (Allier) and online shop for LEGO, COBI, Playmobil and Ravensburger, with LEGO loose parts. Member of the Auver'Briques association. Shop open by appointment from Wednesday to Saturday."
+summary_fr = "Boutique à Marcillat-en-Combraille (Allier) et boutique en ligne pour LEGO, COBI, Playmobil et Ravensburger, avec des pièces LEGO détachées. Membre de l'association Auver'Briques. Magasin ouvert sur rendez-vous du mercredi au samedi."
+strengths_en = [
+  "LEGO parts sold by the piece with stock levels shown",
+]
+strengths_fr = [
+  "Pièces LEGO vendues à l'unité avec niveaux de stock affichés",
+]
+weaknesses_en = [
+  "Small rural location; visits by appointment only",
+]
+weaknesses_fr = [
+  "Petite localité rurale ; visites uniquement sur rendez-vous",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Marcillat-en-Combraille"
+
+[[resource.sources]]
+url = "https://autourdesbriques.fr/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://autourdesbriques.fr/Informations-contact"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "steingemachtes"
+name = "Steingemachtes"
+url = "https://www.steingemachtes.de/"
+group = "physical-shops"
+covers = ["alternative", "parts", "places"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Shop and online shop"
+business_model_fr = "Boutique et boutique en ligne"
+summary_en = "Shop for alternative brick brands and bulk bricks in Paderborn (Detmolder Straße 190), with an online shop; organises a spring festival of bricks in Paderborn (29 and 30 May 2026)."
+summary_fr = "Boutique de marques de briques alternatives et de briques en vrac à Paderborn (Detmolder Straße 190), avec boutique en ligne ; organise un festival de printemps de la brique à Paderborn (29 et 30 mai 2026)."
+strengths_en = [
+  "Alternative brands and mixed bulk bricks (1 kg for 20 €)",
+]
+strengths_fr = [
+  "Marques alternatives et briques mixtes en vrac (1 kg pour 20 €)",
+]
+weaknesses_en = [
+  "Shop hours (Friday and Saturday) only seen in a business listing, not on the site",
+]
+weaknesses_fr = [
+  "Horaires du magasin (vendredi et samedi) vus seulement dans une fiche d'entreprise, pas sur le site",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+city = "Paderborn"
+
+[[resource.sources]]
+url = "https://www.steingemachtes.de/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.steine-kanal.de/veranstaltungskalender-2026-alle-lego-fan-veranstaltungen-und-boersen-im-uberblick/"
+date = "2026-11-23"
+kind = "third-party"
+
+# ---------------------------------------------------------------- cafés and play spaces
+
+[[resource]]
+id = "brick-bank-cafe"
+name = "Brick Bank Café"
+url = "https://www.brickbankcafe.org/"
+group = "cafes-and-bars"
+covers = ["official", "second-hand", "places"]
+languages = ["en"]
+countries = ["GB"]
+access = "paid"
+business_model_en = "Not-for-profit community café, profits support autistic people"
+business_model_fr = "Café communautaire à but non lucratif, bénéfices reversés à l'accompagnement de personnes autistes"
+summary_en = "Community café in Bingley (West Yorkshire), opened in June 2025 in a former bank: LEGO sets or trays of loose bricks can be hired by the half hour or hour and built at the table. Pre-loved LEGO sold."
+summary_fr = "Café communautaire à Bingley (West Yorkshire), ouvert en juin 2025 dans une ancienne banque : sets LEGO ou plateaux de briques en vrac à louer à la demi-heure ou à l'heure et à construire à table. LEGO d'occasion en vente."
+strengths_en = [
+  "Hire price list published, from 4 pounds for 30 minutes; no booking needed",
+  "Adults explicitly welcome; weekly evening LEGO clubs",
+]
+strengths_fr = [
+  "Tarifs de location publiés, dès 4 livres pour 30 minutes ; sans réservation",
+  "Adultes explicitement bienvenus ; clubs LEGO hebdomadaires en soirée",
+]
+weaknesses_en = [
+  "Hired models cannot be bought; LEGO hire charged separately from food",
+]
+weaknesses_fr = [
+  "Les modèles loués ne sont pas à vendre ; location LEGO facturée à part de la restauration",
+]
+status = "active"
+last_activity = "2026-11-09"
+checked = "2026-11-23"
+confidence = "high"
+city = "Bingley"
+
+[[resource.sources]]
+url = "https://www.brickbankcafe.org/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.brickbankcafe.org/legoexperience/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.thetelegraphandargus.co.uk/news/26237346.lots-tasty-food-lego-fun-brick-bank-cafe/"
+date = "2026-07-03"
+kind = "third-party"
+
+[[resource]]
+id = "builders-brew-cafe"
+name = "Builder's Brew Café"
+url = "https://buildersbrewcafe.com/"
+group = "cafes-and-bars"
+covers = ["official", "places"]
+languages = ["en"]
+countries = ["GB"]
+access = "paid"
+business_model_en = "Café with paid LEGO build sessions"
+business_model_fr = "Café avec séances de construction LEGO payantes"
+summary_en = "Café in Sheffield city centre (2-3 East Parade) where LEGO sets can be built at the table while having a drink. Tables can be booked upstairs to build from 45 pre-sorted boxes on The Brick Wall."
+summary_fr = "Café au centre de Sheffield (2-3 East Parade) où l'on construit des sets LEGO à table en buvant un verre. Des tables à l'étage peuvent être réservées pour construire à partir de 45 boîtes pré-triées de The Brick Wall."
+strengths_en = [
+  "Large library of LEGO sets, food baked on site",
+]
+strengths_fr = [
+  "Grande bibliothèque de sets LEGO, cuisine faite sur place",
+]
+weaknesses_en = [
+  "Closed Monday and Thursday; booking recommended, especially in school holidays",
+]
+weaknesses_fr = [
+  "Fermé le lundi et le jeudi ; réservation recommandée, surtout pendant les vacances scolaires",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+city = "Sheffield"
+
+[[resource.sources]]
+url = "https://buildersbrewcafe.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.welcometosheffield.co.uk/content/food-drink-and-nightlife/builders-brew-cafe/"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "d-brick-cafe"
+name = "D-Brick Café"
+url = "https://www.d-brick.com/"
+group = "cafes-and-bars"
+covers = ["official", "second-hand", "places"]
+languages = ["fr"]
+countries = ["BE"]
+access = "free"
+business_model_en = "Independent LEGO shop and Italian café"
+business_model_fr = "Boutique LEGO indépendante et café italien"
+summary_en = "Independent LEGO shop and café in Liège (rue de la Boucherie 1): new and used sets, built at the table on a tray without time limit or taken away. Workshops and parties. Not affiliated with the LEGO Group."
+summary_fr = "Boutique LEGO indépendante et café à Liège (rue de la Boucherie 1) : sets neufs et d'occasion, construits à table sur un plateau sans limite de temps ou emportés. Ateliers et anniversaires. Non affilié au groupe LEGO."
+strengths_en = [
+  "Set and drink formula for two people, 20 €, with no time limit",
+]
+strengths_fr = [
+  "Formule set et boisson pour deux personnes, 20 €, sans limite de temps",
+]
+weaknesses_en = [
+  "Very small: 7 to 8 seats inside, 18 on the terrace; closed Monday and Tuesday",
+]
+weaknesses_fr = [
+  "Très petit : 7 à 8 places à l'intérieur, 18 en terrasse ; fermé le lundi et le mardi",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Liège"
+
+[[resource.sources]]
+url = "https://www.d-brick.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "coffee-and-bricks-limburg"
+name = "Coffee & Bricks by BRICKONAS"
+url = "https://brickonas.info/coffee-and-bricks/"
+group = "cafes-and-bars"
+covers = ["alternative", "places"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "Café, shop and creative room"
+business_model_fr = "Café, boutique et salle créative"
+summary_en = "Café, brick shop and creative room in Limburg an der Lahn (Hospitalstraße 1), with building at the table, sets, minifigures and loose parts, photo mosaics, building evenings and parties. Opening announced for 14 November 2026."
+summary_fr = "Café, boutique de briques et salle créative à Limburg an der Lahn (Hospitalstraße 1), avec construction à table, sets, figurines et pièces détachées, mosaïques photo, soirées de construction et anniversaires. Ouverture annoncée le 14 novembre 2026."
+strengths_en = [
+  "Building evenings and company or school sessions",
+]
+strengths_fr = [
+  "Soirées de construction et séances pour entreprises ou écoles",
+]
+weaknesses_en = [
+  "Very recent: opening is announced on the site, effective opening not confirmed",
+]
+weaknesses_fr = [
+  "Très récent : l'ouverture est annoncée sur le site, l'ouverture effective n'est pas confirmée",
+]
+status = "active"
+last_activity = "2026-11-14"
+checked = "2026-11-23"
+confidence = "medium"
+city = "Limburg an der Lahn"
+
+[[resource.sources]]
+url = "https://brickonas.info/coffee-and-bricks/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "heartbrickcafe"
+name = "HeartBrickCafé"
+url = "https://heartbrickcafe.de/"
+group = "cafes-and-bars"
+covers = ["official", "minifigures", "places"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+business_model_en = "LEGO retailer with a café corner"
+business_model_fr = "Revendeur LEGO avec coin café"
+summary_en = "LEGO shop with a café area in Rothenburg ob der Tauber (Rödergasse 18), opened in September 2025 by an authorised LEGO dealer: current sets, retired sets from his own collection and bought collections, rare minifigures, a children's corner."
+summary_fr = "Boutique LEGO avec espace café à Rothenburg ob der Tauber (Rödergasse 18), ouverte en septembre 2025 par un revendeur LEGO agréé : sets actuels, sets retirés issus de sa collection et de collections rachetées, figurines rares, coin enfants."
+strengths_en = [
+  "Retired sets and collectable minifigures in addition to the current range",
+]
+strengths_fr = [
+  "Sets retirés et figurines de collection en plus de la gamme actuelle",
+]
+weaknesses_en = [
+  "Site partly unfinished (placeholder text on the about page); opening dates taken from a local news article",
+]
+weaknesses_fr = [
+  "Site en partie inachevé (texte provisoire en page « à propos ») ; dates d'ouverture tirées d'un article de presse locale",
+]
+status = "active"
+last_activity = "2026-03-11"
+checked = "2026-11-23"
+confidence = "medium"
+city = "Rothenburg ob der Tauber"
+
+[[resource.sources]]
+url = "https://heartbrickcafe.de/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.rotour.de/mit-lego-zum-lebenstraum/"
+date = "2026-03-11"
+kind = "third-party"
+
+[[resource]]
+id = "steinequelle-baupause"
+name = "Baupause by Steinequelle"
+url = "https://steinequelle.de/baupause/"
+group = "cafes-and-bars"
+covers = ["official", "places"]
+languages = ["de"]
+countries = ["DE"]
+access = "paid"
+business_model_en = "Paid build sessions with drinks"
+business_model_fr = "Séances de construction payantes avec boissons"
+summary_en = "Build break at the Steinequelle shop in Höhr-Grenzhausen (Rudolf-Diesel-Straße 9): choose a LEGO set on site, build it at a table with coffee or soft drinks. Adults welcome; evenings for adults planned; second Friday of the month, a long fan evening."
+summary_fr = "Pause de construction dans la boutique Steinequelle à Höhr-Grenzhausen (Rudolf-Diesel-Straße 9) : choix d'un set LEGO sur place, construction à table avec café ou boissons sans alcool. Adultes bienvenus ; soirées pour adultes prévues ; le deuxième vendredi du mois, longue soirée de passionnés."
+strengths_en = [
+  "Calm format, not an indoor playground; booking recommended but not required",
+]
+strengths_fr = [
+  "Format calme, pas une aire de jeux ; réservation recommandée mais non obligatoire",
+]
+weaknesses_en = [
+  "Opening hours differ between school term and summer holidays; sets mostly stay on site",
+]
+weaknesses_fr = [
+  "Horaires différents entre période scolaire et vacances d'été ; sets surtout conservés sur place",
+]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+city = "Höhr-Grenzhausen"
+
+[[resource.sources]]
+url = "https://steinequelle.de/baupause/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "bricks-factory"
+name = "Bricks Factory"
+url = "https://bricksfactory.fr/"
+group = "cafes-and-bars"
+covers = ["official", "places"]
+languages = ["fr"]
+countries = ["FR"]
+access = "paid"
+business_model_en = "Workshops, free building sessions, café"
+business_model_fr = "Ateliers, séances de construction libre, café"
+summary_en = "LEGO workshop venue in Vedène near Avignon: workshops, holiday courses, parties, and free building sessions (Bricks Academy, Bricks en Famille) with a Bricks Café serving hot and cold drinks."
+summary_fr = "Lieu d'ateliers LEGO à Vedène près d'Avignon : ateliers, stages de vacances, anniversaires et séances de construction libre (Bricks Academy, Bricks en Famille) avec un Bricks Café proposant boissons chaudes et froides."
+strengths_en = [
+  "Free building with a large choice of LEGO bricks, no booking needed except on Saturday afternoons",
+  "Open Monday to Saturday year-round",
+]
+strengths_fr = [
+  "Construction libre avec un large choix de briques LEGO, sans réservation sauf le samedi après-midi",
+  "Ouvert du lundi au samedi toute l'année",
+]
+weaknesses_en = [
+  "Oriented to children and families rather than adult builders",
+]
+weaknesses_fr = [
+  "Orienté vers les enfants et les familles plutôt que vers les constructeurs adultes",
+]
+status = "active"
+last_activity = "2025-01-30"
+checked = "2026-11-23"
+confidence = "medium"
+city = "Vedène"
+
+[[resource.sources]]
+url = "https://bricksfactory.fr/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://bricksfactory.fr/bricks-lab/"
+date = "2026-11-23"
+kind = "read"

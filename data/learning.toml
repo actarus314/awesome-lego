@@ -1,0 +1,1263 @@
+[category]
+id = "learning"
+name_en = "Learning and understanding bricks"
+name_fr = "Apprendre et comprendre la brique"
+summary_en = "Guides, glossaries, history, compatibility and legal references, education and competitions, books, magazines and recognised brick artists."
+summary_fr = "Guides, glossaires, histoire, références sur la compatibilité et le droit, éducation et compétitions, livres, magazines et artistes de la brique reconnus."
+
+[[category.groups]]
+id = "guides"
+name_en = "Guides and reference"
+name_fr = "Guides et références"
+
+[[category.groups]]
+id = "compatibility-and-law"
+name_en = "Compatibility, materials and law"
+name_fr = "Compatibilité, matières et droit"
+
+[[category.groups]]
+id = "history"
+name_en = "History"
+name_fr = "Histoire"
+
+[[category.groups]]
+id = "education-and-competitions"
+name_en = "Education and competitions"
+name_fr = "Éducation et compétitions"
+
+[[category.groups]]
+id = "books-and-magazines"
+name_en = "Books and magazines"
+name_fr = "Livres et magazines"
+
+[[category.groups]]
+id = "artists"
+name_en = "Artists and designers"
+name_fr = "Artistes et créateurs"
+
+[[resource]]
+id = "brick-architect"
+name = "Brick Architect"
+url = "https://brickarchitect.com/"
+group = "guides"
+featured = true
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Independent site by an architect and author: online LEGO Parts Guide, LEGO Storage Guide, set reviews and monthly news roundups."
+summary_fr = "Site indépendant d'un architecte et auteur : guide des pièces LEGO et guide de rangement en ligne, tests de sets et synthèses mensuelles de l'actualité."
+strengths_en = ["Catalogue of nearly 2500 current parts", "Print edition of The LEGO Parts Guide announced on 18 October 2026", "Monthly news roundup, latest dated 31 October 2026"]
+strengths_fr = ["Catalogue de près de 2500 pièces actuelles", "Édition imprimée de The LEGO Parts Guide annoncée le 18 octobre 2026", "Synthèse mensuelle de l'actualité, la dernière datée du 31 octobre 2026"]
+weaknesses_en = ["English only"]
+weaknesses_fr = ["Anglais uniquement"]
+status = "active"
+last_activity = "2026-10-31"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickarchitect.com/"
+date = "2026-10-31"
+kind = "read"
+
+[[resource]]
+id = "swooshable"
+name = "Swooshable"
+url = "https://swooshable.com/"
+group = "guides"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Collection of SNOT (studs not on top) techniques, each with the parts list needed to reproduce it."
+summary_fr = "Collection de techniques SNOT (tenons non orientés vers le haut), chacune avec la liste des pièces nécessaires pour la reproduire."
+strengths_en = ["87 SNOT techniques listed", "Links to an advanced building techniques guide"]
+strengths_fr = ["87 techniques SNOT répertoriées", "Liens vers un guide de techniques de construction avancées"]
+weaknesses_en = ["Latest dated item seen on the home page is from November 2020"]
+weaknesses_fr = ["Le dernier élément daté visible sur la page d'accueil remonte à novembre 2020"]
+status = "inactive"
+last_activity = "2020-11-30"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://swooshable.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brick-builders-handbook"
+name = "Brick Builder's Handbook"
+url = "https://brickbuildershandbook.com/"
+group = "guides"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Blog and book on building techniques: sideways building, half-stud offsets with jumper plates, angled walls, round shapes and the geometry behind them."
+summary_fr = "Blog et livre sur les techniques de construction : construction latérale, décalages d'un demi-tenon avec les plaques jumper, murs en angle, formes rondes et la géométrie qui les sous-tend."
+strengths_en = ["Index of techniques with the reasoning behind each", "Series The Math Behind LEGO Building Techniques, four volumes"]
+strengths_fr = ["Index des techniques avec le raisonnement de chacune", "Série The Math Behind LEGO Building Techniques, quatre volumes"]
+weaknesses_en = ["Latest post seen dates from April 2025"]
+weaknesses_fr = ["Dernier article vu daté d'avril 2025"]
+status = "inactive"
+last_activity = "2025-04-03"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickbuildershandbook.com/2025/04/03/the-math-behind-lego-building-techniques-volume-4/"
+date = "2025-04-03"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickbuildershandbook.com/lego-building-techniques-index/"
+date = "2024-07-14"
+kind = "read"
+
+[[resource]]
+id = "sariel"
+name = "Sariel.pl"
+url = "https://sariel.pl/"
+group = "guides"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Technic builder's site: model presentations, free building instructions and online tools for builders; the author wrote The Unofficial LEGO Technic Builder's Guide."
+summary_fr = "Site d'un constructeur Technic : présentation de modèles, instructions de construction gratuites et outils en ligne ; l'auteur a écrit The Unofficial LEGO Technic Builder's Guide."
+strengths_en = ["Source code of the online tools published on GitHub on 24 July 2026", "Free instructions for some models, such as a 2-speed sliding gear transmission"]
+strengths_fr = ["Code source des outils en ligne publié sur GitHub le 24 juillet 2026", "Instructions gratuites pour certains modèles, comme une transmission coulissante à 2 vitesses"]
+weaknesses_en = ["English only", "Centred on Technic"]
+weaknesses_fr = ["Anglais uniquement", "Centré sur Technic"]
+status = "active"
+last_activity = "2026-07-24"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://sariel.pl/"
+date = "2026-07-24"
+kind = "read"
+
+[[resource]]
+id = "philohome"
+name = "Philo's Home Page"
+url = "https://www.philohome.com/"
+group = "guides"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Personal site with technical tests and tools: battery comparison for the Technic and Control+ hub, Mindstorms, LDraw and LeoCAD tutorials, parts packs for Studio."
+summary_fr = "Site personnel de tests et d'outils techniques : comparaison de piles pour le hub Technic et Control+, Mindstorms, tutoriels LDraw et LeoCAD, packs de pièces pour Studio."
+strengths_en = ["Measured comparisons, for example four power sources for a Technic hub", "Technical information on LEGO electronics"]
+strengths_fr = ["Comparaisons mesurées, par exemple quatre sources d'alimentation pour un hub Technic", "Informations techniques sur l'électronique LEGO"]
+weaknesses_en = ["English only", "Page dates not shown"]
+weaknesses_fr = ["Anglais uniquement", "Dates des pages non affichées"]
+status = "active"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.philohome.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "bricks-stackexchange"
+name = "Bricks Stack Exchange"
+url = "https://bricks.stackexchange.com/"
+group = "guides"
+covers = ["learning", "official", "alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Question and answer site on LEGO and compatible bricks: identification of parts and clones, plastics, cleaning, compatibility measurement, building problems."
+summary_fr = "Site de questions et réponses sur LEGO et les briques compatibles : identification de pièces et de clones, matières plastiques, nettoyage, mesure de la compatibilité, problèmes de construction."
+strengths_en = ["Newest questions dated 3 November", "Answers on clutch power testing and on plastics of different brands"]
+strengths_fr = ["Questions les plus récentes datées du 3 novembre", "Réponses sur les essais de force de maintien et sur les plastiques de différentes marques"]
+weaknesses_en = ["Answer quality varies; some answers date from 2013 to 2016"]
+weaknesses_fr = ["La qualité des réponses varie ; certaines datent de 2013 à 2016"]
+status = "active"
+last_activity = "2026-11-03"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://bricks.stackexchange.com/questions"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "sealug-glossary"
+name = "SEALUG glossary of LEGO terms"
+url = "https://sealug.org/glossary/"
+group = "guides"
+covers = ["learning"]
+languages = ["en"]
+countries = ["US"]
+access = "free"
+summary_en = "Glossary of terms used by adult fans of LEGO, published by the Seattle LEGO Users Group: techniques, parts, community terms."
+summary_fr = "Glossaire des termes utilisés par les fans adultes de LEGO, publié par le Seattle LEGO Users Group : techniques, pièces, vocabulaire de la communauté."
+strengths_en = ["Defines terms such as SNOT, studless, microscale and greeble"]
+strengths_fr = ["Définit des termes comme SNOT, studless, microscale et greeble"]
+weaknesses_en = ["English only", "Glossary not dated"]
+weaknesses_fr = ["Anglais uniquement", "Glossaire non daté"]
+status = "active"
+last_activity = "2026-11-07"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://sealug.org/glossary/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://sealug.org/"
+date = "2026-11-07"
+kind = "read"
+
+[[resource]]
+id = "hellobricks-lexique"
+name = "HelloBricks : lexique LEGO"
+url = "https://www.hellobricks.com/lexique-lego/"
+group = "guides"
+covers = ["learning"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "French-language lexicon of terms and acronyms of the LEGO world."
+summary_fr = "Lexique en français des termes et sigles du monde LEGO."
+strengths_en = ["Covers company terms, community terms and set lines"]
+strengths_fr = ["Couvre les termes de l'entreprise, de la communauté et des gammes"]
+weaknesses_en = ["Page not dated; some entries describe older situations"]
+weaknesses_fr = ["Page non datée ; certaines entrées décrivent des situations anciennes"]
+status = "active"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.hellobricks.com/lexique-lego/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "spielzeug-fuchs-lexikon"
+name = "Spielzeug-Fuchs : Klemmbaustein-Lexikon"
+url = "https://spielzeug-fuchs.de/das-klemmbaustein-lexikon/"
+group = "guides"
+covers = ["learning", "alternative"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+summary_en = "German-language lexicon of abbreviations and terms of the brick hobby, published by a brick retailer."
+summary_fr = "Lexique en allemand des abréviations et termes de la brique, publié par un revendeur de briques."
+strengths_en = ["Explains SNOT and studless techniques in German"]
+strengths_fr = ["Explique en allemand les techniques SNOT et studless"]
+weaknesses_en = ["Published by a shop", "Page not dated"]
+weaknesses_fr = ["Publié par une boutique", "Page non datée"]
+status = "active"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://spielzeug-fuchs.de/das-klemmbaustein-lexikon/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "lego-cleaning-help"
+name = "Official LEGO guidance: cleaning bricks"
+url = "https://www.lego.com/en-us/service/help-topics/article/cleaning-your-lego-bricks"
+group = "guides"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Official LEGO support page on cleaning bricks: hand washing in water no hotter than 40 degrees Celsius, soft cloth, no washing machine, dishwasher or heat drying."
+summary_fr = "Page d'aide officielle de LEGO sur le nettoyage des briques : lavage à la main dans une eau à 40 degrés Celsius au plus, chiffon doux, ni lave-linge, ni lave-vaisselle, ni séchage à la chaleur."
+strengths_en = ["Primary source", "Separate advice for electronic and metal-containing pieces"]
+strengths_fr = ["Source primaire", "Conseils distincts pour les pièces électroniques et celles contenant du métal"]
+weaknesses_en = ["Concerns official LEGO pieces; other brands may differ"]
+weaknesses_fr = ["Concerne les pièces LEGO officielles ; les autres marques peuvent différer"]
+status = "active"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/service/help-topics/article/cleaning-your-lego-bricks"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "lego-materials-help"
+name = "Official LEGO guidance: what bricks are made of"
+url = "https://www.lego.com/en-us/service/help-topics/article/what-lego-bricks-are-made-of"
+group = "compatibility-and-law"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Official LEGO statement on materials: most pieces made of ABS since 1963, which the company links to clutch power, gloss and colours; some silicone pieces."
+summary_fr = "Déclaration officielle de LEGO sur les matériaux : la plupart des pièces sont en ABS depuis 1963, matière que l'entreprise associe à la force de maintien, à la brillance et aux couleurs ; quelques pièces en silicone."
+strengths_en = ["Primary source on LEGO materials"]
+strengths_fr = ["Source primaire sur les matériaux LEGO"]
+weaknesses_en = ["Says nothing about other manufacturers' materials"]
+weaknesses_fr = ["Ne dit rien des matériaux des autres fabricants"]
+status = "active"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/service/help-topics/article/what-lego-bricks-are-made-of"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "cjeu-lego-juris"
+name = "Court of Justice judgment C-48/09 P, Lego Juris v OHIM"
+url = "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A62009CJ0048"
+group = "compatibility-and-law"
+featured = true
+covers = ["learning", "official", "alternative"]
+languages = ["en", "fr", "de"]
+countries = ["international"]
+access = "free"
+summary_en = "Judgment of 14 September 2010: the three-dimensional shape of a LEGO brick cannot be registered as a trade mark, as it consists of a shape necessary to obtain a technical result."
+summary_fr = "Arrêt du 14 septembre 2010 : la forme tridimensionnelle d'une brique LEGO ne peut pas être enregistrée comme marque, car elle se compose d'une forme nécessaire à l'obtention d'un résultat technique."
+strengths_en = ["Primary source, full text", "Explains why compatible bricks are legal in the European Union"]
+strengths_fr = ["Source primaire, texte intégral", "Explique pourquoi les briques compatibles sont légales dans l'Union européenne"]
+weaknesses_en = ["Concerns the shape of the brick only, not copies of sets, logos or packaging", "Legal text, not a buyer's guide"]
+weaknesses_fr = ["Ne concerne que la forme de la brique, pas les copies de sets, de logos ou d'emballages", "Texte juridique, pas un guide d'achat"]
+status = "active"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A62009CJ0048"
+date = "2010-09-14"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.lexology.com/library/detail.aspx?g=6ae5a8e2-21ed-4e32-9240-747340ec00e3"
+date = "2010-09-30"
+kind = "third-party"
+
+[[resource]]
+id = "wikipedia-lego-clone"
+name = "Wikipedia: Lego clone"
+url = "https://en.wikipedia.org/wiki/Lego_clone"
+group = "compatibility-and-law"
+covers = ["learning", "alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Encyclopedia article on brands mechanically compatible with LEGO, with the main court cases: Mega Bloks in Canada (2005), European Union rulings (2008 and 2010), Best-Lock in Germany."
+summary_fr = "Article encyclopédique sur les marques mécaniquement compatibles avec LEGO, avec les principales décisions de justice : Mega Bloks au Canada (2005), décisions de l'Union européenne (2008 et 2010), Best-Lock en Allemagne."
+strengths_en = ["Overview with references"]
+strengths_fr = ["Vue d'ensemble avec références"]
+weaknesses_en = ["Collaborative text, may change"]
+weaknesses_fr = ["Texte collaboratif, susceptible de changer"]
+status = "active"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://en.wikipedia.org/wiki/Lego_clone"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "lego-fair-play"
+name = "Official LEGO policy: Fair Play"
+url = "https://www.lego.com/en-us/legal/notices-and-policies/fair-play"
+group = "compatibility-and-law"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Official LEGO policy on counterfeiting and copies, with rules on how enthusiasts may refer to LEGO products on the Internet."
+summary_fr = "Politique officielle de LEGO sur la contrefaçon et les copies, avec les règles sur la façon dont les passionnés peuvent désigner les produits LEGO sur Internet."
+strengths_en = ["Primary source on the brand owner's position"]
+strengths_fr = ["Source primaire sur la position du titulaire de la marque"]
+weaknesses_en = ["Brand owner's viewpoint"]
+weaknesses_fr = ["Point de vue du titulaire de la marque"]
+status = "active"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/legal/notices-and-policies/fair-play"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "douane-contrefacon"
+name = "Douane française : comment éviter les contrefaçons"
+url = "https://www.douane.gouv.fr/comment-eviter-les-contrefacons"
+group = "compatibility-and-law"
+covers = ["learning"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "French customs page on counterfeits: definition by the national institute of intellectual property, risks, fines, confiscation, advice before buying online."
+summary_fr = "Page de la douane française sur les contrefaçons : définition de l'Institut national de la propriété industrielle, risques, amendes, confiscation, conseils avant d'acheter en ligne."
+strengths_en = ["Official source", "Toys are among the most seized counterfeit products according to a customs press item"]
+strengths_fr = ["Source officielle", "Les jouets figurent parmi les produits contrefaits les plus saisis d'après un communiqué de la douane"]
+weaknesses_en = ["General page, not specific to bricks"]
+weaknesses_fr = ["Page générale, non spécifique aux briques"]
+status = "active"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.douane.gouv.fr/comment-eviter-les-contrefacons"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://www.douane.gouv.fr/actualites/saisie-de-plus-de-5-000-boites-de-contrefacons-de-jouets-par-les-douaniers-du-havre"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "kohen-avocats-compatible"
+name = "Kohen Avocats: faux LEGO, brique compatible et contrefaçon"
+url = "https://kohenavocats.fr/2026/11/22/faux-lego-lego-chinois-contrefacon-brique-compatible-legal-remboursement/"
+group = "compatibility-and-law"
+covers = ["learning", "alternative"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "Law firm article of 22 November 2026: a box sold under its own name and stating compatibility is not a counterfeit only because of its shape or price; customs retention risk for parcels from outside the European Union."
+summary_fr = "Article d'un cabinet d'avocats du 22 novembre 2026 : une boîte vendue sous son propre nom et annonçant sa compatibilité n'est pas une contrefaçon du seul fait de sa forme ou de son prix ; risque de retenue en douane pour les colis venus de hors de l'Union européenne."
+strengths_en = ["Distinguishes counterfeit and compatible product", "Practical steps: check seller and shipping country, keep invoice"]
+strengths_fr = ["Distingue contrefaçon et produit compatible", "Conseils pratiques : vérifier le vendeur et le pays d'expédition, conserver la facture"]
+weaknesses_en = ["General scope, states that it does not assess the LEGO brand or any seller", "Cases consulted concern businesses, not a private buyer of a single box"]
+weaknesses_fr = ["Portée générale, précise ne porter aucune appréciation sur la marque LEGO ni sur un vendeur", "Les décisions consultées concernent des professionnels, pas un particulier achetant une seule boîte"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://kohenavocats.fr/2026/11/22/faux-lego-lego-chinois-contrefacon-brique-compatible-legal-remboursement/"
+date = "2026-11-22"
+kind = "third-party"
+
+[[resource]]
+id = "lego-history"
+name = "LEGO History (official LEGO)"
+url = "https://www.lego.com/en-us/history"
+group = "history"
+featured = true
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Official chronology of the LEGO Group from 1890, with articles on the Automatic Binding Bricks (1949), Kiddicraft and the stud and tube principle (patent application of 28 January 1958)."
+summary_fr = "Chronologie officielle du groupe LEGO depuis 1890, avec des articles sur les Automatic Binding Bricks (1949), Kiddicraft et le principe tenon-tube (demande de brevet du 28 janvier 1958)."
+strengths_en = ["Primary source", "Article on how the 1981 purchase of Kiddicraft rights came about"]
+strengths_fr = ["Source primaire", "Article sur le rachat en 1981 des droits de Kiddicraft"]
+weaknesses_en = ["Company viewpoint"]
+weaknesses_fr = ["Point de vue de l'entreprise"]
+status = "active"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/history"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/history/articles/d-the-stud-and-tube-principle"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "kiddicraft-brighton-toy-museum"
+name = "Brighton Toy Museum: Kiddicraft Self-Locking Building Bricks"
+url = "https://www.brightontoymuseum.co.uk/index/Category:Self-Locking_Building_Bricks_%28Kiddicraft%29"
+group = "history"
+covers = ["learning"]
+languages = ["en"]
+countries = ["GB"]
+access = "free"
+summary_en = "Museum index page on the Kiddicraft bricks, forerunner of the LEGO brick: patents GB587206 (granted 1947) and GB633055 (granted 1949), design and clutch power."
+summary_fr = "Page du musée sur les briques Kiddicraft, précurseures de la brique LEGO : brevets GB587206 (délivré en 1947) et GB633055 (délivré en 1949), conception et force de maintien."
+strengths_en = ["Links to the patents", "Explains the end slots and the grip tolerance"]
+strengths_fr = ["Liens vers les brevets", "Explique les fentes d'extrémité et la tolérance de maintien"]
+weaknesses_en = ["Index page with editorial comments of the museum"]
+weaknesses_fr = ["Page d'index avec des commentaires éditoriaux du musée"]
+status = "active"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.brightontoymuseum.co.uk/index/Category:Self-Locking_Building_Bricks_%28Kiddicraft%29"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "patent-us3005282"
+name = "US patent 3005282: Toy building brick"
+url = "https://patents.google.com/patent/US3005282"
+group = "history"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["US"]
+access = "free"
+summary_en = "Patent of the stud and tube brick: priority of 28 January 1958 (Denmark), filed 28 July 1958, granted 24 October 1961 to Godtfred Kirk Christiansen, assigned to Interlego."
+summary_fr = "Brevet de la brique à tenons et tubes : priorité du 28 janvier 1958 (Danemark), déposé le 28 juillet 1958, délivré le 24 octobre 1961 à Godtfred Kirk Christiansen, cédé à Interlego."
+strengths_en = ["Primary source with drawings and claims"]
+strengths_fr = ["Source primaire avec dessins et revendications"]
+weaknesses_en = ["Technical legal text", "Expired"]
+weaknesses_fr = ["Texte juridique technique", "Expiré"]
+status = "archived"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://patents.google.com/patent/US3005282"
+date = "1961-10-24"
+kind = "read"
+
+[[resource]]
+id = "wikipedia-history-of-lego"
+name = "Wikipedia: History of Lego"
+url = "https://en.wikipedia.org/wiki/History_of_Lego"
+group = "history"
+covers = ["learning"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Encyclopedia article on the history of LEGO: Kiddicraft samples, 1949 Automatic Binding Bricks, 1958 tube design and later development."
+summary_fr = "Article encyclopédique sur l'histoire de LEGO : échantillons Kiddicraft, Automatic Binding Bricks de 1949, conception à tubes de 1958 et développements ultérieurs."
+strengths_en = ["Referenced, updated on 16 November 2026"]
+strengths_fr = ["Référencé, mis à jour le 16 novembre 2026"]
+weaknesses_en = ["Collaborative text, may change"]
+weaknesses_fr = ["Texte collaboratif, susceptible de changer"]
+status = "active"
+last_activity = "2026-11-16"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://en.wikipedia.org/wiki/History_of_Lego"
+date = "2026-11-16"
+kind = "indexed"
+
+[[resource]]
+id = "loc-lego-patent-law"
+name = "Library of Congress: 60 years of Lego and Danish patent law"
+url = "https://blogs.loc.gov/law/2018/01/60-years-of-lego-building-blocks-and-danish-patent-law/"
+group = "history"
+covers = ["learning"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Law Library of Congress article (2018) on the 1958 Danish patent application, the Danish patent act in force, and the expiry of the brick patents."
+summary_fr = "Article de la Law Library of Congress (2018) sur la demande de brevet danois de 1958, la loi danoise sur les brevets alors en vigueur et l'expiration des brevets de la brique."
+strengths_en = ["Institutional source with legal context"]
+strengths_fr = ["Source institutionnelle avec contexte juridique"]
+weaknesses_en = ["Dated 2018"]
+weaknesses_fr = ["Daté de 2018"]
+status = "archived"
+last_activity = "2018-01-29"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://blogs.loc.gov/law/2018/01/60-years-of-lego-building-blocks-and-danish-patent-law/"
+date = "2018-01-29"
+kind = "read"
+
+[[resource]]
+id = "smithsonian-lego-patents"
+name = "Smithsonian Magazine: how Lego patents built a toy empire"
+url = "https://www.smithsonianmag.com/innovation/how-lego-patents-helped-build-toy-empire-brick-by-brick-180971429/"
+group = "history"
+covers = ["learning"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Magazine article (2019) on the successive LEGO patents, from the 1961 United States patent for a toy building brick."
+summary_fr = "Article de magazine (2019) sur les brevets successifs de LEGO, à partir du brevet américain de 1961 pour une brique de construction."
+strengths_en = ["Accessible overview of patents"]
+strengths_fr = ["Vue d'ensemble accessible des brevets"]
+weaknesses_en = ["Dated 2019"]
+weaknesses_fr = ["Daté de 2019"]
+status = "archived"
+last_activity = "2019-02-07"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.smithsonianmag.com/innovation/how-lego-patents-helped-build-toy-empire-brick-by-brick-180971429/"
+date = "2019-02-07"
+kind = "indexed"
+
+[[resource]]
+id = "lego-education"
+name = "LEGO Education"
+url = "https://education.lego.com/"
+group = "education-and-competitions"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Official LEGO classroom solutions for ages up to 14: science, computer science and artificial intelligence, and the competition program formerly run with FIRST."
+summary_fr = "Solutions officielles LEGO pour la classe, de la maternelle à la quatrième : sciences, informatique et intelligence artificielle, et programme de compétition mené jusqu'ici avec FIRST."
+strengths_en = ["Announces a successor competition program, LEGO League, from the 2027-2028 season"]
+strengths_fr = ["Annonce un programme de compétition successeur, LEGO League, à partir de la saison 2027-2028"]
+weaknesses_en = ["Aimed at schools and teachers, not at adult builders"]
+weaknesses_fr = ["Destiné aux écoles et aux enseignants, pas aux constructeurs adultes"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://education.lego.com/en-us/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://education.lego.com/en-us/first-lego-league/partnership-update/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "first-lego-league"
+name = "FIRST LEGO League (global)"
+url = "https://firstlegoleague.org/"
+group = "education-and-competitions"
+covers = ["learning", "official", "events"]
+languages = ["en"]
+countries = ["international"]
+access = "paid"
+summary_en = "International robotics and innovation competition for ages 5 to 16, run by FIRST and LEGO Education. The 2026-2027 BIOGLOW season is the last under this name."
+summary_fr = "Compétition internationale de robotique et d'innovation pour les 5 à 16 ans, menée par FIRST et LEGO Education. La saison 2026-2027 BIOGLOW est la dernière sous ce nom."
+strengths_en = ["Two editions in 2026-2027: Founders Edition and Future Edition", "Season kickoff on 4 August 2026"]
+strengths_fr = ["Deux éditions en 2026-2027 : Founders Edition et Future Edition", "Lancement de la saison le 4 août 2026"]
+weaknesses_en = ["The partnership with LEGO Education ends after 2026-2027", "Registration and fees depend on the regional partner"]
+weaknesses_fr = ["Le partenariat avec LEGO Education s'arrête après 2026-2027", "Inscription et frais selon le partenaire régional"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+recurrence_en = "Yearly season, August to spring"
+recurrence_fr = "Saison annuelle, d'août au printemps"
+
+[[resource.sources]]
+url = "https://firstlegoleague.org/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://education.lego.com/en-us/first-lego-league/partnership-update/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "first-lego-league-france"
+name = "FIRST LEGO League France"
+url = "https://firstlegoleaguefrance.fr/"
+group = "education-and-competitions"
+covers = ["learning", "official", "events"]
+languages = ["fr"]
+countries = ["FR"]
+access = "paid"
+summary_en = "French site of the competition: BIOGLOW season 2026-2027, Future Edition, local partners and calendar. The Challenge level is for ages 9 to 16."
+summary_fr = "Site français de la compétition : saison BIOGLOW 2026-2027, Future Edition, partenaires locaux et calendrier. Le niveau Challenge s'adresse aux 9 à 16 ans."
+strengths_en = ["According to the national festival site, 75 percent of the project is research and presentation, 25 percent robot programming", "National festival 2027 site announced"]
+strengths_fr = ["D'après le site du festival national, 75 pour cent du projet est de la recherche et une présentation, 25 pour cent de la programmation de robot", "Site du festival national 2027 annoncé"]
+weaknesses_en = ["Season calendar published in the resources section, not on the home page"]
+weaknesses_fr = ["Calendrier de la saison publié dans la section ressources, pas sur la page d'accueil"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+recurrence_en = "Yearly season"
+recurrence_fr = "Saison annuelle"
+
+[[resource.sources]]
+url = "https://firstlegoleaguefrance.fr/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://fll2027.fr/decouvrir/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "first-lego-league-dach"
+name = "FIRST LEGO League (Germany, Austria, Switzerland)"
+url = "https://www.first-lego-league.org/en/"
+group = "education-and-competitions"
+covers = ["learning", "official", "events"]
+languages = ["de", "en"]
+countries = ["DE", "AT", "CH"]
+access = "paid"
+summary_en = "Program site run since 2002 by a non-profit organisation: 2026-2027 includes 12 Future Edition events, 46 Explore exhibitions and 52 Challenge regional tournaments; transition to LEGO League in three seasons."
+summary_fr = "Site du programme géré depuis 2002 par une association à but non lucratif : 2026-2027 comprend 12 événements Future Edition, 46 expositions Explore et 52 tournois régionaux Challenge ; transition vers LEGO League en trois saisons."
+strengths_en = ["Detailed transition plan to 2028-2029"]
+strengths_fr = ["Plan de transition détaillé jusqu'en 2028-2029"]
+weaknesses_en = ["Covers the German-speaking region only"]
+weaknesses_fr = ["Ne couvre que l'espace germanophone"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+recurrence_en = "Yearly season"
+recurrence_fr = "Saison annuelle"
+
+[[resource.sources]]
+url = "https://www.first-lego-league.org/en/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.first-lego-league.org/en/transition-and-future"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "lego-ideas"
+name = "LEGO Ideas"
+url = "https://ideas.lego.com/"
+group = "education-and-competitions"
+covers = ["learning", "official", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+summary_en = "Official platform where fans submit set concepts; a project reaching 10000 supporters is considered for production. Also runs themed challenges with prizes."
+summary_fr = "Plateforme officielle où les fans proposent des concepts de sets ; un projet atteignant 10000 soutiens est étudié pour une production. Propose aussi des défis à thème avec récompenses."
+strengths_en = ["Creators receive 1 percent of the net sales", "Review results of 2025-2 published on 27 April 2026: four ideas moved to development"]
+strengths_fr = ["Les créateurs reçoivent 1 pour cent des ventes nettes", "Résultats de la revue 2025-2 publiés le 27 avril 2026 : quatre idées passent en développement"]
+weaknesses_en = ["Selection and production decided by LEGO"]
+weaknesses_fr = ["Sélection et production décidées par LEGO"]
+status = "active"
+last_activity = "2026-11-10"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://ideas.lego.com/how-it-works"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://ideas.lego.com/blog/0ca35d5b-df80-4a65-8838-23a0aee5f7c7"
+date = "2026-04-27"
+kind = "read"
+
+[[resource]]
+id = "blocks-magazine"
+name = "Blocks magazine"
+url = "https://blocksmag.com/"
+group = "books-and-magazines"
+featured = true
+covers = ["learning", "official", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "paid"
+business_model_en = "Print and digital subscriptions, single issues"
+business_model_fr = "Abonnements papier et numérique, numéros à l'unité"
+summary_en = "Monthly magazine for adult fans of LEGO, 116 pages, published in the United Kingdom since November 2014 by Silverback Publishing. Issue 145 went online on 30 October 2026."
+summary_fr = "Magazine mensuel pour les fans adultes de LEGO, 116 pages, publié au Royaume-Uni depuis novembre 2014 par Silverback Publishing. Le numéro 145 est paru en ligne le 30 octobre 2026."
+strengths_en = ["Includes a digital archive of over 100 back issues", "Takes over BrickJournal subscribers and adds a BrickJournal section"]
+strengths_fr = ["Comprend une archive numérique de plus de 100 anciens numéros", "Reprend les abonnés de BrickJournal et ajoute une rubrique BrickJournal"]
+weaknesses_en = ["Paid magazine; covers official LEGO mainly"]
+weaknesses_fr = ["Magazine payant ; traite surtout LEGO officiel"]
+size_en = "145 issues published by 30 October 2026 (Exact Editions lists issue count 146 with the pilot)"
+size_fr = "145 numéros parus au 30 octobre 2026 (Exact Editions compte 146 numéros avec le numéro pilote)"
+status = "active"
+last_activity = "2026-10-30"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://blocksmag.com/"
+date = "2026-10-30"
+kind = "read"
+
+[[resource.sources]]
+url = "https://blocksmag.com/continuing-the-legacy-of-brickjournal/"
+date = "2026-04-07"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickset.com/article/135019/blocks-magazine-issue-144-out-now"
+date = "2026-09-30"
+kind = "third-party"
+
+[[resource]]
+id = "brickjournal"
+name = "BrickJournal"
+url = "https://twomorrows.com/blog/tnt/brickjournal-magazine-is-ending-with-92-and-moving-to-blocks-magazine/"
+group = "books-and-magazines"
+covers = ["learning", "official", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "paid"
+summary_en = "Magazine of the LEGO fan community: digital from 2005, print from 2008. Issue 92, due in July 2026, is the final one after the death of editor Joe Meno; remaining subscriptions are filled with Blocks."
+summary_fr = "Magazine de la communauté des fans LEGO : numérique depuis 2005, papier depuis 2008. Le numéro 92, prévu en juillet 2026, est le dernier après le décès du rédacteur en chef Joe Meno ; les abonnements restants sont honorés avec Blocks."
+strengths_en = ["Back issues remain on sale at the publisher TwoMorrows"]
+strengths_fr = ["Anciens numéros toujours en vente chez l'éditeur TwoMorrows"]
+weaknesses_en = ["Publication ended; the URL is the publisher's announcement (shop pages could not be read)"]
+weaknesses_fr = ["Publication terminée ; l'adresse est l'annonce de l'éditeur (pages de la boutique illisibles)"]
+status = "archived"
+last_activity = "2026-07-22"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://twomorrows.com/blog/tnt/brickjournal-magazine-is-ending-with-92-and-moving-to-blocks-magazine/"
+date = "2026-04-02"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.thebrickfan.com/final-issue-of-brickjournal-now-available-for-pre-order/"
+date = "2026-03-26"
+kind = "third-party"
+
+[[resource]]
+id = "bricka-magazine"
+name = "BRICKA"
+url = "https://www.brickamag.com/"
+group = "books-and-magazines"
+covers = ["learning", "official", "news"]
+languages = ["en"]
+countries = ["US"]
+access = "paid"
+summary_en = "Independent quarterly magazine for adult fans of LEGO, based in the United States: artist profiles, builds, techniques. First issue in December 2025; issue 4 in fall 2026, issue 5 shipping soon."
+summary_fr = "Magazine trimestriel indépendant pour les fans adultes de LEGO, basé aux États-Unis : portraits d'artistes, créations, techniques. Premier numéro en décembre 2025 ; numéro 4 à l'automne 2026, numéro 5 bientôt expédié."
+strengths_en = ["Articles also published online", "Digital access to every issue for print subscribers"]
+strengths_fr = ["Articles aussi publiés en ligne", "Accès numérique à tous les numéros pour les abonnés papier"]
+weaknesses_en = ["Young publication, single founder"]
+weaknesses_fr = ["Publication récente, fondée par une seule personne"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.brickamag.com/issues"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.brickamag.com/subscribe"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.wbur.org/upnext/2025/12/17/lego-magazine-bricka-massachusetts-afols"
+date = "2025-12-17"
+kind = "third-party"
+
+[[resource]]
+id = "briques-mag"
+name = "Briques MAG"
+url = "https://www.briquesmag.fr/"
+group = "books-and-magazines"
+covers = ["learning", "alternative", "news"]
+languages = ["fr"]
+countries = ["FR"]
+access = "paid"
+summary_en = "French-language print magazine on construction bricks, first issue on 13 November 2019; the 39th issue is the last, as announced on 4 June 2026."
+summary_fr = "Magazine papier francophone consacré à la brique de construction, premier numéro le 13 novembre 2019 ; le 39e numéro est le dernier, annoncé le 4 juin 2026."
+strengths_en = ["Only French-language magazine on the subject, per a French news site", "Covered LEGO and other brick systems"]
+strengths_fr = ["Seul magazine francophone sur le sujet, selon un site d'actualité français", "Traitait LEGO et d'autres systèmes de briques"]
+weaknesses_en = ["Publication ended; the web address redirects to an old site"]
+weaknesses_fr = ["Publication terminée ; l'adresse web renvoie vers un ancien site"]
+status = "dead"
+last_activity = "2026-06-04"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.hothbricks.com/apres-39-numeros-laventure-briques-mag-sarrete/"
+date = "2026-06-04"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.avenuedelabrique.com/actualites-lego/le-premier-numero-du-magazine-briques-mag-est-sorti/373"
+date = "2019-11-13"
+kind = "indexed"
+
+[[resource]]
+id = "no-starch-lego"
+name = "No Starch Press: LEGO books"
+url = "https://nostarch.com/catalog/lego"
+group = "books-and-magazines"
+featured = true
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "paid"
+summary_en = "Publisher catalogue of unofficial LEGO books for builders: technique, Technic, robotics, lighting, trains and art. September 2026: Building LEGO Worlds; December 2026: Awesome Black Creativity."
+summary_fr = "Catalogue d'un éditeur de livres LEGO non officiels pour constructeurs : techniques, Technic, robotique, éclairage, trains et art. Septembre 2026 : Building LEGO Worlds ; décembre 2026 : Awesome Black Creativity."
+strengths_en = ["Includes The LEGO Builder's Handbook (2024) and Technic Non-Electric Models (2021)"]
+strengths_fr = ["Comprend The LEGO Builder's Handbook (2024) et Technic Non-Electric Models (2021)"]
+weaknesses_en = ["English only", "Books are sold; ebooks available"]
+weaknesses_fr = ["Anglais uniquement", "Livres vendus ; livres numériques disponibles"]
+status = "active"
+last_activity = "2026-09-30"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://nostarch.com/catalog/lego"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "technic-builders-guide"
+name = "The Unofficial LEGO Technic Builder's Guide, 2nd Edition"
+url = "https://nostarch.com/technicbuilder2"
+group = "books-and-magazines"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "paid"
+summary_en = "Book by Paweł Kmieć (Sariel), October 2016, 424 pages: gears, linkages, differentials, steering, motors, tracked vehicles, planetary gearing, scaling a model."
+summary_fr = "Livre de Paweł Kmieć (Sariel), octobre 2016, 424 pages : engrenages, leviers, différentiels, direction, moteurs, véhicules à chenilles, trains planétaires, mise à l'échelle d'un modèle."
+strengths_en = ["Introduces torque, friction and traction through Technic", "Inventories updated to 2016 pieces"]
+strengths_fr = ["Introduit le couple, le frottement et l'adhérence avec Technic", "Inventaires de pièces mis à jour à 2016"]
+weaknesses_en = ["Dated 2016; later Technic parts and the Powered Up system are not covered"]
+weaknesses_fr = ["Daté de 2016 ; les pièces Technic ultérieures et le système Powered Up ne sont pas traités"]
+status = "active"
+last_activity = "2016-10-21"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://nostarch.com/technicbuilder2"
+date = "2016-10-01"
+kind = "read"
+
+[[resource.sources]]
+url = "https://sariel.pl/guide2/"
+date = "2016-10-16"
+kind = "read"
+
+[[resource]]
+id = "dk-lego-books"
+name = "DK: LEGO books"
+url = "https://dk.com/en-us/collections/lego-books"
+group = "books-and-magazines"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "paid"
+summary_en = "Publisher of the official LEGO reference and idea books: visual dictionaries, character encyclopedias, The LEGO Ideas Book (new edition 2022, 200 pages, over 200 building ideas by fan builders)."
+summary_fr = "Éditeur des livres officiels de référence et d'idées LEGO : dictionnaires visuels, encyclopédies de personnages, The LEGO Ideas Book (nouvelle édition 2022, 200 pages, plus de 200 idées de construction de fans)."
+strengths_en = ["Official LEGO licence", "Translations exist, for example in German and French"]
+strengths_fr = ["Licence officielle LEGO", "Traductions existantes, par exemple en allemand et en français"]
+weaknesses_en = ["Most titles target children"]
+weaknesses_fr = ["La plupart des titres visent les enfants"]
+status = "active"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://dk.com/en-us/collections/lego-books"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://dk.com/en-us/products/9780744060935-the-lego-ideas-book-new-edition"
+date = "2022-09-27"
+kind = "read"
+
+[[resource]]
+id = "lego-certified-professionals"
+name = "LEGO Certified Professionals (official LEGO list)"
+url = "https://www.lego.com/en-us/aboutus/lego-certified-professionals"
+group = "artists"
+featured = true
+covers = ["learning", "official", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Official list of adult builders officially recognised by LEGO who run a business with bricks, by region, with the rules on what they may build for clients."
+summary_fr = "Liste officielle des constructeurs adultes reconnus par LEGO qui exercent une activité professionnelle avec les briques, par région, avec les règles sur ce qu'ils peuvent construire pour des clients."
+strengths_en = ["27 professionals listed", "Clear rules: no multiple special LEGO products or custom minifigures for third parties"]
+strengths_fr = ["27 professionnels listés", "Règles claires : pas de produits LEGO spéciaux en série ni de figurines sur mesure pour des tiers"]
+weaknesses_en = ["Page not dated"]
+weaknesses_fr = ["Page non datée"]
+size_en = "27 professionals: 4 Americas, 14 Europe and Middle East, 9 Asia-Pacific"
+size_fr = "27 professionnels : 4 Amériques, 14 Europe et Moyen-Orient, 9 Asie-Pacifique"
+status = "active"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/aboutus/lego-certified-professionals"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "nathan-sawaya"
+name = "Nathan Sawaya: The Art of the Brick"
+url = "https://brickartist.com/"
+group = "artists"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Contemporary artist working with LEGO bricks; the touring exhibition The Art of the Brick has run since 2007. The site lists exhibitions, one of them marked on in Nantes at the reading date."
+summary_fr = "Artiste contemporain travaillant avec des briques LEGO ; l'exposition itinérante The Art of the Brick existe depuis 2007. Le site liste les expositions, dont une en cours à Nantes à la date de lecture."
+strengths_en = ["Official LEGO biography confirms the Certified Professional status"]
+strengths_fr = ["La biographie officielle de LEGO confirme le statut de Certified Professional"]
+weaknesses_en = ["Mostly an exhibition schedule"]
+weaknesses_fr = ["Surtout un calendrier d'expositions"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickartist.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/aboutus/nathan-sawaya"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "sean-kenney"
+name = "Sean Kenney"
+url = "https://www.seankenney.com/"
+group = "artists"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Artist, New York-born and based in Amsterdam, making sculpture and portraiture from LEGO bricks for over 20 years; exhibitions in over 100 cities, over 500 commissions."
+summary_fr = "Artiste, né à New York et installé à Amsterdam, réalisant sculptures et portraits en briques LEGO depuis plus de 20 ans ; expositions dans plus de 100 villes, plus de 500 commandes."
+strengths_en = ["First LEGO Certified Professional (2005 to 2019), per his biography", "Current exhibitions listed"]
+strengths_fr = ["Premier LEGO Certified Professional (2005 à 2019), d'après sa biographie", "Expositions en cours listées"]
+weaknesses_en = ["Figures are the artist's own"]
+weaknesses_fr = ["Chiffres fournis par l'artiste"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.seankenney.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.seankenney.com/about/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "warren-elsmore"
+name = "Warren Elsmore"
+url = "https://www.warrenelsmore.com/"
+group = "artists"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["GB"]
+access = "free"
+summary_en = "Edinburgh brick artist and company, established for nearly 20 years: touring exhibitions (Brick City, Brick Wonders, Brick History, Brick Flicks, Brick Dinos, Brick Journeys) and commissions."
+summary_fr = "Artiste et société d'Édimbourg, établie depuis près de 20 ans : expositions itinérantes (Brick City, Brick Wonders, Brick History, Brick Flicks, Brick Dinos, Brick Journeys) et commandes."
+strengths_en = ["Exhibition models built from genuine LEGO bricks without special parts, per the site", "Author of the book Brick City"]
+strengths_fr = ["Modèles d'exposition construits en briques LEGO authentiques sans pièces spéciales, d'après le site", "Auteur du livre Brick City"]
+weaknesses_en = ["Visitor figures differ between pages of the site"]
+weaknesses_fr = ["Chiffres de fréquentation différents selon les pages du site"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Edinburgh"
+
+[[resource.sources]]
+url = "https://www.warrenelsmore.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.warrenelsmore.com/exhibitions"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "the-brickman"
+name = "The Brickman (Ryan McNaught)"
+url = "https://www.thebrickman.com/"
+group = "artists"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["AU"]
+access = "free"
+summary_en = "Australian team of brick artists led by Ryan McNaught, LEGO Certified Professional; exhibitions and model commissions. He has been a judge of LEGO Masters Australia since 2019."
+summary_fr = "Équipe australienne d'artistes de la brique dirigée par Ryan McNaught, LEGO Certified Professional ; expositions et commandes de modèles. Il est juge de LEGO Masters Australie depuis 2019."
+strengths_en = ["Current exhibitions listed on the site"]
+strengths_fr = ["Expositions en cours listées sur le site"]
+weaknesses_en = ["Commercial site, little learning content"]
+weaknesses_fr = ["Site commercial, peu de contenu pédagogique"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.thebrickman.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "ekow-nimako"
+name = "Ekow Nimako Studios"
+url = "https://www.ekownimako.com/"
+group = "artists"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["CA"]
+access = "free"
+summary_en = "Toronto-based artist known for the Building Black series, largely in black bricks; exhibitions Building Black Mythos, Civilizations and Amorphia, shown in cities such as Seoul, Berlin, Vienna and New York."
+summary_fr = "Artiste installé à Toronto, connu pour la série Building Black, surtout en briques noires ; expositions Building Black Mythos, Civilizations et Amorphia, présentées notamment à Séoul, Berlin, Vienne et New York."
+strengths_en = ["Official LEGO article presents his work"]
+strengths_fr = ["Un article officiel de LEGO présente son travail"]
+weaknesses_en = ["Site pages are undated"]
+weaknesses_fr = ["Pages du site non datées"]
+status = "active"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.ekownimako.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/categories/adults-welcome/article/artists"
+date = "2020-12-02"
+kind = "indexed"
+
+[[resource]]
+id = "georg-schmitt"
+name = "Georg Schmitt"
+url = "https://lpro.fr/"
+group = "artists"
+covers = ["learning", "official"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "French LEGO Certified Professional: monumental models, exhibitions and workshops for brands, shopping centres, museums and local authorities; Brickmaster in LEGO Masters on M6, per the site."
+summary_fr = "LEGO Certified Professional français : modèles monumentaux, expositions et ateliers pour marques, centres commerciaux, musées et collectivités ; Brickmaster dans LEGO Masters sur M6, d'après le site."
+strengths_en = ["Listed on the official LEGO page"]
+strengths_fr = ["Présent sur la page officielle de LEGO"]
+weaknesses_en = ["Commercial site"]
+weaknesses_fr = ["Site commercial"]
+status = "active"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://lpro.fr/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/aboutus/lego-certified-professionals"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brick-fabrik"
+name = "BrickFabrik (René Hoffmeister)"
+url = "https://www.brick-fabrik.de/"
+group = "artists"
+covers = ["learning", "official"]
+languages = ["de", "en"]
+countries = ["DE"]
+access = "free"
+summary_en = "German LEGO Certified Professional: models, sculptures and large pictures for trade fairs, exhibitions and companies. Described by LEGO as the only certified professional in Germany and Brickmaster of LEGO Masters on VOX."
+summary_fr = "LEGO Certified Professional allemand : modèles, sculptures et grands tableaux pour salons, expositions et entreprises. Décrit par LEGO comme le seul professionnel certifié d'Allemagne et Brickmaster de LEGO Masters sur VOX."
+strengths_en = ["Listed on the official LEGO page"]
+strengths_fr = ["Présent sur la page officielle de LEGO"]
+weaknesses_en = ["Commercial site", "Site pages are undated"]
+weaknesses_fr = ["Site commercial", "Pages du site non datées"]
+status = "active"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.brick-fabrik.de/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.lego.com/de-de/page/lego-masters"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "mbrick"
+name = "M'BricK"
+url = "https://mbrickart.bigcartel.com/"
+group = "artists"
+covers = ["learning", "official"]
+languages = ["fr", "en"]
+countries = ["FR"]
+access = "free"
+summary_en = "French artist (pseudonym) making relief mosaics from LEGO bricks, based in Dijon; street pieces since 2020 per local press. The online shop sells limited reproductions printed on art paper."
+summary_fr = "Artiste français (pseudonyme) réalisant des mosaïques en relief en briques LEGO, installé à Dijon ; pièces de rue depuis 2020 d'après la presse locale. La boutique en ligne vend des reproductions limitées imprimées sur papier d'art."
+strengths_en = ["Technique described in local press: image pixelated, recoloured in LEGO colours, then given volume"]
+strengths_fr = ["Technique décrite par la presse locale : image pixélisée, recolorée aux couleurs LEGO, puis mise en volume"]
+weaknesses_en = ["Only the shop is an official site; no biography page read"]
+weaknesses_fr = ["Seule la boutique est un site officiel ; aucune page de biographie lue"]
+status = "active"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://mbrickart.bigcartel.com/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.dijonlhebdo.fr/2024/04/25/mbrick-a-lheure-du-succes/"
+date = "2024-04-25"
+kind = "indexed"
+
+[[resource]]
+id = "deparkatre-creators"
+name = "Deparkatre: LEGO creators and designers directory"
+url = "https://deparkatre.fr/en/lego-creators"
+group = "artists"
+covers = ["learning", "official", "custom-builds"]
+languages = ["fr", "en"]
+countries = ["FR"]
+access = "free"
+summary_en = "French directory of LEGO Certified Professionals, artists, custom-build creators, designers and studios, with profiles and locations."
+summary_fr = "Annuaire français des LEGO Certified Professionals, artistes, créateurs de créations originales, concepteurs et studios, avec profils et localisations."
+strengths_en = ["Strong coverage of French creators"]
+strengths_fr = ["Bonne couverture des créateurs français"]
+weaknesses_en = ["Lists 20 certified professionals while the official LEGO list shows 27", "Entries are community-submitted and not all verified"]
+weaknesses_fr = ["Liste 20 professionnels certifiés alors que la liste officielle de LEGO en montre 27", "Fiches proposées par la communauté et non toutes vérifiées"]
+size_en = "61 profiles in three sections (20, 14, 27)"
+size_fr = "61 fiches en trois sections (20, 14, 27)"
+status = "active"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://deparkatre.fr/en/lego-creators"
+date = "2026-11-23"
+kind = "read"

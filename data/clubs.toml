@@ -1,0 +1,880 @@
+[category]
+id = "clubs"
+name_en = "Clubs and fan associations"
+name_fr = "Clubs et associations de fans"
+summary_en = "User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan CoLab recognition programme to national and local clubs in Europe."
+summary_fr = "Groupes d'utilisateurs, clubs et associations de fans de LEGO et de briques, du programme de reconnaissance LEGO Fan CoLab aux clubs nationaux et locaux en Europe."
+
+[[category.groups]]
+id = "networks"
+name_en = "Networks and directories"
+name_fr = "Réseaux et annuaires"
+
+[[category.groups]]
+id = "national-clubs"
+name_en = "National clubs"
+name_fr = "Clubs nationaux"
+
+[[category.groups]]
+id = "regional-clubs"
+name_en = "Regional and local clubs"
+name_fr = "Clubs régionaux et locaux"
+
+[[category.groups]]
+id = "alternative-brand-clubs"
+name_en = "Clubs for alternative brands"
+name_fr = "Clubs des marques alternatives"
+
+[[category.groups]]
+id = "online-clubs"
+name_en = "Online clubs"
+name_fr = "Clubs en ligne"
+
+[[resource]]
+id = "avenue-de-la-brique-associations"
+name = "Avenue de la brique - Associations de fans de LEGO"
+url = "https://www.avenuedelabrique.com/associations-lego"
+group = "networks"
+covers = ["clubs", "official", "events"]
+languages = ["fr"]
+countries = ["FR", "BE", "CH"]
+access = "free"
+business_model_en = "Free; site financed by advertising and affiliate links (not checked here)"
+business_model_fr = "Gratuit ; site financé par la publicité et des liens d'affiliation (non vérifié ici)"
+summary_en = "French-language list of fan associations in France, Belgium and Switzerland, with a page per association and its exhibitions."
+summary_fr = "Liste francophone des associations de fans en France, Belgique et Suisse, avec une fiche par association et ses expositions."
+strengths_en = ["One page per association with website, contact and past exhibitions", "Covers many small local French associations"]
+strengths_fr = ["Une fiche par association avec site, contact et expositions passées", "Couvre de nombreuses petites associations locales françaises"]
+weaknesses_en = ["Per-association activity is not dated on the list page"]
+weaknesses_fr = ["L'activité de chaque association n'est pas datée sur la page de liste"]
+size_en = "About 80 associations listed (not counted exactly)"
+size_fr = "Environ 80 associations listées (non comptées exactement)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.avenuedelabrique.com/associations-lego"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brickish"
+name = "Brickish"
+url = "https://brickish.org/"
+group = "national-clubs"
+featured = true
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["GB"]
+access = "freemium"
+business_model_en = "Paid membership"
+business_model_fr = "Adhésion payante"
+summary_en = "UK-wide club of adult fans of LEGO, active since 2002 and described by itself as the first user group in the country; local meet-ups, public shows and a members-only forum."
+summary_fr = "Club national britannique de fans adultes de LEGO, actif depuis 2002 et se présentant comme le premier groupe d'utilisateurs du pays ; rencontres locales, expositions publiques et forum réservé aux membres."
+strengths_en = ["Open meet-ups as a taster before joining", "Participation in public shows and in programmes for recognized user groups"]
+strengths_fr = ["Rencontres ouvertes pour essayer avant d'adhérer", "Participation à des expositions publiques et aux programmes réservés aux groupes reconnus"]
+weaknesses_en = ["Forum, newsletter and some benefits are for members only"]
+weaknesses_fr = ["Forum, lettre d'information et certains avantages réservés aux membres"]
+status = "active"
+last_activity = "2026-08-12"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickish.org/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brickish.org/press-release-fan-colab/"
+date = "2026-08-12"
+kind = "official"
+
+[[resource]]
+id = "belug"
+name = "BeLUG"
+url = "https://www.belug.be/"
+group = "national-clubs"
+featured = true
+covers = ["clubs", "official", "events"]
+languages = ["nl", "en"]
+countries = ["BE"]
+access = "free"
+summary_en = "Belgian LEGO User Group: club for adult LEGO builders and collectors, independent of the LEGO Group, taking part in fairs in Belgium and abroad and organizing Brick Mania."
+summary_fr = "Belgian LEGO User Group : club belge d'adultes constructeurs et collectionneurs LEGO, indépendant du groupe LEGO, présent dans des salons en Belgique et à l'étranger et organisateur de Brick Mania."
+strengths_en = ["Brick Mania Antwerpen held on 21 and 22 November 2026", "Members can buy LEGO on special terms at certain times"]
+strengths_fr = ["Brick Mania Antwerpen les 21 et 22 novembre 2026", "Les membres peuvent acheter du LEGO à des conditions particulières à certaines périodes"]
+weaknesses_en = ["Site mainly in Dutch"]
+weaknesses_fr = ["Site principalement en néerlandais"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.belug.be/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "byggepladen"
+name = "Byggepladen"
+url = "https://byggepladen.dk/"
+group = "national-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["da"]
+countries = ["DK"]
+access = "free"
+summary_en = "Danish association of adult LEGO fans with building meetings, exhibitions, a members' magazine and collaborative projects; chosen for the Danish Diner in the international Modulars Around the World project of 2027."
+summary_fr = "Association danoise de fans adultes de LEGO avec rencontres de construction, expositions, magazine des membres et projets collectifs ; choisie pour le Diner danois du projet international Modulars Around the World de 2027."
+strengths_en = ["Members' magazine Byggebladet, issue 70 published on 17 September 2026", "Selected among 22 associations worldwide for a giant Modular building in 2027"]
+strengths_fr = ["Magazine des membres Byggebladet, numéro 70 publié le 17 septembre 2026", "Sélection parmi 22 associations dans le monde pour un bâtiment Modular géant en 2027"]
+weaknesses_en = ["Site in Danish only"]
+weaknesses_fr = ["Site uniquement en danois"]
+size_en = "About 600 members (Fan CoLab directory)"
+size_fr = "Environ 600 membres (annuaire du Fan CoLab)"
+status = "active"
+last_activity = "2026-09-17"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://byggepladen.dk/"
+date = "2026-09-17"
+kind = "official"
+
+[[resource.sources]]
+url = "https://fancolab.lego.com/communities/?page=2"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "swebrick"
+name = "Swebrick"
+url = "https://swebrick.se/"
+group = "national-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["sv"]
+countries = ["SE"]
+access = "free"
+summary_en = "Swedish non-profit association and forum for adult LEGO fans, with a monthly build vote, meet-ups and an annual main event."
+summary_fr = "Association suédoise à but non lucratif et forum de fans adultes de LEGO, avec un vote mensuel de la meilleure création, des rencontres et un événement annuel principal."
+strengths_en = ["Active Swedish-language forum with monthly build of the month", "Main event Swebrick '27 announced for 16 April"]
+strengths_fr = ["Forum actif en suédois avec création du mois", "Événement principal Swebrick '27 annoncé pour le 16 avril"]
+weaknesses_en = ["Site in Swedish only"]
+weaknesses_fr = ["Site uniquement en suédois"]
+status = "active"
+last_activity = "2026-11-14"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://swebrick.se/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://fancolab.lego.com/communities/?page=8"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "itlug"
+name = "ItLUG"
+url = "https://www.itlug.org/"
+group = "national-clubs"
+featured = true
+covers = ["clubs", "official", "events"]
+languages = ["it"]
+countries = ["IT"]
+access = "free"
+summary_en = "Italian LEGO Users Group: national association of adult LEGO fans founded in 1999 and legally constituted in November 2010, with a forum, national events and local exhibitions."
+summary_fr = "Italian LEGO Users Group : association nationale de fans adultes de LEGO fondée en 1999 et constituée légalement en novembre 2010, avec forum, événements nationaux et expositions locales."
+strengths_en = ["Calendar of national and local events up to July 2027", "Forum for construction techniques and image sharing"]
+strengths_fr = ["Calendrier d'événements nationaux et locaux jusqu'en juillet 2027", "Forum de techniques de construction et de partage d'images"]
+weaknesses_en = ["Membership required to join the association"]
+weaknesses_fr = ["Adhésion nécessaire pour rejoindre l'association"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.itlug.org/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "ale-spain"
+name = "ALE! Asociación Cultural de Aficionados a LEGO"
+url = "https://www.alebricks.com/"
+group = "national-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["es"]
+countries = ["ES"]
+access = "free"
+summary_en = "Spanish cultural association of LEGO fans, constituted on 26 December 2010, organizer of the free ALEbricks! exhibition in the Madrid area and of workshops."
+summary_fr = "Association culturelle espagnole de fans de LEGO, constituée le 26 décembre 2010, organisatrice de l'exposition gratuite ALEbricks! dans la région de Madrid et d'ateliers."
+strengths_en = ["ALEbricks! held on 21 and 22 November 2026, free entry", "Board elected by members with ten seats"]
+strengths_fr = ["ALEbricks! les 21 et 22 novembre 2026, entrée gratuite", "Bureau de dix membres élu par les adhérents"]
+weaknesses_en = ["Site in Spanish only"]
+weaknesses_fr = ["Site uniquement en espagnol"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.alebricks.com/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.alebricks.com/about/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "hispalug"
+name = "HispaLUG"
+url = "https://hispalug.com/"
+group = "national-clubs"
+covers = ["clubs", "official"]
+languages = ["es"]
+countries = ["ES"]
+access = "free"
+summary_en = "Spanish non-profit association of LEGO fans founded in 2006 and recognized in 2010, with a large public forum and events."
+summary_fr = "Association espagnole à but non lucratif de fans de LEGO fondée en 2006 et reconnue en 2010, avec un grand forum public et des événements."
+strengths_en = ["Forum with more than 370000 messages", "More than 100 active members according to the Fan CoLab directory"]
+strengths_fr = ["Forum de plus de 370000 messages", "Plus de 100 membres actifs selon l'annuaire du Fan CoLab"]
+weaknesses_en = ["Site not readable at the time of the check; last forum message seen dates from December 2025"]
+weaknesses_fr = ["Site illisible lors de la vérification ; dernier message de forum observé en décembre 2025"]
+status = "slow"
+last_activity = "2025-12-19"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://hispalug.com/foro/index.php"
+date = "2025-12-19"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://fancolab.lego.com/communities/463-hispalug/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "lugpol"
+name = "LUGPol"
+url = "https://lugpol.pl/"
+group = "national-clubs"
+covers = ["clubs", "official", "custom-builds"]
+languages = ["pl"]
+countries = ["PL"]
+access = "free"
+summary_en = "Polish online community of adult LEGO fans, built around a forum with showcases of custom builds, set reviews and member competitions."
+summary_fr = "Communauté polonaise en ligne de fans adultes de LEGO, articulée autour d'un forum avec présentation de créations originales, tests de sets et concours entre membres."
+strengths_en = ["Forum posts dated within the last month", "Yearly custom-build awards"]
+strengths_fr = ["Messages de forum datés du dernier mois", "Prix annuels de la meilleure création originale"]
+weaknesses_en = ["Site in Polish only"]
+weaknesses_fr = ["Site uniquement en polonais"]
+status = "active"
+last_activity = "2026-11-09"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://lugpol.pl/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "lowlug"
+name = "Lowlug"
+url = "https://www.lowlug.nl/"
+group = "national-clubs"
+covers = ["clubs", "official"]
+languages = ["nl"]
+countries = ["NL"]
+access = "free"
+summary_en = "LEGO User Group of the Lowlands, connecting adult fans in the Netherlands since 2003, with a forum, articles and exhibitions."
+summary_fr = "LEGO User Group of the Lowlands, qui relie les fans adultes aux Pays-Bas depuis 2003, avec forum, articles et expositions."
+strengths_en = ["Articles and forum posts dated 22 and 23 November 2026"]
+strengths_fr = ["Articles et messages de forum datés des 22 et 23 novembre 2026"]
+weaknesses_en = ["Site in Dutch only"]
+weaknesses_fr = ["Site uniquement en néerlandais"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lowlug.nl/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "dutchbricks"
+name = "Dutchbricks"
+url = "https://www.dutchbricks.nl/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["nl", "en"]
+countries = ["NL", "BE"]
+access = "free"
+summary_en = "Association of the Dutch and Belgian Limburg Euroregion founded in 2015, recognized by the LEGO Group, organizer of the Bricktopia events."
+summary_fr = "Association de l'eurorégion du Limbourg néerlandais et belge fondée en 2015, reconnue par le groupe LEGO, organisatrice des événements Bricktopia."
+strengths_en = ["More than 150 members according to the site", "Bricktopia World announced for 10 and 11 April 2027 in Maastricht"]
+strengths_fr = ["Plus de 150 membres selon le site", "Bricktopia World annoncé les 10 et 11 avril 2027 à Maastricht"]
+weaknesses_en = ["Site mainly in Dutch"]
+weaknesses_fr = ["Site principalement en néerlandais"]
+size_en = "More than 150 members"
+size_fr = "Plus de 150 membres"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.dutchbricks.nl/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "lgoe"
+name = "LGOe - LEGO Gemeinschaft Österreich"
+url = "https://www.lgoe.at/"
+group = "national-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["de"]
+countries = ["AT"]
+access = "free"
+summary_en = "Austrian association based in Vienna, about 100 members across the country, specialized in model building with original LEGO parts and organizer of the Welt der Steine exhibitions; free forum registration."
+summary_fr = "Association autrichienne basée à Vienne, environ 100 membres dans tout le pays, spécialisée dans la construction de modèles avec des pièces LEGO d'origine et organisatrice des expositions Welt der Steine ; inscription gratuite au forum."
+strengths_en = ["Forum open to non-members", "Build contest and exhibitions announced for 2027"]
+strengths_fr = ["Forum ouvert aux non-membres", "Concours de construction et expositions annoncés pour 2027"]
+weaknesses_en = ["Site in German only"]
+weaknesses_fr = ["Site uniquement en allemand"]
+size_en = "About 100 members"
+size_fr = "Environ 100 membres"
+status = "active"
+last_activity = "2026-10-24"
+checked = "2026-11-23"
+confidence = "high"
+city = "Wien"
+
+[[resource.sources]]
+url = "https://www.lgoe.at/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "briques-unies"
+name = "Briques Unies"
+url = "https://briques-unies.org/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "French non-profit association (loi 1901) founded in 2018 in the Drôme, recognized by the LEGO Group, organizing 100 percent LEGO exhibitions, play areas and workshops."
+summary_fr = "Association française (loi 1901) fondée en 2018 dans la Drôme, reconnue par le groupe LEGO, qui organise des expositions 100 % LEGO, des espaces de jeu et des ateliers."
+strengths_en = ["Exhibition announced for 30 and 31 January 2027", "Exhibitors may show official sets and custom builds"]
+strengths_fr = ["Exposition annoncée les 30 et 31 janvier 2027", "Les exposants peuvent présenter des sets officiels et des créations originales"]
+weaknesses_en = ["Focus on exhibitions in its region"]
+weaknesses_fr = ["Activité centrée sur les expositions dans sa région"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://briques-unies.org/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "chti-lug"
+name = "Ch'ti LUG"
+url = "https://chtilug.fr/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "LEGO user group of northern France (Nord and Pas-de-Calais) organizing the Ch'ti Brick exhibitions in several towns each year."
+summary_fr = "Groupe d'utilisateurs LEGO du Nord de la France (Nord et Pas-de-Calais) qui organise chaque année les expositions Ch'ti Brick dans plusieurs communes."
+strengths_en = ["Several exhibitions per year, with reports published after each", "Next exhibition announced for 13 and 14 February 2027 in Faches-Thumesnil"]
+strengths_fr = ["Plusieurs expositions par an, avec compte rendu après chacune", "Prochaine exposition annoncée les 13 et 14 février 2027 à Faches-Thumesnil"]
+weaknesses_en = ["Membership terms not stated on the home page"]
+weaknesses_fr = ["Conditions d'adhésion absentes de la page d'accueil"]
+status = "active"
+last_activity = "2026-11-21"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://chtilug.fr/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "lugest"
+name = "LUG'Est"
+url = "https://lugest.fr/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "Association (loi 1901) created in 2014 in Bourgogne-Franche-Comté, recognized by the LEGO Group, organizing exhibitions, hospital workshops and charity events."
+summary_fr = "Association (loi 1901) créée en 2014 en Bourgogne-Franche-Comté, reconnue par le groupe LEGO, qui organise des expositions, des ateliers en milieu hospitalier et des événements solidaires."
+strengths_en = ["Dated news up to 2 November 2026", "Public agenda of past and upcoming exhibitions"]
+strengths_fr = ["Actualités datées jusqu'au 2 novembre 2026", "Agenda public des expositions passées et à venir"]
+weaknesses_en = ["Regional scope"]
+weaknesses_fr = ["Portée régionale"]
+status = "active"
+last_activity = "2026-11-02"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://lugest.fr/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://lugest.fr/a-propos/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "fanabriques-club"
+name = "Fana'briques"
+url = "https://fanabriques.fr/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "Alsace association that organizes the annual Fana'briques LEGO exhibition, described by another French club as the main yearly event of French LEGO fans."
+summary_fr = "Association alsacienne qui organise l'exposition LEGO annuelle Fana'briques, décrite par un autre club français comme le principal événement annuel des fans français."
+strengths_en = ["2026 edition held in October, reported on 27 October 2026 by LUG'Est"]
+strengths_fr = ["Édition 2026 tenue en octobre, relatée le 27 octobre 2026 par LUG'Est"]
+weaknesses_en = ["Home page is an interactive page with little readable text; facts come mostly from third parties"]
+weaknesses_fr = ["La page d'accueil est interactive et contient peu de texte lisible ; les faits viennent surtout de tiers"]
+status = "active"
+last_activity = "2026-10-27"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://fanabriques.fr/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://lugest.fr/"
+date = "2026-11-23"
+kind = "third-party"
+
+[[resource]]
+id = "french-brick-idf"
+name = "French'Brick - Île-de-France"
+url = "https://frenchbrickidf.forumgaming.fr/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "Association (loi 1901) of the Paris region organizing LEGO exhibitions, with a forum and group purchases for its members."
+summary_fr = "Association (loi 1901) d'Île-de-France qui organise des expositions LEGO, avec forum et achats groupés pour ses membres."
+strengths_en = ["Exhibition held in Nozay on 14 and 15 November 2026"]
+strengths_fr = ["Exposition tenue à Nozay les 14 et 15 novembre 2026"]
+weaknesses_en = ["Home page seen only through a search index; another address of the association returned an error"]
+weaknesses_fr = ["Page d'accueil vue seulement par un index de recherche ; une autre adresse de l'association a renvoyé une erreur"]
+status = "active"
+last_activity = "2026-11-15"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://frenchbrickidf.forumgaming.fr/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://nozay91.fr/fr/ev/2297011/2015522/exposition-lego-1"
+date = "2026-11-14"
+kind = "third-party"
+
+[[resource]]
+id = "bricking-bavaria-club"
+name = "Bricking Bavaria e.V."
+url = "https://www.bricking-bavaria.de/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["de", "en"]
+countries = ["DE"]
+access = "free"
+summary_en = "Bavarian LEGO association organizing regular Stammtisch meetings open to everyone and the Bricking Bavaria exhibition in Augsburg."
+summary_fr = "Association bavaroise LEGO organisant des Stammtisch réguliers ouverts à tous et l'exposition Bricking Bavaria à Augsbourg."
+strengths_en = ["Bricking Bavaria 2026 held on 31 October and 1 November 2026 with more than 550 fans and exhibitors", "Monthly Stammtisch in Munich"]
+strengths_fr = ["Bricking Bavaria 2026 tenu les 31 octobre et 1er novembre 2026 avec plus de 550 fans et exposants", "Stammtisch mensuel à Munich"]
+weaknesses_en = ["Site mainly in German"]
+weaknesses_fr = ["Site principalement en allemand"]
+status = "active"
+last_activity = "2026-11-01"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.bricking-bavaria.de/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "afol-stammtisch-karlsruhe"
+name = "AFOL Stammtisch Karlsruhe"
+url = "https://www.afol-stammtisch-ka.de/"
+group = "regional-clubs"
+covers = ["clubs", "official"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+summary_en = "Open regional gathering of brick fans around Karlsruhe with regular Stammtisch, exhibitions and project pages; collectors, custom builders and newcomers welcome."
+summary_fr = "Rencontre régionale ouverte de fans de briques autour de Karlsruhe avec Stammtisch réguliers, expositions et pages de projets ; collectionneurs, créateurs et débutants bienvenus."
+strengths_en = ["Next Stammtisch announced for 1 or 3 December 2026"]
+strengths_fr = ["Prochain Stammtisch annoncé le 1er ou le 3 décembre 2026"]
+weaknesses_en = ["Small local group, site in German only"]
+weaknesses_fr = ["Petit groupe local, site uniquement en allemand"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+city = "Karlsruhe"
+
+[[resource.sources]]
+url = "https://www.afol-stammtisch-ka.de/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "london-afols"
+name = "London AFOLs"
+url = "https://www.londonafols.uk/"
+group = "regional-clubs"
+covers = ["clubs", "official"]
+languages = ["en"]
+countries = ["GB"]
+access = "free"
+summary_en = "Monthly gathering of adult fans of LEGO in a central London pub; open to residents and visitors, with dates listed on Meetup."
+summary_fr = "Rencontre mensuelle de fans adultes de LEGO dans un pub du centre de Londres ; ouverte aux résidents et aux visiteurs, dates publiées sur Meetup."
+strengths_en = ["Dated meetup calendar through December", "Open to all"]
+strengths_fr = ["Calendrier de rencontres daté jusqu'en décembre", "Ouvert à tous"]
+weaknesses_en = ["Venue details only on Meetup"]
+weaknesses_fr = ["Lieu précisé uniquement sur Meetup"]
+status = "active"
+last_activity = "2026-11-09"
+checked = "2026-11-23"
+confidence = "high"
+city = "London"
+
+[[resource.sources]]
+url = "https://www.londonafols.uk/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "tartan-lug"
+name = "Tartan LUG"
+url = "https://www.tartanlug.com/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["GB"]
+access = "free"
+summary_en = "Scottish user group for adult fans of LEGO, with public shows, collaborative builds and meet-ups, focused on charity fundraising; first public show in July 2015."
+summary_fr = "Groupe écossais d'utilisateurs pour fans adultes de LEGO, avec expositions publiques, constructions collectives et rencontres, centré sur la collecte de fonds caritative ; première exposition publique en juillet 2015."
+strengths_en = ["Committee elected in August 2026", "Describes itself as Scotland's only community in the Fan CoLab"]
+strengths_fr = ["Comité élu en août 2026", "Se décrit comme la seule communauté écossaise du Fan CoLab"]
+weaknesses_en = ["Discussion takes place in closed Facebook and Discord groups"]
+weaknesses_fr = ["Les échanges se tiennent dans des groupes Facebook et Discord fermés"]
+status = "active"
+last_activity = "2026-08-31"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.tartanlug.com/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "brick-alley"
+name = "Brick Alley"
+url = "https://www.brickalleylug.co.uk/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["GB"]
+access = "free"
+summary_en = "User group for adult fans of LEGO in North East England, with monthly meet-ups, collaborative displays and exhibitions such as Discovery Brick Show (Newcastle, since 2018) and Shildon Brick Show (since 2016)."
+summary_fr = "Groupe d'utilisateurs de fans adultes de LEGO du nord-est de l'Angleterre, avec rencontres mensuelles, expositions collectives et salons comme Discovery Brick Show (Newcastle, depuis 2018) et Shildon Brick Show (depuis 2016)."
+strengths_en = ["Thirsk Brick Show announced for 6 February 2027"]
+strengths_fr = ["Thirsk Brick Show annoncé le 6 février 2027"]
+weaknesses_en = ["Regional scope"]
+weaknesses_fr = ["Portée régionale"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.brickalleylug.co.uk/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "quelug"
+name = "QuéLUG"
+url = "https://www.quelug.org/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["fr"]
+countries = ["CA"]
+access = "free"
+summary_en = "Association of LEGO fans of Quebec, in French, with quarterly meetings, a forum, group orders and attendance at Canadian exhibitions."
+summary_fr = "Association de fans de LEGO du Québec, en français, avec réunions trimestrielles, forum, commandes groupées et présence dans les expositions canadiennes."
+strengths_en = ["French-language community useful to French speakers", "Forum posts dated 25 October 2026"]
+strengths_fr = ["Communauté francophone utile aux francophones", "Messages de forum datés du 25 octobre 2026"]
+weaknesses_en = ["Outside Europe"]
+weaknesses_fr = ["Hors d'Europe"]
+status = "active"
+last_activity = "2026-10-25"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.quelug.org/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://forums.quelug.org/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "nelug"
+name = "NELUG - New England LEGO Users Group"
+url = "https://www.nelug.org/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["US"]
+access = "free"
+summary_en = "Regional group of adult LEGO fans in the north-east of the United States, formed in August 1999, with a forum, displays and large exhibitions."
+summary_fr = "Groupe régional de fans adultes de LEGO du nord-est des États-Unis, formé en août 1999, avec forum, expositions et grands événements."
+strengths_en = ["Dated posts in October 2026", "One of the oldest user groups still active"]
+strengths_fr = ["Messages datés d'octobre 2026", "L'un des plus anciens groupes d'utilisateurs encore actifs"]
+weaknesses_en = ["Outside Europe"]
+weaknesses_fr = ["Hors d'Europe"]
+status = "active"
+last_activity = "2026-10-06"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.nelug.org/"
+date = "2026-08-14"
+kind = "official"
+
+[[resource]]
+id = "bionilug"
+name = "BioniLUG"
+url = "https://www.bionilug.com/"
+group = "online-clubs"
+covers = ["clubs", "official", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Online user group for fans of Bionicle and Constraction, recognized by the LEGO Group, with member spotlights and displays at fan conventions."
+summary_fr = "Groupe d'utilisateurs en ligne pour les fans de Bionicle et de Constraction, reconnu par le groupe LEGO, avec portraits de membres et présence dans des conventions de fans."
+strengths_en = ["Dedicated to one theme", "Member spotlight published in September 2026"]
+strengths_fr = ["Consacré à un seul thème", "Portrait de membre publié en septembre 2026"]
+weaknesses_en = ["Narrow theme"]
+weaknesses_fr = ["Thème étroit"]
+status = "active"
+last_activity = "2026-09-22"
+checked = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.bionilug.com/"
+date = "2026-09-22"
+kind = "official"
+
+[[resource]]
+id = "der-helfende-stein"
+name = "Der helfende Stein"
+url = "https://derhelfendestein.at/"
+group = "alternative-brand-clubs"
+covers = ["clubs", "alternative", "official", "events"]
+languages = ["de"]
+countries = ["AT"]
+access = "freemium"
+business_model_en = "Membership of 24 euros per year (2023 forum post)"
+business_model_fr = "Adhésion de 24 euros par an (message de forum de 2023)"
+summary_en = "Austrian non-profit association for building-brick fans of all brands, with club evenings, a members' forum and a Klemmbaustein Tour exhibition; supports children's homes and social facilities with donations in kind."
+summary_fr = "Association autrichienne à but non lucratif pour les fans de briques de toutes marques, avec soirées de club, forum des membres et exposition Klemmbaustein Tour ; soutient des foyers d'enfants et des structures sociales par des dons en nature."
+strengths_en = ["Any brick brand is welcome, as stated by the association", "Klemmbaustein Tour 2026 in Ernstbrunn drew more than 1000 visitors, according to the association"]
+strengths_fr = ["Toute marque de briques est acceptée, selon l'association", "Klemmbaustein Tour 2026 à Ernstbrunn : plus de 1000 visiteurs, selon l'association"]
+weaknesses_en = ["Forum and Discord for members only", "Site in German only"]
+weaknesses_fr = ["Forum et Discord réservés aux membres", "Site uniquement en allemand"]
+status = "active"
+last_activity = "2026-09-05"
+checked = "2026-11-23"
+confidence = "high"
+city = "Niederkreuzstetten"
+
+[[resource.sources]]
+url = "https://derhelfendestein.at/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://derhelfendestein.at/news/"
+date = "2026-09-05"
+kind = "official"
+
+[[resource.sources]]
+url = "https://forum.derhelfendestein.at/archive/index.php?thread-40.html="
+date = "2023-04-18"
+kind = "forum"
+
+[[resource]]
+id = "noppenhelden"
+name = "Noppenhelden.de"
+url = "https://noppenhelden.de/"
+group = "alternative-brand-clubs"
+covers = ["clubs", "alternative", "news"]
+languages = ["de"]
+countries = ["DE"]
+access = "free-account"
+summary_en = "German-language forum dedicated to alternative building bricks, with new-set news, custom builds, a members' marketplace and events listings."
+summary_fr = "Forum germanophone consacré aux briques alternatives, avec nouveautés de sets, créations originales, place de marché pour les membres et liste d'événements."
+strengths_en = ["Posts dated November 2026", "Sections for custom builds and alternative-brand news"]
+strengths_fr = ["Messages datés de novembre 2026", "Rubriques de créations originales et d'actualités des marques alternatives"]
+weaknesses_en = ["Low volume: most recent topics come from a single member", "Registration needed for full access"]
+weaknesses_fr = ["Faible volume : les sujets récents viennent d'un seul membre", "Inscription nécessaire pour un accès complet"]
+status = "active"
+last_activity = "2026-11-06"
+checked = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://noppenhelden.de/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://noppenhelden.de/forum/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "les-briques-en-folie"
+name = "Les Briques en Folie"
+url = "https://www.lesbriquesenfolie.fr/"
+group = "regional-clubs"
+covers = ["clubs", "official"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "Association of adult fans of LEGO based in Rouen and recognised by the LEGO Group, organising exhibitions, giant mosaics and workshops in Normandy."
+summary_fr = "Association d'adultes fans de LEGO basée à Rouen et reconnue par le groupe LEGO, qui organise expositions, mosaïques géantes et ateliers en Normandie."
+strengths_en = ["Own events calendar with calendar export", "Next exhibition at the Parc des expositions of Rouen announced"]
+strengths_fr = ["Calendrier d'événements propre avec export", "Prochaine exposition au Parc des expositions de Rouen annoncée"]
+weaknesses_en = ["Regional activity"]
+weaknesses_fr = ["Activité régionale"]
+size_en = "Rouen exhibition 26 March to 4 April 2027 (as indexed)"
+size_fr = "Exposition de Rouen du 26 mars au 4 avril 2027 (selon l'index)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+city = "Le Grand-Quevilly"
+next_date = "2027-03-26"
+recurrence_en = "Several events per year"
+recurrence_fr = "Plusieurs événements par an"
+
+[[resource.sources]]
+url = "https://www.lesbriquesenfolie.fr/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.lesbriquesenfolie.fr/events/"
+date = "2026-11-23"
+kind = "indexed"
+
+[[resource]]
+id = "brisy-expo-100-briques"
+name = "BRISY"
+url = "https://brisy.fr/"
+group = "regional-clubs"
+covers = ["clubs", "official"]
+languages = ["fr"]
+countries = ["FR"]
+access = "paid"
+summary_en = "Association of adult fans of LEGO in the Yvelines organising the Expo 100% Briques in Le Perray-en-Yvelines and taking part in other exhibitions and workshops."
+summary_fr = "Association d'adultes fans de LEGO dans les Yvelines qui organise l'Expo 100% Briques au Perray-en-Yvelines et participe à d'autres expositions et ateliers."
+strengths_en = ["Next exhibition announced on the home page"]
+strengths_fr = ["Prochaine exposition annoncée sur la page d'accueil"]
+weaknesses_en = ["Local scale"]
+weaknesses_fr = ["Échelle locale"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "high"
+city = "Le Perray-en-Yvelines"
+next_date = "2026-11-28"
+recurrence_en = "Yearly, November"
+recurrence_fr = "Chaque année, en novembre"
+
+[[resource.sources]]
+url = "https://brisy.fr/"
+date = "2026-11-23"
+kind = "official"
+
+[[resource]]
+id = "brickouest"
+name = "Brickouest"
+url = "https://brickouest.fr/"
+group = "regional-clubs"
+covers = ["clubs", "official"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+summary_en = "Association of LEGO fans of western France, recognised by the LEGO Group, publishing a calendar and a map of its exhibitions and workshops."
+summary_fr = "Association de fans de LEGO du Grand Ouest, reconnue par le groupe LEGO, qui publie un calendrier et une carte de ses expositions et animations."
+strengths_en = ["Calendar and map of events", "List of past exhibitions"]
+strengths_fr = ["Calendrier et carte des événements", "Liste des expositions passées"]
+weaknesses_en = ["News mostly on Facebook"]
+weaknesses_fr = ["Actualités surtout sur Facebook"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+confidence = "medium"
+city = "Rennes"
+recurrence_en = "Several events per year"
+recurrence_fr = "Plusieurs événements par an"
+
+[[resource.sources]]
+url = "https://brickouest.fr/"
+date = "2026-11-23"
+kind = "official"
