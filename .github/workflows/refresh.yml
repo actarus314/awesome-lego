@@ -31,6 +31,7 @@ jobs:
           python3 scripts/refresh.py --month --previous previous.md --links links.md > report.md
           echo >> report.md
           python3 scripts/trends.py >> report.md || echo "Trends: the history branch could not be read this month." >> report.md   # never loses the rest of the report
+          python3 -c "import pathlib; p = pathlib.Path('report.md'); t = p.read_text(encoding='utf-8'); p.write_text(t if len(t) <= 65000 else t[:65000].rsplit(chr(10), 1)[0] + chr(10) + '(cut: too long for an issue)' + chr(10), encoding='utf-8')"   # an issue body holds 65536 characters
       - name: Open or update the report issue
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

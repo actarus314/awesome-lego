@@ -23,7 +23,7 @@ jobs:
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.15"
-      # 401 and 403: a bot check in front of a public page; 405: an endpoint that answers only another method (an MCP server)
+      # 401 and 403: a bot check in front of a public page; 405: an endpoint that answers only another method (an MCP server); 429: a rate limit
       - id: lychee
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
@@ -53,8 +53,8 @@ jobs:
             else gh issue edit "$n" --body-file body.md; [ "$state" = "OPEN" ] || gh issue reopen "$n"; fi
           elif [ -n "$n" ]; then
             gh issue edit "$n" --body-file body.md
-            [ "$state" != "OPEN" ] || gh issue close "$n" --comment "Nothing needs a person: every link answers, from GitHub or from Globalping."
+            [ "$state" != "OPEN" ] || gh issue close "$n" --comment "Nothing needs a person this week: no broken link, no dead page."
           elif grep -q "<details>" body.md; then   # no issue yet: one is written and closed, for its folded lists (read by the monthly report)
             url=$(gh issue create --title "Broken links" --label links --label automatic --body-file body.md)
-            gh issue close "$url" --comment "Nothing needs a person: every link answers, from GitHub or from Globalping."
+            gh issue close "$url" --comment "Nothing needs a person this week: no broken link, no dead page."
           fi

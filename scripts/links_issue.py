@@ -63,13 +63,13 @@ PARKED_SITE = [  # in the HTML: a parking service or a domain marketplace that s
     r"\bsedoparking\.com", r"\bparkingcrew\.net", r"\bbodis\.com", r"\bafternic\.com", r"\bhugedomains\.com",
     r"\bundeveloped\.com", r"\bnameshift\.com", r"\bdomainmarket\.com", r"\bparklogic\.com",
     r"location\.href\s*=\s*[\"']/lander[\"']"]
-PARKED_TEXT = [  # in the title, headings, description and the start of the text
-    r"this domain (is|may be) for sale", r"buy this domain", r"this domain is parked", r"parked free",
+PARKED_TEXT = [  # in the title, the description and the main headings
+    r"this domain (is|may be) for sale", r"buy this domain", r"this domain is parked", r"parked free, courtesy of",
     r"le nom de domaine \S+ est à vendre", r"ce (nom de )?domaine est à vendre", r"diese domain (steht zum verkauf|kaufen|ist zu verkaufen)",
     r"questo dominio è in vendita", r"este dominio (está a la venta|se vende)", r"deze domeinnaam is te koop",
     r"this domain (name )?has expired", r"website expired", r"this account has been suspended"]
 CLOSED = [  # closure notices, in the title, headings, description and the start of the text
-    r"permanently closed", r"closed permanently", r"closed for good", r"has closed (down|its doors)", r"we have (now )?closed",
+    r"permanently closed", r"closed permanently", r"closed for good", r"has closed (down|its doors)", r"we have (now )?closed (for good|permanently|our (shop|store|doors|business))",
     r"(is|are) no longer (trading|operating|in business)", r"ceased trading", r"shut down (permanently|for good)",
     r"(site|website|shop|store) (has been|is) (closed|discontinued|shut down)",
     r"définitivement fermée?s?", r"a fermé (ses portes|définitivement)", r"fermeture définitive", r"nous avons fermé", r"cessation d'activité",
@@ -82,7 +82,10 @@ TAKEN = [  # words of an unrelated trade in the title, the description or the ma
     r"\bblackjack\b", r"\bslot gacor\b", r"\btogel\b", r"\b(situs|judi) (judi|online|slot)\b", r"\bporn", r"\bxxx\b",
     r"\bviagra\b", r"\bcialis\b", r"\bescorts?\b", r"\bpayday loans?\b"]
 # ... and none of the words of the bricks there: a brick model of a casino or of a Ford Escort is no take-over
-BRICKS = re.compile(r"lego|brick|briq|stein|mattonc|ladrill|klock|kostk|kock|minifig|\bmoc\b|afol|\blug\b|technic|duplo|klemm", re.I)
+BRICKS = re.compile(r"lego|brick|briq|baustein|klemmbau|mattonc|ladrill|klock|kostk|kock|minifig|\bmoc\b|afol|\blug\b|technic|duplo", re.I)
+
+
+_BRANDS = []   # filled on first use by brand_words()
 
 
 def code(text):
@@ -135,8 +138,8 @@ def reason(result):
     raw = (result.get("rawOutput") or "").strip()
     for pattern, text in ((r"ENOTFOUND|EAI_AGAIN", "name not found"), (r"timed out|ETIMEDOUT", "timed out"),
                           (r"ECONNREFUSED", "connection refused"), (r"ENETUNREACH|EHOSTUNREACH", "unreachable"),
-                          (r"ECONNRESET", "connection reset"), (r"certificate|CERT_", "certificate error"),
-                          (r"\b(TLS|SSL)\b|EPROTO", "TLS error")):
+                          (r"ECONNRESET", "connection reset"), (r"certificate|CERT_|SELF_SIGNED|UNABLE_TO_VERIFY", "certificate error"),
+                          (r"(?<![A-Za-z])(TLS|SSL)(?![A-Za-z])|EPROTO", "TLS error")):
         if re.search(pattern, raw, re.I):
             return text
     return code(raw.splitlines()[0][:60]) if raw else result.get("status", "?")
@@ -224,7 +227,7 @@ def recheck(urls, token=None, api=_api, sleep=time.sleep, confirm=True):
             v, reasons, extra = verdict(results[current[u]])
             if v == "redirect" and hop < HOPS:
                 current[u] = urllib.parse.urljoin(current[u], extra)
-                path[u].append(f"{', '.join(reasons)} to {current[u]}")
+                path[u].append(f"{', '.join(reasons)} to {code(current[u])}")   # the address comes from a third party
                 nxt.append(u)
                 continue
             if v == "redirect":
@@ -244,42 +247,49 @@ def recheck(urls, token=None, api=_api, sleep=time.sleep, confirm=True):
 # --- Dead pages that answer 200 ---------------------------------------------------------------------------------
 
 class _Reader(html.parser.HTMLParser):
-    """Title, description, headings and visible text of a page, in one linear pass."""
+    """Title, description, headings and visible text of a page, in one linear pass: counters, never a stack, so that
+    unclosed or stray tags cost nothing."""
     SKIP = {"script", "style", "noscript", "svg", "template"}
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
-        self.title, self.desc, self.heads, self.text, self.skip, self.where = [], "", [], [], 0, []
+        self.title, self.desc, self.heads, self.text, self.size = [], "", [], [], 0
+        self.skip = self.in_title = self.in_head = 0
 
     def handle_starttag(self, tag, attrs):
         if tag in self.SKIP:
             self.skip += 1
-        elif tag == "meta":
+        elif tag == "title":
+            self.in_title = 1
+        elif tag in ("h1", "h2"):
+            self.in_head += 1
+        elif tag == "meta" and not self.desc:
             a = {k.lower(): (v or "") for k, v in attrs}
-            if (a.get("name") or a.get("property") or "").lower() in ("description", "og:description") and not self.desc:
+            if (a.get("name") or a.get("property") or "").lower() in ("description", "og:description"):
                 self.desc = a.get("content", "")
-        self.where.append(tag)
 
-    def handle_startendtag(self, tag, attrs):   # <svg ... />, <meta ... />: nothing to skip
+    def handle_startendtag(self, tag, attrs):   # <svg ... />, <meta ... />: nothing opens
         if tag == "meta":
             self.handle_starttag(tag, attrs)
-            self.where.pop()
 
     def handle_endtag(self, tag):
-        if tag in self.SKIP and self.skip:
-            self.skip -= 1
-        while self.where and self.where.pop() != tag:
-            pass
+        if tag in self.SKIP:
+            self.skip = max(0, self.skip - 1)
+        elif tag == "title":
+            self.in_title = 0
+        elif tag in ("h1", "h2"):
+            self.in_head = max(0, self.in_head - 1)
 
     def handle_data(self, data):
         if self.skip:
             return
-        if "title" in self.where:
+        if self.in_title:
             self.title.append(data)
-        elif any(t in ("h1", "h2") for t in self.where):
+        elif self.in_head:
             self.heads.append(data)
-        if sum(map(len, self.text)) < 3000:
+        if self.size < 3000:
             self.text.append(data)
+            self.size += len(data)
 
 
 def _text(page):
@@ -294,24 +304,45 @@ def _text(page):
     return clean(" ".join(r.title)), clean(r.desc), clean(" ".join(r.heads)), clean(" ".join(r.text))[:3000]
 
 
+def brand_words(root=ROOT):
+    """Names of the brands of the directory (data/brands.toml), as words: a page about one is about bricks."""
+    try:
+        rows = tomllib.loads((root / "data" / "brands.toml").read_text(encoding="utf-8")).get("resource", [])
+    except OSError:
+        return []
+    names = (n.split(" (")[0].strip().lower() for r in rows for n in [r.get("name", ""), *r.get("aliases", [])])
+    return sorted({n for n in names if len(n) > 2})
+
+
+def is_bricks(text):
+    if not _BRANDS:
+        _BRANDS.extend(brand_words() or ["lego"])
+    t = text.lower()
+    return bool(BRICKS.search(t)) or any(re.search(rf"(?<!\w){re.escape(w)}(?!\w)", t) for w in _BRANDS)
+
+
 def classify(page):
-    """(kind, evidence) for a dead page, else None. Kinds: parked or expired, taken over, closed."""
+    """(kind, evidence) for a dead page, else None. Kinds: parked or expired, taken over, closed. Parking and
+    take-over are read in the title, the description and the main headings; a closure notice also in the start
+    of the text."""
     title, desc, heads, start = _text(page)
-    seen = f"{title} | {desc} | {heads} | {start}"
+    top = {"title": title, "description": desc, "heading": heads}
     for p in PARKED_SITE:
         if m := re.search(p, page, re.I):
             return "parked or expired", code(m.group(0))
     for p in PARKED_TEXT:
-        if m := re.search(p, seen, re.I):
-            return "parked or expired", code(m.group(0))
-    top = f"{title} | {desc} | {heads}"
-    if not BRICKS.search(top):
+        for where, t in top.items():
+            if m := re.search(p, t, re.I):
+                return "parked or expired", f"{code(m.group(0))} in the {where}"
+    if not is_bricks(" | ".join(top.values())):
         for p in TAKEN:
-            if m := re.search(p, top, re.I):
-                return "taken over", f"{code(m.group(0))} in {code((title or desc)[:90])}"
+            for where, t in top.items():
+                if m := re.search(p, t, re.I):
+                    return "taken over", f"{code(m.group(0))} in the {where} {code(t[:90])}"
     for p in CLOSED:
-        if m := re.search(p, seen, re.I):
-            return "closed", code(m.group(0))
+        for where, t in (*top.items(), ("text", start)):
+            if m := re.search(p, t, re.I):
+                return "closed", f"{code(m.group(0))} in the {where}"
     return None
 
 
@@ -348,13 +379,18 @@ def dead_pages(items, fetch=_fetch):
         return sorted(x for x in pool.map(one, items) if x)
 
 
+def reported(previous):
+    """Links that the previous body reported as needing a look: its folded lists (alive, refused TLS) left out."""
+    return set(re.findall(r"<(https?://[^>]+)>", re.sub(r"<details>.*?</details>", "", previous or "", flags=re.S)))
+
+
 def order_for_recheck(urls, previous, today=None):
     """Links that failed in the previous run first, then the others in an order that changes each week, so that an
     hourly limit never leaves the same links out week after week."""
     today = today or dt.date.today()
     week = today.isocalendar()[:2]
     key = lambda u: hashlib.sha256(f"{week}{u}".encode()).hexdigest()
-    before = set(re.findall(r"<(https?://[^>]+)>", previous))
+    before = reported(previous)
     return [u for u in urls if u in before] + sorted((u for u in urls if u not in before), key=key)
 
 
@@ -365,7 +401,7 @@ def body(report, previous="", rechecked=None, dead=(), today=None):
     a dead page, or a link that failed twice in a row and could not be opened again."""
     today = today or dt.date.today()
     now = failures(report)
-    before = set(re.findall(r"<(https?://[^>]+)>", previous))
+    before = reported(previous)
     rechecked = rechecked if rechecked is not None else {}
     v = lambda u: rechecked.get(u, ("unchecked",))[0]
     at = lambda u: f"{now[u][0]} {now[u][1]}"

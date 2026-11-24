@@ -87,6 +87,9 @@ class Globalping(unittest.TestCase):
         self.assertEqual(v([internal, probe("failed", raw="ENOTFOUND"), probe("failed", raw="ENOTFOUND")])[0], "down")
         self.assertEqual(v([probe("failed", raw="Client network socket disconnected before secure TLS connection")] * 3)[0], "tls")
         self.assertEqual(links_issue.reason(probe("failed", raw="connect to tlsfast.example failed")["result"]), "`connect to tlsfast.example failed`")
+        for raw, why in (("ERR_SSL_WRONG_VERSION_NUMBER", "TLS error"), ("DEPTH_ZERO_SELF_SIGNED_CERT", "certificate error"),
+                         ("UNABLE_TO_VERIFY_LEAF_SIGNATURE", "certificate error")):
+            self.assertEqual(links_issue.reason(probe("failed", raw=raw)["result"]), why)
         casino = "<html><head><title>Goldspin Casino France</title></head><body>Spins</body></html>"
         self.assertEqual(v([probe(code=200, body=casino)])[2][0], "taken over")
 
@@ -131,11 +134,15 @@ class Globalping(unittest.TestCase):
         page = "<title>Casino bonus @octocat https://spam.example/x [click](https://evil.example) #1</title>"
         kind, ev = links_issue.classify(page)
         self.assertEqual(kind, "taken over")
-        quoted = ev.split(" in ", 1)[1]
+        quoted = ev.split(" in the title ", 1)[1]
         self.assertTrue(quoted.startswith("`") and quoted.endswith("`") and quoted.count("`") == 2)
         report = "### Errors in data/brands.toml\n\n* [503] <https://a.example/> (at 3:8) | Rejected `x` @octocat\n"
         text, _ = links_issue.body(report, rechecked={"https://a.example/": ("down", ["503, 503, 503"], None)}, today=DAY)
         self.assertIn("GitHub: `Rejected 'x' @octocat`", text)
+        answers = {"https://a.example/": [probe(code=301, location="https://z.example/@octocat")] * 3,
+                   "https://z.example/@octocat": [probe(code=404)] * 3}
+        out = links_issue.recheck(["https://a.example/"], api=self.api(answers), sleep=lambda s: None)
+        self.assertEqual(out["https://a.example/"][1][0], "301, 301, 301 to `https://z.example/@octocat`")
 
     def api(self, answers, limit=100):
         """A fake Globalping: answers[address] are the results of a measurement of that address."""
@@ -180,8 +187,8 @@ class Globalping(unittest.TestCase):
                    "https://b.example/home": [probe(code=200)] * 3}
         out = links_issue.recheck(["https://a.example/", "https://b.example/"], api=self.api(answers), sleep=lambda s: None)
         self.assertEqual(out["https://a.example/"][0], "down")
-        self.assertEqual(out["https://a.example/"][1][:3], ["301, 301, 301 to https://a.example/new",
-                                                            "302, 302, 302 to https://a.example/gone", "404, 404, 404"])
+        self.assertEqual(out["https://a.example/"][1][:3], ["301, 301, 301 to `https://a.example/new`",
+                                                            "302, 302, 302 to `https://a.example/gone`", "404, 404, 404"])
         self.assertTrue(out["https://a.example/"][1][3].startswith("again 90 s later: 301, 301, 301 to"))
         self.assertEqual(out["https://b.example/"][0], "alive")
 
@@ -210,6 +217,10 @@ class Globalping(unittest.TestCase):
         urls = [f"https://s{i}.example/" for i in range(30)]
         ordered = links_issue.order_for_recheck(urls, "* <https://s29.example/> previous", today=DAY)
         self.assertEqual(ordered[0], "https://s29.example/")
+        folded = "* <https://s1.example/> x\n\n<details><summary>They block GitHub (1)</summary>\n\n* <https://s28.example/> alive\n\n</details>\n"
+        self.assertEqual(links_issue.reported(folded), {"https://s1.example/"})   # alive links do not count as reported
+        _, needed = links_issue.body("### Errors in data/x.toml\n\n* [503] <https://s28.example/> (at 1:1) | 503\n", folded, today=DAY)
+        self.assertFalse(needed)
         self.assertEqual(sorted(ordered), sorted(urls))
         other_week = links_issue.order_for_recheck(urls, "", today=DAY + dt.timedelta(days=7))
         self.assertNotEqual(ordered[1:6], [u for u in other_week if u != "https://s29.example/"][:5])
@@ -221,7 +232,7 @@ class DeadPages(unittest.TestCase):
 
     def test_dead(self):
         c = links_issue.classify
-        self.assertEqual(c(self.page("example.com", text="This domain is for sale!"))[0], "parked or expired")
+        self.assertEqual(c(self.page("example.com", h1="This domain is for sale!"))[0], "parked or expired")
         self.assertEqual(c('<script>window.onload=function(){window.location.href="/lander"}</script>')[0], "parked or expired")
         self.assertEqual(c(self.page("x", extra='<script src="https://www.hugedomains.com/js/x.js"></script>'))[0], "parked or expired")
         self.assertEqual(c(self.page("Squarespace - Website Expired"))[0], "parked or expired")
@@ -231,6 +242,9 @@ class DeadPages(unittest.TestCase):
         self.assertEqual(c(self.page("Bricks shop", h1="Unser Shop ist dauerhaft geschlossen"))[0], "closed")
         self.assertEqual(c(self.page("Boutique", text="La boutique a fermé ses portes. Merci à tous."))[0], "closed")
         self.assertEqual(c(self.page("Club", extra="<svg viewBox='0 0 1 1'/>", text="We have closed for good."))[0], "closed")
+        self.assertEqual(c("<html><body><h1>Online </p>casino bonus</h1></body></html>")[0], "taken over")   # a stray end tag
+        self.assertEqual(c(self.page("Shop", extra='<meta property="og:description" content="Online casino bonus">'))[1],
+                         "`casino` in the description `Online casino bonus`")
 
     def test_traps_stay_healthy(self):
         c = links_issue.classify
@@ -245,13 +259,20 @@ class DeadPages(unittest.TestCase):
                      self.page("Ford Escort MK2 brick model"),
                      self.page("Forum", extra='<script>var m="Your account has been suspended"</script>', text="My account suspended again"),
                      self.page("Club", text='<a href="https://twitter.com/lander">us</a>'),
-                     self.page("Club", extra="<!-- domain parked -->")):
+                     self.page("Club", extra="<!-- domain parked -->"),
+                     self.page("Bluebrixx Casino Royale set"),
+                     self.page("Mould King 10001 Casino"),
+                     self.page("Club", text="We have closed registrations for the 2027 show."),
+                     self.page("Car park", text="Parked free of charge for visitors; do not buy this domain name story."),
+                     self.page("Shop", text="Our website expired once in 2019.")):
             self.assertIsNone(c(page), page)
 
     def test_broken_markup_is_read_in_linear_time(self):
         start = time.monotonic()
         links_issue.classify("<html><body>" + "<svg><path/>" * 20000 + "<script>" * 20000)
-        self.assertLess(time.monotonic() - start, 3)
+        links_issue.classify("<html><body><div>" + "<br>x" * 40000)
+        links_issue.classify("<b>a</b>" * 57000)
+        self.assertLess(time.monotonic() - start, 5)
 
     def test_dead_pages_skip_failures(self):
         pages = {"https://a.example/": self.page("Casino"), "https://b.example/": self.page("Bricks")}
@@ -262,7 +283,7 @@ class DeadPages(unittest.TestCase):
             return pages[url]
 
         out = links_issue.dead_pages([("a", "https://a.example/"), ("b", "https://b.example/"), ("c", "https://c.example/")], fetch)
-        self.assertEqual(out, [("https://a.example/", "entry `a`", "taken over", "`Casino` in `Casino`")])
+        self.assertEqual(out, [("https://a.example/", "entry `a`", "taken over", "`Casino` in the title `Casino`")])
 
     def test_entries_leave_platforms_and_closed_entries_out(self):
         with tempfile.TemporaryDirectory() as d:

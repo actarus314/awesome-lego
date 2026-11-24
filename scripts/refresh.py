@@ -127,7 +127,7 @@ def selection_check(rows):
         out_best = max((x for x in items if not selected(x[1]) and x[1].get("status") == "active"), default=None, key=lambda x: x[0])
         for sc, r in items:
             if selected(r) and out_best and out_best[0] - sc >= 2:
-                out.append(f"{cat}/{g}: {r['id']} ({sc}) vs {out_best[1]['id']} ({out_best[0]})")
+                out.append(f"{cat}/{g}: {r['id']} ({sc}) against {out_best[1]['id']} ({out_best[0]})")
     return out
 
 
@@ -205,7 +205,12 @@ def date_en(day):
 
 def since(iso):
     """'since 12 November 2026, 22 days' for a past ISO date."""
-    return f"since {date_en(iso)}, {(TODAY - dt.date.fromisoformat(iso)).days} days"
+    return f"since {date_en(iso)}, {days(iso)}"
+
+
+def days(iso):
+    n = (TODAY - dt.date.fromisoformat(iso)).days
+    return f"{n} day" if n == 1 else f"{n} days"
 
 
 def month_changes(days, ids):
@@ -301,7 +306,7 @@ def main():
     for r, (m, err) in zip(entries, results):
         if err:
             ok = (old.get(r["id"]) or {}).get("refreshed")
-            failed.append((r["id"], err.split(": ", 1)[1], f"last read {date_en(ok)}, {(TODAY - dt.date.fromisoformat(ok)).days} days ago" if ok else "never read"))
+            failed.append((r["id"], err.split(": ", 1)[1], f"last read {date_en(ok)}, {days(ok)} ago" if ok else "never read"))
         if m and m.get("archived") and r.get("status") != "archived":
             archived.append(r["id"])
         if m:
@@ -312,7 +317,7 @@ def main():
         if selected(r) and (idle or gone or r.get("status") != "active" or r.get("confidence") == "low"):
             why = []
             if idle:
-                why.append("inactive " + since((dt.date.fromisoformat(last) + dt.timedelta(days=IDLE_DAYS + 1)).isoformat()) if month else f"last activity {last}")
+                why.append("inactive " + since((dt.date.fromisoformat(last) + dt.timedelta(days=IDLE_DAYS + 1)).isoformat()) if month else f"last activity {date_en(last)}")
             if gone:
                 why.append("archived " + (archived_since(days, r["id"]) or "on GitHub") if month else "archived")
             if r.get("status") != "active":
@@ -326,7 +331,7 @@ def main():
             stale.append(f"{r['id']} ({checked})")
     OUT.write_text(json.dumps(new, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
     lines = [f"Monthly data report: {date_en(TODAY.isoformat())}. Read by the monthly review." if month
-             else f"Automatic refresh: {TODAY.isoformat()}", ""]
+             else f"Automatic refresh: {date_en(TODAY)}", ""]
     ids = {"read failures": [i for i, _, _ in failed], "no longer eligible": [i for i, _ in unfeature], "archived": archived}
     if month:
         when, kept, base = guard(arg("--previous"), ids)
