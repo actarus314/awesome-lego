@@ -22,7 +22,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
         run: |
-          gh issue list --label automatic --state open --search "Monthly data report in:title" --limit 1 --json body -q '.[].body' > previous.md
+          gh issue list --label automatic --state all --search "Monthly data report in:title" --limit 1 --json body -q '.[].body' > previous.md   # open or closed
           gh issue list --label links --state all --limit 1 --json body -q '.[].body' > links.md
       - name: Read activity data and write the report
         env:
@@ -36,5 +36,5 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
         run: |
-          n=$(gh issue list --label automatic --state open --search "Monthly data report in:title" --json number -q '.[0].number')
-          if [ -n "$n" ]; then gh issue edit "$n" --body-file report.md; else gh issue create --title "Monthly data report" --label automatic --body-file report.md; fi
+          n=$(gh issue list --label automatic --state open --search "Monthly data report in:title" --limit 1 --json number -q '.[].number')
+          if [ -n "$n" ]; then gh issue edit "$n" --body-file report.md; else gh issue create --title "Monthly data report" --label automatic --body-file report.md; fi   # a closed report stays closed: a new one opens

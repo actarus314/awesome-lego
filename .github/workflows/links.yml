@@ -1,4 +1,5 @@
 name: Links
+run-name: ${{ inputs.dry_run && 'Links (dry run)' || 'Links' }}   # Data fixes does not follow a dry run
 on:
   schedule:
     - cron: "23 5 * * 3"   # weekly, Wednesdays; Data fixes starts when this run ends
@@ -42,7 +43,8 @@ jobs:
         run: |
           if [ "$LYCHEE_CODE" != "0" ] && [ ! -s lychee-report.md ]; then echo "::warning::lychee wrote no report: the links issue is left as it is"; exit 0; fi
           [ "$LYCHEE_CODE" = "0" ] && : > lychee-report.md   # no failure
-          read -r n state < <(gh issue list --label links --state all --limit 1 --json number,state -q '.[] | "\(.number) \(.state)"') || true   # the newest links issue, open or closed
+          last=$(gh issue list --label links --state all --limit 1 --json number,state -q '.[] | "\(.number) \(.state)"')   # the newest links issue, open or closed; a failure stops the step
+          read -r n state <<< "$last" || true
           if [ -n "$n" ]; then gh issue view "$n" --json body -q .body > previous.md; else : > previous.md; fi
           python3 scripts/links_issue.py lychee-report.md previous.md --recheck --pages --state needed.txt > body.md
           if [ "$DRY_RUN" = "true" ]; then { echo "Issue: $(cat needed.txt)"; echo; cat body.md; } | tee -a "$GITHUB_STEP_SUMMARY"; exit 0; fi   # summary and log
@@ -52,4 +54,7 @@ jobs:
           elif [ -n "$n" ]; then
             gh issue edit "$n" --body-file body.md
             [ "$state" != "OPEN" ] || gh issue close "$n" --comment "Nothing needs a person: every link answers, from GitHub or from Globalping."
+          elif grep -q "<details>" body.md; then   # no issue yet: one is written and closed, for its folded lists (read by the monthly report)
+            url=$(gh issue create --title "Broken links" --label links --label automatic --body-file body.md)
+            gh issue close "$url" --comment "Nothing needs a person: every link answers, from GitHub or from Globalping."
           fi

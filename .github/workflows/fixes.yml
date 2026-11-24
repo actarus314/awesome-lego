@@ -12,6 +12,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   fixes:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.display_title != 'Links (dry run)'
     runs-on: ubuntu-latest
     permissions:
       contents: write

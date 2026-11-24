@@ -4,15 +4,17 @@
 Three readings, from three places:
 1. lychee, from the machines of GitHub (its Markdown report is the input): every link of the data and the documents.
 2. Globalping (https://globalping.io, free public API of jsDelivr): every link that failed from GitHub is opened
-   again from 3 probes, on home and office networks when there are enough ("eyeball" probes: 2 in Europe, 1 in
-   North America). A link that fails from every probe is broken. A link that answers somewhere blocks the machines
-   of GitHub and is alive: it goes to a short list, never to the broken links. Redirects count as alive (Data fixes
-   replaces addresses that moved for good). A link whose secure connection every probe refuses goes to a second short
-   list (browsers often still open it); a failure of the probe itself is not counted. Token: GLOBALPING_TOKEN,
-   optional (higher hourly limit).
-3. The address of every entry still open, opened from GitHub: a page that answers 200 but is dead (parked domain, closure
-   notice, site taken over by unrelated content) is listed too.
-Without Globalping (limit reached, service down), the failures keep the old order: failed twice in a row first.
+   again from 3 probes on home and office networks ("eyeball" probes: 2 in Europe and 1 in North America, else any 3
+   eyeball probes; never data centre probes, which fail like GitHub). A link that fails from every probe (2 readings at
+   least) is broken. A link that answers somewhere blocks the machines of GitHub and is alive: it goes to a folded list,
+   never to the broken links. A redirect is followed (3 hops at most): the link is judged by where it leads, and an
+   address that moved for good is left to Data fixes. A link whose secure connection every probe refuses goes to a
+   second folded list (browsers often still open it); a failure of the probe itself is not counted. When the hourly
+   limit cuts the list, the links that failed in the previous run go first, then a different part of the others each
+   week. Token: GLOBALPING_TOKEN, optional (higher hourly limit).
+3. The address of every entry still open, opened from GitHub: a page that answers 200 but is dead (parked or expired
+   domain, closure notice, site taken over by unrelated content) is listed too.
+Text read on a third-party page or probe is quoted as code, so that it can neither mention nor link anyone.
 
 Usage:
   links_issue.py REPORT [PREVIOUS_BODY] [--recheck] [--pages] [--state FILE] > body.md
@@ -23,7 +25,8 @@ Usage:
 """
 import concurrent.futures
 import datetime as dt
-import html
+import hashlib
+import html.parser
 import json
 import os
 import pathlib
@@ -35,6 +38,9 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from refresh import date_en  # noqa: E402  (one way of writing a date)
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LINE = re.compile(r"^\* \[[^\]]+\] <(?P<url>[^>]+)> \(at (?P<at>\d+:\d+)\) \| (?P<why>.*)$")
 FILE = re.compile(r"^### (?:Errors|Timeouts) in (?P<file>\S+)")
@@ -43,20 +49,24 @@ UA = "awesome-lego-links/1.0 (+https://github.com/actarus314/awesome-lego)"
 API = "https://api.globalping.io/v1"
 ACCEPT = {401, 403, 405, 429}   # as lychee in links.yml: a bot check, another method, a rate limit
 PROBES = [{"magic": "europe+eyeball", "limit": 2}, {"magic": "north america+eyeball", "limit": 1}]
-FALLBACK = [{"magic": "world", "limit": 3}]   # when too few eyeball probes are online
-PER_URL = 3   # tests of Globalping per link
+FALLBACK = [{"magic": "eyeball", "limit": 3}]   # when too few eyeball probes are online in those regions
+PER_URL = 3   # tests of Globalping per measurement
+MIN_READINGS = 2   # a link is broken only if at least 2 probes really read it
+HOPS = 3   # redirects followed
 PLATFORMS = ("youtube.com", "reddit.com", "github.com", "facebook.com", "instagram.com", "discord.gg", "discord.com",
              "x.com", "twitter.com", "tiktok.com", "flickr.com", "patreon.com", "twitch.tv")   # their pages never park
 
 # Dead pages that answer 200. Each pattern is matched case-insensitively.
-PARKED = [  # parking services, domain marketplaces, expired or suspended hosting
-    r"sedoparking\.com", r"parkingcrew\.net", r"bodis\.com", r"above\.com/marketplace", r"\bdan\.com/", r"afternic\.com",
-    r"hugedomains\.com", r"undeveloped\.com", r"nameshift\.com", r"domainmarket\.com", r"parklogic", r"/lander\b",
-    r"this domain (is|may be) for sale", r"buy this domain", r"domain (is )?parked", r"parked free",
-    r"le nom de domaine [^<]{0,80} est à vendre", r"ce (nom de )?domaine est à vendre", r"diese domain (steht zum verkauf|kaufen|ist zu verkaufen)",
+PARKED_SITE = [  # in the HTML: a parking service or a domain marketplace that serves the page
+    r"\bsedoparking\.com", r"\bparkingcrew\.net", r"\bbodis\.com", r"\bafternic\.com", r"\bhugedomains\.com",
+    r"\bundeveloped\.com", r"\bnameshift\.com", r"\bdomainmarket\.com", r"\bparklogic\.com",
+    r"location\.href\s*=\s*[\"']/lander[\"']"]
+PARKED_TEXT = [  # in the title, headings, description and the start of the text
+    r"this domain (is|may be) for sale", r"buy this domain", r"this domain is parked", r"parked free",
+    r"le nom de domaine \S+ est à vendre", r"ce (nom de )?domaine est à vendre", r"diese domain (steht zum verkauf|kaufen|ist zu verkaufen)",
     r"questo dominio è in vendita", r"este dominio (está a la venta|se vende)", r"deze domeinnaam is te koop",
-    r"this domain (name )?has expired", r"domain (name )?has expired", r"account (has been )?suspended", r"website expired"]
-CLOSED = [  # closure notices, looked for in the title, headings, description and the start of the text
+    r"this domain (name )?has expired", r"website expired", r"this account has been suspended"]
+CLOSED = [  # closure notices, in the title, headings, description and the start of the text
     r"permanently closed", r"closed permanently", r"closed for good", r"has closed (down|its doors)", r"we have (now )?closed",
     r"(is|are) no longer (trading|operating|in business)", r"ceased trading", r"shut down (permanently|for good)",
     r"(site|website|shop|store) (has been|is) (closed|discontinued|shut down)",
@@ -65,14 +75,22 @@ CLOSED = [  # closure notices, looked for in the title, headings, description an
     r"chiuso definitivamente", r"chiusura definitiva", r"cessata attività",
     r"cerrado (definitivamente|permanentemente)", r"cierre definitivo",
     r"definitief gesloten", r"permanent gesloten", r"lukket permanent", r"stängt permanent"]
-TAKEN = [  # unrelated content in the title, the description or the main heading: the domain changed hands
+TAKEN = [  # words of an unrelated trade in the title, the description or the main headings
     r"\bcasinos?\b", r"\bgambling\b", r"\bbetting\b", r"\bsportsbook\b", r"\bbookmakers?\b", r"\bpoker\b", r"\broulette\b",
-    r"\bblackjack\b", r"\bslot gacor\b", r"\btogel\b", r"\bjudi\b", r"\bporn", r"\bxxx\b", r"\bviagra\b", r"\bcialis\b",
-    r"\bescorts?\b", r"\bpayday loans?\b"]
+    r"\bblackjack\b", r"\bslot gacor\b", r"\btogel\b", r"\b(situs|judi) (judi|online|slot)\b", r"\bporn", r"\bxxx\b",
+    r"\bviagra\b", r"\bcialis\b", r"\bescorts?\b", r"\bpayday loans?\b"]
+# ... and none of the words of the bricks there: a brick model of a casino or of a Ford Escort is no take-over
+BRICKS = re.compile(r"lego|brick|briq|stein|mattonc|ladrill|klock|kostk|kock|minifig|\bmoc\b|afol|\blug\b|technic|duplo|klemm", re.I)
 
 
-def date_en(d):
-    return f"{d.day} {d:%B} {d.year}"
+def code(text):
+    """Third-party text as a code span: no mention, link or issue reference can come alive in the issue."""
+    t = re.sub(r"\s+", " ", str(text)).replace("`", "'").strip()
+    return f"`{t}`" if t else "``"
+
+
+def plural(n, one, many):
+    return f"{n} {one if n == 1 else many}"
 
 
 def failures(text):
@@ -112,45 +130,54 @@ def reason(result):
     """Short reason of one probe's answer."""
     if result.get("status") == "finished":
         return str(result.get("statusCode"))
-    raw = (result.get("rawOutput") or "").lower()
-    for key, text in (("enotfound", "name not found"), ("eai_again", "name not found"), ("timed out", "timed out"),
-                      ("etimedout", "timed out"), ("econnrefused", "connection refused"), ("enetunreach", "unreachable"),
-                      ("ehostunreach", "unreachable"), ("econnreset", "connection reset"), ("certificate", "certificate error"),
-                      ("tls", "TLS error"), ("ssl", "TLS error")):
-        if key in raw:
+    raw = (result.get("rawOutput") or "").strip()
+    for pattern, text in ((r"ENOTFOUND|EAI_AGAIN", "name not found"), (r"timed out|ETIMEDOUT", "timed out"),
+                          (r"ECONNREFUSED", "connection refused"), (r"ENETUNREACH|EHOSTUNREACH", "unreachable"),
+                          (r"ECONNRESET", "connection reset"), (r"certificate|CERT_", "certificate error"),
+                          (r"\b(TLS|SSL)\b|EPROTO", "TLS error")):
+        if re.search(pattern, raw, re.I):
             return text
-    return raw.strip().splitlines()[0][:60] if raw.strip() else result.get("status", "?")
+    return code(raw.splitlines()[0][:60]) if raw else result.get("status", "?")
 
 
 def alive(result):
-    code = result.get("statusCode") if result.get("status") == "finished" else None
-    return code is not None and (200 <= code < 400 or code in ACCEPT)
+    c = result.get("statusCode") if result.get("status") == "finished" else None
+    return c is not None and (200 <= c < 300 or c in ACCEPT)
+
+
+def location(result):
+    c = result.get("statusCode") if result.get("status") == "finished" else None
+    if c is None or not 300 <= c < 400:
+        return None
+    loc = next((v for k, v in (result.get("headers") or {}).items() if k.lower() == "location"), None)
+    return loc[0] if isinstance(loc, list) else loc
 
 
 def verdict(results):
-    """("alive" | "down" | "tls" | "unchecked", reasons of the probes, (kind, evidence) of a dead page or None).
-    A failure of the probe itself (failureSource internal) does not count. "tls": every probe failed on the secure
-    connection, as GitHub did; the checkers' TLS libraries refuse servers that browsers often still open (seen on
-    vodio.fr, 24/11/2026), so this is not counted as broken."""
+    """("alive" | "down" | "tls" | "unchecked" | "redirect", reasons of the probes, (kind, evidence) of a dead page,
+    or for "redirect" the address it leads to). A failure of the probe itself (failureSource internal) does not count,
+    and fewer than MIN_READINGS readings judge nothing. "tls": every probe failed on the secure connection, as GitHub
+    did; the checkers' TLS libraries refuse servers that browsers often still open (seen on vodio.fr, 24/11/2026)."""
     rs = [x for r in results for x in [r.get("result", {})]
           if x.get("status") == "finished" or (x.get("status") == "failed" and x.get("failureSource") != "internal")]
-    if not rs:
-        return "unchecked", [], None
-    found = next((f for r in rs if r.get("statusCode") == 200 and r.get("rawBody") for f in [classify(r["rawBody"])] if f), None)
     reasons = [reason(r) for r in rs]
     if any(alive(r) for r in rs):
+        found = next((f for r in rs if r.get("statusCode") == 200 and r.get("rawBody") for f in [classify(r["rawBody"])] if f), None)
         return "alive", reasons, found
+    target = next((loc for r in rs for loc in [location(r)] if loc), None)
+    if target:
+        return "redirect", reasons, target
+    if any(300 <= (r.get("statusCode") or 0) < 400 for r in rs):
+        return "alive", reasons, None   # a redirect without an address: the server answers
+    if len(rs) < MIN_READINGS:
+        return "unchecked", reasons, None
     return ("tls" if all(x in ("TLS error", "certificate error") for x in reasons) else "down"), reasons, None
 
 
-def recheck(urls, token=None, api=_api, sleep=time.sleep):
-    """{url: (verdict, reasons, dead page)} from Globalping; links over the hourly limit are left out (unchecked)."""
-    try:
-        left = api("/limits", token=token)["rateLimit"]["measurements"]["create"]["remaining"]
-    except Exception:
-        left = 0
-    out, ids = {}, {}
-    for url in urls[: max(0, left) // PER_URL]:
+def _measure(urls, token, api, sleep):
+    """{url: results} of one Globalping measurement per link; a link with no suitable probe is left out."""
+    ids, out = {}, {}
+    for url in urls:
         for locations in (PROBES, FALLBACK):
             try:
                 ids[url] = api("/measurements", dict(_request(url), locations=locations), token)["id"]
@@ -167,36 +194,115 @@ def recheck(urls, token=None, api=_api, sleep=time.sleep):
             except Exception:
                 break
             if m.get("status") != "in-progress":
-                out[url] = verdict(m.get("results", []))
+                out[url] = m.get("results", [])
                 break
             sleep(0.6)   # the API asks for 500 ms between two reads of one measurement
     return out
 
 
+def recheck(urls, token=None, api=_api, sleep=time.sleep):
+    """{url: (verdict, readings, dead page or None)} from Globalping, redirects followed (readings: one line per
+    address read); links over the hourly limit are left out (unchecked)."""
+    try:
+        left = api("/limits", token=token)["rateLimit"]["measurements"]["create"]["remaining"]
+    except Exception:
+        left = 0
+    out, path, current = {}, {u: [] for u in urls}, {u: u for u in urls}
+    pending = list(urls)
+    for hop in range(HOPS + 1):
+        pending = pending[: max(0, left) // PER_URL]
+        if not pending:
+            break
+        left -= PER_URL * len(pending)
+        results = _measure([current[u] for u in pending], token, api, sleep)
+        nxt = []
+        for u in pending:
+            if current[u] not in results:
+                continue
+            v, reasons, extra = verdict(results[current[u]])
+            if v == "redirect" and hop < HOPS:
+                current[u] = urllib.parse.urljoin(current[u], extra)
+                path[u].append(f"{', '.join(reasons)} to {current[u]}")
+                nxt.append(u)
+                continue
+            if v == "redirect":
+                v, extra = "alive", None   # still redirecting after HOPS: the server answers
+            out[u] = (v, [*path[u], ", ".join(reasons)], extra)   # one line per address read: "301, 301, 301 to …", "404, 404, 404"
+        pending = nxt
+    return out
+
+
 # --- Dead pages that answer 200 ---------------------------------------------------------------------------------
+
+class _Reader(html.parser.HTMLParser):
+    """Title, description, headings and visible text of a page, in one linear pass."""
+    SKIP = {"script", "style", "noscript", "svg", "template"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.title, self.desc, self.heads, self.text, self.skip, self.where = [], "", [], [], 0, []
+
+    def handle_starttag(self, tag, attrs):
+        if tag in self.SKIP:
+            self.skip += 1
+        elif tag == "meta":
+            a = {k.lower(): (v or "") for k, v in attrs}
+            if (a.get("name") or a.get("property") or "").lower() in ("description", "og:description") and not self.desc:
+                self.desc = a.get("content", "")
+        self.where.append(tag)
+
+    def handle_startendtag(self, tag, attrs):   # <svg ... />, <meta ... />: nothing to skip
+        if tag == "meta":
+            self.handle_starttag(tag, attrs)
+            self.where.pop()
+
+    def handle_endtag(self, tag):
+        if tag in self.SKIP and self.skip:
+            self.skip -= 1
+        while self.where and self.where.pop() != tag:
+            pass
+
+    def handle_data(self, data):
+        if self.skip:
+            return
+        if "title" in self.where:
+            self.title.append(data)
+        elif any(t in ("h1", "h2") for t in self.where):
+            self.heads.append(data)
+        if sum(map(len, self.text)) < 3000:
+            self.text.append(data)
+
 
 def _text(page):
     """(title, description, headings, start of the visible text) of an HTML page."""
-    t = re.search(r"<title[^>]*>(.*?)</title>", page, re.S | re.I)
-    d = re.search(r"<meta[^>]+(?:name|property)=[\"'](?:og:)?description[\"'][^>]*content=[\"']([^\"']*)", page, re.I)
-    heads = " ".join(re.findall(r"<h[12][^>]*>(.*?)</h[12]>", page, re.S | re.I))
-    body = re.sub(r"<(script|style|noscript|svg)[^>]*>.*?</\1>", " ", page, flags=re.S | re.I)
-    clean = lambda s: html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", s or ""))).strip()
-    return clean(t.group(1) if t else ""), clean(d.group(1) if d else ""), clean(heads), clean(body)[:3000]
+    r = _Reader()
+    try:
+        r.feed(page)
+        r.close()
+    except Exception:
+        pass
+    clean = lambda s: re.sub(r"\s+", " ", s).strip()
+    return clean(" ".join(r.title)), clean(r.desc), clean(" ".join(r.heads)), clean(" ".join(r.text))[:3000]
 
 
 def classify(page):
     """(kind, evidence) for a dead page, else None. Kinds: parked or expired, taken over, closed."""
     title, desc, heads, start = _text(page)
-    for p in PARKED:
+    seen = f"{title} | {desc} | {heads} | {start}"
+    for p in PARKED_SITE:
         if m := re.search(p, page, re.I):
-            return "parked or expired", m.group(0)
-    for p in TAKEN:
-        if m := re.search(p, f"{title} | {desc} | {heads}", re.I):
-            return "taken over", f"{m.group(0)}: “{(title or desc)[:90]}”"
+            return "parked or expired", code(m.group(0))
+    for p in PARKED_TEXT:
+        if m := re.search(p, seen, re.I):
+            return "parked or expired", code(m.group(0))
+    top = f"{title} | {desc} | {heads}"
+    if not BRICKS.search(top):
+        for p in TAKEN:
+            if m := re.search(p, top, re.I):
+                return "taken over", f"{code(m.group(0))} in {code((title or desc)[:90])}"
     for p in CLOSED:
-        if m := re.search(p, f"{title} | {desc} | {heads} | {start}", re.I):
-            return "closed", m.group(0)
+        if m := re.search(p, seen, re.I):
+            return "closed", code(m.group(0))
     return None
 
 
@@ -209,10 +315,10 @@ def _fetch(url):
         return raw.decode(r.headers.get_content_charset() or "utf-8", "replace")
 
 
-def entries():
+def entries(root=ROOT):
     """[(id, url)] of every entry still open (status archived or dead left out), platforms left out."""
     out = []
-    for path in sorted((ROOT / "data").glob("*.toml")):
+    for path in sorted((root / "data").glob("*.toml")):
         for r in tomllib.loads(path.read_text(encoding="utf-8")).get("resource", []):
             host = (urllib.parse.urlsplit(r["url"]).hostname or "").removeprefix("www.")
             if r.get("status") not in ("archived", "dead") and not any(host == p or host.endswith("." + p) for p in PLATFORMS):
@@ -233,52 +339,77 @@ def dead_pages(items, fetch=_fetch):
         return sorted(x for x in pool.map(one, items) if x)
 
 
+def order_for_recheck(urls, previous, today=None):
+    """Links that failed in the previous run first, then the others in an order that changes each week, so that an
+    hourly limit never leaves the same links out week after week."""
+    today = today or dt.date.today()
+    week = today.isocalendar()[:2]
+    key = lambda u: hashlib.sha256(f"{week}{u}".encode()).hexdigest()
+    before = set(re.findall(r"<(https?://[^>]+)>", previous))
+    return [u for u in urls if u in before] + sorted((u for u in urls if u not in before), key=key)
+
+
 # --- Issue body -------------------------------------------------------------------------------------------------
 
 def body(report, previous="", rechecked=None, dead=(), today=None):
-    """(text, needs_a_person). rechecked=None: Globalping was not asked."""
+    """(text, needs_a_person). rechecked=None: Globalping was not asked. A person is needed for a broken link,
+    a dead page, or a link that failed twice in a row and could not be opened again."""
     today = today or dt.date.today()
     now = failures(report)
     before = set(re.findall(r"<(https?://[^>]+)>", previous))
     rechecked = rechecked if rechecked is not None else {}
+    v = lambda u: rechecked.get(u, ("unchecked",))[0]
     at = lambda u: f"{now[u][0]} {now[u][1]}"
-    broken = [u for u in now if rechecked.get(u, ("",))[0] == "down"]
-    alive_dead = [(u, at(u), *rechecked[u][2]) for u in now if rechecked.get(u, ("",))[0] == "alive" and rechecked[u][2]]
-    blocked = [u for u in now if rechecked.get(u, ("",))[0] == "alive" and not rechecked[u][2]]
-    tls = [u for u in now if rechecked.get(u, ("",))[0] == "tls"]
-    dead = sorted(set(dead) | {x for x in alive_dead if x[0] not in {d[0] for d in dead}})   # read by Globalping when GitHub could not
-    unchecked = [u for u in now if rechecked.get(u, ("",))[0] not in ("down", "alive", "tls")]
+    gh = lambda u: code(now[u][2])
+    gp = lambda u: "; ".join(rechecked[u][1])
     order = lambda us: sorted(us, key=lambda u: now[u][:2])
-    gp = lambda u: ", ".join(rechecked[u][1])
-    again = lambda u: " | also last week" if u in before else ""
-    out = [f"{len(now)} links failed from the machines of GitHub on {date_en(today)}"
-           + (f"; {len(now) - len(unchecked)} were opened again from 3 probes of Globalping, on home and office networks."
-              if len(now) - len(unchecked) else "."), ""]
-    if broken:
-        out += ["## Broken: they fail from GitHub and from every probe", ""]
-        out += [f"* <{u}> ({at(u)}) | GitHub: {now[u][2]} | Globalping: {gp(u)}{again(u)}" for u in order(broken)] + [""]
-    if dead:
-        out += ["## They answer, but the page is dead", ""]
-        out += [f"* <{u}> ({where}) | {kind}: {ev}{again(u)}" for u, where, kind, ev in dead] + [""]
-    if unchecked:
-        twice = [u for u in unchecked if u in before]
-        once = [u for u in unchecked if u not in before]
-        out += ["## Not opened again (Globalping unavailable or over its hourly limit)", "",
-                "Some sites refuse the machines of GitHub but open in a browser: open a link before changing its entry.", ""]
-        for title, urls in (("Failed twice in a row", twice), ("Failed in this run only", once)):
+    again = lambda u: " | also in the previous run" if u in before else ""
+    broken = [u for u in now if v(u) == "down"]
+    alive_dead = [(u, at(u), *rechecked[u][2]) for u in now if v(u) == "alive" and rechecked[u][2]]
+    blocked = [u for u in now if v(u) == "alive" and not rechecked[u][2]]
+    tls = [u for u in now if v(u) == "tls"]
+    unchecked = [u for u in now if v(u) not in ("down", "alive", "tls")]
+    known = {d[0] for d in dead}
+    dead = sorted([*dead, *(x for x in alive_dead if x[0] not in known)])   # read by Globalping when GitHub could not
+    opened = len(now) - len(unchecked)
+    twice = [u for u in unchecked if u in before]
+    once = [u for u in unchecked if u not in before]
+
+    def text(fold):
+        out = [(f"{plural(len(now), 'link', 'links')} failed from the machines of GitHub on {date_en(today)}"
+                + (f"; {opened} {'was' if opened == 1 else 'were'} opened again from probes of Globalping on home and office networks."
+                   if opened else ".")) if now else f"Every link answers from the machines of GitHub ({date_en(today)}).", ""]
+        if broken:
+            out += ["## Broken: they fail from GitHub and from every probe", ""]
+            out += [f"* <{u}> ({at(u)}) | GitHub: {gh(u)} | Globalping: {gp(u)}{again(u)}" for u in order(broken)] + [""]
+        if dead:
+            out += ["## They answer, but the page is dead", ""]
+            out += [f"* <{u}> ({where}) | {kind}: {ev}{again(u)}" for u, where, kind, ev in dead] + [""]
+        if unchecked:
+            out += ["## Not opened again (Globalping unavailable or over its hourly limit)", "",
+                    "Some sites refuse the machines of GitHub but open in a browser: open a link before changing its entry.", ""]
+            for title, urls in (("Failed twice in a row", twice), ("Failed in this run only", once)):
+                if urls:
+                    out += [f"### {title}", ""] + [f"* <{u}> ({at(u)}) | {gh(u)}" for u in order(urls)] + [""]
+        for urls, summary in ((blocked, f"They block GitHub, alive according to Globalping on {date_en(today)}"),
+                              (tls, "Their secure connection is refused by GitHub and by Globalping; a browser often still opens them")):
             if urls:
-                out += [f"### {title}", ""] + [f"* <{u}> ({at(u)}) | {now[u][2]}" for u in order(urls)] + [""]
-    if blocked:
-        out += [f"<details><summary>They block GitHub, alive according to Globalping on {date_en(today)} ({len(blocked)})</summary>", ""]
-        out += [f"* <{u}> ({at(u)}) | GitHub: {now[u][2]} | Globalping: {gp(u)}" for u in order(blocked)] + ["", "</details>", ""]
-    if tls:
-        out += [f"<details><summary>Their secure connection is refused by GitHub and by Globalping; a browser often still opens them ({len(tls)})</summary>", ""]
-        out += [f"* <{u}> ({at(u)}) | GitHub: {now[u][2]} | Globalping: {gp(u)}" for u in order(tls)] + ["", "</details>", ""]
-    if not now and not dead:
-        out = [f"Every link answers ({date_en(today)}).", ""]
-    text = "\n".join(out)
-    text = text if len(text) <= LIMIT else text[:LIMIT].rsplit("\n", 1)[0] + "\n\n(cut: too long for an issue)\n"
-    return text, bool(broken or dead or unchecked)
+                shown = order(urls)[:fold]
+                out += [f"<details><summary>{summary} ({len(urls)})</summary>", ""]
+                out += [f"* <{u}> ({at(u)}) | GitHub: {gh(u)} | Globalping: {gp(u)}" for u in shown]
+                out += ([f"* … and {len(urls) - len(shown)} more"] if len(shown) < len(urls) else []) + ["", "</details>", ""]
+        if not now and not dead:
+            out = [f"Every link answers ({date_en(today)}).", ""]
+        return "\n".join(out)
+
+    out = text(None)
+    for fold in (200, 50, 10, 0):   # the folded lists give way first
+        if len(out) <= LIMIT:
+            break
+        out = text(fold)
+    if len(out) > LIMIT:
+        out = out[:LIMIT].rsplit("\n", 1)[0] + "\n\n(cut: too long for an issue)\n"
+    return out, bool(broken or dead or twice)
 
 
 # --- Sample: the yardstick of the checks, read live --------------------------------------------------------------
@@ -299,11 +430,11 @@ def sample(path, token=None):
             pages[c["url"]] = classify(page) or ("healthy", "")
     down = recheck([c["url"] for c in cases if c["check"] == "globalping"] + unread, token)
     for u in unread:
-        v = down.pop(u, ("unchecked", [], None))
-        pages[u] = v[2] or (("healthy", "read by Globalping") if v[0] == "alive" else ("unread", ", ".join(v[1])))
+        x = down.pop(u, ("unchecked", [], None))
+        pages[u] = x[2] or (("healthy", "read by Globalping") if x[0] == "alive" else ("unread", "; ".join(x[1])))
     bad = 0
     for c in cases:
-        got, detail = (down.get(c["url"], ("unchecked", []))[0], down.get(c["url"], ("", []))[1]) if c["check"] == "globalping" else pages[c["url"]]
+        got, detail = (down.get(c["url"], ("unchecked", []))[0], "; ".join(down.get(c["url"], ("", []))[1])) if c["check"] == "globalping" else pages[c["url"]]
         ok = got in (c["expected"] if isinstance(c["expected"], list) else [c["expected"]])
         bad += not ok
         print(f"{'ok ' if ok else 'BAD'} {c['url']}: {got} (expected {c['expected']}) {detail}")
@@ -315,13 +446,11 @@ def main(argv):
     token = os.environ.get("GLOBALPING_TOKEN") or None
     if argv[:1] == ["--sample"]:
         return sample(argv[1], token)
-    args = [a for a in argv if not a.startswith("--")]
     state = argv[argv.index("--state") + 1] if "--state" in argv else None
-    if state in args:
-        args.remove(state)
-    report = pathlib.Path(args[0]).read_text(encoding="utf-8") if args and pathlib.Path(args[0]).exists() else ""
-    previous = pathlib.Path(args[1]).read_text(encoding="utf-8") if len(args) > 1 and pathlib.Path(args[1]).exists() else ""
-    rechecked = recheck(list(failures(report)), token) if "--recheck" in argv else None
+    args = [a for i, a in enumerate(argv) if not a.startswith("--") and not (i and argv[i - 1] == "--state")]
+    read = lambda i: pathlib.Path(args[i]).read_text(encoding="utf-8") if len(args) > i and pathlib.Path(args[i]).exists() else ""
+    report, previous = read(0), read(1)
+    rechecked = recheck(order_for_recheck(list(failures(report)), previous), token) if "--recheck" in argv else None
     dead = dead_pages(entries()) if "--pages" in argv else ()
     text, needed = body(report, previous, rechecked, dead)
     if state:

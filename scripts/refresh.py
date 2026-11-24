@@ -37,6 +37,8 @@ OUT = ROOT / "data" / "metrics.json"
 UA = "awesome-lego-refresh/1.0 (+https://github.com/actarus314/awesome-lego)"
 TODAY = dt.date.today()
 SITE_DATA = "https://actarus314.github.io/awesome-lego/data.json"
+IDLE_DAYS = 183   # an entry of regime activity is no longer eligible for the selection after 6 months without activity
+LIMIT = 60000   # body of the monthly report: the rest of the issue, trends included, must fit in 65536 characters
 
 
 def site_metrics():
@@ -107,7 +109,7 @@ def score(r, last):
     if r.get("_regime", "activity") == "operating":
         last = str(r.get("checked") or "")  # open or closed: what counts is a recent check at the source
     days = (TODAY - dt.date.fromisoformat(last)).days if last else None
-    act = 0 if days is None else 3 if days <= 30 else 2 if days <= 90 else 1 if days <= 183 else 0
+    act = 0 if days is None else 3 if days <= 30 else 2 if days <= 90 else 1 if days <= IDLE_DAYS else 0
     if r.get("_regime") == "work":
         act = 2  # a finished work does not age by its date; its review keeps it or archives it
     conf = {"high": 2, "medium": 1}.get(r.get("confidence"), 0)
@@ -195,8 +197,9 @@ def read(r, old, token):
     return m, None
 
 
-def date_en(iso):
-    d = dt.date.fromisoformat(iso)
+def date_en(day):
+    """A date as the website and the reports write it: "24 November 2026" (a date or an ISO string)."""
+    d = dt.date.fromisoformat(day) if isinstance(day, str) else day
     return f"{d.day} {d:%B} {d.year}"
 
 
@@ -207,6 +210,8 @@ def since(iso):
 
 def month_changes(days, ids):
     """What changed during the month in the daily measurements of the `history` branch: (heading line, items)."""
+    if days is None:
+        return "The `history` branch could not be read this month.", []
     if not days:
         return "No measurements kept on the `history` branch yet.", []
     names = list(days)
@@ -219,7 +224,7 @@ def month_changes(days, ids):
     newly = [i for i in sorted(set(a) & set(b)) if b[i].get("archived") and not a[i].get("archived")]
     came = sorted(set(b) - set(a))
     left = sorted(i for i in set(a) - set(b) if i in ids)   # an entry removed from the data is not a change of the month
-    for label, xs in (("Status changes (active up to 6 months, slowing up to 12, then inactive)", moved),
+    for label, xs in (("Status changes (active up to 6 months, slow up to 12, then inactive)", moved),
                       ("Archived on GitHub during the month", newly), ("Measured for the first time", came),
                       ("No longer measured though still in the data", left)):
         items.append(f"- {label}: {', '.join(xs) or 'none'}")
@@ -230,7 +235,7 @@ def month_changes(days, ids):
 def archived_since(days, i):
     """First day of the last unbroken run of `archived` in the history, with 'at least' when it starts the history."""
     run = None
-    for d, m in days.items():
+    for d, m in (days or {}).items():
         run = (run or d) if (m.get(i) or {}).get("archived") else None
     if not run:
         return None
@@ -243,12 +248,25 @@ def links_blocking(text):
     return (m.group(1), [l for l in m.group(2).strip().splitlines() if l.startswith("* ")]) if m else (None, [])
 
 
-def guard(previous, ids):
-    """Items of this report already listed in the previous one: {kind: [ids]}."""
+def report_ids(previous):
+    """The items listed by a monthly report, kept in its last line: {"month", "date", "ids", "base"}."""
     m = re.search(r"<!-- report-ids (\{.*?\}) -->", previous or "")
-    before = json.loads(m.group(1)) if m else {}
-    date = re.search(r"Monthly data report: ([0-9]{1,2} \w+ [0-9]{4})", previous or "")
-    return (date.group(1) if date else None), {k: sorted(set(v) & set(before.get(k, []))) for k, v in ids.items() if set(v) & set(before.get(k, []))}
+    try:
+        return json.loads(m.group(1)) if m else {}
+    except ValueError:
+        return {}
+
+
+def guard(previous, ids):
+    """(date of the report compared with, {kind: [ids]} of this report already listed there, base to keep).
+    A report written again in the same month (a run started by hand) compares with the report it replaces had as
+    its own base, so that the guard always looks one month back."""
+    prev = report_ids(previous)
+    base = prev.get("base") if prev.get("month") == TODAY.isoformat()[:7] else prev
+    base = {k: base[k] for k in ("month", "date", "ids") if k in base} if base else {}
+    before = base.get("ids", {})
+    kept = {k: sorted(set(v) & set(before.get(k, []))) for k, v in ids.items() if set(v) & set(before.get(k, []))}
+    return base.get("date"), kept, base
 
 
 def arg(name):
@@ -271,7 +289,7 @@ def main():
         try:
             days = trends.snapshots()
         except Exception:
-            days = {}   # never loses the rest of the report
+            days = None   # never loses the rest of the report; said in its section
     new, failed, archived, stale, unfeature = {}, [], [], [], []
     token = os.environ.get("GITHUB_TOKEN")
     entries = [dict(r, _cat=path.stem, _regime=regime(r, d.get("category", {}))) for path in sorted((ROOT / "data").glob("*.toml"))
@@ -289,12 +307,12 @@ def main():
         if m:
             new[r["id"]] = {k: v for k, v in m.items() if v is not None}
         last = (new.get(r["id"]) or {}).get("last_activity") or str(r.get("last_activity") or "")
-        idle = r["_regime"] == "activity" and last and (TODAY - dt.date.fromisoformat(last)).days > 183
+        idle = r["_regime"] == "activity" and last and (TODAY - dt.date.fromisoformat(last)).days > IDLE_DAYS
         gone = (new.get(r["id"]) or {}).get("archived")
         if selected(r) and (idle or gone or r.get("status") != "active" or r.get("confidence") == "low"):
             why = []
             if idle:
-                why.append("inactive " + since((dt.date.fromisoformat(last) + dt.timedelta(days=184)).isoformat()) if month else f"last activity {last}")
+                why.append("inactive " + since((dt.date.fromisoformat(last) + dt.timedelta(days=IDLE_DAYS + 1)).isoformat()) if month else f"last activity {last}")
             if gone:
                 why.append("archived " + (archived_since(days, r["id"]) or "on GitHub") if month else "archived")
             if r.get("status") != "active":
@@ -311,7 +329,7 @@ def main():
              else f"Automatic refresh: {TODAY.isoformat()}", ""]
     ids = {"read failures": [i for i, _, _ in failed], "no longer eligible": [i for i, _ in unfeature], "archived": archived}
     if month:
-        when, kept = guard(arg("--previous"), ids)
+        when, kept, base = guard(arg("--previous"), ids)
         lines += [("**Guard: still listed since the report of " + (when or "last month") + ":** "
                    + "; ".join(f"{k}: {', '.join(v)}" for k, v in kept.items())) if kept
                   else "**Guard:** nothing carried over from the previous report.", ""]
@@ -336,13 +354,19 @@ def main():
         lines += ["", "### Changes during the month", "", head, *([""] + items if items else [])]
         title, blocking = links_blocking(arg("--links"))
         lines += ["", "### Links that block GitHub", "",
-                  *((f"{title}, from the links issue:", "", *blocking) if blocking else ("None listed in the links issue.",))]
+                  *((f"{title}, from the links issue:", "", *blocking) if blocking
+                    else ("None listed in the links issue." if arg("--links").strip() else "No links issue found.",))]
     lines += ["", "### Reliability of the directory", "",
               "Confidence of the entries (high: read at the source; medium: indexed or third-party; low: single weak source) and kinds of their sources, per category.", "",
               *reliability(rows)]
     if month:
-        lines += ["", f"<!-- report-ids {json.dumps(ids, sort_keys=True)} -->"]
-    print("\n".join(lines))
+        lines += ["", "<!-- report-ids " + json.dumps({"month": TODAY.isoformat()[:7], "date": date_en(TODAY), "ids": ids, "base": base},
+                                                      sort_keys=True, ensure_ascii=False) + " -->"]
+    text = "\n".join(lines)
+    if len(text) > LIMIT:   # an issue body holds 65536 characters at most; the ids line stays
+        tail = text[text.rindex("<!-- report-ids"):] if month else ""
+        text = text[: LIMIT - len(tail) - 40].rsplit("\n", 1)[0] + "\n\n(cut: too long for an issue)\n\n" + tail
+    print(text)
     return 0
 
 
