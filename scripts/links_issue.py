@@ -7,8 +7,10 @@ Three readings, from three places:
    again from 3 probes, on home and office networks when there are enough ("eyeball" probes: 2 in Europe, 1 in
    North America). A link that fails from every probe is broken. A link that answers somewhere blocks the machines
    of GitHub and is alive: it goes to a short list, never to the broken links. Redirects count as alive (Data fixes
-   replaces addresses that moved for good). Token: GLOBALPING_TOKEN, optional (higher hourly limit).
-3. The address of every entry, opened from GitHub: a page that answers 200 but is dead (parked domain, closure
+   replaces addresses that moved for good). A link whose secure connection every probe refuses goes to a second short
+   list (browsers often still open it); a failure of the probe itself is not counted. Token: GLOBALPING_TOKEN,
+   optional (higher hourly limit).
+3. The address of every entry still open, opened from GitHub: a page that answers 200 but is dead (parked domain, closure
    notice, site taken over by unrelated content) is listed too.
 Without Globalping (limit reached, service down), the failures keep the old order: failed twice in a row first.
 
@@ -126,12 +128,19 @@ def alive(result):
 
 
 def verdict(results):
-    """("alive" | "down" | "unchecked", reasons of the probes, (kind, evidence) of a dead page or None)."""
-    rs = [r.get("result", {}) for r in results if r.get("result", {}).get("status") in ("finished", "failed")]
+    """("alive" | "down" | "tls" | "unchecked", reasons of the probes, (kind, evidence) of a dead page or None).
+    A failure of the probe itself (failureSource internal) does not count. "tls": every probe failed on the secure
+    connection, as GitHub did; the checkers' TLS libraries refuse servers that browsers often still open (seen on
+    vodio.fr, 24/11/2026), so this is not counted as broken."""
+    rs = [x for r in results for x in [r.get("result", {})]
+          if x.get("status") == "finished" or (x.get("status") == "failed" and x.get("failureSource") != "internal")]
     if not rs:
         return "unchecked", [], None
     found = next((f for r in rs if r.get("statusCode") == 200 and r.get("rawBody") for f in [classify(r["rawBody"])] if f), None)
-    return ("alive" if any(alive(r) for r in rs) else "down"), [reason(r) for r in rs], found
+    reasons = [reason(r) for r in rs]
+    if any(alive(r) for r in rs):
+        return "alive", reasons, found
+    return ("tls" if all(x in ("TLS error", "certificate error") for x in reasons) else "down"), reasons, None
 
 
 def recheck(urls, token=None, api=_api, sleep=time.sleep):
@@ -201,12 +210,12 @@ def _fetch(url):
 
 
 def entries():
-    """[(id, url)] of every entry, platforms left out."""
+    """[(id, url)] of every entry still open (status archived or dead left out), platforms left out."""
     out = []
     for path in sorted((ROOT / "data").glob("*.toml")):
         for r in tomllib.loads(path.read_text(encoding="utf-8")).get("resource", []):
             host = (urllib.parse.urlsplit(r["url"]).hostname or "").removeprefix("www.")
-            if not any(host == p or host.endswith("." + p) for p in PLATFORMS):
+            if r.get("status") not in ("archived", "dead") and not any(host == p or host.endswith("." + p) for p in PLATFORMS):
                 out.append((r["id"], r["url"]))
     return out
 
@@ -236,8 +245,9 @@ def body(report, previous="", rechecked=None, dead=(), today=None):
     broken = [u for u in now if rechecked.get(u, ("",))[0] == "down"]
     alive_dead = [(u, at(u), *rechecked[u][2]) for u in now if rechecked.get(u, ("",))[0] == "alive" and rechecked[u][2]]
     blocked = [u for u in now if rechecked.get(u, ("",))[0] == "alive" and not rechecked[u][2]]
+    tls = [u for u in now if rechecked.get(u, ("",))[0] == "tls"]
     dead = sorted(set(dead) | {x for x in alive_dead if x[0] not in {d[0] for d in dead}})   # read by Globalping when GitHub could not
-    unchecked = [u for u in now if rechecked.get(u, ("",))[0] not in ("down", "alive")]
+    unchecked = [u for u in now if rechecked.get(u, ("",))[0] not in ("down", "alive", "tls")]
     order = lambda us: sorted(us, key=lambda u: now[u][:2])
     gp = lambda u: ", ".join(rechecked[u][1])
     again = lambda u: " | also last week" if u in before else ""
@@ -261,6 +271,9 @@ def body(report, previous="", rechecked=None, dead=(), today=None):
     if blocked:
         out += [f"<details><summary>They block GitHub, alive according to Globalping on {date_en(today)} ({len(blocked)})</summary>", ""]
         out += [f"* <{u}> ({at(u)}) | GitHub: {now[u][2]} | Globalping: {gp(u)}" for u in order(blocked)] + ["", "</details>", ""]
+    if tls:
+        out += [f"<details><summary>Their secure connection is refused by GitHub and by Globalping; a browser often still opens them ({len(tls)})</summary>", ""]
+        out += [f"* <{u}> ({at(u)}) | GitHub: {now[u][2]} | Globalping: {gp(u)}" for u in order(tls)] + ["", "</details>", ""]
     if not now and not dead:
         out = [f"Every link answers ({date_en(today)}).", ""]
     text = "\n".join(out)
@@ -271,17 +284,29 @@ def body(report, previous="", rechecked=None, dead=(), today=None):
 # --- Sample: the yardstick of the checks, read live --------------------------------------------------------------
 
 def sample(path, token=None):
-    """Reads each address of the sample and compares the verdict with the expected one."""
+    """Reads each address of the sample and compares the verdict with the expected one (a list: any of them).
+    A page that cannot be opened from here is read by Globalping, as the links issue does for a failure."""
     cases = json.loads(pathlib.Path(path).read_text(encoding="utf-8"))["cases"]
-    down = recheck([c["url"] for c in cases if c["check"] == "globalping"], token)
-    pages = {u: (k, e) for u, _, k, e in dead_pages([(c["url"], c["url"]) for c in cases if c["check"] == "page"])}
+    pages, unread = {}, []
+    for c in (c for c in cases if c["check"] == "page"):
+        try:
+            page = _fetch(c["url"])
+        except Exception:
+            page = None
+        if page is None:
+            unread.append(c["url"])
+        else:
+            pages[c["url"]] = classify(page) or ("healthy", "")
+    down = recheck([c["url"] for c in cases if c["check"] == "globalping"] + unread, token)
+    for u in unread:
+        v = down.pop(u, ("unchecked", [], None))
+        pages[u] = v[2] or (("healthy", "read by Globalping") if v[0] == "alive" else ("unread", ", ".join(v[1])))
     bad = 0
     for c in cases:
-        got = down.get(c["url"], ("unchecked", []))[0] if c["check"] == "globalping" else pages.get(c["url"], ("healthy",))[0]
-        ok = got == c["expected"]
+        got, detail = (down.get(c["url"], ("unchecked", []))[0], down.get(c["url"], ("", []))[1]) if c["check"] == "globalping" else pages[c["url"]]
+        ok = got in (c["expected"] if isinstance(c["expected"], list) else [c["expected"]])
         bad += not ok
-        print(f"{'ok ' if ok else 'BAD'} {c['url']}: {got} (expected {c['expected']})"
-              + (f" {down[c['url']][1]}" if c["url"] in down else f" {pages[c['url']][1]}" if c["url"] in pages else ""))
+        print(f"{'ok ' if ok else 'BAD'} {c['url']}: {got} (expected {c['expected']}) {detail}")
     print(f"{len(cases) - bad}/{len(cases)} as expected")
     return 1 if bad else 0
 

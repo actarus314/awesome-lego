@@ -2,6 +2,9 @@
 
 # v2.x — The directory read at the source down to its links: which brands each entry deals with, how it is funded, who makes the bricks; a website in three views, directory, out and about, observatory.
 
+## v2.18 — 2026-11-24
+Automation: each link that fails from the machines of GitHub is opened again from 3 probes of Globalping, on home and office networks; the links issue lists as broken only what fails everywhere, folds into two short lists the links that only block GitHub and those whose secure connection the checkers refuse (a browser often still opens them), skips the failures of a probe itself, and also lists the pages that answer but are dead (parked or expired domain, site taken over by unrelated content, closure notice), checked against a yardstick of real addresses (`tests/links-sample.json`). The weekly data report is replaced by a monthly one, written the day before the monthly review, with a guard line for what the previous report already listed, how long each read failure and each ineligibility has lasted, what changed during the month and the links that block GitHub; the Weekly data report issue is closed. Data fixes no longer runs on Tuesdays: it starts when the weekly Links run ends. MAINTENANCE.md lists the owner's tasks: what, where, when, how, and what happens when one waits.
+
 ## v2.17 — 2026-11-24
 Website: the group of a card is back beside the entry's name, on one line, in a short form (`short_en`, `short_fr` of a group, 17 characters at most, required by the build when the name is longer); a long entry name wraps under it instead. The rendering check fails on a group label that is not on the first line, beside the name.
 

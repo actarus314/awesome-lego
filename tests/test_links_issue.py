@@ -57,6 +57,10 @@ class Globalping(unittest.TestCase):
         self.assertEqual(v([probe(code=301)] * 3)[0], "alive")   # a redirect: left to Data fixes
         self.assertEqual(v([probe(code=403)] * 3)[0], "alive")   # a bot check, as lychee
         self.assertEqual(v([probe("offline")] * 3)[0], "unchecked")
+        internal = {"result": {"status": "failed", "failureSource": "internal", "rawOutput": "The probe reported an invalid result."}}
+        self.assertEqual(v([internal] * 3)[0], "unchecked")   # a failure of the probe, not of the site
+        self.assertEqual(v([internal, probe("failed", raw="queryA ENOTFOUND x")])[:2], ("down", ["name not found"]))
+        self.assertEqual(v([probe("failed", raw="Client network socket disconnected before secure TLS connection")] * 3)[0], "tls")
         casino = "<html><head><title>Goldspin Casino France</title></head><body>Spins</body></html>"
         self.assertEqual(v([probe(code=200, body=casino)])[2][0], "taken over")
 
@@ -74,6 +78,13 @@ class Globalping(unittest.TestCase):
         self.assertIn("<https://a.example/>", blocked)
         self.assertNotIn("Not opened again", text)
         self.assertTrue(needed)
+
+    def test_refused_secure_connections_are_folded(self):
+        rechecked = {u: ("tls", ["TLS error"] * 3, None) for u in ("https://a.example/", "https://b.example/", "https://c.example/")}
+        text, needed = links_issue.body(REPORT, rechecked=rechecked, today=DAY)
+        self.assertFalse(needed)
+        self.assertNotIn("## Broken", text)
+        self.assertIn("refused by GitHub and by Globalping; a browser often still opens them (3)</summary>", text)
 
     def test_only_links_that_block_github_close_the_issue(self):
         rechecked = {u: ("alive", ["200"] * 3, None) for u in ("https://a.example/", "https://b.example/", "https://c.example/")}
@@ -145,6 +156,7 @@ class DeadPages(unittest.TestCase):
         urls = [u for _, u in links_issue.entries()]
         self.assertTrue(urls)
         self.assertFalse([u for u in urls if "youtube.com" in u or "reddit.com" in u or "github.com/" in u])
+        self.assertNotIn("https://jmag286.wixsite.com/briquesmag1", urls)   # status dead: its closure is known
 
 
 if __name__ == "__main__":
