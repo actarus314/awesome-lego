@@ -9,6 +9,8 @@ summary_fr = "Conventions, expositions de fans, expositions d'artistes, concours
 id = "conventions"
 name_en = "Conventions, fairs and exhibitions"
 name_fr = "Conventions, salons et expositions"
+short_en = "Conventions"
+short_fr = "Conventions"
 
 [[category.groups]]
 id = "competitions"
@@ -19,6 +21,8 @@ name_fr = "Concours"
 id = "calendars"
 name_en = "Event calendars"
 name_fr = "Calendriers d'événements"
+short_en = "Calendars"
+short_fr = "Calendriers"
 
 [[resource]]
 id = "skaerbaek-fan-weekend"

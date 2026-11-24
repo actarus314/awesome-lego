@@ -14,6 +14,8 @@ summary_fr = "Une phrase."
 id = "price-comparators"
 name_en = "Price comparators"
 name_fr = "Comparateurs de prix"
+short_en = "Price comparison"            # optional: label on the cards, 17 characters at most (needed when the name is longer)
+short_fr = "Comparateurs"
 regime = "activity"                      # optional: activity | work | operating, the default of the entries of the group (see Regimes below)
 
 [[resource]]

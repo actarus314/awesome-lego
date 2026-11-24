@@ -9,6 +9,8 @@ summary_fr = "Logiciels de conception, applications, API, données ouvertes et p
 id = "design-software"
 name_en = "Design software"
 name_fr = "Logiciels de conception"
+short_en = "Design software"
+short_fr = "Conception"
 
 [[category.groups]]
 id = "apps"
@@ -19,16 +21,22 @@ name_fr = "Applications"
 id = "apis-and-data"
 name_en = "APIs and open data"
 name_fr = "API et données ouvertes"
+short_en = "APIs, open data"
+short_fr = "API, données"
 
 [[category.groups]]
 id = "open-source"
 name_en = "Open-source projects"
 name_fr = "Projets libres"
+short_en = "Open source"
+short_fr = "Projets libres"
 
 [[category.groups]]
 id = "programming-and-control"
 name_en = "Programming, control and robotics"
 name_fr = "Programmation, pilotage et robotique"
+short_en = "Programming"
+short_fr = "Programmation"
 
 [[resource]]
 id = "rebrickable-api-v3"

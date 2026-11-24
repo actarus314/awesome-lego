@@ -25,6 +25,7 @@ ORDER = ["brands", "shops", "comparators", "second-hand", "community", "video", 
 COVERS = {"official", "alternative", "second-hand", "parts", "custom-builds", "minifigures", "instructions", "news", "data", "events", "places", "clubs", "learning"}
 ACCESS = {"free", "free-account", "freemium", "paid"}
 STATUS = {"active", "slow", "inactive", "archived", "dead"}
+CARD_LABEL = 17  # characters of a group label on a card, beside the entry's name, on one line down to 320 px
 REGIMES = {"activity", "work", "operating"}  # what keeps an entry current: recent activity, nothing (a finished work), being open
 CONFIDENCE = {"high", "medium", "low"}
 KINDS = {"official", "read", "indexed", "third-party", "forum"}
@@ -74,6 +75,9 @@ def load():
                 errors.append(f"{where}: category.{k} missing")
         groups = [g["id"] for g in c.get("groups", [])]
         for g in c.get("groups", []):
+            for lang in LANGS:  # the label of a card stands on one line beside the entry's name
+                if len(g.get("short_" + lang) or g.get("name_" + lang, "")) > CARD_LABEL:
+                    errors.append(f"{where}: group {g['id']}: short_{lang} needed, the card label holds {CARD_LABEL} characters at most")
             if g.get("regime", "activity") not in REGIMES:
                 errors.append(f"{where}: group {g['id']}: regime must be one of {sorted(REGIMES)}")
         for r in d.get("resource", []):
@@ -308,7 +312,7 @@ def site_data(cats, m):
     rows = []
     for c in cats:
         cat = c["category"]
-        gnames = {g["id"]: {"en": g["name_en"], "fr": g["name_fr"]} for g in cat.get("groups", [])}
+        gnames = {g["id"]: {lang: g.get("short_" + lang) or g["name_" + lang] for lang in LANGS} for g in cat.get("groups", [])}  # card labels
         for r in c["resources"]:
             status, last = effective(r, m)
             row = {k: r.get(k) for k in ("id", "name", "url", "covers", "languages", "countries", "access", "confidence", "checked", "github", "subreddit", "featured", "city", "ships_to_france")}

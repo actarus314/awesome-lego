@@ -2,6 +2,9 @@
 
 # v2.x — The directory read at the source down to its links: which brands each entry deals with, how it is funded, who makes the bricks; a website in three views, directory, out and about, observatory.
 
+## v2.17 — 2026-11-24
+Website: the group of a card is back beside the entry's name, on one line, in a short form (`short_en`, `short_fr` of a group, 17 characters at most, required by the build when the name is longer); a long entry name wraps under it instead. The rendering check fails on a group label that is not on the first line, beside the name.
+
 ## v2.16 — 2026-11-24
 Data: groups regrouped where a visitor looking in one would also want the other: Mattel and Revell join the European brands (European and American alternatives), chat servers join the forums, awesome lists join the site directories, touring exhibitions join the conventions, and fans' buy-and-sell threads join the marketplaces; FreeLUG moves to the national clubs, Deparkatre Creators and the Avenue de la brique list of clubs to the site directories, LEGO Ideas to the competitions (54 groups instead of 60). Website: the group of a card stands above its name, left-aligned, instead of floating beside or under it; the rendering check now fails on a group label that is neither beside the name nor aligned with it.
 

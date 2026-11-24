@@ -15,12 +15,16 @@ regime = "operating"
 id = "alternative-brands"
 name_en = "Alternative brands"
 name_fr = "Marques alternatives"
+short_en = "Alternatives"
+short_fr = "Alternatives"
 regime = "operating"
 
 [[category.groups]]
 id = "general-retailers"
 name_en = "General retailers"
 name_fr = "Généralistes"
+short_en = "Retailers"
+short_fr = "Généralistes"
 regime = "operating"
 
 [[resource]]

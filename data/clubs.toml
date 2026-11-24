@@ -15,12 +15,16 @@ regime = "operating"
 id = "regional-clubs"
 name_en = "Regional and local clubs"
 name_fr = "Clubs régionaux et locaux"
+short_en = "Regional clubs"
+short_fr = "Clubs régionaux"
 regime = "operating"
 
 [[category.groups]]
 id = "alternative-brand-clubs"
 name_en = "Clubs for alternative brands"
 name_fr = "Clubs des marques alternatives"
+short_en = "Alternative clubs"
+short_fr = "Clubs alternatifs"
 regime = "operating"
 
 [[category.groups]]

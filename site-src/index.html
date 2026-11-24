@@ -127,9 +127,9 @@ table.dt{width:100%;border-collapse:collapse;background:var(--card);border:1px s
 .card{scroll-margin-top:calc(var(--bar-h,250px) + 12px);content-visibility:auto;contain-intrinsic-size:auto 220px}  /* cards far from the screen are laid out when they come near */.card.focus{border-color:var(--hi);box-shadow:0 0 0 3px var(--hi),0 10px 28px -12px rgba(0,0,0,.35);background:color-mix(in srgb,var(--hi) 7%,var(--card));animation:pop .5s ease-out}
 @keyframes pop{0%{transform:scale(.97)}60%{transform:scale(1.015)}100%{transform:none}}
 @media (prefers-reduced-motion:reduce){.card.focus{animation:none}}
-.card .h{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+.card .h{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:10px;align-items:baseline}
 .card .h a{font-weight:700;font-size:16px;text-decoration:none;color:var(--fg);min-width:0;overflow-wrap:break-word}.card .h a:hover{color:var(--accent)}
-.card .g{order:-1;font:600 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--faint)}
+.card .g{font:600 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--faint);text-align:right;white-space:nowrap}
 .card .s{margin:0}.star{color:var(--hi)}
 .tags{display:flex;flex-wrap:wrap;gap:5px}
 .tag{font:600 11.5px system-ui,sans-serif;padding:2px 7px;border-radius:6px;background:var(--sunk);color:var(--muted)}
@@ -354,7 +354,7 @@ function card(r,showCat){const x=r[L];const tags=[...(r.covers||[]).filter(c=>c!
  const m=r.metrics||{};const fu=r.funding&&r.funding[0]!=='unknown'?FU.filter(f=>r.funding.includes(f)).map(f=>t('fu_'+f)).join(', '):'';  // funding read at the source replaces the free business model text
  const extra=[r.next?t('next')+' '+fmt(r.next):'',r.city||'',x.size,m.stars!=null?'★ '+m.stars:'',fu?fu[0].toUpperCase()+fu.slice(1):x.model].filter(Boolean).map(esc).join(' · ');
  const wb=BN[r.id]&&BM!==r.id?`<button type="button" class="chip wb" data-brand="${r.id}">${t('where')} <span class="c">${BN[r.id]}</span></button>`:'';
- return `<article class="card" id="r-${r.id}"><div class="h"><a href="${esc(r.url)}" rel="noopener">${r.featured?'<span class="star" aria-hidden="true">★ </span>':''}${esc(r.name)}</a><span class="g">${esc(showCat?catName(r.cat):x.group)}</span></div><p class="s">${esc(x.summary)}</p>${contact(r)}${mkLine(r)}${extra?`<div class="src">${extra}</div>`:''}<div class="tags">${tags}</div>${wb}`+
+ return `<article class="card" id="r-${r.id}"><div class="h"><a href="${esc(r.url)}" rel="noopener">${r.featured?'<span class="star" aria-hidden="true">★ </span>':''}${esc(r.name)}</a><span class="g">${esc(showCat?shortCat(r.cat):x.group)}</span></div><p class="s">${esc(x.summary)}</p>${contact(r)}${mkLine(r)}${extra?`<div class="src">${extra}</div>`:''}<div class="tags">${tags}</div>${wb}`+
  ((x.strengths.length||x.weaknesses.length)?`<details><summary>${t('strengths')} · ${t('weaknesses')}</summary>${x.strengths.length?`<ul class="plus">${x.strengths.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`:''}${x.weaknesses.length?`<ul class="minus">${x.weaknesses.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`:''}<div class="src">${t('sources')}${COLON}${r.sources.map((s,i,a)=>{const h=host(s.url),dup=a.filter(x=>host(x.url)===h).length>1,seg=(()=>{try{return new URL(s.url).pathname.split('/').filter(Boolean)[0]||''}catch(e){return ''}})();return `<a href="${esc(s.url)}" rel="noopener">${esc(dup&&seg?h+'/'+seg:h)}</a>`}).join(' · ')}</div></details>`:'')+`</article>`}
 const COLS=[['name',t('c_name'),r=>r.name],['cat',t('c_cat'),r=>catName(r.cat)],['scope',t('c_scope'),r=>(r.covers||[]).filter(c=>c==='official'||c==='alternative').map(t).join(', ')],['lang',t('c_lang'),r=>(r.languages||[]).join(' ').toUpperCase(),'opt'],['status',t('c_status'),r=>t('st_'+r.status),'opt'],['last',t('c_last'),r=>r.last||'','n'],['stars',t('c_stars'),r=>(r.metrics||{}).stars??-1,'n opt']];
 function drawTable(rs){if(st.sort){const c=COLS.find(c=>c[0]===st.sort.k),d=st.sort.d;rs.sort((a,b)=>{const x=c[2](a),y=c[2](b);return (typeof x==='number'?x-y:String(x).localeCompare(String(y)))*d})}

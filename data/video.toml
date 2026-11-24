@@ -9,21 +9,29 @@ summary_fr = "Chaînes YouTube et podcasts en anglais et en français : tests de
 id = "official-lego-reviews"
 name_en = "Official LEGO reviews"
 name_fr = "Tests de LEGO officiel"
+short_en = "Official LEGO"
+short_fr = "LEGO officiel"
 
 [[category.groups]]
 id = "alternative-brand-reviews"
 name_en = "Alternative brand reviews"
 name_fr = "Tests de marques alternatives"
+short_en = "Alternatives"
+short_fr = "Alternatives"
 
 [[category.groups]]
 id = "building-and-custom"
 name_en = "Building and custom builds"
 name_fr = "Constructions et créations originales"
+short_en = "Builds"
+short_fr = "Créations"
 
 [[category.groups]]
 id = "news"
 name_en = "News and community"
 name_fr = "Actualité et communauté"
+short_en = "News"
+short_fr = "Actualité"
 
 [[category.groups]]
 id = "podcasts"

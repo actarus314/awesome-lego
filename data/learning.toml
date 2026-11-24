@@ -9,12 +9,16 @@ summary_fr = "Guides, glossaires, histoire, références sur la compatibilité e
 id = "guides"
 name_en = "Guides and reference"
 name_fr = "Guides et références"
+short_en = "Guides"
+short_fr = "Guides"
 regime = "work"
 
 [[category.groups]]
 id = "compatibility-and-law"
 name_en = "Compatibility, materials and law"
 name_fr = "Compatibilité, matières et droit"
+short_en = "Law, materials"
+short_fr = "Droit, matières"
 regime = "work"
 
 [[category.groups]]
@@ -27,18 +31,24 @@ regime = "work"
 id = "education-and-competitions"
 name_en = "Education and competitions"
 name_fr = "Éducation et compétitions"
+short_en = "Education"
+short_fr = "Éducation"
 regime = "operating"
 
 [[category.groups]]
 id = "books-and-magazines"
 name_en = "Books and magazines"
 name_fr = "Livres et magazines"
+short_en = "Books, magazines"
+short_fr = "Livres, revues"
 regime = "work"
 
 [[category.groups]]
 id = "artists"
 name_en = "Artists and designers"
 name_fr = "Artistes et créateurs"
+short_en = "Artists"
+short_fr = "Artistes"
 
 [[resource]]
 id = "brick-architect"
