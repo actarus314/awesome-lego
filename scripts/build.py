@@ -8,6 +8,7 @@ import base64
 import datetime as dt
 import hashlib
 import html
+import html.parser
 import json
 import pathlib
 import re
@@ -358,11 +359,38 @@ def page(lang, data):
     return out[:i] + csp(out) + out[i + len("{{CSP}}"):]
 
 
+class _Scripts(html.parser.HTMLParser):
+    """Bodies of the executable inline scripts (<script> without attributes), read by an HTML parser."""
+    def __init__(self):
+        super().__init__(convert_charrefs=False)
+        self.bodies, self._in = [], False
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "script" and not attrs:
+            self._in = True
+            self.bodies.append("")
+
+    def handle_endtag(self, tag):
+        if tag == "script":
+            self._in = False
+
+    def handle_data(self, data):
+        if self._in:
+            self.bodies[-1] += data
+
+
+def inline_scripts(doc):
+    p = _Scripts()
+    p.feed(doc)
+    p.close()
+    return p.bodies
+
+
 def csp(doc, rest="; style-src 'unsafe-inline'; img-src 'self' https://actarus314.github.io; connect-src 'self' https://nominatim.openstreetmap.org; base-uri 'none'; form-action 'none'"):
     """Content security policy (GitHub Pages sends no headers: a meta element, placed before the first script).
     Only the page's own inline scripts run, each allowed by its hash; nothing is loaded from elsewhere."""
     hashes = [base64.b64encode(hashlib.sha256(m.encode("utf-8")).digest()).decode()
-              for m in re.findall(r"<script>(.*?)</script>", doc, re.S)]
+              for m in inline_scripts(doc)]
     return "default-src 'none'; script-src " + " ".join(f"'sha256-{h}'" for h in hashes) + rest
 
 

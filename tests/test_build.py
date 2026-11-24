@@ -100,9 +100,10 @@ class Pages(unittest.TestCase):
             self.assertNotRegex(doc, r"\{\{[A-Z]+\}\}", lang)
 
     def test_every_inline_script_is_allowed(self):
+        self.assertGreaterEqual(min(len(build.inline_scripts(d)) for d in self.pages.values()), 3)
         for lang, doc in self.pages.items():
             policy = re.search(r'http-equiv="Content-Security-Policy" content="([^"]*)"', doc).group(1)
-            for body in re.findall(r"<script>(.*?)</script>", doc, re.S):
+            for body in build.inline_scripts(doc):
                 h = "'sha256-" + base64.b64encode(hashlib.sha256(body.encode()).digest()).decode() + "'"
                 self.assertIn(h, policy, lang)
 
@@ -114,8 +115,9 @@ class Pages(unittest.TestCase):
 
     def test_data_block_cannot_close_the_script(self):
         for doc in self.pages.values():
-            block = re.search(r'<script id="data" type="application/json">(.*?)</script>', doc, re.S).group(1)
-            self.assertNotIn("<", block)
+            i = doc.index('<script id="data" type="application/json">')  # the data block ends at the first "</": it must hold no "<"
+            j = doc.index("</", i + 1)
+            self.assertEqual(doc[j:j + 9], "</script>")
 
 
 class Calendar(unittest.TestCase):
