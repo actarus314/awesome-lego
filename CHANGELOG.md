@@ -2,6 +2,9 @@
 
 # v2.x — The directory read at the source down to its links: which brands each entry deals with, how it is funded, who makes the bricks; a website in three views, directory, out and about, observatory.
 
+## v2.15 — 2026-11-24
+Checks: the accessibility rules of the rendering check are a guard, not a conformance target; the 13 px studs of the category map are accepted by name, so that a newer version of axe-core cannot fail the check on them; the page is scrolled back to the top before the rules run, as a sticky header over a scrolled view made two heat map cells of the observatory look covered.
+
 ## v2.14 — 2026-11-24
 Data: each entry has a regime that says what keeps it current. Sites, channels, forums and software (activity) keep their status from their last post, video or commit; finished works such as books, guides, articles and standards (work) show their date and never become inactive by age; places, shops, marketplaces, brands, clubs and programmes (operating) are open or closed, checked by the review rather than by their posts. 17 entries no longer show as slow or inactive (among them a 2016 book, a train layout standard, three national clubs and a chain of shops); the activity chart of the observatory and the weekly report measure only the first regime.
 

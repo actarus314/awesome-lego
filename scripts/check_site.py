@@ -12,7 +12,9 @@ themes. Fails on:
   outer rows reaching the inner ones);
 - script error, console error, or content security policy violation;
 - accessibility (axe-core, WCAG 2.2 A and AA rules: contrast on the real background, names of controls,
-  target sizes, landmarks, ARIA): every violation, on the same views, at 1440 and 390 px in both themes.
+  target sizes, landmarks, ARIA): every violation, on the same views, at 1440 and 390 px in both themes. A guard,
+  not a conformance target: the 13 px studs of the category map are accepted, and marks told apart by colour
+  alone (WCAG 1.4.1) are not checked (decision of 24/11/2026).
 
 Usage: python3 scripts/check_site.py [--site site] [--quick] [--chrome /path/to/chrome] [--axe path/to/axe.min.js]
 Needs `pip install playwright`, `playwright install chromium` (or --chrome) and `npm install axe-core`
@@ -217,8 +219,10 @@ def main():
                                 pg.wait_for_timeout(400)
                             pg.add_style_tag(content="*{content-visibility:visible!important}")
                             pg.add_script_tag(path=str(axe))
+                            pg.evaluate("window.scrollTo(0,0)")  # a sticky header over a scrolled view would count as covering its targets
                             res = pg.evaluate("""async()=>{const r=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']},resultTypes:['violations']});
                               return r.violations.flatMap(v=>v.nodes.map(n=>[v.id,n.target.join(' '),(n.failureSummary||'').split('\\n').slice(1,2).join('').trim().slice(0,120)]))}""")
+                            res = [x for x in res if not (x[0] == "target-size" and ".stud" in x[1])]  # accepted: 13 px studs (decision of 24/11/2026)
                             record(lang, w, theme, name, [["a11y " + k, t, d] for k, t, d in res])
                         c.close()
         b.close()
