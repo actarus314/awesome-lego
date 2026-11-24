@@ -74,10 +74,10 @@ h2{font-size:22px;margin:44px 0 6px;letter-spacing:-.01em;border-left:4px solid 
 .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;min-width:0}
 .panel h3{margin:0 0 4px;font-size:17px}.panel .take{margin:0 0 14px;color:var(--fg);font-size:15px}
 .panel .note{margin:12px 0 0;color:var(--muted);font-size:13px}
-.heat{display:grid;gap:3px;font-size:13px;align-items:stretch}
+.heatbox{overflow-x:auto}.heatbox:focus-visible{outline:2px solid var(--fg);outline-offset:2px}.heat{min-width:300px;display:grid;gap:3px;font-size:13px;align-items:stretch}
 .heat .h{font:600 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--faint);align-self:end;padding:0 0 4px;text-align:center;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:anywhere;word-break:normal;min-width:0}
 @media (max-width:640px){.heat .h{letter-spacing:0;font-size:10px}}
-.heat .rn{padding:3px 8px 3px 0;color:var(--fg);overflow-wrap:anywhere;align-self:center}
+.heat .rn{padding:3px 8px 3px 0;color:var(--fg);overflow-wrap:break-word;align-self:center;min-width:0}
 .heat .c{border-radius:5px;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;min-height:26px;border:0;cursor:pointer;font:600 13px system-ui,sans-serif;color:var(--fg)}
 .heat .c.z{background:transparent;border:1px dashed var(--line);color:var(--faint);cursor:default;font-weight:400}
 .heat .c:not(.z):hover{outline:2px solid var(--fg)}
@@ -127,8 +127,8 @@ table.dt{width:100%;border-collapse:collapse;background:var(--card);border:1px s
 .card{scroll-margin-top:calc(var(--bar-h,250px) + 12px);content-visibility:auto;contain-intrinsic-size:auto 220px}  /* cards far from the screen are laid out when they come near */.card.focus{border-color:var(--hi);box-shadow:0 0 0 3px var(--hi),0 10px 28px -12px rgba(0,0,0,.35);background:color-mix(in srgb,var(--hi) 7%,var(--card));animation:pop .5s ease-out}
 @keyframes pop{0%{transform:scale(.97)}60%{transform:scale(1.015)}100%{transform:none}}
 @media (prefers-reduced-motion:reduce){.card.focus{animation:none}}
-.card .h{display:flex;align-items:baseline;gap:8px;justify-content:space-between}
-.card .h a{font-weight:700;font-size:16px;text-decoration:none;color:var(--fg);min-width:0;overflow-wrap:anywhere}.card .h a:hover{color:var(--accent)}
+.card .h{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;justify-content:space-between}.card .h>a{flex:1 1 11em}
+.card .h a{font-weight:700;font-size:16px;text-decoration:none;color:var(--fg);min-width:0;overflow-wrap:break-word}.card .h a:hover{color:var(--accent)}
 .card .g{font:600 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--faint);text-align:right;max-width:55%}
 .card .s{margin:0}.star{color:var(--hi)}
 .tags{display:flex;flex-wrap:wrap;gap:5px}
@@ -524,7 +524,7 @@ function vBrands(){const el=document.getElementById('v-brands');
  const ink=pct=>{const mx=mix(pct);return CR(mx,FG)>=CR(mx,CD)?'var(--fg)':'var(--card)'};  // the darker or lighter text, whichever reads best on this cell
  const fit=pct=>{for(let p=pct;p<=100;p++){const mx=mix(p);if(Math.max(CR(mx,FG),CR(mx,CD))>=4.5)return p}return pct};  // a shade where neither text reads is darkened a little
  const cell=(r,i)=>{const pct=fit(Math.round(14+66*r.v[i]/max));return r.v[i]?`<button type="button" class="c" style="background:color-mix(in srgb,var(--seq) ${pct}%,var(--card));color:${ink(pct)}" data-f="${IC[i]}|${r.id}" aria-label="${esc(r.name)}, ${esc(catName(IC[i]))}${COLON}${r.v[i]}" data-tip="${esc(r.name)} · ${esc(catName(IC[i]))}${COLON}${r.v[i]}">${r.v[i]}</button>`:`<span class="c z" aria-hidden="true">·</span>`};
- el.innerHTML=`<h3>${t('b_title')}</h3><p class="take">${esc(take)}</p><div class="heat" style="grid-template-columns:minmax(76px,1.3fr) repeat(${IC.length},minmax(34px,1fr))"><span></span>${IC.map(c=>`<span class="h">${esc(shortCat(c))}</span>`).join('')}${seen.map(r=>`<span class="rn">${esc(r.name)}</span>${IC.map((_,i)=>cell(r,i)).join('')}`).join('')}${none.length?`<span class="sep">${t('b_none')}</span><span class="rn" style="grid-column:1/-1;white-space:normal;color:var(--muted)">${esc(none.map(r=>r.name).join(' · '))}</span>`:''}</div><p class="note">${t('b_note')}</p>`;
+ el.innerHTML=`<h3>${t('b_title')}</h3><p class="take">${esc(take)}</p><div class="heatbox" role="region" tabindex="0" aria-label="${esc(t('b_title'))}"><div class="heat" style="grid-template-columns:minmax(92px,1.3fr) repeat(${IC.length},minmax(34px,1fr))"><span></span>${IC.map(c=>`<span class="h">${esc(shortCat(c))}</span>`).join('')}${seen.map(r=>`<span class="rn">${esc(r.name)}</span>${IC.map((_,i)=>cell(r,i)).join('')}`).join('')}${none.length?`<span class="sep">${t('b_none')}</span><span class="rn" style="grid-column:1/-1;white-space:normal;color:var(--muted)">${esc(none.map(r=>r.name).join(' · '))}</span>`:''}</div></div><p class="note">${t('b_note')}</p>`;
  el.onclick=e=>{const b=e.target.closest('[data-f]');if(!b)return;const[c,id]=b.dataset.f.split('|');toDir();resetAll();setQuery(brandName(id));st.cat.add(c);update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()})}}
 // insight 2: pulse. Dormant resources (no activity for 6 months) one by one; the active ones counted per category
 function vPulse(){const el=document.getElementById('v-pulse');const cats=C.map(c=>c.id),today=new Date(D.built),from=new Date(today);from.setMonth(from.getMonth()-24);
