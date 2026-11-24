@@ -25,12 +25,25 @@ jobs:
         run: python3 scripts/autofix.py --write > fixes.md
       - name: Rebuild the generated files and check them
         run: python3 scripts/build.py && python3 scripts/build.py --check
+      # A pull request opened with the token of Actions waits for "Approve and run workflows" before its checks.
+      # A GitHub App token (client ID in the variable DATA_FIXES_APP_ID, private key in the secret DATA_FIXES_APP_KEY)
+      # or a personal token (secret DATA_FIXES_TOKEN) lets Check and Render start on their own.
+      - id: app
+        if: vars.DATA_FIXES_APP_ID != ''
+        uses: actions/create-github-app-token@305e4aec4e2000ce216527e282f0749f47637923 # v3.4.0
+        with:
+          client-id: ${{ vars.DATA_FIXES_APP_ID }}
+          private-key: ${{ secrets.DATA_FIXES_APP_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
       - name: Open or update the pull request
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ steps.app.outputs.token || secrets.DATA_FIXES_TOKEN || secrets.GITHUB_TOKEN }}
+          OWN_TOKEN: ${{ steps.app.outputs.token != '' || secrets.DATA_FIXES_TOKEN != '' }}
           GH_REPO: ${{ github.repository }}
         run: |
           if git diff --quiet -- data README.md full-list.md; then echo "Nothing to fix."; exit 0; fi
+          [ "$OWN_TOKEN" = "true" ] || echo "::warning::No app or personal token: the checks of the pull request wait for Approve and run workflows"
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -q -B auto/data-fixes
           git add data README.md full-list.md

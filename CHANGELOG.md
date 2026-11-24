@@ -2,6 +2,9 @@
 
 # v2.x — The directory read at the source down to its links: which brands each entry deals with, how it is funded, who makes the bricks; a website in three views, directory, out and about, observatory.
 
+## v2.13 — 2026-11-24
+Automation: the Data fixes pull request can be opened with the token of a GitHub App or a personal token, so that its checks start on their own instead of waiting for an approval.
+
 ## v2.12 — 2026-11-24
 Automation: everything follows its latest release. Renovate proposes an update 3 days after it is published (at once for a security fix, as Dependabot does), and now also follows MiniSearch and the fonts of the Brick Vault, whose files the website keeps: `scripts/vendor.py` copies them from the locked packages and Check fails when they differ. The checks run on the latest Python release only (the job on Python 3.11 is removed).
 
