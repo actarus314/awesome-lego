@@ -224,7 +224,7 @@ def readme(cats, m, lang, kind="readme"):
     logo = [f'<a href="{PAGES}"><img src="media/logo.svg" align="right" width="120" alt="Awesome LEGO logo"></a>', ""] if kind == "readme" else []
     out = [f"# {title}{badge}", "", *logo, f"> {T['tagline'][lang]}", "",
            f"**[{T['site'][lang]}]({PAGES})** · [{T['site_fr'][lang]}]({PAGES}fr/) · [{T['feed'][lang]}]({PAGES}feed.xml)", "",
-           *([f'<p align="center"><a href="{PAGES}"><img src="media/site-preview.png" width="880" alt="The website: the map of the brick world, one stud per resource by category, above the directory; tabs Directory, Out and about, Observatory"></a></p>', ""] if kind == "readme" else []),
+           *([f'<p align="center"><a href="{PAGES}"><img src="media/site-preview.png" width="880" alt="The website: the map of the brick world, one stud per resource by category, above the directory; tabs Directory and Observatory"></a></p>', ""] if kind == "readme" else []),
            MORE[kind][lang], "", f"## {T['contents'][lang]}", ""]
     seen = {}
 
@@ -294,20 +294,6 @@ def alt_brands(cats):
     return out
 
 
-GEOFILE = DATA / "backend" / "geocode.json"
-GEO = json.loads(GEOFILE.read_text(encoding="utf-8"))["places"] if GEOFILE.exists() else {}
-
-
-def cities(r):
-    """'Chambéry, Annecy' is two cities (same rule as scripts/geocode.py)."""
-    return [c.strip() for c in str(r.get("city", "")).split(",") if c.strip()]
-
-
-def geo_key(city, r):
-    cc = [c for c in r.get("countries", []) if c != "international"]
-    return f"{city}|{cc[0] if len(cc) == 1 else ''}"
-
-
 def site_data(cats, m):
     rows = []
     for c in cats:
@@ -332,7 +318,6 @@ def site_data(cats, m):
                 row["contact"] = {k: r["contact"][k] for k in ("address", "phone", "email") if r["contact"].get(k)}
             if r.get("makers"):
                 row["makers"] = [{k: str(x[k]) for k in ("name", "name_fr", "id", "url", "date", "kind") if x.get(k)} for x in r["makers"]]
-            row["geo"] = [[GEO[k]["lat"], GEO[k]["lon"], c] for c in cities(r) for k in [geo_key(c, r)] if k in GEO]
             rows.append(row)
     categories = [{"id": c["category"]["id"], "en": c["category"]["name_en"], "fr": c["category"]["name_fr"],
                    "summary": {lang: c["category"].get("summary_" + lang, "") for lang in LANGS},
@@ -409,7 +394,7 @@ def inline_scripts(doc):
     return p.bodies
 
 
-def csp(doc, rest="; style-src 'unsafe-inline'; img-src 'self' https://actarus314.github.io; connect-src 'self' https://nominatim.openstreetmap.org; base-uri 'none'; form-action 'none'"):
+def csp(doc, rest="; style-src 'unsafe-inline'; img-src 'self' https://actarus314.github.io; connect-src 'self'; base-uri 'none'; form-action 'none'"):
     """Content security policy (GitHub Pages sends no headers: a meta element, placed before the first script).
     Only the page's own inline scripts run, each allowed by its hash; nothing is loaded from elsewhere."""
     hashes = [base64.b64encode(hashlib.sha256(m.encode("utf-8")).digest()).decode()
@@ -471,57 +456,6 @@ def content_feed(cats, lang):
     return atom(FEED_T["title"][lang], site + "feed.xml", site, items[:60])
 
 
-COUNTRY = {  # names for the calendar (the website names countries in the visitor's language with Intl.DisplayNames)
-    "AT": ("Austria", "Autriche"), "AU": ("Australia", "Australie"), "BE": ("Belgium", "Belgique"), "CA": ("Canada", "Canada"),
-    "CH": ("Switzerland", "Suisse"), "CN": ("China", "Chine"), "CZ": ("Czechia", "Tchéquie"), "DE": ("Germany", "Allemagne"),
-    "DK": ("Denmark", "Danemark"), "ES": ("Spain", "Espagne"), "FI": ("Finland", "Finlande"), "FR": ("France", "France"),
-    "GB": ("United Kingdom", "Royaume-Uni"), "IE": ("Ireland", "Irlande"), "IT": ("Italy", "Italie"), "LU": ("Luxembourg", "Luxembourg"),
-    "MC": ("Monaco", "Monaco"), "NL": ("Netherlands", "Pays-Bas"), "NO": ("Norway", "Norvège"), "NZ": ("New Zealand", "Nouvelle-Zélande"),
-    "PL": ("Poland", "Pologne"), "PT": ("Portugal", "Portugal"), "SE": ("Sweden", "Suède"), "SK": ("Slovakia", "Slovaquie"),
-    "US": ("United States", "États-Unis"), "ZA": ("South Africa", "Afrique du Sud")}
-
-
-def calendar(cats, lang):
-    """iCalendar file of the announced next editions (all-day events: only the start date is known)."""
-    def esc(x):
-        return str(x).replace("\\", "\\\\").replace(";", "\\;").replace(",", "\\,").replace("\n", "\\n")
-
-    def fold(line):  # RFC 5545: lines of at most 75 octets, continued with a space
-        out, cur = [], ""
-        for ch in line:
-            if len((cur + ch).encode("utf-8")) > 75:
-                out.append(cur)
-                cur = " " + ch
-            else:
-                cur += ch
-        return "\r\n".join(out + [cur])
-    today = dt.date.today()
-    stamp = today.strftime("%Y%m%dT000000Z")
-    site = PAGES + ("fr/" if lang == "fr" else "")
-    lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//actarus314//Awesome LEGO//" + lang.upper(), "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
-             "X-WR-CALNAME:" + esc(CAL_T[lang]), "REFRESH-INTERVAL;VALUE=DURATION:P1D", "X-PUBLISHED-TTL:P1D"]  # subscribed calendars come back once a day (RFC 7986)
-    for c in cats:
-        for r in c["resources"]:
-            nd = str(r.get("next_date") or "")
-            if not nd or nd < today.isoformat():
-                continue
-            d = dt.date.fromisoformat(nd)
-            cc = [x for x in r.get("countries", []) if x in COUNTRY]
-            where = ", ".join(filter(None, [r.get("city", ""), COUNTRY[cc[0]][LANGS.index(lang)] if len(cc) == 1 else ""]))
-            lines += ["BEGIN:VEVENT", f"UID:{r['id']}-{nd}@actarus314.github.io", "DTSTAMP:" + stamp,
-                      "DTSTART;VALUE=DATE:" + d.strftime("%Y%m%d"), "DTEND;VALUE=DATE:" + (d + dt.timedelta(days=1)).strftime("%Y%m%d"),
-                      "SUMMARY:" + esc(r["name"]), *(["LOCATION:" + esc(where)] if where else []),
-                      "DESCRIPTION:" + esc(r["summary_" + lang] + (" " + r["recurrence_" + lang] + "." if r.get("recurrence_" + lang) else "") + " " + CAL_T["dates"][lang]),
-                      "URL:" + r["url"], "END:VEVENT"]
-    lines.append("END:VCALENDAR")
-    return "\r\n".join(fold(l) for l in lines) + "\r\n"
-
-
-CAL_T = {"en": "Awesome LEGO: next editions", "fr": "Awesome LEGO : prochaines éditions",
-         "dates": {"en": "Start date as announced; check the dates and opening hours on the event's site.",
-                   "fr": "Date de début annoncée ; vérifier les dates et horaires sur le site de l'événement."}}
-
-
 def changes_feed():
     """For whoever follows the development: one item per version, from CHANGELOG.md."""
     text = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
@@ -571,9 +505,6 @@ def main():
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
     if not re.search(rf"^## v{re.escape(version)} — \d{{4}}-\d{{2}}-\d{{2}}$", (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), re.M):
         fail([f"CHANGELOG.md has no '## v{version} — YYYY-MM-DD' section for VERSION {version}"])
-    missing = sorted({geo_key(c, r) for cat in cats for r in cat["resources"] for c in cities(r)} - set(GEO))
-    for k in missing:
-        print(f"! no coordinates for {k}: run python3 scripts/geocode.py (the entry stays off the map)")
     texts = {f: readme(cats, m, lang, kind) for (kind, lang), f in FILES.items()}
     texts[".github/ISSUE_TEMPLATE/add-resource.yml"] = issue_form(cats)
     print(f"✓ v{version}: {sum(len(c['resources']) for c in cats)} resources in {len(cats)} categories")
@@ -596,8 +527,6 @@ def main():
     (SITE / "feed.xml").write_text(content_feed(cats, "en"), encoding="utf-8")
     (SITE / "fr" / "feed.xml").write_text(content_feed(cats, "fr"), encoding="utf-8")
     (SITE / "changes.xml").write_text(changes_feed(), encoding="utf-8")
-    (SITE / "agenda.ics").write_text(calendar(cats, "en"), encoding="utf-8", newline="")
-    (SITE / "fr" / "agenda.ics").write_text(calendar(cats, "fr"), encoding="utf-8", newline="")
     (SITE / "favicon.ico").write_bytes((ROOT / "media" / "favicon.ico").read_bytes())  # readers that look for <site>/favicon.ico
     for f in (ROOT / "media").rglob("*"):
         if f.is_file() and f.name != "site-preview.png":  # the README image is read on GitHub, not on the website

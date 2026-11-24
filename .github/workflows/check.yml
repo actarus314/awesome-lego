@@ -25,11 +25,9 @@ jobs:
         run: python3 scripts/vendor.py --check
       - name: Validate data and check that generated files are up to date
         run: python3 scripts/build.py --check
-      - name: Unit tests (validation, pages, calendar)
+      - name: Unit tests (validation, pages)
         run: python3 -m unittest discover -s tests
       - name: Build the site
         run: python3 scripts/build.py
-      - name: Cities without coordinates (a warning; the maintainer geocodes them)
-        run: python3 scripts/geocode.py --check || echo "::warning::Cities without coordinates are missing from the map; run scripts/geocode.py"
       - name: awesome-lint
         run: npx --no-install awesome-lint README.md

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Rendering checks of the built website (site/), in a real browser (Playwright, Chromium).
 
-Every view and state a visitor reaches (directory as cards and as a table, brand mode, out and about with
-every entry unfolded, observatory, hidden vault), in English and French, at several widths and in both
+Every view and state a visitor reaches (directory as cards and as a table, brand mode, observatory,
+hidden vault), in English and French, at several widths and in both
 themes. Fails on:
 - overflow: the page scrolls sideways, or an element sticks out of the box (card, panel, row) it sits in;
 - broken token: a phone number, an email, a website, a date, a tag, a chip, a button label or a short
@@ -61,7 +61,7 @@ PROBE = r"""
   const lines = el => { const tops = []; const tw = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); const rg = document.createRange(); let n;
     while ((n = tw.nextNode())) { if (!n.textContent.trim()) continue; rg.selectNodeContents(n); for (const q of rg.getClientRects()) if (q.width > 0.5) tops.push(q.top) }
     tops.sort((x, y) => x - y); let k = tops.length ? 1 : 0; for (let i = 1; i < tops.length; i++) if (tops[i] - tops[i - 1] > 6) k++; return k };
-  const ATOM = '.ct .tel a, .ct .mail a, .ct .web a, .ct .nw, .ct button, time, .tag:not(.langs), .chip, .btn, .kpi b, .city .ch > span, .agenda .w, .pill';
+  const ATOM = '.ct .tel a, .ct .mail a, .ct .nw, time, .tag:not(.langs), .chip, .btn, .kpi b, .pill';
   for (const el of document.querySelectorAll(ATOM)) if (vis(el) && lines(el) > 1) add('broken token', el, txt(el));
 
   // words split inside themselves (not at a hyphen or a slash) although they fit on a line
@@ -83,13 +83,11 @@ PROBE = r"""
 """
 
 # states: (name, path, script run before the probe)
-UNFOLD = """(()=>{const n=document.getElementById('nearall');if(n)n.click();document.querySelectorAll('#near .tg[aria-expanded=false], #ag .tg[aria-expanded=false]').forEach(b=>b.click())})()"""
 # axe reads every node: the directory is narrowed to three categories (134 cards, the richest ones) to keep a run short
 AXE_STATES = [
     ("directory", "#cat=places,events,clubs", "document.querySelectorAll('#list details').forEach(d=>d.open=true)"),
     ("table", "#cat=places,events,clubs&view=table", ""),
     ("brand mode", "#q=COBI", ""),
-    ("out and about", "#out", None),
     ("observatory", "#observatory", ""),
     ("observatory after a theme switch", "#observatory",  # colours computed by the page must follow the theme button
      "(()=>{const want=matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark',tb=document.getElementById('theme');for(let i=0;i<3&&document.documentElement.dataset.theme!==want;i++)tb.click()})()"),
@@ -98,7 +96,6 @@ STATES = [
     ("directory", "#map", "document.querySelectorAll('#list details').forEach(d=>d.open=true)"),
     ("table", "#view=table", ""),
     ("brand mode", "#q=COBI", ""),
-    ("out and about", "#out", UNFOLD),
     ("observatory", "#observatory", ""),
 ]
 
@@ -171,7 +168,6 @@ def main():
                     c = b.new_context(viewport={"width": w, "height": 900}, locale="fr-FR" if lang == "fr" else "en-GB",
                                       color_scheme=theme, is_mobile=mobile, has_touch=mobile, device_scale_factor=2 if mobile else 1)
                     c.add_init_script("addEventListener('securitypolicyviolation',e=>console.error('CSP '+e.violatedDirective+' '+e.blockedURI))")
-                    c.route("https://nominatim.openstreetmap.org/**", lambda r: r.abort())
                     pg = c.new_page()
                     errs = []
                     pg.on("pageerror", lambda e: errs.append(str(e)))
@@ -180,8 +176,6 @@ def main():
                         pg.goto(base + root + frag)
                         pg.reload()
                         pg.wait_for_selector("html.ready", state="attached")
-                        if name == "out and about":
-                            pg.wait_for_selector("#geo .pt, body.nomap", state="attached", timeout=15000)
                         pg.wait_for_timeout(300)
                         pg.add_style_tag(content="*{content-visibility:visible!important}")  # every card laid out, so that every card is checked
                         if js:
@@ -208,16 +202,12 @@ def main():
                         mobile = w < 700
                         c = b.new_context(viewport={"width": w, "height": 900}, locale="fr-FR" if lang == "fr" else "en-GB", color_scheme=theme,
                                           is_mobile=mobile, has_touch=mobile, bypass_csp=True)
-                        c.route("https://nominatim.openstreetmap.org/**", lambda r: r.abort())
                         pg = c.new_page()
                         for name, frag, js in AXE_STATES + ([("vault", "vault/", "")] if lang == "en" else []):
-                            js = UNFOLD if js is None else js
                             pg.goto(base + (frag if name == "vault" else root + frag))
                             if name != "vault":
                                 pg.reload()
                                 pg.wait_for_selector("html.ready", state="attached")
-                                if name == "out and about":
-                                    pg.wait_for_selector("#geo .pt, body.nomap", state="attached", timeout=15000)
                             pg.wait_for_timeout(300)
                             if js:
                                 pg.evaluate(js)

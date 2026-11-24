@@ -122,8 +122,8 @@ class Pages(unittest.TestCase):
                 self.assertIn(h, policy, lang)
 
     def test_static_texts_at_first_paint(self):
-        self.assertIn('data-t="nav_out">Sortir</a>', self.pages["fr"])
-        self.assertIn('data-t="nav_out">Out and about</a>', self.pages["en"])
+        self.assertIn('data-t="nav_obs">Observatoire</a>', self.pages["fr"])
+        self.assertIn('data-t="nav_obs">Observatory</a>', self.pages["en"])
         for lang, doc in self.pages.items():
             self.assertNotRegex(doc, r'data-t="\w+"[^>]*></(a|h1|h2|h3|span|button|p)>', lang)
 
@@ -132,18 +132,6 @@ class Pages(unittest.TestCase):
             i = doc.index('<script id="data" type="application/json">')  # the data block ends at the first "</": it must hold no "<"
             j = doc.index("</", i + 1)
             self.assertEqual(doc[j:j + 9], "</script>")
-
-
-class Calendar(unittest.TestCase):
-    def test_lines_folded_and_closed(self):
-        with contextlib.redirect_stdout(io.StringIO()):
-            cats, _ = build.load()
-        for lang in ("en", "fr"):
-            ics = build.calendar(cats, lang)
-            self.assertTrue(ics.startswith("BEGIN:VCALENDAR") and ics.rstrip().endswith("END:VCALENDAR"))
-            self.assertEqual(ics.count("BEGIN:VEVENT"), ics.count("END:VEVENT"))
-            for line in ics.split("\r\n"):
-                self.assertLessEqual(len(line.encode()), 75, line)
 
 
 if __name__ == "__main__":
