@@ -97,7 +97,7 @@ kind = "official"
 [[resource]]
 id = "byggepladen"
 name = "Byggepladen"
-url = "https://byggepladen.dk/"
+url = "https://www.byggepladen.dk/"
 group = "national-clubs"
 covers = ["clubs", "official", "events"]
 languages = ["da"]
@@ -161,7 +161,7 @@ kind = "official"
 [[resource]]
 id = "itlug"
 name = "ItLUG"
-url = "https://www.itlug.org/"
+url = "https://itlug.org/"
 group = "national-clubs"
 featured = true
 covers = ["clubs", "official", "events"]
@@ -391,7 +391,7 @@ kind = "official"
 [[resource]]
 id = "chti-lug"
 name = "Ch'ti LUG"
-url = "https://chtilug.fr/"
+url = "https://www.chtilug.fr/"
 feed = "https://www.chtilug.fr/feed/"
 group = "regional-clubs"
 covers = ["clubs", "official", "events"]
