@@ -9,26 +9,31 @@ summary_fr = "Lieux du monde de la brique que l'on peut visiter : sites et magas
 id = "official-venues"
 name_en = "Official LEGO venues and stores"
 name_fr = "Sites et magasins LEGO officiels"
+regime = "operating"
 
 [[category.groups]]
 id = "theme-parks"
 name_en = "Theme parks"
 name_fr = "Parcs à thème"
+regime = "operating"
 
 [[category.groups]]
 id = "museums-and-exhibitions"
 name_en = "Museums and permanent exhibitions"
 name_fr = "Musées et expositions permanentes"
+regime = "operating"
 
 [[category.groups]]
 id = "physical-shops"
 name_en = "Physical shops (alternative brands and used bricks)"
 name_fr = "Boutiques physiques (marques alternatives et briques d'occasion)"
+regime = "operating"
 
 [[category.groups]]
 id = "cafes-and-bars"
 name_en = "Cafés and play spaces"
 name_fr = "Cafés et espaces de jeu"
+regime = "operating"
 
 # ---------------------------------------------------------------- official venues
 

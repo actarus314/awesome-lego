@@ -54,6 +54,20 @@ class Validation(unittest.TestCase):
             return t + "\n" + t[i:j].replace('url = "', 'url = "https://example.org/x', 1)
         self.assertTrue(any("id" in e for e in load_with("places.toml", edit)))
 
+    def test_regime(self):
+        """A place is open or closed: its posts do not make it slow; an entry may override its group."""
+        errs = load_with("places.toml", lambda t: re.sub(r'^status = "active"$', 'status = "slow"', t, count=1, flags=re.M))
+        self.assertTrue(any("regime operating" in e for e in errs), errs)
+        errs = load_with("places.toml", lambda t: re.sub(r'^regime = "operating"$', 'regime = "forever"', t, count=1, flags=re.M))
+        self.assertTrue(any("regime must be one of" in e for e in errs), errs)
+        cat = {"groups": [{"id": "g", "regime": "work"}]}
+        self.assertEqual(build.regime({"group": "g"}, cat), "work")
+        self.assertEqual(build.regime({"group": "g", "regime": "activity"}, cat), "activity")
+        self.assertEqual(build.regime({"group": "h"}, cat), "activity")
+        old = {"id": "x", "status": "active", "last_activity": "2016-10-21"}
+        self.assertEqual(build.effective(dict(old, _regime="work"), {})[0], "active")
+        self.assertEqual(build.effective(dict(old, _regime="activity"), {})[0], "inactive")
+
     def test_malformed_url(self):
         errs = load_with("places.toml", lambda t: re.sub(r'^url = "https?://', 'url = "javascript:', t, count=1, flags=re.M))
         self.assertTrue(any("url" in e for e in errs), errs)

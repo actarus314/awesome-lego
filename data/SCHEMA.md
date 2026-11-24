@@ -14,6 +14,7 @@ summary_fr = "Une phrase."
 id = "price-comparators"
 name_en = "Price comparators"
 name_fr = "Comparateurs de prix"
+regime = "activity"                      # optional: activity | work | operating, the default of the entries of the group (see Regimes below)
 
 [[resource]]
 id = "brick-broker"                      # unique across all files, lowercase, hyphens
@@ -37,7 +38,8 @@ weaknesses_en = ["…"]
 weaknesses_fr = ["…"]
 size_en = "42003 sets, 95 brands"        # optional, figures as published by the resource
 size_fr = "42003 sets, 95 marques"
-status = "active"                        # active | slow (no update for 6 months) | inactive (12 months) | archived | dead
+status = "active"                        # active | slow (no update for 6 months) | inactive (12 months) | archived | dead; slow and inactive for the regime activity only
+regime = "work"                          # optional, also on category.groups (default for the group, else activity): activity | work | operating
 last_activity = "2026-11-23"             # ISO date of the last observed activity (post, video, commit, price update)
 checked = "2026-11-23"                   # ISO date of the last verification of this entry
 added = "2026-11-23"                     # ISO date the entry entered the directory, set once and never changed (content feed)
@@ -73,6 +75,11 @@ url = "https://pantasy.com/pages/about-us"
 date = "2026-11-23"
 kind = "official"                        # official | read | third-party; a maker resting on third-party sources needs two independent sites, unless the brand or the maker states it (a forum or a search snippet is never enough)
 ```
+
+Regimes (`regime`, on a group or an entry): what keeps an entry current, and so how its status is read.
+- `activity` (default): a site, a channel, a forum, software. The status follows `last_activity`: active up to 6 months, slow up to 12, inactive beyond; a recurring event with an announced `next_date` stays active.
+- `work`: a finished work whose value does not depend on new posts (book, article, guide, glossary, standard, ruling, patent). `last_activity` is the date of its latest edition or revision, shown as such; the status is active, or archived once a review finds it outdated, or dead when it is gone.
+- `operating`: an entity that is open or closed (place, shop, marketplace, brand, club, programme). Its posts do not measure it; the review checks that it still operates (`checked`); the status is active, archived or dead.
 
 Writing rules:
 - Impersonal, factual, short. No marketing words. Facts not verified are left out or marked in `confidence`.

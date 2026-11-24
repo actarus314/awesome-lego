@@ -289,7 +289,7 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 
 ### Parts, custom builds and instructions
 
-- [Bobby Brix](https://store.bobbybrix.com/) - Slovak shop of custom build kits, retired LEGO sets and GoBricks kits. Covers official LEGO and alternative brands. Status: no update for 6 months.
+- [Bobby Brix](https://store.bobbybrix.com/) - Slovak shop of custom build kits, retired LEGO sets and GoBricks kits. Covers official LEGO and alternative brands.
 - [Brickmania](https://www.brickmania.com/) - American shop of custom military and historical building kits, with BrickArms weapons. Covers official LEGO.
 - [Brickwith (formerly Webrick)](https://www.brickwith.com/en) - Shop of compatible bulk parts made by GoBricks for custom builds; webrick.com now redirects to brickwith.com. Covers alternative brands.
 - [BuildaMOC](https://buildamoc.com/) - Complete kits of custom builds by independent designers, made only of original LEGO elements with the designer's instructions; custom kits for companies.
@@ -648,14 +648,14 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 - [Brikkelauget](https://www.brikkelauget.no/) - Norwegian group of adult LEGO fans, described as the largest in Norway, with a public forum including a buy and sell section.
 - [Byggepladen](https://byggepladen.dk/) - Danish association of adult LEGO fans with building meetings, exhibitions, a members' magazine and collaborative projects; chosen for the Danish Diner in the international Modulars Around the World project of 2027. Covers official LEGO.
 - [Comunidade 0937](https://comunidade0937.com/portal/) - Portuguese LEGO fan group founded in 2006 that organises exhibitions and meetings and runs an online discussion forum; it announces the Paredes de Coura Fan Weekend.
-- [HispaLUG](https://hispalug.com/) - Spanish non-profit association of LEGO fans founded in 2006 and recognised in 2010, with a large public forum and events. Covers official LEGO. Status: no update for 6 months.
+- [HispaLUG](https://hispalug.com/) - Spanish non-profit association of LEGO fans founded in 2006 and recognised in 2010, with a large public forum and events. Covers official LEGO.
 - [ItLUG](https://www.itlug.org/) - Italian LEGO Users Group: national association of adult LEGO fans founded in 1999 and legally constituted in November 2010, with a forum, national events and local exhibitions. Covers official LEGO.
 - [LGOe - LEGO Gemeinschaft Österreich](https://www.lgoe.at/) - Austrian association based in Vienna, about 100 members across the country, specialised in model building with original LEGO parts and organiser of the Welt der Steine exhibitions; free forum registration. Covers official LEGO.
-- [LLMTC: LowLands L-Gauge Model Train Club](https://llmtc.nl/) - Dutch club of LEGO train builders in scale 1:45, with modular layouts built to the MILS standard and a yearly display at LEGO World in Utrecht. Status: no update for 6 months.
+- [LLMTC: LowLands L-Gauge Model Train Club](https://llmtc.nl/) - Dutch club of LEGO train builders in scale 1:45, with modular layouts built to the MILS standard and a yearly display at LEGO World in Utrecht.
 - [Lowlug](https://www.lowlug.nl/) - LEGO User Group of the Lowlands, connecting adult fans in the Netherlands since 2003, with a forum, articles and exhibitions. Covers official LEGO.
 - [LUGPol](https://lugpol.pl/) - Polish online community of adult LEGO fans, built around a forum with showcases of custom builds, set reviews and member competitions. Covers official LEGO.
 - [LUKR: LEGO UK Railway](https://www.lukrailway.co.uk/) - United Kingdom LEGO train club founded in summer 2017 with more than 60 members, exhibiting as LNUR (north) and LSUR (south). Publishes railway building standards, a list of LEGO train clubs worldwide, a podcast and news, and organises the Brick Train Awards.
-- [Noppenbahner](https://noppenbahner.de/) - German group of six adult LEGO train builders working in scale 1:45 (models about 8 studs wide). Organises the yearly Noppenbahner L-Gauge Meeting in Wörrstadt and co-founded Open L-Gauge. Status: no update for 6 months.
+- [Noppenbahner](https://noppenbahner.de/) - German group of six adult LEGO train builders working in scale 1:45 (models about 8 studs wide). Organises the yearly Noppenbahner L-Gauge Meeting in Wörrstadt and co-founded Open L-Gauge.
 - [Palikkatakomo](https://www.palikkatakomo.org/) - Finnish LEGO fan community and forum since 2008, supported by the registered association Palikkatakomo ry, a LEGO recognised user group, with exhibitions and building contests.
 - [PLUG - Associação Portuguesa de Utilizadores de LEGO](https://forum.plug.pt/) - Portuguese association of LEGO users with a forum for custom builds, events and general discussion, and a board for a LEGO ambassador.
 - [Swebrick](https://swebrick.se/) - Swedish non-profit association and forum for adult LEGO fans, with a monthly build vote, meet-ups and an annual main event. Covers official LEGO.
@@ -708,21 +708,21 @@ Guides, glossaries, history, compatibility and legal references, education and c
 ### Guides and reference
 
 - [Brick Architect](https://brickarchitect.com/) - Independent site by an architect and author: online LEGO Parts Guide, LEGO Storage Guide, set reviews and monthly news roundups. Covers official LEGO.
-- [Brick Builder's Handbook](https://brickbuildershandbook.com/) - Blog and book on building techniques: sideways building, half-stud offsets with jumper plates, angled walls, round shapes and the geometry behind them. Covers official LEGO. Status: no update for a year.
+- [Brick Builder's Handbook](https://brickbuildershandbook.com/) - Blog and book on building techniques: sideways building, half-stud offsets with jumper plates, angled walls, round shapes and the geometry behind them. Covers official LEGO.
 - [BrickNerd lighting lessons](https://bricknerd.com/home/lego-lighting-lessons-making-sets-and-mocs-merry-and-bright-12-26-22) - Hands-on article on installing LED lighting kits in LEGO sets and custom builds, with the three types of lighting products.
 - [BrickNerd storage guide](https://bricknerd.com/home/an-opinionated-guide-to-lego-storage-containers-and-cost-5-25-23) - Opinionated guide by an adult fan on sorting loose parts and choosing containers, with a cost comparison of drawer units.
 - [BrickReport: licensed themes of LEGO alternatives](https://www.brickreport.io/blog/lego-alternatives-licensed-themes) - Guide to the licences held by each alternative brand (Pantasy, Mattel, COBI, CaDA, BlueBrixx, Blokees, Keeppley, Lumibricks and others), current and ended, set against the licences of official LEGO. Covers official LEGO and alternative brands.
 - [Bricks Stack Exchange](https://bricks.stackexchange.com/) - Question and answer site on LEGO and compatible bricks: identification of parts and clones, plastics, cleaning, compatibility measurement, building problems. Covers official LEGO and alternative brands.
 - [HelloBricks : lexique LEGO](https://www.hellobricks.com/lexique-lego/) - French-language lexicon of terms and acronyms of the LEGO world.
-- [L-Gauge Modular System (LGMS)](https://lgms.org/) - Modular standard for collaborative LEGO train layouts used at United States conventions: modules of at least 3 by 3 baseplates, double-track mainline with minimum radius R104, clearances, rules for the layout coordinator. Version 1.5 released on 7 July 2021. Status: no update for a year.
+- [L-Gauge Modular System (LGMS)](https://lgms.org/) - Modular standard for collaborative LEGO train layouts used at United States conventions: modules of at least 3 by 3 baseplates, double-track mainline with minimum radius R104, clearances, rules for the layout coordinator. Version 1.5 released on 7 July 2021.
 - [Official LEGO guidance: cleaning bricks](https://www.lego.com/en-us/service/help-topics/article/cleaning-your-lego-bricks) - Official LEGO support page on cleaning bricks: hand washing in water no hotter than 40 degrees Celsius, soft cloth, no washing machine, dishwasher or heat drying. Covers official LEGO.
 - [Philo's Home Page](https://www.philohome.com/) - Personal site with technical tests and tools: battery comparison for the Technic and Control+ hub, Mindstorms, LDraw and LeoCAD tutorials, parts packs for Studio. Covers official LEGO.
 - [Sariel.pl](https://sariel.pl/) - Technic builder's site: model presentations, free building instructions and online tools for builders; the author wrote The Unofficial LEGO Technic Builder's Guide. Covers official LEGO.
 - [SEALUG glossary of LEGO terms](https://sealug.org/glossary/) - Glossary of terms used by adult fans of LEGO, published by the Seattle LEGO Users Group: techniques, parts, community terms.
 - [Spielzeug-Fuchs : Klemmbaustein-Lexikon](https://spielzeug-fuchs.de/das-klemmbaustein-lexikon/) - German-language lexicon of abbreviations and terms of the brick hobby, published by a brick retailer. Covers alternative brands.
-- [Spielzeug-Fuchs: LEGO sortieren](https://spielzeug-fuchs.de/lego-sortieren-leicht-gemacht/) - German-language guide to sorting bricks: workspace, sorting boxes, drawer systems and labels. Status: no update for 6 months.
-- [Swooshable](https://swooshable.com/) - Collection of SNOT (studs not on top) techniques, each with the parts list needed to reproduce it. Covers official LEGO. Status: no update for a year.
-- [The Brothers Brick: cleaning yellowed bricks](https://www.brothers-brick.com/2009/08/30/how-to-clean-yellowed-lego-bricks-to-make-classic-space-sets-look-new-news/) - Article on restoring the colour of yellowed white bricks, plus a dust-cleaning tip with a dry paint brush. Status: no update for a year.
+- [Spielzeug-Fuchs: LEGO sortieren](https://spielzeug-fuchs.de/lego-sortieren-leicht-gemacht/) - German-language guide to sorting bricks: workspace, sorting boxes, drawer systems and labels.
+- [Swooshable](https://swooshable.com/) - Collection of SNOT (studs not on top) techniques, each with the parts list needed to reproduce it. Covers official LEGO.
+- [The Brothers Brick: cleaning yellowed bricks](https://www.brothers-brick.com/2009/08/30/how-to-clean-yellowed-lego-bricks-to-make-classic-space-sets-look-new-news/) - Article on restoring the colour of yellowed white bricks, plus a dust-cleaning tip with a dry paint brush.
 
 ### Compatibility, materials and law
 
@@ -816,7 +816,7 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 - [Brickognize](https://brickognize.com/) - Image search for LEGO parts, minifigures, sets and sticker sheets from a photo; free API without key used by several open-source collection tools. Covers official LEGO.
 - [Brickset API v3](https://brickset.com/article/52666/brickset-web-services) - JSON and SOAP interface to the Brickset catalog: sets, extra images, instructions, reviews, member collections (read and write). Covers official LEGO.
 - [LDraw open standard and parts library](https://www.ldraw.org/) - Open format for digital LEGO models and official parts library, basis of LeoCAD, LDView, LPub3D and Studio export. Covers official LEGO.
-- [LEGO Wireless Protocol 3.0 documentation](https://lego.github.io/lego-ble-wireless-protocol-docs/) - Documentation published by LEGO of the Bluetooth Low Energy protocol of its smart hubs: one GATT service to read hub information and to drive the motors and sensors connected to the ports. Covers official LEGO. Status: no update for a year.
+- [LEGO Wireless Protocol 3.0 documentation](https://lego.github.io/lego-ble-wireless-protocol-docs/) - Documentation published by LEGO of the Bluetooth Low Energy protocol of its smart hubs: one GATT service to read hub information and to drive the motors and sensors connected to the ports. Covers official LEGO.
 - [Rebrickable API v3](https://rebrickable.com/api/) - REST interface to the official LEGO catalog (sets, parts, minifigures, themes, colours) and to Rebrickable user collections. Covers official LEGO.
 - [Rebrickable catalog CSV downloads](https://rebrickable.com/downloads/) - Daily archive of CSV files: themes, colours, parts, elements, sets, minifigures, inventories, and identifier mappings to Brickset, BrickLink, Brick Owl, LEGO and LDraw. Covers official LEGO.
 

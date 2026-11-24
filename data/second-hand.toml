@@ -9,11 +9,13 @@ summary_fr = "Où acheter des sets d'occasion et des pièces détachées, trouve
 id = "marketplaces"
 name_en = "Marketplaces and classified ads"
 name_fr = "Places de marché et petites annonces"
+regime = "operating"
 
 [[category.groups]]
 id = "second-hand-shops"
 name_en = "Second-hand and refurbished shops"
 name_fr = "Boutiques d'occasion et de reconditionné"
+regime = "operating"
 
 [[category.groups]]
 id = "communities"
@@ -24,26 +26,31 @@ name_fr = "Espaces communautaires d'achat et de vente"
 id = "parts-and-custom-builds"
 name_en = "Parts, custom builds and instructions"
 name_fr = "Pièces, créations originales et instructions"
+regime = "operating"
 
 [[category.groups]]
 id = "services-and-accessories"
 name_en = "Services and accessories (lighting, display, sorting, data)"
 name_fr = "Services et accessoires (éclairage, vitrines, tri, données)"
+regime = "operating"
 
 [[category.groups]]
 id = "custom-minifigures-and-accessories"
 name_en = "Custom minifigures and accessories"
 name_fr = "Minifigurines et accessoires sur mesure"
+regime = "operating"
 
 [[category.groups]]
 id = "decals-and-stickers"
 name_en = "Decals and stickers"
 name_fr = "Autocollants et décalcomanies"
+regime = "operating"
 
 [[category.groups]]
 id = "motors-and-track"
 name_en = "Motors, controllers and track"
 name_fr = "Moteurs, contrôleurs et voies"
+regime = "operating"
 
 [[resource]]
 id = "bricklink-marketplace"
@@ -1089,7 +1096,7 @@ weaknesses_en = [
 weaknesses_fr = [
   "Kits GoBricks expédiés de Chine : 10 à 20 jours ouvrables",
 ]
-status = "slow"
+status = "active"
 last_activity = "2026-06-04"
 checked = "2026-11-23"
 added = "2026-11-23"

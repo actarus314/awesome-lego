@@ -25,6 +25,7 @@ ORDER = ["brands", "shops", "comparators", "second-hand", "community", "video", 
 COVERS = {"official", "alternative", "second-hand", "parts", "custom-builds", "minifigures", "instructions", "news", "data", "events", "places", "clubs", "learning"}
 ACCESS = {"free", "free-account", "freemium", "paid"}
 STATUS = {"active", "slow", "inactive", "archived", "dead"}
+REGIMES = {"activity", "work", "operating"}  # what keeps an entry current: recent activity, nothing (a finished work), being open
 CONFIDENCE = {"high", "medium", "low"}
 KINDS = {"official", "read", "indexed", "third-party", "forum"}
 FUNDING = {"affiliation", "ads", "sponsorship", "subscription", "donations", "shop", "none", "unknown"}
@@ -72,6 +73,9 @@ def load():
             if not c.get(k):
                 errors.append(f"{where}: category.{k} missing")
         groups = [g["id"] for g in c.get("groups", [])]
+        for g in c.get("groups", []):
+            if g.get("regime", "activity") not in REGIMES:
+                errors.append(f"{where}: group {g['id']}: regime must be one of {sorted(REGIMES)}")
         for r in d.get("resource", []):
             w = f"{where}: {r.get('id', '?')}"
             if not ID.match(r.get("id", "")):
@@ -93,6 +97,11 @@ def load():
             urls[u] = (r.get("id"), path.stem)
             if r.get("group") not in groups:
                 errors.append(f"{w}: group '{r.get('group')}' not in category.groups")
+            r["_regime"] = regime(r, c)
+            if r["_regime"] not in REGIMES:
+                errors.append(f"{w}: regime must be one of {sorted(REGIMES)}")
+            elif r["_regime"] != "activity" and r.get("status") in ("slow", "inactive"):
+                errors.append(f"{w}: status '{r['status']}' measures activity; an entry of regime {r['_regime']} is active, archived or dead")
             if set(r.get("covers", [])) - COVERS:
                 errors.append(f"{w}: unknown covers {set(r['covers']) - COVERS}")
             if r.get("access") and r["access"] not in ACCESS:
@@ -170,6 +179,14 @@ def metrics():
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
 
 
+def regime(r, category):
+    """activity: current while it posts, publishes or commits (a site, a channel, a forum, software);
+    work: a finished work (book, article, guide, standard), dated, never inactive for its age;
+    operating: open or closed (a place, a shop, a brand, a club), checked by the review, not by its posts."""
+    group = next((g for g in category.get("groups", []) if g["id"] == r.get("group")), {})
+    return r.get("regime") or group.get("regime") or "activity"
+
+
 def effective(r, m):
     """Status and last activity, after automatic metrics (data/metrics.json)."""
     last = str(r.get("last_activity") or "")
@@ -177,6 +194,8 @@ def effective(r, m):
     if auto and auto > last:
         last = auto
     status = r["status"]
+    if r.get("_regime", "activity") != "activity":
+        return status, last  # declared: active, archived or dead
     if status in ("active", "slow", "inactive") and last:
         days = (dt.date.today() - dt.date.fromisoformat(last)).days
         status = "active" if days <= 183 else "slow" if days <= 365 else "inactive"
@@ -294,7 +313,7 @@ def site_data(cats, m):
             status, last = effective(r, m)
             row = {k: r.get(k) for k in ("id", "name", "url", "covers", "languages", "countries", "access", "confidence", "checked", "github", "subreddit", "featured", "city", "ships_to_france")}
             row["next"] = str(r["next_date"]) if r.get("next_date") and str(r["next_date"]) >= dt.date.today().isoformat() else None  # past dates are dropped at each daily build
-            row.update(cat=cat["id"], group=r["group"], status=status, last=last,
+            row.update(cat=cat["id"], group=r["group"], status=status, last=last, regime=r["_regime"],
                        metrics=m.get(r["id"], {}),
                        sources=[{"url": s["url"], "date": str(s["date"]), "kind": s["kind"]} for s in r.get("sources", [])])
             for lang in LANGS:
@@ -519,7 +538,7 @@ def check_docs():
     """The documents that describe the data and the automation must name what exists."""
     errors = []
     schema = (DATA / "SCHEMA.md").read_text(encoding="utf-8")
-    for name, words in (("covers", COVERS), ("access", ACCESS), ("status", STATUS), ("kind", KINDS), ("funding", FUNDING)):
+    for name, words in (("covers", COVERS), ("access", ACCESS), ("status", STATUS), ("regime", REGIMES), ("kind", KINDS), ("funding", FUNDING)):
         line = next((l for l in schema.splitlines() if l.startswith(f"{name} = ")), "")
         missing = sorted(w for w in words if not re.search(rf"\b{re.escape(w)}\b", line))
         if missing:

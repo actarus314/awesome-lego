@@ -79,11 +79,22 @@ def subreddit_last(name):
     return newest_date(get(f"https://www.reddit.com/r/{name}/new/.rss"))
 
 
+def regime(r, category):
+    """Same rule as scripts/build.py: the entry's regime, else its group's, else activity."""
+    group = next((g for g in category.get("groups", []) if g["id"] == r.get("group")), {})
+    return r.get("regime") or group.get("regime") or "activity"
+
+
 def score(r, last):
     """Fixed yardstick for the README selection, 0 to 9; reported, never shown on the website.
-    Activity (0-3) + confidence (0-2) + sources read at the source (0-2) + serves a French reader (0-2)."""
+    Activity (0-3; for an operating entry, how recent its check; a finished work 2) + confidence (0-2)
+    + sources read at the source (0-2) + serves a French reader (0-2)."""
+    if r.get("_regime", "activity") == "operating":
+        last = str(r.get("checked") or "")  # open or closed: what counts is a recent check at the source
     days = (TODAY - dt.date.fromisoformat(last)).days if last else None
     act = 0 if days is None else 3 if days <= 30 else 2 if days <= 90 else 1 if days <= 183 else 0
+    if r.get("_regime") == "work":
+        act = 2  # a finished work does not age by its date; its review keeps it or archives it
     conf = {"high": 2, "medium": 1}.get(r.get("confidence"), 0)
     src = min(2, sum(1 for x in r.get("sources", []) if x.get("kind") in ("official", "read")))
     fr = ("fr" in r.get("languages", [])) + ("FR" in r.get("countries", []) or bool(r.get("ships_to_france")))
@@ -181,7 +192,8 @@ def main():
             old[k] = v
     new, failed, archived, stale, unfeature = {}, [], [], [], []
     token = os.environ.get("GITHUB_TOKEN")
-    entries = [dict(r, _cat=path.stem) for path in sorted((ROOT / "data").glob("*.toml")) for r in tomllib.loads(pathlib.Path(path).read_text(encoding="utf-8")).get("resource", [])]
+    entries = [dict(r, _cat=path.stem, _regime=regime(r, d.get("category", {}))) for path in sorted((ROOT / "data").glob("*.toml"))
+               for d in [tomllib.loads(pathlib.Path(path).read_text(encoding="utf-8"))] for r in d.get("resource", [])]
     with ThreadPoolExecutor(12) as pool, ThreadPoolExecutor(1) as slow:  # network waits overlap; subreddits stay one at a time
         jobs = [(slow if r.get("subreddit") and not r.get("github") and not r.get("youtube_channel_id") else pool).submit(read, r, old, token) for r in entries]
         results = [j.result() for j in jobs]
@@ -194,7 +206,7 @@ def main():
             if m:
                 new[r["id"]] = {k: v for k, v in m.items() if v is not None}
             last = (new.get(r["id"]) or {}).get("last_activity") or str(r.get("last_activity") or "")
-            idle = last and (TODAY - dt.date.fromisoformat(last)).days > 183
+            idle = r["_regime"] == "activity" and last and (TODAY - dt.date.fromisoformat(last)).days > 183
             if r.get("featured") and (idle or r.get("status") != "active" or r.get("confidence") == "low" or (new.get(r["id"]) or {}).get("archived")):
                 unfeature.append(f"{r['id']} ({last or 'no date'})")
             rows.append((r, last or None))

@@ -9,21 +9,25 @@ summary_fr = "Groupes d'utilisateurs, clubs et associations de fans de LEGO et d
 id = "networks"
 name_en = "Networks and directories"
 name_fr = "Réseaux et annuaires"
+regime = "operating"
 
 [[category.groups]]
 id = "national-clubs"
 name_en = "National clubs"
 name_fr = "Clubs nationaux"
+regime = "operating"
 
 [[category.groups]]
 id = "regional-clubs"
 name_en = "Regional and local clubs"
 name_fr = "Clubs régionaux et locaux"
+regime = "operating"
 
 [[category.groups]]
 id = "alternative-brand-clubs"
 name_en = "Clubs for alternative brands"
 name_fr = "Clubs des marques alternatives"
+regime = "operating"
 
 [[category.groups]]
 id = "online-clubs"
@@ -260,7 +264,7 @@ strengths_en = ["Forum with more than 370000 messages", "More than 100 active me
 strengths_fr = ["Forum de plus de 370000 messages", "Plus de 100 membres actifs selon l'annuaire du Fan CoLab"]
 weaknesses_en = ["Site not readable at the time of the check; last forum message seen dates from December 2025"]
 weaknesses_fr = ["Site illisible lors de la vérification ; dernier message de forum observé en décembre 2025"]
-status = "slow"
+status = "active"
 last_activity = "2025-12-19"
 checked = "2026-11-23"
 added = "2026-11-23"
@@ -1116,7 +1120,7 @@ weaknesses_en = ["Site in German only", "Latest post on 12 May 2026; dates of th
 weaknesses_fr = ["Site uniquement en allemand", "Dernier article le 12 mai 2026 ; dates de la rencontre 2027 non annoncées à la date de lecture"]
 size_en = "6 members"
 size_fr = "6 membres"
-status = "slow"
+status = "active"
 last_activity = "2026-05-12"
 checked = "2026-11-23"
 added = "2026-11-23"
@@ -1151,7 +1155,7 @@ weaknesses_en = ["Own site rarely updated: pages last modified in November 2025"
 weaknesses_fr = ["Site propre rarement mis à jour : pages modifiées en dernier en novembre 2025", "Taille du club tirée d'un entretien d'un site tiers"]
 size_en = "13 builders (third-party interview, April 2026)"
 size_fr = "13 constructeurs (entretien d'un site tiers, avril 2026)"
-status = "slow"
+status = "active"
 last_activity = "2026-04-22"
 checked = "2026-11-23"
 added = "2026-11-23"

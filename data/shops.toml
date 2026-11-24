@@ -9,16 +9,19 @@ summary_fr = "Boutiques en ligne et en magasin vendant du LEGO officiel, des mar
 id = "official-lego"
 name_en = "Official LEGO"
 name_fr = "LEGO officiel"
+regime = "operating"
 
 [[category.groups]]
 id = "alternative-brands"
 name_en = "Alternative brands"
 name_fr = "Marques alternatives"
+regime = "operating"
 
 [[category.groups]]
 id = "general-retailers"
 name_en = "General retailers"
 name_fr = "Généralistes"
+regime = "operating"
 
 [[resource]]
 id = "lego-com-fr"
