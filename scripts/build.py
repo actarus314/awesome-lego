@@ -282,7 +282,8 @@ def site_data(cats, m):
             for lang in LANGS:
                 row[lang] = {"summary": r["summary_" + lang], "strengths": r.get("strengths_" + lang, []),
                              "weaknesses": r.get("weaknesses_" + lang, []), "size": r.get("size_" + lang, ""),
-                             "model": r.get("business_model_" + lang, ""), "group": gnames.get(r["group"], {}).get(lang, r["group"])}
+                             "model": r.get("business_model_" + lang, ""), "group": gnames.get(r["group"], {}).get(lang, r["group"]),
+                             **({"rec": r["recurrence_" + lang]} if r.get("recurrence_" + lang) else {})}
             row["checked"] = str(row["checked"])
             row["brands"] = r.get("brands", [])  # read at the source of each entry (brands of brands.toml it sells, tracks, reviews or admits)
             row["funding"] = r.get("funding")
@@ -333,7 +334,7 @@ def csp(doc):
     hashes = [base64.b64encode(hashlib.sha256(m.encode("utf-8")).digest()).decode()
               for m in re.findall(r"<script>(.*?)</script>", doc, re.S)]
     return ("default-src 'none'; script-src " + " ".join(f"'sha256-{h}'" for h in hashes)
-            + "; style-src 'unsafe-inline'; img-src 'self' https://actarus314.github.io; connect-src 'self'; base-uri 'none'; form-action 'none'")
+            + "; style-src 'unsafe-inline'; img-src 'self' https://actarus314.github.io; connect-src 'self' https://nominatim.openstreetmap.org; base-uri 'none'; form-action 'none'")
 
 
 BASELINE = "2026-11-23"  # the directory's first day: its entries make one opening item, not 400 separate ones
@@ -411,7 +412,7 @@ def calendar(cats, lang):
     stamp = today.strftime("%Y%m%dT000000Z")
     site = PAGES + ("fr/" if lang == "fr" else "")
     lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//actarus314//Awesome LEGO//" + lang.upper(), "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
-             "X-WR-CALNAME:" + esc(CAL_T[lang]), "X-PUBLISHED-TTL:P1D"]
+             "X-WR-CALNAME:" + esc(CAL_T[lang]), "REFRESH-INTERVAL;VALUE=DURATION:P1D", "X-PUBLISHED-TTL:P1D"]  # subscribed calendars come back once a day (RFC 7986)
     for c in cats:
         for r in c["resources"]:
             nd = str(r.get("next_date") or "")

@@ -25,7 +25,7 @@ try{if('{{LANG}}'==='en'){const l=localStorage.getItem('lang');if(l==='fr'||(!l&
 --accent:light-dark(#0a6aa1,#7fd4ff);--on-accent:light-dark(#ffffff,#04192c);--hi:light-dark(#e3a008,#ffd166);
 --official:light-dark(#b8453a,#ff8f8f);--alt:light-dark(#d9a21b,#ffd166);--alt-ink:light-dark(#8a6400,#ffd166);--other:light-dark(#7a8692,#6f8fae);
 --seq:light-dark(#0a6aa1,#7fd4ff);--f-cat:light-dark(#0a6aa1,#7fd4ff);--f-cov:light-dark(#0f6b5c,#c3b5ff);--f-opt:light-dark(#3b4651,#7ee8a6);--ok:light-dark(#1f7a3e,#7ee8a6);--warn:light-dark(#a35d00,#ff9d7a);--bad:light-dark(#a3231b,#ff8f8f);
---grid:light-dark(rgba(12,38,64,.045),rgba(255,255,255,.028));
+--t-club:light-dark(#8a3fd1,#d2a8ff);--grid:light-dark(rgba(12,38,64,.045),rgba(255,255,255,.028));
 --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;--r:12px;--maxw:1400px}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box}html{scroll-padding-top:calc(var(--hdr,56px) + 1rem)}
@@ -143,12 +143,19 @@ footer{margin:60px 0 0;padding:24px 0 40px;border-top:1px solid var(--line);colo
 footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
 @media (max-width:820px){header.top .wrap{flex-wrap:wrap;height:auto;padding-top:10px;row-gap:2px}nav.tabs{order:3;flex-basis:100%;overflow-x:auto;padding-bottom:4px}.tools{margin-left:auto}}
 h3.part{font-size:15px;margin:34px 0 4px;font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}h3.part+p{margin:0 0 14px;color:var(--muted)}
-.agenda{list-style:none;margin:0;padding:0;display:grid;gap:6px}.agenda li{display:grid;grid-template-columns:92px 1fr auto;gap:10px;align-items:baseline;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
-.agenda time{font:600 13px var(--mono);color:var(--fg)}.agenda .w{color:var(--muted);font-size:13px;text-align:right}.agenda button,.near button.go,.mk button{border:0;background:none;padding:0;font:600 15px system-ui,sans-serif;color:var(--accent);cursor:pointer;text-align:left}
+.agenda{list-style:none;margin:0;padding:0;display:grid;gap:6px}.agenda li{background:var(--card);border:1px solid var(--line);border-radius:10px}
+.tg{display:block;width:100%;border:0;background:none;padding:0;font:inherit;color:inherit;text-align:left;cursor:pointer}.tg b{color:var(--accent);font-weight:600}.tg::after{content:'▸';float:right;color:var(--muted);margin-left:8px}.tg[aria-expanded=true]::after{content:'▾'}
+.agenda .tg{display:grid;grid-template-columns:92px 1fr auto 12px;gap:10px;align-items:baseline;padding:8px 12px;font-size:15px}.agenda .tg::after{float:none;margin:0}
+.mf{font-size:13.5px;line-height:1.45}.mf p{margin:0 0 6px}.mf .k{color:var(--muted);font-size:12.5px}.mf .ln{display:flex;gap:14px;flex-wrap:wrap}.mf a,.mf button{font:600 13.5px system-ui,sans-serif;color:var(--accent);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline}
+.agenda .mf{padding:0 12px 10px 114px}.near .mf{padding:4px 0 6px 12px;border-left:2px solid var(--line);margin:4px 0 4px 2px}
+.near .tg{display:flex;gap:6px;align-items:baseline}.near .tg::after{float:none;margin-left:auto}.where{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.where input{font:inherit;font-size:14px;height:34px;box-sizing:border-box;padding:0 9px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);width:12em}.where small{color:var(--muted);font-size:12px}
+.subs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px}.subs a.btn{text-decoration:none;display:inline-flex;align-items:center}#tip{white-space:pre-line}
+.geokey i.mix{background:conic-gradient(var(--accent) 0 33%,var(--hi) 0 66%,var(--t-club) 0)}#geo .sl{pointer-events:none}#geo .here{fill:none;stroke:var(--fg);pointer-events:none}#geo .here-c{fill:var(--fg);pointer-events:none}#geo{user-select:none;-webkit-user-select:none}
+.agenda time{font:600 13px var(--mono);color:var(--fg)}.agenda .w{color:var(--muted);font-size:13px;text-align:right}.mk button{border:0;background:none;padding:0;font:600 15px system-ui,sans-serif;color:var(--accent);cursor:pointer;text-align:left}
 .agenda h4,.near h4{margin:16px 0 6px;font-size:14px;color:var(--muted)}
-@media (max-width:640px){.agenda li{grid-template-columns:1fr;gap:2px}.agenda .w{text-align:left}}
+@media (max-width:640px){.agenda .tg{grid-template-columns:1fr 12px;gap:2px 10px}.agenda .tg time,.agenda .tg b,.agenda .tg .w{grid-column:1}.agenda .tg::after{grid-column:2;grid-row:1}.agenda .w{text-align:left}.agenda .mf{padding:0 12px 10px}}
 .mapbar .chip{--f:var(--accent)}.mapbar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:4px 0 10px}.mapbar .sp{flex:1}
-.geo{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(280px,1fr);gap:14px;align-items:start}@media (max-width:980px){.geo{grid-template-columns:1fr}}
+.geo{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(280px,1fr);gap:14px;align-items:start}@media (max-width:980px){.near{max-height:none}.geo{grid-template-columns:1fr}}
 .geomap{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;position:relative}
 #geo{display:block;width:100%;touch-action:none;cursor:grab;background:color-mix(in srgb,var(--accent) 6%,var(--bg))}#geo.drag{cursor:grabbing}
 #geo .land{fill:var(--card);stroke:var(--line)}#geo .ref{fill:var(--faint)}#geo .rl{fill:var(--muted);paint-order:stroke;stroke:var(--card);stroke-linejoin:round}
@@ -188,16 +195,15 @@ h3.part{font-size:15px;margin:34px 0 4px;font:600 12px var(--mono);letter-spacin
 <div id="list"></div>
 </div>
 <div id="view-out" hidden>
-<h2 id="agenda" data-t="ag_title"></h2><p class="lead" id="ag-lead"></p><div id="ag"></div>
-<h2 id="near-me" data-t="geo_title"></h2><p class="lead" data-t="geo_lead"></p>
+<h2 id="near-me" data-t="geo_title"></h2>
 <div class="mapbar" id="mapbar"></div>
 <div class="geo"><div class="geomap"><svg id="geo" role="group" tabindex="0"></svg><div class="geokey" id="geokey"></div></div><div class="near" id="near"></div></div>
+<h2 id="agenda" data-t="ag_title"></h2><div class="subs" id="ag-sub"></div><div id="ag"></div>
 </div>
 <div id="view-obs" hidden>
-<h2 data-t="obs"></h2><p class="lead" data-t="ins_lead"></p>
-<h3 class="part" data-t="part_out"></h3><p data-t="part_out_lead"></p>
+<h2 data-t="part_out"></h2>
 <div class="insights"><section class="panel wide" id="v-passion"></section><section class="panel wide" id="v-makers"></section></div>
-<h3 class="part" data-t="part_in"></h3><p data-t="part_in_lead"></p>
+<h2 data-t="part_in"></h2>
 <div class="insights"><section class="panel" id="v-pulse"></section><section class="panel" id="v-brands"></section></div>
 </div>
 </main>
@@ -212,8 +218,8 @@ const L=document.documentElement.lang,D=JSON.parse(document.getElementById('data
 const S={
 short:{en:'Awesome LEGO',fr:'Awesome LEGO'},nav_dir:{en:'Directory',fr:'Annuaire'},nav_out:{en:'Out and about',fr:'Sortir'},nav_obs:{en:'Observatory',fr:'Observatoire'},
 other:{en:'Français',fr:'English'},map:{en:'Map of the brick world',fr:'Carte du monde de la brique'},
-obs:{en:'Observatory',fr:'Observatoire'},part_out:{en:'Beyond the directory',fr:'Au-delà de l\'annuaire'},part_out_lead:{en:'Figures from other sources than the entries: fan communities recognized by the LEGO Group, population, who makes the bricks.',fr:'Des chiffres venus d\'autres sources que les fiches : communautés de fans reconnues par le groupe LEGO, population, fabricants des briques.'},part_in:{en:'What the directory reveals',fr:'Ce que révèle l\'annuaire'},part_in_lead:{en:'Computed from the entries themselves.',fr:'Calculé depuis les fiches elles-mêmes.'},ag_title:{en:'Calendar',fr:'Agenda'},ag_lead:{en:'Next editions announced by the events and clubs of the directory, by date.',fr:'Prochaines éditions annoncées par les événements et clubs de l\'annuaire, par date.'},ag_ics:{en:'Add to my calendar (iCal, {n} editions)',fr:'Ajouter à mon agenda (iCal, {n} éditions)'},ag_mine:{en:'{c}',fr:'{c}'},ag_others:{en:'Elsewhere',fr:'Ailleurs'},ag_all:{en:'Next editions',fr:'Prochaines éditions'},ag_none_mine:{en:'No dated edition announced in {c} for now.',fr:'Aucune édition datée annoncée pour l\'instant : {c}.'},geo_title:{en:'Near me',fr:'Près de chez moi'},geo_lead:{en:'Places to visit, events and clubs of the directory, placed at their city.',fr:'Lieux à visiter, événements et clubs de l\'annuaire, placés à leur ville.'},locate:{en:'Locate me',fr:'Me situer'},zin:{en:'Zoom in',fr:'Zoomer'},zout:{en:'Zoom out',fr:'Dézoomer'},from_c:{en:'Sorted by distance from {c}',fr:'Classé par distance depuis : {c}'},from_me:{en:'Sorted by distance from your position (computed in your browser)',fr:'Classé par distance depuis votre position (calculée dans votre navigateur)'},from_z:{en:'Sorted by distance from the middle of the map',fr:'Classé par distance depuis le centre de la carte'},km:{en:'{n} km',fr:'{n} km'},more_c:{en:'{n} more cities',fr:'{n} autres villes'},loc_err:{en:'Position not available',fr:'Position indisponible'},map_err:{en:'The map could not be loaded; the list below still works.',fr:'La carte n\'a pas pu être chargée ; la liste ci-dessous reste utilisable.'},osm:{en:'Coordinates © OpenStreetMap contributors · outlines Natural Earth',fr:'Coordonnées © contributeurs OpenStreetMap · contours Natural Earth'},Europe:{en:'Europe',fr:'Europe'},'North America':{en:'North America',fr:'Amérique du Nord'},'South America':{en:'South America',fr:'Amérique du Sud'},Oceania:{en:'Oceania',fr:'Océanie'},Africa:{en:'Africa',fr:'Afrique'},Asia:{en:'Asia',fr:'Asie'},mk_title:{en:'Who makes the bricks',fr:'Qui fabrique les briques'},mk_own:{en:'Make their own bricks',fr:'Fabriquent leurs briques'},mk_ext:{en:'Have them made elsewhere',fr:'Les font fabriquer ailleurs'},mk_none:{en:'Maker not established',fr:'Fabricant non établi'},mk_note:{en:'A link is kept when the brand or the maker states it, or when two independent sources confirm it; a forum rumour, a single source or an unsourced page is not enough. Sources by site name, with their date.',fr:'Un lien est retenu s\'il est déclaré par la marque ou le fabricant, ou confirmé par deux sources indépendantes ; une rumeur de forum, une source unique ou une page sans référence ne suffit pas. Sources par nom de site, avec leur date.'},mk_take:{en:'{o} of {n} brands make their own bricks; {e} have them made elsewhere, {g} of them by GoBricks; for {u}, the maker is not established.',fr:'{o} marques sur {n} fabriquent leurs briques ; {e} les font fabriquer ailleurs, dont {g} par GoBricks ; pour {u}, le fabricant n\'est pas établi.'},bricks:{en:'Bricks',fr:'Briques'},mixed:{en:'several types',fr:'plusieurs types'},own_make:{en:'own production',fr:'fabrication propre'},no_maker:{en:'maker not established',fr:'fabricant non établi'},
-ins_lead:{en:'Computed from the data at each update. Click a cell or a dot to see the resources behind it.',fr:'Calculé depuis les données à chaque mise à jour. Un clic sur une case ou un point montre les ressources concernées.'},
+part_out:{en:'Beyond the directory',fr:'Au-delà de l\'annuaire'},part_in:{en:'What the directory reveals',fr:'Ce que révèle l\'annuaire'},ag_title:{en:'Calendar',fr:'Agenda'},ag_sub:{en:'Subscribe to the calendar',fr:'S\'abonner à l\'agenda'},ag_copy:{en:'Copy the calendar address',fr:'Copier l\'adresse de l\'agenda'},ag_copied:{en:'Address copied',fr:'Adresse copiée'},site:{en:'Website',fr:'Site'},full:{en:'Full entry',fr:'Fiche complète'},ty_places:{en:'place',fr:'lieu'},ty_events:{en:'event',fr:'événement'},ty_clubs:{en:'club',fr:'club'},more_n:{en:'+{n} more',fr:'+{n} autres'},ag_mine:{en:'{c}',fr:'{c}'},ag_others:{en:'Elsewhere',fr:'Ailleurs'},ag_all:{en:'Next editions',fr:'Prochaines éditions'},ag_none_mine:{en:'No dated edition announced in {c} for now.',fr:'Aucune édition datée annoncée pour l\'instant : {c}.'},geo_title:{en:'Near me',fr:'Près de chez moi'},locate:{en:'Locate me',fr:'Me situer'},zin:{en:'Zoom in',fr:'Zoomer'},zout:{en:'Zoom out',fr:'Dézoomer'},from_c:{en:'Sorted by distance from {c}',fr:'Classé par distance depuis : {c}'},from_me:{en:'Sorted by distance from your position (computed in your browser)',fr:'Classé par distance depuis votre position (calculée dans votre navigateur)'},from_z:{en:'Sorted by distance from the middle of the map',fr:'Classé par distance depuis le centre de la carte'},km:{en:'{n} km',fr:'{n} km'},more_c:{en:'{n} more cities',fr:'{n} autres villes'},loc_err:{en:'Position not available',fr:'Position indisponible'},wh_q:{en:'City or postal code',fr:'Ville ou code postal'},where_go:{en:'Go',fr:'Aller'},where_via:{en:'Search sent to OpenStreetMap',fr:'Recherche envoyée à OpenStreetMap'},where_none:{en:'Place not found',fr:'Lieu introuvable'},where_in:{en:'Postal code searched in {c} only: add the country (for example 84220 France)',fr:'Code postal cherché seulement pour : {c} ; ajouter le pays (par exemple 84220 France)'},where_err:{en:'Search unavailable',fr:'Recherche indisponible'},from_p:{en:'Sorted by distance from {c}',fr:'Classé par distance depuis : {c}'},map_err:{en:'The map could not be loaded; the list below still works.',fr:'La carte n\'a pas pu être chargée ; la liste ci-dessous reste utilisable.'},osm:{en:'Coordinates © OpenStreetMap contributors · outlines Natural Earth',fr:'Coordonnées © contributeurs OpenStreetMap · contours Natural Earth'},Europe:{en:'Europe',fr:'Europe'},'North America':{en:'North America',fr:'Amérique du Nord'},'South America':{en:'South America',fr:'Amérique du Sud'},Oceania:{en:'Oceania',fr:'Océanie'},Africa:{en:'Africa',fr:'Afrique'},Asia:{en:'Asia',fr:'Asie'},mk_title:{en:'Who makes the bricks',fr:'Qui fabrique les briques'},mk_own:{en:'Make their own bricks',fr:'Fabriquent leurs briques'},mk_ext:{en:'Have them made elsewhere',fr:'Les font fabriquer ailleurs'},mk_none:{en:'Maker not established',fr:'Fabricant non établi'},mk_note:{en:'A link is kept when the brand or the maker states it, or when two independent sources confirm it; a forum rumour, a single source or an unsourced page is not enough.',fr:'Un lien est retenu s\'il est déclaré par la marque ou le fabricant, ou confirmé par deux sources indépendantes ; une rumeur de forum, une source unique ou une page sans référence ne suffit pas.'},bricks:{en:'Bricks',fr:'Briques'},mixed:{en:'several types',fr:'plusieurs types'},own_make:{en:'own production',fr:'fabrication propre'},no_maker:{en:'maker not established',fr:'fabricant non établi'},
+
 reset:{en:'Show all',fr:'Tout afficher'},start:{en:'Where to start',fr:'Par où commencer'},v_cards:{en:'Cards',fr:'Cartes'},v_table:{en:'Table',fr:'Tableau'},c_name:{en:'Name',fr:'Nom'},c_cat:{en:'Category',fr:'Catégorie'},c_scope:{en:'Scope',fr:'Périmètre'},c_lang:{en:'Languages',fr:'Langues'},c_status:{en:'Status',fr:'Statut'},c_last:{en:'Last activity',fr:'Dernière activité'},c_stars:{en:'Stars',fr:'Étoiles'},search:{en:'Search a name, a brand, a country, a feature…',fr:'Chercher un nom, une marque, un pays, une fonction…'},
 f_cat:{en:'Categories',fr:'Catégories'},filters:{en:'Filters',fr:'Filtres'},f_cov:{en:'Scope',fr:'Périmètre'},f_opt:{en:'Criteria',fr:'Critères'},
 contribute:{en:'Contribute',fr:'Contribuer'},report:{en:'Report an error',fr:'Signaler une erreur'},
@@ -354,15 +360,15 @@ function mkLine(r){if(BN[r.id]==null)return'';const{own,ext}=mkOf(r);const by={}
 function vMakers(){const el=document.getElementById('v-makers');const all=D.brands.map(b=>({...b,...mkOf(b)}));
  const own=all.filter(b=>b.own.length&&!b.ext.length),ext=all.filter(b=>b.ext.length),none=all.filter(b=>!b.own.length&&!b.ext.length);
  const via={};ext.forEach(b=>{const g={};b.ext.forEach(x=>{const k=x.name_fr||/\(/.test(x.name)||!x.id?mkName(x):brandName(x.id)||mkName(x);(g[k]=g[k]||[]).push(x)});Object.entries(g).forEach(([k,xs])=>(via[k]=via[k]||[]).push({b,xs}))});
- const g=(via.GoBricks||[]).length,btn=(id,label)=>`<button type="button" data-go="${id}">${esc(label)}</button>`;
- const take=t('mk_take').replace('{o}',own.length).replace('{n}',all.length).replace('{e}',ext.length).replace('{g}',g).replace('{u}',none.length);
- el.innerHTML=`<h3>${t('mk_title')}</h3><p class="take">${esc(take)}</p><div class="mk">`+
+ const btn=(id,label)=>`<button type="button" data-brand="${id}">${esc(label)}</button>`;
+ el.innerHTML=`<h3>${t('mk_title')}</h3><div class="mk">`+
   `<div><h4>${t('mk_own')} (${own.length})</h4><ul>${own.map(b=>`<li>${btn(b.id,b.name)} <span class="via">${mkSrc(b.own,true)}</span></li>`).join('')}</ul></div>`+
   `<div><h4>${t('mk_ext')} (${ext.length})</h4><ul>${Object.entries(via).sort((a,b)=>b[1].length-a[1].length).map(([k,v])=>`<li><span class="via">${esc(k)} →</span> ${v.map(({b,xs})=>`${btn(b.id,b.name)} <span class="via">(${mkSrc(xs,true)})</span>`).join(' · ')}</li>`).join('')}</ul></div>`+
   `<div><h4>${t('mk_none')} (${none.length})</h4><ul>${none.map(b=>`<li>${btn(b.id,b.name)}</li>`).join('')}</ul></div></div><p class="note">${t('mk_note')}</p>`;
- el.onclick=e=>{const b=e.target.closest('button[data-go]');if(b)openEntry(b.dataset.go)}}
-// "Out and about": calendar of the next editions, then the map near me (drawn by the site: outlines and reference cities from media/basemap.json)
-const TYPES={places:'var(--accent)',events:'var(--hi)',clubs:'var(--ok)'},tcol=c=>TYPES[c]||'var(--other)';
+ el.onclick=e=>{const b=e.target.closest('button[data-brand]');if(b)brandMode(b.dataset.brand)}}
+function brandMode(id){toDir();resetAll();setQuery(brandName(id));update();document.getElementById('directory').scrollIntoView({behavior:'smooth'})}
+// "Out and about": the map near me (drawn by the site: outlines and reference cities from media/basemap.json; a typed place goes to Nominatim on submit only), then the calendar of the next editions
+const TYPES={places:'var(--accent)',events:'var(--hi)',clubs:'var(--t-club)'},tcol=c=>TYPES[c]||'var(--other)';
 const MW=1000,merc=(lat,lon)=>{const y=Math.log(Math.tan(Math.PI/4+Math.max(-60,Math.min(78,lat))*Math.PI/360));return[(lon+180)/360*MW,(1-y/Math.PI)/2*MW]};
 const unmerc=(x,y)=>[Math.atan(Math.sinh(Math.PI*(1-2*y/MW)))*180/Math.PI,x/MW*360-180];
 const km=(a,b)=>{const r=Math.PI/180,d=Math.sin((b[0]-a[0])*r/2)**2+Math.cos(a[0]*r)*Math.cos(b[0]*r)*Math.sin((b[1]-a[1])*r/2)**2;return 12742*Math.asin(Math.sqrt(d))};
@@ -373,21 +379,30 @@ function drawOut(){if(!outDrawn){drawAgenda();outDrawn=true}
  if(!BASE){if(!baseLoad)baseLoad=fetch((L==='fr'?'../':'')+'media/basemap.json').then(r=>{if(!r.ok)throw r.status;return r.json()}).then(b=>{BASE=b;BASE.cont=Object.fromEntries(b.countries.map(c=>[c.c,c.k]));if(cur==='out')initGeo()})
    .catch(()=>{baseLoad=null;document.getElementById('mapbar').innerHTML=`<p class="lead">${t('map_err')}</p>`;drawNear()});return}
  if(!geoOn)initGeo();else drawGeo()}
+// one mini-fiche for the calendar and the list near the map: what one needs without leaving the tab
+function mini(r,meta){const x=r[L],k=[...meta,x.rec||''].filter(Boolean);
+ return `<p>${esc(x.summary)}</p>${k.length?`<p class="k">${k.map(esc).join(' · ')}</p>`:''}<p class="ln"><a href="${esc(r.url)}" target="_blank" rel="noopener">${t('site')} ↗</a><button type="button" data-full="${r.id}">${t('full')}</button></p>`}
+const foldRow=(p,r,head,open,meta=[])=>`<li><button type="button" class="tg" aria-expanded="${!!open}" aria-controls="mf-${p}-${r.id}">${head}</button><div class="mf" id="mf-${p}-${r.id}"${open?'':' hidden'}>${mini(r,meta)}</div></li>`;
+function foldClick(e,onToggle){const f=e.target.closest('[data-full]');if(f){openEntry(f.dataset.full);return true}const b=e.target.closest('button.tg');if(!b)return false;
+ const o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o);document.getElementById(b.getAttribute('aria-controls')).hidden=!o;if(onToggle)onToggle(b,o);return true}
 function drawAgenda(){const items=R.filter(r=>r.next).sort((a,b)=>a.next<b.next?-1:a.next>b.next?1:a.name.localeCompare(b.name));
- const row=r=>`<li><time>${fmt(r.next)}</time><span><button type="button" data-go="${r.id}">${esc(r.name)}</button></span><span class="w">${esc([r.city,(r.countries||[]).filter(c=>c!=='international').map(cname).join(', ')].filter(Boolean).join(' · '))}</span></li>`;
+ const row=r=>foldRow('ag',r,`<time>${fmt(r.next)}</time><b>${esc(r.name)}</b><span class="w">${esc([r.city,(r.countries||[]).filter(c=>c!=='international').map(cname).join(', ')].filter(Boolean).join(' · '))}</span>`,false,[t('ty_'+r.cat)]);
  const mine=VC?items.filter(r=>(r.countries||[]).includes(VC)):[],others=items.filter(r=>!mine.includes(r));
- document.getElementById('ag-lead').innerHTML=`${esc(t('ag_lead'))} <a href="agenda.ics" download>${esc(t('ag_ics').replace('{n}',items.length))}</a>`;
+ const ics=new URL('agenda.ics',location.href).href,sub=document.getElementById('ag-sub');  // a subscription follows the daily rebuild of the file
+ sub.innerHTML=`<a class="btn" href="${esc(ics.replace(/^https?:/,'webcal:'))}">${t('ag_sub')}</a><button class="btn" type="button" id="agcopy">${t('ag_copy')}</button>`;
+ sub.onclick=e=>{if(e.target.id!=='agcopy')return;const b=e.target;(navigator.clipboard?navigator.clipboard.writeText(ics):Promise.reject()).then(()=>{b.textContent=t('ag_copied')},()=>{b.textContent=ics})};
  const el=document.getElementById('ag');
  el.innerHTML=(VC?`<h4>${esc(t('ag_mine').replace('{c}',cname(VC)))}</h4>`+(mine.length?`<ul class="agenda">${mine.map(row).join('')}</ul>`:`<p class="lead">${esc(t('ag_none_mine').replace('{c}',cname(VC)))}</p>`)+`<h4>${t('ag_others')}</h4>`:`<h4>${t('ag_all')}</h4>`)+`<ul class="agenda">${others.map(row).join('')}</ul>`;
- el.onclick=e=>{const b=e.target.closest('[data-go]');if(b)openEntry(b.dataset.go)}}
+ el.onclick=e=>foldClick(e)}
 function zones(){const z={};CITIES.forEach(c=>{const k=BASE.cont[c.cc]||'';if(!k)return;(z[k]=z[k]||[]).push(c)});
  return Object.entries(z).map(([k,cs])=>{const xs=cs.map(c=>c.xy[0]),ys=cs.map(c=>c.xy[1]);return{k,n:cs.reduce((a,c)=>a+c.items.length,0),box:[Math.min(...xs),Math.min(...ys),Math.max(...xs),Math.max(...ys)]}}).sort((a,b)=>b.n-a.n)}
 function fit(box){const svg=document.getElementById('geo');if(!svg.clientWidth)return;const ar=svg.clientHeight/svg.clientWidth;let[x0,y0,x1,y1]=box;let w=Math.max(40,(x1-x0)*1.25),h=Math.max(40*ar,(y1-y0)*1.25);
  if(h/w>ar)w=h/ar;else h=w*ar;vb={x:(x0+x1)/2-w/2,y:(y0+y1)/2-h/2,w,h}}
 function initGeo(){if(geoOn)return;geoOn=true;const svg=document.getElementById('geo');svg.setAttribute('aria-label',t('geo_title'));
  const Z=zones(),mineZ=Z.find(z=>z.k===BASE.cont[VC])||Z[0];
- document.getElementById('mapbar').innerHTML=Z.map(z=>`<button class="chip" type="button" data-z="${esc(z.k)}" aria-pressed="false">${esc(t(z.k))} <span class="c">${z.n}</span></button>`).join('')+`<span class="sp"></span><button class="btn" type="button" data-zoom="1.6" aria-label="${t('zin')}">+</button><button class="btn" type="button" data-zoom="0.625" aria-label="${t('zout')}">−</button><button class="btn" type="button" id="locate">${t('locate')}</button>`;
- document.getElementById('geokey').innerHTML=Object.keys(TYPES).map(c=>`<span><i style="background:${tcol(c)}"></i>${esc(shortCat(c))}</span>`).join('')+`<span><i style="background:var(--muted)"></i>${t('mixed')}</span><span class="attr">${t('osm')}</span>`;
+ document.getElementById('mapbar').innerHTML=Z.map(z=>`<button class="chip" type="button" data-z="${esc(z.k)}" aria-pressed="false">${esc(t(z.k))} <span class="c">${z.n}</span></button>`).join('')+`<span class="sp"></span><button class="btn" type="button" data-zoom="1.6" aria-label="${t('zin')}">+</button><button class="btn" type="button" data-zoom="0.625" aria-label="${t('zout')}">−</button><button class="btn" type="button" id="locate">${t('locate')}</button><form id="where" class="where"><input type="search" name="q" placeholder="${t('wh_q')}" aria-label="${t('wh_q')}" autocomplete="postal-code" enterkeyhint="search"><button class="btn" type="submit">${t('where_go')}</button><small id="wmsg">${t('where_via')}</small></form>`;
+  document.getElementById('where').onsubmit=e=>{e.preventDefault();whereGo(e.target)};
+ document.getElementById('geokey').innerHTML=Object.keys(TYPES).map(c=>`<span><i style="background:${tcol(c)}"></i>${esc(shortCat(c))}</span>`).join('')+`<span><i class="mix"></i>${t('mixed')}</span><span class="attr">${t('osm')}</span>`;
  svg.style.height=Math.min(600,Math.max(300,svg.clientWidth*.68))+'px';
  const VCC=BASE.countries.find(c=>c.c===VC);if(VCC){origin=unmerc(VCC.x,VCC.y);originKind='c'}
  fit(mineZ.box);zonePressed(mineZ.k);if(!origin){origin=unmerc(vb.x+vb.w/2,vb.y+vb.h/2);originKind='z'}drawGeo();drawNear();
@@ -397,19 +412,31 @@ function initGeo(){if(geoOn)return;geoOn=true;const svg=document.getElementById(
   if(e.target.id==='locate'&&navigator.geolocation)navigator.geolocation.getCurrentPosition(p=>{origin=[p.coords.latitude,p.coords.longitude];originKind='me';const[x,y]=merc(...origin);zonePressed('');vb={x:x-vb.w/2,y:y-vb.h/2,w:vb.w,h:vb.h};drawGeo();drawNear()},()=>{e.target.textContent=t('loc_err')},{timeout:10000})};
  // zoom with the wheel or a pinch, move by dragging; points stay the same size on screen
  const toMap=(cx,cy)=>{const r=svg.getBoundingClientRect();return[vb.x+(cx-r.left)/r.width*vb.w,vb.y+(cy-r.top)/r.height*vb.h]};
- svg.addEventListener('wheel',e=>{if(!e.ctrlKey&&!e.metaKey)return;e.preventDefault();const[x,y]=toMap(e.clientX,e.clientY);zoomAt(x,y,e.deltaY<0?1.25:0.8)},{passive:false});
+ svg.addEventListener('wheel',e=>{e.preventDefault();const d=Math.max(-120,Math.min(120,e.deltaMode?e.deltaY*33:e.deltaY)),[x,y]=toMap(e.clientX,e.clientY);zoomAt(x,y,Math.exp(-d*(e.ctrlKey?.01:.0025)))},{passive:false});
+  svg.addEventListener('dblclick',e=>e.preventDefault());let tap=null;
  const P=new Map();let last=null,moved=false;
  svg.addEventListener('pointerdown',e=>{P.set(e.pointerId,[e.clientX,e.clientY]);moved=false;if(P.size===1)last=[e.clientX,e.clientY]});
  svg.addEventListener('pointermove',e=>{if(!P.has(e.pointerId))return;const prev=P.get(e.pointerId);P.set(e.pointerId,[e.clientX,e.clientY]);const r=svg.getBoundingClientRect();
   if(P.size===2){const[a,b]=[...P.values()],o=[...P.entries()].find(([k])=>k!==e.pointerId)[1];const d0=Math.hypot(prev[0]-o[0],prev[1]-o[1]),d1=Math.hypot(a[0]-b[0],a[1]-b[1]);
    if(d0>0){const[x,y]=toMap((a[0]+b[0])/2,(a[1]+b[1])/2);zoomAt(x,y,d1/d0)}moved=true;return}
   const dx=e.clientX-last[0],dy=e.clientY-last[1];if(Math.abs(dx)+Math.abs(dy)>3||moved){if(!moved)svg.setPointerCapture(e.pointerId);moved=true;svg.classList.add('drag');zonePressed('');vb.x-=dx/r.width*vb.w;vb.y-=dy/r.height*vb.h;last=[e.clientX,e.clientY];drawGeo()}});
- const up=e=>{P.delete(e.pointerId);svg.classList.remove('drag');if(P.size===1)last=[...P.values()][0]};
+ const up=e=>{const two=P.size>1;P.delete(e.pointerId);svg.classList.remove('drag');if(P.size===1)last=[...P.values()][0];
+   if(e.type==='pointerup'&&!moved&&!two&&!P.size){const n=performance.now();if(tap&&n-tap.t<350&&Math.hypot(e.clientX-tap.x,e.clientY-tap.y)<25){const[x,y]=toMap(e.clientX,e.clientY);zoomAt(x,y,e.shiftKey?.5:2);tap=null}else tap={t:n,x:e.clientX,y:e.clientY}}};
  svg.addEventListener('pointerup',up);svg.addEventListener('pointercancel',up);
  svg.addEventListener('click',e=>{if(moved)return;const p=e.target.closest('[data-city]');if(p)pickCity(p.dataset.city)});
  svg.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey)return;if((e.key==='Enter'||e.key===' ')&&e.target.dataset.city){e.preventDefault();pickCity(e.target.dataset.city);return}
   const mv={ArrowLeft:[-.2,0],ArrowRight:[.2,0],ArrowUp:[0,-.2],ArrowDown:[0,.2]}[e.key];if(mv){e.preventDefault();zonePressed('');vb.x+=mv[0]*vb.w;vb.y+=mv[1]*vb.h;drawGeo();return}
   if(e.key==='+'||e.key==='='){e.preventDefault();zoomAt(vb.x+vb.w/2,vb.y+vb.h/2,1.6)}if(e.key==='-'){e.preventDefault();zoomAt(vb.x+vb.w/2,vb.y+vb.h/2,.625)}})}
+const WC=new Map();let wLast=0,placeName='';
+function whereGo(f){const q=f.q.value.trim(),msg=document.getElementById('wmsg'),b=f.querySelector('button');if(!q||b.disabled)return;
+ const cc=/^[\d\s-]+$/.test(q)&&VC&&VC.length===2?VC:'';  // a bare postal code is read in the visitor's country, said if nothing is found
+ const done=g=>{b.disabled=false;if(!g){msg.textContent=cc?t('where_in').replace('{c}',()=>cname(cc)):t('where_none');return}msg.textContent=t('where_via');origin=[g.lat,g.lon];originKind='p';placeName=g.name;const[x,y]=merc(...origin);zonePressed('');
+  const w=Math.min(vb.w,60),h=vb.h*w/vb.w;vb={x:x-w/2,y:y-h/2,w,h};focusCity='';nearAll=false;drawGeo();drawNear()};
+ if(WC.has(q)){done(WC.get(q));return}b.disabled=true;
+ const go=()=>{wLast=Date.now();
+  fetch('https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&addressdetails=1&accept-language='+L+(cc?'&countrycodes='+cc.toLowerCase():'')+'&q='+encodeURIComponent(q)).then(r=>{if(!r.ok)throw r.status;return r.json()})
+   .then(a=>{const g=a[0]?{lat:+a[0].lat,lon:+a[0].lon,name:(d=>{const ad=a[0].address||{},pl=ad.city||ad.town||ad.village||ad.municipality||ad.county||d[0];return ad.postcode&&q.includes(ad.postcode)?ad.postcode+' '+pl:pl})(a[0].display_name.split(',').map(x=>x.trim()))}:null;WC.set(q,g);done(g)}).catch(()=>{b.disabled=false;msg.textContent=t('where_err')})};
+ setTimeout(go,Math.max(0,1100-(Date.now()-wLast)))}
 function zonePressed(k){document.querySelectorAll('#mapbar [data-z]').forEach(b=>{b.setAttribute('aria-pressed',b.dataset.z===k);b.classList.toggle('on',b.dataset.z===k)})}
 function zoomAt(x,y,f){zonePressed('');const w=Math.max(12,Math.min(MW,vb.w/f)),k=w/vb.w;vb={x:x-(x-vb.x)*k,y:y-(y-vb.y)*k,w,h:vb.h*k};drawGeo()}
 function drawGeo(){const svg=document.getElementById('geo');if(!BASE||!vb||!svg.clientWidth)return;const fk=document.activeElement&&svg.contains(document.activeElement)?document.activeElement.dataset.city||'':null;const px=vb.w/Math.max(1,svg.clientWidth);
@@ -421,16 +448,22 @@ function drawGeo(){const svg=document.getElementById('geo');if(!BASE||!vb||!svg.
  for(const p of [...BASE.places].sort((a,b)=>a.r-b.r))if(p.r<=maxRank&&vis(p.x,p.y)){const nm=p[L]||p.en,fs=(p.r?10.5:11.5)*px,b=[p.x-3*px,p.y-fs,p.x+4*px+nm.length*fs*.64,p.y+4*px];
   if(!free(b))continue;boxes.push(b);s+=`<circle class="ref" cx="${p.x}" cy="${p.y}" r="${2*px}"/><text class="rl" x="${p.x+4*px}" y="${p.y+3.5*px}" font-size="${fs}" stroke-width="${2.5*px}">${esc(nm)}</text>`}
  s+='</g><g>';const mid=[vb.x+vb.w/2,vb.y+vb.h/2];
- for(const c of [...CITIES].sort((a,b)=>Math.hypot(a.xy[0]-mid[0],a.xy[1]-mid[1])-Math.hypot(b.xy[0]-mid[0],b.xy[1]-mid[1]))){const[x,y]=c.xy,n=c.items.length,cats=[...new Set(c.items.map(r=>r.cat))],col=cats.length>1?'var(--muted)':tcol(cats[0]),r=(n>1?8:6)*px;
-  s+=`<circle class="pt${c.k===focusCity?' on':''}" cx="${x}" cy="${y}" r="${r}" fill="${col}" stroke-width="${2*px}" data-city="${esc(c.k)}" tabindex="${vis(...c.xy)?0:-1}" role="button" aria-label="${esc(c.city)}" data-tip="${esc(c.city+' · '+c.items.map(r=>r.name+(r.next?' ('+fmt(r.next)+')':'')).join(', '))}"/>`+(n>1?`<text class="pn" x="${x}" y="${y+3.6*px}" font-size="${10*px}" text-anchor="middle">${n}</text>`:'')}
+ if(origin&&(originKind==='p'||originKind==='me')){const[ox,oy]=merc(...origin);s+=`<circle class="here" cx="${ox}" cy="${oy}" r="${7*px}" stroke-width="${2.5*px}"/><circle class="here-c" cx="${ox}" cy="${oy}" r="${2.5*px}"/>`}
+ for(const c of [...CITIES].sort((a,b)=>Math.hypot(a.xy[0]-mid[0],a.xy[1]-mid[1])-Math.hypot(b.xy[0]-mid[0],b.xy[1]-mid[1]))){const[x,y]=c.xy,n=c.items.length,cats=[...new Set(c.items.map(r=>r.cat))],r=(n>1?8:6)*px;
+  const tipT=[c.city+(c.cc?' · '+cname(c.cc):''),...c.items.slice(0,4).map(r=>r.name+' — '+t('ty_'+r.cat)+(r.next?' · '+fmt(r.next):'')),...(n>4?[t('more_n').replace('{n}',n-4)]:[])];
+  if(cats.length>1){let a0=-Math.PI/2;for(const k of cats){const a1=a0+2*Math.PI*c.items.filter(r=>r.cat===k).length/n,big=a1-a0>Math.PI?1:0;
+    s+=`<path class="sl" d="M${x} ${y}L${x+r*Math.cos(a0)} ${y+r*Math.sin(a0)}A${r} ${r} 0 ${big} 1 ${x+r*Math.cos(a1)} ${y+r*Math.sin(a1)}Z" fill="${tcol(k)}"/>`;a0=a1}}
+  s+=`<circle class="pt${c.k===focusCity?' on':''}" cx="${x}" cy="${y}" r="${r}" fill="${cats.length>1?'transparent':tcol(cats[0])}" stroke-width="${2*px}" data-city="${esc(c.k)}" tabindex="${vis(...c.xy)?0:-1}" role="button" aria-label="${esc(tipT.join('. '))}" data-tip="${esc(tipT.join('\n'))}"/>`+(n>1?`<text class="pn" x="${x}" y="${y+3.6*px}" font-size="${10*px}" text-anchor="middle">${n}</text>`:'')}
  svg.innerHTML=s+'</g>';if(fk!==null){const p=fk&&[...svg.querySelectorAll('[data-city]')].find(x=>x.dataset.city===fk&&x.getAttribute('tabindex')==='0');(p||svg).focus({preventScroll:true})}}
+let openNear=new Set();
 function drawNear(){const el=document.getElementById('near');const o=origin||[50,10];
  const cs=CITIES.map(c=>({...c,d:km(o,[c.lat,c.lon])})).sort((a,b)=>a.d-b.d),max=nearAll?cs.length:12;
- const head=originKind==='me'?t('from_me'):originKind==='c'?t('from_c').replace('{c}',cname(VC)):t('from_z');
- el.innerHTML=`<p class="lead">${esc(head)}</p>`+cs.slice(0,max).map(c=>`<div class="city${c.k===focusCity?' on':''}" id="city-${esc(c.k.replace(/\W/g,'_'))}"><h5>${esc(c.city)}${c.cc?' · '+esc(cname(c.cc)):''}<span>${t('km').replace('{n}',Math.round(c.d))}</span></h5><ul>${c.items.map(r=>`<li><button type="button" class="go" data-go="${r.id}">${esc(r.name)}</button> <span class="k">${esc(shortCat(r.cat))}${r.next?' · '+t('next')+' '+fmt(r.next):''}</span></li>`).join('')}</ul></div>`).join('')+
+ const head=originKind==='p'?t('from_p').replace('{c}',()=>placeName):originKind==='me'?t('from_me'):originKind==='c'?t('from_c').replace('{c}',cname(VC)):t('from_z');
+ el.innerHTML=`<p class="lead">${esc(head)}</p>`+cs.slice(0,max).map(c=>`<div class="city${c.k===focusCity?' on':''}" id="city-${esc(c.k.replace(/\W/g,'_'))}"><h5>${esc(c.city)}${c.cc?' · '+esc(cname(c.cc)):''}<span>${t('km').replace('{n}',Math.round(c.d))}</span></h5><ul>${c.items.map(r=>foldRow('nr',r,`<b>${esc(r.name)}</b> <span class="k">${esc(t('ty_'+r.cat))}${r.next?' · '+fmt(r.next):''}</span>`,openNear.has(r.id))).join('')}</ul></div>`).join('')+
   (cs.length>max?`<button class="btn" type="button" id="nearall">${t('more_c').replace('{n}',cs.length-max)}</button>`:'');
- el.onclick=e=>{const b=e.target.closest('[data-go]');if(b){openEntry(b.dataset.go);return}if(e.target.id==='nearall'){nearAll=true;drawNear()}}}
-function pickCity(k){focusCity=k;const kb=document.activeElement&&document.activeElement.dataset&&document.activeElement.dataset.city===k;const c=CITIES.find(x=>x.k===k);if(!nearAll&&c){const o=origin||[50,10],rank=CITIES.map(x=>km(o,[x.lat,x.lon])).sort((a,b)=>a-b).indexOf(km(o,[c.lat,c.lon]));if(rank>=12)nearAll=true}
+ el.onclick=e=>{if(foldClick(e,(b,o)=>{const id=b.getAttribute('aria-controls').slice(6);o?openNear.add(id):openNear.delete(id)}))return;if(e.target.id==='nearall'){nearAll=true;drawNear();const n=el.querySelectorAll('.city')[12];if(n)n.querySelector('.tg').focus()}}}
+function pickCity(k){focusCity=k;const kb=document.activeElement&&document.activeElement.dataset&&document.activeElement.dataset.city===k;const c=CITIES.find(x=>x.k===k);if(!c)return;
+ openNear=new Set(c.items.map(r=>r.id));if(!nearAll){const o=origin||[50,10],rank=CITIES.map(x=>km(o,[x.lat,x.lon])).sort((a,b)=>a-b).indexOf(km(o,[c.lat,c.lon]));if(rank>=12)nearAll=true}
  drawGeo();drawNear();if(kb){const p=[...document.querySelectorAll('#geo [data-city]')].find(x=>x.dataset.city===k);if(p)p.focus()}const el=document.getElementById('city-'+k.replace(/\W/g,'_'));if(el)el.scrollIntoView({behavior:'smooth',block:'nearest'})}
 // insight 1: which listed resources name each alternative brand, by category
 const IC=['shops','comparators','second-hand','community','video'];
