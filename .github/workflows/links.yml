@@ -29,6 +29,7 @@ jobs:
         run: |
           n=$(gh issue list --label links --state open --json number -q '.[0].number')
           if [ "$FAILED" = "true" ] && [ -f lychee-report.md ]; then
-            head -c 60000 lychee-report.md > body.md   # an issue body holds 65536 characters at most
+            if [ -n "$n" ]; then gh issue view "$n" --json body -q .body > previous.md; else : > previous.md; fi
+            python3 scripts/links_issue.py lychee-report.md previous.md > body.md   # links failing twice in a row first
             if [ -n "$n" ]; then gh issue edit "$n" --body-file body.md; else gh issue create --title "Broken links" --label links --label automatic --body-file body.md; fi
           elif [ "$FAILED" != "true" ] && [ -n "$n" ]; then gh issue close "$n" --comment "Every link answers again."; fi   # a run without a report closes nothing
