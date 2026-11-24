@@ -239,14 +239,16 @@ OFFICIEL = re.compile(r"\bLEGO\s+officiel(le)?s?\b|\bofficiel(le)?s?\s+LEGO\b")
 NUMERIC_DATE = re.compile(r"\b\d{4}-\d{2}-\d{2}\b|\b\d{1,2}/\d{1,2}/\d{4}\b")
 SUMMARY_WORDS = 35  # a card's text: what is particular, one or two sentences (decision of 12:28)
 COUNTRY_WORDS = re.compile(r"^(?:an? |the )?(?:french|german|polish|italian|spanish|dutch|belgian|swiss|austrian|danish|swedish|norwegian|finnish|czech|slovak|british|english|scottish|welsh|irish|american|canadian|australian|chinese|japanese|portuguese|luxembourg\w*|south african|new zealand\w*|european|hungarian|greek|icelandic|estonian|latvian|lithuanian|slovenian|croatian|romanian|bulgarian|ukrainian|korean|taiwanese|brazilian|mexican)\b", re.I)
-STOP = {"and", "the", "of", "for", "with", "official", "lego", "other", "brands", "brand", "sites", "site"}
+COUNTRY_WORDS_FR = re.compile(r"\b(?:français|allemand|polonais|italien|espagnol|néerlandais|belge|suisse|autrichien|danois|suédois|norvégien|finlandais|tchèque|slovaque|britannique|anglais|écossais|irlandais|américain|canadien|australien|chinois|japonais|portugais|luxembourgeois|sud-africain|néo-zélandais|européen|hongrois|grec|coréen)(?:ne|e)?s?\b", re.I)
+STOP = {"and", "the", "of", "for", "with", "official", "lego", "other", "brands", "brand", "sites", "site",
+        "et", "les", "des", "pour", "avec", "officiel", "officiels", "autres", "marques", "marque", "sites"}
 
 
 def text_notes(cats):
     """Writing rules of lot 3 on the texts of the entries: warnings until lot 3b."""
     for c in cats:
         cid = c["category"]["id"]
-        gname = {g["id"]: g["name_en"] for g in c["category"].get("groups", [])}
+        gname = {(g["id"], lang): g["name_" + lang] for g in c["category"].get("groups", []) for lang in LANGS}
         if OFFICIEL.search(c["category"].get("summary_fr", "")):
             notes.append(f"{cid}.toml: category summary_fr: « LEGO officiel » in a sentence")
         for r in c["resources"]:
@@ -263,12 +265,14 @@ def text_notes(cats):
             sm = r.get("summary_en", "")
             if len(sm.split()) > SUMMARY_WORDS or len(r.get("summary_fr", "").split()) > SUMMARY_WORDS:
                 notes.append(f"{w}: summary of {max(len(sm.split()), len(r.get('summary_fr', '').split()))} words, {SUMMARY_WORDS} at most")
-            first = [re.sub(r"s$", "", x) for x in re.findall(r"[a-z]+", sm.lower())[:4]]
-            gw = {re.sub(r"s$", "", x) for x in re.findall(r"[a-z]+", gname.get(r["group"], "").lower()) if len(x) > 3 and x not in STOP}
-            if gw & set(first):
-                notes.append(f"{w}: summary starts with its group ({', '.join(sorted(gw & set(first)))}): start with what sets the entry apart")
-            if COUNTRY_WORDS.search(sm):
-                notes.append(f"{w}: summary starts with a country: the card shows it")
+            for lang in ("en", "fr"):  # the group and the country, which the card shows, at the start of the text
+                txt = r.get("summary_" + lang, "")
+                first = [re.sub(r"s$", "", x) for x in re.findall(r"[a-zà-ÿ]+", txt.lower())[:4]]
+                gw = {re.sub(r"s$", "", x) for x in re.findall(r"[a-zà-ÿ]+", gname.get((r["group"], lang), "").lower()) if len(x) > 3 and x not in STOP}
+                if gw & set(first):
+                    notes.append(f"{w}: summary_{lang} starts with its group ({', '.join(sorted(gw & set(first)))}): start with what sets the entry apart")
+                if (COUNTRY_WORDS.search(txt) if lang == "en" else COUNTRY_WORDS_FR.search(" ".join(txt.split()[:3]))):
+                    notes.append(f"{w}: summary_{lang} starts with a country: the card shows it")
 
 
 def site_notes():
@@ -341,7 +345,7 @@ def readme(cats, m, lang, kind="readme"):
     title = T["title"][lang] if kind == "readme" else "Awesome LEGO: full list"
     badge = " [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)" if kind == "readme" else ""
     ranked = has_ranks(cats)
-    keep = (lambda r: picked(r, ranked)) if kind == "readme" else (lambda r: True)
+    keep = (lambda r: picked(r, ranked, c["category"]["id"])) if kind == "readme" else (lambda r: True)
     logo = [f'<a href="{PAGES}"><img src="media/logo.svg" align="right" width="120" alt="Awesome LEGO logo"></a>', ""] if kind == "readme" else []
     out = [f"# {title}{badge}", "", *logo, f"> {T['tagline'][lang]}", "",
            f"**[{T['site'][lang]}]({PAGES})** · [{T['site_fr'][lang]}]({PAGES}fr/) · [{T['feed'][lang]}]({PAGES}feed.xml)", "",
@@ -430,7 +434,7 @@ def site_data(cats, m):
             status, last = effective(r, m)
             row = {k: r.get(k) for k in ("id", "name", "url", "covers", "languages", "countries", "confidence", "checked", "github", "subreddit", "city", "city_fr", "city_local", "ships_to_france", "rank", "size")}
             row = {k: v for k, v in row.items() if v is not None}
-            row["featured"] = picked(r, ranked)
+            row["featured"] = picked(r, ranked, cat["id"])
             ctx = access_context(cat["id"], r["group"])
             row["access"] = f"{ctx}_{r['access']}" if r.get("access") in ACCESS_BY.get(ctx, set()) else None  # label of strings.json
             row["operator"] = lego_operator(r)
@@ -508,18 +512,20 @@ def lego_operator(r):
     if r.get("operator"):
         return r["operator"]
     h = host(r["url"])
-    if re.search(r"(^|\.)(lego\.com|legohouse\.com|bricklink\.com|legolanddiscoverycenter\.com)$", h):
+    if re.search(r"(^|\.)(lego\.com|legohouse\.com|bricklink\.com|legolanddiscoverycenter\.com|legodiscoverycentre\.com|legoworld\.nl)$", h):
         return "lego-group"
     return "licensee" if re.match(r"legoland\.", h) else None
 
 
 def has_ranks(cats):
-    return any(r.get("rank") for c in cats for r in c["resources"])
+    """Groups whose entries carry ranks (lot 3b ranks them group by group): {(category, group)}."""
+    return {(c["category"]["id"], r["group"]) for c in cats for r in c["resources"] if r.get("rank")}
 
 
-def picked(r, ranked):
-    """The selection (★, README, filter, suggestions): rank 1 worldwide in its group once ranks exist, `featured` before."""
-    return (r.get("rank") or {}).get("intl") == 1 if ranked else bool(r.get("featured"))
+def picked(r, ranked, cat):
+    """The selection (★, README, filter, suggestions): rank 1 worldwide once the group of the entry carries ranks,
+    `featured` before."""
+    return (r.get("rank") or {}).get("intl") == 1 if (cat, r["group"]) in ranked else bool(r.get("featured"))
 
 
 def passion():

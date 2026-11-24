@@ -8,6 +8,7 @@ themes. Fails on:
 - broken token: a phone number, an email, a website, a date, a tag, a chip, a button label or a short
   part of an address split over two lines;
 - broken word: a word split inside itself (not at a hyphen) when it fits on a line;
+- overlapping text: two texts of a chart (SVG) drawn over one another (axis marks, labels);
 - inherited frame: a list item framed or filled inside another framed list item (a rule meant for the
   outer rows reaching the inner ones);
 - script error, console error, or content security policy violation;
@@ -74,6 +75,12 @@ PROBE = r"""
   for (const h of document.querySelectorAll('.card .h')) { const a = h.querySelector('a'), g = h.querySelector('.g'); if (!a || !g || !vis(g)) continue;
     const ra = a.getBoundingClientRect(), r = document.createRange(); r.selectNodeContents(g); const ls = [...r.getClientRects()].filter(q => q.width > 0.5);
     const top = [...a.getClientRects()][0]; if (ls.length === 1 && top && ls[0].left >= top.right - 1 && ls[0].top < top.bottom) continue; add('misaligned label', g, txt(g)) }  // each text line, not the box
+
+  // texts of a chart (SVG) drawn over one another: axis marks, labels
+  for (const svg of document.querySelectorAll('svg')) { if (!vis(svg)) continue;
+    const ts = [...svg.querySelectorAll('text')].filter(t => t.textContent.trim()).map(t => [t, t.getBBox()]);
+    for (let i = 0; i < ts.length; i++) for (let j = i + 1; j < ts.length; j++) { const a = ts[i][1], b = ts[j][1];
+      if (a.x < b.x + b.width - 1 && b.x < a.x + a.width - 1 && a.y < b.y + b.height - 1 && b.y < a.y + a.height - 1) add('overlapping text', ts[j][0], ts[i][0].textContent.trim() + ' / ' + ts[j][0].textContent.trim()) } }
 
   // a framed list item inside another framed list item
   const framed = el => { const s = getComputedStyle(el); return parseFloat(s.borderTopWidth) > 0 || (s.backgroundColor !== 'rgba(0, 0, 0, 0)' && s.backgroundColor !== 'transparent') };

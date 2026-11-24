@@ -187,6 +187,6 @@
 "all_about":{"en":"All about {b} · {n} entries","fr":"Tout sur {b} · {n} fiches"},
 "all_about1":{"en":"All about {b} · 1 entry","fr":"Tout sur {b} · 1 fiche"},
 "logo_of":{"en":"{b} logo","fr":"Logo de {b}"},
-"lego_where":{"en":"Where official LEGO is: sites and places of the LEGO Group and under the LEGO brand","fr":"Où est l'officiel : sites et lieux du groupe LEGO et sous enseigne LEGO"},
+"lego_where":{"en":"Sites and places of the LEGO Group and under the LEGO brand","fr":"Sites et lieux du groupe LEGO et sous enseigne LEGO"},
 "lego_scope":{"en":"All entries · scope official LEGO · {n}","fr":"Toutes les fiches · périmètre LEGO officiel · {n}","label":true}
 }

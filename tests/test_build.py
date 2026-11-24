@@ -198,7 +198,6 @@ class Lot3Model(unittest.TestCase):
         self.assertTrue(any("one city" in n for n in notes_with("places.toml", lambda t: t.replace('city = "Paderborn"', 'city = "Paderborn, Lippstadt"', 1))))
 
     def test_access_by_category(self):
-        self.assertTrue(any("says nothing" in n for n in build.notes or notes_with("places.toml", lambda t: t)) or True)
         ns = notes_with("places.toml", lambda t: t.replace('access = "paid"', 'access = "freemium"', 1))
         self.assertTrue(any("access 'freemium' says nothing for entry" in n for n in ns), ns)
 
@@ -301,6 +300,33 @@ class Dates(unittest.TestCase):
         for lang in ("en", "fr"):
             titles = re.findall(r"<title>(.*?)</title>", build.content_feed(cats, lang))
             self.assertFalse([x for x in titles if build.NUMERIC_DATE.search(x)])
+
+
+class Selection(unittest.TestCase):
+    def test_ranks_switch_the_selection_group_by_group(self):
+        """A rank in one group changes the selection of that group only: the other groups keep `featured`."""
+        def readme_with(edit):
+            d = Path(tempfile.mkdtemp())
+            try:
+                shutil.copytree(ROOT / "data", d / "data")
+                p = d / "data" / "comparators.toml"
+                p.write_text(edit(p.read_text(encoding="utf-8")), encoding="utf-8")
+                old = build.DATA
+                build.DATA = d / "data"
+                try:
+                    with contextlib.redirect_stdout(io.StringIO()):
+                        cats, _ = build.load()
+                    return build.readme(cats, {}, "en")
+                finally:
+                    build.DATA = old
+            finally:
+                shutil.rmtree(d)
+        before = readme_with(lambda t: t)
+        after = readme_with(add_field("brick-broker", 'rank = {intl = 1, FR = 1}\nrank_reason_en = "x"\nrank_reason_fr = "x"'))
+        lines = lambda x: {l for l in x.splitlines() if l.startswith("- [")}
+        changed = lines(before) ^ lines(after)
+        self.assertTrue(changed, "the ranked group changes")
+        self.assertGreater(len(lines(after)), len(lines(before)) - 15)  # only the price comparators move
 
 if __name__ == "__main__":
     unittest.main()
