@@ -69,6 +69,11 @@ PROBE = r"""
   for (const el of leaves) { const cw = el.getBoundingClientRect().width; for (const n of el.childNodes) { if (n.nodeType !== 3) continue; const t = n.textContent; const re = /[^\s\-\/‐-―]{4,}/g; let m;
       while ((m = re.exec(t))) { rg.setStart(n, m.index); rg.setEnd(n, m.index + m[0].length); const rs = rg.getClientRects(); if (rs.length > 1) { const w = [...rs].reduce((a, x) => a + x.width, 0); if (w < cw - 2) add('broken word', el, m[0]) } } } }
 
+  // a card's group label: beside the name, or starting where the name starts, never floating in between
+  for (const h of document.querySelectorAll('.card .h')) { const a = h.querySelector('a'), g = h.querySelector('.g'); if (!a || !g || !vis(g)) continue;
+    const ra = a.getBoundingClientRect(), r = document.createRange(); r.selectNodeContents(g); const ls = [...r.getClientRects()].filter(q => q.width > 0.5);
+    if (ls.every(q => q.left >= ra.right - 1) || ls.every(q => Math.abs(q.left - ra.left) <= 1)) continue; add('misaligned label', g, txt(g)) }  // each text line, not the box
+
   // a framed list item inside another framed list item
   const framed = el => { const s = getComputedStyle(el); return parseFloat(s.borderTopWidth) > 0 || (s.backgroundColor !== 'rgba(0, 0, 0, 0)' && s.backgroundColor !== 'transparent') };
   for (const li of document.querySelectorAll('li li')) if (vis(li) && framed(li)) { const o = li.parentElement.closest('li'); if (o && framed(o)) add('inherited frame', li, txt(li)) }

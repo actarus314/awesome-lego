@@ -773,37 +773,6 @@ date = "2026-11-23"
 kind = "read"
 
 [[resource]]
-id = "lego-ideas"
-name = "LEGO Ideas"
-url = "https://ideas.lego.com/"
-group = "education-and-competitions"
-covers = ["learning", "official", "custom-builds"]
-languages = ["en"]
-countries = ["international"]
-access = "free-account"
-summary_en = "Official platform where fans submit set concepts; a project reaching 10000 supporters is considered for production. Also runs themed challenges with prizes."
-summary_fr = "Plateforme officielle où les fans proposent des concepts de sets ; un projet atteignant 10000 soutiens est étudié pour une production. Propose aussi des défis à thème avec récompenses."
-strengths_en = ["Creators receive 1 percent of the net sales", "Review results of 2025-2 published on 27 April 2026: four ideas moved to development"]
-strengths_fr = ["Les créateurs reçoivent 1 pour cent des ventes nettes", "Résultats de la revue 2025-2 publiés le 27 avril 2026 : quatre idées passent en développement"]
-weaknesses_en = ["Selection and production decided by LEGO"]
-weaknesses_fr = ["Sélection et production décidées par LEGO"]
-status = "active"
-last_activity = "2026-11-10"
-checked = "2026-11-23"
-added = "2026-11-23"
-confidence = "high"
-
-[[resource.sources]]
-url = "https://ideas.lego.com/how-it-works"
-date = "2026-11-23"
-kind = "read"
-
-[[resource.sources]]
-url = "https://ideas.lego.com/blog/0ca35d5b-df80-4a65-8838-23a0aee5f7c7"
-date = "2026-04-27"
-kind = "read"
-
-[[resource]]
 id = "blocks-magazine"
 name = "Blocks magazine"
 url = "https://blocksmag.com/"
@@ -1306,33 +1275,6 @@ kind = "read"
 url = "https://www.dijonlhebdo.fr/2024/04/25/mbrick-a-lheure-du-succes/"
 date = "2024-04-25"
 kind = "indexed"
-
-[[resource]]
-id = "deparkatre-creators"
-name = "Deparkatre: LEGO creators and designers directory"
-url = "https://deparkatre.fr/en/lego-creators"
-group = "artists"
-covers = ["learning", "official", "custom-builds"]
-languages = ["fr", "en"]
-countries = ["FR"]
-access = "free"
-summary_en = "French directory of LEGO Certified Professionals, artists, custom-build creators, designers and studios, with profiles and locations."
-summary_fr = "Annuaire français des LEGO Certified Professionals, artistes, créateurs de créations originales, concepteurs et studios, avec profils et localisations."
-strengths_en = ["Strong coverage of French creators"]
-strengths_fr = ["Bonne couverture des créateurs français"]
-weaknesses_en = ["Lists 20 certified professionals while the official LEGO list shows 27", "Entries are community-submitted and not all verified"]
-weaknesses_fr = ["Liste 20 professionnels certifiés alors que la liste officielle de LEGO en montre 27", "Fiches proposées par la communauté et non toutes vérifiées"]
-size_en = "61 profiles in three sections (20, 14, 27)"
-size_fr = "61 fiches en trois sections (20, 14, 27)"
-status = "active"
-checked = "2026-11-23"
-added = "2026-11-23"
-confidence = "medium"
-
-[[resource.sources]]
-url = "https://deparkatre.fr/en/lego-creators"
-date = "2026-11-23"
-kind = "read"
 
 [[resource]]
 id = "bricknerd-storage-guide"

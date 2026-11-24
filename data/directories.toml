@@ -6,14 +6,9 @@ summary_en = "Existing directories, awesome lists and lists of channels and bran
 summary_fr = "Annuaires, listes awesome et listes de chaînes et de marques existants sur LEGO et les briques compatibles."
 
 [[category.groups]]
-id = "awesome-lists"
-name_en = "Awesome lists"
-name_fr = "Listes awesome"
-
-[[category.groups]]
 id = "site-directories"
-name_en = "Site directories"
-name_fr = "Annuaires de sites"
+name_en = "Site directories and awesome lists"
+name_fr = "Annuaires de sites et listes awesome"
 
 [[category.groups]]
 id = "channel-lists"
@@ -29,7 +24,7 @@ name_fr = "Listes de marques"
 id = "awesome-lego-ad-si"
 name = "awesome-lego (ad-si)"
 url = "https://github.com/ad-si/awesome-lego"
-group = "awesome-lists"
+group = "site-directories"
 featured = true
 covers = ["official", "custom-builds", "instructions", "news"]
 languages = ["en"]
@@ -59,7 +54,7 @@ kind = "read"
 id = "awesome-lego-brickventory"
 name = "awesome-lego (brickventory)"
 url = "https://github.com/brickventory/awesome-lego"
-group = "awesome-lists"
+group = "site-directories"
 covers = ["official"]
 languages = ["en"]
 countries = ["international"]
@@ -86,7 +81,7 @@ kind = "read"
 id = "awesome-lego-machine-learning"
 name = "awesome-lego-machine-learning"
 url = "https://github.com/360er0/awesome-lego-machine-learning"
-group = "awesome-lists"
+group = "site-directories"
 covers = ["parts", "data"]
 languages = ["en"]
 countries = ["international"]
@@ -595,5 +590,62 @@ confidence = "medium"
 
 [[resource.sources]]
 url = "https://kostky.eu/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "avenue-de-la-brique-associations"
+name = "Avenue de la brique - Associations de fans de LEGO"
+url = "https://www.avenuedelabrique.com/associations-lego"
+group = "site-directories"
+covers = ["clubs", "official", "events"]
+languages = ["fr"]
+countries = ["FR", "BE", "CH"]
+access = "free"
+business_model_en = "Free; site financed by advertising and affiliate links (not checked here)"
+business_model_fr = "Gratuit ; site financé par la publicité et des liens d'affiliation (non vérifié ici)"
+summary_en = "French-language list of fan associations in France, Belgium and Switzerland, with a page per association and its exhibitions."
+summary_fr = "Liste francophone des associations de fans en France, Belgique et Suisse, avec une fiche par association et ses expositions."
+strengths_en = ["One page per association with website, contact and past exhibitions", "Covers many small local French associations"]
+strengths_fr = ["Une fiche par association avec site, contact et expositions passées", "Couvre de nombreuses petites associations locales françaises"]
+weaknesses_en = ["Per-association activity is not dated on the list page"]
+weaknesses_fr = ["L'activité de chaque association n'est pas datée sur la page de liste"]
+size_en = "About 80 associations listed (not counted exactly)"
+size_fr = "Environ 80 associations listées (non comptées exactement)"
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.avenuedelabrique.com/associations-lego"
+date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "deparkatre-creators"
+name = "Deparkatre: LEGO creators and designers directory"
+url = "https://deparkatre.fr/en/lego-creators"
+group = "site-directories"
+covers = ["learning", "official", "custom-builds"]
+languages = ["fr", "en"]
+countries = ["FR"]
+access = "free"
+summary_en = "French directory of LEGO Certified Professionals, artists, custom-build creators, designers and studios, with profiles and locations."
+summary_fr = "Annuaire français des LEGO Certified Professionals, artistes, créateurs de créations originales, concepteurs et studios, avec profils et localisations."
+strengths_en = ["Strong coverage of French creators"]
+strengths_fr = ["Bonne couverture des créateurs français"]
+weaknesses_en = ["Lists 20 certified professionals while the official LEGO list shows 27", "Entries are community-submitted and not all verified"]
+weaknesses_fr = ["Liste 20 professionnels certifiés alors que la liste officielle de LEGO en montre 27", "Fiches proposées par la communauté et non toutes vérifiées"]
+size_en = "61 profiles in three sections (20, 14, 27)"
+size_fr = "61 fiches en trois sections (20, 14, 27)"
+status = "active"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://deparkatre.fr/en/lego-creators"
 date = "2026-11-23"
 kind = "read"

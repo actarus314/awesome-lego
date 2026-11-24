@@ -6,12 +6,6 @@ summary_en = "User groups, clubs and associations of LEGO and brick fans, from t
 summary_fr = "Groupes d'utilisateurs, clubs et associations de fans de LEGO et de briques, du programme de reconnaissance LEGO Fan CoLab aux clubs nationaux et locaux en Europe."
 
 [[category.groups]]
-id = "networks"
-name_en = "Networks and directories"
-name_fr = "Réseaux et annuaires"
-regime = "operating"
-
-[[category.groups]]
 id = "national-clubs"
 name_en = "National clubs"
 name_fr = "Clubs nationaux"
@@ -33,36 +27,6 @@ regime = "operating"
 id = "online-clubs"
 name_en = "Online clubs"
 name_fr = "Clubs en ligne"
-
-[[resource]]
-id = "avenue-de-la-brique-associations"
-name = "Avenue de la brique - Associations de fans de LEGO"
-url = "https://www.avenuedelabrique.com/associations-lego"
-group = "networks"
-covers = ["clubs", "official", "events"]
-languages = ["fr"]
-countries = ["FR", "BE", "CH"]
-access = "free"
-business_model_en = "Free; site financed by advertising and affiliate links (not checked here)"
-business_model_fr = "Gratuit ; site financé par la publicité et des liens d'affiliation (non vérifié ici)"
-summary_en = "French-language list of fan associations in France, Belgium and Switzerland, with a page per association and its exhibitions."
-summary_fr = "Liste francophone des associations de fans en France, Belgique et Suisse, avec une fiche par association et ses expositions."
-strengths_en = ["One page per association with website, contact and past exhibitions", "Covers many small local French associations"]
-strengths_fr = ["Une fiche par association avec site, contact et expositions passées", "Couvre de nombreuses petites associations locales françaises"]
-weaknesses_en = ["Per-association activity is not dated on the list page"]
-weaknesses_fr = ["L'activité de chaque association n'est pas datée sur la page de liste"]
-size_en = "About 80 associations listed (not counted exactly)"
-size_fr = "Environ 80 associations listées (non comptées exactement)"
-status = "active"
-last_activity = "2026-11-23"
-checked = "2026-11-23"
-added = "2026-11-23"
-confidence = "medium"
-
-[[resource.sources]]
-url = "https://www.avenuedelabrique.com/associations-lego"
-date = "2026-11-23"
-kind = "read"
 
 [[resource]]
 id = "brickish"
@@ -1487,3 +1451,39 @@ kind = "indexed"
 url = "https://toscananews.net/bricks-in-florence-festival-torna-il-festival-dedicato-al-mondo-lego/"
 date = "2026-11-08"
 kind = "third-party"
+
+[[resource]]
+id = "freelug"
+name = "FreeLUG"
+url = "https://www.freelug.org/"
+group = "national-clubs"
+featured = true
+covers = ["official", "custom-builds"]
+languages = ["fr"]
+countries = ["FR"]
+access = "free"
+business_model_en = "Non-profit association; free reading"
+business_model_fr = "Association à but non lucratif ; lecture libre"
+summary_en = "French national association of LEGO fans since 2003, with a Discourse forum, exhibitions and meeting reports."
+summary_fr = "Association nationale française de passionnés de LEGO depuis 2003, avec un forum Discourse, des expositions et des comptes rendus de rencontres."
+strengths_en = ["Forum with a category for box reviews, creations, computer-aided design and promotions", "Exhibitions and regional network of members"]
+strengths_fr = ["Forum avec une catégorie pour les tests de boîtes, créations, conception assistée par ordinateur et promotions", "Expositions et réseau régional de membres"]
+weaknesses_en = ["Centred on creations and exhibitions rather than choosing a set", "Alternative brands not covered in the categories read", "Main site protected by an anti-robot service; only the forum was read directly"]
+weaknesses_fr = ["Centré sur les créations et les expositions plutôt que sur le choix d'un set", "Marques alternatives absentes des catégories lues", "Site principal protégé par un service anti-robot ; seul le forum a été lu directement"]
+size_en = "About 116 topics across three categories (forum)"
+size_fr = "Environ 116 sujets répartis en trois catégories (forum)"
+status = "active"
+last_activity = "2026-11-12"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://forum.freelug.org/"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.freelug.org/"
+date = "2026-11-23"
+kind = "indexed"

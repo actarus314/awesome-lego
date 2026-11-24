@@ -13,20 +13,14 @@ regime = "operating"
 
 [[category.groups]]
 id = "european-alternatives"
-name_en = "European alternatives"
-name_fr = "Alternatives européennes"
+name_en = "European and American alternatives"
+name_fr = "Alternatives européennes et américaines"
 regime = "operating"
 
 [[category.groups]]
 id = "chinese-alternatives"
 name_en = "Chinese alternatives"
 name_fr = "Alternatives chinoises"
-regime = "operating"
-
-[[category.groups]]
-id = "toy-industry-brands"
-name_en = "Toy and model-kit companies"
-name_fr = "Groupes de jouets et de maquettes"
 regime = "operating"
 
 [[category.groups]]
@@ -899,7 +893,7 @@ aliases = ["Mattel"]
 name = "Mattel Brick Shop (MEGA)"
 url = "https://shopping.mattel.com/de-de/collections/bausteine-sets"
 feed = "https://shopping.mattel.com/de-de/collections/bausteine-sets.atom"
-group = "toy-industry-brands"
+group = "european-alternatives"
 featured = true
 covers = ["alternative"]
 languages = ["de", "fr", "en"]
@@ -935,7 +929,7 @@ aliases = ["Revell"]
 name = "Revell Brick System"
 url = "https://revell.com/collections/brick-system"
 feed = "https://revell.com/collections/brick-system.atom"
-group = "toy-industry-brands"
+group = "european-alternatives"
 featured = true
 covers = ["alternative"]
 languages = ["de", "en"]

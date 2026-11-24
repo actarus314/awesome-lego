@@ -12,8 +12,8 @@ name_fr = "Actualités et tests"
 
 [[category.groups]]
 id = "forums"
-name_en = "Forums"
-name_fr = "Forums"
+name_en = "Forums and chat"
+name_fr = "Forums et discussions"
 
 [[category.groups]]
 id = "reddit"
@@ -29,11 +29,6 @@ name_fr = "Wikis"
 id = "deals"
 name_en = "Deals"
 name_fr = "Bons plans"
-
-[[category.groups]]
-id = "chat-and-social"
-name_en = "Chat and social"
-name_fr = "Discussion et réseaux"
 
 [[resource]]
 id = "hothbricks"
@@ -586,42 +581,6 @@ date = "2026-11-23"
 kind = "read"
 
 [[resource]]
-id = "freelug"
-name = "FreeLUG"
-url = "https://www.freelug.org/"
-group = "forums"
-featured = true
-covers = ["official", "custom-builds"]
-languages = ["fr"]
-countries = ["FR"]
-access = "free"
-business_model_en = "Non-profit association; free reading"
-business_model_fr = "Association à but non lucratif ; lecture libre"
-summary_en = "French national association of LEGO fans since 2003, with a Discourse forum, exhibitions and meeting reports."
-summary_fr = "Association nationale française de passionnés de LEGO depuis 2003, avec un forum Discourse, des expositions et des comptes rendus de rencontres."
-strengths_en = ["Forum with a category for box reviews, creations, computer-aided design and promotions", "Exhibitions and regional network of members"]
-strengths_fr = ["Forum avec une catégorie pour les tests de boîtes, créations, conception assistée par ordinateur et promotions", "Expositions et réseau régional de membres"]
-weaknesses_en = ["Centred on creations and exhibitions rather than choosing a set", "Alternative brands not covered in the categories read", "Main site protected by an anti-robot service; only the forum was read directly"]
-weaknesses_fr = ["Centré sur les créations et les expositions plutôt que sur le choix d'un set", "Marques alternatives absentes des catégories lues", "Site principal protégé par un service anti-robot ; seul le forum a été lu directement"]
-size_en = "About 116 topics across three categories (forum)"
-size_fr = "Environ 116 sujets répartis en trois catégories (forum)"
-status = "active"
-last_activity = "2026-11-12"
-checked = "2026-11-23"
-added = "2026-11-23"
-confidence = "medium"
-
-[[resource.sources]]
-url = "https://forum.freelug.org/"
-date = "2026-11-23"
-kind = "read"
-
-[[resource.sources]]
-url = "https://www.freelug.org/"
-date = "2026-11-23"
-kind = "indexed"
-
-[[resource]]
 id = "brickpirate"
 name = "BrickPirate"
 url = "https://www.brickpirate.net/"
@@ -1098,7 +1057,7 @@ kind = "read"
 id = "brickset-discord"
 name = "Brickset forum (Discord)"
 url = "https://brickset.com/forum"
-group = "chat-and-social"
+group = "forums"
 covers = ["official"]
 languages = ["en"]
 countries = ["international"]
@@ -1126,7 +1085,7 @@ kind = "read"
 id = "merlins-discord"
 name = "Merlins Steine community (Discord)"
 url = "https://www.merlinssteine.de/communityreviews/"
-group = "chat-and-social"
+group = "forums"
 covers = ["official", "alternative", "instructions"]
 languages = ["de"]
 countries = ["DE"]

@@ -2,6 +2,9 @@
 
 # v2.x — The directory read at the source down to its links: which brands each entry deals with, how it is funded, who makes the bricks; a website in three views, directory, out and about, observatory.
 
+## v2.16 — 2026-11-24
+Data: groups regrouped where a visitor looking in one would also want the other: Mattel and Revell join the European brands (European and American alternatives), chat servers join the forums, awesome lists join the site directories, touring exhibitions join the conventions, and fans' buy-and-sell threads join the marketplaces; FreeLUG moves to the national clubs, Deparkatre Creators and the Avenue de la brique list of clubs to the site directories, LEGO Ideas to the competitions (54 groups instead of 60). Website: the group of a card stands above its name, left-aligned, instead of floating beside or under it; the rendering check now fails on a group label that is neither beside the name nor aligned with it.
+
 ## v2.15 — 2026-11-24
 Checks: the accessibility rules of the rendering check are a guard, not a conformance target; the 13 px studs of the category map are accepted by name, so that a newer version of axe-core cannot fail the check on them; the page is scrolled back to the top before the rules run, as a sticky header over a scrolled view made two heat map cells of the observatory look covered.
 

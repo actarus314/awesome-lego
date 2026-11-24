@@ -7,13 +7,8 @@ summary_fr = "Conventions, expositions de fans, expositions d'artistes, concours
 
 [[category.groups]]
 id = "conventions"
-name_en = "Conventions and fan events"
-name_fr = "Conventions et événements de fans"
-
-[[category.groups]]
-id = "exhibitions"
-name_en = "Exhibitions: clubs and artists"
-name_fr = "Expositions : clubs et artistes"
+name_en = "Conventions, fairs and exhibitions"
+name_fr = "Conventions, salons et expositions"
 
 [[category.groups]]
 id = "competitions"
@@ -937,7 +932,7 @@ kind = "third-party"
 id = "landebrick"
 name = "Landébrick"
 url = "https://www.cdp29.fr/fr/agenda/view/1043/landebrick/"
-group = "exhibitions"
+group = "conventions"
 covers = ["events", "official"]
 languages = ["fr"]
 countries = ["FR"]
@@ -1586,7 +1581,7 @@ date = "2026-11-24"
 id = "brickuniverse"
 name = "BrickUniverse"
 url = "https://www.brickuniverseusa.com/"
-group = "exhibitions"
+group = "conventions"
 covers = ["events"]
 languages = ["en"]
 countries = ["US"]
@@ -1821,3 +1816,34 @@ kind = "read"
 email = "hello@brickfair.co.za"
 url = "https://www.brickfair.co.za/"
 date = "2026-11-24"
+
+[[resource]]
+id = "lego-ideas"
+name = "LEGO Ideas"
+url = "https://ideas.lego.com/"
+group = "competitions"
+covers = ["learning", "official", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+summary_en = "Official platform where fans submit set concepts; a project reaching 10000 supporters is considered for production. Also runs themed challenges with prizes."
+summary_fr = "Plateforme officielle où les fans proposent des concepts de sets ; un projet atteignant 10000 soutiens est étudié pour une production. Propose aussi des défis à thème avec récompenses."
+strengths_en = ["Creators receive 1 percent of the net sales", "Review results of 2025-2 published on 27 April 2026: four ideas moved to development"]
+strengths_fr = ["Les créateurs reçoivent 1 pour cent des ventes nettes", "Résultats de la revue 2025-2 publiés le 27 avril 2026 : quatre idées passent en développement"]
+weaknesses_en = ["Selection and production decided by LEGO"]
+weaknesses_fr = ["Sélection et production décidées par LEGO"]
+status = "active"
+last_activity = "2026-11-10"
+checked = "2026-11-23"
+added = "2026-11-23"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://ideas.lego.com/how-it-works"
+date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://ideas.lego.com/blog/0ca35d5b-df80-4a65-8838-23a0aee5f7c7"
+date = "2026-04-27"
+kind = "read"

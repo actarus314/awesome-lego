@@ -18,11 +18,6 @@ name_fr = "Boutiques d'occasion et de reconditionné"
 regime = "operating"
 
 [[category.groups]]
-id = "communities"
-name_en = "Community buy and sell spaces"
-name_fr = "Espaces communautaires d'achat et de vente"
-
-[[category.groups]]
 id = "parts-and-custom-builds"
 name_en = "Parts, custom builds and instructions"
 name_fr = "Pièces, créations originales et instructions"
@@ -744,7 +739,8 @@ kind = "read"
 id = "reddit-legomarket"
 name = "r/Legomarket"
 url = "https://www.reddit.com/r/Legomarket/"
-group = "communities"
+group = "marketplaces"
+regime = "activity"
 covers = ["official", "second-hand"]
 languages = ["en"]
 countries = ["US"]
@@ -781,7 +777,8 @@ kind = "third-party"
 id = "techlug-vente-achat"
 name = "TechLUG, buy and sell section"
 url = "https://www.techlug.fr/Forum/viewforum.php?f=6"
-group = "communities"
+group = "marketplaces"
+regime = "activity"
 covers = ["official", "second-hand", "custom-builds"]
 languages = ["fr"]
 countries = ["FR"]
@@ -2130,7 +2127,8 @@ kind = "read"
 id = "afols-nl"
 name = "afols.nl"
 url = "https://afols.nl/"
-group = "communities"
+group = "marketplaces"
+regime = "activity"
 covers = ["second-hand", "news"]
 languages = ["nl"]
 countries = ["NL"]

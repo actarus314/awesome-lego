@@ -127,9 +127,9 @@ table.dt{width:100%;border-collapse:collapse;background:var(--card);border:1px s
 .card{scroll-margin-top:calc(var(--bar-h,250px) + 12px);content-visibility:auto;contain-intrinsic-size:auto 220px}  /* cards far from the screen are laid out when they come near */.card.focus{border-color:var(--hi);box-shadow:0 0 0 3px var(--hi),0 10px 28px -12px rgba(0,0,0,.35);background:color-mix(in srgb,var(--hi) 7%,var(--card));animation:pop .5s ease-out}
 @keyframes pop{0%{transform:scale(.97)}60%{transform:scale(1.015)}100%{transform:none}}
 @media (prefers-reduced-motion:reduce){.card.focus{animation:none}}
-.card .h{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;justify-content:space-between}.card .h>a{flex:1 1 11em}
+.card .h{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
 .card .h a{font-weight:700;font-size:16px;text-decoration:none;color:var(--fg);min-width:0;overflow-wrap:break-word}.card .h a:hover{color:var(--accent)}
-.card .g{font:600 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--faint);text-align:right;max-width:55%}
+.card .g{order:-1;font:600 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--faint)}
 .card .s{margin:0}.star{color:var(--hi)}
 .tags{display:flex;flex-wrap:wrap;gap:5px}
 .tag{font:600 11.5px system-ui,sans-serif;padding:2px 7px;border-radius:6px;background:var(--sunk);color:var(--muted)}

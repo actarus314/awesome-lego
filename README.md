@@ -14,9 +14,8 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
 
 - [Brands and manufacturers](#brands-and-manufacturers)
   - [Official LEGO](#official-lego)
-  - [European alternatives](#european-alternatives)
+  - [European and American alternatives](#european-and-american-alternatives)
   - [Chinese alternatives](#chinese-alternatives)
-  - [Toy and model-kit companies](#toy-and-model-kit-companies)
   - [Brick manufacturers and suppliers](#brick-manufacturers-and-suppliers)
 - [Shops](#shops)
   - [Official LEGO](#official-lego-1)
@@ -36,7 +35,7 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
   - [Motors, controllers and track](#motors-controllers-and-track)
 - [Communities and news](#communities-and-news)
   - [News and reviews](#news-and-reviews)
-  - [Forums](#forums)
+  - [Forums and chat](#forums-and-chat)
   - [Wikis](#wikis)
   - [Deals](#deals)
 - [YouTube and podcasts](#youtube-and-podcasts)
@@ -46,7 +45,7 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
   - [News and community](#news-and-community)
   - [Podcasts](#podcasts)
 - [Events](#events)
-  - [Conventions and fan events](#conventions-and-fan-events)
+  - [Conventions, fairs and exhibitions](#conventions-fairs-and-exhibitions)
   - [Competitions](#competitions)
   - [Event calendars](#event-calendars)
 - [Places to visit](#places-to-visit)
@@ -68,8 +67,7 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
   - [Open-source projects](#open-source-projects)
   - [Programming, control and robotics](#programming-control-and-robotics)
 - [Other directories and lists](#other-directories-and-lists)
-  - [Awesome lists](#awesome-lists)
-  - [Site directories](#site-directories)
+  - [Site directories and awesome lists](#site-directories-and-awesome-lists)
   - [Channel and podcast lists](#channel-and-podcast-lists)
   - [Brand lists](#brand-lists)
 
@@ -85,10 +83,12 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 - [LEGO](https://www.lego.com/fr-fr) - Denmark. Original maker of the 8 mm stud brick system, with an adult range (Icons, Technic, Botanicals, Art) and the largest licence portfolio. Covers official LEGO.
 
-### European alternatives
+### European and American alternatives
 
 - [BlueBrixx](https://www.bluebrixx.com/fr/) - Germany (BB Services GmbH). Brand and shop for architecture, trains, medieval, vehicles and licences (BlueBrixx Pro for adults). Covers alternative brands.
 - [COBI](https://cobi.com/fr-fr) - Poland. Maker of compatible bricks with its own factory in Mielec, specialised in historical and military models (tanks, aircraft, ships) and licensed vehicles. Covers alternative brands.
+- [Mattel Brick Shop (MEGA)](https://shopping.mattel.com/de-de/collections/bausteine-sets) - United States (Mattel). Adult line launched in 2025: licensed Hot Wheels cars (Lamborghini, Audi, Honda, Aston Martin), Masters of the Universe, Halo, Xbox. Covers alternative brands.
+- [Revell Brick System](https://revell.com/collections/brick-system) - Germany. Brick line of the plastic model-kit maker, aimed at adults and launched in 2025 with the submarine from Das Boot (6483 pieces, 1:56). 2026 additions: V-22 Osprey (3730 pieces), Spitfire Mk.II Iron Maiden (2802), F-14A Tomcat Top Gun (2687) and Cutty Sark (7325 pieces, 549 euros). Covers alternative brands.
 
 ### Chinese alternatives
 
@@ -96,11 +96,6 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 - [Lumibricks (formerly Funwhole)](https://www.lumibricks.com/) - China (Guangzhou). Complete sets of buildings and scenes with integrated light, in 13 collections including Cyberpunk Neoncity and the Blade Runner 2049 licence. Covers alternative brands.
 - [Mould King](https://mouldkingcorp.com/) - China (Shantou). Very large motorised Technic models, cranes, vehicles and trains at a very low price per piece. Covers alternative brands.
 - [Pantasy](https://www.pantasy.com/) - China (Guangdong Pinqi Culture and Technology). Covers alternative brands.
-
-### Toy and model-kit companies
-
-- [Mattel Brick Shop (MEGA)](https://shopping.mattel.com/de-de/collections/bausteine-sets) - United States (Mattel). Adult line launched in 2025: licensed Hot Wheels cars (Lamborghini, Audi, Honda, Aston Martin), Masters of the Universe, Halo, Xbox. Covers alternative brands.
-- [Revell Brick System](https://revell.com/collections/brick-system) - Germany. Brick line of the plastic model-kit maker, aimed at adults and launched in 2025 with the submarine from Das Boot (6483 pieces, 1:56). 2026 additions: V-22 Osprey (3730 pieces), Spitfire Mk.II Iron Maiden (2802), F-14A Tomcat Top Gun (2687) and Cutty Sark (7325 pieces, 549 euros). Covers alternative brands.
 
 ### Brick manufacturers and suppliers
 
@@ -214,10 +209,9 @@ Forums, subreddits, wikis, news and review sites, deal communities and chat serv
 - [New Elementary](https://www.newelementary.com/) - Site on LEGO parts, sets and building techniques, with tracking of Pick a Brick prices and new parts in sets. Covers official LEGO.
 - [The Brothers Brick](https://www.brothers-brick.com/) - LEGO news, reviews and fan creations blog; describes itself as the world's number one source. Covers official LEGO.
 
-### Forums
+### Forums and chat
 
 - [Eurobricks Forums](https://www.eurobricks.com/forum/) - General English-language forum for adult fans of LEGO, with sections on custom builds, reviews and marketplace, and a section on alternative brands. Covers official LEGO and alternative brands.
-- [FreeLUG](https://www.freelug.org/) - French national association of LEGO fans since 2003, with a Discourse forum, exhibitions and meeting reports. Covers official LEGO.
 - [HardWare.fr: compatible bricks topic](https://forum.hardware.fr/hfr/Discussions/Loisirs/briques-construction-compatibles-sujet_119659_1.htm) - Long-running French forum topic on LEGO-compatible brick brands (started 16 December 2021), with a maintained introduction on brands, compatibility and after-sales service. Covers alternative brands.
 - [TechLug.fr forum](https://www.techlug.fr/Forum/) - French-speaking forum on LEGO Technic and Mindstorms: news, set discussions, modifications of official sets, custom builds and a section on theory of mechanisms and gearing. Covers official LEGO.
 
@@ -271,7 +265,7 @@ English- and French-language YouTube channels and podcasts: reviews of official 
 
 Conventions, fan exhibitions, artist shows, public competitions and calendars listing brick events by country.
 
-### Conventions and fan events
+### Conventions, fairs and exhibitions
 
 - [Brick Mania Antwerpen](https://www.belug.be/brickmania/antwerpen/) - Largest LEGO exhibition in Belgium, organised by the Belgian LEGO User Group BeLUG at Antwerp Expo, with layouts, a Great Ball Contraption, workshops and sales. Covers official LEGO.
 - [Fana'Briques](https://expo.fanabriques.fr/fr/) - Large LEGO exhibition at the Parc des expositions in Colmar, organised by volunteers of the association Fanabriques, with dioramas, mosaics, new and second-hand LEGO shops and artists' stalls. Covers official LEGO.
@@ -321,6 +315,7 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 
 - [BeLUG](https://www.belug.be/) - Belgian LEGO User Group: club for adult LEGO builders and collectors, independent of the LEGO Group, taking part in fairs in Belgium and abroad and organising Brick Mania. Covers official LEGO.
 - [Brickish](https://brickish.org/) - UK-wide club of adult fans of LEGO, active since 2002 and described by itself as the first user group in the country; local meet-ups, public shows and a members-only forum. Covers official LEGO.
+- [FreeLUG](https://www.freelug.org/) - French national association of LEGO fans since 2003, with a Discourse forum, exhibitions and meeting reports. Covers official LEGO.
 - [ItLUG](https://www.itlug.org/) - Italian LEGO Users Group: national association of adult LEGO fans founded in 1999 and legally constituted in November 2010, with a forum, national events and local exhibitions. Covers official LEGO.
 
 <br>
@@ -395,12 +390,9 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 
 Existing directories, awesome lists and lists of channels and brands about LEGO and compatible bricks.
 
-### Awesome lists
+### Site directories and awesome lists
 
 - [awesome-lego (ad-si)](https://github.com/ad-si/awesome-lego) - Community awesome list of LEGO software, archives, libraries, marketplaces, channels, books, blogs and games. Covers official LEGO.
-
-### Site directories
-
 - [Deparkatre clubs and associations directory](https://deparkatre.fr/associations) - French-language directory of LEGO user groups, clubs and online communities in France, Europe and elsewhere, with national, regional and local scope. Covers official LEGO.
 - [LEGO Fan CoLab community directory](https://fancolab.lego.com/communities/) - Official LEGO directory of recognised fan communities, including French associations. Covers official LEGO.
 
