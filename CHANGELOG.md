@@ -2,6 +2,9 @@
 
 # v2.x — The directory read at the source down to its links: which brands each entry deals with, how it is funded, who makes the bricks; a website in three views, directory, out and about, observatory.
 
+## v2.5 — 2026-11-24
+Website: contact details take one line each (address, phone, email), with an icon; a phone number, an email, a town or a postal code no longer breaks across two lines, and two addresses no longer run into each other. On phones and tablets, the list near the map grows with its content instead of scrolling inside the page, as intended since v2.1.
+
 ## v2.4 — 2026-11-24
 Website: an easter egg. The Konami code (↑ ↑ ↓ ↓ ← → ← → B A, or on a touch screen four swipes up, down, left and right in that order, then two taps) opens the Brick Vault (`vault/`, English only): a baseplate where bricks drop and stack, five cheat codes to find and nine achievements, kept in the browser. Its two fonts (Press Start 2P and Nunito, SIL Open Font License) are served by the site itself; the page contacts nothing else and is not indexed.
 
