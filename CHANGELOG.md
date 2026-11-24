@@ -2,6 +2,9 @@
 
 # v2.x — The directory read at the source down to its links: which brands each entry deals with, how it is funded, who makes the bricks; a website in three views, directory, out and about, observatory.
 
+## v2.3 — 2026-11-24
+Website: an address opens Google Maps, which phones hand to their maps app, instead of OpenStreetMap; showing a city of the list on the map no longer scrolls that city to the top of the list.
+
 ## v2.2 — 2026-11-24
 Data: a new `contact` field gives the address, phone and email that 60 places, events and clubs publish as their own (43 addresses, 26 phones, 43 emails), each read on the official site with its page and date; for an event, the venue of the next edition only; never the home address or personal number of a private person. Website: the entries of the calendar and of the list near the map show these details instead of a link to the full entry, and directory cards show them too; a city of the list and an entry of the calendar open their point on the map; the map takes the height of the list beside it; the README preview shows the current website. Removed: the "Independent" criterion (7 entries out of 523: too few to search with; the funding line of each card stays). Automation: activity is read in parallel, and a publication after a push reuses the measurements of the published website (read again every day), about one minute instead of four.
 
