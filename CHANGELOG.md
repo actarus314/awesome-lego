@@ -2,6 +2,9 @@
 
 # v2.x — The directory read at the source down to its links: which brands each entry deals with, how it is funded, who makes the bricks; a website in three views, directory, out and about, observatory.
 
+## v2.7 — 2026-11-24
+Website: a few hints towards the Brick Vault, for those who look. A faint line of arrows in the footer, a comment in the page source, a message in the browser console, a search suggestion for words such as "secret", "cheat" or "konami" (five letters at least, so it never crowds an ordinary search), and the logo that hops while the code is being typed.
+
 ## v2.6 — 2026-11-24
 Website: in the calendar and the list near the map, the website and "On the map" join the contact lines, in the same form (icon, then the site's name or the action), instead of a separate row of links; the contact lines of the calendar no longer inherit the frame of the calendar rows.
 
