@@ -23,6 +23,10 @@ jobs:
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Third-party files kept in the repository match the locked packages
         run: python3 scripts/vendor.py --check
+      - name: Licence of every file (REUSE specification)
+        run: |
+          python3 -m pip install --quiet -r tests/requirements-check.txt
+          reuse lint
       - name: Validate data and check that generated files are up to date
         run: python3 scripts/build.py --check
       - name: Unit tests (validation, pages)

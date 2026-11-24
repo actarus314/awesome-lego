@@ -19,4 +19,4 @@ This list aims to be complete, accurate and current. Every entry is checked at i
 
 **Writing:** factual and short, no marketing words; decimal point, no thousands separator; prices including taxes; no abbreviations except proper names and technical terms.
 
-By contributing, you agree that your contribution is published under the licenses of the repository (content: CC BY-NC-SA 4.0; code: PolyForm Noncommercial 1.0.0). Everyone follows the [code of conduct](CODE_OF_CONDUCT.md).
+By contributing, you agree that your contribution is published under the licenses of the repository (content: CC BY-NC-SA 4.0; code: PolyForm Noncommercial 1.0.0). The licence of each file is set in [`REUSE.toml`](REUSE.toml) (texts in [`LICENSES/`](LICENSES/)) and checked by `reuse lint`: a new file outside the paths listed there needs its line. Brand logos (`media/logos/`) are trademarks of their owners, under none of these licences. Everyone follows the [code of conduct](CODE_OF_CONDUCT.md).
