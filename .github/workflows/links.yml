@@ -45,7 +45,7 @@ jobs:
           read -r n state < <(gh issue list --label links --state all --limit 1 --json number,state -q '.[] | "\(.number) \(.state)"') || true   # the newest links issue, open or closed
           if [ -n "$n" ]; then gh issue view "$n" --json body -q .body > previous.md; else : > previous.md; fi
           python3 scripts/links_issue.py lychee-report.md previous.md --recheck --pages --state needed.txt > body.md
-          if [ "$DRY_RUN" = "true" ]; then { echo "Issue: $(cat needed.txt)"; echo; cat body.md; } >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
+          if [ "$DRY_RUN" = "true" ]; then { echo "Issue: $(cat needed.txt)"; echo; cat body.md; } | tee -a "$GITHUB_STEP_SUMMARY"; exit 0; fi   # summary and log
           if [ "$(cat needed.txt)" = "open" ]; then
             if [ -z "$n" ]; then gh issue create --title "Broken links" --label links --label automatic --body-file body.md
             else gh issue edit "$n" --body-file body.md; [ "$state" = "OPEN" ] || gh issue reopen "$n"; fi
