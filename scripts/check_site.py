@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Rendering checks of the built website (site/), in a real browser (Playwright, Chromium).
 
-Every view and state a visitor reaches (directory as cards and as a table, brand mode, observatory,
+Every view and state a visitor reaches (directory as cards and as a table, brand mode of an alternative brand and of LEGO, observatory,
 hidden vault), in English and French, at several widths and in both
 themes. Fails on:
 - overflow: the page scrolls sideways, or an element sticks out of the box (card, panel, row) it sits in;
@@ -89,6 +89,7 @@ AXE_STATES = [
     ("directory", "#cat=places,events,clubs", "document.querySelectorAll('#list details').forEach(d=>d.open=true)"),
     ("table", "#cat=places,events,clubs&view=table", ""),
     ("brand mode", "#q=COBI", ""),
+    ("brand mode of LEGO", "#q=LEGO", ""),
     ("observatory", "#observatory", ""),
     ("observatory after a theme switch", "#observatory",  # colours computed by the page must follow the theme button
      "(()=>{const want=matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark',tb=document.getElementById('theme');for(let i=0;i<3&&document.documentElement.dataset.theme!==want;i++)tb.click()})()"),
@@ -97,6 +98,7 @@ STATES = [
     ("directory", "#map", "document.querySelectorAll('#list details').forEach(d=>d.open=true)"),
     ("table", "#view=table", ""),
     ("brand mode", "#q=COBI", ""),
+    ("brand mode of LEGO", "#q=LEGO", ""),
     ("observatory", "#observatory", ""),
 ]
 

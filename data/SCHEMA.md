@@ -37,8 +37,8 @@ ships_to_france = true                   # shops only; omit when not relevant
 access = "free"                          # free | free-account | freemium | paid, with a meaning that depends on the category (see Access below)
 business_model_en = "Affiliate links"    # until lot 3b, not shown: becomes funding (read at the source) or goes
 business_model_fr = "Liens d'affiliation"
-summary_en = "What it is and what it is for, one or two sentences."
-summary_fr = "Ce que c'est et à quoi ça sert, une ou deux phrases."
+summary_en = "What is particular about it, one or two sentences, 35 words at most."   # see Writing rules: the card already shows the name, the group, the country and the tags
+summary_fr = "Ce qu'elle a de particulier, une ou deux phrases, 35 mots au plus."
 strengths_en = ["Short factual point", "…"]
 strengths_fr = ["Point factuel court", "…"]
 weaknesses_en = ["…"]
@@ -104,7 +104,9 @@ Sizes (`size`, unit): sets | brands | members | topics | posts | subscribers | v
 Writing rules:
 - Impersonal, factual, short. No marketing words. Facts not verified are left out or marked in `confidence`.
 - Numbers: decimal point, no thousands separator (`42003`, `4.95 €`).
-- English: "official LEGO" for the brand; French: « LEGO officiel ». Proper names keep their form (LEGO Ideas, LEGO.com).
+- The brand. English: "official LEGO". French: « LEGO officiel » is a label only (a filter, a legend, a heading against « marques alternatives »); in a sentence, « de marque LEGO » for a product (sets, parts, minifigures, prices), « du groupe LEGO » for what the company runs (shop, stores, centres), « sous enseigne LEGO » for a store or a place run by a partner (LEGO Certified Stores, LEGOLAND parks). Proper names keep their form (LEGO Ideas, LEGO.com).
+- Dates in texts: the month in letters, never abbreviated (3 July 2027, 3 juillet 2027, 1er avril), never 2027-07-03 nor 03/07/2027. Data fields (`checked`, `next_date`…) stay ISO dates; the website writes them in letters.
+- The card's text (`summary_*`): what sets the entry apart, in one or two sentences of 35 words at most; it does not repeat the name, the group, the country or the tags, and starts with what distinguishes the entry. Everything else of the card's legend comes from structured fields (`city`, `size`, `next_date`, `funding`).
 - No abbreviations except proper names and technical terms (API, CSV, RSS). Write "custom builds" / « créations originales » rather than MOC.
 - Prices including taxes.
 
