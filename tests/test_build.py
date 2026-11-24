@@ -337,8 +337,13 @@ class Lot3Checks(unittest.TestCase):
         self.assertEqual(build.lego_operator({"url": "https://example.org/", "operator": "licensee"}), "licensee")
 
     def test_french_card_text(self):
-        ns = notes_with("comparators.toml", lambda t: t.replace('summary_fr = "', 'summary_fr = "Comparateur de prix allemand, ', 1))
-        self.assertTrue(any("summary_fr starts with a country" in n for n in ns), ns)
+        def planted(t):
+            i, j = entry_of(t, "brickset")
+            return t[:i] + re.sub(r'summary_fr = "[^"]*"', 'summary_fr = "Base de données allemande de sets et de figurines."', t[i:j], count=1) + t[j:]
+        before = notes_with("comparators.toml", lambda t: t)
+        self.assertFalse([n for n in before if "brickset: summary_fr starts with a country" in n])
+        ns = notes_with("comparators.toml", planted)
+        self.assertTrue([n for n in ns if "brickset: summary_fr starts with a country" in n], "a demonym after the noun is found")
         def lang_only(t):
             i, j = entry_of(t, "jangbricks")
             return t[:i] + re.sub(r'summary_fr = "[^"]*"', 'summary_fr = "Chaîne en allemand sur les sets de marque LEGO."', t[i:j], count=1) + t[j:]

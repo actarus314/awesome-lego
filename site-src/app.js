@@ -147,7 +147,7 @@ function banner(r,b,rs){if(!r)return'';const cats=C.map(c=>[c.id,rs.filter(x=>x.
  const grp=((C.find(c=>c.id===r.cat)||{groups:[]}).groups.find(g=>g.id===r.group)||{})[L]||r[L].group;
  const meta=[one(r),grp].filter(Boolean).map(esc).join(' · ')+` · <a href="${esc(r.url)}" rel="noopener">${esc(host(r.url))}</a>`;
  return `<section class="banner ${b.lego?'official':'alternative'}" aria-labelledby="bn-h">${r.logo?`<img class="logo" src="${PRE}${esc(r.logo)}" alt="${esc(t('logo_of').replace('{b}',b.name))}">`:''}<div class="bt"><h3 id="bn-h" tabindex="-1">${esc(b.name)}</h3><p class="meta">${meta}</p><p class="s">${esc(r[L].summary)}</p>${mkLine(r)}`+
-  `<p class="counts">${b.lego?esc(t('lego_where'))+COLON:esc(tn('n_linked',rs.length))+COLON}${cats.map(([c,n])=>`${esc(shortCat(c))} ${n}`).join(' · ')}</p>`+
+  (cats.length?`<p class="counts">${b.lego?esc(t('lego_where'))+COLON:esc(tn('n_linked',rs.length))+COLON}${cats.map(([c,n])=>`${esc(shortCat(c))} ${n}`).join(' · ')}</p>`:'')+
   (b.lego?`<button type="button" class="btn all" data-scope="official">${esc(t('lego_scope').replace('{n}',R.filter(x=>(x.covers||[]).includes('official')).length))}</button>`:'')+`</div></section>`}
 function vMakers(){const el=document.getElementById('v-makers');const all=D.brands.map(b=>({...b,...mkOf(b)}));
  const own=all.filter(b=>b.own.length&&!b.ext.length),ext=all.filter(b=>b.ext.length),none=all.filter(b=>!b.own.length&&!b.ext.length);
