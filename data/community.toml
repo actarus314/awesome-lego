@@ -292,7 +292,7 @@ kind = "read"
 [[resource]]
 id = "zusammengebaut"
 name = "Zusammengebaut"
-url = "https://www.zusammengebaut.com/"
+url = "https://zusammengebaut.com/"
 feed = "https://www.zusammengebaut.com/feed/"
 group = "news-and-reviews"
 covers = ["official", "news"]

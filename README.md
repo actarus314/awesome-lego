@@ -95,7 +95,7 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 - [CaDA (Double Eagle)](https://cadatoys.com/) - China (Shantou), Double Eagle group, which also makes the bricks. Covers alternative brands.
 - [Lumibricks (formerly Funwhole)](https://www.lumibricks.com/) - China (Guangzhou). Complete sets of buildings and scenes with integrated light, in 13 collections including Cyberpunk Neoncity and the Blade Runner 2049 licence. Covers alternative brands.
 - [Mould King](https://mouldkingcorp.com/) - China (Shantou). Very large motorised Technic models, cranes, vehicles and trains at a very low price per piece. Covers alternative brands.
-- [Pantasy](https://www.pantasy.com/) - China (Guangdong Pinqi Culture and Technology). Covers alternative brands.
+- [Pantasy](https://pantasy.com/) - China (Guangdong Pinqi Culture and Technology). Covers alternative brands.
 
 ### Brick manufacturers and suppliers
 
@@ -168,7 +168,7 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 ### Parts, custom builds and instructions
 
 - [BuyMeBricks](https://buymebricks.com/) - Shop of GoBricks compatible parts run by a French company: part lists imported from Studio, Rebrickable or BrickLink, and custom build kits with PDF instructions. Covers alternative brands.
-- [Official LEGO building instructions](https://www.lego.com/fr-fr/service/buildinginstructions) - Official LEGO page to find the instructions of a set by name or number, and the LEGO Builder application. Covers official LEGO.
+- [Official LEGO building instructions](https://www.lego.com/fr-fr/service/building-instructions) - Official LEGO page to find the instructions of a set by name or number, and the LEGO Builder application. Covers official LEGO.
 - [Open L-Gauge](https://open-l-gauge.eu/) - Community library of free LEGO train model instructions, among them German locomotives (Baureihe 152, 185, 189, Vectron).
 - [Pick a Brick (LEGO.com)](https://www.lego.com/fr-fr/pick-and-build/pick-a-brick) - New individual parts sold by LEGO, ordered on the French LEGO.com site. Covers official LEGO.
 - [ToyPro](https://www.toypro.com/fr) - Dutch shop of new genuine LEGO parts, minifigures and sets. Covers official LEGO.

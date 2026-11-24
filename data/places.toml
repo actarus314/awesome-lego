@@ -1530,7 +1530,7 @@ date = "2026-11-24"
 [[resource]]
 id = "steingemachtes"
 name = "Steingemachtes"
-url = "https://www.steingemachtes.de/"
+url = "https://steingemachtes.de/"
 feed = "https://steingemachtes.de/rss.xml"
 group = "physical-shops"
 covers = ["alternative", "parts", "places"]

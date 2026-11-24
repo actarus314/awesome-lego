@@ -1199,7 +1199,7 @@ kind = "read"
 [[resource]]
 id = "lego-building-instructions"
 name = "Official LEGO building instructions"
-url = "https://www.lego.com/fr-fr/service/buildinginstructions"
+url = "https://www.lego.com/fr-fr/service/building-instructions"
 group = "parts-and-custom-builds"
 featured = true
 covers = ["official", "instructions"]
@@ -1963,7 +1963,7 @@ kind = "read"
 [[resource]]
 id = "briquestore"
 name = "Briquestore"
-url = "https://www.briquestore.fr/"
+url = "https://www.briquestore.fr/fr/"
 group = "custom-minifigures-and-accessories"
 covers = ["official", "parts", "minifigures", "custom-builds"]
 languages = ["fr", "en", "es", "de", "it"]
