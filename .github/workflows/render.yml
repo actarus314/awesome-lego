@@ -24,7 +24,7 @@ jobs:
           python-version: "3.13"   # the browser library ships wheels for released Pythons first
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: "22"
+          node-version: "26"
           cache: npm
       - name: Tools (axe-core from package-lock.json, Playwright and Chromium)
         run: |
