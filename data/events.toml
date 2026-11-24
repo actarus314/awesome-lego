@@ -703,7 +703,7 @@ date = "2026-11-24"
 [[resource]]
 id = "letzbrick"
 name = "Lëtzbrick"
-url = "https://www.afol.lu/"
+url = "https://afol55.afol.lu/"
 group = "conventions"
 covers = ["events", "official"]
 languages = ["en", "fr", "de"]

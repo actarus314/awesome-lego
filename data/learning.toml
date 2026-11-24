@@ -897,7 +897,7 @@ kind = "third-party"
 [[resource]]
 id = "briques-mag"
 name = "Briques MAG"
-url = "https://www.briquesmag.fr/"
+url = "https://jmag286.wixsite.com/briquesmag1"
 group = "books-and-magazines"
 regime = "activity"
 covers = ["learning", "alternative", "news"]

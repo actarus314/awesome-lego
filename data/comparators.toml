@@ -735,7 +735,7 @@ kind = "read"
 [[resource]]
 id = "brick-tracker-de"
 name = "Brick-Tracker.de"
-url = "https://www.brick-tracker.de/"
+url = "https://www.brick-tracker.de/index.php"
 group = "price-comparators"
 covers = ["official"]
 languages = ["de"]

@@ -303,7 +303,7 @@ kind = "official"
 [[resource]]
 id = "dutchbricks"
 name = "Dutchbricks"
-url = "https://www.dutchbricks.nl/"
+url = "https://www.dutchbricks.com/"
 group = "regional-clubs"
 covers = ["clubs", "official", "events"]
 languages = ["nl", "en"]
@@ -566,7 +566,7 @@ kind = "read"
 [[resource]]
 id = "london-afols"
 name = "London AFOLs"
-url = "https://www.londonafols.uk/"
+url = "https://londonafols.uk/"
 group = "regional-clubs"
 covers = ["clubs", "official"]
 languages = ["en"]
@@ -651,7 +651,7 @@ kind = "official"
 [[resource]]
 id = "quelug"
 name = "QuéLUG"
-url = "https://www.quelug.org/"
+url = "https://quelug.org/"
 group = "regional-clubs"
 covers = ["clubs", "official", "events"]
 languages = ["fr"]
@@ -709,7 +709,7 @@ kind = "official"
 [[resource]]
 id = "bionilug"
 name = "BioniLUG"
-url = "https://www.bionilug.com/"
+url = "https://bionilug.com/"
 group = "online-clubs"
 covers = ["clubs", "official", "custom-builds"]
 languages = ["en"]

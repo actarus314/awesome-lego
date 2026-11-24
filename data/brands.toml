@@ -385,7 +385,7 @@ kind = "third-party"
 [[resource]]
 id = "pantasy"
 name = "Pantasy"
-url = "https://www.pantasy.com/"
+url = "https://pantasy.com/"
 group = "chinese-alternatives"
 featured = true
 covers = ["alternative"]
