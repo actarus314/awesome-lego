@@ -2,6 +2,9 @@
 
 # v2.x — The directory read at the source down to its links: which brands each entry deals with, how it is funded, who makes the bricks; a website in three views, directory, out and about, observatory.
 
+## v2.6 — 2026-11-24
+Website: in the calendar and the list near the map, the website and "On the map" join the contact lines, in the same form (icon, then the site's name or the action), instead of a separate row of links; the contact lines of the calendar no longer inherit the frame of the calendar rows.
+
 ## v2.5 — 2026-11-24
 Website: contact details take one line each (address, phone, email), with an icon; a phone number, an email, a town or a postal code no longer breaks across two lines, and two addresses no longer run into each other. On phones and tablets, the list near the map grows with its content instead of scrolling inside the page, as intended since v2.1.
 
