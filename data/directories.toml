@@ -131,6 +131,7 @@ last_activity = "2016-01-26"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = []
 
 [[resource.sources]]
 url = "https://brickmap.info/"
@@ -157,6 +158,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = []
 
 [[resource.sources]]
 url = "https://www.brickdiscovery.com/buy-sell-invest/"
@@ -289,6 +291,7 @@ last_activity = "2026-10-10"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "low"
+brands = []
 
 [[resource.sources]]
 url = "https://spielzeug-fuchs.de/klemmbaustein-preisvergleichsplattformen/"
@@ -318,6 +321,7 @@ last_activity = "2026-07-27"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
 
 [[resource.sources]]
 url = "https://bricktubed.com/channels/"
@@ -345,6 +349,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = []
 
 [[resource.sources]]
 url = "https://deparkatre.fr/influenceurs"
@@ -425,6 +430,7 @@ last_activity = "2026-09-27"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi", "bluebrixx", "cada", "mould-king", "pantasy", "lumibricks", "xingbao", "jiestar", "sembo-block", "keeppley", "wange", "mork", "sluban", "mattel-brick-shop", "panlos", "brixies", "loz"]
 
 [[resource.sources]]
 url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
@@ -477,6 +483,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["bluebrixx", "bryx", "cada", "cobi", "lumibricks", "jiestar", "mattel-brick-shop", "mould-king", "panlos", "pantasy", "keeppley", "rastar", "reobrix", "sembo-block", "sluban", "wange", "xingbao"]
 
 [[resource.sources]]
 url = "https://spielzeug-fuchs.de/klemmbaustein-hersteller/"
@@ -532,6 +539,7 @@ last_activity = "2022-03-09"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["bluebrixx", "cada", "cobi", "mattel-brick-shop", "mould-king", "panlos", "keeppley", "sembo-block", "sluban", "wange", "xingbao"]
 
 [[resource.sources]]
 url = "https://baustein.info/welt-des-steins/"

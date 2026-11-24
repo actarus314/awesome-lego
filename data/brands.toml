@@ -115,6 +115,13 @@ url = "https://www.galaxus.de/de/page/klemmbausteine-fuer-erwachsene-die-spannen
 date = "2026-03-31"
 kind = "third-party"
 
+[[resource.makers]]
+name = "COBI Factory S.A. (Mielec)"
+id = "cobi"
+url = "https://cobi.com/pages/about-us"
+date = "2026-11-23"
+kind = "official"
+
 [[resource]]
 id = "bluebrixx"
 name = "BlueBrixx"
@@ -128,8 +135,8 @@ ships_to_france = true
 access = "free"
 business_model_en = "Own brand and online shop; also resells sets of other brands"
 business_model_fr = "Marque propre et boutique en ligne ; revend aussi des sets d'autres marques"
-summary_en = "Germany (BB Service GmbH). Brand and shop for architecture, trains, medieval, vehicles and licences (BlueBrixx Pro for adults). Bricks come from several Chinese manufacturers; design and distribution are in Germany."
-summary_fr = "Allemagne (BB Service GmbH). Marque et boutique : architecture, trains, médiéval, véhicules et licences (BlueBrixx Pro pour adultes). Les briques viennent de plusieurs fabricants chinois ; conception et distribution en Allemagne."
+summary_en = "Germany (BB Services GmbH). Brand and shop for architecture, trains, medieval, vehicles and licences (BlueBrixx Pro for adults). Bricks come from several Chinese manufacturers; design and distribution are in Germany."
+summary_fr = "Allemagne (BB Services GmbH). Marque et boutique : architecture, trains, médiéval, véhicules et licences (BlueBrixx Pro pour adultes). Les briques viennent de plusieurs fabricants chinois ; conception et distribution en Allemagne."
 strengths_en = ["Delivery to France 9.95 €, 3 to 5 working days, payment by Carte Bancaire (shipping page)", "Licences include Stargate", "Delivers to all European Union countries (help centre, 2026-10-14)"]
 strengths_fr = ["Livraison en France 9.95 €, 3 à 5 jours ouvrés, paiement par Carte Bancaire (page livraison)", "Licences dont Stargate", "Livraison dans tous les pays de l'Union européenne (centre d'aide, 14/10/2026)"]
 weaknesses_en = ["Bricks from several sources: irregular shades and clutch power possible (GameStar, 2026-11-20)", "Free-shipping threshold unclear: 99 € on the French shipping page, 199 € in the help centre for Germany; to check at checkout", "Sets can leave the range without notice after licence or legal disputes"]
@@ -154,6 +161,22 @@ kind = "official"
 url = "https://www.gamestar.de/artikel/beste-klemmbausteine-2026-lego-bluebrixx-lumibricks-alternativen,3451687.html"
 date = "2026-11-20"
 kind = "third-party"
+
+[[resource.makers]]
+name = "Xingbao (BlueBrixx Pro parts)"
+name_fr = "Xingbao (pièces de la gamme BlueBrixx Pro)"
+id = "xingbao"
+url = "https://www.gamestar.de/artikel/bluebrixx-qualitaetsschwankungen-chef,3452857.html"
+date = "2026-05-12"
+kind = "third-party"
+
+[[resource.makers]]
+name = "Xingbao (BlueBrixx Pro parts)"
+name_fr = "Xingbao (pièces de la gamme BlueBrixx Pro)"
+id = "xingbao"
+url = "https://bluebrixx.zendesk.com/hc/en-001/articles/36466904131101-Why-am-I-not-seeing-any-spare-parts"
+date = "2026-06-11"
+kind = "official"
 
 [[resource]]
 id = "brixies"
@@ -256,6 +279,13 @@ url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
 date = "2026-09-27"
 kind = "third-party"
 
+[[resource.makers]]
+name = "Double Eagle group"
+id = "cada"
+url = "https://www.doubleeagle-group.com/about"
+date = "2026-11-23"
+kind = "official"
+
 [[resource]]
 id = "mould-king"
 name = "Mould King"
@@ -294,6 +324,20 @@ kind = "official"
 [[resource.sources]]
 url = "https://www.gamestar.de/artikel/beste-klemmbausteine-2026-lego-bluebrixx-lumibricks-alternativen,3451687,seite2.html"
 date = "2026-11-20"
+kind = "third-party"
+
+[[resource.makers]]
+name = "GoBricks"
+id = "gobricks"
+url = "https://www.gamestar.de/artikel/beste-klemmbausteine-2026-lego-bluebrixx-lumibricks-alternativen,3451687,seite2.html"
+date = "2026-11-20"
+kind = "third-party"
+
+[[resource.makers]]
+name = "GoBricks"
+id = "gobricks"
+url = "https://derdealer.ch/fr/blogs/der-dealer-magazin/mould-king-vs-lego-wechsel-vergleich"
+date = "2026-05-08"
 kind = "third-party"
 
 [[resource]]
@@ -370,6 +414,13 @@ url = "https://bricktimer.de/blogs/news-aus-der-werkstatt/klemmbaustein-marken-v
 date = "2026-07-08"
 kind = "third-party"
 
+[[resource.makers]]
+name = "GoBricks"
+id = "gobricks"
+url = "https://pantasy.com/pages/about-us"
+date = "2026-11-23"
+kind = "official"
+
 [[resource]]
 id = "lumibricks"
 name = "Lumibricks (formerly Funwhole)"
@@ -409,6 +460,13 @@ kind = "official"
 url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
 date = "2026-09-27"
 kind = "third-party"
+
+[[resource.makers]]
+name = "GoBricks"
+id = "gobricks"
+url = "https://www.lumibricks.com/pages/lighting-bricks-world"
+date = "2026-11-23"
+kind = "official"
 
 [[resource]]
 id = "jmbricklayer"
@@ -479,6 +537,13 @@ url = "https://baustein.info/welt-des-steins/"
 date = "2022-03-09"
 kind = "third-party"
 
+[[resource.makers]]
+name = "Guangdong Xingbao Electronics Technology"
+id = "xingbao"
+url = "https://xingbao.org/pages/about-us"
+date = "2026-11-23"
+kind = "official"
+
 [[resource]]
 id = "jiestar"
 name = "JIE STAR (with GULY)"
@@ -516,6 +581,13 @@ kind = "read"
 url = "https://gulytoys.com/"
 date = "2026-11-23"
 kind = "read"
+
+[[resource.makers]]
+name = "Guangdong JieXing Toys Industrial"
+id = "jiestar"
+url = "https://www.jiestartoys.com/about"
+date = "2026-11-23"
+kind = "official"
 
 [[resource]]
 id = "sembo-block"
@@ -573,6 +645,13 @@ url = "https://c-en.qmjm.com/en/product/"
 date = "2026-11-23"
 kind = "indexed"
 
+[[resource.makers]]
+name = "Guangdong Qman Toys Industry"
+id = "keeppley"
+url = "https://c-en.qmjm.com/"
+date = "2026-11-23"
+kind = "official"
+
 [[resource]]
 id = "wange"
 name = "Wange"
@@ -602,6 +681,13 @@ kind = "indexed"
 url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
 date = "2026-09-27"
 kind = "third-party"
+
+[[resource.makers]]
+name = "Shantou Wange Educational Material Sci-Tech"
+id = "wange"
+url = "https://hk.wangetoys.com/SinglePage/SinglePage.aspx?menuId=28&pid=6"
+date = "2026-11-23"
+kind = "official"
 
 [[resource]]
 id = "mork"
@@ -688,6 +774,13 @@ url = "https://www.immasterstore.com/"
 date = "2026-11-23"
 kind = "read"
 
+[[resource.makers]]
+name = "Shantou Qihui Toys Industrial"
+id = "im-master"
+url = "http://en.qihuiwanju.com/Profile.html"
+date = "2026-11-23"
+kind = "official"
+
 [[resource]]
 id = "nifeliz"
 name = "Nifeliz"
@@ -720,13 +813,20 @@ url = "https://www.nifeliz.com/2024/08/27/production-process-nifeliz-standard/"
 date = "2024-08-27"
 kind = "official"
 
+[[resource.makers]]
+name = "Shantou Nifeliz Cultural"
+id = "nifeliz"
+url = "https://www.nifeliz.com/2024/08/27/production-process-nifeliz-standard/"
+date = "2024-08-27"
+kind = "official"
+
 [[resource]]
 id = "sluban"
 name = "Sluban"
-url = "https://slubanbricks.com/de"
+url = "https://www.sluban.com.cn/en/"
 group = "chinese-alternatives"
 covers = ["alternative"]
-languages = ["de", "en", "cs"]
+languages = ["en", "zh"]
 countries = ["international"]
 access = "free"
 summary_en = "China, with European distribution in the Netherlands (Sluban Europe). Military, city, aircraft and mecha sets at low prices, mostly for play rather than adult display."
@@ -736,14 +836,21 @@ strengths_fr = ["Prix bas ; thèmes militaire, aviation, espace (site officiel)"
 weaknesses_en = ["Mostly play and children orientation", "Delivery to France not verified"]
 weaknesses_fr = ["Orientation surtout jeu et enfants", "Livraison en France non vérifiée"]
 status = "active"
-checked = "2026-11-23"
+checked = "2026-11-24"
 added = "2026-11-23"
 confidence = "low"
 
 [[resource.sources]]
-url = "https://slubanbricks.com/de"
-date = "2026-11-23"
-kind = "read"
+url = "https://www.sluban.com.cn/en/"
+date = "2026-11-24"
+kind = "official"
+
+[[resource.makers]]
+name = "Century Youyi Toys"
+id = "sluban"
+url = "https://www.china-kids-expo.com/other/video_details?id=176175529297920"
+date = "2024-06-07"
+kind = "official"
 
 [[resource]]
 id = "wiseblock"
@@ -754,8 +861,8 @@ covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-summary_en = "Shop of the WISEBLOCK brand, with Assassin's Creed sets (Jackdaw, Havana Harbour, Ezio, 1269 pieces for the Jackdaw Voyage edition at 89.90 dollars) and other themes. Orders ship from the United States; origin of the company is not stated on the pages read."
-summary_fr = "Boutique de la marque WISEBLOCK, avec des sets Assassin's Creed (Jackdaw, port de La Havane, Ezio, 1269 pièces pour l'édition Voyage du Jackdaw à 89.90 dollars) et d'autres thèmes. Les commandes sont expédiées depuis les États-Unis ; l'origine de l'entreprise n'est pas indiquée sur les pages lues."
+summary_en = "Shop of the WISEBLOCK brand, with Assassin's Creed sets (Jackdaw, Havana Harbour, Ezio, 1269 pieces for the Jackdaw Voyage edition at 89.90 dollars) and other themes. Orders ship from the United States; the brand belongs to Alpha Group, a toy and animation company of Shantou, China (trade press, 2026-11-06)."
+summary_fr = "Boutique de la marque WISEBLOCK, avec des sets Assassin's Creed (Jackdaw, port de La Havane, Ezio, 1269 pièces pour l'édition Voyage du Jackdaw à 89.90 dollars) et d'autres thèmes. Les commandes sont expédiées depuis les États-Unis ; la marque appartient à Alpha Group, société de jouets et d'animation de Shantou, Chine (presse spécialisée, 06/11/2026)."
 strengths_en = ["Assassin's Creed licence (BrickReport, 2026-10-08)"]
 strengths_fr = ["Licence Assassin's Creed (BrickReport, 08/10/2026)"]
 weaknesses_en = ["Duties and import fees may be payable on delivery outside the United States", "Domain name suffix suggests a secondary shop; official status not confirmed"]
@@ -774,6 +881,11 @@ kind = "read"
 url = "https://www.wiseblock-alpha.com/products/jackdawvoyage-edition"
 date = "2026-11-23"
 kind = "read"
+
+[[resource.sources]]
+url = "https://www.licenseglobal.com/toys-games/wiseblock-taps-mix-licensing-group-to-expand-presence-in-north-america"
+date = "2026-11-06"
+kind = "third-party"
 
 [[resource]]
 id = "mattel-brick-shop"
@@ -886,6 +998,20 @@ url = "https://baustein.info/welt-des-steins/"
 date = "2022-03-09"
 kind = "third-party"
 
+[[resource.makers]]
+name = "Shantou Golds Precision Technology"
+id = "gobricks"
+url = "https://newsroom.haitian.com/customer-stories-en/golds-precision-behind-10-billion-building-blocks/"
+date = "2026-03-12"
+kind = "third-party"
+
+[[resource.makers]]
+name = "Shantou Golds Precision Technology"
+id = "gobricks"
+url = "https://bausteinblog.de/bauspass/mould-king-gobricks-fabrik-china-shantou-kabel-eins-tv/"
+date = "2021-12-29"
+kind = "third-party"
+
 [[resource]]
 id = "panlos"
 name = "Panlos"
@@ -920,6 +1046,13 @@ kind = "third-party"
 url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
 date = "2026-09-27"
 kind = "third-party"
+
+[[resource.makers]]
+name = "Shantou Chenghai Huada Toys"
+id = "panlos"
+url = "http://www.panlos.com/"
+date = "2026-11-23"
+kind = "official"
 
 [[resource]]
 id = "blokees"
@@ -977,6 +1110,13 @@ url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
 date = "2026-09-27"
 kind = "third-party"
 
+[[resource.makers]]
+name = "Guangdong Zhenfeng Science and Educational Toys"
+id = "loz"
+url = "https://sourcing.hktdc.com/en/Product-Detail/-LOZ-Plastic-Building-Mini-Blocks-The-London-Bridge-1Z03GB6X3"
+date = "2025-12-12"
+kind = "official"
+
 [[resource]]
 id = "nanoblock"
 name = "nanoblock (Kawada)"
@@ -1008,3 +1148,11 @@ kind = "read"
 url = "https://kawada-toys.com/en/brand/nanoblock/history/"
 date = "2026-11-23"
 kind = "read"
+
+[[resource.makers]]
+name = "Kawada (Nagano factory)"
+id = "nanoblock"
+url = "https://www.diablock.co.jp/en/about/business/"
+date = "2026-11-23"
+kind = "official"
+

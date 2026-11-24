@@ -773,6 +773,7 @@ last_activity = "2026-09-05"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
 city = "Niederkreuzstetten"
 
 [[resource.sources]]
@@ -810,6 +811,7 @@ last_activity = "2026-11-06"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["bluebrixx", "cada", "cobi", "mould-king", "sembo-block", "wange", "xingbao", "keeppley", "jiestar", "loz", "mattel-brick-shop"]
 
 [[resource.sources]]
 url = "https://noppenhelden.de/"

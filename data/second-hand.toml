@@ -275,6 +275,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
 
 [[resource.sources]]
 url = "https://www.leboncoin.fr/c/jeux_jouets/games_and_toys_brand:lego"
@@ -926,6 +927,7 @@ last_activity = "2026-08-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["gobricks"]
 
 [[resource.sources]]
 url = "https://www.brickwith.com/en"
@@ -975,6 +977,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["gobricks"]
 
 [[resource.sources]]
 url = "https://buymebricks.com/faq"
@@ -1091,6 +1094,7 @@ last_activity = "2026-06-04"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["gobricks"]
 
 [[resource.sources]]
 url = "https://store.bobbybrix.com/blogs/news/bobby-brix-shipping-explained-new-calculator-two-streams-and-where-we-ship-to"

@@ -103,6 +103,33 @@ def coverage_gaps(rows):
             if k >= 3 and entries.get(c, 0) <= k]
 
 
+def reliability(rows):
+    """Per category: share of entries by confidence and share of sources by kind (the directory's own reliability)."""
+    kinds = ("official", "read", "indexed", "third-party", "forum")
+    by = {}
+    for r, _ in rows:
+        c = by.setdefault(r["_cat"], {"n": 0, "conf": {}, "src": {}})
+        c["n"] += 1
+        c["conf"][r.get("confidence")] = c["conf"].get(r.get("confidence"), 0) + 1
+        for x in r.get("sources", []):
+            c["src"][x.get("kind")] = c["src"].get(x.get("kind"), 0) + 1
+    pct = lambda a, b: f"{round(100 * a / b)} %" if b else "-"
+    out = ["| Category | Entries | High | Medium | Low | " + " | ".join(k.capitalize() for k in kinds) + " |",
+           "|---|---:|---:|---:|---:|" + "---:|" * len(kinds)]
+    tot = {"n": 0, "conf": {}, "src": {}}
+    for cat, c in sorted(by.items(), key=lambda x: -x[1]["n"]) + [("**All**", None)]:
+        c = c or tot
+        ns = sum(c["src"].values())
+        out.append(f"| {cat} | {c['n']} | " + " | ".join(pct(c["conf"].get(k, 0), c["n"]) for k in ("high", "medium", "low")) + " | "
+                   + " | ".join(pct(c["src"].get(k, 0), ns) for k in kinds) + " |")
+        if c is not tot:
+            tot["n"] += c["n"]
+            for part in ("conf", "src"):
+                for k, v in c[part].items():
+                    tot[part][k] = tot[part].get(k, 0) + v
+    return out
+
+
 def main():
     old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
     new, failed, archived, stale, unfeature = {}, [], [], [], []
@@ -144,22 +171,25 @@ def main():
             if checked and (TODAY - dt.date.fromisoformat(checked)).days > 365:
                 stale.append(f"{r['id']} ({checked})")
     OUT.write_text(json.dumps(new, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
-    lines = [f"Automatic refresh : {TODAY.isoformat()}", "",
-             f"- Measured : {len(new)}"]
+    lines = [f"Automatic refresh: {TODAY.isoformat()}", "",
+             f"- Measured: {len(new)}"]
     if archived:
-        lines.append("- Archived on GitHub, to review : " + ", ".join(archived))
+        lines.append("- Archived on GitHub, to review: " + ", ".join(archived))
     if unfeature:
-        lines.append("- In the README selection but no longer eligible (inactive for 6 months, archived or weak source), to remove from the selection : " + ", ".join(unfeature))
+        lines.append("- In the README selection but no longer eligible (inactive for 6 months, archived or weak source), to remove from the selection: " + ", ".join(unfeature))
     gaps = coverage_gaps(rows)
     if gaps:
-        lines.append("- Coverage gaps (countries with 3 or more fan communities recognized by LEGO and at most one entry per community) : " + ", ".join(gaps))
+        lines.append("- Coverage gaps (countries with 3 or more fan communities recognized by LEGO and at most one entry per community): " + ", ".join(gaps))
     swaps = selection_check(rows)
     if swaps:
-        lines.append("- Selection check (score out of 9: activity, confidence, sources read, French reader), selected entry far below an unselected one of its group : " + "; ".join(swaps))
+        lines.append("- Selection check (score out of 9: activity, confidence, sources read, French reader), selected entry far below an unselected one of its group: " + "; ".join(swaps))
     if stale:
-        lines.append("- Not checked by hand for more than a year : " + ", ".join(stale))
+        lines.append("- Not checked by hand for more than a year: " + ", ".join(stale))
     if failed:
-        lines.append("- Read failures (previous values kept) : " + ", ".join(failed))
+        lines.append("- Read failures (previous values kept): " + ", ".join(failed))
+    lines += ["", "### Reliability of the directory", "",
+              "Confidence of the entries (high: read at the source; medium: indexed or third-party; low: single weak source) and kinds of their sources, per category.", "",
+              *reliability(rows)]
     print("\n".join(lines))
     return 0
 

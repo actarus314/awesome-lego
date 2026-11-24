@@ -40,8 +40,6 @@ covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "Set reviews and reveals of official LEGO sets by an adult fan; the channel description states unsponsored content and titles carry a #NotAd tag."
 summary_fr = "Tests et présentations de sets LEGO officiel par un fan adulte ; la description de la chaîne indique un contenu sans parrainage et les titres portent la mention #NotAd."
 strengths_en = ["Declared independent, unsponsored content (channel description)", "Recurring coverage of upcoming sets"]
@@ -55,6 +53,7 @@ last_activity = "2026-11-19"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation", "subscription"]
 youtube_channel_id = "UCH09uL3dLqsVsOh0XmapzLQ"
 
 [[resource.sources]]
@@ -77,8 +76,6 @@ covers = ["official"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "Set reviews by a former official LEGO designer, with building tips."
 summary_fr = "Tests de sets par un ancien concepteur de LEGO officiel, avec des conseils de construction."
 strengths_en = ["Former LEGO designer, per the channel description", "Regular uploads (several per month)"]
@@ -92,6 +89,7 @@ last_activity = "2026-11-20"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation", "sponsorship"]
 youtube_channel_id = "UCqLbTAc5Mn2cJDu1-FZ2W3g"
 
 [[resource.sources]]
@@ -114,8 +112,6 @@ covers = ["official"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "Detailed building reviews of LEGO Technic and vehicle sets, with Powered Up tutorials."
 summary_fr = "Tests détaillés de la construction de sets LEGO Technic et de véhicules, avec des tutoriels Powered Up."
 strengths_en = ["Detailed building reviews (channel description)", "Frequent uploads"]
@@ -129,6 +125,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["shop", "affiliation"]
 youtube_channel_id = "UCfU8ME4_m48QwDJCUvpzqyQ"
 
 [[resource.sources]]
@@ -150,8 +147,6 @@ covers = ["official"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "Reviews of LEGO Star Wars, Harry Potter and Architecture sets by an adult fan, including retired sets."
 summary_fr = "Tests de sets LEGO Star Wars, Harry Potter et Architecture par un fan adulte, y compris des sets retirés de la vente."
 strengths_en = ["Reviews of older, retired sets", "Frequent uploads"]
@@ -165,6 +160,7 @@ last_activity = "2026-11-22"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation", "shop", "sponsorship"]
 youtube_channel_id = "UCLnr9MzQ_v_a_OPmJkye5lA"
 
 [[resource.sources]]
@@ -186,8 +182,6 @@ covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "Daily LEGO news, reveals, minifigure and set reviews."
 summary_fr = "Actualités LEGO quotidiennes, nouveautés, tests de minifigures et de sets."
 strengths_en = ["Very frequent uploads", "Covers reveals and set reviews"]
@@ -201,6 +195,7 @@ last_activity = "2026-11-20"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["unknown"]
 youtube_channel_id = "UC9o13aexcHFSok7VYZ24EaQ"
 
 [[resource.sources]]
@@ -222,8 +217,6 @@ covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "French-language LEGO news and set reviews with euro prices; the channel is linked to the hothbricks.com site."
 summary_fr = "Actualités et tests de sets LEGO en français, avec les prix en euros ; la chaîne est liée au site hothbricks.com."
 strengths_en = ["Euro prices and piece counts in titles", "Linked news site updated daily"]
@@ -237,6 +230,7 @@ last_activity = "2026-11-12"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation"]
 youtube_channel_id = "UCjWrV0NX7A0j_m8NSCt3a2Q"
 
 [[resource.sources]]
@@ -264,8 +258,6 @@ covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "French-language LEGO news and set reviews; the channel describes itself as an independent medium."
 summary_fr = "Actualités et tests de sets LEGO en français ; la chaîne se présente comme un média indépendant."
 strengths_en = ["Frequent uploads", "Cited as a useful channel by members of a French LEGO user group forum (QuéLUG, 2024)"]
@@ -279,6 +271,7 @@ last_activity = "2026-11-22"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation", "sponsorship"]
 youtube_channel_id = "UC-ZDWS69odM3k6nDfv7udjw"
 
 [[resource.sources]]
@@ -300,8 +293,6 @@ covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "French-language channel on LEGO Star Wars and custom builds; set reviews, deals and news. Declares itself an independent fan channel."
 summary_fr = "Chaîne en français consacrée à LEGO Star Wars et aux créations originales ; tests de sets, promotions et actualités. Se déclare chaîne de fan indépendante."
 strengths_en = ["Frequent uploads", "French-language deal and gift-guide videos"]
@@ -315,6 +306,7 @@ last_activity = "2026-11-22"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation"]
 youtube_channel_id = "UCsrP9tqjYv54VWcKpsMrdOg"
 
 [[resource.sources]]
@@ -341,8 +333,6 @@ covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "New LEGO pieces and colours, set reviews, building techniques and interviews with designers."
 summary_fr = "Nouvelles pièces et couleurs LEGO, tests de sets, techniques de construction et entretiens avec des concepteurs."
 strengths_en = ["Focus on new elements and design details"]
@@ -356,6 +346,7 @@ last_activity = "2026-11-12"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["sponsorship"]
 youtube_channel_id = "UCszUefMJp4eSDHa8fr-xk8A"
 
 [[resource.sources]]
@@ -378,8 +369,6 @@ covers = ["alternative", "official", "news"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "French-language channel testing alternative brick brands (CaDA, Cobi, Pantasy, Lumibricks) next to official LEGO sets; some videos state that products were supplied."
 summary_fr = "Chaîne en français testant des marques alternatives (CaDA, Cobi, Pantasy, Lumibricks) et des sets LEGO officiel ; certaines vidéos indiquent des produits fournis."
 strengths_en = ["Compares alternative brands with each other and with official LEGO", "States when products are supplied (\"produits offerts\" in titles, a Cobi set supplied by a French shop)"]
@@ -393,6 +382,8 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi", "cada", "pantasy", "lumibricks"]
+funding = ["affiliation", "sponsorship"]
 youtube_channel_id = "UCculeEnUOr3gQsEYJOD7hmQ"
 
 [[resource.sources]]
@@ -419,8 +410,6 @@ covers = ["alternative", "official", "custom-builds"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "French-language channel on LEGO and alternative bricks: stop-motion, large projects and rare sets."
 summary_fr = "Chaîne en français sur LEGO et les briques alternatives : stop-motion, grands projets et sets rares."
 strengths_en = ["Frequent uploads", "Builds long projects episode by episode"]
@@ -434,6 +423,8 @@ last_activity = "2026-11-22"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cada", "lumibricks"]
+funding = ["unknown"]
 youtube_channel_id = "UC37eBIEZyWHwRyssj12x5Vg"
 
 [[resource.sources]]
@@ -455,8 +446,6 @@ covers = ["alternative", "official"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "Set builds and reviews by a husband-and-wife team covering LEGO and other brick brands."
 summary_fr = "Constructions et tests de sets par un couple, sur LEGO et d'autres marques de briques."
 strengths_en = ["Daily uploads"]
@@ -470,6 +459,8 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi", "cada", "mould-king", "reobrix", "pantasy", "lumibricks", "jmbricklayer", "jiestar", "mork", "nifeliz", "sluban", "mattel-brick-shop", "gobricks", "panlos", "loz", "nanoblock"]
+funding = ["affiliation", "sponsorship", "shop"]
 youtube_channel_id = "UC2sF01Me4Dg38kVG35YS_uw"
 
 [[resource.sources]]
@@ -491,8 +482,6 @@ covers = ["alternative", "official"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "Reviews of Mould King, BlueBrixx, LesDIY and Nifeliz sets and comparisons with official LEGO sets (\"set showdown\" videos)."
 summary_fr = "Tests de sets Mould King, BlueBrixx, LesDIY et Nifeliz et comparaisons avec des sets LEGO officiel (vidéos « set showdown »)."
 strengths_en = ["Side-by-side comparisons of Mould King and official LEGO sets"]
@@ -506,6 +495,8 @@ last_activity = "2026-10-04"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["cobi", "bluebrixx", "mould-king", "reobrix", "pantasy", "jmbricklayer", "jiestar", "nifeliz", "gobricks", "panlos", "lumibricks"]
+funding = ["affiliation", "subscription", "ads", "sponsorship"]
 youtube_channel_id = "UC3QVAPzox1cbjLhaq7pwItQ"
 
 [[resource.sources]]
@@ -528,8 +519,6 @@ covers = ["alternative", "official"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "Non-sponsored reviews of brick-built construction toys from many brands, run by the author of JANGBRiCKS."
 summary_fr = "Tests sans parrainage de jeux de construction en briques de nombreuses marques, tenus par l'auteur de JANGBRiCKS."
 strengths_en = ["Declared non-sponsored (channel description)", "Wide range of brands, recommended by another reviewer (jtsandman45, 2025)"]
@@ -543,6 +532,8 @@ last_activity = "2026-11-21"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi", "cada", "mould-king", "reobrix", "pantasy", "lumibricks", "jmbricklayer", "xingbao", "sembo-block", "keeppley", "wange", "rastar", "sluban", "mattel-brick-shop", "panlos", "nanoblock", "wiseblock"]
+funding = ["affiliation", "subscription"]
 youtube_channel_id = "UCaoS4CSezDuLe5TPu8pUTYw"
 
 [[resource.sources]]
@@ -564,8 +555,6 @@ covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "Reviews of unique, high-quality sets from alternative brands such as Pantasy."
 summary_fr = "Tests de sets originaux et de qualité de marques alternatives telles que Pantasy."
 strengths_en = ["Frequent uploads", "Recommended on a community forum for alternative brick reviews (Reddit r/lepin)"]
@@ -579,6 +568,8 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi", "cada", "mould-king", "reobrix", "pantasy", "lumibricks", "xingbao", "jiestar", "sembo-block", "keeppley", "wange", "mork", "sluban", "panlos", "loz", "nanoblock", "bluebrixx"]
+funding = ["shop", "affiliation"]
 youtube_channel_id = "UCvBQ7Tl0LQQOf5ukEYHbzAg"
 
 [[resource.sources]]
@@ -600,8 +591,6 @@ covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising, channel memberships"
-business_model_fr = "Publicité, abonnements à la chaîne"
 summary_en = "Reviews of alternative brick brands (Pantasy, Lumibricks, CaDA, Cobi) by a couple; channel memberships are offered."
 summary_fr = "Tests de marques de briques alternatives (Pantasy, Lumibricks, CaDA, Cobi) par un couple ; des abonnements à la chaîne sont proposés."
 strengths_en = ["Focus on higher-quality alternative brands", "Frequent uploads"]
@@ -615,6 +604,8 @@ last_activity = "2026-11-22"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi", "cada", "mould-king", "reobrix", "pantasy", "lumibricks", "jmbricklayer", "xingbao", "jiestar", "sembo-block", "mork", "gobricks", "loz"]
+funding = ["affiliation", "subscription", "ads"]
 youtube_channel_id = "UCLQkbkVZ_ybJfNk6awoKCyA"
 
 [[resource.sources]]
@@ -636,8 +627,6 @@ covers = ["alternative", "official"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "Builds, reviews and comparisons of LEGO sets with alternative brands."
 summary_fr = "Constructions, tests et comparaisons de sets LEGO avec des marques alternatives."
 strengths_en = ["Compares LEGO with alternative brands and marketplace sets"]
@@ -651,6 +640,8 @@ last_activity = "2026-11-21"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cada", "mould-king", "reobrix", "lumibricks", "jiestar", "mork", "rastar", "nifeliz"]
+funding = ["affiliation", "shop"]
 youtube_channel_id = "UClhrLFkZ-yxUPHRa9ylJZeQ"
 
 [[resource.sources]]
@@ -672,8 +663,6 @@ covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "Unboxings, reviews and build impressions of sets beyond LEGO; the channel published a ranking of 32 alternative brands in August 2026."
 summary_fr = "Déballages, tests et impressions de construction de sets hors LEGO ; la chaîne a publié en août 2026 un classement de 32 marques alternatives."
 strengths_en = ["Covers many lesser-known brands", "Ranking criteria stated in the ranking video (design, engineering, instructions, consistency, customer support)"]
@@ -687,6 +676,8 @@ last_activity = "2026-11-22"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cada", "mould-king", "reobrix", "pantasy", "lumibricks", "jmbricklayer", "jiestar", "sembo-block", "mork", "rastar", "nifeliz", "mattel-brick-shop", "panlos", "loz"]
+funding = ["affiliation", "sponsorship"]
 youtube_channel_id = "UClpxDGXCYB4lCQZ6C1BmT9w"
 
 [[resource.sources]]
@@ -713,8 +704,6 @@ covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "Live builds and reviews of alternative brick sets (Lumibricks, Pantasy, Barweer)."
 summary_fr = "Constructions en direct et tests de sets de briques alternatives (Lumibricks, Pantasy, Barweer)."
 strengths_en = ["Live builds show the full construction"]
@@ -728,6 +717,8 @@ last_activity = "2026-11-22"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cada", "reobrix", "pantasy", "lumibricks", "jiestar", "nifeliz", "wiseblock", "mattel-brick-shop", "gobricks", "jmbricklayer"]
+funding = ["shop"]
 youtube_channel_id = "UCls26W9Wokr9qFPMdKMtBjw"
 
 [[resource.sources]]
@@ -750,8 +741,6 @@ covers = ["alternative", "official"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising, Amazon affiliate links, Patreon"
-business_model_fr = "Publicité, liens d'affiliation Amazon, Patreon"
 summary_en = "Speed-build reviews of military and vehicle sets, mainly Cobi, CaDA, Panlos and Mould King; the author also runs German and English blogs."
 summary_fr = "Tests en construction accélérée de sets militaires et de véhicules, surtout Cobi, CaDA, Panlos et Mould King ; l'auteur tient aussi des blogs en allemand et en anglais."
 strengths_en = ["Detailed Cobi coverage", "Videos in English with a German-language blog"]
@@ -765,6 +754,8 @@ last_activity = "2026-07-12"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi", "nifeliz", "sluban", "cada", "mould-king", "panlos", "xingbao", "reobrix"]
+funding = ["affiliation", "subscription", "sponsorship"]
 youtube_channel_id = "UCMikC_IXMsVqnpQ8PuNDDMw"
 
 [[resource.sources]]
@@ -787,8 +778,6 @@ covers = ["custom-builds", "official"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "Showcase of LEGO custom models, with weekly top-10 selections of custom builds and display ideas."
 summary_fr = "Présentation de créations originales en LEGO, avec des sélections hebdomadaires de dix créations et des idées d'exposition."
 strengths_en = ["Large number of custom builds shown", "Frequent uploads"]
@@ -802,6 +791,7 @@ last_activity = "2026-11-11"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["shop"]
 youtube_channel_id = "UCrhb3SP2lZBgguLHIWWuHOQ"
 
 [[resource.sources]]
@@ -823,8 +813,6 @@ covers = ["official", "custom-builds"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "City builds, custom builds, vlogs, set reviews and live builds by an adult fan based in Canada."
 summary_fr = "Constructions de ville, créations originales, vlogs, tests de sets et constructions en direct par un fan adulte installé au Canada."
 strengths_en = ["Large community channel", "Daily uploads"]
@@ -838,6 +826,7 @@ last_activity = "2026-11-22"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation", "ads", "sponsorship", "subscription", "donations"]
 youtube_channel_id = "UC8tsuj8_Is8-_eUCMWHfShA"
 
 [[resource.sources]]
@@ -859,8 +848,6 @@ covers = ["custom-builds", "official"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "French-language channel on building a LEGO town (landscape, trains, techniques), by a member of a French LEGO user group."
 summary_fr = "Chaîne en français sur la construction d'une ville LEGO (paysage, trains, techniques), tenue par un membre d'un groupe d'utilisateurs LEGO francophone."
 strengths_en = ["Building techniques for beginners and experts (QuéLUG forum, 2024)"]
@@ -874,6 +861,7 @@ last_activity = "2026-02-22"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["sponsorship"]
 youtube_channel_id = "UC7kSiblATJae3VAUqPCzXcQ"
 
 [[resource.sources]]
@@ -901,8 +889,6 @@ covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising, merchandise"
-business_model_fr = "Publicité, produits dérivés"
 summary_en = "LEGO news and reveal coverage; the channel states it began in November 2011 as an audio-only podcast and sells merchandise."
 summary_fr = "Actualité et nouveautés LEGO ; la chaîne indique avoir débuté en novembre 2011 comme podcast audio et vend des produits dérivés."
 strengths_en = ["Long-running channel with first-look coverage of new sets"]
@@ -916,6 +902,7 @@ last_activity = "2026-11-13"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["shop"]
 youtube_channel_id = "UCkapkfGuO2LnDpIp8f_p7gA"
 
 [[resource.sources]]
@@ -937,8 +924,6 @@ covers = ["news"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "French-language show about LEGO fans and their community."
 summary_fr = "Émission en français sur les fans de LEGO et leur communauté."
 strengths_en = ["Community focus"]
@@ -952,6 +937,7 @@ last_activity = "2026-01-10"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["unknown"]
 youtube_channel_id = "UCeohvTWYjZDOubRaSIlpBCQ"
 
 [[resource.sources]]
@@ -973,8 +959,6 @@ covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "French-language LEGO content creator: challenges, tier lists, set reviews and news."
 summary_fr = "Créateur de contenu LEGO francophone : défis, classements, tests de sets et actualités."
 strengths_en = ["Frequent uploads", "French-language news on new ranges"]
@@ -988,6 +972,7 @@ last_activity = "2026-11-20"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["sponsorship"]
 youtube_channel_id = "UC5Rd7Kqz7TBEQMY5UCafytg"
 
 [[resource.sources]]
@@ -1014,8 +999,6 @@ covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "YouTube channel of the French-language LEGO news and review blog brickonaute.fr: new releases, tests and set information."
 summary_fr = "Chaîne YouTube du blog francophone d'actualité et de tests LEGO brickonaute.fr : nouveautés, tests et informations sur les sets."
 strengths_en = ["Linked to an active news blog"]
@@ -1029,6 +1012,7 @@ last_activity = "2026-10-15"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["affiliation", "sponsorship"]
 youtube_channel_id = "UCXUkE3Sh7Lpdww9NA4irQvg"
 
 [[resource.sources]]
@@ -1055,8 +1039,6 @@ covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Advertising"
-business_model_fr = "Publicité"
 summary_en = "YouTube channel of the Jay's Brick Blog LEGO blog: speed builds, reviews and reveal videos."
 summary_fr = "Chaîne YouTube du blog LEGO Jay's Brick Blog : constructions accélérées, tests et présentations de nouveautés."
 strengths_en = ["Linked to a long-running blog"]
@@ -1070,6 +1052,7 @@ last_activity = "2026-11-06"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["sponsorship"]
 youtube_channel_id = "UCKMrzZy4WgVXsyvPf_VlF5g"
 
 [[resource.sources]]
@@ -1105,6 +1088,7 @@ last_activity = "2026-11-16"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["unknown"]
 feed = "https://www.vodio.fr/rssmedias.php?valeur=1753"
 
 [[resource.sources]]
@@ -1139,6 +1123,7 @@ last_activity = "2026-11-20"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["unknown"]
 feed = "https://feed.ausha.co/B1nn7t1z1VrQ"
 
 [[resource.sources]]
@@ -1173,6 +1158,7 @@ last_activity = "2026-04-08"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["subscription"]
 feed = "https://www.spreaker.com/show/4920139/episodes/feed"
 
 [[resource.sources]]
@@ -1207,6 +1193,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["shop"]
 feed = "https://feeds.simplecast.com/B0ugHnOe"
 
 [[resource.sources]]
@@ -1237,6 +1224,7 @@ last_activity = "2026-11-19"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation", "subscription", "donations"]
 feed = "https://rss.buzzsprout.com/1098041.rss"
 
 [[resource.sources]]
@@ -1271,6 +1259,7 @@ last_activity = "2026-11-21"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["unknown"]
 feed = "https://feeds.acast.com/public/shows/6661f8bf49b95d00126d7fbd"
 
 [[resource.sources]]
@@ -1305,6 +1294,7 @@ last_activity = "2026-11-22"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["unknown"]
 feed = "https://anchor.fm/s/b0004320/podcast/rss"
 
 [[resource.sources]]
@@ -1334,6 +1324,7 @@ last_activity = "2026-11-16"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["unknown"]
 feed = "https://anchor.fm/s/1044a5254/podcast/rss"
 
 [[resource.sources]]

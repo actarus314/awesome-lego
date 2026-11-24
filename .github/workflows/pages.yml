@@ -14,7 +14,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # the daily measurements are kept on the "history" branch
+      contents: read   # the job that reads outside feeds cannot write to the repository
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -26,22 +26,39 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/refresh.py
-      - name: Keep the day's measurements on the "history" branch (trends, never shown as such)
+      - name: Keep the day's measurements for the "history" job
         if: github.event_name == 'schedule'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          day=$(date -u +%F); d=$(mktemp -d); remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git config --global user.name "github-actions[bot]"; git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git ls-remote --exit-code "$remote" history >/dev/null; then git fetch -q "$remote" history && git worktree add -q "$d" FETCH_HEAD
-          else git worktree add -q --detach "$d" && git -C "$d" checkout -q --orphan history && git -C "$d" rm -rqf . ; fi
-          mkdir -p "$d/metrics" && cp data/metrics.json "$d/metrics/$day.json"
-          git -C "$d" add metrics && (git -C "$d" commit -qm "Measurements $day" && git -C "$d" push -q "$remote" HEAD:history || true)
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: metrics
+          path: data/metrics.json
+          retention-days: 3
       - run: python3 scripts/build.py --site-only
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: site
+  history:
+    needs: build
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # the only job that can write to the repository; its steps push to the "history" branch and nowhere else
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: metrics
+      - name: Keep the day's measurements on the "history" branch (trends, never shown as such)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          day=$(date -u +%F); d=$(mktemp -d); remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git init -q "$d" && cd "$d"
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code "$remote" history >/dev/null; then git fetch -q --depth=1 "$remote" history && git checkout -q -b history FETCH_HEAD
+          else git checkout -q --orphan history; fi
+          mkdir -p metrics && cp "$GITHUB_WORKSPACE/metrics.json" "metrics/$day.json"
+          git add metrics && (git commit -qm "Measurements $day" && git push -q "$remote" HEAD:history || true)
   deploy:
     needs: build
     runs-on: ubuntu-latest

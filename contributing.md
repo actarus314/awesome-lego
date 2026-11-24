@@ -15,6 +15,8 @@ This list aims to be complete, accurate and current. Every entry is checked at i
 
 **What stays out:** affiliate or referral links, link shorteners, pages that require an account to read, copies of copyrighted instructions, sellers of counterfeit sets presented as official LEGO, self-promotion without substance.
 
+**Links read at the source:** `brands` (alternative brands an entry sells, tracks, reviews or discusses), `funding` (how a comparator, review site or channel earns money) and `makers` (who makes a brand's bricks) are filled only from the resource's own pages or, for makers, from the brand, the maker or two independent sources; leave them out rather than guess. See [`data/SCHEMA.md`](data/SCHEMA.md).
+
 **Writing:** factual and short, no marketing words; decimal point, no thousands separator; prices including taxes; no abbreviations except proper names and technical terms.
 
 By contributing, you agree that your contribution is published under the licenses of the repository (content: CC BY-NC-SA 4.0; code: PolyForm Noncommercial 1.0.0). Everyone follows the [code of conduct](CODE_OF_CONDUCT.md).

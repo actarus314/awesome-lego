@@ -192,6 +192,7 @@ last_activity = "2026-09-17"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
 
 [[resource.sources]]
 url = "https://www.brickowl.com/api_docs"
@@ -546,6 +547,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = []
 
 [[resource.sources]]
 url = "https://www.mecabricks.com/"
@@ -833,6 +835,7 @@ last_activity = "2026-09-12"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
 github = "rgriebl/brickstore"
 
 [[resource.sources]]
@@ -1217,6 +1220,7 @@ last_activity = "2024-06-11"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = []
 github = "imurvai/brickcontroller2"
 
 [[resource.sources]]

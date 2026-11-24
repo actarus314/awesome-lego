@@ -87,7 +87,7 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 ### European alternatives
 
-- [BlueBrixx](https://www.bluebrixx.com/fr/) - Germany (BB Service GmbH). Brand and shop for architecture, trains, medieval, vehicles and licences (BlueBrixx Pro for adults). Covers alternative brands.
+- [BlueBrixx](https://www.bluebrixx.com/fr/) - Germany (BB Services GmbH). Brand and shop for architecture, trains, medieval, vehicles and licences (BlueBrixx Pro for adults). Covers alternative brands.
 - [COBI](https://cobi.com/fr-fr) - Poland. Maker of compatible bricks with its own factory in Mielec, specialised in historical and military models (tanks, aircraft, ships) and licensed vehicles. Covers alternative brands.
 
 ### Chinese alternatives

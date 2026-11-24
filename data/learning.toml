@@ -194,6 +194,7 @@ last_activity = "2026-11-03"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi", "mould-king", "xingbao", "nifeliz", "nanoblock"]
 
 [[resource.sources]]
 url = "https://bricks.stackexchange.com/questions"
@@ -275,6 +276,7 @@ status = "active"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = []
 
 [[resource.sources]]
 url = "https://spielzeug-fuchs.de/das-klemmbaustein-lexikon/"
@@ -351,6 +353,7 @@ status = "active"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
 
 [[resource.sources]]
 url = "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A62009CJ0048"
@@ -381,6 +384,7 @@ status = "active"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["bluebrixx", "cada", "cobi", "jiestar", "jmbricklayer", "lumibricks", "mattel-brick-shop", "mould-king", "nifeliz", "pantasy", "keeppley", "reobrix", "sembo-block", "sluban", "xingbao"]
 
 [[resource.sources]]
 url = "https://en.wikipedia.org/wiki/Lego_clone"
@@ -462,6 +466,7 @@ last_activity = "2026-11-22"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = []
 
 [[resource.sources]]
 url = "https://kohenavocats.fr/2026/11/22/faux-lego-lego-chinois-contrefacon-brique-compatible-legal-remboursement/"
@@ -918,6 +923,7 @@ last_activity = "2026-06-04"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = []
 
 [[resource.sources]]
 url = "https://www.hothbricks.com/apres-39-numeros-laventure-briques-mag-sarrete/"
@@ -1516,4 +1522,31 @@ url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCYPBfLx3dgMxW60CY9u7
 date = "2026-11-07"
 kind = "read"
 
-# ------------------------------------------------------------------ events
+
+[[resource]]
+id = "brickreport-licensed-themes"
+name = "BrickReport: licensed themes of LEGO alternatives"
+url = "https://www.brickreport.io/blog/lego-alternatives-licensed-themes"
+group = "guides"
+covers = ["learning", "official", "alternative"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Guide to the licences held by each alternative brand (Pantasy, Mattel, COBI, CaDA, BlueBrixx, Blokees, Keeppley, Lumibricks and others), current and ended, set against the licences of official LEGO."
+summary_fr = "Guide des licences de chaque marque alternative (Pantasy, Mattel, COBI, CaDA, BlueBrixx, Blokees, Keeppley, Lumibricks et autres), en cours et terminées, face à celles de LEGO officiel."
+strengths_en = ["One table of current and ended licences per brand", "Dated: published 2026-10-08, updated 2026-11-10"]
+strengths_fr = ["Un tableau des licences en cours et terminées par marque", "Daté : publié le 08/10/2026, mis à jour le 10/11/2026"]
+weaknesses_en = ["Affiliate links to the shops it names", "Licences change often: a snapshot to check against the brand's shop"]
+weaknesses_fr = ["Liens d'affiliation vers les boutiques citées", "Les licences changent souvent : un instantané à vérifier sur la boutique de la marque"]
+status = "active"
+last_activity = "2026-11-10"
+checked = "2026-11-24"
+added = "2026-11-24"
+confidence = "high"
+brands = ["lumibricks", "pantasy", "mattel-brick-shop", "cobi", "wiseblock", "cada", "bluebrixx", "blokees", "keeppley", "mould-king"]
+funding = ["affiliation"]
+
+[[resource.sources]]
+url = "https://www.brickreport.io/blog/lego-alternatives-licensed-themes"
+date = "2026-11-10"
+kind = "read"

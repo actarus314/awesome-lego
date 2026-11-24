@@ -624,6 +624,7 @@ last_activity = "2026-11-16"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = []
 city = "Junglinster"
 next_date = "2027-06-05"
 recurrence_en = "Yearly, first weekend of June"
@@ -1023,6 +1024,7 @@ last_activity = "2026-09-01"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
 recurrence_en = "Monthly raffle"
 recurrence_fr = "Tirage mensuel"
 
@@ -1056,6 +1058,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
 
 [[resource.sources]]
 url = "https://www.avenuedelabrique.com/expositions-lego"
@@ -1115,6 +1118,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
 
 [[resource.sources]]
 url = "https://deparkatre.fr/expositions"
@@ -1142,6 +1146,7 @@ last_activity = "2026-08-24"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
 
 [[resource.sources]]
 url = "https://forum.freelug.org/t/calendrier-des-expositions-lego-prevues-pour-2027-toutes-associations/3629"
@@ -1168,6 +1173,7 @@ last_activity = "2026-10-29"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
 
 [[resource.sources]]
 url = "https://beetoys.ch/agenda.php"
@@ -1195,6 +1201,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
 
 [[resource.sources]]
 url = "https://www.steine-kanal.de/veranstaltungskalender-2027-alle-lego-fan-veranstaltungen-und-boersen-im-uberblick/"
@@ -1223,6 +1230,7 @@ last_activity = "2026-03-30"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
 
 [[resource.sources]]
 url = "https://www.bricksmcgee.com/blog/2027-lego-fan-events-in-the-uk-ireland/"
@@ -1249,6 +1257,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
 
 [[resource.sources]]
 url = "https://www.merlinsbricks.com/events/"
@@ -1275,6 +1284,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
 
 [[resource.sources]]
 url = "https://brick.news/calendar"
@@ -1301,6 +1311,7 @@ last_activity = "2026-11-02"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
 
 [[resource.sources]]
 url = "https://www.swiss-brick.com/lego-events-und-ausstellungen/"
@@ -1328,6 +1339,7 @@ last_activity = "2026-10-21"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = []
 
 [[resource.sources]]
 url = "https://www.stonewars.de/events/"
@@ -1380,6 +1392,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = []
 
 [[resource.sources]]
 url = "https://www.brickdb.fr/events?country=FR"

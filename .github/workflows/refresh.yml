@@ -20,7 +20,10 @@ jobs:
       - name: Read activity data and write the report
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 scripts/refresh.py > report.md
+        run: |
+          python3 scripts/refresh.py > report.md
+          echo >> report.md
+          python3 scripts/trends.py >> report.md || echo "Trends: the history branch could not be read this week." >> report.md   # never loses the rest of the report
       - name: Open or update the report issue
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

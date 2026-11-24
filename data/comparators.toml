@@ -32,10 +32,8 @@ covers = ["official", "alternative"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
-summary_en = "Price comparator covering official LEGO and about 95 alternative brands in one search, with offers deliverable to France. Published by Kadris, a sole proprietorship based in France."
-summary_fr = "Comparateur de prix couvrant LEGO officiel et environ 95 marques alternatives dans une même recherche, avec des offres livrables en France. Édité par Kadris, entreprise individuelle établie en France."
+summary_en = "Price comparator covering official LEGO and about 95 alternative brands in one search, with offers deliverable to France. Published by Doux Labs SASU, based in Allonzier-la-Caille, France."
+summary_fr = "Comparateur de prix couvrant LEGO officiel et environ 95 marques alternatives dans une même recherche, avec des offres livrables en France. Édité par Doux Labs SASU, établie à Allonzier-la-Caille (France)."
 strengths_en = [
   "Official LEGO and about 95 alternative brands in the same search",
   "Median of 3 merchants per alternative-brand set in a sample of 709 sets",
@@ -73,6 +71,8 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi", "bluebrixx", "brixies", "bryx", "cada", "mould-king", "reobrix", "pantasy", "lumibricks", "jmbricklayer", "xingbao", "jiestar", "sembo-block", "keeppley", "wange", "mork", "rastar", "nifeliz", "sluban", "mattel-brick-shop", "revell-brick-system", "panlos", "blokees", "loz", "nanoblock"]
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://brick-broker.com/"
@@ -93,8 +93,6 @@ covers = ["official"]
 languages = ["en", "de", "fr", "nl"]
 countries = ["international"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "Price comparator for official LEGO sets with regional sites (USD, GBP, CHF, EUR), secondary-market value of sealed sets and a collection tracker shared with its application."
 summary_fr = "Comparateur de prix de sets LEGO officiel avec sites régionaux (USD, GBP, CHF, EUR), valeur marchande des sets scellés sur le marché secondaire et suivi de collection partagé avec son application."
 strengths_en = [
@@ -130,6 +128,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://brickfact.com/llms.txt"
@@ -150,8 +149,6 @@ covers = ["official", "alternative", "custom-builds", "instructions"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "French price comparator for building bricks, sets, ready-to-build custom kits, instructions and accessories, limited to brands linked to a merchant delivering to France. Run by the company BRICKSBIZ."
 summary_fr = "Comparateur de prix français de briques de construction, sets, kits de créations originales, instructions et accessoires, limité aux marques rattachées à un marchand livrant en France. Porté par la société BRICKSBIZ."
 strengths_en = [
@@ -183,6 +180,8 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["brixies", "cada", "cobi", "jmbricklayer", "lumibricks", "nifeliz", "pantasy"]
+funding = ["affiliation", "donations"]
 
 [[resource.sources]]
 url = "https://planet-brick.com/marques/"
@@ -233,6 +232,8 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["pantasy", "lumibricks", "cada", "bluebrixx"]
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://labriquelibre.fr/"
@@ -254,8 +255,6 @@ covers = ["official"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "Price comparator for official LEGO only, built from affiliate feeds of French retailers; no account required."
 summary_fr = "Comparateur de prix 100 % LEGO officiel, alimenté par les flux d'affiliation des enseignes françaises ; aucun compte requis."
 strengths_en = [
@@ -287,6 +286,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation", "donations"]
 
 [[resource.sources]]
 url = "https://brickmitri.com/comparateur-lego/"
@@ -303,8 +303,6 @@ covers = ["official"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "Price comparator specialised in official LEGO, gathering French online shops."
 summary_fr = "Comparateur de prix spécialisé LEGO officiel regroupant les boutiques en ligne françaises."
 strengths_en = [
@@ -328,6 +326,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "low"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://www.avenuedelabrique.com/"
@@ -343,8 +342,6 @@ covers = ["official"]
 languages = ["fr", "de", "en"]
 countries = ["FR", "DE", "US"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "Daily price comparator for official LEGO with tracking of sets about to be retired by LEGO and price per piece; variants for France, Germany and the United States."
 summary_fr = "Comparateur quotidien de prix LEGO officiel avec suivi des retraits annoncés par LEGO et prix par pièce ; variantes France, Allemagne et États-Unis."
 strengths_en = [
@@ -372,6 +369,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://bricksvalue.com/fr"
@@ -414,6 +412,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://bricktracker.eu/fr"
@@ -431,8 +430,6 @@ covers = ["official", "parts", "minifigures"]
 languages = ["fr", "en", "de", "nl"]
 countries = ["international"]
 access = "free"
-business_model_en = "Affiliate links, declared without effect on ranking"
-business_model_fr = "Liens d'affiliation, déclarés sans effet sur le classement"
 summary_en = "Independent comparator for official LEGO based on its own price collection, also covering parts, minifigures and display cases."
 summary_fr = "Comparateur indépendant LEGO officiel fondé sur ses propres relevés de prix, couvrant aussi pièces, minifigurines et vitrines."
 strengths_en = [
@@ -462,6 +459,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://lakea.net/?lang=fr"
@@ -500,6 +498,8 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "low"
+brands = ["lumibricks", "pantasy", "mould-king", "cada", "cobi", "bluebrixx"]
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://altbrickscan.com/fr-FR/"
@@ -515,8 +515,6 @@ covers = ["official"]
 languages = ["fr", "en", "nl"]
 countries = ["NL", "FR", "GB"]
 access = "free-account"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "Price watch for official LEGO at several retailers, published by Kiobi BV (Netherlands), with France and United Kingdom variants."
 summary_fr = "Suivi des prix LEGO officiel chez plusieurs détaillants, édité par Kiobi BV (Pays-Bas), avec variantes France et Royaume-Uni."
 strengths_en = [
@@ -544,6 +542,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://www.brickwatch.net/en-GB/about"
@@ -591,6 +590,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["affiliation", "ads"]
 
 [[resource.sources]]
 url = "https://www.brickyes.com/nl-nl/lego"
@@ -606,8 +606,6 @@ covers = ["official"]
 languages = ["en", "de", "nl"]
 countries = ["NL", "BE", "DE"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "Price comparator for official LEGO by set number, with shops in the Netherlands, Belgium and Germany."
 summary_fr = "Comparateur de prix LEGO officiel par numéro de set, avec des boutiques aux Pays-Bas, en Belgique et en Allemagne."
 strengths_en = [
@@ -635,6 +633,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://bricksdeal.com/de-en"
@@ -676,6 +675,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://klockometr.pl/"
@@ -692,8 +692,6 @@ covers = ["official"]
 languages = ["de"]
 countries = ["DE"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "German price comparator for official LEGO since 2014, with price alert, discount alert and price history."
 summary_fr = "Comparateur de prix allemand LEGO officiel depuis 2014, avec alerte de prix, alerte de remise et historique."
 strengths_en = [
@@ -721,6 +719,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://www.brickmerge.de/"
@@ -761,6 +760,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["affiliation", "subscription"]
 
 [[resource.sources]]
 url = "https://www.brick-tracker.de/"
@@ -806,6 +806,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://brickguide.de/"
@@ -850,6 +851,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://www.templeofbricks.com/fr/"
@@ -861,14 +863,12 @@ id = "toysetfox"
 name = "ToySetFox"
 url = "https://toysetfox.com/fr-fr/guides/alternatives-a-lego"
 group = "price-comparators"
-covers = ["alternative"]
+covers = ["official", "alternative"]
 languages = ["fr", "de", "nl", "en"]
 countries = ["FR", "DE", "NL"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
-summary_en = "General toy-set comparator by manufacturer set number (Playmobil, Schleich, COBI and others) with guides on alternative brick brands. Official LEGO sets were not seen in the catalogue."
-summary_fr = "Comparateur généraliste de jeux et sets par numéro du fabricant (Playmobil, Schleich, COBI et autres) avec des guides sur les marques de briques alternatives. Sets LEGO officiel non vus dans le catalogue."
+summary_en = "General toy-set comparator by manufacturer set number (Playmobil, Schleich, COBI and others) with guides on alternative brick brands. Official LEGO sets are listed too (LEGO brand page)."
+summary_fr = "Comparateur généraliste de jeux et sets par numéro du fabricant (Playmobil, Schleich, COBI et autres) avec des guides sur les marques de briques alternatives. Les sets LEGO officiel y figurent aussi (page de la marque LEGO)."
 strengths_en = [
   "Comparison by set number, manufacturer price shown when published",
   "Guide on alternatives to LEGO",
@@ -892,6 +892,8 @@ last_activity = "2026-09-30"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "low"
+brands = ["cobi", "cada", "mould-king", "bluebrixx", "brixies", "reobrix", "pantasy", "lumibricks", "keeppley", "loz", "nanoblock", "sluban", "mattel-brick-shop", "wange"]
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://toysetfox.com/fr-fr/guides/alternatives-a-lego"
@@ -935,6 +937,8 @@ checked = "2026-11-23"
 added = "2026-11-23"
 last_activity = "2026-11-23"
 confidence = "low"
+brands = ["mould-king"]
+funding = ["unknown"]
 
 [[resource.sources]]
 url = "https://toy-links.com/mouldking"
@@ -950,8 +954,6 @@ covers = ["official"]
 languages = ["fr", "de", "en"]
 countries = ["FR", "DE"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "General price comparator with a LEGO category: offers per set, price chart and reviews."
 summary_fr = "Comparateur de prix généraliste avec une catégorie LEGO : offres par set, graphique de prix et avis."
 strengths_en = [
@@ -979,6 +981,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["unknown"]
 
 [[resource.sources]]
 url = "https://www.idealo.fr/cat/9552/lego.html"
@@ -994,8 +997,6 @@ covers = ["official"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "General French price comparator with a LEGO category listing sets with best price."
 summary_fr = "Comparateur de prix généraliste français avec une catégorie LEGO listant les sets avec leur meilleur prix."
 strengths_en = [
@@ -1019,6 +1020,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "low"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://ledenicheur.fr/c/lego"
@@ -1034,8 +1036,6 @@ covers = ["official", "alternative"]
 languages = ["de"]
 countries = ["AT", "DE"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "Austrian and German general comparator with a LEGO category and a separate category for alternative brick brands (CaDA, Cobi and others)."
 summary_fr = "Comparateur généraliste autrichien et allemand avec une catégorie LEGO et une catégorie distincte pour les marques de briques alternatives (CaDA, Cobi et autres)."
 strengths_en = [
@@ -1063,6 +1063,8 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["cada", "cobi", "lumibricks", "mould-king", "pantasy", "mattel-brick-shop"]
+funding = ["unknown"]
 
 [[resource.sources]]
 url = "https://geizhals.at/?cat=spzglego"
@@ -1083,8 +1085,6 @@ covers = ["official", "alternative"]
 languages = ["de"]
 countries = ["DE"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "German price comparator for building-brick sets (LEGO, COBI, BlueBrixx, CaDA, Mould King, Reobrix and others). It is the price comparison formerly under the reBricker name; reBricker remains a sorting and used-brick service."
 summary_fr = "Comparateur de prix allemand de sets de briques (LEGO, COBI, BlueBrixx, CaDA, Mould King, Reobrix et autres). C'est le comparateur autrefois sous le nom reBricker ; reBricker reste un service de tri et de briques d'occasion."
 strengths_en = [
@@ -1112,6 +1112,8 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["cobi", "bluebrixx", "brixies", "bryx", "cada", "mould-king", "reobrix", "pantasy", "lumibricks", "jmbricklayer", "xingbao", "jiestar", "sembo-block", "keeppley", "wange", "mork", "rastar", "nifeliz", "sluban", "mattel-brick-shop", "revell-brick-system", "panlos", "loz"]
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://verobricks.com/"
@@ -1127,8 +1129,6 @@ covers = ["official"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "French price comparator dedicated to official LEGO sets, identified by set number and barcode, with French merchants only."
 summary_fr = "Comparateur de prix français dédié aux sets LEGO officiel, identifiés par numéro et code-barres, avec des marchands français seulement."
 strengths_en = [
@@ -1156,6 +1156,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://www.comparobrick.fr/"
@@ -1202,6 +1203,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "low"
+funding = ["affiliation", "ads"]
 
 [[resource.sources]]
 url = "https://chezemil.fr/"
@@ -1250,6 +1252,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation", "ads", "sponsorship"]
 
 [[resource.sources]]
 url = "https://brickset.com/sets"
@@ -1301,6 +1304,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["unknown"]
 
 [[resource.sources]]
 url = "https://rebrickable.com/downloads/"
@@ -1344,6 +1348,8 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["lumibricks", "mattel-brick-shop", "pantasy", "cobi", "cada"]
+funding = ["ads", "affiliation"]
 
 [[resource.sources]]
 url = "https://brick.news/sets"
@@ -1387,6 +1393,8 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["cobi", "bluebrixx", "brixies", "bryx", "cada", "mould-king", "reobrix", "pantasy", "lumibricks", "jmbricklayer", "xingbao", "jiestar", "sembo-block", "keeppley", "wange", "mork", "rastar", "nifeliz", "sluban", "mattel-brick-shop", "revell-brick-system", "panlos", "loz", "nanoblock"]
+funding = ["affiliation", "sponsorship"]
 
 [[resource.sources]]
 url = "https://merlinssteine.de/"
@@ -1432,6 +1440,8 @@ last_activity = "2026-11-07"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["mould-king", "jiestar", "reobrix", "lumibricks", "cada", "mork", "panlos", "jmbricklayer", "sembo-block", "xingbao", "keeppley", "sluban", "pantasy", "rastar"]
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://other-bricks.com/de/"
@@ -1472,6 +1482,8 @@ last_activity = "2026-11-21"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["sembo-block", "mould-king", "cada", "sluban", "keeppley", "wange", "panlos", "pantasy", "jiestar"]
+funding = ["donations"]
 
 [[resource.sources]]
 url = "https://brick4.com/"
@@ -1492,8 +1504,6 @@ covers = ["official", "minifigures", "parts"]
 languages = ["de", "en", "fr"]
 countries = ["international"]
 access = "free"
-business_model_en = "Labelled affiliate links and voluntary support"
-business_model_fr = "Liens d'affiliation signalés et soutien volontaire"
 summary_en = "Free catalogue and collection manager for official LEGO sets, minifigures and parts with barcode scanning, set price comparison and market values showing their sample size. Started in September 2026 in Germany; applications for several platforms."
 summary_fr = "Catalogue et gestion de collection gratuits pour sets, minifigurines et pièces LEGO officiel, avec lecture de codes-barres, comparaison des prix des sets et valeurs de marché indiquant leur échantillon. Lancé en septembre 2026 en Allemagne ; applications pour plusieurs plateformes."
 strengths_en = [
@@ -1521,6 +1531,7 @@ last_activity = "2026-11-07"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["affiliation", "donations"]
 
 [[resource.sources]]
 url = "https://www.brickdb.de/about/press"
@@ -1571,6 +1582,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["subscription"]
 
 [[resource.sources]]
 url = "https://www.brickeconomy.com/faqs"
@@ -1596,8 +1608,6 @@ covers = ["official", "minifigures", "second-hand"]
 languages = ["en"]
 countries = ["US"]
 access = "freemium"
-business_model_en = "Premium subscription"
-business_model_fr = "Abonnement Premium"
 summary_en = "LEGO investing platform: price guide based on completed sales, part-out value, portfolio tracking, retirement watch and deal alerts. Free to browse without an account; advanced tools in Premium."
 summary_fr = "Plateforme d'investissement LEGO : guide des prix fondé sur les ventes réalisées, valeur de démontage, suivi de portefeuille, veille des retraits et alertes d'offres. Consultation libre sans compte ; outils avancés en Premium."
 strengths_en = [
@@ -1623,6 +1633,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["subscription"]
 
 [[resource.sources]]
 url = "https://brickpicker.com/"
@@ -1654,6 +1665,7 @@ last_activity = "2026-11-22"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["unknown"]
 
 [[resource.sources]]
 url = "https://promoklocki.pl/"
@@ -1680,6 +1692,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["unknown"]
 
 [[resource.sources]]
 url = "https://www.ceneo.pl/"
@@ -1708,6 +1721,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation", "ads"]
 
 [[resource.sources]]
 url = "https://brickzone.dk/"
@@ -1734,6 +1748,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["ads", "affiliation"]
 
 [[resource.sources]]
 url = "https://www.prisjakt.nu/c/lego"
@@ -1749,8 +1764,6 @@ covers = ["official", "data"]
 languages = ["en"]
 countries = ["AU"]
 access = "free-account"
-business_model_en = "Affiliate links from some retailers"
-business_model_fr = "Liens d'affiliation de certains distributeurs"
 summary_en = "Independent Australian price comparison for LEGO sets: prices from more than 20 Australian retailers side by side, price history, retiring-soon list and email price-drop alerts."
 summary_fr = "Comparateur de prix australien indépendant pour les sets LEGO : prix de plus de 20 distributeurs australiens côte à côte, historique de prix, liste des sets bientôt retirés et alertes par courriel."
 strengths_en = ["Price history and drop alerts", "Ranking not influenced by commissions (stated)"]
@@ -1764,6 +1777,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://brickturtle.com.au/about"
@@ -1795,6 +1809,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["unknown"]
 
 [[resource.sources]]
 url = "https://legopricetracker.co.nz/"

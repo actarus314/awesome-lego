@@ -45,8 +45,6 @@ covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "French-language LEGO news site: new sets, reviews, contests, rumours, deals and sets about to retire."
 summary_fr = "Site d'actualité LEGO en français : nouveautés, tests, concours, rumeurs, bons plans et sets bientôt retirés."
 strengths_en = ["Several articles per day", "Sections for retiring sets, deals and best sellers", "RSS feed"]
@@ -58,6 +56,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation", "ads"]
 feed = "https://www.hothbricks.com/feed/"
 
 [[resource.sources]]
@@ -79,8 +78,6 @@ covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "French-language LEGO blog: news, reviews, rumours and custom builds, with a glossary of fan vocabulary."
 summary_fr = "Blog LEGO en français : actualité, tests, rumeurs et créations originales, avec un lexique du vocabulaire des fans."
 strengths_en = ["Active blog", "Monthly new-set lists and promotion coverage"]
@@ -92,6 +89,7 @@ last_activity = "2026-11-20"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation"]
 feed = "https://www.hellobricks.com/feed/"
 
 [[resource.sources]]
@@ -113,8 +111,6 @@ covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "French-language LEGO blog with news, reader and staff reviews, deals and a small forum."
 summary_fr = "Blog LEGO en français avec actualités, tests de la rédaction et des lecteurs, promotions et un petit forum."
 strengths_en = ["Active blog; 2125 news items and 836 reviews", "Reader reviews and vintage mini-reviews"]
@@ -128,6 +124,7 @@ last_activity = "2026-11-21"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation"]
 feed = "https://brickonaute.fr/feed/"
 
 [[resource.sources]]
@@ -161,6 +158,7 @@ last_activity = "2026-11-22"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation", "ads"]
 feed = "https://www.brothers-brick.com/feed/"
 
 [[resource.sources]]
@@ -183,8 +181,6 @@ covers = ["official", "parts", "news"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "LEGO.com affiliate link"
-business_model_fr = "Lien d'affiliation LEGO.com"
 summary_en = "Site on LEGO parts, sets and building techniques, with tracking of Pick a Brick prices and new parts in sets."
 summary_fr = "Site sur les pièces, sets et techniques de construction LEGO, avec suivi des prix Pick a Brick et des nouvelles pièces dans les sets."
 strengths_en = ["Posts on Pick a Brick price changes"]
@@ -196,6 +192,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation", "subscription"]
 
 [[resource.sources]]
 url = "https://www.newelementary.com/"
@@ -212,8 +209,6 @@ covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Affiliate links and advertising"
-business_model_fr = "Liens d'affiliation et publicité"
 summary_en = "LEGO news, reviews and deals blog with monthly lists of retiring sets."
 summary_fr = "Blog d'actualités, de tests et de promotions LEGO avec des listes mensuelles de sets retirés."
 strengths_en = ["Several posts per day on the pages read", "Retiring-sets lists"]
@@ -225,6 +220,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["unknown"]
 
 [[resource.sources]]
 url = "https://jaysbrickblog.com/"
@@ -240,8 +236,6 @@ covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Affiliate links and advertising"
-business_model_fr = "Liens d'affiliation et publicité"
 summary_en = "LEGO news, reviews and deals site relaying LEGO Insiders offers."
 summary_fr = "Site d'actualités, de tests et de bons plans LEGO qui relaie les offres LEGO Insiders."
 strengths_en = ["Several items per day"]
@@ -253,6 +247,8 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["lumibricks"]
+funding = ["affiliation", "ads", "sponsorship"]
 feed = "https://www.brickfanatics.com/feed/"
 
 [[resource.sources]]
@@ -269,8 +265,6 @@ covers = ["official", "alternative", "news"]
 languages = ["de"]
 countries = ["DE"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "Independent German-language online magazine on construction bricks: LEGO news, reviews and deals since 2013, extended to Mattel Brick Shop, Revell Brick System, Lumibricks and Bryx."
 summary_fr = "Magazine en ligne indépendant en allemand sur les briques de construction : actualités, tests et offres LEGO depuis 2013, élargi à Mattel Brick Shop, Revell Brick System, Lumibricks et Bryx."
 strengths_en = ["Several items per day", "Event calendar, retiring-set lists, podcast"]
@@ -282,6 +276,8 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["mattel-brick-shop", "lumibricks", "revell-brick-system", "bryx", "bluebrixx"]
+funding = ["affiliation", "ads"]
 feed = "https://www.promobricks.de/feed/"
 
 [[resource.sources]]
@@ -315,6 +311,7 @@ last_activity = "2026-11-22"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://www.zusammengebaut.com/"
@@ -331,12 +328,10 @@ covers = ["official", "alternative", "data", "news"]
 languages = ["en", "de", "fr"]
 countries = ["international"]
 access = "free"
-business_model_en = "Affiliate links, supporter programme"
-business_model_fr = "Liens d'affiliation, programme de soutien"
 summary_en = "Independent platform of set reviews for all brands (German version merlinssteine.de): reviews archive, weekly podcast and SetDB, a database of more than 39000 sets."
 summary_fr = "Plateforme indépendante de tests de sets de toutes marques (version allemande merlinssteine.de) : archive de tests, podcast hebdomadaire et SetDB, base de plus de 39000 sets."
-strengths_en = ["Systematic reviews of alternative brands, with an archive by brand", "Transparency report page", "Interface in German, English and French"]
-strengths_fr = ["Tests systématiques des marques alternatives, avec une archive par marque", "Page de rapport de transparence", "Interface en allemand, anglais et français"]
+strengths_en = ["Systematic reviews of alternative brands, with an archive by brand", "SetDB lists sets by official licence, all brands together (licences page)", "Transparency report page", "Interface in German, English and French"]
+strengths_fr = ["Tests systématiques des marques alternatives, avec une archive par marque", "SetDB classe les sets par licence officielle, toutes marques confondues (page des licences)", "Page de rapport de transparence", "Interface en allemand, anglais et français"]
 weaknesses_en = ["Affiliation links declared (BlueBrixx, Amazon and others)", "Content mostly German and English"]
 weaknesses_fr = ["Liens d'affiliation déclarés (BlueBrixx, Amazon et autres)", "Contenu surtout en allemand et en anglais"]
 size_en = "SetDB: more than 39000 sets"
@@ -346,6 +341,8 @@ last_activity = "2026-11-21"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["bluebrixx", "brixies", "bryx", "cada", "cobi", "jiestar", "jmbricklayer", "keeppley", "loz", "lumibricks", "mattel-brick-shop", "mork", "mould-king", "nanoblock", "nifeliz", "panlos", "pantasy", "rastar", "reobrix", "revell-brick-system", "sembo-block", "sluban", "wange", "xingbao"]
+funding = ["affiliation", "sponsorship"]
 feed = "https://www.merlinsbricks.com/index.xml"
 
 [[resource.sources]]
@@ -356,6 +353,11 @@ kind = "read"
 [[resource.sources]]
 url = "https://www.merlinssteine.de/communityreviews/"
 date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.merlinsbricks.com/setdb/licenses/"
+date = "2026-11-24"
 kind = "read"
 
 [[resource]]
@@ -378,6 +380,7 @@ last_activity = "2026-11-16"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation", "subscription"]
 feed = "https://klemmbausteinlyrik.de/feed/"
 
 [[resource.sources]]
@@ -410,6 +413,8 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["lumibricks", "mattel-brick-shop", "pantasy", "cobi", "cada"]
+funding = ["affiliation", "ads"]
 feed = "https://brick.news/feed/"
 
 [[resource.sources]]
@@ -431,8 +436,6 @@ covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "LEGO blog with picks, reviews and deals."
 summary_fr = "Blog LEGO avec sélections, avis et offres."
 strengths_en = ["RSS feed"]
@@ -444,6 +447,7 @@ last_activity = "2026-11-21"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["affiliation", "donations"]
 feed = "https://thebrickblogger.com/feed/"
 
 [[resource.sources]]
@@ -465,8 +469,6 @@ covers = ["official", "news"]
 languages = ["en"]
 countries = ["US"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "LEGO news, reviews and discussion site, with weekly tracking of LEGO Ideas projects."
 summary_fr = "Site d'actualités, de tests et de discussions LEGO, avec suivi hebdomadaire des projets LEGO Ideas."
 strengths_en = ["Several items per day", "Large LEGO Ideas archive"]
@@ -478,6 +480,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation", "ads"]
 feed = "https://www.thebrickfan.com/feed/"
 
 [[resource.sources]]
@@ -499,8 +502,6 @@ covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "Guide comparing alternatives to LEGO (Mattel, Lumibricks, Pantasy, COBI, CaDA, Mould King and others) with strengths and trade-offs per brand."
 summary_fr = "Guide comparant les alternatives à LEGO (Mattel, Lumibricks, Pantasy, COBI, CaDA, Mould King et autres) avec avantages et contreparties par marque."
 strengths_en = ["Guide updated after publication"]
@@ -512,6 +513,8 @@ last_activity = "2026-11-04"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["lumibricks", "pantasy", "mattel-brick-shop", "cobi", "cada", "mould-king", "bluebrixx"]
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://www.brickreport.io/blog/lego-competitors"
@@ -527,8 +530,6 @@ covers = ["alternative", "official", "news"]
 languages = ["de"]
 countries = ["DE"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "German-language guide and review site on construction bricks for adults (BlueBrixx, CaDA, COBI, Mould King, Pantasy), with product listings and long-form brand experience reports."
 summary_fr = "Site allemand de guides et de tests sur les briques de construction pour adultes (BlueBrixx, CaDA, COBI, Mould King, Pantasy), avec fiches produits et retours d'expérience détaillés par marque."
 strengths_en = ["Brand-by-brand reports, for example COBI after four years (13 November 2025)", "RSS feed"]
@@ -540,6 +541,8 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["bluebrixx", "cada", "cobi", "lumibricks", "mould-king", "pantasy", "reobrix", "sluban", "wange", "xingbao", "jiestar"]
+funding = ["affiliation"]
 feed = "https://klemmbaustein.com/feed/"
 
 [[resource.sources]]
@@ -575,6 +578,7 @@ last_activity = "2026-11-22"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["cada", "mould-king"]
 
 [[resource.sources]]
 url = "https://www.eurobricks.com/forum/"
@@ -671,6 +675,7 @@ last_activity = "2026-11-22"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi", "sluban", "xingbao", "bluebrixx", "cada"]
 
 [[resource.sources]]
 url = "https://www.1000steine.de/de/gemeinschaft/forum/"
@@ -700,6 +705,7 @@ last_activity = "2026-11-06"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["cobi", "bluebrixx", "cada", "wange", "sembo-block", "xingbao", "sluban", "reobrix"]
 
 [[resource.sources]]
 url = "https://forum.hardware.fr/hfr/Discussions/Loisirs/briques-construction-compatibles-sujet_119659_1.htm"
@@ -820,6 +826,7 @@ last_activity = "2026-10-31"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["cobi", "bluebrixx", "cada", "mould-king", "reobrix", "pantasy", "lumibricks", "jmbricklayer", "xingbao", "jiestar", "sembo-block", "keeppley", "wange", "mork", "rastar", "nifeliz", "sluban", "wiseblock", "mattel-brick-shop", "revell-brick-system", "gobricks", "loz", "nanoblock"]
 subreddit = "lepin"
 
 [[resource.sources]]
@@ -854,6 +861,7 @@ last_activity = "2024-12-24"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "low"
+brands = ["mould-king", "cada", "pantasy", "sluban", "sembo-block", "keeppley", "cobi"]
 subreddit = "MouldKing"
 
 [[resource.sources]]
@@ -883,6 +891,7 @@ last_activity = "2026-07-13"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "low"
+brands = ["cada", "sembo-block", "pantasy", "sluban"]
 subreddit = "ALTbricks"
 
 [[resource.sources]]
@@ -911,6 +920,7 @@ status = "active"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "low"
+brands = ["cada", "mould-king", "cobi", "pantasy", "lumibricks", "reobrix", "sluban", "brixies", "mattel-brick-shop", "bluebrixx"]
 subreddit = "klemmbausteine"
 
 [[resource.sources]]
@@ -971,6 +981,7 @@ last_activity = "2026-10-31"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "low"
+brands = ["mattel-brick-shop", "cobi", "lumibricks", "pantasy", "cada", "mould-king", "bluebrixx", "loz", "nanoblock"]
 subreddit = "buildingblocks"
 
 [[resource.sources]]
@@ -1025,8 +1036,6 @@ covers = ["official"]
 languages = ["fr"]
 countries = ["FR"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "French deal community: LEGO promotions posted, voted and commented by members, from LEGO.com and French retailers."
 summary_fr = "Communauté française de bons plans : promotions LEGO publiées, votées et commentées par les membres, chez LEGO.com et les enseignes françaises."
 strengths_en = ["Offers voted and discussed by members", "RSS feed per group"]
@@ -1038,6 +1047,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation", "ads"]
 feed = "https://www.dealabs.com/rss/groupe/lego"
 
 [[resource.sources]]
@@ -1059,8 +1069,6 @@ covers = ["official", "alternative"]
 languages = ["de"]
 countries = ["DE"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "German deal community: LEGO offers posted and commented by members (Amazon, Smyths Toys, Alternate and others)."
 summary_fr = "Communauté allemande de bons plans : offres LEGO publiées et commentées par les membres (Amazon, Smyths Toys, Alternate et autres)."
 strengths_en = ["Offers listed in a group feed", "RSS feed"]
@@ -1072,6 +1080,8 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = []
+funding = ["affiliation", "ads"]
 feed = "https://www.mydealz.de/rss/gruppe/lego"
 
 [[resource.sources]]
@@ -1134,6 +1144,7 @@ last_activity = "2026-10-16"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["bluebrixx", "cobi", "cada", "wange", "xingbao"]
 feed = "https://www.merlinssteine.de/communityreviews/index.xml"
 
 [[resource.sources]]
@@ -1278,6 +1289,7 @@ last_activity = "2026-11-03"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["none"]
 
 [[resource.sources]]
 url = "https://www.orangeteamlug.it/news"
@@ -1309,6 +1321,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation"]
 feed = "https://www.ilmastrocostruttore.it/feed/"
 
 [[resource.sources]]
@@ -1341,6 +1354,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation"]
 feed = "https://elcatalejo.es/feed/"
 
 [[resource.sources]]
@@ -1374,6 +1388,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["unknown"]
 
 [[resource.sources]]
 url = "https://todobrick.com/blog/"
@@ -1400,6 +1415,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation", "ads"]
 feed = "https://faniklockow.pl/feed/"
 
 [[resource.sources]]
@@ -1432,6 +1448,7 @@ last_activity = "2026-10-10"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation"]
 feed = "https://bouwsteentjes.info/feed/"
 
 [[resource.sources]]
@@ -1464,6 +1481,7 @@ last_activity = "2026-11-19"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://kostkoviny.cz/"
@@ -1611,8 +1629,6 @@ covers = ["news", "instructions", "parts", "learning"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
-business_model_en = "Free blog; store with instruction kits, decals, couplers and wheel sets"
-business_model_fr = "Blog gratuit ; boutique de kits d'instructions, décalcomanies, attelages et jeux de roues"
 summary_en = "Blog on LEGO trains since January 2017 (news, events, building articles on scale, gearing and clubs) and store for train parts. Hosts the free download of all 15 issues of the RAILBRICKS magazine (2008 to 2014)."
 summary_fr = "Blog sur les trains LEGO depuis janvier 2017 (actualités, événements, articles de construction sur l'échelle, les engrenages et les clubs) et boutique de pièces pour trains. Héberge le téléchargement gratuit des 15 numéros du magazine RAILBRICKS (2008 à 2014)."
 strengths_en = ["Complete RAILBRICKS archive, free", "Articles on scale conversion and on the L-Gauge community"]
@@ -1624,6 +1640,7 @@ last_activity = "2026-10-26"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["shop"]
 
 [[resource.sources]]
 url = "https://brickmodelrailroader.com/index.php/2026/10/26/what-is-going-on-with-brick-model-railroader/"
@@ -1655,6 +1672,7 @@ last_activity = "2026-11-21"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["ads"]
 feed = "https://thelegocarblog.com/feed/"
 
 [[resource.sources]]
@@ -1879,6 +1897,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["cobi"]
 subreddit = "cobiblocks"
 
 [[resource.sources]]
@@ -1910,6 +1929,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["bluebrixx"]
 subreddit = "bluebrixx"
 
 [[resource.sources]]
@@ -2000,6 +2020,7 @@ last_activity = "2026-11-13"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["ads", "affiliation", "subscription", "donations"]
 
 [[resource.sources]]
 url = "https://bricknerd.com/"
@@ -2016,8 +2037,6 @@ covers = ["news"]
 languages = ["en"]
 countries = ["AU"]
 access = "freemium"
-business_model_en = "Optional paid membership for monthly draws"
-business_model_fr = "Abonnement payant facultatif pour des tirages mensuels"
 summary_en = "Australian LEGO news site founded in Cairns: upcoming sets, leaks and rumours, events, competitions and sales, with monthly prize draws."
 summary_fr = "Site australien d'actualités LEGO fondé à Cairns : sets à venir, fuites et rumeurs, événements, concours et promotions, avec des tirages mensuels."
 strengths_en = ["Australian events and sales coverage", "Public RSS feed"]
@@ -2029,6 +2048,7 @@ last_activity = "2026-11-17"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["subscription"]
 
 [[resource.sources]]
 url = "https://www.bricknews.com.au/about-us"
@@ -2049,8 +2069,6 @@ covers = ["news", "official"]
 languages = ["en"]
 countries = ["CA"]
 access = "free"
-business_model_en = "Affiliate links"
-business_model_fr = "Liens d'affiliation"
 summary_en = "Canadian LEGO news and deals site: daily lists of sales at Amazon Canada, Walmart Canada and LEGO.com, Insiders weekend and Black Friday promotions, with RSS, email, WhatsApp and Discord alerts."
 summary_fr = "Site canadien d'actualités et de bons plans LEGO : listes quotidiennes de promotions chez Amazon Canada, Walmart Canada et LEGO.com, promotions du week-end Insiders et du Black Friday, avec alertes par flux RSS, courriel, WhatsApp et Discord."
 strengths_en = ["Daily posts", "Dedicated Canada section"]
@@ -2062,6 +2080,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+funding = ["affiliation"]
 
 [[resource.sources]]
 url = "https://www.toysnbricks.com/category/lego-sales-canada/"
@@ -2109,8 +2128,6 @@ covers = ["news"]
 languages = ["it"]
 countries = ["IT"]
 access = "freemium"
-business_model_en = "Free website; paid subscription for the printed and digital magazine"
-business_model_fr = "Site gratuit ; abonnement payant pour le magazine imprimé et numérique"
 summary_en = "Italian LEGO news site and magazine: daily news, weekly LEGO Ideas review updates, event reports and a magazine whose issue 28 came out in August 2026."
 summary_fr = "Site et magazine italiens d'actualités LEGO : actualités quotidiennes, suivi hebdomadaire des projets LEGO Ideas, comptes rendus d'événements et magazine dont le numéro 28 est paru en août 2026."
 strengths_en = ["Daily posts", "Printed and digital magazine"]
@@ -2122,6 +2139,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+funding = ["unknown"]
 
 [[resource.sources]]
 url = "https://www.brickitmagazine.com/feed/"

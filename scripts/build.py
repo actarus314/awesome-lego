@@ -4,7 +4,9 @@
 
 Usage: python3 scripts/build.py [--check | --site-only]   (standard library only, Python 3.11+)
 """
+import base64
 import datetime as dt
+import hashlib
 import html
 import json
 import pathlib
@@ -24,6 +26,7 @@ ACCESS = {"free", "free-account", "freemium", "paid"}
 STATUS = {"active", "slow", "inactive", "archived", "dead"}
 CONFIDENCE = {"high", "medium", "low"}
 KINDS = {"official", "read", "indexed", "third-party", "forum"}
+FUNDING = {"affiliation", "ads", "sponsorship", "subscription", "donations", "shop", "none", "unknown"}
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 ID = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 
@@ -114,8 +117,33 @@ def load():
             for k, v in r.items():
                 if isinstance(v, str) and re.search(r"\d[  ]\d{3}\b", v):
                     errors.append(f"{w}: {k}: thousands separator in a number")
+            f = r.get("funding")
+            if f is not None and (not f or set(f) - FUNDING or len(set(f)) != len(f) or (("unknown" in f or "none" in f) and len(f) > 1)):
+                errors.append(f"{w}: funding must list words of {sorted(FUNDING)}, each once, with unknown or none alone")
+            for mk in r.get("makers", []):
+                if not mk.get("id") and not mk.get("name_fr"):
+                    errors.append(f"{w}: a maker without id needs name_fr (its name is a description)")
+                if path.stem != "brands" or not mk.get("name") or not str(mk.get("url", "")).startswith("http") \
+                        or mk.get("kind") not in KINDS - {"forum", "indexed"} or not DATE.match(str(mk.get("date", ""))):
+                    errors.append(f"{w}: a maker needs name, url, date YYYY-MM-DD and kind official, read or third-party (brands only)")
         cats.append({"category": c, "resources": d.get("resource", [])})
     cats.sort(key=lambda x: ORDER.index(x["category"]["id"]) if x["category"].get("id") in ORDER else 99)
+    alt = {r["id"] for c in cats if c["category"].get("id") == "brands" for r in c["resources"] if "official" not in r.get("covers", [])}
+    for c in cats:
+        for r in c["resources"]:
+            w = f"{c['category'].get('id')}.toml: {r.get('id', '?')}"
+            if "brands" in r and (c["category"].get("id") == "brands" or set(r["brands"]) - alt or len(set(r["brands"])) != len(r["brands"])):
+                errors.append(f"{w}: brands must list ids of alternative brands of brands.toml, once each (not in brands.toml itself)")
+            tp = {}
+            for mk in r.get("makers", []):
+                if mk.get("kind") == "third-party":
+                    tp.setdefault(mk.get("id") or mk.get("name"), set()).add(re.sub(r"^https?://(www\.)?", "", str(mk.get("url", ""))).split("/")[0])
+            for k, hosts in tp.items():
+                if len(hosts) < 2 and not any(x.get("kind") == "official" and (x.get("id") or x.get("name")) == k for x in r.get("makers", [])):
+                    errors.append(f"{w}: maker '{k}' rests on one third-party site: two independent sites are needed, or a statement of the brand or the maker")
+            for mk in r.get("makers", []):
+                if mk.get("id") and mk["id"] not in alt:
+                    errors.append(f"{w}: maker id '{mk['id']}' is not an alternative brand of brands.toml")
     return cats, errors
 
 
@@ -209,9 +237,10 @@ def readme(cats, m, lang, kind="readme"):
     return "\n".join(out).replace("\n\n\n", "\n\n")
 
 
-def brand_terms(cats):
-    """Names a brand goes by: its name, the names in brackets ('Lumibricks (formerly Funwhole)') and its `aliases`."""
-    out = {}
+def alt_brands(cats):
+    """Alternative brands of brands.toml with every name they go by: the name, the names in brackets
+    ('Lumibricks (formerly Funwhole)', 'Keeppley (Qman)') and `aliases`. They feed the search suggestions."""
+    out = []
     for c in cats:
         if c["category"]["id"] != "brands":
             continue
@@ -219,23 +248,27 @@ def brand_terms(cats):
             if "official" in r.get("covers", []):
                 continue
             main = re.sub(r"\s*\(.*?\)", "", r["name"]).strip()
-            extra = re.findall(r"\((?:formerly |with )?([^)]+)\)", r["name"])
-            terms = [main] + [t for t in extra if len(t) > 2 and not re.search(r"[a-z]{3,} [A-Z]", t) or t.isupper()]
-            terms += r.get("aliases", [])
-            out[r["id"]] = {"name": main, "terms": [t for t in dict.fromkeys(terms) if t]}
+            extra = [re.sub(r"^(formerly|with) ", "", x).strip() for x in re.findall(r"\(([^)]+)\)", r["name"])]
+            out.append({"id": r["id"], "name": main, "aka": [n for n in dict.fromkeys(extra + r.get("aliases", [])) if n and n != main]})
     return out
 
 
-def mentions(r, terms):
-    text = " ".join([r["name"], r["summary_en"], *r.get("strengths_en", []), *r.get("weaknesses_en", []), r.get("size_en", "")])
-    def found(t, exact):  # a short all-capitals other name (MEGA) must match its case
-        return re.search(rf"(?<![\w-]){re.escape(t)}(?![\w-])", text, 0 if exact else re.I)
-    return [b for b, v in terms.items() if any(found(t, i > 0 and t.isupper()) for i, t in enumerate(v["terms"]))]
+GEOFILE = DATA / "backend" / "geocode.json"
+GEO = json.loads(GEOFILE.read_text(encoding="utf-8"))["places"] if GEOFILE.exists() else {}
+
+
+def cities(r):
+    """'Chambéry, Annecy' is two cities (same rule as scripts/geocode.py)."""
+    return [c.strip() for c in str(r.get("city", "")).split(",") if c.strip()]
+
+
+def geo_key(city, r):
+    cc = [c for c in r.get("countries", []) if c != "international"]
+    return f"{city}|{cc[0] if len(cc) == 1 else ''}"
 
 
 def site_data(cats, m):
     rows = []
-    terms = brand_terms(cats)
     for c in cats:
         cat = c["category"]
         gnames = {g["id"]: {"en": g["name_en"], "fr": g["name_fr"]} for g in cat.get("groups", [])}
@@ -251,7 +284,11 @@ def site_data(cats, m):
                              "weaknesses": r.get("weaknesses_" + lang, []), "size": r.get("size_" + lang, ""),
                              "model": r.get("business_model_" + lang, ""), "group": gnames.get(r["group"], {}).get(lang, r["group"])}
             row["checked"] = str(row["checked"])
-            row["brands"] = [] if cat["id"] == "brands" else mentions(r, terms)
+            row["brands"] = r.get("brands", [])  # read at the source of each entry (brands of brands.toml it sells, tracks, reviews or admits)
+            row["funding"] = r.get("funding")
+            if r.get("makers"):
+                row["makers"] = [{k: str(x[k]) for k in ("name", "name_fr", "id", "url", "date", "kind") if x.get(k)} for x in r["makers"]]
+            row["geo"] = [[GEO[k]["lat"], GEO[k]["lon"], c] for c in cities(r) for k in [geo_key(c, r)] if k in GEO]
             rows.append(row)
     categories = [{"id": c["category"]["id"], "en": c["category"]["name_en"], "fr": c["category"]["name_fr"],
                    "summary": {lang: c["category"].get("summary_" + lang, "") for lang in LANGS},
@@ -263,7 +300,7 @@ def site_data(cats, m):
     if missing:
         fail(missing)
     return {"built": dt.date.today().isoformat(), "categories": categories, "resources": rows, "journeys": journeys,
-            "brands": [{"id": k, "name": v["name"]} for k, v in terms.items()], "passion": passion()}
+            "brands": alt_brands(cats), "passion": passion()}
 
 
 def passion():
@@ -281,12 +318,22 @@ def page(lang, data):
     other = "fr/" if lang == "en" else "../"
     other_lang = "fr" if lang == "en" else "en"
     lean = dict(data, resources=[{k: v for k, v in r.items() if k != other_lang} for r in data["resources"]])  # each page carries its own language only
-    blob = json.dumps(lean, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    return (tpl.replace("{{LANG}}", lang).replace("{{OTHER}}", other)
+    blob = json.dumps(lean, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")  # no "</script" nor "<!--" inside the data block
+    out = (tpl.replace("{{LANG}}", lang).replace("{{OTHER}}", other)
                .replace("{{TITLE}}", html.escape(T["title"][lang])).replace("{{TAGLINE}}", html.escape(T["site_tagline"][lang]))
                .replace("{{MINISEARCH}}", (ROOT / "site-src" / "vendor" / "minisearch.min.js").read_text(encoding="utf-8"))
                .replace("{{FEEDTITLE}}", html.escape(FEED_T["title"][lang])).replace("{{FEEDPATH}}", "fr/" if lang == "fr" else "")
                .replace("{{DATA}}", blob).replace("{{REPO}}", REPO).replace("{{VERSION}}", data["version"]))
+    return out.replace("{{CSP}}", csp(out))
+
+
+def csp(doc):
+    """Content security policy (GitHub Pages sends no headers: a meta element, placed before the first script).
+    Only the page's own inline scripts run, each allowed by its hash; nothing is loaded from elsewhere."""
+    hashes = [base64.b64encode(hashlib.sha256(m.encode("utf-8")).digest()).decode()
+              for m in re.findall(r"<script>(.*?)</script>", doc, re.S)]
+    return ("default-src 'none'; script-src " + " ".join(f"'sha256-{h}'" for h in hashes)
+            + "; style-src 'unsafe-inline'; img-src 'self' https://actarus314.github.io; connect-src 'self'; base-uri 'none'; form-action 'none'")
 
 
 BASELINE = "2026-11-23"  # the directory's first day: its entries make one opening item, not 400 separate ones
@@ -336,6 +383,57 @@ def content_feed(cats, lang):
     return atom(FEED_T["title"][lang], site + "feed.xml", site, items[:60])
 
 
+COUNTRY = {  # names for the calendar (the website names countries in the visitor's language with Intl.DisplayNames)
+    "AT": ("Austria", "Autriche"), "AU": ("Australia", "Australie"), "BE": ("Belgium", "Belgique"), "CA": ("Canada", "Canada"),
+    "CH": ("Switzerland", "Suisse"), "CN": ("China", "Chine"), "CZ": ("Czechia", "Tchéquie"), "DE": ("Germany", "Allemagne"),
+    "DK": ("Denmark", "Danemark"), "ES": ("Spain", "Espagne"), "FI": ("Finland", "Finlande"), "FR": ("France", "France"),
+    "GB": ("United Kingdom", "Royaume-Uni"), "IE": ("Ireland", "Irlande"), "IT": ("Italy", "Italie"), "LU": ("Luxembourg", "Luxembourg"),
+    "MC": ("Monaco", "Monaco"), "NL": ("Netherlands", "Pays-Bas"), "NO": ("Norway", "Norvège"), "NZ": ("New Zealand", "Nouvelle-Zélande"),
+    "PL": ("Poland", "Pologne"), "PT": ("Portugal", "Portugal"), "SE": ("Sweden", "Suède"), "SK": ("Slovakia", "Slovaquie"),
+    "US": ("United States", "États-Unis"), "ZA": ("South Africa", "Afrique du Sud")}
+
+
+def calendar(cats, lang):
+    """iCalendar file of the announced next editions (all-day events: only the start date is known)."""
+    def esc(x):
+        return str(x).replace("\\", "\\\\").replace(";", "\\;").replace(",", "\\,").replace("\n", "\\n")
+
+    def fold(line):  # RFC 5545: lines of at most 75 octets, continued with a space
+        out, cur = [], ""
+        for ch in line:
+            if len((cur + ch).encode("utf-8")) > 75:
+                out.append(cur)
+                cur = " " + ch
+            else:
+                cur += ch
+        return "\r\n".join(out + [cur])
+    today = dt.date.today()
+    stamp = today.strftime("%Y%m%dT000000Z")
+    site = PAGES + ("fr/" if lang == "fr" else "")
+    lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//actarus314//Awesome LEGO//" + lang.upper(), "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
+             "X-WR-CALNAME:" + esc(CAL_T[lang]), "X-PUBLISHED-TTL:P1D"]
+    for c in cats:
+        for r in c["resources"]:
+            nd = str(r.get("next_date") or "")
+            if not nd or nd < today.isoformat():
+                continue
+            d = dt.date.fromisoformat(nd)
+            cc = [x for x in r.get("countries", []) if x in COUNTRY]
+            where = ", ".join(filter(None, [r.get("city", ""), COUNTRY[cc[0]][LANGS.index(lang)] if len(cc) == 1 else ""]))
+            lines += ["BEGIN:VEVENT", f"UID:{r['id']}-{nd}@actarus314.github.io", "DTSTAMP:" + stamp,
+                      "DTSTART;VALUE=DATE:" + d.strftime("%Y%m%d"), "DTEND;VALUE=DATE:" + (d + dt.timedelta(days=1)).strftime("%Y%m%d"),
+                      "SUMMARY:" + esc(r["name"]), *(["LOCATION:" + esc(where)] if where else []),
+                      "DESCRIPTION:" + esc(r["summary_" + lang] + (" " + r["recurrence_" + lang] + "." if r.get("recurrence_" + lang) else "") + " " + CAL_T["dates"][lang]),
+                      "URL:" + r["url"], "END:VEVENT"]
+    lines.append("END:VCALENDAR")
+    return "\r\n".join(fold(l) for l in lines) + "\r\n"
+
+
+CAL_T = {"en": "Awesome LEGO: next editions", "fr": "Awesome LEGO : prochaines éditions",
+         "dates": {"en": "Start date as announced; check the dates and opening hours on the event's site.",
+                   "fr": "Date de début annoncée ; vérifier les dates et horaires sur le site de l'événement."}}
+
+
 def changes_feed():
     """For whoever follows the development: one item per version, from CHANGELOG.md."""
     text = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
@@ -356,7 +454,7 @@ def check_docs():
     """The documents that describe the data and the automation must name what exists."""
     errors = []
     schema = (DATA / "SCHEMA.md").read_text(encoding="utf-8")
-    for name, words in (("covers", COVERS), ("access", ACCESS), ("status", STATUS), ("kind", KINDS)):
+    for name, words in (("covers", COVERS), ("access", ACCESS), ("status", STATUS), ("kind", KINDS), ("funding", FUNDING)):
         line = next((l for l in schema.splitlines() if l.startswith(f"{name} = ")), "")
         missing = sorted(w for w in words if not re.search(rf"\b{re.escape(w)}\b", line))
         if missing:
@@ -385,6 +483,9 @@ def main():
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
     if not re.search(rf"^## v{re.escape(version)} — \d{{4}}-\d{{2}}-\d{{2}}$", (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), re.M):
         fail([f"CHANGELOG.md has no '## v{version} — YYYY-MM-DD' section for VERSION {version}"])
+    missing = sorted({geo_key(c, r) for cat in cats for r in cat["resources"] for c in cities(r)} - set(GEO))
+    for k in missing:
+        print(f"! no coordinates for {k}: run python3 scripts/geocode.py (the entry stays off the map)")
     texts = {f: readme(cats, m, lang, kind) for (kind, lang), f in FILES.items()}
     texts[".github/ISSUE_TEMPLATE/add-resource.yml"] = issue_form(cats)
     print(f"✓ v{version}: {sum(len(c['resources']) for c in cats)} resources in {len(cats)} categories")
@@ -405,6 +506,8 @@ def main():
     (SITE / "feed.xml").write_text(content_feed(cats, "en"), encoding="utf-8")
     (SITE / "fr" / "feed.xml").write_text(content_feed(cats, "fr"), encoding="utf-8")
     (SITE / "changes.xml").write_text(changes_feed(), encoding="utf-8")
+    (SITE / "agenda.ics").write_text(calendar(cats, "en"), encoding="utf-8", newline="")
+    (SITE / "fr" / "agenda.ics").write_text(calendar(cats, "fr"), encoding="utf-8", newline="")
     (SITE / "favicon.ico").write_bytes((ROOT / "media" / "favicon.ico").read_bytes())  # readers that look for <site>/favicon.ico
     for f in (ROOT / "media").rglob("*"):
         if f.is_file():

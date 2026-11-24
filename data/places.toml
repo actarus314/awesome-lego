@@ -711,6 +711,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi", "mould-king", "wange", "cada", "reobrix", "sembo-block"]
 city = "Eckental"
 
 [[resource.sources]]
@@ -734,8 +735,8 @@ countries = ["DE"]
 access = "paid"
 business_model_en = "Paid admission"
 business_model_fr = "Entrée payante"
-summary_en = "Brick museum in Bad Birnbach, Bavaria, announced to open on 1 July 2026, turning the travelling brick exhibition format into a permanent show with building competitions and life-size brick sets for photos."
-summary_fr = "Musée de briques à Bad Birnbach (Bavière), dont l'ouverture était annoncée pour le 1er juillet 2026, qui transforme le format des expositions itinérantes en exposition permanente, avec concours de construction et décors grandeur nature en briques pour les photos."
+summary_en = "Brick museum in Bad Birnbach, Bavaria, announced to open on 1 July 2026, as a permanent version of a travelling brick exhibition; its site now shows only a closure notice."
+summary_fr = "Musée de briques à Bad Birnbach (Bavière), dont l'ouverture était annoncée pour le 1er juillet 2026, version permanente d'une exposition itinérante ; son site n'affiche plus qu'un avis de fermeture."
 strengths_en = [
   "More than one million bricks: City, Star Wars, Castle, Western, Pirates, large map of Bavaria",
 ]
@@ -743,18 +744,19 @@ strengths_fr = [
   "Plus d'un million de briques : City, Star Wars, Château, Western, Pirates, grande carte de la Bavière",
 ]
 weaknesses_en = [
-  "Site content not readable (title only): opening, address and prices not confirmed at the source",
+  "Closed: the site shows only the notice \"Leider ist das BRICK HAUS bereits geschlossen\" (read on 2026-11-24)",
 ]
 weaknesses_fr = [
-  "Contenu du site illisible (titre seulement) : ouverture, adresse et tarifs non confirmés à la source",
+  "Fermé : le site n'affiche plus que l'avis « Leider ist das BRICK HAUS bereits geschlossen » (lu le 24/11/2026)",
 ]
 size_en = "More than one million bricks (as announced)"
 size_fr = "Plus d'un million de briques (selon l'annonce)"
-status = "active"
+status = "dead"
 last_activity = "2026-06-26"
-checked = "2026-11-23"
+checked = "2026-11-24"
 added = "2026-11-23"
 confidence = "low"
+brands = []
 city = "Bad Birnbach"
 
 [[resource.sources]]
@@ -1065,6 +1067,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = []
 
 [[resource.sources]]
 url = "https://www.merlinssteine.de/dauerausstellungen/"
@@ -1161,6 +1164,7 @@ last_activity = "2026-07-28"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi", "lumibricks", "reobrix"]
 city = "Chambéry, Annecy"
 
 [[resource.sources]]
@@ -1206,6 +1210,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi"]
 city = "Saint-Orens-de-Gameville"
 
 [[resource.sources]]
@@ -1249,6 +1254,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["pantasy", "mould-king", "jiestar", "wange"]
 city = "Saint-Malo"
 
 [[resource.sources]]
@@ -1361,6 +1367,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi"]
 city = "Marcillat-en-Combraille"
 
 [[resource.sources]]
@@ -1404,6 +1411,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["cada", "cobi", "lumibricks", "loz", "mattel-brick-shop", "mould-king", "panlos", "pantasy", "reobrix", "revell-brick-system", "sembo-block", "wange"]
 city = "Paderborn"
 
 [[resource.sources]]
@@ -1576,6 +1584,7 @@ last_activity = "2026-11-14"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = []
 city = "Limburg an der Lahn"
 
 [[resource.sources]]

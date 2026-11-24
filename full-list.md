@@ -95,7 +95,7 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 ### European alternatives
 
-- [BlueBrixx](https://www.bluebrixx.com/fr/) - Germany (BB Service GmbH). Brand and shop for architecture, trains, medieval, vehicles and licences (BlueBrixx Pro for adults). Bricks come from several Chinese manufacturers; design and distribution are in Germany. Covers alternative brands.
+- [BlueBrixx](https://www.bluebrixx.com/fr/) - Germany (BB Services GmbH). Brand and shop for architecture, trains, medieval, vehicles and licences (BlueBrixx Pro for adults). Bricks come from several Chinese manufacturers; design and distribution are in Germany. Covers alternative brands.
 - [Brixies](https://brixies.de/) - Germany. 4 mm micro-bricks (monuments, postcards) and a Plus range compatible with LEGO (licensed Fendt, Claas and Deutz-Fahr tractors, themed worlds). Covers alternative brands.
 - [BRYX](https://bryxtoys.com/) - Germany (Berlin). Compatible brand with official licences from football clubs (21 stadium sets, 298 to 6162 bricks), landmarks and about 400 single parts sold individually. Sets are designed in Berlin; logos are printed, not stuck. Covers alternative brands.
 - [COBI](https://cobi.com/fr-fr) - Poland. Maker of compatible bricks with its own factory in Mielec, specialised in historical and military models (tanks, aircraft, ships) and licensed vehicles. The European shop is active with a French interface and prices in euros. Covers alternative brands.
@@ -115,9 +115,9 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 - [Rastar](https://www.rastar.com/) - China (Rastar Group, listed toy and games company). Licensed car models in bricks: Pagani Huayra BC at 1:8 (3068 pieces, remote control), Maserati MC20, Audi R8, Hummer EV. Bricks reportedly from GoBricks. Covers alternative brands.
 - [Reobrix](https://reobrix.fr/fr_FR/index) - China; the French shop is the official European Union store, shipping from Poland. Large mechanical and display models: ships, construction machines, motorbikes, trains, buildings; its home page presents ship models up to 108 cm long. Covers alternative brands.
 - [Sembo Block](https://www.sembo-block.com/) - China (Sembo Toys). Architecture, street scenes, military and cars; bricks partly its own, partly GoBricks. Covers alternative brands.
-- [Sluban](https://slubanbricks.com/de) - China, with European distribution in the Netherlands (Sluban Europe). Military, city, aircraft and mecha sets at low prices, mostly for play rather than adult display. Covers alternative brands.
+- [Sluban](https://www.sluban.com.cn/en/) - China, with European distribution in the Netherlands (Sluban Europe). Military, city, aircraft and mecha sets at low prices, mostly for play rather than adult display. Covers alternative brands.
 - [Wange](http://www.wangetoys.com/) - China (Shantou Wange Educational Material Sci-Tech). Manufacturer and brand focused on landmark architecture (Sydney Opera House, Space Needle, Capitol), cars and police sets, at low prices. The official site is served over http only. Covers alternative brands.
-- [WISEBLOCK](https://www.wiseblock-alpha.com/) - Shop of the WISEBLOCK brand, with Assassin's Creed sets (Jackdaw, Havana Harbour, Ezio, 1269 pieces for the Jackdaw Voyage edition at 89.90 dollars) and other themes. Orders ship from the United States; origin of the company is not stated on the pages read. Covers alternative brands.
+- [WISEBLOCK](https://www.wiseblock-alpha.com/) - Shop of the WISEBLOCK brand, with Assassin's Creed sets (Jackdaw, Havana Harbour, Ezio, 1269 pieces for the Jackdaw Voyage edition at 89.90 dollars) and other themes. Orders ship from the United States; the brand belongs to Alpha Group, a toy and animation company of Shantou, China (trade press, 2026-11-06). Covers alternative brands.
 - [Xingbao](https://xingbaostore.com/) - China (Shantou), operated by Guangdong Xingbao Electronics Technology, founded in December 2016. Large architecture, Chinese-style scenes, vehicles, military and designs of community builders. Has its own parts production; supplies BlueBrixx Pro and other brands. Covers alternative brands.
 
 ### Toy and model-kit companies
@@ -154,7 +154,7 @@ Online and physical shops selling official LEGO, alternative brick brands and ge
 ### Alternative brands
 
 - [AFOBrick](https://afobrick.com) - Online store shipping from China by air; sets without original box, in bags. Covers alternative brands.
-- [Barweer](https://www.barweer.com) - Chinese brand selling modular and film-themed sets directly, with warehouses in China, the United States and Europe. Covers alternative brands.
+- [Barweer](https://www.barweer.com) - Chinese online shop with its own range of modular and film-themed sets and collections of other alternative brands (Mould King, Pantasy, Sembo, Reobrix and others), with warehouses in China, the United States and Europe. Covers alternative brands.
 - [Bausteinreich](https://www.bausteinreich.de) - Berlin online store (Lonestar-Bricks GmbH) for alternative bricks: Mould King, Cobi, Wange, Sembo, Balody and others; own warehouse in Berlin. Covers alternative brands.
 - [Blouge Brick Store](https://blouge-brickstore.fr) - Lille online store of compatible bricks (Pantasy, CaDA, LOZ, FunWhole); products stated to meet CE and EN71 standards, sets delivered in sealed original boxes. Covers alternative brands.
 - [Brickcoast](https://brickcoast.de) - Retailer in Castrop-Rauxel (Steinebande GmbH) of official LEGO, Mould King and Cobi. Site not readable in this pass; data from the first pass. Covers official LEGO and alternative brands.
@@ -165,10 +165,10 @@ Online and physical shops selling official LEGO, alternative brick brands and ge
 - [JoyGobricks](https://joygobricks.com) - Reseller of GoBricks parts and sets; ships from China. Covers alternative brands.
 - [KBS Shop](https://kbs-shop.com) - German online store for technical and remote-controlled bricks: Mould King, CaDA, Reobrix, Wange, Jie Star, Panlos. Covers alternative brands.
 - [Mister Brixx](https://www.misterbrixx.de) - Duisburg shop selling official LEGO, Mould King, CaDA, Reobrix, Panlos, Cobi; buys and resells LEGO. Covers official LEGO and alternative brands.
-- [MyGoBricks (Brickbulk)](https://mygobricks.com) - Authorised distributor of GoBricks bulk parts and sets; French version (bricksbulk.fr) run by SOUFEEL INTERNATIONAL TRADING CO., LIMITED, Beckenham, United Kingdom. Reported renaming to Brickbulk. Covers alternative brands.
+- [MyGoBricks (Brickbulk)](https://mygobricks.com) - Authorised distributor of GoBricks bulk parts and sets; French version (bricksbulk.fr) run by SOUFEEL INTERNATIONAL TRADING CO., LIMITED, Beckenham, United Kingdom. Renamed Brickbulk: mygobricks.com redirects to bricksbulk.com. Covers alternative brands.
 - [Spielzeug-Fuchs](https://spielzeug-fuchs.de) - German online store for alternative bricks: more than 2000 sets from more than 20 brands (COBI, CaDA, Mould King, Pantasy, Lumibricks, Reobrix). Covers alternative brands.
 - [Warbrix.fr](https://www.warbrix.fr) - French online store of COBI and Reobrix, stating it was the first distributor to introduce COBI in France (2012). Covers alternative brands.
-- [YWOBB](https://yourwobb.com) - Multi-brand store (CaDA, Quan Guan, Xinyu), prices in United States dollars; some CaDA sets offered as 'European Union warehouse' versions. Covers alternative brands.
+- [YWOBB](https://yourwobb.com) - Multi-brand store with more than 60 brands in its menu (CaDA, Mould King, Pantasy, Sembo, Keeppley and others), prices in United States dollars; some CaDA sets offered as 'European Union warehouse' versions. Covers alternative brands.
 
 ### General retailers
 
@@ -197,7 +197,7 @@ Sites that compare set prices across shops, catalogue sets and parts, track seco
 
 - [AltBrickScan](https://altbrickscan.com/fr-FR/) - Multi-brand comparator announced as showing prices with delivery to the chosen country, price history and email alert. Described as a prototype. Covers official LEGO and alternative brands.
 - [Avenue de la Brique](https://www.avenuedelabrique.com/) - Price comparator specialised in official LEGO, gathering French online shops. Covers official LEGO.
-- [Brick Broker](https://brick-broker.com/) - Price comparator covering official LEGO and about 95 alternative brands in one search, with offers deliverable to France. Published by Kadris, a sole proprietorship based in France. Covers official LEGO and alternative brands.
+- [Brick Broker](https://brick-broker.com/) - Price comparator covering official LEGO and about 95 alternative brands in one search, with offers deliverable to France. Published by Doux Labs SASU, based in Allonzier-la-Caille, France. Covers official LEGO and alternative brands.
 - [Brick-Tracker.de](https://www.brick-tracker.de/) - German price comparator for official LEGO with price alert, wish list, collection tool, and a market analysis of retiring sets. Covers official LEGO.
 - [Brickfact](https://brickfact.com/) - Price comparator for official LEGO sets with regional sites (USD, GBP, CHF, EUR), secondary-market value of sealed sets and a collection tracker shared with its application. Covers official LEGO.
 - [brickguide.de](https://brickguide.de/) - German comparator, set base and collection manager for official LEGO, with prices from merchant feeds and a price history. Covers official LEGO.
@@ -225,7 +225,7 @@ Sites that compare set prices across shops, catalogue sets and parts, track seco
 - [promoklocki.pl](https://promoklocki.pl/) - Polish price comparator and catalogue for LEGO sets, with pages for the lowest prices in the official LEGO shop, retirements, a promotions calendar and Polish catalogues. Covers official LEGO.
 - [Temple of Bricks](https://www.templeofbricks.com/fr/) - Price comparator for official LEGO sets and minifigures, secondary market included, with prices filtered by the country the merchant ships to. Covers official LEGO.
 - [Toy-Links](https://toy-links.com/mouldking) - Set lists by alternative brand (Mould King page read) with price comparison and availability filter. Covers alternative brands.
-- [ToySetFox](https://toysetfox.com/fr-fr/guides/alternatives-a-lego) - General toy-set comparator by manufacturer set number (Playmobil, Schleich, COBI and others) with guides on alternative brick brands. Official LEGO sets were not seen in the catalogue. Covers alternative brands.
+- [ToySetFox](https://toysetfox.com/fr-fr/guides/alternatives-a-lego) - General toy-set comparator by manufacturer set number (Playmobil, Schleich, COBI and others) with guides on alternative brick brands. Official LEGO sets are listed too (LEGO brand page). Covers official LEGO and alternative brands.
 - [VERObricks](https://verobricks.com/) - German price comparator for building-brick sets (LEGO, COBI, BlueBrixx, CaDA, Mould King, Reobrix and others). It is the price comparison formerly under the reBricker name; reBricker remains a sorting and used-brick service. Covers official LEGO and alternative brands.
 
 ### Set and parts databases
@@ -591,7 +591,7 @@ Venues of the brick world that can be visited: official LEGO venues and stores, 
 
 ### Museums and permanent exhibitions
 
-- [BRICK HAUS Klemmbaustein-Museum](https://www.brick-brick.de/) - Brick museum in Bad Birnbach, Bavaria, announced to open on 1 July 2026, turning the travelling brick exhibition format into a permanent show with building competitions and life-size brick sets for photos. Covers official LEGO and alternative brands.
+- [BRICK HAUS Klemmbaustein-Museum](https://www.brick-brick.de/) - Brick museum in Bad Birnbach, Bavaria, announced to open on 1 July 2026, as a permanent version of a travelling brick exhibition; its site now shows only a closure notice. Covers official LEGO and alternative brands. Status: dead.
 - [Bricks & Figs](https://bricksandfigs.pl/en/) - Private museum in Kraków focused on LEGO minifigures and sets: more than 14000 minifigures and 700 original sets, with a café and a shop. Not affiliated with the LEGO Group. Covers official LEGO.
 - [Brickz Museum](https://brickzmuseum.com/) - LEGO museum in Milton Keynes, opened in April 2025, with large builds (pirates, Star Wars, underwater creatures), a history of LEGO and items made for Asian and US markets. Not affiliated with the LEGO Group. Covers official LEGO.
 - [ElbaBrick](https://www.elbabrick.it/) - Permanent LEGO exhibition-museum on Elba island, in the former aquarium of Marina di Campo: hundreds of official sets from the first bricks to the latest releases, dioramas, original creations and two play areas. Private initiative, not linked to the LEGO Group. Covers official LEGO.
@@ -708,6 +708,7 @@ Guides, glossaries, history, compatibility and legal references, education and c
 - [Brick Builder's Handbook](https://brickbuildershandbook.com/) - Blog and book on building techniques: sideways building, half-stud offsets with jumper plates, angled walls, round shapes and the geometry behind them. Covers official LEGO. Status: no update for a year.
 - [BrickNerd lighting lessons](https://bricknerd.com/home/lego-lighting-lessons-making-sets-and-mocs-merry-and-bright-12-26-22) - Hands-on article on installing LED lighting kits in LEGO sets and custom builds, with the three types of lighting products.
 - [BrickNerd storage guide](https://bricknerd.com/home/an-opinionated-guide-to-lego-storage-containers-and-cost-5-25-23) - Opinionated guide by an adult fan on sorting loose parts and choosing containers, with a cost comparison of drawer units.
+- [BrickReport: licensed themes of LEGO alternatives](https://www.brickreport.io/blog/lego-alternatives-licensed-themes) - Guide to the licences held by each alternative brand (Pantasy, Mattel, COBI, CaDA, BlueBrixx, Blokees, Keeppley, Lumibricks and others), current and ended, set against the licences of official LEGO. Covers official LEGO and alternative brands.
 - [Bricks Stack Exchange](https://bricks.stackexchange.com/) - Question and answer site on LEGO and compatible bricks: identification of parts and clones, plastics, cleaning, compatibility measurement, building problems. Covers official LEGO and alternative brands.
 - [HelloBricks : lexique LEGO](https://www.hellobricks.com/lexique-lego/) - French-language lexicon of terms and acronyms of the LEGO world.
 - [L-Gauge Modular System (LGMS)](https://lgms.org/) - Modular standard for collaborative LEGO train layouts used at United States conventions: modules of at least 3 by 3 baseplates, double-track mainline with minimum radius R104, clearances, rules for the layout coordinator. Version 1.5 released on 7 July 2021. Status: no update for a year.

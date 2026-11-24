@@ -81,6 +81,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi", "cada", "pantasy", "lumibricks", "blokees", "brixies", "mattel-brick-shop", "revell-brick-system"]
 
 [[resource.sources]]
 url = "https://www.ltoys.lu/fr"
@@ -179,6 +180,7 @@ last_activity = "2026-08-27"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi", "cada", "wange", "sluban", "mould-king", "bluebrixx", "pantasy", "reobrix", "sembo-block", "xingbao", "jiestar", "lumibricks", "mattel-brick-shop", "revell-brick-system"]
 
 [[resource.sources]]
 url = "https://www.brickmo.com/fr/frais-d-envoi"
@@ -216,6 +218,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cada", "mould-king", "reobrix", "xingbao", "jiestar", "wange", "mork", "panlos"]
 
 [[resource.sources]]
 url = "https://kbs-shop.com/pages/versand-lieferung"
@@ -244,6 +247,7 @@ last_activity = "2026-11-17"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["mould-king", "cobi", "jiestar", "sembo-block", "reobrix", "loz", "wange", "pantasy", "nanoblock"]
 
 [[resource.sources]]
 url = "https://www.bausteinreich.de/policies/shipping-policy"
@@ -268,8 +272,8 @@ ships_to_france = true
 access = "free"
 business_model_en = "Brand and retailer"
 business_model_fr = "Marque et distributeur"
-summary_en = "Brand and retailer (BB Service GmbH, Wiesbaden): own sets under licences not held by LEGO (Star Trek, Stargate, RoboCop, emergency vehicles), plus CaDA, Cobi and Xingbao."
-summary_fr = "Marque et distributeur (BB Service GmbH, Wiesbaden) : sets propres sous licences que LEGO ne détient pas (Star Trek, Stargate, RoboCop, véhicules d'urgence), plus CaDA, Cobi et Xingbao."
+summary_en = "Brand and retailer (BB Services GmbH, Flörsheim am Main): own sets under licences not held by LEGO (Stargate, RoboCop, emergency vehicles); its pages for other brands (COBI, Mould King, Panlos, Reobrix, Wange) showed no product when read on 2026-11-24."
+summary_fr = "Marque et distributeur (BB Services GmbH, Flörsheim am Main) : sets propres sous licences que LEGO ne détient pas (Stargate, RoboCop, véhicules d'urgence) ; ses pages d'autres marques (COBI, Mould King, Panlos, Reobrix, Wange) n'affichaient aucun produit à la lecture du 24/11/2026."
 strengths_en = ["Shipping to France 9.95 €, free from 99 €; European taxes included", "Original licences not available from official LEGO", "Missing parts replaced free of charge (first pass)"]
 strengths_fr = ["Port vers la France de 9.95 €, offert dès 99 € ; taxes européennes incluses", "Licences originales introuvables chez LEGO officiel", "Pièces manquantes remplacées gratuitement (première passe)"]
 weaknesses_en = ["Independent test of March 2026: uneven colours, variable clutch power, few printed parts (third party, not re-read)", "Hybrid role (brand and reseller of other brands); possible withdrawal of minifigure sets linked to a dispute with the LEGO group (not re-read)", "The help page gives a 199 € free-shipping threshold for Germany against 99 € on the legal page"]
@@ -279,6 +283,7 @@ last_activity = "2026-10-14"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["bluebrixx"]
 
 [[resource.sources]]
 url = "https://www.bluebrixx.com/fr/informations-legales/livraison-et-paiement/"
@@ -315,6 +320,7 @@ last_activity = "2026-10-10"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["cobi", "cada", "mould-king", "pantasy", "lumibricks", "reobrix", "brixies", "bryx", "sluban", "revell-brick-system"]
 
 [[resource.sources]]
 url = "https://spielzeug-fuchs.de/versandarten/"
@@ -348,6 +354,7 @@ last_activity = "2026-10-27"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "low"
+brands = ["cada", "cobi", "jiestar", "loz", "mattel-brick-shop", "mould-king", "pantasy", "reobrix", "revell-brick-system"]
 
 [[resource.sources]]
 url = "https://geizhals.de/merchants/brickcoast-de"
@@ -381,6 +388,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["cada", "mould-king", "pantasy", "reobrix", "jiestar"]
 
 [[resource.sources]]
 url = "https://brickparts.nl/bestel-betaal-ontvang/"
@@ -409,6 +417,7 @@ last_activity = "2026-10-19"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "low"
+brands = ["cobi", "cada", "mould-king", "reobrix", "lumibricks", "mork", "panlos"]
 
 [[resource.sources]]
 url = "https://www.misterbrixx.de/"
@@ -439,6 +448,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
+brands = ["cobi", "cada", "pantasy", "lumibricks"]
 
 [[resource.sources]]
 url = "https://www.brickeez.com/"
@@ -473,6 +483,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["cada", "cobi", "pantasy", "lumibricks", "mould-king", "jiestar", "keeppley", "loz", "wange", "gobricks"]
 
 [[resource.sources]]
 url = "https://blouge-brickstore.fr/pages/faq"
@@ -489,10 +500,10 @@ languages = ["en"]
 countries = ["international"]
 ships_to_france = true
 access = "free"
-business_model_en = "Direct sales by the brand"
-business_model_fr = "Vente directe par la marque"
-summary_en = "Chinese brand selling modular and film-themed sets directly, with warehouses in China, the United States and Europe."
-summary_fr = "Marque chinoise de sets modulaires et de sets sous licence cinéma, vendant en direct, avec entrepôts en Chine, aux États-Unis et en Europe."
+business_model_en = "Online shop: own range and other brands"
+business_model_fr = "Boutique en ligne : gamme propre et autres marques"
+summary_en = "Chinese online shop with its own range of modular and film-themed sets and collections of other alternative brands (Mould King, Pantasy, Sembo, Reobrix and others), with warehouses in China, the United States and Europe."
+summary_fr = "Boutique en ligne chinoise avec sa propre gamme de sets modulaires et sur le thème du cinéma, et des collections d'autres marques alternatives (Mould King, Pantasy, Sembo, Reobrix et autres), avec entrepôts en Chine, aux États-Unis et en Europe."
 strengths_en = ["From the United States and European Union warehouses: average delivery 3 to 7 days; shipping fee at checkout includes all costs, no extra taxes or duties", "Worldwide shipping, country-specific price shown at checkout", "After-sales service within 15 days of delivery"]
 strengths_fr = ["Depuis les entrepôts américain et européen : livraison moyenne de 3 à 7 jours ; port affiché à la caisse tout compris, sans taxes ni droits supplémentaires", "Livraison dans le monde, prix par pays affiché à la caisse", "Service après-vente sous 15 jours après livraison"]
 weaknesses_en = ["From the China warehouse: 10 to 18 working days by air, 35 to 60 by sea", "Automatic trust scores reported unfavourably by a third party (FranceVerif, ScamDoc), not re-read"]
@@ -502,6 +513,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["jiestar", "mork", "reobrix", "mould-king", "xingbao", "lumibricks", "panlos", "pantasy", "sembo-block", "sluban"]
 
 [[resource.sources]]
 url = "https://www.barweer.com/pages/shipping-policy"
@@ -536,6 +548,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["cada", "lumibricks", "keeppley", "loz", "panlos", "pantasy", "sembo-block", "sluban", "jiestar"]
 
 [[resource.sources]]
 url = "https://afobrick.com/pages/shipping-policy"
@@ -565,6 +578,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["gobricks"]
 
 [[resource.sources]]
 url = "https://joygobricks.com/pages/shipping-policy"
@@ -594,6 +608,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["lumibricks", "reobrix", "jiestar", "cada", "gobricks", "im-master", "keeppley", "loz", "mork", "mould-king", "panlos", "pantasy", "sembo-block", "sluban", "wange", "xingbao", "jmbricklayer"]
 
 [[resource.sources]]
 url = "https://www.chowbrick.com/art/shipping-amp-order-tracking_a0003.html"
@@ -611,8 +626,8 @@ countries = ["international"]
 access = "free"
 business_model_en = "Online store"
 business_model_fr = "Boutique en ligne"
-summary_en = "Multi-brand store (CaDA, Quan Guan, Xinyu), prices in United States dollars; some CaDA sets offered as 'European Union warehouse' versions."
-summary_fr = "Boutique multimarque (CaDA, Quan Guan, Xinyu), prix en dollars ; certains sets CaDA proposés en version « entrepôt européen »."
+summary_en = "Multi-brand store with more than 60 brands in its menu (CaDA, Mould King, Pantasy, Sembo, Keeppley and others), prices in United States dollars; some CaDA sets offered as 'European Union warehouse' versions."
+summary_fr = "Boutique multimarque, plus de 60 marques au menu (CaDA, Mould King, Pantasy, Sembo, Keeppley et autres), prix en dollars ; certains sets CaDA proposés en version « entrepôt européen »."
 strengths_en = ["European Union warehouse versions with original box on some CaDA sets"]
 strengths_fr = ["Versions « entrepôt européen » avec boîte d'origine sur certains sets CaDA"]
 weaknesses_en = ["Prices in United States dollars; shipping conditions to France not read; no independent reviews found", "Site notes that custom build sets are not assembly-verified by the factory"]
@@ -622,6 +637,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "low"
+brands = ["mould-king", "pantasy", "cada", "sluban", "sembo-block", "lumibricks", "keeppley", "panlos", "jiestar", "reobrix", "mork", "jmbricklayer", "wange", "xingbao", "loz"]
 
 [[resource.sources]]
 url = "https://yourwobb.com/"
@@ -639,8 +655,8 @@ countries = ["international"]
 access = "free"
 business_model_en = "Online store"
 business_model_fr = "Boutique en ligne"
-summary_en = "Authorised distributor of GoBricks bulk parts and sets; French version (bricksbulk.fr) run by SOUFEEL INTERNATIONAL TRADING CO., LIMITED, Beckenham, United Kingdom. Reported renaming to Brickbulk."
-summary_fr = "Distributeur agréé de pièces GoBricks en vrac et de sets ; version française (bricksbulk.fr) exploitée par SOUFEEL INTERNATIONAL TRADING CO., LIMITED, Beckenham, Royaume-Uni. Changement de nom en Brickbulk signalé."
+summary_en = "Authorised distributor of GoBricks bulk parts and sets; French version (bricksbulk.fr) run by SOUFEEL INTERNATIONAL TRADING CO., LIMITED, Beckenham, United Kingdom. Renamed Brickbulk: mygobricks.com redirects to bricksbulk.com."
+summary_fr = "Distributeur agréé de pièces GoBricks en vrac et de sets ; version française (bricksbulk.fr) exploitée par SOUFEEL INTERNATIONAL TRADING CO., LIMITED, Beckenham, Royaume-Uni. Renommé Brickbulk : mygobricks.com redirige vers bricksbulk.com."
 strengths_en = ["Trustpilot 4.4 on 24 reviews (2026-11-03, first pass)", "Order by parts list (Rebrickable, Studio) per first pass"]
 strengths_fr = ["Trustpilot 4.4 sur 24 avis (03/11/2026, première passe)", "Commande par liste de pièces (Rebrickable, Studio) selon la première passe"]
 weaknesses_en = ["Recent review reports an undelivered order and unanswered emails (2026-10-27)", "A customer in Germany paid 13.32 € in customs fees", "Shipping to France not published"]
@@ -650,6 +666,7 @@ last_activity = "2026-10-30"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "low"
+brands = ["gobricks", "wange"]
 
 [[resource.sources]]
 url = "https://bricksbulk.fr/pages/contact-us"
@@ -684,6 +701,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["cobi", "reobrix", "sluban"]
 
 [[resource.sources]]
 url = "https://www.warbrix.fr/en"
@@ -713,6 +731,7 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
+brands = ["cobi"]
 
 [[resource.sources]]
 url = "https://cobi.com/fr-fr/pages/faq"
