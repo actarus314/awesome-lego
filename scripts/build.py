@@ -556,11 +556,22 @@ def static_texts(tpl, lang):
                   lambda m: m.group(1) + html.escape(S[m.group(3)], quote=False) + m.group(4) if m.group(3) in S else m.group(0), tpl)
 
 
+def page_texts(x):
+    """The texts of an entry carried by the page; strengths and weaknesses go to details.json, read when needed."""
+    return {**{k: v for k, v in x.items() if k not in ("strengths", "weaknesses")}, "d": bool(x["strengths"] or x["weaknesses"])}
+
+
+def details(lang, data):
+    """site/details.json and site/fr/details.json: strengths and weaknesses of each entry, [strengths, weaknesses]."""
+    return json.dumps({r["id"]: [r[lang]["strengths"], r[lang]["weaknesses"]] for r in data["resources"] if r[lang]["strengths"] or r[lang]["weaknesses"]},
+                      ensure_ascii=False, separators=(",", ":"))
+
+
 def page(lang, data):
     tpl = static_texts(assemble(), lang)
     other = "fr/" if lang == "en" else "../"
     other_lang = "fr" if lang == "en" else "en"
-    lean = dict(data, resources=[{k: v for k, v in r.items() if k != other_lang} for r in data["resources"]])  # each page carries its own language only
+    lean = dict(data, resources=[{**{k: v for k, v in r.items() if k not in LANGS}, lang: page_texts(r[lang])} for r in data["resources"]])  # each page carries its own language only
     blob = json.dumps(lean, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")  # no "</script" nor "<!--" inside the data block
     values = {"LANG": lang, "OTHER": other, "TITLE": html.escape(T["title"][lang]), "TAGLINE": html.escape(T["site_tagline"][lang]),
               "MINISEARCH": (ROOT / "site-src" / "vendor" / "minisearch.min.js").read_text(encoding="utf-8"),
@@ -754,6 +765,8 @@ def main():
     (SITE / "fr").mkdir(parents=True, exist_ok=True)
     (SITE / "index.html").write_text(page("en", data), encoding="utf-8")
     (SITE / "fr" / "index.html").write_text(page("fr", data), encoding="utf-8")
+    (SITE / "details.json").write_text(details("en", data), encoding="utf-8")
+    (SITE / "fr" / "details.json").write_text(details("fr", data), encoding="utf-8")
     (SITE / "vault").mkdir(parents=True, exist_ok=True)
     (SITE / "vault" / "index.html").write_text(vault(), encoding="utf-8")
     (SITE / "feed.xml").write_text(content_feed(cats, "en"), encoding="utf-8")

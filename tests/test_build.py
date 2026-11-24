@@ -5,6 +5,7 @@ import contextlib
 import hashlib
 import base64
 import io
+import json
 import re
 import shutil
 import sys
@@ -270,6 +271,22 @@ def load_quiet(edit):
             build.DATA = old
     finally:
         shutil.rmtree(d)
+
+
+class Details(unittest.TestCase):
+    def test_strengths_leave_the_page_for_details_json(self):
+        with contextlib.redirect_stdout(io.StringIO()):
+            cats, _ = build.load()
+            data = build.site_data(cats, {})
+        data["version"] = "0"
+        for lang in ("en", "fr"):
+            doc = build.page(lang, data)
+            blob = json.loads(re.search(r'<script id="data" type="application/json">(.*?)</script>', doc, re.S).group(1).replace("\\u003c", "<"))
+            self.assertFalse(any("strengths" in r[lang] for r in blob["resources"]))
+            det = json.loads(build.details(lang, data))
+            n = sum(1 for r in data["resources"] if r[lang]["strengths"] or r[lang]["weaknesses"])
+            self.assertEqual(len(det), n)
+            self.assertEqual(sum(1 for r in blob["resources"] if r[lang]["d"]), n)
 
 if __name__ == "__main__":
     unittest.main()

@@ -11,6 +11,7 @@ themes. Fails on:
 - inherited frame: a list item framed or filled inside another framed list item (a rule meant for the
   outer rows reaching the inner ones);
 - script error, console error, or content security policy violation;
+- search: a word found only in the strengths or weaknesses of an entry (details.json, read after the page) must find it;
 - accessibility (axe-core, WCAG 2.2 A and AA rules: contrast on the real background, names of controls,
   target sizes, landmarks, ARIA): every violation, on the same views, at 1440 and 390 px in both themes. A guard,
   not a conformance target: the 13 px studs of the category map are accepted, and marks told apart by colour
@@ -98,6 +99,24 @@ STATES = [
     ("brand mode", "#q=COBI", ""),
     ("observatory", "#observatory", ""),
 ]
+
+
+def details_word(site, lang):
+    """A word of the strengths or weaknesses of one entry that no other text of the directory holds."""
+    import re
+    import unicodedata
+    fold = lambda x: unicodedata.normalize("NFD", x.lower()).encode("ascii", "ignore").decode()
+    data = json.loads((site / "data.json").read_text(encoding="utf-8"))  # every text, as scripts/build.py wrote it
+    det = {r["id"]: (r[lang]["strengths"], r[lang]["weaknesses"]) for r in data["resources"]}
+    other = fold(" ".join(" ".join([r["name"], r[lang]["summary"], r[lang]["group"], str(r[lang].get("size", "")), str(r.get("city") or "")]) for r in data["resources"]))
+    words = {}
+    for rid, (st, wk) in det.items():
+        for w in set(re.findall(r"[a-zà-ÿ]{7,}", fold(" ".join(st + wk)))):
+            words.setdefault(w, set()).add(rid)
+    for w, ids in sorted(words.items()):
+        if len(ids) == 1 and w not in other:
+            return w, next(iter(ids))
+    raise SystemExit("no word found only in the strengths and weaknesses")
 
 
 def main():
@@ -189,6 +208,18 @@ def main():
                     for e in errs:
                         found.setdefault(("script error", "", e[:160]), []).append(f"{lang} {w} {theme}")
                     c.close()
+        # search: strengths and weaknesses come from details.json, read after the page; a word found only there must still find its entry
+        for lang, root in (("en", ""), ("fr", "fr/")):
+            word, rid = details_word(Path(a.site), lang)
+            c = b.new_context(viewport={"width": 1440, "height": 900}, locale="fr-FR" if lang == "fr" else "en-GB")
+            pg = c.new_page()
+            pg.goto(base + root)
+            pg.wait_for_selector("html.ready", state="attached")
+            pg.fill("#q", word)
+            pg.wait_for_timeout(1200)  # details.json read, index rebuilt, results drawn
+            if not pg.query_selector(f"#list #r-{rid}"):
+                found.setdefault(("search", "#q", f"'{word}', only in the strengths or weaknesses of {rid}, does not find it"), []).append(lang)
+            c.close()
         # accessibility: axe-core injected into the page (the page's own security policy is bypassed for that only)
         axe = Path(a.axe)
         if a.no_axe:
