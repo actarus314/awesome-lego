@@ -385,6 +385,11 @@ url = "https://www.lgoe.at/"
 date = "2026-11-23"
 kind = "official"
 
+[resource.contact]
+email = "info@lgoe.at"
+url = "https://www.lgoe.at/"
+date = "2026-11-24"
+
 [[resource]]
 id = "briques-unies"
 name = "Briques Unies"
@@ -613,6 +618,11 @@ url = "https://www.londonafols.uk/"
 date = "2026-11-23"
 kind = "official"
 
+[resource.contact]
+email = "lug@londonafols.co.uk"
+url = "https://www.londonafols.uk/"
+date = "2026-11-24"
+
 [[resource]]
 id = "tartan-lug"
 name = "Tartan LUG"
@@ -791,6 +801,12 @@ url = "https://forum.derhelfendestein.at/archive/index.php?thread-40.html="
 date = "2023-04-18"
 kind = "forum"
 
+[resource.contact]
+address = "Schulgasse 25, 2124 Niederkreuzstetten"
+email = "office@derhelfendestein.at"
+url = "https://derhelfendestein.at/"
+date = "2026-11-24"
+
 [[resource]]
 id = "noppenhelden"
 name = "Noppenhelden.de"
@@ -891,6 +907,11 @@ url = "https://brisy.fr/"
 date = "2026-11-23"
 kind = "official"
 
+[resource.contact]
+email = "brisy.association@gmail.com"
+url = "https://brisy.fr/notre-association/contact/"
+date = "2026-11-24"
+
 [[resource]]
 id = "brickouest"
 name = "Brickouest"
@@ -919,6 +940,11 @@ recurrence_fr = "Plusieurs événements par an"
 url = "https://brickouest.fr/"
 date = "2026-11-23"
 kind = "official"
+
+[resource.contact]
+email = "contact@brickouest.fr"
+url = "https://brickouest.fr/"
+date = "2026-11-24"
 
 [[resource]]
 id = "brikkelauget"
@@ -1176,6 +1202,11 @@ url = "https://baylug.org/"
 date = "2026-11-23"
 kind = "read"
 
+[resource.contact]
+email = "baylug2014@gmail.com"
+url = "https://baylug.org/contact-us/"
+date = "2026-11-24"
+
 [[resource]]
 id = "torolug"
 name = "ToroLUG"
@@ -1304,6 +1335,12 @@ url = "https://www.well-lug.nz/afol-day"
 date = "2026-11-23"
 kind = "read"
 
+[resource.contact]
+address = "WelTec Petone, 21 Kensington Ave (Room C110)"
+email = "contact@well-lug.nz"
+url = "https://www.well-lug.nz/"
+date = "2026-11-24"
+
 [[resource]]
 id = "aucklug"
 name = "AuckLUG"
@@ -1337,6 +1374,11 @@ kind = "read"
 url = "https://fancolab.lego.com/communities/406-auckland-lego-user-group-aucklug/"
 date = "2026-11-23"
 kind = "official"
+
+[resource.contact]
+email = "info@aucklug.co.nz"
+url = "https://www.aucklug.co.nz/contact"
+date = "2026-11-24"
 
 [[resource]]
 id = "zalug"
@@ -1372,6 +1414,11 @@ kind = "read"
 url = "https://www.zalug.co.za/feed/"
 date = "2026-11-23"
 kind = "read"
+
+[resource.contact]
+email = "membership@zalug.co.za"
+url = "https://www.zalug.co.za/contact/"
+date = "2026-11-24"
 
 [[resource]]
 id = "safols"

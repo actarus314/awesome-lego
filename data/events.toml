@@ -65,6 +65,12 @@ url = "https://skaerbaekcentret.dk/aktivitetscenter/det-sker/fan-weekend"
 date = "2026-11-23"
 kind = "official"
 
+[resource.contact]
+address = "Storegade 46-48, 6780 Skærbæk"
+email = "info@fanweekend.dk"
+url = "https://www.fanweekend.dk/where.php"
+date = "2026-11-24"
+
 [[resource]]
 id = "bricking-bavaria"
 name = "Bricking Bavaria"
@@ -100,6 +106,11 @@ kind = "official"
 url = "https://brickingbavaria-fanevent.de/"
 date = "2026-11-23"
 kind = "official"
+
+[resource.contact]
+email = "info@brickingbavaria-fanevent.de"
+url = "https://brickingbavaria-fanevent.de/"
+date = "2026-11-24"
 
 [[resource]]
 id = "brickfair"
@@ -175,6 +186,11 @@ url = "https://brickworld.com/indianapolis"
 date = "2026-11-23"
 kind = "indexed"
 
+[resource.contact]
+address = "1202 East 38th Street, Indianapolis, IN 46205"
+url = "https://brickworld.com/indianapolis/"
+date = "2026-11-24"
+
 [[resource]]
 id = "brickcon"
 name = "BrickCon"
@@ -210,6 +226,11 @@ kind = "official"
 url = "https://afol.brickcon.org/"
 date = "2026-11-23"
 kind = "official"
+
+[resource.contact]
+address = "11100 NE 6th St, Bellevue, WA 98004"
+url = "https://www.brickcon.org/getting-here"
+date = "2026-11-24"
 
 [[resource]]
 id = "brickvention"
@@ -247,6 +268,11 @@ url = "https://www.brickvention.melbourne/public-expo/"
 date = "2026-11-23"
 kind = "official"
 
+[resource.contact]
+address = "9 Nicholson St, Carlton VIC 3053"
+url = "https://www.brickvention.melbourne/"
+date = "2026-11-24"
+
 [[resource]]
 id = "lego-house-afol-day"
 name = "LEGO House AFOL Day"
@@ -280,6 +306,11 @@ kind = "third-party"
 url = "https://faniklockow.pl/2026/09/24/lego-fan-tour-czyli-zwiedzanie-lego-house-w-wyzszej-cenie-jest-jednak-kilka-plusow/"
 date = "2026-09-24"
 kind = "third-party"
+
+[resource.contact]
+address = "Ole Kirks Plads 1, 7190 Billund"
+url = "https://legohouse.com/en-gb"
+date = "2026-11-24"
 
 [[resource]]
 id = "bricktastic"
@@ -315,6 +346,12 @@ kind = "official"
 url = "https://bricktastic.seetickets.com/timeslot/bricktastic?outputStyle=Default&pageIndex=1&pageSize=30"
 date = "2026-11-23"
 kind = "official"
+
+[resource.contact]
+address = "Manchester Central - Central Hall, Petersfield, Manchester M2 3GX"
+email = "contact@fairybricks.org"
+url = "https://bricktastic.org/contact/"
+date = "2026-11-24"
 
 [[resource]]
 id = "bricktopia-world"
@@ -387,6 +424,11 @@ url = "https://www.nieuwsblad.be/regio/antwerpen/regio-antwerpen/antwerpen/van-m
 date = "2026-11-16"
 kind = "third-party"
 
+[resource.contact]
+email = "contact@belug.be"
+url = "https://www.belug.be/brickmania/antwerpen/bma-locatie/"
+date = "2026-11-24"
+
 [[resource]]
 id = "great-western-brick-show"
 name = "Great Western Brick Show"
@@ -422,6 +464,13 @@ kind = "official"
 url = "https://brickish.org/eventspage/"
 date = "2026-11-23"
 kind = "official"
+
+[resource.contact]
+address = "STEAM - Museum of the Great Western Railway, Fire Fly Avenue, Swindon SN2 2EY"
+phone = "+44 1793 466646"
+email = "steammuseum@swindon.gov.uk"
+url = "https://greatwesternbrickshow.co.uk/faqs/"
+date = "2026-11-24"
 
 [[resource]]
 id = "edinbrick"
@@ -533,6 +582,13 @@ url = "https://brickish.org/eventspage/"
 date = "2026-11-23"
 kind = "official"
 
+[resource.contact]
+address = "Exploration Drive, SPACE CITY, Leicester LE4 5NS"
+phone = "+44 116 261 0261"
+email = "info@spacecentre.co.uk"
+url = "https://www.spacecentre.co.uk/whats-on/brickish-weekend/"
+date = "2026-11-24"
+
 [[resource]]
 id = "itlug-lecco"
 name = "ItLUG Lecco"
@@ -640,6 +696,11 @@ url = "https://www.steine-kanal.de/veranstaltungskalender-2027-alle-lego-fan-ver
 date = "2026-11-11"
 kind = "third-party"
 
+[resource.contact]
+email = "brixembourg@yahoo.com"
+url = "https://www.brixembourg.com/kontakt"
+date = "2026-11-24"
+
 [[resource]]
 id = "letzbrick"
 name = "Lëtzbrick"
@@ -674,6 +735,11 @@ kind = "official"
 url = "https://www.afol.lu/"
 date = "2026-11-23"
 kind = "official"
+
+[resource.contact]
+email = "info@afol.lu"
+url = "https://afol55.afol.lu/calendar/index.php?event/6158-letzbrick-2027/"
+date = "2026-11-24"
 
 [[resource]]
 id = "fanabriques"
@@ -710,6 +776,11 @@ url = "https://www.colmar-expo.fr/evenement/fanabriques-2026/"
 date = "2026-11-23"
 kind = "official"
 
+[resource.contact]
+email = "postmaster@fanabriques.fr"
+url = "https://asso.fanabriques.fr/contact.php"
+date = "2026-11-24"
+
 [[resource]]
 id = "bricks-and-friends"
 name = "Bricks and Friends"
@@ -745,6 +816,11 @@ url = "https://bricksandfriends.wordpress.com/"
 date = "2026-11-23"
 kind = "official"
 
+[resource.contact]
+email = "bricksandfriends@web.de"
+url = "https://bricksandfriends.wordpress.com/impressum/"
+date = "2026-11-24"
+
 [[resource]]
 id = "berliner-steinewahn"
 name = "Berliner SteineWAHN!"
@@ -774,6 +850,11 @@ recurrence_fr = "Chaque année, en septembre"
 url = "https://www.steinewahn.de/"
 date = "2026-11-23"
 kind = "official"
+
+[resource.contact]
+address = "Wilkestraße 1, 13507 Berlin"
+url = "https://www.steinewahn.de/anfahrt/"
+date = "2026-11-24"
 
 [[resource]]
 id = "steinchenwelt"
@@ -810,6 +891,13 @@ kind = "official"
 url = "https://www.swiss-brick.com/lego-events-und-ausstellungen/"
 date = "2026-11-02"
 kind = "third-party"
+
+[resource.contact]
+address = "Gewerbestrasse 4, 4552 Derendingen"
+phone = "+41 78 684 96 41"
+email = "mail@steinchenwelt.ch"
+url = "https://steinchenwelt.ch/impressum/"
+date = "2026-11-24"
 
 [[resource]]
 id = "lego-world-utrecht"
@@ -1443,6 +1531,11 @@ url = "https://www.steine-kanal.de/lbrick-bauspielbahntreffen-2026-alle-infos-zu
 date = "2026-07-21"
 kind = "third-party"
 
+[resource.contact]
+address = "Altes Straßenbahndepot, Rathausplatz 9, Schkeuditz"
+url = "https://lbrick.de/bauspielbahn-treffen/"
+date = "2026-11-24"
+
 [[resource]]
 id = "brick-train-awards"
 name = "Brick Train Awards"
@@ -1484,6 +1577,11 @@ url = "https://www.lukrailway.co.uk/podcast/brick-train-awards-2026-winners/"
 date = "2026-10-09"
 kind = "third-party"
 
+[resource.contact]
+email = "bricktrainawards@gmail.com"
+url = "https://www.bricktrainawards.com/press"
+date = "2026-11-24"
+
 [[resource]]
 id = "brickuniverse"
 name = "BrickUniverse"
@@ -1521,6 +1619,11 @@ kind = "official"
 url = "https://www.brickuniverseusa.com/"
 date = "2026-11-23"
 kind = "read"
+
+[resource.contact]
+address = "Richmond Raceway, 600 East Laburnum Avenue, Richmond, VA 23222"
+url = "https://www.brickuniverseusa.com/"
+date = "2026-11-24"
 
 [[resource]]
 id = "bricks-in-the-six"
@@ -1560,6 +1663,11 @@ kind = "read"
 url = "https://bricksinthe6.ca/"
 date = "2026-11-23"
 kind = "read"
+
+[resource.contact]
+email = "info@brickassembly.ca"
+url = "https://bricksinthe6.ca/contact/"
+date = "2026-11-24"
 
 [[resource]]
 id = "northern-bricks"
@@ -1634,6 +1742,11 @@ url = "https://www.marilug.ca/events/lego-fan-conventions"
 date = "2026-11-23"
 kind = "third-party"
 
+[resource.contact]
+email = "expo@brickomanie.ca"
+url = "https://brickomanie.ca/en/contact"
+date = "2026-11-24"
+
 [[resource]]
 id = "brixpo"
 name = "Brixpo"
@@ -1703,3 +1816,8 @@ recurrence_fr = "Chaque année, en octobre"
 url = "https://www.brickfair.co.za/"
 date = "2026-11-23"
 kind = "read"
+
+[resource.contact]
+email = "hello@brickfair.co.za"
+url = "https://www.brickfair.co.za/"
+date = "2026-11-24"

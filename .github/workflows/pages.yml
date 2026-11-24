@@ -25,7 +25,8 @@ jobs:
       - name: Read activity data (GitHub, YouTube, Reddit, feeds)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 scripts/refresh.py
+          REUSE: ${{ github.event_name == 'push' && '--from-site' || '' }}
+        run: python3 scripts/refresh.py $REUSE   # after a push, the measurements of the published website are reused (read daily)
       - name: Keep the day's measurements for the "history" job
         if: github.event_name == 'schedule'
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

@@ -120,6 +120,17 @@ def load():
             f = r.get("funding")
             if f is not None and (not f or set(f) - FUNDING or len(set(f)) != len(f) or (("unknown" in f or "none" in f) and len(f) > 1)):
                 errors.append(f"{w}: funding must list words of {sorted(FUNDING)}, each once, with unknown or none alone")
+            ct = r.get("contact")
+            if ct is not None and not isinstance(ct, dict):
+                errors.append(f"{w}: contact must be a table [resource.contact]")
+            elif ct is not None:
+                if path.stem not in ("places", "events", "clubs") or not str(ct.get("url", "")).startswith("http") or not DATE.match(str(ct.get("date", ""))) \
+                        or not any(ct.get(k) for k in ("address", "phone", "email")) or set(ct) - {"address", "phone", "email", "url", "date"}:
+                    errors.append(f"{w}: contact (places, events, clubs) needs url, date YYYY-MM-DD and at least one of address, phone, email")
+                if ct.get("phone") and not re.fullmatch(r"\+\d[\d ]{5,}\d", ct["phone"]):
+                    errors.append(f"{w}: contact phone in international format (+33 4 90 00 00 00)")
+                if ct.get("email") and not re.fullmatch(r"[\w.+-]+@[\w-]+(\.[\w-]+)*\.[a-z]{2,}", ct["email"], re.I):
+                    errors.append(f"{w}: contact email malformed")
             for mk in r.get("makers", []):
                 if not mk.get("id") and not mk.get("name_fr"):
                     errors.append(f"{w}: a maker without id needs name_fr (its name is a description)")
@@ -183,7 +194,7 @@ def readme(cats, m, lang, kind="readme"):
     logo = [f'<a href="{PAGES}"><img src="media/logo.svg" align="right" width="120" alt="Awesome LEGO logo"></a>', ""] if kind == "readme" else []
     out = [f"# {title}{badge}", "", *logo, f"> {T['tagline'][lang]}", "",
            f"**[{T['site'][lang]}]({PAGES})** · [{T['site_fr'][lang]}]({PAGES}fr/) · [{T['feed'][lang]}]({PAGES}feed.xml)", "",
-           *([f'<p align="center"><a href="{PAGES}"><img src="media/site-preview.png" width="880" alt="The website: a map of the brick world, a directory with search and filters, and findings"></a></p>', ""] if kind == "readme" else []),
+           *([f'<p align="center"><a href="{PAGES}"><img src="media/site-preview.png" width="880" alt="The website: the map of the brick world, one stud per resource by category, above the directory; tabs Directory, Out and about, Observatory"></a></p>', ""] if kind == "readme" else []),
            MORE[kind][lang], "", f"## {T['contents'][lang]}", ""]
     seen = {}
 
@@ -287,6 +298,8 @@ def site_data(cats, m):
             row["checked"] = str(row["checked"])
             row["brands"] = r.get("brands", [])  # read at the source of each entry (brands of brands.toml it sells, tracks, reviews or admits)
             row["funding"] = r.get("funding")
+            if r.get("contact"):
+                row["contact"] = {k: r["contact"][k] for k in ("address", "phone", "email") if r["contact"].get(k)}
             if r.get("makers"):
                 row["makers"] = [{k: str(x[k]) for k in ("name", "name_fr", "id", "url", "date", "kind") if x.get(k)} for x in r["makers"]]
             row["geo"] = [[GEO[k]["lat"], GEO[k]["lon"], c] for c in cities(r) for k in [geo_key(c, r)] if k in GEO]

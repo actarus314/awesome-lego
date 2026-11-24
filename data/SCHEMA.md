@@ -58,6 +58,13 @@ url = "https://brick-broker.com/a-propos"
 date = "2026-11-23"                      # publication or update date of the source, else the reading date
 kind = "official"                        # official | read (page read at the source) | indexed (search snippet, cache) | third-party | forum
 
+[resource.contact]                       # optional, places, events, clubs: the public contact the entity publishes as its own, read on its official site; url, date and at least one of address, phone, email
+address = "…, 7190 Billund"             # the place (several places: separated by " ; "); for an event, the venue of the next edition; for a club, a public meeting place only, never a member's home
+phone = "+45 …"                         # international format; businesses, venues and organisers only, never a private person's number
+email = "info@…"                        # the address published as the entity's contact; none when only a form exists
+url = "https://…/contact"                # page where they were read
+date = "2026-11-24"
+
 [[resource.makers]]                      # optional, brands.toml only: who makes the bricks, one table per maker, each with its own source
 name = "GoBricks"                        # the company, or a short description when it is not named
 name_fr = "…"                            # required when the maker has no id (a description, shown in French)
@@ -76,7 +83,7 @@ Writing rules:
 
 ## Other data files
 
-- `brands`, `funding` and `makers` are read at the source and never deduced from the texts. A resource is independent of the brands and sellers it talks about when its `funding` is known and has none of `affiliation`, `sponsorship` and `shop` (the "Independent" criterion of the website).
+- `brands`, `funding` and `makers` are read at the source and never deduced from the texts.
 - `data/journeys.toml`: the "Where to start" needs of the website (`[[journey]]` with `id`, `title_en`, `title_fr`, `scope`, `resources`, optional `always`). `resources` is one ranked list mixing international and local entries; the website keeps, in this order, the first 5 that suit the visitor: `scope = "country"` keeps international entries and those of the visitor's country (from the browser; for France, also entries with `ships_to_france`), `scope = "language"` keeps entries in the visitor's language or in English, `scope = "global"` keeps all; ids in `always` are kept for everyone. An unknown id or scope fails the build.
 - `data/backend/`: figures used by the website but not listed as entries, each file with its `source`, its reading `date` and its source `kind`. `clubs-by-country.json`: fan communities per country (ISO 3166-1 alpha-2) in the official LEGO Fan CoLab directory. `population.json`: World Bank population (SP.POP.TOTL) of the same countries. `geocode.json`: coordinates of each `city` (one point per city, `"City|CC"` keys, city precision, not addresses), from the public Nominatim service of OpenStreetMap (data © OpenStreetMap contributors, ODbL); written by `scripts/geocode.py`, which asks only for cities not yet in the file, at most one request per second.
 - `data/metrics.json`: local cache of the last activity reading, written by `scripts/refresh.py`.

@@ -85,6 +85,13 @@ url = "https://legohouse.com/en-gb/plan-your-visit/faq"
 date = "2026-11-23"
 kind = "indexed"
 
+[resource.contact]
+address = "Ole Kirks Plads 1, 7190 Billund"
+phone = "+45 82 82 04 00"
+email = "info@LEGOHouse.com"
+url = "https://legohouse.com/en-gb/plan-your-visit/faq"
+date = "2026-11-24"
+
 [[resource]]
 id = "lego-store-locator"
 name = "LEGO Stores directory"
@@ -218,6 +225,12 @@ url = "https://www.guinnessworldrecords.com/world-records/476519-largest-lego-st
 date = "2026-11-23"
 kind = "third-party"
 
+[resource.contact]
+address = "3 Swiss Court, London W1D 6AP"
+phone = "+44 20 7665 0413"
+url = "https://www.lego.com/en-gb/stores/store/lsq"
+date = "2026-11-24"
+
 [[resource]]
 id = "lego-store-paris-les-halles"
 name = "LEGO Store Paris Les Halles"
@@ -256,6 +269,12 @@ city = "Paris"
 url = "https://www.lego.com/fr-fr/stores/store/paris-les-halles"
 date = "2026-11-23"
 kind = "read"
+
+[resource.contact]
+address = "1, Passage de la Canopée, 75001 Paris"
+phone = "+33 1 59 02 03 78"
+url = "https://www.lego.com/fr-fr/stores/store/paris-les-halles"
+date = "2026-11-24"
 
 [[resource]]
 id = "lego-discovery-centres"
@@ -449,6 +468,13 @@ url = "https://en.wikipedia.org/wiki/Legoland"
 date = "2026-11-23"
 kind = "third-party"
 
+[resource.contact]
+address = "Åstvej 10, 7190 Billund"
+phone = "+45 75 33 12 44"
+email = "info@LEGOLAND.dk"
+url = "https://www.legoland.dk/en/plan-your-day/help/contact/"
+date = "2026-11-24"
+
 [[resource]]
 id = "legoland-windsor"
 name = "LEGOLAND Windsor Resort"
@@ -492,6 +518,12 @@ kind = "read"
 url = "https://en.wikipedia.org/wiki/Legoland"
 date = "2026-11-23"
 kind = "third-party"
+
+[resource.contact]
+address = "Winkfield Road, Windsor, Berkshire SL4 4AY"
+phone = "+44 1753 626416"
+url = "https://www.legoland.co.uk/plan-your-day/help-centre/contact-us/"
+date = "2026-11-24"
 
 [[resource]]
 id = "legoland-deutschland"
@@ -538,6 +570,13 @@ date = "2026-11-23"
 kind = "third-party"
 
 # ---------------------------------------------------------------- museums and exhibitions
+
+[resource.contact]
+address = "LEGOLAND Allee 1, 89312 Günzburg"
+phone = "+49 8221 257 355 0"
+email = "info@legoland.de"
+url = "https://www.legoland.de/impressum/"
+date = "2026-11-24"
 
 [[resource]]
 id = "museum-of-bricks"
@@ -586,6 +625,12 @@ url = "https://prague.eu/en/objevujte/museum-of-bricks/"
 date = "2026-11-23"
 kind = "third-party"
 
+[resource.contact]
+address = "Národní 362/31, 110 00 Praha 1"
+email = "info@museumofbricks.cz"
+url = "https://museumofbricks.cz/kontakt/"
+date = "2026-11-24"
+
 [[resource]]
 id = "muzeum-lega-tabor"
 name = "Muzeum LEGA Tábor"
@@ -624,6 +669,13 @@ city = "Tábor"
 url = "https://brickmuzeumtabor.cz/en/about-us/"
 date = "2026-11-23"
 kind = "read"
+
+[resource.contact]
+address = "Betlémská ulice 275/2, 390 01 Tábor"
+phone = "+420 602 697 207"
+email = "info@brickmuzeumtabor.cz"
+url = "https://brickmuzeumtabor.cz/"
+date = "2026-11-24"
 
 [[resource]]
 id = "lebrickgo"
@@ -672,6 +724,13 @@ kind = "read"
 url = "https://www.lebrickgo.ch/de/Infos/"
 date = "2026-11-23"
 kind = "indexed"
+
+[resource.contact]
+address = "Oberwilerstrasse 20, 4102 Binningen"
+phone = "+41 61 501 10 00"
+email = "info@lebrickgo.ch"
+url = "https://www.lebrickgo.ch/de/Infos/"
+date = "2026-11-24"
 
 [[resource]]
 id = "frankensteins-klemmbaustein-museum"
@@ -723,6 +782,12 @@ kind = "read"
 url = "https://www.nn.de/region/erlangen-hoechstadt/viel-mehr-als-lego-klemmbaustein-museum-in-eckental-feiert-am-3-oktober-jubilaum-1.14431584"
 date = "2026-11-23"
 kind = "third-party"
+
+[resource.contact]
+address = "Nordring 1, 90542 Eckental"
+email = "info@frankensteins.de"
+url = "https://frankensteins.de/impressum"
+date = "2026-11-24"
 
 [[resource]]
 id = "brick-haus"
@@ -864,6 +929,13 @@ url = "https://museumsatlas.com/fr/belgique/musee/railway-brick-museum/"
 date = "2026-11-23"
 kind = "third-party"
 
+[resource.contact]
+address = "Sint-Pietersstraat 87, 3630 Maasmechelen"
+phone = "+32 89 38 40 08"
+email = "info@railway-brickmuseum.eu"
+url = "https://www.railway-brickmuseum.eu/contact"
+date = "2026-11-24"
+
 [[resource]]
 id = "elbabrick"
 name = "ElbaBrick"
@@ -906,6 +978,12 @@ kind = "read"
 url = "https://www.infoelba.com/sports-free-time/enjoyment-relaxation/elbabrick/"
 date = "2026-11-23"
 kind = "third-party"
+
+[resource.contact]
+address = "Trav di via Segagnana, 245, Marina di Campo"
+phone = "+39 0565 977885"
+url = "https://www.elbabrick.it/"
+date = "2026-11-24"
 
 [[resource]]
 id = "karalisbrick"
@@ -950,6 +1028,11 @@ url = "https://www.karalisbrick.com/en/home-en/"
 date = "2026-11-23"
 kind = "read"
 
+[resource.contact]
+address = "VIA AMENDOLA 52/B, 09012 Capoterra (CA)"
+url = "https://www.karalisbrick.com/en/contacts/"
+date = "2026-11-24"
+
 [[resource]]
 id = "bricks-and-figs"
 name = "Bricks & Figs"
@@ -990,6 +1073,13 @@ city = "Kraków"
 url = "https://bricksandfigs.pl/en/"
 date = "2026-11-23"
 kind = "read"
+
+[resource.contact]
+address = "ul. Henryka Dąbrowskiego 20, 30-532 Kraków"
+phone = "+48 577 977 545"
+email = "kontakt@bricksandfigs.pl"
+url = "https://bricksandfigs.pl/en/"
+date = "2026-11-24"
 
 [[resource]]
 id = "brickz-museum"
@@ -1034,6 +1124,12 @@ kind = "read"
 url = "https://www.bbc.co.uk/news/articles/cq5z34wnv72o"
 date = "2025-03-05"
 kind = "third-party"
+
+[resource.contact]
+address = "34 Secklow Gate West, Milton Keynes MK9 3AT"
+email = "enquiries@brickzmuseum.com"
+url = "https://brickzmuseum.com/contact-us/"
+date = "2026-11-24"
 
 [[resource]]
 id = "merlins-steine-permanent-exhibitions"
@@ -1177,6 +1273,13 @@ url = "https://cabinet-hermes.fr/time-for-bricks-ouvre-une-nouvelle-boutique-a-a
 date = "2026-07-28"
 kind = "third-party"
 
+[resource.contact]
+address = "200 avenue Pierre Lanfrey, 73000 Chambéry ; 16 avenue d'Alery, 74000 Annecy"
+phone = "+33 4 56 11 36 83"
+email = "hello@timeforbricks.fr"
+url = "https://www.timeforbricks.fr/"
+date = "2026-11-24"
+
 [[resource]]
 id = "toysngo-cobi-store"
 name = "Toysngo COBI Store"
@@ -1223,6 +1326,13 @@ url = "https://actu.fr/occitanie/saint-orens-de-gameville_31506/une-premiere-mon
 date = "2020-09-05"
 kind = "third-party"
 
+[resource.contact]
+address = "3 rue du négoce, 31650 Saint-Orens-de-Gameville"
+phone = "+33 6 01 49 62 30"
+email = "contact@toysngo.com"
+url = "https://www.toysngo.com/content/2-mentions-legales"
+date = "2026-11-24"
+
 [[resource]]
 id = "enjeu-briques"
 name = "Enjeu Briques"
@@ -1262,6 +1372,12 @@ url = "https://enjeubriques.fr/"
 date = "2026-11-23"
 kind = "read"
 
+[resource.contact]
+address = "55 rue de la Pie, 35400 Saint-Malo"
+phone = "+33 9 61 51 64 95"
+url = "https://enjeubriques.fr/"
+date = "2026-11-24"
+
 [[resource]]
 id = "la-boite-a-briques"
 name = "La Boîte à Briques"
@@ -1299,6 +1415,11 @@ url = "https://laboiteabriques.com/"
 date = "2026-11-23"
 kind = "read"
 
+[resource.contact]
+address = "8 rue Balard, Montpellier"
+url = "https://laboiteabriques.com/"
+date = "2026-11-24"
+
 [[resource]]
 id = "brickfun-1974"
 name = "Brickfun 1974"
@@ -1335,6 +1456,13 @@ city = "Saint-Martin-Bellevue"
 url = "https://www.brickfun-1974.fr/"
 date = "2026-11-23"
 kind = "read"
+
+[resource.contact]
+address = "2806 route impériale, 74370 Saint-Martin-Bellevue"
+phone = "+33 6 41 91 85 84"
+email = "brickfun1974@gmail.com"
+url = "https://www.brickfun-1974.fr/mentions-legales"
+date = "2026-11-24"
 
 [[resource]]
 id = "autour-des-briques"
@@ -1379,6 +1507,12 @@ kind = "read"
 url = "https://autourdesbriques.fr/Informations-contact"
 date = "2026-11-23"
 kind = "read"
+
+[resource.contact]
+address = "Grand Rue 62, 03420 Marcillat-en-Combraille"
+phone = "+33 9 67 32 02 07"
+url = "https://autourdesbriques.fr/"
+date = "2026-11-24"
 
 [[resource]]
 id = "steingemachtes"
@@ -1425,6 +1559,13 @@ date = "2026-11-23"
 kind = "third-party"
 
 # ---------------------------------------------------------------- cafés and play spaces
+
+[resource.contact]
+address = "Detmolder Str. 200, 33100 Paderborn"
+phone = "+49 5251 5310468"
+email = "kontakt@steingemachtes.de"
+url = "https://steingemachtes.de/Impressum"
+date = "2026-11-24"
 
 [[resource]]
 id = "brick-bank-cafe"
@@ -1475,6 +1616,11 @@ url = "https://www.thetelegraphandargus.co.uk/news/26237346.lots-tasty-food-lego
 date = "2026-07-03"
 kind = "third-party"
 
+[resource.contact]
+address = "152 Main Street, Bingley BD16 2HS"
+url = "https://www.brickbankcafe.org/contactus/"
+date = "2026-11-24"
+
 [[resource]]
 id = "builders-brew-cafe"
 name = "Builder's Brew Café"
@@ -1517,6 +1663,13 @@ url = "https://www.welcometosheffield.co.uk/content/food-drink-and-nightlife/bui
 date = "2026-11-23"
 kind = "third-party"
 
+[resource.contact]
+address = "2-3 East Parade, Sheffield S1 2ET"
+phone = "+44 114 312 4335"
+email = "build@buildersbrewcafe.com"
+url = "https://buildersbrewcafe.com/"
+date = "2026-11-24"
+
 [[resource]]
 id = "d-brick-cafe"
 name = "D-Brick Café"
@@ -1553,6 +1706,13 @@ city = "Liège"
 url = "https://www.d-brick.com/"
 date = "2026-11-23"
 kind = "read"
+
+[resource.contact]
+address = "Rue de la Boucherie 1, 4000 Liège"
+phone = "+32 465 78 22 76"
+email = "d-brickcafe@hotmail.com"
+url = "https://www.d-brick.com/"
+date = "2026-11-24"
 
 [[resource]]
 id = "coffee-and-bricks-limburg"
@@ -1591,6 +1751,13 @@ city = "Limburg an der Lahn"
 url = "https://brickonas.info/coffee-and-bricks/"
 date = "2026-11-23"
 kind = "read"
+
+[resource.contact]
+address = "Hospitalstraße 1, 65549 Limburg an der Lahn"
+phone = "+49 159 08173983"
+email = "info@brickonas.com"
+url = "https://brickonas.info/coffee-and-bricks/"
+date = "2026-11-24"
 
 [[resource]]
 id = "heartbrickcafe"
@@ -1634,6 +1801,13 @@ url = "https://www.rotour.de/mit-lego-zum-lebenstraum/"
 date = "2026-03-11"
 kind = "third-party"
 
+[resource.contact]
+address = "Rödergasse 18, 91541 Rothenburg ob der Tauber"
+phone = "+49 1522 3096561"
+email = "info@heartbrickcafe.de"
+url = "https://heartbrickcafe.de/Informationen/Impressum/"
+date = "2026-11-24"
+
 [[resource]]
 id = "steinequelle-baupause"
 name = "Baupause by Steinequelle"
@@ -1670,6 +1844,13 @@ city = "Höhr-Grenzhausen"
 url = "https://steinequelle.de/baupause/"
 date = "2026-11-23"
 kind = "read"
+
+[resource.contact]
+address = "Rudolf-Diesel-Straße 9, 56203 Höhr-Grenzhausen"
+phone = "+49 176 66554734"
+email = "info@steinequelle.de"
+url = "https://steinequelle.de/baupause/"
+date = "2026-11-24"
 
 [[resource]]
 id = "bricks-factory"
@@ -1715,3 +1896,9 @@ kind = "read"
 url = "https://bricksfactory.fr/bricks-lab/"
 date = "2026-11-23"
 kind = "read"
+
+[resource.contact]
+address = "165 Impasse de la Garriguette, ZA La Garrigue De Chalançon, 84270 Vedène"
+phone = "+33 4 32 74 22 69"
+url = "https://bricksfactory.fr/contact/"
+date = "2026-11-24"

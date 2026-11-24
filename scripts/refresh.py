@@ -5,7 +5,10 @@
 - YouTube channels (`youtube_channel_id`): date of the last video (public RSS feed).
 - Subreddits (`subreddit`): date of the newest post (public Arctic Shift archive, else Reddit's feed).
 - Sites with a `feed`: date of the newest item (public RSS or Atom feed).
-A failed read keeps the previous values. Writes a Markdown report to stdout, used as the body of the
+Reads run in parallel (subreddits one at a time, the archive asks for it). A failed read keeps the previous
+values, taken from the published website when they are newer than the repository's copy. With `--from-site`
+(builds that follow a push), nothing is read: the measurements of the published website are reused, and a
+full reading runs only if the website cannot be reached. Writes a Markdown report to stdout, used as the body of the
 weekly pull request: entries that failed, became archived, left the conditions of the README
 selection, or were not checked by hand for more than 365 days.
 """
@@ -19,11 +22,22 @@ import time
 import tomllib
 import urllib.request
 import xml.etree.ElementTree as ET
+from concurrent.futures import ThreadPoolExecutor
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "metrics.json"
 UA = "awesome-lego-refresh/1.0 (+https://github.com/actarus314/awesome-lego)"
 TODAY = dt.date.today()
+SITE_DATA = "https://actarus314.github.io/awesome-lego/data.json"
+
+
+def site_metrics():
+    """Measurements of the published website, by entry id (None if the website cannot be read)."""
+    try:
+        rows = json.loads(get(SITE_DATA))["resources"]
+    except Exception:
+        return None
+    return {r["id"]: r["metrics"] for r in rows if r.get("metrics")}
 
 
 def get(url, headers=None):
@@ -130,36 +144,53 @@ def reliability(rows):
     return out
 
 
+def read(r, old, token):
+    """One entry's measurements: (metrics or None when the entry has nothing to read, error or None)."""
+    m = dict(old.get(r["id"], {}))
+    try:
+        if r.get("github"):
+            h = {"Accept": "application/vnd.github+json"}
+            if token:
+                h["Authorization"] = f"Bearer {token}"
+            d = json.loads(get(f"https://api.github.com/repos/{r['github']}", h))
+            m.update(stars=d["stargazers_count"], archived=d["archived"], last_activity=d["pushed_at"][:10])
+        elif r.get("youtube_channel_id"):
+            m["last_activity"] = newest_date(get(f"https://www.youtube.com/feeds/videos.xml?channel_id={r['youtube_channel_id']}"))
+        elif r.get("subreddit"):
+            m["last_activity"] = subreddit_last(r["subreddit"])
+        elif r.get("feed"):
+            m["last_activity"] = newest_date(get(r["feed"]))
+        else:
+            m = None
+        if m is not None:
+            m["refreshed"] = TODAY.isoformat()
+    except Exception as exc:  # network, parsing: keep previous values
+        return m, f"{r['id']}: {type(exc).__name__}"
+    return m, None
+
+
 def main():
     old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
+    site = site_metrics()
+    if "--from-site" in sys.argv and site:
+        OUT.write_text(json.dumps(site, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+        print(f"Measurements reused from the published website: {len(site)}")
+        return 0
+    for k, v in (site or {}).items():  # the published values are newer than the repository's copy
+        if v.get("refreshed", "") >= old.get(k, {}).get("refreshed", ""):
+            old[k] = v
     new, failed, archived, stale, unfeature = {}, [], [], [], []
     token = os.environ.get("GITHUB_TOKEN")
+    entries = [dict(r, _cat=path.stem) for path in sorted((ROOT / "data").glob("*.toml")) for r in tomllib.load(open(path, "rb")).get("resource", [])]
+    with ThreadPoolExecutor(12) as pool, ThreadPoolExecutor(1) as slow:  # network waits overlap; subreddits stay one at a time
+        jobs = [(slow if r.get("subreddit") and not r.get("github") and not r.get("youtube_channel_id") else pool).submit(read, r, old, token) for r in entries]
+        results = [j.result() for j in jobs]
     rows = []
-    for path in sorted((ROOT / "data").glob("*.toml")):
-        for r in tomllib.load(open(path, "rb")).get("resource", []):
-            r["_cat"] = path.stem
-            m = dict(old.get(r["id"], {}))
-            try:
-                if r.get("github"):
-                    h = {"Accept": "application/vnd.github+json"}
-                    if token:
-                        h["Authorization"] = f"Bearer {token}"
-                    d = json.loads(get(f"https://api.github.com/repos/{r['github']}", h))
-                    m.update(stars=d["stargazers_count"], archived=d["archived"], last_activity=d["pushed_at"][:10])
-                    if d["archived"] and r.get("status") != "archived":
-                        archived.append(r["id"])
-                elif r.get("youtube_channel_id"):
-                    m["last_activity"] = newest_date(get(f"https://www.youtube.com/feeds/videos.xml?channel_id={r['youtube_channel_id']}"))
-                elif r.get("subreddit"):
-                    m["last_activity"] = subreddit_last(r["subreddit"])
-                elif r.get("feed"):
-                    m["last_activity"] = newest_date(get(r["feed"]))
-                else:
-                    m = None
-                if m is not None:
-                    m["refreshed"] = TODAY.isoformat()
-            except Exception as exc:  # network, parsing: keep previous values
-                failed.append(f"{r['id']}: {type(exc).__name__}")
+    for r, (m, err) in zip(entries, results):
+            if err:
+                failed.append(err)
+            if m and m.get("archived") and r.get("status") != "archived":
+                archived.append(r["id"])
             if m:
                 new[r["id"]] = {k: v for k, v in m.items() if v is not None}
             last = (new.get(r["id"]) or {}).get("last_activity") or str(r.get("last_activity") or "")
