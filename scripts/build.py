@@ -345,9 +345,7 @@ def passion():
 def static_texts(tpl, lang):
     """Fill the empty elements marked data-t="key" with the string the page's script would put there
     (same table S of site-src/index.html): the first paint shows the final texts, nothing moves after."""
-    S = {}
-    for m in re.finditer(r"(?<![\w.])(\w+):\{en:'((?:[^'\\]|\\.)*)',fr:'((?:[^'\\]|\\.)*)'\}", tpl):
-        S.setdefault(m.group(1), (m.group(2) if lang == "en" else m.group(3)).replace("\\'", "'"))
+    S = {k: v[lang] for k, v in json.loads(re.search(r"const S=(\{\n.*?\n\});", tpl, re.S).group(1)).items()}
     return re.sub(r'(<(\w+)\b[^>]*\bdata-t="(\w+)"[^>]*>)(</\2>)',
                   lambda m: m.group(1) + html.escape(S[m.group(3)], quote=False) + m.group(4) if m.group(3) in S else m.group(0), tpl)
 
