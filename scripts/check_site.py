@@ -22,6 +22,8 @@ import argparse
 import functools
 import http.server
 import json
+import os
+import tempfile
 import socketserver
 import sys
 import threading
@@ -101,6 +103,7 @@ def main():
     ap.add_argument("--chrome", default="", help="Chrome or Chromium to use instead of Playwright's")
     ap.add_argument("--json", default="", help="write the findings to this file")
     ap.add_argument("--no-axe", action="store_true", help="layout checks only")
+    ap.add_argument("--dejavu", action="store_true", help="draw system-ui and sans-serif with DejaVu Sans, as on the Ubuntu runners of GitHub Actions (wider than most desktop fonts)")
     ap.add_argument("--axe", default=str(ROOT / "node_modules" / "axe-core" / "axe.min.js"), help="axe-core build (npm install axe-core)")
     a = ap.parse_args()
     from playwright.sync_api import sync_playwright
@@ -126,7 +129,14 @@ def main():
             found.setdefault((k, where, detail), []).append(f"{lang} {w} {theme} {state}")
 
     with sync_playwright() as p:
-        b = p.chromium.launch(**({"executable_path": a.chrome} if a.chrome else {}), args=["--no-sandbox"])
+        env = dict(os.environ)
+        if a.dejavu:
+            conf = Path(tempfile.mkdtemp()) / "fonts.conf"
+            conf.write_text('<?xml version="1.0"?><!DOCTYPE fontconfig SYSTEM "fonts.dtd"><fontconfig><include ignore_missing="yes">/etc/fonts/fonts.conf</include>'
+                            + "".join(f'<alias binding="strong"><family>{f}</family><prefer><family>{t}</family></prefer></alias>' for f, t in
+                                      (("system-ui", "DejaVu Sans"), ("sans-serif", "DejaVu Sans"), ("monospace", "DejaVu Sans Mono"))) + "</fontconfig>")
+            env["FONTCONFIG_FILE"] = str(conf)
+        b = p.chromium.launch(**({"executable_path": a.chrome} if a.chrome else {}), args=["--no-sandbox"], env=env)
         # calibration: the probe must find exactly the defects planted in tests/render-fixture.html
         pg = b.new_page(viewport={"width": 390, "height": 900})
         pg.set_content((ROOT / "tests" / "render-fixture.html").read_text(encoding="utf-8"))
