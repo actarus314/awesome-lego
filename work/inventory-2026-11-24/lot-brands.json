@@ -1,0 +1,1227 @@
+{
+ "candidates": [
+  {
+   "name": "IAMBRICK",
+   "url": "https://iambrickimb.com/",
+   "category": "brands",
+   "group": "chinese-alternatives",
+   "countries": [
+    "CN"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "Adult-targeted original fantasy, steampunk and post-apocalyptic display sets with built-in lighting and printed parts, first sold in Europe in 2025-2026; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://iambrickimb.com/",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://iambrick.shop/",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://www.merlinsbricks.com/article/iambrick-40102-the-riverside-perfume-shop-review/",
+     "date": "2026-10-21",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://architectcommerce.com/brands/iambrick",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": "2026-10-21",
+   "confidence": "high",
+   "rank": 2,
+   "rank_reason": "Notable: appears with Lumibricks and Pantasy in 2026 reviews, sold by European shops (modyx.de, 24builds.com, hugmietoys.ie, a French retail price near 115 EUR per the review); too recent (2025) for rank 1.",
+   "europe_availability": "European stockists read via architectcommerce.com (modyx.de DE, 24builds.com EE, hugmietoys.ie IE, powerblockz.com BE) and iambrick.shop (EE storefront, EUR/USD prices).",
+   "maker": "Brand company per Merlin's Bricks review: Shenzhen Pingchuan Culture Technology Co., Ltd.; brick maker NOT established (review says GoBricks quality, single third-party source) so left out."
+  },
+  {
+   "name": "Eikee",
+   "url": "https://eikeebricks.com/",
+   "category": "brands",
+   "group": "chinese-alternatives",
+   "countries": [
+    "CN"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "Technic-style supercar and engine display models at 1:8 to 1:24 scale for adults, with a European storefront shipping from Europe; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://eikeebricks.com/pages/about-us",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://ekgarage.com/",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://architectcommerce.com/brands/eikee",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://other-bricks.com/en/brand/eikee/",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": "2026-11-24",
+   "confidence": "high",
+   "rank": 2,
+   "rank_reason": "Notable: 55 products, 2026 collection, five European stockists (ttbausteine.de, 24builds.com, happybausteine.de, carbrick.nl, modyx.de) plus ekgarage.com shipping from Europe; one of the 32 brands of other-bricks.com.",
+   "europe_availability": "ekgarage.com (EUR prices, ships from Europe), ttbausteine.de DE, modyx.de DE, happybausteine.de DE, carbrick.nl NL, 24builds.com EE.",
+   "note": "Founding year differs: official about page says 2022, other-bricks.com says 2024. ekgarage.com presents itself as Eikee garage; its link to the brand company is not stated."
+  },
+  {
+   "name": "BAKA",
+   "url": "https://other-bricks.com/en/brand/baka/",
+   "category": "brands",
+   "group": "chinese-alternatives",
+   "countries": [
+    "CN"
+   ],
+   "languages": [
+    "en",
+    "de"
+   ],
+   "city": null,
+   "why": "Large fantasy and landmark display sets (Valley of Twilight, 9 sets, 37805 pieces in total; Grand Palace 11930 pieces) at the lowest price per piece of a mid-size EU shop catalogue; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://other-bricks.com/en/brand/baka/",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://mmo457.de/collections/baka",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://mmo457.de/blogs/neuigkeiten/welcher-klemmbaustein-hersteller-passt-zu-dir-der-grosse-kaufberater-2026",
+     "date": "2026-07-28",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://www.otto.de/spielwaren/?marke=baka",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://architectcommerce.com/brands/baka",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": "2026-11-24",
+   "confidence": "medium",
+   "rank": 2,
+   "rank_reason": "Notable: one of the four brands carrying a German shop catalogue (mmo457.de, Sept 2026 figures), listed by otto.de and nine European stockists; most likely to reach rank 1 once an official site exists.",
+   "official_site": "NOT FOUND: no brand-owned page was found by search or by the retailer pages read; url above is a third-party brand page, not an official site. Entry criterion (official site) unmet until found.",
+   "europe_availability": "mmo457.de DE, modyx.de DE, happybausteine.de DE, klemmkreativ.com DE, maxi-bricks.de DE, misterbrixx.de DE (already fichée as shop), mandendeco.nl NL, powerblockz.com BE, otto.de DE."
+  },
+  {
+   "name": "QuanGuan",
+   "url": "https://quanguanbricks.com/",
+   "category": "brands",
+   "group": "chinese-alternatives",
+   "countries": [
+    "CN"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "Specialist in WWII and modern military armour, aircraft and artillery display sets, with an official site stating delivery to Europe; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://quanguanbricks.com/",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://afobrick.com/collections/quan-guan",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://architectcommerce.com/brands/quanguan",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": "2026-11-24",
+   "confidence": "medium",
+   "rank": 2,
+   "rank_reason": "Notable: clear niche (military) with 250 sets at brick4.com, 171 at Merlin's SetDB, an official site listing Amazon EU and a store delivering to Europe; the only European stockists read are powerblockz.com (BE) and Amazon EU.",
+   "europe_availability": "Official page lists a brick store with delivery to Europe and Amazon EU; powerblockz.com BE (third-party).",
+   "maker": "Shantou Quanguan Media Co., Ltd. per afobrick.com (single third-party source): brick maker not established, left out."
+  },
+  {
+   "name": "TKTWO",
+   "url": "https://tktwobricks.com/",
+   "category": "brands",
+   "group": "chinese-alternatives",
+   "countries": [
+    "international"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "New adult-only WWII armour line (13 sets, 481 to 2164 pieces, full interiors, printed parts) with its own site, guides dated 17 Nov 2026 and a Japanese distribution contract from 2026-08; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://tktwobricks.com/about",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://tktwobricks.com/guides/choosing-your-first-tk-two-set",
+     "date": "2026-11-17",
+     "rank": "official"
+    },
+    {
+     "url": "https://panzer-blocks.com/start_ms-series/",
+     "date": "2026-07-16",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": "2026-11-17",
+   "confidence": "medium",
+   "rank": 3,
+   "rank_reason": "Secondary: brand only a few months old, 13 sets; Europe availability stated only as 'trusted brick retailers worldwide' (retailer list not read).",
+   "europe_availability": "NOT ESTABLISHED: the about page lists retailers without naming any European one in the text read.",
+   "note": "Country of origin not stated by the brand ('independent design studio'); countries set to international."
+  },
+  {
+   "name": "12GO",
+   "url": "https://12gobricks.com/",
+   "category": "brands",
+   "group": "chinese-alternatives",
+   "countries": [
+    "international"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "Military vehicles, warships, engines and racing pit sets sold as collector kits; a second storefront (12gobuilds.com) quotes EUR prices and 3 to 9 day delivery to Spain and the EU; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://12gobricks.com/",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://12gobuilds.com/",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://other-bricks.com/en/brands/",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": "2026-11-24",
+   "confidence": "medium",
+   "rank": 3,
+   "rank_reason": "Secondary: 86 sets on other-bricks.com, official EU shipping terms, but no independent European stockist or review read; two storefronts whose relation is not stated.",
+   "europe_availability": "12gobuilds.com states tracked express delivery to Spain and the EU in 3 to 9 business days, prices in EUR.",
+   "note": "Which of 12gobricks.com and 12gobuilds.com is the primary brand site is not established; origin country not stated."
+  },
+  {
+   "name": "GULY",
+   "url": "https://gulytoys.com/",
+   "category": "brands",
+   "group": "chinese-alternatives",
+   "countries": [
+    "CN"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "Adult-collector brand (1:8 hypercars with RC, motorcycles, mechs) with its own store; today only an alias inside the JIE STAR entry whose address is jiestartoys.com.",
+   "evidence": [
+    {
+     "url": "https://gulytoys.com/",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://modyx.de/blogs/neuigkeiten/welche-klemmbaustein-hersteller-gibt-es-die-grosse-ubersicht-der-besten-marken-2026-modyx",
+     "date": "2026-06-23",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://other-bricks.com/en/brands/",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": "2026-11-24",
+   "confidence": "medium",
+   "rank": 2,
+   "rank_reason": "Notable: 122 sets on other-bricks.com (more than CaDA), 200000 builds claimed, listed by modyx.de; overlap with the existing JIE STAR entry must be decided by the maintainer (separate fiche or alias).",
+   "europe_availability": "modyx.de DE lists GULY (2026-06-23).",
+   "note": "Existing entry 'jiestar' already names GULY in its title; same domain rule: different domain here (gulytoys.com), so listed as candidate. Relation to JIE STAR is stated by the existing entry, not re-verified here."
+  },
+  {
+   "name": "Stone Heap",
+   "url": "https://stone-heap.com/",
+   "category": "brands",
+   "group": "european-alternatives",
+   "countries": [
+    "DE"
+   ],
+   "languages": [
+    "de"
+   ],
+   "city": null,
+   "why": "German designer-producer of railway (DB, SBB licences), tram, town and military sets with printed boxes and a 75-page catalogue 2026/2; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://stone-heap.com/",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://stone-heap.com/Wir-ueber-uns",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://stone-heap.com/Produktkatalog-2026-2?lang=ger",
+     "date": "2026-09-02",
+     "rank": "official"
+    }
+   ],
+   "last_activity": "2026-09-02",
+   "confidence": "high",
+   "rank": 2,
+   "rank_reason": "Notable: licensed DB and SBB train sets are unique in Europe; 250+ models; partner of derKlassiker; fills the European-alternatives group.",
+   "europe_availability": "Own shop, free shipping in Germany from 150 EUR; shipping to other countries not read.",
+   "note": "Also sells PDF instructions and accessories (wheels, drinks); about page says the site is being revised."
+  },
+  {
+   "name": "Build Army (Buildarmy)",
+   "url": "https://buildarmy.com/",
+   "category": "brands",
+   "group": "european-alternatives",
+   "countries": [
+    "GB"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "UK designer of accurate military kits (tanks, half-tracks, infantry minifigures) in genuine-LEGO-compatible bricks, shipped from the United Kingdom, with an international retailer list; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://buildarmy.com/",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://buildarmy.com/shop/",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://buildarmy.com/retailers/",
+     "date": "2026-11-24",
+     "rank": "official"
+    }
+   ],
+   "last_activity": "2026-11-24",
+   "confidence": "medium",
+   "rank": 2,
+   "rank_reason": "Notable: the main Western-made military kit brand besides COBI; 24 sets at Merlin's SetDB; prices are shown excluding VAT (UK shop), so the 'prices including taxes' rule needs a check.",
+   "europe_availability": "Ships from the UK (Europe geographically, outside the EU); an authorised stockist list exists, European stockists not read.",
+   "note": "Steine-kanal lexicon (2025-10-29) lists it as UK with own minifigure."
+  },
+  {
+   "name": "JAKI",
+   "url": "https://www.jakibricks.com/",
+   "category": "brands",
+   "group": "chinese-alternatives",
+   "countries": [
+    "CN"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "Collectible display sets (modular buildings, Saw licence, Mount Fuji pagoda, Christmas) with an official store; 763 sets at brick4.com; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://www.jakibricks.com/",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://architectcommerce.com/brands/jaki",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": "2026-11-24",
+   "confidence": "medium",
+   "rank": 3,
+   "rank_reason": "Secondary: official store free shipping over 59 USD, few European stockists (dunyong.com NL, fenvar.com ES, toyhaven.nl NL, brickcarmerchant.co.uk GB).",
+   "europe_availability": "dunyong.com NL, toyhaven.nl NL, fenvar.com ES, brickcarmerchant.co.uk GB (third-party listing).",
+   "note": "Do not confuse with the fashion retailer jakilondon.com (571 clothing products), which is unrelated."
+  },
+  {
+   "name": "Bole Brick",
+   "url": "https://www.bolebricks.com/",
+   "category": "brands",
+   "group": "chinese-alternatives",
+   "countries": [
+    "international"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "Licensed 1:8 to 1:10 sports and rally cars (Audi Quattro S1, Audi R8 LM-P, Toyota Supra, Auto Union Type C) plus a 'PRO Drive' RC conversion line; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://www.bolebricks.com/",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://mmo457.de/blogs/neuigkeiten/welcher-klemmbaustein-hersteller-passt-zu-dir-der-grosse-kaufberater-2026",
+     "date": "2026-07-28",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": "2026-11-24",
+   "confidence": "medium",
+   "rank": 3,
+   "rank_reason": "Secondary: licensed cars niche; one European stockist read (mmo457.de) plus YouTube reviews cited on its home page.",
+   "europe_availability": "mmo457.de DE sells and reviews it (2026-07-28).",
+   "note": "Country of origin not stated on the pages read."
+  },
+  {
+   "name": "Forange",
+   "url": "https://www.forange.net/en/company/en_about.html",
+   "category": "brands",
+   "group": "chinese-alternatives",
+   "countries": [
+    "CN"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "Display vehicles, warships and 2-in-1 transformable models; official site read, exporting to Europe with CE certification; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://www.forange.net/en/company/en_about.html",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://architectcommerce.com/brands/forange",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://toyhaven.nl/de/blogs/nieuws/more-building-brands-we-love",
+     "date": "2026-10-09",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": "2026-11-24",
+   "confidence": "medium",
+   "rank": 3,
+   "rank_reason": "Secondary: the brand describes itself as for children aged 6 to 14, which sits at the edge of the 'adults' criterion; Europe stockists blouge-brickstore.fr (already fichée), toyhaven.nl, powerblockz.com.",
+   "europe_availability": "blouge-brickstore.fr FR (fichée as shop), toyhaven.nl NL, powerblockz.com BE.",
+   "maker": "Brand of Shantou Chenghai Meigaobao Toys Co., Ltd., stated by the brand on its about page (company, not necessarily brick moulder)."
+  },
+  {
+   "name": "MunichBricks",
+   "url": "https://shop.munichbricks.de/",
+   "category": "brands",
+   "group": "european-alternatives",
+   "countries": [
+    "DE"
+   ],
+   "languages": [
+    "de"
+   ],
+   "city": null,
+   "why": "German shop with its own licensed tractor line (Schlüter, KRONE, Lemken; designer brickbuur) and accessories, 1:32 scale, compatible bricks; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://shop.munichbricks.de/",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://shop.munichbricks.de/munichbricks-traktorenwelt",
+     "date": "2026-11-24",
+     "rank": "official"
+    }
+   ],
+   "last_activity": "2026-11-24",
+   "confidence": "medium",
+   "rank": 3,
+   "rank_reason": "Secondary: mostly a reseller (COBI, Mould King, Pantasy) whose own range is one theme; may belong in the shops category instead of brands.",
+   "maker": "Own-brand sets list 'Hersteller (nach GPSR): MunichBricks.de Inh. Niklas Schur, Amerang' (states the responsible company, not the moulder); some tractor sets are sold under BRIXIES brand (EAN lists)."
+  },
+  {
+   "name": "Q-BRICKS",
+   "url": "https://www.q-bricks.com/en/",
+   "category": "brands",
+   "group": "european-alternatives",
+   "countries": [
+    "SI"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "Slovenian manufacturer of classic-compatible bricks (34 colours, 22 shapes), bulk kits and MOC parts, made and packed in Slovenia, with a page aimed at AFOLs; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://www.q-bricks.com/en/the-product",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://www.q-bricks.com/en/contactus",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://www.q-bricks.com/en/choose-your-brick",
+     "date": "2026-11-24",
+     "rank": "official"
+    }
+   ],
+   "last_activity": "2026-11-24",
+   "confidence": "medium",
+   "rank": 3,
+   "rank_reason": "Secondary: the home page calls them 'children's compatible building bricks'; value for adults is loose bricks and baseplates, not display sets (fits the manufacturers group, not shops).",
+   "europe_availability": "Own shop 'fast delivery across Europe', prices including tax, based in Vrhnika, Slovenia.",
+   "maker": "Q-BRICKS d.o.o., Vrhnika: states it makes its own bricks in Slovenia (brand's own statement).",
+   "makers_id": "self"
+  },
+  {
+   "name": "Balody",
+   "url": "http://balody.cn/EN/Index.aspx",
+   "category": "brands",
+   "group": "other-formats",
+   "countries": [
+    "CN"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "Micro-block maker (not compatible with standard bricks) with licensed ranges (Doraemon, Garfield, SpongeBob, Crayon Shin-chan); sold by Toy Haven and Bausteinreich; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "http://balody.cn/EN/About.aspx",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://toyhaven.nl/de/blogs/nieuws/more-building-brands-we-love",
+     "date": "2026-10-09",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://bausteinreich.de/collections?page=1",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": null,
+   "confidence": "low",
+   "rank": 3,
+   "rank_reason": "Secondary: micro blocks, same group as LOZ and nanoblock; the official site is a plain corporate page without dated activity, 4 dated sources only at stockists.",
+   "europe_availability": "toyhaven.nl NL and bausteinreich.de DE (collection 'Balody').",
+   "maker": "Linkgo Toys Industrial Co., Ltd., established 1999, Chenghai (brand's own about page); Toy Haven names Shantou Liangao Toy Industry instead, the two names differ."
+  },
+  {
+   "name": "JEKCA",
+   "url": "https://www.jekca.com/",
+   "category": "brands",
+   "group": "other-formats",
+   "countries": [
+    "HK"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "Own side-stud brick system (not compatible with standard bricks) for 'kidults' building animals and objects without glue; 494 sets tracked by Brick Broker; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://www.jekca.com/",
+     "date": "2026-11-24",
+     "rank": "official"
+    },
+    {
+     "url": "https://brick-broker.com/marques",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://www.steine-kanal.de/klemmbaustein-hersteller-lexikon/",
+     "date": "2025-11-07",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": "2026-11-24",
+   "confidence": "low",
+   "rank": 3,
+   "rank_reason": "Secondary: not compatible with standard bricks; the official 'Global' storefront prices in SGD with flash sales for Southeast Asia; European retail not established.",
+   "europe_availability": "NOT ESTABLISHED by a page read; Brick Broker (a French comparator) tracks 494 JEKCA sets, which suggests European prices but the shops were not read."
+  },
+  {
+   "name": "AREA-X",
+   "url": "https://other-bricks.com/en/brand/area-x/",
+   "category": "brands",
+   "group": "chinese-alternatives",
+   "countries": [
+    "CN"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "Licensed display sets (SpongeBob, Yu-Gi-Oh!, Crayon Shin-chan) rated 14+ with lighting; Toy Haven states it is a brand of Sembo; no own entry exists (Sembo is fichée).",
+   "evidence": [
+    {
+     "url": "https://toyhaven.nl/en-nl/collections/area-x",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://other-bricks.com/en/brand/area-x/",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://modyx.de/blogs/neuigkeiten/welche-klemmbaustein-hersteller-gibt-es-die-grosse-ubersicht-der-besten-marken-2026-modyx",
+     "date": "2026-06-23",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": "2026-11-24",
+   "confidence": "low",
+   "rank": 3,
+   "rank_reason": "Secondary: sub-brand of Sembo (single retailer source), no official site found.",
+   "official_site": "NOT FOUND: url is a third-party brand page. Entry criterion unmet until an official site is found.",
+   "europe_availability": "toyhaven.nl NL, modyx.de DE."
+  },
+  {
+   "name": "DK (TEC CREATORS)",
+   "url": "https://joooooy.com/collections/dk",
+   "category": "brands",
+   "group": "chinese-alternatives",
+   "countries": [
+    "CN"
+   ],
+   "languages": [
+    "en",
+    "de"
+   ],
+   "city": null,
+   "why": "Display sets of figures, busts, licensed fantasy scenes and trains; 129 sets on other-bricks.com; legal manufacturer Shantou Deke Chuangxiang Toys named on a retailer page; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://modyx.de/en/products/dk-6038-right-king-koenigstatue",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://other-bricks.com/en/brands/",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": "2026-11-24",
+   "confidence": "low",
+   "rank": 3,
+   "rank_reason": "Secondary: no official site found; many sets rely on third-party licences whose status was not checked.",
+   "official_site": "NOT FOUND: url is a retailer collection, not an official site.",
+   "europe_availability": "modyx.de DE (GPSR importer BeekoGlobalExchange, Oberhausen), toyhaven.nl NL."
+  },
+  {
+   "name": "K-BOX (Kbox)",
+   "url": "https://other-bricks.com/en/guides/top-10-biggest-largest-kbox-building-sets/",
+   "category": "brands",
+   "group": "chinese-alternatives",
+   "countries": [
+    "CN"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "Large Technic-style supercars and SUVs at 1:8, helicarrier and figures, founded 2020 per other-bricks.com; 145 sets at brick4.com; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://other-bricks.com/en/guides/top-10-biggest-largest-kbox-building-sets/",
+     "date": "2026-10-13",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://www.blockbrickworld.com/brand/kbox/",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://mmo457.de/blogs/neuigkeiten/welcher-klemmbaustein-hersteller-passt-zu-dir-der-grosse-kaufberater-2026",
+     "date": "2026-07-28",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": "2026-11-03",
+   "confidence": "low",
+   "rank": 3,
+   "rank_reason": "Secondary: no official site found; only isolated European listings (mmo457.de carries one model).",
+   "official_site": "NOT FOUND: url is a third-party guide.",
+   "europe_availability": "mmo457.de DE (one model, 2026-07-28); other stockists not read."
+  },
+  {
+   "name": "Youmko",
+   "url": "https://youmko.com/",
+   "category": "brands",
+   "group": "chinese-alternatives",
+   "countries": [
+    "CN"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "Large licensed and modular display buildings (Oscorp Tower 6375 pieces, Mos Eisley Cantina, Petra Treasury), established 2016 per other-bricks.com; no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://other-bricks.com/en/brand/youmko/",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://www.barweer.com/products/youmko-ym014-amazing-spider-man-oscorp-tower",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=gxBk0fW_9Zs",
+     "date": "2026-03-16",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": "2026-03-16",
+   "confidence": "low",
+   "rank": 3,
+   "rank_reason": "Secondary: official site unverified (youmko.com answered 403 to a plain request), 13 sets, licences (Marvel, Fallout, Star Wars) not authorised by their owners as far as read.",
+   "official_site": "UNVERIFIED: youmko.com exists but returned HTTP 403 (bot protection); not read, not bypassed.",
+   "europe_availability": "Barweer lists a Europe warehouse (barweer is already fichée as shop)."
+  },
+  {
+   "name": "ZHEGAO (Qunlong)",
+   "url": "https://afobrick.com/collections/zhegao-blocks",
+   "category": "brands",
+   "group": "chinese-alternatives",
+   "countries": [
+    "CN"
+   ],
+   "languages": [
+    "en"
+   ],
+   "city": null,
+   "why": "Mini-brick and standard modular buildings and coffee-machine style display sets (1877 sets at brick4.com, 171 at Merlin's SetDB); no existing entry covers it.",
+   "evidence": [
+    {
+     "url": "https://afobrick.com/collections/zhegao-blocks",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://architectcommerce.com/brands/zhegao",
+     "date": "2026-11-24",
+     "rank": "third-party"
+    },
+    {
+     "url": "https://toyhaven.nl/nl/blogs/nieuws/lego-compatible-bricks-more-options-same-fun",
+     "date": "2025-03-17",
+     "rank": "third-party"
+    }
+   ],
+   "last_activity": "2026-11-24",
+   "confidence": "low",
+   "rank": 3,
+   "rank_reason": "Secondary: no reliable official site (zhegaoblock.com calls itself the official shop but is a US-based reseller whose text speaks of selling Lepin sets, so it was not used); several lines use mini bricks not compatible with standard ones.",
+   "official_site": "NOT ESTABLISHED: the brand belongs to Guangdong Qunlong Precision Technology per afobrick.com (single source); qunlongtoys.com cited by de.wikipedia (2022) was not read.",
+   "europe_availability": "toyhaven.nl NL, powerblockz.com BE."
+  }
+ ],
+ "rejected": [
+  {
+   "name": "Xbert",
+   "url": "https://www.jiestartoys.com/collections/xbert",
+   "reason": "Sub-brand of JIE STAR (the JIE STAR store describes Xbert as its display-oriented sub-brand, jiestartoys.com/collections/xbert); no own site; covered by the existing JIE STAR entry. Suggest adding 'Xbert' as an alias of that entry."
+  },
+  {
+   "name": "Kiddicraft (Dark Side Bricks GmbH)",
+   "url": "https://kiddicraft.store/",
+   "reason": "Active (shop lists third-wave sets, DE), but the brand states it offers play sets for children (farm, fire station, dungeon, Biblecraft); not an adult range."
+  },
+  {
+   "name": "PowerBlock (brick brand)",
+   "url": "https://powerblockz.com/",
+   "reason": "No brand site found: powerblock.com is a dumbbell maker; powerblockz.com is a Belgian retailer ('Power Blockz') selling many brands. Barweer and Modyx describe a PowerBlock brick brand but give no official page. Treat powerblockz.com as a shop lead."
+  },
+  {
+   "name": "Kqiboxxr",
+   "url": "https://toyhaven.nl/blogs/nieuws/what-is-kqiboxxr",
+   "reason": "Four sets only, sold by one shop (Toy Haven), no official site found, rated 8+."
+  },
+  {
+   "name": "CLC, MEKANSM, YKO, Wonder Moon, PZX (micro-block brands)",
+   "url": "https://toyhaven.nl/de/blogs/nieuws/more-building-brands-we-love",
+   "reason": "Micro or mini blocks incompatible with standard bricks, small gifts at 4.95 to 9.95 EUR, no official site found; single-shop brands."
+  },
+  {
+   "name": "TUOMU",
+   "url": "https://toyhaven.nl/de/blogs/nieuws/more-building-brands-we-love",
+   "reason": "STEM and programmable trucks aimed at children aged 8+; no official site found."
+  },
+  {
+   "name": "Wekki",
+   "url": "https://toyhaven.nl/blogs/nieuws/what-is-wekki",
+   "reason": "Shenzhen brand founded 2020, 4 sets at one European shop, rated 6+ to 8+, no official site found. Re-examine if an official site appears (49 sets at Merlin's SetDB, 249 at brick4.com)."
+  },
+  {
+   "name": "Mega Bloks / Mega Construx / MEGA",
+   "url": "https://brick-broker.com/marque/Mega%20Bloks",
+   "reason": "Mattel brands: adult range already covered by the existing 'Mattel Brick Shop (MEGA)' entry; Mega Bloks proper is 16 mm blocks for young children."
+  },
+  {
+   "name": "BanBao",
+   "url": "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern",
+   "reason": "Children's range (own figures, ages 3+), no adult display line found; no 2026 source read."
+  },
+  {
+   "name": "Blocki / Mubi (Poland)",
+   "url": "https://www.spielwarenmesse.de/product-preview/technisches-spielzeug-edukatives-spielzeug-aktionsspielwaren/blocki-mycity-bulldozer-kb0229",
+   "reason": "Children's play sets (Klocki Blocki, Mubi 16 mm); not read today."
+  },
+  {
+   "name": "Hubelino, Unico Plus, Wader, Zebrix, BIG Bloxx, Polesie, Dubie, HPD, Feelo, burgkidz, Simba Blocks",
+   "url": "https://www.steine-kanal.de/klemmbaustein-hersteller-lexikon/",
+   "reason": "Large 16 mm blocks or baby blocks for young children (steine-kanal lexicon, 2025-10-29): out of scope."
+  },
+  {
+   "name": "BiOBUDDi, Luckys",
+   "url": "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern",
+   "reason": "Bio-based 16 mm blocks for children; out of scope."
+  },
+  {
+   "name": "Playtive Clippys (Lidl), Playland (Aldi), Build-it (Smyths Toys), Blox (Migros), Blockz (CH), Toylino, Wilko Blox",
+   "url": "https://www.steine-kanal.de/klemmbaustein-hersteller-lexikon/",
+   "reason": "Retailer private labels for children, no brand site; Wilko Blox belongs to a retailer that ceased trading in 2023 (not re-checked)."
+  },
+  {
+   "name": "Zuru MAX Build More, BLDR (Jazwares), Block Tech, Make-it Blocks, Lite Brix",
+   "url": "https://www.steine-kanal.de/klemmbaustein-hersteller-lexikon/",
+   "reason": "Discount or licensed children's lines, no adult range found."
+  },
+  {
+   "name": "Lepin, King/Queen, Lion King, Jack",
+   "url": "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern",
+   "reason": "Lepin ceased in 2019 after raids and convictions (de.wikipedia, 2026-09-27); successor labels are mostly copies of official sets; outside the entry rule on counterfeits."
+  },
+  {
+   "name": "Bela/Lari, Lele, SY, Decool, Cogo, Ausini, Winner, Woma, Gudi, Femibox",
+   "url": "https://uploads.brickset.com/docs/clonebrands_v1.8.pdf",
+   "reason": "Brands described as copying official sets (Brickset brand list 2018, WPKO wiki) or sold mainly through AliExpress/Temu; no adult original range or European stockist page read today. Kazi, Decool and Winner appear in Merlin's SetDB and Bausteinreich: see unverified_leads."
+  },
+  {
+   "name": "Funwhole",
+   "url": "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern",
+   "reason": "Renamed Lumibricks in 2025 (de.wikipedia, gamestar.de 2026-11-20); already fichée as 'Lumibricks (formerly Funwhole)'."
+  },
+  {
+   "name": "Modbrix",
+   "url": "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern",
+   "reason": "Taken over by BlueBrixx in 2023 (de.wikipedia); BlueBrixx pages list own lines Pro, Special, Play. Not re-verified."
+  },
+  {
+   "name": "Enlighten, Ligao, UrGe",
+   "url": "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern",
+   "reason": "Former names: Enlighten became Qman (Keeppley entry), Ligao became Wange, UrGe was succeeded by Mork; all successors already fichées."
+  },
+  {
+   "name": "Best-Lock, Kre-O, Built to Rule, Tyco Super Blocks, N&B Block, Montini, Tente, Pebe, Formo, Philiform, Tog'l, Polly, Batima",
+   "url": "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern",
+   "reason": "Discontinued or historical systems (period shown in the list); no sets sold in 2026 established. Best-Lock is listed 1997 to 2014 by de.wikipedia but 'present' by en.wikipedia: not resolved."
+  },
+  {
+   "name": "Brickmania",
+   "url": "https://www.brickmania.com/",
+   "reason": "Active (preorders shipping Nov 2026) but kits are built from genuine LEGO elements plus BrickArms, sold from the US: a custom-kit maker, not a compatible-brick brand; candidate for the custom-builds group of second-hand/parts if the maintainer wants it."
+  },
+  {
+   "name": "La Briquette, Fabbrique, Bag'N Bricks, URSABILIS (France)",
+   "url": "https://www.la-briquette.com/fr/",
+   "reason": "French B2B custom-set makers (corporate gifts), bulk single-brick sacks for children, or custom builds from genuine LEGO pieces: no adult retail brand. No French-origin adult brand found."
+  },
+  {
+   "name": "Oxford (Korea)",
+   "url": "https://oxfordtoy.co.kr/",
+   "reason": "Active in 2026 (Seoul City Series, 2026-10-30; military and ships) but only Korean and US stockists read (ProTinkerToys.com); Europe availability not established."
+  },
+  {
+   "name": "Open Bricks, myBrickZ, BrickStadium (Germany)",
+   "url": "https://www.steine-kanal.de/klemmbaustein-hersteller-lexikon/",
+   "reason": "Listed by steine-kanal (2025-10-29) as accessories/baseplates (OpenBricks), licensed DHL vehicles (myBrickZ) and micro stadiums (BrickStadium); no current page read today to establish activity. See unverified_leads."
+  },
+  {
+   "name": "Airfix Quick Build (Hornby)",
+   "url": "https://uk.airfix.com/",
+   "reason": "Listed by de.wikipedia; Airfix 2026 pages read (Jan 2026) mention Quickbuild item numbers but no 2026 Quick Build brick set and no adult positioning was established."
+  },
+  {
+   "name": "MJI, INSOON, Small Angle, Taigaole, TOP TOY, Tuomu, Kalos, Zoin, Xinyu/Happy Build, MOYU",
+   "url": "https://www.merlinssteine.de/setdb/hersteller/",
+   "reason": "Present in Merlin's SetDB (set counts 26 to 406) and sold by Toy Haven or Bausteinreich, but no official site, 2026 activity or European stockist page read: see unverified_leads."
+  },
+  {
+   "name": "Lonestar-Bricks",
+   "url": "https://www.bausteinreich.de/collections/lonestar-bricks",
+   "reason": "Private label of the Bausteinreich operator (Lonestar-Bricks GmbH, Berlin; dinosaur figures at 5 to 10 EUR, rails, accessories) rather than an adult set brand; Bausteinreich is already fichée."
+  }
+ ],
+ "resisted": [
+  {
+   "name": "other-bricks.com (brands and brand pages, direct)",
+   "url": "https://other-bricks.com/en/brands/",
+   "tried": "curl with the inventory user agent returned a Cloudflare 'Just a moment' challenge (not bypassed); r.jina.ai returned the same challenge. The page was then read through the Exa reader (cached copy), which returned the 32-brand list and the brand pages for Eikee, BAKA, AREA-X, Youmko, K-BOX via search results. Dates of those copies unknown."
+  },
+  {
+   "name": "Bausteinreich (pages/hersteller, collections, sitemap)",
+   "url": "https://bausteinreich.de/pages/hersteller",
+   "tried": "curl first returned the page (collections list), then HTTP 429 and a 'verify your connection' challenge on later requests (not bypassed). Collections list read via Exa (pages 1 to 3); /pages/hersteller returned only the shop footer, so the shop's own A-Z manufacturer page was not read."
+  },
+  {
+   "name": "Reddit r/lepin, r/buildingblocks, r/MouldKing",
+   "url": "https://www.reddit.com/r/lepin/",
+   "tried": "curl on about.json returned HTTP 403 for all three; Exa fetch returned SOURCE_NOT_AVAILABLE. No subreddit content was read; the Seven Star Bricks guide (links to r/lepin) and web threads were used instead. Not read: the three communities."
+  },
+  {
+   "name": "Brick Broker brand list (95 brands)",
+   "url": "https://brick-broker.com/marques",
+   "tried": "The page states 95 brands but its server-rendered version shows only 10 (LEGO, BlueBrixx, Mega Bloks, COBI, Mould King, JIESTAR, BRIXIES, Sluban, JEKCA, CaDA); sitemap-1.xml lists the same 10 /marque/ pages; the full list is loaded by a script from a hosted database (a client key sits in the page source: not used). The other 85 names are unknown."
+  },
+  {
+   "name": "Brickmo brand list",
+   "url": "https://www.brickmo.com/",
+   "tried": "Home page read via Exa (no brand list); /noppensteine/ returned CRAWL_NOT_FOUND; the brand navigation was not found. Not read."
+  },
+  {
+   "name": "LepinBoard 'Manufacturer - Who is who?!' thread",
+   "url": "https://www.lepinboard.de/viewtopic.php?p=290620",
+   "tried": "Exa fetch returned the first lines and 'please log in to read the rest' (login wall, not bypassed)."
+  },
+  {
+   "name": "youmko.com",
+   "url": "https://youmko.com/",
+   "tried": "curl returned HTTP 403 (5419 bytes, protection page); not bypassed. Brand facts taken from other-bricks.com and Barweer."
+  },
+  {
+   "name": "BlueBrixx brand pages",
+   "url": "https://www.bluebrixx.com/en/brands",
+   "tried": "Read through Exa: lists Pro, Special, Play only; no further BlueBrixx sub-brands or partner brands could be read from the page."
+  }
+ ],
+ "coverage": {
+  "brands": "'Complete' meant: every brand named in the German Wikipedia list (page of 2026-09-27, 2026-11-24), the steine-kanal lexicon (2025-10-29), the modellbau-wiki page, Merlin's SetDB manufacturers index (86, 2026-11-24), other-bricks.com (32 brands, 2026-11-24), Brick Broker (10 of 95 readable), brick4.com (85, snippet only), Bausteinreich collections (pages 1 to 3, 2026-11-24), KBS Shop home (6 brands) and the Modyx, MMO457 and Toy Haven 2026 guides, was triaged against: active in 2026, adult display range, Europe availability, official site. Retailer evidence for Europe came from architectcommerce.com per-brand pages (third party, auto-generated). Reddit (r/lepin, r/buildingblocks, r/MouldKing) was not readable (HTTP 403), the 85 unreadable Brick Broker brands and Brickmo's brand list were not read, and Planet-Brick's brand list was read only as a snippet; 21 candidates are listed, none with rank 1 (the leading brands are already fichées); 6 of them (BAKA, AREA-X, DK, K-BOX, Youmko, ZHEGAO) lack a verified official site and cannot enter before one is found. Languages and countries covered by searches: de, fr, nl, it, es, pl, en, plus the original-language lists of zh (brick4) and ja (bricktomato, 2023). No brand from FR, IT, ES, PL other than COBI was found; CH only private labels; Czech, Slovak, Romanian, Greek, Nordic and Portuguese brands were not searched. Brand-to-maker links were set only where the brand states them (Q-BRICKS, Forange company, Balody company); other maker claims rest on one source and were left out."
+ },
+ "reference_directories": [
+  {
+   "name": "other-bricks.com brands",
+   "url": "https://other-bricks.com/en/brands/",
+   "held": "live site, page read 2026-11-24 (brand pages carry 2026 set data; a 2026-10-13 guide is dated)",
+   "scope": "32 brands with origin, founding year, specialisation, set counts and shop price comparison; Europe-friendly.",
+   "language": "en (also de, fr per site)",
+   "already_fichee": true,
+   "opinion": "Best single referral for a visitor: curated, descriptive, English, updated with the shop comparison. Limits: 32 brands (no BlueBrixx, COBI, MEGA), blocked to robots by Cloudflare (human visitors fine)."
+  },
+  {
+   "name": "Merlin's Steine SetDB, manufacturers index",
+   "url": "https://www.merlinssteine.de/setdb/hersteller/",
+   "held": "live, read 2026-11-24 (86 manufacturers with set counts, e.g. BlueBrixx 2614, Mould King 1122, LesDiy 4021, Quanguan 171)",
+   "scope": "86 manufacturers in a set database with reviews; includes brands unknown elsewhere (Open Bricks, Munichbricks, Kalos, Zoin).",
+   "language": "de, en (merlinsbricks.com mirror)",
+   "already_fichee": false,
+   "opinion": "Best referral for exhaustiveness (the only list read that is both long and counted by sets); the 'setdb' fiche exists at merlinsbricks.com/setdb, so this would be a distinct address and usage. No origin or description per brand."
+  },
+  {
+   "name": "brick4.com brand index",
+   "url": "https://brick4.com/brand/list/",
+   "held": "live, read 2026-11-24 (85 brands with set counts)",
+   "scope": "Chinese-market index of 85 brands with set counts; largest list of Chinese brands, includes COBI, Brickmania, Oxford, Mega Bloks.",
+   "language": "zh",
+   "already_fichee": false,
+   "opinion": "Best coverage of the Chinese ecosystem, but Chinese only; brick4.com is fichée for sets. Useful as a secondary referral for researchers."
+  },
+  {
+   "name": "Wikipedia (de): Liste von Klemmbausteinherstellern",
+   "url": "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern",
+   "held": "page dated 2026-09-27; carries a 'sources missing' warning banner",
+   "scope": "About 100 entries (compatible makers, other systems, dead brands) with country, period, set maker, brick maker, stud grid.",
+   "language": "de",
+   "already_fichee": true,
+   "opinion": "Only list that gives set maker and brick maker per brand and flags dead brands, but unsourced in places and not adult-oriented. Good for history, weak for what to buy."
+  },
+  {
+   "name": "steine-kanal.de Klemmbaustein Hersteller Lexikon",
+   "url": "https://www.steine-kanal.de/klemmbaustein-hersteller-lexikon/",
+   "held": "2025-10-29, updated 2025-11-07; comment of 2026-01-30 says the list is incomplete",
+   "scope": "about 100 brands with country and one-line profile, covers kids brands, retailer labels and accessory makers; excludes copy brands.",
+   "language": "de",
+   "already_fichee": true,
+   "opinion": "Best narrative list in German; one year old, no 2026 update seen."
+  },
+  {
+   "name": "Spielzeug-Fuchs Klemmbaustein Hersteller",
+   "url": "https://spielzeug-fuchs.de/klemmbaustein-hersteller/",
+   "held": "undated; table of set maker, brick maker, country (snippet read 2026-11-24)",
+   "scope": "table of brands with set maker and brick maker.",
+   "language": "de",
+   "already_fichee": true,
+   "opinion": "Complementary to Wikipedia for brick-maker links; shop-owned, so check bias."
+  },
+  {
+   "name": "modellbau-wiki.de Klemmbausteine",
+   "url": "https://www.modellbau-wiki.de/wiki/Klemmbausteine",
+   "held": "undated wiki page, read 2026-11-24",
+   "scope": "brands split into own-brick makers, set assemblers (Konfektionierer) without own bricks, and non-compatible systems (diamond, mini, baby blocks, JEKCA); explains clutch power.",
+   "language": "de",
+   "already_fichee": false,
+   "opinion": "Most useful taxonomy (who makes the bricks vs who sells the set); a good referral for the 'makers' question."
+  },
+  {
+   "name": "Wikipedia (en): Lego clone",
+   "url": "https://en.wikipedia.org/wiki/Lego_clone",
+   "held": "page dated 2026-09-18",
+   "scope": "about 45 brands with years and manufacturers; legal history.",
+   "language": "en",
+   "already_fichee": false,
+   "opinion": "Neutral reference for history and law, incomplete for 2024-2026 brands (no BAKA, Eikee, IAMBRICK); not for choosing sets."
+  },
+  {
+   "name": "Brick Broker, brands",
+   "url": "https://brick-broker.com/marques",
+   "held": "live; states 95 brands, 10 readable",
+   "scope": "price tracking by brand (LEGO 28888 sets, BlueBrixx 3136, COBI 1566).",
+   "language": "fr",
+   "already_fichee": true,
+   "opinion": "Cannot serve as a brand directory while only 10 of 95 brands are readable without a script."
+  },
+  {
+   "name": "Planet-Brick, marques",
+   "url": "https://planet-brick.com/marques/",
+   "held": "live, read 2026-11-24 (snippet: Lumibricks 324 items, Pantasy 494)",
+   "scope": "French comparator brand pages and a 2026-08-13 guide to compatible brands.",
+   "language": "fr",
+   "already_fichee": true,
+   "opinion": "Short list centred on its catalogue (CaDA, Cobi, Pantasy, JMBricklayer, Lumibricks); Planet-Brick pages show an Indiana address and a Vietnamese phone number in the footer, which is odd for a French site; reliability not established."
+  },
+  {
+   "name": "Brickfact comparison guides (fr, nl, it, es)",
+   "url": "https://brickfact.com/fr-fr/blog/briques/lego-alternatives-le-grand-guide",
+   "held": "updated 2026-08-11 (fr, nl), 2026-09-23 (it, es)",
+   "scope": "12 to 14 brands per language with format warnings (standard, mini, large blocks).",
+   "language": "fr, nl, it, es, de",
+   "already_fichee": false,
+   "opinion": "Best localised guides for non-German markets, but links point to Amazon product examples; brickfact app is fichée as a tool."
+  },
+  {
+   "name": "WPKO Bricks Wiki, manufacturers",
+   "url": "https://sites.google.com/site/wpkobrickswiki/manufacturers",
+   "held": "undated, oriented to 2018-2020 clone brands",
+   "scope": "manufacturer pages for Chinese clone brands.",
+   "language": "en",
+   "already_fichee": false,
+   "opinion": "Stale for 2026; useful only for identifying old clone makers."
+  },
+  {
+   "name": "Brickset 'Communist LEGO' clone brand PDF v1.8",
+   "url": "https://uploads.brickset.com/docs/clonebrands_v1.8.pdf",
+   "held": "2018",
+   "scope": "clone brand list 2018",
+   "language": "en",
+   "already_fichee": false,
+   "opinion": "Obsolete (2018); do not refer to it."
+  },
+  {
+   "name": "brickscompare.com brand list",
+   "url": "https://brickscompare.com/brands",
+   "held": "live snippet only",
+   "scope": "brand list with set counts (Lepin, Lele, SY, Bela)",
+   "language": "en",
+   "already_fichee": false,
+   "opinion": "Oriented to clone brands; not read in depth."
+  }
+ ],
+ "reference_directory_recommendation": "Send visitors to two directories rather than re-listing every brand: other-bricks.com/en/brands (already fichée as 'other-bricks-brands') for a curated English view with origin and shops, and Merlin's SetDB manufacturers index (merlinssteine.de/setdb/hersteller/, 86 manufacturers, de/en) as the exhaustive counted list; add modellbau-wiki.de for the brick-maker versus set-assembler distinction. Fiche in the brands category only brands that are active, adult-oriented, sold in Europe and have an official site (from this lot, the rank 2 candidates with official sites: IAMBRICK, Eikee, QuanGuan, GULY, Stone Heap, Build Army).",
+ "leads_for_other_categories": [
+  {
+   "category": "shops (alternative-brands)",
+   "name": "Modyx",
+   "url": "https://modyx.de/",
+   "note": "DE; brand overview blog 2026-06-23; GPSR importer BeekoGlobalExchange, Oberhausen; stocks GULY, DK, Eikee, IAMBRICK, BAKA."
+  },
+  {
+   "category": "shops",
+   "name": "MMO457",
+   "url": "https://mmo457.de/",
+   "note": "DE; buyer's guide dated 2026-07-28 with catalogue figures for Reobrix, Mould King, Pantasy, BAKA."
+  },
+  {
+   "category": "shops",
+   "name": "Toy Haven",
+   "url": "https://toyhaven.nl/",
+   "note": "NL, Enschede; conventions across Europe; blog of 12 small brands 2026-10-09; ships to Netherlands (free from 60 EUR)."
+  },
+  {
+   "category": "shops",
+   "name": "Power Blockz",
+   "url": "https://powerblockz.com/",
+   "note": "BE (EUR prices); multi-brand incl. IAMBRICK, Xbert, Quanguan, K-BOX; monthly mystery set."
+  },
+  {
+   "category": "shops",
+   "name": "Latericius (EU store)",
+   "url": "https://latericius.com/en-eu/",
+   "note": "EU storefront with a 2026-09-17 alt-brick guide; 'quick shipping in Europe'."
+  },
+  {
+   "category": "shops",
+   "name": "TodoBloque",
+   "url": "https://todobloque.es/",
+   "note": "ES; LEGO and compatible brands (Reobrix, Pantasy, Lumibricks, CaDA); only Spanish-language shop found."
+  },
+  {
+   "category": "shops",
+   "name": "Happy Bausteine",
+   "url": "https://happybausteine.de/",
+   "note": "DE; stocks Eikee, BAKA, IAMBRICK, Xbert (via architectcommerce.com)."
+  },
+  {
+   "category": "shops",
+   "name": "TT Bausteine",
+   "url": "https://ttbausteine.de/",
+   "note": "DE; Eikee large sets."
+  },
+  {
+   "category": "shops",
+   "name": "Klemmkreativ",
+   "url": "https://klemmkreativ.com/",
+   "note": "DE; BAKA, Xbert."
+  },
+  {
+   "category": "shops",
+   "name": "24builds / EK Garage",
+   "url": "https://24builds.com/",
+   "note": "EE-based storefronts for Eikee and others."
+  },
+  {
+   "category": "shops",
+   "name": "Bouwsteenwinkel",
+   "url": "https://bouwsteenwinkel.nl/",
+   "note": "NL; blog 2026-07-20 on LEGO competitors; not read beyond the snippet."
+  },
+  {
+   "category": "comparators / directories",
+   "name": "architectcommerce.com brand pages",
+   "url": "https://architectcommerce.com/brands/eikee",
+   "note": "Automatic per-brand list of independent European and other stockists with countries; useful evidence for 'sold in Europe' but auto-generated and noisy (mixes unrelated products with the same brand name, e.g. LEYI phone cases)."
+  },
+  {
+   "category": "community / video",
+   "name": "Latericius blog, Toy Haven blog, Barweer blog",
+   "url": "https://www.barweer.com/blog/detail/lego-alternatives-the-best-off-brand-building-blocks-for-2026",
+   "note": "Shop-owned guides, not independent."
+  }
+ ],
+ "unverified_leads": [
+  {
+   "name": "Kazi, Decool, Winner, Woma, Cogo",
+   "why": "In Merlin's SetDB (Kazi 49, Decool 55, Winner 70) and Bausteinreich collections (Kazi, Woma); older clone brands; need one page showing a 2026 adult original range.",
+   "next": "Read Bausteinreich product pages and one 2026 review each."
+  },
+  {
+   "name": "Open Bricks",
+   "why": "German open-source brick brand known for stackable baseplates (steine-kanal); 30 sets in SetDB.",
+   "next": "Find the official site (not looked up) and check whether it sells sets."
+  },
+  {
+   "name": "myBrickZ",
+   "why": "Berlin brand with DHL-licensed vehicles; 6 sets in SetDB; steine-kanal 2025.",
+   "next": "Find the official site; check 2026 activity."
+  },
+  {
+   "name": "BrickStadium",
+   "why": "German micro football stadium sets (steine-kanal 2025).",
+   "next": "Official site and 2026 sets."
+  },
+  {
+   "name": "TrixBrix (NL)",
+   "why": "9V-compatible train system with own parts (de.wikipedia, trixbrix.eu).",
+   "next": "Read trixbrix.eu and check sets."
+  },
+  {
+   "name": "Xinyu / Happy Build, MOYU, Kalos, Small Angle, TaiGaoLe, TOP TOY, MJI, INSOON, Zoin",
+   "why": "All in SetDB or retailer collections (26 to 406 sets); INSOON is cited by Brickfact guides for lit house sets.",
+   "next": "Check official site and a European stockist for each; INSOON first."
+  },
+  {
+   "name": "Mega Bloks / Mattel: BLDR (Jazwares)",
+   "why": "BLDR 'SquishBrik' launched 2025 (Forbes 2025-03-13); kids licensed lines.",
+   "next": "Probably reject; confirm adult range."
+  },
+  {
+   "name": "LesDiy",
+   "why": "SetDB lists 4021 'sets' (MOC marketplace); lesdiy.com publishes a 2026-09-24 guide; an independent-MOC seller rather than a brand.",
+   "next": "Decide whether it belongs to parts-and-custom-builds."
+  },
+  {
+   "name": "Hornby Airfix Quick Build, TrixBrix, Oxford: Europe check",
+   "why": "See rejected.",
+   "next": "Read official Hornby page for Quick Build 2026."
+  },
+  {
+   "name": "Czech, Slovak, Romanian, Greek, Nordic, Portuguese brands",
+   "why": "Not searched; no brand from these countries surfaced in the lists read.",
+   "next": "One native-language search per country."
+  }
+ ],
+ "confidence_overall": "medium: brand identity, country and 2026 activity are well supported by official sites and several independent shop and review sources for the 6 rank 2 candidates with official sites; European availability rests mostly on an automatic retailer aggregator and on shop-owned guides; the official site of 6 candidates is missing or unverified; long-tail brands (about 30) are unverified.",
+ "recommendation": "Stop the broad brand sweep here, then push with: (1) a browser-capable reader for other-bricks.com brand pages and the Bausteinreich /pages/hersteller list, (2) one Reddit-capable tool or an offline export for r/lepin, r/buildingblocks and r/MouldKing wikis, (3) ten to fifteen further calls to find official sites for BAKA, DK, K-BOX, AREA-X, ZHEGAO and Youmko and to read the retailer lists of QuanGuan, TKTWO, 12GO and Build Army, (4) native-language searches for CZ, SK, RO, GR, Nordic and PT. Fiche the 6 rank 2 candidates with official sites first; keep the rest on a watch list for the monthly review."
+}

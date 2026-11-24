@@ -1,0 +1,10344 @@
+{
+"entries": [
+{
+"id": "lego",
+"name": "LEGO",
+"url": "https://www.lego.com/fr-fr",
+"group": "official-lego",
+"countries": [
+"international"
+],
+"languages": [
+"fr",
+"en",
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"minifigures"
+],
+"category": "brands",
+"domain": "lego.com"
+},
+{
+"id": "cobi",
+"name": "COBI",
+"url": "https://cobi.com/fr-fr",
+"group": "european-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"fr",
+"en",
+"pl",
+"de"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "cobi.com"
+},
+{
+"id": "bluebrixx",
+"name": "BlueBrixx",
+"url": "https://www.bluebrixx.com/fr/",
+"group": "european-alternatives",
+"countries": [
+"FR",
+"DE"
+],
+"languages": [
+"fr",
+"de",
+"en"
+],
+"city": null,
+"covers": [
+"alternative",
+"parts"
+],
+"category": "brands",
+"domain": "bluebrixx.com"
+},
+{
+"id": "brixies",
+"name": "Brixies",
+"url": "https://brixies.de/",
+"group": "european-alternatives",
+"countries": [
+"DE"
+],
+"languages": [
+"de",
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "brixies.de"
+},
+{
+"id": "bryx",
+"name": "BRYX",
+"url": "https://bryxtoys.com/",
+"group": "european-alternatives",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "bryxtoys.com"
+},
+{
+"id": "cada",
+"name": "CaDA (Double Eagle)",
+"url": "https://cadatoys.com/",
+"group": "chinese-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "cadatoys.com"
+},
+{
+"id": "mould-king",
+"name": "Mould King",
+"url": "https://mouldkingcorp.com/",
+"group": "chinese-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "mouldkingcorp.com"
+},
+{
+"id": "reobrix",
+"name": "Reobrix",
+"url": "https://reobrix.fr/fr_FR/index",
+"group": "chinese-alternatives",
+"countries": [
+"FR"
+],
+"languages": [
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "reobrix.fr"
+},
+{
+"id": "pantasy",
+"name": "Pantasy",
+"url": "https://pantasy.com/",
+"group": "chinese-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "pantasy.com"
+},
+{
+"id": "lumibricks",
+"name": "Lumibricks (formerly Funwhole)",
+"url": "https://www.lumibricks.com/",
+"group": "chinese-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "lumibricks.com"
+},
+{
+"id": "jmbricklayer",
+"name": "JMBricklayer",
+"url": "https://www.jmbricklayer.com/",
+"group": "chinese-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "jmbricklayer.com"
+},
+{
+"id": "xingbao",
+"name": "Xingbao",
+"url": "https://xingbaostore.com/",
+"group": "chinese-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "xingbaostore.com"
+},
+{
+"id": "jiestar",
+"name": "JIE STAR (with GULY)",
+"url": "https://www.jiestartoys.com/",
+"group": "chinese-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "jiestartoys.com"
+},
+{
+"id": "sembo-block",
+"name": "Sembo Block",
+"url": "https://www.sembo-block.com/",
+"group": "chinese-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "sembo-block.com"
+},
+{
+"id": "keeppley",
+"name": "Keeppley (Qman)",
+"url": "https://c-en.qmjm.com/",
+"group": "chinese-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"zh"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "c-en.qmjm.com"
+},
+{
+"id": "wange",
+"name": "Wange",
+"url": "http://www.wangetoys.com/",
+"group": "chinese-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"zh"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "wangetoys.com"
+},
+{
+"id": "mork",
+"name": "Mork (XMork)",
+"url": "http://www.morktoys.com/",
+"group": "chinese-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"zh"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "morktoys.com"
+},
+{
+"id": "rastar",
+"name": "Rastar",
+"url": "https://www.rastar.com/",
+"group": "chinese-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"zh"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "rastar.com"
+},
+{
+"id": "im-master",
+"name": "iM.Master",
+"url": "https://www.immasterstore.com/",
+"group": "chinese-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "immasterstore.com"
+},
+{
+"id": "nifeliz",
+"name": "Nifeliz",
+"url": "https://www.nifeliz.com/",
+"group": "chinese-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "nifeliz.com"
+},
+{
+"id": "sluban",
+"name": "Sluban",
+"url": "https://www.sluban.com.cn/en/",
+"group": "chinese-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"zh"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "sluban.com.cn"
+},
+{
+"id": "wiseblock",
+"name": "WISEBLOCK",
+"url": "https://www.wiseblock-alpha.com/",
+"group": "chinese-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "wiseblock-alpha.com"
+},
+{
+"id": "mattel-brick-shop",
+"name": "Mattel Brick Shop (MEGA)",
+"url": "https://shopping.mattel.com/de-de/collections/bausteine-sets",
+"group": "european-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"de",
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "shopping.mattel.com"
+},
+{
+"id": "revell-brick-system",
+"name": "Revell Brick System",
+"url": "https://revell.com/collections/brick-system",
+"group": "european-alternatives",
+"countries": [
+"international"
+],
+"languages": [
+"de",
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "revell.com"
+},
+{
+"id": "gobricks",
+"name": "GoBricks (Shantou Golds Precision Technology)",
+"url": "https://gobricks.net/",
+"group": "manufacturers",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"parts",
+"alternative"
+],
+"category": "brands",
+"domain": "gobricks.net"
+},
+{
+"id": "panlos",
+"name": "Panlos",
+"url": "http://www.panlos.com/",
+"group": "manufacturers",
+"countries": [
+"international"
+],
+"languages": [
+"zh",
+"en"
+],
+"city": null,
+"covers": [
+"parts",
+"alternative"
+],
+"category": "brands",
+"domain": "panlos.com"
+},
+{
+"id": "blokees",
+"name": "Blokees",
+"url": "https://blokees.com/",
+"group": "other-formats",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "blokees.com"
+},
+{
+"id": "loz",
+"name": "LOZ",
+"url": "https://loz-mini.com/en",
+"group": "other-formats",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"zh"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "loz-mini.com"
+},
+{
+"id": "nanoblock",
+"name": "nanoblock (Kawada)",
+"url": "https://www.kawada-toys.com/en/brand/nanoblock/",
+"group": "other-formats",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"ja"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "brands",
+"domain": "kawada-toys.com"
+},
+{
+"id": "brickish",
+"name": "Brickish",
+"url": "https://brickish.org/",
+"group": "national-clubs",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "brickish.org"
+},
+{
+"id": "belug",
+"name": "BeLUG",
+"url": "https://www.belug.be/",
+"group": "national-clubs",
+"countries": [
+"BE"
+],
+"languages": [
+"nl",
+"en"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "belug.be"
+},
+{
+"id": "byggepladen",
+"name": "Byggepladen",
+"url": "https://byggepladen.dk/",
+"group": "national-clubs",
+"countries": [
+"DK"
+],
+"languages": [
+"da"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "byggepladen.dk"
+},
+{
+"id": "swebrick",
+"name": "Swebrick",
+"url": "https://swebrick.se/",
+"group": "national-clubs",
+"countries": [
+"SE"
+],
+"languages": [
+"sv"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "swebrick.se"
+},
+{
+"id": "itlug",
+"name": "ItLUG",
+"url": "https://www.itlug.org/",
+"group": "national-clubs",
+"countries": [
+"IT"
+],
+"languages": [
+"it"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "itlug.org"
+},
+{
+"id": "ale-spain",
+"name": "ALE! Asociación Cultural de Aficionados a LEGO",
+"url": "https://www.alebricks.com/",
+"group": "national-clubs",
+"countries": [
+"ES"
+],
+"languages": [
+"es"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "alebricks.com"
+},
+{
+"id": "hispalug",
+"name": "HispaLUG",
+"url": "https://hispalug.com/",
+"group": "national-clubs",
+"countries": [
+"ES"
+],
+"languages": [
+"es"
+],
+"city": null,
+"covers": [
+"clubs",
+"official"
+],
+"category": "clubs",
+"domain": "hispalug.com"
+},
+{
+"id": "lugpol",
+"name": "LUGPol",
+"url": "https://lugpol.pl/",
+"group": "national-clubs",
+"countries": [
+"PL"
+],
+"languages": [
+"pl"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"custom-builds"
+],
+"category": "clubs",
+"domain": "lugpol.pl"
+},
+{
+"id": "lowlug",
+"name": "Lowlug",
+"url": "https://www.lowlug.nl/",
+"group": "national-clubs",
+"countries": [
+"NL"
+],
+"languages": [
+"nl"
+],
+"city": null,
+"covers": [
+"clubs",
+"official"
+],
+"category": "clubs",
+"domain": "lowlug.nl"
+},
+{
+"id": "dutchbricks",
+"name": "Dutchbricks",
+"url": "https://www.dutchbricks.com/",
+"group": "regional-clubs",
+"countries": [
+"NL",
+"BE"
+],
+"languages": [
+"nl",
+"en"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "dutchbricks.com"
+},
+{
+"id": "lgoe",
+"name": "LGOe - LEGO Gemeinschaft Österreich",
+"url": "https://www.lgoe.at/",
+"group": "national-clubs",
+"countries": [
+"AT"
+],
+"languages": [
+"de"
+],
+"city": "Wien",
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "lgoe.at"
+},
+{
+"id": "briques-unies",
+"name": "Briques Unies",
+"url": "https://briques-unies.org/",
+"group": "regional-clubs",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "briques-unies.org"
+},
+{
+"id": "chti-lug",
+"name": "Ch'ti LUG",
+"url": "https://chtilug.fr/",
+"group": "regional-clubs",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "chtilug.fr"
+},
+{
+"id": "lugest",
+"name": "LUG'Est",
+"url": "https://lugest.fr/",
+"group": "regional-clubs",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "lugest.fr"
+},
+{
+"id": "fanabriques-club",
+"name": "Fana'briques",
+"url": "https://fanabriques.fr/",
+"group": "regional-clubs",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "fanabriques.fr"
+},
+{
+"id": "french-brick-idf",
+"name": "French'Brick - Île-de-France",
+"url": "https://frenchbrickidf.forumgaming.fr/",
+"group": "regional-clubs",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "frenchbrickidf.forumgaming.fr"
+},
+{
+"id": "bricking-bavaria-club",
+"name": "Bricking Bavaria e.V.",
+"url": "https://www.bricking-bavaria.de/",
+"group": "regional-clubs",
+"countries": [
+"DE"
+],
+"languages": [
+"de",
+"en"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "bricking-bavaria.de"
+},
+{
+"id": "afol-stammtisch-karlsruhe",
+"name": "AFOL Stammtisch Karlsruhe",
+"url": "https://www.afol-stammtisch-ka.de/",
+"group": "regional-clubs",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": "Karlsruhe",
+"covers": [
+"clubs",
+"official"
+],
+"category": "clubs",
+"domain": "afol-stammtisch-ka.de"
+},
+{
+"id": "london-afols",
+"name": "London AFOLs",
+"url": "https://londonafols.uk/",
+"group": "regional-clubs",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": "London",
+"covers": [
+"clubs",
+"official"
+],
+"category": "clubs",
+"domain": "londonafols.uk"
+},
+{
+"id": "tartan-lug",
+"name": "Tartan LUG",
+"url": "https://www.tartanlug.com/",
+"group": "regional-clubs",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "tartanlug.com"
+},
+{
+"id": "brick-alley",
+"name": "Brick Alley",
+"url": "https://www.brickalleylug.co.uk/",
+"group": "regional-clubs",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "brickalleylug.co.uk"
+},
+{
+"id": "quelug",
+"name": "QuéLUG",
+"url": "https://quelug.org/",
+"group": "regional-clubs",
+"countries": [
+"CA"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "quelug.org"
+},
+{
+"id": "nelug",
+"name": "NELUG - New England LEGO Users Group",
+"url": "https://www.nelug.org/",
+"group": "regional-clubs",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "nelug.org"
+},
+{
+"id": "bionilug",
+"name": "BioniLUG",
+"url": "https://bionilug.com/",
+"group": "online-clubs",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"custom-builds"
+],
+"category": "clubs",
+"domain": "bionilug.com"
+},
+{
+"id": "der-helfende-stein",
+"name": "Der helfende Stein",
+"url": "https://derhelfendestein.at/",
+"group": "alternative-brand-clubs",
+"countries": [
+"AT"
+],
+"languages": [
+"de"
+],
+"city": "Niederkreuzstetten",
+"covers": [
+"clubs",
+"alternative",
+"official",
+"events"
+],
+"category": "clubs",
+"domain": "derhelfendestein.at"
+},
+{
+"id": "noppenhelden",
+"name": "Noppenhelden.de",
+"url": "https://noppenhelden.de/",
+"group": "alternative-brand-clubs",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"clubs",
+"alternative",
+"news"
+],
+"category": "clubs",
+"domain": "noppenhelden.de"
+},
+{
+"id": "les-briques-en-folie",
+"name": "Les Briques en Folie",
+"url": "https://www.lesbriquesenfolie.fr/",
+"group": "regional-clubs",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": "Le Grand-Quevilly",
+"covers": [
+"clubs",
+"official"
+],
+"category": "clubs",
+"domain": "lesbriquesenfolie.fr"
+},
+{
+"id": "brisy-expo-100-briques",
+"name": "BRISY",
+"url": "https://brisy.fr/",
+"group": "regional-clubs",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": "Le Perray-en-Yvelines",
+"covers": [
+"clubs",
+"official"
+],
+"category": "clubs",
+"domain": "brisy.fr"
+},
+{
+"id": "brickouest",
+"name": "Brickouest",
+"url": "https://brickouest.fr/",
+"group": "regional-clubs",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": "Rennes",
+"covers": [
+"clubs",
+"official"
+],
+"category": "clubs",
+"domain": "brickouest.fr"
+},
+{
+"id": "brikkelauget",
+"name": "Brikkelauget",
+"url": "https://www.brikkelauget.no/",
+"group": "national-clubs",
+"countries": [
+"NO"
+],
+"languages": [
+"no"
+],
+"city": null,
+"covers": [
+"clubs",
+"events",
+"second-hand"
+],
+"category": "clubs",
+"domain": "brikkelauget.no"
+},
+{
+"id": "palikkatakomo",
+"name": "Palikkatakomo",
+"url": "https://www.palikkatakomo.org/",
+"group": "national-clubs",
+"countries": [
+"FI"
+],
+"languages": [
+"fi"
+],
+"city": null,
+"covers": [
+"clubs",
+"events"
+],
+"category": "clubs",
+"domain": "palikkatakomo.org"
+},
+{
+"id": "plug-pt",
+"name": "PLUG - Associação Portuguesa de Utilizadores de LEGO",
+"url": "https://forum.plug.pt/",
+"group": "national-clubs",
+"countries": [
+"PT"
+],
+"languages": [
+"pt",
+"en"
+],
+"city": null,
+"covers": [
+"clubs",
+"events"
+],
+"category": "clubs",
+"domain": "forum.plug.pt"
+},
+{
+"id": "comunidade-0937",
+"name": "Comunidade 0937",
+"url": "https://comunidade0937.com/portal/",
+"group": "national-clubs",
+"countries": [
+"PT"
+],
+"languages": [
+"pt"
+],
+"city": null,
+"covers": [
+"clubs",
+"events"
+],
+"category": "clubs",
+"domain": "comunidade0937.com"
+},
+{
+"id": "lukr",
+"name": "LUKR: LEGO UK Railway",
+"url": "https://www.lukrailway.co.uk/",
+"group": "national-clubs",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"clubs",
+"learning",
+"events"
+],
+"category": "clubs",
+"domain": "lukrailway.co.uk"
+},
+{
+"id": "noppenbahner",
+"name": "Noppenbahner",
+"url": "https://noppenbahner.de/",
+"group": "national-clubs",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"clubs",
+"events",
+"instructions"
+],
+"category": "clubs",
+"domain": "noppenbahner.de"
+},
+{
+"id": "llmtc",
+"name": "LLMTC: LowLands L-Gauge Model Train Club",
+"url": "https://llmtc.nl/",
+"group": "national-clubs",
+"countries": [
+"NL"
+],
+"languages": [
+"en",
+"nl"
+],
+"city": null,
+"covers": [
+"clubs",
+"events"
+],
+"category": "clubs",
+"domain": "llmtc.nl"
+},
+{
+"id": "baylug",
+"name": "BayLUG",
+"url": "https://baylug.org/",
+"group": "regional-clubs",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": "San Francisco Bay Area",
+"covers": [
+"clubs"
+],
+"category": "clubs",
+"domain": "baylug.org"
+},
+{
+"id": "torolug",
+"name": "ToroLUG",
+"url": "https://torolug.ca/",
+"group": "regional-clubs",
+"countries": [
+"CA"
+],
+"languages": [
+"en"
+],
+"city": "Toronto",
+"covers": [
+"clubs",
+"events"
+],
+"category": "clubs",
+"domain": "torolug.ca"
+},
+{
+"id": "brisbricks",
+"name": "BrisBricks",
+"url": "https://brisbricks.org/",
+"group": "regional-clubs",
+"countries": [
+"AU"
+],
+"languages": [
+"en"
+],
+"city": "Brisbane",
+"covers": [
+"clubs",
+"events"
+],
+"category": "clubs",
+"domain": "brisbricks.org"
+},
+{
+"id": "sydlug",
+"name": "SydLUG",
+"url": "https://www.sydlug.com/",
+"group": "regional-clubs",
+"countries": [
+"AU"
+],
+"languages": [
+"en"
+],
+"city": "Sydney",
+"covers": [
+"clubs",
+"events"
+],
+"category": "clubs",
+"domain": "sydlug.com"
+},
+{
+"id": "well-lug",
+"name": "Well-LUG",
+"url": "https://www.well-lug.nz/",
+"group": "regional-clubs",
+"countries": [
+"NZ"
+],
+"languages": [
+"en"
+],
+"city": "Wellington",
+"covers": [
+"clubs",
+"events"
+],
+"category": "clubs",
+"domain": "well-lug.nz"
+},
+{
+"id": "aucklug",
+"name": "AuckLUG",
+"url": "https://www.aucklug.co.nz/",
+"group": "regional-clubs",
+"countries": [
+"NZ"
+],
+"languages": [
+"en"
+],
+"city": "Auckland",
+"covers": [
+"clubs",
+"events"
+],
+"category": "clubs",
+"domain": "aucklug.co.nz"
+},
+{
+"id": "zalug",
+"name": "zaLUG",
+"url": "https://www.zalug.co.za/",
+"group": "national-clubs",
+"countries": [
+"ZA"
+],
+"languages": [
+"en"
+],
+"city": "Gauteng",
+"covers": [
+"clubs",
+"events"
+],
+"category": "clubs",
+"domain": "zalug.co.za"
+},
+{
+"id": "safols",
+"name": "SAFOLs",
+"url": "https://www.safols.co.za/",
+"group": "online-clubs",
+"countries": [
+"ZA"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"clubs",
+"news"
+],
+"category": "clubs",
+"domain": "safols.co.za"
+},
+{
+"id": "toscanabricks",
+"name": "ToscanaBricks",
+"url": "https://www.toscanabricks.it/",
+"group": "regional-clubs",
+"countries": [
+"IT"
+],
+"languages": [
+"it"
+],
+"city": "Florence",
+"covers": [
+"clubs",
+"events"
+],
+"category": "clubs",
+"domain": "toscanabricks.it"
+},
+{
+"id": "freelug",
+"name": "FreeLUG",
+"url": "https://www.freelug.org/",
+"group": "national-clubs",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"custom-builds"
+],
+"category": "clubs",
+"domain": "freelug.org"
+},
+{
+"id": "hothbricks",
+"name": "Hoth Bricks",
+"url": "https://www.hothbricks.com/",
+"group": "news-and-reviews",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "hothbricks.com"
+},
+{
+"id": "hellobricks",
+"name": "HelloBricks",
+"url": "https://www.hellobricks.com/",
+"group": "news-and-reviews",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "hellobricks.com"
+},
+{
+"id": "brickonaute",
+"name": "Brickonaute",
+"url": "https://brickonaute.fr/",
+"group": "news-and-reviews",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "brickonaute.fr"
+},
+{
+"id": "brothers-brick",
+"name": "The Brothers Brick",
+"url": "https://www.brothers-brick.com/",
+"group": "news-and-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"news",
+"custom-builds"
+],
+"category": "community",
+"domain": "brothers-brick.com"
+},
+{
+"id": "new-elementary",
+"name": "New Elementary",
+"url": "https://www.newelementary.com/",
+"group": "news-and-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"parts",
+"news"
+],
+"category": "community",
+"domain": "newelementary.com"
+},
+{
+"id": "jays-brick-blog",
+"name": "Jay's Brick Blog",
+"url": "https://jaysbrickblog.com/",
+"group": "news-and-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "jaysbrickblog.com"
+},
+{
+"id": "brick-fanatics",
+"name": "Brick Fanatics",
+"url": "https://www.brickfanatics.com/",
+"group": "news-and-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "brickfanatics.com"
+},
+{
+"id": "promobricks",
+"name": "Promobricks",
+"url": "https://www.promobricks.de/",
+"group": "news-and-reviews",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"news"
+],
+"category": "community",
+"domain": "promobricks.de"
+},
+{
+"id": "zusammengebaut",
+"name": "Zusammengebaut",
+"url": "https://zusammengebaut.com/",
+"group": "news-and-reviews",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "zusammengebaut.com"
+},
+{
+"id": "merlins-bricks",
+"name": "Merlins Bricks (Merlins Steine)",
+"url": "https://www.merlinsbricks.com/",
+"group": "news-and-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"de",
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"data",
+"news"
+],
+"category": "community",
+"domain": "merlinsbricks.com"
+},
+{
+"id": "klemmbausteinlyrik",
+"name": "Klemmbausteinlyrik",
+"url": "https://klemmbausteinlyrik.de/",
+"group": "news-and-reviews",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "klemmbausteinlyrik.de"
+},
+{
+"id": "brick-news",
+"name": "brick.news",
+"url": "https://brick.news/",
+"group": "news-and-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"news",
+"data"
+],
+"category": "community",
+"domain": "brick.news"
+},
+{
+"id": "thebrickblogger",
+"name": "theBrickBlogger",
+"url": "https://thebrickblogger.com/",
+"group": "news-and-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "thebrickblogger.com"
+},
+{
+"id": "the-brick-fan",
+"name": "The Brick Fan",
+"url": "https://www.thebrickfan.com/",
+"group": "news-and-reviews",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "thebrickfan.com"
+},
+{
+"id": "brickreport-competitors",
+"name": "BrickReport: LEGO competitors",
+"url": "https://www.brickreport.io/blog/lego-competitors",
+"group": "news-and-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "community",
+"domain": "brickreport.io"
+},
+{
+"id": "klemmbaustein-com",
+"name": "Klemmbaustein.com",
+"url": "https://klemmbaustein.com/",
+"group": "news-and-reviews",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"alternative",
+"official",
+"news"
+],
+"category": "community",
+"domain": "klemmbaustein.com"
+},
+{
+"id": "eurobricks",
+"name": "Eurobricks Forums",
+"url": "https://www.eurobricks.com/forum/",
+"group": "forums",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"custom-builds",
+"news"
+],
+"category": "community",
+"domain": "eurobricks.com"
+},
+{
+"id": "brickpirate",
+"name": "BrickPirate",
+"url": "https://www.brickpirate.net/",
+"group": "forums",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"custom-builds"
+],
+"category": "community",
+"domain": "brickpirate.net"
+},
+{
+"id": "1000steine-forum",
+"name": "1000steine.de forum",
+"url": "https://www.1000steine.de/de/gemeinschaft/forum/",
+"group": "forums",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"second-hand",
+"custom-builds",
+"parts"
+],
+"category": "community",
+"domain": "1000steine.de"
+},
+{
+"id": "hardware-fr-compatible-bricks",
+"name": "HardWare.fr: compatible bricks topic",
+"url": "https://forum.hardware.fr/hfr/Discussions/Loisirs/briques-construction-compatibles-sujet_119659_1.htm",
+"group": "forums",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "community",
+"domain": "forum.hardware.fr"
+},
+{
+"id": "reddit-lego",
+"name": "r/lego",
+"url": "https://www.reddit.com/r/lego/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-legodeal",
+"name": "r/legodeal",
+"url": "https://www.reddit.com/r/legodeal/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-legoleak",
+"name": "r/Legoleak",
+"url": "https://www.reddit.com/r/Legoleak/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-lepin",
+"name": "r/lepin",
+"url": "https://www.reddit.com/r/lepin/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative",
+"minifigures"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-mouldking",
+"name": "r/MouldKing",
+"url": "https://www.reddit.com/r/MouldKing/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-altbricks",
+"name": "r/ALTbricks",
+"url": "https://www.reddit.com/r/ALTbricks/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-klemmbausteine",
+"name": "r/klemmbausteine",
+"url": "https://www.reddit.com/r/klemmbausteine/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-legofrance",
+"name": "r/LegoFrance",
+"url": "https://www.reddit.com/r/LegoFrance/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-buildingblocks",
+"name": "r/buildingblocks",
+"url": "https://www.reddit.com/r/buildingblocks/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "brickipedia",
+"name": "Brickipedia",
+"url": "https://en.brickimedia.org/wiki/Main_Page",
+"group": "wikis",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"data",
+"instructions"
+],
+"category": "community",
+"domain": "en.brickimedia.org"
+},
+{
+"id": "dealabs-lego",
+"name": "Dealabs: LEGO group",
+"url": "https://www.dealabs.com/groupe/lego",
+"group": "deals",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "community",
+"domain": "dealabs.com"
+},
+{
+"id": "mydealz-lego",
+"name": "mydealz: LEGO group",
+"url": "https://www.mydealz.de/gruppe/lego",
+"group": "deals",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "community",
+"domain": "mydealz.de"
+},
+{
+"id": "brickset-discord",
+"name": "Brickset forum (Discord)",
+"url": "https://brickset.com/forum",
+"group": "forums",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "community",
+"domain": "brickset.com"
+},
+{
+"id": "merlins-discord",
+"name": "Merlins Steine community (Discord)",
+"url": "https://www.merlinssteine.de/communityreviews/",
+"group": "forums",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"instructions"
+],
+"category": "community",
+"domain": "merlinssteine.de"
+},
+{
+"id": "reddit-legostorage",
+"name": "r/LegoStorage",
+"url": "https://www.reddit.com/r/LegoStorage/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "eurobricks-minifig-customisation-workshop",
+"name": "Eurobricks Minifig Customisation Workshop",
+"url": "https://www.eurobricks.com/forum/forums/forum/90-minifig-customisation-workshop/",
+"group": "forums",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"minifigures"
+],
+"category": "community",
+"domain": "eurobricks.com"
+},
+{
+"id": "reddit-legocustoms",
+"name": "r/LEGOcustoms",
+"url": "https://www.reddit.com/r/LEGOcustoms/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"minifigures"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-customfigs",
+"name": "r/customfigs",
+"url": "https://www.reddit.com/r/customfigs/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"minifigures"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "orangeteam-lug",
+"name": "OrangeTeam LUG",
+"url": "https://www.orangeteamlug.it/",
+"group": "news-and-reviews",
+"countries": [
+"IT"
+],
+"languages": [
+"it"
+],
+"city": null,
+"covers": [
+"news",
+"clubs",
+"events"
+],
+"category": "community",
+"domain": "orangeteamlug.it"
+},
+{
+"id": "il-mastro-costruttore",
+"name": "Il Mastro Costruttore",
+"url": "https://www.ilmastrocostruttore.it/",
+"group": "deals",
+"countries": [
+"IT"
+],
+"languages": [
+"it"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "ilmastrocostruttore.it"
+},
+{
+"id": "elcatalejo",
+"name": "elCatalejo",
+"url": "https://elcatalejo.es/",
+"group": "news-and-reviews",
+"countries": [
+"ES"
+],
+"languages": [
+"es"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "elcatalejo.es"
+},
+{
+"id": "todobrick",
+"name": "TodoBrick",
+"url": "https://todobrick.com/",
+"group": "news-and-reviews",
+"countries": [
+"ES"
+],
+"languages": [
+"es"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "todobrick.com"
+},
+{
+"id": "fani-klockow",
+"name": "Fani Klocków",
+"url": "https://faniklockow.pl/",
+"group": "news-and-reviews",
+"countries": [
+"PL"
+],
+"languages": [
+"pl"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "faniklockow.pl"
+},
+{
+"id": "bouwsteentjes",
+"name": "Bouwsteentjes.info",
+"url": "https://bouwsteentjes.info/",
+"group": "news-and-reviews",
+"countries": [
+"NL",
+"BE"
+],
+"languages": [
+"nl"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "bouwsteentjes.info"
+},
+{
+"id": "kostkoviny",
+"name": "Kostkoviny",
+"url": "https://kostkoviny.cz/",
+"group": "news-and-reviews",
+"countries": [
+"CZ"
+],
+"languages": [
+"cs"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "kostkoviny.cz"
+},
+{
+"id": "eurobricks-train-tech",
+"name": "Eurobricks: LEGO Train Tech",
+"url": "https://www.eurobricks.com/forum/forums/forum/122-lego-train-tech/",
+"group": "forums",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"custom-builds",
+"news"
+],
+"category": "community",
+"domain": "eurobricks.com"
+},
+{
+"id": "eurobricks-technic",
+"name": "Eurobricks: LEGO Technic, Mindstorms, Model Team and Scale Modeling",
+"url": "https://www.eurobricks.com/forum/forums/forum/115-lego-technic-mindstorms-model-team-and-scale-modeling/",
+"group": "forums",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"custom-builds",
+"news"
+],
+"category": "community",
+"domain": "eurobricks.com"
+},
+{
+"id": "techlug-forum",
+"name": "TechLug.fr forum",
+"url": "https://www.techlug.fr/Forum/",
+"group": "forums",
+"countries": [
+"FR"
+],
+"languages": [
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"custom-builds",
+"news"
+],
+"category": "community",
+"domain": "techlug.fr"
+},
+{
+"id": "l-gauge-wiki",
+"name": "L-Gauge",
+"url": "https://l-gauge.org/wiki/index.php?title=Main_Page",
+"group": "wikis",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"learning"
+],
+"category": "community",
+"domain": "l-gauge.org"
+},
+{
+"id": "brick-model-railroader",
+"name": "Brick Model Railroader",
+"url": "https://brickmodelrailroader.com/",
+"group": "news-and-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"news",
+"instructions",
+"parts",
+"learning"
+],
+"category": "community",
+"domain": "brickmodelrailroader.com"
+},
+{
+"id": "the-lego-car-blog",
+"name": "The Lego Car Blog",
+"url": "https://thelegocarblog.com/",
+"group": "news-and-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"news",
+"custom-builds",
+"official"
+],
+"category": "community",
+"domain": "thelegocarblog.com"
+},
+{
+"id": "reddit-legotechnic",
+"name": "r/LEGOtechnic",
+"url": "https://www.reddit.com/r/legotechnic/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"parts"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-legotrains",
+"name": "r/LEGOtrains",
+"url": "https://www.reddit.com/r/LEGOtrains/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"custom-builds"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-afol",
+"name": "r/AFOL",
+"url": "https://www.reddit.com/r/AFOL/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"custom-builds"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-legoinvesting",
+"name": "r/legoinvesting",
+"url": "https://www.reddit.com/r/legoinvesting/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"data"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-legouk",
+"name": "r/LegoUK",
+"url": "https://www.reddit.com/r/LegoUK/",
+"group": "reddit",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-bricklink",
+"name": "r/BrickLink",
+"url": "https://www.reddit.com/r/Bricklink/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"second-hand",
+"parts"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-cobiblocks",
+"name": "r/Cobi",
+"url": "https://www.reddit.com/r/cobiblocks/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-bluebrixx",
+"name": "r/BlueBrixx",
+"url": "https://www.reddit.com/r/bluebrixx/",
+"group": "reddit",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-legominifigure",
+"name": "r/LegoMinifigure",
+"url": "https://www.reddit.com/r/LegoMinifigure/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"minifigures"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "reddit-legoideas",
+"name": "r/legoideas",
+"url": "https://www.reddit.com/r/legoideas/",
+"group": "reddit",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "community",
+"domain": "reddit.com"
+},
+{
+"id": "bricknerd",
+"name": "BrickNerd",
+"url": "https://bricknerd.com/",
+"group": "news-and-reviews",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"news"
+],
+"category": "community",
+"domain": "bricknerd.com"
+},
+{
+"id": "brick-news-australia",
+"name": "Brick News",
+"url": "https://www.bricknews.com.au/",
+"group": "news-and-reviews",
+"countries": [
+"AU"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"news"
+],
+"category": "community",
+"domain": "bricknews.com.au"
+},
+{
+"id": "toys-n-bricks",
+"name": "Toys N Bricks",
+"url": "https://www.toysnbricks.com/",
+"group": "deals",
+"countries": [
+"CA"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"news",
+"official"
+],
+"category": "community",
+"domain": "toysnbricks.com"
+},
+{
+"id": "lego-forum-italia",
+"name": "LEGO Forum Italia",
+"url": "https://legoforum.forumcommunity.net/",
+"group": "forums",
+"countries": [
+"IT"
+],
+"languages": [
+"it"
+],
+"city": null,
+"covers": [
+"news",
+"parts"
+],
+"category": "community",
+"domain": "legoforum.forumcommunity.net"
+},
+{
+"id": "brick-it-magazine",
+"name": "Brick.it Magazine",
+"url": "https://www.brickitmagazine.com/",
+"group": "news-and-reviews",
+"countries": [
+"IT"
+],
+"languages": [
+"it"
+],
+"city": null,
+"covers": [
+"news"
+],
+"category": "community",
+"domain": "brickitmagazine.com"
+},
+{
+"id": "brick-broker",
+"name": "Brick Broker",
+"url": "https://brick-broker.com/",
+"group": "price-comparators",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "comparators",
+"domain": "brick-broker.com"
+},
+{
+"id": "brickfact",
+"name": "Brickfact",
+"url": "https://brickfact.com/",
+"group": "price-comparators",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"de",
+"fr",
+"nl"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "brickfact.com"
+},
+{
+"id": "planet-brick",
+"name": "Planet-Brick",
+"url": "https://planet-brick.com/",
+"group": "price-comparators",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"custom-builds",
+"instructions"
+],
+"category": "comparators",
+"domain": "planet-brick.com"
+},
+{
+"id": "la-brique-libre",
+"name": "La Brique Libre",
+"url": "https://labriquelibre.fr/",
+"group": "price-comparators",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"news"
+],
+"category": "comparators",
+"domain": "labriquelibre.fr"
+},
+{
+"id": "brickmitri",
+"name": "Brickmitri",
+"url": "https://brickmitri.com/comparateur-lego/",
+"group": "price-comparators",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "brickmitri.com"
+},
+{
+"id": "avenue-de-la-brique",
+"name": "Avenue de la Brique",
+"url": "https://www.avenuedelabrique.com/",
+"group": "price-comparators",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "avenuedelabrique.com"
+},
+{
+"id": "bricksvalue",
+"name": "BricksValue",
+"url": "https://bricksvalue.com/fr",
+"group": "price-comparators",
+"countries": [
+"FR",
+"DE",
+"US"
+],
+"languages": [
+"fr",
+"de",
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "bricksvalue.com"
+},
+{
+"id": "bricktracker-eu",
+"name": "BrickTracker.eu",
+"url": "https://bricktracker.eu/fr",
+"group": "price-comparators",
+"countries": [
+"NL",
+"BE",
+"DE",
+"FR"
+],
+"languages": [
+"fr",
+"nl",
+"de",
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "bricktracker.eu"
+},
+{
+"id": "lakea",
+"name": "Lakea",
+"url": "https://lakea.net/?lang=fr",
+"group": "price-comparators",
+"countries": [
+"international"
+],
+"languages": [
+"fr",
+"en",
+"de",
+"nl"
+],
+"city": null,
+"covers": [
+"official",
+"parts",
+"minifigures"
+],
+"category": "comparators",
+"domain": "lakea.net"
+},
+{
+"id": "altbrickscan",
+"name": "AltBrickScan",
+"url": "https://altbrickscan.com/fr-FR/",
+"group": "price-comparators",
+"countries": [
+"international"
+],
+"languages": [
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "comparators",
+"domain": "altbrickscan.com"
+},
+{
+"id": "brickwatch",
+"name": "Brickwatch",
+"url": "https://www.brickwatch.net/fr-FR/",
+"group": "price-comparators",
+"countries": [
+"NL",
+"FR",
+"GB"
+],
+"languages": [
+"fr",
+"en",
+"nl"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "brickwatch.net"
+},
+{
+"id": "brickyes",
+"name": "Brickyes",
+"url": "https://www.brickyes.com/nl-nl/lego",
+"group": "price-comparators",
+"countries": [
+"NL"
+],
+"languages": [
+"nl"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "brickyes.com"
+},
+{
+"id": "bricksdeal",
+"name": "BricksDeal",
+"url": "https://bricksdeal.com/de-en",
+"group": "price-comparators",
+"countries": [
+"NL",
+"BE",
+"DE"
+],
+"languages": [
+"en",
+"de",
+"nl"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "bricksdeal.com"
+},
+{
+"id": "klockometr",
+"name": "Klockometr",
+"url": "https://klockometr.pl/",
+"group": "price-comparators",
+"countries": [
+"PL"
+],
+"languages": [
+"pl"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "klockometr.pl"
+},
+{
+"id": "brickmerge",
+"name": "Brickmerge",
+"url": "https://www.brickmerge.de/",
+"group": "price-comparators",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "brickmerge.de"
+},
+{
+"id": "brick-tracker-de",
+"name": "Brick-Tracker.de",
+"url": "https://www.brick-tracker.de/index.php",
+"group": "price-comparators",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "brick-tracker.de"
+},
+{
+"id": "brickguide-de",
+"name": "brickguide.de",
+"url": "https://brickguide.de/",
+"group": "price-comparators",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "brickguide.de"
+},
+{
+"id": "temple-of-bricks",
+"name": "Temple of Bricks",
+"url": "https://www.templeofbricks.com/fr/",
+"group": "price-comparators",
+"countries": [
+"international"
+],
+"languages": [
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"minifigures",
+"second-hand"
+],
+"category": "comparators",
+"domain": "templeofbricks.com"
+},
+{
+"id": "toysetfox",
+"name": "ToySetFox",
+"url": "https://toysetfox.com/fr-fr/guides/alternatives-a-lego",
+"group": "price-comparators",
+"countries": [
+"FR",
+"DE",
+"NL"
+],
+"languages": [
+"fr",
+"de",
+"nl",
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "comparators",
+"domain": "toysetfox.com"
+},
+{
+"id": "toy-links",
+"name": "Toy-Links",
+"url": "https://toy-links.com/mouldking",
+"group": "price-comparators",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "comparators",
+"domain": "toy-links.com"
+},
+{
+"id": "idealo",
+"name": "idealo",
+"url": "https://www.idealo.fr/",
+"group": "price-comparators",
+"countries": [
+"FR",
+"DE"
+],
+"languages": [
+"fr",
+"de",
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "idealo.fr"
+},
+{
+"id": "ledenicheur",
+"name": "LeDénicheur",
+"url": "https://ledenicheur.fr/",
+"group": "price-comparators",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "ledenicheur.fr"
+},
+{
+"id": "geizhals",
+"name": "Geizhals",
+"url": "https://geizhals.at/",
+"group": "price-comparators",
+"countries": [
+"AT",
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "comparators",
+"domain": "geizhals.at"
+},
+{
+"id": "verobricks",
+"name": "VERObricks",
+"url": "https://verobricks.com/",
+"group": "price-comparators",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "comparators",
+"domain": "verobricks.com"
+},
+{
+"id": "comparobrick",
+"name": "ComparoBrick",
+"url": "https://www.comparobrick.fr/",
+"group": "price-comparators",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "comparobrick.fr"
+},
+{
+"id": "chez-emil",
+"name": "Chez Emil",
+"url": "https://chezemil.fr/",
+"group": "price-comparators",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "chezemil.fr"
+},
+{
+"id": "brickset",
+"name": "Brickset",
+"url": "https://brickset.com/",
+"group": "set-databases",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"minifigures",
+"parts",
+"news"
+],
+"category": "comparators",
+"domain": "brickset.com"
+},
+{
+"id": "rebrickable",
+"name": "Rebrickable",
+"url": "https://rebrickable.com/",
+"group": "set-databases",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"custom-builds",
+"instructions",
+"parts",
+"minifigures",
+"data"
+],
+"category": "comparators",
+"domain": "rebrickable.com"
+},
+{
+"id": "brick-news-sets",
+"name": "Brick Set Database (brick.news)",
+"url": "https://brick.news/sets",
+"group": "set-databases",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "comparators",
+"domain": "brick.news"
+},
+{
+"id": "setdb",
+"name": "SetDB (Merlins Steine)",
+"url": "https://www.merlinsbricks.com/setdb/",
+"group": "set-databases",
+"countries": [
+"international"
+],
+"languages": [
+"de",
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"minifigures",
+"parts",
+"news"
+],
+"category": "comparators",
+"domain": "merlinsbricks.com"
+},
+{
+"id": "other-bricks",
+"name": "other-bricks.com",
+"url": "https://other-bricks.com/de/",
+"group": "set-databases",
+"countries": [
+"international"
+],
+"languages": [
+"de",
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "comparators",
+"domain": "other-bricks.com"
+},
+{
+"id": "brick4",
+"name": "Brick4.com",
+"url": "https://brick4.com/",
+"group": "set-databases",
+"countries": [
+"CN"
+],
+"languages": [
+"zh"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "comparators",
+"domain": "brick4.com"
+},
+{
+"id": "brickdb",
+"name": "BrickDb",
+"url": "https://www.brickdb.de/",
+"group": "set-databases",
+"countries": [
+"international"
+],
+"languages": [
+"de",
+"en",
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"minifigures",
+"parts"
+],
+"category": "comparators",
+"domain": "brickdb.de"
+},
+{
+"id": "brickeconomy",
+"name": "BrickEconomy",
+"url": "https://www.brickeconomy.com/",
+"group": "value-tracking",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"minifigures",
+"second-hand"
+],
+"category": "comparators",
+"domain": "brickeconomy.com"
+},
+{
+"id": "brickpicker",
+"name": "BrickPicker",
+"url": "https://brickpicker.com/",
+"group": "value-tracking",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"minifigures",
+"second-hand"
+],
+"category": "comparators",
+"domain": "brickpicker.com"
+},
+{
+"id": "promoklocki",
+"name": "promoklocki.pl",
+"url": "https://promoklocki.pl/",
+"group": "price-comparators",
+"countries": [
+"PL"
+],
+"languages": [
+"pl"
+],
+"city": null,
+"covers": [
+"official",
+"data"
+],
+"category": "comparators",
+"domain": "promoklocki.pl"
+},
+{
+"id": "ceneo",
+"name": "Ceneo",
+"url": "https://www.ceneo.pl/",
+"group": "price-comparators",
+"countries": [
+"PL"
+],
+"languages": [
+"pl"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "ceneo.pl"
+},
+{
+"id": "brickzone-dk",
+"name": "brickzone",
+"url": "https://brickzone.dk/",
+"group": "price-comparators",
+"countries": [
+"DK"
+],
+"languages": [
+"da"
+],
+"city": null,
+"covers": [
+"official",
+"data"
+],
+"category": "comparators",
+"domain": "brickzone.dk"
+},
+{
+"id": "prisjakt-se",
+"name": "Prisjakt",
+"url": "https://www.prisjakt.nu/c/lego",
+"group": "price-comparators",
+"countries": [
+"SE"
+],
+"languages": [
+"sv"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "comparators",
+"domain": "prisjakt.nu"
+},
+{
+"id": "brickturtle",
+"name": "BrickTurtle",
+"url": "https://brickturtle.com.au/",
+"group": "price-comparators",
+"countries": [
+"AU"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"data"
+],
+"category": "comparators",
+"domain": "brickturtle.com.au"
+},
+{
+"id": "lego-price-tracker-nz",
+"name": "LEGO Price Tracker",
+"url": "https://legopricetracker.co.nz/",
+"group": "price-comparators",
+"countries": [
+"NZ",
+"AU",
+"CA",
+"US"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"data"
+],
+"category": "comparators",
+"domain": "legopricetracker.co.nz"
+},
+{
+"id": "awesome-lego-ad-si",
+"name": "awesome-lego (ad-si)",
+"url": "https://github.com/ad-si/awesome-lego",
+"group": "site-directories",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"custom-builds",
+"instructions",
+"news"
+],
+"category": "directories",
+"domain": "github.com"
+},
+{
+"id": "awesome-lego-brickventory",
+"name": "awesome-lego (brickventory)",
+"url": "https://github.com/brickventory/awesome-lego",
+"group": "site-directories",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "directories",
+"domain": "github.com"
+},
+{
+"id": "awesome-lego-machine-learning",
+"name": "awesome-lego-machine-learning",
+"url": "https://github.com/360er0/awesome-lego-machine-learning",
+"group": "site-directories",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"parts",
+"data"
+],
+"category": "directories",
+"domain": "github.com"
+},
+{
+"id": "brickmap",
+"name": "BrickMap",
+"url": "https://brickmap.info/",
+"group": "site-directories",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"parts",
+"second-hand",
+"news"
+],
+"category": "directories",
+"domain": "brickmap.info"
+},
+{
+"id": "brick-discovery",
+"name": "Brick Discovery",
+"url": "https://www.brickdiscovery.com/buy-sell-invest/",
+"group": "site-directories",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"second-hand",
+"custom-builds",
+"minifigures"
+],
+"category": "directories",
+"domain": "brickdiscovery.com"
+},
+{
+"id": "eurobricks-site-directory",
+"name": "Eurobricks LEGO Site Directory",
+"url": "https://www.eurobricks.com/forum/forums/topic/38481-lego-site-directory/",
+"group": "site-directories",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "directories",
+"domain": "eurobricks.com"
+},
+{
+"id": "brickset-app-directory",
+"name": "Brickset app directory",
+"url": "https://brickset.com/article/131478/app-directory",
+"group": "site-directories",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"data"
+],
+"category": "directories",
+"domain": "brickset.com"
+},
+{
+"id": "deparkatre-associations",
+"name": "Deparkatre clubs and associations directory",
+"url": "https://deparkatre.fr/associations",
+"group": "site-directories",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"custom-builds",
+"news"
+],
+"category": "directories",
+"domain": "deparkatre.fr"
+},
+{
+"id": "lego-fan-colab-communities",
+"name": "LEGO Fan CoLab community directory",
+"url": "https://fancolab.lego.com/communities/",
+"group": "site-directories",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "directories",
+"domain": "fancolab.lego.com"
+},
+{
+"id": "spielzeug-fuchs-price-platforms",
+"name": "Spielzeug-Fuchs: price comparison platforms for building bricks",
+"url": "https://spielzeug-fuchs.de/klemmbaustein-preisvergleichsplattformen/",
+"group": "site-directories",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "directories",
+"domain": "spielzeug-fuchs.de"
+},
+{
+"id": "bricktubed-channels",
+"name": "BrickTubed channel directory",
+"url": "https://bricktubed.com/channels/",
+"group": "channel-lists",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"news"
+],
+"category": "directories",
+"domain": "bricktubed.com"
+},
+{
+"id": "deparkatre-influenceurs",
+"name": "Deparkatre LEGO influencer directory",
+"url": "https://deparkatre.fr/influenceurs",
+"group": "channel-lists",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"news"
+],
+"category": "directories",
+"domain": "deparkatre.fr"
+},
+{
+"id": "quelug-youtube-channels",
+"name": "QuéLUG thread: interesting YouTube channels",
+"url": "https://forums.quelug.org/t/canaux-youtube-interessants/3294",
+"group": "channel-lists",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"custom-builds"
+],
+"category": "directories",
+"domain": "forums.quelug.org"
+},
+{
+"id": "feedspot-lego-podcasts",
+"name": "Feedspot LEGO podcasts",
+"url": "https://podcast.feedspot.com/lego_podcasts/",
+"group": "channel-lists",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "directories",
+"domain": "podcast.feedspot.com"
+},
+{
+"id": "wikipedia-de-klemmbausteinhersteller",
+"name": "Liste von Klemmbausteinherstellern (German Wikipedia)",
+"url": "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern",
+"group": "brand-lists",
+"countries": [
+"international"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "directories",
+"domain": "de.wikipedia.org"
+},
+{
+"id": "steine-kanal-hersteller-lexikon",
+"name": "Klemmbaustein Hersteller Lexikon (Steine-Kanal)",
+"url": "https://www.steine-kanal.de/klemmbaustein-hersteller-lexikon/",
+"group": "brand-lists",
+"countries": [
+"international"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "directories",
+"domain": "steine-kanal.de"
+},
+{
+"id": "spielzeug-fuchs-hersteller",
+"name": "Klemmbaustein Hersteller (Spielzeug-Fuchs)",
+"url": "https://spielzeug-fuchs.de/klemmbaustein-hersteller/",
+"group": "brand-lists",
+"countries": [
+"international"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "directories",
+"domain": "spielzeug-fuchs.de"
+},
+{
+"id": "other-bricks-brands",
+"name": "other-bricks.com brands",
+"url": "https://other-bricks.com/en/brands/",
+"group": "brand-lists",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "directories",
+"domain": "other-bricks.com"
+},
+{
+"id": "baustein-info-welt-des-steins",
+"name": "Welt des Steins (baustein.info)",
+"url": "https://baustein.info/welt-des-steins/",
+"group": "brand-lists",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "directories",
+"domain": "baustein.info"
+},
+{
+"id": "promoklocki-youtuberzy",
+"name": "Polscy LEGO Youtuberzy (promoklocki.pl)",
+"url": "https://promoklocki.pl/polscy-lego-youtuberzy",
+"group": "channel-lists",
+"countries": [
+"PL"
+],
+"languages": [
+"pl"
+],
+"city": null,
+"covers": [
+"news",
+"learning"
+],
+"category": "directories",
+"domain": "promoklocki.pl"
+},
+{
+"id": "kostky-eu",
+"name": "Kostky.eu",
+"url": "https://kostky.eu/",
+"group": "site-directories",
+"countries": [
+"CZ",
+"SK"
+],
+"languages": [
+"cs"
+],
+"city": null,
+"covers": [
+"news",
+"data"
+],
+"category": "directories",
+"domain": "kostky.eu"
+},
+{
+"id": "avenue-de-la-brique-associations",
+"name": "Avenue de la brique - Associations de fans de LEGO",
+"url": "https://www.avenuedelabrique.com/associations-lego",
+"group": "site-directories",
+"countries": [
+"FR",
+"BE",
+"CH"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"clubs",
+"official",
+"events"
+],
+"category": "directories",
+"domain": "avenuedelabrique.com"
+},
+{
+"id": "deparkatre-creators",
+"name": "Deparkatre: LEGO creators and designers directory",
+"url": "https://deparkatre.fr/en/lego-creators",
+"group": "site-directories",
+"countries": [
+"FR"
+],
+"languages": [
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official",
+"custom-builds"
+],
+"category": "directories",
+"domain": "deparkatre.fr"
+},
+{
+"id": "skaerbaek-fan-weekend",
+"name": "Skærbæk Fan Weekend",
+"url": "https://www.fanweekend.dk/",
+"group": "conventions",
+"countries": [
+"DK"
+],
+"languages": [
+"en",
+"da"
+],
+"city": "Skærbæk",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "fanweekend.dk"
+},
+{
+"id": "bricking-bavaria",
+"name": "Bricking Bavaria",
+"url": "https://brickingbavaria-fanevent.de/",
+"group": "conventions",
+"countries": [
+"DE"
+],
+"languages": [
+"de",
+"en"
+],
+"city": "Augsburg",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "brickingbavaria-fanevent.de"
+},
+{
+"id": "brickfair",
+"name": "BrickFair",
+"url": "https://www.brickfair.com/",
+"group": "conventions",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": "Richmond",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "brickfair.com"
+},
+{
+"id": "brickworld",
+"name": "Brickworld",
+"url": "https://brickworld.com/",
+"group": "conventions",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": "Indianapolis",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "brickworld.com"
+},
+{
+"id": "brickcon",
+"name": "BrickCon",
+"url": "https://www.brickcon.org/",
+"group": "conventions",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": "Bellevue",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "brickcon.org"
+},
+{
+"id": "brickvention",
+"name": "Brickvention",
+"url": "https://www.brickvention.melbourne/",
+"group": "conventions",
+"countries": [
+"AU"
+],
+"languages": [
+"en"
+],
+"city": "Melbourne",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "brickvention.melbourne"
+},
+{
+"id": "lego-house-afol-day",
+"name": "LEGO House AFOL Day",
+"url": "https://event.legohouse.com/",
+"group": "conventions",
+"countries": [
+"DK"
+],
+"languages": [
+"en"
+],
+"city": "Billund",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "event.legohouse.com"
+},
+{
+"id": "bricktastic",
+"name": "Bricktastic",
+"url": "https://bricktastic.org/",
+"group": "conventions",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": "Manchester",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "bricktastic.org"
+},
+{
+"id": "bricktopia-world",
+"name": "Bricktopia World",
+"url": "https://bricktopia-world.com/",
+"group": "conventions",
+"countries": [
+"NL"
+],
+"languages": [
+"nl",
+"en"
+],
+"city": "Maastricht",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "bricktopia-world.com"
+},
+{
+"id": "brick-mania-antwerp",
+"name": "Brick Mania Antwerpen",
+"url": "https://www.belug.be/brickmania/antwerpen/",
+"group": "conventions",
+"countries": [
+"BE"
+],
+"languages": [
+"nl"
+],
+"city": "Antwerp",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "belug.be"
+},
+{
+"id": "great-western-brick-show",
+"name": "Great Western Brick Show",
+"url": "https://greatwesternbrickshow.co.uk/",
+"group": "conventions",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": "Swindon",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "greatwesternbrickshow.co.uk"
+},
+{
+"id": "edinbrick",
+"name": "Edinbrick",
+"url": "https://www.brickm8.org/edinbrick",
+"group": "conventions",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": "Edinburgh",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "brickm8.org"
+},
+{
+"id": "brick-feile",
+"name": "Brick Féile",
+"url": "https://www.xn--brickfile-g4a.ie/",
+"group": "conventions",
+"countries": [
+"IE"
+],
+"languages": [
+"en"
+],
+"city": "Gormanston",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "xn--brickfile-g4a.ie"
+},
+{
+"id": "brickish-weekend",
+"name": "Brickish Weekend",
+"url": "https://www.spacecentre.co.uk/whats-on/brickish-weekend/",
+"group": "conventions",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": "Leicester",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "spacecentre.co.uk"
+},
+{
+"id": "itlug-lecco",
+"name": "ItLUG Lecco",
+"url": "https://lecco.itlug.org/",
+"group": "conventions",
+"countries": [
+"IT"
+],
+"languages": [
+"it",
+"en"
+],
+"city": "Lecco",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "lecco.itlug.org"
+},
+{
+"id": "paredes-de-coura-fan-weekend",
+"name": "Paredes de Coura Fan Weekend",
+"url": "https://fanweekend.pt/",
+"group": "conventions",
+"countries": [
+"PT"
+],
+"languages": [
+"en",
+"pt"
+],
+"city": "Paredes de Coura",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "fanweekend.pt"
+},
+{
+"id": "lux-brixembourg",
+"name": "Brixembourg",
+"url": "https://www.brixembourg.com/",
+"group": "conventions",
+"countries": [
+"LU"
+],
+"languages": [
+"de",
+"en",
+"fr"
+],
+"city": "Junglinster",
+"covers": [
+"events",
+"official",
+"alternative"
+],
+"category": "events",
+"domain": "brixembourg.com"
+},
+{
+"id": "letzbrick",
+"name": "Lëtzbrick",
+"url": "https://afol55.afol.lu/",
+"group": "conventions",
+"countries": [
+"LU"
+],
+"languages": [
+"en",
+"fr",
+"de"
+],
+"city": "Wasserbillig",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "afol55.afol.lu"
+},
+{
+"id": "fanabriques",
+"name": "Fana'Briques",
+"url": "https://expo.fanabriques.fr/fr/",
+"group": "conventions",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": "Colmar",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "expo.fanabriques.fr"
+},
+{
+"id": "bricks-and-friends",
+"name": "Bricks and Friends",
+"url": "https://bricksandfriends.wordpress.com/",
+"group": "conventions",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": "Cologne",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "bricksandfriends.wordpress.com"
+},
+{
+"id": "berliner-steinewahn",
+"name": "Berliner SteineWAHN!",
+"url": "https://www.steinewahn.de/",
+"group": "conventions",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": "Berlin",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "steinewahn.de"
+},
+{
+"id": "steinchenwelt",
+"name": "SteinCHenwelt",
+"url": "https://steinchenwelt.ch/",
+"group": "conventions",
+"countries": [
+"CH"
+],
+"languages": [
+"de"
+],
+"city": "Derendingen",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "steinchenwelt.ch"
+},
+{
+"id": "lego-world-utrecht",
+"name": "LEGO World Utrecht",
+"url": "https://www.legoworld.nl/",
+"group": "conventions",
+"countries": [
+"NL"
+],
+"languages": [
+"nl"
+],
+"city": "Utrecht",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "legoworld.nl"
+},
+{
+"id": "landebrick",
+"name": "Landébrick",
+"url": "https://www.cdp29.fr/fr/agenda/view/1043/landebrick/",
+"group": "conventions",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": "Landévennec",
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "cdp29.fr"
+},
+{
+"id": "lego-ideas-challenges",
+"name": "LEGO Ideas challenges",
+"url": "https://ideas.lego.com/challenges",
+"group": "competitions",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "ideas.lego.com"
+},
+{
+"id": "bricklink-designer-program",
+"name": "BrickLink Designer Program",
+"url": "https://www.bricklink.com/v3/designer-program/main.page",
+"group": "competitions",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "bricklink.com"
+},
+{
+"id": "eurobricks-may-the-4th-contest",
+"name": "Eurobricks May the 4th contest",
+"url": "https://www.eurobricks.com/forum/forums/topic/213112-may-the-4th-contest-2026/",
+"group": "competitions",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "eurobricks.com"
+},
+{
+"id": "eurobricks-summer-joust",
+"name": "Summer Joust",
+"url": "https://www.eurobricks.com/forum/forums/topic/213326-summer-joust-2026/",
+"group": "competitions",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "eurobricks.com"
+},
+{
+"id": "rebrickable-competitions",
+"name": "Rebrickable competitions",
+"url": "https://rebrickable.com/competitions/",
+"group": "competitions",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"events",
+"official",
+"alternative"
+],
+"category": "events",
+"domain": "rebrickable.com"
+},
+{
+"id": "avenue-de-la-brique-expositions",
+"name": "Avenue de la Brique: expositions LEGO",
+"url": "https://www.avenuedelabrique.com/expositions-lego",
+"group": "calendars",
+"countries": [
+"FR",
+"BE",
+"CH"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"events",
+"official",
+"alternative"
+],
+"category": "events",
+"domain": "avenuedelabrique.com"
+},
+{
+"id": "hothbricks-expos",
+"name": "hothbricks: expositions et événements LEGO",
+"url": "https://www.hothbricks.com/expos/",
+"group": "calendars",
+"countries": [
+"FR",
+"BE",
+"CH"
+],
+"languages": [
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "hothbricks.com"
+},
+{
+"id": "deparkatre-expositions",
+"name": "Deparkatre: agenda des expositions LEGO",
+"url": "https://deparkatre.fr/expositions",
+"group": "calendars",
+"countries": [
+"FR",
+"BE",
+"CH",
+"international"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"events",
+"official",
+"alternative"
+],
+"category": "events",
+"domain": "deparkatre.fr"
+},
+{
+"id": "freelug-calendrier-2027",
+"name": "FreeLUG: calendrier des expositions 2027",
+"url": "https://forum.freelug.org/t/calendrier-des-expositions-lego-prevues-pour-2027-toutes-associations/3629",
+"group": "calendars",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"events",
+"official",
+"alternative"
+],
+"category": "events",
+"domain": "forum.freelug.org"
+},
+{
+"id": "beetoys-agenda",
+"name": "BeeToys: agenda des expos LEGO",
+"url": "https://beetoys.ch/agenda.php",
+"group": "calendars",
+"countries": [
+"CH",
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"events",
+"official",
+"alternative"
+],
+"category": "events",
+"domain": "beetoys.ch"
+},
+{
+"id": "steine-kanal-veranstaltungskalender",
+"name": "steine-kanal: Veranstaltungskalender",
+"url": "https://www.steine-kanal.de/veranstaltungskalender-2027-alle-lego-fan-veranstaltungen-und-boersen-im-uberblick/",
+"group": "calendars",
+"countries": [
+"DE",
+"AT",
+"CH",
+"NL",
+"LU"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"events",
+"official",
+"alternative"
+],
+"category": "events",
+"domain": "steine-kanal.de"
+},
+{
+"id": "bricks-mcgee-uk-ireland-events",
+"name": "Bricks McGee: UK and Ireland LEGO fan events 2027",
+"url": "https://www.bricksmcgee.com/blog/2027-lego-fan-events-in-the-uk-ireland/",
+"group": "calendars",
+"countries": [
+"GB",
+"IE"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"events",
+"official",
+"alternative"
+],
+"category": "events",
+"domain": "bricksmcgee.com"
+},
+{
+"id": "merlins-bricks-events",
+"name": "Merlins Bricks: conventions and exhibitions",
+"url": "https://www.merlinsbricks.com/events/",
+"group": "calendars",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"de"
+],
+"city": null,
+"covers": [
+"events",
+"official",
+"alternative"
+],
+"category": "events",
+"domain": "merlinsbricks.com"
+},
+{
+"id": "brick-news-calendar",
+"name": "brick.news: events calendar",
+"url": "https://brick.news/calendar",
+"group": "calendars",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"events",
+"official",
+"alternative"
+],
+"category": "events",
+"domain": "brick.news"
+},
+{
+"id": "swiss-brick-events",
+"name": "swiss-brick: LEGO events 2026/27",
+"url": "https://www.swiss-brick.com/lego-events-und-ausstellungen/",
+"group": "calendars",
+"countries": [
+"CH",
+"DE",
+"AT"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"events",
+"official",
+"alternative"
+],
+"category": "events",
+"domain": "swiss-brick.com"
+},
+{
+"id": "stonewars-events",
+"name": "Stonewars: LEGO events and exhibitions",
+"url": "https://www.stonewars.de/events/",
+"group": "calendars",
+"countries": [
+"DE",
+"AT",
+"CH"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"events",
+"official",
+"alternative"
+],
+"category": "events",
+"domain": "stonewars.de"
+},
+{
+"id": "fan-colab-events",
+"name": "LEGO Fan CoLab events",
+"url": "https://fancolab.lego.com/events/",
+"group": "calendars",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"events",
+"official"
+],
+"category": "events",
+"domain": "fancolab.lego.com"
+},
+{
+"id": "brickdb-events",
+"name": "BrickDb: événements",
+"url": "https://www.brickdb.fr/events",
+"group": "calendars",
+"countries": [
+"FR",
+"international"
+],
+"languages": [
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"events",
+"official",
+"alternative"
+],
+"category": "events",
+"domain": "brickdb.fr"
+},
+{
+"id": "bauspielbahn-treffen",
+"name": "Bauspielbahn-Treffen (BSBT)",
+"url": "https://lbrick.de/bauspielbahn-treffen/",
+"group": "conventions",
+"countries": [
+"DE"
+],
+"languages": [
+"de",
+"en"
+],
+"city": "Schkeuditz",
+"covers": [
+"events",
+"clubs"
+],
+"category": "events",
+"domain": "lbrick.de"
+},
+{
+"id": "brick-train-awards",
+"name": "Brick Train Awards",
+"url": "https://www.bricktrainawards.com/",
+"group": "competitions",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"events"
+],
+"category": "events",
+"domain": "bricktrainawards.com"
+},
+{
+"id": "brickuniverse",
+"name": "BrickUniverse",
+"url": "https://www.brickuniverseusa.com/",
+"group": "conventions",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"events"
+],
+"category": "events",
+"domain": "brickuniverseusa.com"
+},
+{
+"id": "bricks-in-the-six",
+"name": "Bricks in the Six",
+"url": "https://bricksinthe6.ca/",
+"group": "conventions",
+"countries": [
+"CA"
+],
+"languages": [
+"en"
+],
+"city": "Mississauga",
+"covers": [
+"events"
+],
+"category": "events",
+"domain": "bricksinthe6.ca"
+},
+{
+"id": "northern-bricks",
+"name": "Northern Bricks",
+"url": "https://northernbricks.ca/",
+"group": "conventions",
+"countries": [
+"CA"
+],
+"languages": [
+"en"
+],
+"city": "Edmonton",
+"covers": [
+"events"
+],
+"category": "events",
+"domain": "northernbricks.ca"
+},
+{
+"id": "brickomanie",
+"name": "Brickomanie",
+"url": "https://brickomanie.ca/en",
+"group": "conventions",
+"countries": [
+"CA"
+],
+"languages": [
+"en",
+"fr"
+],
+"city": "Laval",
+"covers": [
+"events"
+],
+"category": "events",
+"domain": "brickomanie.ca"
+},
+{
+"id": "brixpo",
+"name": "Brixpo",
+"url": "https://www.brixpo.com.au/",
+"group": "conventions",
+"countries": [
+"AU"
+],
+"languages": [
+"en"
+],
+"city": "Adelaide",
+"covers": [
+"events"
+],
+"category": "events",
+"domain": "brixpo.com.au"
+},
+{
+"id": "brickfair-south-africa",
+"name": "Brickfair South Africa",
+"url": "https://www.brickfair.co.za/",
+"group": "conventions",
+"countries": [
+"ZA"
+],
+"languages": [
+"en"
+],
+"city": "Pretoria",
+"covers": [
+"events"
+],
+"category": "events",
+"domain": "brickfair.co.za"
+},
+{
+"id": "lego-ideas",
+"name": "LEGO Ideas",
+"url": "https://ideas.lego.com/",
+"group": "competitions",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official",
+"custom-builds"
+],
+"category": "events",
+"domain": "ideas.lego.com"
+},
+{
+"id": "brick-architect",
+"name": "Brick Architect",
+"url": "https://brickarchitect.com/",
+"group": "guides",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "brickarchitect.com"
+},
+{
+"id": "swooshable",
+"name": "Swooshable",
+"url": "https://swooshable.com/",
+"group": "guides",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "swooshable.com"
+},
+{
+"id": "brick-builders-handbook",
+"name": "Brick Builder's Handbook",
+"url": "https://brickbuildershandbook.com/",
+"group": "guides",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "brickbuildershandbook.com"
+},
+{
+"id": "sariel",
+"name": "Sariel.pl",
+"url": "https://sariel.pl/",
+"group": "guides",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "sariel.pl"
+},
+{
+"id": "philohome",
+"name": "Philo's Home Page",
+"url": "https://www.philohome.com/",
+"group": "guides",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "philohome.com"
+},
+{
+"id": "bricks-stackexchange",
+"name": "Bricks Stack Exchange",
+"url": "https://bricks.stackexchange.com/",
+"group": "guides",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official",
+"alternative"
+],
+"category": "learning",
+"domain": "bricks.stackexchange.com"
+},
+{
+"id": "sealug-glossary",
+"name": "SEALUG glossary of LEGO terms",
+"url": "https://sealug.org/glossary/",
+"group": "guides",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning"
+],
+"category": "learning",
+"domain": "sealug.org"
+},
+{
+"id": "hellobricks-lexique",
+"name": "HelloBricks : lexique LEGO",
+"url": "https://www.hellobricks.com/lexique-lego/",
+"group": "guides",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"learning"
+],
+"category": "learning",
+"domain": "hellobricks.com"
+},
+{
+"id": "spielzeug-fuchs-lexikon",
+"name": "Spielzeug-Fuchs : Klemmbaustein-Lexikon",
+"url": "https://spielzeug-fuchs.de/das-klemmbaustein-lexikon/",
+"group": "guides",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"learning",
+"alternative"
+],
+"category": "learning",
+"domain": "spielzeug-fuchs.de"
+},
+{
+"id": "lego-cleaning-help",
+"name": "Official LEGO guidance: cleaning bricks",
+"url": "https://www.lego.com/en-us/service/help-topics/article/cleaning-your-lego-bricks",
+"group": "guides",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "lego.com"
+},
+{
+"id": "lego-materials-help",
+"name": "Official LEGO guidance: what bricks are made of",
+"url": "https://www.lego.com/en-us/service/help-topics/article/what-lego-bricks-are-made-of",
+"group": "compatibility-and-law",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "lego.com"
+},
+{
+"id": "cjeu-lego-juris",
+"name": "Court of Justice judgment C-48/09 P, Lego Juris v OHIM",
+"url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A62009CJ0048",
+"group": "compatibility-and-law",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"fr",
+"de"
+],
+"city": null,
+"covers": [
+"learning",
+"official",
+"alternative"
+],
+"category": "learning",
+"domain": "eur-lex.europa.eu"
+},
+{
+"id": "wikipedia-lego-clone",
+"name": "Wikipedia: Lego clone",
+"url": "https://en.wikipedia.org/wiki/Lego_clone",
+"group": "compatibility-and-law",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"alternative"
+],
+"category": "learning",
+"domain": "en.wikipedia.org"
+},
+{
+"id": "lego-fair-play",
+"name": "Official LEGO policy: Fair Play",
+"url": "https://www.lego.com/en-us/legal/notices-and-policies/fair-play",
+"group": "compatibility-and-law",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "lego.com"
+},
+{
+"id": "douane-contrefacon",
+"name": "Douane française : comment éviter les contrefaçons",
+"url": "https://www.douane.gouv.fr/comment-eviter-les-contrefacons",
+"group": "compatibility-and-law",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"learning"
+],
+"category": "learning",
+"domain": "douane.gouv.fr"
+},
+{
+"id": "kohen-avocats-compatible",
+"name": "Kohen Avocats: faux LEGO, brique compatible et contrefaçon",
+"url": "https://kohenavocats.fr/2026/11/22/faux-lego-lego-chinois-contrefacon-brique-compatible-legal-remboursement/",
+"group": "compatibility-and-law",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"learning",
+"alternative"
+],
+"category": "learning",
+"domain": "kohenavocats.fr"
+},
+{
+"id": "lego-history",
+"name": "LEGO History (official LEGO)",
+"url": "https://www.lego.com/en-us/history",
+"group": "history",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "lego.com"
+},
+{
+"id": "kiddicraft-brighton-toy-museum",
+"name": "Brighton Toy Museum: Kiddicraft Self-Locking Building Bricks",
+"url": "https://www.brightontoymuseum.co.uk/index/Category:Self-Locking_Building_Bricks_%28Kiddicraft%29",
+"group": "history",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning"
+],
+"category": "learning",
+"domain": "brightontoymuseum.co.uk"
+},
+{
+"id": "patent-us3005282",
+"name": "US patent 3005282: Toy building brick",
+"url": "https://patents.google.com/patent/US3005282",
+"group": "history",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "patents.google.com"
+},
+{
+"id": "wikipedia-history-of-lego",
+"name": "Wikipedia: History of Lego",
+"url": "https://en.wikipedia.org/wiki/History_of_Lego",
+"group": "history",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning"
+],
+"category": "learning",
+"domain": "en.wikipedia.org"
+},
+{
+"id": "loc-lego-patent-law",
+"name": "Library of Congress: 60 years of Lego and Danish patent law",
+"url": "https://blogs.loc.gov/law/2018/01/60-years-of-lego-building-blocks-and-danish-patent-law/",
+"group": "history",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning"
+],
+"category": "learning",
+"domain": "blogs.loc.gov"
+},
+{
+"id": "smithsonian-lego-patents",
+"name": "Smithsonian Magazine: how Lego patents built a toy empire",
+"url": "https://www.smithsonianmag.com/innovation/how-lego-patents-helped-build-toy-empire-brick-by-brick-180971429/",
+"group": "history",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning"
+],
+"category": "learning",
+"domain": "smithsonianmag.com"
+},
+{
+"id": "lego-education",
+"name": "LEGO Education",
+"url": "https://education.lego.com/",
+"group": "education-and-competitions",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "education.lego.com"
+},
+{
+"id": "first-lego-league",
+"name": "FIRST LEGO League (global)",
+"url": "https://firstlegoleague.org/",
+"group": "education-and-competitions",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official",
+"events"
+],
+"category": "learning",
+"domain": "firstlegoleague.org"
+},
+{
+"id": "first-lego-league-france",
+"name": "FIRST LEGO League France",
+"url": "https://firstlegoleaguefrance.fr/",
+"group": "education-and-competitions",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"learning",
+"official",
+"events"
+],
+"category": "learning",
+"domain": "firstlegoleaguefrance.fr"
+},
+{
+"id": "first-lego-league-dach",
+"name": "FIRST LEGO League (Germany, Austria, Switzerland)",
+"url": "https://www.first-lego-league.org/en/",
+"group": "education-and-competitions",
+"countries": [
+"DE",
+"AT",
+"CH"
+],
+"languages": [
+"de",
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official",
+"events"
+],
+"category": "learning",
+"domain": "first-lego-league.org"
+},
+{
+"id": "blocks-magazine",
+"name": "Blocks magazine",
+"url": "https://blocksmag.com/",
+"group": "books-and-magazines",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official",
+"news"
+],
+"category": "learning",
+"domain": "blocksmag.com"
+},
+{
+"id": "brickjournal",
+"name": "BrickJournal",
+"url": "https://twomorrows.com/blog/tnt/brickjournal-magazine-is-ending-with-92-and-moving-to-blocks-magazine/",
+"group": "books-and-magazines",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official",
+"news"
+],
+"category": "learning",
+"domain": "twomorrows.com"
+},
+{
+"id": "bricka-magazine",
+"name": "BRICKA",
+"url": "https://www.brickamag.com/",
+"group": "books-and-magazines",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official",
+"news"
+],
+"category": "learning",
+"domain": "brickamag.com"
+},
+{
+"id": "briques-mag",
+"name": "Briques MAG",
+"url": "https://jmag286.wixsite.com/briquesmag1",
+"group": "books-and-magazines",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"learning",
+"alternative",
+"news"
+],
+"category": "learning",
+"domain": "jmag286.wixsite.com"
+},
+{
+"id": "no-starch-lego",
+"name": "No Starch Press: LEGO books",
+"url": "https://nostarch.com/catalog/lego",
+"group": "books-and-magazines",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "nostarch.com"
+},
+{
+"id": "technic-builders-guide",
+"name": "The Unofficial LEGO Technic Builder's Guide, 2nd Edition",
+"url": "https://nostarch.com/technicbuilder2",
+"group": "books-and-magazines",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "nostarch.com"
+},
+{
+"id": "dk-lego-books",
+"name": "DK: LEGO books",
+"url": "https://dk.com/en-us/collections/lego-books",
+"group": "books-and-magazines",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "dk.com"
+},
+{
+"id": "lego-certified-professionals",
+"name": "LEGO Certified Professionals (official LEGO list)",
+"url": "https://www.lego.com/en-us/aboutus/lego-certified-professionals",
+"group": "artists",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official",
+"custom-builds"
+],
+"category": "learning",
+"domain": "lego.com"
+},
+{
+"id": "nathan-sawaya",
+"name": "Nathan Sawaya: The Art of the Brick",
+"url": "https://brickartist.com/",
+"group": "artists",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "brickartist.com"
+},
+{
+"id": "sean-kenney",
+"name": "Sean Kenney",
+"url": "https://www.seankenney.com/",
+"group": "artists",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "seankenney.com"
+},
+{
+"id": "warren-elsmore",
+"name": "Warren Elsmore",
+"url": "https://www.warrenelsmore.com/",
+"group": "artists",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": "Edinburgh",
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "warrenelsmore.com"
+},
+{
+"id": "the-brickman",
+"name": "The Brickman (Ryan McNaught)",
+"url": "https://www.thebrickman.com/",
+"group": "artists",
+"countries": [
+"AU"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "thebrickman.com"
+},
+{
+"id": "ekow-nimako",
+"name": "Ekow Nimako Studios",
+"url": "https://www.ekownimako.com/",
+"group": "artists",
+"countries": [
+"CA"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "ekownimako.com"
+},
+{
+"id": "georg-schmitt",
+"name": "Georg Schmitt",
+"url": "https://lpro.fr/",
+"group": "artists",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "lpro.fr"
+},
+{
+"id": "brick-fabrik",
+"name": "BrickFabrik (René Hoffmeister)",
+"url": "https://www.brick-fabrik.de/",
+"group": "artists",
+"countries": [
+"DE"
+],
+"languages": [
+"de",
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "brick-fabrik.de"
+},
+{
+"id": "mbrick",
+"name": "M'BricK",
+"url": "https://mbrickart.bigcartel.com/",
+"group": "artists",
+"countries": [
+"FR"
+],
+"languages": [
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official"
+],
+"category": "learning",
+"domain": "mbrickart.bigcartel.com"
+},
+{
+"id": "bricknerd-storage-guide",
+"name": "BrickNerd storage guide",
+"url": "https://bricknerd.com/home/an-opinionated-guide-to-lego-storage-containers-and-cost-5-25-23",
+"group": "guides",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning"
+],
+"category": "learning",
+"domain": "bricknerd.com"
+},
+{
+"id": "bricknerd-lighting-guide",
+"name": "BrickNerd lighting lessons",
+"url": "https://bricknerd.com/home/lego-lighting-lessons-making-sets-and-mocs-merry-and-bright-12-26-22",
+"group": "guides",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning"
+],
+"category": "learning",
+"domain": "bricknerd.com"
+},
+{
+"id": "spielzeug-fuchs-sortieren",
+"name": "Spielzeug-Fuchs: LEGO sortieren",
+"url": "https://spielzeug-fuchs.de/lego-sortieren-leicht-gemacht/",
+"group": "guides",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"learning"
+],
+"category": "learning",
+"domain": "spielzeug-fuchs.de"
+},
+{
+"id": "brothers-brick-yellowed-bricks",
+"name": "The Brothers Brick: cleaning yellowed bricks",
+"url": "https://www.brothers-brick.com/2009/08/30/how-to-clean-yellowed-lego-bricks-to-make-classic-space-sets-look-new-news/",
+"group": "guides",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning"
+],
+"category": "learning",
+"domain": "brothers-brick.com"
+},
+{
+"id": "hispabrick-magazine",
+"name": "HispaBrick Magazine",
+"url": "https://hispabrickmagazine.com/",
+"group": "books-and-magazines",
+"countries": [
+"ES"
+],
+"languages": [
+"es",
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"news"
+],
+"category": "learning",
+"domain": "hispabrickmagazine.com"
+},
+{
+"id": "lgms",
+"name": "L-Gauge Modular System (LGMS)",
+"url": "https://lgms.org/",
+"group": "guides",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"clubs"
+],
+"category": "learning",
+"domain": "lgms.org"
+},
+{
+"id": "nico71",
+"name": "Nico71's Technic Creations",
+"url": "https://www.nico71.fr/",
+"group": "artists",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"fr"
+],
+"city": null,
+"covers": [
+"learning",
+"instructions",
+"custom-builds"
+],
+"category": "learning",
+"domain": "nico71.fr"
+},
+{
+"id": "brickreport-licensed-themes",
+"name": "BrickReport: licensed themes of LEGO alternatives",
+"url": "https://www.brickreport.io/blog/lego-alternatives-licensed-themes",
+"group": "guides",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"learning",
+"official",
+"alternative"
+],
+"category": "learning",
+"domain": "brickreport.io"
+},
+{
+"id": "lego-house",
+"name": "LEGO House",
+"url": "https://legohouse.com/en-gb",
+"group": "official-venues",
+"countries": [
+"DK"
+],
+"languages": [
+"en",
+"da",
+"de"
+],
+"city": "Billund",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "legohouse.com"
+},
+{
+"id": "lego-store-locator",
+"name": "LEGO Stores directory",
+"url": "https://www.lego.com/fr-fr/stores",
+"group": "official-venues",
+"countries": [
+"international"
+],
+"languages": [
+"fr",
+"en",
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "lego.com"
+},
+{
+"id": "lego-certified-stores",
+"name": "LEGO Certified Stores",
+"url": "https://www.lego.com/en-us/service/help-topics/article/lego-certified-stores",
+"group": "official-venues",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "lego.com"
+},
+{
+"id": "lego-store-leicester-square",
+"name": "LEGO Store Leicester Square",
+"url": "https://www.lego.com/en-gb/stores/store/lsq",
+"group": "official-venues",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": "London",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "lego.com"
+},
+{
+"id": "lego-store-paris-les-halles",
+"name": "LEGO Store Paris Les Halles",
+"url": "https://www.lego.com/fr-fr/stores/store/paris-les-halles",
+"group": "official-venues",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": "Paris",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "lego.com"
+},
+{
+"id": "lego-discovery-centres",
+"name": "LEGO Discovery Centre",
+"url": "https://www.legodiscoverycentre.com/",
+"group": "official-venues",
+"countries": [
+"BE",
+"DE",
+"US"
+],
+"languages": [
+"en",
+"fr",
+"de",
+"nl"
+],
+"city": null,
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "legodiscoverycentre.com"
+},
+{
+"id": "legoland-discovery-centers",
+"name": "LEGOLAND Discovery Centers",
+"url": "https://www.legolanddiscoverycenter.com/",
+"group": "official-venues",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"de",
+"nl"
+],
+"city": null,
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "legolanddiscoverycenter.com"
+},
+{
+"id": "legoland-parks",
+"name": "LEGOLAND parks (official list)",
+"url": "https://www.legoland.com/",
+"group": "theme-parks",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "legoland.com"
+},
+{
+"id": "legoland-billund",
+"name": "LEGOLAND Billund Resort",
+"url": "https://www.legoland.dk/",
+"group": "theme-parks",
+"countries": [
+"DK"
+],
+"languages": [
+"da",
+"en",
+"de"
+],
+"city": "Billund",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "legoland.dk"
+},
+{
+"id": "legoland-windsor",
+"name": "LEGOLAND Windsor Resort",
+"url": "https://www.legoland.co.uk/",
+"group": "theme-parks",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": "Windsor",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "legoland.co.uk"
+},
+{
+"id": "legoland-deutschland",
+"name": "LEGOLAND Deutschland Resort",
+"url": "https://www.legoland.de/",
+"group": "theme-parks",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": "Günzburg",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "legoland.de"
+},
+{
+"id": "museum-of-bricks",
+"name": "Museum of Bricks",
+"url": "https://museumofbricks.cz/",
+"group": "museums-and-exhibitions",
+"countries": [
+"CZ"
+],
+"languages": [
+"cs",
+"en",
+"de"
+],
+"city": "Prague",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "museumofbricks.cz"
+},
+{
+"id": "muzeum-lega-tabor",
+"name": "Muzeum LEGA Tábor",
+"url": "https://brickmuzeumtabor.cz/",
+"group": "museums-and-exhibitions",
+"countries": [
+"CZ"
+],
+"languages": [
+"cs",
+"en"
+],
+"city": "Tábor",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "brickmuzeumtabor.cz"
+},
+{
+"id": "lebrickgo",
+"name": "LEbrickGO Museum",
+"url": "https://www.lebrickgo.ch/",
+"group": "museums-and-exhibitions",
+"countries": [
+"CH"
+],
+"languages": [
+"de"
+],
+"city": "Binningen",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "lebrickgo.ch"
+},
+{
+"id": "frankensteins-klemmbaustein-museum",
+"name": "Frankensteins Klemmbaustein Museum",
+"url": "https://frankensteins.de/",
+"group": "museums-and-exhibitions",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": "Eckental",
+"covers": [
+"official",
+"alternative",
+"places"
+],
+"category": "places",
+"domain": "frankensteins.de"
+},
+{
+"id": "brick-haus",
+"name": "BRICK HAUS Klemmbaustein-Museum",
+"url": "https://www.brick-brick.de/",
+"group": "museums-and-exhibitions",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": "Bad Birnbach",
+"covers": [
+"official",
+"alternative",
+"places"
+],
+"category": "places",
+"domain": "brick-brick.de"
+},
+{
+"id": "palais-de-la-maquette",
+"name": "Palais de la Maquette - Musée du Jouet",
+"url": "http://www.palaisdelamaquette.com/",
+"group": "museums-and-exhibitions",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": "Valras-Plage",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "palaisdelamaquette.com"
+},
+{
+"id": "railway-brick-museum",
+"name": "Railway Brick Museum",
+"url": "https://www.railway-brickmuseum.eu/",
+"group": "museums-and-exhibitions",
+"countries": [
+"BE"
+],
+"languages": [
+"nl",
+"en"
+],
+"city": "Maasmechelen",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "railway-brickmuseum.eu"
+},
+{
+"id": "elbabrick",
+"name": "ElbaBrick",
+"url": "https://www.elbabrick.it/",
+"group": "museums-and-exhibitions",
+"countries": [
+"IT"
+],
+"languages": [
+"it",
+"fr",
+"en"
+],
+"city": "Marina di Campo",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "elbabrick.it"
+},
+{
+"id": "karalisbrick",
+"name": "Karalisbrick Museo del Mattoncino",
+"url": "https://www.karalisbrick.com/en/home-en/",
+"group": "museums-and-exhibitions",
+"countries": [
+"IT"
+],
+"languages": [
+"it",
+"en"
+],
+"city": "Capoterra",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "karalisbrick.com"
+},
+{
+"id": "bricks-and-figs",
+"name": "Bricks & Figs",
+"url": "https://bricksandfigs.pl/en/",
+"group": "museums-and-exhibitions",
+"countries": [
+"PL"
+],
+"languages": [
+"en",
+"pl"
+],
+"city": "Kraków",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "bricksandfigs.pl"
+},
+{
+"id": "brickz-museum",
+"name": "Brickz Museum",
+"url": "https://brickzmuseum.com/",
+"group": "museums-and-exhibitions",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": "Milton Keynes",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "brickzmuseum.com"
+},
+{
+"id": "merlins-steine-permanent-exhibitions",
+"name": "Merlins Steine: permanent exhibitions",
+"url": "https://www.merlinssteine.de/dauerausstellungen/",
+"group": "museums-and-exhibitions",
+"countries": [
+"DE",
+"CH",
+"AT"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"places"
+],
+"category": "places",
+"domain": "merlinssteine.de"
+},
+{
+"id": "bluebrixx-stores",
+"name": "BlueBrixx Stores",
+"url": "https://www.bluebrixx.com/de/stores/",
+"group": "physical-shops",
+"countries": [
+"DE",
+"AT"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"alternative",
+"places"
+],
+"category": "places",
+"domain": "bluebrixx.com"
+},
+{
+"id": "time-for-bricks",
+"name": "Time For Bricks",
+"url": "https://www.timeforbricks.fr/",
+"group": "physical-shops",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": "Chambéry, Annecy",
+"covers": [
+"alternative",
+"places"
+],
+"category": "places",
+"domain": "timeforbricks.fr"
+},
+{
+"id": "toysngo-cobi-store",
+"name": "Toysngo COBI Store",
+"url": "https://www.toysngo.com/",
+"group": "physical-shops",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": "Saint-Orens-de-Gameville",
+"covers": [
+"alternative",
+"places"
+],
+"category": "places",
+"domain": "toysngo.com"
+},
+{
+"id": "enjeu-briques",
+"name": "Enjeu Briques",
+"url": "https://enjeubriques.fr/",
+"group": "physical-shops",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": "Saint-Malo",
+"covers": [
+"official",
+"alternative",
+"second-hand",
+"places"
+],
+"category": "places",
+"domain": "enjeubriques.fr"
+},
+{
+"id": "la-boite-a-briques",
+"name": "La Boîte à Briques",
+"url": "https://laboiteabriques.com/",
+"group": "physical-shops",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": "Montpellier",
+"covers": [
+"official",
+"second-hand",
+"parts",
+"places"
+],
+"category": "places",
+"domain": "laboiteabriques.com"
+},
+{
+"id": "brickfun-1974",
+"name": "Brickfun 1974",
+"url": "https://www.brickfun-1974.fr/",
+"group": "physical-shops",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": "Saint-Martin-Bellevue",
+"covers": [
+"official",
+"second-hand",
+"parts",
+"minifigures",
+"places"
+],
+"category": "places",
+"domain": "brickfun-1974.fr"
+},
+{
+"id": "autour-des-briques",
+"name": "Autour des Briques",
+"url": "https://autourdesbriques.fr/",
+"group": "physical-shops",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": "Marcillat-en-Combraille",
+"covers": [
+"official",
+"alternative",
+"parts",
+"places"
+],
+"category": "places",
+"domain": "autourdesbriques.fr"
+},
+{
+"id": "steingemachtes",
+"name": "Steingemachtes",
+"url": "https://steingemachtes.de/",
+"group": "physical-shops",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": "Paderborn",
+"covers": [
+"alternative",
+"parts",
+"places"
+],
+"category": "places",
+"domain": "steingemachtes.de"
+},
+{
+"id": "brick-bank-cafe",
+"name": "Brick Bank Café",
+"url": "https://www.brickbankcafe.org/",
+"group": "cafes-and-bars",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": "Bingley",
+"covers": [
+"official",
+"second-hand",
+"places"
+],
+"category": "places",
+"domain": "brickbankcafe.org"
+},
+{
+"id": "builders-brew-cafe",
+"name": "Builder's Brew Café",
+"url": "https://buildersbrewcafe.com/",
+"group": "cafes-and-bars",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": "Sheffield",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "buildersbrewcafe.com"
+},
+{
+"id": "d-brick-cafe",
+"name": "D-Brick Café",
+"url": "https://www.d-brick.com/",
+"group": "cafes-and-bars",
+"countries": [
+"BE"
+],
+"languages": [
+"fr"
+],
+"city": "Liège",
+"covers": [
+"official",
+"second-hand",
+"places"
+],
+"category": "places",
+"domain": "d-brick.com"
+},
+{
+"id": "coffee-and-bricks-limburg",
+"name": "Coffee & Bricks by BRICKONAS",
+"url": "https://brickonas.info/coffee-and-bricks/",
+"group": "cafes-and-bars",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": "Limburg an der Lahn",
+"covers": [
+"alternative",
+"places"
+],
+"category": "places",
+"domain": "brickonas.info"
+},
+{
+"id": "heartbrickcafe",
+"name": "HeartBrickCafé",
+"url": "https://heartbrickcafe.de/",
+"group": "cafes-and-bars",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": "Rothenburg ob der Tauber",
+"covers": [
+"official",
+"minifigures",
+"places"
+],
+"category": "places",
+"domain": "heartbrickcafe.de"
+},
+{
+"id": "steinequelle-baupause",
+"name": "Baupause by Steinequelle",
+"url": "https://steinequelle.de/baupause/",
+"group": "cafes-and-bars",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": "Höhr-Grenzhausen",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "steinequelle.de"
+},
+{
+"id": "bricks-factory",
+"name": "Bricks Factory",
+"url": "https://bricksfactory.fr/",
+"group": "cafes-and-bars",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": "Vedène",
+"covers": [
+"official",
+"places"
+],
+"category": "places",
+"domain": "bricksfactory.fr"
+},
+{
+"id": "bricklink-marketplace",
+"name": "BrickLink",
+"url": "https://www.bricklink.com/",
+"group": "marketplaces",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"second-hand",
+"parts",
+"minifigures",
+"instructions",
+"data"
+],
+"category": "second-hand",
+"domain": "bricklink.com"
+},
+{
+"id": "brick-owl-marketplace",
+"name": "Brick Owl",
+"url": "https://www.brickowl.com/",
+"group": "marketplaces",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"second-hand",
+"parts",
+"minifigures"
+],
+"category": "second-hand",
+"domain": "brickowl.com"
+},
+{
+"id": "ebay-fr",
+"name": "eBay.fr",
+"url": "https://www.ebay.fr/",
+"group": "marketplaces",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"second-hand",
+"parts",
+"minifigures"
+],
+"category": "second-hand",
+"domain": "ebay.fr"
+},
+{
+"id": "vinted",
+"name": "Vinted",
+"url": "https://www.vinted.fr/",
+"group": "marketplaces",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"second-hand",
+"minifigures"
+],
+"category": "second-hand",
+"domain": "vinted.fr"
+},
+{
+"id": "leboncoin",
+"name": "Leboncoin",
+"url": "https://www.leboncoin.fr/",
+"group": "marketplaces",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"second-hand",
+"parts",
+"minifigures"
+],
+"category": "second-hand",
+"domain": "leboncoin.fr"
+},
+{
+"id": "catawiki",
+"name": "Catawiki",
+"url": "https://www.catawiki.com/fr",
+"group": "marketplaces",
+"countries": [
+"international"
+],
+"languages": [
+"fr",
+"en",
+"nl",
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"second-hand",
+"parts"
+],
+"category": "second-hand",
+"domain": "catawiki.com"
+},
+{
+"id": "marktplaats",
+"name": "Marktplaats",
+"url": "https://www.marktplaats.nl/",
+"group": "marketplaces",
+"countries": [
+"NL"
+],
+"languages": [
+"nl"
+],
+"city": null,
+"covers": [
+"official",
+"second-hand"
+],
+"category": "second-hand",
+"domain": "marktplaats.nl"
+},
+{
+"id": "kleinanzeigen",
+"name": "Kleinanzeigen",
+"url": "https://www.kleinanzeigen.de/",
+"group": "marketplaces",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"second-hand"
+],
+"category": "second-hand",
+"domain": "kleinanzeigen.de"
+},
+{
+"id": "klodivo",
+"name": "klodivo",
+"url": "https://klodivo.com/fr",
+"group": "marketplaces",
+"countries": [
+"international"
+],
+"languages": [
+"fr",
+"en",
+"da",
+"de",
+"sv",
+"nl",
+"pl",
+"it",
+"es",
+"pt",
+"fi",
+"cs"
+],
+"city": null,
+"covers": [
+"official",
+"second-hand",
+"parts",
+"minifigures",
+"instructions"
+],
+"category": "second-hand",
+"domain": "klodivo.com"
+},
+{
+"id": "de-brickplaats",
+"name": "De BrickPlaats",
+"url": "https://brickplaats.nl/",
+"group": "second-hand-shops",
+"countries": [
+"NL"
+],
+"languages": [
+"nl",
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"second-hand",
+"parts",
+"minifigures",
+"custom-builds",
+"instructions"
+],
+"category": "second-hand",
+"domain": "brickplaats.nl"
+},
+{
+"id": "brickland",
+"name": "Brickland",
+"url": "https://brickland.fr/",
+"group": "second-hand-shops",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"second-hand",
+"parts",
+"minifigures"
+],
+"category": "second-hand",
+"domain": "brickland.fr"
+},
+{
+"id": "brickplus",
+"name": "BrickPlus",
+"url": "https://brickplus.fr/",
+"group": "second-hand-shops",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"second-hand",
+"minifigures",
+"parts"
+],
+"category": "second-hand",
+"domain": "brickplus.fr"
+},
+{
+"id": "retrobriques",
+"name": "Retrobriques",
+"url": "https://www.retrobriques.com/",
+"group": "second-hand-shops",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"second-hand"
+],
+"category": "second-hand",
+"domain": "retrobriques.com"
+},
+{
+"id": "rebloxe",
+"name": "Rebloxe",
+"url": "https://www.rebloxe.com/fr-fr",
+"group": "second-hand-shops",
+"countries": [
+"international"
+],
+"languages": [
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"second-hand"
+],
+"category": "second-hand",
+"domain": "rebloxe.com"
+},
+{
+"id": "reliczone",
+"name": "Reliczone",
+"url": "https://reliczone.fr/collections/lego",
+"group": "second-hand-shops",
+"countries": [
+"FR"
+],
+"languages": [
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"second-hand",
+"minifigures"
+],
+"category": "second-hand",
+"domain": "reliczone.fr"
+},
+{
+"id": "reddit-legomarket",
+"name": "r/Legomarket",
+"url": "https://www.reddit.com/r/Legomarket/",
+"group": "marketplaces",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"second-hand"
+],
+"category": "second-hand",
+"domain": "reddit.com"
+},
+{
+"id": "techlug-vente-achat",
+"name": "TechLUG, buy and sell section",
+"url": "https://www.techlug.fr/Forum/viewforum.php?f=6",
+"group": "marketplaces",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"second-hand",
+"custom-builds"
+],
+"category": "second-hand",
+"domain": "techlug.fr"
+},
+{
+"id": "pick-a-brick",
+"name": "Pick a Brick (LEGO.com)",
+"url": "https://www.lego.com/fr-fr/pick-and-build/pick-a-brick",
+"group": "parts-and-custom-builds",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"parts",
+"minifigures"
+],
+"category": "second-hand",
+"domain": "lego.com"
+},
+{
+"id": "toypro",
+"name": "ToyPro",
+"url": "https://www.toypro.com/fr",
+"group": "parts-and-custom-builds",
+"countries": [
+"international"
+],
+"languages": [
+"fr",
+"en",
+"nl",
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"parts",
+"minifigures"
+],
+"category": "second-hand",
+"domain": "toypro.com"
+},
+{
+"id": "brickwith",
+"name": "Brickwith (formerly Webrick)",
+"url": "https://www.brickwith.com/en",
+"group": "parts-and-custom-builds",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative",
+"parts",
+"custom-builds"
+],
+"category": "second-hand",
+"domain": "brickwith.com"
+},
+{
+"id": "buymebricks",
+"name": "BuyMeBricks",
+"url": "https://buymebricks.com/",
+"group": "parts-and-custom-builds",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"fr"
+],
+"city": null,
+"covers": [
+"alternative",
+"parts",
+"custom-builds",
+"instructions"
+],
+"category": "second-hand",
+"domain": "buymebricks.com"
+},
+{
+"id": "buildamoc",
+"name": "BuildaMOC",
+"url": "https://buildamoc.com/",
+"group": "parts-and-custom-builds",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"parts",
+"instructions"
+],
+"category": "second-hand",
+"domain": "buildamoc.com"
+},
+{
+"id": "openstuds",
+"name": "OpenStuds and BrickVault",
+"url": "https://www.openstuds.com/",
+"group": "parts-and-custom-builds",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"instructions"
+],
+"category": "second-hand",
+"domain": "openstuds.com"
+},
+{
+"id": "bobby-brix",
+"name": "Bobby Brix",
+"url": "https://store.bobbybrix.com/",
+"group": "parts-and-custom-builds",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"alternative",
+"official",
+"instructions"
+],
+"category": "second-hand",
+"domain": "store.bobbybrix.com"
+},
+{
+"id": "moc-brick-land",
+"name": "MOC Brick Land",
+"url": "https://mocbrickland.com/",
+"group": "parts-and-custom-builds",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"alternative"
+],
+"category": "second-hand",
+"domain": "mocbrickland.com"
+},
+{
+"id": "brickmania",
+"name": "Brickmania",
+"url": "https://www.brickmania.com/",
+"group": "parts-and-custom-builds",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"official"
+],
+"category": "second-hand",
+"domain": "brickmania.com"
+},
+{
+"id": "lego-building-instructions",
+"name": "Official LEGO building instructions",
+"url": "https://www.lego.com/fr-fr/service/building-instructions",
+"group": "parts-and-custom-builds",
+"countries": [
+"international"
+],
+"languages": [
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"instructions"
+],
+"category": "second-hand",
+"domain": "lego.com"
+},
+{
+"id": "lightailing-briksmax",
+"name": "Lightailing and Briksmax",
+"url": "https://www.lightailing.com/fr",
+"group": "services-and-accessories",
+"countries": [
+"international"
+],
+"languages": [
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "second-hand",
+"domain": "lightailing.com"
+},
+{
+"id": "light-my-bricks",
+"name": "Light My Bricks",
+"url": "https://www.lightmybricks.com/",
+"group": "services-and-accessories",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "second-hand",
+"domain": "lightmybricks.com"
+},
+{
+"id": "vitrinefactory",
+"name": "VitrineFactory",
+"url": "https://vitrinefactory.com/",
+"group": "services-and-accessories",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "second-hand",
+"domain": "vitrinefactory.com"
+},
+{
+"id": "kadris-art",
+"name": "Kadris Art",
+"url": "https://www.kadris-art.com/collections/plexiglas",
+"group": "services-and-accessories",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "second-hand",
+"domain": "kadris-art.com"
+},
+{
+"id": "briquesabrac",
+"name": "BriquesaBrac",
+"url": "https://www.briquesabrac.com/vitrines-ensembles-lego",
+"group": "services-and-accessories",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "second-hand",
+"domain": "briquesabrac.com"
+},
+{
+"id": "wicked-brick",
+"name": "Wicked Brick",
+"url": "https://www.wickedbrick.com/",
+"group": "services-and-accessories",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"minifigures"
+],
+"category": "second-hand",
+"domain": "wickedbrick.com"
+},
+{
+"id": "sora-lego",
+"name": "sora.de",
+"url": "https://www.sora.de/sammelwelten/lego/",
+"group": "services-and-accessories",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "second-hand",
+"domain": "sora.de"
+},
+{
+"id": "brick-in-it",
+"name": "Brick In It",
+"url": "https://brick-in-it.com/collections/lego-display-cases",
+"group": "services-and-accessories",
+"countries": [
+"GB",
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "second-hand",
+"domain": "brick-in-it.com"
+},
+{
+"id": "minifigures-display",
+"name": "Minifigures Display",
+"url": "https://www.minifiguresdisplay.com/en-us",
+"group": "services-and-accessories",
+"countries": [
+"ES",
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"minifigures"
+],
+"category": "second-hand",
+"domain": "minifiguresdisplay.com"
+},
+{
+"id": "sticknbricks",
+"name": "Stick N' Bricks",
+"url": "https://sticknbricks.com/",
+"group": "services-and-accessories",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"minifigures"
+],
+"category": "second-hand",
+"domain": "sticknbricks.com"
+},
+{
+"id": "bright-my-bricks",
+"name": "Bright My Bricks",
+"url": "https://brightmybricks.com/",
+"group": "services-and-accessories",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"fr",
+"de"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "second-hand",
+"domain": "brightmybricks.com"
+},
+{
+"id": "game-of-bricks-eu",
+"name": "Game of Bricks EU",
+"url": "https://gameofbricks.eu/",
+"group": "services-and-accessories",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "second-hand",
+"domain": "gameofbricks.eu"
+},
+{
+"id": "brickstuff",
+"name": "Brickstuff",
+"url": "https://www.brickstuff.com/",
+"group": "services-and-accessories",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds"
+],
+"category": "second-hand",
+"domain": "brickstuff.com"
+},
+{
+"id": "brickcessories",
+"name": "Brickcessories",
+"url": "https://brickcessories.com/",
+"group": "services-and-accessories",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"parts"
+],
+"category": "second-hand",
+"domain": "brickcessories.com"
+},
+{
+"id": "bricktactical",
+"name": "BrickTactical",
+"url": "https://bricktactical.com/",
+"group": "custom-minifigures-and-accessories",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"minifigures",
+"parts"
+],
+"category": "second-hand",
+"domain": "bricktactical.com"
+},
+{
+"id": "brickwarriors",
+"name": "BrickWarriors",
+"url": "https://www.brickwarriors.com/",
+"group": "custom-minifigures-and-accessories",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"minifigures",
+"parts"
+],
+"category": "second-hand",
+"domain": "brickwarriors.com"
+},
+{
+"id": "citizen-brick",
+"name": "Citizen Brick",
+"url": "https://citizenbrick.com/",
+"group": "custom-minifigures-and-accessories",
+"countries": [
+"US"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"minifigures",
+"parts"
+],
+"category": "second-hand",
+"domain": "citizenbrick.com"
+},
+{
+"id": "minifigs-me",
+"name": "Minifigs.me",
+"url": "https://minifigs.me/",
+"group": "custom-minifigures-and-accessories",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"minifigures",
+"parts"
+],
+"category": "second-hand",
+"domain": "minifigs.me"
+},
+{
+"id": "hall-of-bricks",
+"name": "Hall of Bricks",
+"url": "https://hallofbricks.shop/",
+"group": "custom-minifigures-and-accessories",
+"countries": [
+"DE",
+"international"
+],
+"languages": [
+"de",
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"minifigures"
+],
+"category": "second-hand",
+"domain": "hallofbricks.shop"
+},
+{
+"id": "brick-manufacture",
+"name": "Brick Manufacture",
+"url": "https://brick-manufacture.com/en",
+"group": "custom-minifigures-and-accessories",
+"countries": [
+"DE",
+"FR",
+"international"
+],
+"languages": [
+"de",
+"en",
+"fr",
+"es"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"minifigures"
+],
+"category": "second-hand",
+"domain": "brick-manufacture.com"
+},
+{
+"id": "minifiguren-com",
+"name": "minifiguren.com",
+"url": "https://www.minifiguren.com/",
+"group": "custom-minifigures-and-accessories",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"minifigures",
+"parts"
+],
+"category": "second-hand",
+"domain": "minifiguren.com"
+},
+{
+"id": "bedrukjeblokje",
+"name": "Bedrukjeblokje",
+"url": "https://bedrukjeblokje.nl/",
+"group": "custom-minifigures-and-accessories",
+"countries": [
+"NL",
+"international"
+],
+"languages": [
+"nl",
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"minifigures",
+"parts"
+],
+"category": "second-hand",
+"domain": "bedrukjeblokje.nl"
+},
+{
+"id": "pepe-bricks",
+"name": "Pepe Bricks",
+"url": "https://www.pepebricks.com/",
+"group": "custom-minifigures-and-accessories",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"minifigures",
+"parts"
+],
+"category": "second-hand",
+"domain": "pepebricks.com"
+},
+{
+"id": "briquestore",
+"name": "Briquestore",
+"url": "https://www.briquestore.fr/fr/",
+"group": "custom-minifigures-and-accessories",
+"countries": [
+"FR"
+],
+"languages": [
+"fr",
+"en",
+"es",
+"de",
+"it"
+],
+"city": null,
+"covers": [
+"official",
+"parts",
+"minifigures",
+"custom-builds"
+],
+"category": "second-hand",
+"domain": "briquestore.fr"
+},
+{
+"id": "brickstickershop",
+"name": "BrickStickerShop",
+"url": "https://www.brickstickershop.com/",
+"group": "decals-and-stickers",
+"countries": [
+"NL",
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"parts"
+],
+"category": "second-hand",
+"domain": "brickstickershop.com"
+},
+{
+"id": "ultimate-collector-stickers",
+"name": "Ultimate Collector Stickers",
+"url": "https://www.ultimatecollectorstickers.co.uk/",
+"group": "decals-and-stickers",
+"countries": [
+"GB"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"parts"
+],
+"category": "second-hand",
+"domain": "ultimatecollectorstickers.co.uk"
+},
+{
+"id": "forwartsticker",
+"name": "ForwartSticker",
+"url": "https://forwartsticker.com/",
+"group": "decals-and-stickers",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"parts"
+],
+"category": "second-hand",
+"domain": "forwartsticker.com"
+},
+{
+"id": "moc-sticker-shop",
+"name": "The MOC Sticker Shop",
+"url": "https://themocstickershop.com/",
+"group": "decals-and-stickers",
+"countries": [
+"GB",
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"parts"
+],
+"category": "second-hand",
+"domain": "themocstickershop.com"
+},
+{
+"id": "wallapop",
+"name": "Wallapop",
+"url": "https://www.wallapop.com/",
+"group": "marketplaces",
+"countries": [
+"ES"
+],
+"languages": [
+"es"
+],
+"city": null,
+"covers": [
+"second-hand"
+],
+"category": "second-hand",
+"domain": "wallapop.com"
+},
+{
+"id": "afols-nl",
+"name": "afols.nl",
+"url": "https://afols.nl/",
+"group": "marketplaces",
+"countries": [
+"NL"
+],
+"languages": [
+"nl"
+],
+"city": null,
+"covers": [
+"second-hand",
+"news"
+],
+"category": "second-hand",
+"domain": "afols.nl"
+},
+{
+"id": "2dehands-be",
+"name": "2dehands",
+"url": "https://www.2dehands.be/",
+"group": "marketplaces",
+"countries": [
+"BE"
+],
+"languages": [
+"nl"
+],
+"city": null,
+"covers": [
+"second-hand"
+],
+"category": "second-hand",
+"domain": "2dehands.be"
+},
+{
+"id": "blocket-se",
+"name": "Blocket",
+"url": "https://www.blocket.se/",
+"group": "marketplaces",
+"countries": [
+"SE"
+],
+"languages": [
+"sv"
+],
+"city": null,
+"covers": [
+"second-hand"
+],
+"category": "second-hand",
+"domain": "blocket.se"
+},
+{
+"id": "dba-dk",
+"name": "DBA",
+"url": "https://www.dba.dk/",
+"group": "marketplaces",
+"countries": [
+"DK"
+],
+"languages": [
+"da"
+],
+"city": null,
+"covers": [
+"second-hand"
+],
+"category": "second-hand",
+"domain": "dba.dk"
+},
+{
+"id": "finn-no",
+"name": "FINN.no",
+"url": "https://www.finn.no/",
+"group": "marketplaces",
+"countries": [
+"NO"
+],
+"languages": [
+"no"
+],
+"city": null,
+"covers": [
+"second-hand"
+],
+"category": "second-hand",
+"domain": "finn.no"
+},
+{
+"id": "buwizz",
+"name": "BuWizz",
+"url": "https://buwizz.com/",
+"group": "motors-and-track",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"sl"
+],
+"city": null,
+"covers": [
+"parts"
+],
+"category": "second-hand",
+"domain": "buwizz.com"
+},
+{
+"id": "fx-bricks",
+"name": "Fx Bricks",
+"url": "https://shop.fxbricks.com/",
+"group": "motors-and-track",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"parts"
+],
+"category": "second-hand",
+"domain": "shop.fxbricks.com"
+},
+{
+"id": "trixbrix",
+"name": "Trixbrix",
+"url": "https://trixbrix.eu/en/",
+"group": "motors-and-track",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"de"
+],
+"city": null,
+"covers": [
+"parts"
+],
+"category": "second-hand",
+"domain": "trixbrix.eu"
+},
+{
+"id": "open-l-gauge",
+"name": "Open L-Gauge",
+"url": "https://open-l-gauge.eu/",
+"group": "parts-and-custom-builds",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"instructions",
+"custom-builds"
+],
+"category": "second-hand",
+"domain": "open-l-gauge.eu"
+},
+{
+"id": "train-moc",
+"name": "train-moc",
+"url": "https://train-moc.com/",
+"group": "parts-and-custom-builds",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"instructions",
+"custom-builds"
+],
+"category": "second-hand",
+"domain": "train-moc.com"
+},
+{
+"id": "brickville",
+"name": "Brickville",
+"url": "https://brickville.com.au/",
+"group": "second-hand-shops",
+"countries": [
+"AU",
+"NZ"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"second-hand"
+],
+"category": "second-hand",
+"domain": "brickville.com.au"
+},
+{
+"id": "lego-com-fr",
+"name": "LEGO.com (France)",
+"url": "https://www.lego.com/fr-fr",
+"group": "official-lego",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "shops",
+"domain": "lego.com"
+},
+{
+"id": "ltoys",
+"name": "LToys",
+"url": "https://www.ltoys.lu/fr",
+"group": "official-lego",
+"countries": [
+"LU",
+"FR",
+"BE",
+"DE",
+"NL",
+"AT"
+],
+"languages": [
+"fr",
+"en",
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "shops",
+"domain": "ltoys.lu"
+},
+{
+"id": "baustein-store",
+"name": "Baustein Store",
+"url": "https://bausteinstore.de",
+"group": "official-lego",
+"countries": [
+"DE",
+"FR"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "shops",
+"domain": "bausteinstore.de"
+},
+{
+"id": "duo-idee-spiel",
+"name": "idee+spiel (duo idee+spiel)",
+"url": "https://www.ideeundspiel.com",
+"group": "official-lego",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "shops",
+"domain": "ideeundspiel.com"
+},
+{
+"id": "brickmo",
+"name": "Brickmo",
+"url": "https://www.brickmo.com/fr/",
+"group": "alternative-brands",
+"countries": [
+"AT",
+"FR",
+"DE"
+],
+"languages": [
+"de",
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "shops",
+"domain": "brickmo.com"
+},
+{
+"id": "kbs-shop",
+"name": "KBS Shop",
+"url": "https://kbs-shop.com",
+"group": "alternative-brands",
+"countries": [
+"DE",
+"FR",
+"BE"
+],
+"languages": [
+"de",
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "shops",
+"domain": "kbs-shop.com"
+},
+{
+"id": "bausteinreich",
+"name": "Bausteinreich",
+"url": "https://www.bausteinreich.de",
+"group": "alternative-brands",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "shops",
+"domain": "bausteinreich.de"
+},
+{
+"id": "bluebrixx-shop",
+"name": "BlueBrixx",
+"url": "https://www.bluebrixx.com/fr/",
+"group": "alternative-brands",
+"countries": [
+"DE",
+"FR"
+],
+"languages": [
+"fr",
+"de",
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "shops",
+"domain": "bluebrixx.com"
+},
+{
+"id": "spielzeug-fuchs",
+"name": "Spielzeug-Fuchs",
+"url": "https://spielzeug-fuchs.de",
+"group": "alternative-brands",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "shops",
+"domain": "spielzeug-fuchs.de"
+},
+{
+"id": "brickcoast",
+"name": "Brickcoast",
+"url": "https://brickcoast.de",
+"group": "alternative-brands",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "shops",
+"domain": "brickcoast.de"
+},
+{
+"id": "brickparts-nl",
+"name": "Brickparts.nl",
+"url": "https://brickparts.nl",
+"group": "alternative-brands",
+"countries": [
+"NL",
+"BE",
+"DE"
+],
+"languages": [
+"nl"
+],
+"city": null,
+"covers": [
+"alternative",
+"parts"
+],
+"category": "shops",
+"domain": "brickparts.nl"
+},
+{
+"id": "mister-brixx",
+"name": "Mister Brixx",
+"url": "https://www.misterbrixx.de",
+"group": "alternative-brands",
+"countries": [
+"DE"
+],
+"languages": [
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "shops",
+"domain": "misterbrixx.de"
+},
+{
+"id": "brickeez",
+"name": "Brickeez",
+"url": "https://www.brickeez.com",
+"group": "alternative-brands",
+"countries": [
+"FR",
+"BE"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "shops",
+"domain": "brickeez.com"
+},
+{
+"id": "blouge-brick-store",
+"name": "Blouge Brick Store",
+"url": "https://blouge-brickstore.fr",
+"group": "alternative-brands",
+"countries": [
+"FR",
+"BE",
+"LU"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "shops",
+"domain": "blouge-brickstore.fr"
+},
+{
+"id": "barweer",
+"name": "Barweer",
+"url": "https://www.barweer.com",
+"group": "alternative-brands",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "shops",
+"domain": "barweer.com"
+},
+{
+"id": "afobrick",
+"name": "AFOBrick",
+"url": "https://afobrick.com",
+"group": "alternative-brands",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "shops",
+"domain": "afobrick.com"
+},
+{
+"id": "joygobricks",
+"name": "JoyGobricks",
+"url": "https://joygobricks.com",
+"group": "alternative-brands",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative",
+"parts"
+],
+"category": "shops",
+"domain": "joygobricks.com"
+},
+{
+"id": "chowbrick",
+"name": "ChowBrick",
+"url": "https://www.chowbrick.com",
+"group": "alternative-brands",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "shops",
+"domain": "chowbrick.com"
+},
+{
+"id": "ywobb",
+"name": "YWOBB",
+"url": "https://yourwobb.com",
+"group": "alternative-brands",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "shops",
+"domain": "yourwobb.com"
+},
+{
+"id": "mygobricks-brickbulk",
+"name": "MyGoBricks (Brickbulk)",
+"url": "https://bricksbulk.com/",
+"group": "alternative-brands",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"fr"
+],
+"city": null,
+"covers": [
+"alternative",
+"parts"
+],
+"category": "shops",
+"domain": "bricksbulk.com"
+},
+{
+"id": "warbrix",
+"name": "Warbrix.fr",
+"url": "https://www.warbrix.fr",
+"group": "alternative-brands",
+"countries": [
+"FR",
+"MC"
+],
+"languages": [
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "shops",
+"domain": "warbrix.fr"
+},
+{
+"id": "cobi-europe",
+"name": "COBI Europe (official store)",
+"url": "https://cobi.com/fr-fr",
+"group": "alternative-brands",
+"countries": [
+"international"
+],
+"languages": [
+"fr",
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "shops",
+"domain": "cobi.com"
+},
+{
+"id": "amazon-fr",
+"name": "Amazon.fr",
+"url": "https://www.amazon.fr",
+"group": "general-retailers",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"alternative"
+],
+"category": "shops",
+"domain": "amazon.fr"
+},
+{
+"id": "alternate-fr",
+"name": "Alternate (alternate.fr)",
+"url": "https://www.alternate.fr/Jouets/LEGO",
+"group": "general-retailers",
+"countries": [
+"FR"
+],
+"languages": [
+"fr",
+"de"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "shops",
+"domain": "alternate.fr"
+},
+{
+"id": "galaxus-fr",
+"name": "Galaxus (galaxus.fr)",
+"url": "https://www.galaxus.fr",
+"group": "general-retailers",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "shops",
+"domain": "galaxus.fr"
+},
+{
+"id": "joybuy-fr",
+"name": "Joybuy France",
+"url": "https://www.joybuy.fr",
+"group": "general-retailers",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "shops",
+"domain": "joybuy.fr"
+},
+{
+"id": "kidinn",
+"name": "Kidinn",
+"url": "https://www.tradeinn.com/kidinn/fr",
+"group": "general-retailers",
+"countries": [
+"FR",
+"ES"
+],
+"languages": [
+"fr",
+"en",
+"es"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "shops",
+"domain": "tradeinn.com"
+},
+{
+"id": "cdiscount",
+"name": "Cdiscount",
+"url": "https://www.cdiscount.com",
+"group": "general-retailers",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "shops",
+"domain": "cdiscount.com"
+},
+{
+"id": "carrefour",
+"name": "Carrefour (direct sales and Marketplace)",
+"url": "https://www.carrefour.fr",
+"group": "general-retailers",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "shops",
+"domain": "carrefour.fr"
+},
+{
+"id": "e-leclerc",
+"name": "E.Leclerc",
+"url": "https://www.e.leclerc",
+"group": "general-retailers",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "shops",
+"domain": "e.leclerc"
+},
+{
+"id": "smyths-toys-fr",
+"name": "Smyths Toys France",
+"url": "https://www.smythstoys.com/fr/fr-fr",
+"group": "general-retailers",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "shops",
+"domain": "smythstoys.com"
+},
+{
+"id": "king-jouet",
+"name": "King Jouet",
+"url": "https://www.king-jouet.com",
+"group": "general-retailers",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "shops",
+"domain": "king-jouet.com"
+},
+{
+"id": "fnac",
+"name": "Fnac",
+"url": "https://www.fnac.com",
+"group": "general-retailers",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "shops",
+"domain": "fnac.com"
+},
+{
+"id": "cultura",
+"name": "Cultura",
+"url": "https://www.cultura.com",
+"group": "general-retailers",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "shops",
+"domain": "cultura.com"
+},
+{
+"id": "brickitalia",
+"name": "Brickitalia",
+"url": "https://www.brickitalia.com/",
+"group": "official-lego",
+"countries": [
+"IT"
+],
+"languages": [
+"it"
+],
+"city": null,
+"covers": [
+"official",
+"parts",
+"minifigures"
+],
+"category": "shops",
+"domain": "brickitalia.com"
+},
+{
+"id": "rebrickable-api-v3",
+"name": "Rebrickable API v3",
+"url": "https://rebrickable.com/api/",
+"group": "apis-and-data",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"parts",
+"minifigures",
+"data"
+],
+"category": "tools",
+"domain": "rebrickable.com"
+},
+{
+"id": "rebrickable-csv-downloads",
+"name": "Rebrickable catalog CSV downloads",
+"url": "https://rebrickable.com/downloads/",
+"group": "apis-and-data",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"parts",
+"minifigures",
+"data"
+],
+"category": "tools",
+"domain": "rebrickable.com"
+},
+{
+"id": "brickset-api-v3",
+"name": "Brickset API v3",
+"url": "https://brickset.com/article/52666/brickset-web-services",
+"group": "apis-and-data",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"instructions",
+"data"
+],
+"category": "tools",
+"domain": "brickset.com"
+},
+{
+"id": "bricklink-api",
+"name": "BrickLink API",
+"url": "https://www.bricklink.com/v3/api.page",
+"group": "apis-and-data",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"parts",
+"second-hand",
+"data"
+],
+"category": "tools",
+"domain": "bricklink.com"
+},
+{
+"id": "brick-owl-api",
+"name": "Brick Owl API",
+"url": "https://www.brickowl.com/api_docs",
+"group": "apis-and-data",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"parts",
+"second-hand",
+"data"
+],
+"category": "tools",
+"domain": "brickowl.com"
+},
+{
+"id": "brickeconomy-api",
+"name": "BrickEconomy API v1",
+"url": "https://www.brickeconomy.com/api-reference",
+"group": "apis-and-data",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"minifigures",
+"data"
+],
+"category": "tools",
+"domain": "brickeconomy.com"
+},
+{
+"id": "brickfact-mcp",
+"name": "Brickfact public MCP server",
+"url": "https://mcp.brickfact.com/mcp",
+"group": "apis-and-data",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"de",
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"data"
+],
+"category": "tools",
+"domain": "mcp.brickfact.com"
+},
+{
+"id": "brick-directory-mcp",
+"name": "Brick Directory MCP server",
+"url": "https://brick.directory/",
+"group": "apis-and-data",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"data"
+],
+"category": "tools",
+"domain": "brick.directory"
+},
+{
+"id": "brickognize",
+"name": "Brickognize",
+"url": "https://brickognize.com/",
+"group": "apis-and-data",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"parts",
+"minifigures"
+],
+"category": "tools",
+"domain": "brickognize.com"
+},
+{
+"id": "ldraw",
+"name": "LDraw open standard and parts library",
+"url": "https://www.ldraw.org/",
+"group": "apis-and-data",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"parts",
+"data"
+],
+"category": "tools",
+"domain": "ldraw.org"
+},
+{
+"id": "bricklink-studio",
+"name": "BrickLink Studio",
+"url": "https://www.bricklink.com/v3/studio/download.page",
+"group": "design-software",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"parts",
+"custom-builds",
+"instructions"
+],
+"category": "tools",
+"domain": "bricklink.com"
+},
+{
+"id": "leocad",
+"name": "LeoCAD",
+"url": "https://www.leocad.org/",
+"group": "design-software",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"parts",
+"custom-builds",
+"instructions"
+],
+"category": "tools",
+"domain": "leocad.org"
+},
+{
+"id": "ldcad",
+"name": "LDCad",
+"url": "https://www.melkert.net/LDCad",
+"group": "design-software",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"parts",
+"custom-builds"
+],
+"category": "tools",
+"domain": "melkert.net"
+},
+{
+"id": "lpub3d",
+"name": "LPub3D",
+"url": "https://trevorsandy.github.io/lpub3d/",
+"group": "design-software",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"instructions",
+"custom-builds"
+],
+"category": "tools",
+"domain": "trevorsandy.github.io"
+},
+{
+"id": "ldview",
+"name": "LDView",
+"url": "https://github.com/tcobbs/ldview",
+"group": "design-software",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"parts"
+],
+"category": "tools",
+"domain": "github.com"
+},
+{
+"id": "mecabricks",
+"name": "Mecabricks",
+"url": "https://www.mecabricks.com/",
+"group": "design-software",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"custom-builds"
+],
+"category": "tools",
+"domain": "mecabricks.com"
+},
+{
+"id": "lego-builder-app",
+"name": "LEGO Builder",
+"url": "https://www.lego.com/en-us/builder-app",
+"group": "apps",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"fr",
+"de"
+],
+"city": null,
+"covers": [
+"official",
+"instructions"
+],
+"category": "tools",
+"domain": "lego.com"
+},
+{
+"id": "brick-search-app",
+"name": "Brick Search",
+"url": "https://bricksearch.app/",
+"group": "apps",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"minifigures"
+],
+"category": "tools",
+"domain": "bricksearch.app"
+},
+{
+"id": "mybricks-app",
+"name": "myBricks",
+"url": "https://mybricks.app/",
+"group": "apps",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "tools",
+"domain": "mybricks.app"
+},
+{
+"id": "brickfact-app",
+"name": "Brickfact app",
+"url": "https://brickfact.com/blog/guides/brickfact-app-the-best-tool-for-every-lego-fan",
+"group": "apps",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"de",
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"data"
+],
+"category": "tools",
+"domain": "brickfact.com"
+},
+{
+"id": "instabrick",
+"name": "Instabrick",
+"url": "https://www.instabrick.org/",
+"group": "apps",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"parts",
+"minifigures",
+"second-hand"
+],
+"category": "tools",
+"domain": "instabrick.org"
+},
+{
+"id": "brick-work",
+"name": "Brick Work",
+"url": "https://github.com/Ulef1005/brick-work",
+"group": "open-source",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"parts"
+],
+"category": "tools",
+"domain": "github.com"
+},
+{
+"id": "bricktracker",
+"name": "BrickTracker (ssmiller25 mirror)",
+"url": "https://github.com/ssmiller25/bricktracker",
+"group": "open-source",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"parts",
+"minifigures"
+],
+"category": "tools",
+"domain": "github.com"
+},
+{
+"id": "brickhoard",
+"name": "BrickHoard",
+"url": "https://github.com/ZehJulianLp/brickhoard",
+"group": "open-source",
+"countries": [
+"DE"
+],
+"languages": [
+"de",
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"parts"
+],
+"category": "tools",
+"domain": "github.com"
+},
+{
+"id": "nupplo-se",
+"name": "Nupplo SE (formerly Brickfolio)",
+"url": "https://github.com/Melle79/nupplo",
+"group": "open-source",
+"countries": [
+"DE"
+],
+"languages": [
+"de",
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"parts",
+"minifigures"
+],
+"category": "tools",
+"domain": "github.com"
+},
+{
+"id": "brickstore",
+"name": "BrickStore",
+"url": "https://github.com/rgriebl/brickstore",
+"group": "open-source",
+"countries": [
+"international"
+],
+"languages": [
+"en",
+"de",
+"es",
+"sv",
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"alternative",
+"parts",
+"second-hand"
+],
+"category": "tools",
+"domain": "github.com"
+},
+{
+"id": "bricks-mcp-wendehals",
+"name": "bricks-mcp (wendehals)",
+"url": "https://github.com/wendehals/bricks-mcp",
+"group": "open-source",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"parts",
+"data"
+],
+"category": "tools",
+"domain": "github.com"
+},
+{
+"id": "pileometer",
+"name": "Pile[o]meter",
+"url": "https://pileometer.app/",
+"group": "apps",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"parts"
+],
+"category": "tools",
+"domain": "pileometer.app"
+},
+{
+"id": "bricklog",
+"name": "Bricklog",
+"url": "https://bricklog.co/",
+"group": "apps",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"parts",
+"data"
+],
+"category": "tools",
+"domain": "bricklog.co"
+},
+{
+"id": "brick-sorting-machine",
+"name": "BrickSortingMachine",
+"url": "https://bricksortingmachine.com",
+"group": "open-source",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"parts"
+],
+"category": "tools",
+"domain": "bricksortingmachine.com"
+},
+{
+"id": "basicallysource-sorter",
+"name": "basicallysource sorter",
+"url": "https://github.com/basicallysource/sorter",
+"group": "open-source",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"parts"
+],
+"category": "tools",
+"domain": "github.com"
+},
+{
+"id": "omgbricks",
+"name": "omgbricks",
+"url": "https://omgbricks.com/",
+"group": "apps",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"minifigures",
+"data"
+],
+"category": "tools",
+"domain": "omgbricks.com"
+},
+{
+"id": "minifig-scan",
+"name": "Minifig Scan",
+"url": "https://pacolabs.com/MinifigScan/",
+"group": "apps",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"minifigures"
+],
+"category": "tools",
+"domain": "pacolabs.com"
+},
+{
+"id": "brickscan",
+"name": "BrickScan",
+"url": "https://brickscan.com/",
+"group": "apps",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"minifigures",
+"parts",
+"data"
+],
+"category": "tools",
+"domain": "brickscan.com"
+},
+{
+"id": "brick-deals-identify-minifigure",
+"name": "Brick.Deals minifigure identifier",
+"url": "https://brick.deals/tools/identify-minifigure",
+"group": "apps",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"minifigures",
+"data"
+],
+"category": "tools",
+"domain": "brick.deals"
+},
+{
+"id": "pybricks",
+"name": "Pybricks",
+"url": "https://pybricks.com/",
+"group": "programming-and-control",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"learning"
+],
+"category": "tools",
+"domain": "pybricks.com"
+},
+{
+"id": "brickrail",
+"name": "Brickrail",
+"url": "https://github.com/Novakasa/brickrail",
+"group": "programming-and-control",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "tools",
+"domain": "github.com"
+},
+{
+"id": "brickcontroller2",
+"name": "BrickController 2",
+"url": "https://github.com/imurvai/brickcontroller2",
+"group": "programming-and-control",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"parts"
+],
+"category": "tools",
+"domain": "github.com"
+},
+{
+"id": "node-poweredup",
+"name": "node-poweredup",
+"url": "https://github.com/nathankellenicki/node-poweredup",
+"group": "programming-and-control",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "tools",
+"domain": "github.com"
+},
+{
+"id": "ev3dev",
+"name": "ev3dev",
+"url": "https://www.ev3dev.org/",
+"group": "programming-and-control",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"learning"
+],
+"category": "tools",
+"domain": "ev3dev.org"
+},
+{
+"id": "lego-wireless-protocol",
+"name": "LEGO Wireless Protocol 3.0 documentation",
+"url": "https://lego.github.io/lego-ble-wireless-protocol-docs/",
+"group": "apis-and-data",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"data"
+],
+"category": "tools",
+"domain": "lego.github.io"
+},
+{
+"id": "jangbricks",
+"name": "JANGBRiCKS",
+"url": "https://www.youtube.com/@JANGBRiCKS",
+"group": "official-lego-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "tiago-catarino",
+"name": "Tiago Catarino",
+"url": "https://www.youtube.com/@TiagoCatarino",
+"group": "official-lego-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "racingbrick",
+"name": "RacingBrick",
+"url": "https://www.youtube.com/@RacingBrick",
+"group": "official-lego-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "mandrproductions",
+"name": "MandRproductions",
+"url": "https://www.youtube.com/@MandRproductions",
+"group": "official-lego-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "ashnflash",
+"name": "Ashnflash",
+"url": "https://www.youtube.com/@Ashnflash",
+"group": "official-lego-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "hoth-bricks",
+"name": "Hoth Bricks (YouTube)",
+"url": "https://www.youtube.com/@hoth_bricks",
+"group": "official-lego-reviews",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "brickmitri-youtube",
+"name": "Brickmitri (YouTube)",
+"url": "https://www.youtube.com/@brickmitri",
+"group": "official-lego-reviews",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "lego-leader",
+"name": "Lego Leader",
+"url": "https://www.youtube.com/@LegoLeader",
+"group": "official-lego-reviews",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "new-elementary-youtube",
+"name": "New Elementary (YouTube)",
+"url": "https://www.youtube.com/@NewElementary",
+"group": "official-lego-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "the-laser-symphony",
+"name": "The Laser Symphony",
+"url": "https://www.youtube.com/@TheLaserSymphony",
+"group": "alternative-brand-reviews",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"alternative",
+"official",
+"news"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "godofthebricks",
+"name": "GodOfTheBricks",
+"url": "https://www.youtube.com/@godofthebricks",
+"group": "alternative-brand-reviews",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"alternative",
+"official",
+"custom-builds"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "curkymbrickbuilds",
+"name": "CurKymBrickBuilds",
+"url": "https://www.youtube.com/@curkymbrickbuilds",
+"group": "alternative-brand-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative",
+"official"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "seven-star-bricks",
+"name": "Seven Star Bricks",
+"url": "https://www.youtube.com/@SevenStarBricks",
+"group": "alternative-brand-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative",
+"official"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "jangs-other-bricks",
+"name": "JANG's Other Bricks",
+"url": "https://www.youtube.com/@JANGsOtherBricks",
+"group": "alternative-brand-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative",
+"official"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "brick-me-up-scottie",
+"name": "Brick Me Up Scottie",
+"url": "https://www.youtube.com/@BrickMeUpScottie",
+"group": "alternative-brand-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "sheclicksbricks",
+"name": "SheClicksBricks",
+"url": "https://www.youtube.com/@SheClicksBricks",
+"group": "alternative-brand-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "mr-bricksteen",
+"name": "Mr.Bricksteen",
+"url": "https://www.youtube.com/@Mr.Bricksteen",
+"group": "alternative-brand-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative",
+"official"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "monster-brick-reviews",
+"name": "Monster Brick Reviews",
+"url": "https://www.youtube.com/@MonsterBrickReviews",
+"group": "alternative-brand-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "mark-builds-brix",
+"name": "Mark Builds BRIX",
+"url": "https://www.youtube.com/@markbuildsbrix",
+"group": "alternative-brand-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "brickmeet",
+"name": "BrickMeet",
+"url": "https://www.youtube.com/@BrickMeet",
+"group": "alternative-brand-reviews",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"alternative",
+"official"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "brickvault",
+"name": "BrickVault",
+"url": "https://www.youtube.com/channel/UCrhb3SP2lZBgguLHIWWuHOQ",
+"group": "building-and-custom",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"official"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "bricksie",
+"name": "Bricksie",
+"url": "https://www.youtube.com/@Bricksie",
+"group": "building-and-custom",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"custom-builds"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "mabrikville",
+"name": "Mabrikville",
+"url": "https://www.youtube.com/@Mabrikville",
+"group": "building-and-custom",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"custom-builds",
+"official"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "beyond-the-brick",
+"name": "Beyond the Brick",
+"url": "https://www.youtube.com/@BeyondtheBrick",
+"group": "news",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "briquefan",
+"name": "Briquefan",
+"url": "https://www.youtube.com/channel/UCeohvTWYjZDOubRaSIlpBCQ",
+"group": "news",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"news"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "frostiize",
+"name": "FrosTiize",
+"url": "https://www.youtube.com/@FrosTiize",
+"group": "news",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "brickonaute-youtube",
+"name": "Brickonaute (YouTube)",
+"url": "https://www.youtube.com/@Brickonaute",
+"group": "news",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "jays-brick-blog-youtube",
+"name": "Jay's Brick Blog (YouTube)",
+"url": "https://www.youtube.com/@Jaysbrickblog",
+"group": "news",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"official",
+"news"
+],
+"category": "video",
+"domain": "youtube.com"
+},
+{
+"id": "briques-en-vrac",
+"name": "Briques en Vrac",
+"url": "https://www.vodio.fr/vodiotheque/c/1753/briques-en-vrac-actualites-et-nouveautes-lego/",
+"group": "podcasts",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"news",
+"official"
+],
+"category": "video",
+"domain": "vodio.fr"
+},
+{
+"id": "men-in-bricks",
+"name": "Men in Bricks",
+"url": "https://www.meninbricks.fr/",
+"group": "podcasts",
+"countries": [
+"FR"
+],
+"languages": [
+"fr"
+],
+"city": null,
+"covers": [
+"news"
+],
+"category": "video",
+"domain": "meninbricks.fr"
+},
+{
+"id": "bricks-king-podcast",
+"name": "The Bricks King Podcast",
+"url": "https://www.spreaker.com/podcast/the-bricks-king-podcast-lego--4920139",
+"group": "podcasts",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"news",
+"custom-builds"
+],
+"category": "video",
+"domain": "spreaker.com"
+},
+{
+"id": "afols-welcome",
+"name": "AFOLs Welcome",
+"url": "https://bleav.com/shows/afols-welcome-a-lego-podcast/",
+"group": "podcasts",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"news"
+],
+"category": "video",
+"domain": "bleav.com"
+},
+{
+"id": "back-2-brick",
+"name": "Back 2 Brick LEGO Podcast",
+"url": "https://back2brick.buzzsprout.com/",
+"group": "podcasts",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"news",
+"custom-builds"
+],
+"category": "video",
+"domain": "back2brick.buzzsprout.com"
+},
+{
+"id": "london-calling-lego-podcast",
+"name": "London Calling LEGO Podcast",
+"url": "https://shows.acast.com/londoncalling",
+"group": "podcasts",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"news"
+],
+"category": "video",
+"domain": "shows.acast.com"
+},
+{
+"id": "full-of-brick",
+"name": "Full of Brick",
+"url": "https://creators.spotify.com/pod/profile/gerald-dumol/",
+"group": "podcasts",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"news"
+],
+"category": "video",
+"domain": "creators.spotify.com"
+},
+{
+"id": "the-hidden-bricks",
+"name": "The Hidden Bricks",
+"url": "https://creators.spotify.com/pod/profile/the-hidden-bricks/",
+"group": "podcasts",
+"countries": [
+"international"
+],
+"languages": [
+"en"
+],
+"city": null,
+"covers": [
+"news"
+],
+"category": "video",
+"domain": "creators.spotify.com"
+}
+],
+"categories": {
+"brands": {
+"name_en": "Brands and manufacturers",
+"groups": {
+"official-lego": "Official LEGO",
+"european-alternatives": "European and American alternatives",
+"chinese-alternatives": "Chinese alternatives",
+"manufacturers": "Brick manufacturers and suppliers",
+"other-formats": "Other formats"
+}
+},
+"clubs": {
+"name_en": "Clubs and associations",
+"groups": {
+"national-clubs": "National clubs",
+"regional-clubs": "Regional and local clubs",
+"alternative-brand-clubs": "Clubs for alternative brands",
+"online-clubs": "Online clubs"
+}
+},
+"community": {
+"name_en": "Communities and news",
+"groups": {
+"news-and-reviews": "News and reviews",
+"forums": "Forums and chat",
+"reddit": "Reddit",
+"wikis": "Wikis",
+"deals": "Deals"
+}
+},
+"comparators": {
+"name_en": "Price comparators and databases",
+"groups": {
+"price-comparators": "Price comparators",
+"set-databases": "Set and parts databases",
+"value-tracking": "Value and investment tracking"
+}
+},
+"directories": {
+"name_en": "Other directories and lists",
+"groups": {
+"site-directories": "Site directories and awesome lists",
+"channel-lists": "Channel and podcast lists",
+"brand-lists": "Brand lists"
+}
+},
+"events": {
+"name_en": "Events",
+"groups": {
+"conventions": "Conventions, fairs and exhibitions",
+"competitions": "Competitions",
+"calendars": "Event calendars"
+}
+},
+"learning": {
+"name_en": "Learning",
+"groups": {
+"guides": "Guides and reference",
+"compatibility-and-law": "Compatibility, materials and law",
+"history": "History",
+"education-and-competitions": "Education and competitions",
+"books-and-magazines": "Books and magazines",
+"artists": "Artists and designers"
+}
+},
+"places": {
+"name_en": "Places to visit",
+"groups": {
+"official-venues": "Official LEGO venues and stores",
+"theme-parks": "Theme parks",
+"museums-and-exhibitions": "Museums and permanent exhibitions",
+"physical-shops": "Physical shops (alternative brands and used bricks)",
+"cafes-and-bars": "Cafés and play spaces"
+}
+},
+"second-hand": {
+"name_en": "Second-hand, parts and accessories",
+"groups": {
+"marketplaces": "Marketplaces and classified ads",
+"second-hand-shops": "Second-hand and refurbished shops",
+"parts-and-custom-builds": "Parts, custom builds and instructions",
+"services-and-accessories": "Services and accessories (lighting, display, sorting, data)",
+"custom-minifigures-and-accessories": "Custom minifigures and accessories",
+"decals-and-stickers": "Decals and stickers",
+"motors-and-track": "Motors, controllers and track"
+}
+},
+"shops": {
+"name_en": "Shops",
+"groups": {
+"official-lego": "Official LEGO",
+"alternative-brands": "Alternative brands",
+"general-retailers": "General retailers"
+}
+},
+"tools": {
+"name_en": "Tools and APIs",
+"groups": {
+"design-software": "Design software",
+"apps": "Apps",
+"apis-and-data": "APIs and open data",
+"open-source": "Open-source projects",
+"programming-and-control": "Programming, control and robotics"
+}
+},
+"video": {
+"name_en": "YouTube and podcasts",
+"groups": {
+"official-lego-reviews": "Official LEGO reviews",
+"alternative-brand-reviews": "Alternative brand reviews",
+"building-and-custom": "Building and custom builds",
+"news": "News and community",
+"podcasts": "Podcasts"
+}
+}
+}
+}
