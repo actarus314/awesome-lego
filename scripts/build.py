@@ -2,7 +2,7 @@
 """Validate data/*.toml, write README.md (entries marked `featured`) and full-list.md
 (every entry), and build the bilingual GitHub Pages site (site/).
 
-Usage: python3 scripts/build.py [--check | --site-only]   (standard library only, Python 3.11+)
+Usage: python3 scripts/build.py [--check | --site-only]   (standard library only, latest Python release)
 """
 import base64
 import datetime as dt

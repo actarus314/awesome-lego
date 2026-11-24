@@ -2,6 +2,9 @@
 
 # v2.x — The directory read at the source down to its links: which brands each entry deals with, how it is funded, who makes the bricks; a website in three views, directory, out and about, observatory.
 
+## v2.12 — 2026-11-24
+Automation: everything follows its latest release. Renovate proposes an update 3 days after it is published (at once for a security fix, as Dependabot does), and now also follows MiniSearch and the fonts of the Brick Vault, whose files the website keeps: `scripts/vendor.py` copies them from the locked packages and Check fails when they differ. The checks run on the latest Python release only (the job on Python 3.11 is removed).
+
 ## v2.11 — 2026-11-24
 Checks: the links issue lists first the links that failed twice in a row, then those that failed once (from the machines of GitHub, many sites time out or refuse the connection for a day and answer again the next week), with a reminder to open a link in a browser before changing its entry.
 

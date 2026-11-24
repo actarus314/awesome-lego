@@ -1,11 +1,30 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "helpers:pinGitHubActionDigests"],
+  "extends": [
+    "config:recommended",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "minimumReleaseAge": "3 days",
+  "internalChecksFilter": "strict",
   "packageRules": [
     {
       "description": "GitHub Actions: one grouped pull request.",
-      "matchManagers": ["github-actions"],
+      "matchManagers": [
+        "github-actions"
+      ],
       "groupName": "GitHub Actions"
+    },
+    {
+      "description": "Packages whose files the website keeps in the repository: the pull request needs scripts/vendor.py.",
+      "matchPackageNames": [
+        "minisearch",
+        "@fontsource/press-start-2p",
+        "@fontsource-variable/nunito",
+        "terser"
+      ],
+      "prBodyNotes": [
+        "Files of this package are kept in the repository: on this branch, run `npm ci --ignore-scripts && python3 scripts/vendor.py && python3 scripts/build.py` and commit the result before merging (Check fails until then)."
+      ]
     }
   ]
 }
