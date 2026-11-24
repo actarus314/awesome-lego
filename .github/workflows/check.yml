@@ -15,9 +15,29 @@ jobs:
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.15"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Tools of the checks, as locked in package-lock.json
+        run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Validate data and check that generated files are up to date
         run: python3 scripts/build.py --check
+      - name: Unit tests (validation, pages, calendar)
+        run: python3 -m unittest discover -s tests
       - name: Build the site
         run: python3 scripts/build.py
+      - name: Cities without coordinates (a warning; the maintainer geocodes them)
+        run: python3 scripts/geocode.py --check || echo "::warning::Cities without coordinates are missing from the map; run scripts/geocode.py"
       - name: awesome-lint
-        run: npx --yes awesome-lint@2.3.0 README.md
+        run: npx --no-install awesome-lint README.md
+  oldest-python:   # contributing.md promises Python 3.11 or later
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.11"
+      - run: python3 scripts/build.py --check && python3 -m unittest discover -s tests

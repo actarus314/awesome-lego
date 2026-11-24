@@ -3,7 +3,7 @@
   "extends": ["config:recommended", "helpers:pinGitHubActionDigests"],
   "packageRules": [
     {
-      "description": "GitHub Actions: one grouped pull request / Actions GitHub : une seule demande de fusion groupée.",
+      "description": "GitHub Actions: one grouped pull request.",
       "matchManagers": ["github-actions"],
       "groupName": "GitHub Actions"
     }

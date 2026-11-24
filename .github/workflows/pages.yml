@@ -59,7 +59,9 @@ jobs:
           if git ls-remote --exit-code "$remote" history >/dev/null; then git fetch -q --depth=1 "$remote" history && git checkout -q -b history FETCH_HEAD
           else git checkout -q --orphan history; fi
           mkdir -p metrics && cp "$GITHUB_WORKSPACE/metrics.json" "metrics/$day.json"
-          git add metrics && (git commit -qm "Measurements $day" && git push -q "$remote" HEAD:history || true)
+          git add metrics
+          if git diff --cached --quiet; then echo "Measurements of $day already kept."; exit 0; fi   # a rerun of the same day
+          git commit -qm "Measurements $day" && git push -q "$remote" HEAD:history   # a failed push fails the job: a missing day is seen
   deploy:
     needs: build
     runs-on: ubuntu-latest

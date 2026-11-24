@@ -187,7 +187,7 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 
 ### Custom minifigures and accessories
 
-- [Brick Manufacture](https://brick-manufacture.com/en) - Hamburg workshop, active since 2023, printing and assembling personalized LEGO minifigures and bricks in house; site in four languages with a country selector including France.
+- [Brick Manufacture](https://brick-manufacture.com/en) - Hamburg workshop, active since 2023, printing and assembling personalised LEGO minifigures and bricks in house; site in four languages with a country selector including France.
 - [Minifigs.me](https://minifigs.me/) - British shop of custom minifigures printed onto genuine LEGO parts, with small builds and frames; ships worldwide from the United Kingdom.
 
 ### Decals and stickers
@@ -239,7 +239,7 @@ English- and French-language YouTube channels and podcasts: reviews of official 
 
 ### Official LEGO reviews
 
-- [Brickmitri](https://www.youtube.com/@brickmitri) - French-language LEGO news and set reviews; the channel describes itself as an independent medium. Covers official LEGO.
+- [Brickmitri (YouTube)](https://www.youtube.com/@brickmitri) - French-language LEGO news and set reviews; the channel describes itself as an independent medium. Covers official LEGO.
 - [JANGBRiCKS](https://www.youtube.com/@JANGBRiCKS) - Set reviews and reveals of official LEGO sets by an adult fan; the channel description states unsponsored content and titles carry a #NotAd tag. Covers official LEGO.
 - [RacingBrick](https://www.youtube.com/@RacingBrick) - Detailed building reviews of LEGO Technic and vehicle sets, with Powered Up tutorials. Covers official LEGO.
 - [Tiago Catarino](https://www.youtube.com/@TiagoCatarino) - Set reviews by a former official LEGO designer, with building tips. Covers official LEGO.
@@ -319,7 +319,7 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 
 ### National clubs
 
-- [BeLUG](https://www.belug.be/) - Belgian LEGO User Group: club for adult LEGO builders and collectors, independent of the LEGO Group, taking part in fairs in Belgium and abroad and organizing Brick Mania. Covers official LEGO.
+- [BeLUG](https://www.belug.be/) - Belgian LEGO User Group: club for adult LEGO builders and collectors, independent of the LEGO Group, taking part in fairs in Belgium and abroad and organising Brick Mania. Covers official LEGO.
 - [Brickish](https://brickish.org/) - UK-wide club of adult fans of LEGO, active since 2002 and described by itself as the first user group in the country; local meet-ups, public shows and a members-only forum. Covers official LEGO.
 - [ItLUG](https://www.itlug.org/) - Italian LEGO Users Group: national association of adult LEGO fans founded in 1999 and legally constituted in November 2010, with a forum, national events and local exhibitions. Covers official LEGO.
 
@@ -377,7 +377,7 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 - [Brickognize](https://brickognize.com/) - Image search for LEGO parts, minifigures, sets and sticker sheets from a photo; free API without key used by several open-source collection tools. Covers official LEGO.
 - [Brickset API v3](https://brickset.com/article/52666/brickset-web-services) - JSON and SOAP interface to the Brickset catalog: sets, extra images, instructions, reviews, member collections (read and write). Covers official LEGO.
 - [LDraw open standard and parts library](https://www.ldraw.org/) - Open format for digital LEGO models and official parts library, basis of LeoCAD, LDView, LPub3D and Studio export. Covers official LEGO.
-- [Rebrickable API v3](https://rebrickable.com/api/) - REST interface to the official LEGO catalog (sets, parts, minifigures, themes, colors) and to Rebrickable user collections. Covers official LEGO.
+- [Rebrickable API v3](https://rebrickable.com/api/) - REST interface to the official LEGO catalog (sets, parts, minifigures, themes, colours) and to Rebrickable user collections. Covers official LEGO.
 
 ### Open-source projects
 

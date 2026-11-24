@@ -59,7 +59,7 @@ def load():
         if path.stem in ("metrics", "journeys"):
             continue
         try:
-            d = tomllib.load(open(path, "rb"))
+            d = tomllib.loads(pathlib.Path(path).read_text(encoding="utf-8"))
         except tomllib.TOMLDecodeError as exc:
             errors.append(f"{path.name}: {exc}")
             continue
@@ -120,6 +120,12 @@ def load():
             f = r.get("funding")
             if f is not None and (not f or set(f) - FUNDING or len(set(f)) != len(f) or (("unknown" in f or "none" in f) and len(f) > 1)):
                 errors.append(f"{w}: funding must list words of {sorted(FUNDING)}, each once, with unknown or none alone")
+            for k, pat in (("url", r"https?://\S+"), ("feed", r"https?://\S+"), ("github", r"[\w.-]+/[\w.-]+"), ("youtube_channel_id", r"UC[\w-]{22}"), ("subreddit", r"\w{2,21}")):
+                if r.get(k) is not None and not re.fullmatch(pat, str(r[k])):
+                    errors.append(f"{w}: {k} malformed (expected {pat})")  # these values end up in addresses read by the scripts
+            for s_ in r.get("sources", []) + r.get("makers", []) + ([r["contact"]] if isinstance(r.get("contact"), dict) else []):
+                if s_.get("url") and not re.fullmatch(r"https?://\S+", str(s_["url"])):
+                    errors.append(f"{w}: url malformed: {s_['url']}")
             ct = r.get("contact")
             if ct is not None and not isinstance(ct, dict):
                 errors.append(f"{w}: contact must be a table [resource.contact]")
@@ -160,7 +166,7 @@ def load():
 
 def metrics():
     p = DATA / "metrics.json"
-    return json.load(open(p, encoding="utf-8")) if p.exists() else {}
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
 
 
 def effective(r, m):
@@ -225,8 +231,8 @@ def readme(cats, m, lang, kind="readme"):
         if cat.get("summary_" + lang):
             out += [cat["summary_" + lang], ""]
         for g in cat.get("groups", []):
-            rs = [r for r in c["resources"] if r["group"] == g["id"] and keep(r) and r["url"] not in listed]
-            listed.update(r["url"] for r in rs)  # one link once per file (awesome-lint: double-link)
+            rs = [r for r in c["resources"] if r["group"] == g["id"] and keep(r) and (kind != "readme" or r["url"] not in listed)]
+            listed.update(r["url"] for r in rs)  # the README gives a link once (awesome-lint: double-link); the full list gives every entry
             if not rs:
                 continue
             out += [f"### {g['name_' + lang]}", ""]
@@ -308,7 +314,7 @@ def site_data(cats, m):
                    "summary": {lang: c["category"].get("summary_" + lang, "") for lang in LANGS},
                    "groups": [{"id": g["id"], "en": g["name_en"], "fr": g["name_fr"]} for g in c["category"].get("groups", [])]} for c in cats]
     ids = {r["id"] for r in rows}
-    journeys = tomllib.load(open(DATA / "journeys.toml", "rb")).get("journey", []) if (DATA / "journeys.toml").exists() else []
+    journeys = tomllib.loads(pathlib.Path(DATA / "journeys.toml").read_text(encoding="utf-8")).get("journey", []) if (DATA / "journeys.toml").exists() else []
     missing = [f"journeys.toml: {j['id']}: unknown resource {i}" for j in journeys for i in j["resources"] + j.get("always", []) if i not in ids]
     missing += [f"journeys.toml: {j['id']}: scope must be country, language or global" for j in journeys if j.get("scope") not in ("country", "language", "global")]
     if missing:
@@ -327,18 +333,29 @@ def passion():
             "rows": [{"c": k, "n": n, "pop": p["population"].get(k)} for k, n in c["countries"].items()]}
 
 
+def static_texts(tpl, lang):
+    """Fill the empty elements marked data-t="key" with the string the page's script would put there
+    (same table S of site-src/index.html): the first paint shows the final texts, nothing moves after."""
+    S = {}
+    for m in re.finditer(r"(?<![\w.])(\w+):\{en:'((?:[^'\\]|\\.)*)',fr:'((?:[^'\\]|\\.)*)'\}", tpl):
+        S.setdefault(m.group(1), (m.group(2) if lang == "en" else m.group(3)).replace("\\'", "'"))
+    return re.sub(r'(<(\w+)\b[^>]*\bdata-t="(\w+)"[^>]*>)(</\2>)',
+                  lambda m: m.group(1) + html.escape(S[m.group(3)], quote=False) + m.group(4) if m.group(3) in S else m.group(0), tpl)
+
+
 def page(lang, data):
-    tpl = (ROOT / "site-src" / "index.html").read_text(encoding="utf-8")
+    tpl = static_texts((ROOT / "site-src" / "index.html").read_text(encoding="utf-8"), lang)
     other = "fr/" if lang == "en" else "../"
     other_lang = "fr" if lang == "en" else "en"
     lean = dict(data, resources=[{k: v for k, v in r.items() if k != other_lang} for r in data["resources"]])  # each page carries its own language only
     blob = json.dumps(lean, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")  # no "</script" nor "<!--" inside the data block
-    out = (tpl.replace("{{LANG}}", lang).replace("{{OTHER}}", other)
-               .replace("{{TITLE}}", html.escape(T["title"][lang])).replace("{{TAGLINE}}", html.escape(T["site_tagline"][lang]))
-               .replace("{{MINISEARCH}}", (ROOT / "site-src" / "vendor" / "minisearch.min.js").read_text(encoding="utf-8"))
-               .replace("{{FEEDTITLE}}", html.escape(FEED_T["title"][lang])).replace("{{FEEDPATH}}", "fr/" if lang == "fr" else "")
-               .replace("{{DATA}}", blob).replace("{{REPO}}", REPO).replace("{{VERSION}}", data["version"]))
-    return out.replace("{{CSP}}", csp(out))
+    values = {"LANG": lang, "OTHER": other, "TITLE": html.escape(T["title"][lang]), "TAGLINE": html.escape(T["site_tagline"][lang]),
+              "MINISEARCH": (ROOT / "site-src" / "vendor" / "minisearch.min.js").read_text(encoding="utf-8"),
+              "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "",
+              "DATA": blob, "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}"}
+    out = re.sub(r"\{\{(\w+)\}\}", lambda m: values[m.group(1)], tpl)  # one pass: a text of the data that contains {{…}} is never replaced again
+    i = out.index("{{CSP}}")  # the policy is the template's own placeholder, before any data
+    return out[:i] + csp(out) + out[i + len("{{CSP}}"):]
 
 
 def csp(doc, rest="; style-src 'unsafe-inline'; img-src 'self' https://actarus314.github.io; connect-src 'self' https://nominatim.openstreetmap.org; base-uri 'none'; form-action 'none'"):
@@ -532,11 +549,11 @@ def main():
     (SITE / "fr" / "agenda.ics").write_text(calendar(cats, "fr"), encoding="utf-8", newline="")
     (SITE / "favicon.ico").write_bytes((ROOT / "media" / "favicon.ico").read_bytes())  # readers that look for <site>/favicon.ico
     for f in (ROOT / "media").rglob("*"):
-        if f.is_file():
+        if f.is_file() and f.name != "site-preview.png":  # the README image is read on GitHub, not on the website
             out = SITE / f.relative_to(ROOT)
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_bytes(f.read_bytes())
-    (SITE / "data.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+    (SITE / "data.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")  # read by scripts/refresh.py --from-site
     print("✓ site/index.html, site/fr/index.html, site/data.json")
 
 

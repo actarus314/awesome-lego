@@ -149,6 +149,7 @@ Online and physical shops selling official LEGO, alternative brick brands and ge
 - [Baustein Store](https://bausteinstore.de) - German online store selling official LEGO and delivering across the European Union and Monaco by DHL. Covers official LEGO.
 - [Brickitalia](https://www.brickitalia.com/) - Italian online shop for LEGO sets, loose parts and minifigures, aimed at collectors and builders. Covers official LEGO.
 - [idee+spiel (duo idee+spiel)](https://www.ideeundspiel.com) - Online shop of the German toy retail cooperative duo idee+spiel (duo and idee+spiel merged on 1 January 2026). Delivery to France not established. Covers official LEGO.
+- [LEGO.com (France)](https://www.lego.com/fr-fr) - Manufacturer's store for France: full catalogue, exclusives, gift cards, Pick a Brick. Delivers only to addresses in France. Covers official LEGO.
 - [LToys](https://www.ltoys.lu/fr) - Luxembourg specialist (LTOYS S.A R.L., founded 2017, store in Niederanven): more than 1000 official LEGO items, plus COBI, CaDA, Pantasy, Lumibricks, Blokees and die-cast cars. Covers official LEGO and alternative brands.
 
 ### Alternative brands
@@ -157,11 +158,13 @@ Online and physical shops selling official LEGO, alternative brick brands and ge
 - [Barweer](https://www.barweer.com) - Chinese online shop with its own range of modular and film-themed sets and collections of other alternative brands (Mould King, Pantasy, Sembo, Reobrix and others), with warehouses in China, the United States and Europe. Covers alternative brands.
 - [Bausteinreich](https://www.bausteinreich.de) - Berlin online store (Lonestar-Bricks GmbH) for alternative bricks: Mould King, Cobi, Wange, Sembo, Balody and others; own warehouse in Berlin. Covers alternative brands.
 - [Blouge Brick Store](https://blouge-brickstore.fr) - Lille online store of compatible bricks (Pantasy, CaDA, LOZ, FunWhole); products stated to meet CE and EN71 standards, sets delivered in sealed original boxes. Covers alternative brands.
-- [Brickcoast](https://brickcoast.de) - Retailer in Castrop-Rauxel (Steinebande GmbH) of official LEGO, Mould King and Cobi. Site not readable in this pass; data from the first pass. Covers official LEGO and alternative brands.
+- [BlueBrixx](https://www.bluebrixx.com/fr/) - Brand and retailer (BB Services GmbH, Flörsheim am Main): own sets under licences not held by LEGO (Stargate, RoboCop, emergency vehicles); its pages for other brands (COBI, Mould King, Panlos, Reobrix, Wange) showed no product when read on 2026-11-24. Covers alternative brands.
+- [Brickcoast](https://brickcoast.de) - Retailer in Castrop-Rauxel (Steinebande GmbH) of official LEGO, Mould King and Cobi. Site not read directly; data not re-read. Covers official LEGO and alternative brands.
 - [Brickeez](https://www.brickeez.com) - French online store (Hérault): new official LEGO, Lumibricks, Pantasy, COBI, CaDA. Covers official LEGO and alternative brands.
 - [Brickmo](https://www.brickmo.com/fr/) - Austrian online store (Scalemo GmbH) selling official LEGO and alternative brands (Cobi, CaDA, Sluban, Wange, Xingbao, Jekca). Site available in French. Covers official LEGO and alternative brands.
 - [Brickparts.nl](https://brickparts.nl) - Dutch online store (Kuinre) for sets and parts. Whether it is the 'Brickparts' of the original request is not confirmed. Covers alternative brands.
 - [ChowBrick](https://www.chowbrick.com) - Online store of alternative bricks shipping from China to the rest of the world. Covers alternative brands.
+- [COBI Europe (official store)](https://cobi.com/fr-fr) - Official online store of the Polish manufacturer COBI S.A. (Warsaw), shipping across the European Union; historical military models, licensed cars, ships and aircraft. Covers alternative brands.
 - [JoyGobricks](https://joygobricks.com) - Reseller of GoBricks parts and sets; ships from China. Covers alternative brands.
 - [KBS Shop](https://kbs-shop.com) - German online store for technical and remote-controlled bricks: Mould King, CaDA, Reobrix, Wange, Jie Star, Panlos. Covers alternative brands.
 - [Mister Brixx](https://www.misterbrixx.de) - Duisburg shop selling official LEGO, Mould King, CaDA, Reobrix, Panlos, Cobi; buys and resells LEGO. Covers official LEGO and alternative brands.
@@ -173,9 +176,9 @@ Online and physical shops selling official LEGO, alternative brick brands and ge
 ### General retailers
 
 - [Alternate (alternate.fr)](https://www.alternate.fr/Jouets/LEGO) - German electronics retailer (Alternate GmbH) with a large official LEGO range delivered to France. Covers official LEGO.
-- [Amazon.fr](https://www.amazon.fr) - General marketplace: official LEGO sold directly and by third parties; a few alternative brands. Page not readable by the tools (anti-bot challenge, not bypassed); data from the first pass. Covers official LEGO and alternative brands.
+- [Amazon.fr](https://www.amazon.fr) - General marketplace: official LEGO sold directly and by third parties; a few alternative brands. Page not read directly (anti-bot challenge, not bypassed); data not re-read. Covers official LEGO and alternative brands.
 - [Carrefour (direct sales and Marketplace)](https://www.carrefour.fr) - Supermarket chain selling LEGO; direct sales are distinct from the Marketplace. Covers official LEGO.
-- [Cdiscount](https://www.cdiscount.com) - French general retailer, direct sales and marketplace. Not re-read in this pass. Covers official LEGO.
+- [Cdiscount](https://www.cdiscount.com) - French general retailer, direct sales and marketplace. Not re-read. Covers official LEGO.
 - [Cultura](https://www.cultura.com) - French cultural and creative-leisure retailer with a LEGO range. Covers official LEGO.
 - [E.Leclerc](https://www.e.leclerc) - Supermarket chain, online and in store, with a LEGO catalogue. Covers official LEGO.
 - [Fnac](https://www.fnac.com) - French cultural and technical retailer with a LEGO range. Covers official LEGO.
@@ -319,20 +322,20 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 ### Custom minifigures and accessories
 
 - [Bedrukjeblokje](https://bedrukjeblokje.nl/) - Dutch shop printing user designs (photo, logo, text) onto LEGO parts such as torsos and tiles, with an online designer, and selling printed and collectible minifigures.
-- [Brick Manufacture](https://brick-manufacture.com/en) - Hamburg workshop, active since 2023, printing and assembling personalized LEGO minifigures and bricks in house; site in four languages with a country selector including France.
+- [Brick Manufacture](https://brick-manufacture.com/en) - Hamburg workshop, active since 2023, printing and assembling personalised LEGO minifigures and bricks in house; site in four languages with a country selector including France.
 - [BrickTactical](https://bricktactical.com/) - American maker of injection-molded weapons, helmets, vests and accessories for LEGO-compatible minifigures, and printer of minifigures on genuine LEGO parts.
 - [BrickWarriors](https://www.brickwarriors.com/) - American producer of custom accessories for minifigures (weapons, armor, helmets, heads, capes) in ABS plastic, founded in 2011.
 - [Briquestore](https://www.briquestore.fr/) - French online shop of new LEGO minifigures and single parts (founded 2015, Charente-Maritime), with a figure composer and a personalisation service by UV printing. Covers official LEGO.
 - [Citizen Brick](https://citizenbrick.com/) - American maker of custom printed minifigures and bricks since 2010, with injection-molded parts and a custom printing service for businesses.
 - [Hall of Bricks](https://hallofbricks.shop/) - German studio making custom minifigures since 2012, printed in house with UV printers on original LEGO elements; ships worldwide.
 - [Minifigs.me](https://minifigs.me/) - British shop of custom minifigures printed onto genuine LEGO parts, with small builds and frames; ships worldwide from the United Kingdom.
-- [minifiguren.com](https://www.minifiguren.com/) - German shop of configurable minifigures personalized by UV digital printing on original LEGO parts (names, text, graphics), plus printed bricks and tiles and single parts.
+- [minifiguren.com](https://www.minifiguren.com/) - German shop of configurable minifigures personalised by UV digital printing on original LEGO parts (names, text, graphics), plus printed bricks and tiles and single parts.
 - [Pepe Bricks](https://www.pepebricks.com/) - Slovak shop of custom printed minifigures, torsos, heads, shields and tiles on classic space, castle and game themes, with prices in euros.
 
 ### Decals and stickers
 
 - [BrickStickerShop](https://www.brickstickershop.com/) - Dutch shop of replacement and custom vinyl stickers for LEGO sets and builds, vector drawn, with ink calibrated to brick colours; ships worldwide.
-- [ForwartSticker](https://forwartsticker.com/) - Shop of die-cut self-adhesive stickers for LEGO sets and custom builds designed with MOC designers, with a custom design and printing service, single copies included.
+- [ForwartSticker](https://forwartsticker.com/) - Shop of die-cut self-adhesive stickers for LEGO sets and custom builds designed with custom-build designers, with a custom design and printing service, single copies included.
 - [The MOC Sticker Shop](https://themocstickershop.com/) - British shop of hand-drawn vinyl decals for modular scenes and custom builds, with a custom service drawn to the tile sizes sent by the customer.
 - [Ultimate Collector Stickers](https://www.ultimatecollectorstickers.co.uk/) - British shop of die-cut, colour-matched stickers in the style of LEGO Ultimate Collector Series sets, with a custom design and printing service from 20 pounds.
 
@@ -446,12 +449,12 @@ English- and French-language YouTube channels and podcasts: reviews of official 
 ### Official LEGO reviews
 
 - [Ashnflash](https://www.youtube.com/@Ashnflash) - Daily LEGO news, reveals, minifigure and set reviews. Covers official LEGO.
-- [Brickmitri](https://www.youtube.com/@brickmitri) - French-language LEGO news and set reviews; the channel describes itself as an independent medium. Covers official LEGO.
-- [Hoth Bricks](https://www.youtube.com/@hoth_bricks) - French-language LEGO news and set reviews with euro prices; the channel is linked to the hothbricks.com site. Covers official LEGO.
+- [Brickmitri (YouTube)](https://www.youtube.com/@brickmitri) - French-language LEGO news and set reviews; the channel describes itself as an independent medium. Covers official LEGO.
+- [Hoth Bricks (YouTube)](https://www.youtube.com/@hoth_bricks) - French-language LEGO news and set reviews with euro prices; the channel is linked to the hothbricks.com site. Covers official LEGO.
 - [JANGBRiCKS](https://www.youtube.com/@JANGBRiCKS) - Set reviews and reveals of official LEGO sets by an adult fan; the channel description states unsponsored content and titles carry a #NotAd tag. Covers official LEGO.
 - [Lego Leader](https://www.youtube.com/@LegoLeader) - French-language channel on LEGO Star Wars and custom builds; set reviews, deals and news. Declares itself an independent fan channel. Covers official LEGO.
 - [MandRproductions](https://www.youtube.com/@MandRproductions) - Reviews of LEGO Star Wars, Harry Potter and Architecture sets by an adult fan, including retired sets. Covers official LEGO.
-- [New Elementary](https://www.youtube.com/@NewElementary) - New LEGO pieces and colours, set reviews, building techniques and interviews with designers. Covers official LEGO.
+- [New Elementary (YouTube)](https://www.youtube.com/@NewElementary) - New LEGO pieces and colours, set reviews, building techniques and interviews with designers. Covers official LEGO.
 - [RacingBrick](https://www.youtube.com/@RacingBrick) - Detailed building reviews of LEGO Technic and vehicle sets, with Powered Up tutorials. Covers official LEGO.
 - [Tiago Catarino](https://www.youtube.com/@TiagoCatarino) - Set reviews by a former official LEGO designer, with building tips. Covers official LEGO.
 
@@ -478,10 +481,10 @@ English- and French-language YouTube channels and podcasts: reviews of official 
 ### News and community
 
 - [Beyond the Brick](https://www.youtube.com/@BeyondtheBrick) - LEGO news and reveal coverage; the channel states it began in November 2011 as an audio-only podcast and sells merchandise. Covers official LEGO.
-- [Brickonaute](https://www.youtube.com/@Brickonaute) - YouTube channel of the French-language LEGO news and review blog brickonaute.fr: new releases, tests and set information. Covers official LEGO.
+- [Brickonaute (YouTube)](https://www.youtube.com/@Brickonaute) - YouTube channel of the French-language LEGO news and review blog brickonaute.fr: new releases, tests and set information. Covers official LEGO.
 - [Briquefan](https://www.youtube.com/channel/UCeohvTWYjZDOubRaSIlpBCQ) - French-language show about LEGO fans and their community. Status: no update for 6 months.
 - [FrosTiize](https://www.youtube.com/@FrosTiize) - French-language LEGO content creator: challenges, tier lists, set reviews and news. Covers official LEGO.
-- [Jay's Brick Blog](https://www.youtube.com/@Jaysbrickblog) - YouTube channel of the Jay's Brick Blog LEGO blog: speed builds, reviews and reveal videos. Covers official LEGO.
+- [Jay's Brick Blog (YouTube)](https://www.youtube.com/@Jaysbrickblog) - YouTube channel of the Jay's Brick Blog LEGO blog: speed builds, reviews and reveal videos. Covers official LEGO.
 
 ### Podcasts
 
@@ -639,15 +642,15 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 
 ### National clubs
 
-- [ALE! Asociación Cultural de Aficionados a LEGO](https://www.alebricks.com/) - Spanish cultural association of LEGO fans, constituted on 26 December 2010, organizer of the free ALEbricks! exhibition in the Madrid area and of workshops. Covers official LEGO.
-- [BeLUG](https://www.belug.be/) - Belgian LEGO User Group: club for adult LEGO builders and collectors, independent of the LEGO Group, taking part in fairs in Belgium and abroad and organizing Brick Mania. Covers official LEGO.
+- [ALE! Asociación Cultural de Aficionados a LEGO](https://www.alebricks.com/) - Spanish cultural association of LEGO fans, constituted on 26 December 2010, organiser of the free ALEbricks! exhibition in the Madrid area and of workshops. Covers official LEGO.
+- [BeLUG](https://www.belug.be/) - Belgian LEGO User Group: club for adult LEGO builders and collectors, independent of the LEGO Group, taking part in fairs in Belgium and abroad and organising Brick Mania. Covers official LEGO.
 - [Brickish](https://brickish.org/) - UK-wide club of adult fans of LEGO, active since 2002 and described by itself as the first user group in the country; local meet-ups, public shows and a members-only forum. Covers official LEGO.
 - [Brikkelauget](https://www.brikkelauget.no/) - Norwegian group of adult LEGO fans, described as the largest in Norway, with a public forum including a buy and sell section.
 - [Byggepladen](https://byggepladen.dk/) - Danish association of adult LEGO fans with building meetings, exhibitions, a members' magazine and collaborative projects; chosen for the Danish Diner in the international Modulars Around the World project of 2027. Covers official LEGO.
 - [Comunidade 0937](https://comunidade0937.com/portal/) - Portuguese LEGO fan group founded in 2006 that organises exhibitions and meetings and runs an online discussion forum; it announces the Paredes de Coura Fan Weekend.
-- [HispaLUG](https://hispalug.com/) - Spanish non-profit association of LEGO fans founded in 2006 and recognized in 2010, with a large public forum and events. Covers official LEGO. Status: no update for 6 months.
+- [HispaLUG](https://hispalug.com/) - Spanish non-profit association of LEGO fans founded in 2006 and recognised in 2010, with a large public forum and events. Covers official LEGO. Status: no update for 6 months.
 - [ItLUG](https://www.itlug.org/) - Italian LEGO Users Group: national association of adult LEGO fans founded in 1999 and legally constituted in November 2010, with a forum, national events and local exhibitions. Covers official LEGO.
-- [LGOe - LEGO Gemeinschaft Österreich](https://www.lgoe.at/) - Austrian association based in Vienna, about 100 members across the country, specialized in model building with original LEGO parts and organizer of the Welt der Steine exhibitions; free forum registration. Covers official LEGO.
+- [LGOe - LEGO Gemeinschaft Österreich](https://www.lgoe.at/) - Austrian association based in Vienna, about 100 members across the country, specialised in model building with original LEGO parts and organiser of the Welt der Steine exhibitions; free forum registration. Covers official LEGO.
 - [LLMTC: LowLands L-Gauge Model Train Club](https://llmtc.nl/) - Dutch club of LEGO train builders in scale 1:45, with modular layouts built to the MILS standard and a yearly display at LEGO World in Utrecht. Status: no update for 6 months.
 - [Lowlug](https://www.lowlug.nl/) - LEGO User Group of the Lowlands, connecting adult fans in the Netherlands since 2003, with a forum, articles and exhibitions. Covers official LEGO.
 - [LUGPol](https://lugpol.pl/) - Polish online community of adult LEGO fans, built around a forum with showcases of custom builds, set reviews and member competitions. Covers official LEGO.
@@ -664,18 +667,18 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 - [AuckLUG](https://www.aucklug.co.nz/) - Auckland LEGO User Group: monthly meetings, build challenges, members' displays at shows and charity events, and the annual Auckland Brick Show, described by the group as the biggest LEGO show in the city.
 - [BayLUG](https://baylug.org/) - Bay Area LEGO Users Group, founded in 1998, with about 200 members of all ages, public meetings and displays in the San Francisco Bay Area; its train club BayLTC focuses on LEGO trains.
 - [Brick Alley](https://www.brickalleylug.co.uk/) - User group for adult fans of LEGO in North East England, with monthly meet-ups, collaborative displays and exhibitions such as Discovery Brick Show (Newcastle, since 2018) and Shildon Brick Show (since 2016). Covers official LEGO.
-- [Bricking Bavaria e.V.](https://www.bricking-bavaria.de/) - Bavarian LEGO association organizing regular Stammtisch meetings open to everyone and the Bricking Bavaria exhibition in Augsburg. Covers official LEGO.
+- [Bricking Bavaria e.V.](https://www.bricking-bavaria.de/) - Bavarian LEGO association organising regular Stammtisch meetings open to everyone and the Bricking Bavaria exhibition in Augsburg. Covers official LEGO.
 - [Brickouest](https://brickouest.fr/) - Association of LEGO fans of western France, recognised by the LEGO Group, publishing a calendar and a map of its exhibitions and workshops. Covers official LEGO.
-- [Briques Unies](https://briques-unies.org/) - French non-profit association (loi 1901) founded in 2018 in the Drôme, recognized by the LEGO Group, organizing 100 percent LEGO exhibitions, play areas and workshops. Covers official LEGO.
+- [Briques Unies](https://briques-unies.org/) - French non-profit association (loi 1901) founded in 2018 in the Drôme, recognised by the LEGO Group, organising 100 percent LEGO exhibitions, play areas and workshops. Covers official LEGO.
 - [BrisBricks](https://brisbricks.org/) - Recognised LEGO user group of Brisbane that runs the BrisBricks Chandler fan event and the BBX Fan Expo, Queensland's largest LEGO fan event according to the group.
 - [BRISY](https://brisy.fr/) - Association of adult fans of LEGO in the Yvelines organising the Expo 100% Briques in Le Perray-en-Yvelines and taking part in other exhibitions and workshops. Covers official LEGO.
-- [Ch'ti LUG](https://chtilug.fr/) - LEGO user group of northern France (Nord and Pas-de-Calais) organizing the Ch'ti Brick exhibitions in several towns each year. Covers official LEGO.
-- [Dutchbricks](https://www.dutchbricks.nl/) - Association of the Dutch and Belgian Limburg Euroregion founded in 2015, recognized by the LEGO Group, organizer of the Bricktopia events. Covers official LEGO.
-- [Fana'briques](https://fanabriques.fr/) - Alsace association that organizes the annual Fana'briques LEGO exhibition, described by another French club as the main yearly event of French LEGO fans. Covers official LEGO.
-- [French'Brick - Île-de-France](https://frenchbrickidf.forumgaming.fr/) - Association (loi 1901) of the Paris region organizing LEGO exhibitions, with a forum and group purchases for its members. Covers official LEGO.
+- [Ch'ti LUG](https://chtilug.fr/) - LEGO user group of northern France (Nord and Pas-de-Calais) organising the Ch'ti Brick exhibitions in several towns each year. Covers official LEGO.
+- [Dutchbricks](https://www.dutchbricks.nl/) - Association of the Dutch and Belgian Limburg Euroregion founded in 2015, recognised by the LEGO Group, organiser of the Bricktopia events. Covers official LEGO.
+- [Fana'briques](https://fanabriques.fr/) - Alsace association that organises the annual Fana'briques LEGO exhibition, described by another French club as the main yearly event of French LEGO fans. Covers official LEGO.
+- [French'Brick - Île-de-France](https://frenchbrickidf.forumgaming.fr/) - Association (loi 1901) of the Paris region organising LEGO exhibitions, with a forum and group purchases for its members. Covers official LEGO.
 - [Les Briques en Folie](https://www.lesbriquesenfolie.fr/) - Association of adult fans of LEGO based in Rouen and recognised by the LEGO Group, organising exhibitions, giant mosaics and workshops in Normandy. Covers official LEGO.
 - [London AFOLs](https://www.londonafols.uk/) - Monthly gathering of adult fans of LEGO in a central London pub; open to residents and visitors, with dates listed on Meetup. Covers official LEGO.
-- [LUG'Est](https://lugest.fr/) - Association (loi 1901) created in 2014 in Bourgogne-Franche-Comté, recognized by the LEGO Group, organizing exhibitions, hospital workshops and charity events. Covers official LEGO.
+- [LUG'Est](https://lugest.fr/) - Association (loi 1901) created in 2014 in Bourgogne-Franche-Comté, recognised by the LEGO Group, organising exhibitions, hospital workshops and charity events. Covers official LEGO.
 - [NELUG - New England LEGO Users Group](https://www.nelug.org/) - Regional group of adult LEGO fans in the north-east of the United States, formed in August 1999, with a forum, displays and large exhibitions. Covers official LEGO.
 - [QuéLUG](https://www.quelug.org/) - Association of LEGO fans of Quebec, in French, with quarterly meetings, a forum, group orders and attendance at Canadian exhibitions. Covers official LEGO.
 - [SydLUG](https://www.sydlug.com/) - Sydney LEGO Users Group, stated to be Sydney's only recognised LUG, with members across Greater Sydney, the Central Coast and Wollongong, monthly meetups in Croydon and charity displays.
@@ -691,7 +694,7 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 
 ### Online clubs
 
-- [BioniLUG](https://www.bionilug.com/) - Online user group for fans of Bionicle and Constraction, recognized by the LEGO Group, with member spotlights and displays at fan conventions. Covers official LEGO.
+- [BioniLUG](https://www.bionilug.com/) - Online user group for fans of Bionicle and Constraction, recognised by the LEGO Group, with member spotlights and displays at fan conventions. Covers official LEGO.
 - [SAFOLs](https://www.safols.co.za/) - South African Fans of LEGO: recognised online community created in 2017 around a Facebook group of about 3000 members, with a website of set reviews, competitions and a list of local BrickLink stores. Status: no update for 6 months.
 
 <br>
@@ -814,8 +817,8 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 - [Brickset API v3](https://brickset.com/article/52666/brickset-web-services) - JSON and SOAP interface to the Brickset catalog: sets, extra images, instructions, reviews, member collections (read and write). Covers official LEGO.
 - [LDraw open standard and parts library](https://www.ldraw.org/) - Open format for digital LEGO models and official parts library, basis of LeoCAD, LDView, LPub3D and Studio export. Covers official LEGO.
 - [LEGO Wireless Protocol 3.0 documentation](https://lego.github.io/lego-ble-wireless-protocol-docs/) - Documentation published by LEGO of the Bluetooth Low Energy protocol of its smart hubs: one GATT service to read hub information and to drive the motors and sensors connected to the ports. Covers official LEGO. Status: no update for a year.
-- [Rebrickable API v3](https://rebrickable.com/api/) - REST interface to the official LEGO catalog (sets, parts, minifigures, themes, colors) and to Rebrickable user collections. Covers official LEGO.
-- [Rebrickable catalog CSV downloads](https://rebrickable.com/downloads/) - Daily archive of CSV files: themes, colors, parts, elements, sets, minifigures, inventories, and identifier mappings to Brickset, BrickLink, Brick Owl, LEGO and LDraw. Covers official LEGO.
+- [Rebrickable API v3](https://rebrickable.com/api/) - REST interface to the official LEGO catalog (sets, parts, minifigures, themes, colours) and to Rebrickable user collections. Covers official LEGO.
+- [Rebrickable catalog CSV downloads](https://rebrickable.com/downloads/) - Daily archive of CSV files: themes, colours, parts, elements, sets, minifigures, inventories, and identifier mappings to Brickset, BrickLink, Brick Owl, LEGO and LDraw. Covers official LEGO.
 
 ### Open-source projects
 

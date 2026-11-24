@@ -9,7 +9,7 @@ Reads run in parallel (subreddits one at a time, the archive asks for it). A fai
 values, taken from the published website when they are newer than the repository's copy. With `--from-site`
 (builds that follow a push), nothing is read: the measurements of the published website are reused, and a
 full reading runs only if the website cannot be reached. Writes a Markdown report to stdout, used as the body of the
-weekly pull request: entries that failed, became archived, left the conditions of the README
+weekly report issue: entries that failed, became archived, left the conditions of the README
 selection, or were not checked by hand for more than 365 days.
 """
 import datetime as dt
@@ -181,7 +181,7 @@ def main():
             old[k] = v
     new, failed, archived, stale, unfeature = {}, [], [], [], []
     token = os.environ.get("GITHUB_TOKEN")
-    entries = [dict(r, _cat=path.stem) for path in sorted((ROOT / "data").glob("*.toml")) for r in tomllib.load(open(path, "rb")).get("resource", [])]
+    entries = [dict(r, _cat=path.stem) for path in sorted((ROOT / "data").glob("*.toml")) for r in tomllib.loads(pathlib.Path(path).read_text(encoding="utf-8")).get("resource", [])]
     with ThreadPoolExecutor(12) as pool, ThreadPoolExecutor(1) as slow:  # network waits overlap; subreddits stay one at a time
         jobs = [(slow if r.get("subreddit") and not r.get("github") and not r.get("youtube_channel_id") else pool).submit(read, r, old, token) for r in entries]
         results = [j.result() for j in jobs]

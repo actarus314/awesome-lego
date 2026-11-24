@@ -1,0 +1,10 @@
+{
+  "name": "awesome-lego-checks",
+  "private": true,
+  "description": "Tools of the checks only (README lint, accessibility of the website); the website itself needs no build step from npm.",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "awesome-lint": "2.3.0",
+    "axe-core": "4.14.1"
+  }
+}

@@ -17,12 +17,17 @@ jobs:
       - id: lychee
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
-          args: --no-progress --max-retries 2 --timeout 30 --accept 200..=299,403,429 --exclude-path site 'data/*.toml' README.md README.fr.md
+          args: --no-progress --max-retries 2 --timeout 30 --accept 200..=299,403,429 --exclude-path site 'data/*.toml' README.md contributing.md MAINTENANCE.md
           output: lychee-report.md
           fail: false
-      - if: steps.lychee.outputs.exit_code != 0
-        uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710 # v6.0.0
-        with:
-          title: "Broken links / Liens morts"
-          content-filepath: lychee-report.md
-          labels: links, automatic
+      - name: Open, update or close the links issue   # one issue, kept up to date, closed when every link answers
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          FAILED: ${{ steps.lychee.outputs.exit_code != 0 }}
+        run: |
+          n=$(gh issue list --label links --state open --json number -q '.[0].number')
+          if [ "$FAILED" = "true" ] && [ -f lychee-report.md ]; then
+            head -c 60000 lychee-report.md > body.md   # an issue body holds 65536 characters at most
+            if [ -n "$n" ]; then gh issue edit "$n" --body-file body.md; else gh issue create --title "Broken links" --label links --label automatic --body-file body.md; fi
+          elif [ "$FAILED" != "true" ] && [ -n "$n" ]; then gh issue close "$n" --comment "Every link answers again."; fi   # a run without a report closes nothing

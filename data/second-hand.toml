@@ -911,7 +911,7 @@ strengths_en = [
   "Parts in colours outside the LEGO range",
 ]
 strengths_fr = [
-  "Livraison depuis la Chine rapportée à 5 jours ouvrés vers le Royaume-Uni sans frais de douane (forum, 2026-08-23)",
+  "Livraison depuis la Chine rapportée à 5 jours ouvrés vers le Royaume-Uni sans frais de douane (forum, 23/08/2026)",
   "Pièces dans des couleurs hors gamme LEGO",
 ]
 weaknesses_en = [
@@ -1816,7 +1816,7 @@ business_model_fr = "Boutique"
 summary_en = "German studio making custom minifigures since 2012, printed in house with UV printers on original LEGO elements; ships worldwide."
 summary_fr = "Studio allemand de minifigurines sur mesure depuis 2012, imprimées sur place par impression UV sur éléments LEGO d'origine ; expédie dans le monde."
 strengths_en = ["Prices in euros", "Own designs (western, zombie, science-fiction) rather than copies of licensed characters, with some Star Wars-style customs"]
-strengths_fr = ["Prix en euros", "Créations propres (western, zombies, science-fiction), avec quelques figurines de style Star Wars"]
+strengths_fr = ["Prix en euros", "Créations propres (western, zombies, science-fiction) plutôt que des copies de personnages sous licence, avec quelques figurines de style Star Wars"]
 weaknesses_en = ["Customer rating of 4.86 stars on 946 reviews is the shop's own figure, not checked"]
 weaknesses_fr = ["Note de 4.86 étoiles sur 946 avis fournie par la boutique, non vérifiée"]
 status = "active"
@@ -1842,7 +1842,7 @@ countries = ["DE", "FR", "international"]
 access = "free"
 business_model_en = "Shop"
 business_model_fr = "Boutique"
-summary_en = "Hamburg workshop, active since 2023, printing and assembling personalized LEGO minifigures and bricks in house; site in four languages with a country selector including France."
+summary_en = "Hamburg workshop, active since 2023, printing and assembling personalised LEGO minifigures and bricks in house; site in four languages with a country selector including France."
 summary_fr = "Atelier de Hambourg, actif depuis 2023, qui imprime et assemble sur place des minifigurines et briques LEGO personnalisées ; site en quatre langues avec sélecteur de pays incluant la France."
 strengths_en = ["Site available in French", "Free shipping from 59 euros for Germany (as stated)"]
 strengths_fr = ["Site disponible en français", "Livraison offerte dès 59 euros pour l'Allemagne (selon le site)"]
@@ -1871,7 +1871,7 @@ countries = ["DE"]
 access = "free"
 business_model_en = "Shop"
 business_model_fr = "Boutique"
-summary_en = "German shop of configurable minifigures personalized by UV digital printing on original LEGO parts (names, text, graphics), plus printed bricks and tiles and single parts."
+summary_en = "German shop of configurable minifigures personalised by UV digital printing on original LEGO parts (names, text, graphics), plus printed bricks and tiles and single parts."
 summary_fr = "Boutique allemande de minifigurines configurables personnalisées par impression numérique UV sur pièces LEGO d'origine (noms, textes, graphiques), avec briques et tuiles imprimées et pièces à l'unité."
 strengths_en = ["Online configurator for heads, hair, torsos and legs", "Prices published in euros"]
 strengths_fr = ["Configurateur en ligne pour têtes, cheveux, torses et jambes", "Prix publiés en euros"]
@@ -2048,7 +2048,7 @@ countries = ["international"]
 access = "free"
 business_model_en = "Shop"
 business_model_fr = "Boutique"
-summary_en = "Shop of die-cut self-adhesive stickers for LEGO sets and custom builds designed with MOC designers, with a custom design and printing service, single copies included."
+summary_en = "Shop of die-cut self-adhesive stickers for LEGO sets and custom builds designed with custom-build designers, with a custom design and printing service, single copies included."
 summary_fr = "Boutique d'autocollants adhésifs prédécoupés pour sets LEGO et créations originales, conçus avec des concepteurs de créations, avec un service sur mesure, exemplaire unique compris."
 strengths_en = ["Worldwide shipping; refund guarantee stated", "Sheets for community models and Icons sets, priced in euros"]
 strengths_fr = ["Expédition dans le monde ; garantie de remboursement annoncée", "Planches pour modèles de la communauté et sets Icons, prix en euros"]

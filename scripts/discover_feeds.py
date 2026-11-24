@@ -75,7 +75,7 @@ def main():
     for path in sorted((ROOT / "data").glob("*.toml")):
         if path.stem == "journeys":
             continue
-        for r in tomllib.load(open(path, "rb")).get("resource", []):
+        for r in tomllib.loads(pathlib.Path(path).read_text(encoding="utf-8")).get("resource", []):
             if not any(r.get(k) for k in ("github", "youtube_channel_id", "subreddit", "feed")) and r.get("status") != "dead":
                 todo.append((path, r))
     found = {}

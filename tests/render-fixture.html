@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- Calibration page for scripts/check_site.py: each element marked data-expect must be reported with that
+     check, and nothing else may be reported. Keep one sound and one faulty case of every check. -->
+<html lang="en"><head><meta charset="utf-8"><title>Rendering checks: calibration</title>
+<style>
+body{font:15px/1.4 system-ui,sans-serif;margin:16px;width:360px;background:#fff;color:#111}
+.card{border:1px solid #888;padding:8px;margin:8px 0;width:300px}
+.ct{list-style:none;padding:0}.ct li{display:flex;gap:6px}
+.ok .tel a{white-space:nowrap}
+.bad .tel a{overflow-wrap:anywhere}
+.rows>li{border:1px solid #888;border-radius:8px;margin:4px 0;list-style:none}
+.leak li{border:1px solid #888;background:#eee}
+.wide{width:420px;white-space:nowrap}
+.brk{word-break:break-all}
+</style></head><body>
+<div class="card ok"><ul class="ct"><li class="tel"><a href="tel:+33601496230">+33 6 01 49 62 30</a></li></ul></div>
+<div class="card bad" style="width:120px"><ul class="ct"><li class="tel"><a data-expect="broken token" href="tel:+33601496230">+33 6 01 49 62 30</a></li></ul></div>
+<ul class="rows"><li>Row<ul class="ct"><li>inner line, not framed</li></ul></li></ul>
+<ul class="rows leak"><li>Row<ul><li data-expect="inherited frame">inner line, framed by the outer rule</li></ul></li></ul>
+<div class="card"><span>short text that fits</span></div>
+<div class="card"><span class="wide" data-expect="overflow">a line that does not fit in its card at all, nowrap</span></div>
+<div class="card" style="width:140px"><span class="brk" data-expect="broken word">Saint-Orens Gameville Castanet-Tolosan Labège Ramonville Escalquens</span></div>
+<div class="card" style="width:140px"><span>Saint-Orens Gameville and other towns</span></div>
+<div class="card"><div style="width:60px;display:inline-block" data-expect="overflow">Communities</div></div>
+<div class="card"><div style="width:60px;display:inline-block;overflow-wrap:anywhere">Communities</div></div>
+</body></html>

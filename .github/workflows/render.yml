@@ -1,0 +1,42 @@
+name: Render
+on:
+  pull_request:
+    paths: ["site-src/**", "scripts/build.py", "scripts/check_site.py", "media/**", "data/**", "tests/render-fixture.html", "tests/requirements.txt", "package-lock.json", ".github/workflows/render.yml"]
+  push:
+    branches: [main]
+    paths: ["site-src/**", "scripts/build.py", "scripts/check_site.py", "media/**", "data/**", "tests/render-fixture.html", "tests/requirements.txt", "package-lock.json", ".github/workflows/render.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: render-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  render:   # not a required check: a path filter would leave a required check pending
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.13"   # the browser library ships wheels for released Pythons first
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Tools (axe-core from package-lock.json, Playwright and Chromium)
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          python3 -m pip install --quiet -r tests/requirements.txt
+          python3 -m playwright install --with-deps chromium
+      - run: python3 scripts/build.py --site-only
+      - name: Rendering checks (layout of every view at five widths, accessibility with axe-core)
+        run: python3 scripts/check_site.py --json render.json
+      - if: failure()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: render-findings
+          path: render.json
+          retention-days: 7

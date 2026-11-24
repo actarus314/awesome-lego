@@ -210,7 +210,7 @@ kind = "read"
 
 [[resource]]
 id = "hoth-bricks"
-name = "Hoth Bricks"
+name = "Hoth Bricks (YouTube)"
 url = "https://www.youtube.com/@hoth_bricks"
 group = "official-lego-reviews"
 covers = ["official", "news"]
@@ -250,7 +250,7 @@ kind = "read"
 
 [[resource]]
 id = "brickmitri-youtube"
-name = "Brickmitri"
+name = "Brickmitri (YouTube)"
 url = "https://www.youtube.com/@brickmitri"
 group = "official-lego-reviews"
 featured = true
@@ -326,7 +326,7 @@ kind = "read"
 
 [[resource]]
 id = "new-elementary-youtube"
-name = "New Elementary"
+name = "New Elementary (YouTube)"
 url = "https://www.youtube.com/@NewElementary"
 group = "official-lego-reviews"
 covers = ["official", "news"]
@@ -992,7 +992,7 @@ kind = "read"
 
 [[resource]]
 id = "brickonaute-youtube"
-name = "Brickonaute"
+name = "Brickonaute (YouTube)"
 url = "https://www.youtube.com/@Brickonaute"
 group = "news"
 covers = ["official", "news"]
@@ -1032,7 +1032,7 @@ kind = "read"
 
 [[resource]]
 id = "jays-brick-blog-youtube"
-name = "Jay's Brick Blog"
+name = "Jay's Brick Blog (YouTube)"
 url = "https://www.youtube.com/@Jaysbrickblog"
 group = "news"
 covers = ["official", "news"]

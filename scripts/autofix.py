@@ -47,8 +47,8 @@ def moved(url):
         except Exception:
             return None
         break
-    if not hops or code != 200 or "?" in cur:
-        return None
+    if not hops or code != 200 or "?" in cur or not re.fullmatch(r"https?://[^\s\"\\<>`]+", cur):
+        return None  # an address with characters that would break the data file or the pull request is left to a person
     same = lambda a, b: a.rstrip("/").lower() == b.rstrip("/").lower()
     return None if same(cur, url) or same(cur.replace("http://", "https://"), url) else cur
 
@@ -71,7 +71,9 @@ def main():
         if not nu:
             continue
         path, old = urls[rid]
-        lines.append(f"- `{rid}`: address moved for good, {old} → {nu}")
+        host = lambda u: urllib.parse.urlsplit(u).hostname.removeprefix("www.")
+        flag = "**other site, check the owner**: " if host(old) != host(nu) else ""  # a moved address can hide a change of owner
+        lines.append(f"- `{rid}`: {flag}address moved for good, `{old}` → `{nu}`")
         files[path] = re.sub(rf'(?ms)^(id = "{re.escape(rid)}"\n.*?^url = )"{re.escape(old)}"', lambda m: m.group(1) + f'"{nu}"', files[path], count=1)
     for path, rid, d in dates:
         lines.append(f"- `{rid}`: next edition date {d} is past, removed")
@@ -81,6 +83,7 @@ def main():
             tomllib.loads(text)
             if text != path.read_text(encoding="utf-8"):
                 path.write_text(text, encoding="utf-8")
+    lines.sort(key=lambda l: "**" not in l)  # changes of site first, for the person who merges
     print("\n".join(lines) if lines else "Nothing to fix.")
     return 0
 

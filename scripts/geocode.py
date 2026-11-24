@@ -38,7 +38,7 @@ def wanted():
     for path in sorted((ROOT / "data").glob("*.toml")):
         if path.stem in ("journeys",):
             continue
-        for r in tomllib.load(open(path, "rb")).get("resource", []):
+        for r in tomllib.loads(pathlib.Path(path).read_text(encoding="utf-8")).get("resource", []):
             for c in cities(r):
                 out.setdefault(key(c, r), []).append(r["id"])
     return out
