@@ -288,5 +288,19 @@ class Details(unittest.TestCase):
             self.assertEqual(len(det), n)
             self.assertEqual(sum(1 for r in blob["resources"] if r[lang]["d"]), n)
 
+
+class Dates(unittest.TestCase):
+    def test_in_letters(self):
+        self.assertEqual(build.in_letters("2027-07-03", "en"), "3 July 2027")
+        self.assertEqual(build.in_letters("2027-04-01", "fr"), "1er avril 2027")
+        self.assertEqual(build.in_letters("2027-04-01", "en"), "1 April 2027")
+
+    def test_feed_has_no_numeric_date_in_titles(self):
+        with contextlib.redirect_stdout(io.StringIO()):
+            cats, _ = build.load()
+        for lang in ("en", "fr"):
+            titles = re.findall(r"<title>(.*?)</title>", build.content_feed(cats, lang))
+            self.assertFalse([x for x in titles if build.NUMERIC_DATE.search(x)])
+
 if __name__ == "__main__":
     unittest.main()

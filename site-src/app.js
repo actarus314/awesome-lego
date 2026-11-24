@@ -45,7 +45,7 @@ const det=()=>detP||(detP=fetch('details.json').then(x=>{if(!x.ok)throw x.status
 const index=()=>{if(ms)return ms;ms=new MiniSearch({fields:['name','summary','strengths','weaknesses','group','covers','countries','city','size','brands'],storeFields:[],
  processTerm:w=>fold(w),searchOptions:{boost:{name:4,brands:3,group:2},prefix:true,fuzzy:0.2,combineWith:'AND'}});
  ms.addAll(R.map(r=>({id:r.id,name:r.name,summary:r[L].summary,strengths:r[L].strengths.join(' '),weaknesses:r[L].weaknesses.join(' '),group:r[L].group,
- covers:(r.covers||[]).map(t).join(' '),countries:(r.countries||[]).map(cname).join(' '),city:r.city||'',size:r[L].size,brands:(r.brands||[]).map(brandName).join(' ')})));return ms};
+ covers:(r.covers||[]).map(t).join(' '),countries:(r.countries||[]).map(cname).join(' '),city:[r.city,r.city_fr,r.city_local].filter(Boolean).join(' '),size:r[L].size,brands:(r.brands||[]).map(brandName).join(' ')})));return ms};
 const st={cat:new Set(),cov:new Set(),langs:new Set(),active:false,featured:false,country:'',q:'',view:'cards',sort:null};
 let BM='';  // brand mode: the query is exactly a brand's name or other name
 const BNAME=new Map(BRANDS.flatMap(b=>[b.name,...b.aka].map(n=>[fold(n),b.id])));
@@ -251,7 +251,7 @@ const SG=(()=>{const out=[],add=(g,label,names,w,go,d)=>out.push({g,label,keys:n
  C.forEach(c=>{const n=R.filter(r=>r.cat===c.id).length;add('cat',c[L],[c[L],c.en,c.fr],n,{cat:c.id},tn('n_entries',n))});
  CTRY.forEach(([c,n])=>add('place',cname(c),[cname(c),c],n,{country:c},tn('n_entries',n)));
  add('entry',L==='fr'?'Un mur qui cache autre chose':'A wall that hides something',['konami','secret','vault','cheat','easter egg','hidden','coffre','triche'],-1,{vault:true},'↑ ↑ ↓ ↓ ← → ← → B A');  // a hint towards the Brick Vault
- Object.entries(R.reduce((a,r)=>{(r.city||'').split(',').map(x=>x.trim()).filter(Boolean).forEach(x=>(a[x]=a[x]||[]).push(r));return a},{})).forEach(([city,rs])=>add('place',city,[city],rs.length,{q:city},rs.map(r=>catName(r.cat)).filter((v,i,a)=>a.indexOf(v)===i).join(', ')));
+ Object.values(R.reduce((a,r)=>{if(r.city)(a[r.city]=a[r.city]||{r0:r,rs:[]}).rs.push(r);return a},{})).forEach(({r0,rs})=>add('place',cityOf(r0),[r0.city,r0.city_fr,r0.city_local].filter(Boolean),rs.length,{q:cityOf(r0)},rs.map(r=>catName(r.cat)).filter((v,i,a)=>a.indexOf(v)===i).join(', ')));  // a city is found by its English, French or local name
  return out})();
 const sugg=document.getElementById('sugg');let sgItems=[],sgAt=-1;
 function suggest(v){const f=fold(v.trim());sgItems=[];sgAt=-1;

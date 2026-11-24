@@ -631,7 +631,7 @@ FEED_T = {
     "next": {"en": "Next edition", "fr": "Prochaine édition"},
     "open": {"en": "Awesome LEGO opens with {n} resources", "fr": "Awesome LEGO ouvre avec {n} ressources"},
     "open_body": {"en": "{n} resources of the brick world, each checked at its source: brands, shops, prices, second-hand, communities, videos, events, places, clubs, learning and tools.",
-                  "fr": "{n} ressources du monde de la brique, chacune vérifiée à sa source : marques, boutiques, prix, occasion, communautés, vidéos, événements, lieux, clubs, savoir et outils."},
+                  "fr": "{n} ressources du monde de la brique, chacune vérifiée à sa source : marques, boutiques, prix, occasion, communautés, vidéos, événements, lieux, clubs, apprendre et outils."},
 }
 
 
@@ -645,6 +645,16 @@ def atom(title, self_url, site_url, items):
             f'<id>{self_url}</id><link href="{site_url}"/><link rel="self" href="{self_url}"/>'
             f'<icon>{PAGES}media/favicon.png</icon><logo>{PAGES}media/apple-touch-icon.png</logo>'
             f'<updated>{updated}T00:00:00Z</updated><author><name>Awesome LEGO</name></author>{entries}</feed>\n')
+
+
+MONTHS = {"en": "January February March April May June July August September October November December".split(),
+          "fr": "janvier février mars avril mai juin juillet août septembre octobre novembre décembre".split()}
+
+
+def in_letters(iso, lang):
+    """2027-07-03: 3 July 2027, 3 juillet 2027; the first of the month in French: 1er avril 2027."""
+    y, m, d = (int(x) for x in iso.split("-"))
+    return f"{'1er' if lang == 'fr' and d == 1 else d} {MONTHS[lang][m - 1]} {y}"
 
 
 def content_feed(cats, lang):
@@ -661,9 +671,9 @@ def content_feed(cats, lang):
             else:
                 items.append((f"{site}#added-{r['id']}", f"{FEED_T['new'][lang]} · {cname} · {r['name']}", link, str(r["added"]), r["summary_" + lang]))
             if r.get("next_date") and str(r["next_date"]) >= today:
-                when = ".".join(reversed(str(r["next_date"]).split("-")))  # DD.MM.YYYY
-                where = f" · {r['city']}" if r.get("city") else ""
-                items.append((f"{site}#next-{r['id']}-{r['next_date']}", f"{FEED_T['next'][lang]} · {r['name']} · {when.replace('.', '/')}{where}",
+                city = r.get("city_fr") if lang == "fr" and r.get("city_fr") else r.get("city")
+                where = f" · {city}" if city else ""
+                items.append((f"{site}#next-{r['id']}-{r['next_date']}", f"{FEED_T['next'][lang]} · {r['name']} · {in_letters(str(r['next_date']), lang)}{where}",
                               link, str(r["checked"]), r["summary_" + lang]))
     if base:
         items.append((f"{site}#opening", FEED_T["open"][lang].format(n=base), site, BASELINE, FEED_T["open_body"][lang].format(n=base)))
