@@ -342,16 +342,32 @@ def passion():
             "rows": [{"c": k, "n": n, "pop": p["population"].get(k)} for k, n in c["countries"].items()]}
 
 
+SRC = ROOT / "site-src"
+
+
+def source(name):
+    """A part of the page from site-src/, as it goes into the template: without its final newline."""
+    text = (SRC / name).read_text(encoding="utf-8")
+    return text[:-1] if text.endswith("\n") else text
+
+
+def assemble():
+    """The page template, put together from its parts: index.html (skeleton, head scripts, vault hint script),
+    style.css, app.js (the page's script) and strings.json (interface strings in English and French, the table S
+    of app.js). Plain text insertion, no modules: the page served is one file per language, as before."""
+    return (SRC / "index.html").read_text(encoding="utf-8").replace("{{STYLE}}", source("style.css"), 1).replace("{{APP}}", source("app.js").replace("{{STRINGS}}", source("strings.json"), 1), 1)
+
+
 def static_texts(tpl, lang):
     """Fill the empty elements marked data-t="key" with the string the page's script would put there
-    (same table S of site-src/index.html): the first paint shows the final texts, nothing moves after."""
-    S = {k: v[lang] for k, v in json.loads(re.search(r"const S=(\{\n.*?\n\});", tpl, re.S).group(1)).items()}
+    (site-src/strings.json): the first paint shows the final texts, nothing moves after."""
+    S = {k: v[lang] for k, v in json.loads(source("strings.json")).items()}
     return re.sub(r'(<(\w+)\b[^>]*\bdata-t="(\w+)"[^>]*>)(</\2>)',
                   lambda m: m.group(1) + html.escape(S[m.group(3)], quote=False) + m.group(4) if m.group(3) in S else m.group(0), tpl)
 
 
 def page(lang, data):
-    tpl = static_texts((ROOT / "site-src" / "index.html").read_text(encoding="utf-8"), lang)
+    tpl = static_texts(assemble(), lang)
     other = "fr/" if lang == "en" else "../"
     other_lang = "fr" if lang == "en" else "en"
     lean = dict(data, resources=[{k: v for k, v in r.items() if k != other_lang} for r in data["resources"]])  # each page carries its own language only
