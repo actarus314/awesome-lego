@@ -239,7 +239,7 @@ OFFICIEL = re.compile(r"\bLEGO\s+officiel(le)?s?\b|\bofficiel(le)?s?\s+LEGO\b")
 NUMERIC_DATE = re.compile(r"\b\d{4}-\d{2}-\d{2}\b|\b\d{1,2}/\d{1,2}/\d{4}\b")
 SUMMARY_WORDS = 35  # a card's text: what is particular, one or two sentences (decision of 12:28)
 COUNTRY_WORDS = re.compile(r"^(?:an? |the )?(?:french|german|polish|italian|spanish|dutch|belgian|swiss|austrian|danish|swedish|norwegian|finnish|czech|slovak|british|english|scottish|welsh|irish|american|canadian|australian|chinese|japanese|portuguese|luxembourg\w*|south african|new zealand\w*|european|hungarian|greek|icelandic|estonian|latvian|lithuanian|slovenian|croatian|romanian|bulgarian|ukrainian|korean|taiwanese|brazilian|mexican)\b", re.I)
-COUNTRY_WORDS_FR = re.compile(r"\b(?:français|allemand|polonais|italien|espagnol|néerlandais|belge|suisse|autrichien|danois|suédois|norvégien|finlandais|tchèque|slovaque|britannique|anglais|écossais|irlandais|américain|canadien|australien|chinois|japonais|portugais|luxembourgeois|sud-africain|néo-zélandais|européen|hongrois|grec|coréen)(?:ne|e)?s?\b", re.I)
+COUNTRY_WORDS_FR = re.compile(r"(?<!\ben )\b(?:français|allemand|polonais|italien|espagnol|néerlandais|belge|suisse|autrichien|danois|suédois|norvégien|finlandais|tchèque|slovaque|britannique|anglais|écossais|gallois|irlandais|américain|canadien|australien|chinois|japonais|portugais|luxembourgeois|sud-africain|néo-zélandais|européen|hongrois|grec|grecque|islandais|estonien|letton|lituanien|slovène|croate|roumain|bulgare|ukrainien|coréen|taïwanais|brésilien|mexicain)(?:ne|e)?s?\b", re.I)  # in French the demonym follows the noun: « Comparateur de prix allemand »; « en allemand » is a language
 STOP = {"and", "the", "of", "for", "with", "official", "lego", "other", "brands", "brand", "sites", "site",
         "et", "les", "des", "pour", "avec", "officiel", "officiels", "autres", "marques", "marque", "sites"}
 
@@ -271,7 +271,7 @@ def text_notes(cats):
                 gw = {re.sub(r"s$", "", x) for x in re.findall(r"[a-zà-ÿ]+", gname.get((r["group"], lang), "").lower()) if len(x) > 3 and x not in STOP}
                 if gw & set(first):
                     notes.append(f"{w}: summary_{lang} starts with its group ({', '.join(sorted(gw & set(first)))}): start with what sets the entry apart")
-                if (COUNTRY_WORDS.search(txt) if lang == "en" else COUNTRY_WORDS_FR.search(" ".join(txt.split()[:3]))):
+                if (COUNTRY_WORDS.search(txt) if lang == "en" else COUNTRY_WORDS_FR.search(" ".join(txt.split()[:6]))):
                     notes.append(f"{w}: summary_{lang} starts with a country: the card shows it")
 
 

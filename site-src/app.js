@@ -115,7 +115,7 @@ document.getElementById('list').addEventListener('click',e=>{const go=e.target.c
 document.getElementById('viewsw').onclick=e=>{const b=e.target.closest('[data-v]');if(b){st.view=b.dataset.v;update(false)}};
 function drawList(){const rs=R.filter(r=>match(r));document.getElementById('count').innerHTML=rs.length+' / '+R.length+'<span class="cw"> '+t('shown')+'</span>';const list=document.getElementById('list');
  document.querySelectorAll('#viewsw [data-v]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===st.view));
- if(!rs.length){list.innerHTML=`<div class="empty">${t('none')}</div>`;return}
+ if(!rs.length){list.innerHTML=(BM?banner(R.find(r=>r.id===BM),BRANDS.find(x=>x.id===BM),rs):'')+`<div class="empty">${t('none')}</div>`;return}
  if(st.view==='table'){root.style.setProperty('--bar-h',(document.querySelector('.bar').offsetHeight+hdr())+'px');if(hits&&!st.sort)rs.sort((a,b)=>hits.get(b.id)-hits.get(a.id));list.innerHTML=(BM?banner(R.find(r=>r.id===BM),BRANDS.find(x=>x.id===BM),rs):'')+drawTable(rs);return}
  if(BM){const nm=brandName(BM),b=BRANDS.find(x=>x.id===BM),re=new RegExp('(^|[^a-z0-9])('+[b.name,...b.aka].map(n=>fold(n).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')+')([^a-z0-9]|$)'),
    others=b.lego?[]:R.filter(r=>r.id!==BM&&!linked(r,BM)&&re.test(fold([r.name,r[L].summary,...r[L].strengths,...r[L].weaknesses,r[L].size].join(' '))));  // for LEGO, every entry would
@@ -185,9 +185,8 @@ const el=document.getElementById('v-pulse');const cats=C.map(c=>c.id),today=new 
   :`Among sites, channels, forums and software, ${old.length} have shown no sign of life for 6 months${top?`, mostly in "${catName(top[0])}" (${top[1]})`:''}; ${nolast} have no observable date. Works, places, shops and brands are left out: their posts do not measure them.`;
  let s=`<svg class="pulse" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t('p_title'))}">`;
  s+=`<rect x="${xs}" y="2" width="${x1-xs}" height="${H-26}" fill="var(--sunk)" rx="4"/><text class="ax" x="${(xs+x1)/2}" y="${H-6}" text-anchor="middle">${t('p_recent')}</text>`;
- const ks=W<520?[0]:[0,6,12],dOf=k=>{const d=new Date(from);d.setMonth(d.getMonth()+k);return d},gap=W<520?(xs+x1)/2-t('p_recent').length*3.6-x0:X(dOf(6))-X(from),full=d=>MONTHS[d.getMonth()]+' '+d.getFullYear();
- const fits=Math.max(...ks.map(k=>full(dOf(k)).length+2))*7.2*(ks.length>1?1.5:1)<=gap-8;  // the first mark starts at its point, the next one is centred on its own  // the month in letters, never abbreviated; where it does not fit, the year alone (first mark) and the month alone (the others)
- for(const k of ks){const d=dOf(k);if(!fits&&!k&&(String(d.getFullYear()).length+2)*7.2>gap-8)continue;s+=`<text class="ax" x="${X(d)}" y="${H-6}" text-anchor="${k?'middle':'start'}">${k?'':'≤ '}${fits?full(d):k?MONTHS[d.getMonth()]:d.getFullYear()}</text>`}
+ const ks=W<520?[0]:[0,6,12],dOf=k=>{const d=new Date(from);d.setMonth(d.getMonth()+k);return d};
+ for(const k of ks){const d=dOf(k);s+=`<text class="ax tick" x="${X(d)}" y="${H-6}" text-anchor="${k?'middle':'start'}" data-short="${k?MONTHS[d.getMonth()]:'≤ '+d.getFullYear()}">${k?'':'≤ '}${MONTHS[d.getMonth()]} ${d.getFullYear()}</text>`}
  cats.forEach((c,i)=>{const y=14+i*rh,rs=RA.filter(r=>r.cat===c&&r.last);s+=`<text x="${lw}" y="${y+5}" text-anchor="end">${esc(cut(shortCat(c)))}</text><line x1="${x0}" x2="${xs}" y1="${y}" y2="${y}" stroke="var(--line)"/>`;
   const placed=[],old2=rs.filter(r=>new Date(r.last)<from);
   if(old2.length){s+=`<circle cx="${x0}" cy="${y}" r="${old2.length>1?9:5.5}" fill="var(--card)" stroke="var(--warn)" stroke-width="2.5" data-go="${old2[0].id}" data-tip="${esc(old2.map(r=>r.name+' · '+fmt(r.last)).join(' ; '))}" style="cursor:pointer"/>`+(old2.length>1?`<text x="${x0}" y="${y+4}" text-anchor="middle" style="font-size:10px;font-weight:700;fill:var(--warn);pointer-events:none">${old2.length}</text>`:'');placed.push({x:x0,dy:0})}
@@ -196,6 +195,9 @@ const el=document.getElementById('v-pulse');const cats=C.map(c=>c.id),today=new 
   const n=rs.filter(r=>new Date(r.last)>=six).length,bw=(x1-xs-30)*n/Math.max(1,...cats.map(cc=>RA.filter(r=>r.cat===cc&&r.last&&new Date(r.last)>=six).length));
   s+=`<rect x="${xs+6}" y="${y-6}" width="${bw}" height="12" rx="3" fill="var(--other)" data-tip="${esc(shortCat(c))} · ${n}"/><text class="ax" x="${xs+10+bw}" y="${y+4}">${n}</text>`});
  el.innerHTML=`<h3>${t('p_title')}</h3><p class="take">${esc(take)}</p>${s}</svg><p class="note">${t('p_note')}</p>`;
+ // the marks of the axis, measured as drawn: the month in letters (never abbreviated) where it fits, else the year alone (first mark) and the month alone; a mark that still meets another text goes
+ const ax=[...el.querySelectorAll('svg text.ax')],over=a=>{const b=a.getBBox();return ax.some(x=>x!==a&&x.isConnected&&(c=>b.x<c.x+c.width-1&&c.x<b.x+b.width-1&&b.y<c.y+c.height-1&&c.y<b.y+b.height-1)(x.getBBox()))},ticks=ax.filter(x=>x.classList.contains('tick'));
+ if(ticks.some(over))ticks.forEach(x=>x.textContent=x.dataset.short);ticks.forEach(x=>{if(over(x))x.remove()});
  el.onclick=e=>{const p=e.target.closest('[data-go]');if(p)openEntry(p.dataset.go)}}
 // insight 3: recognised fan communities against population, by country (backend data)
 function vPassion(){const el=document.getElementById('v-passion'),P=D.passion;if(!el)return;if(!P){el.remove();return}
@@ -281,7 +283,7 @@ const suits=(j,r)=>{if((j.always||[]).includes(r.id)||j.scope==='intl')return tr
 // for the visitor (their rank in the visitor's country or language first, then worldwide), then the whole category; 4 lines at most
 const byId=id=>R.find(r=>r.id===id);
 function needEntries(j,skip,n){const key=j.scope==='country'?VC:j.scope==='language'?VL:'',inG=r=>j.groups.includes(r.cat+'/'+r.group)&&r.id!==skip&&r.status!=='dead';
- const RANKED=R.some(r=>inG(r)&&r.rank);  // the groups of this need carry ranks (lot 3b), else its fallback list
+ const RANKED=R.some(r=>j.groups.includes(r.cat+'/'+r.group)&&r.rank);  // the groups of this need carry ranks (lot 3b), else its fallback list
  if(j.mode==='brand'){const bs=R.filter(r=>inG(r)&&BN[r.id]!=null);return (RANKED?bs.filter(r=>r.rank).sort((a,b)=>((a.rank.intl||9)-(b.rank.intl||9))):bs.sort((a,b)=>BN[b.id]-BN[a.id])).slice(0,n)}  // until the ranks: the brands most entries talk about
  if(!RANKED)return (j.fallback||[]).map(byId).filter(r=>r&&r.id!==skip&&suits(j,r)).slice(0,n);
  const rk=r=>{const x=r.rank||{};return key&&x[key]?[0,x[key]]:x.intl?[1,x.intl]:null};

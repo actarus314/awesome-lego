@@ -80,7 +80,7 @@
 "b_note":{"en":"Entries of this directory that sell, track, review or discuss the brand, as read on their own pages, by category.","fr":"Fiches de cet annuaire qui vendent, suivent, testent ou commentent la marque, d'après leurs propres pages, par catégorie."},
 "b_none":{"en":"Linked to no other entry","fr":"Liées à aucune autre fiche"},
 "p_title":{"en":"Last sign of life","fr":"Dernier signe de vie"},
-"p_note":{"en":"Ring: a resource silent for 6 months, at its last post, video or commit. Bar: resources active in the last 6 months.","fr":"Cercle : ressource muette depuis 6 mois, à son dernier article, sa dernière vidéo ou son dernier commit. Barre : ressources actives depuis 6 mois."},
+"p_note":{"en":"The last 24 months. Ring: a resource silent for 6 months, at its last post, video or commit. Bar: resources active in the last 6 months.","fr":"Les 24 derniers mois. Cercle : ressource muette depuis 6 mois, à son dernier article, sa dernière vidéo ou son dernier commit. Barre : ressources actives depuis 6 mois."},
 "p_recent":{"en":"last 6 months","fr":"6 derniers mois"},
 "intl":{"en":"international","fr":"international"},
 "events":{"en":"events","fr":"événements"},

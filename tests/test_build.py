@@ -328,5 +328,22 @@ class Selection(unittest.TestCase):
         self.assertTrue(changed, "the ranked group changes")
         self.assertGreater(len(lines(after)), len(lines(before)) - 15)  # only the price comparators move
 
+
+class Lot3Checks(unittest.TestCase):
+    def test_lego_operator_by_address_until_3b(self):
+        for url, want in (("https://www.lego.com/fr-fr", "lego-group"), ("https://www.legodiscoverycentre.com/", "lego-group"),
+                          ("https://www.legoworld.nl/", "lego-group"), ("https://www.legoland.de/", "licensee"), ("https://brickset.com/", None)):
+            self.assertEqual(build.lego_operator({"url": url}), want, url)
+        self.assertEqual(build.lego_operator({"url": "https://example.org/", "operator": "licensee"}), "licensee")
+
+    def test_french_card_text(self):
+        ns = notes_with("comparators.toml", lambda t: t.replace('summary_fr = "', 'summary_fr = "Comparateur de prix allemand, ', 1))
+        self.assertTrue(any("summary_fr starts with a country" in n for n in ns), ns)
+        def lang_only(t):
+            i, j = entry_of(t, "jangbricks")
+            return t[:i] + re.sub(r'summary_fr = "[^"]*"', 'summary_fr = "Chaîne en allemand sur les sets de marque LEGO."', t[i:j], count=1) + t[j:]
+        ns = notes_with("video.toml", lang_only)
+        self.assertFalse([n for n in ns if "jangbricks: summary_fr starts with a country" in n], "a language is not a country")
+
 if __name__ == "__main__":
     unittest.main()
