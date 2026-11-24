@@ -11,7 +11,8 @@ Three readings, from three places:
    address that moved for good is left to Data fixes. A link whose secure connection every probe refuses goes to a
    second folded list (browsers often still open it); a failure of the probe itself is not counted. When the hourly
    limit cuts the list, the links that failed in the previous run go first, then a different part of the others each
-   week. Token: GLOBALPING_TOKEN, optional (higher hourly limit).
+   week. A link found broken is read again 90 seconds later and stays broken only if it fails again.
+   Token: GLOBALPING_TOKEN, optional (higher hourly limit).
 3. The address of every entry still open, opened from GitHub: a page that answers 200 but is dead (parked or expired
    domain, closure notice, site taken over by unrelated content) is listed too.
 Text read on a third-party page or probe is quoted as code, so that it can neither mention nor link anyone.
@@ -53,6 +54,7 @@ FALLBACK = [{"magic": "eyeball", "limit": 3}]   # when too few eyeball probes ar
 PER_URL = 3   # tests of Globalping per measurement
 MIN_READINGS = 2   # a link is broken only if at least 2 probes really read it
 HOPS = 3   # redirects followed
+CONFIRM_PAUSE = 90   # seconds before a link that failed from every probe is read a second time
 PLATFORMS = ("youtube.com", "reddit.com", "github.com", "facebook.com", "instagram.com", "discord.gg", "discord.com",
              "x.com", "twitter.com", "tiktok.com", "flickr.com", "patreon.com", "twitch.tv")   # their pages never park
 
@@ -200,7 +202,7 @@ def _measure(urls, token, api, sleep):
     return out
 
 
-def recheck(urls, token=None, api=_api, sleep=time.sleep):
+def recheck(urls, token=None, api=_api, sleep=time.sleep, confirm=True):
     """{url: (verdict, readings, dead page or None)} from Globalping, redirects followed (readings: one line per
     address read); links over the hourly limit are left out (unchecked)."""
     try:
@@ -229,6 +231,13 @@ def recheck(urls, token=None, api=_api, sleep=time.sleep):
                 v, extra = "alive", None   # still redirecting after HOPS: the server answers
             out[u] = (v, [*path[u], ", ".join(reasons)], extra)   # one line per address read: "301, 301, 301 to …", "404, 404, 404"
         pending = nxt
+    doubt = [u for u in urls if out.get(u, ("",))[0] in ("down", "tls")]
+    if confirm and doubt:   # a site down for a minute is not broken: read again later, broken only if it fails again
+        sleep(CONFIRM_PAUSE)
+        again = recheck(doubt, token, api, sleep, confirm=False)
+        for u in doubt:
+            if u in again:
+                out[u] = again[u] if again[u][0] not in ("down", "tls") else (out[u][0], [*out[u][1], f"again {CONFIRM_PAUSE} s later: " + "; ".join(again[u][1])], None)
     return out
 
 

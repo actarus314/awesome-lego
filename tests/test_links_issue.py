@@ -180,9 +180,26 @@ class Globalping(unittest.TestCase):
                    "https://b.example/home": [probe(code=200)] * 3}
         out = links_issue.recheck(["https://a.example/", "https://b.example/"], api=self.api(answers), sleep=lambda s: None)
         self.assertEqual(out["https://a.example/"][0], "down")
-        self.assertEqual(out["https://a.example/"][1], ["301, 301, 301 to https://a.example/new",
-                                                        "302, 302, 302 to https://a.example/gone", "404, 404, 404"])
+        self.assertEqual(out["https://a.example/"][1][:3], ["301, 301, 301 to https://a.example/new",
+                                                            "302, 302, 302 to https://a.example/gone", "404, 404, 404"])
+        self.assertTrue(out["https://a.example/"][1][3].startswith("again 90 s later: 301, 301, 301 to"))
         self.assertEqual(out["https://b.example/"][0], "alive")
+
+    def test_a_site_down_for_a_minute_is_not_broken(self):
+        reads, pauses = {}, []
+
+        def api(path, body=None, token=None):
+            if path == "/limits":
+                return {"rateLimit": {"measurements": {"create": {"remaining": 100}}}}
+            if path == "/measurements":
+                return {"id": body["target"]}
+            reads[path] = reads.get(path, 0) + 1
+            down = path.endswith("a.example") and reads[path] == 1 or path.endswith("b.example")
+            return {"status": "finished", "results": [probe("failed", raw="timed out")] * 3 if down else [probe(code=200)] * 3}
+        out = links_issue.recheck(["https://a.example/", "https://b.example/"], api=api, sleep=pauses.append)
+        self.assertEqual(out["https://a.example/"][0], "alive")
+        self.assertEqual(out["https://b.example/"][:2], ("down", ["timed out, timed out, timed out", "again 90 s later: timed out, timed out, timed out"]))
+        self.assertIn(links_issue.CONFIRM_PAUSE, pauses)
 
     def test_recheck_without_the_service(self):
         def api(path, body=None, token=None):
