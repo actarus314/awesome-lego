@@ -1,7 +1,7 @@
 name: Data report
 on:
   schedule:
-    - cron: "41 3 * * 1"   # weekly
+    - cron: "41 3 4 * *"   # monthly, the 4th: the day before the monthly review
   workflow_dispatch:
 permissions:
   contents: read
@@ -17,17 +17,24 @@ jobs:
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.15"
+      - name: Previous report and links issue (the guard line and the links that block GitHub)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh issue list --label automatic --state open --search "Monthly data report in:title" --limit 1 --json body -q '.[].body' > previous.md
+          gh issue list --label links --state all --limit 1 --json body -q '.[].body' > links.md
       - name: Read activity data and write the report
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python3 scripts/refresh.py > report.md
+          python3 scripts/refresh.py --month --previous previous.md --links links.md > report.md
           echo >> report.md
-          python3 scripts/trends.py >> report.md || echo "Trends: the history branch could not be read this week." >> report.md   # never loses the rest of the report
+          python3 scripts/trends.py >> report.md || echo "Trends: the history branch could not be read this month." >> report.md   # never loses the rest of the report
       - name: Open or update the report issue
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
         run: |
-          n=$(gh issue list --label automatic --state open --search "Weekly data report in:title" --json number -q '.[0].number')
-          if [ -n "$n" ]; then gh issue edit "$n" --body-file report.md; else gh issue create --title "Weekly data report" --label automatic --body-file report.md; fi
+          n=$(gh issue list --label automatic --state open --search "Monthly data report in:title" --json number -q '.[0].number')
+          if [ -n "$n" ]; then gh issue edit "$n" --body-file report.md; else gh issue create --title "Monthly data report" --label automatic --body-file report.md; fi

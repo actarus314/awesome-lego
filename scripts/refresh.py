@@ -8,9 +8,14 @@
 Reads run in parallel (subreddits one at a time, the archive asks for it). A failed read keeps the previous
 values, taken from the published website when they are newer than the repository's copy. With `--from-site`
 (builds that follow a push), nothing is read: the measurements of the published website are reused, and a
-full reading runs only if the website cannot be reached. Writes a Markdown report to stdout, used as the body of the
-weekly report issue: entries that failed, became archived, left the conditions of the README
-selection, or were not checked by hand for more than 365 days.
+full reading runs only if the website cannot be reached. Writes a Markdown report to stdout: entries that failed,
+became archived, left the conditions of the README selection, or were not checked by hand for more than 365 days.
+
+With `--month [--previous FILE] [--links FILE]` (the Data report workflow, the 4th of each month), the report is the
+body of the "Monthly data report" issue, read by the monthly review the next day: how long each read failure and each
+ineligibility has lasted, what changed during the month (daily measurements kept on the `history` branch), the links
+that block the machines of GitHub (the links issue, FILE), and a guard line at the top for what the previous report
+(FILE) already listed.
 """
 import datetime as dt
 import json
@@ -23,6 +28,9 @@ import tomllib
 import urllib.request
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import trends  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "metrics.json"
@@ -79,6 +87,13 @@ def subreddit_last(name):
     return newest_date(get(f"https://www.reddit.com/r/{name}/new/.rss"))
 
 
+def selected(r):
+    """In the README selection: `featured` until the entries carry ranks (lot 3 of 24/11/2026), then rank 1 at the
+    international scope of the entry's group ("rank 1 of its group", decision of 24/11/2026 at 13:02)."""
+    rank = r.get("rank")
+    return rank.get("intl") == 1 if isinstance(rank, dict) else bool(r.get("featured"))
+
+
 def regime(r, category):
     """Same rule as scripts/build.py: the entry's regime, else its group's, else activity."""
     group = next((g for g in category.get("groups", []) if g["id"] == r.get("group")), {})
@@ -107,9 +122,9 @@ def selection_check(rows):
     for r, last in rows:
         groups.setdefault((r["_cat"], r["group"]), []).append((score(r, last), r))
     for (cat, g), items in sorted(groups.items()):
-        out_best = max((x for x in items if not x[1].get("featured") and x[1].get("status") == "active"), default=None, key=lambda x: x[0])
+        out_best = max((x for x in items if not selected(x[1]) and x[1].get("status") == "active"), default=None, key=lambda x: x[0])
         for sc, r in items:
-            if r.get("featured") and out_best and out_best[0] - sc >= 2:
+            if selected(r) and out_best and out_best[0] - sc >= 2:
                 out.append(f"{cat}/{g}: {r['id']} ({sc}) vs {out_best[1]['id']} ({out_best[0]})")
     return out
 
@@ -180,6 +195,66 @@ def read(r, old, token):
     return m, None
 
 
+def date_en(iso):
+    d = dt.date.fromisoformat(iso)
+    return f"{d.day} {d:%B} {d.year}"
+
+
+def since(iso):
+    """'since 12 November 2026, 22 days' for a past ISO date."""
+    return f"since {date_en(iso)}, {(TODAY - dt.date.fromisoformat(iso)).days} days"
+
+
+def month_changes(days, ids):
+    """What changed during the month in the daily measurements of the `history` branch: (heading line, items)."""
+    if not days:
+        return "No measurements kept on the `history` branch yet.", []
+    names = list(days)
+    start = max((d for d in names if d <= (TODAY - dt.timedelta(days=30)).isoformat()), default=names[0])
+    a, b = days[start], days[names[-1]]
+    items = []
+    moved = [f"{i}: {trends.status(a[i].get('last_activity'), start)} → {trends.status(b[i].get('last_activity'), names[-1])}"
+             for i in sorted(set(a) & set(b)) if trends.status(a[i].get("last_activity"), start) != trends.status(b[i].get("last_activity"), names[-1])
+             and trends.status(a[i].get("last_activity"), start) and trends.status(b[i].get("last_activity"), names[-1])]
+    newly = [i for i in sorted(set(a) & set(b)) if b[i].get("archived") and not a[i].get("archived")]
+    came = sorted(set(b) - set(a))
+    left = sorted(i for i in set(a) - set(b) if i in ids)   # an entry removed from the data is not a change of the month
+    for label, xs in (("Status changes (active up to 6 months, slowing up to 12, then inactive)", moved),
+                      ("Archived on GitHub during the month", newly), ("Measured for the first time", came),
+                      ("No longer measured though still in the data", left)):
+        items.append(f"- {label}: {', '.join(xs) or 'none'}")
+    return (f"From {date_en(start)} to {date_en(names[-1])}; {len(days)} day{'s' * (len(days) > 1)} kept on the `history` branch"
+            + (" (fewer than 30: the month is partly covered)." if len(days) < 30 else ".")), items
+
+
+def archived_since(days, i):
+    """First day of the last unbroken run of `archived` in the history, with 'at least' when it starts the history."""
+    run = None
+    for d, m in days.items():
+        run = (run or d) if (m.get(i) or {}).get("archived") else None
+    if not run:
+        return None
+    return ("at least " if run == next(iter(days)) else "") + since(run)
+
+
+def links_blocking(text):
+    """The links that block GitHub, from the body of the links issue (scripts/links_issue.py)."""
+    m = re.search(r"<summary>(They block GitHub[^<]*)</summary>(.*?)</details>", text or "", re.S)
+    return (m.group(1), [l for l in m.group(2).strip().splitlines() if l.startswith("* ")]) if m else (None, [])
+
+
+def guard(previous, ids):
+    """Items of this report already listed in the previous one: {kind: [ids]}."""
+    m = re.search(r"<!-- report-ids (\{.*?\}) -->", previous or "")
+    before = json.loads(m.group(1)) if m else {}
+    date = re.search(r"Monthly data report: ([0-9]{1,2} \w+ [0-9]{4})", previous or "")
+    return (date.group(1) if date else None), {k: sorted(set(v) & set(before.get(k, []))) for k, v in ids.items() if set(v) & set(before.get(k, []))}
+
+
+def arg(name):
+    return pathlib.Path(sys.argv[sys.argv.index(name) + 1]).read_text(encoding="utf-8") if name in sys.argv and sys.argv.index(name) + 1 < len(sys.argv) else ""
+
+
 def main():
     old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
     site = site_metrics()
@@ -190,6 +265,13 @@ def main():
     for k, v in (site or {}).items():  # the published values are newer than the repository's copy
         if v.get("refreshed", "") >= old.get(k, {}).get("refreshed", ""):
             old[k] = v
+    month = "--month" in sys.argv
+    days = {}
+    if month:
+        try:
+            days = trends.snapshots()
+        except Exception:
+            days = {}   # never loses the rest of the report
     new, failed, archived, stale, unfeature = {}, [], [], [], []
     token = os.environ.get("GITHUB_TOKEN")
     entries = [dict(r, _cat=path.stem, _regime=regime(r, d.get("category", {}))) for path in sorted((ROOT / "data").glob("*.toml"))
@@ -199,27 +281,46 @@ def main():
         results = [j.result() for j in jobs]
     rows = []
     for r, (m, err) in zip(entries, results):
-            if err:
-                failed.append(err)
-            if m and m.get("archived") and r.get("status") != "archived":
-                archived.append(r["id"])
-            if m:
-                new[r["id"]] = {k: v for k, v in m.items() if v is not None}
-            last = (new.get(r["id"]) or {}).get("last_activity") or str(r.get("last_activity") or "")
-            idle = r["_regime"] == "activity" and last and (TODAY - dt.date.fromisoformat(last)).days > 183
-            if r.get("featured") and (idle or r.get("status") != "active" or r.get("confidence") == "low" or (new.get(r["id"]) or {}).get("archived")):
-                unfeature.append(f"{r['id']} ({last or 'no date'})")
-            rows.append((r, last or None))
-            checked = str(r.get("checked", ""))
-            if checked and (TODAY - dt.date.fromisoformat(checked)).days > 365:
-                stale.append(f"{r['id']} ({checked})")
+        if err:
+            ok = (old.get(r["id"]) or {}).get("refreshed")
+            failed.append((r["id"], err.split(": ", 1)[1], f"last read {date_en(ok)}, {(TODAY - dt.date.fromisoformat(ok)).days} days ago" if ok else "never read"))
+        if m and m.get("archived") and r.get("status") != "archived":
+            archived.append(r["id"])
+        if m:
+            new[r["id"]] = {k: v for k, v in m.items() if v is not None}
+        last = (new.get(r["id"]) or {}).get("last_activity") or str(r.get("last_activity") or "")
+        idle = r["_regime"] == "activity" and last and (TODAY - dt.date.fromisoformat(last)).days > 183
+        gone = (new.get(r["id"]) or {}).get("archived")
+        if selected(r) and (idle or gone or r.get("status") != "active" or r.get("confidence") == "low"):
+            why = []
+            if idle:
+                why.append("inactive " + since((dt.date.fromisoformat(last) + dt.timedelta(days=184)).isoformat()) if month else f"last activity {last}")
+            if gone:
+                why.append("archived " + (archived_since(days, r["id"]) or "on GitHub") if month else "archived")
+            if r.get("status") != "active":
+                why.append(f"status {r.get('status')}")
+            if r.get("confidence") == "low":
+                why.append("low confidence")
+            unfeature.append((r["id"], "; ".join(why)))
+        rows.append((r, last or None))
+        checked = str(r.get("checked", ""))
+        if checked and (TODAY - dt.date.fromisoformat(checked)).days > 365:
+            stale.append(f"{r['id']} ({checked})")
     OUT.write_text(json.dumps(new, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
-    lines = [f"Automatic refresh: {TODAY.isoformat()}", "",
-             f"- Measured: {len(new)}"]
+    lines = [f"Monthly data report: {date_en(TODAY.isoformat())}. Read by the monthly review." if month
+             else f"Automatic refresh: {TODAY.isoformat()}", ""]
+    ids = {"read failures": [i for i, _, _ in failed], "no longer eligible": [i for i, _ in unfeature], "archived": archived}
+    if month:
+        when, kept = guard(arg("--previous"), ids)
+        lines += [("**Guard: still listed since the report of " + (when or "last month") + ":** "
+                   + "; ".join(f"{k}: {', '.join(v)}" for k, v in kept.items())) if kept
+                  else "**Guard:** nothing carried over from the previous report.", ""]
+    lines.append(f"- Measured: {len(new)}")
     if archived:
         lines.append("- Archived on GitHub, to review: " + ", ".join(archived))
     if unfeature:
-        lines.append("- In the README selection but no longer eligible (inactive for 6 months, archived or weak source), to remove from the selection: " + ", ".join(unfeature))
+        lines.append("- In the README selection but no longer eligible (inactive for 6 months, archived or weak source), to remove from the selection: "
+                     + ", ".join(f"{i} ({why})" for i, why in unfeature))
     gaps = coverage_gaps(rows)
     if gaps:
         lines.append("- Coverage gaps (countries with 3 or more fan communities recognized by LEGO and at most one entry per community): " + ", ".join(gaps))
@@ -229,10 +330,18 @@ def main():
     if stale:
         lines.append("- Not checked by hand for more than a year: " + ", ".join(stale))
     if failed:
-        lines.append("- Read failures (previous values kept): " + ", ".join(failed))
+        lines.append("- Read failures (previous values kept): " + ", ".join(f"{i}: {why} ({when})" for i, why, when in failed))
+    if month:
+        head, items = month_changes(days, {r["id"] for r in entries})
+        lines += ["", "### Changes during the month", "", head, *([""] + items if items else [])]
+        title, blocking = links_blocking(arg("--links"))
+        lines += ["", "### Links that block GitHub", "",
+                  *((f"{title}, from the links issue:", "", *blocking) if blocking else ("None listed in the links issue.",))]
     lines += ["", "### Reliability of the directory", "",
               "Confidence of the entries (high: read at the source; medium: indexed or third-party; low: single weak source) and kinds of their sources, per category.", "",
               *reliability(rows)]
+    if month:
+        lines += ["", f"<!-- report-ids {json.dumps(ids, sort_keys=True)} -->"]
     print("\n".join(lines))
     return 0
 
