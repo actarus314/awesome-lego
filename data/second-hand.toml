@@ -7,6 +7,7 @@ summary_fr = "Où acheter des sets d'occasion et des pièces détachées, trouve
 
 [[category.groups]]
 id = "marketplaces"
+rank_scope = "country"
 name_en = "Marketplaces and classified ads"
 name_fr = "Places de marché et petites annonces"
 short_en = "Marketplaces"
@@ -15,6 +16,7 @@ regime = "operating"
 
 [[category.groups]]
 id = "second-hand-shops"
+rank_scope = "country"
 name_en = "Second-hand and refurbished shops"
 name_fr = "Boutiques d'occasion et de reconditionné"
 short_en = "Shops"
@@ -23,6 +25,7 @@ regime = "operating"
 
 [[category.groups]]
 id = "parts-and-custom-builds"
+rank_scope = "intl"
 name_en = "Parts, custom builds and instructions"
 name_fr = "Pièces, créations originales et instructions"
 short_en = "Parts, builds"
@@ -31,6 +34,7 @@ regime = "operating"
 
 [[category.groups]]
 id = "services-and-accessories"
+rank_scope = "intl"
 name_en = "Services and accessories (lighting, display, sorting, data)"
 name_fr = "Services et accessoires (éclairage, vitrines, tri, données)"
 short_en = "Accessories"
@@ -39,6 +43,7 @@ regime = "operating"
 
 [[category.groups]]
 id = "custom-minifigures-and-accessories"
+rank_scope = "intl"
 name_en = "Custom minifigures and accessories"
 name_fr = "Minifigurines et accessoires sur mesure"
 short_en = "Minifigures"
@@ -47,6 +52,7 @@ regime = "operating"
 
 [[category.groups]]
 id = "decals-and-stickers"
+rank_scope = "intl"
 name_en = "Decals and stickers"
 name_fr = "Autocollants et décalcomanies"
 short_en = "Decals, stickers"
@@ -55,6 +61,7 @@ regime = "operating"
 
 [[category.groups]]
 id = "motors-and-track"
+rank_scope = "intl"
 name_en = "Motors, controllers and track"
 name_fr = "Moteurs, contrôleurs et voies"
 short_en = "Motors, track"

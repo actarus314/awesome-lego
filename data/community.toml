@@ -7,6 +7,7 @@ summary_fr = "Forums, sous-reddits, wikis, sites d'actualité et de tests, commu
 
 [[category.groups]]
 id = "news-and-reviews"
+rank_scope = "language"
 name_en = "News and reviews"
 name_fr = "Actualités et tests"
 short_en = "News, reviews"
@@ -14,6 +15,7 @@ short_fr = "Actualité, tests"
 
 [[category.groups]]
 id = "forums"
+rank_scope = "language"
 name_en = "Forums and chat"
 name_fr = "Forums et discussions"
 short_en = "Forums and chat"
@@ -21,16 +23,19 @@ short_fr = "Forums et chats"
 
 [[category.groups]]
 id = "reddit"
+rank_scope = "language"
 name_en = "Reddit"
 name_fr = "Reddit"
 
 [[category.groups]]
 id = "wikis"
+rank_scope = "language"
 name_en = "Wikis"
 name_fr = "Wikis"
 
 [[category.groups]]
 id = "deals"
+rank_scope = "country"
 name_en = "Deals"
 name_fr = "Bons plans"
 

@@ -4,19 +4,21 @@ const S={{STRINGS}};
 const t=k=>(S[k]||{})[L]||k,tn=(k,n)=>t(n===1?k+'1':k).replace('{n}',n),COLON=L==='fr'?' : ':': ';  // French puts a space before the colon, English does not
 document.querySelectorAll('[data-t]').forEach(e=>e.textContent=t(e.dataset.t));document.querySelectorAll('[data-t-label]').forEach(e=>e.setAttribute('aria-label',t(e.dataset.tLabel)));
 const R=D.resources,C=D.categories,catName=id=>(C.find(c=>c.id===id)||{})[L]||id,shortCat=id=>catName(id).split(/[,(]/)[0].replace(/ (et|and) .*/,'');
-const ci=id=>`<img class="ci" src="${L==='fr'?'../':''}media/icons/${id}.svg" alt="">`;  // category icon, directory list only
+const ci=id=>`<img class="ci" src="${L==='fr'?'../':''}media/icons/${id}.svg" alt="">`;  // category icon: headings of the directory and tiles of "Where to start" only
 const host=u=>{try{return new URL(u).hostname.replace(/^www\./,'')}catch(e){return u}};
-const fmt=d=>d?d.split('-').reverse().join('/'):'';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const MONTHS=t('months').split(',');  // the month in letters, never abbreviated: 3 July 2027, 3 juillet 2027, 1er avril
+const fmt=d=>{if(!d)return'';const[y,m,j]=String(d).split('-').map(Number);return m?(j?(L==='fr'&&j===1?'1er':j)+' ':'')+MONTHS[m-1]+' '+y:String(y)};
+const dt=d=>d?`<time datetime="${esc(d)}">${esc(fmt(d))}</time>`:'';  // every date shown, machine-readable and never broken over two lines
 const TITLE0=document.title;
 // colours of the theme as numbers, to choose readable text (WCAG contrast)
 const RGB=v=>{const d=document.createElement('i');d.style.color=`var(${v})`;document.body.appendChild(d);const m=getComputedStyle(d).color.match(/[\d.]+/g).map(Number);d.remove();return m.slice(0,3)};
 const LUM=c=>{const f=x=>(x/=255)<=.03928?x/12.92:((x+.055)/1.055)**2.4;return .2126*f(c[0])+.7152*f(c[1])+.0722*f(c[2])},CR=(a,b)=>{const x=LUM(a),y=LUM(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
 const SMOOTH=()=>matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';  // no animated scroll for those who asked for less motion
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fold=s=>String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 const world=r=>{const o=(r.covers||[]).includes('official'),a=(r.covers||[]).includes('alternative');return o&&a?'both':o?'official':a?'alternative':''};
 const cname=(()=>{try{const n=new Intl.DisplayNames([L],{type:'region'});return c=>c==='international'?t('intl'):(n.of(c)||c)}catch(e){return c=>c}})();
-document.getElementById('fresh').textContent=`${t('reviewed')} ${fmt(R.reduce((a,r)=>r.checked>a?r.checked:a,''))} · ${t('built')} ${fmt(D.built)}`;
+document.getElementById('fresh').innerHTML=`${t('reviewed')} ${dt(R.reduce((a,r)=>r.checked>a?r.checked:a,''))} · ${t('built')} ${dt(D.built)}`;
 const tb=document.getElementById('theme'),root=document.documentElement,ic=p=>`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">${p}</svg>`;
 const lab={auto:ic('<circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/>'),light:ic('<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>'),dark:ic('<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>')};
 const tname={auto:{en:'Theme: auto',fr:'Thème : auto'},light:{en:'Theme: light',fr:'Thème : clair'},dark:{en:'Theme: dark',fr:'Thème : sombre'}};
@@ -32,7 +34,10 @@ document.addEventListener('mousemove',e=>{const el=e.target.closest('[data-tip]'
 const active=R.filter(r=>r.status==='active').length,langs=new Set(R.flatMap(r=>r.languages||[]));
 document.getElementById('kpis').innerHTML=[[R.length,t('resources')],[C.length,t('categories')],[Math.round(100*active/R.length)+' %',t('active')],[langs.size,t('languages')]].map(([v,l])=>`<div class="kpi"><b>${v}</b><span>${l}</span></div>`).join('');
 // search index: MiniSearch, fuzzy and prefix matching, results ranked by relevance
-const brandName=id=>(D.brands.find(x=>x.id===id)||{}).name||'';
+const LEGO=R.find(r=>r.cat==='brands'&&(r.covers||[]).includes('official'));  // the LEGO brand: its brand mode shows where official LEGO is
+const BRANDS=[...D.brands,...(LEGO?[{id:LEGO.id,name:LEGO.name,aka:[],lego:true}]:[])];
+const brandName=id=>(BRANDS.find(x=>x.id===id)||{}).name||'';
+const linked=(r,b)=>b===(LEGO||{}).id?!!r.operator&&r.id!==b:(r.brands||[]).includes(b);  // sites and places of the LEGO Group and under the LEGO brand; for another brand, the entries that sell, track, review or admit it
 let ms=null;  // built when first needed (focus of the search field, or a search)
 const index=()=>{if(ms)return ms;ms=new MiniSearch({fields:['name','summary','strengths','weaknesses','group','covers','countries','city','size','brands'],storeFields:[],
  processTerm:w=>fold(w),searchOptions:{boost:{name:4,brands:3,group:2},prefix:true,fuzzy:0.2,combineWith:'AND'}});
@@ -40,8 +45,8 @@ const index=()=>{if(ms)return ms;ms=new MiniSearch({fields:['name','summary','st
  covers:(r.covers||[]).map(t).join(' '),countries:(r.countries||[]).map(cname).join(' '),city:r.city||'',size:r[L].size,brands:(r.brands||[]).map(brandName).join(' ')})));return ms};
 const st={cat:new Set(),cov:new Set(),langs:new Set(),active:false,featured:false,country:'',q:'',view:'cards',sort:null};
 let BM='';  // brand mode: the query is exactly a brand's name or other name
-const BNAME=new Map(D.brands.flatMap(b=>[b.name,...b.aka].map(n=>[fold(n),b.id])));
-const BN=Object.fromEntries(D.brands.map(b=>[b.id,R.filter(r=>(r.brands||[]).includes(b.id)).length]));
+const BNAME=new Map(BRANDS.flatMap(b=>[b.name,...b.aka].map(n=>[fold(n),b.id])));
+const BN=Object.fromEntries(BRANDS.map(b=>[b.id,R.filter(r=>linked(r,b.id)).length]));
 const CTRY=Object.entries(R.flatMap(r=>(r.countries||[]).filter(c=>c!=='international')).reduce((a,c)=>(a[c]=(a[c]||0)+1,a),{})).sort((a,b)=>b[1]-a[1]||cname(a[0]).localeCompare(cname(b[0])));
 // the visitor's language (browser), then English, then the others: everyone finds what they can read first, nothing is hidden
 const VL=(((navigator.languages||[navigator.language])[0]||L).slice(0,2).toLowerCase());
@@ -53,21 +58,21 @@ const toggle=(set,v)=>set.has(v)?set.delete(v):set.add(v);
 let hits=null;
 const covers=['official','alternative','second-hand','parts','custom-builds','instructions','news','data'];
 function match(r,skip){
- if(BM&&r.id===BM)return true;  // the brand's own entry stays on top whatever the other criteria
+ if(BM&&r.id===BM)return false;  // the brand itself is the banner above its entries
  if(skip!=='cat'&&st.cat.size&&!st.cat.has(r.cat))return false;
  if(skip!=='cov'&&st.cov.size&&!(r.covers||[]).some(c=>st.cov.has(c)))return false;
  if(st.active&&r.status!=='active')return false;
  if(st.langs.size&&!(r.languages||[]).some(l=>st.langs.has(l)))return false;
  if(st.featured&&!r.featured)return false;
 
- if(st.country&&!(r.countries||[]).includes(st.country))return false;
- if(BM){if(!(r.brands||[]).includes(BM))return false}else if(hits&&!hits.has(r.id))return false;
+ if(skip!=='country'&&st.country&&!(r.countries||[]).includes(st.country))return false;
+ if(BM){if(!linked(r,BM))return false}else if(hits&&!hits.has(r.id))return false;
  return true}
 const fc=document.getElementById('f-cat'),fv=document.getElementById('f-cov'),fm=document.getElementById('f-misc'),q=document.getElementById('q');q.placeholder=t('search');q.setAttribute('aria-label',t('search'));
 function drawFilters(){
  fc.innerHTML=C.map(c=>`<button class="chip${st.cat.has(c.id)?' on':''}" data-cat="${c.id}" aria-pressed="${st.cat.has(c.id)}">${esc(c[L])}<span class="c">${R.filter(r=>r.cat===c.id&&match(r,'cat')).length}</span></button>`).join('');
  fv.innerHTML=covers.map(c=>`<button class="chip${st.cov.has(c)?' on':''}" data-cov="${c}" aria-pressed="${st.cov.has(c)}">${t(c)}<span class="c">${R.filter(r=>(r.covers||[]).includes(c)&&match(r,'cov')).length}</span></button>`).join('');
- fm.innerHTML=[['featured',t('featured')],['active',t('only_active')]].map(([k,l,tip])=>`<button class="chip${st[k]?' on':''}" data-m="${k}" aria-pressed="${st[k]}"${tip?` title="${esc(tip)}"`:''}>${l}</button>`).join('')+LANGS.map(l=>`<button class="chip${st.langs.has(l)?' on':''}" data-lang="${l}" aria-pressed="${st.langs.has(l)}">${esc(t('in_lang').replace('{x}',lname(l)))}</button>`).join('')+`<select id="f-country" class="${st.country?'on':''}" aria-label="${t('country_all')}"><option value="">${t('country_all')}</option>${CTRY.map(([c,n])=>`<option value="${c}"${st.country===c?' selected':''}>${esc(cname(c))} (${n})</option>`).join('')}</select>`}
+ fm.innerHTML=[['featured',t('featured')],['active',t('only_active')]].map(([k,l,tip])=>`<button class="chip${st[k]?' on':''}" data-m="${k}" aria-pressed="${st[k]}"${tip?` title="${esc(tip)}"`:''}>${l}</button>`).join('')+LANGS.map(l=>`<button class="chip${st.langs.has(l)?' on':''}" data-lang="${l}" aria-pressed="${st.langs.has(l)}">${esc(t('in_lang').replace('{x}',lname(l)))}</button>`).join('')+`<select id="f-country" class="${st.country?'on':''}" aria-label="${t('country_all')}"><option value="">${t('country_all')}</option>${CTRY.map(([c])=>`<option value="${c}"${st.country===c?' selected':''}>${esc(cname(c))} (${R.filter(r=>(r.countries||[]).includes(c)&&match(r,'country')).length})</option>`).join('')}</select>`}
 fc.onclick=e=>{const b=e.target.closest('[data-cat]');if(b){toggle(st.cat,b.dataset.cat);update()}};
 fv.onclick=e=>{const b=e.target.closest('[data-cov]');if(b){const c=b.dataset.cov;st.cov.has(c)?st.cov.delete(c):st.cov.add(c);update()}};
 fm.onchange=e=>{if(e.target.id==='f-country'){st.country=e.target.value;update()}};
@@ -84,24 +89,31 @@ function contact(r){const c=r.contact||{};const li=(k,cls,html)=>`<li class="${c
  if(c.address)c.address.split(' ; ').forEach(ad=>a.push(li('adr','adr',`<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ad+', '+(r.countries||[]).filter(x=>x!=='international').map(cname).join(' '))}" target="_blank" rel="noopener" title="${t('addr_map')}">${ad.split(', ').map(x=>x.length>28?esc(x):`<span class="nw">${esc(x)}</span>`).join(', ')}</a>`)));  // a line breaks between the parts of an address, never inside a short part (a town, a postal code)
  if(c.phone)a.push(li('tel','tel',`<a href="tel:${esc(c.phone.replace(/\s/g,''))}">${esc(c.phone)}</a>`));if(c.email)a.push(li('mail','mail',`<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`));
  return a.length?`<ul class="ct">${a.join('')}</ul>`:''}
-function card(r,showCat){const x=r[L];const tags=[...(r.covers||[]).filter(c=>c!==r.cat).map(c=>`<span class="tag ${c}">${t(c)}</span>`),(r.status!=='active'?`<span class="tag st-${r.status}">${t('st_'+r.status)}</span>`:''),(r.regime==='work'&&r.last?`<span class="tag">${t('dated')} ${r.last.slice(0,4)}</span>`:''),(r.languages||[]).length?`<span class="tag langs">${esc(r.languages.join(' · ').toUpperCase())}</span>`:'',r.access?`<span class="tag">${t(r.access)}</span>`:''].join('');
+const stLabel=r=>t(r.status==='archived'&&r.regime==='operating'?'st_closed':r.status==='active'&&r.regime==='operating'?'st_open':'st_'+r.status);  // the status said for what the entry is: open or closed, updated or not
+const cityOf=r=>L==='fr'&&r.city_fr?r.city_fr:r.city||'';
+const sizeOf=r=>r.size?r.size.map(z=>{const v=tn('u_'+z.unit,z.n);return z.approx?t('sz_'+z.approx).replace('{x}',v):v}).join(', '):r[L].size;  // free text until the sizes are converted (lot 3b)
+const one=r=>{const c=(r.countries||[]).filter(x=>x!=='international');return c.length===1?cname(c[0]):''};
+function sameSite(r){const o=(r.same||[]).filter(id=>id!==r.id).map(id=>R.find(x=>x.id===id)).filter(Boolean);if(!o.length)return'';
+ if(o.length>6&&r.operator&&LEGO)return `<div class="same">${t('same_site')}${COLON}${esc(tn('n_entries',o.length))}, <button type="button" class="lk" data-brand="${LEGO.id}">${esc(tn('all_about',BN[LEGO.id]).replace('{b}',LEGO.name))}</button></div>`;  // lego.com: a dozen entries, all in the brand mode of LEGO
+ return `<div class="same">${t('same_site')}${COLON}${o.map(x=>`<a href="#entry=${x.id}" data-go="${x.id}">${esc(x.name)}</a>`).join(', ')}</div>`}
+function card(r,showCat){const x=r[L];const tags=[...(r.covers||[]).filter(c=>c!==r.cat).map(c=>`<span class="tag ${c}">${t(c)}</span>`),(r.status!=='active'?`<span class="tag st-${r.status}">${stLabel(r)}</span>`:''),(r.regime==='work'&&r.last?`<span class="tag">${t('dated').replace('{y}',dt(r.last.slice(0,4)))}</span>`:''),(r.languages||[]).length?`<span class="tag langs">${esc(r.languages.join(' · ').toUpperCase())}</span>`:'',r.access?`<span class="tag">${t('acc_'+r.access)}</span>`:''].join('');
  const m=r.metrics||{};const fu=r.funding&&r.funding[0]!=='unknown'?FU.filter(f=>r.funding.includes(f)).map(f=>t('fu_'+f)).join(', '):'';  // funding read at the source replaces the free business model text
- const extra=[r.next?t('next')+' '+fmt(r.next):'',r.city||'',x.size,m.stars!=null?'★ '+m.stars:'',fu?fu[0].toUpperCase()+fu.slice(1):x.model].filter(Boolean).map(esc).join(' · ');
- const wb=BN[r.id]&&BM!==r.id?`<button type="button" class="chip wb" data-brand="${r.id}">${t('where')} <span class="c">${BN[r.id]}</span></button>`:'';
- return `<article class="card" id="r-${r.id}"><div class="h"><a href="${esc(r.url)}" rel="noopener">${r.featured?'<span class="star" aria-hidden="true">★ </span>':''}${esc(r.name)}</a><span class="g">${esc(showCat?shortCat(r.cat):x.group)}</span></div><p class="s">${esc(x.summary)}</p>${contact(r)}${mkLine(r)}${extra?`<div class="src">${extra}</div>`:''}<div class="tags">${tags}</div>${wb}`+
- ((x.strengths.length||x.weaknesses.length)?`<details><summary>${t('strengths')} · ${t('weaknesses')}</summary>${x.strengths.length?`<ul class="plus">${x.strengths.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`:''}${x.weaknesses.length?`<ul class="minus">${x.weaknesses.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`:''}<div class="src">${t('sources')}${COLON}${r.sources.map((s,i,a)=>{const h=host(s.url),dup=a.filter(x=>host(x.url)===h).length>1,seg=(()=>{try{return new URL(s.url).pathname.split('/').filter(Boolean)[0]||''}catch(e){return ''}})();return `<a href="${esc(s.url)}" rel="noopener">${esc(dup&&seg?h+'/'+seg:h)}</a>`}).join(' · ')}</div></details>`:'')+`</article>`}
-const COLS=[['name',t('c_name'),r=>r.name],['cat',t('c_cat'),r=>catName(r.cat)],['scope',t('c_scope'),r=>(r.covers||[]).filter(c=>c==='official'||c==='alternative').map(t).join(', ')],['lang',t('c_lang'),r=>(r.languages||[]).join(' ').toUpperCase(),'opt'],['status',t('c_status'),r=>t('st_'+r.status),'opt'],['last',t('c_last'),r=>r.last||'','n'],['stars',t('c_stars'),r=>(r.metrics||{}).stars??-1,'n opt']];
+ const extra=[[cityOf(r),one(r)].filter(Boolean).map(esc).join(', '),esc(sizeOf(r)),m.stars!=null?'★ '+m.stars:'',r.next?esc(t('next'))+' '+dt(r.next):'',fu?esc(fu[0].toUpperCase()+fu.slice(1)):''].filter(Boolean).join(' · ');
+ const wb=BN[r.id]!=null&&BM!==r.id?`<button type="button" class="btn all" data-brand="${r.id}">${esc(tn('all_about',BN[r.id]).replace('{b}',brandName(r.id)))}</button>`:'';
+ return `<article class="card" id="r-${r.id}"><div class="h"><a href="${esc(r.url)}" rel="noopener">${r.featured?'<span class="star" aria-hidden="true">★ </span>':''}${esc(r.name)}</a><span class="g">${esc(showCat?shortCat(r.cat):x.group)}</span></div><p class="s">${esc(x.summary)}</p>${contact(r)}${extra?`<div class="src">${extra}</div>`:''}<div class="tags">${tags}</div>${sameSite(r)}`+
+ ((x.strengths.length||x.weaknesses.length)?`<details><summary>${t('strengths')} · ${t('weaknesses')}</summary>${x.strengths.length?`<ul class="plus">${x.strengths.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`:''}${x.weaknesses.length?`<ul class="minus">${x.weaknesses.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`:''}<div class="src">${t('sources')}${COLON}${r.sources.map((s,i,a)=>{const h=host(s.url),dup=a.filter(x=>host(x.url)===h).length>1,seg=(()=>{try{return new URL(s.url).pathname.split('/').filter(Boolean)[0]||''}catch(e){return ''}})();return `<a href="${esc(s.url)}" rel="noopener">${esc(dup&&seg?h+'/'+seg:h)}</a>`}).join(' · ')}</div></details>`:'')+wb+`</article>`}
+const COLS=[['name',t('c_name'),r=>r.name],['cat',t('c_cat'),r=>catName(r.cat)],['scope',t('c_scope'),r=>(r.covers||[]).filter(c=>c==='official'||c==='alternative').map(t).join(', ')],['lang',t('c_lang'),r=>(r.languages||[]).join(' ').toUpperCase(),'opt'],['status',t('c_status'),stLabel,'opt'],['last',t('c_last'),r=>r.last||'','n'],['stars',t('c_stars'),r=>(r.metrics||{}).stars??-1,'n opt']];
 function drawTable(rs){if(st.sort){const c=COLS.find(c=>c[0]===st.sort.k),d=st.sort.d;rs.sort((a,b)=>{const x=c[2](a),y=c[2](b);return (typeof x==='number'?x-y:String(x).localeCompare(String(y)))*d})}
- return `<div class="tscroll" role="region" tabindex="0" aria-label="${esc(t('nav_dir'))}"><table class="dt"><caption class="vh">${esc(t('nav_dir'))}</caption><thead><tr>${COLS.map(c=>`<th scope="col" class="${(c[3]||'').includes('opt')?'opt':''}"${st.sort&&st.sort.k===c[0]?` aria-sort="${st.sort.d>0?'ascending':'descending'}"`:''}><button type="button" class="sortb" data-k="${c[0]}">${c[1]}</button></th>`).join('')}</tr></thead><tbody>${rs.map(r=>`<tr data-go="${r.id}"><td><a href="${esc(r.url)}" rel="noopener">${r.featured?'★ ':''}${esc(r.name)}</a></td><td>${esc(catName(r.cat))}</td><td>${esc(COLS[2][2](r))}</td><td class="opt">${esc(COLS[3][2](r))}</td><td class="opt">${esc(COLS[4][2](r))}</td><td class="n">${fmt(r.last)}</td><td class="n opt">${(r.metrics||{}).stars??''}</td></tr>`).join('')}</tbody></table></div>`}
-document.getElementById('list').addEventListener('click',e=>{const wb=e.target.closest('[data-brand]');if(wb){resetAll();setQuery(brandName(wb.dataset.brand));update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()});return}const h=e.target.closest('button[data-k]');if(h){const k=h.dataset.k;st.sort=!st.sort||st.sort.k!==k?{k,d:1}:st.sort.d>0?{k,d:-1}:null;keepFocus(drawList);return}const row=e.target.closest('tr[data-go]');if(row&&!e.target.closest('a')){st.view='cards';openEntry(row.dataset.go)}});
+ return `<div class="tscroll" role="region" tabindex="0" aria-label="${esc(t('nav_dir'))}"><table class="dt"><caption class="vh">${esc(t('nav_dir'))}</caption><thead><tr>${COLS.map(c=>`<th scope="col" class="${(c[3]||'').includes('opt')?'opt':''}"${st.sort&&st.sort.k===c[0]?` aria-sort="${st.sort.d>0?'ascending':'descending'}"`:''}><button type="button" class="sortb" data-k="${c[0]}">${c[1]}</button></th>`).join('')}</tr></thead><tbody>${rs.map(r=>`<tr data-go="${r.id}"><td><a href="${esc(r.url)}" rel="noopener">${r.featured?'★ ':''}${esc(r.name)}</a></td><td>${esc(catName(r.cat))}</td><td>${esc(COLS[2][2](r))}</td><td class="opt">${esc(COLS[3][2](r))}</td><td class="opt">${esc(COLS[4][2](r))}</td><td class="n">${dt(r.last)}</td><td class="n opt">${(r.metrics||{}).stars??''}</td></tr>`).join('')}</tbody></table></div>`}
+document.getElementById('list').addEventListener('click',e=>{const go=e.target.closest('a[data-go]');if(go){e.preventDefault();openEntry(go.dataset.go);return}const sc=e.target.closest('[data-scope]');if(sc){resetAll();st.cov.add(sc.dataset.scope);update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()});return}const wb=e.target.closest('[data-brand]');if(wb){resetAll();setQuery(brandName(wb.dataset.brand));update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()});return}const h=e.target.closest('button[data-k]');if(h){const k=h.dataset.k;st.sort=!st.sort||st.sort.k!==k?{k,d:1}:st.sort.d>0?{k,d:-1}:null;keepFocus(drawList);return}const row=e.target.closest('tr[data-go]');if(row&&!e.target.closest('a')){st.view='cards';openEntry(row.dataset.go)}});
 document.getElementById('viewsw').onclick=e=>{const b=e.target.closest('[data-v]');if(b){st.view=b.dataset.v;update(false)}};
 function drawList(){const rs=R.filter(r=>match(r));document.getElementById('count').innerHTML=rs.length+' / '+R.length+'<span class="cw"> '+t('shown')+'</span>';const list=document.getElementById('list');
  document.querySelectorAll('#viewsw [data-v]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===st.view));
  if(!rs.length){list.innerHTML=`<div class="empty">${t('none')}</div>`;return}
  if(st.view==='table'){root.style.setProperty('--bar-h',(document.querySelector('.bar').offsetHeight+hdr())+'px');if(hits&&!st.sort)rs.sort((a,b)=>hits.get(b.id)-hits.get(a.id));list.innerHTML=drawTable(rs);return}
- if(BM){const nm=brandName(BM),b=D.brands.find(x=>x.id===BM),re=new RegExp('(^|[^a-z0-9])('+[b.name,...b.aka].map(n=>fold(n).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')+')([^a-z0-9]|$)'),
-   others=R.filter(r=>r.id!==BM&&!(r.brands||[]).includes(BM)&&re.test(fold([r.name,r[L].summary,...r[L].strengths,...r[L].weaknesses,r[L].size].join(' '))));
-  list.innerHTML=`<p class="lead">${esc(t('bm_title').replace('{b}',nm))}</p>`+byCat(rs,crank)+(others.length?`<details class="more"><summary>${esc(tn('bm_more',others.length).replace('{b}',nm))}</summary><div class="grid" style="margin-top:10px">${others.map(r=>card(r,true)).join('')}</div></details>`:'');return}
+ if(BM){const nm=brandName(BM),b=BRANDS.find(x=>x.id===BM),re=new RegExp('(^|[^a-z0-9])('+[b.name,...b.aka].map(n=>fold(n).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')+')([^a-z0-9]|$)'),
+   others=b.lego?[]:R.filter(r=>r.id!==BM&&!linked(r,BM)&&re.test(fold([r.name,r[L].summary,...r[L].strengths,...r[L].weaknesses,r[L].size].join(' '))));  // for LEGO, every entry would
+  list.innerHTML=banner(R.find(r=>r.id===BM),b,rs)+byCat(rs,crank)+(others.length?`<details class="more"><summary>${esc(tn('bm_more',others.length).replace('{b}',nm))}</summary><div class="grid" style="margin-top:10px">${others.map(r=>card(r,true)).join('')}</div></details>`:'');return}
  if(hits){rs.sort((a,b)=>hits.get(b.id)-hits.get(a.id));list.innerHTML=`<section class="cat"><h3>${t('ranked')} <span class="count">${rs.length}</span></h3><div class="grid">${rs.map(r=>card(r,true)).join('')}</div></section>`;return}
  list.innerHTML=byCat(rs)}
 function byCat(rs,first){return C.map(c=>{const cr=rs.filter(r=>r.cat===c.id);if(!cr.length)return'';
@@ -118,11 +130,18 @@ mg.onclick=e=>{const s=e.target.closest('[data-go]');if(s){openEntry(s.dataset.g
 
 document.getElementById('mapkey').innerHTML=[['official',t('official')],['both',t('both')],['alternative',t('alternative')],['',t('otherw')],['official dim',t('dim')]].map(([c,n])=>`<span><i class="stud ${c}"></i>${n}</span>`).join('');
 // makers of the bricks (brands.toml `makers`, read at the source): own production, made elsewhere, not established
-const mkName=x=>L==='fr'&&x.name_fr?x.name_fr:x.name,mkSrc=(xs,dated)=>xs.map(x=>`<a href="${esc(x.url)}" rel="noopener" title="${esc(fmt(x.date))}">${esc(host(x.url))}</a>${dated?' '+fmt(x.date):''}`).join(', ');
+const mkName=x=>L==='fr'&&x.name_fr?x.name_fr:x.name,mkSrc=(xs,dated)=>xs.map(x=>`<a href="${esc(x.url)}" rel="noopener" title="${esc(fmt(x.date))}">${esc(host(x.url))}</a>${dated?' '+dt(x.date):''}`).join(', ');
 const mkOf=b=>{const r=R.find(x=>x.id===b.id)||{},m=r.makers||[];return{r,own:m.filter(x=>x.id===b.id),ext:m.filter(x=>x.id!==b.id)}};
-function mkLine(r){if(BN[r.id]==null)return'';const{own,ext}=mkOf(r);const by={};[...own.map(x=>[t('own_make'),x]),...ext.map(x=>[mkName(x),x])].forEach(([k,x])=>(by[k]=by[k]||[]).push(x));
+function mkLine(r){if(BN[r.id]==null||r===LEGO)return'';const{own,ext}=mkOf(r);const by={};[...own.map(x=>[t('own_make'),x]),...ext.map(x=>[mkName(x),x])].forEach(([k,x])=>(by[k]=by[k]||[]).push(x));
  const parts=Object.entries(by).map(([k,xs])=>`${esc(k)} · ${mkSrc(xs)}`);
  return `<div class="mkline">${t('bricks')}${COLON}${parts.length?parts.join(' ; '):esc(t('no_maker'))}</div>`}
+// brand mode: the brand as a banner above its entries (decision of 24/11/2026, 11:58 to 12:05)
+const PRE=L==='fr'?'../':'';
+function banner(r,b,rs){if(!r)return'';const cats=C.map(c=>[c.id,rs.filter(x=>x.cat===c.id).length]).filter(x=>x[1]);
+ const meta=[one(r),r[L].group].filter(Boolean).map(esc).join(' · ')+` · <a href="${esc(r.url)}" rel="noopener">${esc(host(r.url))}</a>`;
+ return `<section class="banner ${b.lego?'official':'alternative'}" aria-labelledby="bn-h">${r.logo?`<img class="logo" src="${PRE}${esc(r.logo)}" alt="${esc(t('logo_of').replace('{b}',b.name))}">`:''}<div class="bt"><h3 id="bn-h">${esc(b.name)}</h3><p class="meta">${meta}</p>${mkLine(r)}`+
+  `<p class="counts">${b.lego?esc(t('lego_where'))+COLON:esc(tn('n_linked',rs.length))+COLON}${cats.map(([c,n])=>`${esc(shortCat(c))} ${n}`).join(' · ')}</p>`+
+  (b.lego?`<button type="button" class="btn all" data-scope="official">${esc(t('lego_scope').replace('{n}',R.filter(x=>(x.covers||[]).includes('official')).length))}</button>`:'')+`</div></section>`}
 function vMakers(){const el=document.getElementById('v-makers');const all=D.brands.map(b=>({...b,...mkOf(b)}));
  const own=all.filter(b=>b.own.length&&!b.ext.length),ext=all.filter(b=>b.ext.length),none=all.filter(b=>!b.own.length&&!b.ext.length);
  const via={};ext.forEach(b=>{const g={};b.ext.forEach(x=>{const k=x.name_fr||/\(/.test(x.name)||!x.id?mkName(x):brandName(x.id)||mkName(x);(g[k]=g[k]||[]).push(x)});Object.entries(g).forEach(([k,xs])=>(via[k]=via[k]||[]).push({b,xs}))});
@@ -159,7 +178,7 @@ const el=document.getElementById('v-pulse');const cats=C.map(c=>c.id),today=new 
   :`Among sites, channels, forums and software, ${old.length} have shown no sign of life for 6 months${top?`, mostly in "${catName(top[0])}" (${top[1]})`:''}; ${nolast} have no observable date. Works, places, shops and brands are left out: their posts do not measure them.`;
  let s=`<svg class="pulse" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t('p_title'))}">`;
  s+=`<rect x="${xs}" y="2" width="${x1-xs}" height="${H-26}" fill="var(--sunk)" rx="4"/><text class="ax" x="${(xs+x1)/2}" y="${H-6}" text-anchor="middle">${t('p_recent')}</text>`;
- for(const k of (W<520?[0]:[0,6,12])){const d=new Date(from);d.setMonth(d.getMonth()+k);s+=`<text class="ax" x="${X(d)}" y="${H-6}" text-anchor="${k?'middle':'start'}">${k?'':'≤ '}${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getFullYear()).slice(2)}</text>`}
+ for(const k of (W<520?[0]:[0,6,12])){const d=new Date(from);d.setMonth(d.getMonth()+k);s+=`<text class="ax" x="${X(d)}" y="${H-6}" text-anchor="${k?'middle':'start'}">${k?'':'≤ '}${MONTHS[d.getMonth()]} ${d.getFullYear()}</text>`}
  cats.forEach((c,i)=>{const y=14+i*rh,rs=RA.filter(r=>r.cat===c&&r.last);s+=`<text x="${lw}" y="${y+5}" text-anchor="end">${esc(cut(shortCat(c)))}</text><line x1="${x0}" x2="${xs}" y1="${y}" y2="${y}" stroke="var(--line)"/>`;
   const placed=[],old2=rs.filter(r=>new Date(r.last)<from);
   if(old2.length){s+=`<circle cx="${x0}" cy="${y}" r="${old2.length>1?9:5.5}" fill="var(--card)" stroke="var(--warn)" stroke-width="2.5" data-go="${old2[0].id}" data-tip="${esc(old2.map(r=>r.name+' · '+fmt(r.last)).join(' ; '))}" style="cursor:pointer"/>`+(old2.length>1?`<text x="${x0}" y="${y+4}" text-anchor="middle" style="font-size:10px;font-weight:700;fill:var(--warn);pointer-events:none">${old2.length}</text>`:'');placed.push({x:x0,dy:0})}
@@ -192,7 +211,7 @@ function vPassion(){const el=document.getElementById('v-passion'),P=D.passion;if
  const hit=(bx,by,w)=>boxes.some(b=>bx<b.x+b.w&&bx+w>b.x&&by<b.y+13&&by+13>b.y)||placed.some(p=>p.x+6>bx&&p.x-6<bx+w&&p.y+6>by&&p.y-6<by+13);
  lab.forEach(({r,x,y})=>{const w=cname(r.c).length*6.8;for(const [dx,dy,a] of [[9,4,'start'],[-9,4,'end'],[0,-10,'middle'],[0,19,'middle'],[9,-9,'start'],[-9,-9,'end'],[9,17,'start'],[-9,17,'end']]){const bx=a==='start'?x+dx:a==='end'?x+dx-w:x-w/2,by=y+dy-11;if(bx<ml||bx+w>W-mr||by<mt)continue;if(!hit(bx,by,w)){boxes.push({x:bx,y:by,w});s+=`<text class="lb" x="${x+dx}" y="${y+dy}" text-anchor="${a}">${esc(cname(r.c))}</text>`;break}}});
  const xn=nopop.length?t('pa_nopop')+nopop.map(r=>`${cname(r.c)} (${r.n})`).join(', ')+'.':'';
- el.innerHTML=`<h3>${t('pa_title')}</h3><p class="take">${esc(take)}</p>${s}</svg><p class="note">${esc(t('pa_note').replace('{d}',fmt(P.date)).replace('{y}',P.pop_year).replace('{x}',xn))}</p>`;
+ el.innerHTML=`<h3>${t('pa_title')}</h3><p class="take">${esc(take)}</p>${s}</svg><p class="note">${esc(t('pa_note').replace('{y}',P.pop_year).replace('{x}',xn)).replace('{d}',dt(P.date))}</p>`;
  el.onclick=e=>{const p=e.target.closest('[data-c]');if(!p)return;toDir();resetAll();st.country=p.dataset.c;update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()})}}
 var drawn=false;matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{if(drawn)vBrands()});  // colours chosen by contrast are chosen again
 function drawInsights(){vPassion();vMakers();vBrands();vPulse();drawn=true}
@@ -216,13 +235,12 @@ function keepFocus(draw){const a=document.activeElement,k=a&&a.dataset?FKEYS.fin
  if(k&&box&&!document.body.contains(a)){const b=document.getElementById(box.id)||document;const n=[...b.querySelectorAll(`[data-${k}]`)].find(x=>x.dataset[k]===v&&x.className.split(' ')[0]===String(cls).split(' ')[0])||[...b.querySelectorAll(`[data-${k}]`)].find(x=>x.dataset[k]===v);if(n)n.focus({preventScroll:true})}}
 function update(all=true){keepFocus(()=>update0(all))}
 function update0(all){const n=nActive();ft.textContent=t('filters')+(n?` (${n})`:'');drawFilters();drawList();if(all)drawMap();writeHash()}
-// "Where to start": each need keeps the first 5 entries of its ranked list that suit the visitor (data/journeys.toml)
 const VC=(()=>{const tags=navigator.languages||[navigator.language];for(const t of tags){const m=/^[a-z]{2,3}-([A-Z]{2})$/i.exec(t||'');if(m)return m[1].toUpperCase()}
  return {fr:'FR',de:'DE',it:'IT',es:'ES',nl:'NL',pl:'PL',pt:'PT',da:'DK',sv:'SE',nb:'NO',no:'NO',fi:'FI',cs:'CZ'}[VL]||''})();
 const crank=r=>{const c=r.countries||[];return (VC&&c.includes(VC))||(VC==='FR'&&r.ships_to_france)?0:c.includes('international')?1:2};
 // search suggestions, built from the data: brands (with their other names), entries, categories, countries and cities
 const SG=(()=>{const out=[],add=(g,label,names,w,go,d)=>out.push({g,label,keys:names.map(fold),w,go,d});
- D.brands.forEach(b=>add('brand',b.name,[b.name,...b.aka],BN[b.id],{q:b.name},tn('n_linked',BN[b.id])+(b.aka.length?' · '+b.aka.join(', '):'')));
+ BRANDS.forEach(b=>add('brand',b.name,[b.name,...b.aka],BN[b.id],{q:b.name},tn('n_linked',BN[b.id])+(b.aka.length?' · '+b.aka.join(', '):'')));
  R.filter(r=>BN[r.id]==null).forEach(r=>add('entry',r.name,[r.name],(r.featured?100:0)+(r.status==='active'?10:0),{entry:r.id},catName(r.cat)));
  C.forEach(c=>{const n=R.filter(r=>r.cat===c.id).length;add('cat',c[L],[c[L],c.en,c.fr],n,{cat:c.id},tn('n_entries',n))});
  CTRY.forEach(([c,n])=>add('place',cname(c),[cname(c),c],n,{country:c},tn('n_entries',n)));
@@ -247,10 +265,21 @@ q.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){e.preventDefault();if(s
 sugg.addEventListener('mousedown',e=>e.preventDefault());  // keep the focus in the field
 sugg.addEventListener('click',e=>{const o=e.target.closest('[data-i]');if(o)sgPick(sgItems[+o.dataset.i])});
 q.addEventListener('blur',()=>setTimeout(sgClose,100));
-const suits=(j,r)=>{if((j.always||[]).includes(r.id)||j.scope==='global')return true;const c=r.countries||[],l=r.languages||[];
+const suits=(j,r)=>{if((j.always||[]).includes(r.id)||j.scope==='intl')return true;const c=r.countries||[],l=r.languages||[];
  return j.scope==='language'?(l.includes(VL)||l.includes('en')):(c.includes('international')||(VC&&c.includes(VC))||(VC==='FR'&&r.ships_to_france))};
-document.getElementById('journeys').innerHTML=(D.journeys||[]).map(j=>`<div class="jr"><h3>${esc(j['title_'+L])}</h3><ul>${j.resources.map(id=>R.find(r=>r.id===id)).filter(r=>r&&suits(j,r)).slice(0,5).map(r=>`<li><a href="#" data-go="${r.id}">${esc(r.name)}</a></li>`).join('')}</ul></div>`).join('');
-document.getElementById('journeys').onclick=e=>{const a=e.target.closest('[data-go]');if(a){e.preventDefault();openEntry(a.dataset.go)}};
+// "Where to start" (data/journeys.toml): per need, the reference of the visitor's country or language, then entries of its groups ranked
+// for the visitor (their rank in the visitor's country or language first, then worldwide), then the whole category; 4 lines at most
+const RANKED=R.some(r=>r.rank),byId=id=>R.find(r=>r.id===id);
+function needEntries(j,skip,n){const key=j.scope==='country'?VC:j.scope==='language'?VL:'',inG=r=>j.groups.includes(r.cat+'/'+r.group)&&r.id!==skip&&r.status!=='dead';
+ if(j.mode==='brand'){const bs=R.filter(r=>inG(r)&&BN[r.id]!=null);return (RANKED?bs.filter(r=>r.rank).sort((a,b)=>((a.rank.intl||9)-(b.rank.intl||9))):bs.sort((a,b)=>BN[b.id]-BN[a.id])).slice(0,n)}  // until the ranks: the brands most entries talk about
+ if(!RANKED)return (j.fallback||[]).map(byId).filter(r=>r&&r.id!==skip&&suits(j,r)).slice(0,n);
+ const rk=r=>{const x=r.rank||{};return key&&x[key]?[0,x[key]]:x.intl?[1,x.intl]:null};
+ return R.filter(r=>inG(r)&&rk(r)).sort((a,b)=>{const x=rk(a),y=rk(b);return x[0]-y[0]||x[1]-y[1]||lrank(a)-lrank(b)}).slice(0,n)}
+function drawNeeds(){document.getElementById('journeys').innerHTML=(D.journeys||[]).map(j=>{const key=j.scope==='country'?VC:j.scope==='language'?VL:'',rf=j.reference||{},ref=byId(rf[key]||rf.default),es=needEntries(j,ref&&ref.id,ref?2:3),n=R.filter(r=>r.cat===j.category).length;
+ const li=(r,cls)=>`<li${cls?` class="${cls}"`:''}><a href="#entry=${r.id}" ${j.mode==='brand'?`data-brand="${r.id}"`:`data-go="${r.id}"`}>${esc(r.name)}</a></li>`;
+ return `<div class="jr"><h3>${ci(j.category)}${esc(j['title_'+L])}</h3><ul>${ref?li(ref,'ref'):''}${es.map(r=>li(r)).join('')}<li class="all"><a href="#cat=${j.category}" data-cat="${j.category}">${esc(catName(j.category))} <span class="nw">· ${n} →</span></a></li></ul></div>`}).join('')}
+drawNeeds();
+document.getElementById('journeys').onclick=e=>{const a=e.target.closest('a');if(!a)return;e.preventDefault();if(a.dataset.go)openEntry(a.dataset.go);else if(a.dataset.brand)brandMode(a.dataset.brand);else if(a.dataset.cat){resetAll();st.cat.add(a.dataset.cat);update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()})}};
 const landing=new URLSearchParams(location.hash.slice(1)).get('entry');  // #entry=<id>: a link to one entry (feed, outside pages)
 const v0=viewOf(location.hash),OUT0=OUT.test(location.hash);cur=v0;readHash();update();show(v0,true);if(landing)openEntry(landing);document.documentElement.classList.add('ready');
 q.addEventListener('focus',()=>index(),{once:true});  // the search index is built when the search field is first used

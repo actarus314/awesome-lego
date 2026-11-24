@@ -61,7 +61,7 @@ PROBE = r"""
   const lines = el => { const tops = []; const tw = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); const rg = document.createRange(); let n;
     while ((n = tw.nextNode())) { if (!n.textContent.trim()) continue; rg.selectNodeContents(n); for (const q of rg.getClientRects()) if (q.width > 0.5) tops.push(q.top) }
     tops.sort((x, y) => x - y); let k = tops.length ? 1 : 0; for (let i = 1; i < tops.length; i++) if (tops[i] - tops[i - 1] > 6) k++; return k };
-  const ATOM = '.ct .tel a, .ct .mail a, .ct .nw, time, .tag:not(.langs), .chip, .btn, .kpi b, .pill';
+  const ATOM = '.ct .tel a, .ct .mail a, .ct .nw, time, .tag:not(.langs), .chip, .btn:not(.all), .kpi b, .pill';  // a full-width button may take two lines
   for (const el of document.querySelectorAll(ATOM)) if (vis(el) && lines(el) > 1) add('broken token', el, txt(el));
 
   // words split inside themselves (not at a hyphen or a slash) although they fit on a line

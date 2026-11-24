@@ -7,6 +7,7 @@ summary_fr = "Logiciels de conception, applications, API, données ouvertes et p
 
 [[category.groups]]
 id = "design-software"
+rank_scope = "intl"
 name_en = "Design software"
 name_fr = "Logiciels de conception"
 short_en = "Design software"
@@ -14,11 +15,13 @@ short_fr = "Conception"
 
 [[category.groups]]
 id = "apps"
+rank_scope = "intl"
 name_en = "Apps"
 name_fr = "Applications"
 
 [[category.groups]]
 id = "apis-and-data"
+rank_scope = "intl"
 name_en = "APIs and open data"
 name_fr = "API et données ouvertes"
 short_en = "APIs, open data"
@@ -26,6 +29,7 @@ short_fr = "API, données"
 
 [[category.groups]]
 id = "open-source"
+rank_scope = "intl"
 name_en = "Open-source projects"
 name_fr = "Projets libres"
 short_en = "Open source"
@@ -33,6 +37,7 @@ short_fr = "Projets libres"
 
 [[category.groups]]
 id = "programming-and-control"
+rank_scope = "intl"
 name_en = "Programming, control and robotics"
 name_fr = "Programmation, pilotage et robotique"
 short_en = "Programming"

@@ -2,7 +2,7 @@
 """Validate data/*.toml, write README.md (entries marked `featured`) and full-list.md
 (every entry), and build the bilingual GitHub Pages site (site/).
 
-Usage: python3 scripts/build.py [--check | --site-only]   (standard library only, latest Python release)
+Usage: python3 scripts/build.py [--check | --site-only] [--notes]   (standard library only, latest Python release)
 """
 import base64
 import datetime as dt
@@ -24,6 +24,23 @@ LANGS = ("en", "fr")
 ORDER = ["brands", "shops", "comparators", "second-hand", "community", "video", "events", "places", "clubs", "learning", "tools", "directories"]
 COVERS = {"official", "alternative", "second-hand", "parts", "custom-builds", "minifigures", "instructions", "news", "data", "events", "places", "clubs", "learning"}
 ACCESS = {"free", "free-account", "freemium", "paid"}
+# what `access` describes depends on the category (decision of 24/11/2026, 12:18): the entry of a place or an event,
+# the membership of a club, entering a competition, using a tool; nothing for brands, shops and second-hand, nothing
+# when free for news, communities, videos and directories. Label of each pair: strings.json, "acc_<context>_<value>".
+ACCESS_CONTEXT = {"places": "entry", "events": "entry", "clubs": "membership", "tools": "use", "comparators": "use", "learning": "use",
+                  "community": "open", "video": "open", "directories": "open"}
+ACCESS_GROUP = {("events", "competitions"): "competition", ("events", "calendars"): "open"}  # websites, not events one enters
+ACCESS_BY = {"entry": {"free", "paid"}, "membership": {"free", "paid"}, "competition": {"free", "free-account"},
+             "use": {"free", "freemium", "paid", "free-account"}, "open": {"free-account", "freemium"}}
+OPERATORS = {"lego-group", "licensee"}  # sites and places of the LEGO Group itself, or under the LEGO brand by a partner
+RANK_SCOPES = {"country", "language", "intl"}  # a group ranks its entries per country, per language, or once worldwide
+RANK = range(1, 6)
+UNITS = {"sets", "brands", "members", "topics", "posts", "subscribers", "videos", "episodes", "entries", "associations",
+         "square-metres", "bricks", "parks", "minifigures", "parts", "products", "shops", "ads", "visitors", "exhibitors",
+         "models", "articles", "countries", "events", "clubs", "communities", "instructions", "reviews", "followers", "editions"}
+APPROX = {"about", "more-than", "at-least"}
+# Rules of lot 3 that the current data do not meet yet: warnings until the content is converted (lot 3b), errors after.
+NEW_RULES_BLOCKING = False
 STATUS = {"active", "slow", "inactive", "archived", "dead"}
 CARD_LABEL = 17  # characters of a group label on a card, beside the entry's name, on one line down to 320 px
 REGIMES = {"activity", "work", "operating"}  # what keeps an entry current: recent activity, nothing (a finished work), being open
@@ -36,9 +53,9 @@ ID = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 T = {  # interface strings
     "title": {"en": "Awesome LEGO", "fr": "Awesome LEGO"},
     "tagline": {"en": "Interlocking plastic construction bricks, from the official LEGO system to compatible brands.",
-                "fr": "Briques de construction en plastique à emboîter, du système LEGO officiel aux marques compatibles."},
+                "fr": "Briques de construction en plastique à emboîter, du système LEGO aux marques compatibles."},
     "site_tagline": {"en": "The best of the brick world for adult builders, in official LEGO and compatible brands.",
-                     "fr": "Le meilleur du monde de la brique pour les adultes qui construisent, en LEGO officiel comme en marques compatibles."},
+                     "fr": "Le meilleur du monde de la brique pour les adultes qui construisent, en sets de marque LEGO comme en marques compatibles."},
     "feed": {"en": "Feed of new resources (RSS)", "fr": "Flux des nouveautés (RSS)"},
     "contents": {"en": "Contents", "fr": "Sommaire"},
     "contributing": {"en": "Contributing", "fr": "Contribuer"},
@@ -58,6 +75,7 @@ def fail(errors):
 
 def load():
     cats, errors, ids, urls = [], [], {}, {}
+    notes.clear()
     for path in sorted(DATA.glob("*.toml")):
         if path.stem in ("metrics", "journeys"):
             continue
@@ -80,6 +98,9 @@ def load():
                     errors.append(f"{where}: group {g['id']}: short_{lang} needed, the card label holds {CARD_LABEL} characters at most")
             if g.get("regime", "activity") not in REGIMES:
                 errors.append(f"{where}: group {g['id']}: regime must be one of {sorted(REGIMES)}")
+            if g.get("rank_scope") not in RANK_SCOPES:
+                errors.append(f"{where}: group {g['id']}: rank_scope must be one of {sorted(RANK_SCOPES)}")
+        scope = {g["id"]: g.get("rank_scope") for g in c.get("groups", [])}
         for r in d.get("resource", []):
             w = f"{where}: {r.get('id', '?')}"
             if not ID.match(r.get("id", "")):
@@ -110,6 +131,32 @@ def load():
                 errors.append(f"{w}: unknown covers {set(r['covers']) - COVERS}")
             if r.get("access") and r["access"] not in ACCESS:
                 errors.append(f"{w}: unknown access '{r['access']}'")
+            elif r.get("access") and r["access"] not in ACCESS_BY.get(access_context(path.stem, r.get("group")), set()):
+                notes.append(f"{w}: access '{r['access']}' says nothing for {access_context(path.stem, r.get('group')) or 'this category'} (allowed: {sorted(ACCESS_BY.get(access_context(path.stem, r.get('group')), set())) or 'none'})")
+            if "," in str(r.get("city", "")):
+                notes.append(f"{w}: city holds one city (the main one; the others in the text)")
+            if r.get("city_fr") is not None and (not r["city_fr"] or r["city_fr"] == r.get("city") or not r.get("city")):
+                errors.append(f"{w}: city_fr only when the French name differs from city")
+            if r.get("city_local") is not None and (not r["city_local"] or r["city_local"] == r.get("city") or not r.get("city")):
+                errors.append(f"{w}: city_local only when the local name differs from city")
+            if r.get("operator") is not None and r["operator"] not in OPERATORS:
+                errors.append(f"{w}: operator must be one of {sorted(OPERATORS)}")
+            rk = r.get("rank")
+            if rk is not None:
+                sc = scope.get(r.get("group"))
+                code = {"country": r"[A-Z]{2}", "language": r"[a-z]{2}", "intl": r"(?!)"}.get(sc, r"(?!)")
+                if not isinstance(rk, dict) or not rk or any(not (k == "intl" or re.fullmatch(code, k)) or v not in RANK or isinstance(v, bool) for k, v in rk.items()):
+                    errors.append(f"{w}: rank is a table {{intl = 1, <{'code' if sc == 'intl' else sc} code> = 2}} of ranks 1 to 5 (group scope: {sc})")
+                elif not (r.get("rank_reason_en") and r.get("rank_reason_fr")):
+                    notes.append(f"{w}: rank_reason_en and rank_reason_fr say why the entry has its rank")
+            sz = r.get("size")
+            if sz is not None and (not isinstance(sz, list) or not sz or any(not isinstance(x, dict) or set(x) - {"n", "unit", "approx"} or not isinstance(x.get("n"), (int, float))
+                                                                                or isinstance(x.get("n"), bool) or x.get("unit") not in UNITS or x.get("approx", "about") not in APPROX for x in sz)):
+                errors.append(f"{w}: size is a list of {{n = 42003, unit = \"sets\"}} (unit in {sorted(UNITS)}, approx in {sorted(APPROX)})")
+            if r.get("size_en"):
+                notes.append(f"{w}: size_en and size_fr are free text: write size = [{{n = …, unit = …}}]")
+            if r.get("business_model_en"):
+                notes.append(f"{w}: business_model_en and business_model_fr are not shown: write funding (read at the source) or drop them")
             if r.get("status") not in STATUS:
                 errors.append(f"{w}: unknown status '{r.get('status')}'")
             if r.get("confidence") not in CONFIDENCE:
@@ -178,6 +225,79 @@ def load():
     return cats, errors
 
 
+notes = []  # breaches of the rules of lot 3 not yet met by the data (NEW_RULES_BLOCKING)
+
+
+def access_context(cat, group):
+    return ACCESS_GROUP.get((cat, group), ACCESS_CONTEXT.get(cat))
+
+
+# French: "LEGO officiel" is a label only (filter, legend, heading); in a sentence, "de marque LEGO" for a product,
+# "du groupe LEGO" for what the company runs, "sous enseigne LEGO" for a place run by a partner (decision of 24/11/2026, 10:13)
+OFFICIEL = re.compile(r"\bLEGO\s+officiel(le)?s?\b|\bofficiel(le)?s?\s+LEGO\b")
+# dates in texts: the month in letters (3 July 2027, 3 juillet 2027), never 2027-07-03 nor 03/07/2027 (decision of 10:45)
+NUMERIC_DATE = re.compile(r"\b\d{4}-\d{2}-\d{2}\b|\b\d{1,2}/\d{1,2}/\d{4}\b")
+SUMMARY_WORDS = 35  # a card's text: what is particular, one or two sentences (decision of 12:28)
+COUNTRY_WORDS = re.compile(r"^(?:an? |the )?(?:french|german|polish|italian|spanish|dutch|belgian|swiss|austrian|danish|swedish|norwegian|finnish|czech|slovak|british|english|scottish|welsh|irish|american|canadian|australian|chinese|japanese|portuguese|luxembourg\w*|south african|new zealand\w*|european|hungarian|greek|icelandic|estonian|latvian|lithuanian|slovenian|croatian|romanian|bulgarian|ukrainian|korean|taiwanese|brazilian|mexican)\b", re.I)
+STOP = {"and", "the", "of", "for", "with", "official", "lego", "other", "brands", "brand", "sites", "site"}
+
+
+def text_notes(cats):
+    """Writing rules of lot 3 on the texts of the entries: warnings until lot 3b."""
+    for c in cats:
+        cid = c["category"]["id"]
+        gname = {g["id"]: g["name_en"] for g in c["category"].get("groups", [])}
+        if OFFICIEL.search(c["category"].get("summary_fr", "")):
+            notes.append(f"{cid}.toml: category summary_fr: « LEGO officiel » in a sentence")
+        for r in c["resources"]:
+            w = f"{cid}.toml: {r['id']}"
+            for k, v in r.items():
+                vs = v if isinstance(v, list) else [v]
+                for x in vs:
+                    if not isinstance(x, str):
+                        continue
+                    if k.endswith("_fr") and OFFICIEL.search(x):
+                        notes.append(f"{w}: {k}: « {OFFICIEL.search(x).group(0)} » in a sentence: de marque LEGO (a product), du groupe LEGO (the company), sous enseigne LEGO (a partner)")
+                    if (k.endswith("_en") or k.endswith("_fr")) and NUMERIC_DATE.search(x):
+                        notes.append(f"{w}: {k}: date {NUMERIC_DATE.search(x).group(0)} with the month in letters")
+            sm = r.get("summary_en", "")
+            if len(sm.split()) > SUMMARY_WORDS or len(r.get("summary_fr", "").split()) > SUMMARY_WORDS:
+                notes.append(f"{w}: summary of {max(len(sm.split()), len(r.get('summary_fr', '').split()))} words, {SUMMARY_WORDS} at most")
+            first = [re.sub(r"s$", "", x) for x in re.findall(r"[a-z]+", sm.lower())[:4]]
+            gw = {re.sub(r"s$", "", x) for x in re.findall(r"[a-z]+", gname.get(r["group"], "").lower()) if len(x) > 3 and x not in STOP}
+            if gw & set(first):
+                notes.append(f"{w}: summary starts with its group ({', '.join(sorted(gw & set(first)))}): start with what sets the entry apart")
+            if COUNTRY_WORDS.search(sm):
+                notes.append(f"{w}: summary starts with a country: the card shows it")
+
+
+def site_notes():
+    """The same rule of the brand on the French sentences of the site: build.py (T, FEED_T) and site-src (strings.json
+    except the strings marked as labels, French branches of app.js)."""
+    for name, table in (("T", T), ("FEED_T", FEED_T)):
+        for k, v in table.items():
+            if isinstance(v, dict) and OFFICIEL.search(str(v.get("fr", ""))):
+                notes.append(f"scripts/build.py: {name}[{k}]: « LEGO officiel » in a sentence")
+    for k, v in json.loads(source("strings.json")).items():
+        if not v.get("label") and OFFICIEL.search(v.get("fr", "")):
+            notes.append(f"site-src/strings.json: {k}: « LEGO officiel » in a sentence (mark a label with \"label\": true)")
+    for m in re.finditer(r"L===?'fr'\?(`[^`]*`|'[^']*')", source("app.js")):
+        if OFFICIEL.search(m.group(1)):
+            notes.append("site-src/app.js: « LEGO officiel » in a French sentence")
+
+
+def rank_check(cats):
+    """At most one entry per rank in a group and a scope."""
+    for c in cats:
+        seen = {}
+        for r in c["resources"]:
+            for k, v in (r.get("rank") or {}).items():
+                seen.setdefault((r["group"], k, v), []).append(r["id"])
+        for (g, k, v), ids_ in seen.items():
+            if len(ids_) > 1:
+                notes.append(f"{c['category']['id']}.toml: group {g}, scope {k}: rank {v} given to {', '.join(ids_)}")
+
+
 def metrics():
     p = DATA / "metrics.json"
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
@@ -220,7 +340,8 @@ MORE = {"readme": {"en": "Only the best of each group is listed here. The [full 
 def readme(cats, m, lang, kind="readme"):
     title = T["title"][lang] if kind == "readme" else "Awesome LEGO: full list"
     badge = " [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)" if kind == "readme" else ""
-    keep = (lambda r: r.get("featured")) if kind == "readme" else (lambda r: True)
+    ranked = has_ranks(cats)
+    keep = (lambda r: picked(r, ranked)) if kind == "readme" else (lambda r: True)
     logo = [f'<a href="{PAGES}"><img src="media/logo.svg" align="right" width="120" alt="Awesome LEGO logo"></a>', ""] if kind == "readme" else []
     out = [f"# {title}{badge}", "", *logo, f"> {T['tagline'][lang]}", "",
            f"**[{T['site'][lang]}]({PAGES})** · [{T['site_fr'][lang]}]({PAGES}fr/) · [{T['feed'][lang]}]({PAGES}feed.xml)", "",
@@ -296,20 +417,34 @@ def alt_brands(cats):
 
 def site_data(cats, m):
     rows = []
+    ranked = has_ranks(cats)
+    by_host = {}
+    for c in cats:
+        for r in c["resources"]:
+            by_host.setdefault(host(r["url"]), []).append(r["id"])
+    same = {h: ids_ for h, ids_ in by_host.items() if len(ids_) > 1 and not PLATFORMS.search(h)}  # "From the same site"
     for c in cats:
         cat = c["category"]
         gnames = {g["id"]: {lang: g.get("short_" + lang) or g["name_" + lang] for lang in LANGS} for g in cat.get("groups", [])}  # card labels
         for r in c["resources"]:
             status, last = effective(r, m)
-            row = {k: r.get(k) for k in ("id", "name", "url", "covers", "languages", "countries", "access", "confidence", "checked", "github", "subreddit", "featured", "city", "ships_to_france")}
+            row = {k: r.get(k) for k in ("id", "name", "url", "covers", "languages", "countries", "confidence", "checked", "github", "subreddit", "city", "city_fr", "city_local", "ships_to_france", "rank", "size")}
+            row = {k: v for k, v in row.items() if v is not None}
+            row["featured"] = picked(r, ranked)
+            ctx = access_context(cat["id"], r["group"])
+            row["access"] = f"{ctx}_{r['access']}" if r.get("access") in ACCESS_BY.get(ctx, set()) else None  # label of strings.json
+            row["operator"] = lego_operator(r)
+            row["same"] = same.get(host(r["url"]), [])
+            if cat["id"] == "brands":  # logo of the brand, from its official site (media/logos/, licence apart in REUSE.toml)
+                row["logo"] = next((f"media/logos/{r['id']}.{x}" for x in ("svg", "png") if (ROOT / "media" / "logos" / f"{r['id']}.{x}").exists()), None)
             row["next"] = str(r["next_date"]) if r.get("next_date") and str(r["next_date"]) >= dt.date.today().isoformat() else None  # past dates are dropped at each daily build
             row.update(cat=cat["id"], group=r["group"], status=status, last=last, regime=r["_regime"],
                        metrics=m.get(r["id"], {}),
                        sources=[{"url": s["url"], "date": str(s["date"]), "kind": s["kind"]} for s in r.get("sources", [])])
             for lang in LANGS:
                 row[lang] = {"summary": r["summary_" + lang], "strengths": r.get("strengths_" + lang, []),
-                             "weaknesses": r.get("weaknesses_" + lang, []), "size": r.get("size_" + lang, ""),
-                             "model": r.get("business_model_" + lang, ""), "group": gnames.get(r["group"], {}).get(lang, r["group"]),
+                             "weaknesses": r.get("weaknesses_" + lang, []), "size": r.get("size_" + lang, ""),  # free text until lot 3b
+                             "group": gnames.get(r["group"], {}).get(lang, r["group"]),
                              **({"rec": r["recurrence_" + lang]} if r.get("recurrence_" + lang) else {})}
             row["checked"] = str(row["checked"])
             row["brands"] = r.get("brands", [])  # read at the source of each entry (brands of brands.toml it sells, tracks, reviews or admits)
@@ -323,13 +458,68 @@ def site_data(cats, m):
                    "summary": {lang: c["category"].get("summary_" + lang, "") for lang in LANGS},
                    "groups": [{"id": g["id"], "en": g["name_en"], "fr": g["name_fr"]} for g in c["category"].get("groups", [])]} for c in cats]
     ids = {r["id"] for r in rows}
-    journeys = tomllib.loads(pathlib.Path(DATA / "journeys.toml").read_text(encoding="utf-8")).get("journey", []) if (DATA / "journeys.toml").exists() else []
-    missing = [f"journeys.toml: {j['id']}: unknown resource {i}" for j in journeys for i in j["resources"] + j.get("always", []) if i not in ids]
-    missing += [f"journeys.toml: {j['id']}: scope must be country, language or global" for j in journeys if j.get("scope") not in ("country", "language", "global")]
-    if missing:
-        fail(missing)
+    journeys = needs(cats, ids)
     return {"built": dt.date.today().isoformat(), "categories": categories, "resources": rows, "journeys": journeys,
             "brands": alt_brands(cats), "passion": passion()}
+
+
+def needs(cats, ids):
+    """data/journeys.toml: the needs of "Where to start", checked against the data."""
+    js = tomllib.loads((DATA / "journeys.toml").read_text(encoding="utf-8")).get("need", [])
+    groups = {f"{c['category']['id']}/{g['id']}" for c in cats for g in c["category"].get("groups", [])}
+    cids = {c["category"]["id"] for c in cats}
+    bad = []
+    for j in js:
+        w = f"journeys.toml: {j.get('id')}"
+        if not (j.get("id") and j.get("title_en") and j.get("title_fr")):
+            bad.append(f"{w}: id, title_en and title_fr needed")
+        if j.get("category") not in cids:
+            bad.append(f"{w}: category must be a category id (its icon and its link)")
+        if not j.get("groups") or set(j["groups"]) - groups:
+            bad.append(f"{w}: groups must be <category>/<group> ids: {sorted(set(j.get('groups', [])) - groups)}")
+        if j.get("scope") not in RANK_SCOPES:
+            bad.append(f"{w}: scope must be one of {sorted(RANK_SCOPES)}")
+        if j.get("mode") not in (None, "brand"):
+            bad.append(f"{w}: mode can only be brand")
+        code = {"country": r"[A-Z]{2}", "language": r"[a-z]{2}"}.get(j.get("scope"), r"(?!)")
+        for k, v in (j.get("reference") or {}).items():
+            if not (k == "default" or re.fullmatch(code, k)):
+                bad.append(f"{w}: reference key {k} is a {j.get('scope')} code or default")
+            if v not in ids:
+                bad.append(f"{w}: unknown resource {v}")
+        bad += [f"{w}: unknown resource {i}" for i in j.get("fallback", []) + j.get("always", []) if i not in ids]
+        if set(j) - {"id", "title_en", "title_fr", "category", "groups", "scope", "mode", "reference", "fallback", "always"}:
+            bad.append(f"{w}: unknown keys {sorted(set(j) - {'id', 'title_en', 'title_fr', 'category', 'groups', 'scope', 'mode', 'reference', 'fallback', 'always'})}")
+    if bad:
+        fail(bad)
+    return js
+
+
+PLATFORMS = re.compile(r"(^|\.)(youtube\.com|youtu\.be|reddit\.com|github\.com|spotify\.com|wikipedia\.org)$")  # one site, many unrelated pages
+
+
+def host(url):
+    return re.sub(r"^www\.", "", re.sub(r"^https?://", "", url).split("/")[0].lower())
+
+
+def lego_operator(r):
+    """Sites and places of the LEGO Group (lego-group) or under the LEGO brand by a partner (licensee): the `operator`
+    field, else, until lot 3b fills it, the address (lego.com, LEGO House, BrickLink, Discovery Centres; LEGOLAND parks)."""
+    if r.get("operator"):
+        return r["operator"]
+    h = host(r["url"])
+    if re.search(r"(^|\.)(lego\.com|legohouse\.com|bricklink\.com|legolanddiscoverycenter\.com)$", h):
+        return "lego-group"
+    return "licensee" if re.match(r"legoland\.", h) else None
+
+
+def has_ranks(cats):
+    return any(r.get("rank") for c in cats for r in c["resources"])
+
+
+def picked(r, ranked):
+    """The selection (★, README, filter, suggestions): rank 1 worldwide in its group once ranks exist, `featured` before."""
+    return (r.get("rank") or {}).get("intl") == 1 if ranked else bool(r.get("featured"))
 
 
 def passion():
@@ -495,6 +685,11 @@ def check_docs():
         missing = sorted(w for w in words if not re.search(rf"\b{re.escape(w)}\b", line))
         if missing:
             errors.append(f"data/SCHEMA.md: the `{name}` line does not list {', '.join(missing)}")
+    S = json.loads(source("strings.json"))  # one table of labels for the website
+    need = [f"acc_{c}_{v}" for c, vs in ACCESS_BY.items() for v in sorted(vs)] + [k for u in sorted(UNITS) for k in (f"u_{u}", f"u_{u}1")] + [f"sz_{a}" for a in sorted(APPROX)]
+    errors += [f"site-src/strings.json: label {k} missing" for k in need if not (S.get(k, {}).get("en") and S.get(k, {}).get("fr"))]
+    sizes = next((l for l in schema.splitlines() if l.startswith("Sizes (")), "")
+    errors += [f"data/SCHEMA.md: the Sizes line does not list {u}" for u in sorted(UNITS) if not re.search(rf"\b{re.escape(u)}\b", sizes)]
     for f in sorted((DATA / "backend").glob("*.json")):
         if f"`{f.name}`" not in schema:
             errors.append(f"data/SCHEMA.md: data/backend/{f.name} is not described")
@@ -510,11 +705,33 @@ def check_docs():
     return errors
 
 
+def report_notes():
+    """The breaches of the rules of lot 3: counted by rule, listed with --notes; errors once NEW_RULES_BLOCKING."""
+    if NEW_RULES_BLOCKING and notes:
+        fail(notes)
+    if not notes:
+        return
+    kinds = {}
+    for n in notes:
+        k = re.sub(r"^[\w.-]+\.toml: [\w-]+: |^[^:]+: ", "", n)
+        k = re.sub(r"'[^']*'|\"[^\"]*\"|«[^»]*»|\([^)]*\)|\[[^\]]*\]|\d+|^[\w-]+: ", "…", k)[:90]
+        kinds[k] = kinds.get(k, 0) + 1
+    print(f"! {len(notes)} breaches of the rules of lot 3, warnings until the data are converted (python3 scripts/build.py --notes lists them):")
+    for k, n in sorted(kinds.items(), key=lambda x: -x[1]):
+        print(f"   {n:4} {k}")
+    if "--notes" in sys.argv:
+        for n in notes:
+            print("  !", n)
+
+
 def main():
     cats, errors = load()
     errors += check_docs()
     if errors:
         fail(errors)
+    rank_check(cats)
+    text_notes(cats)
+    site_notes()
     m = metrics()
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
     if not re.search(rf"^## v{re.escape(version)} — \d{{4}}-\d{{2}}-\d{{2}}$", (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), re.M):
@@ -522,6 +739,7 @@ def main():
     texts = {f: readme(cats, m, lang, kind) for (kind, lang), f in FILES.items()}
     texts[".github/ISSUE_TEMPLATE/add-resource.yml"] = issue_form(cats)
     print(f"✓ v{version}: {sum(len(c['resources']) for c in cats)} resources in {len(cats)} categories")
+    report_notes()
     if "--check" in sys.argv:
         stale = [f for f, t in texts.items() if not (ROOT / f).exists() or (ROOT / f).read_text(encoding="utf-8") != t]
         if stale:
