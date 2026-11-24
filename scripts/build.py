@@ -341,13 +341,19 @@ def page(lang, data):
     return out.replace("{{CSP}}", csp(out))
 
 
-def csp(doc):
+def csp(doc, rest="; style-src 'unsafe-inline'; img-src 'self' https://actarus314.github.io; connect-src 'self' https://nominatim.openstreetmap.org; base-uri 'none'; form-action 'none'"):
     """Content security policy (GitHub Pages sends no headers: a meta element, placed before the first script).
     Only the page's own inline scripts run, each allowed by its hash; nothing is loaded from elsewhere."""
     hashes = [base64.b64encode(hashlib.sha256(m.encode("utf-8")).digest()).decode()
               for m in re.findall(r"<script>(.*?)</script>", doc, re.S)]
-    return ("default-src 'none'; script-src " + " ".join(f"'sha256-{h}'" for h in hashes)
-            + "; style-src 'unsafe-inline'; img-src 'self' https://actarus314.github.io; connect-src 'self' https://nominatim.openstreetmap.org; base-uri 'none'; form-action 'none'")
+    return "default-src 'none'; script-src " + " ".join(f"'sha256-{h}'" for h in hashes) + rest
+
+
+def vault():
+    """The Brick Vault (site/vault/): an English-only easter egg that the Konami code opens from either home page.
+    Its fonts are served by the site itself (media/fonts/, SIL Open Font License); it contacts nothing else."""
+    doc = (ROOT / "site-src" / "vault.html").read_text(encoding="utf-8")
+    return doc.replace("{{CSP}}", csp(doc, "; style-src 'unsafe-inline'; font-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'"))
 
 
 BASELINE = "2026-11-23"  # the directory's first day: its entries make one opening item, not 400 separate ones
@@ -517,6 +523,8 @@ def main():
     (SITE / "fr").mkdir(parents=True, exist_ok=True)
     (SITE / "index.html").write_text(page("en", data), encoding="utf-8")
     (SITE / "fr" / "index.html").write_text(page("fr", data), encoding="utf-8")
+    (SITE / "vault").mkdir(parents=True, exist_ok=True)
+    (SITE / "vault" / "index.html").write_text(vault(), encoding="utf-8")
     (SITE / "feed.xml").write_text(content_feed(cats, "en"), encoding="utf-8")
     (SITE / "fr" / "feed.xml").write_text(content_feed(cats, "fr"), encoding="utf-8")
     (SITE / "changes.xml").write_text(changes_feed(), encoding="utf-8")

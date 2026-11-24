@@ -592,5 +592,16 @@ const v0=viewOf(location.hash);cur=v0;readHash();update();show(v0,true);if(landi
 (window.requestIdleCallback||(f=>setTimeout(f,300)))(()=>index());
 })();
 </script>
+<script>/* ↑↑↓↓←→←→BA opens the Brick Vault (vault/, English only); on a touch screen, swipes stand for the arrows and two taps for B and A */
+(()=>{const SEQ=['up','up','down','down','left','right','left','right','b','a'];let i=0,x0=0,y0=0;
+const go=()=>{location.href=(document.documentElement.lang==='fr'?'../':'')+'vault/#open'};
+const feed=k=>{i=k===SEQ[i]?i+1:(k===SEQ[0]?1:0);if(i===SEQ.length){i=0;go()}};
+const KEYS={ArrowUp:'up',ArrowDown:'down',ArrowLeft:'left',ArrowRight:'right',b:'b',B:'b',a:'a',A:'a'};
+addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey||e.target.closest('input,textarea,select,[contenteditable]'))return;const k=KEYS[e.key];if(k)feed(k);else if(e.key.length===1)i=0},true);
+addEventListener('touchstart',e=>{if(e.touches.length!==1)return;x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true,capture:true});
+addEventListener('touchend',e=>{const t=e.changedTouches[0],dx=t.clientX-x0,dy=t.clientY-y0,ax=Math.abs(dx),ay=Math.abs(dy);
+ if(Math.max(ax,ay)>=40)feed(ax>ay?(dx>0?'right':'left'):(dy>0?'down':'up'));else if(i>=8)feed(SEQ[i])},{passive:true,capture:true});
+})();
+</script>
 </body>
 </html>

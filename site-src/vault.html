@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="{{CSP}}">
+<meta name="robots" content="noindex">
+<title>The Brick Vault · Awesome LEGO</title>
+<link rel="icon" href="../media/favicon.png" type="image/png">
+<link rel="preload" href="../media/fonts/press-start-2p.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* fonts: SIL Open Font License 1.1, see media/fonts/*-LICENSE.txt */
+@font-face{font-family:"Press Start 2P";src:url(../media/fonts/press-start-2p.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Nunito;src:url(../media/fonts/nunito.woff2) format("woff2");font-weight:200 1000;font-display:swap}
+/* VOICE: playful arcade cabinet, a secret behind a wall.
+   IDEA: a cartridge title screen that hides a brick workshop.
+   PICTURE: a wall of bricks that only the code opens; then a live baseplate to build on.
+   COLOUR and TYPE: royal brick blue field, brick yellow support, brick red accent; Press Start 2P titles, Nunito body.
+   LAYOUT: lock screen fills the view; vault = builder first, cheats and achievements beside it, stacked under 900px. */
+:root{color-scheme:dark;--bg:#123a8c;--deep:#0c2a68;--sunk:#0a2357;--ink:#fff;--muted:#c9d6f5;--faint:#8ea3d6;--yel:#f5c518;--red:#d7261e;--grn:#1f9d4c;--line:#2a54ac;--card:#16449c}
+:root[data-theme=light],:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Nunito,system-ui,sans-serif;overflow-x:clip;min-height:100vh}
+h1,h2,.px{font-family:"Press Start 2P",monospace;font-weight:400;line-height:1.35}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;border:0;border-radius:10px;min-height:44px;padding:0 16px;font-weight:800;background:var(--yel);color:#2b1d00;box-shadow:inset 0 -4px 0 rgba(0,0,0,.22)}
+button:active{transform:translateY(2px);box-shadow:inset 0 -2px 0 rgba(0,0,0,.22)}
+button.ghost{background:var(--deep);color:var(--ink);box-shadow:inset 0 -4px 0 rgba(0,0,0,.3)}
+:focus-visible{outline:3px solid var(--yel);outline-offset:3px}
+.hide{display:none!important}
+
+/* lock screen */
+#lock{min-height:100vh;display:grid;place-items:center;padding:24px 16px;position:relative;overflow:hidden;
+ background:
+  linear-gradient(180deg,rgba(12,42,104,.0),rgba(12,42,104,.55)),
+  repeating-linear-gradient(0deg,transparent 0 38px,rgba(0,0,0,.28) 38px 40px),
+  repeating-linear-gradient(90deg,transparent 0 78px,rgba(0,0,0,.28) 78px 80px) 0 0/80px 80px,
+  var(--bg)}
+#lock::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 78px,rgba(0,0,0,.28) 78px 80px);background-position:40px 40px;mask:repeating-linear-gradient(0deg,transparent 0 40px,#000 40px 80px);pointer-events:none}
+.cab{position:relative;width:min(640px,100%);background:var(--sunk);border-radius:22px;padding:clamp(20px,4vw,36px);box-shadow:0 0 0 6px var(--deep),0 24px 60px rgba(0,0,0,.45);text-align:center}
+.cab h1{font-size:clamp(18px,4.4vw,30px);margin:0 0 12px;text-wrap:balance}
+.cab p{color:var(--muted);margin:0 0 22px}
+.slots{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;margin:0 0 22px}
+.slot{aspect-ratio:1;border-radius:6px;background:var(--deep);border:1px solid var(--line);display:grid;place-items:center;font:700 clamp(12px,3vw,20px)/1 Nunito,sans-serif;color:var(--faint);position:relative;transition:background .12s}
+.slot.on{background:var(--yel);color:#2b1d00;border-color:var(--yel);box-shadow:inset 0 -4px 0 rgba(0,0,0,.2)}
+.slot.on::before{content:"";position:absolute;top:-6px;left:50%;width:44%;height:7px;transform:translateX(-50%);background:inherit;border-radius:3px 3px 0 0}
+.slot .g{opacity:0}.hint .slot .g{opacity:1}.slot.on .g{opacity:1}
+.shake{animation:shake .35s}
+@keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.pad{display:flex;justify-content:center;align-items:center;gap:clamp(18px,6vw,48px);flex-wrap:wrap;margin-bottom:18px}
+.dpad{display:grid;grid-template-columns:repeat(3,52px);grid-template-rows:repeat(3,52px);gap:4px}
+.dpad button,.ab button{padding:0;font-size:20px;background:var(--deep);color:var(--ink)}
+.dpad .u{grid-area:1/2}.dpad .l{grid-area:2/1}.dpad .r{grid-area:2/3}.dpad .d{grid-area:3/2}
+.dpad i{grid-area:2/2;background:var(--deep);border-radius:10px}
+.ab{display:flex;gap:14px;transform:rotate(-12deg)}
+.ab button{width:60px;height:60px;border-radius:50%;background:var(--red);color:#fff;font-family:"Press Start 2P",monospace;font-size:14px}
+.foot{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.foot button{min-height:40px;font-size:14px}
+.blink{animation:blink 1.1s steps(1) infinite;color:var(--yel);font-size:11px;margin:0 0 18px}
+@keyframes blink{50%{opacity:0}}
+
+/* rain overlay */
+#rain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9}
+
+/* vault */
+#vault header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px max(4vw,16px);background:var(--deep);position:sticky;top:0;z-index:5}
+#vault header h1{font-size:clamp(13px,2.2vw,18px);margin:0;color:var(--yel)}
+.hud{display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-weight:800}
+.hud span{white-space:nowrap}.hud b{color:var(--yel);font-variant-numeric:tabular-nums}
+main{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start;padding:clamp(18px,3vw,36px) max(4vw,16px);max-width:1340px;margin:0 auto}
+@media(max-width:900px){main{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--card);border-radius:16px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.card h2{font-size:13px;margin:0 0 12px;color:var(--yel)}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.sw{width:44px;height:44px;border-radius:10px;padding:0;border:3px solid transparent;box-shadow:inset 0 -5px 0 rgba(0,0,0,.25)}
+.sw[aria-pressed=true]{border-color:#fff}
+.sep{width:1px;height:32px;background:var(--line)}
+.wd{background:var(--deep);color:var(--ink);min-width:48px}
+.wd[aria-pressed=true]{background:#fff;color:var(--bg)}
+.stage{position:relative;border-radius:12px;overflow:hidden;background:var(--sunk);touch-action:manipulation}
+#plate{display:block;width:100%;cursor:crosshair}
+.msg{position:absolute;left:50%;top:14px;transform:translateX(-50%);background:var(--red);padding:6px 14px;border-radius:8px;font-weight:800;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
+.msg.show{opacity:1}
+.quake{animation:shake .5s 2}
+aside{display:grid;gap:24px;align-content:start}
+form.cheat{display:flex;gap:8px}
+form.cheat input{flex:1;height:44px;border-radius:10px;border:1px solid var(--line);background:var(--sunk);padding:0 12px;font-size:16px;text-transform:uppercase;letter-spacing:.08em}
+.small{color:var(--muted);font-size:14px;margin:10px 0 0}
+.below{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}.below .small{margin:0}
+@media(max-width:600px){#vault header{position:static}.sep{display:none}}
+ul.ach{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+ul.ach li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;align-items:center;padding:8px;border-radius:10px;background:var(--sunk)}
+.badge{width:36px;height:28px;border-radius:5px;background:var(--deep);border:1px solid var(--line);position:relative;margin-top:6px}
+.badge::before,.badge::after{content:"";position:absolute;top:-6px;width:9px;height:6px;border-radius:2px 2px 0 0;background:inherit;border:inherit;border-bottom:0}
+.badge::before{left:5px}.badge::after{right:5px}
+li.got .badge{background:var(--yel);border-color:var(--yel)}
+ul.ach strong{display:block;line-height:1.2}
+ul.ach small{color:var(--muted)}
+li:not(.got) strong{color:var(--faint)}
+.prog{height:10px;border-radius:5px;background:var(--line);overflow:hidden;margin:0 0 14px}
+.prog i{display:block;height:100%;background:var(--yel);transition:width .3s}
+footer{text-align:center;color:var(--muted);padding:0 16px 32px;font-size:14px}
+footer a{color:var(--yel);font-weight:800}
+footer .code{font-weight:800;font-size:18px;color:var(--yel);letter-spacing:.3em;margin:0}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,120px);background:var(--yel);color:#2b1d00;padding:12px 18px;border-radius:12px;font-weight:800;z-index:10;transition:transform .3s;box-shadow:0 10px 30px rgba(0,0,0,.4);max-width:calc(100% - 32px);text-align:center}
+.toast.show{transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<section id="lock" aria-label="Locked vault">
+ <div class="cab" id="cab">
+  <h1>Nothing to see here</h1>
+  <p>Just a wall of bricks. Solid, ordinary, perfectly locked.</p>
+  <div class="slots" id="slots" aria-live="polite"></div>
+  <p class="blink px" id="prompt">Press the code</p>
+  <div class="pad">
+   <div class="dpad">
+    <button class="u" data-k="up" aria-label="Up">▲</button>
+    <button class="l" data-k="left" aria-label="Left">◀</button><i></i>
+    <button class="r" data-k="right" aria-label="Right">▶</button>
+    <button class="d" data-k="down" aria-label="Down">▼</button>
+   </div>
+   <div class="ab"><button data-k="b" aria-label="B">B</button><button data-k="a" aria-label="A">A</button></div>
+  </div>
+  <div class="foot"><button class="ghost" id="hintBtn" aria-pressed="false">Need a hint?</button></div>
+ </div>
+</section>
+
+<canvas id="rain" class="hide"></canvas>
+
+<div id="vault" class="hide">
+ <header>
+  <h1>The Brick Vault</h1>
+  <div class="hud">
+   <span>Bricks <b id="hBricks">0</b></span>
+   <span>Height <b id="hHeight">0</b></span>
+   <span>Lives <b id="hLives">3</b></span>
+   <button class="ghost" id="lockBtn">Lock the vault</button>
+  </div>
+ </header>
+ <main>
+  <section class="card" aria-label="Brick builder">
+   <h2>Baseplate</h2>
+   <div class="tools">
+    <div id="colors" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+    <span class="sep"></span>
+    <div id="widths" style="display:flex;gap:6px"></div>
+   </div>
+   <div class="stage" id="stage"><canvas id="plate" aria-label="Baseplate: click or tap a column to drop a brick"></canvas><div class="msg" id="msg">Top of the tower reached</div></div>
+   <div class="below"><p class="small">Click or tap a column to drop a brick. Keys: 1 to 4 for width, Z to undo.</p><span style="display:flex;gap:8px"><button class="ghost" id="undo">Undo</button><button class="ghost" id="clear">Clear</button></span></div>
+  </section>
+  <aside>
+   <section class="card" aria-label="Cheat codes">
+    <h2>Cheat codes</h2>
+    <form class="cheat" id="cheatForm"><input id="cheatIn" maxlength="12" autocomplete="off" spellcheck="false" aria-label="Cheat code" placeholder="Type a code"><button>Enter</button></form>
+    <p class="small" id="cheatOut">Five codes hide in this vault. Typing anywhere works too.</p>
+   </section>
+   <section class="card" aria-label="Achievements">
+    <h2>Achievements <span id="achCount" style="float:right;color:var(--ink)"></span></h2>
+    <div class="prog"><i id="achBar"></i></div>
+    <ul class="ach" id="ach"></ul>
+    <p class="small"><button class="ghost" id="resetAll" style="min-height:36px;font-size:14px">Reset progress</button></p>
+   </section>
+  </aside>
+ </main>
+ <footer><p class="code">↑↑↓↓←→←→BA</p><p>Generic bricks, no brand inside. Progress stays in this browser only.</p><p><a href="../">Back to Awesome LEGO</a></p></footer>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+{
+const $=id=>document.getElementById(id);
+const store={get(k,d){try{const v=localStorage.getItem('vault-'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('vault-'+k,JSON.stringify(v))}catch(e){}}};
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* sound */
+let ac=null;
+const beep=(f,d=.08,type='square',vol=.05,when=0)=>{try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();const t=ac.currentTime+when,o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.setValueAtTime(f,t);g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g).connect(ac.destination);o.start(t);o.stop(t+d)}catch(e){}};
+const clack=()=>{beep(180,.06,'triangle',.12);beep(90,.05,'square',.04,.01)};
+const fanfare=()=>[523,659,784,1047,784,1047].forEach((f,i)=>beep(f,.14,'square',.05,i*.1));
+
+/* toast */
+let tt;const toast=t=>{const e=$('toast');e.textContent=t;e.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>e.classList.remove('show'),2400)};
+
+/* konami */
+const SEQ=['up','up','down','down','left','right','left','right','b','a'];
+const GLYPH={up:'↑',down:'↓',left:'←',right:'→',b:'B',a:'A'};
+const KEYMAP={ArrowUp:'up',ArrowDown:'down',ArrowLeft:'left',ArrowRight:'right',b:'b',B:'b',a:'a',A:'a'};
+const slots=$('slots');
+slots.innerHTML=SEQ.map(k=>`<div class="slot"><span class="g">${GLYPH[k]}</span></div>`).join('');
+let pos=0;
+const paint=()=>[...slots.children].forEach((s,i)=>s.classList.toggle('on',i<pos));
+const press=k=>{
+ if($('lock').classList.contains('hide'))return;
+ if(k===SEQ[pos]){pos++;beep(330+pos*70,.09);paint();if(pos===SEQ.length){pos=0;setTimeout(unlock,180)}}
+ else{pos=k===SEQ[0]?1:0;beep(110,.18,'sawtooth',.06);const c=$('cab');c.classList.remove('shake');void c.offsetWidth;c.classList.add('shake');paint()}
+};
+document.querySelectorAll('[data-k]').forEach(b=>b.addEventListener('click',()=>press(b.dataset.k)));
+$('hintBtn').addEventListener('click',e=>{const on=slots.classList.toggle('hint');e.currentTarget.setAttribute('aria-pressed',on);e.currentTarget.textContent=on?'Hide the hint':'Need a hint?'});
+
+/* rain */
+const COLORS=[['Red','#d7261e'],['Yellow','#f5c518'],['Blue','#2f6fe0'],['Green','#1f9d4c'],['White','#f2f2ee'],['Black','#2a2a2e'],['Orange','#f07f13'],['Lime','#9ccb2b']];
+const shade=(hex,a)=>{const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;const f=v=>Math.max(0,Math.min(255,Math.round(a<0?v*(1+a):v+(255-v)*a)));return `rgb(${f(r)},${f(g)},${f(b)})`};
+function brick(ctx,x,y,w,h,col,units){
+ const sh=h*.22,sw=w/units*.5;
+ ctx.fillStyle=col;
+ for(let i=0;i<units;i++){const cx=x+w/units*(i+.5);ctx.fillRect(cx-sw/2,y-sh,sw,sh+1);ctx.fillStyle=shade(col,.35);ctx.fillRect(cx-sw/2,y-sh,sw*.28,sh);ctx.fillStyle=col}
+ ctx.fillRect(x,y,w,h);
+ ctx.fillStyle=shade(col,.28);ctx.fillRect(x,y,w,Math.max(2,h*.1));
+ ctx.fillStyle=shade(col,-.28);ctx.fillRect(x,y+h*.84,w,h*.16);ctx.fillRect(x+w-2,y,2,h);
+}
+function unlock(){
+ fanfare();store.set('open',true);award('code');
+ if(reduced){showVault();return}
+ const c=$('rain');c.classList.remove('hide');const ctx=c.getContext('2d'),W=c.width=innerWidth,H=c.height=innerHeight;
+ const ps=Array.from({length:140},()=>{const u=1+Math.floor(Math.random()*3),s=18+Math.random()*16;return{x:Math.random()*W,y:-Math.random()*H*1.2-40,v:4+Math.random()*7,r:Math.random()*6,vr:(Math.random()-.5)*.15,u,s,col:COLORS[Math.floor(Math.random()*7)][1]}});
+ const t0=performance.now();let shown=false;
+ const tick=t=>{ctx.clearRect(0,0,W,H);for(const p of ps){p.y+=p.v;p.v+=.18;p.r+=p.vr;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);brick(ctx,-p.s*p.u/2,-p.s*.4,p.s*p.u,p.s*.8,p.col,p.u);ctx.restore()}
+  if(!shown&&t-t0>700){shown=true;showVault()}
+  if(t-t0<2600)requestAnimationFrame(tick);else{c.classList.add('hide');ctx.clearRect(0,0,W,H)}};
+ requestAnimationFrame(tick);
+}
+function showVault(){$('lock').classList.add('hide');$('vault').classList.remove('hide');resize();toast('Vault open. +30 bricks of fun.')}
+$('lockBtn').addEventListener('click',()=>{store.set('open',false);$('vault').classList.add('hide');$('lock').classList.remove('hide');pos=0;paint();beep(220,.2,'triangle',.08)});
+
+/* builder */
+const COLS=16,ROWS=12;
+let bricks=store.get('bricks',[]),placed=store.get('placed',0),lives=store.get('lives',3),gold=false;
+let color=COLORS[0][1],width=2,hover=null,anim=[];
+$('colors').innerHTML=COLORS.map(([n,h],i)=>`<button class="sw" style="background:${h}" data-c="${h}" aria-label="${n}" aria-pressed="${i===0}"></button>`).join('');
+$('widths').innerHTML=[1,2,3,4].map(w=>`<button class="wd" data-w="${w}" aria-pressed="${w===2}">1×${w}</button>`).join('');
+const setColor=c=>{color=c;document.querySelectorAll('.sw').forEach(b=>b.setAttribute('aria-pressed',b.dataset.c===c))};
+const setWidth=w=>{width=w;document.querySelectorAll('.wd').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.w===w));draw()};
+$('colors').addEventListener('click',e=>{const b=e.target.closest('.sw');if(b)setColor(b.dataset.c)});
+$('widths').addEventListener('click',e=>{const b=e.target.closest('.wd');if(b)setWidth(+b.dataset.w)});
+const cv=$('plate'),cx=cv.getContext('2d');let cell=40,bh=40,top0=0,dpr=1;
+function resize(){dpr=devicePixelRatio||1;const w=cv.parentElement.clientWidth;cell=w/COLS;bh=cell*.95;top0=bh*.6;const h=top0+ROWS*bh+cell*.5;cv.width=w*dpr;cv.height=h*dpr;cv.style.height=h+'px';cx.setTransform(dpr,0,0,dpr,0,0);draw()}
+const heights=()=>{const h=Array(COLS).fill(0);for(const b of bricks)for(let c=b.c;c<b.c+b.w;c++)h[c]=Math.max(h[c],b.row+1);return h};
+const landing=(c,w)=>{const h=heights();return Math.max(...h.slice(c,c+w))};
+const yOf=row=>top0+(ROWS-1-row)*bh;
+function draw(){
+ const W=cv.width/dpr,H=cv.height/dpr,base=top0+ROWS*bh;
+ cx.clearRect(0,0,W,H);
+ cx.fillStyle='rgba(255,255,255,.04)';for(let r=0;r<ROWS;r++)if(r%2)cx.fillRect(0,yOf(r),W,bh);
+ brick(cx,0,base,W,cell*.5,'#1f9d4c',COLS);
+ const now=performance.now();
+ for(const b of bricks){let y=yOf(b.row);const a=anim.find(q=>q.b===b);if(a){const k=Math.min(1,(now-a.t)/260);y=-bh+(y+bh)*(1-(1-k)**3)}brick(cx,b.c*cell,y,b.w*cell,bh,b.col,b.w)}
+ if(hover!=null&&!anim.length){const c=Math.min(hover,COLS-width),row=landing(c,width);if(row<ROWS){cx.globalAlpha=.4;brick(cx,c*cell,yOf(row),width*cell,bh,gold?'#d4af37':color,width);cx.globalAlpha=1}}
+}
+function loop(){const now=performance.now();anim=anim.filter(a=>{if(now-a.t>=260){clack();return false}return true});draw();if(anim.length)requestAnimationFrame(loop)}
+function hud(){const h=Math.max(0,...heights());$('hBricks').textContent=bricks.length;$('hHeight').textContent=h;$('hLives').textContent=lives;store.set('bricks',bricks);store.set('placed',placed);store.set('lives',lives)}
+function flash(t){const m=$('msg');m.textContent=t;m.classList.add('show');setTimeout(()=>m.classList.remove('show'),1400)}
+function drop(col){
+ const c=Math.max(0,Math.min(col,COLS-width)),row=landing(c,width);
+ if(row>=ROWS){flash('Top of the tower reached');beep(110,.15,'sawtooth',.05);return}
+ const b={c,w:width,row,col:gold?'#d4af37':color};bricks.push(b);placed++;
+ if(reduced)clack();else{anim.push({b,t:performance.now()});if(anim.length===1)requestAnimationFrame(loop)}
+ award('first');if(placed>=50)award('fifty');if(row===ROWS-1)award('sky');hud();draw();
+}
+const colAt=e=>{const r=cv.getBoundingClientRect();return Math.floor((e.clientX-r.left)/cell)};
+cv.addEventListener('pointermove',e=>{if(e.pointerType==='mouse'){hover=colAt(e);draw()}});
+cv.addEventListener('pointerleave',()=>{hover=null;draw()});
+cv.addEventListener('click',e=>drop(colAt(e)));
+$('undo').addEventListener('click',()=>{if(bricks.pop()){anim=[];hud();draw();beep(260,.06,'triangle',.06)}});
+$('clear').addEventListener('click',()=>{if(!bricks.length)return;anim=[];bricks=[];hud();draw();beep(80,.3,'sawtooth',.06)});
+new ResizeObserver(()=>{if(!$('vault').classList.contains('hide'))resize()}).observe($('stage'));
+
+/* achievements */
+const ACH=[
+ ['code','Code breaker','Open the vault'],
+ ['first','First brick','Drop a brick on the baseplate'],
+ ['sky','Skyscraper','Reach the top row'],
+ ['fifty','Architect','Drop 50 bricks in total'],
+ ['rainbow','Prism','Find the code that paints in all colours'],
+ ['tower','Instant city','Find the code that builds by itself'],
+ ['quake','Tremor','Find the code that shakes things up'],
+ ['gold','Midas','Find the code made of precious metal'],
+ ['lives','Extra lives','Find the code every arcade player dreams of']];
+let got=store.get('ach',[]);
+function renderAch(){
+ $('ach').innerHTML=ACH.map(([id,n,h])=>{const g=got.includes(id);return `<li class="${g?'got':''}"><span class="badge"></span><span><strong>${g?n:'???'}</strong><small>${h}</small></span></li>`}).join('');
+ $('achCount').textContent=got.length+' / '+ACH.length;$('achBar').style.width=got.length/ACH.length*100+'%';
+}
+function award(id){if(got.includes(id))return;got.push(id);store.set('ach',got);renderAch();const a=ACH.find(x=>x[0]===id);toast('Achievement: '+a[1]);setTimeout(()=>[784,1047].forEach((f,i)=>beep(f,.12,'square',.05,i*.09)),120);if(got.length===ACH.length)setTimeout(()=>toast('Every secret found. Vault complete.'),2600)}
+$('resetAll').addEventListener('click',()=>{got=['code'];bricks=[];placed=0;lives=3;gold=false;store.set('ach',got);const syncFocus=()=>{const f=document.hasFocus();$('prompt').textContent=f?'Press the code':'Click here first';$('prompt').classList.toggle('nofocus',!f)};
+addEventListener('focus',syncFocus);addEventListener('blur',syncFocus);setInterval(syncFocus,500);
+$('lock').addEventListener('pointerdown',()=>{try{window.focus()}catch(e){}setTimeout(syncFocus,50)});
+renderAch();hud();syncFocus();draw();toast('Progress reset')});
+
+/* cheats */
+const CHEATS={
+ RAINBOW(){bricks.forEach(b=>b.col=COLORS[[0,6,1,7,3,2][b.c%6]][1]);draw();hud();return 'Every brick takes a colour of the rainbow.'},
+ TOWER(){let n=0;for(let i=0;i<40;i++){const w=1+Math.floor(Math.random()*4),c=Math.floor(Math.random()*(COLS-w+1)),row=landing(c,w);if(row<ROWS-2){bricks.push({c,w,row,col:COLORS[Math.floor(Math.random()*7)][1]});n++}}placed+=n;if(placed>=50)award('fifty');hud();draw();return n+' bricks appear out of nowhere.'},
+ QUAKE(){const s=$('stage');s.classList.remove('quake');void s.offsetWidth;s.classList.add('quake');const h=Math.max(0,...heights());const before=bricks.length;bricks=bricks.filter(b=>b.row<h-3);beep(60,.6,'sawtooth',.09);hud();draw();return (before-bricks.length)+' bricks tumble off the top.'},
+ GOLD(){gold=!gold;draw();return gold?'New bricks come out in solid gold.':'Back to plastic.'},
+ LIVES(){lives=30;hud();return 'Lives set to 30. Use them wisely.'}};
+let buf='';
+function tryCheat(raw){const code=raw.toUpperCase().replace(/[^A-Z0-9]/g,''),f=CHEATS[code];if(!f)return false;$('cheatOut').textContent=f();award(code.toLowerCase());fanfare();return true}
+$('cheatForm').addEventListener('submit',e=>{e.preventDefault();const i=$('cheatIn');if(!tryCheat(i.value)){$('cheatOut').textContent='Nothing happens. Not a known code.';beep(110,.18,'sawtooth',.05)}i.value=''});
+
+/* keyboard */
+addEventListener('keydown',e=>{
+ if(!$('lock').classList.contains('hide')){const k=KEYMAP[e.key];if(k){if(k.length>1)e.preventDefault();press(k)}return}
+ if(e.target.tagName==='INPUT')return;
+ if('1234'.includes(e.key)&&e.key.length===1){setWidth(+e.key);return}
+ if(e.key==='z'||e.key==='Z'){$('undo').click();return}
+ if(/^[a-zA-Z0-9]$/.test(e.key)){buf=(buf+e.key.toUpperCase()).slice(-8);for(const c in CHEATS)if(buf.endsWith(c)){tryCheat(c);buf=''}}
+});
+
+const syncFocus=()=>{const f=document.hasFocus();$('prompt').textContent=f?'Press the code':'Click here first';$('prompt').classList.toggle('nofocus',!f)};
+addEventListener('focus',syncFocus);addEventListener('blur',syncFocus);setInterval(syncFocus,500);
+$('lock').addEventListener('pointerdown',()=>{try{window.focus()}catch(e){}setTimeout(syncFocus,50)});
+renderAch();hud();syncFocus();
+if(location.hash==='#open'){history.replaceState(null,'',location.pathname);unlock()}
+else if(store.get('open',false)){$('lock').classList.add('hide');$('vault').classList.remove('hide');requestAnimationFrame(resize)}
+}
+</script>
+</body>
+</html>
