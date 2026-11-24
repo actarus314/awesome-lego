@@ -14,10 +14,11 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      # 401 and 403: a bot check in front of a public page; 405: an endpoint that answers only another method (an MCP server)
       - id: lychee
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
-          args: --no-progress --max-retries 2 --timeout 30 --accept 200..=299,403,429 --exclude-path site 'data/*.toml' README.md contributing.md MAINTENANCE.md
+          args: --no-progress --max-retries 3 --timeout 30 --accept 200..=299,401,403,405,429 --exclude-loopback --exclude-path site 'data/*.toml' README.md contributing.md MAINTENANCE.md
           output: lychee-report.md
           fail: false
       - name: Open, update or close the links issue   # one issue, kept up to date, closed when every link answers

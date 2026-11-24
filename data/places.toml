@@ -837,7 +837,7 @@ kind = "read"
 [[resource]]
 id = "palais-de-la-maquette"
 name = "Palais de la Maquette - Musée du Jouet"
-url = "https://www.palaisdelamaquette.com/"
+url = "http://www.palaisdelamaquette.com/"
 group = "museums-and-exhibitions"
 featured = true
 covers = ["official", "places"]
@@ -858,11 +858,11 @@ strengths_fr = [
 ]
 weaknesses_en = [
   "Not accessible to wheelchairs",
-  "Opening hours reduced outside school holidays (weekends, 13:30 to 18:00 from November to December 2026); outdated website",
+  "Opening hours reduced outside school holidays (weekends, 13:30 to 18:00 from November to December 2026); outdated website, whose secure address (https) is refused by browsers (self-signed certificate, 2026-11-24)",
 ]
 weaknesses_fr = [
   "Non accessible aux fauteuils roulants",
-  "Horaires réduits hors vacances (week-ends de 13:30 à 18:00 de novembre à décembre 2026) ; site web daté",
+  "Horaires réduits hors vacances (week-ends de 13:30 à 18:00 de novembre à décembre 2026) ; site web daté, dont l'adresse sécurisée (https) est refusée par les navigateurs (certificat auto-signé, 24/11/2026)",
 ]
 size_en = "200 m², 650000 LEGO pieces and 170000 K'NEX pieces"
 size_fr = "200 m², 650000 pièces LEGO et 170000 pièces K'NEX"
@@ -874,7 +874,7 @@ confidence = "high"
 city = "Valras-Plage"
 
 [[resource.sources]]
-url = "https://www.palaisdelamaquette.com/"
+url = "http://www.palaisdelamaquette.com/"
 date = "2026-11-23"
 kind = "read"
 

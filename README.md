@@ -303,7 +303,7 @@ Venues of the brick world that can be visited: official LEGO venues and stores, 
 
 - [Frankensteins Klemmbaustein Museum](https://frankensteins.de/) - Museum in Eckental near Nuremberg showing LEGO and compatible brands (COBI, Mould King, Wange, Cada, Reobrix, Sembo and others), with a large main layout, special exhibitions, a building room, a shop and a café. Opened in October 2021. Covers official LEGO and alternative brands.
 - [Museum of Bricks](https://museumofbricks.cz/) - Private LEGO museum with five sites in Czechia (Prague flagship on Národní třída, Kutná Hora, Špindlerův Mlýn, Poděbrady, Hatě near Znojmo), built on the collection of Miloš Křeček. Covers official LEGO.
-- [Palais de la Maquette - Musée du Jouet](https://www.palaisdelamaquette.com/) - Toy museum in Valras-Plage (Hérault) with giant animated LEGO and K'NEX models on 200 m²: seaside resort, harbour, medieval town, amusement park. Covers official LEGO.
+- [Palais de la Maquette - Musée du Jouet](http://www.palaisdelamaquette.com/) - Toy museum in Valras-Plage (Hérault) with giant animated LEGO and K'NEX models on 200 m²: seaside resort, harbour, medieval town, amusement park. Covers official LEGO.
 
 ### Physical shops (alternative brands and used bricks)
 

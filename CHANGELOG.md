@@ -2,6 +2,9 @@
 
 # v2.x — The directory read at the source down to its links: which brands each entry deals with, how it is funded, who makes the bricks; a website in three views, directory, out and about, observatory.
 
+## v2.10 — 2026-11-24
+Data: the Palais de la Maquette links to its plain address (http), its secure address being refused by browsers (self-signed certificate). Checks: the hashes of the security policy are computed from the scripts read by an HTML parser instead of a regular expression (two code scanning alerts); a run of the website started by hand also keeps the day's measurements; the rendering check runs on Node 26 and Python 3.15; the links check counts a bot check (401) and a method refused by an endpoint (405) as an answer, skips local addresses and retries three times, and the forms of contributing.md are linked by their full address.
+
 ## v2.9 — 2026-11-24
 Website: with the wider fonts of some systems (DejaVu Sans, as on Linux and on the GitHub runners), entry names on narrow phones and brand names of the observatory's heat map no longer break inside a word: an entry's category moves below its name, and the heat map scrolls inside its own box. Checks: the rendering check can draw the page with those fonts (`--dejavu`), the way the Render workflow sees it.
 
