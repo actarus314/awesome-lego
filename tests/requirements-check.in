@@ -1,0 +1,1 @@
+reuse==6.3.0   # licence of every file (REUSE.toml, LICENSES/), checked by `reuse lint` in Check

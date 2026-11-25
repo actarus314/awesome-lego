@@ -25,7 +25,7 @@ jobs:
         run: python3 scripts/vendor.py --check
       - name: Licence of every file (REUSE specification)
         run: |
-          python3 -m pip install --quiet -r tests/requirements-check.txt
+          python3 -m pip install --quiet --require-hashes -r tests/requirements-check.txt
           reuse lint
       - name: Validate data and check that generated files are up to date
         run: python3 scripts/build.py --check

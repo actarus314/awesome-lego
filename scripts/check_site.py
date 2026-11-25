@@ -18,7 +18,7 @@ themes. Fails on:
   not a conformance target: the 13 px studs of the category map are accepted, and marks told apart by colour
   alone (WCAG 1.4.1) are not checked (decision of 24/11/2026).
 
-Usage: python3 scripts/check_site.py [--site site] [--quick] [--chrome /path/to/chrome] [--axe path/to/axe.min.js]
+Usage: python3 scripts/check_site.py [--site site] [--quick | --data-only] [--chrome /path/to/chrome] [--axe path/to/axe.min.js]
 Needs `pip install playwright`, `playwright install chromium` (or --chrome) and `npm install axe-core`
 (found in node_modules/ by default). Exit status 1 on any failure.
 """
@@ -136,6 +136,8 @@ def main():
     ap.add_argument("--chrome", default="", help="Chrome or Chromium to use instead of Playwright's")
     ap.add_argument("--json", default="", help="write the findings to this file")
     ap.add_argument("--no-axe", action="store_true", help="layout checks only")
+    ap.add_argument("--data-only", action="store_true", help="for a change of data alone (workflow Render): layout at 1440, 390 and 320 px in the light theme, "
+                    "no accessibility pass; colours, controls and landmarks come from the source of the website, not from the data")
     ap.add_argument("--dejavu", action="store_true", help="draw system-ui and sans-serif with DejaVu Sans, as on the Ubuntu runners of GitHub Actions (wider than most desktop fonts)")
     ap.add_argument("--axe", default=str(ROOT / "node_modules" / "axe-core" / "axe.min.js"), help="axe-core build (npm install axe-core)")
     a = ap.parse_args()
@@ -154,7 +156,7 @@ def main():
     srv = socketserver.ThreadingTCPServer(("127.0.0.1", 0), h)
     threading.Thread(target=srv.serve_forever, daemon=True).start()
     base = f"http://127.0.0.1:{srv.server_address[1]}/"
-    widths = [1440, 390] if a.quick else [1440, 1024, 768, 390, 320]
+    widths = [1440, 390, 320] if a.data_only else [1440, 390] if a.quick else [1440, 1024, 768, 390, 320]
     found = {}
 
     def record(lang, w, theme, state, items):
@@ -191,7 +193,7 @@ def main():
         for lang, root in (("en", ""), ("fr", "fr/")):
             for w in widths:
                 for theme in ("light", "dark"):
-                    if theme == "dark" and w not in (1440, 390):
+                    if theme == "dark" and (a.data_only or w not in (1440, 390)):
                         continue  # colours do not depend on the width; layout is checked in light
                     mobile = w < 700
                     c = b.new_context(viewport={"width": w, "height": 900}, locale="fr-FR" if lang == "fr" else "en-GB",
@@ -232,7 +234,7 @@ def main():
             c.close()
         # accessibility: axe-core injected into the page (the page's own security policy is bypassed for that only)
         axe = Path(a.axe)
-        if a.no_axe:
+        if a.no_axe or a.data_only:
             pass
         elif not axe.exists():
             found.setdefault(("accessibility", "", f"axe-core not found at {axe}: npm install axe-core"), []).append("setup")
@@ -276,7 +278,7 @@ def main():
         if len(v) > 12:
             print(f"   … {len(v) - 12} more")
     if not by:
-        print(f"✓ rendering: {len(widths)} widths, 2 themes, 2 languages, {len(STATES) + 1} views")
+        print(f"✓ rendering: {len(widths)} widths, {'1 theme' if a.data_only else '2 themes'}, 2 languages, {len(STATES) + 1} views" + (" (data only: no accessibility pass)" if a.data_only else ""))
     return 1 if by else 0
 
 

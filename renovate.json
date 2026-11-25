@@ -25,6 +25,22 @@
       "prBodyNotes": [
         "Files of this package are kept in the repository: on this branch, run `npm ci --ignore-scripts && python3 scripts/vendor.py && python3 scripts/build.py` and commit the result before merging (Check fails until then)."
       ]
+    },
+    {
+      "description": "Python tools of the checks: locked with hashes by uv pip compile (tests/*.in → tests/*.txt); the plain requirements manager leaves the lock files alone.",
+      "matchManagers": [
+        "pip_requirements"
+      ],
+      "matchFileNames": [
+        "tests/requirements.txt",
+        "tests/requirements-check.txt"
+      ],
+      "enabled": false
     }
-  ]
+  ],
+  "pip-compile": {
+    "managerFilePatterns": [
+      "/^tests/requirements(-check)?\\.txt$/"
+    ]
+  }
 }
