@@ -33,6 +33,9 @@ name = "Skærbæk Fan Weekend"
 url = "https://www.fanweekend.dk/"
 group = "conventions"
 featured = true
+rank = {intl = 1, DK = 1}
+rank_reason_en = "More than 1000 adult fans gather each year in southern Jutland, with a public exhibition of custom builds, held the last complete weekend of September."
+rank_reason_fr = "Plus de 1000 fans adultes se réunissent chaque année dans le sud du Jutland, avec une exposition publique de créations originales, le dernier week-end complet de septembre."
 covers = ["events", "official"]
 languages = ["en", "da"]
 countries = ["DK"]
@@ -74,6 +77,9 @@ id = "bricking-bavaria"
 name = "Bricking Bavaria"
 url = "https://brickingbavaria-fanevent.de/"
 group = "conventions"
+rank = {intl = 2, DE = 1}
+rank_reason_en = "22nd edition in 2026 with more than 550 exhibitors on almost 7000 square metres at the Messe Augsburg."
+rank_reason_fr = "22e édition en 2026 avec plus de 550 exposants sur près de 7000 mètres carrés à la Messe Augsburg."
 covers = ["events", "official"]
 languages = ["de", "en"]
 countries = ["DE"]
@@ -115,6 +121,9 @@ id = "brickfair"
 name = "BrickFair"
 url = "https://www.brickfair.com/"
 group = "conventions"
+rank = {US = 3}
+rank_reason_en = "Several editions per year in different states, the next in Richmond, Virginia, on 3 and 4 April 2027."
+rank_reason_fr = "Plusieurs éditions par an dans différents États, la prochaine à Richmond, en Virginie, les 3 et 4 avril 2027."
 covers = ["events", "official"]
 languages = ["en"]
 countries = ["US"]
@@ -150,6 +159,9 @@ id = "brickworld"
 name = "Brickworld"
 url = "https://brickworld.com/"
 group = "conventions"
+rank = {intl = 4, US = 1}
+rank_reason_en = "Chicago show with a recognised fan convention from Wednesday to Sunday and an Indianapolis show; Indianapolis on 3 and 4 April and Chicago on 19 and 20 June in 2027."
+rank_reason_fr = "Exposition de Chicago avec une convention de fans reconnue du mercredi au dimanche et exposition d'Indianapolis ; Indianapolis les 3 et 4 avril et Chicago les 19 et 20 juin en 2027."
 covers = ["events", "official"]
 languages = ["en"]
 countries = ["US"]
@@ -189,6 +201,9 @@ date = "2026-11-24"
 id = "brickcon"
 name = "BrickCon"
 url = "https://www.brickcon.org/"
+rank = {intl = 5, US = 2}
+rank_reason_en = "25th edition in 2026 with more than 500 builders, billed as the longest-running LEGO fan convention."
+rank_reason_fr = "25e édition en 2026 avec plus de 500 constructeurs, présentée comme la plus ancienne convention de fans LEGO."
 feed = "https://www.brickcon.org/index.xml"
 group = "conventions"
 covers = ["events", "official"]
@@ -230,6 +245,9 @@ date = "2026-11-24"
 id = "brickvention"
 name = "Brickvention"
 url = "https://www.brickvention.melbourne/"
+rank = {AU = 1}
+rank_reason_en = "More than 300 exhibitors at the Royal Exhibition Building, around the third weekend of January, next edition on 15 January 2027."
+rank_reason_fr = "Plus de 300 exposants au Royal Exhibition Building, vers le troisième week-end de janvier, prochaine édition le 15 janvier 2027."
 feed = "https://www.brickvention.melbourne/feed/"
 group = "conventions"
 covers = ["events", "official"]
@@ -272,6 +290,9 @@ id = "lego-house-afol-day"
 name = "LEGO House AFOL Day"
 url = "https://event.legohouse.com/"
 group = "conventions"
+rank = {DK = 2}
+rank_reason_en = "Two-day event for adult fans at the LEGO House, with about 900 participants in 2026."
+rank_reason_fr = "Événement de deux jours pour les fans adultes à LEGO House, avec environ 900 participants en 2026."
 operator = "lego-group"
 covers = ["events", "official"]
 languages = ["en"]
@@ -312,6 +333,9 @@ id = "bricktastic"
 name = "Bricktastic"
 url = "https://bricktastic.org/"
 group = "conventions"
+rank = {intl = 3, GB = 1}
+rank_reason_en = "Largest recognised LEGO fan event in the United Kingdom, with over 400 exhibitors announced for 2027, for the charity Fairy Bricks."
+rank_reason_fr = "Plus grand événement de fans LEGO reconnu du Royaume-Uni, avec plus de 400 exposants annoncés pour 2027, au profit de l'association Fairy Bricks."
 covers = ["events", "official"]
 languages = ["en"]
 countries = ["GB"]
@@ -352,6 +376,9 @@ date = "2026-11-24"
 id = "bricktopia-world"
 name = "Bricktopia World"
 url = "https://bricktopia-world.com/"
+rank = {NL = 1}
+rank_reason_en = "International LEGO fan event by Dutchbricks at the MECC Maastricht, with more than 6500 square metres announced for the second edition on 10 April 2027."
+rank_reason_fr = "Événement international de fans LEGO de Dutchbricks au MECC Maastricht, avec plus de 6500 mètres carrés annoncés pour la deuxième édition le 10 avril 2027."
 feed = "https://bricktopia-world.com/feed/"
 group = "conventions"
 covers = ["events", "official"]
@@ -390,6 +417,9 @@ name = "Brick Mania Antwerpen"
 url = "https://www.belug.be/brickmania/antwerpen/"
 group = "conventions"
 featured = true
+rank = {BE = 1}
+rank_reason_en = "13th edition in 2026 with more than 250 exhibitors on 6000 square metres at Antwerp Expo and about 8000 visitors per year according to the press."
+rank_reason_fr = "13e édition en 2026 avec plus de 250 exposants sur 6000 mètres carrés à Antwerp Expo et environ 8000 visiteurs par an selon la presse."
 covers = ["events", "official"]
 languages = ["nl"]
 countries = ["BE"]
@@ -430,6 +460,9 @@ date = "2026-11-24"
 id = "great-western-brick-show"
 name = "Great Western Brick Show"
 url = "https://greatwesternbrickshow.co.uk/"
+rank = {GB = 2}
+rank_reason_en = "Held since 2002 in the STEAM museum by the club Brickish, the longest-running LEGO event in the United Kingdom, with a 25th anniversary edition in 2027."
+rank_reason_fr = "Organisé depuis 2002 au musée STEAM par le club Brickish, plus ancien événement LEGO du Royaume-Uni, avec une édition du 25e anniversaire en 2027."
 feed = "https://greatwesternbrickshow.co.uk/feed/"
 group = "conventions"
 covers = ["events", "official"]
@@ -474,6 +507,9 @@ id = "edinbrick"
 name = "Edinbrick"
 url = "https://www.brickm8.org/edinbrick"
 group = "conventions"
+rank = {GB = 3}
+rank_reason_en = "Charity show for Fairy Bricks presented as the largest in Scotland, sold out eight shows in a row according to the organiser."
+rank_reason_fr = "Exposition caritative au profit de Fairy Bricks présentée comme la plus grande d'Écosse, complète huit éditions de suite selon l'organisateur."
 covers = ["events", "official"]
 languages = ["en"]
 countries = ["GB"]
@@ -510,6 +546,9 @@ id = "brick-feile"
 name = "Brick Féile"
 url = "https://www.xn--brickfile-g4a.ie/"
 group = "conventions"
+rank = {IE = 1}
+rank_reason_en = "Organised by the community Brick.ie for Fairy Bricks, the main LEGO fan event in Ireland, with the largest brick pits in Ireland."
+rank_reason_fr = "Organisé par la communauté Brick.ie au profit de Fairy Bricks, principal événement de fans LEGO d'Irlande, avec les plus grands bacs à briques d'Irlande."
 covers = ["events", "official"]
 languages = ["en"]
 countries = ["IE"]
@@ -550,6 +589,9 @@ id = "brickish-weekend"
 name = "Brickish Weekend"
 url = "https://www.spacecentre.co.uk/whats-on/brickish-weekend/"
 group = "conventions"
+rank = {GB = 4}
+rank_reason_en = "Fan weekend at the National Space Centre in Leicester with fan builds from across the United Kingdom, next on 17 April 2027."
+rank_reason_fr = "Week-end de fans au National Space Centre de Leicester avec des créations de fans de tout le Royaume-Uni, prochaine édition le 17 avril 2027."
 covers = ["events", "official"]
 languages = ["en"]
 countries = ["GB"]
@@ -592,6 +634,9 @@ id = "itlug-lecco"
 name = "ItLUG Lecco"
 url = "https://lecco.itlug.org/"
 group = "conventions"
+rank = {IT = 1}
+rank_reason_en = "Free admission, held by the Italian LEGO user group ItLUG at the Lecco campus of the Politecnico di Milano, one of the longest-running fan exhibitions in Italy according to the organiser."
+rank_reason_fr = "Entrée gratuite, organisé par le groupe d'utilisateurs LEGO italien ItLUG sur le campus de Lecco du Politecnico di Milano, l'une des plus anciennes expositions de fans d'Italie selon l'organisateur."
 covers = ["events", "official"]
 languages = ["it", "en"]
 countries = ["IT"]
@@ -627,6 +672,9 @@ id = "paredes-de-coura-fan-weekend"
 name = "Paredes de Coura Fan Weekend"
 url = "https://fanweekend.pt/"
 group = "conventions"
+rank = {PT = 1}
+rank_reason_en = "Three-day international gathering of adult fans in northern Portugal, with accommodation, meals, workshops and an adult-fan lounge included."
+rank_reason_fr = "Rassemblement international de trois jours de fans adultes dans le nord du Portugal, avec hébergement, repas, ateliers et salon des fans adultes inclus."
 covers = ["events", "official"]
 languages = ["en", "pt"]
 countries = ["PT"]
@@ -660,6 +708,9 @@ kind = "third-party"
 id = "lux-brixembourg"
 name = "Brixembourg"
 url = "https://www.brixembourg.com/"
+rank = {LU = 1}
+rank_reason_en = "Marketplace and exhibition organised since 2019 by the association Brixembourg, usually the first weekend of June, with an event calendar for the Greater Region."
+rank_reason_fr = "Marché et exposition organisés depuis 2019 par l'association Brixembourg, en général le premier week-end de juin, avec un calendrier d'événements de la Grande Région."
 feed = "https://www.brixembourg.com/blog-feed.xml"
 group = "conventions"
 covers = ["events", "official", "alternative"]
@@ -703,6 +754,9 @@ id = "letzbrick"
 name = "Lëtzbrick"
 url = "https://afol55.afol.lu/"
 group = "conventions"
+rank = {LU = 2}
+rank_reason_en = "Public LEGO fan exhibition run by the recognised community AFOL.lu, with about 1600 visitors in 2026 according to the organiser."
+rank_reason_fr = "Exposition publique de fans LEGO tenue par la communauté reconnue AFOL.lu, avec environ 1600 visiteurs en 2026 selon l'organisateur."
 covers = ["events", "official"]
 languages = ["en", "fr", "de"]
 countries = ["LU"]
@@ -744,6 +798,9 @@ name = "Fana'briques"
 url = "https://expo.fanabriques.fr/fr/"
 group = "conventions"
 featured = true
+rank = {FR = 1}
+rank_reason_en = "7000 square metres and about 150 exhibitors from several European countries at the Parc des expositions, 19th edition in 2026."
+rank_reason_fr = "7000 mètres carrés et environ 150 exposants de plusieurs pays européens au Parc des expositions, 19e édition en 2026."
 covers = ["events", "official"]
 languages = ["fr"]
 countries = ["FR"]
@@ -782,6 +839,9 @@ date = "2026-11-24"
 id = "bricks-and-friends"
 name = "Bricks and Friends"
 url = "https://bricksandfriends.wordpress.com/"
+rank = {DE = 3}
+rank_reason_en = "Held since 2021 at the Motorworld in Cologne, with a LEGO trading area and its own custom-builds club."
+rank_reason_fr = "Organisé depuis 2021 au Motorworld de Cologne, avec un espace de vente LEGO et son propre club de créations originales."
 feed = "https://bricksandfriends.wordpress.com/feed/"
 group = "conventions"
 covers = ["events", "official"]
@@ -824,6 +884,9 @@ id = "berliner-steinewahn"
 name = "Berliner SteineWAHN!"
 url = "https://www.steinewahn.de/"
 group = "conventions"
+rank = {DE = 2}
+rank_reason_en = "15th edition in 2026 with 2249 visitors and votes of visitors and exhibitors for the best custom builds."
+rank_reason_fr = "15e édition en 2026 avec 2249 visiteurs et des votes des visiteurs et des exposants pour les meilleures créations originales."
 covers = ["events", "official"]
 languages = ["de"]
 countries = ["DE"]
@@ -858,6 +921,9 @@ date = "2026-11-24"
 id = "steinchenwelt"
 name = "SteinCHenwelt"
 url = "https://steinchenwelt.ch/"
+rank = {CH = 1}
+rank_reason_en = "Held at the Enter Technikwelt in Derendingen, whose site also lists LEGO events and trading fairs in Switzerland; organiser gives 24 and 25 April 2027."
+rank_reason_fr = "Organisé à l'Enter Technikwelt de Derendingen, dont le site liste aussi les événements et bourses LEGO en Suisse ; l'organisateur indique les 24 et 25 avril 2027."
 feed = "https://steinchenwelt.ch/feed/"
 group = "conventions"
 covers = ["events", "official"]
@@ -902,6 +968,9 @@ id = "lego-world-utrecht"
 name = "LEGO World Utrecht"
 url = "https://www.legoworld.nl/"
 group = "conventions"
+rank = {NL = 2}
+rank_reason_en = "23rd edition in 2026 on 36000 square metres in five halls, organised by the LEGO Group, with a fan zone showing builds by selected adult fans."
+rank_reason_fr = "23e édition en 2026 sur 36000 mètres carrés dans cinq halls, organisée par le groupe LEGO, avec une zone de fans présentant des créations de fans adultes sélectionnés."
 operator = "lego-group"
 covers = ["events", "official"]
 languages = ["nl"]
@@ -937,6 +1006,9 @@ id = "landebrick"
 name = "Landébrick"
 url = "https://www.cdp29.fr/fr/agenda/view/1043/landebrick/"
 group = "conventions"
+rank = {FR = 2}
+rank_reason_en = "LEGO festival at the Landévennec abbey with a participatory giant mosaic; the 2026 edition was the fifth."
+rank_reason_fr = "Festival LEGO à l'abbaye de Landévennec avec une mosaïque géante participative ; l'édition 2026 était la cinquième."
 covers = ["events", "official"]
 languages = ["fr"]
 countries = ["FR"]
@@ -967,6 +1039,9 @@ name = "LEGO Ideas challenges"
 url = "https://ideas.lego.com/challenges"
 group = "competitions"
 featured = true
+rank = {intl = 1}
+rank_reason_en = "Building challenges on the LEGO Ideas platform, with set prizes and, for some, a path to an official product; review phase and fan vote with results dates published per challenge."
+rank_reason_fr = "Défis de construction sur la plateforme LEGO Ideas, avec des sets en prix et, pour certains, une voie vers un produit de marque LEGO ; phase d'examen et vote des fans avec dates des résultats publiées par défi."
 operator = "lego-group"
 covers = ["events", "official"]
 languages = ["en"]
@@ -1000,6 +1075,9 @@ id = "bricklink-designer-program"
 name = "BrickLink Designer Program"
 url = "https://www.bricklink.com/v3/designer-program/main.page"
 group = "competitions"
+rank = {intl = 2}
+rank_reason_en = "Fan designers submit digital models with a restricted parts palette; finalists are crowdfunded and produced as sets, with dates published per series."
+rank_reason_fr = "Des concepteurs fans soumettent des modèles numériques avec une palette de pièces restreinte ; les finalistes sont financés par la foule et produits en sets, avec des dates publiées par série."
 operator = "lego-group"
 covers = ["events", "official"]
 languages = ["en"]
@@ -1126,6 +1204,9 @@ id = "avenue-de-la-brique-expositions"
 name = "Avenue de la Brique: expositions LEGO"
 url = "https://www.avenuedelabrique.com/expositions-lego"
 group = "calendars"
+rank = {FR = 3, BE = 3, CH = 5}
+rank_reason_en = "Agenda of LEGO exhibitions and fan events with a detail page per event (dates, hours, organiser) and an archive of past exhibitions."
+rank_reason_fr = "Agenda d'expositions LEGO et d'événements de fans avec une page de détail par événement (dates, horaires, organisateur) et des archives des expositions passées."
 covers = ["events", "official", "alternative"]
 languages = ["fr"]
 countries = ["FR", "BE", "CH"]
@@ -1156,6 +1237,9 @@ kind = "indexed"
 id = "hothbricks-expos"
 name = "hothbricks: expositions et événements LEGO"
 url = "https://www.hothbricks.com/expos/"
+rank = {intl = 5, FR = 1, BE = 1, CH = 3}
+rank_reason_en = "Agenda of LEGO exhibitions and international events with a long list reaching into spring 2027, in French and English."
+rank_reason_fr = "Agenda d'expositions LEGO et d'événements internationaux avec une longue liste allant jusqu'au printemps 2027, en français et en anglais."
 feed = "https://www.hothbricks.com/expos/feed/"
 group = "calendars"
 featured = true
@@ -1184,6 +1268,9 @@ id = "deparkatre-expositions"
 name = "Deparkatre: agenda des expositions LEGO"
 url = "https://deparkatre.fr/expositions"
 group = "calendars"
+rank = {FR = 2, BE = 2, CH = 4}
+rank_reason_en = "Agenda of past and upcoming exhibitions, festivals and fan weekends, including international events such as Brickworld and Brickvention, with prices per event."
+rank_reason_fr = "Agenda d'expositions, de festivals et de week-ends de fans passés et à venir, dont des événements internationaux comme Brickworld et Brickvention, avec les prix par événement."
 covers = ["events", "official", "alternative"]
 languages = ["fr"]
 countries = ["FR", "BE", "CH", "international"]
@@ -1209,6 +1296,9 @@ kind = "read"
 id = "freelug-calendrier-2027"
 name = "FreeLUG: calendrier des expositions 2027"
 url = "https://forum.freelug.org/t/calendrier-des-expositions-lego-prevues-pour-2027-toutes-associations/3629"
+rank = {FR = 5}
+rank_reason_en = "Pinned forum topic of the association FreeLUG listing the exhibitions planned for 2027 by all associations, completed by members."
+rank_reason_fr = "Sujet épinglé du forum de l'association FreeLUG listant les expositions prévues en 2027 par toutes les associations, complété par les membres."
 feed = "https://forum.freelug.org/t/calendrier-des-expositions-lego-prevues-pour-2027-toutes-associations/3629.rss"
 group = "calendars"
 covers = ["events", "official", "alternative"]
@@ -1264,6 +1354,9 @@ name = "steine-kanal: Veranstaltungskalender"
 url = "https://www.steine-kanal.de/veranstaltungskalender-2027-alle-lego-fan-veranstaltungen-und-boersen-im-uberblick/"
 group = "calendars"
 featured = true
+rank = {intl = 4, DE = 1, AT = 1, LU = 1, NL = 2, CH = 2}
+rank_reason_en = "Yearly month-by-month list for Germany, Austria, Switzerland, the Netherlands and Luxembourg, with a separate section for exhibitions of other manufacturers; last update on 23 November 2026."
+rank_reason_fr = "Liste annuelle mois par mois pour l'Allemagne, l'Autriche, la Suisse, les Pays-Bas et le Luxembourg, avec une section séparée pour les expositions d'autres fabricants ; dernière mise à jour le 23 novembre 2026."
 covers = ["events", "official", "alternative"]
 languages = ["de"]
 countries = ["DE", "AT", "CH", "NL", "LU"]
@@ -1290,6 +1383,9 @@ id = "bricks-mcgee-uk-ireland-events"
 name = "Bricks McGee: UK and Ireland LEGO fan events 2027"
 url = "https://www.bricksmcgee.com/blog/2027-lego-fan-events-in-the-uk-ireland/"
 group = "calendars"
+rank = {GB = 1, IE = 1}
+rank_reason_en = "List of 19 fan events for 2027 with date, venue, organiser and size class."
+rank_reason_fr = "Liste de 19 événements de fans pour 2027 avec date, lieu, organisateur et catégorie de taille."
 covers = ["events", "official", "alternative"]
 languages = ["en"]
 countries = ["GB", "IE"]
@@ -1317,6 +1413,9 @@ id = "merlins-bricks-events"
 name = "Merlins Bricks: conventions and exhibitions"
 url = "https://www.merlinsbricks.com/events/"
 group = "calendars"
+rank = {intl = 3}
+rank_reason_en = "Worldwide table of conventions, fan days and exhibitions with start and end dates, venue, region and country, and a form to submit missing events."
+rank_reason_fr = "Tableau mondial de conventions, de journées de fans et d'expositions avec dates de début et de fin, lieu, région et pays, et un formulaire pour signaler les événements manquants."
 covers = ["events", "official", "alternative"]
 languages = ["en", "de"]
 countries = ["international"]
@@ -1343,6 +1442,9 @@ id = "brick-news-calendar"
 name = "brick.news: events calendar"
 url = "https://brick.news/calendar"
 group = "calendars"
+rank = {intl = 1}
+rank_reason_en = "Worldwide listing of fan events, conventions, exhibitions, workshops and meetups, with a page per event (venue, admission, website) and more than 43 upcoming events."
+rank_reason_fr = "Liste mondiale d'événements de fans, de conventions, d'expositions, d'ateliers et de rencontres, avec une page par événement (lieu, tarif, site) et plus de 43 événements à venir."
 covers = ["events", "official", "alternative"]
 languages = ["en"]
 countries = ["international"]
@@ -1369,6 +1471,9 @@ id = "swiss-brick-events"
 name = "swiss-brick: LEGO events 2026/27"
 url = "https://www.swiss-brick.com/lego-events-und-ausstellungen/"
 group = "calendars"
+rank = {CH = 1, DE = 2, AT = 2}
+rank_reason_en = "List of LEGO exhibitions and trading fairs with Swiss events first, last checked on 2 November 2026."
+rank_reason_fr = "Liste d'expositions et de bourses LEGO avec les événements suisses en premier, dernière vérification le 2 novembre 2026."
 covers = ["events", "official", "alternative"]
 languages = ["de"]
 countries = ["CH", "DE", "AT"]
@@ -1394,6 +1499,9 @@ kind = "read"
 id = "stonewars-events"
 name = "Stonewars: LEGO events and exhibitions"
 url = "https://www.stonewars.de/events/"
+rank = {DE = 3, AT = 3}
+rank_reason_en = "News site with an overview of exhibitions, events and fairs and reports on major events such as Bricking Bavaria and the Skærbæk Fan Weekend."
+rank_reason_fr = "Site d'actualité avec un aperçu des expositions, événements et salons et des comptes rendus d'événements majeurs comme Bricking Bavaria et le Skærbæk Fan Weekend."
 feed = "https://www.stonewars.de/events/feed/"
 group = "calendars"
 covers = ["events", "official", "alternative"]
@@ -1422,6 +1530,9 @@ id = "fan-colab-events"
 name = "LEGO Fan CoLab events"
 url = "https://fancolab.lego.com/events/"
 group = "calendars"
+rank = {intl = 2}
+rank_reason_en = "Official platform of the LEGO Group listing the events of recognised fan communities, including flagship events with full descriptions, searchable by location."
+rank_reason_fr = "Plateforme officielle du groupe LEGO listant les événements des communautés de fans reconnues, dont les événements phares avec descriptions complètes, avec recherche par lieu."
 operator = "lego-group"
 covers = ["events", "official"]
 languages = ["en"]
@@ -1448,6 +1559,9 @@ id = "brickdb-events"
 name = "BrickDb: événements"
 url = "https://www.brickdb.fr/events"
 group = "calendars"
+rank = {FR = 4}
+rank_reason_en = "Community-submitted listings of fan events, checked by a person before publication and filterable by country."
+rank_reason_fr = "Listes d'événements de fans proposées par la communauté, vérifiées par une personne avant publication et filtrables par pays."
 covers = ["events", "official", "alternative"]
 languages = ["fr", "en"]
 countries = ["FR", "international"]
@@ -1474,6 +1588,9 @@ id = "bauspielbahn-treffen"
 name = "Bauspielbahn-Treffen (BSBT)"
 url = "https://lbrick.de/bauspielbahn-treffen/"
 group = "conventions"
+rank = {DE = 4}
+rank_reason_en = "Yearly meeting of LEGO train builders near Leipzig with a shared layout of about 700 square metres; the organiser calls it the largest LEGO train fan event in Europe."
+rank_reason_fr = "Rencontre annuelle de constructeurs de trains LEGO près de Leipzig avec une installation commune d'environ 700 mètres carrés ; l'organisateur la présente comme le plus grand événement de fans de trains LEGO en Europe."
 covers = ["events", "clubs"]
 languages = ["de", "en"]
 countries = ["DE"]
@@ -1520,6 +1637,9 @@ id = "brick-train-awards"
 name = "Brick Train Awards"
 url = "https://www.bricktrainawards.com/"
 group = "competitions"
+rank = {intl = 4}
+rank_reason_en = "Yearly online awards for brick train builders in 17 categories, with 915 entries in the sixth edition in 2026 and free entry."
+rank_reason_fr = "Récompenses annuelles en ligne pour constructeurs de trains en briques en 17 catégories, avec 915 participations à la sixième édition en 2026 et participation gratuite."
 covers = ["events"]
 languages = ["en"]
 countries = ["international"]
@@ -1565,6 +1685,9 @@ id = "brickuniverse"
 name = "BrickUniverse"
 url = "https://www.brickuniverseusa.com/"
 group = "conventions"
+rank = {US = 5}
+rank_reason_en = "Touring show run by a family company since 2014, in several cities per year, with more than 250 events."
+rank_reason_fr = "Exposition itinérante d'une entreprise familiale depuis 2014, dans plusieurs villes par an, avec plus de 250 événements."
 covers = ["events"]
 languages = ["en"]
 countries = ["US"]
@@ -1604,6 +1727,9 @@ date = "2026-11-24"
 id = "bricks-in-the-six"
 name = "Bricks in the Six"
 url = "https://bricksinthe6.ca/"
+rank = {CA = 1}
+rank_reason_en = "Presented by the organisers as the largest LEGO fan event in Canada, in a five-day format; 2026 edition on 11 to 15 November."
+rank_reason_fr = "Présenté par les organisateurs comme le plus grand événement de fans LEGO du Canada, sur cinq jours ; édition 2026 du 11 au 15 novembre."
 feed = "https://bricksinthe6.ca/feed/"
 group = "conventions"
 covers = ["events"]
@@ -1645,6 +1771,9 @@ id = "northern-bricks"
 name = "Northern Bricks"
 url = "https://northernbricks.ca/"
 group = "conventions"
+rank = {CA = 3}
+rank_reason_en = "More than 300 creations announced for the public days of the 2027 edition on 13 to 16 May at the Alberta Aviation Museum."
+rank_reason_fr = "Plus de 300 créations annoncées pour les journées publiques de l'édition 2027 du 13 au 16 mai à l'Alberta Aviation Museum."
 covers = ["events"]
 languages = ["en"]
 countries = ["CA"]
@@ -1675,6 +1804,9 @@ id = "brickomanie"
 name = "Brickomanie"
 url = "https://brickomanie.ca/en"
 group = "conventions"
+rank = {CA = 2}
+rank_reason_en = "Bilingual convention in French and English near Montreal; 10th edition with the convention on 12 to 15 August 2027."
+rank_reason_fr = "Convention bilingue en français et en anglais près de Montréal ; 10e édition avec la convention du 12 au 15 août 2027."
 covers = ["events"]
 languages = ["en", "fr"]
 countries = ["CA"]
@@ -1715,6 +1847,9 @@ id = "brixpo"
 name = "Brixpo"
 url = "https://www.brixpo.com.au/"
 group = "conventions"
+rank = {AU = 3}
+rank_reason_en = "South Australia's largest fan-run LEGO event since 2019 according to the organisers, with the 2026 edition sold out."
+rank_reason_fr = "Plus grand événement LEGO de fans d'Australie-Méridionale depuis 2019 selon les organisateurs, avec l'édition 2026 complète."
 covers = ["events"]
 languages = ["en"]
 countries = ["AU"]
@@ -1749,6 +1884,9 @@ kind = "read"
 id = "brickfair-south-africa"
 name = "Brickfair South Africa"
 url = "https://www.brickfair.co.za/"
+rank = {ZA = 1}
+rank_reason_en = "More than 200 exhibits and competitions in nine categories with free entry; 2026 edition on 24 and 25 October."
+rank_reason_fr = "Plus de 200 pièces exposées et des concours dans neuf catégories avec entrée gratuite ; édition 2026 les 24 et 25 octobre."
 feed = "https://www.brickfair.co.za/feed/"
 group = "conventions"
 covers = ["events"]
@@ -1816,6 +1954,9 @@ id = "brickbuilt-sydney"
 name = "Brickbuilt Sydney"
 url = "https://www.brickbuilt.sydney/"
 group = "conventions"
+rank = {AU = 2}
+rank_reason_en = "More than 180 exhibitors and more than 6000 visitors expected for the fifth edition on 30 and 31 May 2026 at Sydney Showground."
+rank_reason_fr = "Plus de 180 exposants et plus de 6000 visiteurs attendus pour la cinquième édition les 30 et 31 mai 2026 au Sydney Showground."
 covers = ["events", "official"]
 languages = ["en"]
 countries = ["AU"]
@@ -1857,6 +1998,9 @@ id = "gold-coast-brick-show"
 name = "Gold Coast Brick Show"
 url = "https://www.qlug.org/event-info/qlug-gold-coast-brick-show-2/form"
 group = "conventions"
+rank = {AU = 4}
+rank_reason_en = "Two-day fan show recognised by the LEGO Group as a flagship community event, with the 2027 edition announced for 1 and 2 May."
+rank_reason_fr = "Deux jours de présentations de fans, reconnues par le groupe LEGO comme événement phare des communautés, avec l'édition 2027 annoncée pour les 1er et 2 mai."
 covers = ["events", "official"]
 languages = ["en"]
 countries = ["AU"]
@@ -1892,6 +2036,9 @@ id = "melbourne-brick-show"
 name = "Melbourne Brick Show"
 url = "https://mugsmelbourne.com.au/melbourne-brick-show/"
 group = "conventions"
+rank = {AU = 5}
+rank_reason_en = "Second edition on 5 and 6 September 2026 with almost 70 builders according to a local newspaper; third edition planned for 4 and 5 September 2027."
+rank_reason_fr = "Deuxième édition les 5 et 6 septembre 2026 avec près de 70 constructeurs selon un journal local ; troisième édition prévue les 4 et 5 septembre 2027."
 covers = ["events", "official"]
 languages = ["en"]
 countries = ["AU"]
@@ -1932,6 +2079,9 @@ id = "christchurch-brick-show"
 name = "Christchurch Brick Show"
 url = "https://imagination-station.org.nz/pages/the-christchurch-brick-show"
 group = "conventions"
+rank = {NZ = 1}
+rank_reason_en = "More than 350 exhibitors on 4000 square metres, billed as the biggest LEGO show in New Zealand since 2012; 2026 edition on 11 and 12 July."
+rank_reason_fr = "Plus de 350 exposants sur 4000 mètres carrés, présenté comme la plus grande exposition LEGO de Nouvelle-Zélande depuis 2012 ; édition 2026 les 11 et 12 juillet."
 covers = ["events", "official"]
 languages = ["en"]
 countries = ["NZ"]
@@ -1977,6 +2127,9 @@ id = "japan-brickfest"
 name = "Japan Brickfest"
 url = "https://japanbrickfest.klug-jp.com/"
 group = "conventions"
+rank = {JP = 1}
+rank_reason_en = "Official Hub Event of the LEGO Group since 2017 with more than 400 fan builders; 2026 edition on 7 and 8 November in Kobe."
+rank_reason_fr = "Hub Event officiel du groupe LEGO depuis 2017 avec plus de 400 constructeurs fans ; édition 2026 les 7 et 8 novembre à Kobe."
 covers = ["events", "official"]
 languages = ["ja", "en"]
 countries = ["JP"]
@@ -2019,6 +2172,9 @@ id = "korea-brick-party"
 name = "Korea Brick Party"
 url = "https://koreabrickparty.com/en/home_en/"
 group = "conventions"
+rank = {KR = 1}
+rank_reason_en = "Annual gathering for adult fans since 2019 with builders from Korea and abroad, workshops, a brick market and competitions; 2026 edition on 1 and 2 August."
+rank_reason_fr = "Rassemblement annuel de fans adultes depuis 2019 avec des constructeurs de Corée et de l'étranger, des ateliers, un marché de briques et des concours ; édition 2026 les 1er et 2 août."
 covers = ["events", "official"]
 languages = ["ko", "en"]
 countries = ["KR"]
@@ -2055,6 +2211,9 @@ id = "enblock"
 name = "ENBLOCK"
 url = "https://bugs.rocks/tag/enblock/"
 group = "conventions"
+rank = {SG = 1}
+rank_reason_en = "Flagship show of the Bricks User Group Singapore with reports for the editions from 2022 to 2025; next edition on 27 and 28 November 2027 according to LEGO Fan CoLab."
+rank_reason_fr = "Exposition phare du Bricks User Group Singapore avec des comptes rendus des éditions de 2022 à 2025 ; prochaine édition les 27 et 28 novembre 2027 selon LEGO Fan CoLab."
 covers = ["events", "official"]
 languages = ["en"]
 countries = ["SG"]
@@ -2090,6 +2249,9 @@ id = "brick-fest-peru"
 name = "BrickFest Perú"
 url = "https://lugperu.com/eventos/"
 group = "conventions"
+rank = {PE = 1}
+rank_reason_en = "Free yearly show of LUG Perú, held in Lima since 2013 and recognised by the LEGO Group as a flagship community event; 10th edition on 22 November 2025."
+rank_reason_fr = "Exposition annuelle gratuite du LUG Perú, tenue à Lima depuis 2013 et reconnue par le groupe LEGO comme événement phare des communautés ; 10e édition le 22 novembre 2025."
 covers = ["events", "official"]
 languages = ["es"]
 countries = ["PE"]
@@ -2129,6 +2291,9 @@ id = "bricks-for-all"
 name = "Bricks For All"
 url = "https://brickantiers.com/events/"
 group = "conventions"
+rank = {BE = 2, NL = 3}
+rank_reason_en = "Touring series with Harmelen on 20 and 21 February 2027, Torhout on 20 and 21 March 2027 and Houthalen-Helchteren on 16 and 17 October 2027; the Torhout edition is recognised by the LEGO Group as a flagship community event."
+rank_reason_fr = "Série itinérante avec Harmelen les 20 et 21 février 2027, Torhout les 20 et 21 mars 2027 et Houthalen-Helchteren les 16 et 17 octobre 2027 ; l'édition de Torhout est reconnue par le groupe LEGO comme événement phare des communautés."
 covers = ["events", "official"]
 languages = ["nl"]
 countries = ["BE", "NL"]
@@ -2174,6 +2339,9 @@ id = "cremona-bricks"
 name = "Cremona & Bricks"
 url = "https://cremonaebricks.it/"
 group = "conventions"
+rank = {IT = 2}
+rank_reason_en = "Co-organised by CremonaFiere and the association Cremona Bricks, billed as the largest Italian brick event; next edition on 13 and 14 March 2027."
+rank_reason_fr = "Coorganisé par CremonaFiere et l'association Cremona Bricks, présenté comme le plus grand événement de briques d'Italie ; prochaine édition les 13 et 14 mars 2027."
 covers = ["events", "official"]
 languages = ["it"]
 countries = ["IT"]
@@ -2222,6 +2390,9 @@ id = "pisabrickart"
 name = "PisaBrickArt"
 url = "https://www.pisabrickart.it/"
 group = "conventions"
+rank = {IT = 3}
+rank_reason_en = "Free show of custom builds by OrangeTeam LUG, recognised by the LEGO Group since 2014; 13th edition on 9 and 10 October 2027."
+rank_reason_fr = "Exposition gratuite de créations originales d'OrangeTeam LUG, reconnu par le groupe LEGO depuis 2014 ; 13e édition les 9 et 10 octobre 2027."
 covers = ["events", "official"]
 languages = ["it"]
 countries = ["IT"]
@@ -2268,6 +2439,9 @@ id = "svet-kostek"
 name = "Svět kostek"
 url = "https://www.svet-kostek.cz/"
 group = "conventions"
+rank = {CZ = 1}
+rank_reason_en = "Held at the Flora Olomouc exhibition grounds with foreign exhibitors from six countries and a record of 22000 visitors in 2022; next edition on 29 and 30 October 2027."
+rank_reason_fr = "Organisé au parc des expositions Flora Olomouc avec des exposants étrangers de six pays et un record de 22000 visiteurs en 2022 ; prochaine édition les 29 et 30 octobre 2027."
 covers = ["events", "official"]
 languages = ["cs"]
 countries = ["CZ"]
@@ -2314,6 +2488,9 @@ id = "brick-rodeo"
 name = "Brick Rodeo"
 url = "https://brickrodeo.com/"
 group = "conventions"
+rank = {US = 4}
+rank_reason_en = "Four-day gathering for fans then two public days; all-access passes sold out five years in a row and more than 6000 people in 2026."
+rank_reason_fr = "Rassemblement de quatre jours pour les fans puis deux jours publics ; passes complets épuisés cinq ans de suite et plus de 6000 personnes en 2026."
 covers = ["events", "official"]
 languages = ["en"]
 countries = ["US"]
@@ -2360,6 +2537,9 @@ id = "brick-roundup"
 name = "Brick Roundup"
 url = "https://brickroundup.com/"
 group = "conventions"
+rank = {CA = 4}
+rank_reason_en = "2025 edition with 75 builders, 300 builds and almost 2000 guests; 2026 edition on 17 and 18 October at the University of Calgary."
+rank_reason_fr = "Édition 2025 avec 75 constructeurs, 300 constructions et près de 2000 invités ; édition 2026 les 17 et 18 octobre à l'université de Calgary."
 covers = ["events", "official"]
 languages = ["en"]
 countries = ["CA"]
@@ -2399,6 +2579,9 @@ date = "2026-11-25"
 id = "iron-builder"
 name = "Iron Builder"
 url = "https://iron.builders/"
+rank = {intl = 3}
+rank_reason_en = "One-on-one building duels of 16 days judged by three experienced builders, with round 11 of season 7 ended on 12 October 2026 and an open yearly qualifier, the Iron Forge."
+rank_reason_fr = "Duels de construction à deux de 16 jours jugés par trois constructeurs expérimentés, avec le tour 11 de la saison 7 terminé le 12 octobre 2026 et un qualificatif annuel ouvert, l'Iron Forge."
 feed = "https://iron.builders/feed/"
 group = "competitions"
 covers = ["events"]
@@ -2473,6 +2656,9 @@ id = "bricknerd-nerdvember"
 name = "Nerdvember"
 url = "https://bricknerd.com/home/nerdvember-2026-inside-edition-11-10-26"
 group = "competitions"
+rank = {intl = 5}
+rank_reason_en = "Yearly contest of the site BrickNerd with three categories and awards of 75, 50 and 25 dollars in LEGO products per category; entries until 10 January 2027."
+rank_reason_fr = "Concours annuel du site BrickNerd en trois catégories avec des prix de 75, 50 et 25 dollars en produits LEGO par catégorie ; participations jusqu'au 10 janvier 2027."
 covers = ["events"]
 languages = ["en"]
 countries = ["international"]
@@ -2506,6 +2692,9 @@ id = "brickmaniacos-eventos"
 name = "Brickmaniacos: eventos LEGO en España y Latinoamérica"
 url = "https://brickmaniacos.com/eventos"
 group = "calendars"
+rank = {ES = 1, MX = 1}
+rank_reason_en = "Dated list of 12 fan events and exhibitions (11 in Spain, 1 in Mexico) updated on 20 November 2026, with organiser and admission."
+rank_reason_fr = "Liste datée de 12 événements de fans et expositions (11 en Espagne, 1 au Mexique) mise à jour le 20 novembre 2026, avec organisateur et tarif."
 covers = ["events", "official"]
 languages = ["es"]
 countries = ["ES", "MX"]
@@ -2532,6 +2721,9 @@ id = "alego73-eventi"
 name = "ALEGO73: calendario eventi LEGO in Italia"
 url = "https://alego73.com/events/"
 group = "calendars"
+rank = {IT = 1}
+rank_reason_en = "Agenda of 15 events with hours and venue, dates checked against the organisers' sources and confirming the 2027 dates of Cremona & Bricks, ItLUG Lecco and PisaBrickArt."
+rank_reason_fr = "Agenda de 15 événements avec horaires et lieu, dates vérifiées auprès des organisateurs et confirmant les dates 2027 de Cremona & Bricks, ItLUG Lecco et PisaBrickArt."
 covers = ["events", "official"]
 languages = ["it"]
 countries = ["IT"]
@@ -2558,6 +2750,9 @@ id = "fani-klockow-kalendarz-2027"
 name = "Fani Klocków: kalendarz klockowych eventów 2027"
 url = "https://faniklockow.pl/2026/10/17/kalendarz-klockowych-eventow-w-polsce-2027-rok/"
 group = "calendars"
+rank = {PL = 1}
+rank_reason_en = "Agenda for 2027 posted on 17 October 2026 with 5 events, each with date, venue, organiser, description and ticket price."
+rank_reason_fr = "Agenda 2027 publié le 17 octobre 2026 avec 5 événements, chacun avec date, lieu, organisateur, description et prix du billet."
 covers = ["events", "official", "alternative"]
 languages = ["pl"]
 countries = ["PL"]
@@ -2584,6 +2779,9 @@ id = "lowlug-calendar"
 name = "LowLUG: AFOL kalender"
 url = "https://www.lowlug.nl/calendar/index.php?upcoming-event-list%2F="
 group = "calendars"
+rank = {NL = 1, BE = 4}
+rank_reason_en = "11 events from December 2026 to June 2027 reachable from the Netherlands, with date, time and full venue address per day."
+rank_reason_fr = "11 événements de décembre 2026 à juin 2027 accessibles depuis les Pays-Bas, avec date, heure et adresse complète du lieu pour chaque jour."
 covers = ["events", "official"]
 languages = ["nl"]
 countries = ["NL", "BE"]

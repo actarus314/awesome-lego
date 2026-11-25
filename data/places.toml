@@ -54,6 +54,9 @@ name = "LEGO House"
 url = "https://legohouse.com/en-gb"
 group = "official-venues"
 featured = true
+rank = {intl = 1, DK = 1}
+rank_reason_en = "Four Experience Zones, a historical collection on the LEGO Group and the brick, products sold only in its LEGO Store, 25000000 bricks on 12000 square metres."
+rank_reason_fr = "Quatre zones d'expérience, une collection historique sur le groupe LEGO et la brique, des produits vendus uniquement dans son LEGO Store, 25000000 briques sur 12000 mètres carrés."
 operator = "lego-group"
 covers = ["official", "places"]
 languages = ["en", "da", "de"]
@@ -96,6 +99,9 @@ name = "LEGO Stores directory"
 url = "https://www.lego.com/fr-fr/stores"
 group = "official-venues"
 featured = true
+rank = {intl = 2}
+rank_reason_en = "Single directory of the official LEGO Stores, with address, opening hours and features per store; Certified Stores run by partners are marked in it."
+rank_reason_fr = "Annuaire unique des LEGO Stores du groupe LEGO, avec adresse, horaires et services par magasin ; les Certified Stores tenus par des partenaires y sont signalés."
 operator = "lego-group"
 covers = ["official", "places"]
 languages = ["fr", "en", "de"]
@@ -127,6 +133,9 @@ id = "lego-certified-stores"
 name = "LEGO Certified Stores"
 url = "https://www.lego.com/en-us/service/help-topics/article/lego-certified-stores"
 group = "official-venues"
+rank = {intl = 4}
+rank_reason_en = "Official help page on the stores run by local partners under licence, with the list of countries where they exist and their limits (no LEGO gift cards, no LEGO Insiders points)."
+rank_reason_fr = "Page d'aide officielle sur les magasins sous enseigne LEGO exploités par des partenaires locaux sous licence, avec la liste des pays et leurs limites (ni cartes cadeaux LEGO, ni points LEGO Insiders)."
 operator = "licensee"
 covers = ["official", "places"]
 languages = ["en"]
@@ -158,6 +167,9 @@ id = "lego-store-leicester-square"
 name = "LEGO Store Leicester Square"
 url = "https://www.lego.com/en-gb/stores/store/lsq"
 group = "official-venues"
+rank = {intl = 3, GB = 1}
+rank_reason_en = "Flagship reopened in August 2022, the largest LEGO Store in the world according to the LEGO Group, with a floor area of 914 square metres and a mosaic and minifigure personalisation studio."
+rank_reason_fr = "Magasin amiral rouvert en août 2022, plus grand LEGO Store du monde selon le groupe LEGO, sur 914 mètres carrés, avec un atelier de personnalisation de mosaïques et de figurines."
 operator = "lego-group"
 covers = ["official", "places"]
 languages = ["en"]
@@ -198,6 +210,9 @@ id = "lego-store-paris-les-halles"
 name = "LEGO Store Paris Les Halles"
 url = "https://www.lego.com/fr-fr/stores/store/paris-les-halles"
 group = "official-venues"
+rank = {FR = 1}
+rank_reason_en = "Pick and Build wall, Build a Minifigure and LEGO Insiders programme, open every day from 10:00 in Paris 1er."
+rank_reason_fr = "Mur Pick and Build, Build a Minifigure et programme LEGO Insiders, ouvert tous les jours dès 10 h à Paris 1er."
 operator = "lego-group"
 covers = ["official", "places"]
 languages = ["fr"]
@@ -231,6 +246,9 @@ id = "lego-discovery-centres"
 name = "LEGO Discovery Centre"
 url = "https://www.legodiscoverycentre.com/"
 group = "official-venues"
+rank = {intl = 5, BE = 1, DE = 1, US = 1}
+rank_reason_en = "Centres under the new LEGO Discovery Centre name (Brussels, Hamburg, Atlanta, Boston, Washington DC), acquired by the LEGO Group on 27 February 2026; Hamburg runs LEGO After Work evenings reserved for adult fans."
+rank_reason_fr = "Centres au nouveau nom LEGO Discovery Centre (Bruxelles, Hambourg, Atlanta, Boston, Washington DC), rachetés par le groupe LEGO le 27 février 2026 ; Hambourg organise des soirées LEGO After Work réservées aux adultes fans de LEGO."
 operator = "lego-group"
 aliases = ["LEGO Discovery Center"]
 covers = ["official", "places"]
@@ -308,6 +326,9 @@ id = "legoland-parks"
 name = "LEGOLAND parks (official list)"
 url = "https://www.legoland.com/"
 group = "theme-parks"
+rank = {intl = 2}
+rank_reason_en = "Official list of the 11 parks and the water park at Gardaland, with a link to the site of each park."
+rank_reason_fr = "Liste officielle des 11 parcs et du parc aquatique de Gardaland, avec un lien vers le site de chaque parc."
 operator = "licensee"
 covers = ["official", "places"]
 languages = ["en"]
@@ -341,6 +362,9 @@ id = "legoland-billund"
 name = "LEGOLAND Billund Resort"
 url = "https://www.legoland.dk/"
 group = "theme-parks"
+rank = {intl = 1, DK = 1}
+rank_reason_en = "The original LEGOLAND, opened in 1968, with more than 80000000 bricks according to the park and combined tickets with LEGO House."
+rank_reason_fr = "Le LEGOLAND d'origine, ouvert en 1968, avec plus de 80000000 briques selon le parc et des billets combinés avec LEGO House."
 operator = "licensee"
 covers = ["official", "places"]
 languages = ["da", "en", "de"]
@@ -381,6 +405,9 @@ id = "legoland-windsor"
 name = "LEGOLAND Windsor Resort"
 url = "https://www.legoland.co.uk/"
 group = "theme-parks"
+rank = {intl = 5, GB = 1}
+rank_reason_en = "Opened in 1996 near London, with more than 55 rides and attractions according to the park, a themed hotel and Christmas events."
+rank_reason_fr = "Ouvert en 1996 près de Londres, avec plus de 55 attractions selon le parc, un hôtel thématique et des événements de Noël."
 operator = "licensee"
 covers = ["official", "places"]
 languages = ["en"]
@@ -420,6 +447,9 @@ id = "legoland-deutschland"
 name = "LEGOLAND Deutschland Resort"
 url = "https://www.legoland.de/"
 group = "theme-parks"
+rank = {DE = 1}
+rank_reason_en = "In Günzburg, with winter opening from 28 November 2026 to 10 January 2027 and a 25th anniversary season announced for 2027."
+rank_reason_fr = "À Günzburg, avec une ouverture d'hiver du 28 novembre 2026 au 10 janvier 2027 et une saison du 25e anniversaire annoncée pour 2027."
 operator = "licensee"
 covers = ["official", "places"]
 languages = ["de"]
@@ -461,6 +491,9 @@ name = "Museum of Bricks"
 url = "https://museumofbricks.cz/"
 group = "museums-and-exhibitions"
 featured = true
+rank = {intl = 1, CZ = 1}
+rank_reason_en = "More than 9000 models on 5 sites (Prague, Kutná Hora, Špindlerův Mlýn, Poděbrady, Hatě), a Guinness World Records entry for 6005 sets and online tickets valid for six months for the five sites."
+rank_reason_fr = "Plus de 9000 modèles sur 5 sites (Prague, Kutná Hora, Špindlerův Mlýn, Poděbrady, Hatě), une inscription au Guinness World Records pour 6005 sets et des billets en ligne valables six mois pour les cinq sites."
 covers = ["official", "places"]
 languages = ["cs", "en", "de"]
 countries = ["CZ"]
@@ -506,6 +539,9 @@ id = "muzeum-lega-tabor"
 name = "Muzeum LEGA Tábor"
 url = "https://brickmuzeumtabor.cz/"
 group = "museums-and-exhibitions"
+rank = {intl = 5, CZ = 2}
+rank_reason_en = "In the historic centre of Tábor since July 2012, with more than 3000000 bricks and hundreds of models on more than 200 square metres."
+rank_reason_fr = "Dans le centre historique de Tábor depuis juillet 2012, avec plus de 3000000 briques et des centaines de modèles sur plus de 200 mètres carrés."
 covers = ["official", "places"]
 languages = ["cs", "en"]
 countries = ["CZ"]
@@ -540,6 +576,9 @@ id = "lebrickgo"
 name = "LEbrickGO Museum"
 url = "https://www.lebrickgo.ch/"
 group = "museums-and-exhibitions"
+rank = {intl = 4, CH = 1}
+rank_reason_en = "570 square metres with sets from every decade and rotating displays of fan creations, open since 2017; awarded the 2025 cultural prize of the municipality of Binningen."
+rank_reason_fr = "570 mètres carrés avec des sets de chaque décennie et des présentations tournantes de créations de fans, ouvert depuis 2017 ; lauréat du prix culturel 2025 de la commune de Binningen."
 covers = ["official", "places"]
 languages = ["de"]
 countries = ["CH"]
@@ -579,6 +618,9 @@ date = "2026-11-24"
 id = "frankensteins-klemmbaustein-museum"
 name = "Frankensteins Klemmbaustein Museum"
 url = "https://frankensteins.de/"
+rank = {intl = 2, DE = 1}
+rank_reason_en = "LEGO and compatible brands (COBI, Mould King, Wange, Cada, Reobrix, Sembo and others) shown together on more than 500 square metres, with about 1600000 bricks, a building room, a shop and a café."
+rank_reason_fr = "Marques LEGO et compatibles (COBI, Mould King, Wange, Cada, Reobrix, Sembo et autres) présentées ensemble sur plus de 500 mètres carrés, avec environ 1600000 briques, une salle de construction, une boutique et un café."
 size = [{n = 500, unit = "square-metres", approx = "more-than"}, {n = 1600000, unit = "bricks", approx = "about"}]
 feed = "https://frankensteins.de/feed/"
 group = "museums-and-exhibitions"
@@ -656,6 +698,9 @@ name = "Palais de la Maquette - Musée du Jouet"
 url = "http://www.palaisdelamaquette.com/"
 group = "museums-and-exhibitions"
 featured = true
+rank = {FR = 1}
+rank_reason_en = "Giant animated LEGO and K'NEX models, with 650000 LEGO pieces and 170000 K'NEX pieces on show according to the tourist office, and building tables for up to one hour after the visit."
+rank_reason_fr = "Maquettes géantes animées en LEGO et K'NEX, avec 650000 pièces LEGO et 170000 pièces K'NEX exposées selon l'office de tourisme, et des tables de construction jusqu'à une heure après la visite."
 covers = ["official", "places"]
 languages = ["fr"]
 countries = ["FR"]
@@ -689,6 +734,9 @@ id = "railway-brick-museum"
 name = "Railway Brick Museum"
 url = "https://www.railway-brickmuseum.eu/"
 group = "museums-and-exhibitions"
+rank = {BE = 1}
+rank_reason_en = "Built around more than 50 years of LEGO trains on about 300 square metres, with themed landscapes where visitors start the trains; opened in 2021."
+rank_reason_fr = "Construit autour de plus de 50 ans de trains LEGO sur environ 300 mètres carrés, avec des paysages thématiques où les visiteurs lancent les trains ; ouvert en 2021."
 covers = ["official", "places"]
 languages = ["nl", "en"]
 countries = ["BE"]
@@ -727,6 +775,9 @@ date = "2026-11-24"
 id = "elbabrick"
 name = "ElbaBrick"
 url = "https://www.elbabrick.it/"
+rank = {IT = 1}
+rank_reason_en = "Hundreds of official LEGO sets from the first bricks to the latest releases, dioramas, original creations and two play areas, open every day."
+rank_reason_fr = "Des centaines de sets de marque LEGO des premières briques aux dernières nouveautés, des dioramas, des créations originales et deux espaces de jeu, ouvert tous les jours."
 feed = "https://www.elbabrick.it/feed/"
 group = "museums-and-exhibitions"
 covers = ["official", "places"]
@@ -766,6 +817,9 @@ id = "karalisbrick"
 name = "Karalisbrick Museo del Mattoncino"
 url = "https://www.karalisbrick.com/en/home-en/"
 group = "museums-and-exhibitions"
+rank = {IT = 2}
+rank_reason_en = "More than 1000000 bricks over 18 themed areas, with the main dioramas of Maurizio Lampis; permanent home in Capoterra recently established, opening hours not confirmed."
+rank_reason_fr = "Plus de 1000000 briques sur 18 espaces thématiques, avec les principaux dioramas de Maurizio Lampis ; site permanent à Capoterra récemment établi, horaires non confirmés."
 covers = ["official", "places"]
 languages = ["it", "en"]
 countries = ["IT"]
@@ -799,6 +853,9 @@ id = "bricks-and-figs"
 name = "Bricks & Figs"
 url = "https://bricksandfigs.pl/en/"
 group = "museums-and-exhibitions"
+rank = {intl = 3, PL = 1}
+rank_reason_en = "More than 14000 minifigures and 700 sets, with rare items such as gold prototypes and Comic-Con exclusives, open every day from 10:00 to 20:00."
+rank_reason_fr = "Plus de 14000 figurines et 700 sets, dont des pièces rares comme des prototypes dorés et des exclusivités du Comic-Con, ouvert tous les jours de 10 h à 20 h."
 covers = ["official", "places"]
 languages = ["en", "pl"]
 countries = ["PL"]
@@ -835,6 +892,9 @@ id = "brickz-museum"
 name = "Brickz Museum"
 url = "https://brickzmuseum.com/"
 group = "museums-and-exhibitions"
+rank = {GB = 1}
+rank_reason_en = "About 5000000 bricks according to the museum, with large builds and a history of LEGO; opened in April 2025."
+rank_reason_fr = "Environ 5000000 briques selon le musée, avec de grandes constructions et une histoire de LEGO ; ouvert en avril 2025."
 covers = ["official", "places"]
 languages = ["en"]
 countries = ["GB"]
@@ -874,6 +934,9 @@ id = "merlins-steine-permanent-exhibitions"
 name = "Merlins Steine: permanent exhibitions"
 url = "https://www.merlinssteine.de/dauerausstellungen/"
 group = "museums-and-exhibitions"
+rank = {DE = 2, CH = 2, AT = 1}
+rank_reason_en = "List of permanent brick exhibitions and museums for Germany, Switzerland and Austria, with 3 venues read on 23 November 2026."
+rank_reason_fr = "Liste d'expositions permanentes et de musées de briques pour l'Allemagne, la Suisse et l'Autriche, avec 3 lieux relevés le 23 novembre 2026."
 covers = ["official", "alternative", "places"]
 languages = ["de"]
 countries = ["DE", "CH", "AT"]
@@ -901,6 +964,9 @@ id = "bluebrixx-stores"
 name = "BlueBrixx Stores"
 url = "https://www.bluebrixx.com/de/stores/"
 group = "physical-shops"
+rank = {intl = 2, DE = 1, AT = 1}
+rank_reason_en = "39 stores in Germany on 4 June 2026 according to an enthusiast site and 4 in Austria, also stocking COBI, Mould King, Funwhole, Reobrix and Pantasy."
+rank_reason_fr = "39 magasins en Allemagne au 4 juin 2026 selon un site d'amateurs et 4 en Autriche, qui vendent aussi COBI, Mould King, Funwhole, Reobrix et Pantasy."
 covers = ["alternative", "places"]
 languages = ["de"]
 countries = ["DE", "AT"]
@@ -938,6 +1004,9 @@ name = "Time For Bricks"
 url = "https://www.timeforbricks.fr/"
 group = "physical-shops"
 featured = true
+rank = {intl = 1, FR = 1}
+rank_reason_en = "About thirty alternative brands sold in Chambéry since 2023 and in Annecy (opened in July 2026), with free building tables."
+rank_reason_fr = "Une trentaine de marques alternatives vendues à Chambéry depuis 2023 et à Annecy (ouvert en juillet 2026), avec des tables de construction gratuites."
 covers = ["alternative", "places"]
 languages = ["fr"]
 countries = ["FR"]
@@ -978,6 +1047,9 @@ id = "toysngo-cobi-store"
 name = "Toysngo COBI Store"
 url = "https://www.toysngo.com/"
 group = "physical-shops"
+rank = {intl = 4, FR = 3}
+rank_reason_en = "COBI only, with more than 150 square metres of assembled models on display and more than 2500 boxes in stock according to the site."
+rank_reason_fr = "COBI uniquement, avec plus de 150 mètres carrés de modèles montés exposés et plus de 2500 boîtes en stock selon le site."
 covers = ["alternative", "places"]
 languages = ["fr"]
 countries = ["FR"]
@@ -1018,6 +1090,9 @@ id = "enjeu-briques"
 name = "Enjeu Briques"
 url = "https://enjeubriques.fr/"
 group = "physical-shops"
+rank = {intl = 3, FR = 2}
+rank_reason_en = "Inside a 250 square metre store in Saint-Malo: used LEGO sets, new sets of alternative brands, parts, minifigures, buying back of collections and a play room."
+rank_reason_fr = "Dans un magasin de 250 mètres carrés à Saint-Malo : sets LEGO d'occasion, sets neufs de marques alternatives, pièces, figurines, rachat de collections et salle de jeu."
 covers = ["official", "alternative", "second-hand", "places"]
 languages = ["fr"]
 countries = ["FR"]
@@ -1052,6 +1127,9 @@ id = "la-boite-a-briques"
 name = "La Boîte à Briques"
 url = "https://laboiteabriques.com/"
 group = "physical-shops"
+rank = {intl = 5, FR = 4}
+rank_reason_en = "55 square metres of used LEGO sets, minifigures and loose parts in Montpellier, with buying of collections by appointment and a search service for specific sets or parts."
+rank_reason_fr = "55 mètres carrés de sets LEGO d'occasion, figurines et pièces en vrac à Montpellier, avec rachat de collections sur rendez-vous et service de recherche de sets ou de pièces précis."
 covers = ["official", "second-hand", "parts", "places"]
 languages = ["fr"]
 countries = ["FR"]
@@ -1116,6 +1194,9 @@ id = "autour-des-briques"
 name = "Autour des Briques"
 url = "https://autourdesbriques.fr/"
 group = "physical-shops"
+rank = {FR = 5}
+rank_reason_en = "LEGO, COBI, Playmobil and Ravensburger in Marcillat-en-Combraille, with LEGO loose parts sold by the piece and stock levels shown."
+rank_reason_fr = "LEGO, COBI, Playmobil et Ravensburger à Marcillat-en-Combraille, avec des pièces LEGO en vrac vendues à l'unité et les niveaux de stock affichés."
 covers = ["official", "alternative", "parts", "places"]
 languages = ["fr"]
 countries = ["FR"]
@@ -1154,6 +1235,9 @@ date = "2026-11-24"
 id = "steingemachtes"
 name = "Steingemachtes"
 url = "https://steingemachtes.de/"
+rank = {DE = 2}
+rank_reason_en = "Alternative brands and mixed bulk bricks (1 kilogram for 20 €) in Paderborn, and organiser of a spring festival of bricks."
+rank_reason_fr = "Marques alternatives et briques mélangées en vrac (1 kilogramme pour 20 €) à Paderborn, et organisateur d'un festival de briques au printemps."
 feed = "https://steingemachtes.de/rss.xml"
 group = "physical-shops"
 covers = ["alternative", "parts", "places"]
@@ -1195,6 +1279,9 @@ id = "brick-bank-cafe"
 name = "Brick Bank Café"
 url = "https://www.brickbankcafe.org/"
 group = "cafes-and-bars"
+rank = {intl = 1, GB = 1}
+rank_reason_en = "LEGO sets or trays of loose bricks hired from 4 pounds for 30 minutes, adults explicitly welcome and weekly evening LEGO clubs, in a not-for-profit café."
+rank_reason_fr = "Sets LEGO ou plateaux de briques en vrac loués dès 4 livres pour 30 minutes, adultes explicitement bienvenus et clubs LEGO hebdomadaires en soirée, dans un café à but non lucratif."
 covers = ["official", "second-hand", "places"]
 languages = ["en"]
 countries = ["GB"]
@@ -1237,6 +1324,9 @@ id = "builders-brew-cafe"
 name = "Builder's Brew Café"
 url = "https://buildersbrewcafe.com/"
 group = "cafes-and-bars"
+rank = {intl = 3, GB = 2}
+rank_reason_en = "LEGO sets built at the table with a drink, and 45 pre-sorted boxes on The Brick Wall to build from at tables booked upstairs."
+rank_reason_fr = "Sets LEGO construits à table avec une boisson, et 45 boîtes pré-triées sur The Brick Wall à construire à des tables réservées à l'étage."
 covers = ["official", "places"]
 languages = ["en"]
 countries = ["GB"]
@@ -1276,6 +1366,9 @@ id = "d-brick-cafe"
 name = "D-Brick Café"
 url = "https://www.d-brick.com/"
 group = "cafes-and-bars"
+rank = {intl = 2, BE = 1}
+rank_reason_en = "New and used sets built at the table on a tray without time limit, with a set and drink formula for two people at 20 €."
+rank_reason_fr = "Sets neufs et d'occasion construits à table sur un plateau sans limite de temps, avec une formule set et boisson pour deux personnes à 20 €."
 covers = ["official", "second-hand", "places"]
 languages = ["fr"]
 countries = ["BE"]
@@ -1310,6 +1403,9 @@ id = "coffee-and-bricks-limburg"
 name = "Coffee & Bricks by BRICKONAS"
 url = "https://brickonas.info/coffee-and-bricks/"
 group = "cafes-and-bars"
+rank = {DE = 3}
+rank_reason_en = "Building at the table, sets, minifigures, building evenings and parties in a café with shop; opening announced for 14 November 2026."
+rank_reason_fr = "Construction à table, sets, figurines, soirées de construction et fêtes dans un café avec boutique ; ouverture annoncée pour le 14 novembre 2026."
 covers = ["alternative", "places"]
 languages = ["de"]
 countries = ["DE"]
@@ -1344,6 +1440,9 @@ id = "heartbrickcafe"
 name = "HeartBrickCafé"
 url = "https://heartbrickcafe.de/"
 group = "cafes-and-bars"
+rank = {intl = 5, DE = 2}
+rank_reason_en = "Current and retired sets and rare minifigures in a shop with a café area opened in September 2025 by an authorised LEGO dealer."
+rank_reason_fr = "Sets actuels et retirés et figurines rares dans une boutique avec un espace café ouverte en septembre 2025 par un revendeur LEGO agréé."
 covers = ["official", "minifigures", "places"]
 languages = ["de"]
 countries = ["DE"]
@@ -1382,6 +1481,9 @@ id = "steinequelle-baupause"
 name = "Baupause by Steinequelle"
 url = "https://steinequelle.de/baupause/"
 group = "cafes-and-bars"
+rank = {intl = 4, DE = 1}
+rank_reason_en = "Choose a set in the shop and build it at a table with a drink; adults welcome, with a long fan evening on the second Friday of the month."
+rank_reason_fr = "Choix d'un set en boutique et construction à table avec une boisson ; adultes bienvenus, avec une longue soirée de fans le deuxième vendredi du mois."
 covers = ["official", "places"]
 languages = ["de"]
 countries = ["DE"]
@@ -1415,6 +1517,9 @@ date = "2026-11-24"
 id = "bricks-factory"
 name = "Bricks Factory"
 url = "https://bricksfactory.fr/"
+rank = {FR = 1}
+rank_reason_en = "Workshops, holiday courses, parties and free building sessions with a Bricks Café, open Monday to Saturday year-round."
+rank_reason_fr = "Ateliers, stages de vacances, fêtes et séances de construction libre avec un Bricks Café, ouvert du lundi au samedi toute l'année."
 feed = "https://bricksfactory.fr/feed/"
 group = "cafes-and-bars"
 covers = ["official", "places"]
@@ -1455,6 +1560,9 @@ id = "legoland-california"
 name = "LEGOLAND California Resort"
 url = "https://www.legoland.com/california/"
 group = "theme-parks"
+rank = {intl = 4, US = 1}
+rank_reason_en = "More than 60 rides, shows and attractions, a SEA LIFE Aquarium, a water park and two themed hotels on the same resort."
+rank_reason_fr = "Plus de 60 attractions et spectacles, un SEA LIFE Aquarium, un parc aquatique et deux hôtels thématiques sur le même site."
 operator = "licensee"
 covers = ["official", "places"]
 languages = ["en"]
@@ -1495,6 +1603,9 @@ id = "legoland-florida"
 name = "LEGOLAND Florida Resort"
 url = "https://www.legoland.com/florida/"
 group = "theme-parks"
+rank = {US = 2}
+rank_reason_en = "Theme park of 150 acres with more than 50 rides, shows and attractions, a water park, a SEA LIFE Aquarium, a botanical garden and three themed hotels."
+rank_reason_fr = "Parc de 150 acres avec plus de 50 attractions et spectacles, un parc aquatique, un SEA LIFE Aquarium, un jardin botanique et trois hôtels thématiques."
 operator = "licensee"
 covers = ["official", "places"]
 languages = ["en"]
@@ -1535,6 +1646,9 @@ id = "legoland-new-york"
 name = "LEGOLAND New York Resort"
 url = "https://www.legoland.com/new-york/"
 group = "theme-parks"
+rank = {US = 3}
+rank_reason_en = "Seasonal opening in the Hudson Valley with 7 themed lands and a themed hotel; tickets for 2027 already on sale."
+rank_reason_fr = "Ouverture saisonnière dans la vallée de l'Hudson avec 7 univers thématiques et un hôtel thématique ; billets 2027 déjà en vente."
 operator = "licensee"
 covers = ["official", "places"]
 languages = ["en"]
@@ -1580,6 +1694,9 @@ id = "legoland-dubai"
 name = "LEGOLAND Dubai"
 url = "https://www.legoland.com/dubai/"
 group = "theme-parks"
+rank = {AE = 1}
+rank_reason_en = "More than 40 rides and attractions, a themed hotel and a water park of more than 20 slides and attractions, inside Dubai Parks and Resorts."
+rank_reason_fr = "Plus de 40 attractions, un hôtel thématique et un parc aquatique de plus de 20 toboggans et attractions, dans Dubai Parks and Resorts."
 operator = "licensee"
 covers = ["official", "places"]
 languages = ["en", "ar"]
@@ -1627,6 +1744,9 @@ id = "legoland-japan"
 name = "LEGOLAND Japan Resort"
 url = "https://www.legoland.jp/"
 group = "theme-parks"
+rank = {JP = 1}
+rank_reason_en = "More than 40 attractions, workshops, a themed hotel and the Nagoya SEA LIFE Aquarium, with a site in Japanese, English and Chinese."
+rank_reason_fr = "Plus de 40 attractions, des ateliers, un hôtel thématique et le Nagoya SEA LIFE Aquarium, avec un site en japonais, en anglais et en chinois."
 operator = "licensee"
 aliases = ["レゴランド・ジャパン"]
 covers = ["official", "places"]
@@ -1668,6 +1788,9 @@ id = "legoland-korea"
 name = "LEGOLAND Korea Resort"
 url = "https://www.legoland.kr/"
 group = "theme-parks"
+rank = {KR = 1}
+rank_reason_en = "More than 40 LEGO-themed attractions and a themed hotel, one hour from Seoul according to its site."
+rank_reason_fr = "Plus de 40 attractions sur le thème LEGO et un hôtel thématique, à une heure de Séoul selon son site."
 operator = "licensee"
 aliases = ["레고랜드 코리아"]
 covers = ["official", "places"]
@@ -1705,6 +1828,9 @@ id = "legoland-malaysia"
 name = "LEGOLAND Malaysia Resort"
 url = "https://www.legoland.com.my/"
 group = "theme-parks"
+rank = {MY = 1}
+rank_reason_en = "More than 80 rides, a water park, a SEA LIFE Aquarium and a themed hotel, with annual family passes for Malaysia and for Singapore."
+rank_reason_fr = "Plus de 80 attractions, un parc aquatique, un SEA LIFE Aquarium et un hôtel thématique, avec des abonnements familiaux annuels pour la Malaisie et pour Singapour."
 operator = "licensee"
 covers = ["official", "places"]
 languages = ["en"]
@@ -1745,6 +1871,9 @@ id = "legoland-shanghai"
 name = "LEGOLAND Shanghai Resort"
 url = "https://legolandshanghai.cn/"
 group = "theme-parks"
+rank = {intl = 3, CN = 1}
+rank_reason_en = "Eight themed lands, more than 75 rides, shows and attractions and more than 85000000 bricks in the models, with opening hours published day by day."
+rank_reason_fr = "Huit univers thématiques, plus de 75 attractions et spectacles, plus de 85000000 briques dans les modèles, horaires publiés jour par jour."
 operator = "licensee"
 aliases = ["上海乐高乐园"]
 covers = ["official", "places"]
@@ -1782,6 +1911,9 @@ id = "legoland-water-park-gardaland"
 name = "LEGOLAND Water Park Gardaland"
 url = "https://www.gardaland.it/en/explore-gardaland/legoland-water-park/"
 group = "theme-parks"
+rank = {IT = 1}
+rank_reason_en = "Fully LEGO-themed water slides and pools inside Gardaland, described as the first fully LEGO-themed water park in Europe."
+rank_reason_fr = "Toboggans et bassins entièrement sur le thème LEGO dans Gardaland, décrits comme le premier parc aquatique entièrement sur le thème LEGO en Europe."
 operator = "licensee"
 covers = ["official", "places"]
 languages = ["en", "it", "de"]
@@ -1820,6 +1952,9 @@ id = "legoland-discovery-centre-tokyo"
 name = "LEGOLAND Discovery Centre Tokyo"
 url = "https://www.legolanddiscoverycenter.com/tokyo/"
 group = "official-venues"
+rank = {JP = 1}
+rank_reason_en = "In the DECKS Tokyo Beach mall in Odaiba, with 11 attractions and a site in Japanese and English."
+rank_reason_fr = "Dans le centre commercial DECKS Tokyo Beach à Odaiba, avec 11 attractions et un site en japonais et en anglais."
 operator = "lego-group"
 aliases = ["LEGOLAND Discovery Center Tokyo", "レゴランド・ディスカバリー・センター東京"]
 covers = ["official", "places"]
@@ -1861,6 +1996,9 @@ id = "legoland-discovery-centre-osaka"
 name = "LEGOLAND Discovery Centre Osaka"
 url = "https://www.legolanddiscoverycenter.com/osaka/"
 group = "official-venues"
+rank = {JP = 2}
+rank_reason_en = "On the third floor of the Tempozan Marketplace, with 11 attractions and a site in Japanese, English and Chinese."
+rank_reason_fr = "Au troisième étage du Tempozan Marketplace, avec 11 attractions et un site en japonais, en anglais et en chinois."
 operator = "lego-group"
 aliases = ["LEGOLAND Discovery Center Osaka", "レゴランド・ディスカバリー・センター大阪"]
 covers = ["official", "places"]
@@ -1902,6 +2040,9 @@ id = "legoland-discovery-centre-scheveningen"
 name = "LEGOLAND Discovery Centre Scheveningen"
 url = "https://www.legolanddiscoverycentre.com/scheveningen/"
 group = "official-venues"
+rank = {NL = 1}
+rank_reason_en = "Only LEGOLAND Discovery Centre of the Netherlands, with more than 3000000 bricks, 7 or more play zones and one ride."
+rank_reason_fr = "Seul LEGOLAND Discovery Centre des Pays-Bas, avec plus de 3000000 briques, 7 zones de jeu ou plus et une attraction."
 operator = "lego-group"
 aliases = ["LEGOLAND Discovery Center Scheveningen"]
 covers = ["official", "places"]
@@ -1946,6 +2087,9 @@ id = "legoland-discovery-centre-toronto"
 name = "LEGOLAND Discovery Centre Toronto"
 url = "https://www.legolanddiscoverycentre.com/toronto/"
 group = "official-venues"
+rank = {CA = 1}
+rank_reason_en = "In the Vaughan Mills mall, with 12 or more attractions, rides and experiences, LEGO play zones and a 4D cinema."
+rank_reason_fr = "Dans le centre commercial Vaughan Mills, avec 12 attractions ou plus, des zones de jeu LEGO et un cinéma 4D."
 operator = "lego-group"
 aliases = ["LEGOLAND Discovery Center Toronto"]
 covers = ["official", "places"]
@@ -1986,6 +2130,9 @@ id = "legoland-discovery-centre-melbourne"
 name = "LEGOLAND Discovery Centre Melbourne"
 url = "https://www.legolanddiscoverycentre.com/melbourne/"
 group = "official-venues"
+rank = {AU = 1}
+rank_reason_en = "Adult Nights for guests aged 18 and over with workshops by a Master Model Builder, 13 attractions and more than 2000000 bricks."
+rank_reason_fr = "Soirées adultes pour les personnes de 18 ans et plus, avec ateliers d'un Master Model Builder, 13 attractions et plus de 2000000 briques."
 operator = "lego-group"
 aliases = ["LEGOLAND Discovery Center Melbourne"]
 covers = ["official", "places"]
@@ -2032,6 +2179,9 @@ id = "legoland-discovery-centre-hong-kong"
 name = "LEGOLAND Discovery Centre Hong Kong"
 url = "https://www.legolanddiscoverycentre.com/hong-kong/en/"
 group = "official-venues"
+rank = {HK = 1}
+rank_reason_en = "A Miniland of Hong Kong landmarks with more than 1500000 bricks, 2 rides and a 4D studio."
+rank_reason_fr = "Un Miniland de monuments de Hong Kong avec plus de 1500000 briques, 2 attractions et un studio 4D."
 operator = "lego-group"
 aliases = ["LEGOLAND Discovery Center Hong Kong"]
 covers = ["official", "places"]
@@ -2074,6 +2224,9 @@ id = "brick-museum-karpacz"
 name = "Brick Museum Karpacz"
 url = "https://www.muzeumklockow.pl/en/"
 group = "museums-and-exhibitions"
+rank = {PL = 2}
+rank_reason_en = "Interactive models run with buttons and joysticks, open every day from 10:00 to 18:00, with a combined ticket with a Video Game Museum."
+rank_reason_fr = "Modèles interactifs commandés par boutons et manettes, ouvert tous les jours de 10 h à 18 h, avec un billet combiné avec un musée du jeu vidéo."
 aliases = ["Muzeum Klocków Karpacz"]
 covers = ["official", "places"]
 languages = ["pl", "en", "de", "cs"]
@@ -2113,6 +2266,9 @@ id = "legio-museum"
 name = "LEGiO Museum"
 url = "https://www.museumpleingrootegast.nl/"
 group = "museums-and-exhibitions"
+rank = {NL = 1}
+rank_reason_en = "In the former LEGO Nederland building (1963 to 1998), with a new floor opened on 29 March 2026 and rotating themed exhibitions of several collectors."
+rank_reason_fr = "Dans l'ancien bâtiment de LEGO Nederland (1963 à 1998), avec un étage ouvert le 29 mars 2026 et des expositions thématiques temporaires de plusieurs collectionneurs."
 covers = ["official", "places"]
 languages = ["nl"]
 countries = ["NL"]
@@ -2152,6 +2308,9 @@ id = "museum-van-de-20e-eeuw-lego"
 name = "Museum van de 20e Eeuw: LEGO in het Museum"
 url = "https://www.museumhoorn.nl/en/"
 group = "museums-and-exhibitions"
+rank = {NL = 2}
+rank_reason_en = "Two galleries from a collection taken over from an entire LEGO museum, plus Brick-City at Hoorn railway station; free with the Museumkaart."
+rank_reason_fr = "Deux galeries issues d'une collection reprise d'un musée LEGO entier, plus Brick-City à la gare de Hoorn ; gratuit avec la Museumkaart."
 aliases = ["LEGO in het Museum", "Museum Hoorn"]
 covers = ["official", "places"]
 languages = ["nl", "en", "de"]
@@ -2197,6 +2356,9 @@ id = "campona-kockapark"
 name = "Campona KockaPark"
 url = "https://kockapark.com/en/"
 group = "museums-and-exhibitions"
+rank = {HU = 1}
+rank_reason_en = "Dioramas by Hungarian builders, open every day from 10:00 to 19:00, with site news dated 27 October 2026."
+rank_reason_fr = "Dioramas de constructeurs hongrois, ouvert tous les jours de 10 h à 19 h, avec une actualité du site datée du 27 octobre 2026."
 covers = ["official", "places"]
 languages = ["hu", "en"]
 countries = ["HU"]
@@ -2241,6 +2403,9 @@ id = "vanha-palikka"
 name = "Vanha Palikka"
 url = "https://www.vanha-palikka.com/"
 group = "museums-and-exhibitions"
+rank = {FI = 1}
+rank_reason_en = "Thousands of sets from several decades in themed rooms, open on listed dates from 15 November 2026 to 3 January 2027, with a web shop of used products."
+rank_reason_fr = "Des milliers de sets de plusieurs décennies dans des salles thématiques, ouvert à des dates indiquées du 15 novembre 2026 au 3 janvier 2027, avec une boutique en ligne de produits d'occasion."
 aliases = ["Vanha-palikka", "Old Brick"]
 covers = ["official", "second-hand", "places"]
 languages = ["fi"]
@@ -2275,6 +2440,9 @@ id = "brickiseum"
 name = "Brickiseum"
 url = "https://www.brickiseum.com/"
 group = "museums-and-exhibitions"
+rank = {AU = 1}
+rank_reason_en = "Star Wars Wing with nearly 1600 minifigures and every Ultimate Collector Series set, open on Saturday and Sunday from 10:00 to 16:00."
+rank_reason_fr = "Aile Star Wars avec près de 1600 figurines et tous les sets Ultimate Collector Series, ouvert le samedi et le dimanche de 10 h à 16 h."
 covers = ["official", "places"]
 languages = ["en"]
 countries = ["AU"]
@@ -2313,6 +2481,9 @@ id = "brick-ark-museum"
 name = "Brick Ark Museum"
 url = "https://www.brickark.com/"
 group = "museums-and-exhibitions"
+rank = {TW = 1}
+rank_reason_en = "More than 1000000 bricks and over 1000 exhibits, open every day of the year from 10:00 to 17:00."
+rank_reason_fr = "Plus de 1000000 briques et plus de 1000 pièces exposées, ouvert tous les jours de l'année de 10 h à 17 h."
 aliases = ["積木博物館"]
 covers = ["official", "places"]
 languages = ["zh"]
@@ -2350,6 +2521,9 @@ id = "brickseum"
 name = "Brickseum"
 url = "https://brickseum.com/"
 group = "museums-and-exhibitions"
+rank = {PH = 1}
+rank_reason_en = "Vintage LEGO collection, a shop of hard-to-find sets and a play area; opened to the public on 26 October 2025 according to The Manila Times."
+rank_reason_fr = "Collection ancienne de LEGO, boutique de sets difficiles à trouver et espace de jeu ; ouvert au public le 26 octobre 2025 selon The Manila Times."
 covers = ["official", "places"]
 languages = ["en"]
 countries = ["PH"]
@@ -2387,6 +2561,9 @@ id = "toy-and-plastic-brick-museum"
 name = "Toy and Plastic Brick Museum"
 url = "https://brickmuseum.com/"
 group = "museums-and-exhibitions"
+rank = {US = 1}
+rank_reason_en = "More than 4000000 bricks, 500 statues and about 20 themed rooms according to its operator, open Tuesday to Sunday from 15 May 2026, seasonal."
+rank_reason_fr = "Plus de 4000000 briques, 500 statues et environ 20 salles thématiques selon son exploitant, ouvert du mardi au dimanche depuis le 15 mai 2026, saisonnier."
 aliases = ["Brick Museum Bellaire", "Unofficial Toy and Plastic Brick Museum"]
 covers = ["official", "places"]
 languages = ["en"]

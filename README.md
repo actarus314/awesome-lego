@@ -51,8 +51,10 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
   - [Event calendars](#event-calendars)
 - [Places to visit](#places-to-visit)
   - [Official LEGO venues and stores](#official-lego-venues-and-stores)
+  - [Theme parks](#theme-parks)
   - [Museums and permanent exhibitions](#museums-and-permanent-exhibitions)
   - [Physical shops (alternative brands and used bricks)](#physical-shops-alternative-brands-and-used-bricks)
+  - [Cafés and play spaces](#cafs-and-play-spaces)
 - [Clubs and associations](#clubs-and-associations)
   - [National clubs](#national-clubs)
   - [Regional and local clubs](#regional-and-local-clubs)
@@ -271,8 +273,6 @@ Conventions, fan exhibitions, artist shows, public competitions and calendars li
 
 ### Conventions, fairs and exhibitions
 
-- [Brick Mania Antwerpen](https://www.belug.be/brickmania/antwerpen/) - Organised by the Belgian LEGO User Group BeLUG at Antwerp Expo, the largest LEGO exhibition in Belgium, with layouts, a Great Ball Contraption, workshops and sales. Covers official LEGO.
-- [Fana'briques](https://expo.fanabriques.fr/fr/) - Organised by volunteers of the association Fanabriques at the Parc des expositions, with dioramas, mosaics, new and second-hand LEGO shops and artists' stalls. Covers official LEGO.
 - [Skærbæk Fan Weekend](https://www.fanweekend.dk/) - International gathering of adult fans of LEGO in southern Jutland, 80 km south of Billund, with a public exhibition of custom builds on the Saturday and Sunday. Covers official LEGO.
 
 ### Competitions
@@ -281,8 +281,7 @@ Conventions, fan exhibitions, artist shows, public competitions and calendars li
 
 ### Event calendars
 
-- [hothbricks: expositions et événements LEGO](https://www.hothbricks.com/expos/) - Agenda of LEGO exhibitions, plus international events where LEGO is present. Covers official LEGO.
-- [steine-kanal: Veranstaltungskalender](https://www.steine-kanal.de/veranstaltungskalender-2027-alle-lego-fan-veranstaltungen-und-boersen-im-uberblick/) - Yearly list, month by month, of LEGO fan events and trading fairs, with a separate section for exhibitions using bricks of other manufacturers; permanent museums are added. Covers official LEGO and alternative brands.
+- [brick.news: events calendar](https://brick.news/calendar) - Worldwide listing of LEGO and brick fan events, conventions, exhibitions, workshops and meetups, with a page per event. Covers official LEGO and alternative brands.
 
 <br>
 
@@ -295,17 +294,22 @@ Venues of the brick world that can be visited: official LEGO venues and stores, 
 ### Official LEGO venues and stores
 
 - [LEGO House](https://legohouse.com/en-gb) - Four Experience Zones, a historical collection on the LEGO Group and the brick, a LEGO Store and restaurants. Covers official LEGO.
-- [LEGO Stores directory](https://www.lego.com/fr-fr/stores) - Pages with address, opening hours and features (Pick and Build wall, Build a Minifigure, LEGO Insiders) for each official LEGO Store. Covers official LEGO.
+
+### Theme parks
+
+- [LEGOLAND Billund Resort](https://www.legoland.dk/) - The original LEGOLAND, opened in 1968 next to LEGO House in Billund. Covers official LEGO.
 
 ### Museums and permanent exhibitions
 
-- [Frankensteins Klemmbaustein Museum](https://frankensteins.de/) - LEGO and compatible brands (COBI, Mould King, Wange, Cada, Reobrix, Sembo and others) on show, plus a building room, a shop and a café. Opened in October 2021 in Eckental near Nuremberg. Covers official LEGO and alternative brands.
 - [Museum of Bricks](https://museumofbricks.cz/) - Built on the collection of Miloš Křeček, with 5 sites: Prague flagship on Národní třída, Kutná Hora, Špindlerův Mlýn, Poděbrady, Hatě near Znojmo. Covers official LEGO.
-- [Palais de la Maquette - Musée du Jouet](http://www.palaisdelamaquette.com/) - Giant animated LEGO and K'NEX models: seaside resort, harbour, medieval town, amusement park. Covers official LEGO.
 
 ### Physical shops (alternative brands and used bricks)
 
 - [Time For Bricks](https://www.timeforbricks.fr/) - About thirty brands of alternative bricks compatible with standard bricks, sold in Chambéry (since 2023) and Annecy (opened in July 2026), with free building tables and a hot drink corner in Annecy. Covers alternative brands.
+
+### Cafés and play spaces
+
+- [Brick Bank Café](https://www.brickbankcafe.org/) - LEGO sets or trays of loose bricks hired by the half hour or hour and built at the table, in a former bank, opened in June 2025 in Bingley (West Yorkshire). Covers official LEGO.
 
 <br>
 
