@@ -60,7 +60,7 @@ T = {  # interface strings
     "feed": {"en": "Feed of new resources (RSS)", "fr": "Flux des nouveautés (RSS)"},
     "contents": {"en": "Contents", "fr": "Sommaire"},
     "contributing": {"en": "Contributing", "fr": "Contribuer"},
-    "contrib_text": {"en": "Additions and corrections are welcome: read [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them."},
+    "contrib_text": {"en": "Additions and corrections are welcome: read [how the directory is made and what gets in](https://actarus314.github.io/awesome-lego/about/), then [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them."},
     "site_fr": {"en": "French version of the website", "fr": "Version française du site"},
     "site": {"en": "Explore the website: every resource, with search, filters and a map", "fr": "Explorer le site : toutes les ressources, avec recherche, filtres et carte"},
     "updated": {"en": "Updated", "fr": "Mis à jour"},
@@ -568,14 +568,20 @@ def source(name):
 def assemble():
     """The page template, put together from its parts: index.html (skeleton, head scripts, vault hint script),
     style.css, app.js (the page's script) and strings.json (interface strings in English and French, the table S
-    of app.js). Plain text insertion, no modules: the page served is one file per language, as before."""
-    return (SRC / "index.html").read_text(encoding="utf-8").replace("{{STYLE}}", source("style.css"), 1).replace("{{APP}}", source("app.js").replace("{{STRINGS}}", source("strings.json"), 1), 1)
+    of app.js), plus the shared header (header.html, header.js). Plain text insertion, no modules: the page served is one file per language, as before."""
+    return shared((SRC / "index.html").read_text(encoding="utf-8")).replace("{{APP}}", source("app.js").replace("{{STRINGS}}", source("strings.json"), 1), 1)
+
+
+def shared(tpl):
+    """The parts every page of the website shares: style.css, the header (header.html) and its script (header.js)."""
+    return tpl.replace("{{STYLE}}", source("style.css"), 1).replace("{{HEADER}}", source("header.html"), 1).replace("{{HEADERJS}}", source("header.js"), 1)
 
 
 def static_texts(tpl, lang):
     """Fill the empty elements marked data-t="key" with the string the page's script would put there
     (site-src/strings.json): the first paint shows the final texts, nothing moves after."""
     S = {k: v[lang] for k, v in json.loads(source("strings.json")).items()}
+    tpl = re.sub(r'\bdata-t-label="(\w+)"', lambda m: m.group(0) + f' aria-label="{html.escape(S[m.group(1)])}"' if m.group(1) in S else m.group(0), tpl)  # names of the icon buttons, for pages without app.js
     return re.sub(r'(<(\w+)\b[^>]*\bdata-t="(\w+)"[^>]*>)(</\2>)',
                   lambda m: m.group(1) + html.escape(S[m.group(3)], quote=False) + m.group(4) if m.group(3) in S else m.group(0), tpl)
 
@@ -600,7 +606,7 @@ def page(lang, data):
     values = {"LANG": lang, "OTHER": other, "TITLE": html.escape(T["title"][lang]), "TAGLINE": html.escape(T["site_tagline"][lang]),
               "MINISEARCH": (ROOT / "site-src" / "vendor" / "minisearch.min.js").read_text(encoding="utf-8"),
               "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "",
-              "DATA": blob, "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}"}
+              "DATA": blob, "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": "#top", "HOME": "", "ABOUT": "about/"}
     out = re.sub(r"\{\{(\w+)\}\}", lambda m: values[m.group(1)], tpl)  # one pass: a text of the data that contains {{…}} is never replaced again
     i = out.index("{{CSP}}")  # the policy is the template's own placeholder, before any data
     return out[:i] + csp(out) + out[i + len("{{CSP}}"):]
@@ -639,6 +645,38 @@ def csp(doc, rest="; style-src 'unsafe-inline'; img-src 'self' https://actarus31
     hashes = [base64.b64encode(hashlib.sha256(m.encode("utf-8")).digest()).decode()
               for m in inline_scripts(doc)]
     return "default-src 'none'; script-src " + " ".join(f"'sha256-{h}'" for h in hashes) + rest
+
+
+ABOUT_PATH = {"en": "about/", "fr": "fr/about/"}
+
+
+def about(lang, data):
+    """site/about/ and site/fr/about/: what the directory is, how it is made and kept current, why a selection and how
+    it is made, how to write to the maintainer. Plain text that search engines read without running the page's script;
+    its figures come from the data at each build. Texts in site-src/about.json, page in about.html, styles in about.css."""
+    A = {k: v[lang] for k, v in json.loads(source("about.json")).items()}
+    R = data["resources"]
+    n, ranked, sel = len(R), sum(1 for r in R if r.get("rank")), sum(1 for r in R if r["featured"])
+    groups = sum(len(c["groups"]) for c in data["categories"])
+    home = "../"  # the directory page of the same language: site/ from site/about/, site/fr/ from site/fr/about/
+    fill = lambda x: x.replace("{REPO}", REPO).replace("{HOME}", home).replace("{groups}", str(groups)).replace("{date}", in_letters(data["built"], lang))
+    canon = PAGES + ABOUT_PATH[lang]
+    ld = json.dumps({"@context": "https://schema.org", "@type": "AboutPage", "name": A["ptitle"], "description": A["pdesc"], "url": canon,
+                     "inLanguage": lang, "dateModified": data["built"], "isPartOf": {"@type": "WebSite", "name": "Awesome LEGO", "url": PAGES + ("fr/" if lang == "fr" else "")}},
+                    ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+    pct = lambda k: f"{max(1, round(100 * k / n))}%"
+    values = {"LANG": lang, "PTITLE": html.escape(A["ptitle"]), "PDESC": html.escape(A["pdesc"]), "CANON": canon, "LD": ld,
+              "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "", "ASTYLE": source("about.css"),
+              "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": home, "HOME": home,
+              "OTHER": "../fr/about/" if lang == "en" else "../../about/",
+              "N": str(n), "RANKED": str(ranked), "SEL": str(sel), "RANKEDW": pct(ranked), "SELW": pct(sel),
+              "COUNTRIES": str(len({c for r in R for c in r.get("countries") or [] if c != "international"})),
+              "LANGS": str(len({x for r in R for x in r.get("languages") or []})), "SOURCES": str(sum(len(r["sources"]) for r in R))}
+    tpl = static_texts(shared((SRC / "about.html").read_text(encoding="utf-8")), lang)
+    tpl = re.sub(r"\{\{a:(\w+)\}\}", lambda m: fill(A[m.group(1)]), tpl)  # the page's own texts: trusted HTML of site-src/about.json
+    out = re.sub(r"\{\{(\w+)\}\}", lambda m: values[m.group(1)], tpl)
+    i = out.index("{{CSP}}")
+    return out[:i] + csp(out) + out[i + len("{{CSP}}"):]
 
 
 def vault():
@@ -847,6 +885,9 @@ def main():
     (SITE / "fr" / "index.html").write_text(page("fr", data), encoding="utf-8")
     (SITE / "details.json").write_text(details("en", data), encoding="utf-8")
     (SITE / "fr" / "details.json").write_text(details("fr", data), encoding="utf-8")
+    for lang, path in ABOUT_PATH.items():
+        (SITE / path).mkdir(parents=True, exist_ok=True)
+        (SITE / path / "index.html").write_text(about(lang, data), encoding="utf-8")
     (SITE / "vault").mkdir(parents=True, exist_ok=True)
     (SITE / "vault" / "index.html").write_text(vault(), encoding="utf-8")
     (SITE / "feed.xml").write_text(content_feed(cats, "en"), encoding="utf-8")
@@ -859,7 +900,7 @@ def main():
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_bytes(f.read_bytes())
     (SITE / "data.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")  # read by scripts/refresh.py --from-site
-    print("✓ site/index.html, site/fr/index.html, site/data.json")
+    print("✓ site/index.html, site/fr/index.html, site/about/, site/fr/about/, site/data.json")
 
 
 if __name__ == "__main__":

@@ -3,6 +3,9 @@ description: Suggest a website, shop, brand, channel, community, event, place, c
 title: "Add: "
 labels: ["new resource"]
 body:
+  - type: markdown
+    attributes:
+      value: The directory keeps the 3 to 5 resources that stand out per country or language in each group, and points to reference directories for the rest. [What gets in and what stays out](https://actarus314.github.io/awesome-lego/about/#selection).
   - type: input
     id: url
     attributes:
@@ -54,6 +57,8 @@ body:
       label: Checks
       options:
         - label: Not already in the list
+          required: true
+        - label: Meets the criteria of the directory (what gets in, what stays out)
           required: true
         - label: No affiliate or referral link
           required: true

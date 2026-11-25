@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="{{CSP}}">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{PTITLE}}</title>
+<meta name="description" content="{{PDESC}}">
+<link rel="canonical" href="{{CANON}}">
+<meta property="og:type" content="website"><meta property="og:title" content="{{PTITLE}}"><meta property="og:description" content="{{PDESC}}"><meta property="og:url" content="{{CANON}}">
+<meta property="og:image" content="https://actarus314.github.io/awesome-lego/media/social.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="https://actarus314.github.io/awesome-lego/about/">
+<link rel="alternate" hreflang="fr" href="https://actarus314.github.io/awesome-lego/fr/about/">
+<link rel="alternate" type="application/atom+xml" title="{{FEEDTITLE}}" href="https://actarus314.github.io/awesome-lego/{{FEEDPATH}}feed.xml">
+<link rel="icon" type="image/svg+xml" href="https://actarus314.github.io/awesome-lego/media/logo.svg">
+<link rel="icon" type="image/png" sizes="64x64" href="https://actarus314.github.io/awesome-lego/media/favicon.png">
+<link rel="apple-touch-icon" href="https://actarus314.github.io/awesome-lego/media/apple-touch-icon.png">
+<script type="application/ld+json">{{LD}}</script>
+<script>/* language: the English about page sends a French-speaking browser to the French one, unless a language was chosen with the button */
+try{if('{{LANG}}'==='en'){const l=localStorage.getItem('lang');if(l==='fr'||(!l&&/^fr\b/i.test((navigator.languages||[navigator.language])[0]||'')))location.replace('../fr/about/'+location.hash)}}catch(e){}</script>
+<script>document.documentElement.classList.add('ready');try{const t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<style>
+{{STYLE}}
+{{ASTYLE}}
+</style>
+</head>
+<body>
+<a class="skip" href="#about" data-t="skip_content"></a>
+{{HEADER}}
+<main class="wrap ab" id="about">
+<section class="hero ab-hero"><div><h1>{{a:h1}}</h1><p>{{a:lead}}</p><p class="fresh">{{a:figures}}</p></div>
+<div class="kpis"><div class="kpi"><b>{{N}}</b><span>{{a:k_res}}</span></div><div class="kpi"><b>{{COUNTRIES}}</b><span>{{a:k_countries}}</span></div><div class="kpi"><b>{{LANGS}}</b><span>{{a:k_langs}}</span></div><div class="kpi"><b>{{SOURCES}}</b><span>{{a:k_sources}}</span></div></div></section>
+
+<h2 id="method">{{a:m_h}}</h2>
+<p class="lead">{{a:m_lead}}</p>
+<ol class="flow">
+<li><b>{{a:f1}}</b><span>{{a:f1d}}</span></li>
+<li><b>{{a:f2}}</b><span>{{a:f2d}}</span></li>
+<li><b>{{a:f3}}</b><span>{{a:f3d}}</span></li>
+<li><b>{{a:f4}}</b><span>{{a:f4d}}</span></li>
+<li><b>{{a:f5}}</b><span>{{a:f5d}}</span></li>
+</ol>
+<h3 class="sub">{{a:c_h}}</h3>
+<div class="rhythm">
+<div class="beat"><span class="label">{{a:c1}}</span><p>{{a:c1d}}</p></div>
+<div class="beat"><span class="label">{{a:c2}}</span><p>{{a:c2d}}</p></div>
+<div class="beat"><span class="label">{{a:c3}}</span><p>{{a:c3d}}</p></div>
+<div class="beat"><span class="label">{{a:c4}}</span><p>{{a:c4d}}</p></div>
+</div>
+<p class="note">{{a:who}}</p>
+
+<h2 id="selection">{{a:s_h}}</h2>
+<p class="lead">{{a:s_lead}}</p>
+<div class="funnel">
+<div class="step" style="--w:100%"><b>{{N}}</b><span class="track"><span class="fill"></span></span><span class="what">{{a:s1}}</span></div>
+<div class="step" style="--w:{{RANKEDW}}"><b>{{RANKED}}</b><span class="track"><span class="fill"></span></span><span class="what">{{a:s2}}</span></div>
+<div class="step" style="--w:{{SELW}}"><b>{{SEL}}</b><span class="track"><span class="fill"></span></span><span class="what">{{a:s3}}</span></div>
+</div>
+<div class="rules">
+<section class="panel"><h3>{{a:r1}}</h3><p>{{a:r1d}}</p></section>
+<section class="panel"><h3>{{a:r2}}</h3><p>{{a:r2d}}</p></section>
+</div>
+<div class="inout">
+<section class="panel in"><h3>{{a:in_h}}</h3><ul>{{a:in}}</ul></section>
+<section class="panel out"><h3>{{a:out_h}}</h3><ul>{{a:out}}</ul></section>
+</div>
+<p class="note">{{a:good}}</p>
+
+<h2 id="contact">{{a:x_h}}</h2>
+<p class="lead">{{a:x_lead}}</p>
+<div class="contact">
+<a class="panel act" href="https://github.com/{{REPO}}/issues/new?template=add-resource.yml"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><b>{{a:x1}}</b><span>{{a:x1d}}</span></a>
+<a class="panel act" href="https://github.com/{{REPO}}/issues/new?template=fix-entry.yml"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg><b>{{a:x2}}</b><span>{{a:x2d}}</span></a>
+<a class="panel act" href="https://github.com/{{REPO}}/discussions"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><b>{{a:x3}}</b><span>{{a:x3d}}</span></a>
+<a class="panel act" href="https://github.com/{{REPO}}/security/advisories/new"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><b>{{a:x4}}</b><span>{{a:x4d}}</span></a>
+</div>
+
+<h2 id="licences">{{a:l_h}}</h2>
+<p class="lead">{{a:l1}}</p>
+<p class="note">{{a:l2}}</p>
+</main>
+<footer><div class="wrap"><span><a href="{{HOME}}" data-t="nav_dir"></a> · <a href="https://github.com/{{REPO}}/blob/main/contributing.md" data-t="contribute"></a> · <a href="{{HOME}}feed.xml" type="application/atom+xml" data-t="feed"></a> · <a href="https://github.com/{{REPO}}/blob/main/LICENSE">CC BY-NC-SA 4.0</a></span></div></footer>
+<script>
+{{HEADERJS}}
+</script>
+</body>
+</html>

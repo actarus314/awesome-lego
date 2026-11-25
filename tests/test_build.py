@@ -136,6 +136,47 @@ class Pages(unittest.TestCase):
 
 
 
+class About(unittest.TestCase):
+    """site/about/ and site/fr/about/: plain text pages, figures from the data, the header of the home pages."""
+    @classmethod
+    def setUpClass(cls):
+        with contextlib.redirect_stdout(io.StringIO()):
+            cats, _ = build.load()
+            cls.data = build.site_data(cats, build.metrics())
+        cls.data["version"] = (ROOT / "VERSION").read_text().strip()
+        cls.pages = {lang: build.about(lang, cls.data) for lang in ("en", "fr")}
+
+    def test_no_placeholder_left(self):
+        for lang, doc in self.pages.items():
+            self.assertNotRegex(doc, r"\{\{|\{(REPO|HOME|groups|date)\}", lang)
+
+    def test_every_inline_script_is_allowed(self):
+        for lang, doc in self.pages.items():
+            policy = re.search(r'http-equiv="Content-Security-Policy" content="([^"]*)"', doc).group(1)
+            for body in build.inline_scripts(doc):
+                h = "'sha256-" + base64.b64encode(hashlib.sha256(body.encode()).digest()).decode() + "'"
+                self.assertIn(h, policy, lang)
+
+    def test_found_by_search_engines(self):
+        for lang, doc in self.pages.items():
+            self.assertIn(f'<link rel="canonical" href="{build.PAGES}{build.ABOUT_PATH[lang]}">', doc)
+            self.assertIn('hreflang="en" href="https://actarus314.github.io/awesome-lego/about/"', doc)
+            self.assertIn('hreflang="fr" href="https://actarus314.github.io/awesome-lego/fr/about/"', doc)
+            ld = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', doc).group(1))
+            self.assertEqual(ld["@type"], "AboutPage")
+
+    def test_figures_follow_the_data(self):
+        R = self.data["resources"]
+        for doc in self.pages.values():
+            self.assertIn(f"<b>{len(R)}</b>", doc)
+            self.assertIn(f"<b>{sum(1 for r in R if r['featured'])}</b>", doc)
+            self.assertIn(f"<b>{sum(len(r['sources']) for r in R)}</b>", doc)
+
+    def test_icon_buttons_named_without_the_page_script(self):
+        self.assertIn('id="settings" type="button" aria-expanded="false" aria-controls="setmenu" data-t-label="settings" aria-label="Réglages"', self.pages["fr"])
+        self.assertIn('data-t="nav_dir">Directory</a>', self.pages["en"])
+
+
 def entry_of(text, rid):
     """Span of the [[resource]] block with id `rid`."""
     i = text.index(f'id = "{rid}"')
