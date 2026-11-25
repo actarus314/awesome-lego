@@ -750,7 +750,7 @@ date = "2026-11-24"
 
 [[resource]]
 id = "fanabriques"
-name = "Fana'Briques"
+name = "Fana'briques"
 url = "https://expo.fanabriques.fr/fr/"
 group = "conventions"
 featured = true

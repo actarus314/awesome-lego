@@ -454,7 +454,7 @@ kind = "official"
 
 [[resource]]
 id = "fanabriques-club"
-name = "Fana'briques"
+name = "Fana'briques (club)"
 url = "https://fanabriques.fr/"
 group = "regional-clubs"
 covers = ["clubs", "official", "events"]
