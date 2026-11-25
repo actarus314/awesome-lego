@@ -2102,7 +2102,7 @@ kind = "read"
 [[resource]]
 id = "willhaben"
 name = "willhaben"
-url = "https://www.willhaben.at/"
+url = "https://www.willhaben.at/iad"
 group = "marketplaces"
 rank = {AT = 1}
 rank_reason_en = "Presents itself as the largest digital marketplace in Austria, with a category of its own holding 139940 ads on 25 November 2026 and secure payment and parcel shipping through PayLivery."
