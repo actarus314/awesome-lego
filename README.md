@@ -267,18 +267,18 @@ Conventions, fan exhibitions, artist shows, public competitions and calendars li
 
 ### Conventions, fairs and exhibitions
 
-- [Brick Mania Antwerpen](https://www.belug.be/brickmania/antwerpen/) - Largest LEGO exhibition in Belgium, organised by the Belgian LEGO User Group BeLUG at Antwerp Expo, with layouts, a Great Ball Contraption, workshops and sales. Covers official LEGO.
-- [Fana'briques](https://expo.fanabriques.fr/fr/) - Large LEGO exhibition at the Parc des expositions in Colmar, organised by volunteers of the association Fanabriques, with dioramas, mosaics, new and second-hand LEGO shops and artists' stalls. Covers official LEGO.
-- [Skærbæk Fan Weekend](https://www.fanweekend.dk/) - International convention of adult fans of LEGO in southern Jutland, 80 km south of Billund, with a public exhibition of custom builds on the Saturday and Sunday. Covers official LEGO.
+- [Brick Mania Antwerpen](https://www.belug.be/brickmania/antwerpen/) - Organised by the Belgian LEGO User Group BeLUG at Antwerp Expo, the largest LEGO exhibition in Belgium, with layouts, a Great Ball Contraption, workshops and sales. Covers official LEGO.
+- [Fana'briques](https://expo.fanabriques.fr/fr/) - Organised by volunteers of the association Fanabriques at the Parc des expositions, with dioramas, mosaics, new and second-hand LEGO shops and artists' stalls. Covers official LEGO.
+- [Skærbæk Fan Weekend](https://www.fanweekend.dk/) - International gathering of adult fans of LEGO in southern Jutland, 80 km south of Billund, with a public exhibition of custom builds on the Saturday and Sunday. Covers official LEGO.
 
 ### Competitions
 
-- [LEGO Ideas challenges](https://ideas.lego.com/challenges) - Official building challenges on the LEGO Ideas platform, with prizes of sets and, for some, a path to an official product. Covers official LEGO.
+- [LEGO Ideas challenges](https://ideas.lego.com/challenges) - Building challenges on the LEGO Ideas platform, with set prizes and, for some, a path to an official product. Covers official LEGO.
 
 ### Event calendars
 
-- [hothbricks: expositions et événements LEGO](https://www.hothbricks.com/expos/) - Agenda of LEGO exhibitions in France, Belgium and Switzerland, plus international events where LEGO is present. Covers official LEGO.
-- [steine-kanal: Veranstaltungskalender](https://www.steine-kanal.de/veranstaltungskalender-2027-alle-lego-fan-veranstaltungen-und-boersen-im-uberblick/) - Yearly calendar of LEGO fan events and trading fairs by month, with a separate section for exhibitions using bricks of other manufacturers; permanent museums are added. Covers official LEGO and alternative brands.
+- [hothbricks: expositions et événements LEGO](https://www.hothbricks.com/expos/) - Agenda of LEGO exhibitions, plus international events where LEGO is present. Covers official LEGO.
+- [steine-kanal: Veranstaltungskalender](https://www.steine-kanal.de/veranstaltungskalender-2027-alle-lego-fan-veranstaltungen-und-boersen-im-uberblick/) - Yearly list, month by month, of LEGO fan events and trading fairs, with a separate section for exhibitions using bricks of other manufacturers; permanent museums are added. Covers official LEGO and alternative brands.
 
 <br>
 
