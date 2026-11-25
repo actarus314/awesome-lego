@@ -1975,3 +1975,362 @@ kind = "read"
 url = "https://www.brickitmagazine.com/"
 date = "2026-11-23"
 kind = "read"
+
+[[resource]]
+id = "bricktastic-nl"
+name = "BrickTastic"
+url = "https://www.bricktastic.nl/"
+group = "news-and-reviews"
+covers = ["official", "news"]
+languages = ["nl"]
+countries = ["NL", "BE"]
+summary_en = "Several posts a day on set announcements, rumours and shop deals, signed by the same editor on the home page; deals pages and Black Friday coverage sit beside the news."
+summary_fr = "Plusieurs articles par jour sur les annonces de sets, les rumeurs et les offres des boutiques, signés du même rédacteur ; des pages d'offres et la couverture du Black Friday côtoient l'actualité."
+strengths_en = ["Posts every day: latest on 25 November 2026", "Public RSS feed", "Pages for deals and for the sets of the year"]
+strengths_fr = ["Articles tous les jours : dernier le 25 novembre 2026", "Flux RSS public", "Pages d'offres et de sets de l'année"]
+weaknesses_en = ["Deals-heavy: flash deals and Black Friday posts make up much of the home page", "Amazon affiliate programme stated in the footer"]
+weaknesses_fr = ["Beaucoup d'offres : les offres éclair et le Black Friday occupent une grande part de la page d'accueil", "Programme d'affiliation Amazon indiqué en pied de page"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+funding = ["affiliation"]
+feed = "https://www.bricktastic.nl/feed/"
+
+[[resource.sources]]
+url = "https://www.bricktastic.nl/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.bricktastic.nl/feed/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "matyho-kostky"
+name = "Matyho kostky"
+url = "https://matyhokostky.cz/"
+group = "news-and-reviews"
+covers = ["official", "news"]
+languages = ["cs"]
+countries = ["CZ", "SK"]
+summary_en = "Archive of catalogues of sets of the LEGO brand sold in Czechia from 1987 to today, beside reviews, news and a selection of discounts in Czech shops, by a recognised fan creator."
+summary_fr = "Archive des catalogues de sets de marque LEGO vendus en Tchéquie de 1987 à aujourd'hui, avec tests, actualités et une sélection de réductions, par un créateur de fans reconnu."
+strengths_en = ["Catalogue archive from 1987 to the present", "Stated as a Recognized LEGO Fan Creator within the LEGO Fan CoLab", "Public RSS feed"]
+strengths_fr = ["Archive de catalogues de 1987 à aujourd'hui", "Indiqué comme Recognized LEGO Fan Creator au sein du LEGO Fan CoLab", "Flux RSS public"]
+weaknesses_en = ["Purchases through the discount selection and donations fund the site (stated)", "Written by one author"]
+weaknesses_fr = ["Les achats par la sélection de réductions et les dons financent le site (indiqué)", "Rédigé par un seul auteur"]
+status = "active"
+last_activity = "2026-11-24"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+funding = ["affiliation", "donations"]
+feed = "https://matyhokostky.cz/feed/"
+
+[[resource.sources]]
+url = "https://matyhokostky.cz/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://matyhokostky.cz/feed/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "studs-jp"
+name = "Studs (スタッズ)"
+url = "https://stds.jp/"
+group = "news-and-reviews"
+covers = ["official", "news"]
+languages = ["ja"]
+countries = ["JP"]
+summary_en = "Founded in 2010 by a single editor: sale and gift-with-purchase pages updated continuously, new-set lists, reviews, and exclusive purchase gifts run with the LEGO Shop since 2022."
+summary_fr = "Fondé en 2010 par un seul rédacteur : promotions et cadeaux à l'achat mis à jour en continu, listes de nouveautés, tests, et cadeaux exclusifs à l'achat avec le LEGO Shop depuis 2022."
+strengths_en = ["Posts every day: latest on 25 November 2026", "More than 30 exclusive purchase-gift campaigns with the LEGO Shop since 2022 (stated)", "Public RSS feed"]
+strengths_fr = ["Articles tous les jours : dernier le 25 novembre 2026", "Plus de 30 campagnes de cadeaux exclusifs à l'achat avec le LEGO Shop depuis 2022 (indiqué)", "Flux RSS public"]
+weaknesses_en = ["Affiliate advertising stated on every page", "Review items sometimes supplied by the LEGO Group (stated)"]
+weaknesses_fr = ["Publicité d'affiliation indiquée sur chaque page", "Articles de test parfois fournis par le groupe LEGO (indiqué)"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+funding = ["affiliation", "sponsorship"]
+feed = "https://stds.jp/feed/"
+
+[[resource.sources]]
+url = "https://stds.jp/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://stds.jp/stds-about-profile-keelan/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://stds.jp/feed/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "brimaga"
+name = "Brimaga"
+url = "https://brimaga.com/"
+group = "news-and-reviews"
+covers = ["official", "news", "data"]
+languages = ["ja"]
+countries = ["JP"]
+summary_en = "Tracks prices across several shops with lowest-price and median comparisons and a market score, beside daily news on new sets, sales and retirements."
+summary_fr = "Suit les prix dans plusieurs boutiques (prix le plus bas, médiane, score de marché) et publie chaque jour des actualités sur les nouveautés, les promotions et les retraits."
+strengths_en = ["Posts every day: latest on 25 November 2026", "Price history compared with the lowest price and the 90-day and one-year median (stated)", "Operating company and representative named on the about page", "Public RSS feed"]
+strengths_fr = ["Articles tous les jours : dernier le 25 novembre 2026", "Historique des prix comparé au prix le plus bas et à la médiane sur 90 jours et sur un an (indiqué)", "Société exploitante et représentant nommés sur la page de présentation", "Flux RSS public"]
+weaknesses_en = ["Affiliate programmes stated (Rakuten, Yahoo Shopping, Amazon)", "Prices and scores given as a reference without guarantee (stated)"]
+weaknesses_fr = ["Programmes d'affiliation indiqués (Rakuten, Yahoo Shopping, Amazon)", "Prix et scores donnés à titre indicatif, sans garantie (indiqué)"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+funding = ["affiliation"]
+feed = "https://brimaga.com/feed.xml"
+
+[[resource.sources]]
+url = "https://brimaga.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brimaga.com/about"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brimaga.com/feed.xml"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "felix-playground"
+name = "Felix's Playground (菲力克斯的遊樂園)"
+url = "https://cfelixplayground.com/"
+group = "news-and-reviews"
+covers = ["official", "news", "data"]
+languages = ["zh"]
+countries = ["TW"]
+summary_en = "Personal blog of an adult fan with a database of more than 2000 sets and 5000 minifigures, price drops from five Taiwanese shops, and unboxing reports."
+summary_fr = "Blog personnel d'un fan adulte avec une base de plus de 2000 sets et 5000 minifigurines, les baisses de prix de cinq boutiques taïwanaises et des comptes rendus de déballage."
+strengths_en = ["Set database with wish-list alerts and retirement-date tracking", "Price drops updated hourly or daily depending on the shop (stated)", "Public RSS feed"]
+strengths_fr = ["Base de sets avec alertes de liste de souhaits et suivi des dates de retrait", "Baisses de prix mises à jour toutes les heures ou chaque jour selon la boutique (indiqué)", "Flux RSS public"]
+weaknesses_en = ["Written by one person, in Traditional Chinese", "Revenue-share purchase links fund the site (stated)"]
+weaknesses_fr = ["Rédigé par une seule personne, en chinois traditionnel", "Des liens d'achat à commission financent le site (indiqué)"]
+status = "active"
+last_activity = "2026-11-20"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+funding = ["affiliation"]
+feed = "https://cfelixplayground.com/feed/"
+size = [{n = 2000, unit = "sets", approx = "more-than"}, {n = 5000, unit = "minifigures", approx = "more-than"}]
+
+[[resource.sources]]
+url = "https://cfelixplayground.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://cfelixplayground.com/lego-catalog/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://cfelixplayground.com/about-us/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "bzpower"
+name = "BZPower"
+url = "https://www.bzpower.com/"
+group = "forums"
+covers = ["official", "custom-builds", "news"]
+languages = ["en"]
+countries = ["international"]
+summary_en = "Centred on BIONICLE, with sections for story theories, fan fiction, artwork, role-playing games and recurring creation contests; other themes share one general section."
+summary_fr = "Centré sur BIONICLE, avec des rubriques pour les théories sur l'histoire, les fictions de fans, les illustrations, les jeux de rôle et des concours de créations récurrents ; les autres thèmes partagent une rubrique générale."
+strengths_en = ["Bionicle Discussion section: 83294 posts", "Newest thread posted within the hour of reading (25 November 2026)", "Buy, sell and trade section (15246 posts)"]
+strengths_fr = ["Rubrique Bionicle Discussion : 83294 messages", "Dernier fil publié moins d'une heure avant la lecture (25 novembre 2026)", "Rubrique d'achat, de vente et d'échange (15246 messages)"]
+weaknesses_en = ["Premier Membership ended in 2024; the site asks for donations (stated)", "The event planning section requires a login"]
+weaknesses_fr = ["L'abonnement Premier Membership a pris fin en 2024 ; le site demande des dons (indiqué)", "La rubrique d'organisation d'événements exige une connexion"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+funding = ["donations"]
+
+[[resource.sources]]
+url = "https://www.bzpower.com/forums/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.bzpower.com/topic/36209-supporting-bzpower/"
+date = "2024-03-25"
+kind = "official"
+
+[[resource]]
+id = "das-klemmbrett"
+name = "Das Klemmbrett"
+url = "https://klemmbrett.info/"
+group = "forums"
+covers = ["alternative", "custom-builds"]
+languages = ["de"]
+countries = ["DE", "AT", "CH"]
+summary_en = "Run by a registered association and given over to alternative brick brands, with separate sections for sets, reviews, manufacturers, custom builds and other brick formats."
+summary_fr = "Tenu par une association enregistrée et consacré aux marques de briques alternatives, avec des rubriques séparées pour les sets, les tests, les fabricants, les créations originales et les autres formats de briques."
+strengths_en = ["124392 posts in 6646 topics, 624 members", "Latest post on 24 November 2026", "Manufacturers section with a topic per brand (455 replies on the BlueBrixx topic)", "Peak of 3051 simultaneous visitors on 14 August 2026"]
+strengths_fr = ["124392 messages dans 6646 sujets, 624 membres", "Dernier message le 24 novembre 2026", "Rubrique des fabricants avec un sujet par marque (455 réponses sur le sujet BlueBrixx)", "Pic de 3051 visiteurs simultanés le 14 août 2026"]
+weaknesses_en = ["No RSS feed found (the standard phpBB feed address returns an error)", "German only"]
+weaknesses_fr = ["Aucun flux RSS trouvé (l'adresse standard de flux phpBB renvoie une erreur)", "En allemand uniquement"]
+status = "active"
+last_activity = "2026-11-24"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 124392, unit = "posts"}, {n = 6646, unit = "topics"}, {n = 624, unit = "members"}]
+brands = ["bluebrixx", "cobi", "cada", "pantasy", "lumibricks", "gobricks", "sembo-block", "mattel-brick-shop", "brixies", "stone-heap", "sluban"]
+
+[[resource.sources]]
+url = "https://klemmbrett.info/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://klemmbrett.info/viewtopic.php?t=7438"
+date = "2026-10-28"
+kind = "official"
+
+[[resource.sources]]
+url = "https://klemmbrett.info/viewforum.php?f=12"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "lelezhen"
+name = "LeLeZhen (乐乐镇)"
+url = "https://www.lelezhen.com/"
+group = "forums"
+covers = ["official", "custom-builds"]
+languages = ["zh"]
+countries = ["CN"]
+summary_en = "Threads mostly present custom builds, with building contests of its own and sections for reviews, official sets, events and a chat room."
+summary_fr = "Les fils présentent surtout des créations originales, avec ses propres concours de construction et des rubriques pour les tests, les sets de marque LEGO, les événements et un salon de discussion."
+strengths_en = ["Contests announced and judged on the forum (2025 contest results published)", "Newest thread 3 days old at reading (relative times only)"]
+strengths_fr = ["Concours annoncés et jugés sur le forum (résultats du concours 2025 publiés)", "Fil le plus récent daté de 3 jours à la lecture (durées relatives seulement)"]
+weaknesses_en = ["Pages show relative times, so the date of last activity is derived", "Most threads have no or few replies", "Direct requests from the work environment returned error 522; the page was read through a fetch service"]
+weaknesses_fr = ["Les pages affichent des durées relatives : la date de dernière activité est déduite", "La plupart des fils n'ont aucune réponse ou très peu", "Les requêtes directes depuis l'environnement de travail renvoient l'erreur 522 ; page lue par un service de lecture"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.lelezhen.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "cmnxt-forum"
+name = "CMNXT Chinese LEGO forum (中文乐高)"
+url = "https://bbs.cmnxt.com/"
+group = "forums"
+covers = ["learning", "custom-builds"]
+languages = ["zh"]
+countries = ["CN"]
+summary_en = "Robotics and programming with LEGO sets (EV3, SPIKE, FLL and WRO competitions), with shared programs and building instructions and a long archive of EV3 software threads."
+summary_fr = "Robotique et programmation avec des sets de marque LEGO (EV3, SPIKE, compétitions FLL et WRO), avec des programmes et des notices partagés et une longue archive de fils sur les logiciels EV3."
+strengths_en = ["722231 posts and 78161 members (counters read 25 November 2026)", "Threads dated up to 11 November 2026"]
+strengths_fr = ["722231 messages et 78161 membres (compteurs lus le 25 novembre 2026)", "Fils datés jusqu'au 11 novembre 2026"]
+weaknesses_en = ["Education and competition focus rather than adult collecting", "Counters show 0 posts today and yesterday at reading"]
+weaknesses_fr = ["Orienté éducation et compétitions plutôt que collection adulte", "Les compteurs indiquent 0 message aujourd'hui et hier à la lecture"]
+status = "active"
+last_activity = "2026-11-11"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 722231, unit = "posts"}, {n = 78161, unit = "members"}]
+
+[[resource.sources]]
+url = "https://bbs.cmnxt.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "flickr-lego-pool"
+name = "Flickr: The LEGO Pool"
+url = "https://www.flickr.com/groups/lego/"
+group = "forums"
+covers = ["custom-builds"]
+languages = ["en"]
+countries = ["international"]
+summary_en = "Photo pool open since 9 June 2004 where members post pictures of what they have built, with a discussion board."
+summary_fr = "Galerie photo ouverte depuis le 9 juin 2004 où les membres publient des images de leurs constructions, avec un forum de discussion."
+strengths_en = ["650177 photos shared by 21668 members (read 25 November 2026)", "Photos added on 24 November 2026 in the public pool feed"]
+strengths_fr = ["650177 photos partagées par 21668 membres (relevé du 25 novembre 2026)", "Photos ajoutées le 24 novembre 2026 dans le flux public de la galerie"]
+weaknesses_en = ["Pictures only: no news, reviews or buying information", "Group page shows no photo dates; activity read from the public feed"]
+weaknesses_fr = ["Images uniquement : ni actualité, ni tests, ni informations d'achat", "La page du groupe n'affiche pas les dates des photos ; activité lue dans le flux public"]
+status = "active"
+last_activity = "2026-11-24"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 21668, unit = "members"}]
+feed = "https://api.flickr.com/services/feeds/groups_pool.gne?id=44124304756@N01&lang=en-us&format=rss_200"
+
+[[resource.sources]]
+url = "https://www.flickr.com/groups/lego/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://api.flickr.com/services/feeds/groups_pool.gne?id=44124304756@N01&lang=en-us&format=rss_200"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "reddit-bioniclelego"
+name = "r/bioniclelego"
+url = "https://www.reddit.com/r/bioniclelego/"
+group = "reddit"
+covers = ["official", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+summary_en = "Main BIONICLE community on Reddit, with flairs for art, collections, custom builds, discussion and lore, and a linked Discord server."
+summary_fr = "Principale communauté BIONICLE sur Reddit, avec des étiquettes pour les illustrations, les collections, les créations originales, les discussions et l'histoire, et un serveur Discord lié."
+strengths_en = ["Active: 825 posts in 30 days (archive read 25 November 2026)", "Created on 2 September 2012"]
+strengths_fr = ["Actif : 825 messages en 30 jours (archive lue le 25 novembre 2026)", "Créé le 2 septembre 2012"]
+weaknesses_en = ["Figures read from the Arctic Shift archive, not from Reddit, which refuses readers"]
+weaknesses_fr = ["Chiffres lus dans l'archive Arctic Shift, non sur Reddit, qui refuse les lecteurs"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+size = [{n = 83626, unit = "members", approx = "about"}]
+subreddit = "bioniclelego"
+
+[[resource.sources]]
+url = "https://arctic-shift.photon-reddit.com/api/subreddits/search?subreddit=bioniclelego"
+date = "2026-11-25"
+kind = "third-party"
+
+[[resource.sources]]
+url = "https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=bioniclelego&limit=1&sort=desc"
+date = "2026-11-25"
+kind = "third-party"
