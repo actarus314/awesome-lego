@@ -1,0 +1,77 @@
+name: Preview
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+  push:
+    branches: [dev]
+  delete:   # the branch dev deleted: its preview goes
+permissions: {}
+jobs:
+  build:
+    # branches of this repository only, never a fork; requests opened by bots (dependencies, data fixes) start no rebuild
+    if: >-
+      github.event_name != 'pull_request' ||
+      (github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.user.type != 'Bot')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    concurrency:
+      group: preview-build   # each run builds every preview: a newer run makes an older one useless
+      cancel-in-progress: true
+    permissions:
+      contents: read        # the branches' code runs here: this job can write nowhere and publishes nothing
+      pull-requests: read   # to list the open pull requests
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.15"
+      - name: Measurements of the published website
+        continue-on-error: true   # without them, the branches build with the repository's copy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/refresh.py --from-site
+      - name: Website of the branch dev and of each open pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # read by the listing only: the branches' builds run without it
+        run: python3 scripts/previews.py previews
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: previews
+          path: previews
+          retention-days: 30   # the Pages runs of the following days publish the same previews
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write   # to start the Pages workflow of main, the only one allowed to publish
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref main -f previews=true
+  link:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.user.type != 'Bot'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write   # one comment with the link, kept up to date
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          N: ${{ github.event.pull_request.number }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+          HEAD: ${{ github.event.pull_request.head.ref }}
+          ACTION: ${{ github.event.action }}
+        run: |
+          dir=$N; [ "$HEAD" = dev ] && dir=dev   # a request from dev shows the preview of dev
+          url="https://${GITHUB_REPOSITORY%/*}.github.io/${GITHUB_REPOSITORY#*/}/preview/${dir}/"
+          if [ "$ACTION" = closed ]; then body="<!-- preview -->
+          Preview removed: the pull request is closed."
+          else body="<!-- preview -->
+          **Preview of this pull request**: ${url} (French: ${url}fr/)
+
+          Commit ${SHA:0:7}, online a few minutes after this comment, once the **Preview** run and the **Pages** run it starts have ended. Every page carries a banner and is hidden from search engines; the preview disappears when the pull request is closed."
+          fi
+          id=$(gh api "repos/$GITHUB_REPOSITORY/issues/$N/comments" --paginate --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | startswith("<!-- preview -->"))) | .id' | head -n1)
+          if [ -n "$id" ]; then gh api -X PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$id" -f body="$body" >/dev/null
+          else gh api "repos/$GITHUB_REPOSITORY/issues/$N/comments" -f body="$body" >/dev/null; fi
