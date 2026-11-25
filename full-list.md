@@ -92,14 +92,22 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 - [BlueBrixx](https://www.bluebrixx.com/fr/) - Architecture, trains, medieval, vehicles and licences (BlueBrixx Pro for adults), by BB Services GmbH. Bricks come from several Chinese manufacturers; design and distribution in Germany. Covers alternative brands.
 - [Brixies](https://brixies.de/) - 4 mm micro-bricks (monuments, postcards) and a Plus range compatible with LEGO (licensed Fendt, Claas and Deutz-Fahr tractors, themed worlds). Covers alternative brands.
 - [BRYX](https://bryxtoys.com/) - Compatible sets with official licences from football clubs (21 stadium sets, 298 to 6162 bricks), landmarks and about 400 single parts sold individually. Designed in Berlin; logos printed, not stuck. Covers alternative brands.
+- [Buildarmy](https://buildarmy.com/) - Accurate World War II and modern military kits at 1:33 minifigure scale, with full interiors, working suspension and infantry squads; designed by Ruibin Zhang and shipped from the United Kingdom. Covers alternative brands.
 - [COBI](https://cobi.com/fr-fr) - Compatible bricks, own factory in Mielec, Poland; specialised in historical and military models (tanks, aircraft, ships) and licensed vehicles. Covers alternative brands.
 - [Mattel Brick Shop (MEGA)](https://shopping.mattel.com/de-de/collections/bausteine-sets) - Adult line launched in 2025: licensed Hot Wheels cars (Lamborghini, Audi, Honda, Aston Martin), Masters of the Universe, Halo, Xbox. MEGA Bloks remains the children's range. Mattel, United States. Covers alternative brands.
 - [Revell Brick System](https://revell.com/collections/brick-system) - Brick line of the plastic model-kit maker, aimed at adults and launched in 2025 with the submarine from Das Boot (6483 pieces, 1:56). Based in Germany. Covers alternative brands.
+- [Stone Heap](https://stone-heap.com/) - Trains, trams, buses, port and military vehicles in 6-wide and 8-wide scale, with Deutsche Bahn and Swiss Federal Railways licences, printed boxes and its own 3D-printed railway wheels. Covers alternative brands.
 
 ### Chinese alternatives
 
+- [12GO](https://12gobuilds.com/) - Manual display models for collectors aged 14 and over: tanks mostly at 1:28, a 7261-piece 1:16 Tiger II, warships, a U-96 submarine, cars and engines; no motors or remote control. Covers alternative brands.
+- [Bole Brick](https://www.bolebricks.com/) - Licensed 1:8 and 1:10 racing cars (Audi Quattro S1, Audi R8 LM-P, Toyota Supra A80) for ages 14 and over, plus PRO Drive remote-control and drift conversion parts. Covers alternative brands.
 - [CaDA (Double Eagle)](https://cadatoys.com/) - Technic-style cars, often motorised or remote-controlled and licensed (Master series at 1:8), plus space and military models. Double Eagle group, Shantou (China), also makes the bricks. Covers alternative brands.
+- [Eikee](https://eikeebricks.com/) - Supercar, endurance racer, truck and engine models for collectors aged 14 and over, from the 3771-piece 1:8 Le Mans prototype Toro SC63 to small display kits. Covers alternative brands.
+- [IAMBRICK](https://iambrickimb.com/) - Original fantasy, wasteland and steampunk worlds for adult collectors, linked by one story on the continent of Gridera; most sets use printed pieces instead of stickers. Covers alternative brands.
 - [iM.Master](https://www.immasterstore.com/) - Remote-controlled and app-controlled cars and engineering models at 1:10 with colour-changing paint (9826-2: 2036 pieces, 300 dollars). From China; the store states it is the official iM.Master shop. Covers alternative brands.
+- [INSOON](https://insoontoys.com/) - Lit house, book nook, flower and Christmas sets (34 in the house series) with LED panels, aimed at teens and adults; some sets use 3.6 mm mini blocks. Covers alternative brands.
+- [JAKI](https://www.jakibricks.com/) - Collectible display sets (modular shops, Mount Fuji and pagoda, Christmas chalets, licensed Saw props) from an official store that ships to 13 European countries. Covers alternative brands.
 - [JIE STAR (with GULY)](https://www.jiestartoys.com/) - Streets, buildings, vehicles, aircraft, mechas and flowers; sub-brands include GULY (1:8 supercars, motorcycles), iBlock, Xbert, TKTWO, ZOIN and JIQI. Guangdong JieXing Toys Industrial (China), founded in 1998, with its own injection moulding. Covers alternative brands.
 - [JMBricklayer](https://www.jmbricklayer.com/) - Fantasy creatures, dragons, ships, art in bricks and hand-crank kinetic mechanisms for adult collectors; ship models include Black Pearl, Queen Anne's Revenge and Bismarck. From China. Covers alternative brands.
 - [Keeppley (Qman)](https://c-en.qmjm.com/) - Licensed line launched in 2019 (Sanrio, Hello Kitty, Doraemon, Naruto, Detective Conan, Pokemon); Qman also sells under its own name. Guangdong Qman Industry Toys, China, has produced original blocks since 1994. Covers alternative brands.
@@ -124,6 +132,7 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 ### Other formats
 
 - [Blokees](https://blokees.com/) - Articulated assemble-and-pose figures and vehicles under licence (Transformers, Ultraman, Naruto, DC, Jurassic Park), outside the 8 mm stud system. From China. Covers alternative brands.
+- [JEKCA](https://www.jekca.com/) - Animals, monsters and characters built with an own locking system, without glue, presented as building blocks for kidults; regional stores in euros for France and the European Union. Covers alternative brands.
 - [LOZ](https://loz-mini.com/en) - Micro-blocks and Diamond Blocks of 4 to 6 mm (food shops, street scenes, characters), not compatible with the 8 mm pitch. From China; the official site is operated from Hong Kong (I-Had Creation). Covers alternative brands.
 - [nanoblock (Kawada)](https://www.kawada-toys.com/en/brand/nanoblock/) - Micro-blocks whose smallest piece measures 4 mm by 4 mm by 5 mm, on sale since October 2008: animals, landmarks, ships and castles, with an Advanced Hobby series for adults. Kawada (Japan). Covers alternative brands.
 

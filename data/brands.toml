@@ -1111,3 +1111,345 @@ id = "nanoblock"
 url = "https://www.diablock.co.jp/en/about/business/"
 date = "2026-11-23"
 kind = "official"
+
+[[resource]]
+id = "iambrick"
+name = "IAMBRICK"
+url = "https://iambrickimb.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+summary_en = "Original fantasy, wasteland and steampunk worlds for adult collectors, linked by one story on the continent of Gridera; most sets use printed pieces instead of stickers."
+summary_fr = "Mondes originaux de fantasy, de terres dévastées et de steampunk pour collectionneurs adultes, reliés par une histoire commune sur le continent de Gridera ; pièces le plus souvent imprimées plutôt qu'autocollantes."
+strengths_en = ["Delivery to the United Kingdom, Germany, France, Italy, Spain and the Netherlands stated on the official shipping page", "Free replacement of missing pieces, without receipt", "Sets such as Hellfire Colossus (1271 pieces) have built-in lighting"]
+strengths_fr = ["Livraison vers le Royaume-Uni, l'Allemagne, la France, l'Italie, l'Espagne et les Pays-Bas indiquée sur la page de livraison officielle", "Remplacement gratuit des pièces manquantes, sans justificatif", "Des sets comme Hellfire Colossus (1271 pièces) ont un éclairage intégré"]
+weaknesses_en = ["Sets rated 8+ although the brand is aimed at adults", "Orders ship from a warehouse in the United States or from China, 7 to 15 business days to the main European countries; country of origin and brick maker not stated"]
+weaknesses_fr = ["Sets classés 8+ alors que la marque vise les adultes", "Expédition depuis un entrepôt aux États-Unis ou depuis la Chine, de 7 à 15 jours ouvrés vers les principaux pays européens ; pays d'origine et fabricant des briques non indiqués"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://iambrickimb.com/pages/about-us"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://iambrickimb.com/pages/shipping-policy"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://iambrick.shop/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "eikee"
+name = "Eikee"
+url = "https://eikeebricks.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+summary_en = "Supercar, endurance racer, truck and engine models for collectors aged 14 and over, from the 3771-piece 1:8 Le Mans prototype Toro SC63 to small display kits."
+summary_fr = "Modèles de supercars, de voitures d'endurance, de camions et de moteurs pour collectionneurs de 14 ans et plus, du prototype du Mans Toro SC63 au 1:8 (3771 pièces) aux petits kits d'exposition."
+strengths_en = ["Storefront ekgarage.com ships from a European warehouse, 3 to 7 working days in the European Union, prices in euros", "Free replacement parts for missing or damaged pieces, worldwide support", "Return of unopened models within 30 days"]
+strengths_fr = ["Boutique ekgarage.com expédiée depuis un entrepôt européen, 3 à 7 jours ouvrés dans l'Union européenne, prix en euros", "Pièces de remplacement gratuites pour les pièces manquantes ou abîmées, assistance dans le monde entier", "Retour des modèles non ouverts sous 30 jours"]
+weaknesses_en = ["Country of origin not stated on the official pages", "Link between eikeebricks.com and the storefront ekgarage.com not stated"]
+weaknesses_fr = ["Pays d'origine non indiqué sur les pages officielles", "Lien entre eikeebricks.com et la boutique ekgarage.com non indiqué"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://eikeebricks.com/pages/about-us"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://ekgarage.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.makers]]
+name = "Eikee (in-house production, company not named)"
+name_fr = "Eikee (production interne, société non nommée)"
+id = "eikee"
+url = "https://eikeebricks.com/pages/about-us"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "bole-brick"
+name = "Bole Brick"
+url = "https://www.bolebricks.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en", "de", "zh"]
+countries = ["international"]
+summary_en = "Licensed 1:8 and 1:10 racing cars (Audi Quattro S1, Audi R8 LM-P, Toyota Supra A80) for ages 14 and over, plus PRO Drive remote-control and drift conversion parts."
+summary_fr = "Voitures de course sous licence au 1:8 et au 1:10 (Audi Quattro S1, Audi R8 LM-P, Toyota Supra A80) dès 14 ans, et pièces PRO Drive de télécommande et de conversion pour le drift."
+strengths_en = ["Licensed Audi and Toyota models, the Supra A80 having 4508 pieces", "Maker named on the official site: Guangdong Xinyu Technology, engineering since 1997", "Website in English, German and Chinese, with instruction manuals online"]
+strengths_fr = ["Modèles sous licence Audi et Toyota, la Supra A80 comptant 4508 pièces", "Fabricant nommé sur le site officiel : Guangdong Xinyu Technology, ingénierie depuis 1997", "Site en anglais, en allemand et en chinois, avec notices en ligne"]
+weaknesses_en = ["Static display editions with lighting only; motors and remote control are bought separately and PRO Drive accessories do not fit the Supra A80", "Delivery to Europe stated only as worldwide delivery, no country list read"]
+weaknesses_fr = ["Éditions d'exposition statiques avec éclairage seulement ; moteurs et télécommande s'achètent séparément et les accessoires PRO Drive ne conviennent pas à la Supra A80", "Livraison en Europe indiquée seulement comme livraison dans le monde entier, sans liste de pays"]
+status = "active"
+last_activity = "2026-11-15"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.bolebricks.com/about-us/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.bolebricks.com/product/yc-23049/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.bolebricks.com/"
+date = "2026-11-15"
+kind = "read"
+
+[[resource.makers]]
+name = "Guangdong Xinyu Technology"
+name_fr = "Guangdong Xinyu Technology"
+url = "https://www.bolebricks.com/about-us/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "jaki"
+name = "JAKI"
+url = "https://www.jakibricks.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+summary_en = "Collectible display sets (modular shops, Mount Fuji and pagoda, Christmas chalets, licensed Saw props) from an official store that ships to 13 European countries."
+summary_fr = "Sets de collection à exposer (boutiques modulaires, mont Fuji et pagode, chalets de Noël, accessoires sous licence Saw) vendus par une boutique officielle qui livre dans 13 pays européens."
+strengths_en = ["Shipping to Austria, Czech Republic, Finland, France, Germany, Italy, Netherlands, Norway, Portugal, Spain, Sweden, Switzerland and the United Kingdom", "Free economy shipping from 59 US dollars in all supported countries", "100+ licences and 500+ new designs a year, as stated by the brand"]
+strengths_fr = ["Livraison en Autriche, en République tchèque, en Finlande, en France, en Allemagne, en Italie, aux Pays-Bas, en Norvège, au Portugal, en Espagne, en Suède, en Suisse et au Royaume-Uni", "Livraison économique gratuite dès 59 dollars américains dans tous les pays desservis", "Plus de 100 licences et plus de 500 nouveaux modèles par an, selon la marque"]
+weaknesses_en = ["Prices in US dollars; international standard delivery takes 10 to 15 business days", "Brick maker not named: production left to unnamed partners"]
+weaknesses_fr = ["Prix en dollars américains ; la livraison internationale standard prend de 10 à 15 jours ouvrés", "Fabricant des briques non nommé : production confiée à des partenaires non nommés"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.jakibricks.com/policies/shipping-policy"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.jakibricks.com/pages/about-jaki"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.jakibricks.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "12go"
+name = "12GO"
+url = "https://12gobuilds.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+summary_en = "Manual display models for collectors aged 14 and over: tanks mostly at 1:28, a 7261-piece 1:16 Tiger II, warships, a U-96 submarine, cars and engines; no motors or remote control."
+summary_fr = "Modèles d'exposition à fonctions manuelles pour collectionneurs dès 14 ans : chars surtout au 1:28, Tiger II au 1:16 de 7261 pièces, navires, sous-marin U-96, voitures et moteurs ; ni moteur ni télécommande."
+strengths_en = ["Official store for Europe: prices in euros, delivery in 3 to 9 business days to Spain and the European Union, 8.99 € to the European Union", "90-day return and free replacement parts", "Scale shown on every product page, numbered bags and printed manual"]
+strengths_fr = ["Boutique officielle pour l'Europe : prix en euros, livraison en 3 à 9 jours ouvrés vers l'Espagne et l'Union européenne, 8.99 € vers l'Union européenne", "Retour sous 90 jours et pièces de remplacement gratuites", "Échelle indiquée sur chaque fiche produit, sachets numérotés et notice imprimée"]
+weaknesses_en = ["Country of origin and moulding site not named", "The largest set, the Tiger II Flagship Tank, costs 478.99 €"]
+weaknesses_fr = ["Pays d'origine et site de moulage non nommés", "Le plus grand set, le Tiger II Flagship Tank, coûte 478.99 €"]
+status = "active"
+last_activity = "2026-10-26"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://12gobuilds.com/pages/faq"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://12gobuilds.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://12gobuilds.com/products/tiger-ii-flagship-tank"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.makers]]
+name = "12GO (own manufacture, company not named)"
+name_fr = "12GO (fabrication propre, société non nommée)"
+id = "12go"
+url = "https://12gobuilds.com/pages/faq"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "jekca"
+name = "JEKCA"
+url = "https://www.jekca.com/"
+group = "other-formats"
+covers = ["alternative"]
+languages = ["en", "de", "fr"]
+countries = ["international"]
+summary_en = "Animals, monsters and characters built with an own locking system, without glue, presented as building blocks for kidults; regional stores in euros for France and the European Union."
+summary_fr = "Animaux, monstres et personnages construits avec un système de verrouillage propre, sans colle, présentés comme des briques pour kidults ; boutiques régionales en euros pour la France et l'Union européenne."
+strengths_en = ["Regional official stores: jekca.fr (free delivery from 80 €), jekca.net for the European Union, jekca.uk, jekca.us and others", "Black Friday offers of up to 30% on sculptures in November 2026"]
+strengths_fr = ["Boutiques régionales officielles : jekca.fr (livraison offerte dès 80 €), jekca.net pour l'Union européenne, jekca.uk, jekca.us et d'autres", "Offres Black Friday jusqu'à 30 % sur les sculptures en novembre 2026"]
+weaknesses_en = ["Not presented as compatible with other brick brands", "jekca.fr states the set is accessible from age 6; the global store prices in Singapore dollars"]
+weaknesses_fr = ["Non présenté comme compatible avec les briques d'autres marques", "jekca.fr indique un set accessible dès 6 ans ; la boutique mondiale affiche des prix en dollars de Singapour"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.jekca.com/policies/shipping-policy"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.jekca.fr/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.jekca.net/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.makers]]
+name = "JEKCA (own factory in China, company JEKCA Limited, Hong Kong)"
+name_fr = "JEKCA (usine propre en Chine, société JEKCA Limited, Hong Kong)"
+id = "jekca"
+url = "https://www.jekca.com/policies/shipping-policy"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "insoon"
+name = "INSOON"
+url = "https://insoontoys.com/"
+group = "chinese-alternatives"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["international"]
+summary_en = "Lit house, book nook, flower and Christmas sets (34 in the house series) with LED panels, aimed at teens and adults; some sets use 3.6 mm mini blocks."
+summary_fr = "Maisons, coins de lecture, fleurs et sets de Noël éclairés par des panneaux à LED (34 maisons), pour adolescents et adultes ; certains sets utilisent des mini-briques de 3.6 mm."
+strengths_en = ["Free shipping to the United States and the European Union (Sweden excluded)", "Dispatch from a local warehouse in 3 to 7 working days, or from China in 10 to 15"]
+strengths_fr = ["Livraison offerte vers les États-Unis et l'Union européenne (Suède exclue)", "Expédition depuis un entrepôt local en 3 à 7 jours ouvrés, ou depuis la Chine en 10 à 15"]
+weaknesses_en = ["Prices in US dollars; fees of 15 to 25 dollars to the United Kingdom, Switzerland, Norway and others", "Some sets use 3.6 mm mini blocks, so not all are compatible with standard bricks", "Company behind the brand and country of origin not stated; product pages give ages from 10 to 12 and over"]
+weaknesses_fr = ["Prix en dollars américains ; frais de 15 à 25 dollars vers le Royaume-Uni, la Suisse, la Norvège et d'autres", "Certains sets utilisent des mini-briques de 3.6 mm, donc tous ne sont pas compatibles avec les briques standard", "Société derrière la marque et pays d'origine non indiqués ; les fiches produits donnent un âge de 10 à 12 ans et plus"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://insoontoys.com/pages/shipping-policy"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://insoontoys.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://insoontoys.com/products/wood-cabin-building-set"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "stone-heap"
+name = "Stone Heap"
+url = "https://stone-heap.com/"
+group = "european-alternatives"
+covers = ["alternative"]
+languages = ["de", "en"]
+countries = ["DE"]
+summary_en = "Trains, trams, buses, port and military vehicles in 6-wide and 8-wide scale, with Deutsche Bahn and Swiss Federal Railways licences, printed boxes and its own 3D-printed railway wheels."
+summary_fr = "Trains, tramways, bus, engins de port et militaires en largeur 6 et 8, licences Deutsche Bahn et Chemins de fer fédéraux suisses, boîtes imprimées, roues de train imprimées en 3D par la marque."
+strengths_en = ["Swiss Federal Railways licence since June 2021 and Deutsche Bahn licence since April 2022", "Sold in 22 stores, with a shop locator on the site", "Shipping to Austria 8.95 €, European Union 11.90 €, Switzerland 15 €; prices include VAT", "Catalogue 2026/2 of 75 pages published on 2 September 2026"]
+strengths_fr = ["Licence des Chemins de fer fédéraux suisses depuis juin 2021 et de la Deutsche Bahn depuis avril 2022", "Vendu dans 22 magasins, avec localisateur de magasins sur le site", "Livraison vers l'Autriche 8.95 €, l'Union européenne 11.90 €, la Suisse 15 € ; prix taxes comprises", "Catalogue 2026/2 de 75 pages publié le 2 septembre 2026"]
+weaknesses_en = ["Free shipping only within Germany, from 150 €", "One line (Kivikasa) is aimed at children aged 6 to 12", "About page says the site is being revised and partly outdated; brick maker not established"]
+weaknesses_fr = ["Livraison offerte seulement en Allemagne, dès 150 €", "Une gamme (Kivikasa) vise les enfants de 6 à 12 ans", "La page de présentation indique que le site est en cours de révision et en partie périmé ; fabricant des briques non établi"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://stone-heap.com/Wir-ueber-uns"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://stone-heap.com/Versandinformationen"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://stone-heap.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "buildarmy"
+name = "Buildarmy"
+url = "https://buildarmy.com/"
+group = "european-alternatives"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["GB"]
+summary_en = "Accurate World War II and modern military kits at 1:33 minifigure scale, with full interiors, working suspension and infantry squads; designed by Ruibin Zhang and shipped from the United Kingdom."
+summary_fr = "Kits militaires fidèles de la Seconde Guerre mondiale et modernes à l'échelle 1:33 des minifigurines, avec intérieurs complets, suspensions fonctionnelles et sections d'infanterie ; conçus par Ruibin Zhang et expédiés depuis le Royaume-Uni."
+strengths_en = ["Free shipping from £50 in the European Union, £25 in the United Kingdom and £100 elsewhere", "Authorised stockists listed on the site", "Instruction booklets sold separately; parts list file on request for BrickLink"]
+strengths_fr = ["Livraison offerte dès 50 £ dans l'Union européenne, 25 £ au Royaume-Uni et 100 £ ailleurs", "Revendeurs agréés listés sur le site", "Notices vendues séparément ; fichier de liste de pièces sur demande pour BrickLink"]
+weaknesses_en = ["Prices in pounds sterling, shown excluding VAT", "Site describes the kits as a gift for both children and adults; brick maker not established"]
+weaknesses_fr = ["Prix en livres sterling, affichés hors taxe", "Le site présente les kits comme un cadeau pour les enfants comme pour les adultes ; fabricant des briques non établi"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+aliases = ["Build Army"]
+
+[[resource.sources]]
+url = "https://buildarmy.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://buildarmy.com/shipping/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://buildarmy.com/retailers/"
+date = "2026-07-06"
+kind = "official"
