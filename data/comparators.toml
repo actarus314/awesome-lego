@@ -35,6 +35,9 @@ name = "Brick Broker"
 url = "https://brick-broker.com/"
 group = "price-comparators"
 featured = true
+rank = {intl = 2, FR = 1}
+rank_reason_en = "Official LEGO and about 95 alternative brands in one search, 42003 sets, price history over 90 days and email alerts without an account; offers deliverable to France."
+rank_reason_fr = "Sets de marque LEGO et environ 95 marques alternatives dans une même recherche, 42003 sets, historique de prix sur 90 jours et alertes par courriel sans compte ; offres livrables en France."
 covers = ["official", "alternative"]
 languages = ["fr"]
 countries = ["FR"]
@@ -69,6 +72,9 @@ id = "brickfact"
 name = "Brickfact"
 url = "https://brickfact.com/"
 group = "price-comparators"
+rank = {intl = 4}
+rank_reason_en = "Secondary-market value of sealed sets and part-out value, collection tracker and public MCP server without key, with regional sites in USD, GBP, CHF and EUR; 3406 sets compared at 6 shops."
+rank_reason_fr = "Valeur sur le marché secondaire des sets scellés et valeur en pièces détachées, suivi de collection et serveur MCP public sans clé, avec des sites régionaux en USD, GBP, CHF et EUR ; 3406 sets comparés dans 6 boutiques."
 covers = ["official"]
 languages = ["en", "de", "fr", "nl"]
 countries = ["international"]
@@ -102,6 +108,9 @@ id = "planet-brick"
 name = "Planet-Brick"
 url = "https://planet-brick.com/"
 group = "price-comparators"
+rank = {FR = 3}
+rank_reason_en = "Covers official LEGO, alternative brands, ready-to-build custom kits and instructions, a brand being listed only if a merchant delivers it to France; merchants collected 1 to 9 times a day; footer contact details inconsistent with a French publisher."
+rank_reason_fr = "Couvre les sets de marque LEGO, les marques alternatives, les kits de créations originales prêts à construire et les notices, une marque n'étant listée que si un marchand la livre en France ; marchands relevés 1 à 9 fois par jour ; coordonnées du pied de page incohérentes avec un éditeur français."
 covers = ["official", "alternative", "custom-builds", "instructions"]
 languages = ["fr"]
 countries = ["FR"]
@@ -172,6 +181,9 @@ name = "Brickmitri"
 url = "https://brickmitri.com/comparateur-lego/"
 group = "price-comparators"
 featured = true
+rank = {FR = 2}
+rank_reason_en = "Built from the affiliate feeds of French retailers (1384 sets, 14 shops), Amazon re-read hourly, price history per retailer and price alert by email without an account."
+rank_reason_fr = "Construit sur les flux d'affiliation de distributeurs français (1384 sets, 14 boutiques), Amazon relu toutes les heures, historique de prix par distributeur et alerte de prix par courriel sans compte."
 covers = ["official"]
 languages = ["fr"]
 countries = ["FR"]
@@ -228,6 +240,9 @@ id = "bricksvalue"
 name = "BricksValue"
 url = "https://bricksvalue.com/fr"
 group = "price-comparators"
+rank = {intl = 3, FR = 5, NL = 5, PL = 3, US = 2, GB = 2, ES = 3, BE = 3, AU = 3, AT = 2, CA = 1, IT = 1, CH = 1}
+rank_reason_en = "Daily comparison in 13 countries with one variant and one where-to-buy guide per country (16 retailers in France and in Canada), tracking of sets about to be retired and price per piece; price history and alerts not established."
+rank_reason_fr = "Comparaison quotidienne dans 13 pays avec une variante et un guide d'achat par pays (16 boutiques en France et au Canada), suivi des sets bientôt retirés et prix à la pièce ; historique de prix et alertes non établis."
 covers = ["official"]
 languages = ["fr", "de", "en", "it", "es", "nl", "pl"]
 countries = ["FR", "DE", "US", "GB", "IT", "ES", "AT", "CH", "NL", "BE", "PL", "CA", "AU"]
@@ -261,6 +276,9 @@ id = "bricktracker-eu"
 name = "BrickTracker.eu"
 url = "https://bricktracker.eu/fr"
 group = "price-comparators"
+rank = {NL = 2, BE = 1}
+rank_reason_en = "89 shops compared in the Netherlands, Belgium, Germany and France, with alerts for price drop, back in stock and target price on a free account."
+rank_reason_fr = "89 boutiques comparées aux Pays-Bas, en Belgique, en Allemagne et en France, avec des alertes de baisse de prix, de retour en stock et de prix cible sur un compte gratuit."
 covers = ["official"]
 languages = ["fr", "nl", "de", "en"]
 countries = ["NL", "BE", "DE", "FR"]
@@ -288,6 +306,9 @@ kind = "read"
 id = "lakea"
 name = "Lakea"
 url = "https://lakea.net/?lang=fr"
+rank = {intl = 1}
+rank_reason_en = "Independent service on its own price collection covering 21675 sets, 138 shops, 7509 parts and 7243 minifigures, with a commission declared to play no part in ranking; tracked since April 2026 only."
+rank_reason_fr = "Service indépendant fondé sur son propre relevé de prix couvrant 21675 sets, 138 boutiques, 7509 pièces et 7243 minifigurines, avec une commission déclarée sans effet sur le classement ; suivi depuis avril 2026 seulement."
 size = [{n = 21675, unit = "sets"}, {n = 138, unit = "shops"}, {n = 7509, unit = "parts"}, {n = 7243, unit = "minifigures"}]
 feed = "https://lakea.net/rss.xml"
 group = "price-comparators"
@@ -347,6 +368,9 @@ id = "brickwatch"
 name = "Brickwatch"
 url = "https://www.brickwatch.net/fr-FR/"
 group = "price-comparators"
+rank = {intl = 5, FR = 4, NL = 1, GB = 1}
+rank_reason_en = "Price history and discount against the official price at several retailers, published by Kiobi BV (Netherlands) with France and United Kingdom variants; the France variant lists 7033 sets."
+rank_reason_fr = "Historique de prix et remise par rapport au prix officiel chez plusieurs distributeurs, édité par Kiobi BV (Pays-Bas) avec des variantes France et Royaume-Uni ; la variante France liste 7033 sets."
 covers = ["official"]
 languages = ["fr", "en", "nl"]
 countries = ["NL", "FR", "GB"]
@@ -380,6 +404,9 @@ id = "brickyes"
 name = "Brickyes"
 url = "https://www.brickyes.com/nl-nl/lego"
 group = "price-comparators"
+rank = {NL = 4}
+rank_reason_en = "2995 in-stock official sets with shipping included in prices, a watchlist with email alerts and a flag for sets about to be retired; Dutch interface."
+rank_reason_fr = "2995 sets de marque LEGO en stock avec port compris dans les prix, une liste de suivi avec alertes par courriel et un repère pour les sets bientôt retirés ; interface en néerlandais."
 covers = ["official"]
 languages = ["nl"]
 countries = ["NL"]
@@ -408,6 +435,9 @@ id = "bricksdeal"
 name = "BricksDeal"
 url = "https://bricksdeal.com/de-en"
 group = "price-comparators"
+rank = {DE = 4, NL = 3, BE = 2}
+rank_reason_en = "17519 sets compared by set number at shops in the Netherlands, Belgium and Germany, with the lowest price of the previous 90 days and an email price alert (earlier reading); France not covered."
+rank_reason_fr = "17519 sets comparés par numéro de set dans des boutiques des Pays-Bas, de Belgique et d'Allemagne, avec le prix le plus bas des 90 jours précédents et une alerte de prix par courriel (lecture antérieure) ; France non couverte."
 covers = ["official"]
 languages = ["en", "de", "nl"]
 countries = ["NL", "BE", "DE"]
@@ -435,6 +465,9 @@ kind = "read"
 id = "klockometr"
 name = "Klockometr"
 url = "https://klockometr.pl/"
+rank = {PL = 1}
+rank_reason_en = "Five-level assessment of each offer against the previous 365 days and the median of offers for retired sets, daily collection kept permanently and a published method."
+rank_reason_fr = "Évaluation à cinq niveaux de chaque offre par rapport aux 365 jours précédents et à la médiane des offres pour les sets retirés, relevé quotidien conservé et méthode publiée."
 feed = "https://klockometr.pl/feed/"
 group = "price-comparators"
 covers = ["official"]
@@ -463,6 +496,9 @@ kind = "read"
 id = "brickmerge"
 name = "Brickmerge"
 url = "https://www.brickmerge.de/"
+rank = {DE = 2}
+rank_reason_en = "Running since 2014, with free price and discount alerts, price history and a daily comparison of dozens of German online merchants for more than 7000 sets."
+rank_reason_fr = "En service depuis 2014, avec des alertes de prix et de remise gratuites, un historique de prix et une comparaison quotidienne de dizaines de marchands en ligne allemands pour plus de 7000 sets."
 size = [{n = 7000, unit = "sets", approx = "more-than"}]
 feed = "https://www.brickmerge.de/rss_aktuell.xml"
 group = "price-comparators"
@@ -493,6 +529,9 @@ id = "brick-tracker-de"
 name = "Brick-Tracker.de"
 url = "https://www.brick-tracker.de/index.php"
 group = "price-comparators"
+rank = {DE = 3}
+rank_reason_en = "6760 sets at more than 50 shops and 415419 published prices, with a market analysis of retiring sets filterable by retirement year, theme, price and piece count."
+rank_reason_fr = "6760 sets dans plus de 50 boutiques et 415419 prix publiés, avec une analyse du marché des sets en fin de vie filtrable par année de retrait, thème, prix et nombre de pièces."
 covers = ["official"]
 languages = ["de"]
 countries = ["DE"]
@@ -698,6 +737,9 @@ id = "geizhals"
 name = "Geizhals"
 url = "https://geizhals.at/"
 group = "price-comparators"
+rank = {DE = 5, AT = 1}
+rank_reason_en = "General catalogue with a separate category for alternative brick brands: 5006 LEGO products and 1946 products of other brands on geizhals.at; read through indexed pages only."
+rank_reason_fr = "Catalogue généraliste avec une catégorie distincte pour les marques de briques alternatives : 5006 produits de marque LEGO et 1946 produits d'autres marques sur geizhals.at ; lu par des pages indexées seulement."
 covers = ["official", "alternative"]
 languages = ["de"]
 countries = ["AT", "DE"]
@@ -732,6 +774,9 @@ id = "verobricks"
 name = "VERObricks"
 url = "https://verobricks.com/"
 group = "price-comparators"
+rank = {DE = 1}
+rank_reason_en = "Official LEGO and alternative brands in the same search: more than 17000 sets, 60 brands and more than 190 shops, final prices including shipping to Germany, price alert and history; figures published by the site itself."
+rank_reason_fr = "Sets de marque LEGO et marques alternatives dans une même recherche : plus de 17000 sets, 60 marques et plus de 190 boutiques, prix finaux port vers l'Allemagne compris, alerte de prix et historique ; chiffres publiés par le site lui-même."
 covers = ["official", "alternative"]
 languages = ["de"]
 countries = ["DE"]
@@ -822,6 +867,9 @@ kind = "read"
 id = "brickset"
 name = "Brickset"
 url = "https://brickset.com/"
+rank = {intl = 1}
+rank_reason_en = "Reference for official LEGO sets since 1997 with minifigures, parts, colours and inventories, 23674 entries, API v3 and CSV export of the collection; no alternative brands."
+rank_reason_fr = "Référence des sets de marque LEGO depuis 1997 avec minifigurines, pièces, couleurs et inventaires, 23674 entrées, API v3 et export CSV de la collection ; pas de marques alternatives."
 size = [{n = 23674, unit = "entries"}]
 feed = "https://brickset.com/feed/"
 group = "set-databases"
@@ -857,6 +905,9 @@ kind = "official"
 id = "rebrickable"
 name = "Rebrickable"
 url = "https://rebrickable.com/"
+rank = {intl = 2}
+rank_reason_en = "Catalogue of official sets, parts and minifigures as CSV files updated daily, API v3, more than 206000 custom builds with instructions and import and export with BrickLink, Brick Owl and Brickset; no alternative-brand catalogue."
+rank_reason_fr = "Catalogue des sets, pièces et minifigurines de marque LEGO en fichiers CSV mis à jour chaque jour, API v3, plus de 206000 créations originales avec notices et import et export avec BrickLink, Brick Owl et Brickset ; pas de catalogue de marques alternatives."
 size = [{n = 206000, unit = "models", approx = "more-than"}]
 feed = "https://rebrickable.com/blog/rss/"
 group = "set-databases"
@@ -922,6 +973,9 @@ name = "SetDB (Merlins Steine)"
 url = "https://www.merlinsbricks.com/setdb/"
 group = "set-databases"
 featured = true
+rank = {intl = 3}
+rank_reason_en = "39690 sets from 92 brands including alternative brands, 17561 minifigures and 42256 bricks and parts, next to reviews and a weekly podcast of the same magazine; no price comparison seen."
+rank_reason_fr = "39690 sets de 92 marques dont des marques alternatives, 17561 minifigurines et 42256 briques et pièces, à côté de tests et d'un podcast hebdomadaire du même magazine ; aucune comparaison de prix vue."
 covers = ["official", "alternative", "minifigures", "parts", "news"]
 languages = ["de", "en"]
 countries = ["international"]
@@ -956,6 +1010,9 @@ id = "other-bricks"
 name = "other-bricks.com"
 url = "https://other-bricks.com/de/"
 group = "set-databases"
+rank = {intl = 4}
+rank_reason_en = "2446 sets from 32 brands other than official LEGO, including brands absent from French comparators (Reobrix, Xingbao, Keeppley, Sluban, Jaki); prices in dollars and euros mixed."
+rank_reason_fr = "2446 sets de 32 marques autres que de marque LEGO, dont des marques absentes des comparateurs français (Reobrix, Xingbao, Keeppley, Sluban, Jaki) ; prix en dollars et en euros mélangés."
 covers = ["alternative"]
 languages = ["de", "en"]
 countries = ["international"]
@@ -1018,6 +1075,9 @@ id = "brickdb"
 name = "BrickDb"
 url = "https://www.brickdb.de/"
 group = "set-databases"
+rank = {intl = 5}
+rank_reason_en = "20411 sets, 17363 minifigures and 64955 parts with barcode scanning and a market value shown only from five sales; project started in September 2026."
+rank_reason_fr = "20411 sets, 17363 minifigurines et 64955 pièces avec lecture de codes-barres et une valeur de marché affichée seulement à partir de cinq ventes ; projet lancé en septembre 2026."
 covers = ["official", "minifigures", "parts"]
 languages = ["de", "en", "fr"]
 countries = ["international"]
@@ -1052,6 +1112,9 @@ name = "BrickEconomy"
 url = "https://www.brickeconomy.com/"
 group = "value-tracking"
 featured = true
+rank = {intl = 1}
+rank_reason_en = "Machine-learning growth forecasts and secondary-market value estimates for sets and minifigures, with value history, retirement dates and a REST API v1 for Premium members; values are model estimates."
+rank_reason_fr = "Prévisions de croissance par apprentissage automatique et estimations de valeur sur le marché secondaire pour les sets et minifigurines, avec historique de valeur, dates de retrait et API REST v1 pour les membres Premium ; valeurs estimées par un modèle."
 covers = ["official", "minifigures", "second-hand"]
 languages = ["en"]
 countries = ["international"]
@@ -1089,6 +1152,9 @@ id = "brickpicker"
 name = "BrickPicker"
 url = "https://brickpicker.com/"
 group = "value-tracking"
+rank = {intl = 2}
+rank_reason_en = "Price guide based on completed sales with part-out value, portfolio priced every morning in 19 currencies and a guide of more than 17000 minifigures; reference prices based on the United States market."
+rank_reason_fr = "Guide de prix fondé sur les ventes conclues avec valeur en pièces détachées, portefeuille valorisé chaque matin en 19 devises et guide de plus de 17000 minifigurines ; prix de référence fondés sur le marché des États-Unis."
 covers = ["official", "minifigures", "second-hand"]
 languages = ["en"]
 countries = ["US"]
@@ -1121,6 +1187,9 @@ id = "promoklocki"
 name = "promoklocki.pl"
 url = "https://promoklocki.pl/"
 group = "price-comparators"
+rank = {PL = 2}
+rank_reason_en = "Catalogue with pages for the lowest prices in the official shop, retirements, a promotions calendar and Polish catalogues, price per piece and 2027 pre-order sets already listed; price history not verified."
+rank_reason_fr = "Catalogue avec des pages pour les prix les plus bas dans la boutique du groupe LEGO, les retraits, un calendrier des promotions et les catalogues polonais, prix à la pièce et sets de 2027 en précommande déjà listés ; historique de prix non vérifié."
 covers = ["official", "data"]
 languages = ["pl"]
 countries = ["PL"]
@@ -1148,6 +1217,9 @@ id = "ceneo"
 name = "Ceneo"
 url = "https://www.ceneo.pl/"
 group = "price-comparators"
+rank = {PL = 4}
+rank_reason_en = "General Polish comparator covering many shops, usable for sets but not specific to LEGO; LEGO category pages not read."
+rank_reason_fr = "Comparateur polonais généraliste couvrant de nombreuses boutiques, utilisable pour les sets mais non spécifique à LEGO ; pages de la catégorie LEGO non lues."
 covers = ["official"]
 languages = ["pl"]
 countries = ["PL"]
@@ -1175,6 +1247,9 @@ id = "brickzone-dk"
 name = "brickzone"
 url = "https://brickzone.dk/"
 group = "price-comparators"
+rank = {DK = 1}
+rank_reason_en = "5713 sets at 89 shops with a price history for each set, a price barometer and 35413 published prices; Danish retailers only."
+rank_reason_fr = "5713 sets dans 89 boutiques avec un historique de prix pour chaque set, un baromètre des prix et 35413 prix publiés ; distributeurs danois seulement."
 covers = ["official", "data"]
 languages = ["da"]
 countries = ["DK"]
@@ -1203,6 +1278,9 @@ id = "prisjakt-se"
 name = "Prisjakt"
 url = "https://www.prisjakt.nu/c/lego"
 group = "price-comparators"
+rank = {DK = 2, SE = 1, NO = 1, FI = 1}
+rank_reason_en = "General comparator with a LEGO category in 4 countries (3831 products in Sweden, 4778 in Norway, 5129 in Denmark, 2788 in Finland) showing age range, piece count and lowest price; not specific to LEGO."
+rank_reason_fr = "Comparateur généraliste avec une catégorie LEGO dans 4 pays (3831 produits en Suède, 4778 en Norvège, 5129 au Danemark, 2788 en Finlande) indiquant la tranche d'âge, le nombre de pièces et le prix le plus bas ; non spécifique à LEGO."
 covers = ["official"]
 languages = ["sv", "no", "da", "fi"]
 countries = ["SE", "NO", "DK", "FI"]
@@ -1240,6 +1318,9 @@ id = "brickturtle"
 name = "BrickTurtle"
 url = "https://brickturtle.com.au/"
 group = "price-comparators"
+rank = {AU = 1}
+rank_reason_en = "Prices of 1537 sets from more than 20 Australian retailers side by side, with price history, a retiring-soon list and email price-drop alerts on a free account; about page published in July 2026."
+rank_reason_fr = "Prix de 1537 sets de plus de 20 distributeurs australiens côte à côte, avec historique de prix, liste des retraits proches et alertes de baisse par courriel sur un compte gratuit ; page de présentation publiée en juillet 2026."
 covers = ["official", "data"]
 languages = ["en"]
 countries = ["AU"]
@@ -1273,6 +1354,9 @@ id = "lego-price-tracker-nz"
 name = "LEGO Price Tracker"
 url = "https://legopricetracker.co.nz/"
 group = "price-comparators"
+rank = {US = 3, AU = 2, CA = 2, NZ = 1}
+rank_reason_en = "Price comparison and history in New Zealand, Australia, Canada and the United States with retailer pages, a retiring-soon list and a watchlist; only comparator found covering Kmart, The Warehouse and Mighty Ape in New Zealand."
+rank_reason_fr = "Comparaison et historique de prix en Nouvelle-Zélande, en Australie, au Canada et aux États-Unis avec des pages par distributeur, une liste des retraits proches et une liste de suivi ; seul comparateur trouvé qui couvre Kmart, The Warehouse et Mighty Ape en Nouvelle-Zélande."
 covers = ["official", "data"]
 languages = ["en"]
 countries = ["NZ", "AU", "CA", "US"]
@@ -1301,6 +1385,9 @@ date = "2026-11-23"
 kind = "indexed"
 
 [[resource]]
+rank = {GB = 3}
+rank_reason_en = "Compares 5 retailers on 1742 sets with a page of drops and a blog of buying guides (latest 2 June 2026); Amazon and LEGO.com absent, prices undated."
+rank_reason_fr = "Compare 5 distributeurs sur 1742 sets avec une page de baisses et un blog de guides d'achat (dernier du 2 juin 2026) ; Amazon et LEGO.com absents, prix non datés."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1334,6 +1421,9 @@ date = "2026-11-25"
 kind = "read"
 
 [[resource]]
+rank = {US = 1}
+rank_reason_en = "More than two dozen retail shops of the United States, daily and weekly drop lists, 52-week-low markers and a discount per offer; active since 2022."
+rank_reason_fr = "Plus de deux douzaines de boutiques des États-Unis, listes de baisses quotidiennes et hebdomadaires, repères du plus bas sur 52 semaines et remise par offre ; actif depuis 2022."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1362,6 +1452,9 @@ date = "2026-11-25"
 kind = "read"
 
 [[resource]]
+rank = {ES = 1, PT = 1}
+rank_reason_en = "1156 sets at 8 stores with prices checked 3 times a day, history over 90 days, email alerts without an account and a published methodology; only comparator of the group serving Portugal."
+rank_reason_fr = "1156 sets dans 8 boutiques avec des prix vérifiés 3 fois par jour, historique sur 90 jours, alertes par courriel sans compte et méthodologie publiée ; seul comparateur du groupe qui dessert le Portugal."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1400,6 +1493,9 @@ date = "2026-11-25"
 kind = "read"
 
 [[resource]]
+rank = {ES = 2}
+rank_reason_en = "About 1000 sets checked every day at Amazon, El Corte Inglés, LEGO.com, Fnac, Miravia, ToysRus, Carrefour and Abacus, with a price history per set; Amazon prices excluded from history and alerts."
+rank_reason_fr = "Environ 1000 sets relevés chaque jour chez Amazon, El Corte Inglés, LEGO.com, Fnac, Miravia, ToysRus, Carrefour et Abacus, avec un historique de prix par set ; prix Amazon exclus de l'historique et des alertes."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1470,6 +1566,9 @@ date = "2026-11-25"
 kind = "read"
 
 [[resource]]
+rank = {intl = 3}
+rank_reason_en = "Over 7 million recorded sales feed resale indices, a retirement tracker and minifigure collections (24265 sets and 18080 minifigures); news section shows items of 2025."
+rank_reason_fr = "Plus de 7 millions de ventes relevées alimentent des indices de revente, un suivi des retraits et des collections de minifigurines (24265 sets et 18080 minifigurines) ; la section d'actualités montre des articles de 2025."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1503,6 +1602,9 @@ date = "2026-11-25"
 kind = "read"
 
 [[resource]]
+rank = {CZ = 1}
+rank_reason_en = "Offers from more than 30 shops and 4 second-hand sites, set database, collection, wish list, personal price watchers and its own marketplace; Czech interface only, run by one enthusiast."
+rank_reason_fr = "Offres de plus de 30 boutiques et de 4 sites d'occasion, base de sets, collection, liste de souhaits, veilles de prix personnelles et place de marché propre ; interface en tchèque seulement, tenu par un passionné."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"

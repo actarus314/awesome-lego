@@ -36,6 +36,9 @@ name = "LEGO.com (France)"
 url = "https://www.lego.com/fr-fr"
 group = "official-lego"
 featured = true
+rank = {intl = 1, FR = 1}
+rank_reason_en = "Shop of the manufacturer with the full catalogue, exclusives, gift cards and Pick a Brick; delivers to addresses in France only, at the reference price."
+rank_reason_fr = "Boutique du fabricant avec le catalogue complet, les exclusivités, les cartes-cadeaux et Pick a Brick ; livraison uniquement vers des adresses en France, au prix de référence."
 operator = "lego-group"
 covers = ["official"]
 languages = ["fr"]
@@ -69,6 +72,9 @@ name = "LToys"
 url = "https://www.ltoys.lu/fr"
 group = "official-lego"
 featured = true
+rank = {intl = 2, FR = 2, DE = 1, BE = 2, NL = 2, LU = 1, AT = 1}
+rank_reason_en = "Delivers to 6 countries (Luxembourg, France, Belgium, Germany, the Netherlands, Austria) the official LEGO range and 5 alternative brands, with more than 1000 products and a physical store in Niederanven."
+rank_reason_fr = "Livre dans 6 pays (Luxembourg, France, Belgique, Allemagne, Pays-Bas, Autriche) la gamme de marque LEGO et 5 marques alternatives, avec plus de 1000 produits et un magasin à Niederanven."
 covers = ["official", "alternative"]
 languages = ["fr", "en", "de"]
 countries = ["LU", "FR", "BE", "DE", "NL", "AT"]
@@ -102,6 +108,9 @@ id = "baustein-store"
 name = "Baustein Store"
 url = "https://bausteinstore.de"
 group = "official-lego"
+rank = {intl = 5, DE = 2, FR = 3}
+rank_reason_en = "German shop delivering by DHL across the European Union and Monaco, to France in 3 to 4 days with tracking and no minimum order, at a flat 16.49 € per order outside Germany."
+rank_reason_fr = "Boutique allemande livrant par DHL dans l'Union européenne et à Monaco, vers la France en 3 à 4 jours avec suivi et sans minimum de commande, à 16.49 € forfaitaires par commande hors Allemagne."
 covers = ["official"]
 languages = ["de"]
 countries = ["DE", "FR"]
@@ -128,6 +137,9 @@ id = "duo-idee-spiel"
 name = "idee+spiel (duo idee+spiel)"
 url = "https://www.ideeundspiel.com"
 group = "official-lego"
+rank = {DE = 3}
+rank_reason_en = "Online shop of a toy retail cooperative of about 640 shareholders and more than 1000 affiliated stores in Germany, Austria, Belgium and Italy; low confidence, shipping outside Germany not established."
+rank_reason_fr = "Boutique en ligne d'une coopérative de jouets d'environ 640 associés et de plus de 1000 magasins affiliés en Allemagne, en Autriche, en Belgique et en Italie ; confiance faible, livraison hors d'Allemagne non établie."
 covers = ["official"]
 languages = ["de"]
 countries = ["DE"]
@@ -159,6 +171,9 @@ id = "brickmo"
 name = "Brickmo"
 url = "https://www.brickmo.com/fr/"
 group = "alternative-brands"
+rank = {intl = 5, FR = 4, DE = 5, AT = 1}
+rank_reason_en = "Official LEGO and 6 alternative brands, published shipping to France of 9.95 € by DHL or 10.95 € by GLS; Trustpilot scores of 3.4 on 10 reviews and 3.6 on 12 reviews, not re-read."
+rank_reason_fr = "Sets de marque LEGO et 6 marques alternatives, port vers la France publié de 9.95 € par DHL ou 10.95 € par GLS ; notes Trustpilot de 3.4 sur 10 avis et de 3.6 sur 12 avis, non relues."
 covers = ["official", "alternative"]
 languages = ["de", "fr", "en"]
 countries = ["AT", "FR", "DE"]
@@ -192,6 +207,9 @@ name = "KBS Shop"
 url = "https://kbs-shop.com"
 group = "alternative-brands"
 featured = true
+rank = {intl = 1, FR = 2, BE = 1, DE = 1}
+rank_reason_en = "Technical and remote-controlled models of 6 brands (349 sets), shipping to France 4.95 € in 1 to 3 days, missing parts sent free of charge, rating 4.73 on 712 reviews on Trusted Shops (figure supplied, not re-checked)."
+rank_reason_fr = "Modèles techniques et télécommandés de 6 marques (349 sets), port vers la France 4.95 € en 1 à 3 jours, pièces manquantes envoyées gratuitement, note de 4.73 sur 712 avis sur Trusted Shops (chiffre fourni, non revérifié)."
 covers = ["alternative"]
 languages = ["de", "fr", "en"]
 countries = ["DE", "FR", "BE"]
@@ -220,6 +238,9 @@ id = "bausteinreich"
 name = "Bausteinreich"
 url = "https://www.bausteinreich.de"
 group = "alternative-brands"
+rank = {DE = 4}
+rank_reason_en = "Own warehouse in Berlin with dispatch on the next working day by DHL, free shipping from 50 € within Germany and a rating of 4.7 on 499 reviews shown on the home page (stated by the shop)."
+rank_reason_fr = "Entrepôt propre à Berlin avec expédition le jour ouvrable suivant par DHL, port gratuit dès 50 € en Allemagne et note de 4.7 sur 499 avis affichée sur la page d'accueil (indiquée par la boutique)."
 covers = ["alternative"]
 languages = ["de"]
 countries = ["DE"]
@@ -252,6 +273,9 @@ name = "BlueBrixx"
 url = "https://www.bluebrixx.com/fr/"
 group = "alternative-brands"
 featured = true
+rank = {intl = 2, FR = 3, DE = 2}
+rank_reason_en = "Own sets under licences not held by LEGO, shipping to France 9.95 € and free from 99 €; an independent test of March 2026 reported uneven colours, variable clutch power and few printed parts."
+rank_reason_fr = "Sets propres sous des licences que LEGO ne détient pas, port vers la France 9.95 € et gratuit dès 99 € ; un test indépendant de mars 2026 relève des couleurs inégales, une force d'emboîtement variable et peu de pièces imprimées."
 covers = ["alternative"]
 languages = ["fr", "de", "en"]
 countries = ["DE", "FR"]
@@ -283,6 +307,9 @@ kind = "third-party"
 id = "spielzeug-fuchs"
 name = "Spielzeug-Fuchs"
 url = "https://spielzeug-fuchs.de"
+rank = {DE = 3}
+rank_reason_en = "More than 2000 sets from more than 20 brands (COBI 517, Mould King 258, CaDA 207, Pantasy 189 on the home page), dispatch by DHL in 1 to 3 working days; shipping to France not published."
+rank_reason_fr = "Plus de 2000 sets de plus de 20 marques (COBI 517, Mould King 258, CaDA 207, Pantasy 189 sur la page d'accueil), expédition par DHL en 1 à 3 jours ouvrables ; port vers la France non publié."
 size = [{n = 2000, unit = "sets", approx = "more-than"}, {n = 20, unit = "brands", approx = "more-than"}]
 feed = "https://spielzeug-fuchs.de/feed/"
 group = "alternative-brands"
@@ -348,6 +375,9 @@ id = "brickparts-nl"
 name = "Brickparts.nl"
 url = "https://brickparts.nl"
 group = "alternative-brands"
+rank = {NL = 1, BE = 3}
+rank_reason_en = "Sets and a section of loose parts, orders before 15:30 shipped the same day when in stock, free shipping from 75 € in the Netherlands and from 125 € in Belgium and Germany."
+rank_reason_fr = "Sets et rayon de pièces détachées, commandes passées avant 15 h 30 expédiées le jour même si en stock, port gratuit dès 75 € aux Pays-Bas et dès 125 € en Belgique et en Allemagne."
 covers = ["alternative", "parts"]
 languages = ["nl"]
 countries = ["NL", "BE", "DE"]
@@ -406,6 +436,9 @@ name = "Brickeez"
 url = "https://www.brickeez.com"
 group = "alternative-brands"
 featured = true
+rank = {intl = 3, FR = 1, BE = 2}
+rank_reason_en = "Shop in the Hérault dispatching from France in 1 to 2 working days, prices in euros with taxes and no customs, pick-up point delivery from 4.99 € and free from 20 €; official LEGO, Lumibricks, Pantasy, COBI and CaDA."
+rank_reason_fr = "Boutique dans l'Hérault expédiant depuis la France en 1 à 2 jours ouvrables, prix en euros taxes comprises et sans douane, livraison en point relais à 4.99 € puis gratuite dès 20 € ; sets de marque LEGO, Lumibricks, Pantasy, COBI et CaDA."
 covers = ["official", "alternative"]
 languages = ["fr"]
 countries = ["FR", "BE"]
@@ -438,6 +471,9 @@ id = "blouge-brick-store"
 name = "Blouge Brick Store"
 url = "https://blouge-brickstore.fr"
 group = "alternative-brands"
+rank = {BE = 5, LU = 1}
+rank_reason_en = "Store in Lille with stock in France, free pick-up point delivery from 55 € in France, Belgium and Luxembourg (stated by the shop); small business founded in 2023, rating shown on its own site."
+rank_reason_fr = "Magasin à Lille avec stock en France, livraison gratuite en point relais dès 55 € en France, en Belgique et au Luxembourg (indiquée par la boutique) ; petite entreprise fondée en 2023, note affichée sur son propre site."
 covers = ["alternative"]
 languages = ["fr"]
 countries = ["FR", "BE", "LU"]
@@ -635,6 +671,9 @@ id = "warbrix"
 name = "Warbrix.fr"
 url = "https://www.warbrix.fr"
 group = "alternative-brands"
+rank = {FR = 5, MC = 1}
+rank_reason_en = "COBI and Reobrix, states it was the first distributor to introduce COBI in France (2012); shipping to France and Monaco 5 € per order up to 69 € and free from 69 €."
+rank_reason_fr = "COBI et Reobrix, se dit premier distributeur à avoir introduit COBI en France (2012) ; port vers la France et Monaco de 5 € par commande jusqu'à 69 € et gratuit dès 69 €."
 covers = ["alternative"]
 languages = ["fr", "en"]
 countries = ["FR", "MC"]
@@ -694,6 +733,9 @@ id = "amazon-fr"
 name = "Amazon.fr"
 url = "https://www.amazon.fr"
 group = "general-retailers"
+rank = {intl = 2, FR = 2}
+rank_reason_en = "Per a third-party survey of 15 September 2026, lowest price on 48 % of tracked sets with a median discount of 28 % below the official price; page not read directly."
+rank_reason_fr = "Selon un relevé tiers du 15 septembre 2026, prix le plus bas sur 48 % des sets suivis, avec une remise médiane de 28 % sous le prix officiel ; page non lue directement."
 covers = ["official", "alternative"]
 languages = ["fr"]
 countries = ["FR"]
@@ -721,6 +763,9 @@ name = "Alternate (alternate.fr)"
 url = "https://www.alternate.fr/Jouets/LEGO"
 group = "general-retailers"
 featured = true
+rank = {intl = 1, FR = 1}
+rank_reason_en = "Per a third-party survey, 99 % of its sets are below the official price, cheapest on 39 % of sets, median discount 26.8 %; Trustpilot 4.3 on 1396 reviews (14 November 2026)."
+rank_reason_fr = "Selon un relevé tiers, 99 % de ses sets sont sous le prix officiel, la moins chère sur 39 % des sets, remise médiane de 26.8 % ; Trustpilot 4.3 sur 1396 avis (14 novembre 2026)."
 covers = ["official"]
 languages = ["fr", "de"]
 countries = ["FR"]
@@ -784,6 +829,9 @@ name = "Joybuy France"
 url = "https://www.joybuy.fr"
 group = "general-retailers"
 featured = true
+rank = {intl = 3, FR = 3}
+rank_reason_en = "Opened in France on 16 March 2026, free shipping from 29 € on items sold and shipped by Joybuy, 97 % of sets below the official price, median discount 23.6 %; Trustpilot 4.6 on 20086 reviews (23 November 2026)."
+rank_reason_fr = "Ouverte en France le 16 mars 2026, port gratuit dès 29 € sur les articles vendus et expédiés par Joybuy, 97 % des sets sous le prix officiel, remise médiane de 23.6 % ; Trustpilot 4.6 sur 20086 avis (23 novembre 2026)."
 covers = ["official"]
 languages = ["fr"]
 countries = ["FR"]
@@ -815,6 +863,9 @@ id = "kidinn"
 name = "Kidinn"
 url = "https://www.tradeinn.com/kidinn/fr"
 group = "general-retailers"
+rank = {ES = 1}
+rank_reason_en = "Only shop of the group listing Spain: children's clothing and toy store of the Tradeinn group shipped from Spain, Verified Reviews 4.6 on 931 reviews."
+rank_reason_fr = "Seule boutique du groupe qui liste l'Espagne : magasin de vêtements et de jouets pour enfants du groupe Tradeinn expédié depuis l'Espagne, Avis vérifiés 4.6 sur 931 avis."
 covers = ["official"]
 languages = ["fr", "en", "es"]
 countries = ["FR", "ES"]
@@ -841,6 +892,9 @@ id = "cdiscount"
 name = "Cdiscount"
 url = "https://www.cdiscount.com"
 group = "general-retailers"
+rank = {intl = 4, FR = 4}
+rank_reason_en = "Per a third-party survey, median discount 25 % and 92 % of sets below the official price, but cheapest on only 10 % of sets; Trustpilot 4.1 on 290179 reviews (22 November 2026)."
+rank_reason_fr = "Selon un relevé tiers, remise médiane de 25 % et 92 % des sets sous le prix officiel, mais la moins chère sur 10 % des sets seulement ; Trustpilot 4.1 sur 290179 avis (22 novembre 2026)."
 covers = ["official"]
 languages = ["fr"]
 countries = ["FR"]
@@ -893,6 +947,9 @@ id = "e-leclerc"
 name = "E.Leclerc"
 url = "https://www.e.leclerc"
 group = "general-retailers"
+rank = {intl = 5, FR = 5}
+rank_reason_en = "Highest median discount of the third-party survey, 28.2 %, with 97 % of sets below the official price; shorter LEGO catalogue, shipping and reviews not read."
+rank_reason_fr = "Remise médiane la plus élevée du relevé tiers, 28.2 %, avec 97 % des sets sous le prix officiel ; catalogue de marque LEGO plus court, port et avis non lus."
 covers = ["official"]
 languages = ["fr"]
 countries = ["FR"]
@@ -1023,6 +1080,9 @@ id = "brickitalia"
 name = "Brickitalia"
 url = "https://www.brickitalia.com/"
 group = "official-lego"
+rank = {IT = 1}
+rank_reason_en = "Only Italian shop of the group, with loose parts (about 50000) and minifigures besides about 250 sets; delivery conditions outside Italy not read."
+rank_reason_fr = "Seule boutique italienne du groupe, avec des pièces détachées (environ 50000) et des minifigurines en plus d'environ 250 sets ; conditions de livraison hors d'Italie non lues."
 covers = ["official", "parts", "minifigures"]
 languages = ["it"]
 countries = ["IT"]
@@ -1045,6 +1105,9 @@ date = "2026-11-23"
 kind = "read"
 
 [[resource]]
+rank = {intl = 4, NL = 1, BE = 1}
+rank_reason_en = "Hard-to-find sets, sets with box damage, loose parts and minifigures, delivered by GLS in 1 working day in the Netherlands and in 1 to 2 in Belgium; delivery to France is a pilot."
+rank_reason_fr = "Sets difficiles à trouver, sets à boîte abîmée, pièces détachées et minifigurines, livrés par GLS en 1 jour ouvrable aux Pays-Bas et en 1 à 2 en Belgique ; la livraison vers la France est un essai."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1076,6 +1139,9 @@ date = "2026-11-25"
 kind = "official"
 
 [[resource]]
+rank = {PL = 1}
+rank_reason_en = "Own store in Łódź with free pick-up and same-day delivery there, delivery by InPost and DPD and a 30-day right of return; delivery limited to Poland."
+rank_reason_fr = "Magasin propre à Łódź avec retrait gratuit et livraison le jour même sur place, livraison par InPost et DPD et droit de retour de 30 jours ; livraison limitée à la Pologne."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1107,6 +1173,9 @@ date = "2026-11-25"
 kind = "read"
 
 [[resource]]
+rank = {PL = 2}
+rank_reason_en = "Store in Kraków with free pick-up, 1419 products listed by release year and published rates for DPD courier and pick-up point; delivery outside Poland not stated."
+rank_reason_fr = "Magasin à Cracovie avec retrait gratuit, 1419 produits listés par année de sortie et tarifs publiés pour le coursier DPD et le point relais ; livraison hors de Pologne non indiquée."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1137,6 +1206,9 @@ date = "2026-11-25"
 kind = "official"
 
 [[resource]]
+rank = {DE = 4}
+rank_reason_en = "961 products listed, PlayPoints loyalty scheme, Click and Collect and personal delivery in Berlin; delivery within Germany only."
+rank_reason_fr = "961 produits listés, programme de fidélité PlayPoints, Click and Collect et livraison en personne à Berlin ; livraison en Allemagne seulement."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1169,6 +1241,9 @@ date = "2026-11-25"
 kind = "official"
 
 [[resource]]
+rank = {DE = 5}
+rank_reason_en = "Non-profit inclusion enterprise with Click and Collect and delivery by DHL or DPD in 2 to 3 working days; delivery within Germany only."
+rank_reason_fr = "Entreprise d'inclusion à but non lucratif avec Click and Collect et livraison par DHL ou DPD en 2 à 3 jours ouvrables ; livraison en Allemagne seulement."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1200,6 +1275,9 @@ date = "2026-11-25"
 kind = "official"
 
 [[resource]]
+rank = {intl = 3, GB = 1}
+rank_reason_en = "More than 4500 brand new sealed retired sets online, trade-in of boxed sets for credit and two stores (Aylesbury and Glasgow); international delivery only on a custom quote."
+rank_reason_fr = "Plus de 4500 sets retirés neufs et scellés en ligne, reprise de sets en boîte contre crédit et deux magasins (Aylesbury et Glasgow) ; livraison internationale seulement sur devis."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1231,6 +1309,9 @@ date = "2026-11-25"
 kind = "read"
 
 [[resource]]
+rank = {ZA = 1}
+rank_reason_en = "Run by the Great Yellow Brick Company, licensed operator since 2017, with stores in Johannesburg, Pretoria, Cape Town and Durban and free delivery on all online orders; only shop of the group in South Africa."
+rank_reason_fr = "Tenue par la Great Yellow Brick Company, opérateur sous licence depuis 2017, avec des magasins à Johannesburg, Pretoria, Le Cap et Durban et la livraison gratuite sur toutes les commandes en ligne ; seule boutique du groupe en Afrique du Sud."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1263,6 +1344,9 @@ date = "2026-11-25"
 kind = "official"
 
 [[resource]]
+rank = {GB = 2}
+rank_reason_en = "Sets from Lumibricks, CaDA, Pantasy and Sluban with free standard shipping from £30; abroad an estimated £14.99 to £23.99, France in the country list."
+rank_reason_fr = "Sets de Lumibricks, CaDA, Pantasy et Sluban avec port standard gratuit dès £30 ; à l'étranger de £14.99 à £23.99 estimés, France dans la liste des pays."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1295,6 +1379,9 @@ date = "2026-11-25"
 kind = "read"
 
 [[resource]]
+rank = {GB = 1}
+rank_reason_en = "Retail outlet in Driffield with stock held in the country, a spare and missing parts service and 13339 models and accessories sold since March 2022; European orders ship by DPD with duties paid, France included."
+rank_reason_fr = "Point de vente à Driffield avec stock détenu dans le pays, service de pièces de rechange et manquantes et 13339 modèles et accessoires vendus depuis mars 2022 ; commandes européennes expédiées par DPD, droits payés, France comprise."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1327,6 +1414,9 @@ date = "2026-11-25"
 kind = "read"
 
 [[resource]]
+rank = {IT = 1}
+rank_reason_en = "Only Italian shop of the group: store in Santarcangelo di Romagna with in-store pick-up and a blog, selling CaDA, Mould King, Reobrix, Sembo Block, Rastar and Wange; delivery outside Italy on request."
+rank_reason_fr = "Seule boutique italienne du groupe : magasin à Santarcangelo di Romagna avec retrait en magasin et un blog, vendant CaDA, Mould King, Reobrix, Sembo Block, Rastar et Wange ; livraison hors d'Italie sur demande."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1358,6 +1448,9 @@ date = "2026-11-25"
 kind = "read"
 
 [[resource]]
+rank = {intl = 4, ES = 1}
+rank_reason_en = "Ships in original boxes with brand guides and a builder quiz, 309 customer reviews (latest 18 November 2026) and free shipping from 120 € to the European Union, France included."
+rank_reason_fr = "Expédie en boîtes d'origine, avec des guides de marques et un quiz du constructeur, 309 avis clients (dernier du 18 novembre 2026) et la livraison gratuite dès 120 € dans l'Union européenne, France comprise."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1390,6 +1483,9 @@ date = "2026-11-25"
 kind = "read"
 
 [[resource]]
+rank = {ES = 2}
+rank_reason_en = "Sells LEGO and compatible bricks together, takes custom-design orders and publishes buying guides; free shipping from 99 € to France and seven other European countries."
+rank_reason_fr = "Vend ensemble des sets de marque LEGO et des briques compatibles, prend des commandes de créations sur mesure et publie des guides d'achat ; livraison gratuite dès 99 € vers la France et sept autres pays européens."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1422,6 +1518,9 @@ date = "2026-11-25"
 kind = "read"
 
 [[resource]]
+rank = {CH = 1}
+rank_reason_en = "Only Swiss shop of the group: stock held in Zürich, delivery in 2 to 3 working days with free shipping, but only 10 products listed on 25 November 2026."
+rank_reason_fr = "Seule boutique suisse du groupe : stock détenu à Zurich, livraison en 2 à 3 jours ouvrables avec port gratuit, mais 10 produits seulement listés le 25 novembre 2026."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1455,6 +1554,9 @@ date = "2026-11-25"
 kind = "read"
 
 [[resource]]
+rank = {NL = 2, BE = 4}
+rank_reason_en = "Run by a couple from Brunssum since 2014, starting with a BrickLink store for loose parts, with customer reviews dated up to 8 November 2026; shipping 5.99 € in the Netherlands and 8.99 € to Belgium."
+rank_reason_fr = "Tenue par un couple de Brunssum depuis 2014, à partir d'une boutique BrickLink de pièces détachées, avec des avis clients datés jusqu'au 8 novembre 2026 ; port de 5.99 € aux Pays-Bas et de 8.99 € vers la Belgique."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1486,6 +1588,9 @@ date = "2026-11-25"
 kind = "official"
 
 [[resource]]
+rank = {NL = 3}
+rank_reason_en = "Lit sets from Lumibricks and FunWhole besides Pantasy and CaDA, shipping 6.95 € in the Netherlands and free from 100 €; does not serve France."
+rank_reason_fr = "Sets lumineux de Lumibricks et FunWhole, ainsi que Pantasy et CaDA, port de 6.95 € aux Pays-Bas et gratuit dès 100 € ; ne dessert pas la France."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1518,6 +1623,9 @@ date = "2026-11-25"
 kind = "read"
 
 [[resource]]
+rank = {AU = 1}
+rank_reason_en = "Only Australian shop of the group: wide brand range (CaDA, Cobi, Mould King, Pantasy, Lumibricks, Sluban, Wange and others) with local stock, Click and Collect and a missing-bricks service; no international shipping."
+rank_reason_fr = "Seule boutique australienne du groupe : large gamme de marques (CaDA, Cobi, Mould King, Pantasy, Lumibricks, Sluban, Wange et d'autres) avec stock local, Click and Collect et service de briques manquantes ; pas de livraison à l'étranger."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"
@@ -1550,6 +1658,9 @@ date = "2026-11-25"
 kind = "read"
 
 [[resource]]
+rank = {US = 1}
+rank_reason_en = "Only shop of the group listing the United States: 493 sets from 24 brands shipped from a warehouse in the United States, free shipping from $75 there; European warehouse announced, not open."
+rank_reason_fr = "Seule boutique du groupe qui liste les États-Unis : 493 sets de 24 marques expédiés depuis un entrepôt aux États-Unis, port gratuit dès $75 sur place ; entrepôt européen annoncé, non ouvert."
 status = "active"
 checked = "2026-11-25"
 added = "2026-11-25"

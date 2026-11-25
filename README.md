@@ -114,20 +114,13 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 Online and physical shops selling official LEGO, alternative brick brands and general goods to customers in Europe, with delivery to France noted when established.
 
-### Official LEGO
-
-- [LToys](https://www.ltoys.lu/fr) - Store in Niederanven of LTOYS S.A R.L. (founded 2017); official LEGO range plus COBI, CaDA, Pantasy, Lumibricks, Blokees and die-cast cars. Covers official LEGO and alternative brands.
-
 ### Alternative brands
 
-- [BlueBrixx](https://www.bluebrixx.com/fr/) - Own sets under licences not held by LEGO (Stargate, RoboCop, emergency vehicles); brand and retailer operated by BB Services GmbH, Flörsheim am Main. Covers alternative brands.
-- [Brickeez](https://www.brickeez.com) - New official LEGO, Lumibricks, Pantasy, COBI and CaDA; shop in the Hérault. Covers official LEGO and alternative brands.
 - [KBS Shop](https://kbs-shop.com) - Technical and remote-controlled bricks: Mould King, CaDA, Reobrix, Wange, Jie Star, Panlos. Covers alternative brands.
 
 ### General retailers
 
 - [Alternate (alternate.fr)](https://www.alternate.fr/Jouets/LEGO) - Large official LEGO range delivered to France, from the electronics seller Alternate GmbH. Covers official LEGO.
-- [Joybuy France](https://www.joybuy.fr) - Marketplace and direct sales of the JD.com group, opened in France on 16 March 2026, with LEGO among launch brands. Covers official LEGO.
 
 <br>
 
@@ -139,15 +132,11 @@ Sites that compare set prices across shops, catalogue sets and parts, track seco
 
 ### Price comparators
 
-- [Brick Broker](https://brick-broker.com/) - Official LEGO and about 95 alternative brands in one search, with offers deliverable to France; published by Doux Labs SASU, based in Allonzier-la-Caille. Covers official LEGO and alternative brands.
-- [Brickmitri](https://brickmitri.com/comparateur-lego/) - Built from the affiliate feeds of French retailers; no account required. Covers official LEGO.
 - [Lakea](https://lakea.net/?lang=fr) - Independent service built on its own price collection for official LEGO, also covering parts, minifigures and display cases. Covers official LEGO.
 
 ### Set and parts databases
 
 - [Brickset](https://brickset.com/) - Reference for official LEGO sets since 1997 (minifigures, parts, colours, inventories), with collection tracking, reviews, news and lists of discounts at retailers. Covers official LEGO.
-- [Rebrickable](https://rebrickable.com/) - Fan-designed custom builds with instructions, official sets and parts; shows which creations can be built with the parts a user owns. Covers official LEGO.
-- [SetDB (Merlins Steine)](https://www.merlinsbricks.com/setdb/) - Independent German brick magazine Merlins Steine (merlinssteine.de, English edition Merlins Bricks): sets of many brands, minifigures and parts, next to reviews, news and a weekly podcast. Covers official LEGO and alternative brands.
 
 ### Value and investment tracking
 
