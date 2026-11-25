@@ -1,1 +1,2 @@
 playwright==1.65.2   # rendering checks (scripts/check_site.py, workflow Render)
+pillow==13.0.0   # the image of the README (scripts/readme_image.py)

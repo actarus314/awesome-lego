@@ -405,5 +405,33 @@ class EnglishOnly(unittest.TestCase):
         self.assertTrue(any("French texts come together" in e for e in load_with("places.toml", partial)))
 
 
+def tiny_png(text=None):
+    """A 1 x 1 PNG, with a tEXt chunk `version` when text is given (standard library only)."""
+    import struct
+    import zlib
+
+    def chunk(kind, data):
+        return struct.pack(">I", len(data)) + kind + data + struct.pack(">I", zlib.crc32(kind + data))
+    out = b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", struct.pack(">IIBBBBB", 1, 1, 8, 0, 0, 0, 0))
+    if text is not None:
+        out += chunk(b"tEXt", b"version\0" + text.encode("latin-1"))
+    return out + chunk(b"IDAT", zlib.compress(b"\0\0")) + chunk(b"IEND", b"")
+
+
+class ReadmeImage(unittest.TestCase):
+    def test_reads_the_version_of_a_png(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "a.png"
+            f.write_bytes(tiny_png("3.5"))
+            self.assertEqual(build.png_text(f, "version"), "3.5")
+            f.write_bytes(tiny_png())
+            self.assertIsNone(build.png_text(f, "version"))
+
+    def test_the_committed_images_show_the_current_version(self):
+        version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+        self.assertEqual(build.check_readme_images(version), [])
+        self.assertEqual(len(build.check_readme_images("0.1")), len(build.README_IMAGES))
+
+
 if __name__ == "__main__":
     unittest.main()
