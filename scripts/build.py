@@ -576,8 +576,11 @@ def assemble():
 
 
 def shared(tpl):
-    """The parts every page of the website shares: style.css, the header (header.html) and its script (header.js)."""
-    return tpl.replace("{{STYLE}}", source("style.css"), 1).replace("{{HEADER}}", source("header.html"), 1).replace("{{HEADERJS}}", source("header.js"), 1)
+    """The parts every page of the website shares: style.css, the header (header.html) and its script (header.js), the footer
+    with the hidden way to the Brick Vault (footer.html). Their placeholders: HOME (the directory page of the language), ROOT
+    (the root of the website), ABOUT and ABOUTCUR (the about page, and the mark of the current page on it)."""
+    return (tpl.replace("{{STYLE}}", source("style.css"), 1).replace("{{HEADER}}", source("header.html"), 1).replace("{{HEADERJS}}", source("header.js"), 1)
+            .replace("{{FOOTER}}", source("footer.html"), 1))
 
 
 def static_texts(tpl, lang):
@@ -609,7 +612,7 @@ def page(lang, data):
     values = {"LANG": lang, "OTHER": other, "TITLE": html.escape(T["title"][lang]), "TAGLINE": html.escape(T["site_tagline"][lang]),
               "MINISEARCH": (ROOT / "site-src" / "vendor" / "minisearch.min.js").read_text(encoding="utf-8"),
               "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "",
-              "DATA": blob, "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": "#top", "HOME": "", "ABOUT": "about/"}
+              "DATA": blob, "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": "#top", "HOME": "", "ABOUT": "about/", "ABOUTCUR": "", "ROOT": "../" if lang == "fr" else ""}
     out = re.sub(r"\{\{(\w+)\}\}", lambda m: values[m.group(1)], tpl)  # one pass: a text of the data that contains {{…}} is never replaced again
     i = out.index("{{CSP}}")  # the policy is the template's own placeholder, before any data
     return out[:i] + csp(out) + out[i + len("{{CSP}}"):]
@@ -670,7 +673,7 @@ def about(lang, data):
     pct = lambda k: f"{max(1, round(100 * k / n))}%"
     values = {"LANG": lang, "PTITLE": html.escape(A["ptitle"]), "PDESC": html.escape(A["pdesc"]), "CANON": canon, "LD": ld,
               "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "", "ASTYLE": source("about.css"),
-              "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": home, "HOME": home,
+              "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": home, "HOME": home, "ABOUT": "./", "ABOUTCUR": ' aria-current="page"', "ROOT": "../../" if lang == "fr" else "../",
               "OTHER": "../fr/about/" if lang == "en" else "../../about/",
               "N": str(n), "RANKED": str(ranked), "SEL": str(sel), "RANKEDW": pct(ranked), "SELW": pct(sel),
               "COUNTRIES": str(len({c for r in R for c in r.get("countries") or [] if c != "international"})),

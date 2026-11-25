@@ -172,6 +172,19 @@ class About(unittest.TestCase):
             self.assertIn(f"<b>{sum(1 for r in R if r['featured'])}</b>", doc)
             self.assertIn(f"<b>{sum(len(r['sources']) for r in R)}</b>", doc)
 
+    def test_no_line_length_cap(self):
+        """Text fills its block: no max-width in ch or em on the website (rule of the maintainer, 05/11/2026)."""
+        for f in sorted((ROOT / "site-src").glob("*.css")) + sorted((ROOT / "site-src").glob("*.html")):
+            self.assertNotRegex(f.read_text(encoding="utf-8"), r"max-(width|inline-size):\s*[0-9.]+(ch|em)\b", f.name)
+
+    def test_same_header_and_footer_as_the_home_pages(self):
+        home = {lang: build.page(lang, self.data) for lang in ("en", "fr")}
+        for lang, doc in self.pages.items():
+            for part in ("<footer>", "data-t=\"about\"", "id=\"setmenu\"", "vault/#open"):
+                self.assertIn(part, doc, lang)
+                self.assertIn(part, home[lang], lang)
+            self.assertIn('class="dsk" href="./" data-t="about" aria-current="page"', doc)
+
     def test_icon_buttons_named_without_the_page_script(self):
         self.assertIn('id="settings" type="button" aria-expanded="false" aria-controls="setmenu" data-t-label="settings" aria-label="Réglages"', self.pages["fr"])
         self.assertIn('data-t="nav_dir">Directory</a>', self.pages["en"])

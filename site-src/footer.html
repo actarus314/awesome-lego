@@ -1,0 +1,15 @@
+<!-- Not every wall here is just a wall. Old arcade players know the way in. -->
+<footer><div class="wrap"><span class="kn" aria-hidden="true">▲ ▲ ▼ ▼ ◀ ▶ ◀ ▶ B A</span><span><a href="{{ABOUT}}" data-t="about"></a> · <a href="https://github.com/{{REPO}}/issues/new/choose" data-t="contribute"></a> · <a href="{{HOME}}feed.xml" type="application/atom+xml" data-t="feed"></a> · <a href="https://github.com/{{REPO}}/blob/main/LICENSE">CC BY-NC-SA 4.0</a></span></div></footer>
+<script>/* ↑↑↓↓←→←→BA opens the Brick Vault (vault/, English only); on a touch screen, swipes stand for the arrows and two taps for B and A */
+(()=>{const SEQ=['up','up','down','down','left','right','left','right','b','a'];let i=0,x0=0,y0=0;
+const go=()=>{location.href='{{ROOT}}vault/#open'};
+const logo=document.querySelector('.brand svg');
+const feed=k=>{i=k===SEQ[i]?i+1:(k===SEQ[0]?1:0);if(i===SEQ.length){i=0;go();return}if(i>=2&&logo){logo.classList.remove('hop');void logo.getBoundingClientRect();logo.classList.add('hop')}};
+console.log('%c▲ ▲ ▼ ▼ ◀ ▶ ◀ ▶ B A','font:700 16px sans-serif;color:#e3a008;letter-spacing:.2em','\nSome walls hide more than bricks.');
+const KEYS={ArrowUp:'up',ArrowDown:'down',ArrowLeft:'left',ArrowRight:'right',b:'b',B:'b',a:'a',A:'a'};
+addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey||e.target.closest('input,textarea,select,[contenteditable]'))return;const k=KEYS[e.key];if(k)feed(k);else if(e.key.length===1)i=0},true);
+addEventListener('touchstart',e=>{if(e.touches.length!==1)return;x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true,capture:true});
+addEventListener('touchend',e=>{const t=e.changedTouches[0],dx=t.clientX-x0,dy=t.clientY-y0,ax=Math.abs(dx),ay=Math.abs(dy);
+ if(Math.max(ax,ay)>=40)feed(ax>ay?(dx>0?'right':'left'):(dy>0?'down':'up'));else if(i>=8)feed(SEQ[i])},{passive:true,capture:true});
+})();
+</script>

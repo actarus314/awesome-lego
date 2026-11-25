@@ -1,40 +1,156 @@
 # Maintenance
 
-Who does what, when and how. Times are UTC. The tasks that wait for a person are under [Owner's tasks](#owners-tasks).
+Who does what, and when. Times are UTC. With no action at all, dates, stars and statuses on the website stay current; corrections and additions wait in their pull request.
 
-| Who | When | What | How |
+## At a glance
+
+```mermaid
+flowchart LR
+  subgraph own["Runs on its own"]
+    day["Every day 04:17<br/>Pages: read activity,<br/>rebuild, publish"]
+    wed["Wednesday 05:23<br/>Links: test every link"] --> fix["Data fixes<br/>pull request"]
+    m4["4th of the month 03:41<br/>Data report: issue"] --> m5["5th, 10:13 Paris time<br/>Review pass: pull request"]
+    sec["Monday 05:37 Workflow audit<br/>Tuesday 04:43 Scorecard"]
+  end
+  reno["Renovate<br/>pull requests"] --> merge
+  contrib["Contributors<br/>issues, pull requests"] --> merge
+  fix --> merge
+  m5 --> merge
+  merge{{"Maintainer reads<br/>and merges"}} --> main[("main")]
+  main --> pub["Pages publishes"]
+  main -->|VERSION changed| rel["Release: tag<br/>and release notes"]
+```
+
+## Scheduled runs
+
+| Workflow | When (UTC) | Does | Writes |
 |---|---|---|---|
-| GitHub Actions: **Pages** | daily at 04:17, at every push to `main`, and when **Preview** starts it | rebuilds and publishes the website | `scripts/refresh.py` reads GitHub stars, last commits and archived flags, YouTube channel feeds, subreddits (public Arctic Shift archive: Reddit refuses automated reads) and site feeds, in parallel (subreddits one at a time); after a push, it reuses the measurements of the published website instead of reading again (about 30 seconds instead of one minute); the daily run (or a run started by hand) hands that day's measurements to a separate job, the only one allowed to write, which keeps them on the `history` branch; statuses (active, slowing, inactive) follow the last activity date; `scripts/build.py --site-only` builds `site/`, with the feeds: new resources and announced event editions (`feed.xml`, `fr/feed.xml`) and versions (`changes.xml`); the strengths and weaknesses of the entries, read by the page when a card unfolds (`details.json`, `fr/details.json`). It then puts under `preview/` the previews built by the last successful **Preview** run (no branch code runs in this workflow; without such a run, the website is published without previews); a run started by **Preview** reuses the published measurements, keeps none, and never replaces a waiting daily run. |
-| GitHub Actions: **Preview** | when a pull request of this repository's branches opened by a person (never a fork, never a bot) that changes the website (its source, `scripts/build.py`, `media/` except the image of the README, `data/`, `VERSION` or `CHANGELOG.md`) is opened, updated, reopened or closed, at every push to `dev`, and when a branch is deleted | builds the previews, then has them published | `scripts/previews.py` builds the website of the branch `dev` when it exists and of every such open pull request (20 at most), each with its own scripts and the measurements of the published website, under `preview/dev/` and `preview/<number>/`, listed at `preview/`; every page carries a banner and `noindex`; the branches' code runs without the token in a job that can write nowhere, and a newer run cancels an older build. Then it starts the **Pages** workflow of `main` (the only one allowed to publish) and keeps one comment on the pull request with the address of its preview (`https://actarus314.github.io/awesome-lego/preview/<number>/`, or `preview/dev/` for a request from `dev`), online a few minutes later; a closed request loses its preview at the next run. A request opened with the personal token of **Data fixes** counts as a person's. A preview is served by the same website as the published one: anyone can open it, and it shares the browser storage of the published pages (theme, language, new tab) |
-| GitHub Actions: **Data report** | the 4th of each month at 03:41, the day before the monthly review | monthly data report | reads the activity data again (`scripts/refresh.py --month`) and updates the open **Monthly data report** issue, or opens a new one when the last was closed, read by the monthly review: a guard line at the top (what the report of the month before already listed and is still there; a report written again in the same month still looks one month back), read failures with the date of the last successful reading, archived repositories, selected entries no longer eligible (no activity for 6 months for an entry of regime activity, since when; archived, since when; status other than active; weak source), entries not checked by hand for a year, coverage gaps (countries with 3 or more fan communities recognized by LEGO and at most one entry per community), a selection check: a selected entry that scores 2 or more below an unselected one of its group (score out of 7: activity, or how recent the check of an operating entry, confidence, sources read at the source), what changed during the month in the daily measurements of the `history` branch (statuses, archived repositories, entries measured for the first time or no longer measured), the links that block the machines of GitHub (copied from the links issue), the reliability of the directory (confidence and kinds of sources per category) and the trends read from the `history` branch by `scripts/trends.py` (posting days and stars over two windows of 90 days, status changes, entries that appeared or left; it says from when two windows are available). The selection is the rank 1 at the international scope of each group |
-| GitHub Actions: **Data fixes** | when the weekly **Links** run ends (Wednesdays), whatever its result | mechanical fixes | `scripts/autofix.py` replaces addresses that moved for good (301 or 308 redirects only) and removes past event dates; opens or updates the **Data fixes** pull request. It opens the pull request with the token of a GitHub App (variable `DATA_FIXES_APP_ID`, secret `DATA_FIXES_APP_KEY`; permissions Contents and Pull requests, read and write, installed on this repository only) or, failing that, a personal token (secret `DATA_FIXES_TOKEN`), so that **Check** and **Render** start on their own; with the token of Actions alone, they wait for **Approve and run workflows** |
-| GitHub Actions: **Links** | Wednesdays at 05:23 | link check | lychee over `data/`, the README, contributing.md and MAINTENANCE.md from the machines of GitHub (401 and 403 accepted: bot checks; 405: an endpoint that takes another method; 429: a rate limit; local addresses skipped); every link that failed is opened again from 3 probes of Globalping (free public API of jsDelivr) on home and office networks (2 in Europe and 1 in North America, else any 3 such probes; never data centre probes, which fail like GitHub); a redirect is followed, 3 hops at most, and the link is judged by where it leads; the first 10 kB of a page that answers are judged too: broken if it fails from every probe that read it (2 at least; a failure of the probe itself does not count) and again 90 seconds later (a link that cannot be read a second time is not judged), else it only blocks GitHub; a secure connection refused by every probe is listed apart (browsers often still open it); when the hourly limit of Globalping cuts the list, the links of the previous run go first, then a different part of the others each week; the address of every entry still open (status archived or dead left out; platforms such as YouTube, Reddit and GitHub left out) is opened to find dead pages that answer 200 (parked or expired domain, site taken over by unrelated content, read in the title, the description and the main headings, unless they name bricks or a brand of the directory; closure notice, also in the start of the text); `scripts/links_issue.py` keeps one **Broken links** issue up to date, text read on third-party pages quoted as code: open when a link is broken, a page is dead, or a link failed twice in a row and could not be judged by Globalping; closed otherwise, its body keeping the folded lists of the links that only block GitHub or whose secure connection is refused (when no issue exists yet and such a list is there, the issue is written and closed at once). `python3 scripts/links_issue.py --sample tests/links-sample.json` reads the real addresses of its yardstick again; **Run workflow** with *dry run* writes the issue body in the run summary and log, changes no issue and does not start **Data fixes** |
-| GitHub Actions: **Check** | every pull request and every push | validation | validates `data/`, checks that the generated files (`README.md`, `full-list.md`, the category list of the **Add a resource** form) are up to date, that `CHANGELOG.md` has a section for `VERSION`, and that this file and `data/SCHEMA.md` still name every workflow, schedule, controlled word and backend file; warns, without failing, when the image of the README (`media/site-preview.png`, `media/site-preview-dark.png`) shows another version; checks the licence of every file with `reuse lint` (`REUSE.toml`, `LICENSES/`); runs the unit tests (`tests/`: validation, pages, the links issue, the monthly report), builds the site, runs awesome-lint as locked in `package-lock.json`; checks that MiniSearch and the fonts of the Brick Vault, kept in the repository, match the packages locked in `package-lock.json` (`scripts/vendor.py`); runs on the latest Python release only |
-| GitHub Actions: **Workflow audit** | every push to `main` and every pull request that changes a workflow, and Mondays at 05:37 | security audit of the workflows | zizmor (`zizmorcore/zizmor-action`) reads `.github/workflows/` (dangerous triggers, injections into `run`, excessive permissions, unpinned or known-vulnerable actions) and puts its findings in the **Security** tab as code scanning alerts |
-| GitHub Actions: **Scorecard** | every push to `main`, and Tuesdays at 04:43 (a change of the ruleset is scored at the next run) | score of the repository practices | OpenSSF Scorecard (`ossf/scorecard-action`) scores the rules of `main`, pinned dependencies, token permissions, dangerous workflows, security policy and the rest of its checks; its findings go to the **Security** tab, and the score is published at `api.scorecard.dev` (`publish_results`) |
-| GitHub Actions: **Render** | every pull request and push that changes the website, its data or its checks (not the image of the README alone) | rendering checks | `scripts/check_site.py` opens every view (directory as cards and table, brand mode of an alternative brand and of LEGO, observatory, vault) in English and French, at 1440, 1024, 768, 390 and 320 px and in both themes, and checks that a word found only in the strengths or weaknesses of an entry finds it in the search; fails on a sideways scroll, an element out of its box, a phone, email, date, tag or button label split over two lines, a word split inside itself, a frame inherited by an inner list, a script or security policy error, and every WCAG 2.2 A and AA violation found by axe-core (a guard, not a conformance target: the 13 px studs of the category map are accepted); it first checks itself on `tests/render-fixture.html`, where one sound and one faulty case of each defect are planted. A pull request that changes only data and the files generated from it (monthly review, data fixes, contributions) gets a lighter pass, about 30 seconds instead of 3 minutes: 1440, 390 and 320 px in the light theme, no accessibility pass (`--data-only`; colours, controls and landmarks come from the source of the website); a push to `main` always gets every check. Not a required check (a path filter would leave it pending): its result is read before merging |
-| GitHub Actions: **Release** | when `VERSION` changes on `main` | release | tags `vX.Y` and publishes the GitHub release with its `CHANGELOG.md` section |
-| Review pass (language model) | the 5th of each month at 10:13 Paris time | full review | every entry read at its source, corrected, missing resources added, feeds found for entries without one (`scripts/discover_feeds.py`), `brands`, `funding`, `makers` and `audience` read again at the source (`audience` looked for on the pages of places, events, clubs, programmes and brands that lack it), ranks of each group (rank 1 worldwide: the selection; per country or language: "Where to start"), French texts of entries proposed in English only, and the needs of "Where to start" reassessed from the **Monthly data report** issue of the day before; fan communities per country recounted from the official LEGO Fan CoLab directory, population figures renewed in January; minor version bumped, `CHANGELOG.md` entry written from `scripts/changelog.py`, image of the README taken again (`scripts/readme_image.py`); opens a **Monthly review vX.Y** pull request, never pushes to `main` |
-| Renovate | 3 days after a version is published (at once for a security fix) | updates the workflows, Python, Node, the tools of the checks, MiniSearch and the fonts | opens a pull request, tested by **Check**; the Python tools of the checks are locked with their hashes (`tests/*.in`, compiled by `uv pip compile --generate-hashes` into `tests/*.txt`, installed with `--require-hashes`), and Renovate compiles the lock again; for MiniSearch or a font, run `scripts/vendor.py` on its branch first (the pull request says so) |
-| Contributors | any time | suggest or fix | issue forms (**Add a resource**, **Fix an entry**) or a pull request from a fork; workflows of outside contributors wait for the maintainer's approval |
+| **Pages** | every day 04:17, every push to `main`, after **Preview** | reads activity, builds and publishes the website with the previews | the website; one file a day on branch `history` |
+| **Links** | Wednesdays 05:23 | tests every link, from GitHub then from home and office probes | issue **Broken links** |
+| **Data fixes** | when **Links** ends | moved addresses, past event dates | pull request **Data fixes** |
+| **Data report** | the 4th of each month, 03:41 | monthly report for the review | issue **Monthly data report** |
+| Review pass (language model) | the 5th of each month, 10:13 Paris time | full review of the data | pull request **Monthly review vX.Y** |
+| **Workflow audit** | Mondays 05:37 | security audit of the workflows | alerts in the **Security** tab |
+| **Scorecard** | Tuesdays 04:43, every push to `main` | score of the repository practices | alerts in the **Security** tab, score at `api.scorecard.dev` |
 
-With no action at all, dates, stars and statuses on the website stay current; corrections and additions wait in their pull request.
+Started by hand (**Run workflow**): **Pages**, **Links** (with *dry run*), **Data fixes**, **Data report**, **Render**.
 
-Versions: minor (`1.1`) for every merge that changes content or the website, major (`2.0`) for a change of structure or data format, none for activity data alone. Generated files (`README.md`, `full-list.md`, `site/`) come from `data/` through `scripts/build.py`. `data/backend/` holds figures used by the website but listed nowhere as entries (fan communities per country, population), each with its source and date. The website calls no outside service: the page reads only its own `details.json` (the `connect-src 'self'` of the content security policy in `scripts/build.py`). The about pages (`site-src/about.html`, texts in `site-src/about.json`, styles in `site-src/about.css`; built as `site/about/` and `site/fr/about/`) say what the directory is, how it is made and kept current, why a selection, what gets in and what stays out, and how to write to the maintainer; their figures come from the data at each build, their texts restate this file and contributing.md in plain words: a change of the schedule, the method or the criteria is carried into `site-src/about.json` in the same pull request. Every page shares the header (`site-src/header.html`, `site-src/header.js`). The Brick Vault (`site-src/vault.html`, built as `site/vault/index.html`) is an English-only easter egg opened by the Konami code from either home page; it uses the fonts of `media/fonts/` (SIL Open Font License, licence files beside them) and its own content security policy (`vault()` in `scripts/build.py`). The home pages hint at it: a faint line of arrows in the footer, a comment in the source, a console message, a search suggestion (the `vault` item of the suggestions) and the logo hopping as the code is typed. Event dates already past disappear from the website at the next daily build. `data/metrics.json` is a local cache of the last reading: the website always reads fresh data.
+## On each pull request
+
+| Check | When | What it tells |
+|---|---|---|
+| **Check** (required) | every pull request, every push to `main` | data valid, generated files up to date, tests, licences |
+| **Render** | when the website, its data or its checks change | the website drawn in a real browser, without defect |
+| **Preview** | when the website changes, for a branch of this repository opened by a person | a link to the website of the branch, in a comment |
+| **Workflow audit** | when a workflow changes | the workflows are safe |
+| **Release** | when `VERSION` changes on `main` | tag `vX.Y` and the GitHub release |
 
 ## Owner's tasks
 
-What waits for the maintainer of the repository, and what happens when it waits.
+| Task | When | If not done |
+|---|---|---|
+| Accept **Data fixes** | Wednesdays, after **Links** | old addresses and past dates stay; the next run proposes them again |
+| Read **Broken links** | Wednesdays, when the issue is open | broken links stay until the monthly review |
+| Accept **Monthly review vX.Y** | after the 5th | corrections and additions wait; merge or close it before the next 5th |
+| Keep the review's instructions up to date | when a rule of the data changes | the review writes entries the build refuses |
+| Accept Renovate's pull requests | when one opens | tools fall behind, security fixes included |
+| Handle security alerts | when GitHub sends one | the flaw stays open |
+| Answer contributors | when an issue or a pull request opens | the suggestion waits |
+| Renew the key of **Data fixes** | when the workflow warns | its checks wait for **Approve and run workflows** |
+| Give **Links** its own Globalping token (optional, once) | once | **Links** shares the anonymous limit of 250 tests an hour |
+| Watch the scheduled runs | after a day without **Pages**, a Wednesday without **Links**, a 4th without **Data report** | dates stop moving, reports are not written |
 
-| Task | Where | When | How | If it is not done |
-|---|---|---|---|---|
-| Accept the mechanical fixes | pull request **Data fixes** (branch `auto/data-fixes`) | each Wednesday, after **Links** | read each line (a moved address can hide a change of owner), then squash and merge | the website keeps the old addresses and the past dates; the next run adds its own fixes to the same pull request, nothing is lost |
-| Read the links issue | issue **Broken links** (label `links`), open only when something needs a person | each Wednesday, when it is open | open each link of *Broken: they fail from GitHub and from every probe* and of *They answer, but the page is dead* in a browser; fix or remove its entry (pull request), or leave it to the monthly review; under *Not judged by Globalping*, open the links of *Failed twice in a row* the same way; the folded lists need nothing | broken links stay on the website until the monthly review reads their entry at its source |
-| Accept the monthly review | pull request **Monthly review vX.Y** | after the 5th of each month | read its summary, the guard line first (points carried over from the previous review), then squash and merge; website and release follow | corrections and additions wait; the next review starts from `main` without them: merge or close it before the 5th of the next month |
-| Keep the monthly review's instructions up to date | the scheduled task of the review pass (outside this repository) | when a rule of the data changes (`data/SCHEMA.md`, the checks of `scripts/build.py`) | replace its instructions with the text written for the change | the review writes entries that the build refuses: its pull request fails **Check** |
-| Accept tool updates | pull requests of Renovate; issue **Dependency Dashboard** | when one opens | squash and merge when **Check** passes; for MiniSearch, a font or terser, first run `npm ci --ignore-scripts && python3 scripts/vendor.py && python3 scripts/build.py` on its branch and commit the result (the pull request says so) | the tools fall behind; a security fix waits like the others |
-| Handle security alerts | **Security** tab: Dependabot alerts, code scanning, secret scanning, private vulnerability reports (`SECURITY.md`) | when GitHub sends one | fix it by a pull request, or dismiss a code scanning alert with its reason; for a secret, revoke it at its service first; only the maintainer dismisses a secret scanning alert | the flaw stays open |
-| Give Links its own Globalping token (optional, once) | the dashboard of Globalping, then the settings of this repository | once | on [dash.globalping.io](https://dash.globalping.io/), sign in with GitHub and create a token; in this repository, **Settings**, **Secrets and variables**, **Actions**, store it as the secret `GLOBALPING_TOKEN` | Links uses the anonymous limit of the runner's address (250 tests per hour, shared with other users of that address, 3 tests per link); failures beyond it are listed as not judged by Globalping |
-| Keep the token of Data fixes valid | the GitHub App of Data fixes (variable `DATA_FIXES_APP_ID`, secret `DATA_FIXES_APP_KEY`) | when the workflow warns that it has no app or personal token | generate a new private key for the app and store it as the secret `DATA_FIXES_APP_KEY` | the checks of the **Data fixes** pull request wait for **Approve and run workflows** |
-| Watch the scheduled runs | **Actions** tab, filter *Event: schedule* | after a day without a **Pages** run, a Wednesday without **Links**, a 4th without **Data report** | start the missing workflow with **Run workflow** (a run of **Links** started by hand also starts **Data fixes**, unless it is a dry run); GitHub starts scheduled runs on a best-effort basis and can skip them | dates and statuses on the website stop moving; the links issue, the mechanical fixes or the monthly report are not written |
-| Answer contributors | issues and pull requests from forks | when one opens | merge or close a pull request (adding the French texts, `VERSION`, the `CHANGELOG.md` entry and the image of the README, taken again by `scripts/readme_image.py`); approve the workflows of an outside contributor after reading the change; an issue can wait for the next review pass | the suggestion waits |
+How, task by task:
+- **Data fixes**: read each line; a line in bold says *other site, check the owner* (the address moved to another site); then squash and merge.
+- **Broken links**: open in a browser each link of *Broken*, *They answer, but the page is dead* and *Failed twice in a row*; fix or remove the entry by a pull request, or leave it to the review. The folded lists need nothing.
+- **Monthly review**: read its summary, the guard line first, then squash and merge.
+- **Review instructions**: they live in the scheduled task of the review pass, outside this repository; replace them with the text written for the change.
+- **Renovate**: squash and merge when **Check** passes. For MiniSearch, a font or terser, first run `npm ci --ignore-scripts && python3 scripts/vendor.py && python3 scripts/build.py` on its branch and commit the result (the pull request says so).
+- **Security alerts** (**Security** tab, `SECURITY.md`): fix by a pull request, or dismiss a code scanning alert with its reason; for a secret, revoke it at its service first; only the maintainer dismisses a secret scanning alert.
+- **Contributors**: before merging, add the French texts, `VERSION`, the `CHANGELOG.md` entry and the image of the README (`scripts/readme_image.py`); approve the workflows of an outside contributor after reading the change.
+- **Key of Data fixes**: generate a new private key for its GitHub App and store it as the secret `DATA_FIXES_APP_KEY`.
+- **Globalping token**: on [dash.globalping.io](https://dash.globalping.io/), sign in with GitHub and create a token; store it as the secret `GLOBALPING_TOKEN` (**Settings**, **Secrets and variables**, **Actions**).
+- **Scheduled runs**: **Actions** tab, filter *Event: schedule*; start a missing one with **Run workflow**. GitHub starts scheduled runs on a best-effort basis, often hours late, and can skip them.
+
+## Workflows in detail
+
+### Pages
+- Reads GitHub stars, last pushes and archived flags, YouTube channel feeds, subreddits (public Arctic Shift archive, one at a time: Reddit refuses automated reads) and site feeds (`scripts/refresh.py`).
+- After a push, or when started by **Preview**, reuses the measurements of the published website instead of reading again; it reads again only if the website cannot be reached.
+- Statuses `active`, `slow` and `inactive` follow the last activity date; past event dates disappear at the next daily run.
+- Builds `site/` (`scripts/build.py --site-only`): pages, `details.json` (strengths and weaknesses, read when a card unfolds), feeds of new resources (`feed.xml`, `fr/feed.xml`) and of versions (`changes.xml`).
+- Puts under `preview/` the previews of the last successful **Preview** run; runs no branch code; without such a run, or once its artefact is older than 30 days, publishes the website without previews.
+- The daily run (or one started by hand without previews) hands the day's measurements to a separate job, the only one allowed to write, which keeps them on the branch `history` (`metrics/YYYY-MM-DD.json`).
+
+### Preview
+- Runs when a pull request that changes the website is opened, updated, reopened or closed (`site-src/`, `scripts/build.py`, `scripts/previews.py`, `media/` except the image of the README, `data/`, `VERSION`, `CHANGELOG.md`, its own workflow), at every push to `dev`, and when a branch or tag is deleted.
+- `scripts/previews.py` builds, without the token and in a job that can write nowhere, the website of `dev` if it exists and of every open pull request of this repository opened by a person (never a fork, never a bot; drafts included; 20 at most), with the measurements of the published website.
+- Each preview, at `preview/<number>/` (or `preview/dev/`), carries a banner and `noindex`; a failed build gets an error page.
+- Then starts **Pages** and keeps one comment on the pull request with the address. A closed request loses its preview at the next run.
+- A preview is served by the same website: anyone can open it, and it shares the browser storage of the published pages (theme, language, new tab). A request opened with the personal token of **Data fixes** counts as a person's.
+
+### Links
+- lychee reads `data/`, the README, contributing.md and this file from the machines of GitHub (401, 403, 405 and 429 accepted; loopback addresses skipped).
+- Each failure is opened again from 3 Globalping probes on home and office networks (2 in Europe, 1 in North America, else any 3), never from data centres; a redirect is followed for 3 hops at most.
+- Broken: fails from every probe that read it (2 at least) and again 90 seconds later. Otherwise it only blocks GitHub. A secure connection refused everywhere is listed apart.
+- Dead pages that answer 200 (parked or expired domain, unrelated content, closure notice) are looked for in the address of every open entry, platforms left out (YouTube, Reddit, GitHub, Facebook, Instagram, Discord, X, TikTok, Flickr, Patreon, Twitch).
+- `scripts/links_issue.py` keeps the issue **Broken links** (label `links`): open when a link is broken, a page is dead, or a link failed twice in a row without a verdict; closed otherwise. If lychee writes no report, the issue is left as it is.
+- When the hourly limit of Globalping cuts the list, the links of the previous run go first.
+- *Dry run* writes the issue body in the run summary, changes no issue and does not start **Data fixes**. `python3 scripts/links_issue.py --sample tests/links-sample.json` reads its yardstick again.
+
+### Data fixes
+- `scripts/autofix.py` replaces an address only after a permanent redirect (301 or 308) that ends on a 200 without a query, in 5 hops at most, and removes past `next_date` values; `data/journeys.toml` is left out.
+- Recreates the branch `auto/data-fixes` from `main` at each run and opens or updates the pull request **Data fixes** (label `automatic`): a commit added by hand on that branch is lost at the next run.
+- Opens the pull request with its GitHub App (variable `DATA_FIXES_APP_ID`: the app's client ID; secret `DATA_FIXES_APP_KEY`) or, failing that, a personal token (secret `DATA_FIXES_TOKEN`), so that **Check** and **Render** start on their own.
+
+### Data report
+- `scripts/refresh.py --month` reads the activity again and writes the issue **Monthly data report** (label `automatic`), read by the review the next day.
+- It holds: a guard line (what the previous report listed and is still there); read failures; archived repositories; selected entries no longer eligible; entries not checked for a year; coverage gaps (countries with 3 or more fan communities recognised by LEGO and at most one entry per community); the selection check; what changed in the month on branch `history`; the links that block GitHub; reliability per category; trends over two windows of 90 days (`scripts/trends.py`).
+- Selection check: a selected entry scoring 2 or more below an active unselected one of its group (score out of 7: activity or how recent the check, confidence, sources read). The selection is the rank 1 worldwide of each group.
+
+### Review pass (language model)
+- Scheduled task outside this repository; never pushes to `main`.
+- Reads every entry at its source and corrects it; adds missing resources; finds feeds (`scripts/discover_feeds.py`); reads `brands`, `funding`, `makers` and `audience` again at the source; reviews the ranks of each group and the needs of "Where to start"; writes the French texts of entries proposed in English.
+- Recounts the fan communities per country from the LEGO Fan CoLab directory; renews population figures in January.
+- Raises the minor version, writes the `CHANGELOG.md` entry from `scripts/changelog.py`, takes the image of the README again, and opens **Monthly review vX.Y**.
+
+### Check
+- Validates `data/`; checks that `README.md`, `full-list.md` and the category list of the **Add a resource** form are up to date, and that `CHANGELOG.md` has a section for `VERSION`.
+- Checks that this file names every workflow and schedule, and that `data/SCHEMA.md` names every controlled word and backend file.
+- Warns, without failing, when the image of the README shows another version.
+- `reuse lint` (`REUSE.toml`, `LICENSES/`); unit tests (`tests/`: data, pages, about pages, links issue, monthly report, previews); awesome-lint as locked in `package-lock.json`; MiniSearch and the fonts of the Brick Vault match their locked packages (`scripts/vendor.py`).
+- Runs on the latest Python release only.
+
+### Render
+- `scripts/check_site.py` opens every view (directory as cards and table, brand mode of an alternative brand and of LEGO, observatory, about page, Brick Vault) in English and French at 1440, 1024, 768, 390 and 320 px, light theme; dark theme at 1440 and 390 px.
+- Fails on a sideways scroll, an element out of its box, a phone, email, date, tag or button label split over two lines, a word split inside itself, overlapping chart labels, a frame inherited by an inner list, a script or security policy error, and a word of the strengths or weaknesses that the search does not find.
+- Accessibility (axe-core, WCAG 2.2 A and AA) at 1440 and 390 px, both themes: a guard, not a conformance target (the 13 px studs of the map are accepted).
+- First checks itself on `tests/render-fixture.html`, where one sound and one faulty case of each defect are planted. On failure, the findings are kept 7 days as the artefact `render-findings`.
+- A pull request that changes only data and the files generated from it gets a lighter pass (`--data-only`: 1440, 390 and 320 px, light theme, no accessibility; about 30 seconds instead of 3 minutes). A push to `main` gets every check.
+- Not a required check (a path filter would leave it pending): its result is read before merging.
+
+### Release
+- Tags `vX.Y` and publishes the GitHub release with its `CHANGELOG.md` section; fails if the section is missing, does nothing if the version exists. Releases are immutable: read the entry before merging.
+
+### Workflow audit and Scorecard
+- **Workflow audit**: zizmor reads `.github/workflows/` (dangerous triggers, injections, excessive permissions, unpinned or vulnerable actions) on every pull request or push to `main` that changes a workflow, and Mondays.
+- **Scorecard**: OpenSSF Scorecard scores the rules of `main`, pinned dependencies, token permissions, dangerous workflows and security policy; a change of the ruleset is scored at the next run.
+
+### Renovate
+- Proposes the latest version of the workflows' actions (grouped in one pull request), Python, Node, the tools of the checks, MiniSearch, terser and the fonts, 3 days after it is published, at once for a security fix.
+- The Python tools of the checks are locked with their hashes (`tests/*.in`, compiled by `uv pip compile --generate-hashes` into `tests/*.txt`, installed with `--require-hashes`); Renovate compiles the lock again.
+
+## The website
+
+- Generated, never edited by hand: `README.md`, `full-list.md`, the category list of `.github/ISSUE_TEMPLATE/add-resource.yml` and `site/` (not kept in git), all from `data/` by `scripts/build.py`.
+- `data/backend/` holds figures used by the website but listed nowhere as entries (fan communities per country, population), each with its source and date. `data/metrics.json` is a local cache of the last reading.
+- The website calls no outside service: the page reads only its own `details.json` (`connect-src 'self'` in `scripts/build.py`).
+- Every page shares the header (`site-src/header.html`, `header.js`) and the footer (`site-src/footer.html`).
+- About pages (`site-src/about.html`, texts in `about.json`, styles in `about.css`; built as `site/about/` and `site/fr/about/`): what the directory is, how it is made, why a selection, how to write. Their figures come from the data; their texts restate this file and contributing.md in plain words, so a change of the schedule, the method or the criteria goes into `site-src/about.json` in the same pull request.
+- The Brick Vault (`site-src/vault.html`, built as `site/vault/`): an English-only easter egg opened by the Konami code from any page, with its own fonts (`media/fonts/`, SIL Open Font License) and security policy. Hints: arrows in the footer, a comment and a console message, a search suggestion, the logo hopping as the code is typed.
+
+## Versions
+
+- Minor (`4.1`) for every merge that changes content or the website; major (`5.0`) for a change of structure or data format; none for activity data, automation or the README alone.
+- The number lives in `VERSION` and `CHANGELOG.md`; **Release** tags it at the merge.
+- A pull request that raises `VERSION` takes the image of the README again: `python3 scripts/build.py --site-only && python3 scripts/readme_image.py`.

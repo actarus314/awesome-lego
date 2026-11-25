@@ -28,7 +28,7 @@ try{if('{{LANG}}'==='en'){const l=localStorage.getItem('lang');if(l==='fr'||(!l&
 <a class="skip" href="#about" data-t="skip_content"></a>
 {{HEADER}}
 <main class="wrap ab" id="about">
-<section class="hero ab-hero"><div><h1>{{a:h1}}</h1><p>{{a:lead}}</p><p class="fresh">{{a:figures}}</p></div>
+<section class="hero ab-hero"><div><h1>{{a:h1}}</h1><p>{{a:lead}}</p><p class="free">{{a:free}}</p><p class="fresh">{{a:figures}}</p></div>
 <div class="kpis"><div class="kpi"><b>{{N}}</b><span>{{a:k_res}}</span></div><div class="kpi"><b>{{COUNTRIES}}</b><span>{{a:k_countries}}</span></div><div class="kpi"><b>{{LANGS}}</b><span>{{a:k_langs}}</span></div><div class="kpi"><b>{{SOURCES}}</b><span>{{a:k_sources}}</span></div></div></section>
 
 <h2 id="method">{{a:m_h}}</h2>
@@ -57,6 +57,7 @@ try{if('{{LANG}}'==='en'){const l=localStorage.getItem('lang');if(l==='fr'||(!l&
 <div class="step" style="--w:{{SELW}}"><b>{{SEL}}</b><span class="track"><span class="fill"></span></span><span class="what">{{a:s3}}</span></div>
 </div>
 <div class="rules">
+<section class="panel"><h3>{{a:r0}}</h3><p>{{a:r0d}}</p></section>
 <section class="panel"><h3>{{a:r1}}</h3><p>{{a:r1d}}</p></section>
 <section class="panel"><h3>{{a:r2}}</h3><p>{{a:r2d}}</p></section>
 </div>
@@ -64,7 +65,7 @@ try{if('{{LANG}}'==='en'){const l=localStorage.getItem('lang');if(l==='fr'||(!l&
 <section class="panel in"><h3>{{a:in_h}}</h3><ul>{{a:in}}</ul></section>
 <section class="panel out"><h3>{{a:out_h}}</h3><ul>{{a:out}}</ul></section>
 </div>
-<p class="note">{{a:good}}</p>
+<section class="welcome"><h3>{{a:good_h}}</h3><p>{{a:good}}</p></section>
 
 <h2 id="contact">{{a:x_h}}</h2>
 <p class="lead">{{a:x_lead}}</p>
@@ -79,7 +80,7 @@ try{if('{{LANG}}'==='en'){const l=localStorage.getItem('lang');if(l==='fr'||(!l&
 <p class="lead">{{a:l1}}</p>
 <p class="note">{{a:l2}}</p>
 </main>
-<footer><div class="wrap"><span><a href="{{HOME}}" data-t="nav_dir"></a> · <a href="https://github.com/{{REPO}}/issues/new/choose" data-t="contribute"></a> · <a href="{{HOME}}feed.xml" type="application/atom+xml" data-t="feed"></a> · <a href="https://github.com/{{REPO}}/blob/main/LICENSE">CC BY-NC-SA 4.0</a></span></div></footer>
+{{FOOTER}}
 <script>
 {{HEADERJS}}
 </script>
