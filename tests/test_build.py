@@ -148,7 +148,7 @@ class About(unittest.TestCase):
 
     def test_no_placeholder_left(self):
         for lang, doc in self.pages.items():
-            self.assertNotRegex(doc, r"\{\{|\{(REPO|HOME|groups|date)\}", lang)
+            self.assertNotRegex(doc, r"\{\{|\{(REPO|HOME|groups|date|active)\}", lang)
 
     def test_every_inline_script_is_allowed(self):
         for lang, doc in self.pages.items():

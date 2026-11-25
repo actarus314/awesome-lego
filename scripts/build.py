@@ -659,7 +659,7 @@ def about(lang, data):
     n, ranked, sel = len(R), sum(1 for r in R if r.get("rank")), sum(1 for r in R if r["featured"])
     groups = sum(len(c["groups"]) for c in data["categories"])
     home = "../"  # the directory page of the same language: site/ from site/about/, site/fr/ from site/fr/about/
-    fill = lambda x: x.replace("{REPO}", REPO).replace("{HOME}", home).replace("{groups}", str(groups)).replace("{date}", in_letters(data["built"], lang))
+    fill = lambda x: x.replace("{REPO}", REPO).replace("{HOME}", home).replace("{groups}", str(groups)).replace("{active}", str(sum(1 for r in R if r["status"] == "active"))).replace("{date}", in_letters(data["built"], lang))
     canon = PAGES + ABOUT_PATH[lang]
     ld = json.dumps({"@context": "https://schema.org", "@type": "AboutPage", "name": A["ptitle"], "description": A["pdesc"], "url": canon,
                      "inLanguage": lang, "dateModified": data["built"], "isPartOf": {"@type": "WebSite", "name": "Awesome LEGO", "url": PAGES + ("fr/" if lang == "fr" else "")}},
