@@ -1281,3 +1281,167 @@ kind = "official"
 url = "https://github.com/LEGO/lego-ble-wireless-protocol-docs/commits/master.atom"
 date = "2019-02-08"
 kind = "read"
+
+[[resource]]
+id = "brickit"
+name = "Brickit"
+url = "https://brickit.app/"
+group = "apps"
+covers = ["official", "parts", "instructions"]
+languages = ["en", "nl", "fr", "de", "it", "ja", "ko", "pt", "ru", "zh", "es", "tr"]
+countries = ["international"]
+access = "freemium"
+summary_en = "Recognises loose bricks on one photo of a pile, shows where each part lies and suggests builds from the pieces owned; a digital inventory is kept in numbered pockets."
+summary_fr = "Reconnaît les briques en vrac sur une photo de tas, indique où se trouve chaque pièce et propose des constructions avec les pièces possédées ; l'inventaire numérique est rangé dans des poches numérotées."
+strengths_en = ["About 23 thousand ratings on the App Store, average 4.5", "Updates on 12 November 2026 (version 5.8.2) and 16 November 2026 (version 5.8.3)", "Interface in 13 languages including French", "Step-by-step instructions, with the parts of each step highlighted in the photo"]
+strengths_fr = ["Environ 23 mille évaluations sur l'App Store, moyenne de 4.5", "Mises à jour le 12 novembre 2026 (version 5.8.2) et le 16 novembre 2026 (version 5.8.3)", "Interface en 13 langues dont le français", "Instructions pas à pas, avec les pièces de chaque étape surlignées sur la photo"]
+weaknesses_en = ["Advanced features need the Brickit Pro subscription", "Aimed at families and school classes as much as at adult builders", "Made by fans, not an official LEGO product, as its App Store page states"]
+weaknesses_fr = ["Les fonctions avancées demandent l'abonnement Brickit Pro", "Destinée aux familles et aux classes autant qu'aux constructeurs adultes", "Créée par des fans, ce n'est pas une application du groupe LEGO, comme le précise sa page App Store"]
+last_activity = "2026-11-16"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickit.app/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://apps.apple.com/us/app/brickit-your-brick-collection/id1477221636"
+date = "2026-11-16"
+kind = "read"
+
+[[resource]]
+id = "lego-powered-up-app"
+name = "LEGO Powered Up"
+url = "https://www.lego.com/en-us/themes/powered-up/about"
+group = "programming-and-control"
+operator = "lego-group"
+covers = ["official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Bluetooth panels to drive LEGO City trains and a drag-and-drop block language to code behaviours for models built with Powered Up hubs, motors and sensors."
+summary_fr = "Panneaux Bluetooth pour conduire les trains LEGO City et langage de blocs par glisser-déposer pour programmer le comportement de modèles équipés de hubs, moteurs et capteurs Powered Up."
+strengths_en = ["Free app on iOS, Android and Fire OS", "Connects up to four hubs at once since version 3.1.0 (19 March 2020)", "Google Play page updated on 9 August 2026; version 4.4.2 on the App Store on 16 June 2026"]
+strengths_fr = ["Application gratuite sur iOS, Android et Fire OS", "Connecte jusqu'à quatre hubs à la fois depuis la version 3.1.0 (19 mars 2020)", "Page Google Play mise à jour le 9 août 2026 ; version 4.4.2 sur l'App Store le 16 juin 2026"]
+weaknesses_en = ["Simple block language, App Store age rating 4+", "Needs iOS 15 or later, Android 5.3 or later, or Fire OS 5.3 or later", "Rated 3.6 out of 5 from 556 ratings on the App Store"]
+weaknesses_fr = ["Langage de blocs simple, âge minimal de 4 ans sur l'App Store", "Demande iOS 15 ou plus, Android 5.3 ou plus, ou Fire OS 5.3 ou plus", "Note de 3.6 sur 5 d'après 556 évaluations sur l'App Store"]
+last_activity = "2026-08-09"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/themes/powered-up/about"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://play.google.com/store/apps/details?hl=en_US&id=com.lego.common.poweredup"
+date = "2026-08-09"
+kind = "read"
+
+[[resource.sources]]
+url = "https://apps.apple.com/us/app/lego-powered-up/id1367846574"
+date = "2026-06-16"
+kind = "read"
+
+[[resource]]
+id = "importldraw"
+name = "ImportLDraw"
+url = "https://github.com/TobyLobster/ImportLDraw"
+group = "open-source"
+covers = ["official", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+github = "TobyLobster/ImportLDraw"
+summary_en = "Blender add-on that imports LDraw, MPD and BrickLink Studio models for photorealistic renders or a building-instructions look, with textures for printed parts and bricks that emit light."
+summary_fr = "Extension de Blender qui importe des modèles LDraw, MPD et BrickLink Studio pour des rendus photoréalistes ou dans le style des notices, avec textures des pièces imprimées et briques lumineuses."
+strengths_en = ["GNU General Public License version 2; 379 stars on the repository", "Version 1.3.0 published on 5 October 2026, for Blender 4.0 up to 5.1", "Runs on Mac, Windows and Linux; reads Studio files and LeoCAD groups and cameras"]
+strengths_fr = ["Licence GNU General Public License version 2 ; 379 étoiles sur le dépôt", "Version 1.3.0 publiée le 5 octobre 2026, pour Blender 4.0 jusqu'à 5.1", "Fonctionne sous Mac, Windows et Linux ; lit les fichiers Studio et les groupes et caméras de LeoCAD"]
+weaknesses_en = ["Needs Blender 4.0 or later; version 1.2.3 serves Blender 2.81 to 3.6", "Import and rendering only, not a model editor"]
+weaknesses_fr = ["Demande Blender 4.0 ou plus ; la version 1.2.3 sert Blender 2.81 à 3.6", "Import et rendu seulement, pas un éditeur de modèles"]
+last_activity = "2026-10-06"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://github.com/TobyLobster/ImportLDraw"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://github.com/TobyLobster/ImportLDraw/releases.atom"
+date = "2026-10-05"
+kind = "read"
+
+[[resource]]
+id = "lego-scad"
+name = "LEGO.scad"
+url = "https://github.com/cfinke/LEGO.scad"
+group = "open-source"
+covers = ["parts", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+github = "cfinke/LEGO.scad"
+summary_en = "Parametric OpenSCAD generator of LEGO-compatible bricks, tiles, slopes, wings, round pieces and Technic-style holes for 3D printing, with Customizer support and DUPLO-style variants."
+summary_fr = "Générateur paramétrique OpenSCAD de briques compatibles LEGO, tuiles, pentes, ailes, pièces rondes et trous de type Technic pour l'impression 3D, avec Customizer et variantes de type DUPLO."
+strengths_en = ["MIT licence; 397 stars on the repository", "Parameters for stud type, wall splines, brick bottom and axle holes", "Commits on 17 and 18 July 2026"]
+strengths_fr = ["Licence MIT ; 397 étoiles sur le dépôt", "Paramètres pour le type de tenon, les nervures de paroi, le dessous de la brique et les trous d'axe", "Contributions les 17 et 18 juillet 2026"]
+weaknesses_en = ["Printed bricks may not fit exactly with LEGO bricks, depending on printer resolution, as the README says", "Needs OpenSCAD"]
+weaknesses_fr = ["Les briques imprimées peuvent ne pas s'emboîter exactement avec celles de marque LEGO, selon la résolution de l'imprimante, comme le dit le fichier README", "Demande OpenSCAD"]
+last_activity = "2026-07-18"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://github.com/cfinke/LEGO.scad"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://github.com/cfinke/LEGO.scad/commits/master.atom"
+date = "2026-07-18"
+kind = "read"
+
+[[resource]]
+id = "pylgbst"
+name = "pylgbst"
+url = "https://github.com/undera/pylgbst"
+group = "programming-and-control"
+covers = ["official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+github = "undera/pylgbst"
+summary_en = "Python library that drives Move Hub and Powered Up hubs from a computer through Bluetooth commands: motors, tilt and vision sensors, LED, headlight, button and battery readings."
+summary_fr = "Bibliothèque Python qui pilote les hubs Move Hub et Powered Up depuis un ordinateur par commandes Bluetooth : moteurs, capteurs d'inclinaison et de vision, LED, phare, bouton et mesures de batterie."
+strengths_en = ["MIT licence; 587 stars on the repository", "Commits on 22 November 2026", "Examples for the BOOST robot Vernie in the repository"]
+strengths_fr = ["Licence MIT ; 587 étoiles sur le dépôt", "Contributions le 22 novembre 2026", "Exemples pour le robot Vernie de BOOST dans le dépôt"]
+weaknesses_en = ["Needs a Bluetooth backend library, bleak recommended", "Programs run from the computer, not on the hub (see Pybricks)"]
+weaknesses_fr = ["Demande une bibliothèque Bluetooth, bleak recommandée", "Les programmes s'exécutent depuis l'ordinateur, pas sur le hub (voir Pybricks)"]
+last_activity = "2026-11-22"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://github.com/undera/pylgbst"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://github.com/undera/pylgbst/commits/master.atom"
+date = "2026-11-22"
+kind = "read"

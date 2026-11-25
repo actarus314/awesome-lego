@@ -156,8 +156,8 @@ countries = ["international"]
 access = "free"
 summary_en = "Technic builder's models, free building instructions and online tools for builders; the author wrote The Unofficial LEGO Technic Builder's Guide."
 summary_fr = "Modèles d'un constructeur Technic, instructions de construction gratuites et outils en ligne pour constructeurs ; l'auteur a écrit The Unofficial LEGO Technic Builder's Guide."
-strengths_en = ["Source code of the online tools published on GitHub on 24 July 2026", "Free instructions for some models, such as a 2-speed sliding gear transmission"]
-strengths_fr = ["Code source des outils en ligne publié sur GitHub le 24 juillet 2026", "Instructions gratuites pour certains modèles, comme une transmission coulissante à 2 vitesses"]
+strengths_en = ["Source code of the online tools published on GitHub on 24 July 2026", "Free instructions for some models, such as a 2-speed sliding gear transmission", "Gear ratio calculator (gears.sariel.pl) for up to 25 gear pairs, with the number of motors"]
+strengths_fr = ["Code source des outils en ligne publié sur GitHub le 24 juillet 2026", "Instructions gratuites pour certains modèles, comme une transmission coulissante à 2 vitesses", "Calculateur de rapport d'engrenages (gears.sariel.pl) jusqu'à 25 paires d'engrenages, avec le nombre de moteurs"]
 weaknesses_en = ["English only", "Centred on Technic"]
 weaknesses_fr = ["Anglais uniquement", "Centré sur Technic"]
 status = "active"
@@ -169,6 +169,11 @@ confidence = "high"
 [[resource.sources]]
 url = "https://sariel.pl/"
 date = "2026-07-24"
+kind = "read"
+
+[[resource.sources]]
+url = "https://gears.sariel.pl/"
+date = "2026-11-25"
 kind = "read"
 
 [[resource]]
@@ -1524,3 +1529,605 @@ funding = ["affiliation"]
 url = "https://www.brickreport.io/blog/lego-alternatives-licensed-themes"
 date = "2026-11-10"
 kind = "read"
+
+[[resource]]
+id = "homa-world-of-bricks"
+name = "HoMa's World of Bricks (Holger Matthes)"
+url = "https://www.holgermatthes.de/bricks/en/index.php"
+group = "guides"
+covers = ["learning", "instructions"]
+languages = ["de", "en"]
+countries = ["DE"]
+access = "free"
+summary_en = "Pages on SNOT and on LEGO train modelling (train wheels, 12 volt trains, layouts) by the author of the book LEGO-Eisenbahnwelt, with an English supplement of the book as a free PDF."
+summary_fr = "Pages sur le SNOT et la modélisation de trains LEGO (roues, trains en 12 volts, réseaux) par l'auteur du livre LEGO-Eisenbahnwelt, avec un supplément anglais du livre en PDF gratuit."
+strengths_en = ["Articles on ball bearings for train wheels, 12 volt trains and track switches", "Free building instructions for some models, such as a remote-controlled robot locomotive", "Links to Open L-Gauge, a community library of LEGO train models"]
+strengths_fr = ["Articles sur les roulements à billes pour roues de trains, les trains en 12 volts et les aiguillages", "Instructions de construction gratuites pour certains modèles, comme une locomotive robot télécommandée", "Liens vers Open L-Gauge, bibliothèque communautaire de modèles de trains LEGO"]
+weaknesses_en = ["Pages not dated; the most recent content read is the report on BauSpielBahnTreffen 2024", "Centred on trains and on the author's own models"]
+weaknesses_fr = ["Pages non datées ; le contenu le plus récent lu est le compte rendu du BauSpielBahnTreffen 2024", "Centré sur les trains et les modèles de l'auteur"]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.holgermatthes.de/bricks/en/index.php"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.holgermatthes.de/bricks/de/bsbt2024.php"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "itlug-advanced-techniques-guide"
+name = "ItLUG: Guida non ufficiale delle tecniche avanzate di costruzione LEGO"
+url = "https://itlug.org/guida-non-ufficiale-delle-tecniche-avanzate-di-costruzione-lego/"
+group = "guides"
+covers = ["learning"]
+languages = ["it"]
+countries = ["IT"]
+access = "free"
+summary_en = "Authorised Italian translation of Didier Enjary's guide to advanced building techniques (SNOT, offsetting, lettering, diagonal stripes, curves, clips), with a PDF version of the page."
+summary_fr = "Techniques de construction avancées (SNOT, décalages, écriture, bandes diagonales, courbes, clips) : traduction italienne autorisée du guide de Didier Enjary, avec une version PDF de la page."
+strengths_en = ["Nine chapters, from brick geometry (LEGO unit, LDraw unit) to clips and mechanical arms", "15420 downloads of the PDF shown on the page"]
+strengths_fr = ["Neuf chapitres, de la géométrie des briques (unité LEGO, unité LDraw) aux clips et bras mécaniques", "15420 téléchargements du PDF indiqués sur la page"]
+weaknesses_en = ["Version 1.0 of 27 December 2014, translating a guide first written in French in 2007"]
+weaknesses_fr = ["Version 1.0 du 27 décembre 2014, traduisant un guide écrit d'abord en français en 2007"]
+last_activity = "2014-12-27"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://itlug.org/guida-non-ufficiale-delle-tecniche-avanzate-di-costruzione-lego/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "mils-hispabrick"
+name = "MILS: Modular Integrated Landscaping System"
+url = "https://www.abellon.net/MILS/"
+group = "guides"
+covers = ["learning", "clubs"]
+languages = ["en"]
+countries = ["ES"]
+access = "free"
+summary_en = "Rules for assembling shared dioramas from terrain modules of 32 by 32 studs, approved by the HispaBrick Magazine team; counterpart for scenery of the L-Gauge Modular System for trains."
+summary_fr = "Règles pour assembler des dioramas collectifs à partir de modules de terrain de 32 par 32 tenons, approuvées par l'équipe de HispaBrick Magazine ; pendant paysager du L-Gauge Modular System pour les trains."
+strengths_en = ["Two kinds of modules: basic terrain modules usable in any orientation and compatible terrain modules for rivers, roads and shores", "Rules cover only the sides where builders connect, not the content of the builds"]
+strengths_fr = ["Deux sortes de modules : modules de terrain de base orientables librement et modules de terrain compatibles pour rivières, routes et rivages", "Les règles ne portent que sur les côtés où les constructeurs se raccordent, pas sur le contenu des créations"]
+weaknesses_en = ["Page last modified on 3 January 2021, according to the server", "Written for the dioramas of the HispaBrick Magazine community"]
+weaknesses_fr = ["Page modifiée pour la dernière fois le 3 janvier 2021, d'après le serveur", "Rédigées pour les dioramas de la communauté de HispaBrick Magazine"]
+last_activity = "2021-01-03"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.abellon.net/MILS/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "build-like-a-master"
+name = "Build Like a Master (video series of the LEGO Group)"
+url = "https://www.lego.com/en-us/families/build-like-a-master"
+group = "guides"
+operator = "lego-group"
+covers = ["learning", "official"]
+languages = ["en", "fr", "de", "es", "it", "nl"]
+countries = ["international"]
+access = "free"
+summary_en = "Four-part video series on brick anatomy, building terms, interlocking, colour change and SNOT; the first module has five videos of 2 to 6 minutes, with a building challenge."
+summary_fr = "Série de quatre parties sur l'anatomie de la brique, le vocabulaire, l'emboîtement, le changement de couleur et le SNOT ; le premier module compte cinq vidéos de 2 à 6 minutes, avec un défi."
+strengths_en = ["Same series on the pages in English, French, German, Spanish, Italian and Dutch", "Includes a video on SNOT building"]
+strengths_fr = ["Même série sur les pages en anglais, français, allemand, espagnol, italien et néerlandais", "Comprend une vidéo sur la construction SNOT"]
+weaknesses_en = ["Aimed at families building with the bricks they already own", "Basics of building, not advanced techniques"]
+weaknesses_fr = ["Destinée aux familles qui construisent avec les briques qu'elles ont déjà", "Bases de la construction, pas de techniques avancées"]
+last_activity = "2025-01-02"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/families/build-like-a-master"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.lego.com/fr-fr/families/build-like-a-master"
+date = "2025-01-02"
+kind = "official"
+
+[[resource]]
+id = "kirkbi-v-ritvik-scc"
+name = "Supreme Court of Canada, Kirkbi AG v. Ritvik Holdings Inc. (2005 SCC 65)"
+url = "https://decisions.scc-csc.ca/scc-csc/scc-csc/en/item/2246/index.do"
+group = "compatibility-and-law"
+covers = ["learning", "alternative"]
+languages = ["en", "fr"]
+countries = ["CA"]
+access = "free"
+summary_en = "Judgment of 17 November 2005: a purely functional design, such as the studs and tubes of LEGO bricks, cannot be a trade-mark, registered or not; passing off was not made out against Mega Bloks."
+summary_fr = "Arrêt du 17 novembre 2005 : un dessin purement fonctionnel, comme les tenons et tubes des briques LEGO, ne peut être une marque, enregistrée ou non ; l'action en passing off échoue contre Mega Bloks."
+strengths_en = ["Official text in English and French on the court's website", "Holds that trade-mark and passing off law may not prolong the monopoly of expired patents"]
+strengths_fr = ["Texte officiel en anglais et en français sur le site de la Cour", "Juge que le droit des marques et du passing off ne peut pas prolonger le monopole de brevets expirés"]
+weaknesses_en = ["Canadian law, which does not bind courts elsewhere", "Concerns trade-marks and passing off, not designs or copyright"]
+weaknesses_fr = ["Droit canadien, qui ne lie pas les tribunaux d'autres pays", "Concerne les marques et le passing off, pas les dessins ni le droit d'auteur"]
+last_activity = "2005-11-17"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://decisions.scc-csc.ca/scc-csc/scc-csc/en/item/2246/index.do"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.canlii.org/en/ca/scc/doc/2005/2005scc65/2005scc65.html"
+date = "2005-11-17"
+kind = "third-party"
+
+[[resource]]
+id = "general-court-t-515-19"
+name = "General Court of the European Union, case T-515/19, Lego v EUIPO (building block design)"
+url = "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A62019TJ0515"
+group = "compatibility-and-law"
+covers = ["learning", "official", "alternative"]
+languages = ["en", "fr", "de"]
+countries = ["international"]
+access = "free"
+summary_en = "Judgment of 24 March 2021 annulling the EUIPO Board of Appeal decision of 10 April 2019 on the invalidity of a LEGO brick design, for lack of examination of the modular-system exception."
+summary_fr = "Arrêt du 24 mars 2021 annulant la décision du 10 avril 2019 de la chambre de recours de l'EUIPO sur la nullité d'un modèle de brique LEGO, faute d'examen de l'exception du système modulaire."
+strengths_en = ["Primary source, full text on EUR-Lex", "Design-law counterpart of the trade-mark judgment C-48/09 P"]
+strengths_fr = ["Source primaire, texte intégral sur EUR-Lex", "Pendant en droit des dessins et modèles de l'arrêt C-48/09 P sur les marques"]
+weaknesses_en = ["The operative part annuls the Board of Appeal decision and dismisses the rest of the action; it does not declare the design valid", "Legal text, not a buyer's guide"]
+weaknesses_fr = ["Le dispositif annule la décision de la chambre de recours et rejette le surplus du recours ; il ne déclare pas le dessin ou modèle valide", "Texte juridique, pas un guide d'achat"]
+last_activity = "2021-03-24"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A62019TJ0515"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "bgh-klemmbausteine-iii"
+name = "Bundesgerichtshof, Klemmbausteine III (I ZR 30/02)"
+url = "https://www.bundesgerichtshof.de/SharedDocs/Entscheidungen/DE/Zivilsenate/I_ZS/2002/I_ZR__30-02.pdf?__blob=publicationFile&v=1"
+group = "compatibility-and-law"
+covers = ["learning", "alternative"]
+languages = ["de"]
+countries = ["DE"]
+access = "free"
+summary_en = "Judgment of 2 December 2004: an origin deception arising only after purchase gives no supplementary unfair-competition protection against imitated clamp-brick elements."
+summary_fr = "Arrêt du 2 décembre 2004 : une tromperie sur l'origine survenue après l'achat ne donne pas droit à la protection complémentaire du droit de la concurrence contre l'imitation d'éléments de briques à emboîtement."
+strengths_en = ["Primary source: full text of the judgment (PDF) on the website of the Federal Court of Justice", "Also holds that protection against joining another maker's series is not unlimited in time"]
+strengths_fr = ["Source primaire : texte intégral de l'arrêt (PDF) sur le site de la Cour fédérale de justice", "Juge aussi que la protection contre l'insertion dans la série d'un autre fabricant n'est pas illimitée dans le temps"]
+weaknesses_en = ["Concerns unfair-competition law, not design or trade-mark law", "Published text abbreviates the names of the parties"]
+weaknesses_fr = ["Concerne le droit de la concurrence déloyale, pas celui des dessins ni des marques", "Le texte publié abrège les noms des parties"]
+last_activity = "2004-12-02"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.bundesgerichtshof.de/SharedDocs/Entscheidungen/DE/Zivilsenate/I_ZS/2002/I_ZR__30-02.pdf?__blob=publicationFile&v=1"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "the-lego-story-andersen"
+name = "The LEGO Story (Jens Andersen)"
+url = "https://www.harpercollins.com/products/the-lego-story-jens-andersen"
+group = "history"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "paid"
+summary_en = "Authorised account of the LEGO Group's 90 years by the Danish author Jens Andersen, based on access to the company's archives and conversations with Kjeld Kirk Kristiansen; 432 pages with family archive photos."
+summary_fr = "Récit autorisé des 90 ans du groupe LEGO par l'auteur danois Jens Andersen, fondé sur l'accès aux archives de l'entreprise et des entretiens avec Kjeld Kirk Kristiansen ; 432 pages avec photos des archives familiales."
+strengths_en = ["Published on 15 November 2022 by Mariner Books, an imprint of HarperCollins", "Covers 90 years, from the carpentry business of 1932 to the present"]
+strengths_fr = ["Publié le 15 novembre 2022 par Mariner Books, label de HarperCollins", "Couvre 90 ans, de l'atelier de menuiserie de 1932 à aujourd'hui"]
+weaknesses_en = ["Publisher page shows the book as out of stock and suggests other formats or retailers"]
+weaknesses_fr = ["La page de l'éditeur indique le livre en rupture de stock et suggère d'autres formats ou revendeurs"]
+last_activity = "2022-11-15"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.harpercollins.com/products/the-lego-story-jens-andersen"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.harpercollins.co.nz/9780063258044/the-lego-story/"
+date = "2022-11-15"
+kind = "official"
+
+[[resource]]
+id = "dpunkt-lego-und-co"
+name = "dpunkt.verlag: Lego & Co."
+url = "https://dpunkt.de/produkt-kategorie/technik-kreatives/lego-co-technik-kreatives/"
+group = "books-and-magazines"
+regime = "operating"
+covers = ["learning"]
+languages = ["de"]
+countries = ["DE"]
+access = "paid"
+summary_en = "Titles in German on building, lighting, trains, Technic and robotics, in print, e-book or bundle: LEGO-Eisenbahnwelt, LEGO-Ingenieurskunst, LEGO-Modelle beleuchten and others."
+summary_fr = "Ouvrages en allemand sur la construction, l'éclairage, les trains, Technic et la robotique, en papier, livre numérique ou lot : LEGO-Eisenbahnwelt, LEGO-Ingenieurskunst, LEGO-Modelle beleuchten et d'autres."
+strengths_en = ["Print books from 14.95 € to 29.90 € and e-books from 10.90 €, VAT included", "Original German titles such as LEGO-Eisenbahnwelt (4 November 2022) by Holger Matthes"]
+strengths_fr = ["Livres papier de 14.95 € à 29.90 € et livres numériques à partir de 10.90 €, TVA comprise", "Titres originaux en allemand comme LEGO-Eisenbahnwelt (4 novembre 2022) de Holger Matthes"]
+weaknesses_en = ["Latest title of the category dated 31 August 2023", "The category also lists books not about LEGO, on Scratch and fischertechnik"]
+weaknesses_fr = ["Dernier titre de la catégorie daté du 31 août 2023", "La catégorie liste aussi des livres qui ne portent pas sur LEGO, sur Scratch et fischertechnik"]
+last_activity = "2023-08-31"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://dpunkt.de/produkt-kategorie/technik-kreatives/lego-co-technik-kreatives/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "nuinui-lego"
+name = "NuiNui: LEGO books"
+url = "https://nuinui.ch/collections/lego"
+group = "books-and-magazines"
+regime = "operating"
+covers = ["learning"]
+languages = ["fr"]
+countries = ["CH", "FR"]
+access = "paid"
+summary_en = "Building guides in French: castles and fortresses, animals, a city, Leonardo da Vinci's inventions and Le maître constructeur LEGO, published on 5 November 2026."
+summary_fr = "Guides de construction en français : châteaux et forteresses, animaux, une ville, les inventions de Léonard de Vinci et Le maître constructeur LEGO, paru le 5 novembre 2026."
+strengths_en = ["Latest title published on 5 November 2026: 192 pages, hardback, by Francesco Frangioja", "Author described by the publisher as active in communities of adult fans"]
+strengths_fr = ["Dernier titre paru le 5 novembre 2026 : 192 pages, cartonné, de Francesco Frangioja", "Auteur présenté par l'éditeur comme actif dans les communautés de fans adultes"]
+weaknesses_en = ["General publisher: LEGO is one collection among Japanese art and gift books", "Several titles aimed at children; one is listed in the collection for ages 3 to 6"]
+weaknesses_fr = ["Éditeur généraliste : LEGO n'est qu'une collection parmi des livres d'art japonais et des livres cadeaux", "Plusieurs titres destinés aux enfants ; l'un figure dans la collection des 3 à 6 ans"]
+last_activity = "2026-11-05"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://nuinui.ch/collections/lego"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://nuinui.ch/products/le-maitre-constructeur-lego-ne"
+date = "2026-11-05"
+kind = "official"
+
+[[resource]]
+id = "brickvision"
+name = "BrickVision (Riccardo Zangelmi)"
+url = "https://www.brickvision.it/"
+group = "artists"
+regime = "operating"
+covers = ["learning", "official", "custom-builds"]
+languages = ["it", "en"]
+countries = ["IT"]
+access = "free"
+summary_en = "Studio of Riccardo Zangelmi, the only Italian LEGO Certified Professional on the official list: models, mosaics and sculptures for companies and events, including a 1:1 Ferrari SF-24 of 562000 bricks."
+summary_fr = "Studio de Riccardo Zangelmi, seul LEGO Certified Professional italien de la liste officielle : modèles, mosaïques et sculptures pour entreprises et événements, dont une Ferrari SF-24 à l'échelle 1:1 en 562000 briques."
+strengths_en = ["Listed on the official LEGO Certified Professionals page, with a profile dating his certification to 2016", "Latest news dated 27 February 2026, about an event in Sanremo with LEGO Italia"]
+strengths_fr = ["Présent sur la page officielle des LEGO Certified Professionals, avec un profil qui date sa certification de 2016", "Dernière actualité datée du 27 février 2026, sur un événement à Sanremo avec LEGO Italia"]
+weaknesses_en = ["Commercial studio working for companies and events", "Studio page gives 19 certified professionals worldwide; the official list now names 27"]
+weaknesses_fr = ["Studio commercial travaillant pour des entreprises et des événements", "La page du studio donne 19 professionnels certifiés dans le monde ; la liste officielle en nomme 27"]
+last_activity = "2026-02-27"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/aboutus/riccardo-zangelmi"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.brickvision.it/news/"
+date = "2026-02-27"
+kind = "read"
+
+[[resource]]
+id = "the-brick-art-lab"
+name = "The Brick Art Lab (Pablo González)"
+url = "https://thebrickartlab.com/"
+group = "artists"
+regime = "operating"
+covers = ["learning", "official", "custom-builds"]
+languages = ["es"]
+countries = ["ES"]
+access = "free"
+summary_en = "Studio founded in 2024 by Pablo González, the first LEGO Certified Professional in Spain and a former model designer in Billund: sculptures, installations, collaborative mosaics and corporate gifts for brands and events."
+summary_fr = "Studio fondé en 2024 par Pablo González, premier LEGO Certified Professional d'Espagne et ancien concepteur de modèles à Billund : sculptures, installations, mosaïques collaboratives et cadeaux d'entreprise pour marques et événements."
+strengths_en = ["Built the functional giant joystick of LEGO Gaming: The Exhibition (15845 pieces, 40 kg), shown in Madrid and Málaga", "Judge of LEGO Masters Spain, according to his official profile"]
+strengths_fr = ["Auteur du joystick géant fonctionnel de LEGO Gaming: The Exhibition (15845 pièces, 40 kg), présenté à Madrid et à Málaga", "Juge de LEGO Masters Espagne, d'après son profil officiel"]
+weaknesses_en = ["Services aimed at brands, events and exhibitions rather than individuals"]
+weaknesses_fr = ["Services destinés aux marques, aux événements et aux expositions plutôt qu'aux particuliers"]
+last_activity = "2026-10-13"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/aboutus/pablo-gonzalez"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://thebrickartlab.com/"
+date = "2026-10-13"
+kind = "read"
+
+[[resource]]
+id = "the-pieces-fit"
+name = "The Pieces Fit (Björn Ramant)"
+url = "https://thepiecesfit.be/"
+group = "artists"
+regime = "operating"
+covers = ["learning", "official", "custom-builds"]
+languages = ["nl"]
+countries = ["BE"]
+access = "free"
+summary_en = "Part-time business of Björn Ramant, LEGO Certified Professional known from LEGO Masters 2020 (yacht and castle replicas): commissions from film characters to a Tomorrowland 2022 stage and a Magritte reproduction."
+summary_fr = "Entreprise à temps partiel de Björn Ramant, LEGO Certified Professional connu de LEGO Masters 2020 : commandes de personnages de films à une scène de Tomorrowland 2022 et une reproduction de Magritte."
+strengths_en = ["Business started in late 2021, according to his official profile", "Gallery of commissions including a stork for LEGO Store Den Haag and a model of the DPD hub in Vilvoorde"]
+strengths_fr = ["Activité lancée fin 2021, d'après son profil officiel", "Galerie de commandes dont une cigogne pour le LEGO Store Den Haag et un modèle du centre DPD de Vilvorde"]
+weaknesses_en = ["Own site last modified on 9 January 2024; no news section found"]
+weaknesses_fr = ["Site personnel modifié pour la dernière fois le 9 janvier 2024 ; aucune rubrique d'actualités trouvée"]
+last_activity = "2024-01-09"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/aboutus/bjorn-ramant"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://thepiecesfit.be/"
+date = "2024-01-09"
+kind = "read"
+
+[[resource]]
+id = "brick-works-dk"
+name = "Brick Works (Caspar Bennedsen)"
+url = "https://brickworks.dk/"
+group = "artists"
+regime = "operating"
+covers = ["learning", "official", "custom-builds"]
+languages = ["da"]
+countries = ["DK"]
+access = "free"
+summary_en = "Studio of Caspar Bennedsen, former model-shop supervisor at LEGOLAND Billund: show-stopper models from very small to over 3 metres tall, events and a model shop; co-organiser of Skærbæk Fanweekend."
+summary_fr = "Studio de Caspar Bennedsen, ancien responsable de l'atelier de modèles de LEGOLAND Billund : modèles spectaculaires, du très petit à plus de 3 mètres, événements et boutique ; coorganisateur du Skærbæk Fanweekend."
+strengths_en = ["Only LEGO Certified Professional in Denmark on the official list", "Company founded in 2018, according to his official profile"]
+strengths_fr = ["Seul LEGO Certified Professional du Danemark sur la liste officielle", "Entreprise fondée en 2018, d'après son profil officiel"]
+weaknesses_en = ["Site gives 22 certified professionals worldwide; the official list now names 27", "Own site last modified on 24 March 2025"]
+weaknesses_fr = ["Le site donne 22 professionnels certifiés dans le monde ; la liste officielle en nomme 27", "Site personnel modifié pour la dernière fois le 24 mars 2025"]
+last_activity = "2025-03-24"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/aboutus/caspar-bennedsen"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brickworks.dk/"
+date = "2025-03-24"
+kind = "read"
+
+[[resource]]
+id = "first-lego-league-us-canada"
+name = "FIRST LEGO League (FIRST, United States and Canada)"
+url = "https://www.firstinspires.org/programs/fll/"
+group = "education-and-competitions"
+operator = "licensee"
+covers = ["learning", "official", "events"]
+languages = ["en"]
+countries = ["US", "CA"]
+access = "paid"
+recurrence_en = "Yearly season"
+recurrence_fr = "Saison annuelle"
+summary_en = "Registration run by FIRST itself: a Founders Edition team costs 150 USD (Explore) or 285 USD (Challenge) per season, before sales tax and shipping; other countries go through their national partner."
+summary_fr = "Inscription gérée par FIRST : une équipe Founders Edition coûte 150 USD (Explore) ou 285 USD (Challenge) par saison, hors taxe et frais de port ; les autres pays passent par leur partenaire national."
+strengths_en = ["Prices published for each option, with class packs and a Challenge Set sold at 105 USD", "BIOGLOW challenge released on 4 August 2026, in two editions"]
+strengths_fr = ["Tarifs publiés pour chaque option, avec des packs de classe et un Challenge Set vendu 105 USD", "Défi BIOGLOW publié le 4 août 2026, en deux éditions"]
+weaknesses_en = ["2026-2027 BIOGLOW is the final season of FIRST LEGO League", "LEGO Education SPIKE sets were on sale only until 30 June 2026"]
+weaknesses_fr = ["BIOGLOW 2026-2027 est la dernière saison de FIRST LEGO League", "Les sets LEGO Education SPIKE n'étaient en vente que jusqu'au 30 juin 2026"]
+last_activity = "2026-11-25"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.firstinspires.org/programs/fll/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.firstinspires.org/programs/cost-and-registration"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "iet-first-lego-league"
+name = "IET FIRST LEGO League (United Kingdom)"
+url = "https://education.theiet.org/first-lego-league-programmes/"
+group = "education-and-competitions"
+operator = "licensee"
+covers = ["learning", "official", "events"]
+languages = ["en"]
+countries = ["GB"]
+access = "paid"
+recurrence_en = "Yearly season"
+recurrence_fr = "Saison annuelle"
+summary_en = "Run by the Institution of Engineering and Technology, the national delivery partner: Explore regional festivals, Challenge regional and national tournaments, and sponsor-funded support for teams that need it."
+summary_fr = "Gérée par l'Institution of Engineering and Technology, partenaire national de livraison : festivals régionaux Explore, tournois régionaux et nationaux Challenge, et soutien financé par des sponsors pour les équipes qui en ont besoin."
+strengths_en = ["Season 2026-2027 BIOGLOW with the Founders and Future editions", "Funding support to subsidise registration and provide free places and equipment"]
+strengths_fr = ["Saison 2026-2027 BIOGLOW avec les éditions Founders et Future", "Aide financière pour subventionner l'inscription et fournir places et matériel gratuits"]
+weaknesses_en = ["Registration fees and tournament dates not shown on the page read", "Aimed at schools, after-school clubs and community groups, ages 5 to 16"]
+weaknesses_fr = ["Frais d'inscription et dates des tournois non indiqués sur la page lue", "Destinée aux écoles, aux clubs périscolaires et aux groupes locaux, de 5 à 16 ans"]
+last_activity = "2026-11-25"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://education.theiet.org/first-lego-league-programmes/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "first-lego-league-italia"
+name = "FIRST LEGO League Italia"
+url = "https://firstlegoleague.it/"
+group = "education-and-competitions"
+operator = "licensee"
+covers = ["learning", "official", "events"]
+languages = ["it"]
+countries = ["IT"]
+access = "paid"
+recurrence_en = "Yearly season"
+recurrence_fr = "Saison annuelle"
+summary_en = "Run by Scuola di Robotica of Genoa and recognised by the education ministry as an excellence programme; regional qualifiers from January to March 2027 and a national final in March 2027."
+summary_fr = "Gérée par la Scuola di Robotica de Gênes et reconnue par le ministère de l'Éducation comme programme d'excellence ; qualifications régionales de janvier à mars 2027 et finale nationale en mars 2027."
+strengths_en = ["Coach guides, official rules and video tutorials in Italian", "Recognised by the Ministry of Education and Merit under ministerial decree 131/2025"]
+strengths_fr = ["Guides de coach, règlements officiels et vidéos tutorielles en italien", "Reconnue par le ministère de l'Éducation et du Mérite par le décret ministériel 131/2025"]
+weaknesses_en = ["Paid registration packages; the season Challenge Set is delivered after invoicing", "School teams from 9 to 16 years; extracurricular groups from 5 to 16 years"]
+weaknesses_fr = ["Forfaits d'inscription payants ; le Challenge Set de la saison est livré après facturation", "Équipes scolaires de 9 à 16 ans ; groupes extrascolaires de 5 à 16 ans"]
+last_activity = "2026-11-25"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://firstlegoleague.it/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://firstlegoleague.it/p/partecipa"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "first-lego-league-nederland"
+name = "FIRST LEGO League Nederland"
+url = "https://firstlegoleague.nl/"
+group = "education-and-competitions"
+operator = "licensee"
+covers = ["learning", "official", "events"]
+languages = ["nl"]
+countries = ["NL"]
+access = "paid"
+recurrence_en = "Yearly season"
+recurrence_fr = "Saison annuelle"
+summary_en = "Season 2026-2027: 20 regional finals of the Founders Edition Challenge listed from 11 December 2026 to 20 February 2027, then national finals on 6 March 2027 (Founders) and 4 April 2027 (Future)."
+summary_fr = "Saison 2026-2027 : 20 finales régionales du Founders Edition Challenge listées du 11 décembre 2026 au 20 février 2027, puis finales nationales le 6 mars 2027 (Founders) et le 4 avril 2027 (Future)."
+strengths_en = ["Coach workshops on 3, 10 and 17 December 2026 in Eindhoven, Coevorden and Utrecht", "Online drop-in sessions with the head referee on 20 November and 9 December 2026"]
+strengths_fr = ["Ateliers pour coachs les 3, 10 et 17 décembre 2026 à Eindhoven, Coevorden et Utrecht", "Permanences en ligne avec l'arbitre en chef les 20 novembre et 9 décembre 2026"]
+weaknesses_en = ["Dates subject to change; the other regional finals are not yet announced", "One registration form per edition, with costs on the edition pages"]
+weaknesses_fr = ["Dates sous réserve de modification ; les autres finales régionales ne sont pas encore annoncées", "Un formulaire d'inscription par édition, avec les coûts sur les pages des éditions"]
+last_activity = "2026-11-25"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://firstlegoleague.nl/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://firstlegoleague.nl/seizoen_2026_2027/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "first-lego-league-suomi"
+name = "FIRST LEGO League Suomi"
+url = "https://www.fllsuomi.org/"
+group = "education-and-competitions"
+operator = "licensee"
+covers = ["learning", "official", "events"]
+languages = ["fi"]
+countries = ["FI"]
+access = "paid"
+recurrence_en = "Yearly season"
+recurrence_fr = "Saison annuelle"
+summary_en = "National operator Aurora Math since June 2026, successor to Robotiikka- ja tiedekasvatus ry: regional qualifiers from January to March 2027, then a national championship in March or April 2027."
+summary_fr = "Opérateur national Aurora Math depuis juin 2026, successeur de Robotiikka- ja tiedekasvatus ry : qualifications régionales de janvier à mars 2027, puis championnat national en mars ou avril 2027."
+strengths_en = ["Classroom participation costs 144 € for Challenge and Future Edition, plus 8 € per student and adult team member for official competitions", "Classes can register at any time and hold a school competition"]
+strengths_fr = ["La participation en classe coûte 144 € pour Challenge et Future Edition, plus 8 € par élève et adulte de l'équipe pour les compétitions officielles", "Les classes peuvent s'inscrire à tout moment et organiser une compétition scolaire"]
+weaknesses_en = ["Registration for the official 2026-2027 competitions ends at the end of November 2026", "Future Edition teams go directly to the national championship"]
+weaknesses_fr = ["L'inscription aux compétitions officielles 2026-2027 se termine fin novembre 2026", "Les équipes Future Edition vont directement au championnat national"]
+last_activity = "2026-11-25"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.fllsuomi.org/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "lego-serious-play"
+name = "LEGO SERIOUS PLAY"
+url = "https://www.lego.com/en-us/seriousplay"
+group = "education-and-competitions"
+operator = "lego-group"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "paid"
+summary_en = "Workshop method that uses bricks with adults to prompt dialogue, reflection and problem solving, with four kits on sale from the Starter Kit to the Identity and Landscape Kit."
+summary_fr = "Méthode d'ateliers qui utilise les briques avec des adultes pour favoriser le dialogue, la réflexion et la résolution de problèmes, avec quatre kits en vente, du Starter Kit à l'Identity and Landscape Kit."
+strengths_en = ["Began as a process for guided workshops with adults, according to the LEGO page", "Kits for different skills: reflection, dialogue, identity, connections"]
+strengths_fr = ["Né comme un processus d'ateliers animés avec des adultes, d'après la page du groupe LEGO", "Kits pour différentes compétences : réflexion, dialogue, identité, liens"]
+weaknesses_en = ["Page read lists kits; workshops and facilitator training are not detailed there", "Kits carry a 6+ age mark"]
+weaknesses_fr = ["La page lue liste des kits ; les ateliers et la formation des animateurs n'y sont pas détaillés", "Kits marqués 6 ans et plus"]
+last_activity = "2026-11-25"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/seriousplay"
+date = "2026-11-25"
+kind = "official"
