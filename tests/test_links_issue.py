@@ -189,7 +189,7 @@ class Globalping(unittest.TestCase):
         self.assertEqual(out["https://a.example/"][0], "down")
         self.assertEqual(out["https://a.example/"][1][:3], ["301, 301, 301 to `https://a.example/new`",
                                                             "302, 302, 302 to `https://a.example/gone`", "404, 404, 404"])
-        self.assertTrue(out["https://a.example/"][1][3].startswith("again 90 s later: 301, 301, 301 to"))
+        self.assertTrue(out["https://a.example/"][1][3].startswith("again 90 seconds later: 301, 301, 301 to"))
         self.assertEqual(out["https://b.example/"][0], "alive")
 
     def test_a_site_down_for_a_minute_is_not_broken(self):
@@ -205,8 +205,34 @@ class Globalping(unittest.TestCase):
             return {"status": "finished", "results": [probe("failed", raw="timed out")] * 3 if down else [probe(code=200)] * 3}
         out = links_issue.recheck(["https://a.example/", "https://b.example/"], api=api, sleep=pauses.append)
         self.assertEqual(out["https://a.example/"][0], "alive")
-        self.assertEqual(out["https://b.example/"][:2], ("down", ["timed out, timed out, timed out", "again 90 s later: timed out, timed out, timed out"]))
+        self.assertEqual(out["https://b.example/"][:2], ("down", ["timed out, timed out, timed out", "again 90 seconds later: timed out, timed out, timed out"]))
         self.assertIn(links_issue.CONFIRM_PAUSE, pauses)
+
+    def test_no_second_reading_judges_nothing(self):
+        def fake(limit, second):
+            calls = {"limits": 0}
+
+            def api(path, body=None, token=None):
+                if path == "/limits":
+                    calls["limits"] += 1
+                    return {"rateLimit": {"measurements": {"create": {"remaining": limit if calls["limits"] == 1 else 0}}}}
+                if path == "/measurements":
+                    return {"id": body["target"]}
+                calls[path] = calls.get(path, 0) + 1
+                return {"status": "finished", "results": [probe("failed", raw="ENOTFOUND")] * 3 if calls[path] == 1 else second}
+            return api
+        pauses = []
+        out = links_issue.recheck(["https://a.example/"], api=fake(3, None), sleep=pauses.append)   # no budget left: no pause
+        self.assertEqual(out["https://a.example/"][:2], ("unchecked", ["name not found, name not found, name not found", "not read again 90 seconds later"]))
+        self.assertNotIn(links_issue.CONFIRM_PAUSE, pauses)
+        internal = [probe("failed", raw="invalid", source="internal")] * 3
+        out = links_issue.recheck(["https://a.example/"], api=fake(100, internal), sleep=lambda s: None)   # budget read again: 0
+        self.assertEqual(out["https://a.example/"][0], "unchecked")
+        text, needed = links_issue.body("### Errors in data/x.toml\n\n* [ERROR] <https://a.example/> (at 1:1) | Network error\n",
+                                        rechecked=out, today=DAY)
+        self.assertIn("## Not judged by Globalping", text)
+        self.assertIn("| Globalping: name not found, name not found, name not found; not read again 90 seconds later", text)
+        self.assertFalse(needed)
 
     def test_recheck_without_the_service(self):
         def api(path, body=None, token=None):

@@ -205,10 +205,10 @@ def date_en(day):
 
 def since(iso):
     """'since 12 November 2026, 22 days' for a past ISO date."""
-    return f"since {date_en(iso)}, {days(iso)}"
+    return f"since {date_en(iso)}, {day_count(iso)}"
 
 
-def days(iso):
+def day_count(iso):
     n = (TODAY - dt.date.fromisoformat(iso)).days
     return f"{n} day" if n == 1 else f"{n} days"
 
@@ -306,7 +306,7 @@ def main():
     for r, (m, err) in zip(entries, results):
         if err:
             ok = (old.get(r["id"]) or {}).get("refreshed")
-            failed.append((r["id"], err.split(": ", 1)[1], f"last read {date_en(ok)}, {days(ok)} ago" if ok else "never read"))
+            failed.append((r["id"], err.split(": ", 1)[1], f"last read {date_en(ok)}, {day_count(ok)} ago" if ok else "never read"))
         if m and m.get("archived") and r.get("status") != "archived":
             archived.append(r["id"])
         if m:
@@ -328,7 +328,7 @@ def main():
         rows.append((r, last or None))
         checked = str(r.get("checked", ""))
         if checked and (TODAY - dt.date.fromisoformat(checked)).days > 365:
-            stale.append(f"{r['id']} ({checked})")
+            stale.append(f"{r['id']} ({date_en(checked)})")
     OUT.write_text(json.dumps(new, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
     lines = [f"Monthly data report: {date_en(TODAY.isoformat())}. Read by the monthly review." if month
              else f"Automatic refresh: {date_en(TODAY)}", ""]

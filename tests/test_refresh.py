@@ -70,5 +70,33 @@ class Month(unittest.TestCase):
         self.assertEqual(refresh.links_blocking("Every link answers."), (None, []))
 
 
+class Command(unittest.TestCase):
+    def test_main_with_read_failures(self):
+        """The whole script, as Pages and the Data report run it, with entries that fail to be read."""
+        import contextlib
+        import io
+        import json as j
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            out = pathlib.Path(d) / "metrics.json"
+            ids = []
+            for path in sorted((refresh.ROOT / "data").glob("*.toml")):
+                ids += [r["id"] for r in refresh.tomllib.loads(path.read_text(encoding="utf-8")).get("resource", [])]
+            out.write_text(j.dumps({i: {"refreshed": iso(10), "last_activity": iso(400), "archived": True} for i in ids[:5]}), encoding="utf-8")
+            fail = lambda r, old, token: (dict(old.get(r["id"], {})) or None, f"{r['id']}: HTTPError") if r["id"] in ids[:5] else (None, None)
+            for argv in (["refresh.py"], ["refresh.py", "--month"]):
+                buf = io.StringIO()
+                with mock.patch.object(refresh, "OUT", out), mock.patch.object(refresh, "site_metrics", return_value=None), \
+                     mock.patch.object(refresh, "read", fail), mock.patch.object(refresh.trends, "snapshots", return_value={}), \
+                     mock.patch.object(sys, "argv", argv), contextlib.redirect_stdout(buf):
+                    self.assertEqual(refresh.main(), 0)
+                text = buf.getvalue()
+                self.assertIn(f"{ids[0]}: HTTPError (last read {refresh.date_en(iso(10))}, 10 days ago)", text)
+                self.assertNotRegex(text.split("<!--")[0], r"\(\d{4}-\d{2}-\d{2}\)")   # dates in letters
+            self.assertIn("Monthly data report:", text)
+            self.assertIn("report-ids", text)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -11,7 +11,8 @@ Three readings, from three places:
    address that moved for good is left to Data fixes. A link whose secure connection every probe refuses goes to a
    second folded list (browsers often still open it); a failure of the probe itself is not counted. When the hourly
    limit cuts the list, the links that failed in the previous run go first, then a different part of the others each
-   week. A link found broken is read again 90 seconds later and stays broken only if it fails again.
+   week. A link found broken is read again 90 seconds later and stays broken only if it fails again; when it cannot
+   be read a second time, it is not judged.
    Token: GLOBALPING_TOKEN, optional (higher hourly limit).
 3. The address of every entry still open, opened from GitHub: a page that answers 200 but is dead (parked or expired
    domain, closure notice, site taken over by unrelated content) is listed too.
@@ -236,11 +237,20 @@ def recheck(urls, token=None, api=_api, sleep=time.sleep, confirm=True):
         pending = nxt
     doubt = [u for u in urls if out.get(u, ("",))[0] in ("down", "tls")]
     if confirm and doubt:   # a site down for a minute is not broken: read again later, broken only if it fails again
-        sleep(CONFIRM_PAUSE)
-        again = recheck(doubt, token, api, sleep, confirm=False)
+        if left >= PER_URL:
+            sleep(CONFIRM_PAUSE)
+            again = recheck(doubt, token, api, sleep, confirm=False)
+        else:
+            again = {}
+        later = f"again {CONFIRM_PAUSE} seconds later"
         for u in doubt:
-            if u in again:
-                out[u] = again[u] if again[u][0] not in ("down", "tls") else (out[u][0], [*out[u][1], f"again {CONFIRM_PAUSE} s later: " + "; ".join(again[u][1])], None)
+            v2 = again.get(u, ("unchecked", [], None))
+            if v2[0] in ("down", "tls"):
+                out[u] = (out[u][0], [*out[u][1], f"{later}: " + "; ".join(v2[1])], None)
+            elif v2[0] == "unchecked":   # no second reading (hourly limit, service, probes): never broken on one reading
+                out[u] = ("unchecked", [*out[u][1], f"not read {later}"], None)
+            else:
+                out[u] = v2
     return out
 
 
@@ -398,7 +408,7 @@ def order_for_recheck(urls, previous, today=None):
 
 def body(report, previous="", rechecked=None, dead=(), today=None):
     """(text, needs_a_person). rechecked=None: Globalping was not asked. A person is needed for a broken link,
-    a dead page, or a link that failed twice in a row and could not be opened again."""
+    a dead page, or a link that failed twice in a row and could not be judged by Globalping."""
     today = today or dt.date.today()
     now = failures(report)
     before = reported(previous)
@@ -431,11 +441,12 @@ def body(report, previous="", rechecked=None, dead=(), today=None):
             out += ["## They answer, but the page is dead", ""]
             out += [f"* <{u}> ({where}) | {kind}: {ev}{again(u)}" for u, where, kind, ev in dead] + [""]
         if unchecked:
-            out += ["## Not opened again (Globalping unavailable or over its hourly limit)", "",
+            out += ["## Not judged by Globalping (unavailable, over its hourly limit, or not read a second time)", "",
                     "Some sites refuse the machines of GitHub but open in a browser: open a link before changing its entry.", ""]
             for title, urls in (("Failed twice in a row", twice), ("Failed in this run only", once)):
                 if urls:
-                    out += [f"### {title}", ""] + [f"* <{u}> ({at(u)}) | {gh(u)}" for u in order(urls)] + [""]
+                    out += [f"### {title}", ""] + [f"* <{u}> ({at(u)}) | {gh(u)}" + (f" | Globalping: {gp(u)}" if u in rechecked else "")
+                                                   for u in order(urls)] + [""]
         for urls, summary in ((blocked, f"They block GitHub, alive according to Globalping on {date_en(today)}"),
                               (tls, "Their secure connection is refused by GitHub and by Globalping; a browser often still opens them")):
             if urls:
