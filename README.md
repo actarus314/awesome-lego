@@ -59,6 +59,7 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
   - [Guides and reference](#guides-and-reference)
   - [Compatibility, materials and law](#compatibility-materials-and-law)
   - [History](#history)
+  - [Education and competitions](#education-and-competitions)
   - [Books and magazines](#books-and-magazines)
   - [Artists and designers](#artists-and-designers)
 - [Tools and APIs](#tools-and-apis)
@@ -329,7 +330,6 @@ Guides, glossaries, history, compatibility and legal references, education and c
 ### Guides and reference
 
 - [Brick Architect](https://brickarchitect.com/) - By an independent architect and author: the online LEGO Parts Guide and LEGO Storage Guide, set reviews and monthly news roundups. Covers official LEGO.
-- [BrickNerd storage guide](https://bricknerd.com/home/an-opinionated-guide-to-lego-storage-containers-and-cost-5-25-23) - Opinionated advice from an adult fan on sorting loose parts and choosing containers, with a cost comparison of drawer units.
 
 ### Compatibility, materials and law
 
@@ -339,15 +339,17 @@ Guides, glossaries, history, compatibility and legal references, education and c
 
 - [LEGO History (official LEGO)](https://www.lego.com/en-us/history) - Official chronology of the LEGO Group from 1890, with articles on the Automatic Binding Bricks (1949), Kiddicraft and the stud and tube principle (patent application of 28 January 1958). Covers official LEGO.
 
+### Education and competitions
+
+- [FIRST LEGO League (global)](https://firstlegoleague.org/) - The 2026-2027 BIOGLOW season is the last under this name and ends the partnership between FIRST and LEGO Education, which will launch its own season in 2027-2028. Covers official LEGO.
+
 ### Books and magazines
 
 - [Blocks magazine](https://blocksmag.com/) - Monthly, 116 pages, for adult fans of LEGO, published in the United Kingdom since November 2014 by Silverback Publishing. Covers official LEGO.
-- [No Starch Press: LEGO books](https://nostarch.com/catalog/lego) - Publisher catalogue of unofficial LEGO books for builders: technique, Technic, robotics, lighting, trains and art. Covers official LEGO.
 
 ### Artists and designers
 
 - [LEGO Certified Professionals (official LEGO list)](https://www.lego.com/en-us/aboutus/lego-certified-professionals) - Adult builders officially recognised by LEGO who run a business with bricks, listed by region, with the rules on what they may build for clients. Covers official LEGO.
-- [Nico71's Technic Creations](https://www.nico71.fr/) - Motorised LEGO Technic vehicles and machines, PDF instructions, custom kits, videos explaining design choices and models built to order for companies, by an independent mechanical engineer.
 
 <br>
 
@@ -360,18 +362,13 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 ### Design software
 
 - [BrickLink Studio](https://www.bricklink.com/v3/studio/download.page) - 3D editor for LEGO models with BrickLink parts list, instruction editor and photorealistic rendering. Covers official LEGO and alternative brands.
-- [LeoCAD](https://www.leocad.org/) - Open-source program to build virtual LEGO models on the LDraw library, for Windows, macOS and Linux. Covers official LEGO.
 
 ### Apps
 
-- [Brick Search](https://bricksearch.app/) - Scans QR codes of collectible minifigures on iOS and Android, with collection tracking, wish list, set archive and price comparison by country. Covers official LEGO.
+- [LEGO Builder](https://www.lego.com/en-us/builder-app) - Interactive 3D building instructions with zoom, rotation and shared building, plus a collection of past instructions; official LEGO app. Covers official LEGO.
 
 ### APIs and open data
 
-- [BrickLink API](https://www.bricklink.com/v3/api.page) - REST interface to the BrickLink marketplace: catalog, price guide, store inventories, orders, messages, feedback. Covers official LEGO and alternative brands.
-- [Brickognize](https://brickognize.com/) - Image search for LEGO parts, minifigures, sets and sticker sheets from a photo; free API without key used by several open-source collection tools. Covers official LEGO.
-- [Brickset API v3](https://brickset.com/article/52666/brickset-web-services) - JSON and SOAP interface to the Brickset catalog: sets, extra images, instructions, reviews, member collections (read and write). Covers official LEGO.
-- [LDraw open standard and parts library](https://www.ldraw.org/) - Digital LEGO model format and official parts library, open standard underlying LeoCAD, LDView, LPub3D and Studio export. Covers official LEGO.
 - [Rebrickable API v3](https://rebrickable.com/api/) - REST interface to the official LEGO catalog (sets, parts, minifigures, themes, colours) and to Rebrickable user collections. Covers official LEGO.
 
 ### Open-source projects

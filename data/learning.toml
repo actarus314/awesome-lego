@@ -60,6 +60,9 @@ short_fr = "Artistes"
 id = "brick-architect"
 name = "Brick Architect"
 url = "https://brickarchitect.com/"
+rank = {intl = 1, en = 1}
+rank_reason_en = "Parts guide of nearly 2500 current parts and a storage guide, with a monthly news roundup dated 31 October 2026 and a print edition announced on 18 October 2026; English only."
+rank_reason_fr = "Guide des pièces actuelles (près de 2500) et guide de rangement, avec synthèse mensuelle de l'actualité datée du 31 octobre 2026 et édition imprimée annoncée le 18 octobre 2026 ; en anglais seulement."
 feed = "https://brickarchitect.com/feed/"
 group = "guides"
 regime = "activity"
@@ -115,6 +118,9 @@ kind = "read"
 id = "brick-builders-handbook"
 name = "Brick Builder's Handbook"
 url = "https://brickbuildershandbook.com/"
+rank = {intl = 4, en = 4}
+rank_reason_en = "Blog and book with an index of building techniques and the reasoning behind each, and a four-volume series on the mathematics of building; latest post dates from April 2025."
+rank_reason_fr = "Blog et livre avec un index de techniques de construction et le raisonnement de chacune, et une série de quatre volumes sur les mathématiques de la construction ; dernier article d'avril 2025."
 feed = "https://brickbuildershandbook.com/feed/"
 group = "guides"
 covers = ["learning", "official"]
@@ -147,6 +153,9 @@ kind = "read"
 id = "sariel"
 name = "Sariel.pl"
 url = "https://sariel.pl/"
+rank = {intl = 2, en = 2}
+rank_reason_en = "Technic models, free instructions and online tools by the author of the Technic builder's guide, with tool source code published on 24 July 2026; English only, centred on Technic."
+rank_reason_fr = "Modèles Technic, instructions gratuites et outils en ligne par l'auteur du guide du constructeur Technic, avec code source des outils publié le 24 juillet 2026 ; en anglais seulement, centré sur Technic."
 feed = "https://sariel.pl/rss"
 group = "guides"
 regime = "activity"
@@ -206,6 +215,9 @@ kind = "read"
 id = "bricks-stackexchange"
 name = "Bricks Stack Exchange"
 url = "https://bricks.stackexchange.com/"
+rank = {intl = 3, en = 3}
+rank_reason_en = "Question and answer site on LEGO and compatible bricks covering clone identification, plastics and compatibility measurement, newest questions dated 3 November 2026; answer quality varies."
+rank_reason_fr = "Site de questions et réponses sur les briques LEGO et compatibles (identification de copies, plastiques, mesure de compatibilité), dernières questions datées du 3 novembre 2026 ; qualité des réponses variable."
 feed = "https://bricks.stackexchange.com/feeds"
 group = "guides"
 regime = "activity"
@@ -267,6 +279,9 @@ id = "hellobricks-lexique"
 name = "HelloBricks : lexique LEGO"
 url = "https://www.hellobricks.com/lexique-lego/"
 group = "guides"
+rank = {fr = 2}
+rank_reason_en = "French lexicon of company, community and set-line terms and acronyms; page not dated, some entries describe older situations."
+rank_reason_fr = "Lexique en français des termes et sigles de l'entreprise, de la communauté et des gammes de sets ; page non datée, certaines entrées décrivent des situations anciennes."
 covers = ["learning"]
 languages = ["fr"]
 countries = ["FR"]
@@ -292,6 +307,9 @@ id = "spielzeug-fuchs-lexikon"
 name = "Spielzeug-Fuchs : Klemmbaustein-Lexikon"
 url = "https://spielzeug-fuchs.de/das-klemmbaustein-lexikon/"
 group = "guides"
+rank = {de = 3}
+rank_reason_en = "German lexicon of hobby abbreviations and terms that explains SNOT and studless techniques; published by a brick retailer, page not dated."
+rank_reason_fr = "Lexique en allemand des abréviations et termes du loisir, qui explique le SNOT et les techniques sans tenons ; publié par un revendeur de briques, page non datée."
 covers = ["learning", "alternative"]
 languages = ["de"]
 countries = ["DE"]
@@ -344,6 +362,9 @@ id = "lego-materials-help"
 name = "Official LEGO guidance: what bricks are made of"
 url = "https://www.lego.com/en-us/service/help-topics/article/what-lego-bricks-are-made-of"
 group = "compatibility-and-law"
+rank = {intl = 5, en = 5}
+rank_reason_en = "Statement of the LEGO Group on the materials of its pieces (ABS since 1963, some silicone) and their link to clutch power, gloss and colours; says nothing about other makers."
+rank_reason_fr = "Déclaration du groupe LEGO sur les matériaux de ses pièces (ABS depuis 1963, un peu de silicone) et leur lien avec la force d'emboîtement, la brillance et les couleurs ; ne dit rien des autres fabricants."
 operator = "lego-group"
 covers = ["learning", "official"]
 languages = ["en"]
@@ -371,6 +392,9 @@ name = "Court of Justice judgment C-48/09 P, Lego Juris v OHIM"
 url = "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A62009CJ0048"
 group = "compatibility-and-law"
 featured = true
+rank = {intl = 1, en = 1, fr = 1, de = 1}
+rank_reason_en = "Full text of the judgment of 14 September 2010 on the three-dimensional shape of the brick as a trade mark, in English, French and German; explains why compatible bricks are legal in the European Union."
+rank_reason_fr = "Texte intégral de l'arrêt du 14 septembre 2010 sur la forme en trois dimensions de la brique comme marque, en anglais, français et allemand ; explique pourquoi les briques compatibles sont légales dans l'Union européenne."
 covers = ["learning", "official", "alternative"]
 languages = ["en", "fr", "de"]
 countries = ["international"]
@@ -402,6 +426,9 @@ id = "wikipedia-lego-clone"
 name = "Wikipedia: Lego clone"
 url = "https://en.wikipedia.org/wiki/Lego_clone"
 group = "compatibility-and-law"
+rank = {intl = 4, en = 4}
+rank_reason_en = "Overview of brands compatible with LEGO and the main court cases (Canada 2005, European Union 2008 and 2010, Germany), with references; collaborative text that may change."
+rank_reason_fr = "Aperçu des marques compatibles avec LEGO et des principales affaires judiciaires (Canada 2005, Union européenne 2008 et 2010, Allemagne), avec références ; texte collaboratif susceptible de changer."
 covers = ["learning", "alternative"]
 languages = ["en"]
 countries = ["international"]
@@ -454,6 +481,9 @@ id = "douane-contrefacon"
 name = "Douane française : comment éviter les contrefaçons"
 url = "https://www.douane.gouv.fr/comment-eviter-les-contrefacons"
 group = "compatibility-and-law"
+rank = {fr = 5}
+rank_reason_en = "French official page on counterfeits covering definition, risks, fines, confiscation and advice before buying online; general page, not specific to bricks."
+rank_reason_fr = "Page officielle française sur la contrefaçon : définition, risques, amendes, confiscation et conseils avant un achat en ligne ; page générale, non propre aux briques."
 covers = ["learning"]
 languages = ["fr"]
 countries = ["FR"]
@@ -484,6 +514,9 @@ id = "kohen-avocats-compatible"
 name = "Kohen Avocats: faux LEGO, brique compatible et contrefaçon"
 url = "https://kohenavocats.fr/2026/11/22/faux-lego-lego-chinois-contrefacon-brique-compatible-legal-remboursement/"
 group = "compatibility-and-law"
+rank = {fr = 2}
+rank_reason_en = "Law firm article of 22 November 2026 distinguishing counterfeit from compatible product, with practical steps and the customs retention risk for parcels from outside the European Union; general scope."
+rank_reason_fr = "Article de cabinet d'avocats du 22 novembre 2026 distinguant contrefaçon et produit compatible, avec démarches pratiques et risque de retenue douanière des colis hors Union européenne ; portée générale."
 covers = ["learning", "alternative"]
 languages = ["fr"]
 countries = ["FR"]
@@ -512,6 +545,9 @@ name = "LEGO History (official LEGO)"
 url = "https://www.lego.com/en-us/history"
 group = "history"
 featured = true
+rank = {intl = 1, en = 1}
+rank_reason_en = "Chronology of the LEGO Group from 1890 with articles on the Automatic Binding Bricks of 1949, Kiddicraft and the stud and tube principle; primary source, company viewpoint."
+rank_reason_fr = "Chronologie du groupe LEGO depuis 1890 avec des articles sur les Automatic Binding Bricks de 1949, Kiddicraft et le principe tenon et tube ; source primaire, point de vue de l'entreprise."
 operator = "lego-group"
 covers = ["learning", "official"]
 languages = ["en"]
@@ -543,6 +579,9 @@ id = "kiddicraft-brighton-toy-museum"
 name = "Brighton Toy Museum: Kiddicraft Self-Locking Building Bricks"
 url = "https://www.brightontoymuseum.co.uk/index/Category:Self-Locking_Building_Bricks_%28Kiddicraft%29"
 group = "history"
+rank = {intl = 3, en = 3}
+rank_reason_en = "Museum page on the Kiddicraft bricks with links to patents GB587206 and GB633055 and an explanation of the grip tolerance; index page with editorial comments."
+rank_reason_fr = "Page de musée sur les briques Kiddicraft avec liens vers les brevets GB587206 et GB633055 et explication de la tolérance d'emboîtement ; page d'index avec commentaires éditoriaux."
 covers = ["learning"]
 languages = ["en"]
 countries = ["GB"]
@@ -593,6 +632,9 @@ id = "wikipedia-history-of-lego"
 name = "Wikipedia: History of Lego"
 url = "https://en.wikipedia.org/wiki/History_of_Lego"
 group = "history"
+rank = {intl = 4, en = 4}
+rank_reason_en = "Encyclopedia article on Kiddicraft samples, the 1949 bricks and the 1958 tube design, updated on 16 November 2026; collaborative text that may change."
+rank_reason_fr = "Article d'encyclopédie sur les échantillons Kiddicraft, les briques de 1949 et le tube de 1958, mis à jour le 16 novembre 2026 ; texte collaboratif susceptible de changer."
 covers = ["learning"]
 languages = ["en"]
 countries = ["international"]
@@ -672,6 +714,9 @@ id = "lego-education"
 name = "LEGO Education"
 url = "https://education.lego.com/"
 group = "education-and-competitions"
+rank = {intl = 2}
+rank_reason_en = "Classroom solutions in science, computer science and artificial intelligence, with its own competition season announced for 2027-2028; aimed at schools and teachers, not at adult builders."
+rank_reason_fr = "Solutions de classe en sciences, informatique et intelligence artificielle, avec une saison de compétition propre annoncée pour 2027-2028 ; destiné aux écoles et aux enseignants, pas aux adultes qui construisent."
 operator = "lego-group"
 covers = ["learning", "official"]
 languages = ["en"]
@@ -704,6 +749,9 @@ id = "first-lego-league"
 name = "FIRST LEGO League (global)"
 url = "https://firstlegoleague.org/"
 group = "education-and-competitions"
+rank = {intl = 1}
+rank_reason_en = "Robotics and innovation competition for ages 5 to 16 run by FIRST and LEGO Education, with two editions in 2026-2027; the BIOGLOW season is the last under this name."
+rank_reason_fr = "Compétition de robotique et d'innovation pour les 5 à 16 ans, menée par FIRST et LEGO Education, avec deux éditions en 2026-2027 ; la saison BIOGLOW est la dernière sous ce nom."
 operator = "licensee"
 covers = ["learning", "official", "events"]
 languages = ["en"]
@@ -738,6 +786,9 @@ id = "first-lego-league-france"
 name = "FIRST LEGO League France"
 url = "https://firstlegoleaguefrance.fr/"
 group = "education-and-competitions"
+rank = {FR = 1}
+rank_reason_en = "Local partners and calendar of the 2026-2027 BIOGLOW season in France, Challenge level for ages 9 to 16; only fiche of the group serving France."
+rank_reason_fr = "Partenaires locaux et calendrier de la saison BIOGLOW 2026-2027 en France, niveau Challenge pour les 9 à 16 ans ; seule fiche du groupe servant la France."
 operator = "licensee"
 covers = ["learning", "official", "events"]
 languages = ["fr"]
@@ -772,6 +823,9 @@ id = "first-lego-league-dach"
 name = "FIRST LEGO League (Germany, Austria, Switzerland)"
 url = "https://www.first-lego-league.org/en/"
 group = "education-and-competitions"
+rank = {intl = 5, DE = 1, AT = 1, CH = 1}
+rank_reason_en = "Operator for Germany, Austria and Switzerland with 12 Future Edition events, 46 Explore exhibitions and 52 Challenge regional tournaments in 2026-2027; only fiche of the group serving these countries."
+rank_reason_fr = "Opérateur pour l'Allemagne, l'Autriche et la Suisse avec 12 événements Future Edition, 46 expositions Explore et 52 tournois régionaux Challenge en 2026-2027 ; seule fiche du groupe servant ces pays."
 operator = "licensee"
 covers = ["learning", "official", "events"]
 languages = ["de", "en"]
@@ -805,6 +859,9 @@ kind = "read"
 id = "blocks-magazine"
 name = "Blocks magazine"
 url = "https://blocksmag.com/"
+rank = {intl = 1, en = 1}
+rank_reason_en = "Monthly magazine of 116 pages for adult fans since November 2014, issue 145 online on 30 October 2026, with a digital archive of over 100 back issues; paid."
+rank_reason_fr = "Mensuel de 116 pages pour les fans adultes depuis novembre 2014, numéro 145 en ligne le 30 octobre 2026, avec archive numérique de plus de 100 anciens numéros ; payant."
 feed = "https://blocksmag.com/feed/"
 group = "books-and-magazines"
 regime = "activity"
@@ -877,6 +934,9 @@ id = "bricka-magazine"
 name = "BRICKA"
 url = "https://www.brickamag.com/"
 group = "books-and-magazines"
+rank = {intl = 5, en = 5}
+rank_reason_en = "Independent quarterly for adult fans with artist profiles, builds and techniques; first issue in December 2025, issue 4 in fall 2026; young publication by a single founder."
+rank_reason_fr = "Trimestriel indépendant pour les fans adultes avec portraits d'artistes, constructions et techniques ; premier numéro en décembre 2025, numéro 4 à l'automne 2026 ; publication jeune, un seul fondateur."
 regime = "activity"
 covers = ["learning", "official", "news"]
 languages = ["en"]
@@ -947,6 +1007,9 @@ id = "no-starch-lego"
 name = "No Starch Press: LEGO books"
 url = "https://nostarch.com/catalog/lego"
 group = "books-and-magazines"
+rank = {intl = 2, en = 2}
+rank_reason_en = "Publisher catalogue of unofficial books on technique, Technic, robotics, lighting, trains and art, with titles in September and December 2026; English only, books sold."
+rank_reason_fr = "Catalogue d'un éditeur de livres non officiels sur la technique, Technic, la robotique, l'éclairage, les trains et l'art, avec des titres en septembre et décembre 2026 ; en anglais seulement, livres payants."
 regime = "operating"
 featured = true
 covers = ["learning", "official"]
@@ -975,6 +1038,9 @@ id = "technic-builders-guide"
 name = "The Unofficial LEGO Technic Builder's Guide, 2nd Edition"
 url = "https://nostarch.com/technicbuilder2"
 group = "books-and-magazines"
+rank = {intl = 4, en = 4}
+rank_reason_en = "Guide of 424 pages on gears, linkages, differentials and steering, October 2016; later Technic parts and the Powered Up system are not covered."
+rank_reason_fr = "Guide de 424 pages sur les engrenages, liaisons, différentiels et directions, octobre 2016 ; les pièces Technic plus récentes et le système Powered Up ne sont pas couverts."
 covers = ["learning", "official"]
 languages = ["en"]
 countries = ["international"]
@@ -1039,6 +1105,9 @@ name = "LEGO Certified Professionals (official LEGO list)"
 url = "https://www.lego.com/en-us/aboutus/lego-certified-professionals"
 group = "artists"
 featured = true
+rank = {intl = 1}
+rank_reason_en = "Directory of 27 adult builders recognised by LEGO who run a business with bricks, listed by region, with the rules on what they may build for clients; page not dated."
+rank_reason_fr = "Annuaire de 27 adultes constructeurs reconnus par LEGO qui exercent une activité avec des briques, classés par région, avec les règles sur ce qu'ils peuvent construire pour des clients ; page non datée."
 operator = "lego-group"
 covers = ["learning", "official", "custom-builds"]
 languages = ["en"]
@@ -1065,6 +1134,9 @@ id = "nathan-sawaya"
 name = "Nathan Sawaya: The Art of the Brick"
 url = "https://brickartist.com/"
 group = "artists"
+rank = {intl = 3}
+rank_reason_en = "Touring exhibition The Art of the Brick running since 2007, with Certified Professional status confirmed by the official LEGO biography; mostly an exhibition schedule."
+rank_reason_fr = "Exposition itinérante The Art of the Brick depuis 2007, statut de professionnel certifié confirmé par la biographie officielle de LEGO ; surtout un calendrier d'expositions."
 covers = ["learning", "official"]
 languages = ["en"]
 countries = ["international"]
@@ -1096,6 +1168,9 @@ id = "sean-kenney"
 name = "Sean Kenney"
 url = "https://www.seankenney.com/"
 group = "artists"
+rank = {intl = 4}
+rank_reason_en = "Sculpture and portraiture for over 20 years, exhibitions in over 100 cities and over 500 commissions, figures given by the artist; first Certified Professional (2005 to 2019)."
+rank_reason_fr = "Sculpture et portrait depuis plus de 20 ans, expositions dans plus de 100 villes et plus de 500 commandes, chiffres donnés par l'artiste ; premier professionnel certifié (2005 à 2019)."
 covers = ["learning", "official"]
 languages = ["en"]
 countries = ["international"]
@@ -1127,6 +1202,9 @@ id = "warren-elsmore"
 name = "Warren Elsmore"
 url = "https://www.warrenelsmore.com/"
 group = "artists"
+rank = {intl = 5}
+rank_reason_en = "Touring exhibitions and commissions by a British brick artist and company established for nearly 20 years, with models from genuine bricks without special parts as the site says; visitor figures differ between pages."
+rank_reason_fr = "Expositions itinérantes et commandes d'un artiste briquiste et d'une entreprise britanniques établis depuis près de 20 ans, avec des modèles en briques d'origine sans pièces spéciales selon le site ; chiffres de visiteurs différents selon les pages."
 covers = ["learning", "official"]
 languages = ["en"]
 countries = ["GB"]
@@ -1359,6 +1437,9 @@ id = "spielzeug-fuchs-sortieren"
 name = "Spielzeug-Fuchs: LEGO sortieren"
 url = "https://spielzeug-fuchs.de/lego-sortieren-leicht-gemacht/"
 group = "guides"
+rank = {de = 4}
+rank_reason_en = "German guide to sorting bricks covering small-parts cabinets, sorting boxes and drawer systems; published by a shop, less detailed than specialist guides; last activity on 27 July 2024."
+rank_reason_fr = "Guide en allemand du tri des briques (meubles à petits tiroirs, boîtes de tri, systèmes de tiroirs) ; publié par une boutique, moins détaillé que les guides spécialisés ; dernière activité le 27 juillet 2024."
 covers = ["learning"]
 languages = ["de"]
 countries = ["DE"]
@@ -1412,6 +1493,9 @@ id = "hispabrick-magazine"
 name = "HispaBrick Magazine"
 url = "https://hispabrickmagazine.com/"
 group = "books-and-magazines"
+rank = {intl = 3, en = 3, es = 1}
+rank_reason_en = "Free magazine and blog since 2008 with identical content in Spanish and English, issues free to download; blog active on 9 November 2026."
+rank_reason_fr = "Magazine et blog gratuits depuis 2008 au contenu identique en espagnol et en anglais, numéros à télécharger gratuitement ; blog actif le 9 novembre 2026."
 regime = "activity"
 covers = ["learning", "news"]
 languages = ["es", "en"]
@@ -1474,6 +1558,9 @@ name = "Nico71's Technic Creations"
 url = "https://www.nico71.fr/"
 group = "artists"
 featured = true
+rank = {intl = 2}
+rank_reason_en = "Motorised Technic vehicles with PDF instructions and free videos explaining design choices, posts on 7 and 12 November 2026; instructions and kits are paid."
+rank_reason_fr = "Véhicules Technic motorisés avec instructions en PDF et vidéos gratuites expliquant les choix de conception, publications des 7 et 12 novembre 2026 ; instructions et kits payants."
 covers = ["learning", "instructions", "custom-builds"]
 languages = ["en", "fr"]
 countries = ["international"]
@@ -1506,6 +1593,9 @@ id = "brickreport-licensed-themes"
 name = "BrickReport: licensed themes of LEGO alternatives"
 url = "https://www.brickreport.io/blog/lego-alternatives-licensed-themes"
 group = "guides"
+rank = {intl = 5, en = 5}
+rank_reason_en = "One table of current and ended licences for each alternative brand, set against licences of official LEGO, published on 8 October 2026 and updated on 10 November 2026; affiliate links."
+rank_reason_fr = "Un tableau des licences en cours et terminées de chaque marque alternative, face aux licences de marque LEGO, publié le 8 octobre 2026 et mis à jour le 10 novembre 2026 ; liens d'affiliation."
 regime = "activity"
 covers = ["learning", "official", "alternative"]
 languages = ["en"]
@@ -1535,6 +1625,9 @@ id = "homa-world-of-bricks"
 name = "HoMa's World of Bricks (Holger Matthes)"
 url = "https://www.holgermatthes.de/bricks/en/index.php"
 group = "guides"
+rank = {de = 1}
+rank_reason_en = "German pages on SNOT and train modelling with free building instructions and a free English supplement of the author's book; pages not dated, latest content read from 2024."
+rank_reason_fr = "Pages en allemand sur le SNOT et la modélisation ferroviaire, avec instructions de montage gratuites et supplément anglais gratuit du livre de l'auteur ; pages non datées, dernier contenu lu de 2024."
 covers = ["learning", "instructions"]
 languages = ["de", "en"]
 countries = ["DE"]
@@ -1565,6 +1658,9 @@ id = "itlug-advanced-techniques-guide"
 name = "ItLUG: Guida non ufficiale delle tecniche avanzate di costruzione LEGO"
 url = "https://itlug.org/guida-non-ufficiale-delle-tecniche-avanzate-di-costruzione-lego/"
 group = "guides"
+rank = {it = 1}
+rank_reason_en = "Authorised Italian translation of an advanced building techniques guide in nine chapters, 15420 downloads of the PDF shown on the page; version 1.0 of 27 December 2014."
+rank_reason_fr = "Traduction italienne autorisée d'un guide de techniques de construction avancées en neuf chapitres, 15420 téléchargements du PDF affichés sur la page ; version 1.0 du 27 décembre 2014."
 covers = ["learning"]
 languages = ["it"]
 countries = ["IT"]
@@ -1617,6 +1713,9 @@ id = "build-like-a-master"
 name = "Build Like a Master (video series of the LEGO Group)"
 url = "https://www.lego.com/en-us/families/build-like-a-master"
 group = "guides"
+rank = {fr = 1, de = 2, it = 2, es = 1, nl = 1}
+rank_reason_en = "Four-part video series on brick anatomy, interlocking and SNOT, on pages in English, French, German, Spanish, Italian and Dutch; basics aimed at families; last activity on 2 January 2025."
+rank_reason_fr = "Série de quatre modules vidéo sur l'anatomie de la brique, l'emboîtement et le SNOT, sur des pages en anglais, français, allemand, espagnol, italien et néerlandais ; bases destinées aux familles ; dernière activité le 2 janvier 2025."
 operator = "lego-group"
 covers = ["learning", "official"]
 languages = ["en", "fr", "de", "es", "it", "nl"]
@@ -1649,6 +1748,9 @@ id = "kirkbi-v-ritvik-scc"
 name = "Supreme Court of Canada, Kirkbi AG v. Ritvik Holdings Inc. (2005 SCC 65)"
 url = "https://decisions.scc-csc.ca/scc-csc/scc-csc/en/item/2246/index.do"
 group = "compatibility-and-law"
+rank = {intl = 3, en = 3, fr = 4}
+rank_reason_en = "Official text in English and French of the judgment of 17 November 2005 holding that a purely functional design cannot be a trade-mark; Canadian law, which does not bind courts elsewhere."
+rank_reason_fr = "Texte officiel en anglais et en français de l'arrêt du 17 novembre 2005 jugeant qu'un dessin purement fonctionnel ne peut être une marque de commerce ; droit canadien, qui ne lie pas les tribunaux d'ailleurs."
 covers = ["learning", "alternative"]
 languages = ["en", "fr"]
 countries = ["CA"]
@@ -1680,6 +1782,9 @@ id = "general-court-t-515-19"
 name = "General Court of the European Union, case T-515/19, Lego v EUIPO (building block design)"
 url = "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A62019TJ0515"
 group = "compatibility-and-law"
+rank = {intl = 2, en = 2, fr = 3, de = 3}
+rank_reason_en = "Full text of the judgment of 24 March 2021 on the invalidity of a brick design, in English, French and German; the operative part annuls the Board of Appeal decision and does not declare the design valid."
+rank_reason_fr = "Texte intégral de l'arrêt du 24 mars 2021 sur la nullité d'un dessin ou modèle de brique, en anglais, français et allemand ; le dispositif annule la décision de la chambre de recours sans déclarer le modèle valide."
 covers = ["learning", "official", "alternative"]
 languages = ["en", "fr", "de"]
 countries = ["international"]
@@ -1706,6 +1811,9 @@ id = "bgh-klemmbausteine-iii"
 name = "Bundesgerichtshof, Klemmbausteine III (I ZR 30/02)"
 url = "https://www.bundesgerichtshof.de/SharedDocs/Entscheidungen/DE/Zivilsenate/I_ZS/2002/I_ZR__30-02.pdf?__blob=publicationFile&v=1"
 group = "compatibility-and-law"
+rank = {de = 2}
+rank_reason_en = "Full text of the judgment of 2 December 2004 of the Federal Court of Justice on imitated clamp-brick elements and unfair-competition law; only German-court decision of the group."
+rank_reason_fr = "Texte intégral de l'arrêt du 2 décembre 2004 de la Cour fédérale de justice sur des éléments de briques à emboîtement imités et le droit de la concurrence déloyale ; seule décision d'un tribunal allemand du groupe."
 covers = ["learning", "alternative"]
 languages = ["de"]
 countries = ["DE"]
@@ -1732,6 +1840,9 @@ id = "the-lego-story-andersen"
 name = "The LEGO Story (Jens Andersen)"
 url = "https://www.harpercollins.com/products/the-lego-story-jens-andersen"
 group = "history"
+rank = {intl = 2, en = 2}
+rank_reason_en = "Authorised history of 90 years in 432 pages, based on the company archives, published on 15 November 2022; the publisher page shows the book out of stock."
+rank_reason_fr = "Histoire autorisée de 90 ans en 432 pages, fondée sur les archives de l'entreprise, publiée le 15 novembre 2022 ; la page de l'éditeur indique le livre en rupture de stock."
 covers = ["learning", "official"]
 languages = ["en"]
 countries = ["international"]
@@ -1763,6 +1874,9 @@ id = "dpunkt-lego-und-co"
 name = "dpunkt.verlag: Lego & Co."
 url = "https://dpunkt.de/produkt-kategorie/technik-kreatives/lego-co-technik-kreatives/"
 group = "books-and-magazines"
+rank = {de = 1}
+rank_reason_en = "German titles on building, lighting, trains, Technic and robotics, print books from 14.95 € and e-books from 10.90 €; latest title of the category dated 31 August 2023; only German-language fiche of the group."
+rank_reason_fr = "Titres en allemand sur la construction, l'éclairage, les trains, Technic et la robotique, livres imprimés dès 14.95 € et livres numériques dès 10.90 € ; dernier titre de la catégorie daté du 31 août 2023 ; seule fiche en allemand du groupe."
 regime = "operating"
 covers = ["learning"]
 languages = ["de"]
@@ -1790,6 +1904,9 @@ id = "nuinui-lego"
 name = "NuiNui: LEGO books"
 url = "https://nuinui.ch/collections/lego"
 group = "books-and-magazines"
+rank = {fr = 1}
+rank_reason_en = "Building guides in French with the latest title published on 5 November 2026; general publisher with several titles aimed at children; only French-language fiche of the group not ended."
+rank_reason_fr = "Guides de construction en français dont le dernier titre est paru le 5 novembre 2026 ; éditeur généraliste avec plusieurs titres destinés aux enfants ; seule fiche en français du groupe non terminée."
 regime = "operating"
 covers = ["learning"]
 languages = ["fr"]
@@ -1950,6 +2067,9 @@ id = "first-lego-league-us-canada"
 name = "FIRST LEGO League (FIRST, United States and Canada)"
 url = "https://www.firstinspires.org/programs/fll/"
 group = "education-and-competitions"
+rank = {intl = 4, US = 1, CA = 1}
+rank_reason_en = "Registration run by FIRST for the United States and Canada with published prices (150 USD for Explore, 285 USD for Challenge per season, before sales tax and shipping); only fiche of the group serving these countries."
+rank_reason_fr = "Inscription gérée par FIRST pour les États-Unis et le Canada avec prix publiés (150 USD pour Explore, 285 USD pour Challenge par saison, avant taxe de vente et frais de livraison) ; seule fiche du groupe servant ces pays."
 operator = "licensee"
 covers = ["learning", "official", "events"]
 languages = ["en"]
@@ -1984,6 +2104,9 @@ id = "iet-first-lego-league"
 name = "IET FIRST LEGO League (United Kingdom)"
 url = "https://education.theiet.org/first-lego-league-programmes/"
 group = "education-and-competitions"
+rank = {GB = 1}
+rank_reason_en = "National delivery partner run by the Institution of Engineering and Technology with regional festivals, tournaments and funding support for teams; only fiche of the group serving the United Kingdom."
+rank_reason_fr = "Partenaire national de mise en œuvre tenu par l'Institution of Engineering and Technology, avec festivals et tournois régionaux et aide financière aux équipes ; seule fiche du groupe servant le Royaume-Uni."
 operator = "licensee"
 covers = ["learning", "official", "events"]
 languages = ["en"]
@@ -2013,6 +2136,9 @@ id = "first-lego-league-italia"
 name = "FIRST LEGO League Italia"
 url = "https://firstlegoleague.it/"
 group = "education-and-competitions"
+rank = {IT = 1}
+rank_reason_en = "Run by Scuola di Robotica of Genoa and recognised by the education ministry, with regional qualifiers from January to March 2027 and a national final in March 2027; only fiche of the group serving Italy."
+rank_reason_fr = "Tenue par la Scuola di Robotica de Gênes et reconnue par le ministère de l'éducation, avec qualifications régionales de janvier à mars 2027 et finale nationale en mars 2027 ; seule fiche du groupe servant l'Italie."
 operator = "licensee"
 covers = ["learning", "official", "events"]
 languages = ["it"]
@@ -2047,6 +2173,9 @@ id = "first-lego-league-nederland"
 name = "FIRST LEGO League Nederland"
 url = "https://firstlegoleague.nl/"
 group = "education-and-competitions"
+rank = {NL = 1}
+rank_reason_en = "Season 2026-2027 calendar with 20 regional finals from 11 December 2026 to 20 February 2027 and national finals on 6 March 2027 and 4 April 2027; only fiche of the group serving the Netherlands."
+rank_reason_fr = "Calendrier de la saison 2026-2027 avec 20 finales régionales du 11 décembre 2026 au 20 février 2027 et finales nationales les 6 mars 2027 et 4 avril 2027 ; seule fiche du groupe servant les Pays-Bas."
 operator = "licensee"
 covers = ["learning", "official", "events"]
 languages = ["nl"]
@@ -2081,6 +2210,9 @@ id = "first-lego-league-suomi"
 name = "FIRST LEGO League Suomi"
 url = "https://www.fllsuomi.org/"
 group = "education-and-competitions"
+rank = {FI = 1}
+rank_reason_en = "National operator Aurora Math since June 2026, with classroom participation at 144 € and 8 € per person for official competitions; only fiche of the group serving Finland."
+rank_reason_fr = "Opérateur national Aurora Math depuis juin 2026, avec participation de classe à 144 € et 8 € par personne pour les compétitions officielles ; seule fiche du groupe servant la Finlande."
 operator = "licensee"
 covers = ["learning", "official", "events"]
 languages = ["fi"]
@@ -2110,6 +2242,9 @@ id = "lego-serious-play"
 name = "LEGO SERIOUS PLAY"
 url = "https://www.lego.com/en-us/seriousplay"
 group = "education-and-competitions"
+rank = {intl = 3}
+rank_reason_en = "Workshop method using bricks with adults to prompt dialogue and problem solving, with four kits on sale; the page lists kits and does not detail workshops or facilitator training."
+rank_reason_fr = "Méthode d'ateliers utilisant des briques avec des adultes pour susciter le dialogue et résoudre des problèmes, avec quatre kits en vente ; la page liste les kits sans détailler ateliers ni formation des animateurs."
 operator = "lego-group"
 covers = ["learning", "official"]
 languages = ["en"]

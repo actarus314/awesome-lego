@@ -49,6 +49,9 @@ name = "Rebrickable API v3"
 url = "https://rebrickable.com/api/"
 group = "apis-and-data"
 featured = true
+rank = {intl = 1}
+rank_reason_en = "REST interface to the official LEGO catalog of sets, parts, minifigures, themes and colours, with a free key, commercial use allowed with credit and read and write access to collections; active on 22 November 2026."
+rank_reason_fr = "Interface REST du catalogue de marque LEGO (sets, pièces, figurines, thèmes, couleurs), avec clé gratuite, usage commercial autorisé avec mention de la source et lecture et écriture des collections ; actif le 22 novembre 2026."
 covers = ["official", "parts", "minifigures", "data"]
 languages = ["en"]
 countries = ["international"]
@@ -80,6 +83,9 @@ id = "rebrickable-csv-downloads"
 name = "Rebrickable catalog CSV downloads"
 url = "https://rebrickable.com/downloads/"
 group = "apis-and-data"
+rank = {intl = 4}
+rank_reason_en = "Daily CSV archive, free, without key or rate limit, with identifier mappings between Brickset, BrickLink, Brick Owl, LEGO and LDraw; no prices; active on 22 November 2026."
+rank_reason_fr = "Archive quotidienne de fichiers CSV, gratuite, sans clé ni limite de débit, avec correspondances d'identifiants entre Brickset, BrickLink, Brick Owl, LEGO et LDraw ; pas de prix ; actif le 22 novembre 2026."
 covers = ["official", "parts", "minifigures", "data"]
 languages = ["en"]
 countries = ["international"]
@@ -112,6 +118,9 @@ name = "Brickset API v3"
 url = "https://brickset.com/article/52666/brickset-web-services"
 group = "apis-and-data"
 featured = true
+rank = {intl = 5}
+rank_reason_en = "Catalog interface with recommended retail prices for four countries, instructions, reviews and member collections, free key; initial limit of 100 calls per day per key."
+rank_reason_fr = "Interface du catalogue avec prix de vente conseillés pour quatre pays, instructions, avis et collections des membres, clé gratuite ; plafond initial de 100 appels par jour et par clé."
 covers = ["official", "instructions", "data"]
 languages = ["en"]
 countries = ["international"]
@@ -144,6 +153,9 @@ name = "BrickLink API"
 url = "https://www.bricklink.com/v3/api.page"
 group = "apis-and-data"
 featured = true
+rank = {intl = 2}
+rank_reason_en = "Only large-scale source of resale prices for parts and sets, with a free key and 5000 calls per day by default; active on 18 November 2026."
+rank_reason_fr = "Seule source à grande échelle de prix de revente des pièces et des sets, avec clé gratuite et 5000 appels par jour par défaut ; actif le 18 novembre 2026."
 operator = "lego-group"
 covers = ["official", "alternative", "parts", "second-hand", "data"]
 languages = ["en"]
@@ -341,6 +353,9 @@ name = "LDraw open standard and parts library"
 url = "https://www.ldraw.org/"
 group = "apis-and-data"
 featured = true
+rank = {intl = 3}
+rank_reason_en = "Open standard format and parts library of 17230 parts underlying LeoCAD, LDView, LPub3D and Studio export; geometry only, no catalog or price API; active on 23 November 2026."
+rank_reason_fr = "Format ouvert et bibliothèque de 17230 pièces sur lesquels reposent LeoCAD, LDView, LPub3D et l'export de Studio ; géométrie seulement, sans catalogue ni API de prix ; actif le 23 novembre 2026."
 covers = ["official", "parts", "data"]
 languages = ["en"]
 countries = ["international"]
@@ -374,6 +389,9 @@ name = "BrickLink Studio"
 url = "https://www.bricklink.com/v3/studio/download.page"
 group = "design-software"
 featured = true
+rank = {intl = 1}
+rank_reason_en = "Free editor combining a parts list, an instruction editor and photorealistic rendering, with BrickLink catalog integration and LDraw export; updated on 27 October 2026."
+rank_reason_fr = "Éditeur gratuit réunissant liste de pièces, éditeur d'instructions et rendu photoréaliste, avec intégration du catalogue BrickLink et export LDraw ; mis à jour le 27 octobre 2026."
 operator = "lego-group"
 covers = ["official", "alternative", "parts", "custom-builds", "instructions"]
 languages = ["en"]
@@ -407,6 +425,9 @@ name = "LeoCAD"
 url = "https://www.leocad.org/"
 group = "design-software"
 featured = true
+rank = {intl = 2}
+rank_reason_en = "Free open-source editor on the LDraw library for Windows, macOS and Linux that handles large models and multi-step instructions; active on 21 November 2026."
+rank_reason_fr = "Éditeur libre et gratuit sur la bibliothèque LDraw pour Windows, macOS et Linux, qui gère les grands modèles et les instructions en plusieurs étapes ; actif le 21 novembre 2026."
 covers = ["official", "parts", "custom-builds", "instructions"]
 languages = ["en"]
 countries = ["international"]
@@ -465,6 +486,9 @@ id = "lpub3d"
 name = "LPub3D"
 url = "https://trevorsandy.github.io/lpub3d/"
 group = "design-software"
+rank = {intl = 4}
+rank_reason_en = "Open-source editor dedicated to building instructions from LDraw files, with PDF, POV-Ray, STL and BrickLink exports; last activity on 30 June 2026."
+rank_reason_fr = "Éditeur libre dédié aux instructions de montage à partir de fichiers LDraw, avec exports PDF, POV-Ray, STL et BrickLink ; dernière activité le 30 juin 2026."
 covers = ["official", "instructions", "custom-builds"]
 languages = ["en"]
 countries = ["international"]
@@ -491,6 +515,9 @@ id = "ldview"
 name = "LDView"
 url = "https://github.com/tcobbs/ldview"
 group = "design-software"
+rank = {intl = 5}
+rank_reason_en = "Free real-time viewer for LDraw models on Windows, macOS and Linux with a dual licence choice; viewer only, no editing; active on 15 November 2026."
+rank_reason_fr = "Visionneuse gratuite en temps réel de modèles LDraw pour Windows, macOS et Linux, à licence double au choix ; visionneuse seulement, sans édition ; actif le 15 novembre 2026."
 covers = ["official", "parts"]
 languages = ["en"]
 countries = ["international"]
@@ -518,6 +545,9 @@ id = "mecabricks"
 name = "Mecabricks"
 url = "https://www.mecabricks.com/"
 group = "design-software"
+rank = {intl = 3}
+rank_reason_en = "In-browser editor without installation, with a Blender add-on and a BrickLink parts list export; active on 23 November 2026, pricing tiers not verified."
+rank_reason_fr = "Éditeur dans le navigateur sans installation, avec module Blender et export de liste de pièces BrickLink ; actif le 23 novembre 2026, niveaux de prix non vérifiés."
 covers = ["official", "alternative", "custom-builds"]
 languages = ["en"]
 countries = ["international"]
@@ -545,6 +575,9 @@ id = "lego-builder-app"
 name = "LEGO Builder"
 url = "https://www.lego.com/en-us/builder-app"
 group = "apps"
+rank = {intl = 1}
+rank_reason_en = "Free app with interactive 3D building instructions, more than 10 million downloads as stated, interface in English, French and German; limited to official LEGO sets; updated on 12 November 2026."
+rank_reason_fr = "Application gratuite d'instructions de montage en 3D interactives, plus de 10 millions de téléchargements selon l'application, interface en anglais, français et allemand ; limitée aux sets de marque LEGO ; mise à jour le 12 novembre 2026."
 operator = "lego-group"
 covers = ["official", "instructions"]
 languages = ["en", "fr", "de"]
@@ -571,6 +604,9 @@ kind = "official"
 id = "brick-search-app"
 name = "Brick Search"
 url = "https://bricksearch.app/"
+rank = {intl = 3}
+rank_reason_en = "Scans collectible minifigure QR codes with collection tracking, an archive of more than 10000 sets and Brickset synchronisation; last activity on 29 May 2026, premium features paid."
+rank_reason_fr = "Lit les codes QR des figurines à collectionner, avec suivi de collection, archive de plus de 10000 sets et synchronisation avec Brickset ; dernière activité le 29 mai 2026, fonctions premium payantes."
 feed = "https://bricksearch.app/feed/"
 group = "apps"
 featured = true
@@ -684,6 +720,9 @@ id = "brick-work"
 name = "Brick Work"
 url = "https://github.com/Ulef1005/brick-work"
 group = "open-source"
+rank = {intl = 4}
+rank_reason_en = "Self-hosted collection app with a missing-parts workbench, BrickLink orders, REST API and MCP server under MIT licence; young project created on 15 October 2026, active on 9 November 2026."
+rank_reason_fr = "Application de collection auto-hébergée avec poste de travail des pièces manquantes, commandes BrickLink, API REST et serveur MCP sous licence MIT ; projet jeune créé le 15 octobre 2026, actif le 9 novembre 2026."
 covers = ["official", "parts"]
 languages = ["en"]
 countries = ["international"]
@@ -793,6 +832,9 @@ name = "BrickStore"
 url = "https://github.com/rgriebl/brickstore"
 group = "open-source"
 featured = true
+rank = {intl = 1}
+rank_reason_en = "Offline BrickLink inventory tool on five platforms under GPL version 3, interface in five languages, with mass upload and price guide pricing; aimed at BrickLink sellers; active on 12 September 2026."
+rank_reason_fr = "Outil d'inventaire BrickLink hors ligne sur cinq plateformes sous licence GPL version 3, interface en cinq langues, avec envoi en masse et prix du guide de prix ; destiné aux vendeurs BrickLink ; actif le 12 septembre 2026."
 covers = ["official", "alternative", "parts", "second-hand"]
 languages = ["en", "de", "es", "sv", "fr"]
 countries = ["international"]
@@ -947,6 +989,9 @@ id = "basicallysource-sorter"
 name = "basicallysource sorter"
 url = "https://github.com/basicallysource/sorter"
 group = "open-source"
+rank = {intl = 5}
+rank_reason_en = "Open repository of a machine-learning sorting machine built by a group of makers, with commits in November 2025; work in progress, documentation not assessed."
+rank_reason_fr = "Dépôt ouvert d'une machine de tri par apprentissage automatique conçue par un groupe de bricoleurs, avec contributions en novembre 2025 ; travail en cours, documentation non évaluée."
 covers = ["parts"]
 languages = ["en"]
 countries = ["international"]
@@ -974,6 +1019,9 @@ id = "omgbricks"
 name = "omgbricks"
 url = "https://omgbricks.com/"
 group = "apps"
+rank = {intl = 4}
+rank_reason_en = "Ranked first on iPhone and joint first on Android in the Brickset test of November 2024 for reading the data code of collectible minifigure boxes; reads sealed boxes only."
+rank_reason_fr = "Classée première sur iPhone et ex aequo sur Android dans le test de Brickset de novembre 2024 pour la lecture du code des boîtes de figurines à collectionner ; lit les boîtes fermées seulement."
 covers = ["official", "minifigures", "data"]
 languages = ["en"]
 countries = ["international"]
@@ -1034,6 +1082,9 @@ id = "brickscan"
 name = "BrickScan"
 url = "https://brickscan.com/"
 group = "apps"
+rank = {intl = 5}
+rank_reason_en = "Identifies loose minifigures and parts from a photo with XML export to inventory tools such as BrickStore; coverage figures are the site's own claims; active on 23 November 2026."
+rank_reason_fr = "Identifie figurines et pièces en vrac à partir d'une photo, avec export XML vers des outils d'inventaire comme BrickStore ; chiffres de couverture donnés par le site lui-même ; actif le 23 novembre 2026."
 covers = ["official", "minifigures", "parts", "data"]
 languages = ["en"]
 countries = ["international"]
@@ -1087,6 +1138,9 @@ name = "Pybricks"
 url = "https://pybricks.com/"
 group = "programming-and-control"
 featured = true
+rank = {intl = 1}
+rank_reason_en = "Python coding for LEGO smart hubs across Technic, City, BOOST, MINDSTORMS and SPIKE with programs stored on the hub, open-source firmware with commits on 14 November 2026."
+rank_reason_fr = "Programmation en Python des hubs LEGO (Technic, City, BOOST, MINDSTORMS, SPIKE) avec programmes stockés sur le hub, micrologiciel libre avec contributions le 14 novembre 2026."
 covers = ["official", "learning"]
 languages = ["en"]
 countries = ["international"]
@@ -1124,6 +1178,9 @@ id = "brickrail"
 name = "Brickrail"
 url = "https://github.com/Novakasa/brickrail"
 group = "programming-and-control"
+rank = {intl = 5}
+rank_reason_en = "Desktop software automating Powered Up train layouts with Pybricks hubs, MIT licence, 109 stars; last activity on 6 May 2026."
+rank_reason_fr = "Logiciel de bureau d'automatisation de circuits de trains Powered Up avec hubs Pybricks, licence MIT, 109 étoiles ; dernière activité le 6 mai 2026."
 covers = ["official"]
 languages = ["en"]
 countries = ["international"]
@@ -1189,6 +1246,9 @@ id = "node-poweredup"
 name = "node-poweredup"
 url = "https://github.com/nathankellenicki/node-poweredup"
 group = "programming-and-control"
+rank = {intl = 4}
+rank_reason_en = "JavaScript and TypeScript module for Powered Up devices, 525 stars, MIT licence, documentation site, version 10.1.0 in January 2026; last commit on 29 March 2026."
+rank_reason_fr = "Module JavaScript et TypeScript pour les appareils Powered Up, 525 étoiles, licence MIT, site de documentation, version 10.1.0 en janvier 2026 ; dernière contribution le 29 mars 2026."
 covers = ["official"]
 languages = ["en"]
 countries = ["international"]
@@ -1287,6 +1347,9 @@ id = "brickit"
 name = "Brickit"
 url = "https://brickit.app/"
 group = "apps"
+rank = {intl = 2}
+rank_reason_en = "Recognises loose bricks from one photo and suggests builds, with about 23 thousand App Store ratings and 13 interface languages; version 5.8.3 on 16 November 2026; advanced features need a subscription."
+rank_reason_fr = "Reconnaît des briques en vrac sur une photo et propose des montages, avec environ 23 mille évaluations App Store et 13 langues d'interface ; version 5.8.3 le 16 novembre 2026 ; fonctions avancées sur abonnement."
 covers = ["official", "parts", "instructions"]
 languages = ["en", "nl", "fr", "de", "it", "ja", "ko", "pt", "ru", "zh", "es", "tr"]
 countries = ["international"]
@@ -1318,6 +1381,9 @@ id = "lego-powered-up-app"
 name = "LEGO Powered Up"
 url = "https://www.lego.com/en-us/themes/powered-up/about"
 group = "programming-and-control"
+rank = {intl = 2}
+rank_reason_en = "Free app on iOS, Android and Fire OS to drive trains and code Powered Up hubs in blocks, up to four hubs at once; version 4.4.2 on 16 June 2026; simple block language."
+rank_reason_fr = "Application gratuite sur iOS, Android et Fire OS pour piloter les trains et programmer les hubs Powered Up par blocs, jusqu'à quatre hubs à la fois ; version 4.4.2 le 16 juin 2026 ; langage par blocs simple."
 operator = "lego-group"
 covers = ["official"]
 languages = ["en"]
@@ -1355,6 +1421,9 @@ id = "importldraw"
 name = "ImportLDraw"
 url = "https://github.com/TobyLobster/ImportLDraw"
 group = "open-source"
+rank = {intl = 2}
+rank_reason_en = "Blender add-on importing LDraw, MPD and Studio models for renders, 379 stars, version 1.3.0 on 5 October 2026; import and rendering only, not an editor."
+rank_reason_fr = "Module Blender important les modèles LDraw, MPD et Studio pour des rendus, 379 étoiles, version 1.3.0 le 5 octobre 2026 ; import et rendu seulement, pas un éditeur."
 covers = ["official", "custom-builds"]
 languages = ["en"]
 countries = ["international"]
@@ -1387,6 +1456,9 @@ id = "lego-scad"
 name = "LEGO.scad"
 url = "https://github.com/cfinke/LEGO.scad"
 group = "open-source"
+rank = {intl = 3}
+rank_reason_en = "Parametric OpenSCAD generator of compatible bricks, tiles, slopes and Technic-style holes for 3D printing, 397 stars, MIT licence, commits on 17 and 18 July 2026."
+rank_reason_fr = "Générateur paramétrique OpenSCAD de briques compatibles, tuiles, pentes et trous de style Technic pour l'impression 3D, 397 étoiles, licence MIT, contributions des 17 et 18 juillet 2026."
 covers = ["parts", "custom-builds"]
 languages = ["en"]
 countries = ["international"]
@@ -1419,6 +1491,9 @@ id = "pylgbst"
 name = "pylgbst"
 url = "https://github.com/undera/pylgbst"
 group = "programming-and-control"
+rank = {intl = 3}
+rank_reason_en = "Python library for Move Hub and Powered Up hubs, 587 stars, MIT licence, commits on 22 November 2026; programs run from the computer, not on the hub."
+rank_reason_fr = "Bibliothèque Python pour les hubs Move Hub et Powered Up, 587 étoiles, licence MIT, contributions le 22 novembre 2026 ; les programmes tournent depuis l'ordinateur, pas sur le hub."
 covers = ["official"]
 languages = ["en"]
 countries = ["international"]
