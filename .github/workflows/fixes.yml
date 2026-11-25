@@ -1,7 +1,9 @@
 name: Data fixes
 on:
-  schedule:
-    - cron: "29 4 * * 2"   # weekly, Tuesdays
+  workflow_run:   # the same morning as the links issue: when the weekly Links run ends, whatever its conclusion
+    workflows: [Links]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
@@ -10,6 +12,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   fixes:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.display_title != 'Links (dry run)'
     runs-on: ubuntu-latest
     permissions:
       contents: write
