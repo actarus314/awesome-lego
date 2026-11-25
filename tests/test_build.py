@@ -220,6 +220,12 @@ class Lot3Model(unittest.TestCase):
     def test_operator(self):
         self.assertTrue(any("operator" in e for e in load_with("places.toml", lambda t: t.replace('operator = "lego-group"', 'operator = "merlin"', 1))))
 
+    def test_no_rank_on_a_dead_entry(self):
+        def edit(t):
+            t = set_field("lego-house", "status", '"dead"')(t)
+            return set_field("lego-house", "rank", "{intl = 1}")(t)
+        self.assertTrue(any("rank on an entry whose status is dead" in n for n in notes_with("places.toml", edit)))
+
 
 class Lot3Texts(unittest.TestCase):
     def test_brand_in_french_sentences(self):

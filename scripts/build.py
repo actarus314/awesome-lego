@@ -153,6 +153,8 @@ def load():
                 code = {"country": r"[A-Z]{2}", "language": r"[a-z]{2}", "intl": r"(?!)"}.get(sc, r"(?!)")
                 if not isinstance(rk, dict) or not rk or any(not (k == "intl" or re.fullmatch(code, k)) or v not in RANK or isinstance(v, bool) for k, v in rk.items()):
                     errors.append(f"{w}: rank is a table {{intl = 1, <{'code' if sc == 'intl' else sc} code> = 2}} of ranks 1 to 5 (group scope: {sc})")
+                elif r.get("status") in ("dead", "archived", "inactive"):  # a rank sends visitors to the entry (Where to start, README)
+                    notes.append(f"{w}: rank on an entry whose status is {r['status']}")
                 elif not (r.get("rank_reason_en") and r.get("rank_reason_fr")):
                     notes.append(f"{w}: rank_reason_en and rank_reason_fr say why the entry has its rank")
             sz = r.get("size")
