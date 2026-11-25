@@ -283,6 +283,8 @@ def text_notes(cats):
                         notes.append(f"{w}: {k}: « {OFFICIEL.search(x).group(0)} » in a sentence: de marque LEGO (a product), du groupe LEGO (the company), sous enseigne LEGO (a partner)")
                     if (k.endswith("_en") or k.endswith("_fr")) and NUMERIC_DATE.search(x):
                         notes.append(f"{w}: {k}: date {NUMERIC_DATE.search(x).group(0)} with the month in letters")
+                    if (k.endswith("_en") or k.endswith("_fr")) and re.search(r"(?<!\.)\.\.(?!\.)", x):
+                        notes.append(f"{w}: {k}: double period")
                     if (k.endswith("_en") or k.endswith("_fr")) and FULL_MONTH.search(x):
                         notes.append(f"{w}: {k}: date « {FULL_MONTH.search(x).group(0)} » with the month abbreviated (Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec; janv. févr. mars avr. mai juin juil. août sept. oct. nov. déc.)")
             sm = r.get("summary_en", "")
