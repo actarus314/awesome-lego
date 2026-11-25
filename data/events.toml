@@ -1810,3 +1810,797 @@ kind = "read"
 url = "https://ideas.lego.com/blog/0ca35d5b-df80-4a65-8838-23a0aee5f7c7"
 date = "2026-04-27"
 kind = "read"
+
+[[resource]]
+id = "brickbuilt-sydney"
+name = "Brickbuilt Sydney"
+url = "https://www.brickbuilt.sydney/"
+group = "conventions"
+covers = ["events", "official"]
+languages = ["en"]
+countries = ["AU"]
+access = "paid"
+summary_en = "Charity show of the Sydney LEGO Users Group at Sydney Showground, with more than 180 exhibitors and more than 6000 visitors expected for the 2026 edition; proceeds go to the Sydney Children's Hospitals Foundation."
+summary_fr = "Rassemblement caritatif du Sydney LEGO Users Group au Sydney Showground, avec plus de 180 exposants et plus de 6000 visiteurs attendus pour l'édition 2026 ; recettes versées à la Sydney Children's Hospitals Foundation."
+strengths_en = ["Fifth edition held on 30 and 31 May 2026", "Presented as the largest LEGO fan event in New South Wales", "Next edition on 29 and 30 May 2027 according to LEGO Fan CoLab, where it is a flagship event"]
+strengths_fr = ["Cinquième édition tenue les 30 et 31 mai 2026", "Présentée comme le plus grand événement de fans LEGO de Nouvelle-Galles du Sud", "Prochaine édition les 29 et 30 mai 2027 selon LEGO Fan CoLab, où elle figure parmi les événements phares"]
+weaknesses_en = ["The organiser's site still shows the 2026 edition; the 2027 date comes from LEGO Fan CoLab only", "Presented as a family event suitable for all ages"]
+weaknesses_fr = ["Le site de l'organisateur affiche encore l'édition 2026 ; la date 2027 vient de LEGO Fan CoLab seulement", "Présenté comme un événement familial pour tous les âges"]
+size = [{n = 180, unit = "exhibitors", approx = "more-than"}]
+last_activity = "2026-05-31"
+confidence = "medium"
+city = "Sydney"
+next_date = "2027-05-29"
+recurrence_en = "Yearly, late May"
+recurrence_fr = "Chaque année, fin mai"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://www.brickbuilt.sydney/about"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.sydneyolympicpark.nsw.gov.au/things-to-see-and-do/brickbuilt-sydney"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://fancolab.lego.com/events/event/13281-brickbuilt-sydney-2027/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "gold-coast-brick-show"
+name = "Gold Coast Brick Show"
+url = "https://www.qlug.org/event-info/qlug-gold-coast-brick-show-2/form"
+group = "conventions"
+covers = ["events", "official"]
+languages = ["en"]
+countries = ["AU"]
+access = "paid"
+summary_en = "Two-day fan show of the Queensland LEGO Users Group in a school campus, moved to a larger site in 2026; tickets cost 5 AUD."
+summary_fr = "Deux jours de présentations de fans du Queensland LEGO Users Group dans un campus scolaire, déplacés sur un site plus grand en 2026 ; billets à 5 AUD."
+strengths_en = ["Recognised by LEGO as a flagship community event", "Play area for children and LEGO retail stands", "Edition 2026 on 2 and 3 May at Trinity Lutheran College; 2027 edition announced for 1 and 2 May"]
+strengths_fr = ["Reconnu par le groupe LEGO comme événement phare des communautés", "Espace de jeu pour les enfants et stands de vente de produits de marque LEGO", "Édition 2026 les 2 et 3 mai au Trinity Lutheran College ; édition 2027 annoncée pour les 1er et 2 mai"]
+weaknesses_en = ["The organiser's page still shows the 2026 edition; the 2027 date comes from LEGO Fan CoLab only"]
+weaknesses_fr = ["La page de l'organisateur affiche encore l'édition 2026 ; la date 2027 vient de LEGO Fan CoLab seulement"]
+last_activity = "2026-05-03"
+confidence = "medium"
+city = "Gold Coast"
+next_date = "2027-05-01"
+recurrence_en = "Yearly, early May"
+recurrence_fr = "Chaque année, début mai"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://www.qlug.org/event-info/qlug-gold-coast-brick-show-2/form"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://fancolab.lego.com/events/event/13352-gold-coast-brick-show/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "melbourne-brick-show"
+name = "Melbourne Brick Show"
+url = "https://mugsmelbourne.com.au/melbourne-brick-show/"
+group = "conventions"
+covers = ["events", "official"]
+languages = ["en"]
+countries = ["AU"]
+access = "paid"
+summary_en = "Volunteer-run show of the Melbourne LEGO User Group in Coburg Town Hall; the second edition took place on 5 and 6 September 2026, the third is planned for 2027."
+summary_fr = "Rassemblement bénévole du Melbourne LEGO User Group à l'hôtel de ville de Coburg ; la deuxième édition a eu lieu les 5 et 6 septembre 2026, la troisième est prévue en 2027."
+strengths_en = ["Admission 10 AUD for adults, 5 AUD for children aged 4 to 16 and 25 AUD for a family pass (2026)", "Next edition on 4 and 5 September 2027 according to LEGO Fan CoLab, where it is a flagship event"]
+strengths_fr = ["Entrée à 10 AUD pour les adultes, 5 AUD pour les enfants de 4 à 16 ans et 25 AUD pour le forfait famille (2026)", "Prochaine édition les 4 et 5 septembre 2027 selon LEGO Fan CoLab, où elle figure parmi les événements phares"]
+weaknesses_en = ["The organiser's page still shows the 2026 edition; the 2027 date comes from LEGO Fan CoLab only", "Small show: almost 70 builders in 2026 according to a local newspaper"]
+weaknesses_fr = ["La page de l'organisateur affiche encore l'édition 2026 ; la date 2027 vient de LEGO Fan CoLab seulement", "Petite exposition : près de 70 constructeurs en 2026 selon un journal local"]
+last_activity = "2026-09-06"
+confidence = "medium"
+city = "Melbourne"
+next_date = "2027-09-04"
+recurrence_en = "Yearly, early September"
+recurrence_fr = "Chaque année, début septembre"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://mugsmelbourne.com.au/melbourne-brick-show/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://fancolab.lego.com/events/event/13350-melbourne-brick-show/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brunswickvoice.com.au/build-it-and-they-will-come-to-coburg/"
+date = "2026-09-05"
+kind = "third-party"
+
+[[resource]]
+id = "christchurch-brick-show"
+name = "Christchurch Brick Show"
+url = "https://imagination-station.org.nz/pages/the-christchurch-brick-show"
+group = "conventions"
+covers = ["events", "official"]
+languages = ["en"]
+countries = ["NZ"]
+access = "paid"
+summary_en = "Run by the user group LUG 4/2 in the Wolfbrook Arena during the July school holidays, billed as the biggest LEGO show in New Zealand since 2012; profits go to charities and education projects."
+summary_fr = "Organisée par le groupe d'utilisateurs LUG 4/2 au Wolfbrook Arena pendant les vacances de juillet, présentée comme la plus grande exposition LEGO de Nouvelle-Zélande depuis 2012 ; bénéfices reversés à des associations et projets éducatifs."
+strengths_en = ["More than 350 exhibitors on 4000 m² announced", "Build-and-learn zone for children, free parking, food on site", "Edition 2026 on 11 and 12 July, with a low-sensory hour from 8:00 to 9:00 each day"]
+strengths_fr = ["Plus de 350 exposants annoncés sur 4000 m²", "Zone de construction et d'apprentissage pour les enfants, parking gratuit, restauration sur place", "Édition 2026 les 11 et 12 juillet, avec une heure à stimulation réduite de 8 h à 9 h chaque jour"]
+weaknesses_en = ["Next edition not announced", "Family show for all ages rather than an adult convention"]
+weaknesses_fr = ["Prochaine édition non annoncée", "Exposition familiale pour tous les âges plutôt que convention d'adultes"]
+size = [{n = 350, unit = "exhibitors", approx = "more-than"}, {n = 4000, unit = "square-metres"}]
+last_activity = "2026-07-12"
+confidence = "medium"
+city = "Christchurch"
+recurrence_en = "Yearly, July school holidays"
+recurrence_fr = "Chaque année, vacances scolaires de juillet"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://imagination-station.org.nz/pages/the-christchurch-brick-show"
+date = "2026-11-25"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://imagination-station.org.nz/pages/the-christchurch-brick-show-information"
+date = "2026-11-25"
+kind = "indexed"
+
+[[resource.sources]]
+url = "https://events.humanitix.com/christchurch-brick-show-2026"
+date = "2026-11-25"
+kind = "third-party"
+
+[resource.contact]
+email = "info@christchurchbrickshow.nz"
+url = "https://imagination-station.org.nz/pages/contact-lug-4-2"
+date = "2026-11-25"
+
+[[resource]]
+id = "japan-brickfest"
+name = "Japan Brickfest"
+url = "https://japanbrickfest.klug-jp.com/"
+group = "conventions"
+covers = ["events", "official"]
+languages = ["ja", "en"]
+countries = ["JP"]
+access = "paid"
+summary_en = "Official LEGO Hub Event since 2017, run by the Kansai LEGO User Group with more than 400 fan builders; the 2026 edition took place on 7 and 8 November at KIITO in Kobe."
+summary_fr = "Hub Event officiel du groupe LEGO depuis 2017, organisé par le Kansai LEGO User Group avec plus de 400 constructeurs fans ; édition 2026 les 7 et 8 novembre au KIITO de Kobe."
+strengths_en = ["Entry 1500 JPY for adults and 1000 JPY for children aged 3 to 15 (2026), cash only", "Half-price entry for visitors from Denmark with a valid passport", "Site in English, Japanese, Danish, Chinese and Korean"]
+strengths_fr = ["Entrée à 1500 JPY pour les adultes et 1000 JPY pour les enfants de 3 à 15 ans (2026), en espèces uniquement", "Demi-tarif pour les visiteurs du Danemark munis d'un passeport valide", "Site en anglais, japonais, danois, chinois et coréen"]
+weaknesses_en = ["Next edition not announced", "The banner of the site still shows 7 and 8 June 2026 at Rokko Island, while the home page gives 7 and 8 November at KIITO"]
+weaknesses_fr = ["Prochaine édition non annoncée", "Le bandeau du site affiche encore les 7 et 8 juin 2026 à Rokko Island, alors que la page d'accueil donne les 7 et 8 novembre au KIITO"]
+size = [{n = 400, unit = "exhibitors", approx = "more-than"}]
+last_activity = "2026-11-08"
+confidence = "high"
+city = "Kobe"
+city_fr = "Kobé"
+city_local = "神戸"
+recurrence_en = "Yearly"
+recurrence_fr = "Chaque année"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://japanbrickfest.klug-jp.com/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://japanbrickfest.klug-jp.com/access/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://klug-jp.com/events"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "korea-brick-party"
+name = "Korea Brick Party"
+url = "https://koreabrickparty.com/en/home_en/"
+group = "conventions"
+covers = ["events", "official"]
+languages = ["ko", "en"]
+countries = ["KR"]
+access = "paid"
+summary_en = "Annual gathering for adult fans since 2019, with builders from Korea and abroad, workshops, a brick market and competitions; the 2026 edition was on 1 and 2 August at the Kim Koo Museum."
+summary_fr = "Rassemblement annuel d'adultes fans depuis 2019, avec des constructeurs de Corée et de l'étranger, ateliers, marché de briques et concours ; l'édition 2026 s'est tenue les 1er et 2 août au musée Kim Koo."
+strengths_en = ["Admission 11000 KRW for adult fans and 7000 KRW for teenage fans, free up to age 5 (2026)", "Opening hours 10:00 to 16:00"]
+strengths_fr = ["Entrée à 11000 KRW pour les adultes fans et 7000 KRW pour les adolescents fans, gratuite jusqu'à 5 ans (2026)", "Ouverture de 10 h à 16 h"]
+weaknesses_en = ["2027 dates not announced"]
+weaknesses_fr = ["Dates 2027 non annoncées"]
+last_activity = "2026-08-02"
+confidence = "high"
+city = "Seoul"
+city_fr = "Séoul"
+city_local = "서울"
+recurrence_en = "Yearly, early August"
+recurrence_fr = "Chaque année, début août"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://koreabrickparty.com/en/home_en/"
+date = "2026-11-25"
+kind = "official"
+
+[resource.contact]
+email = "kbp@koreabrickparty.com"
+url = "https://koreabrickparty.com/en/home_en/"
+date = "2026-11-25"
+
+[[resource]]
+id = "enblock"
+name = "ENBLOCK"
+url = "https://bugs.rocks/tag/enblock/"
+group = "conventions"
+covers = ["events", "official"]
+languages = ["en"]
+countries = ["SG"]
+summary_en = "Flagship show of the Bricks User Group Singapore, open to the public, with trains, city layouts and collaborative builds; the venue changes each year, Changi Airport Terminal 2 in 2025."
+summary_fr = "Rendez-vous phare du Bricks User Group Singapore, ouvert au public, avec trains, villes miniatures et constructions collectives ; le lieu change chaque année, le terminal 2 de l'aéroport de Changi en 2025."
+strengths_en = ["Reports published for the editions from 2022 to 2025", "Next edition on 27 and 28 November 2027 according to LEGO Fan CoLab, where it is a flagship event"]
+strengths_fr = ["Comptes rendus publiés pour les éditions de 2022 à 2025", "Prochaine édition les 27 et 28 novembre 2027 selon LEGO Fan CoLab, où elle figure parmi les événements phares"]
+weaknesses_en = ["The latest report on the community site covers the 2025 edition", "Admission conditions not published on the pages read; the 2027 date comes from LEGO Fan CoLab only"]
+weaknesses_fr = ["Le dernier compte rendu du site de la communauté porte sur l'édition 2025", "Conditions d'entrée non publiées sur les pages lues ; la date 2027 vient de LEGO Fan CoLab seulement"]
+last_activity = "2025-08-05"
+confidence = "medium"
+city = "Singapore"
+city_fr = "Singapour"
+next_date = "2027-11-27"
+recurrence_en = "Yearly"
+recurrence_fr = "Chaque année"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://bugs.rocks/tag/enblock/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://fancolab.lego.com/events/event/13465-enblock-2027/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "brick-fest-peru"
+name = "BrickFest Perú"
+url = "https://lugperu.com/eventos/"
+group = "conventions"
+covers = ["events", "official"]
+languages = ["es"]
+countries = ["PE"]
+access = "free"
+summary_en = "Free yearly show of LUG Perú, the recognised Peruvian fan group, held in Lima since 2013 with the 10th edition on 22 November 2025; the 2026 edition was announced in September without a date."
+summary_fr = "Rendez-vous annuel gratuit de LUG Perú, groupe de fans péruvien reconnu, tenu à Lima depuis 2013 avec la 10e édition le 22 novembre 2025 ; l'édition 2026 a été annoncée en septembre sans date."
+strengths_en = ["Free entry", "All editions listed since the first one in 2013", "Recognised by LEGO as a flagship community event"]
+strengths_fr = ["Entrée gratuite", "Toutes les éditions listées depuis la première en 2013", "Reconnue par le groupe LEGO comme événement phare des communautés"]
+weaknesses_en = ["No date published on the community site for the 2026 edition", "LEGO Fan CoLab lists the 12th edition on 9 October 2027"]
+weaknesses_fr = ["Aucune date publiée sur le site de la communauté pour l'édition 2026", "LEGO Fan CoLab indique la 12e édition le 9 octobre 2027"]
+last_activity = "2026-09-02"
+confidence = "medium"
+city = "Lima"
+recurrence_en = "Yearly, autumn"
+recurrence_fr = "Chaque année, en automne"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://lugperu.com/eventos/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://lugperu.com/noticias/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://fancolab.lego.com/events/event/13270-brick-fest-per%C3%BA/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "bricks-for-all"
+name = "Bricks For All"
+url = "https://brickantiers.com/events/"
+group = "conventions"
+covers = ["events", "official"]
+languages = ["nl"]
+countries = ["BE", "NL"]
+access = "paid"
+summary_en = "Touring series run by the group Brickantiers in Dutch and Flemish towns, with exhibitors, sales stands and a play corner: Harmelen, Torhout and Houthalen-Helchteren in 2027."
+summary_fr = "Série itinérante organisée par le groupe Brickantiers dans des villes néerlandaises et flamandes, avec exposants, stands de vente et coin de jeu : Harmelen, Torhout et Houthalen-Helchteren en 2027."
+strengths_en = ["Harmelen 20 and 21 February 2027, Torhout 20 and 21 March 2027, Houthalen-Helchteren 16 and 17 October 2027", "Admission 5 € at Torhout (free under 6 years), cash or Payconiq", "Torhout edition recognised by LEGO as a flagship community event"]
+strengths_fr = ["Harmelen les 20 et 21 février 2027, Torhout les 20 et 21 mars 2027, Houthalen-Helchteren les 16 et 17 octobre 2027", "Entrée à 5 € à Torhout (gratuite avant 6 ans), en espèces ou par Payconiq", "Édition de Torhout reconnue par le groupe LEGO comme événement phare des communautés"]
+weaknesses_en = ["Pages in Dutch only"]
+weaknesses_fr = ["Pages en néerlandais uniquement"]
+last_activity = "2026-11-25"
+confidence = "medium"
+city = "Harmelen"
+next_date = "2027-02-20"
+recurrence_en = "Several editions per year"
+recurrence_fr = "Plusieurs éditions par an"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://brickantiers.com/events/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brickantiers.com/events/bricks-for-all-torhout-21-22-maart-2026-258/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://fancolab.lego.com/events/event/13256-bricks-for-all-torhout-2027/"
+date = "2026-11-25"
+kind = "official"
+
+[resource.contact]
+address = "H2O recreatiecentrum, De Uithof 1, 3481 WE Harmelen"
+url = "https://brickantiers.com/events/"
+date = "2026-11-25"
+
+[[resource]]
+id = "cremona-bricks"
+name = "Cremona & Bricks"
+url = "https://cremonaebricks.it/"
+group = "conventions"
+covers = ["events", "official"]
+languages = ["it"]
+countries = ["IT"]
+access = "paid"
+summary_en = "Co-organised by CremonaFiere and the association Cremona Bricks, billed as the largest Italian brick event, with a city diorama, a vintage area, a conference area and a school robotics contest."
+summary_fr = "Coorganisé par CremonaFiere et l'association Cremona Bricks, présenté comme le plus grand événement italien de la brique, avec ville en diorama, espace vintage, espace de conférences et concours scolaire de robotique."
+strengths_en = ["Edition 2026 on 14 and 15 March, open 10:00 to 18:30", "Next edition on 13 and 14 March 2027 according to the 2027 calendar of CremonaFiere", "Independent fan association founded in 2012 as co-organiser"]
+strengths_fr = ["Édition 2026 les 14 et 15 mars, ouverte de 10 h à 18 h 30", "Prochaine édition les 13 et 14 mars 2027 selon le calendrier 2027 de CremonaFiere", "Association de fans indépendante fondée en 2012 comme coorganisatrice"]
+weaknesses_en = ["The event site still shows the 2026 edition; the 2027 dates come from the CremonaFiere calendar", "Family fair with play areas rather than a convention for adult fans"]
+weaknesses_fr = ["Le site de l'événement affiche encore l'édition 2026 ; les dates 2027 viennent du calendrier de CremonaFiere", "Salon familial avec espaces de jeu plutôt que convention d'adultes fans"]
+last_activity = "2026-03-15"
+confidence = "medium"
+city = "Cremona"
+city_fr = "Crémone"
+next_date = "2027-03-13"
+recurrence_en = "Yearly, March"
+recurrence_fr = "Chaque année, en mars"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://cremonaebricks.it/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://cremonaebricks.it/news/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://cremonafiere.it/calendario-2027/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "CremonaFiere, Piazza Zelioli Lanzini 1, 26100 Cremona"
+phone = "+39 0372 598011"
+email = "info@cremonaebricks.it"
+url = "https://cremonaebricks.it/"
+date = "2026-11-25"
+
+[[resource]]
+id = "pisabrickart"
+name = "PisaBrickArt"
+url = "https://www.pisabrickart.it/"
+group = "conventions"
+covers = ["events", "official"]
+languages = ["it"]
+countries = ["IT"]
+access = "free"
+summary_en = "Free show of custom builds by OrangeTeam LUG, recognised by the LEGO Group since 2014, in the former Leopolda station, with a public vote, a contest for children under 13 and a radio-controlled crawler track."
+summary_fr = "Créations originales d'OrangeTeam LUG, reconnu par le groupe LEGO depuis 2014, présentées gratuitement dans l'ancienne gare Leopolda, avec vote du public, concours pour les moins de 13 ans et piste de véhicules radiocommandés."
+strengths_en = ["13th edition on 9 and 10 October 2027, Saturday 12:00 to 19:00 and Sunday 10:00 to 19:00", "12th edition held on 19 and 20 September 2026", "Free admission, step-free access"]
+strengths_fr = ["13e édition les 9 et 10 octobre 2027, samedi de 12 h à 19 h et dimanche de 10 h à 19 h", "12e édition tenue les 19 et 20 septembre 2026", "Entrée gratuite, accès sans obstacle"]
+weaknesses_en = ["Site in Italian only"]
+weaknesses_fr = ["Site uniquement en italien"]
+last_activity = "2026-09-20"
+confidence = "high"
+city = "Pisa"
+city_fr = "Pise"
+next_date = "2027-10-09"
+recurrence_en = "Yearly, autumn"
+recurrence_fr = "Chaque année, en automne"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://www.pisabrickart.it/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.pisabrickart.it/pisabrickart-2026-xii-edizione-costruiamo-idee-creiamo-emozioni"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://alego73.com/events/"
+date = "2026-11-25"
+kind = "indexed"
+
+[resource.contact]
+address = "Stazione Leopolda, Via Francesco da Buti 1, 56125 Pisa"
+url = "https://www.pisabrickart.it/"
+date = "2026-11-25"
+
+[[resource]]
+id = "svet-kostek"
+name = "Svět kostek"
+url = "https://www.svet-kostek.cz/"
+group = "conventions"
+covers = ["events", "official"]
+languages = ["cs"]
+countries = ["CZ"]
+access = "paid"
+summary_en = "Interactive show held at the Flora Olomouc exhibition grounds with the Czechoslovak community Kostky.org, with foreign exhibitors from six countries and a record of 22000 visitors in 2022."
+summary_fr = "Présentation interactive tenue au parc des expositions Flora Olomouc avec la communauté tchécoslovaque Kostky.org, avec des exposants étrangers de six pays et un record de 22000 visiteurs en 2022."
+strengths_en = ["Edition 2026 on 31 October and 1 November, Saturday 9:00 to 18:00 and Sunday 9:00 to 17:00", "Next edition on 29 and 30 October 2027", "Play corners with several hundred thousand bricks"]
+strengths_fr = ["Édition 2026 les 31 octobre et 1er novembre, samedi de 9 h à 18 h et dimanche de 9 h à 17 h", "Prochaine édition les 29 et 30 octobre 2027", "Coins de jeu avec plusieurs centaines de milliers de briques"]
+weaknesses_en = ["Site in Czech only", "The visitor figure is the record of 2022"]
+weaknesses_fr = ["Site uniquement en tchèque", "Le chiffre de visiteurs est le record de 2022"]
+size = [{n = 22000, unit = "visitors"}]
+last_activity = "2026-11-01"
+confidence = "high"
+city = "Olomouc"
+next_date = "2027-10-29"
+recurrence_en = "Yearly, end of October"
+recurrence_fr = "Chaque année, fin octobre"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://www.svet-kostek.cz/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://akce.flora-ol.cz/svet-kostek-2027"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://tourism.olomouc.eu/akce/svet-kostek-2027/"
+date = "2026-11-25"
+kind = "third-party"
+
+[resource.contact]
+address = "Výstaviště Flora Olomouc, Wolkerova 37/17, 779 00 Olomouc"
+url = "https://akce.flora-ol.cz/svet-kostek-2027"
+date = "2026-11-25"
+
+[[resource]]
+id = "brick-rodeo"
+name = "Brick Rodeo"
+url = "https://brickrodeo.com/"
+group = "conventions"
+covers = ["events", "official"]
+languages = ["en"]
+countries = ["US"]
+access = "paid"
+summary_en = "Four-day gathering for fans, then two public display days, run by Texas user groups at a resort; all-access passes sold out five years in a row and more than 6000 people came in 2026."
+summary_fr = "Rassemblement de quatre jours pour les fans, puis deux jours d'exposition publique, organisé par des groupes d'utilisateurs du Texas ; forfaits complets épuisés cinq ans de suite, plus de 6000 personnes en 2026."
+strengths_en = ["2027 edition on 15 to 18 July, public days 17 and 18 July", "Run by volunteers as a Texas non-profit supporting education in science, technology, engineering, arts and mathematics", "Presentations, workshops, games and a vendor area", "Held in a resort with a waterpark"]
+strengths_fr = ["Édition 2027 du 15 au 18 juillet, jours publics les 17 et 18 juillet", "Organisée par des bénévoles au sein d'une association texane à but non lucratif qui soutient l'éducation aux sciences, aux technologies, à l'ingénierie, aux arts et aux mathématiques", "Présentations, ateliers, jeux et espace de vendeurs", "Tenue dans un complexe hôtelier avec parc aquatique"]
+weaknesses_en = ["Public tickets sold out four years in a row, so early booking is needed", "Aimed at families as well as adult fans"]
+weaknesses_fr = ["Billets publics épuisés quatre années de suite, donc réservation anticipée nécessaire", "Destinée aux familles autant qu'aux adultes fans"]
+size = [{n = 6000, unit = "visitors", approx = "more-than"}]
+last_activity = "2026-07-26"
+confidence = "high"
+city = "Round Rock"
+next_date = "2027-07-15"
+recurrence_en = "Yearly, July"
+recurrence_fr = "Chaque année, en juillet"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://brickrodeo.com/about"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brickrodeo.com/vendor-sponsor"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brick.news/calendar/event/brick-rodeo"
+date = "2026-11-25"
+kind = "third-party"
+
+[resource.contact]
+address = "Kalahari Resorts & Conventions, Round Rock, Texas"
+url = "https://brickrodeo.com/about"
+date = "2026-11-25"
+
+[[resource]]
+id = "brick-roundup"
+name = "Brick Roundup"
+url = "https://brickroundup.com/"
+group = "conventions"
+covers = ["events", "official"]
+languages = ["en"]
+countries = ["CA"]
+access = "paid"
+summary_en = "Show of the Southern Alberta LEGO Users Group at the University of Calgary, with builder perks, a vendor market and talks; the 2025 edition had 75 builders, 300 builds and almost 2000 guests."
+summary_fr = "Rendez-vous du Southern Alberta LEGO Users Group à l'université de Calgary, avec avantages pour les constructeurs, marché de vendeurs et conférences ; l'édition 2025 comptait 75 constructeurs, 300 créations et près de 2000 visiteurs."
+strengths_en = ["Edition 2026 on 17 and 18 October in MacEwan Hall, with a castle display of 20 feet by 40 feet", "Builders register through a dedicated portal"]
+strengths_fr = ["Édition 2026 les 17 et 18 octobre au MacEwan Hall, avec une présentation de château de 20 pieds sur 40 pieds", "Inscription des constructeurs via un portail dédié"]
+weaknesses_en = ["Next edition announced for 2027 without a date", "Regional show in Alberta"]
+weaknesses_fr = ["Prochaine édition annoncée pour 2027 sans date", "Exposition régionale en Alberta"]
+size = [{n = 75, unit = "exhibitors", approx = "more-than"}]
+last_activity = "2026-10-18"
+confidence = "medium"
+city = "Calgary"
+recurrence_en = "Yearly, autumn"
+recurrence_fr = "Chaque année, en automne"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://brickroundup.com/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.salug.ca/events"
+date = "2026-11-25"
+kind = "official"
+
+[resource.contact]
+email = "info@brickroundup.com"
+url = "https://brickroundup.com/contact-us/"
+date = "2026-11-25"
+
+[[resource]]
+id = "iron-builder"
+name = "Iron Builder"
+url = "https://iron.builders/"
+feed = "https://iron.builders/feed/"
+group = "competitions"
+covers = ["events"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+summary_en = "One-on-one building duels around a seed part, each lasting 16 days and judged by three experienced builders; an open yearly qualifier, the Iron Forge, selects new challengers."
+summary_fr = "Duels de construction à deux autour d'une pièce imposée, de 16 jours chacun et jugés par trois constructeurs expérimentés ; un qualificatif annuel ouvert, l'Iron Forge, désigne de nouveaux challengers."
+strengths_en = ["Round 11 of season 7 ended on 12 October 2026", "Only four Iron Builders hold a title at a time; three wins lead to the Hall of Fame", "100 seed part elements supplied to each builder per round"]
+strengths_fr = ["Le tour 11 de la saison 7 s'est terminé le 12 octobre 2026", "Quatre Iron Builders seulement détiennent un titre à la fois ; trois victoires mènent au Hall of Fame", "100 éléments de la pièce imposée fournis à chaque constructeur par tour"]
+weaknesses_en = ["Duels are by invitation; open entry only through the Iron Forge, whose information is on Discord", "Date of the next Iron Forge not published"]
+weaknesses_fr = ["Duels sur invitation ; participation ouverte uniquement par l'Iron Forge, dont les informations sont sur Discord", "Date du prochain Iron Forge non publiée"]
+last_activity = "2026-10-12"
+confidence = "high"
+recurrence_en = "Season of duels, yearly Iron Forge qualifier"
+recurrence_fr = "Saison de duels, qualificatif Iron Forge annuel"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://iron.builders/about/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://iron.builders/forge/forge-2026/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://iron.builders/feed/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "brickcontests"
+name = "BrickContests"
+url = "https://brickcontests.com/"
+group = "competitions"
+covers = ["events"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+summary_en = "Free platform where community organisers run contests, with jury scoring by criteria, leaderboards and builder profiles; running on 25 November 2026: a Narnia contest, Brickscalibur 2026 and a pirate contest."
+summary_fr = "Plateforme gratuite où la communauté lance des concours, avec jury notant par critères, classements et profils ; en cours le 25 novembre 2026 : concours Narnia, Brickscalibur 2026 et concours de pirates."
+strengths_en = ["387 builders from 33 countries and 8082 jury votes cast", "Anyone can organise a contest for free", "One pirate contest is run in French by Les Briqueurs, with prizes for France and Belgium only"]
+strengths_fr = ["387 constructeurs de 33 pays et 8082 votes de jury enregistrés", "Chacun peut organiser un concours gratuitement", "Un concours de pirates est mené en français par Les Briqueurs, avec des prix pour la France et la Belgique seulement"]
+weaknesses_en = ["Only 5 contests run so far", "An account is required to enter"]
+weaknesses_fr = ["Seulement 5 concours organisés à ce jour", "Un compte est nécessaire pour participer"]
+size = [{n = 387, unit = "members"}, {n = 33, unit = "countries"}]
+last_activity = "2026-11-25"
+confidence = "high"
+recurrence_en = "Several contests at a time"
+recurrence_fr = "Plusieurs concours à la fois"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://brickcontests.com/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brickcontests.com/contests"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "bricknerd-nerdvember"
+name = "Nerdvember"
+url = "https://bricknerd.com/home/nerdvember-2026-inside-edition-11-10-26"
+group = "competitions"
+covers = ["events"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+summary_en = "Yearly building contest of the site BrickNerd around its mascot Nerdly; the 2026 Inside Edition has three categories and awards of 75, 50 and 25 dollars in LEGO products per category."
+summary_fr = "Défi annuel de construction du site BrickNerd autour de sa mascotte Nerdly ; l'Inside Edition 2026 compte trois catégories et des prix de 75, 50 et 25 dollars en produits de marque LEGO par catégorie."
+strengths_en = ["Entries until 10 January 2027, posted in a Flickr group or on Instagram", "Judged on concept, quality and presentation, and fidelity to the mascot", "Bonus prize for entering all three categories"]
+strengths_fr = ["Participations jusqu'au 10 janvier 2027, publiées dans un groupe Flickr ou sur Instagram", "Jugement sur le concept, la qualité et la présentation, et la fidélité à la mascotte", "Prix bonus pour qui participe aux trois catégories"]
+weaknesses_en = ["The entry form was still announced as coming soon when read"]
+weaknesses_fr = ["Le formulaire de participation était encore annoncé comme à venir à la lecture"]
+last_activity = "2026-11-09"
+confidence = "high"
+recurrence_en = "Every year, November to January"
+recurrence_fr = "Chaque année, de novembre à janvier"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://bricknerd.com/home/nerdvember-2026-inside-edition-11-10-26"
+date = "2026-11-09"
+kind = "official"
+
+[[resource.sources]]
+url = "https://bricknerd.com/lego-contests"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "brickmaniacos-eventos"
+name = "Brickmaniacos: eventos LEGO en España y Latinoamérica"
+url = "https://brickmaniacos.com/eventos"
+group = "calendars"
+covers = ["events", "official"]
+languages = ["es"]
+countries = ["ES", "MX"]
+summary_en = "Dated list of fan events and exhibitions with organiser and admission, updated on 20 November 2026, plus a form to report a missing event; 11 events in Spain and 1 in Mexico when read."
+summary_fr = "Liste datée de rencontres de fans et d'expositions avec organisateur et entrée, mise à jour le 20 novembre 2026, et formulaire pour signaler un manque ; 11 rencontres en Espagne et 1 au Mexique."
+strengths_en = ["Flags dates that rest on a single source and should be confirmed", "A separate tab lists shops"]
+strengths_fr = ["Signale les dates qui reposent sur une seule source et sont à confirmer", "Un onglet distinct recense les boutiques"]
+weaknesses_en = ["Latin America nearly empty: one event in Mexico", "Mixes fan exhibitions with shop play areas and nativity scenes in bricks"]
+weaknesses_fr = ["Amérique latine presque vide : un événement au Mexique", "Mélange expositions de fans, espaces de jeu de boutiques et crèches en briques"]
+size = [{n = 12, unit = "events"}]
+last_activity = "2026-11-20"
+confidence = "medium"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://brickmaniacos.com/eventos"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "alego73-eventi"
+name = "ALEGO73: calendario eventi LEGO in Italia"
+url = "https://alego73.com/events/"
+group = "calendars"
+covers = ["events", "official"]
+languages = ["it"]
+countries = ["IT"]
+summary_en = "Agenda with hours and venue for each exhibition or fan meeting, dates checked against the organisers' sources; also lists touring exhibitions and the stops of LEGO Italia's Holiday Lab."
+summary_fr = "Agenda avec horaires et lieu de chaque exposition ou rencontre de fans, dates vérifiées auprès des organisateurs ; recense aussi des expositions itinérantes et les étapes du Holiday Lab de LEGO Italia."
+strengths_en = ["Confirms the 2027 dates of Cremona & Bricks, ItLUG Lecco and PisaBrickArt", "Entries grouped by month with an ongoing marker"]
+strengths_fr = ["Confirme les dates 2027 de Cremona & Bricks, d'ItLUG Lecco et de PisaBrickArt", "Entrées regroupées par mois avec un repère pour les événements en cours"]
+weaknesses_en = ["Mixes fan events with commercial touring exhibitions"]
+weaknesses_fr = ["Mélange événements de fans et expositions itinérantes commerciales"]
+size = [{n = 15, unit = "events"}]
+last_activity = "2026-11-25"
+confidence = "medium"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://alego73.com/events/"
+date = "2026-11-25"
+kind = "indexed"
+
+[[resource]]
+id = "fani-klockow-kalendarz-2027"
+name = "Fani Klocków: kalendarz klockowych eventów 2027"
+url = "https://faniklockow.pl/2026/10/17/kalendarz-klockowych-eventow-w-polsce-2027-rok/"
+group = "calendars"
+covers = ["events", "official", "alternative"]
+languages = ["pl"]
+countries = ["PL"]
+summary_en = "Agenda for 2027 posted on 17 October 2026, with date, venue, organiser, description and ticket price of each event, and a colour-coded month grid."
+summary_fr = "Agenda de 2027 publié le 17 octobre 2026, avec date, lieu, organisateur, description et prix du billet de chaque événement, et une grille mensuelle en couleurs."
+strengths_en = ["Legend separating brick events, shop events, exhibitions and other events", "Includes events with several brick brands, not only LEGO", "A 2026 edition of the same agenda exists"]
+strengths_fr = ["Légende distinguant événements de briques, événements de boutiques, expositions et autres événements", "Inclut des événements avec plusieurs marques de briques, pas seulement LEGO", "Une édition 2026 du même agenda existe"]
+weaknesses_en = ["Only 5 events listed when read, for March, June and September", "No April entry, although LEGO Fan CoLab lists the Poznań brick festival on 3 and 4 April 2027"]
+weaknesses_fr = ["Seulement 5 événements listés à la lecture, pour mars, juin et septembre", "Aucune entrée en avril, alors que LEGO Fan CoLab indique le festival de briques de Poznań les 3 et 4 avril 2027"]
+size = [{n = 5, unit = "events"}]
+last_activity = "2026-10-17"
+confidence = "high"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://faniklockow.pl/2026/10/17/kalendarz-klockowych-eventow-w-polsce-2027-rok/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "lowlug-calendar"
+name = "LowLUG: AFOL kalender"
+url = "https://www.lowlug.nl/calendar/index.php?upcoming-event-list%2F="
+group = "calendars"
+covers = ["events", "official"]
+languages = ["nl"]
+countries = ["NL", "BE"]
+summary_en = "Kept by the user group LowLUG and limited to events reachable from the Netherlands, with LEGO Hub Events and large international events added; 11 events from December 2026 to June 2027."
+summary_fr = "Tenu par le groupe d'utilisateurs LowLUG et limité aux événements accessibles depuis les Pays-Bas, avec les Hub Events de LEGO et les grands événements internationaux ; 11 événements de décembre 2026 à juin 2027."
+strengths_en = ["Date, time and full venue address for each day", "Includes events in Belgium and Germany"]
+strengths_fr = ["Date, horaires et adresse complète du lieu pour chaque jour", "Inclut des événements en Belgique et en Allemagne"]
+weaknesses_en = ["Pages in Dutch only", "Each day of a multi-day event is listed as a separate entry"]
+weaknesses_fr = ["Pages uniquement en néerlandais", "Chaque jour d'un événement de plusieurs jours est listé comme une entrée distincte"]
+size = [{n = 11, unit = "events"}]
+last_activity = "2026-11-25"
+confidence = "high"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+
+[[resource.sources]]
+url = "https://www.lowlug.nl/calendar/index.php?upcoming-event-list%2F="
+date = "2026-11-25"
+kind = "read"
