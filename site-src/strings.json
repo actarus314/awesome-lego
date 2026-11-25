@@ -12,6 +12,7 @@
 "mk_title":{"en":"Who makes the bricks","fr":"Qui fabrique les briques"},
 "mk_own":{"en":"Make their own bricks","fr":"Fabriquent leurs briques"},
 "mk_ext":{"en":"Have them made elsewhere","fr":"Les font fabriquer ailleurs"},
+"mk_by":{"en":"made by {m}","fr":"chez {m}"},
 "mk_none":{"en":"Maker not established","fr":"Fabricant non établi"},
 "mk_note":{"en":"A link is kept when the brand or the maker states it, or when two independent sources confirm it; a forum rumour, a single source or an unsourced page is not enough.","fr":"Un lien est retenu s'il est déclaré par la marque ou le fabricant, ou confirmé par deux sources indépendantes ; une rumeur de forum, une source unique ou une page sans référence ne suffit pas."},
 "bricks":{"en":"Bricks","fr":"Briques"},
@@ -188,6 +189,12 @@
 "all_about":{"en":"All about {b} · {n} entries","fr":"Tout sur {b} · {n} fiches"},
 "all_about1":{"en":"All about {b} · 1 entry","fr":"Tout sur {b} · 1 fiche"},
 "logo_of":{"en":"{b} logo","fr":"Logo de {b}"},
+"bn_exit":{"en":"Back to the whole directory","fr":"Revenir à tout l'annuaire"},
+"lego_why":{"en":"{n} of the {t} entries deal with official LEGO sets, so this page shows only what the LEGO Group runs itself and what is run under the LEGO brand; the button below opens those {n} entries.","fr":"{n} des {t} fiches portent sur des sets de marque LEGO : cette page ne montre donc que ce que le groupe LEGO exploite lui-même et ce qui est tenu sous enseigne LEGO ; le bouton ci-dessous ouvre ces {n} fiches."},
+"totop":{"en":"Back to top","fr":"Revenir en haut"},
+"newtab":{"en":"New tab","fr":"Nouvel onglet"},
+"newtab_on":{"en":"External links open in a new tab (setting kept by this browser). Click to open them in this tab.","fr":"Les liens externes s'ouvrent dans un nouvel onglet (réglage gardé par ce navigateur). Cliquer pour les ouvrir dans cet onglet."},
+"newtab_off":{"en":"External links open in this tab (setting kept by this browser). Click to open them in a new tab.","fr":"Les liens externes s'ouvrent dans cet onglet (réglage gardé par ce navigateur). Cliquer pour les ouvrir dans un nouvel onglet."},
 "lego_where":{"en":"Sites and places of the LEGO Group and under the LEGO brand","fr":"Sites et lieux du groupe LEGO et sous enseigne LEGO"},
 "lego_scope":{"en":"All entries · scope official LEGO · {n}","fr":"Toutes les fiches · périmètre LEGO officiel · {n}","label":true}
 }

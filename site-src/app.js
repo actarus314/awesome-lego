@@ -26,6 +26,15 @@ const getT=()=>{try{return localStorage.getItem('theme')||'auto'}catch(e){return
 const setT=v=>{if(v==='auto')delete root.dataset.theme;else root.dataset.theme=v;if(drawn)vBrands();tb.innerHTML=lab[v];tb.setAttribute('aria-label',tname[v][L]);try{localStorage.setItem('theme',v)}catch(e){}};
 document.getElementById('langbtn').onclick=()=>{try{localStorage.setItem('lang',L==='fr'?'en':'fr')}catch(e){}};
 setT(getT());tb.onclick=()=>{const o=['auto','light','dark'];setT(o[(o.indexOf(getT())+1)%3])};
+// external links in a new tab or not: one setting for the whole page, kept by this browser (request of 25/11/2026)
+const nb=document.getElementById('newtab'),getN=()=>{try{return localStorage.getItem('newtab')==='1'}catch(e){return false}};
+const showN=v=>{nb.setAttribute('aria-pressed',v);nb.innerHTML=ic('<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>')+`<span class="nt">${esc(t('newtab'))}</span>`;nb.setAttribute('aria-label',t('newtab'));nb.title=t(v?'newtab_on':'newtab_off')};
+showN(getN());nb.onclick=()=>{const v=!getN();try{localStorage.setItem('newtab',v?'1':'0')}catch(e){}showN(v)};  // written only when the visitor chooses, so a later change of default reaches everyone else
+// back to the top: a floating button once the visitor has scrolled past one screen (request of 25/11/2026)
+const tt=document.getElementById('totop');tt.innerHTML=ic('<path d="M12 19V5M5 12l7-7 7 7"/>');tt.setAttribute('aria-label',t('totop'));tt.title=t('totop');
+const ttShow=()=>{tt.hidden=scrollY<innerHeight};addEventListener('scroll',ttShow,{passive:true});ttShow();
+tt.onclick=()=>{scrollTo({top:0,behavior:SMOOTH()});document.querySelector('header.top .brand').focus({preventScroll:true})};
+document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[href]');if(!a||!/^https?:$/.test(a.protocol)||a.origin===location.origin)return;if(getN()){a.target='_blank';if(!a.relList.contains('noopener'))a.relList.add('noopener')}else a.removeAttribute('target')},true);  // decided at the click, so every link drawn later follows it
 const hdr=()=>{const h=document.querySelector('header.top').offsetHeight;root.style.setProperty('--hdr',h+'px');return h};hdr();
 const tip=document.getElementById('tip');
 const hideTip=()=>tip.style.opacity=0;addEventListener('scroll',hideTip,{passive:true});addEventListener('resize',hideTip);
@@ -111,7 +120,7 @@ document.getElementById('list').addEventListener('toggle',e=>{const d=e.target;i
 const COLS=[['name',t('c_name'),r=>r.name],['cat',t('c_cat'),r=>catName(r.cat)],['scope',t('c_scope'),r=>(r.covers||[]).filter(c=>c==='official'||c==='alternative').map(t).join(', ')],['lang',t('c_lang'),r=>(r.languages||[]).join(' ').toUpperCase(),'opt'],['status',t('c_status'),stLabel,'opt'],['last',t('c_last'),r=>r.last||'','n'],['stars',t('c_stars'),r=>(r.metrics||{}).stars??-1,'n opt']];
 function drawTable(rs){if(st.sort){const c=COLS.find(c=>c[0]===st.sort.k),d=st.sort.d;rs.sort((a,b)=>{const x=c[2](a),y=c[2](b);return (typeof x==='number'?x-y:String(x).localeCompare(String(y)))*d})}
  return `<div class="tscroll" role="region" tabindex="0" aria-label="${esc(t('nav_dir'))}"><table class="dt"><caption class="vh">${esc(t('nav_dir'))}</caption><thead><tr>${COLS.map(c=>`<th scope="col" class="${(c[3]||'').includes('opt')?'opt':''}"${st.sort&&st.sort.k===c[0]?` aria-sort="${st.sort.d>0?'ascending':'descending'}"`:''}><button type="button" class="sortb" data-k="${c[0]}">${c[1]}</button></th>`).join('')}</tr></thead><tbody>${rs.map(r=>`<tr data-go="${r.id}"><td><a href="${esc(r.url)}" rel="noopener">${r.featured?'★ ':''}${esc(r.name)}</a></td><td>${esc(catName(r.cat))}</td><td>${esc(COLS[2][2](r))}</td><td class="opt">${esc(COLS[3][2](r))}</td><td class="opt">${esc(COLS[4][2](r))}</td><td class="n">${dt(r.last)}</td><td class="n opt">${(r.metrics||{}).stars??''}</td></tr>`).join('')}</tbody></table></div>`}
-document.getElementById('list').addEventListener('click',e=>{const go=e.target.closest('a[data-go]');if(go){e.preventDefault();openEntry(go.dataset.go);return}const sc=e.target.closest('[data-scope]');if(sc){resetAll();st.cov.add(sc.dataset.scope);update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()});return}const wb=e.target.closest('[data-brand]');if(wb){resetAll();setQuery(brandName(wb.dataset.brand));update();const h=document.getElementById('bn-h');document.getElementById('directory').scrollIntoView({behavior:SMOOTH()});if(h)h.focus({preventScroll:true});return}const h=e.target.closest('button[data-k]');if(h){const k=h.dataset.k;st.sort=!st.sort||st.sort.k!==k?{k,d:1}:st.sort.d>0?{k,d:-1}:null;keepFocus(drawList);return}const row=e.target.closest('tr[data-go]');if(row&&!e.target.closest('a')){st.view='cards';openEntry(row.dataset.go)}});
+document.getElementById('list').addEventListener('click',e=>{if(e.target.closest('[data-exit]')){resetAll();update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()});document.getElementById('q').focus({preventScroll:true});return}const go=e.target.closest('a[data-go]');if(go){e.preventDefault();openEntry(go.dataset.go);return}const sc=e.target.closest('[data-scope]');if(sc){resetAll();st.cov.add(sc.dataset.scope);update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()});return}const wb=e.target.closest('[data-brand]');if(wb){resetAll();setQuery(brandName(wb.dataset.brand));update();const h=document.getElementById('bn-h');document.getElementById('directory').scrollIntoView({behavior:SMOOTH()});if(h)h.focus({preventScroll:true});return}const h=e.target.closest('button[data-k]');if(h){const k=h.dataset.k;st.sort=!st.sort||st.sort.k!==k?{k,d:1}:st.sort.d>0?{k,d:-1}:null;keepFocus(drawList);return}const row=e.target.closest('tr[data-go]');if(row&&!e.target.closest('a')){st.view='cards';openEntry(row.dataset.go)}});
 document.getElementById('viewsw').onclick=e=>{const b=e.target.closest('[data-v]');if(b){st.view=b.dataset.v;update(false)}};
 // a resource that cannot be found: suggested at once, the search typed becomes the title of the proposal (GitHub issue form)
 const MISS=document.getElementById('miss'),MISS0=MISS.href,missUrl=n=>{const s=st.q.trim().slice(0,100);return s&&!n?MISS0+'&title='+encodeURIComponent('Add: '+s):MISS0};  // the title only when nothing matches (a search with results names something already there), 100 characters at most (GitHub refuses a very long address)
@@ -139,27 +148,31 @@ mg.onclick=e=>{const s=e.target.closest('[data-go]');if(s){openEntry(s.dataset.g
 
 document.getElementById('mapkey').innerHTML=[['official',t('official')],['both',t('both')],['alternative',t('alternative')],['',t('otherw')],['official dim',t('dim')]].map(([c,n])=>`<span><i class="stud ${c}"></i>${n}</span>`).join('');
 // makers of the bricks (brands.toml `makers`, read at the source): own production, made elsewhere, not established
-const mkName=x=>L==='fr'&&x.name_fr?x.name_fr:x.name,mkSrc=(xs,dated)=>xs.map(x=>`<a href="${esc(x.url)}" rel="noopener" title="${esc(fmt(x.date))}">${esc(host(x.url))}</a>${dated?' '+dt(x.date):''}`).join(', ');
+const mkName=x=>L==='fr'&&x.name_fr?x.name_fr:x.name,mkSrc=(xs,dated)=>xs.map(x=>`<a href="${esc(x.url)}" rel="noopener" title="${esc(fmt(x.date))}">${esc(host(x.url))}</a>${dated?' ('+dt(x.date)+')':''}`).join(dated?' · ':', ');
 const mkOf=b=>{const r=R.find(x=>x.id===b.id)||{},m=r.makers||[];return{r,own:m.filter(x=>x.id===b.id),ext:m.filter(x=>x.id!==b.id)}};
 function mkLine(r){if(BN[r.id]==null||r===LEGO)return'';const{own,ext}=mkOf(r);const by={};[...own.map(x=>[t('own_make'),x]),...ext.map(x=>[mkName(x),x])].forEach(([k,x])=>(by[k]=by[k]||[]).push(x));
- const parts=Object.entries(by).map(([k,xs])=>`${esc(k)} · ${mkSrc(xs)}`);
+ const parts=Object.entries(by).map(([k,xs])=>`${esc(k)} (${mkSrc(xs)})`);
  return `<div class="mkline">${t('bricks')}${COLON}${parts.length?parts.join(' ; '):esc(t('no_maker'))}</div>`}
 // brand mode: the brand as a banner above its entries (decision of 24/11/2026, 11:58 to 12:05)
 const PRE=L==='fr'?'../':'';
 function banner(r,b,rs){if(!r)return'';const cats=C.map(c=>[c.id,rs.filter(x=>x.cat===c.id).length]).filter(x=>x[1]);
  const grp=((C.find(c=>c.id===r.cat)||{groups:[]}).groups.find(g=>g.id===r.group)||{})[L]||r[L].group;
  const meta=[one(r),grp].filter(Boolean).map(esc).join(' · ')+` · <a href="${esc(r.url)}" rel="noopener">${esc(host(r.url))}</a>`;
- return `<section class="banner ${b.lego?'official':'alternative'}" aria-labelledby="bn-h">${r.logo?`<img class="logo" src="${PRE}${esc(r.logo)}" alt="${esc(t('logo_of').replace('{b}',b.name))}">`:''}<div class="bt"><h3 id="bn-h" tabindex="-1">${esc(b.name)}</h3><p class="meta">${meta}</p><p class="s"${r[L].tl?' lang="en"':''}>${esc(r[L].summary)}</p>${mkLine(r)}`+
+ return `<section class="banner ${b.lego?'official':'alternative'}" aria-labelledby="bn-h"><button type="button" class="btn bn-x" data-exit>${ic('<path d="M6 6l12 12M18 6L6 18"/>')}<span>${esc(t('bn_exit'))}</span></button>${r.logo?`<img class="logo" src="${PRE}${esc(r.logo)}" alt="${esc(t('logo_of').replace('{b}',b.name))}">`:''}<div class="bt"><h3 id="bn-h" tabindex="-1">${esc(b.name)}</h3><p class="meta">${meta}</p><p class="s"${r[L].tl?' lang="en"':''}>${esc(r[L].summary)}</p>${mkLine(r)}`+
   (cats.length?`<p class="counts">${b.lego?esc(t('lego_where'))+COLON:esc(tn('n_linked',rs.length))+COLON}${cats.map(([c,n])=>`${esc(shortCat(c))} ${n}`).join(' · ')}</p>`:'')+
-  (b.lego?`<button type="button" class="btn all" data-scope="official">${esc(t('lego_scope').replace('{n}',R.filter(x=>(x.covers||[]).includes('official')).length))}</button>`:'')+`</div></section>`}
+  (b.lego?`<p class="why">${esc(t('lego_why').replace('{t}',R.length).replace(/\{n\}/g,R.filter(x=>(x.covers||[]).includes('official')).length))}</p><button type="button" class="btn all" data-scope="official">${esc(t('lego_scope').replace('{n}',R.filter(x=>(x.covers||[]).includes('official')).length))}</button>`:'')+`</div></section>`}
 function vMakers(){const el=document.getElementById('v-makers');const all=D.brands.map(b=>({...b,...mkOf(b)}));
  const own=all.filter(b=>b.own.length&&!b.ext.length),ext=all.filter(b=>b.ext.length),none=all.filter(b=>!b.own.length&&!b.ext.length);
- const via={};ext.forEach(b=>{const g={};b.ext.forEach(x=>{const k=x.name_fr||/\(/.test(x.name)||!x.id?mkName(x):brandName(x.id)||mkName(x);(g[k]=g[k]||[]).push(x)});Object.entries(g).forEach(([k,xs])=>(via[k]=via[k]||[]).push({b,xs}))});
- const btn=(id,label)=>`<button type="button" data-brand="${id}">${esc(label)}</button>`;
+ // every line reads the same way: brand, then (made elsewhere) its maker, then the sources and the date each was read
+ const mkKey=x=>x.name_fr||/\(/.test(x.name)||!x.id?mkName(x):brandName(x.id)||mkName(x);
+ const items=ext.map(b=>{const g={};b.ext.forEach(x=>{const k=mkKey(x);(g[k]=g[k]||[]).push(x)});return{b,g:Object.entries(g).sort((x,y)=>x[0].localeCompare(y[0]))}});
+ const size={};items.forEach(({g})=>g.forEach(([k])=>size[k]=(size[k]||0)+1));
+ items.sort((x,y)=>size[y.g[0][0]]-size[x.g[0][0]]||x.g[0][0].localeCompare(y.g[0][0])||x.b.name.localeCompare(y.b.name));
+ const btn=(id,label)=>`<button type="button" data-brand="${id}">${esc(label)}</button>`,src=xs=>`<div class="src">${t('sources')}${COLON}${mkSrc(xs,true)}</div>`;
  el.innerHTML=`<h3>${t('mk_title')}</h3><div class="mk">`+
-  `<div><h4>${t('mk_own')} (${own.length})</h4><ul>${own.map(b=>`<li>${btn(b.id,b.name)} <span class="via">${mkSrc(b.own,true)}</span></li>`).join('')}</ul></div>`+
-  `<div><h4>${t('mk_ext')} (${ext.length})</h4><ul>${Object.entries(via).sort((a,b)=>b[1].length-a[1].length).map(([k,v])=>`<li><span class="via">${esc(k)} →</span> ${v.map(({b,xs})=>`${btn(b.id,b.name)} <span class="via">(${mkSrc(xs,true)})</span>`).join(' · ')}</li>`).join('')}</ul></div>`+
-  `<div><h4>${t('mk_none')} (${none.length})</h4><ul>${none.map(b=>`<li>${btn(b.id,b.name)}</li>`).join('')}</ul></div></div><p class="note">${t('mk_note')}</p>`;
+  `<div class="own"><h4>${t('mk_own')} (${own.length})</h4><ul>${own.map(b=>`<li>${btn(b.id,b.name)}${src(b.own)}</li>`).join('')}</ul></div>`+
+  `<div><h4>${t('mk_ext')} (${ext.length})</h4><ul>${items.map(({b,g})=>`<li>${btn(b.id,b.name)}${g.map(([k,xs])=>`<div class="by">${esc(t('mk_by').replace('{m}',k))}</div>${src(xs)}`).join('')}</li>`).join('')}</ul></div>`+
+  `<div class="none"><h4>${t('mk_none')} (${none.length})</h4><ul>${none.map(b=>`<li>${btn(b.id,b.name)}</li>`).join('')}</ul></div></div><p class="note">${t('mk_note')}</p>`;
  el.onclick=e=>{const b=e.target.closest('button[data-brand]');if(b)brandMode(b.dataset.brand)}}
 function brandMode(id){toDir();resetAll();setQuery(brandName(id));update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()});const h=document.getElementById('bn-h');if(h)h.focus({preventScroll:true})}
 // insight 1: which listed resources name each alternative brand, by category
