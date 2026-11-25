@@ -1461,3 +1461,992 @@ kind = "read"
 url = "https://www.freelug.org/"
 date = "2026-11-23"
 kind = "indexed"
+
+[[resource]]
+id = "stein-hanse"
+name = "Stein Hanse e.V."
+url = "https://steinhanse.eu/"
+group = "regional-clubs"
+feed = "https://steinhanse.eu/feed/"
+covers = ["clubs", "official", "events"]
+languages = ["de"]
+countries = ["DE"]
+summary_en = "More than 500 members across northern Germany, in regional sections, with its own yearly exhibition in Kaltenkirchen (3407 visitors on 11 and 12 April 2026) and trips such as a Baltic Sea cruise."
+summary_fr = "Plus de 500 membres dans le nord de l'Allemagne, en sections régionales, une exposition annuelle à Kaltenkirchen (3407 visiteurs les 11 et 12 avril 2026) et des sorties comme une croisière sur la Baltique."
+strengths_en = ["Recognised by the LEGO Group as a fan community, as stated on its page", "SteinHanse 2026 in Kaltenkirchen on 1200 square metres, 3407 visitors", "Presence at the Spielemesse in Hamburg from 27 to 29 November 2026"]
+strengths_fr = ["Reconnue par le groupe LEGO comme communauté de fans, selon sa page", "SteinHanse 2026 à Kaltenkirchen sur 1200 mètres carrés, 3407 visiteurs", "Présence à la Spielemesse de Hambourg du 27 au 29 novembre 2026"]
+weaknesses_en = ["Site in German only", "A few members in the centre and the south of Germany and in Austria; activity mostly in the north"]
+weaknesses_fr = ["Site uniquement en allemand", "Quelques membres au centre et au sud de l'Allemagne et en Autriche ; activité surtout dans le nord"]
+size = [{n = 500, unit = "members", approx = "more-than"}]
+status = "active"
+last_activity = "2026-10-02"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://steinhanse.eu/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://steinhanse.eu/ueber-uns/"
+date = "2026-11-25"
+kind = "official"
+
+[resource.contact]
+email = "info@steinhanse.eu"
+url = "https://steinhanse.eu/ueber-uns/"
+date = "2026-11-25"
+
+[[resource]]
+id = "schwabenstein-2x4"
+name = "Schwabenstein 2x4 e.V."
+url = "https://schwabenstein.org/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["de", "en"]
+countries = ["DE"]
+summary_en = "Runs the LEGO fan area of the Stuttgart games fair (Spielemesse) and a public calendar of fan events; about 30000 visitors in 2025 according to the association, 19 to 22 November 2026 this year."
+summary_fr = "Organise l'espace de fans LEGO de la foire du jeu de Stuttgart (Spielemesse) et un calendrier public d'événements ; environ 30000 visiteurs en 2025 selon l'association, du 19 au 22 novembre 2026 cette année."
+strengths_en = ["Schwabenstein 2026 held at Messe Stuttgart from 19 to 22 November 2026, with a daily livestream", "Founded in 2015 in Stuttgart, with a regular Stammtisch and donations in kind to a children's hospital, according to its LinkedIn page"]
+strengths_fr = ["Schwabenstein 2026 tenu à la Messe Stuttgart du 19 au 22 novembre 2026, avec une diffusion en direct chaque soir", "Fondée en 2015 à Stuttgart, avec un Stammtisch régulier et des dons en nature à un hôpital pour enfants, selon sa page LinkedIn"]
+weaknesses_en = ["The site loads its content dynamically and could not be read as text: facts come mostly from the association's LinkedIn page and from the fair's pages"]
+weaknesses_fr = ["Le site charge son contenu dynamiquement et n'a pas pu être lu en texte : les faits viennent surtout de la page LinkedIn de l'association et des pages de la foire"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+city = "Stuttgart"
+
+[[resource.sources]]
+url = "https://schwabenstein.org/?rq_AppGuid=8B222E5EF537E0AA679BDB9E4DDA56ED208E9480&rq_TargetPageGuid=4B7DD6A458327ED7327C88FF23DB274F540680EE"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.messe-stuttgart.de/spielemesse/messe/schwabenstein-das-legor-fan-event/"
+date = "2026-11-25"
+kind = "third-party"
+
+[[resource.sources]]
+url = "https://www.linkedin.com/company/schwabenstein"
+date = "2026-11-20"
+kind = "indexed"
+
+[[resource]]
+id = "bricks-am-meer"
+name = "Bricks am Meer e. V."
+url = "https://bricks-am-meer.de/"
+group = "regional-clubs"
+feed = "https://bricks-am-meer.de/feed/"
+covers = ["clubs", "official", "events"]
+languages = ["de"]
+countries = ["DE"]
+summary_en = "Monthly Stammtisch open to everyone in Oldenburg, a youth group and three exhibitions of its own: Bricks am Meer, Hamme Bricks and Hygge Bricks; recognised by the LEGO Group."
+summary_fr = "Stammtisch mensuel ouvert à tous à Oldenbourg, un groupe de jeunes et trois expositions propres : Bricks am Meer, Hamme Bricks et Hygge Bricks ; reconnue par le groupe LEGO."
+strengths_en = ["Hamme Bricks on 19 and 20 September 2026 in Ritterhude, with about 60 exhibitors", "Hygge Bricks announced for 5 and 6 December 2026 in Edewecht", "Registered association since 4 April 2018, youth group Bricks Kids for five years"]
+strengths_fr = ["Hamme Bricks les 19 et 20 septembre 2026 à Ritterhude, avec environ 60 exposants", "Hygge Bricks annoncé les 5 et 6 décembre 2026 à Edewecht", "Association inscrite au registre depuis le 4 avril 2018, groupe de jeunes Bricks Kids depuis cinq ans"]
+weaknesses_en = ["Site in German only", "Activity concentrated in the Oldenburg and East Frisia area"]
+weaknesses_fr = ["Site uniquement en allemand", "Activité concentrée autour d'Oldenbourg et de la Frise-Orientale"]
+status = "active"
+last_activity = "2026-11-07"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Oldenburg"
+city_fr = "Oldenbourg"
+
+[[resource.sources]]
+url = "https://bricks-am-meer.de/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://bricks-am-meer.de/ueber-uns"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "berliner-steinkultur"
+name = "Berliner Steinkultur e.V."
+url = "https://www.berliner-steinkultur.de/"
+group = "regional-clubs"
+feed = "https://www.berliner-steinkultur.de/feed/"
+covers = ["clubs", "official", "events"]
+languages = ["de"]
+countries = ["DE"]
+summary_en = "Founded on 5 January 2012; monthly Stammtisch in Berlin, the SteineWAHN! exhibition (next on 18 and 19 September 2027 at the Seeterrassen) and a Discord server."
+summary_fr = "Fondée le 5 janvier 2012 ; Stammtisch mensuel à Berlin, exposition SteineWAHN! (prochaine les 18 et 19 septembre 2027 aux Seeterrassen) et serveur Discord."
+strengths_en = ["Stammtisch of 11 November 2026 reported on the site the same day", "Visit report on Bricking Bavaria 2026 in Augsburg"]
+strengths_fr = ["Stammtisch du 11 novembre 2026 relaté sur le site le jour même", "Compte rendu d'une visite à Bricking Bavaria 2026 à Augsbourg"]
+weaknesses_en = ["Site in German only", "Contact by form only"]
+weaknesses_fr = ["Site uniquement en allemand", "Contact par formulaire uniquement"]
+status = "active"
+last_activity = "2026-11-11"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Berlin"
+
+[[resource.sources]]
+url = "https://www.berliner-steinkultur.de/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "sealug"
+name = "SEALUG - Seattle LEGO Users Group"
+url = "https://sealug.org/"
+group = "regional-clubs"
+feed = "https://sealug.org/feed/"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["US"]
+summary_en = "Meetings and displays across Western Washington, listed in a public calendar and open to anyone aged 18 and over; display at Grit City Comic Show on 7 November 2026."
+summary_fr = "Réunions et expositions dans l'ouest de l'État de Washington, listées dans un calendrier public et ouvertes à toute personne de 18 ans et plus ; exposition au Grit City Comic Show le 7 novembre 2026."
+strengths_en = ["More than 500 members and monthly meetings for 25 years, according to a local newspaper of 2 March 2026", "Pages on drafting, conventions and local BrickLink stores"]
+strengths_fr = ["Plus de 500 membres et des réunions mensuelles depuis 25 ans, selon un journal local du 2 mars 2026", "Pages sur le drafting, les conventions et les boutiques BrickLink locales"]
+weaknesses_en = ["Regional scope", "Site footer still dated 2018-2025"]
+weaknesses_fr = ["Portée régionale", "Pied de page du site encore daté 2018-2025"]
+status = "active"
+last_activity = "2026-11-07"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Seattle"
+
+[[resource.sources]]
+url = "https://sealug.org/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://sealug.org/calendar/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://lynnwoodtimes.com/2026/03/02/sealug-lego/"
+date = "2026-03-02"
+kind = "third-party"
+
+[[resource]]
+id = "chilug"
+name = "ChiLUG - Chicagoland LEGO User Group"
+url = "https://www.chilug.com/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["US"]
+access = "free"
+summary_en = "No membership dues: members keep an active status by attending meetings and public displays; recognised by the LEGO Group, founded in 2012 and run as a not-for-profit organisation."
+summary_fr = "Sans cotisation : les membres gardent un statut actif en participant aux réunions et aux expositions publiques ; reconnu par le groupe LEGO, fondé en 2012 et géré comme organisation à but non lucratif."
+strengths_en = ["Does not charge venues to host its public displays", "Elected executive committee and a named ambassador to the LEGO Ambassador Network"]
+strengths_fr = ["Ne facture pas les lieux qui accueillent ses expositions publiques", "Comité exécutif élu et ambassadeur désigné auprès du LEGO Ambassador Network"]
+weaknesses_en = ["Home page last updated on 26 August 2026 and shows no event calendar", "New members are voted on by a membership committee"]
+weaknesses_fr = ["Page d'accueil mise à jour le 26 août 2026, sans calendrier d'événements", "Les nouveaux membres sont votés par un comité d'adhésion"]
+status = "active"
+last_activity = "2026-08-26"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Chicago"
+
+[[resource.sources]]
+url = "https://www.chilug.com/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "dfw-lug"
+name = "DFW LUG - Dallas/Fort Worth LEGO Users Group"
+url = "https://dfwlug.com/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["US"]
+access = "paid"
+summary_en = "Meets about 30 times a year around Dallas and Fort Worth, with a themed build contest each month (December: a toy from Santa's workshop at full scale) and charity displays."
+summary_fr = "Une trentaine de réunions par an autour de Dallas et Fort Worth, avec un concours de construction à thème chaque mois (décembre : un jouet de l'atelier du Père Noël) et des expositions caritatives."
+strengths_en = ["Events listed through January 2027, including a Saturday Social Hour at Stonebriar Centre in Frisco on 5 December 2026", "Membership open to adults aged 18 and over: five meetings and 24 US dollars a year"]
+strengths_fr = ["Événements listés jusqu'en janvier 2027, dont un Saturday Social Hour au Stonebriar Centre de Frisco le 5 décembre 2026", "Adhésion ouverte aux adultes de 18 ans et plus : cinq réunions et 24 dollars américains par an"]
+weaknesses_en = ["Most day-to-day discussion takes place on Discord", "Founded in 2014, regional scope"]
+weaknesses_fr = ["Les échanges quotidiens se tiennent surtout sur Discord", "Fondé en 2014, portée régionale"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Dallas"
+
+[[resource.sources]]
+url = "https://dfwlug.com/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://dfwlug.com/events/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "gertlug"
+name = "GertLUG"
+url = "https://gertlug.co.uk/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["GB"]
+summary_en = "More than 170 members from across the United Kingdom, monthly meet-ups and two shows of its own, Bristol Brick Show and Supersonic Brick Show; more than 130000 pounds raised for charity since 2019."
+summary_fr = "Plus de 170 membres venus de tout le Royaume-Uni, rencontres mensuelles et deux expositions propres, Bristol Brick Show et Supersonic Brick Show ; plus de 130000 livres sterling collectées pour des œuvres depuis 2019."
+strengths_en = ["Bristol Brick Show 2026 announced on 17 September 2026, tickets on sale", "Members' perks include first refusal on its shows and online meet-ups", "Collaborative builds archive"]
+strengths_fr = ["Bristol Brick Show 2026 annoncé le 17 septembre 2026, billets en vente", "Avantages des membres : priorité sur les expositions du club et rencontres en ligne", "Archive des constructions collectives"]
+weaknesses_en = ["Members-only section and Facebook group", "Membership open to adults aged over 18 only"]
+weaknesses_fr = ["Espace et groupe Facebook réservés aux membres", "Adhésion réservée aux personnes de plus de 18 ans"]
+size = [{n = 170, unit = "members", approx = "more-than"}]
+status = "active"
+last_activity = "2026-09-17"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Bristol"
+
+[[resource.sources]]
+url = "https://gertlug.co.uk/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://gertlug.co.uk/latest-news/"
+date = "2026-09-17"
+kind = "official"
+
+[[resource]]
+id = "brick-ie"
+name = "Brick.ie"
+url = "https://www.brick.ie/"
+group = "national-clubs"
+feed = "https://www.brick.ie/rss.xml"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["IE"]
+access = "free"
+summary_en = "Forum and gatherings of adult fans since 2008, with no membership charge; organiser of the Brick Féile show (11 and 12 July 2026, tickets for the July 2027 edition on sale)."
+summary_fr = "Forum et rencontres de fans adultes depuis 2008, sans cotisation ; organisateur de l'exposition Brick Féile (11 et 12 juillet 2026, billets en vente pour l'édition de juillet 2027)."
+strengths_en = ["No membership fees and no obligation to attend events", "News of 21 October 2026 lists a Model Railway Society exhibition in Dublin and a parish fundraiser in Belfast in November"]
+strengths_fr = ["Aucune cotisation ni obligation de participer aux événements", "L'actualité du 21 octobre 2026 liste une exposition de la Model Railway Society à Dublin et une collecte paroissiale à Belfast en novembre"]
+weaknesses_en = ["Access limited until an account is created and a forum post asks for membership", "No upcoming events listed on the site"]
+weaknesses_fr = ["Accès limité tant qu'un compte n'est pas créé et qu'un message de forum ne demande pas l'adhésion", "Aucun événement à venir listé sur le site"]
+status = "active"
+last_activity = "2026-10-21"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.brick.ie/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.brick.ie/about-brickie"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "lug-ie"
+name = "lug.ie - Irish LEGO User Group"
+url = "https://www.lug.ie/"
+group = "national-clubs"
+feed = "https://www.lug.ie/feed/"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["IE"]
+access = "free"
+summary_en = "Free to join, with more than 250 members in Ireland and Northern Ireland, a WhatsApp community and meet-ups in several cities; public exhibit at Blanchardstown Library for Culture Night 2026."
+summary_fr = "Adhésion gratuite, plus de 250 membres en Irlande et en Irlande du Nord, une communauté WhatsApp et des rencontres dans plusieurs villes ; exposition publique à la bibliothèque de Blanchardstown pour la Culture Night 2026."
+strengths_en = ["Monthly showcase of custom builds", "Meet-ups at the Blanchardstown LEGO Store", "Children's build zone at the Culture Night 2026 exhibit, round-up published on 20 September 2026"]
+strengths_fr = ["Présentation mensuelle de créations originales", "Rencontres au magasin sous enseigne LEGO de Blanchardstown", "Espace de construction pour enfants à l'exposition de la Culture Night 2026, bilan publié le 20 septembre 2026"]
+weaknesses_en = ["Daily discussion mainly on WhatsApp"]
+weaknesses_fr = ["Échanges quotidiens surtout sur WhatsApp"]
+size = [{n = 250, unit = "members", approx = "more-than"}]
+status = "active"
+last_activity = "2026-09-20"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lug.ie/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.lug.ie/about/"
+date = "2026-11-25"
+kind = "official"
+
+[resource.contact]
+email = "lug.ie.info@gmail.com"
+url = "https://www.lug.ie/"
+date = "2026-11-25"
+
+[[resource]]
+id = "kostky-org"
+name = "Kostky.org"
+url = "https://www.kostky.org/"
+group = "national-clubs"
+covers = ["clubs", "official", "events", "second-hand"]
+languages = ["cs", "sk"]
+countries = ["CZ", "SK"]
+access = "free"
+summary_en = "Forum, price lists and catalogues of LEGO sets for fans in Czechia and Slovakia, with a buy and sell section; its members co-organise the Svět kostek exhibition in Olomouc."
+summary_fr = "Forum, tarifs et catalogues de sets LEGO pour les fans de Tchéquie et de Slovaquie, avec une section achat et vente ; ses membres coorganisent l'exposition Svět kostek à Olomouc."
+strengths_en = ["Forum with posts dated 24 November 2026", "Svět kostek 2026 on 31 October and 1 November 2026, described by its site as the largest LEGO event in the Czech Republic", "Forum also offered in Slovak and English"]
+strengths_fr = ["Forum avec des messages datés du 24 novembre 2026", "Svět kostek 2026 les 31 octobre et 1er novembre 2026, présenté par son site comme le plus grand événement LEGO de Tchéquie", "Forum proposé aussi en slovaque et en anglais"]
+weaknesses_en = ["Run by a private webmaster rather than an association", "Static pages carry a 2004-2022 copyright line"]
+weaknesses_fr = ["Géré par un webmestre à titre privé plutôt que par une association", "Les pages statiques portent une mention de droits de 2004-2022"]
+status = "active"
+last_activity = "2026-11-24"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.kostky.org/forum/index.php"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.kostky.org/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.svet-kostek.cz/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "zbudujmy-to"
+name = "Zbudujmy to!"
+url = "https://zbudujmy.to/"
+group = "national-clubs"
+feed = "https://zbudujmy.to/feed/"
+covers = ["clubs", "official", "events"]
+languages = ["pl"]
+countries = ["PL"]
+summary_en = "Association founded in November 2012 with a members' gallery, a forum, set reviews and a railway build competition; exhibitions in 2026 at Hel (1 to 3 May), Łódź and Katowice (7 November)."
+summary_fr = "Association fondée en novembre 2012 avec galerie des membres, forum, tests de sets et concours de construction ferroviaire ; expositions en 2026 à Hel (1er au 3 mai), Łódź et Katowice (7 novembre)."
+strengths_en = ["News dated 14 November 2026 (Planszówki Łowickie festival)", "News of 30 August 2026 announces its place in the LEGO Fan CoLab", "Board, audit committee and members listed on the site"]
+strengths_fr = ["Actualité datée du 14 novembre 2026 (festival Planszówki Łowickie)", "Actualité du 30 août 2026 annonçant sa présence dans le LEGO Fan CoLab", "Bureau, commission de contrôle et membres listés sur le site"]
+weaknesses_en = ["Site in Polish only"]
+weaknesses_fr = ["Site uniquement en polonais"]
+status = "active"
+last_activity = "2026-11-14"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://zbudujmy.to/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://zbudujmy.to/o-stowarzyszeniu/"
+date = "2026-11-25"
+kind = "official"
+
+[resource.contact]
+email = "zarzad@zbudujmy.to"
+url = "https://zbudujmy.to/kontakt/"
+date = "2026-11-25"
+
+[[resource]]
+id = "wawlug"
+name = "WAWLUG - Warsaw LEGO User Group"
+url = "https://wawlug.pl/"
+group = "regional-clubs"
+feed = "https://wawlug.pl/feed/"
+covers = ["clubs", "official", "events"]
+languages = ["pl"]
+countries = ["PL"]
+summary_en = "Founded in 2018, more than 30 local exhibitions; 2026 shows at Bazyliszek (11 and 12 July), Pyrkon in Poznań (19 to 21 June) and BrickDay in Płock (13 June), plus free building instructions."
+summary_fr = "Fondé en 2018, plus de 30 expositions locales ; en 2026 Bazyliszek (11 et 12 juillet), Pyrkon à Poznań (19 au 21 juin) et BrickDay à Płock (13 juin), avec des instructions gratuites."
+strengths_en = ["Exhibition reports published after each show, the latest on 15 July 2026", "Gallery page for each member"]
+strengths_fr = ["Compte rendu publié après chaque exposition, le dernier le 15 juillet 2026", "Page de galerie pour chaque membre"]
+weaknesses_en = ["Latest post dates from 15 July 2026", "Site mainly in Polish"]
+weaknesses_fr = ["Dernier billet du 15 juillet 2026", "Site principalement en polonais"]
+status = "active"
+last_activity = "2026-07-15"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Warsaw"
+city_fr = "Varsovie"
+city_local = "Warszawa"
+
+[[resource.sources]]
+url = "https://wawlug.pl/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://wawlug.pl/o-nas/"
+date = "2026-11-25"
+kind = "official"
+
+[resource.contact]
+email = "wawlug@gmail.com"
+url = "https://wawlug.pl/o-nas/"
+date = "2026-11-25"
+
+[[resource]]
+id = "valbrick"
+name = "VALBRICK"
+url = "https://valbrick.com/"
+group = "regional-clubs"
+feed = "https://valbrick.com/feed/"
+covers = ["clubs", "official", "events"]
+languages = ["es"]
+countries = ["ES"]
+summary_en = "Non-profit association founded on 17 July 2017 and recognised by the LEGO Group since 2018; organises the Castell Brick exhibition at the Castell d'Alaquàs over the Christmas period."
+summary_fr = "Association à but non lucratif fondée le 17 juillet 2017 et reconnue par le groupe LEGO depuis 2018 ; organise l'exposition Castell Brick au château d'Alaquàs pendant la période de Noël."
+strengths_en = ["Castell Brick 2025 held from 5 December 2025 to 5 January 2026 in Alaquàs", "Children's workshops, for example in Almussafes"]
+strengths_fr = ["Castell Brick 2025 tenu du 5 décembre 2025 au 5 janvier 2026 à Alaquàs", "Ateliers pour enfants, par exemple à Almussafes"]
+weaknesses_en = ["Latest post on the site dates from 10 March 2026; no 2026 edition of Castell Brick announced on the home page", "Site in Spanish only"]
+weaknesses_fr = ["Dernier billet du site daté du 10 mars 2026 ; aucune édition 2026 de Castell Brick annoncée sur la page d'accueil", "Site uniquement en espagnol"]
+status = "active"
+last_activity = "2026-03-10"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+city = "Valencia"
+city_local = "València"
+
+[[resource.sources]]
+url = "https://valbrick.com/quienes-somos/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://valbrick.com/"
+date = "2026-11-25"
+kind = "official"
+
+[resource.contact]
+email = "colaboraciones@valbrick.com"
+url = "https://valbrick.com/quienes-somos/"
+date = "2026-11-25"
+
+[[resource]]
+id = "brianzalug"
+name = "BrianzaLUG"
+url = "https://www.brianzalug.it/"
+group = "regional-clubs"
+feed = "https://www.brianzalug.it/feed/"
+covers = ["clubs", "official", "events", "news"]
+languages = ["it"]
+countries = ["IT"]
+summary_en = "Editorial site with set news, a custom build of the week and a series on iconic sets; 133 events, 15 workshops and 3 projects since 2012, among them Ticino Brick (24 and 25 October 2026)."
+summary_fr = "Site éditorial : actualités de sets, création originale de la semaine, série sur les sets emblématiques ; 133 événements, 15 ateliers et 3 projets depuis 2012, dont Ticino Brick (24 et 25 octobre 2026)."
+strengths_en = ["Travelled to Skærbæk Fan Weekend on 26 and 27 September 2026 with Piemonte Bricks", "Presence at Milano Comics & Games 2026 (Brick Arena)"]
+strengths_fr = ["Déplacement au Skærbæk Fan Weekend les 26 et 27 septembre 2026 avec Piemonte Bricks", "Présence à Milano Comics & Games 2026 (Brick Arena)"]
+weaknesses_en = ["Site in Italian only"]
+weaknesses_fr = ["Site uniquement en italien"]
+status = "active"
+last_activity = "2026-10-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.brianzalug.it/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "brickantiers"
+name = "Brickantiers"
+url = "https://brickantiers.com/"
+group = "regional-clubs"
+feed = "https://brickantiers.com/feed/"
+covers = ["clubs", "official", "events"]
+languages = ["nl", "en"]
+countries = ["BE", "NL"]
+access = "paid"
+summary_en = "Own yearly fairs under the name Bricks For All (Harmelen on 20 and 21 February 2027, Torhout on 20 and 21 March 2027), plus presence at other clubs' events; club created in 2021."
+summary_fr = "Salons annuels propres sous le nom Bricks For All (Harmelen les 20 et 21 février 2027, Torhout les 20 et 21 mars 2027), et présence aux événements d'autres clubs ; club créé en 2021."
+strengths_en = ["Recognised LEGO Fan Community, as stated on its home page", "Membership at 20 euros a year for adults and 15 euros for 12 to 17 years"]
+strengths_fr = ["Communauté de fans LEGO reconnue, selon sa page d'accueil", "Adhésion à 20 euros par an pour les adultes et 15 euros de 12 à 17 ans"]
+weaknesses_en = ["Site mainly in Dutch", "Events calendar lists only dates from February 2027"]
+weaknesses_fr = ["Site surtout en néerlandais", "Le calendrier ne liste que des dates à partir de février 2027"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickantiers.com/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brickantiers.com/events/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brickantiers.com/lid-worden/"
+date = "2026-11-25"
+kind = "official"
+
+[resource.contact]
+email = "bestuur@brickantiers.com"
+url = "https://brickantiers.com/"
+date = "2026-11-25"
+
+[[resource]]
+id = "swisslug"
+name = "SwissLUG"
+url = "https://www.swisslug.ch/"
+group = "national-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["de"]
+countries = ["CH"]
+access = "paid"
+summary_en = "Four monthly Stammtische across the German-speaking part of the country, open to non-members, and an exhibition for its 20th anniversary from 27 to 29 August 2027 in Burgdorf; founded on 24 February 2007."
+summary_fr = "Quatre Stammtische mensuels dans la partie alémanique du pays, ouverts aux non-membres, et une exposition pour ses 20 ans du 27 au 29 août 2027 à Berthoud ; fondée le 24 février 2007."
+strengths_en = ["Annual exhibition in the Toggenburg (Lichtensteig) from 20 December 2026 to 17 January 2027", "Galleries of Ticino Bricks (24 and 25 October 2026) and of the InterLUG meeting of 15 August 2026"]
+strengths_fr = ["Exposition annuelle dans le Toggenburg (Lichtensteig) du 20 décembre 2026 au 17 janvier 2027", "Galeries de Ticino Bricks (24 et 25 octobre 2026) et de la rencontre InterLUG du 15 août 2026"]
+weaknesses_en = ["Site in German only", "Individual membership at 45 Swiss francs a year (25 for youth, 75 for families)"]
+weaknesses_fr = ["Site uniquement en allemand", "Adhésion individuelle à 45 francs suisses par an (25 pour les jeunes, 75 pour les familles)"]
+status = "active"
+last_activity = "2026-10-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.swisslug.ch/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.swisslug.ch/events/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.swisslug.ch/verein/"
+date = "2026-11-25"
+kind = "official"
+
+[resource.contact]
+email = "info@swisslug.ch"
+url = "https://www.swisslug.ch/"
+date = "2026-11-25"
+
+[[resource]]
+id = "lelug"
+name = "LELUG - Léman Lego User Group"
+url = "https://www.lelug.ch/"
+group = "regional-clubs"
+feed = "https://www.lelug.ch/feed/"
+covers = ["clubs", "official", "events"]
+languages = ["fr"]
+countries = ["CH"]
+access = "paid"
+summary_en = "Agenda of its own exhibitions up to 2028: Broye Briqu'Expo in Payerne (24 and 25 April 2027, 1 and 2 April 2028), Valtrabrique in Fleurier and Léman Briqu'Expo in Morges (7 and 8 October 2028)."
+summary_fr = "Agenda de ses propres expositions jusqu'en 2028 : Broye Briqu'Expo à Payerne (24 et 25 avril 2027, 1er et 2 avril 2028), Valtrabrique à Fleurier et Léman Briqu'Expo à Morges (7 et 8 octobre 2028)."
+strengths_en = ["Yearly building contest with sets as prizes (2025 theme: water, results published on 10 November 2025)", "Membership at 30 Swiss francs a year for adults, 40 for couples, 50 for families"]
+strengths_fr = ["Concours de construction annuel avec des sets en prix (thème 2025 : l'eau, résultats publiés le 10 novembre 2025)", "Adhésion à 30 francs suisses par an pour les adultes, 40 pour les couples, 50 pour les familles"]
+weaknesses_en = ["Latest blog post dates from 10 November 2025", "Contact by form only"]
+weaknesses_fr = ["Dernier billet de blog daté du 10 novembre 2025", "Contact par formulaire uniquement"]
+status = "active"
+last_activity = "2025-11-10"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.lelug.ch/evenements/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.lelug.ch/adhesion/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.lelug.ch/blog/"
+date = "2025-11-10"
+kind = "official"
+
+[[resource]]
+id = "brique-valais"
+name = "Brique Valais"
+url = "https://briquevalais.ch/"
+group = "regional-clubs"
+feed = "https://briquevalais.ch/feed/"
+covers = ["clubs", "official", "events"]
+languages = ["fr"]
+countries = ["CH"]
+summary_en = "Organiser of the first LEGO exhibition of the canton of Valais: about 50 exhibitors from Switzerland and France, an 80-prize raffle and food trucks; last edition on 11 and 12 April 2026 in Fully."
+summary_fr = "Organisateur de la première exposition LEGO du Valais : une cinquantaine d'exposants de Suisse et de France, tombola de 80 lots, food-trucks ; dernière édition les 11 et 12 avril 2026 à Fully."
+strengths_en = ["More than ten children exhibit their own creations", "Next edition on 3 and 4 April 2027 in Fully according to the LELUG agenda"]
+strengths_fr = ["Plus d'une dizaine d'enfants exposent leurs créations", "Prochaine édition les 3 et 4 avril 2027 à Fully selon l'agenda du LELUG"]
+weaknesses_en = ["Home page still announces the April 2026 edition", "Exhibition only: no meetings or membership described"]
+weaknesses_fr = ["La page d'accueil annonce encore l'édition d'avril 2026", "Exposition uniquement : ni rencontres ni adhésion décrites"]
+status = "active"
+last_activity = "2026-04-12"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+city = "Fully"
+
+[[resource.sources]]
+url = "https://briquevalais.ch/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.lelug.ch/evenements/"
+date = "2026-11-25"
+kind = "third-party"
+
+[[resource]]
+id = "ruz-de-bricks"
+name = "Ruz-de-Brick's"
+url = "https://ruzdebricks.ch/"
+group = "regional-clubs"
+feed = "https://ruzdebricks.ch/feed/"
+covers = ["clubs", "official", "events"]
+languages = ["fr"]
+countries = ["CH"]
+access = "paid"
+summary_en = "Yearly festival, first held on 31 October and 1 November 2026 at La Rebatte, and a LEGO Trophy building contest on 15 May 2027, organised with Briqu'à Loris."
+summary_fr = "Festival annuel, dont la première édition a eu lieu les 31 octobre et 1er novembre 2026 à La Rebatte, et Trophée LEGO de construction le 15 mai 2027, organisé avec Briqu'à Loris."
+strengths_en = ["Membership from 30 Swiss francs a year, with free entry to the festival", "Yearly outing and techniques shared between members of all ages"]
+strengths_fr = ["Adhésion dès 30 francs suisses par an, avec entrée gratuite au festival", "Sortie annuelle et astuces partagées entre membres de tous âges"]
+weaknesses_en = ["Dates of the next festival not yet announced"]
+weaknesses_fr = ["Dates du prochain festival pas encore annoncées"]
+status = "active"
+last_activity = "2026-11-01"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Cernier"
+
+[[resource.sources]]
+url = "https://ruzdebricks.ch/"
+date = "2026-11-25"
+kind = "official"
+
+[resource.contact]
+email = "info@ruz-de-bricks.ch"
+url = "https://ruzdebricks.ch/"
+date = "2026-11-25"
+
+[[resource]]
+id = "perthlug"
+name = "PerthLUG"
+url = "https://perthlug.com/"
+group = "regional-clubs"
+feed = "https://perthlug.com/feed/"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["AU"]
+access = "free"
+summary_en = "Monthly Buildapalooza build night on the second Monday at the John McGrath Pavilion, free membership via its Facebook group (more than 6100 members) and the Bricktober exhibition each October."
+summary_fr = "Soirée de construction mensuelle Buildapalooza le deuxième lundi au John McGrath Pavilion, adhésion gratuite via son groupe Facebook (plus de 6100 membres) et exposition Bricktober chaque octobre."
+strengths_en = ["Founded on 20 January 2014; recognised LEGO fan community of the LEGO Fan CoLab", "Twice-yearly buy and sell days (Minifigapalooza)", "Bricktober 2026 report published on 27 October 2026"]
+strengths_fr = ["Fondé le 20 janvier 2014 ; communauté de fans LEGO reconnue du LEGO Fan CoLab", "Journées d'achat et de vente deux fois par an (Minifigapalooza)", "Compte rendu de Bricktober 2026 publié le 27 octobre 2026"]
+weaknesses_en = ["Membership limited to residents of Western Australia aged 16 and over", "Affiliate links on its site and Facebook group"]
+weaknesses_fr = ["Adhésion réservée aux résidents d'Australie-Occidentale de 16 ans et plus", "Liens d'affiliation sur son site et son groupe Facebook"]
+size = [{n = 6100, unit = "members", approx = "more-than"}]
+status = "active"
+last_activity = "2026-10-27"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Perth"
+
+[[resource.sources]]
+url = "https://perthlug.com/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://perthlug.com/about-us/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://perthlug.com/membership/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "mugs-melbourne"
+name = "MUGs - Melbourne LEGO User Group"
+url = "https://mugsmelbourne.com.au/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["AU"]
+access = "paid"
+summary_en = "Monthly meetings open to the public on the second Sunday at The Baseplate in Preston; host of the Melbourne Brick Show (5 and 6 September 2026) and of Queenscliffe Bricks and Echuca Bricks."
+summary_fr = "Réunions mensuelles ouvertes au public le deuxième dimanche à The Baseplate à Preston ; organisateur du Melbourne Brick Show (5 et 6 septembre 2026), de Queenscliffe Bricks et d'Echuca Bricks."
+strengths_en = ["Under the not-for-profit Brickventures Inc, more than 20 years of history", "MUGs Junior school-holiday events for ages 5 to 13"]
+strengths_fr = ["Sous l'égide de l'organisation à but non lucratif Brickventures Inc, plus de 20 ans d'histoire", "Événements MUGs Junior pendant les vacances scolaires pour les 5 à 13 ans"]
+weaknesses_en = ["Full membership at 60 Australian dollars (35 on joining, then 25 a year)", "Details of the next meeting are given on Facebook"]
+weaknesses_fr = ["Adhésion complète à 60 dollars australiens (35 à l'inscription, puis 25 par an)", "Les détails de la prochaine réunion sont donnés sur Facebook"]
+status = "active"
+last_activity = "2026-09-06"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Melbourne"
+
+[[resource.sources]]
+url = "https://mugsmelbourne.com.au/about/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://mugsmelbourne.com.au/melbourne-brick-show/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://mugsmelbourne.com.au/membership/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "southern-bricks"
+name = "Southern Bricks LEGO User Group"
+url = "https://www.sblug.club/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["AU"]
+summary_en = "Monthly meets at Findon Community Centre (next on 6 December 2026, Christmas theme), a monthly Discord evening and BRI XPO, described as the largest fan-run LEGO exhibition in South Australia."
+summary_fr = "Rencontres mensuelles au Findon Community Centre (prochaine le 6 décembre 2026, thème de Noël), soirée Discord mensuelle et BRI XPO, présentée comme la plus grande exposition LEGO de fans d'Australie-Méridionale."
+strengths_en = ["Established in 2012; direct support from LEGO Australia, as stated by the group", "No cost to attend club meets"]
+strengths_fr = ["Fondé en 2012 ; soutien direct de LEGO Australie, selon le groupe", "Participation gratuite aux rencontres du club"]
+weaknesses_en = ["Home page shows no dated news; dates come from the Monthly Meets page"]
+weaknesses_fr = ["La page d'accueil ne montre aucune actualité datée ; les dates viennent de la page des rencontres mensuelles"]
+status = "active"
+last_activity = "2026-11-19"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Adelaide"
+
+[[resource.sources]]
+url = "https://www.sblug.club/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.sblug.club/monthly-meets"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "vlc-vancouver"
+name = "VLC - Vancouver LEGO Club"
+url = "https://vlc.ca/"
+group = "regional-clubs"
+feed = "https://vlc.ca/feed/"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["CA"]
+summary_en = "More than 50 active members according to a post of July 2025, 25 years of history and displays at the Cloverdale Rodeo (May 2026), the Burnaby Central Railway (June 2026) and train shows."
+summary_fr = "Plus de 50 membres actifs selon un billet de juillet 2025, 25 ans d'histoire et des expositions au Cloverdale Rodeo (mai 2026), au Burnaby Central Railway (juin 2026) et dans des salons ferroviaires."
+strengths_en = ["Posts on the site dated 28 and 31 May 2026", "Large collaborative layouts, for example 380 square feet at the Cloverdale Rodeo 2024"]
+strengths_fr = ["Billets du site datés des 28 et 31 mai 2026", "Grandes constructions collectives, par exemple 380 pieds carrés au Cloverdale Rodeo 2024"]
+weaknesses_en = ["Latest post dates from 31 May 2026"]
+weaknesses_fr = ["Dernier billet du 31 mai 2026"]
+size = [{n = 50, unit = "members", approx = "more-than"}]
+status = "active"
+last_activity = "2026-05-31"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Vancouver"
+
+[[resource.sources]]
+url = "https://vlc.ca/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "nalug"
+name = "NALUG - Northern Alberta LEGO Users Group"
+url = "https://www.nalug.ca/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["CA"]
+summary_en = "Founded in 1999, claims to be the northernmost LEGO user group in the world; organiser of the Northern Bricks convention, with a members' garage sale on 21 November 2026."
+summary_fr = "Fondé en 1999, se présente comme le groupe d'utilisateurs LEGO le plus septentrional du monde ; organisateur de la convention Northern Bricks, avec une vente de garage ouverte au public le 21 novembre 2026."
+strengths_en = ["Twenty-fifth anniversary celebrated in 2024", "Displays at the Greater Edmonton Train Show and at comic book expos"]
+strengths_fr = ["Vingt-cinquième anniversaire fêté en 2024", "Expositions au Greater Edmonton Train Show et dans des salons de bandes dessinées"]
+weaknesses_en = ["Full members must be 18 or over, younger people join as associate members"]
+weaknesses_fr = ["Les membres de plein droit doivent avoir 18 ans ou plus, les plus jeunes sont membres associés"]
+status = "active"
+last_activity = "2026-11-21"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Edmonton"
+
+[[resource.sources]]
+url = "https://www.nalug.ca/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.nalug.ca/join"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "parlugment"
+name = "ParLUGment"
+url = "https://parlugment.ca/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["CA"]
+access = "paid"
+summary_en = "Monthly build challenge for custom builds only, with no official sets, shown at a private mini-exhibition at each meeting; potluck and garage sale on 2 December 2026, about a dozen public shows a year."
+summary_fr = "Défi mensuel réservé aux créations originales, sans sets de marque LEGO, montrées lors de chaque réunion ; repas partagé et vente de garage le 2 décembre 2026 ; une douzaine d'expositions publiques par an."
+strengths_en = ["Recognised LEGO fan community of Ottawa and Gatineau, created on 23 March 2001", "A guest may attend one monthly meeting before joining"]
+strengths_fr = ["Communauté de fans LEGO reconnue d'Ottawa et Gatineau, créée le 23 mars 2001", "Un invité peut assister à une réunion mensuelle avant d'adhérer"]
+weaknesses_en = ["Membership at 30 dollars a year, which covers the rent of the meeting space"]
+weaknesses_fr = ["Adhésion à 30 dollars par an, qui couvrent la location de la salle de réunion"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Ottawa"
+
+[[resource.sources]]
+url = "https://parlugment.ca/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://parlugment.ca/upcoming/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://parlugment.ca/join/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "lug-4-2"
+name = "LUG 4/2"
+url = "https://www.lug4x2.org/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["NZ"]
+summary_en = "First registered LEGO user group of New Zealand (2012), an incorporated society and charity behind the Christchurch Brick Show and Imagination Station; Top of the South Brick Show on 14 and 15 November 2026."
+summary_fr = "Premier groupe d'utilisateurs LEGO enregistré de Nouvelle-Zélande (2012), société constituée et association caritative derrière le Christchurch Brick Show et Imagination Station ; Top of the South Brick Show les 14 et 15 novembre 2026."
+strengths_en = ["Events for members every month, plus community events", "Group build for members on 18 October 2026"]
+strengths_fr = ["Événements mensuels pour les membres, et événements communautaires", "Construction collective réservée aux membres le 18 octobre 2026"]
+weaknesses_en = ["Some events are for members only", "Home page shows no dated news; dates come from the events page"]
+weaknesses_fr = ["Certains événements sont réservés aux membres", "La page d'accueil ne montre aucune actualité datée ; les dates viennent de la page des événements"]
+status = "active"
+last_activity = "2026-11-15"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Christchurch"
+
+[[resource.sources]]
+url = "https://www.lug4x2.org/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.lug4x2.org/events"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "hamlug"
+name = "HamLUG - Hamilton LEGO User Group"
+url = "https://hamlug.co.nz/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["NZ"]
+summary_en = "Around 80 members across the Waikato and a flagship two-day Brick Show each August at Claudelands Event Centre, run by volunteers, with part of the proceeds given to local charities."
+summary_fr = "Environ 80 membres dans le Waikato et une exposition phare de deux jours chaque août au Claudelands Event Centre, tenue par des bénévoles, dont une partie des recettes va à des associations locales."
+strengths_en = ["Recognised LEGO user group, as stated on its page", "Pop-up events for schools and community groups, such as the University of Waikato showcase on 30 October 2026"]
+strengths_fr = ["Groupe d'utilisateurs LEGO reconnu, selon sa page", "Événements éphémères pour les écoles et les associations, comme la présentation à l'université de Waikato le 30 octobre 2026"]
+weaknesses_en = ["Most announcements are on Facebook"]
+weaknesses_fr = ["La plupart des annonces sont sur Facebook"]
+size = [{n = 80, unit = "members", approx = "about"}]
+status = "active"
+last_activity = "2026-10-30"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Hamilton"
+
+[[resource.sources]]
+url = "https://hamlug.co.nz/about/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://hamlug.co.nz/events/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "lug-south"
+name = "LUG South"
+url = "https://www.lug-south.org.nz/"
+group = "regional-clubs"
+covers = ["clubs", "official", "events"]
+languages = ["en"]
+countries = ["NZ"]
+access = "free"
+summary_en = "Recognised by the LEGO Group since late 2015, with no-fee membership at three levels; Southland Brick Show on 5 and 6 September 2026 and Great Little Train Show on 24 and 25 October 2026."
+summary_fr = "Reconnu par le groupe LEGO depuis fin 2015, adhésion sans cotisation à trois niveaux ; Southland Brick Show les 5 et 6 septembre 2026 et Great Little Train Show les 24 et 25 octobre 2026."
+strengths_en = ["Registered charity sharing LEGO with the Southland region to help children and families", "Events through 2026: Relay for Life in March, Night of the Arts in May"]
+strengths_fr = ["Association caritative enregistrée qui partage le LEGO avec la région du Southland au profit des enfants et des familles", "Événements de 2026 : Relay for Life en mars, Night of the Arts en mai"]
+weaknesses_en = ["Updates mostly on Facebook"]
+weaknesses_fr = ["Actualités surtout sur Facebook"]
+status = "active"
+last_activity = "2026-10-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Invercargill"
+
+[[resource.sources]]
+url = "https://www.lug-south.org.nz/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.lug-south.org.nz/events/"
+date = "2026-11-25"
+kind = "official"
