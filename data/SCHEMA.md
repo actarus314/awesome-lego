@@ -1,6 +1,6 @@
 # Data schema
 
-One TOML file per category in `data/`. Every text shown on the website exists in English (`_en`) and French (`_fr`); the README and the full list use English.
+One TOML file per category in `data/`. Every text shown on the website exists in English (`_en`) and French (`_fr`); the README and the full list use English. A proposed entry may come in English only: without `summary_fr`, it carries no French text at all, the build warns « French translation missing », the French page shows the English texts marked as English, and the monthly review adds the French texts.
 
 ```toml
 [category]

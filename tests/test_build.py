@@ -144,6 +144,17 @@ def entry_of(text, rid):
     return i, (j if j > 0 else len(text))
 
 
+def set_field(rid, key, value):
+    """An edit that sets `key = value` (TOML) in the entry `rid`, replacing its current line or adding one after its id."""
+    def edit(t):
+        m = re.search(rf'(?ms)^id = "{re.escape(rid)}"\n.*?(?=^\[\[resource\]\]|\Z)', t)
+        block = m.group(0)
+        line = f"{key} = {value}\n"
+        new = re.sub(rf"(?m)^{re.escape(key)} = .*\n", lambda _: line, block, count=1) if re.search(rf"(?m)^{re.escape(key)} = ", block) else block.replace(f'id = "{rid}"\n', f'id = "{rid}"\n{line}', 1)
+        return t[:m.start()] + new + t[m.end():]
+    return edit
+
+
 def add_field(rid, line):
     """An edit that adds `line` to the entry `rid`, right after its id."""
     return lambda t: t.replace(f'id = "{rid}"\n', f'id = "{rid}"\n{line}\n', 1)
@@ -202,9 +213,9 @@ class Lot3Model(unittest.TestCase):
         self.assertTrue(any("access 'freemium' says nothing for entry" in n for n in ns), ns)
 
     def test_size_form(self):
-        errs = load_with("places.toml", add_field("lego-house", 'size = [{n = 12000, unit = "acres"}]'))
+        errs = load_with("places.toml", set_field("lego-house", "size", '[{n = 12000, unit = "acres"}]'))
         self.assertTrue(any("size is a list" in e for e in errs), errs)
-        self.assertEqual(load_with("places.toml", add_field("lego-house", 'size = [{n = 12000, unit = "square-metres"}, {n = 25000000, unit = "bricks", approx = "about"}]')), [])
+        self.assertEqual(load_with("places.toml", set_field("lego-house", "size", '[{n = 12000, unit = "square-metres"}, {n = 25000000, unit = "bricks", approx = "about"}]')), [])
 
     def test_operator(self):
         self.assertTrue(any("operator" in e for e in load_with("places.toml", lambda t: t.replace('operator = "lego-group"', 'operator = "merlin"', 1))))
@@ -212,11 +223,11 @@ class Lot3Model(unittest.TestCase):
 
 class Lot3Texts(unittest.TestCase):
     def test_brand_in_french_sentences(self):
-        ns = notes_with("places.toml", lambda t: t.replace('summary_fr = "Centre', 'summary_fr = "Des sets LEGO officiels. Centre', 1))
+        ns = notes_with("places.toml", set_field("lego-house", "summary_fr", '"Des sets LEGO officiels."'))
         self.assertTrue(any("lego-house: summary_fr" in n and "LEGO officiels" in n for n in ns), [n for n in ns if "lego-house" in n])
 
     def test_numeric_dates(self):
-        ns = notes_with("places.toml", lambda t: t.replace('summary_en = "Official LEGO experience', 'summary_en = "Opened 2026-07-01. Official LEGO experience', 1))
+        ns = notes_with("places.toml", set_field("lego-house", "summary_en", '"Opened 2026-07-01."'))
         self.assertTrue(any("lego-house" in n and "2026-07-01" in n for n in ns), [n for n in ns if "lego-house" in n])
 
     def test_site_phrases_follow_the_brand_rule(self):
@@ -366,6 +377,43 @@ class Lot3Checks(unittest.TestCase):
             return t[:i] + re.sub(r'summary_fr = "[^"]*"', 'summary_fr = "Chaîne en allemand sur les sets de marque LEGO."', t[i:j], count=1) + t[j:]
         ns = notes_with("video.toml", lang_only)
         self.assertFalse([n for n in ns if "jangbricks: summary_fr starts with a country" in n], "a language is not a country")
+
+class EnglishOnly(unittest.TestCase):
+    """Contributions in English only (decision of 24/11/2026, 13:47): no French text is refused, shown in English."""
+    @staticmethod
+    def drop_french(t):
+        m = re.search(r'(?ms)^id = "lego-house"\n.*?(?=^\[\[resource\]\]|\Z)', t)
+        block = re.sub(r"(?m)^(summary|strengths|weaknesses|recurrence)_fr = .*\n", "", m.group(0))
+        return t[:m.start()] + block + t[m.end():]
+
+    def test_entry_without_french_builds_and_shows_english(self):
+        self.assertEqual(load_with("places.toml", self.drop_french), [])
+        cats, _ = load_quiet(lambda t: t)
+        old = build.DATA
+        d = Path(tempfile.mkdtemp())
+        try:
+            shutil.copytree(ROOT / "data", d / "data")
+            p = d / "data" / "places.toml"
+            p.write_text(self.drop_french(p.read_text(encoding="utf-8")), encoding="utf-8")
+            build.DATA = d / "data"
+            with contextlib.redirect_stdout(io.StringIO()):
+                cats, errs = build.load()
+            self.assertEqual(errs, [])
+            self.assertTrue(any("lego-house" in w for w in build.untranslated))
+            row = next(r for r in build.site_data(cats, {})["resources"] if r["id"] == "lego-house")
+            self.assertEqual(row["fr"]["tl"], "en")
+            self.assertEqual(row["fr"]["summary"], row["en"]["summary"])
+            self.assertNotIn("tl", row["en"])
+        finally:
+            build.DATA = old
+            shutil.rmtree(d)
+
+    def test_french_texts_come_together(self):
+        def partial(t):
+            t = self.drop_french(t)
+            return set_field("lego-house", "strengths_fr", '["Un point"]')(t)
+        self.assertTrue(any("French texts come together" in e for e in load_with("places.toml", partial)))
+
 
 if __name__ == "__main__":
     unittest.main()

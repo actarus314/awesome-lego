@@ -76,6 +76,7 @@ def fail(errors):
 def load():
     cats, errors, ids, urls = [], [], {}, {}
     notes.clear()
+    untranslated.clear()
     for path in sorted(DATA.glob("*.toml")):
         if path.stem in ("metrics", "journeys"):
             continue
@@ -108,9 +109,14 @@ def load():
             elif r["id"] in ids:
                 errors.append(f"{w}: id already used in {ids[r['id']]}")
             ids[r.get("id")] = where
-            for k in ("name", "url", "group", "summary_en", "summary_fr", "status", "checked", "added", "confidence"):
+            for k in ("name", "url", "group", "summary_en", "status", "checked", "added", "confidence"):
                 if not r.get(k):
                     errors.append(f"{w}: {k} missing")
+            if not r.get("summary_fr"):  # contributions in English only (decision of 24/11/2026, 13:47): the monthly review translates
+                frk = [k for k in r if k.endswith("_fr") and k not in ("city_fr",)]
+                if frk:
+                    errors.append(f"{w}: French texts come together, with summary_fr ({', '.join(frk)} without it)")
+                untranslated.append(w)
             if len(r.get("sources", [])) > 3:  # the best three; a newer reading replaces the oldest instead of piling up
                 errors.append(f"{w}: more than 3 sources")
             if not re.match(r"https?://", str(r.get("url", ""))):
@@ -165,7 +171,7 @@ def load():
                 if r.get(k) and not DATE.match(str(r[k])):
                     errors.append(f"{w}: {k} must be YYYY-MM-DD")
             for a, b in (("strengths_en", "strengths_fr"), ("weaknesses_en", "weaknesses_fr")):
-                if len(r.get(a, [])) != len(r.get(b, [])):
+                if r.get("summary_fr") and len(r.get(a, [])) != len(r.get(b, [])):
                     errors.append(f"{w}: {a} and {b} differ in length")
             for a in ("size", "business_model"):
                 if bool(r.get(a + "_en")) != bool(r.get(a + "_fr")):
@@ -226,6 +232,12 @@ def load():
 
 
 notes = []  # breaches of the rules of lot 3 not yet met by the data (NEW_RULES_BLOCKING)
+untranslated = []  # entries proposed in English only: warned, never refused; the monthly review adds the French texts
+
+
+def text(r, key, lang):
+    """A text of an entry in a language: the English one when the French translation is still missing."""
+    return r.get(f"{key}_{lang}") if r.get("summary_" + lang) else r.get(f"{key}_en")
 
 
 def access_context(cat, group):
@@ -446,10 +458,11 @@ def site_data(cats, m):
                        metrics=m.get(r["id"], {}),
                        sources=[{"url": s["url"], "date": str(s["date"]), "kind": s["kind"]} for s in r.get("sources", [])])
             for lang in LANGS:
-                row[lang] = {"summary": r["summary_" + lang], "strengths": r.get("strengths_" + lang, []),
-                             "weaknesses": r.get("weaknesses_" + lang, []), "size": r.get("size_" + lang, ""),  # free text until lot 3b
+                row[lang] = {"summary": text(r, "summary", lang), "strengths": text(r, "strengths", lang) or [],
+                             "weaknesses": text(r, "weaknesses", lang) or [],
                              "group": gnames.get(r["group"], {}).get(lang, r["group"]),
-                             **({"rec": r["recurrence_" + lang]} if r.get("recurrence_" + lang) else {})}
+                             **({"rec": text(r, "recurrence", lang)} if text(r, "recurrence", lang) else {}),
+                             **({} if r.get("summary_" + lang) else {"tl": "en"})}  # the French page shows the English text, marked as such
             row["checked"] = str(row["checked"])
             row["brands"] = r.get("brands", [])  # read at the source of each entry (brands of brands.toml it sells, tracks, reviews or admits)
             row["funding"] = r.get("funding")
@@ -682,12 +695,12 @@ def content_feed(cats, lang):
             if str(r["added"]) <= BASELINE:
                 base += 1
             elif len(days[str(r["added"])]) <= FEED_BATCH:
-                items.append((f"{site}#added-{r['id']}", f"{FEED_T['new'][lang]} · {cname} · {r['name']}", link, str(r["added"]), r["summary_" + lang]))
+                items.append((f"{site}#added-{r['id']}", f"{FEED_T['new'][lang]} · {cname} · {r['name']}", link, str(r["added"]), text(r, "summary", lang)))
             if r.get("next_date") and str(r["next_date"]) >= today:
                 city = r.get("city_fr") if lang == "fr" and r.get("city_fr") else r.get("city")
                 where = f" · {city}" if city else ""
                 items.append((f"{site}#next-{r['id']}-{r['next_date']}", f"{FEED_T['next'][lang]} · {r['name']} · {in_letters(str(r['next_date']), lang)}{where}",
-                              link, str(r["checked"]), r["summary_" + lang]))
+                              link, str(r["checked"]), text(r, "summary", lang)))
     for day, names in days.items():
         if len(names) > FEED_BATCH:
             per = ", ".join(f"{n} {sum(1 for x in names if x == n)}" for n in dict.fromkeys(names))
@@ -778,6 +791,8 @@ def main():
     texts = {f: readme(cats, m, lang, kind) for (kind, lang), f in FILES.items()}
     texts[".github/ISSUE_TEMPLATE/add-resource.yml"] = issue_form(cats)
     print(f"✓ v{version}: {sum(len(c['resources']) for c in cats)} resources in {len(cats)} categories")
+    if untranslated:  # a warning, never an error: contributions come in English only
+        print(f"! French translation missing for {len(untranslated)} entries (the monthly review adds it): " + ", ".join(x.split(": ")[1] for x in untranslated))
     report_notes()
     if "--check" in sys.argv:
         stale = [f for f, t in texts.items() if not (ROOT / f).exists() or (ROOT / f).read_text(encoding="utf-8") != t]
