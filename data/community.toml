@@ -1702,8 +1702,8 @@ checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
 subreddit = "LEGOtrains"
-rank_reason_en = "At least 23760 members in the February 2025 snapshot, the reference subreddit for LEGO trains."
-rank_reason_fr = "Au moins 23760 membres au relevé de février 2025, le sous-reddit de référence des trains LEGO."
+rank_reason_en = "At least 23760 members in the February 2025 snapshot, a subreddit dedicated to LEGO trains."
+rank_reason_fr = "Au moins 23760 membres au relevé de février 2025, un sous-reddit consacré aux trains LEGO."
 
 [[resource.sources]]
 url = "https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=LEGOtrains&limit=1&sort=desc"

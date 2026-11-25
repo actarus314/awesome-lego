@@ -2115,17 +2115,17 @@ name = "LEGOLAND Discovery Centre Melbourne"
 url = "https://www.legolanddiscoverycentre.com/melbourne/"
 group = "official-venues"
 rank = {AU = 1}
-rank_reason_en = "Adult Nights for guests aged 18 and over with workshops by a Master Model Builder, 13 attractions and more than 2000000 bricks."
-rank_reason_fr = "Soirées adultes pour les personnes de 18 ans et plus, avec ateliers d'un Master Model Builder, 13 attractions et plus de 2000000 briques."
+rank_reason_en = "Adult Nights for guests aged 16 and over with workshops by a Master Model Builder, 13 attractions and more than 2000000 bricks."
+rank_reason_fr = "Soirées adultes pour les personnes de 16 ans et plus, avec ateliers d'un Master Model Builder, 13 attractions et plus de 2000000 briques."
 operator = "lego-group"
 covers = ["official", "places"]
 languages = ["en"]
 countries = ["AU"]
 access = "paid"
-summary_en = "Adult Nights for guests aged 18 and over, with workshops by a Master Model Builder, build challenges, set auctions and a 4D cinema; the next one is on Saturday 12 December 2026."
-summary_fr = "Soirées adultes dès 18 ans, avec ateliers d'un Master Model Builder, défis de construction, ventes aux enchères de sets et cinéma 4D ; la prochaine a lieu le samedi 12 décembre 2026."
+summary_en = "Adult Nights for guests aged 16 and over, with workshops by a Master Model Builder, build challenges, set auctions and a 4D cinema; the next one is on Saturday 12 December 2026."
+summary_fr = "Soirées adultes dès 16 ans, avec ateliers d'un Master Model Builder, défis de construction, ventes aux enchères de sets et cinéma 4D ; la prochaine a lieu le samedi 12 décembre 2026."
 strengths_en = ["13 attractions and more than 2 million bricks, including a Miniland of Melbourne", "On level 2 of the Chadstone shopping centre, with a LEGO retail store on site"]
-strengths_fr = ["13 attractions et plus de 2 millions de briques, dont un Miniland de Melbourne", "Au niveau 2 du centre commercial Chadstone, avec un magasin du groupe LEGO sur place"]
+strengths_fr = ["13 attractions et plus de 2 millions de briques, dont un Miniland de Melbourne", "Au niveau 2 du centre commercial Chadstone, avec une boutique de produits de marque LEGO sur place"]
 weaknesses_en = ["During standard hours adults must be accompanied by a child aged 17 or under", "Designed primarily for children aged 3 to 10"]
 weaknesses_fr = ["Aux horaires habituels, les adultes doivent être accompagnés d'un enfant de 17 ans ou moins", "Conçu avant tout pour les enfants de 3 à 10 ans"]
 size = [{n = 2000000, unit = "bricks", approx = "more-than"}]
@@ -2336,8 +2336,8 @@ name = "Campona KockaPark"
 url = "https://kockapark.com/en/"
 group = "museums-and-exhibitions"
 rank = {HU = 1}
-rank_reason_en = "Dioramas by Hungarian builders, open every day from 10:00 to 19:00, with site news dated 27 October 2026."
-rank_reason_fr = "Dioramas de constructeurs hongrois, ouvert tous les jours de 10 h à 19 h, avec une actualité du site datée du 27 octobre 2026."
+rank_reason_en = "Dioramas by local builders, open every day from 10:00 to 19:00, with site news dated 27 October 2026."
+rank_reason_fr = "Dioramas de constructeurs locaux, ouvert tous les jours de 10 h à 19 h, avec une actualité du site datée du 27 octobre 2026."
 covers = ["official", "places"]
 languages = ["hu", "en"]
 countries = ["HU"]

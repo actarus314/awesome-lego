@@ -235,7 +235,7 @@ def load():
     return cats, errors
 
 
-notes = []  # breaches of the rules of lot 3 not yet met by the data (NEW_RULES_BLOCKING)
+notes = []  # breaches of the rules of writing of v3.0 (errors while NEW_RULES_BLOCKING)
 untranslated = []  # entries proposed in English only: warned, never refused; the monthly review adds the French texts
 
 
@@ -527,7 +527,7 @@ def host(url):
 
 def lego_operator(r):
     """Sites and places of the LEGO Group (lego-group) or under the LEGO brand by a partner (licensee): the `operator`
-    field (filled in lot 3b; the address served until then)."""
+    field."""
     return r.get("operator")
 
 
