@@ -168,7 +168,7 @@ Online and physical shops selling official LEGO, alternative brick brands and ge
 
 - [Alternate (alternate.fr)](https://www.alternate.fr/Jouets/LEGO) - Large official LEGO range delivered to France, from the electronics seller Alternate GmbH. Covers official LEGO.
 - [Amazon.fr](https://www.amazon.fr) - Marketplace and direct sales: official LEGO sold directly and by third parties, plus a few alternative brands. Covers official LEGO and alternative brands.
-- [Carrefour (direct sales and Marketplace)](https://www.carrefour.fr) - Direct sales distinct from the Marketplace, in a supermarket chain selling LEGO online and in store. Covers official LEGO.
+- [Carrefour (direct sales and Marketplace)](https://www.carrefour.fr) - Supermarket chain selling LEGO online and in store, its own direct sales kept apart from its Marketplace. Covers official LEGO.
 - [Cdiscount](https://www.cdiscount.com) - Chain with online and in-store sales, both direct and through a marketplace. Covers official LEGO.
 - [Cultura](https://www.cultura.com) - Cultural and creative-leisure chain, online and in store, with a LEGO range. Covers official LEGO.
 - [E.Leclerc](https://www.e.leclerc) - Supermarket chain, online and in store, with a LEGO catalogue. Covers official LEGO.
@@ -331,7 +331,7 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 
 - [BuWizz](https://buwizz.com/) - Driven from a phone application: Bluetooth controllers with a rechargeable battery and motors for LEGO Technic, System and train models. BuWizz 4.0 Ultra was announced on Kickstarter on 4 November 2026.
 - [Fx Bricks](https://shop.fxbricks.com/) - Maker of L-Gauge train products: Fx Track metal track compatible with the 9V system (wide curves, switches), PFx Brick light and sound controller, and the Fx 9V electrical system.
-- [Trixbrix](https://trixbrix.eu/en/) - Plastic, compatible with LEGO train track: curves from R24 to R184, many switch types, ballast plates, bridges, UV-printed tiles and automation parts (train detection, motorised points, signals).
+- [Trixbrix](https://trixbrix.eu/en/) - Curves from R24 to R184, many switch types, ballast plates, bridges, UV-printed tiles and automation parts (train detection, motorised points, signals), all in plastic made to fit LEGO trains.
 
 <br>
 

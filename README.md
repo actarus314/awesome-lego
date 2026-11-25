@@ -192,7 +192,7 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 ### Motors, controllers and track
 
 - [BuWizz](https://buwizz.com/) - Driven from a phone application: Bluetooth controllers with a rechargeable battery and motors for LEGO Technic, System and train models.
-- [Trixbrix](https://trixbrix.eu/en/) - Plastic, compatible with LEGO train track: curves from R24 to R184, many switch types, ballast plates, bridges, UV-printed tiles and automation parts (train detection, motorised points, signals).
+- [Trixbrix](https://trixbrix.eu/en/) - Curves from R24 to R184, many switch types, ballast plates, bridges, UV-printed tiles and automation parts (train detection, motorised points, signals), all in plastic made to fit LEGO trains.
 
 <br>
 
