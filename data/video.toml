@@ -1261,6 +1261,7 @@ rank = {en = 4}
 rank_reason_en = "122 episodes at a weekly rhythm, in a conversation format with guests from several countries; latest episode on 21 November 2026."
 rank_reason_fr = "122 épisodes à rythme hebdomadaire, en format de conversation avec des invités de plusieurs pays ; dernier épisode le 21 novembre 2026."
 covers = ["news"]
+audience = ["adults"]
 languages = ["en"]
 countries = ["international"]
 summary_en = "Live show, audio edition, with guests from several countries discussing LEGO and life."
@@ -1575,6 +1576,7 @@ rank = {intl = 5, en = 5, de = 2}
 rank_reason_en = "About 2090000 subscribers and about 5200 videos, uploads every day, but mostly speed builds with little spoken evaluation; latest video on 24 November 2026."
 rank_reason_fr = "Environ 2090000 abonnés et environ 5200 vidéos, publiées tous les jours, mais surtout des constructions accélérées avec peu d'évaluation parlée ; dernière vidéo le 24 novembre 2026."
 covers = ["official"]
+audience = ["adults"]
 languages = ["de", "en"]
 countries = ["AT"]
 summary_en = "Speed builds and builds without commentary of almost every new and older set, aimed at adult fans (stated); recognised as a LEGO Fan Creator since May 2022 (stated)."
@@ -2091,6 +2093,7 @@ rank = {es = 1}
 rank_reason_en = "43 episodes of four to ten hours with news, interviews and a history section; episode 43 on 20 November 2026."
 rank_reason_fr = "43 épisodes de quatre à dix heures avec actualité, interviews et rubrique d'histoire ; épisode 43 le 20 novembre 2026."
 covers = ["news", "official"]
+audience = ["adults"]
 languages = ["es"]
 countries = ["ES"]
 summary_en = "Very long episodes of four to ten hours with news, interviews, guests and a history section, published on YouTube and audio platforms for adult fans (stated)."
@@ -2234,4 +2237,103 @@ kind = "official"
 [[resource.sources]]
 url = "https://brickmic.com/feed/"
 date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "brick-science"
+name = "Brick Science"
+url = "https://www.youtube.com/channel/UCpQB577lHFyWTyvrS73Ldlg"
+group = "building-and-custom"
+youtube_channel_id = "UCpQB577lHFyWTyvrS73Ldlg"
+covers = ["custom-builds"]
+languages = ["en"]
+countries = ["international"]
+audience = ["children"]
+summary_en = "Experiments and inventions made of bricks (a vault against a burglar, survival bunkers, a rock tumbler) presented as a show for the whole family, with the stated aim of encouraging the younger generation to create."
+summary_fr = "Expériences et inventions en briques (coffre-fort contre cambrioleur, abris de survie, polisseuse de pierres) présentées comme une émission pour toute la famille, avec l'objectif déclaré d'encourager les jeunes à créer."
+strengths_en = ["Describes itself as a family-friendly show", "Latest video on 24 November 2026", "About 721 thousand subscribers"]
+strengths_fr = ["Se présente comme une émission familiale", "Dernière vidéo le 24 novembre 2026", "Environ 721 mille abonnés"]
+weaknesses_en = ["Stunt-style builds more than building instruction", "Channel description carries a religious signature"]
+weaknesses_fr = ["Constructions spectaculaires plus qu'enseignement de la construction", "La description de la chaîne porte une signature religieuse"]
+size = [{n = 721000, unit = "subscribers", approx = "about"}]
+last_activity = "2026-11-24"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.youtube.com/channel/UCpQB577lHFyWTyvrS73Ldlg/about"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCpQB577lHFyWTyvrS73Ldlg"
+date = "2026-11-24"
+kind = "read"
+
+[[resource]]
+id = "building-together-youtube"
+name = "Building Together"
+url = "https://www.youtube.com/channel/UC6DN6B7FN7agEIJ6Gdyz2Cg"
+group = "building-and-custom"
+youtube_channel_id = "UC6DN6B7FN7agEIJ6Gdyz2Cg"
+covers = ["official", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+audience = ["children"]
+summary_en = "Reviews of sets, tips and custom builds from the point of view of families, with the stated idea that family time with bricks supports children's development."
+summary_fr = "Avis sur les sets, conseils et créations originales du point de vue de familles, avec l'idée affichée que le temps en famille avec les briques soutient le développement des enfants."
+strengths_en = ["Family angle stated on its description", "Videos on 22 and 24 November 2026", "Joined YouTube on 1 February 2021", "Presents families building together"]
+strengths_fr = ["Angle familial indiqué dans sa description", "Vidéos les 22 et 24 novembre 2026", "Présente sur YouTube depuis le 1er février 2021", "Présente des familles qui construisent ensemble"]
+weaknesses_en = ["Small audience (about 22 thousand subscribers)", "Many videos are about deals and expensive collector sets"]
+weaknesses_fr = ["Audience modeste (environ 22 mille abonnés)", "Beaucoup de vidéos portent sur les promotions et les sets de collection coûteux"]
+size = [{n = 22000, unit = "subscribers", approx = "about"}]
+last_activity = "2026-11-24"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.youtube.com/channel/UC6DN6B7FN7agEIJ6Gdyz2Cg/about"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC6DN6B7FN7agEIJ6Gdyz2Cg"
+date = "2026-11-24"
+kind = "read"
+
+[[resource]]
+id = "prof-bricks"
+name = "Prof. Bricks"
+url = "https://www.youtube.com/channel/UC2IErW2_erRVY81OVTERvog"
+group = "building-and-custom"
+youtube_channel_id = "UC2IErW2_erRVY81OVTERvog"
+covers = ["official", "learning"]
+languages = ["en"]
+countries = ["international"]
+audience = ["children"]
+summary_en = "Tutorials on robots, from building to programming, with LEGO Education kits (EV3, SPIKE, WeDo 2.0, BOOST), run by a robotics engineer and teacher, with story-based challenges for children."
+summary_fr = "Tutoriels sur les robots, de la construction à la programmation, avec les kits LEGO Education (EV3, SPIKE, WeDo 2.0, BOOST), par un ingénieur en robotique enseignant, avec des défis sous forme d'histoires pour les enfants."
+strengths_en = ["Channel description states the aim of giving children problem-solving and computational thinking skills", "Latest video on 24 September 2026", "About 410 videos, on YouTube since 2006"]
+strengths_fr = ["La description de la chaîne affiche l'objectif de donner aux enfants des compétences de résolution de problèmes et de pensée algorithmique", "Dernière vidéo le 24 septembre 2026", "Environ 410 vidéos, sur YouTube depuis 2006"]
+weaknesses_en = ["Several videos are about advanced mechanisms for older builders", "The channel promotes the author's own paid courses"]
+weaknesses_fr = ["Plusieurs vidéos portent sur des mécanismes avancés pour constructeurs plus âgés", "La chaîne fait la promotion des cours payants de l'auteur"]
+size = [{n = 410, unit = "videos", approx = "about"}, {n = 39000, unit = "subscribers", approx = "about"}]
+last_activity = "2026-09-24"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.youtube.com/channel/UC2IErW2_erRVY81OVTERvog/about"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC2IErW2_erRVY81OVTERvog"
+date = "2026-09-24"
 kind = "read"

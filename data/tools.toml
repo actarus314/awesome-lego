@@ -1341,6 +1341,7 @@ rank = {intl = 2}
 rank_reason_en = "Recognises loose bricks from one photo and suggests builds, with about 23 thousand App Store ratings and 13 interface languages; version 5.8.3 on 16 November 2026; advanced features need a subscription."
 rank_reason_fr = "Reconnaît des briques en vrac sur une photo et propose des montages, avec environ 23 mille évaluations App Store et 13 langues d'interface ; version 5.8.3 le 16 novembre 2026 ; fonctions avancées sur abonnement."
 covers = ["official", "parts", "instructions"]
+audience = ["children"]
 languages = ["en", "nl", "fr", "de", "it", "ja", "ko", "pt", "ru", "zh", "es", "tr"]
 countries = ["international"]
 access = "freemium"
@@ -1510,3 +1511,145 @@ kind = "read"
 url = "https://github.com/undera/pylgbst/commits/master.atom"
 date = "2026-11-22"
 kind = "read"
+
+[[resource]]
+id = "lego-play-app"
+name = "LEGO Play"
+url = "https://kids.lego.com/en-us/play-app"
+group = "apps"
+operator = "lego-group"
+covers = ["official", "learning"]
+languages = ["en"]
+countries = ["international"]
+access = "free-account"
+audience = ["children"]
+summary_en = "Moderated space for children with a 3D Brick Builder, stop-motion studio, pattern designer and avatars; every contribution is checked before it appears, and full creative features need verified parental consent."
+summary_fr = "Espace modéré pour enfants avec constructeur de briques en 3D, studio d'animation en volume, créateur de motifs et avatars ; chaque contribution est contrôlée avant publication, les fonctions créatives complètes exigent le consentement parental vérifié."
+strengths_en = ["Free, with no in-app purchases and no third-party advertising, as its App Store page states", "All content is moderated before appearing in the app", "Version 2026.9.1 released on 5 November 2026; about 13900 ratings on the App Store, average 4.5", "Insiders Club membership (free) unlocks all content"]
+strengths_fr = ["Gratuite, sans achat intégré ni publicité tierce, selon sa page App Store", "Tout contenu est modéré avant d'apparaître dans l'application", "Version 2026.9.1 publiée le 5 novembre 2026 ; environ 13900 évaluations sur l'App Store, moyenne de 4.5", "L'adhésion gratuite au LEGO Insiders Club débloque tout le contenu"]
+weaknesses_en = ["Verified parental consent is needed for the full creative building experience", "A virtual building tool: it does not suggest builds from physical bricks owned", "Replaced the LEGO Life app, which was retired on 1 August 2024"]
+weaknesses_fr = ["Le consentement parental vérifié est nécessaire pour l'expérience de construction complète", "Outil de construction virtuel : ne propose pas de montages à partir des briques physiques possédées", "A remplacé l'application LEGO Life, retirée le 1er août 2024"]
+last_activity = "2026-11-05"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://kids.lego.com/en-us/play-app"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://apps.apple.com/us/app/lego-play/id6502331190"
+date = "2026-11-05"
+kind = "read"
+
+[[resource.sources]]
+url = "https://blocksmag.com/lego-play-is-the-new-app-replacing-lego-life/"
+date = "2026-02-09"
+kind = "third-party"
+
+[[resource]]
+id = "lego-com-for-kids"
+name = "LEGO.com for kids"
+url = "https://kids.lego.com/en-ie/brick"
+group = "apps"
+operator = "lego-group"
+covers = ["official", "instructions"]
+languages = ["en", "fr", "de", "nl", "it", "es"]
+countries = ["international"]
+access = "free"
+audience = ["children"]
+summary_en = "Children's section of the LEGO Group site with a browser Brick Builder, an avatar builder and Tiny Builds, beside web games and videos; a code of conduct states the moderation rules."
+summary_fr = "Espace enfants du site du groupe LEGO avec constructeur de briques en navigateur, créateur d'avatars et Tiny Builds, à côté de jeux web et vidéos ; un code de conduite énonce la modération."
+strengths_en = ["Brick Builder and Tiny Builds, small models (for example Dragon with 58 pieces) work in a browser", "Code of conduct for kids, last updated on 24 March 2025, with moderators and a report button on each post", "Interface in at least six languages (English, French, German, Dutch, Italian, Spanish)"]
+strengths_fr = ["Brick Builder et Tiny Builds, petits modèles (par exemple Dragon de 58 pièces) fonctionnent dans un navigateur", "Code de conduite pour enfants, mis à jour le 24 mars 2025, avec des modérateurs et un bouton de signalement sur chaque publication", "Interface en au moins six langues (anglais, français, allemand, néerlandais, italien, espagnol)"]
+weaknesses_en = ["Most of the site is web games and videos, not building", "The pages are built with scripts, so the building tools could not be tested here"]
+weaknesses_fr = ["La plus grande partie du site est faite de jeux web et de vidéos, non de construction", "Les pages reposent sur des scripts : les outils de construction n'ont pu être essayés ici"]
+last_activity = "2026-11-25"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://kids.lego.com/en-ie/brick"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://kids.lego.com/en-ie/legal/kids-code-of-conduct"
+date = "2025-03-24"
+kind = "official"
+
+[[resource]]
+id = "lego-education-coding-canvas"
+name = "LEGO Education Coding Canvas"
+url = "https://education.lego.com/en-us/lego-education-computer-science-and-ai/"
+group = "programming-and-control"
+operator = "lego-group"
+covers = ["official", "learning"]
+languages = ["en"]
+countries = ["international"]
+access = "paid"
+audience = ["children"]
+summary_en = "Icon-based and word-based block coding in a browser or iOS app for the Computer Science and AI kits of LEGO Education; lessons open with a PIN, without student accounts."
+summary_fr = "Codage par blocs d'icônes ou de mots, dans un navigateur ou une application iOS, pour les kits Computer Science and AI de LEGO Education ; les leçons s'ouvrent avec un code PIN, sans compte élève."
+strengths_en = ["No student account: data and projects stay on the device, as the product page states", "Three kits by school level; the kit for kindergarten to grade 2 (45520) includes 276 bricks, a motor and a colour sensor, and costs 339.95 United States dollars for 4 students", "Computer vision features presented as part of an AI literacy progression"]
+strengths_fr = ["Pas de compte élève : les données et les projets restent sur l'appareil, selon la page du produit", "Trois kits par niveau scolaire ; celui de la maternelle au CE1 (45520) comprend 276 briques, un moteur et un capteur de couleur, et coûte 339.95 dollars américains pour 4 élèves", "Fonctions de vision par ordinateur présentées dans une progression de culture de l'intelligence artificielle"]
+weaknesses_en = ["Sold to schools, with prices in United States dollars; the product page is in English", "Whether the app can be used without a kit was not read"]
+weaknesses_fr = ["Vendu aux écoles, avec des prix en dollars américains ; la page du produit est en anglais", "L'usage de l'application sans kit n'a pas été vérifié"]
+last_activity = "2026-11-25"
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://education.lego.com/en-us/lego-education-computer-science-and-ai/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://education.lego.com/en-us/products/lego-education-computer-science-and-ai/45520/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "lego-education-spike-app"
+name = "LEGO Education SPIKE app"
+url = "https://spike.legoeducation.com/"
+group = "programming-and-control"
+operator = "lego-group"
+covers = ["official", "learning"]
+languages = ["en"]
+countries = ["international"]
+access = "paid"
+audience = ["children"]
+summary_en = "Coding app of the SPIKE Prime and SPIKE Essential robotics kits, used in classrooms and by FIRST LEGO League teams; sales ended in 2026 but updates continue until 30 June 2031."
+summary_fr = "Application de codage des kits de robotique SPIKE Prime et SPIKE Essential, utilisée en classe et par les équipes de la FIRST LEGO League. Ventes arrêtées en 2026, mises à jour jusqu'au 30 juin 2031."
+strengths_en = ["Support promised until 30 June 2031, spare hardware parts stocked until 30 June 2028 (as reported by Blocks magazine)", "LEGO League accepts teams using SPIKE in the 2027-2028 season (LEGO Education page)", "Software still listed on the LEGO Education download page for retired products"]
+strengths_fr = ["Assistance promise jusqu'au 30 juin 2031, pièces de rechange du matériel en stock jusqu'au 30 juin 2028 (selon le magazine Blocks)", "La LEGO League accepte les équipes utilisant SPIKE lors de la saison 2027-2028 (page de LEGO Education)", "Logiciel encore proposé sur la page de téléchargement des produits retirés de LEGO Education"]
+weaknesses_en = ["Product line retired: direct sales ended on 30 June 2026 and the kits are bought from resellers while stocks last", "From the 2028-2029 season LEGO League will require the Computer Science and AI kits", "The app page loads only with scripts, so its content could not be read"]
+weaknesses_fr = ["Gamme retirée : les ventes directes ont pris fin le 30 juin 2026 et les kits s'achètent chez des revendeurs tant que les stocks durent", "À partir de la saison 2028-2029, la LEGO League exigera les kits Computer Science and AI", "La page de l'application ne se charge qu'avec des scripts : son contenu n'a pu être lu"]
+last_activity = "2026-01-13"
+status = "slow"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://education.lego.com/en-us/downloads/retiredproducts/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://education.lego.com/en-us/lego-league/program-update/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://blocksmag.com/lego-education-retires-spike-portfolio/"
+date = "2026-01-13"
+kind = "third-party"

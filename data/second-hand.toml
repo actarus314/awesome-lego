@@ -1724,6 +1724,7 @@ rank_reason_fr = "Forum pour fans adultes de LEGO où les membres achètent, ven
 size = [{n = 497, unit = "ads"}]
 regime = "activity"
 covers = ["second-hand", "news"]
+audience = ["adults"]
 languages = ["nl"]
 countries = ["NL"]
 summary_en = "For adult LEGO fans: forum where members buy, sell and look for sets, promotional gifts with purchase and play-theme sets."

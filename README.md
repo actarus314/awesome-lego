@@ -88,7 +88,7 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 ### Official LEGO
 
-- [LEGO](https://www.lego.com/fr-fr) - Original maker of the 8 mm stud brick system (Denmark), with an adult range (Icons, Technic, Botanicals, Art) and the largest licence portfolio. Covers official LEGO.
+- [LEGO](https://www.lego.com/fr-fr) - Original maker of the 8 mm stud brick system (Denmark), with an adult range (Icons, Technic, Botanicals, Art) and the largest licence portfolio. Covers official LEGO. For children and adults.
 
 ### European and American alternatives
 
@@ -192,7 +192,7 @@ Forums, subreddits, wikis, news and review sites, deal communities and chat serv
 
 ### Forums and chat
 
-- [Eurobricks Forums](https://www.eurobricks.com/forum/) - Sections on custom builds, reviews and marketplace for adult fans of LEGO, plus one on alternative brands. Covers official LEGO and alternative brands.
+- [Eurobricks Forums](https://www.eurobricks.com/forum/) - Sections on custom builds, reviews and marketplace for adult fans of LEGO, plus one on alternative brands. Covers official LEGO and alternative brands. For adults.
 
 ### Reddit
 
@@ -244,7 +244,7 @@ Conventions, fan exhibitions, artist shows, public competitions and calendars li
 
 ### Conventions, fairs and exhibitions
 
-- [Skærbæk Fan Weekend](https://www.fanweekend.dk/) - International gathering of adult fans of LEGO in southern Jutland, 80 km south of Billund, with a public exhibition of custom builds on the Saturday and Sunday. Covers official LEGO.
+- [Skærbæk Fan Weekend](https://www.fanweekend.dk/) - International gathering of adult fans of LEGO in southern Jutland, 80 km south of Billund, with a public exhibition of custom builds on the Saturday and Sunday. Covers official LEGO. For adults.
 
 ### Competitions
 
@@ -264,11 +264,11 @@ Venues of the brick world that can be visited: official LEGO venues and stores, 
 
 ### Official LEGO venues and stores
 
-- [LEGO House](https://legohouse.com/en-gb) - Four Experience Zones, a historical collection on the LEGO Group and the brick, a LEGO Store and restaurants. Covers official LEGO.
+- [LEGO House](https://legohouse.com/en-gb) - Four Experience Zones, a historical collection on the LEGO Group and the brick, a LEGO Store and restaurants. Covers official LEGO. For children.
 
 ### Theme parks
 
-- [LEGOLAND Billund Resort](https://www.legoland.dk/) - The original LEGOLAND, opened in 1968 next to LEGO House in Billund. Covers official LEGO.
+- [LEGOLAND Billund Resort](https://www.legoland.dk/) - The original LEGOLAND, opened in 1968 next to LEGO House in Billund. Covers official LEGO. For children.
 
 ### Museums and permanent exhibitions
 
@@ -276,11 +276,11 @@ Venues of the brick world that can be visited: official LEGO venues and stores, 
 
 ### Physical shops (alternative brands and used bricks)
 
-- [Time For Bricks](https://www.timeforbricks.fr/) - About thirty brands of alternative bricks compatible with standard bricks, sold in Chambéry (since 2023) and Annecy (opened in July 2026), with free building tables and a hot drink corner in Annecy. Covers alternative brands.
+- [Time For Bricks](https://www.timeforbricks.fr/) - About thirty brands of alternative bricks compatible with standard bricks, sold in Chambéry (since 2023) and Annecy (opened in July 2026), with free building tables and a hot drink corner in Annecy. Covers alternative brands. For children and adults.
 
 ### Cafés and play spaces
 
-- [Brick Bank Café](https://www.brickbankcafe.org/) - LEGO sets or trays of loose bricks hired by the half hour or hour and built at the table, in a former bank, opened in June 2025 in Bingley (West Yorkshire). Covers official LEGO.
+- [Brick Bank Café](https://www.brickbankcafe.org/) - LEGO sets or trays of loose bricks hired by the half hour or hour and built at the table, in a former bank, opened in June 2025 in Bingley (West Yorkshire). Covers official LEGO. For children.
 
 <br>
 
@@ -292,7 +292,7 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 
 ### National clubs
 
-- [Brickish](https://brickish.org/) - Active since 2002 and self-described as the first user group in the United Kingdom; local meet-ups, public shows and a members-only forum for adult fans of LEGO. Covers official LEGO.
+- [Brickish](https://brickish.org/) - Active since 2002 and self-described as the first user group in the United Kingdom; local meet-ups, public shows and a members-only forum for adult fans of LEGO. Covers official LEGO. For adults.
 
 ### Regional and local clubs
 
@@ -328,11 +328,11 @@ Guides, glossaries, history, compatibility and legal references, education and c
 
 ### Education and competitions
 
-- [FIRST LEGO League (global)](https://firstlegoleague.org/) - The 2026-2027 BIOGLOW season is the last under this name and ends the partnership between FIRST and LEGO Education, which will launch its own season in 2027-2028. Covers official LEGO.
+- [FIRST LEGO League (global)](https://firstlegoleague.org/) - The 2026-2027 BIOGLOW season is the last under this name and ends the partnership between FIRST and LEGO Education, which will launch its own season in 2027-2028. Covers official LEGO. For children.
 
 ### Books and magazines
 
-- [Blocks magazine](https://blocksmag.com/) - Monthly, 116 pages, for adult fans of LEGO, published in the United Kingdom since November 2014 by Silverback Publishing. Covers official LEGO.
+- [Blocks magazine](https://blocksmag.com/) - Monthly, 116 pages, for adult fans of LEGO, published in the United Kingdom since November 2014 by Silverback Publishing. Covers official LEGO. For adults.
 
 ### Artists and designers
 

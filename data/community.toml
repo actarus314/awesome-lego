@@ -381,6 +381,7 @@ rank = {de = 3}
 rank_reason_en = "Weekly podcast and blog running since 2011, from an adult fan's point of view; latest post on 16 November 2026."
 rank_reason_fr = "Podcast et blog hebdomadaires depuis 2011, du point de vue d'un fan adulte ; dernier article le 16 novembre 2026."
 covers = ["official", "news"]
+audience = ["adults"]
 languages = ["de"]
 countries = ["DE"]
 summary_en = "Weekly podcast and blog on LEGO from an adult fan's point of view, since 2011."
@@ -543,6 +544,7 @@ rank = {de = 5}
 rank_reason_en = "Brand-by-brand experience reports on BlueBrixx, CaDA, COBI, Mould King and Pantasy, on pages largely made of commercial product listings with affiliate links; latest post on 23 November 2026."
 rank_reason_fr = "Retours d'expérience marque par marque sur BlueBrixx, CaDA, COBI, Mould King et Pantasy, sur des pages largement composées de fiches produits commerciales avec des liens d'affiliation ; dernier article le 23 novembre 2026."
 covers = ["alternative", "official", "news"]
+audience = ["adults"]
 languages = ["de"]
 countries = ["DE"]
 summary_en = "Guides and long-form brand experience reports on construction bricks for adults (BlueBrixx, CaDA, COBI, Mould King, Pantasy), with reviews and product listings."
@@ -579,6 +581,7 @@ rank = {intl = 1, en = 1}
 rank_reason_en = "Large archive of discussions and builds, with sections on custom builds, reviews and marketplace and one on alternative brands; registration required to post."
 rank_reason_fr = "Grande archive de discussions et de constructions, avec des sections sur les créations originales, les tests et le marché et une section sur les marques alternatives ; inscription requise pour publier."
 covers = ["official", "alternative", "custom-builds", "news"]
+audience = ["adults"]
 languages = ["en"]
 countries = ["international"]
 access = "free-account"
@@ -1064,6 +1067,7 @@ name = "Brickset forum (Discord)"
 url = "https://brickset.com/forum"
 group = "forums"
 covers = ["official"]
+audience = ["adults"]
 languages = ["en"]
 countries = ["international"]
 access = "free-account"
@@ -1231,6 +1235,7 @@ rank = {it = 2}
 rank_reason_en = "Volunteer-written site of a user group of adult fans with reviews, tutorials, a forum and an event calendar, without a fixed publication rhythm; latest post on 3 November 2026."
 rank_reason_fr = "Site rédigé par des bénévoles d'un groupe d'utilisateurs de fans adultes, avec des tests, des tutoriels, un forum et un calendrier d'événements, sans rythme de publication fixe ; dernier article le 3 novembre 2026."
 covers = ["news", "clubs", "events"]
+audience = ["children", "adults"]
 languages = ["it"]
 countries = ["IT"]
 summary_en = "Volunteer-written site of a LEGO user group of adult fans: news, set reviews, custom builds, tutorials, a forum and an event calendar."
@@ -1719,6 +1724,7 @@ rank = {intl = 4, en = 4}
 rank_reason_en = "At least 32404 members (February 2025 snapshot) and 247 posts in 30 days, read on 23 November 2026."
 rank_reason_fr = "Au moins 32404 membres (relevé de février 2025) et 247 messages en 30 jours, lus le 23 novembre 2026."
 covers = ["official", "custom-builds"]
+audience = ["adults"]
 languages = ["en"]
 countries = ["international"]
 summary_en = "Collections, builds and hobby discussion among adult fans of LEGO."
@@ -2451,4 +2457,36 @@ kind = "read"
 [[resource.sources]]
 url = "https://api.flickr.com/services/feeds/groups_pool.gne?id=44124304756@N01&lang=en-us&format=rss_200"
 date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "brickfact-age-guide"
+name = "Brickfact: LEGO age guide"
+url = "https://brickfact.com/en-gb/blog/guidebooks/lego-from-which-age-guide-for-duplo-and-co"
+group = "news-and-reviews"
+covers = ["official", "learning"]
+languages = ["en", "fr", "de"]
+countries = ["international"]
+audience = ["children"]
+summary_en = "Parents' guide to choosing a first set by age: separates the age label from the small-parts warning and advises keeping younger siblings' pieces apart."
+summary_fr = "Guide pour parents sur le choix d'un premier set selon l'âge : distingue l'âge indiqué de l'avertissement sur les petites pièces et conseille de séparer les pièces des plus jeunes."
+strengths_en = ["Updated on 27 September 2026", "Available in English, French and German, with the same advice", "Links to compared prices of the sets it names", "A sibling guide on storage boxes"]
+strengths_fr = ["Mis à jour le 27 septembre 2026", "Disponible en anglais, en français et en allemand, avec les mêmes conseils", "Renvoie aux prix comparés des sets cités", "Un guide voisin sur les boîtes de rangement"]
+weaknesses_en = ["Half of the guide is about DUPLO sets for toddlers", "Published by a price comparator: set suggestions come with price links"]
+weaknesses_fr = ["La moitié du guide porte sur les sets DUPLO pour les tout-petits", "Publié par un comparateur de prix : les suggestions de sets s'accompagnent de liens vers les prix"]
+last_activity = "2026-09-27"
+status = "active"
+regime = "work"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickfact.com/en-gb/blog/guidebooks/lego-from-which-age-guide-for-duplo-and-co"
+date = "2026-09-27"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickfact.com/fr-fr/blog/pratique/lego-de-quel-age-guide-pour-duplo-et-co"
+date = "2026-09-27"
 kind = "read"

@@ -29,6 +29,18 @@ body:
         - Other directories and lists
     validations:
       required: true
+  - type: dropdown
+    id: audience
+    attributes:
+      label: Public
+      description: Only when the resource itself states it (an age range, a junior section, adult fans only)
+      options:
+        - No particular public
+        - Made for children or families, or with a stated offer for them
+        - Made for adults, or for adults only
+        - Both, with an offer for each
+    validations:
+      required: false
   - type: textarea
     id: why
     attributes:

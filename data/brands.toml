@@ -58,6 +58,7 @@ rank_reason_en = "Only entry of its group: original maker of the 8 mm stud brick
 rank_reason_fr = "Seule fiche de son groupe : fabricant d'origine du système de briques à tenons de 8 mm, avec une gamme adulte et le plus grand portefeuille de licences, active le 23 novembre 2026, sources lues à la source."
 operator = "lego-group"
 covers = ["official", "minifigures"]
+audience = ["children", "adults"]
 languages = ["fr", "en", "de"]
 countries = ["international"]
 ships_to_france = true
@@ -143,6 +144,7 @@ rank = {intl = 2}
 rank_reason_en = "Range for adults (BlueBrixx Pro) with trains, architecture and licences, designed and distributed in Germany, delivery to all European Union countries stated on 14 October 2026; confidence high."
 rank_reason_fr = "Gamme pour adultes (BlueBrixx Pro) avec trains, architecture et licences, conçue et distribuée en Allemagne, livraison dans tous les pays de l'Union européenne indiquée le 14 octobre 2026 ; confiance haute."
 covers = ["alternative", "parts"]
+audience = ["children", "adults"]
 languages = ["fr", "de", "en"]
 countries = ["FR", "DE"]
 ships_to_france = true
@@ -195,6 +197,7 @@ name = "Brixies"
 url = "https://brixies.de/"
 group = "european-alternatives"
 covers = ["alternative"]
+audience = ["children"]
 languages = ["de", "en"]
 countries = ["DE"]
 summary_en = "4 mm micro-bricks (monuments, postcards) and a Plus range compatible with LEGO (licensed Fendt, Claas and Deutz-Fahr tractors, themed worlds)."
@@ -220,6 +223,7 @@ name = "BRYX"
 url = "https://bryxtoys.com/"
 group = "european-alternatives"
 covers = ["alternative"]
+audience = ["adults"]
 languages = ["de"]
 countries = ["DE"]
 summary_en = "Compatible sets with official licences from football clubs (21 stadium sets, 298 to 6162 bricks), landmarks and about 400 single parts sold individually. Designed in Berlin; logos printed, not stuck."
@@ -475,6 +479,7 @@ name = "JMBricklayer"
 url = "https://www.jmbricklayer.com/"
 group = "chinese-alternatives"
 covers = ["alternative"]
+audience = ["adults"]
 languages = ["en"]
 countries = ["international"]
 ships_to_france = true
@@ -502,6 +507,7 @@ url = "https://xingbaostore.com/"
 feed = "https://xingbaostore.com/feed/"
 group = "chinese-alternatives"
 covers = ["alternative"]
+audience = ["adults"]
 languages = ["en"]
 countries = ["international"]
 ships_to_france = true
@@ -545,6 +551,7 @@ name = "JIE STAR (with GULY)"
 url = "https://www.jiestartoys.com/"
 group = "chinese-alternatives"
 covers = ["alternative"]
+audience = ["children"]
 languages = ["en"]
 countries = ["international"]
 summary_en = "Streets, buildings, vehicles, aircraft, mechas and flowers; sub-brands include GULY (1:8 supercars, motorcycles), iBlock, Xbert, TKTWO, ZOIN and JIQI. Guangdong JieXing Toys Industrial (China), founded in 1998, with its own injection moulding."
@@ -617,6 +624,7 @@ name = "Keeppley (Qman)"
 url = "https://c-en.qmjm.com/"
 group = "chinese-alternatives"
 covers = ["alternative"]
+audience = ["children"]
 languages = ["en", "zh"]
 countries = ["international"]
 summary_en = "Licensed line launched in 2019 (Sanrio, Hello Kitty, Doraemon, Naruto, Detective Conan, Pokemon); Qman also sells under its own name. Guangdong Qman Industry Toys, China, has produced original blocks since 1994."
@@ -779,6 +787,7 @@ url = "https://www.nifeliz.com/"
 feed = "https://www.nifeliz.com/feed/"
 group = "chinese-alternatives"
 covers = ["alternative"]
+audience = ["adults"]
 languages = ["en"]
 countries = ["international"]
 summary_en = "Technic, adult decoration, flowers and machines. The brand site describes its own factory in Shantou, China, with three workshops (August 2024)."
@@ -921,6 +930,7 @@ url = "https://revell.com/collections/brick-system"
 feed = "https://revell.com/collections/brick-system.atom"
 group = "european-alternatives"
 covers = ["alternative"]
+audience = ["children", "adults"]
 languages = ["de", "en"]
 countries = ["international"]
 summary_en = "Brick line of the plastic model-kit maker, aimed at adults and launched in 2025 with the submarine from Das Boot (6483 pieces, 1:56). Based in Germany."
@@ -1050,6 +1060,7 @@ rank = {intl = 4}
 rank_reason_en = "Articulated assemble-and-pose figures and vehicles under licence (Transformers, Ultraman), outside the 8 mm stud system; active on 23 November 2026, confidence medium."
 rank_reason_fr = "Figurines et véhicules articulés à assembler sous licence (Transformers, Ultraman), hors du système à tenons de 8 mm ; active le 23 novembre 2026, confiance moyenne."
 covers = ["alternative"]
+audience = ["children"]
 languages = ["en"]
 countries = ["international"]
 summary_en = "Articulated assemble-and-pose figures and vehicles under licence (Transformers, Ultraman, Naruto, DC, Jurassic Park), outside the 8 mm stud system. From China."
@@ -1078,6 +1089,7 @@ rank = {intl = 2}
 rank_reason_en = "Micro-blocks and Diamond Blocks of 4 to 6 mm with licensed city collections, an established format outside the 8 mm pitch; confidence low, no recent activity date."
 rank_reason_fr = "Micro-blocs et Diamond Blocks de 4 à 6 mm avec collections urbaines sous licence, format établi hors du pas de 8 mm ; confiance basse, aucune date d'activité récente."
 covers = ["alternative"]
+audience = ["children", "adults"]
 languages = ["en", "zh"]
 countries = ["international"]
 summary_en = "Micro-blocks and Diamond Blocks of 4 to 6 mm (food shops, street scenes, characters), not compatible with the 8 mm pitch. From China; the official site is operated from Hong Kong (I-Had Creation)."
@@ -1153,6 +1165,7 @@ name = "IAMBRICK"
 url = "https://iambrickimb.com/"
 group = "chinese-alternatives"
 covers = ["alternative"]
+audience = ["adults"]
 languages = ["en"]
 countries = ["international"]
 summary_en = "Original fantasy, wasteland and steampunk worlds for adult collectors, linked by one story on the continent of Gridera; most sets use printed pieces instead of stickers."
@@ -1349,6 +1362,7 @@ rank = {intl = 3}
 rank_reason_en = "Animals, monsters and characters with an own locking system, regional official stores in euros for France and the European Union; active on 25 November 2026, confidence high."
 rank_reason_fr = "Animaux, monstres et personnages avec un système de verrouillage propre, boutiques officielles régionales en euros pour la France et l'Union européenne ; active le 25 novembre 2026, confiance haute."
 covers = ["alternative"]
+audience = ["adults"]
 languages = ["en", "de", "fr"]
 countries = ["international"]
 summary_en = "Animals, monsters and characters built with an own locking system, without glue, presented as building blocks for kidults; regional stores in euros for France and the European Union."
@@ -1392,6 +1406,7 @@ name = "INSOON"
 url = "https://insoontoys.com/"
 group = "chinese-alternatives"
 covers = ["alternative"]
+audience = ["children", "adults"]
 languages = ["en"]
 countries = ["international"]
 summary_en = "Lit house, book nook, flower and Christmas sets (34 in the house series) with LED panels, aimed at teens and adults; some sets use 3.6 mm mini blocks."
@@ -1430,6 +1445,7 @@ rank = {intl = 5}
 rank_reason_en = "Trains, trams and buses with Deutsche Bahn and Swiss Federal Railways licences, sold in 22 stores, catalogue published on 2 September 2026; active on 25 November 2026, confidence high, but distribution mostly German."
 rank_reason_fr = "Trains, tramways et bus avec licences Deutsche Bahn et Chemins de fer fédéraux suisses, vendus dans 22 magasins, catalogue publié le 2 septembre 2026 ; active le 25 novembre 2026, confiance haute, mais diffusion surtout allemande."
 covers = ["alternative"]
+audience = ["children"]
 languages = ["de", "en"]
 countries = ["DE"]
 summary_en = "Trains, trams, buses, port and military vehicles in 6-wide and 8-wide scale, with Deutsche Bahn and Swiss Federal Railways licences, printed boxes and its own 3D-printed railway wheels."
@@ -1493,4 +1509,185 @@ kind = "official"
 [[resource.sources]]
 url = "https://buildarmy.com/retailers/"
 date = "2026-07-06"
+kind = "official"
+
+[[resource]]
+id = "kiddicraft"
+name = "Kiddicraft"
+url = "https://www.kiddicraft-bricks.de/"
+group = "european-alternatives"
+aliases = ["Dark Side Bricks", "BriCity", "Kiddiz"]
+covers = ["alternative", "minifigures"]
+languages = ["de"]
+countries = ["DE"]
+audience = ["children"]
+summary_en = "Revival since 2022 of the name of Hilary Page's 1947 bricks, with city, farm, knights and Bible sets and its own Kiddiz figures, aimed at children."
+summary_fr = "Renaissance depuis 2022 du nom des briques de 1947 de Hilary Page, avec sets ville, ferme, chevaliers et bibliques et ses propres figurines Kiddiz, destinés aux enfants."
+strengths_en = ["Own shop (kiddicraft.store) with prices including taxes, for example 67.99 € for the fire station", "Stated compatible with other brick makers (official site)", "Printed parts instead of stickers on the fire station (SetDB)", "Fire station set of 960 pieces; made by Dark Side Bricks GmbH, Bad Lippspringe"]
+strengths_fr = ["Boutique propre (kiddicraft.store) avec prix toutes taxes comprises, par exemple 67.99 € pour la caserne", "Compatibilité annoncée avec les autres fabricants de briques (site officiel)", "Pièces imprimées plutôt qu'autocollants pour la caserne (SetDB)", "Caserne de 960 pièces ; fabriquée par Dark Side Bricks GmbH, Bad Lippspringe"]
+weaknesses_en = ["Age recommendation of 5 years read only at retailers and databases, not on the official pages", "Delivery to France not verified"]
+weaknesses_fr = ["Âge de 5 ans lu seulement chez des détaillants et des bases de données, pas sur les pages officielles", "Livraison en France non vérifiée"]
+status = "active"
+last_activity = "2026-07-11"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+[[resource.sources]]
+url = "https://www.kiddicraft-bricks.de/"
+date = "2026-11-25"
+kind = "read"
+[[resource.sources]]
+url = "https://kiddicraft.store/Dark-Side-Bricks"
+date = "2026-11-25"
+kind = "read"
+[[resource.sources]]
+url = "https://www.pcgameshardware.de/Klemmbausteine-Hardware-280122/News/Lego-Rivale-zeigt-erste-Testguesse-des-originalen-Steins-1547965/"
+date = "2026-07-11"
+kind = "third-party"
+[[resource.makers]]
+name = "Panlos"
+id = "panlos"
+url = "https://www.merlinssteine.de/sets/kid-kc1206/"
+date = "2026-11-25"
+kind = "third-party"
+[[resource.makers]]
+name = "Panlos"
+id = "panlos"
+url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
+date = "2026-11-25"
+kind = "third-party"
+
+[[resource]]
+id = "playtive-clippys"
+name = "Playtive Clippys (Lidl)"
+url = "https://www.lidl.de/q/brand/playtive-clippys/b16770"
+group = "european-alternatives"
+aliases = ["Playtive", "Clippys", "Lidl Bausteine"]
+covers = ["alternative"]
+languages = ["de"]
+countries = ["DE"]
+audience = ["children"]
+summary_en = "Emergency, construction and vehicle sets for ages 5 and over, stated compatible with usual interlocking bricks, plus a junior box from 1.5 years."
+summary_fr = "Sets d'intervention, de chantier et de véhicules dès 5 ans, annoncés compatibles avec les briques à emboîter usuelles, et une boîte junior dès 1,5 an."
+strengths_en = ["Prices from 10.99 € to 22.99 € including taxes (lidl.de)", "Age and piece count stated on every product page", "Sold in all Lidl online and store channels in Germany", "Retail-chain brand of Lidl; set L of 834 to 865 pieces at 22.99 €"]
+strengths_fr = ["Prix de 10.99 € à 22.99 € toutes taxes comprises (lidl.de)", "Âge et nombre de pièces indiqués sur chaque fiche", "Vendue par les canaux en ligne et en magasin de Lidl en Allemagne", "Marque de distributeur de Lidl ; set L de 834 à 865 pièces à 22.99 €"]
+weaknesses_en = ["Assortment changes by promotion, some sets are sold out online (set L police station)", "The junior box for 1.5 years is a toddler product; the brand's main sets are for 5 years and over"]
+weaknesses_fr = ["L'assortiment change selon les promotions, certains sets sont épuisés en ligne (set L commissariat)", "La boîte junior dès 1,5 an est un produit pour tout-petits ; les sets principaux de la marque sont dès 5 ans"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+[[resource.sources]]
+url = "https://www.lidl.de/p/playtive-clippys-set-l-mit-vielen-accessoires/p100382460"
+date = "2026-11-25"
+kind = "read"
+[[resource.sources]]
+url = "https://www.lidl.de/p/playtive-clippys-set-m/p100380792"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "simba-blox"
+name = "Blox (Simba Toys)"
+url = "https://www.simbatoys.com/simba_de/marken/blox/"
+group = "european-alternatives"
+aliases = ["Simba Blox", "Androni Blox"]
+covers = ["alternative"]
+languages = ["de"]
+countries = ["DE"]
+audience = ["children"]
+summary_en = "Open-play bulk bricks in boxes and buckets (40 to 1000 pieces, 8-stud and 4-stud bricks), stated made in Italy and compatible with usual brick systems."
+summary_fr = "Briques en vrac pour le jeu libre, en boîtes et seaux (40 à 1000 pièces, briques de 8 et de 4 tenons), annoncées fabriquées en Italie et compatibles avec les systèmes usuels."
+strengths_en = ["Age stated on each product page (from 3 or 4 years)", "Production in Italy stated by the brand", "Baseplates and bulk sets from 24.99 € for 500 pieces", "Made by Simba Dickie Group, Fürth"]
+strengths_fr = ["Âge indiqué sur chaque fiche (dès 3 ou 4 ans)", "Fabrication en Italie annoncée par la marque", "Plaques et lots en vrac, dès 24.99 € pour 500 pièces", "Fabriquée par Simba Dickie Group, Fürth"]
+weaknesses_en = ["No themed sets, instructions or figures: bulk bricks only", "Maker of the bricks not named"]
+weaknesses_fr = ["Pas de sets thématiques, de notices ni de figurines : briques en vrac seulement", "Fabricant des briques non nommé"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+[[resource.sources]]
+url = "https://www.simbatoys.com/simba_de/marken/blox/"
+date = "2026-11-25"
+kind = "read"
+[[resource.sources]]
+url = "https://www.simbatoys.com/simba_de/kategorien/konstruktionsspielzeug/steckbausteine/blox-40-8er-bausteine-braun-kompatibel-mit-bekannten-spielsteinen-104114538-de.html"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "airfix-quickbuild"
+name = "Airfix Quickbuild (Hornby)"
+url = "https://uk.airfix.com/quickbuild"
+group = "european-alternatives"
+aliases = ["Airfix Quick Build", "Hornby Hobbies"]
+covers = ["alternative"]
+languages = ["en"]
+countries = ["GB"]
+ships_to_france = true
+audience = ["children"]
+summary_en = "Small push-together scale models of aircraft, cars, tanks and buses (30 to 49 bricks, stickers, stand), stated compatible with other plastic brick brands."
+summary_fr = "Petites maquettes à emboîter d'avions, voitures, chars et bus (30 à 49 briques, autocollants, support), annoncées compatibles avec les autres marques de briques en plastique."
+strengths_en = ["Age stated on the range page and on each kit (6+ or 8+)", "Compatibility with other brick brands stated by the maker (Hornby Hobbies product page)", "Licences from Ford, Jeep and BAE Systems", "Made by Hornby Hobbies Ltd"]
+strengths_fr = ["Âge indiqué sur la page de la gamme et sur chaque maquette (6 ans et plus ou 8 ans et plus)", "Compatibilité avec les autres marques de briques annoncée par le fabricant (fiche Hornby Hobbies)", "Licences Ford, Jeep et BAE Systems", "Fabriquée par Hornby Hobbies Ltd"]
+weaknesses_en = ["Specialised pieces: the models are hard to rebuild with other bricks (BrickJournal, 6 April 2021)", "Very small kits, 14.99 to 24.99 £"]
+weaknesses_fr = ["Pièces spécialisées : les maquettes se reconstruisent difficilement avec d'autres briques (BrickJournal, 6 avril 2021)", "Maquettes très petites, de 14.99 à 24.99 £"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+[[resource.sources]]
+url = "https://uk.airfix.com/quickbuild"
+date = "2026-11-25"
+kind = "official"
+[[resource.sources]]
+url = "https://www.hornbyhobbies.com/products/quickbuild-jeep-quicksand-concept-j6038"
+date = "2026-11-25"
+kind = "official"
+[[resource.sources]]
+url = "https://brickjournal.com/?p=3327"
+date = "2021-04-06"
+kind = "third-party"
+[[resource.makers]]
+name = "Hornby Hobbies Ltd"
+id = "airfix-quickbuild"
+url = "https://www.hornbyhobbies.com/products/quickbuild-jeep-quicksand-concept-j6038"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "zuru-max-build-more"
+name = "MAX Build More (ZURU)"
+url = "https://zurutoys.com/en-GB/brands/max"
+group = "chinese-alternatives"
+aliases = ["ZURU MAX", "MAX Premium"]
+covers = ["alternative"]
+languages = ["en", "fr"]
+countries = ["international"]
+audience = ["children"]
+summary_en = "Bulk bricks (759 pieces, from 3 years) and collectible premium sets (flowers, garden, retro, food, from 6 years) stated compatible with leading brick brands."
+summary_fr = "Briques en vrac (759 pièces, dès 3 ans) et sets premium à collectionner (fleurs, jardin, rétro, alimentation, dès 6 ans) annoncés compatibles avec les grandes marques de briques."
+strengths_en = ["Where-to-buy page for France lists Smyths Toys, King Jouet, JouéClub, E.Leclerc, Auchan, Carrefour, Fnac and others", "Age and warnings on each product page", "ZURU headquarters in Shenzhen, China, with offices in London, Paris and Warsaw"]
+strengths_fr = ["La page « Où acheter » pour la France liste Smyths Toys, King Jouet, JouéClub, E.Leclerc, Auchan, Carrefour, Fnac et d'autres", "Âge et avertissements sur chaque fiche", "Siège de ZURU à Shenzhen, en Chine, avec des bureaux à Londres, Paris et Varsovie"]
+weaknesses_en = ["No direct shop on the brand site: sold only through retailers", "ZURU states no maker of the bricks", "Sued by LEGO over compatibility wording; the Court of Appeal of New Zealand overturned the ruling in December 2025 (Wikipedia)"]
+weaknesses_fr = ["Pas de boutique directe sur le site de la marque : vendue seulement par des détaillants", "ZURU n'indique pas le fabricant des briques", "Poursuivie par LEGO pour sa mention de compatibilité ; la cour d'appel de Nouvelle-Zélande a annulé le jugement en décembre 2025 (Wikipédia)"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+[[resource.sources]]
+url = "https://zurutoys.com/en-GB/brands/max"
+date = "2026-11-25"
+kind = "official"
+[[resource.sources]]
+url = "https://zurutoys.com/fr-FR/where-to-buy"
+date = "2026-11-25"
+kind = "official"
+[[resource.sources]]
+url = "https://zurutoys.com/en-US/about"
+date = "2026-11-25"
 kind = "official"

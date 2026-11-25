@@ -32,6 +32,7 @@ ACCESS_CONTEXT = {"places": "entry", "events": "entry", "clubs": "membership", "
 ACCESS_GROUP = {("events", "competitions"): "competition", ("events", "calendars"): "open"}  # websites, not events one enters
 ACCESS_BY = {"entry": {"free", "paid"}, "membership": {"free", "paid"}, "competition": {"free", "free-account"},
              "use": {"free", "freemium", "paid", "free-account"}, "open": {"free-account", "freemium"}}
+AUDIENCES = ("children", "adults")  # the publics an entry states it is made for or has a specific offer for; absent: no particular public
 OPERATORS = {"lego-group", "licensee"}  # sites and places of the LEGO Group itself, or under the LEGO brand by a partner
 RANK_SCOPES = {"country", "language", "intl"}  # a group ranks its entries per country, per language, or once worldwide
 RANK = range(1, 6)
@@ -54,8 +55,8 @@ T = {  # interface strings
     "title": {"en": "Awesome LEGO", "fr": "Awesome LEGO"},
     "tagline": {"en": "Interlocking plastic construction bricks, from the official LEGO system to compatible brands.",
                 "fr": "Briques de construction en plastique à emboîter, du système LEGO aux marques compatibles."},
-    "site_tagline": {"en": "The best of the brick world for adult builders, in official LEGO and compatible brands.",
-                     "fr": "Le meilleur du monde de la brique pour les adultes qui construisent, en sets de marque LEGO comme en marques compatibles."},
+    "site_tagline": {"en": "The best of the brick world for building at any age, in official LEGO and compatible brands.",
+                     "fr": "Le meilleur du monde de la brique pour construire à tout âge, en sets de marque LEGO comme en marques compatibles."},
     "feed": {"en": "Feed of new resources (RSS)", "fr": "Flux des nouveautés (RSS)"},
     "contents": {"en": "Contents", "fr": "Sommaire"},
     "contributing": {"en": "Contributing", "fr": "Contribuer"},
@@ -147,6 +148,9 @@ def load():
                 errors.append(f"{w}: city_fr only when the French name differs from city")
             if r.get("city_local") is not None and (not r["city_local"] or r["city_local"] == r.get("city") or not r.get("city")):
                 errors.append(f"{w}: city_local only when the local name differs from city")
+            au = r.get("audience")
+            if au is not None and (not isinstance(au, list) or not au or set(au) - set(AUDIENCES) or len(set(au)) != len(au)):
+                errors.append(f"{w}: audience is a list of {list(AUDIENCES)} (absent when no particular public is stated)")
             if r.get("operator") is not None and r["operator"] not in OPERATORS:
                 errors.append(f"{w}: operator must be one of {sorted(OPERATORS)}")
             rk = r.get("rank")
@@ -409,6 +413,8 @@ def readme(cats, m, lang, kind="readme"):
                 status = r["status"]  # declared status: generated files stay stable between data changes
                 worlds = [w for k, w in (("official", "official LEGO"), ("alternative", "alternative brands")) if k in r.get("covers", [])]
                 marks = (f"Covers {' and '.join(worlds)}." if worlds else "")
+                if r.get("audience"):  # the publics the entry states (data/SCHEMA.md, audience)
+                    marks += (" " if marks else "") + "For " + " and ".join(a for a in AUDIENCES if a in r["audience"]) + "."
                 if status != "active":
                     marks += " Status: " + {"slow": "no update for 6 months", "inactive": "no update for a year"}.get(status, status) + "."
                 desc = r["summary_" + lang].strip()
@@ -451,7 +457,7 @@ def site_data(cats, m):
         gnames = {g["id"]: {lang: g.get("short_" + lang) or g["name_" + lang] for lang in LANGS} for g in cat.get("groups", [])}  # card labels
         for r in c["resources"]:
             status, last = effective(r, m)
-            row = {k: r.get(k) for k in ("id", "name", "url", "covers", "languages", "countries", "confidence", "checked", "github", "subreddit", "city", "city_fr", "city_local", "ships_to_france", "rank", "size")}
+            row = {k: r.get(k) for k in ("id", "name", "url", "covers", "languages", "countries", "confidence", "checked", "github", "subreddit", "city", "city_fr", "city_local", "ships_to_france", "rank", "size", "audience")}
             row = {k: v for k, v in row.items() if v is not None}
             row["featured"] = picked(r)  # the selection: rank 1 worldwide of its group (★, filter, README)
             ctx = access_context(cat["id"], r["group"])
@@ -503,6 +509,8 @@ def needs(cats, ids):
             bad.append(f"{w}: groups must be <category>/<group> ids: {sorted(set(j.get('groups', [])) - groups)}")
         if j.get("scope") not in RANK_SCOPES:
             bad.append(f"{w}: scope must be one of {sorted(RANK_SCOPES)}")
+        if j.get("audience") not in (None, *AUDIENCES):
+            bad.append(f"{w}: audience must be one of {list(AUDIENCES)}")
         if j.get("mode") not in (None, "brand"):
             bad.append(f"{w}: mode can only be brand")
         code = {"country": r"[A-Z]{2}", "language": r"[a-z]{2}"}.get(j.get("scope"), r"(?!)")
@@ -511,8 +519,8 @@ def needs(cats, ids):
                 bad.append(f"{w}: reference key {k} is a {j.get('scope')} code or default")
             if v not in ids:
                 bad.append(f"{w}: unknown resource {v}")
-        if set(j) - {"id", "title_en", "title_fr", "category", "groups", "scope", "mode", "reference"}:
-            bad.append(f"{w}: unknown keys {sorted(set(j) - {'id', 'title_en', 'title_fr', 'category', 'groups', 'scope', 'mode', 'reference'})}")
+        if set(j) - {"id", "title_en", "title_fr", "category", "groups", "scope", "mode", "audience", "reference"}:
+            bad.append(f"{w}: unknown keys {sorted(set(j) - {'id', 'title_en', 'title_fr', 'category', 'groups', 'scope', 'mode', 'audience', 'reference'})}")
     if bad:
         fail(bad)
     return js

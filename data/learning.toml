@@ -716,6 +716,7 @@ rank_reason_en = "Classroom solutions in science, computer science and artificia
 rank_reason_fr = "Solutions de classe en sciences, informatique et intelligence artificielle, avec une saison de compétition propre annoncée pour 2027-2028 ; destiné aux écoles et aux enseignants, pas aux adultes qui construisent."
 operator = "lego-group"
 covers = ["learning", "official"]
+audience = ["children"]
 languages = ["en"]
 countries = ["international"]
 access = "free"
@@ -751,6 +752,7 @@ rank_reason_en = "Robotics and innovation competition for ages 5 to 16 run by FI
 rank_reason_fr = "Compétition de robotique et d'innovation pour les 5 à 16 ans, menée par FIRST et LEGO Education, avec deux éditions en 2026-2027 ; la saison BIOGLOW est la dernière sous ce nom."
 operator = "licensee"
 covers = ["learning", "official", "events"]
+audience = ["children"]
 languages = ["en"]
 countries = ["international"]
 access = "paid"
@@ -788,6 +790,7 @@ rank_reason_en = "Local partners and calendar of the 2026-2027 BIOGLOW season in
 rank_reason_fr = "Partenaires locaux et calendrier de la saison BIOGLOW 2026-2027 en France, niveau Challenge pour les 9 à 16 ans ; seule fiche du groupe servant la France."
 operator = "licensee"
 covers = ["learning", "official", "events"]
+audience = ["children"]
 languages = ["fr"]
 countries = ["FR"]
 access = "paid"
@@ -825,6 +828,7 @@ rank_reason_en = "Operator for Germany, Austria and Switzerland with 12 Future E
 rank_reason_fr = "Opérateur pour l'Allemagne, l'Autriche et la Suisse avec 12 événements Future Edition, 46 expositions Explore et 52 tournois régionaux Challenge en 2026-2027 ; seule fiche du groupe servant ces pays."
 operator = "licensee"
 covers = ["learning", "official", "events"]
+audience = ["children"]
 languages = ["de", "en"]
 countries = ["DE", "AT", "CH"]
 access = "paid"
@@ -863,6 +867,7 @@ feed = "https://blocksmag.com/feed/"
 group = "books-and-magazines"
 regime = "activity"
 covers = ["learning", "official", "news"]
+audience = ["adults"]
 languages = ["en"]
 countries = ["international"]
 access = "paid"
@@ -935,6 +940,7 @@ rank_reason_en = "Independent quarterly for adult fans with artist profiles, bui
 rank_reason_fr = "Trimestriel indépendant pour les fans adultes avec portraits d'artistes, constructions et techniques ; premier numéro en décembre 2025, numéro 4 à l'automne 2026 ; publication jeune, un seul fondateur."
 regime = "activity"
 covers = ["learning", "official", "news"]
+audience = ["adults"]
 languages = ["en"]
 countries = ["US"]
 access = "paid"
@@ -1070,6 +1076,7 @@ feed = "https://dk.com/en-us/collections/lego-books.atom"
 group = "books-and-magazines"
 regime = "operating"
 covers = ["learning", "official"]
+audience = ["children", "adults"]
 languages = ["en"]
 countries = ["international"]
 access = "paid"
@@ -1684,6 +1691,7 @@ rank_reason_en = "Four-part video series on brick anatomy, interlocking and SNOT
 rank_reason_fr = "Série de quatre modules vidéo sur l'anatomie de la brique, l'emboîtement et le SNOT, sur des pages en anglais, français, allemand, espagnol, italien et néerlandais ; bases destinées aux familles ; dernière activité le 2 janvier 2025."
 operator = "lego-group"
 covers = ["learning", "official"]
+audience = ["children"]
 languages = ["en", "fr", "de", "es", "it", "nl"]
 countries = ["international"]
 access = "free"
@@ -2038,6 +2046,7 @@ rank_reason_en = "Registration run by FIRST for the United States and Canada wit
 rank_reason_fr = "Inscription gérée par FIRST pour les États-Unis et le Canada avec prix publiés (150 USD pour Explore, 285 USD pour Challenge par saison, avant taxe de vente et frais de livraison) ; seule fiche du groupe servant ces pays."
 operator = "licensee"
 covers = ["learning", "official", "events"]
+audience = ["children"]
 languages = ["en"]
 countries = ["US", "CA"]
 access = "paid"
@@ -2075,6 +2084,7 @@ rank_reason_en = "National delivery partner run by the Institution of Engineerin
 rank_reason_fr = "Partenaire national de mise en œuvre tenu par l'Institution of Engineering and Technology, avec festivals et tournois régionaux et aide financière aux équipes ; seule fiche du groupe servant le Royaume-Uni."
 operator = "licensee"
 covers = ["learning", "official", "events"]
+audience = ["children"]
 languages = ["en"]
 countries = ["GB"]
 access = "paid"
@@ -2107,6 +2117,7 @@ rank_reason_en = "Run by Scuola di Robotica of Genoa and recognised by the educa
 rank_reason_fr = "Tenue par la Scuola di Robotica de Gênes et reconnue par le ministère de l'éducation, avec qualifications régionales de janvier à mars 2027 et finale nationale en mars 2027 ; seule fiche du groupe servant l'Italie."
 operator = "licensee"
 covers = ["learning", "official", "events"]
+audience = ["children"]
 languages = ["it"]
 countries = ["IT"]
 access = "paid"
@@ -2144,6 +2155,7 @@ rank_reason_en = "Season 2026-2027 calendar with 20 regional finals from 11 Dece
 rank_reason_fr = "Calendrier de la saison 2026-2027 avec 20 finales régionales du 11 décembre 2026 au 20 février 2027 et finales nationales les 6 mars 2027 et 4 avril 2027 ; seule fiche du groupe servant les Pays-Bas."
 operator = "licensee"
 covers = ["learning", "official", "events"]
+audience = ["children"]
 languages = ["nl"]
 countries = ["NL"]
 access = "paid"
@@ -2181,6 +2193,7 @@ rank_reason_en = "National operator Aurora Math since June 2026, with classroom 
 rank_reason_fr = "Opérateur national Aurora Math depuis juin 2026, avec participation de classe à 144 € et 8 € par personne pour les compétitions officielles ; seule fiche du groupe servant la Finlande."
 operator = "licensee"
 covers = ["learning", "official", "events"]
+audience = ["children"]
 languages = ["fi"]
 countries = ["FI"]
 access = "paid"
@@ -2213,6 +2226,7 @@ rank_reason_en = "Workshop method using bricks with adults to prompt dialogue an
 rank_reason_fr = "Méthode d'ateliers utilisant des briques avec des adultes pour susciter le dialogue et résoudre des problèmes, avec quatre kits en vente ; la page liste les kits sans détailler ateliers ni formation des animateurs."
 operator = "lego-group"
 covers = ["learning", "official"]
+audience = ["adults"]
 languages = ["en"]
 countries = ["international"]
 access = "paid"
@@ -2232,3 +2246,304 @@ confidence = "high"
 url = "https://www.lego.com/en-us/seriousplay"
 date = "2026-11-25"
 kind = "official"
+
+[[resource]]
+id = "liga-der-roboter"
+name = "Liga der Roboter"
+url = "https://ligaderroboter.de/"
+group = "education-and-competitions"
+regime = "operating"
+covers = ["learning", "events"]
+languages = ["de"]
+countries = ["DE"]
+access = "paid"
+audience = ["children"]
+summary_en = "Weekly robotics courses for ages 5 to 12 with LEGO sets (four levels, from a first robot without screen to artificial intelligence), plus holiday camps, five-day intensive courses and birthday parties."
+summary_fr = "Cours hebdomadaires de robotique de 5 à 12 ans avec des sets de marque LEGO (quatre niveaux, du premier robot sans écran à l'intelligence artificielle), stages de vacances, cours intensifs de cinq jours et anniversaires."
+strengths_en = ["Materials, robots and LEGO sets are provided; a trial lesson is booked online", "Camps, intensive courses and birthdays in the same offer", "Sites in many German cities, listed in Munich, Berlin, Dresden, Augsburg, Erlangen, Fürth, Ingolstadt and others; a regional site covers Hamburg, Kiel and Neumünster"]
+strengths_fr = ["Matériel, robots et sets de marque LEGO fournis ; séance d'essai réservée en ligne", "Stages, cours intensifs et anniversaires dans une même offre", "Sites dans de nombreuses villes allemandes, à Munich, Berlin, Dresde, Augsbourg, Erlangen, Fürth, Ingolstadt et ailleurs ; un site régional couvre Hambourg, Kiel et Neumünster"]
+weaknesses_en = ["Prices are not shown on the pages read; tariff advice follows the trial lesson", "States that LEGO is a tool and that the teaching content is programming and mechanics", "The pages read carry no dated post"]
+weaknesses_fr = ["Les tarifs ne figurent pas sur les pages lues ; le conseil tarifaire suit la séance d'essai", "Indique que LEGO est un outil et que le contenu enseigné est la programmation et la mécanique", "Les pages lues ne portent aucun article daté"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://ligaderroboter.de/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://nord.ligaderroboter.de/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "heyo-legokamp"
+name = "Heyo Vakantiekampen: Legokamp"
+url = "https://www.heyo.be/activiteiten/legokamp"
+group = "education-and-competitions"
+regime = "operating"
+covers = ["learning", "events"]
+languages = ["nl"]
+countries = ["BE"]
+access = "paid"
+audience = ["children"]
+summary_en = "School-holiday LEGO camp for pupils of the first to sixth year (ages 7 to 12), without overnight stay: LEGO WeDo programming workshop, an own LEGO city, Light Stax and a LEGO obstacle course."
+summary_fr = "Stage de vacances scolaires LEGO pour les élèves de la première à la sixième année (7 à 12 ans), sans nuitée : atelier de programmation LEGO WeDo, ville LEGO à construire, Light Stax et parcours."
+strengths_en = ["Dates, towns and prices listed on one page (about 160 to 175 € for four or five days, reduced price shown for some members)", "Camps in many Flemish towns, such as Ghent, Antwerp, Kortrijk, Deinze, Evergem, Sint-Niklaas, Heule and Deerlijk", "Siblings aged 3 to 12 can join another camp at the same site"]
+strengths_fr = ["Dates, villes et prix sur une même page (environ 160 à 175 € pour quatre ou cinq jours, tarif réduit indiqué pour certains membres)", "Stages dans de nombreuses villes flamandes, dont Gand, Anvers, Courtrai, Deinze, Evergem, Saint-Nicolas, Heule et Deerlijk", "Frères et sœurs de 3 à 12 ans accueillis dans un autre stage sur le même site"]
+weaknesses_en = ["States that the camps are not made in cooperation with, nor facilitated by, the LEGO Group", "Only school holidays; the year of the dates shown is not written on the page", "Dutch only; the camp is one of several themed camps of the organiser"]
+weaknesses_fr = ["Précise que les stages ne sont ni conçus en coopération avec le groupe LEGO ni facilités par lui", "Vacances scolaires uniquement ; l'année des dates affichées n'est pas écrite sur la page", "En néerlandais seulement ; ce stage est l'un des stages à thème de l'organisateur"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.heyo.be/activiteiten/legokamp"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "go4robot"
+name = "GO4Robot"
+url = "https://go4robot.pl/"
+group = "education-and-competitions"
+regime = "operating"
+covers = ["learning", "events"]
+languages = ["pl"]
+countries = ["PL"]
+access = "paid"
+audience = ["children"]
+summary_en = "Classes in robotics and programming with LEGO educational sets for ages 3 to 15, in schools, kindergartens and cultural centres; the franchise page also lists workshops, birthdays, holiday and winter camps."
+summary_fr = "Cours de robotique et de programmation avec des sets éducatifs de marque LEGO, de 3 à 15 ans, en écoles, maternelles et centres culturels ; la page franchise cite aussi ateliers, anniversaires et stages."
+strengths_en = ["Map of locations on the home page; states 410 schools and institutions, 95 trainers and 46544 children", "Own course scenarios by age, from LEGO Education sets for age 3 to LEGO SPIKE Prime for grades 4 to 6, ending with mobile applications", "States an activity since 2015", "Franchise academy"]
+strengths_fr = ["Carte des localisations sur la page d'accueil ; annonce 410 écoles et établissements, 95 formateurs et 46544 enfants", "Scénarios de cours propres à chaque âge, des sets LEGO Education dès 3 ans à LEGO SPIKE Prime pour les classes 4 à 6, jusqu'aux applications mobiles", "Annonce une activité depuis 2015", "Académie franchisée"]
+weaknesses_en = ["Classes run in institutions, mostly through franchisees: prices and places depend on the local branch", "Mostly weekly courses during the school year (September or October to June)", "Polish only; figures are the site's own and undated"]
+weaknesses_fr = ["Cours donnés en établissements, surtout par des franchisés : prix et lieux dépendent de l'antenne locale", "Surtout des cours hebdomadaires pendant l'année scolaire (de septembre ou octobre à juin)", "En polonais seulement ; les chiffres sont ceux du site, sans date"]
+size = [{n = 410, unit = "entries"}]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://go4robot.pl/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://go4robot.pl/franczyza/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "edukido"
+name = "Edukido"
+url = "https://edukido.com.pl/"
+group = "education-and-competitions"
+regime = "operating"
+covers = ["learning", "events"]
+languages = ["pl", "en"]
+countries = ["PL"]
+access = "paid"
+audience = ["children"]
+summary_en = "Workshops with LEGO bricks for ages 3 to 10 in schools and kindergartens, built around school subjects (medieval castle, gravity, the power of wind), plus weekly courses, birthdays and day camps."
+summary_fr = "Ateliers avec des briques de marque LEGO de 3 à 10 ans dans des écoles et maternelles, liés aux matières scolaires (château médiéval, gravité, force du vent), avec cours hebdomadaires, anniversaires et centres de loisirs."
+strengths_en = ["Over 300 workshop scenarios without instructions, listed by subject on the site", "States 200 franchise areas in Poland and units abroad (an English franchise page exists)", "Four formats: weekly courses, school workshops, themed birthdays for 10 to 20 children, day camps"]
+strengths_fr = ["Plus de 300 scénarios d'ateliers sans notice, listés par matière sur le site", "Annonce 200 zones franchisées en Pologne et des unités à l'étranger (une page franchise en anglais existe)", "Quatre formats : cours hebdomadaires, ateliers scolaires, anniversaires à thème pour 10 à 20 enfants, centres de loisirs"]
+weaknesses_en = ["Run by franchisees: availability and prices depend on the local branch", "The site is oriented to teachers and franchise buyers; no list of places seen on the pages read", "Polish and English only; the figures quoted are for the 2023 to 2024 school year"]
+weaknesses_fr = ["Animé par des franchisés : disponibilité et prix dépendent de l'antenne locale", "Le site s'adresse aux enseignants et aux candidats à la franchise ; aucune liste de lieux sur les pages lues", "En polonais et anglais seulement ; les chiffres cités concernent l'année scolaire 2023-2024"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://edukido.com.pl/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://edukido.com.pl/franchise/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "bricks-4-kidz"
+name = "Bricks 4 Kidz"
+url = "https://www.bricks4kidz.com/"
+group = "education-and-competitions"
+covers = ["learning", "events"]
+languages = ["en", "fr", "it"]
+countries = ["international"]
+access = "paid"
+audience = ["children"]
+summary_en = "Network of franchises of after-school programmes, holiday camps, birthday parties and school workshops with LEGO bricks; camps are for ages 5 to 13."
+summary_fr = "Réseau de franchises d'activités périscolaires, de stages de vacances, d'anniversaires et d'ateliers scolaires avec des briques LEGO ; stages de 5 à 13 ans."
+strengths_en = ["Presents itself as over 350 franchises in 55 countries, with a locations page and a site per country (France, Italy, United Kingdom and others)", "Camps, after-school programmes, birthday parties, school workshops, robotics and coding in one offer"]
+strengths_fr = ["Se présente comme plus de 350 franchises dans 55 pays, avec une page des localisations et un site par pays (France, Italie, Royaume-Uni et d'autres)", "Stages, activités périscolaires, anniversaires, ateliers scolaires, robotique et codage dans une même offre"]
+weaknesses_en = ["Programmes are run by independent franchisees: availability and prices depend on the local franchise", "States that the LEGO Group does not sponsor, authorize or endorse the programmes", "The international locations page returned no locations when read; places are found on the national sites"]
+weaknesses_fr = ["Les activités sont assurées par des franchisés indépendants : disponibilité et prix dépendent de la franchise locale", "Précise que le groupe LEGO ne parraine, n'autorise ni ne cautionne ces activités", "La page internationale des localisations n'affichait aucun lieu à la lecture ; les lieux se trouvent sur les sites nationaux"]
+size = [{n = 55, unit = "countries"}]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.bricks4kidz.com/about/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.bricks4kidz.com/camps/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.bricks4kidz.fr/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "lego-magazine-kids"
+name = "LEGO Magazine (free magazine for children)"
+url = "https://www.lego.com/en-us/magazine"
+group = "books-and-magazines"
+operator = "lego-group"
+covers = ["learning", "official"]
+languages = ["en", "fr", "de"]
+countries = ["international"]
+access = "free-account"
+audience = ["children"]
+summary_en = "Free for ages 5 to 9, sent in print five times a year, with building challenges, comics, puzzles and creations by young fans; formerly LEGO Life Magazine. Digital issues can be downloaded."
+summary_fr = "Gratuit pour les 5 à 9 ans, imprimé et envoyé cinq fois par an, avec défis de construction, bandes dessinées, jeux et créations de jeunes fans ; ancien LEGO Life Magazine. Numéros numériques téléchargeables."
+strengths_en = ["Available in 15 countries according to the help page, next issue announced for March 2027", "Two versions, for children under 8 and from 8 years"]
+strengths_fr = ["Disponible dans 15 pays selon la page d'aide, prochain numéro annoncé pour mars 2027", "Deux versions, pour les enfants de moins de 8 ans et à partir de 8 ans"]
+weaknesses_en = ["Requires a LEGO account created by a parent or guardian", "First copy can take 6 to 16 weeks to arrive", "Sets and themes of the LEGO Group are promoted in the issues"]
+weaknesses_fr = ["Nécessite un compte LEGO créé par un parent ou un tuteur", "Le premier exemplaire peut mettre de 6 à 16 semaines à arriver", "Les numéros présentent des sets et thèmes du groupe LEGO"]
+status = "active"
+regime = "work"
+last_activity = "2026-07-01"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/magazine/faq"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.lego.com/de-de/magazine"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://kids.lego.com/de-de/lego-magazine/collection"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "blue-ocean-lego-magazine"
+name = "Blue Ocean: LEGO magazines"
+url = "https://www.blue-ocean.de/magazine-comics/"
+group = "books-and-magazines"
+operator = "licensee"
+covers = ["learning", "official"]
+languages = ["de"]
+countries = ["DE"]
+access = "paid"
+audience = ["children"]
+summary_en = "Each issue includes comics, puzzles, a poster and a small set or minifigure, on LEGO City (ages 5 to 9), Ninjago and Friends (ages 6 to 12) and others; issue dates published to 2027."
+summary_fr = "Chaque numéro comprend bande dessinée, jeux, poster et un set ou une minifigurine de marque LEGO, sur LEGO City (5 à 9 ans), Ninjago et Friends (6 à 12 ans) ; parutions publiées jusqu'en 2027."
+strengths_en = ["Publishing calendar to 2027: LEGO City every five weeks (issue 93 on 13 November 2026), Ninjago every four weeks", "Several titles: City, Ninjago, Friends, Technic, Minecraft, Star Wars and others"]
+strengths_fr = ["Calendrier de parution jusqu'en 2027 : LEGO City toutes les cinq semaines (numéro 93 le 13 novembre 2026), Ninjago toutes les quatre semaines", "Plusieurs titres : City, Ninjago, Friends, Technic, Minecraft, Star Wars et d'autres"]
+weaknesses_en = ["Content is mainly comics, puzzles and posters; building comes from the set included", "LEGO City issue costs 6.99 euros, plus shipping outside the free-shipping threshold", "Children's magazines in German only"]
+weaknesses_fr = ["Contenu surtout fait de bandes dessinées, de jeux et de posters ; la construction vient du set inclus", "Le numéro de LEGO City coûte 6.99 euros, frais de port en plus sous le seuil de gratuité", "Magazines pour enfants en allemand seulement"]
+status = "active"
+regime = "work"
+last_activity = "2026-11-13"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.blue-ocean.de/mediadaten/lego-city/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.blue-ocean.de/magazine-comics/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "lego-family-activities"
+name = "LEGO downloadable family activities"
+url = "https://www.lego.com/en-us/families/downloadable-activities"
+group = "guides"
+operator = "lego-group"
+covers = ["learning", "official"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+audience = ["children"]
+summary_en = "Printable activity sheets with building challenges (pirate island, alien planet, city, jungle, castle) for the whole family, to do with bricks already at home."
+summary_fr = "Fiches d'activités à imprimer avec défis de construction (île de pirates, planète extraterrestre, ville, jungle, château) pour toute la famille, à faire avec les briques déjà à la maison."
+strengths_en = ["Free PDF sheets, to print or to build around a tablet", "Challenges for teams, pairs or one child"]
+strengths_fr = ["Fiches PDF gratuites, à imprimer ou à utiliser autour d'une tablette", "Défis pour des équipes, des duos ou un seul enfant"]
+weaknesses_en = ["Few sheets, each tied to a theme of the LEGO Group", "Page carries no publication date"]
+weaknesses_fr = ["Peu de fiches, chacune liée à un thème du groupe LEGO", "La page ne porte pas de date de publication"]
+status = "active"
+regime = "work"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.lego.com/en-us/families/downloadable-activities"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "little-bins-lego-challenges"
+name = "Little Bins for Little Hands: LEGO challenges"
+url = "https://littlebinsforlittlehands.com/lego-task-cards/"
+group = "guides"
+covers = ["learning"]
+languages = ["en"]
+countries = ["US"]
+access = "free"
+audience = ["children"]
+summary_en = "Printable LEGO task cards and a 30-day challenge calendar for kindergarten to grade 5, with picture prompts, timed and partner challenges, usable with any bin of bricks."
+summary_fr = "Cartes de défis et calendrier de 30 défis à imprimer pour les enfants de la maternelle au CM2 américain, avec modèles en images, défis chronométrés et à deux, utilisables avec n'importe quelles briques."
+strengths_en = ["Seasonal and themed sets (space, pirates, animals, holidays), guidance for classroom and homeschool use", "Task cards page updated on 11 September 2026"]
+strengths_fr = ["Séries saisonnières et thématiques (espace, pirates, animaux, fêtes), conseils pour la classe et l'école à la maison", "Page des cartes de défis mise à jour le 11 septembre 2026"]
+weaknesses_en = ["In English only, written for American school grades", "Some downloads are behind an email form"]
+weaknesses_fr = ["En anglais uniquement, écrit pour les niveaux scolaires américains", "Certains téléchargements demandent une adresse électronique"]
+status = "active"
+regime = "work"
+last_activity = "2026-09-11"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://littlebinsforlittlehands.com/lego-task-cards/"
+date = "2026-09-11"
+kind = "read"
+
+[[resource.sources]]
+url = "https://littlebinsforlittlehands.com/lego-challenge-calendar-ideas-kids/"
+date = "2025-06-15"
+kind = "read"

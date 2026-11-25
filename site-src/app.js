@@ -54,8 +54,8 @@ const det=()=>detP||(detP=fetch('details.json').then(x=>{if(!x.ok)throw x.status
 const index=()=>{if(ms)return ms;ms=new MiniSearch({fields:['name','summary','strengths','weaknesses','group','covers','countries','city','size','brands'],storeFields:[],
  processTerm:w=>fold(w),searchOptions:{boost:{name:4,brands:3,group:2},prefix:true,fuzzy:0.2,combineWith:'AND'}});
  ms.addAll(R.map(r=>({id:r.id,name:r.name,summary:r[L].summary,strengths:r[L].strengths.join(' '),weaknesses:r[L].weaknesses.join(' '),group:r[L].group,
- covers:(r.covers||[]).map(t).join(' '),countries:(r.countries||[]).map(cname).join(' '),city:[r.city,r.city_fr,r.city_local].filter(Boolean).join(' '),size:sizeOf(r),brands:(r.brands||[]).map(brandName).join(' ')})));return ms};
-const st={cat:new Set(),cov:new Set(),langs:new Set(),active:false,featured:false,country:'',q:'',view:'cards',sort:null};
+ covers:[...(r.covers||[]).map(t),...(r.audience||[]).map(a=>t('aud_'+a))].join(' '),countries:(r.countries||[]).map(cname).join(' '),city:[r.city,r.city_fr,r.city_local].filter(Boolean).join(' '),size:sizeOf(r),brands:(r.brands||[]).map(brandName).join(' ')})));return ms};
+const st={cat:new Set(),cov:new Set(),langs:new Set(),active:false,featured:false,kids:false,adults:false,country:'',q:'',view:'cards',sort:null};
 let BM='';  // brand mode: the query is exactly a brand's name or other name
 const BNAME=new Map(BRANDS.flatMap(b=>[b.name,...b.aka].map(n=>[fold(n),b.id])));
 const BN=Object.fromEntries(BRANDS.map(b=>[b.id,R.filter(r=>linked(r,b.id)).length]));
@@ -76,6 +76,7 @@ function match(r,skip){
  if(st.active&&r.status!=='active')return false;
  if(st.langs.size&&!(r.languages||[]).some(l=>st.langs.has(l)))return false;
  if(st.featured&&!r.featured)return false;
+ if(st.kids||st.adults){const a=r.audience||[];if(!(st.kids&&a.includes('children')||st.adults&&a.includes('adults')))return false}  // the public the entry states
 
  if(skip!=='country'&&st.country&&!(r.countries||[]).includes(st.country))return false;
  if(BM){if(!linked(r,BM))return false}else if(hits&&!hits.has(r.id))return false;
@@ -84,14 +85,14 @@ const fc=document.getElementById('f-cat'),fv=document.getElementById('f-cov'),fm
 function drawFilters(){
  fc.innerHTML=C.map(c=>`<button class="chip${st.cat.has(c.id)?' on':''}" data-cat="${c.id}" aria-pressed="${st.cat.has(c.id)}">${esc(c[L])}<span class="c">${R.filter(r=>r.cat===c.id&&match(r,'cat')).length}</span></button>`).join('');
  fv.innerHTML=covers.map(c=>`<button class="chip${st.cov.has(c)?' on':''}" data-cov="${c}" aria-pressed="${st.cov.has(c)}">${t(c)}<span class="c">${R.filter(r=>(r.covers||[]).includes(c)&&match(r,'cov')).length}</span></button>`).join('');
- fm.innerHTML=[['featured',t('featured')],['active',t('only_active')]].map(([k,l,tip])=>`<button class="chip${st[k]?' on':''}" data-m="${k}" aria-pressed="${st[k]}"${tip?` title="${esc(tip)}"`:''}>${l}</button>`).join('')+LANGS.map(l=>`<button class="chip${st.langs.has(l)?' on':''}" data-lang="${l}" aria-pressed="${st.langs.has(l)}">${esc(t('in_lang').replace('{x}',lname(l)))}</button>`).join('')+`<select id="f-country" class="${st.country?'on':''}" aria-label="${t('country_all')}"><option value="">${t('country_all')}</option>${CTRY.map(([c])=>`<option value="${c}"${st.country===c?' selected':''}>${esc(cname(c))} (${R.filter(r=>(r.countries||[]).includes(c)&&match(r,'country')).length})</option>`).join('')}</select>`}
+ fm.innerHTML=[['featured',t('featured')],['active',t('only_active')],['kids',t('for_children')],['adults',t('for_adults')]].map(([k,l,tip])=>`<button class="chip${st[k]?' on':''}" data-m="${k}" aria-pressed="${st[k]}"${tip?` title="${esc(tip)}"`:''}>${l}</button>`).join('')+LANGS.map(l=>`<button class="chip${st.langs.has(l)?' on':''}" data-lang="${l}" aria-pressed="${st.langs.has(l)}">${esc(t('in_lang').replace('{x}',lname(l)))}</button>`).join('')+`<select id="f-country" class="${st.country?'on':''}" aria-label="${t('country_all')}"><option value="">${t('country_all')}</option>${CTRY.map(([c])=>`<option value="${c}"${st.country===c?' selected':''}>${esc(cname(c))} (${R.filter(r=>(r.countries||[]).includes(c)&&match(r,'country')).length})</option>`).join('')}</select>`}
 fc.onclick=e=>{const b=e.target.closest('[data-cat]');if(b){toggle(st.cat,b.dataset.cat);update()}};
 fv.onclick=e=>{const b=e.target.closest('[data-cov]');if(b){const c=b.dataset.cov;st.cov.has(c)?st.cov.delete(c):st.cov.add(c);update()}};
 fm.onchange=e=>{if(e.target.id==='f-country'){st.country=e.target.value;update()}};
 fm.onclick=e=>{const lb=e.target.closest('[data-lang]');if(lb){toggle(st.langs,lb.dataset.lang);update();return}const b=e.target.closest('[data-m]');if(b){st[b.dataset.m]=!st[b.dataset.m];update()}};
 function setQuery(v){st.q=v;q.value=v;const s=v.trim();BM=BNAME.get(fold(s))||'';hits=s?new Map(index().search(s).map(h=>[h.id,h.score])):null}
 let qt;q.oninput=()=>{clearTimeout(qt);qt=setTimeout(()=>{setQuery(q.value);update(false)},120)};
-function resetAll(){st.cat.clear();st.cov.clear();st.active=st.featured=false;st.langs.clear();st.country='';setQuery('')}
+function resetAll(){st.cat.clear();st.cov.clear();st.active=st.featured=st.kids=st.adults=false;st.langs.clear();st.country='';setQuery('')}
 document.getElementById('reset').onclick=document.getElementById('reset2').onclick=()=>{resetAll();update()};
 // contact: one line per item (address, phone, email), each with its icon; a phone or an email never breaks
 const ICO={adr:'<path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5zm0 6.3a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6z"/>',
@@ -108,7 +109,7 @@ const one=r=>{const c=(r.countries||[]).filter(x=>x!=='international');return c.
 function sameSite(r){const o=(r.same||[]).filter(id=>id!==r.id).map(id=>R.find(x=>x.id===id)).filter(Boolean);if(!o.length)return'';
  if(o.length>6&&r.operator&&LEGO)return r===LEGO||BM===LEGO.id?`<div class="same">${t('same_site')}${COLON}${esc(tn('n_entries',o.length))}</div>`:`<div class="same">${t('same_site')}${COLON}${esc(tn('n_entries',o.length))}, <button type="button" class="lk" data-brand="${LEGO.id}">${esc(tn('all_about',BN[LEGO.id]).replace('{b}',LEGO.name))}</button></div>`;  // lego.com: a dozen entries, all in the brand mode of LEGO
  return `<div class="same">${t('same_site')}${COLON}${o.map(x=>`<a href="#entry=${x.id}" data-go="${x.id}">${esc(x.name)}</a>`).join(', ')}</div>`}
-function card(r,showCat){const x=r[L];const tags=[...(r.covers||[]).filter(c=>c!==r.cat).map(c=>`<span class="tag ${c}">${t(c)}</span>`),(r.status!=='active'?`<span class="tag st-${r.status}">${stLabel(r)}</span>`:''),(r.regime==='work'&&r.last?`<span class="tag">${t('dated').replace('{y}',dt(r.last.slice(0,4)))}</span>`:''),(r.languages||[]).length?`<span class="tag langs">${esc(r.languages.join(' · ').toUpperCase())}</span>`:'',r.access?`<span class="tag">${t('acc_'+r.access)}</span>`:''].join('');
+function card(r,showCat){const x=r[L];const tags=[...(r.covers||[]).filter(c=>c!==r.cat).map(c=>`<span class="tag ${c}">${t(c)}</span>`),(r.status!=='active'?`<span class="tag st-${r.status}">${stLabel(r)}</span>`:''),(r.regime==='work'&&r.last?`<span class="tag">${t('dated').replace('{y}',dt(r.last.slice(0,4)))}</span>`:''),(r.languages||[]).length?`<span class="tag langs">${esc(r.languages.join(' · ').toUpperCase())}</span>`:'',r.access?`<span class="tag">${t('acc_'+r.access)}</span>`:'',...(r.audience||[]).map(a=>`<span class="tag aud">${t('aud_'+a)}</span>`)].join('');
  const m=r.metrics||{};const fu=r.funding&&r.funding[0]!=='unknown'?FU.filter(f=>r.funding.includes(f)).map(f=>t('fu_'+f)).join(', '):'';  // funding read at the source replaces the free business model text
  const extra=[[cityOf(r),one(r)].filter(Boolean).map(esc).join(', '),esc(sizeOf(r)),m.stars!=null?'★ '+m.stars:'',r.next?esc(t('next'))+' '+dt(r.next):'',fu?esc(fu[0].toUpperCase()+fu.slice(1)):''].filter(Boolean).join(' · ');
  const wb=BN[r.id]!=null&&BM!==r.id?`<button type="button" class="btn all" data-brand="${r.id}">${esc(tn('all_about',BN[r.id]).replace('{b}',brandName(r.id)))}</button>`:'';
@@ -125,7 +126,8 @@ document.getElementById('viewsw').onclick=e=>{const b=e.target.closest('[data-v]
 // a resource that cannot be found: suggested at once, the search typed becomes the title of the proposal (GitHub issue form)
 const MISS=document.getElementById('miss'),MISS0=MISS.href,missUrl=n=>{const s=st.q.trim().slice(0,100);return s&&!n?MISS0+'&title='+encodeURIComponent('Add: '+s):MISS0};  // the title only when nothing matches (a search with results names something already there), 100 characters at most (GitHub refuses a very long address)
 const missLine=n=>`<p class="missl"><a class="miss" href="${esc(missUrl(n))}">${t('suggest')}</a></p>`;
-function drawList(){const rs=R.filter(r=>match(r)),n=rs.length;MISS.href=missUrl(n);MISS.classList.toggle('off',!n);  // with nothing found, the message below carries the link: the one of the bar keeps its place, hiddendocument.getElementById('count').innerHTML=rs.length+' / '+R.length+'<span class="cw"> '+t('shown')+'</span>';const list=document.getElementById('list');
+function drawList(){const rs=R.filter(r=>match(r)),n=rs.length;MISS.href=missUrl(n);MISS.classList.toggle('off',!n);  // with nothing found, the message below carries the link: the one of the bar keeps its place, hidden
+ document.getElementById('count').innerHTML=rs.length+' / '+R.length+'<span class="cw"> '+t('shown')+'</span>';const list=document.getElementById('list');
  document.querySelectorAll('#viewsw [data-v]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===st.view));
  if(!rs.length){list.innerHTML=(BM?banner(R.find(r=>r.id===BM),BRANDS.find(x=>x.id===BM),rs):'')+`<div class="empty">${t('none')}${missLine(n)}</div>`;return}
  if(st.view==='table'){root.style.setProperty('--bar-h',(document.querySelector('.bar').offsetHeight+hdr())+'px');if(hits&&!st.sort)rs.sort((a,b)=>hits.get(b.id)-hits.get(a.id));list.innerHTML=(BM?banner(R.find(r=>r.id===BM),BRANDS.find(x=>x.id===BM),rs):'')+drawTable(rs)+missLine(n);return}
@@ -253,7 +255,7 @@ function show(view,first){const was=cur;cur=view;document.title=view==='dir'?TIT
 document.getElementById('skip').onclick=e=>{e.preventDefault();toDir();const q=document.getElementById('q');q.scrollIntoView({block:'center'});q.focus()};
 document.querySelector('nav.tabs a[data-view=dir]').onclick=e=>{e.preventDefault();toDir();writeHash();document.getElementById('map').scrollIntoView({behavior:SMOOTH()})};
 addEventListener('hashchange',()=>{const v=viewOf(location.hash);if(v!=='dir'||cur!=='dir'||OUT.test(location.hash))show(v)});
-function writeHash(){if(cur!=='dir')return;const p=new URLSearchParams();if(st.q.trim())p.set('q',st.q.trim());if(st.cat.size)p.set('cat',[...st.cat].join(','));if(st.cov.size)p.set('scope',[...st.cov].join(','));const cr=['featured','active'].filter(k=>st[k]);if(cr.length)p.set('crit',cr.join(','));if(st.langs.size)p.set('lang',[...st.langs].join(','));if(st.country)p.set('country',st.country);if(st.view!=='cards')p.set('view',st.view);const h=p.toString();history.replaceState(null,'',h?'#'+h:location.pathname+location.search)}
+function writeHash(){if(cur!=='dir')return;const p=new URLSearchParams();if(st.q.trim())p.set('q',st.q.trim());if(st.cat.size)p.set('cat',[...st.cat].join(','));if(st.cov.size)p.set('scope',[...st.cov].join(','));const cr=['featured','active','kids','adults'].filter(k=>st[k]);if(cr.length)p.set('crit',cr.join(','));if(st.langs.size)p.set('lang',[...st.langs].join(','));if(st.country)p.set('country',st.country);if(st.view!=='cards')p.set('view',st.view);const h=p.toString();history.replaceState(null,'',h?'#'+h:location.pathname+location.search)}
 function readHash(){const h=location.hash.slice(1);if(!h||viewOf(location.hash)!=='dir')return;const p=new URLSearchParams(h);(p.get('cat')||'').split(',').filter(Boolean).forEach(c=>st.cat.add(c));(p.get('scope')||'').split(',').filter(Boolean).forEach(c=>st.cov.add(c));(p.get('crit')||'').split(',').forEach(k=>{if(k==='fr')st.langs.add('fr');else if(k in st&&typeof st[k]==='boolean')st[k]=true});(p.get('lang')||'').split(',').filter(Boolean).forEach(l=>st.langs.add(l));if(p.get('country'))st.country=p.get('country');if(p.get('view')==='table')st.view='table';if(p.get('q'))setQuery(p.get('q'))}
 const ft=document.getElementById('ftoggle'),bar=document.querySelector('.bar');
 ft.onclick=()=>{const o=bar.classList.toggle('open');ft.setAttribute('aria-expanded',o)};
@@ -296,15 +298,16 @@ q.addEventListener('blur',()=>setTimeout(sgClose,100));
 // "Where to start" (data/journeys.toml): per need, the reference of the visitor's country or language, then entries of its groups ranked
 // for the visitor (their rank in the visitor's country or language first, then worldwide), then the whole category; 4 lines at most
 const byId=id=>R.find(r=>r.id===id);
-function needEntries(j,skip,n){const key=j.scope==='country'?VC:j.scope==='language'?VL:'',inG=r=>j.groups.includes(r.cat+'/'+r.group)&&r.id!==skip&&r.status!=='dead';
+const AUDK={children:'kids',adults:'adults'};  // a need for one public ends on the filter of that public
+function needEntries(j,skip,n){const key=j.scope==='country'?VC:j.scope==='language'?VL:'',inG=r=>j.groups.includes(r.cat+'/'+r.group)&&r.id!==skip&&r.status!=='dead'&&(!j.audience||(r.audience||[]).includes(j.audience));
  if(j.mode==='brand')return R.filter(r=>inG(r)&&BN[r.id]!=null&&r.rank&&r.rank.intl).sort((a,b)=>a.rank.intl-b.rank.intl).slice(0,n);
  const rk=r=>{const x=r.rank||{};return key&&x[key]?[0,x[key]]:x.intl?[1,x.intl]:null};
  return R.filter(r=>inG(r)&&rk(r)).sort((a,b)=>{const x=rk(a),y=rk(b);return x[0]-y[0]||x[1]-y[1]||lrank(a)-lrank(b)}).slice(0,n)}
-function drawNeeds(){document.getElementById('journeys').innerHTML=(D.journeys||[]).map(j=>{const key=j.scope==='country'?VC:j.scope==='language'?VL:'',rf=j.reference||{},ref=byId(rf[key]||rf.default),es=needEntries(j,ref&&ref.id,ref?2:3),n=R.filter(r=>r.cat===j.category).length;
+function drawNeeds(){document.getElementById('journeys').innerHTML=(D.journeys||[]).map(j=>{const key=j.scope==='country'?VC:j.scope==='language'?VL:'',rf=j.reference||{},ref=byId(rf[key]||rf.default),es=needEntries(j,ref&&ref.id,ref?2:3),n=j.audience?R.filter(r=>(r.audience||[]).includes(j.audience)).length:R.filter(r=>r.cat===j.category).length;
  const li=(r,cls)=>`<li${cls?` class="${cls}"`:''}><a href="#entry=${r.id}" ${j.mode==='brand'?`data-brand="${r.id}"`:`data-go="${r.id}"`}>${esc(r.name)}</a></li>`;
- return `<div class="jr"><h3>${ci(j.category)}${esc(j['title_'+L])}</h3><ul>${ref?li(ref,'ref'):''}${es.map(r=>li(r)).join('')}<li class="all"><a href="#cat=${j.category}" data-cat="${j.category}">${esc(catName(j.category))} <span class="nw">· ${n} →</span></a></li></ul></div>`}).join('')}
+ return `<div class="jr"><h3>${ci(j.category)}${esc(j['title_'+L])}</h3><ul>${ref?li(ref,'ref'):''}${es.map(r=>li(r)).join('')}<li class="all">${j.audience?`<a href="#crit=${AUDK[j.audience]}" data-crit="${AUDK[j.audience]}">${esc(t('for_'+j.audience))}`:`<a href="#cat=${j.category}" data-cat="${j.category}">${esc(catName(j.category))}`} <span class="nw">· ${n} →</span></a></li></ul></div>`}).join('')}
 drawNeeds();
-document.getElementById('journeys').onclick=e=>{const a=e.target.closest('a');if(!a)return;e.preventDefault();if(a.dataset.go)openEntry(a.dataset.go);else if(a.dataset.brand)brandMode(a.dataset.brand);else if(a.dataset.cat){resetAll();st.cat.add(a.dataset.cat);update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()})}};
+document.getElementById('journeys').onclick=e=>{const a=e.target.closest('a');if(!a)return;e.preventDefault();if(a.dataset.go)openEntry(a.dataset.go);else if(a.dataset.brand)brandMode(a.dataset.brand);else if(a.dataset.cat||a.dataset.crit){resetAll();if(a.dataset.cat)st.cat.add(a.dataset.cat);else st[a.dataset.crit]=true;update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()})}};
 const landing=new URLSearchParams(location.hash.slice(1)).get('entry');  // #entry=<id>: a link to one entry (feed, outside pages)
 const v0=viewOf(location.hash),OUT0=OUT.test(location.hash);cur=v0;readHash();update();show(v0,true);if(landing)openEntry(landing);document.documentElement.classList.add('ready');
 q.addEventListener('focus',()=>{det();index()},{once:true});
