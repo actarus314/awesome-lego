@@ -2,6 +2,8 @@ name: Preview
 on:
   pull_request:
     types: [opened, synchronize, reopened, closed]
+    # what changes the website; a closed request matches when it changed one of these, the only case with a preview to remove
+    paths: ["site-src/**", "scripts/build.py", "scripts/previews.py", "media/**", "!media/site-preview*.png", "data/**", "VERSION", "CHANGELOG.md", ".github/workflows/preview.yml"]
   push:
     branches: [dev]
   delete:   # the branch dev deleted: its preview goes

@@ -1,5 +1,7 @@
 name: Data fixes
 on:
+  # zizmor: ignore[dangerous-triggers] Links runs only on its schedule and by hand on main (no pull request can start it),
+  # and this workflow reads nothing from that run: no artifact, no output, no code of a branch
   workflow_run:   # the same morning as the links issue: when the weekly Links run ends, whatever its conclusion
     workflows: [Links]
     types: [completed]
@@ -33,7 +35,7 @@ jobs:
       # or a personal token (secret DATA_FIXES_TOKEN) lets Check and Render start on their own.
       - id: app
         if: vars.DATA_FIXES_APP_ID != ''
-        uses: actions/create-github-app-token@305e4aec4e2000ce216527e282f0749f47637923 # v3.4.0
+        uses: actions/create-github-app-token@f418cff399f7aef4c2f0ad47e25ca7a6abbdd6fc # v3.4.0
         with:
           client-id: ${{ vars.DATA_FIXES_APP_ID }}
           private-key: ${{ secrets.DATA_FIXES_APP_KEY }}
