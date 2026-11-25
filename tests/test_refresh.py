@@ -13,11 +13,11 @@ iso = lambda n: (T - dt.timedelta(days=n)).isoformat()
 
 
 class Selection(unittest.TestCase):
-    def test_featured_until_ranks_then_rank_one_international(self):
-        self.assertTrue(refresh.selected({"featured": True}))
+    def test_rank_one_international(self):
+        self.assertFalse(refresh.selected({"featured": True}))
         self.assertFalse(refresh.selected({}))
-        self.assertTrue(refresh.selected({"featured": False, "rank": {"intl": 1}}))
-        self.assertFalse(refresh.selected({"featured": True, "rank": {"intl": 2, "FR": 1}}))
+        self.assertTrue(refresh.selected({"rank": {"intl": 1}}))
+        self.assertFalse(refresh.selected({"rank": {"intl": 2, "FR": 1}}))
 
 
 class Month(unittest.TestCase):

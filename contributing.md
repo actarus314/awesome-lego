@@ -1,6 +1,6 @@
 # Contributing
 
-This list aims to be complete, accurate and current. Every entry is checked at its source. Entries carry English and French texts (`_en` and `_fr` fields) because the website is bilingual; a contribution in English only is welcome, the French text is added before merging.
+This list aims to be complete, accurate and current. Every entry is checked at its source. Contributions are written in English. The website is bilingual: an entry proposed without French texts is accepted (the build warns « French translation missing »), shown in English on the French page, and the monthly review adds the French texts.
 
 **Suggest without editing files:** open an issue with the [Add a resource](https://github.com/actarus314/awesome-lego/issues/new?template=add-resource.yml) or [Fix an entry](https://github.com/actarus314/awesome-lego/issues/new?template=fix-entry.yml) form. A maintainer writes the entry.
 
@@ -9,7 +9,7 @@ This list aims to be complete, accurate and current. Every entry is checked at i
 2. Run `python3 scripts/build.py` (the latest Python release, no dependency; the checks run on it only) and commit the regenerated files with the data. To see the website, run `python3 -m http.server -d site` and open http://localhost:8000. The checks of the pull request also run `python3 -m unittest discover -s tests` and, when the website changes, `python3 scripts/check_site.py` (needs `npm ci` and `pip install -r tests/requirements.txt`, then `python3 -m playwright install chromium`; add `--dejavu` to draw the page with the wider fonts of the GitHub runners).
 3. Open a pull request. The maintainer adds the version number and the CHANGELOG entry when merging. Checks validate the data and build the site; links are tested every week by a separate job.
 
-**Selection:** the README lists only entries marked `featured = true`, the best of each group; the [full list](full-list.md) keeps every entry, inactive and dead ones included. See [MAINTENANCE.md](MAINTENANCE.md).
+**Selection:** each entry may carry ranks 1 to 5 within its group, worldwide and per country or language (`rank`, with its reasons; see [`data/SCHEMA.md`](data/SCHEMA.md)); the README lists the rank 1 worldwide of each group, and "Where to start" on the website shows the entries ranked for the visitor's country or language. The [full list](full-list.md) keeps every entry, inactive and dead ones included. See [MAINTENANCE.md](MAINTENANCE.md).
 
 **What gets in:** resources useful to adult builders of official LEGO or compatible bricks, publicly reachable, active or still a reference. Shops must state their delivery terms; brands must have an official site. Each entry needs at least one source with a date.
 
@@ -17,6 +17,6 @@ This list aims to be complete, accurate and current. Every entry is checked at i
 
 **Links read at the source:** `brands` (alternative brands an entry sells, tracks, reviews or discusses), `funding` (how a comparator, review site or channel earns money) and `makers` (who makes a brand's bricks) are filled only from the resource's own pages or, for makers, from the brand, the maker or two independent sources; leave them out rather than guess. See [`data/SCHEMA.md`](data/SCHEMA.md).
 
-**Writing:** factual and short, no marketing words; decimal point, no thousands separator; prices including taxes; no abbreviations except proper names and technical terms. The card's text says what sets the entry apart in 35 words at most; dates are written with the month in letters; in French, « LEGO officiel » is a label only. Details: [`data/SCHEMA.md`](data/SCHEMA.md), "Writing rules"; `python3 scripts/build.py --notes` lists what does not follow them yet.
+**Writing:** factual and short, no marketing words; decimal point, no thousands separator; prices including taxes; no abbreviations except proper names and technical terms. The card's text says what sets the entry apart in 35 words at most; dates are written with the month in letters; in French, « LEGO officiel » is a label only. Details: [`data/SCHEMA.md`](data/SCHEMA.md), "Writing rules"; the build refuses what does not follow them.
 
 By contributing, you agree that your contribution is published under the licenses of the repository (content: CC BY-NC-SA 4.0; code: PolyForm Noncommercial 1.0.0). The licence of each file is set in [`REUSE.toml`](REUSE.toml) (texts in [`LICENSES/`](LICENSES/)) and checked by `reuse lint`: a new file outside the paths listed there needs its line. Brand logos (`media/logos/`) are trademarks of their owners, under none of these licences. Everyone follows the [code of conduct](CODE_OF_CONDUCT.md).

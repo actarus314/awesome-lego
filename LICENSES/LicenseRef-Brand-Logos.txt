@@ -12,14 +12,18 @@ or endorse this website. The same holds for every other brand named or shown her
 An owner who wants a logo removed can open an issue: https://github.com/actarus314/awesome-lego/issues
 
 Sources:
+- 12go.png: https://12gobuilds.com/ (file https://12gobuilds.com/cdn/shop/files/386A5867-D415-473A-8A7A-98654AC9D123.png), read on 2026-11-25
 - blokees.svg: https://blokees.com/ (file https://blokees.com/cdn/shop/files/Group_10266.svg?v=1731059951), read on 2026-11-24
 - bluebrixx.svg: https://www.bluebrixx.com/fr/ (file https://www.bluebrixx.com/media/89/b4/64/1748974412/bluebrixx-logo-m.svg?ts=1748974412), read on 2026-11-24
+- bole-brick.png: https://www.bolebricks.com/ (file https://wpstatic.bolebrick.cn/2026/10/07081311/e4ff5f9e97ada75a500b0c8b.png), read on 2026-11-25
 - brixies.svg: https://brixies.de/ (file https://brixies.de/cdn/shop/files/Beide_Logos.svg?v=1748942796), read on 2026-11-24
 - bryx.svg: https://bryxtoys.com/ (file https://bryxtoys.com/wp-content/uploads/2024/01/BRYX-Logo.svg), read on 2026-11-24
+- buildarmy.png: https://buildarmy.com/ (file https://buildarmy.com/wp-content/uploads/2020/02/Logo-V8_4-500x.jpg), read on 2026-11-25
 - cada.png: https://cadatoys.com/ (file https://cadatoys.com/wp-content/uploads/2026/04/4C7B62C2-8B30-40d8-8684-160A5734426C_5d440065-e96f-4417-8faa-c08b06a17a68.webp), read on 2026-11-24
 - cobi.png: https://cobi.com/fr-fr (file https://cobi.com/cdn/shop/files/logo_1.png?v=1785849677), read on 2026-11-24
 - gobricks.png: https://gobricks.net/ (file https://gobricks.net/_nuxt/img/logo.c14ee82.png), read on 2026-11-24
 - im-master.png: https://www.immasterstore.com/ (file https://www.immasterstore.com/cdn/shop/files/IM.master_LOGO-Orange_021C.png?v=1790056114), read on 2026-11-24
+- jaki.png: https://www.jakibricks.com/ (file https://www.jakibricks.com/cdn/shop/files/LOGO-JAKI_1.png), read on 2026-11-25
 - jiestar.png: https://www.jiestartoys.com/ (file https://www.jiestartoys.com/images/brand/jiestar-logo-color.png), read on 2026-11-24
 - jmbricklayer.png: https://www.jmbricklayer.com/ (file https://www.jmbricklayer.com/cdn/shop/files/JMBricklayer_logo-22.png?v=1764644535), read on 2026-11-24
 - keeppley.png: https://c-en.qmjm.com/ (file https://c-en.qmjm.com/vancheerfile/images/2022/10/20221010151814746.png), read on 2026-11-24

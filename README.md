@@ -17,8 +17,8 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
   - [European and American alternatives](#european-and-american-alternatives)
   - [Chinese alternatives](#chinese-alternatives)
   - [Brick manufacturers and suppliers](#brick-manufacturers-and-suppliers)
+  - [Other formats](#other-formats)
 - [Shops](#shops)
-  - [Official LEGO](#official-lego-1)
   - [Alternative brands](#alternative-brands)
   - [General retailers](#general-retailers)
 - [Price comparators and databases](#price-comparators-and-databases)
@@ -36,6 +36,7 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
 - [Communities and news](#communities-and-news)
   - [News and reviews](#news-and-reviews)
   - [Forums and chat](#forums-and-chat)
+  - [Reddit](#reddit)
   - [Wikis](#wikis)
   - [Deals](#deals)
 - [YouTube and podcasts](#youtube-and-podcasts)
@@ -50,14 +51,20 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
   - [Event calendars](#event-calendars)
 - [Places to visit](#places-to-visit)
   - [Official LEGO venues and stores](#official-lego-venues-and-stores)
+  - [Theme parks](#theme-parks)
   - [Museums and permanent exhibitions](#museums-and-permanent-exhibitions)
   - [Physical shops (alternative brands and used bricks)](#physical-shops-alternative-brands-and-used-bricks)
+  - [Cafés and play spaces](#cafés-and-play-spaces)
 - [Clubs and associations](#clubs-and-associations)
   - [National clubs](#national-clubs)
+  - [Regional and local clubs](#regional-and-local-clubs)
+  - [Clubs for alternative brands](#clubs-for-alternative-brands)
+  - [Online clubs](#online-clubs)
 - [Learning](#learning)
   - [Guides and reference](#guides-and-reference)
   - [Compatibility, materials and law](#compatibility-materials-and-law)
   - [History](#history)
+  - [Education and competitions](#education-and-competitions)
   - [Books and magazines](#books-and-magazines)
   - [Artists and designers](#artists-and-designers)
 - [Tools and APIs](#tools-and-apis)
@@ -81,25 +88,23 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 ### Official LEGO
 
-- [LEGO](https://www.lego.com/fr-fr) - Denmark. Original maker of the 8 mm stud brick system, with an adult range (Icons, Technic, Botanicals, Art) and the largest licence portfolio. Covers official LEGO.
+- [LEGO](https://www.lego.com/fr-fr) - Original maker of the 8 mm stud brick system (Denmark), with an adult range (Icons, Technic, Botanicals, Art) and the largest licence portfolio. Covers official LEGO.
 
 ### European and American alternatives
 
-- [BlueBrixx](https://www.bluebrixx.com/fr/) - Germany (BB Services GmbH). Brand and shop for architecture, trains, medieval, vehicles and licences (BlueBrixx Pro for adults). Covers alternative brands.
-- [COBI](https://cobi.com/fr-fr) - Poland. Maker of compatible bricks with its own factory in Mielec, specialised in historical and military models (tanks, aircraft, ships) and licensed vehicles. Covers alternative brands.
-- [Mattel Brick Shop (MEGA)](https://shopping.mattel.com/de-de/collections/bausteine-sets) - United States (Mattel). Adult line launched in 2025: licensed Hot Wheels cars (Lamborghini, Audi, Honda, Aston Martin), Masters of the Universe, Halo, Xbox. Covers alternative brands.
-- [Revell Brick System](https://revell.com/collections/brick-system) - Germany. Brick line of the plastic model-kit maker, aimed at adults and launched in 2025 with the submarine from Das Boot (6483 pieces, 1:56). 2026 additions: V-22 Osprey (3730 pieces), Spitfire Mk.II Iron Maiden (2802), F-14A Tomcat Top Gun (2687) and Cutty Sark (7325 pieces, 549 euros). Covers alternative brands.
+- [COBI](https://cobi.com/fr-fr) - Compatible bricks, own factory in Mielec, Poland; specialised in historical and military models (tanks, aircraft, ships) and licensed vehicles. Covers alternative brands.
 
 ### Chinese alternatives
 
-- [CaDA (Double Eagle)](https://cadatoys.com/) - China (Shantou), Double Eagle group, which also makes the bricks. Covers alternative brands.
-- [Lumibricks (formerly Funwhole)](https://www.lumibricks.com/) - China (Guangzhou). Complete sets of buildings and scenes with integrated light, in 13 collections including Cyberpunk Neoncity and the Blade Runner 2049 licence. Covers alternative brands.
-- [Mould King](https://mouldkingcorp.com/) - China (Shantou). Very large motorised Technic models, cranes, vehicles and trains at a very low price per piece. Covers alternative brands.
-- [Pantasy](https://pantasy.com/) - China (Guangdong Pinqi Culture and Technology). Covers alternative brands.
+- [CaDA (Double Eagle)](https://cadatoys.com/) - Technic-style cars, often motorised or remote-controlled and licensed (Master series at 1:8), plus space and military models. Covers alternative brands.
 
 ### Brick manufacturers and suppliers
 
-- [GoBricks (Shantou Golds Precision Technology)](https://gobricks.net/) - China (Shantou, Guangdong). Parts manufacturer regarded as the community reference for alternative bricks, founded in 2017, with 327 injection machines and a stated 10 billion pieces per year. Covers alternative brands.
+- [GoBricks (Shantou Golds Precision Technology)](https://gobricks.net/) - Regarded as the community reference for alternative bricks, with 327 injection machines and a stated 10 billion pieces per year. Covers alternative brands.
+
+### Other formats
+
+- [nanoblock (Kawada)](https://www.kawada-toys.com/en/brand/nanoblock/) - Micro-blocks whose smallest piece measures 4 mm by 4 mm by 5 mm, on sale since October 2008: animals, landmarks, ships and castles, with an Advanced Hobby series for adults. Covers alternative brands.
 
 <br>
 
@@ -109,19 +114,13 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 Online and physical shops selling official LEGO, alternative brick brands and general goods to customers in Europe, with delivery to France noted when established.
 
-### Official LEGO
-
-- [LToys](https://www.ltoys.lu/fr) - Luxembourg specialist (LTOYS S.A R.L., founded 2017, store in Niederanven): more than 1000 official LEGO items, plus COBI, CaDA, Pantasy, Lumibricks, Blokees and die-cast cars. Covers official LEGO and alternative brands.
-
 ### Alternative brands
 
-- [Brickeez](https://www.brickeez.com) - French online store (Hérault): new official LEGO, Lumibricks, Pantasy, COBI, CaDA. Covers official LEGO and alternative brands.
-- [KBS Shop](https://kbs-shop.com) - German online store for technical and remote-controlled bricks: Mould King, CaDA, Reobrix, Wange, Jie Star, Panlos. Covers alternative brands.
+- [KBS Shop](https://kbs-shop.com) - Technical and remote-controlled bricks: Mould King, CaDA, Reobrix, Wange, Jie Star, Panlos. Covers alternative brands.
 
 ### General retailers
 
-- [Alternate (alternate.fr)](https://www.alternate.fr/Jouets/LEGO) - German electronics retailer (Alternate GmbH) with a large official LEGO range delivered to France. Covers official LEGO.
-- [Joybuy France](https://www.joybuy.fr) - Marketplace and direct sales of the JD.com group, opened in France on 2026-03-16, with LEGO among launch brands. Covers official LEGO.
+- [Alternate (alternate.fr)](https://www.alternate.fr/Jouets/LEGO) - Large official LEGO range delivered to France, from the electronics seller Alternate GmbH. Covers official LEGO.
 
 <br>
 
@@ -133,19 +132,15 @@ Sites that compare set prices across shops, catalogue sets and parts, track seco
 
 ### Price comparators
 
-- [Brick Broker](https://brick-broker.com/) - Price comparator covering official LEGO and about 95 alternative brands in one search, with offers deliverable to France. Covers official LEGO and alternative brands.
-- [Brickmitri](https://brickmitri.com/comparateur-lego/) - Price comparator for official LEGO only, built from affiliate feeds of French retailers; no account required. Covers official LEGO.
-- [Lakea](https://lakea.net/?lang=fr) - Independent comparator for official LEGO based on its own price collection, also covering parts, minifigures and display cases. Covers official LEGO.
+- [Lakea](https://lakea.net/?lang=fr) - Independent service built on its own price collection for official LEGO, also covering parts, minifigures and display cases. Covers official LEGO.
 
 ### Set and parts databases
 
-- [Brickset](https://brickset.com/) - Reference database of official LEGO sets since 1997 (minifigures, parts, colours, inventories), with collection tracking, reviews, news and lists of discounts at retailers. Covers official LEGO.
-- [Rebrickable](https://rebrickable.com/) - Database of official sets, parts and fan-designed custom builds with instructions; shows which creations can be built with the parts a user owns. Covers official LEGO.
-- [SetDB (Merlins Steine)](https://www.merlinsbricks.com/setdb/) - Set database of the independent German brick magazine Merlins Steine (merlinssteine.de, English edition Merlins Bricks): sets of many brands, minifigures and parts, next to reviews, news and a weekly podcast. Covers official LEGO and alternative brands.
+- [Brickset](https://brickset.com/) - Reference for official LEGO sets since 1997 (minifigures, parts, colours, inventories), with collection tracking, reviews, news and lists of discounts at retailers. Covers official LEGO.
 
 ### Value and investment tracking
 
-- [BrickEconomy](https://www.brickeconomy.com/) - Database of official LEGO sets and minifigures devoted to secondary-market value estimates and machine-learning growth forecasts. Covers official LEGO.
+- [BrickEconomy](https://www.brickeconomy.com/) - Machine-learning growth forecasts and secondary-market value estimates for official LEGO sets and minifigures. Covers official LEGO.
 
 <br>
 
@@ -157,42 +152,31 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 
 ### Marketplaces and classified ads
 
-- [BrickLink](https://www.bricklink.com/) - Specialised marketplace for new and used official LEGO sets, parts, minifigures and instructions, with a catalogue and a price guide based on past sales. Covers official LEGO.
-- [Leboncoin](https://www.leboncoin.fr/) - French classified ads site: sets, large lots, bulk and family collections, with hand-over in person possible. Covers official LEGO and alternative brands.
-- [Vinted](https://www.vinted.fr/) - Peer-to-peer marketplace used for small recent sets, minifigures and quick purchases from a mobile application. Covers official LEGO.
+- [BrickLink](https://www.bricklink.com/) - Specialised in new and used official LEGO sets, parts, minifigures and instructions; catalogue and price guide based on past sales. Covers official LEGO.
 
 ### Second-hand and refurbished shops
 
-- [Brickland](https://brickland.fr/) - French shop of refurbished LEGO: sets checked piece by piece, bulk, minifigures and baseplates; collection buy-back. Covers official LEGO.
+- [Bricks & Minifigs](https://bricksandminifigs.com/) - Franchised stores that buy, sell and trade: Certified Used sets checked complete with figures and instructions, Minifig Maker tables and bulk bricks sold by the cup, trade-ins paid in cash or store credit. Covers official LEGO.
 
 ### Parts, custom builds and instructions
 
-- [BuyMeBricks](https://buymebricks.com/) - Shop of GoBricks compatible parts run by a French company: part lists imported from Studio, Rebrickable or BrickLink, and custom build kits with PDF instructions. Covers alternative brands.
-- [Official LEGO building instructions](https://www.lego.com/fr-fr/service/building-instructions) - Official LEGO page to find the instructions of a set by name or number, and the LEGO Builder application. Covers official LEGO.
-- [Open L-Gauge](https://open-l-gauge.eu/) - Community library of free LEGO train model instructions, among them German locomotives (Baureihe 152, 185, 189, Vectron).
-- [Pick a Brick (LEGO.com)](https://www.lego.com/fr-fr/pick-and-build/pick-a-brick) - New individual parts sold by LEGO, ordered on the French LEGO.com site. Covers official LEGO.
-- [ToyPro](https://www.toypro.com/fr) - Dutch shop of new genuine LEGO parts, minifigures and sets. Covers official LEGO.
+- [BuyMeBricks](https://buymebricks.com/) - Studio, Rebrickable or BrickLink part lists imported to order GoBricks compatible parts, and custom build kits with PDF instructions. Covers alternative brands.
 
 ### Services and accessories (lighting, display, sorting, data)
 
-- [Bright My Bricks](https://brightmybricks.com/) - Shop of LED light kits, each designed for one LEGO set (570 kits stated), with lighting components, acrylic displays and a kit request form. Covers official LEGO.
-- [Lightailing and Briksmax](https://www.lightailing.com/fr) - LED light kits for specific LEGO sets, sold as kits without the set. Covers official LEGO.
-- [Stick N' Bricks](https://sticknbricks.com/) - French maker of frames for LEGO minifigures (25x25, 30x40 and 50x50 cm formats), frame backgrounds and custom stickers.
-- [Wicked Brick](https://www.wickedbrick.com/) - Made-to-order acrylic display cases and stands for LEGO sets and minifigures, with a European store. Covers official LEGO.
+- [Bright My Bricks](https://brightmybricks.com/) - LED light kits, each designed for one LEGO set (570 kits stated), with lighting components, acrylic displays and a kit request form. Covers official LEGO.
 
 ### Custom minifigures and accessories
 
-- [Brick Manufacture](https://brick-manufacture.com/en) - Hamburg workshop, active since 2023, printing and assembling personalised LEGO minifigures and bricks in house; site in four languages with a country selector including France.
-- [Minifigs.me](https://minifigs.me/) - British shop of custom minifigures printed onto genuine LEGO parts, with small builds and frames; ships worldwide from the United Kingdom.
+- [Hall of Bricks](https://hallofbricks.shop/) - Studio printing in house with UV printers on original LEGO elements, making custom minifigures since 2012; ships worldwide.
 
 ### Decals and stickers
 
-- [BrickStickerShop](https://www.brickstickershop.com/) - Dutch shop of replacement and custom vinyl stickers for LEGO sets and builds, vector drawn, with ink calibrated to brick colours; ships worldwide.
+- [BrickStickerShop](https://www.brickstickershop.com/) - Replacement and custom vinyl stickers for LEGO sets and builds, vector drawn, with ink calibrated to brick colours; ships worldwide.
 
 ### Motors, controllers and track
 
-- [BuWizz](https://buwizz.com/) - Slovenian maker of Bluetooth controllers with a rechargeable battery and of motors for LEGO Technic, System and train models, driven from a phone application.
-- [Trixbrix](https://trixbrix.eu/en/) - Polish maker of plastic track compatible with LEGO train track: curves from R24 to R184, many switch types, ballast plates, bridges, UV-printed tiles and automation parts (train detection, motorised points, signals).
+- [BuWizz](https://buwizz.com/) - Driven from a phone application: Bluetooth controllers with a rechargeable battery and motors for LEGO Technic, System and train models.
 
 <br>
 
@@ -204,24 +188,23 @@ Forums, subreddits, wikis, news and review sites, deal communities and chat serv
 
 ### News and reviews
 
-- [Hoth Bricks](https://www.hothbricks.com/) - French-language LEGO news site: new sets, reviews, contests, rumours, deals and sets about to retire. Covers official LEGO.
-- [Merlins Bricks (Merlins Steine)](https://www.merlinsbricks.com/) - Independent platform of set reviews for all brands (German version merlinssteine.de): reviews archive, weekly podcast and SetDB, a database of more than 39000 sets. Covers official LEGO and alternative brands.
-- [New Elementary](https://www.newelementary.com/) - Site on LEGO parts, sets and building techniques, with tracking of Pick a Brick prices and new parts in sets. Covers official LEGO.
-- [The Brothers Brick](https://www.brothers-brick.com/) - LEGO news, reviews and fan creations blog; describes itself as the world's number one source. Covers official LEGO.
+- [Merlins Bricks (Merlins Steine)](https://www.merlinsbricks.com/) - Independent platform covering all brands (German version merlinssteine.de): SetDB, a database of more than 39000 sets, a reviews archive and a weekly podcast. Covers official LEGO and alternative brands.
 
 ### Forums and chat
 
-- [Eurobricks Forums](https://www.eurobricks.com/forum/) - General English-language forum for adult fans of LEGO, with sections on custom builds, reviews and marketplace, and a section on alternative brands. Covers official LEGO and alternative brands.
-- [HardWare.fr: compatible bricks topic](https://forum.hardware.fr/hfr/Discussions/Loisirs/briques-construction-compatibles-sujet_119659_1.htm) - Long-running French forum topic on LEGO-compatible brick brands (started 16 December 2021), with a maintained introduction on brands, compatibility and after-sales service. Covers alternative brands.
-- [TechLug.fr forum](https://www.techlug.fr/Forum/) - French-speaking forum on LEGO Technic and Mindstorms: news, set discussions, modifications of official sets, custom builds and a section on theory of mechanisms and gearing. Covers official LEGO.
+- [Eurobricks Forums](https://www.eurobricks.com/forum/) - Sections on custom builds, reviews and marketplace for adult fans of LEGO, plus one on alternative brands. Covers official LEGO and alternative brands.
+
+### Reddit
+
+- [r/lego](https://www.reddit.com/r/lego/) - News, photos and discussion on LEGO; sales and trades are sent to other subreddits. Covers official LEGO.
 
 ### Wikis
 
-- [Brickipedia](https://en.brickimedia.org/wiki/Main_Page) - Collaborative encyclopedia of official LEGO: sets, themes, minifigures and history; founded 29 January 2006. Covers official LEGO.
+- [Brickipedia](https://en.brickimedia.org/wiki/Main_Page) - Collaborative encyclopedia of official LEGO sets, themes, minifigures and history; founded 29 January 2006. Covers official LEGO.
 
 ### Deals
 
-- [Dealabs: LEGO group](https://www.dealabs.com/groupe/lego) - French deal community: LEGO promotions posted, voted and commented by members, from LEGO.com and French retailers. Covers official LEGO.
+- [Dealabs: LEGO group](https://www.dealabs.com/groupe/lego) - LEGO promotions posted, voted and commented by members, from LEGO.com and French retailers. Covers official LEGO.
 
 <br>
 
@@ -233,29 +216,23 @@ English- and French-language YouTube channels and podcasts: reviews of official 
 
 ### Official LEGO reviews
 
-- [Brickmitri (YouTube)](https://www.youtube.com/@brickmitri) - French-language LEGO news and set reviews; the channel describes itself as an independent medium. Covers official LEGO.
-- [JANGBRiCKS](https://www.youtube.com/@JANGBRiCKS) - Set reviews and reveals of official LEGO sets by an adult fan; the channel description states unsponsored content and titles carry a #NotAd tag. Covers official LEGO.
-- [RacingBrick](https://www.youtube.com/@RacingBrick) - Detailed building reviews of LEGO Technic and vehicle sets, with Powered Up tutorials. Covers official LEGO.
-- [Tiago Catarino](https://www.youtube.com/@TiagoCatarino) - Set reviews by a former official LEGO designer, with building tips. Covers official LEGO.
+- [JANGBRiCKS](https://www.youtube.com/@JANGBRiCKS) - Run by an adult fan; the channel description states the content is unsponsored and titles carry a #NotAd tag. Covers official LEGO.
 
 ### Alternative brand reviews
 
-- [BrickMeet](https://www.youtube.com/@BrickMeet) - Speed-build reviews of military and vehicle sets, mainly Cobi, CaDA, Panlos and Mould King; the author also runs German and English blogs. Covers official LEGO and alternative brands.
-- [JANG's Other Bricks](https://www.youtube.com/@JANGsOtherBricks) - Non-sponsored reviews of brick-built construction toys from many brands, run by the author of JANGBRiCKS. Covers official LEGO and alternative brands.
-- [The Laser Symphony](https://www.youtube.com/@TheLaserSymphony) - French-language channel testing alternative brick brands (CaDA, Cobi, Pantasy, Lumibricks) next to official LEGO sets; some videos state that products were supplied. Covers official LEGO and alternative brands.
+- [JANG's Other Bricks](https://www.youtube.com/@JANGsOtherBricks) - Run by the author of JANGBRiCKS; non-sponsored reviews of brick-built construction toys from many brands. Covers official LEGO and alternative brands.
 
 ### Building and custom builds
 
-- [BrickVault](https://www.youtube.com/channel/UCrhb3SP2lZBgguLHIWWuHOQ) - Showcase of LEGO custom models, with weekly top-10 selections of custom builds and display ideas. Covers official LEGO.
+- [Brick Experiment Channel](https://www.youtube.com/@BrickExperimentChannel) - Motorised mechanisms and engineering experiments built with LEGO parts and third-party motors and battery boxes; part lists and instructions of some designs are published on a separate blog.
 
 ### News and community
 
-- [Beyond the Brick](https://www.youtube.com/@BeyondtheBrick) - LEGO news and reveal coverage; the channel states it began in November 2011 as an audio-only podcast and sells merchandise. Covers official LEGO.
+- [Beyond the Brick](https://www.youtube.com/@BeyondtheBrick) - Began in November 2011 as an audio-only podcast, as the channel states; it also sells merchandise and covers LEGO news and reveals. Covers official LEGO.
 
 ### Podcasts
 
-- [Back 2 Brick LEGO Podcast](https://back2brick.buzzsprout.com/) - Podcast hosted by an adult fan: LEGO news, custom builds and interviews with LEGO designers, with a weekly news recap on Fridays.
-- [Briques en Vrac](https://www.vodio.fr/vodiotheque/c/1753/briques-en-vrac-actualites-et-nouveautes-lego/) - French-language podcast on LEGO news and new releases. Covers official LEGO.
+- [Back 2 Brick LEGO Podcast](https://back2brick.buzzsprout.com/) - Hosted by an adult fan: LEGO news, custom builds and interviews with LEGO designers, with a weekly news recap on Fridays.
 
 <br>
 
@@ -267,18 +244,15 @@ Conventions, fan exhibitions, artist shows, public competitions and calendars li
 
 ### Conventions, fairs and exhibitions
 
-- [Brick Mania Antwerpen](https://www.belug.be/brickmania/antwerpen/) - Largest LEGO exhibition in Belgium, organised by the Belgian LEGO User Group BeLUG at Antwerp Expo, with layouts, a Great Ball Contraption, workshops and sales. Covers official LEGO.
-- [Fana'Briques](https://expo.fanabriques.fr/fr/) - Large LEGO exhibition at the Parc des expositions in Colmar, organised by volunteers of the association Fanabriques, with dioramas, mosaics, new and second-hand LEGO shops and artists' stalls. Covers official LEGO.
-- [Skærbæk Fan Weekend](https://www.fanweekend.dk/) - International convention of adult fans of LEGO in southern Jutland, 80 km south of Billund, with a public exhibition of custom builds on the Saturday and Sunday. Covers official LEGO.
+- [Skærbæk Fan Weekend](https://www.fanweekend.dk/) - International gathering of adult fans of LEGO in southern Jutland, 80 km south of Billund, with a public exhibition of custom builds on the Saturday and Sunday. Covers official LEGO.
 
 ### Competitions
 
-- [LEGO Ideas challenges](https://ideas.lego.com/challenges) - Official building challenges on the LEGO Ideas platform, with prizes of sets and, for some, a path to an official product. Covers official LEGO.
+- [LEGO Ideas challenges](https://ideas.lego.com/challenges) - Building challenges on the LEGO Ideas platform, with set prizes and, for some, a path to an official product. Covers official LEGO.
 
 ### Event calendars
 
-- [hothbricks: expositions et événements LEGO](https://www.hothbricks.com/expos/) - Agenda of LEGO exhibitions in France, Belgium and Switzerland, plus international events where LEGO is present. Covers official LEGO.
-- [steine-kanal: Veranstaltungskalender](https://www.steine-kanal.de/veranstaltungskalender-2027-alle-lego-fan-veranstaltungen-und-boersen-im-uberblick/) - Yearly calendar of LEGO fan events and trading fairs by month, with a separate section for exhibitions using bricks of other manufacturers; permanent museums are added. Covers official LEGO and alternative brands.
+- [brick.news: events calendar](https://brick.news/calendar) - Worldwide listing of LEGO and brick fan events, conventions, exhibitions, workshops and meetups, with a page per event. Covers official LEGO and alternative brands.
 
 <br>
 
@@ -290,18 +264,23 @@ Venues of the brick world that can be visited: official LEGO venues and stores, 
 
 ### Official LEGO venues and stores
 
-- [LEGO House](https://legohouse.com/en-gb) - Official LEGO experience centre in Billund, Denmark, with four Experience Zones, a historical collection of the LEGO Group and the brick, a LEGO Store and restaurants. Covers official LEGO.
-- [LEGO Stores directory](https://www.lego.com/fr-fr/stores) - Official directory of LEGO Stores, with a page per store (address, opening hours, features such as Pick and Build wall, Build a Minifigure, LEGO Insiders). Covers official LEGO.
+- [LEGO House](https://legohouse.com/en-gb) - Four Experience Zones, a historical collection on the LEGO Group and the brick, a LEGO Store and restaurants. Covers official LEGO.
+
+### Theme parks
+
+- [LEGOLAND Billund Resort](https://www.legoland.dk/) - The original LEGOLAND, opened in 1968 next to LEGO House in Billund. Covers official LEGO.
 
 ### Museums and permanent exhibitions
 
-- [Frankensteins Klemmbaustein Museum](https://frankensteins.de/) - Museum in Eckental near Nuremberg showing LEGO and compatible brands (COBI, Mould King, Wange, Cada, Reobrix, Sembo and others), with a large main layout, special exhibitions, a building room, a shop and a café. Opened in October 2021. Covers official LEGO and alternative brands.
-- [Museum of Bricks](https://museumofbricks.cz/) - Private LEGO museum with five sites in Czechia (Prague flagship on Národní třída, Kutná Hora, Špindlerův Mlýn, Poděbrady, Hatě near Znojmo), built on the collection of Miloš Křeček. Covers official LEGO.
-- [Palais de la Maquette - Musée du Jouet](http://www.palaisdelamaquette.com/) - Toy museum in Valras-Plage (Hérault) with giant animated LEGO and K'NEX models on 200 m²: seaside resort, harbour, medieval town, amusement park. Covers official LEGO.
+- [Museum of Bricks](https://museumofbricks.cz/) - Built on the collection of Miloš Křeček, with 5 sites: Prague flagship on Národní třída, Kutná Hora, Špindlerův Mlýn, Poděbrady, Hatě near Znojmo. Covers official LEGO.
 
 ### Physical shops (alternative brands and used bricks)
 
-- [Time For Bricks](https://www.timeforbricks.fr/) - French shops in Chambéry (since 2023) and Annecy (opened in July 2026) selling about thirty alternative brick brands compatible with standard bricks, with free building tables and a hot drink corner in Annecy. Covers alternative brands.
+- [Time For Bricks](https://www.timeforbricks.fr/) - About thirty brands of alternative bricks compatible with standard bricks, sold in Chambéry (since 2023) and Annecy (opened in July 2026), with free building tables and a hot drink corner in Annecy. Covers alternative brands.
+
+### Cafés and play spaces
+
+- [Brick Bank Café](https://www.brickbankcafe.org/) - LEGO sets or trays of loose bricks hired by the half hour or hour and built at the table, in a former bank, opened in June 2025 in Bingley (West Yorkshire). Covers official LEGO.
 
 <br>
 
@@ -313,10 +292,19 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 
 ### National clubs
 
-- [BeLUG](https://www.belug.be/) - Belgian LEGO User Group: club for adult LEGO builders and collectors, independent of the LEGO Group, taking part in fairs in Belgium and abroad and organising Brick Mania. Covers official LEGO.
-- [Brickish](https://brickish.org/) - UK-wide club of adult fans of LEGO, active since 2002 and described by itself as the first user group in the country; local meet-ups, public shows and a members-only forum. Covers official LEGO.
-- [FreeLUG](https://www.freelug.org/) - French national association of LEGO fans since 2003, with a Discourse forum, exhibitions and meeting reports. Covers official LEGO.
-- [ItLUG](https://itlug.org/) - Italian LEGO Users Group: national association of adult LEGO fans founded in 1999 and legally constituted in November 2010, with a forum, national events and local exhibitions. Covers official LEGO.
+- [Brickish](https://brickish.org/) - Active since 2002 and self-described as the first user group in the United Kingdom; local meet-ups, public shows and a members-only forum for adult fans of LEGO. Covers official LEGO.
+
+### Regional and local clubs
+
+- [Stein Hanse e.V.](https://steinhanse.eu/) - More than 500 members across northern Germany, in regional sections, with its own yearly exhibition in Kaltenkirchen (3407 visitors on 11 and 12 April 2026) and trips such as a Baltic Sea cruise. Covers official LEGO.
+
+### Clubs for alternative brands
+
+- [Der helfende Stein](https://derhelfendestein.at/) - Supports children's homes and social facilities with donations in kind; club evenings, a members' forum and a Klemmbaustein Tour exhibition; non-profit association for fans of building bricks of all brands. Covers official LEGO and alternative brands.
+
+### Online clubs
+
+- [BioniLUG](https://bionilug.com/) - Member spotlights and displays at fan conventions for fans of Bionicle and Constraction; user group recognised by the LEGO Group. Covers official LEGO.
 
 <br>
 
@@ -328,8 +316,7 @@ Guides, glossaries, history, compatibility and legal references, education and c
 
 ### Guides and reference
 
-- [Brick Architect](https://brickarchitect.com/) - Independent site by an architect and author: online LEGO Parts Guide, LEGO Storage Guide, set reviews and monthly news roundups. Covers official LEGO.
-- [BrickNerd storage guide](https://bricknerd.com/home/an-opinionated-guide-to-lego-storage-containers-and-cost-5-25-23) - Opinionated guide by an adult fan on sorting loose parts and choosing containers, with a cost comparison of drawer units.
+- [Brick Architect](https://brickarchitect.com/) - By an independent architect and author: the online LEGO Parts Guide and LEGO Storage Guide, set reviews and monthly news roundups. Covers official LEGO.
 
 ### Compatibility, materials and law
 
@@ -339,15 +326,17 @@ Guides, glossaries, history, compatibility and legal references, education and c
 
 - [LEGO History (official LEGO)](https://www.lego.com/en-us/history) - Official chronology of the LEGO Group from 1890, with articles on the Automatic Binding Bricks (1949), Kiddicraft and the stud and tube principle (patent application of 28 January 1958). Covers official LEGO.
 
+### Education and competitions
+
+- [FIRST LEGO League (global)](https://firstlegoleague.org/) - The 2026-2027 BIOGLOW season is the last under this name and ends the partnership between FIRST and LEGO Education, which will launch its own season in 2027-2028. Covers official LEGO.
+
 ### Books and magazines
 
-- [Blocks magazine](https://blocksmag.com/) - Monthly magazine for adult fans of LEGO, 116 pages, published in the United Kingdom since November 2014 by Silverback Publishing. Covers official LEGO.
-- [No Starch Press: LEGO books](https://nostarch.com/catalog/lego) - Publisher catalogue of unofficial LEGO books for builders: technique, Technic, robotics, lighting, trains and art. Covers official LEGO.
+- [Blocks magazine](https://blocksmag.com/) - Monthly, 116 pages, for adult fans of LEGO, published in the United Kingdom since November 2014 by Silverback Publishing. Covers official LEGO.
 
 ### Artists and designers
 
-- [LEGO Certified Professionals (official LEGO list)](https://www.lego.com/en-us/aboutus/lego-certified-professionals) - Official list of adult builders officially recognised by LEGO who run a business with bricks, by region, with the rules on what they may build for clients. Covers official LEGO.
-- [Nico71's Technic Creations](https://www.nico71.fr/) - French independent LEGO Technic designer, a mechanical engineer: motorised vehicles and machines, PDF instructions, custom kits, videos explaining design choices and commissioned models for companies.
+- [LEGO Certified Professionals (official LEGO list)](https://www.lego.com/en-us/aboutus/lego-certified-professionals) - Adult builders officially recognised by LEGO who run a business with bricks, listed by region, with the rules on what they may build for clients. Covers official LEGO.
 
 <br>
 
@@ -359,19 +348,14 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 
 ### Design software
 
-- [BrickLink Studio](https://www.bricklink.com/v3/studio/download.page) - Free 3D design software for LEGO models with BrickLink parts list, instruction editor and photorealistic rendering. Covers official LEGO and alternative brands.
-- [LeoCAD](https://www.leocad.org/) - Open-source computer-aided design program for virtual LEGO models based on the LDraw library, for Windows, macOS and Linux. Covers official LEGO.
+- [BrickLink Studio](https://www.bricklink.com/v3/studio/download.page) - 3D editor for LEGO models with BrickLink parts list, instruction editor and photorealistic rendering. Covers official LEGO and alternative brands.
 
 ### Apps
 
-- [Brick Search](https://bricksearch.app/) - Mobile app (iOS, Android) scanning collectible minifigure QR codes, with collection tracking, wish list, set archive and price comparison by country. Covers official LEGO.
+- [LEGO Builder](https://www.lego.com/en-us/builder-app) - Interactive 3D building instructions with zoom, rotation and shared building, plus a collection of past instructions; official LEGO app. Covers official LEGO.
 
 ### APIs and open data
 
-- [BrickLink API](https://www.bricklink.com/v3/api.page) - REST interface to the BrickLink marketplace: catalog, price guide, store inventories, orders, messages, feedback. Covers official LEGO and alternative brands.
-- [Brickognize](https://brickognize.com/) - Image search for LEGO parts, minifigures, sets and sticker sheets from a photo; free API without key used by several open-source collection tools. Covers official LEGO.
-- [Brickset API v3](https://brickset.com/article/52666/brickset-web-services) - JSON and SOAP interface to the Brickset catalog: sets, extra images, instructions, reviews, member collections (read and write). Covers official LEGO.
-- [LDraw open standard and parts library](https://www.ldraw.org/) - Open format for digital LEGO models and official parts library, basis of LeoCAD, LDView, LPub3D and Studio export. Covers official LEGO.
 - [Rebrickable API v3](https://rebrickable.com/api/) - REST interface to the official LEGO catalog (sets, parts, minifigures, themes, colours) and to Rebrickable user collections. Covers official LEGO.
 
 ### Open-source projects
@@ -380,7 +364,7 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 
 ### Programming, control and robotics
 
-- [Pybricks](https://pybricks.com/) - Python and block coding for LEGO smart hubs (Technic, City, BOOST, MINDSTORMS, SPIKE): programs are stored on the hub and run without a phone, with a web editor, a reference manual and projects for official sets. Covers official LEGO.
+- [Pybricks](https://pybricks.com/) - Python and block coding for LEGO smart hubs (Technic, City, BOOST, MINDSTORMS, SPIKE); programs are stored on the hub and run without a phone, with a web editor and a reference manual. Covers official LEGO.
 
 <br>
 
@@ -392,19 +376,15 @@ Existing directories, awesome lists and lists of channels and brands about LEGO 
 
 ### Site directories and awesome lists
 
-- [awesome-lego (ad-si)](https://github.com/ad-si/awesome-lego) - Community awesome list of LEGO software, archives, libraries, marketplaces, channels, books, blogs and games. Covers official LEGO.
-- [Deparkatre clubs and associations directory](https://deparkatre.fr/associations) - French-language directory of LEGO user groups, clubs and online communities in France, Europe and elsewhere, with national, regional and local scope. Covers official LEGO.
-- [LEGO Fan CoLab community directory](https://fancolab.lego.com/communities/) - Official LEGO directory of recognised fan communities, including French associations. Covers official LEGO.
+- [awesome-lego (ad-si)](https://github.com/ad-si/awesome-lego) - LEGO software, archives, libraries, marketplaces, channels, books, blogs and games, curated by the community. Covers official LEGO.
 
 ### Channel and podcast lists
 
-- [BrickTubed channel directory](https://bricktubed.com/channels/) - Directory of LEGO YouTube channels with subscribers, views, video count, country, last video and active status; a podcast page also exists. Covers official LEGO and alternative brands.
-- [Deparkatre LEGO influencer directory](https://deparkatre.fr/influenceurs) - French-language directory of LEGO YouTube channels, Instagram accounts, blogs and other creators, with an interactive map. Covers official LEGO and alternative brands.
+- [BrickTubed channel directory](https://bricktubed.com/channels/) - Subscribers, views, video count, country, last video and active status for each LEGO YouTube channel; a podcast page also exists. Covers official LEGO and alternative brands.
 
 ### Brand lists
 
 - [Liste von Klemmbausteinherstellern (German Wikipedia)](https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern) - Table of LEGO-compatible brick manufacturers with set maker, brick maker, stud pitch and remarks. Covers official LEGO and alternative brands.
-- [other-bricks.com brands](https://other-bricks.com/en/brands/) - Brand pages comparing building block brands by origin, quality and collection size, with set counts. Covers alternative brands.
 
 ## Contributing
 

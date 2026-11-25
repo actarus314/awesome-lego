@@ -3,7 +3,7 @@ id = "video"
 name_en = "YouTube and podcasts"
 name_fr = "YouTube et podcasts"
 summary_en = "English- and French-language YouTube channels and podcasts: reviews of official LEGO and alternative brands, builds and news."
-summary_fr = "Chaînes YouTube et podcasts en anglais et en français : tests de LEGO officiel et de marques alternatives, constructions et actualité."
+summary_fr = "Chaînes YouTube et podcasts en anglais et en français : tests de sets de marque LEGO et de marques alternatives, constructions et actualité."
 
 [[category.groups]]
 id = "official-lego-reviews"
@@ -48,19 +48,19 @@ id = "jangbricks"
 name = "JANGBRiCKS"
 url = "https://www.youtube.com/@JANGBRiCKS"
 group = "official-lego-reviews"
-featured = true
+rank = {intl = 1, en = 1}
+rank_reason_en = "About 1360000 subscribers and 538 videos, declared unsponsored in the channel description; latest video on 19 November 2026."
+rank_reason_fr = "Environ 1360000 abonnés et 538 vidéos, déclarées sans parrainage dans la description de la chaîne ; dernière vidéo le 19 novembre 2026."
 covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Set reviews and reveals of official LEGO sets by an adult fan; the channel description states unsponsored content and titles carry a #NotAd tag."
-summary_fr = "Tests et présentations de sets LEGO officiel par un fan adulte ; la description de la chaîne indique un contenu sans parrainage et les titres portent la mention #NotAd."
+summary_en = "Run by an adult fan; the channel description states the content is unsponsored and titles carry a #NotAd tag. Reviews and reveals of official LEGO sets."
+summary_fr = "Tenue par un fan adulte ; la description de la chaîne indique un contenu sans parrainage et les titres portent la mention #NotAd. Tests et présentations de sets de marque LEGO."
 strengths_en = ["Declared independent, unsponsored content (channel description)", "Recurring coverage of upcoming sets"]
 strengths_fr = ["Indépendance déclarée, contenu sans parrainage (description de la chaîne)", "Présentation régulière des sets à venir"]
 weaknesses_en = ["Reveal and news videos are mixed with set reviews", "Non-LEGO brands are covered on a separate channel (JANG's Other Bricks)"]
 weaknesses_fr = ["Les vidéos de nouveautés sont mêlées aux tests de sets", "Les marques hors LEGO sont traitées sur une chaîne distincte (JANG's Other Bricks)"]
-size_en = "1.36 million subscribers, 538 videos"
-size_fr = "1.36 million d'abonnés, 538 vidéos"
+size = [{n = 1360000, unit = "subscribers", approx = "about"}, {n = 538, unit = "videos"}]
 status = "active"
 last_activity = "2026-11-19"
 checked = "2026-11-23"
@@ -84,19 +84,19 @@ id = "tiago-catarino"
 name = "Tiago Catarino"
 url = "https://www.youtube.com/@TiagoCatarino"
 group = "official-lego-reviews"
-featured = true
+rank = {intl = 2, en = 2}
+rank_reason_en = "About 579000 subscribers and 727 videos by a former LEGO designer, per the channel description; latest video on 20 November 2026."
+rank_reason_fr = "Environ 579000 abonnés et 727 vidéos d'un ancien concepteur LEGO, selon la description de la chaîne ; dernière vidéo le 20 novembre 2026."
 covers = ["official"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Set reviews by a former official LEGO designer, with building tips."
-summary_fr = "Tests de sets par un ancien concepteur de LEGO officiel, avec des conseils de construction."
+summary_en = "Former official LEGO designer reviewing sets, with building tips."
+summary_fr = "Ancien concepteur du groupe LEGO qui teste des sets, avec des conseils de construction."
 strengths_en = ["Former LEGO designer, per the channel description", "Regular uploads (several per month)"]
 strengths_fr = ["Ancien concepteur LEGO, d'après la description de la chaîne", "Publication régulière (plusieurs vidéos par mois)"]
 weaknesses_en = ["Past link with the LEGO Group: independence is left to the viewer; no statement on free sets found on the channel page"]
 weaknesses_fr = ["Lien passé avec le groupe LEGO : indépendance laissée à l'appréciation du spectateur ; aucune déclaration sur les sets reçus gratuitement relevée sur la page de la chaîne"]
-size_en = "579 thousand subscribers, 727 videos"
-size_fr = "579 mille abonnés, 727 vidéos"
+size = [{n = 579000, unit = "subscribers", approx = "about"}, {n = 727, unit = "videos"}]
 status = "active"
 last_activity = "2026-11-20"
 checked = "2026-11-23"
@@ -120,19 +120,19 @@ id = "racingbrick"
 name = "RacingBrick"
 url = "https://www.youtube.com/@RacingBrick"
 group = "official-lego-reviews"
-featured = true
+rank = {intl = 4, en = 4}
+rank_reason_en = "About 263000 subscribers and detailed build reviews of Technic and vehicle sets; latest video on 23 November 2026."
+rank_reason_fr = "Environ 263000 abonnés et des tests détaillés de construction de sets Technic et de véhicules ; dernière vidéo le 23 novembre 2026."
 covers = ["official"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Detailed building reviews of LEGO Technic and vehicle sets, with Powered Up tutorials."
-summary_fr = "Tests détaillés de la construction de sets LEGO Technic et de véhicules, avec des tutoriels Powered Up."
+summary_en = "LEGO Technic and vehicle sets in detailed build reviews, with Powered Up tutorials."
+summary_fr = "Sets LEGO Technic et véhicules présentés dans des tests détaillés de construction, avec des tutoriels Powered Up."
 strengths_en = ["Detailed building reviews (channel description)", "Frequent uploads"]
 strengths_fr = ["Tests détaillés de construction (description de la chaîne)", "Publication fréquente"]
 weaknesses_en = ["Focus on Technic and vehicles"]
 weaknesses_fr = ["Centrée sur Technic et les véhicules"]
-size_en = "263 thousand subscribers"
-size_fr = "263 mille abonnés"
+size = [{n = 263000, unit = "subscribers", approx = "about"}]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
@@ -156,18 +156,19 @@ id = "mandrproductions"
 name = "MandRproductions"
 url = "https://www.youtube.com/@MandRproductions"
 group = "official-lego-reviews"
+rank = {intl = 3, en = 3}
+rank_reason_en = "About 722000 subscribers and about 1800 videos, with reviews of older, retired sets; latest video on 22 November 2026."
+rank_reason_fr = "Environ 722000 abonnés et environ 1800 vidéos, avec des tests de sets anciens et retirés ; dernière vidéo le 22 novembre 2026."
 covers = ["official"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Reviews of LEGO Star Wars, Harry Potter and Architecture sets by an adult fan, including retired sets."
-summary_fr = "Tests de sets LEGO Star Wars, Harry Potter et Architecture par un fan adulte, y compris des sets retirés de la vente."
+summary_en = "LEGO Star Wars, Harry Potter and Architecture sets, retired ones included, reviewed by an adult fan."
+summary_fr = "Sets LEGO Star Wars, Harry Potter et Architecture, dont des sets retirés de la vente, testés par un fan adulte."
 strengths_en = ["Reviews of older, retired sets", "Frequent uploads"]
 strengths_fr = ["Tests de sets anciens retirés de la vente", "Publication fréquente"]
 weaknesses_en = ["Theme focus on Star Wars"]
 weaknesses_fr = ["Centrée sur Star Wars"]
-size_en = "722 thousand subscribers, 1.8 thousand videos"
-size_fr = "722 mille abonnés, 1.8 mille vidéos"
+size = [{n = 722000, unit = "subscribers", approx = "about"}, {n = 1800, unit = "videos", approx = "about"}]
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
@@ -194,15 +195,13 @@ group = "official-lego-reviews"
 covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
 summary_en = "Daily LEGO news, reveals, minifigure and set reviews."
 summary_fr = "Actualités LEGO quotidiennes, nouveautés, tests de minifigures et de sets."
 strengths_en = ["Very frequent uploads", "Covers reveals and set reviews"]
 strengths_fr = ["Publication très fréquente", "Couvre les nouveautés et les tests de sets"]
 weaknesses_en = ["News-heavy: less suited to in-depth single-set decisions"]
 weaknesses_fr = ["Beaucoup d'actualité : moins adaptée à une décision approfondie sur un set"]
-size_en = "362 thousand subscribers, 3.3 thousand videos"
-size_fr = "362 mille abonnés, 3.3 mille vidéos"
+size = [{n = 362000, unit = "subscribers", approx = "about"}, {n = 3300, unit = "videos", approx = "about"}]
 status = "active"
 last_activity = "2026-11-20"
 checked = "2026-11-23"
@@ -226,18 +225,19 @@ id = "hoth-bricks"
 name = "Hoth Bricks (YouTube)"
 url = "https://www.youtube.com/@hoth_bricks"
 group = "official-lego-reviews"
+rank = {fr = 2}
+rank_reason_en = "About 36600 subscribers, with euro prices and piece counts in titles; latest video on 12 November 2026."
+rank_reason_fr = "Environ 36600 abonnés, avec les prix en euros et le nombre de pièces dans les titres ; dernière vidéo le 12 novembre 2026."
 covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
-access = "free"
-summary_en = "French-language LEGO news and set reviews with euro prices; the channel is linked to the hothbricks.com site."
-summary_fr = "Actualités et tests de sets LEGO en français, avec les prix en euros ; la chaîne est liée au site hothbricks.com."
+summary_en = "Euro prices on LEGO news and set reviews; the channel is linked to the hothbricks.com site."
+summary_fr = "Prix en euros sur les actualités et les tests de sets LEGO ; la chaîne est liée au site hothbricks.com."
 strengths_en = ["Euro prices and piece counts in titles", "Linked news site updated daily"]
 strengths_fr = ["Prix en euros et nombre de pièces dans les titres", "Site d'actualité associé mis à jour chaque jour"]
 weaknesses_en = ["Mix of news, promotions and reviews"]
 weaknesses_fr = ["Mélange d'actualité, de promotions et de tests"]
-size_en = "36.6 thousand subscribers"
-size_fr = "36.6 mille abonnés"
+size = [{n = 36600, unit = "subscribers", approx = "about"}]
 status = "active"
 last_activity = "2026-11-12"
 checked = "2026-11-23"
@@ -266,19 +266,19 @@ id = "brickmitri-youtube"
 name = "Brickmitri (YouTube)"
 url = "https://www.youtube.com/@brickmitri"
 group = "official-lego-reviews"
-featured = true
+rank = {fr = 1}
+rank_reason_en = "About 51900 subscribers and frequent uploads, describing itself as an independent medium; latest video on 22 November 2026."
+rank_reason_fr = "Environ 51900 abonnés et des publications fréquentes, se décrit comme un média indépendant ; dernière vidéo le 22 novembre 2026."
 covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
-access = "free"
-summary_en = "French-language LEGO news and set reviews; the channel describes itself as an independent medium."
-summary_fr = "Actualités et tests de sets LEGO en français ; la chaîne se présente comme un média indépendant."
+summary_en = "Describes itself as an independent medium; LEGO news and set reviews."
+summary_fr = "Se présente comme un média indépendant ; actualités LEGO et tests de sets."
 strengths_en = ["Frequent uploads", "Cited as a useful channel by members of a French LEGO user group forum (QuéLUG, 2024)"]
 strengths_fr = ["Publication fréquente", "Citée comme utile par des membres d'un forum francophone (QuéLUG, 2024)"]
 weaknesses_en = ["News-heavy format"]
 weaknesses_fr = ["Format centré sur l'actualité"]
-size_en = "51.9 thousand subscribers"
-size_fr = "51.9 mille abonnés"
+size = [{n = 51900, unit = "subscribers", approx = "about"}]
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
@@ -302,18 +302,19 @@ id = "lego-leader"
 name = "Lego Leader"
 url = "https://www.youtube.com/@LegoLeader"
 group = "official-lego-reviews"
+rank = {fr = 3}
+rank_reason_en = "About 36400 subscribers and 570 videos with frequent uploads and a Star Wars focus; latest video on 22 November 2026."
+rank_reason_fr = "Environ 36400 abonnés et 570 vidéos, publiées fréquemment, centrées sur Star Wars ; dernière vidéo le 22 novembre 2026."
 covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
-access = "free"
-summary_en = "French-language channel on LEGO Star Wars and custom builds; set reviews, deals and news. Declares itself an independent fan channel."
-summary_fr = "Chaîne en français consacrée à LEGO Star Wars et aux créations originales ; tests de sets, promotions et actualités. Se déclare chaîne de fan indépendante."
+summary_en = "Declares itself an independent fan channel; LEGO Star Wars and custom builds, set reviews, deals and news."
+summary_fr = "Se déclare chaîne de fan indépendante ; LEGO Star Wars et créations originales, tests de sets, promotions et actualités."
 strengths_en = ["Frequent uploads", "French-language deal and gift-guide videos"]
 strengths_fr = ["Publication fréquente", "Vidéos de promotions et de guides cadeaux en français"]
 weaknesses_en = ["Star Wars focus"]
 weaknesses_fr = ["Centrée sur Star Wars"]
-size_en = "36.4 thousand subscribers, 570 videos"
-size_fr = "36.4 mille abonnés, 570 vidéos"
+size = [{n = 36400, unit = "subscribers", approx = "about"}, {n = 570, unit = "videos"}]
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
@@ -345,15 +346,13 @@ group = "official-lego-reviews"
 covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
 summary_en = "New LEGO pieces and colours, set reviews, building techniques and interviews with designers."
 summary_fr = "Nouvelles pièces et couleurs LEGO, tests de sets, techniques de construction et entretiens avec des concepteurs."
 strengths_en = ["Focus on new elements and design details"]
 strengths_fr = ["Accent mis sur les nouveaux éléments et les détails de conception"]
 weaknesses_en = ["Small channel"]
 weaknesses_fr = ["Petite chaîne"]
-size_en = "1.17 thousand subscribers, 174 videos"
-size_fr = "1.17 mille abonnés, 174 vidéos"
+size = [{n = 1170, unit = "subscribers", approx = "about"}, {n = 174, unit = "videos"}]
 status = "active"
 last_activity = "2026-11-12"
 checked = "2026-11-23"
@@ -377,19 +376,19 @@ id = "the-laser-symphony"
 name = "The Laser Symphony"
 url = "https://www.youtube.com/@TheLaserSymphony"
 group = "alternative-brand-reviews"
-featured = true
+rank = {intl = 3, fr = 1}
+rank_reason_en = "About 117000 subscribers; compares alternative brands with each other and with sets of the LEGO brand and states when products were supplied; latest video on 23 November 2026."
+rank_reason_fr = "Environ 117000 abonnés ; compare les marques alternatives entre elles et avec des sets de marque LEGO et indique quand les produits ont été fournis ; dernière vidéo le 23 novembre 2026."
 covers = ["alternative", "official", "news"]
 languages = ["fr"]
 countries = ["FR"]
-access = "free"
-summary_en = "French-language channel testing alternative brick brands (CaDA, Cobi, Pantasy, Lumibricks) next to official LEGO sets; some videos state that products were supplied."
-summary_fr = "Chaîne en français testant des marques alternatives (CaDA, Cobi, Pantasy, Lumibricks) et des sets LEGO officiel ; certaines vidéos indiquent des produits fournis."
+summary_en = "CaDA, Cobi, Pantasy and Lumibricks tested next to official LEGO sets; some videos state that products were supplied."
+summary_fr = "CaDA, Cobi, Pantasy et Lumibricks testés à côté de sets de marque LEGO ; certaines vidéos indiquent des produits fournis."
 strengths_en = ["Compares alternative brands with each other and with official LEGO", "States when products are supplied (\"produits offerts\" in titles, a Cobi set supplied by a French shop)"]
-strengths_fr = ["Compare les marques alternatives entre elles et avec LEGO officiel", "Indique les produits fournis (« produits offerts » dans des titres, set Cobi fourni par une boutique française)"]
+strengths_fr = ["Compare les marques alternatives entre elles et avec les sets de marque LEGO", "Indique les produits fournis (« produits offerts » dans des titres, set Cobi fourni par une boutique française)"]
 weaknesses_en = ["Promotional code offered in a Cobi video: possible affiliate link"]
 weaknesses_fr = ["Code promotionnel proposé dans une vidéo Cobi : lien d'affiliation possible"]
-size_en = "117 thousand subscribers"
-size_fr = "117 mille abonnés"
+size = [{n = 117000, unit = "subscribers", approx = "about"}]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
@@ -419,18 +418,19 @@ id = "godofthebricks"
 name = "GodOfTheBricks"
 url = "https://www.youtube.com/@godofthebricks"
 group = "alternative-brand-reviews"
+rank = {fr = 2}
+rank_reason_en = "About 39600 subscribers and 435 videos on LEGO and alternative bricks, in an entertainment format rather than structured reviews; latest video on 22 November 2026."
+rank_reason_fr = "Environ 39600 abonnés et 435 vidéos sur les briques LEGO et alternatives, dans un format de divertissement plus que de tests structurés ; dernière vidéo le 22 novembre 2026."
 covers = ["alternative", "official", "custom-builds"]
 languages = ["fr"]
 countries = ["FR"]
-access = "free"
-summary_en = "French-language channel on LEGO and alternative bricks: stop-motion, large projects and rare sets."
-summary_fr = "Chaîne en français sur LEGO et les briques alternatives : stop-motion, grands projets et sets rares."
+summary_en = "Stop-motion, large projects and rare sets, on LEGO and alternative bricks."
+summary_fr = "Stop-motion, grands projets et sets rares, sur LEGO et les briques alternatives."
 strengths_en = ["Frequent uploads", "Builds long projects episode by episode"]
 strengths_fr = ["Publication fréquente", "Construction de grands projets épisode par épisode"]
 weaknesses_en = ["Entertainment format: not a structured review channel"]
 weaknesses_fr = ["Format divertissement : pas une chaîne de tests structurés"]
-size_en = "39.6 thousand subscribers, 435 videos"
-size_fr = "39.6 mille abonnés, 435 vidéos"
+size = [{n = 39600, unit = "subscribers", approx = "about"}, {n = 435, unit = "videos"}]
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
@@ -458,15 +458,13 @@ group = "alternative-brand-reviews"
 covers = ["alternative", "official"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Set builds and reviews by a husband-and-wife team covering LEGO and other brick brands."
-summary_fr = "Constructions et tests de sets par un couple, sur LEGO et d'autres marques de briques."
+summary_en = "Husband-and-wife team building and reviewing sets from LEGO and other brick brands."
+summary_fr = "Couple qui construit et teste des sets de LEGO et d'autres marques de briques."
 strengths_en = ["Daily uploads"]
 strengths_fr = ["Publication quotidienne"]
 weaknesses_en = ["Small channel; affiliate deal videos mixed with reviews (not verified as affiliate)"]
 weaknesses_fr = ["Petite chaîne ; vidéos de promotions mêlées aux tests (lien d'affiliation non vérifié)"]
-size_en = "3.47 thousand subscribers"
-size_fr = "3.47 mille abonnés"
+size = [{n = 3470, unit = "subscribers", approx = "about"}]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
@@ -494,15 +492,13 @@ group = "alternative-brand-reviews"
 covers = ["alternative", "official"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Reviews of Mould King, BlueBrixx, LesDIY and Nifeliz sets and comparisons with official LEGO sets (\"set showdown\" videos)."
-summary_fr = "Tests de sets Mould King, BlueBrixx, LesDIY et Nifeliz et comparaisons avec des sets LEGO officiel (vidéos « set showdown »)."
+summary_en = "Sets from Mould King, BlueBrixx, LesDIY and Nifeliz, reviewed and compared with official LEGO sets (\"set showdown\" videos)."
+summary_fr = "Sets Mould King, BlueBrixx, LesDIY et Nifeliz, testés et comparés à des sets de marque LEGO (vidéos « set showdown »)."
 strengths_en = ["Side-by-side comparisons of Mould King and official LEGO sets"]
-strengths_fr = ["Comparaisons côte à côte de sets Mould King et LEGO officiel"]
+strengths_fr = ["Comparaisons côte à côte de sets Mould King et de sets de marque LEGO"]
 weaknesses_en = ["Includes video-game content"]
 weaknesses_fr = ["Inclut du contenu de jeu vidéo"]
-size_en = "2.62 thousand subscribers"
-size_fr = "2.62 mille abonnés"
+size = [{n = 2620, unit = "subscribers", approx = "about"}]
 status = "active"
 last_activity = "2026-10-04"
 checked = "2026-11-23"
@@ -527,19 +523,19 @@ id = "jangs-other-bricks"
 name = "JANG's Other Bricks"
 url = "https://www.youtube.com/@JANGsOtherBricks"
 group = "alternative-brand-reviews"
-featured = true
+rank = {intl = 1, en = 1}
+rank_reason_en = "About 29200 subscribers and 848 videos of reviews declared non-sponsored, on brick-built construction toys from many brands; latest video on 21 November 2026."
+rank_reason_fr = "Environ 29200 abonnés et 848 vidéos de tests déclarés sans parrainage, sur des jouets de construction en briques de nombreuses marques ; dernière vidéo le 21 novembre 2026."
 covers = ["alternative", "official"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Non-sponsored reviews of brick-built construction toys from many brands, run by the author of JANGBRiCKS."
-summary_fr = "Tests sans parrainage de jeux de construction en briques de nombreuses marques, tenus par l'auteur de JANGBRiCKS."
+summary_en = "Run by the author of JANGBRiCKS; non-sponsored reviews of brick-built construction toys from many brands."
+summary_fr = "Tenue par l'auteur de JANGBRiCKS ; tests sans parrainage de jeux de construction en briques de nombreuses marques."
 strengths_en = ["Declared non-sponsored (channel description)", "Wide range of brands, recommended by another reviewer (jtsandman45, 2025)"]
 strengths_fr = ["Sans parrainage déclaré (description de la chaîne)", "Large éventail de marques, recommandée par un autre testeur (jtsandman45, 2025)"]
 weaknesses_en = ["Includes licensed products from other toy makers (for example a Mattel set)"]
 weaknesses_fr = ["Inclut des produits sous licence d'autres fabricants (par exemple un set Mattel)"]
-size_en = "29.2 thousand subscribers, 848 videos"
-size_fr = "29.2 mille abonnés, 848 vidéos"
+size = [{n = 29200, unit = "subscribers", approx = "about"}, {n = 848, unit = "videos"}]
 status = "active"
 last_activity = "2026-11-21"
 checked = "2026-11-23"
@@ -564,18 +560,19 @@ id = "brick-me-up-scottie"
 name = "Brick Me Up Scottie"
 url = "https://www.youtube.com/@BrickMeUpScottie"
 group = "alternative-brand-reviews"
+rank = {en = 4}
+rank_reason_en = "About 15200 subscribers and 674 videos with frequent uploads, recommended on r/lepin; latest video on 23 November 2026."
+rank_reason_fr = "Environ 15200 abonnés et 674 vidéos publiées fréquemment, recommandées sur r/lepin ; dernière vidéo le 23 novembre 2026."
 covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Reviews of unique, high-quality sets from alternative brands such as Pantasy."
-summary_fr = "Tests de sets originaux et de qualité de marques alternatives telles que Pantasy."
+summary_en = "Unique, high-quality sets from brands such as Pantasy."
+summary_fr = "Sets originaux et de qualité de marques telles que Pantasy."
 strengths_en = ["Frequent uploads", "Recommended on a community forum for alternative brick reviews (Reddit r/lepin)"]
 strengths_fr = ["Publication fréquente", "Recommandée sur un forum communautaire pour les tests de briques alternatives (Reddit r/lepin)"]
 weaknesses_en = ["Small channel"]
 weaknesses_fr = ["Petite chaîne"]
-size_en = "15.2 thousand subscribers, 674 videos"
-size_fr = "15.2 mille abonnés, 674 vidéos"
+size = [{n = 15200, unit = "subscribers", approx = "about"}, {n = 674, unit = "videos"}]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
@@ -600,18 +597,19 @@ id = "sheclicksbricks"
 name = "SheClicksBricks"
 url = "https://www.youtube.com/@SheClicksBricks"
 group = "alternative-brand-reviews"
+rank = {en = 5}
+rank_reason_en = "About 7870 subscribers and 503 videos on higher-quality alternative brands (Pantasy, Lumibricks, CaDA, Cobi); latest video on 22 November 2026."
+rank_reason_fr = "Environ 7870 abonnés et 503 vidéos sur des marques alternatives de meilleure qualité (Pantasy, Lumibricks, CaDA, Cobi) ; dernière vidéo le 22 novembre 2026."
 covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Reviews of alternative brick brands (Pantasy, Lumibricks, CaDA, Cobi) by a couple; channel memberships are offered."
-summary_fr = "Tests de marques de briques alternatives (Pantasy, Lumibricks, CaDA, Cobi) par un couple ; des abonnements à la chaîne sont proposés."
+summary_en = "Couple testing Pantasy, Lumibricks, CaDA and Cobi; channel memberships are offered."
+summary_fr = "Couple qui teste Pantasy, Lumibricks, CaDA et Cobi ; des abonnements à la chaîne sont proposés."
 strengths_en = ["Focus on higher-quality alternative brands", "Frequent uploads"]
 strengths_fr = ["Centrée sur les marques alternatives de meilleure qualité", "Publication fréquente"]
 weaknesses_en = ["Positive stance on alternative brands stated in the channel description"]
 weaknesses_fr = ["Position favorable aux marques alternatives affichée dans la description de la chaîne"]
-size_en = "7.87 thousand subscribers, 503 videos"
-size_fr = "7.87 mille abonnés, 503 vidéos"
+size = [{n = 7870, unit = "subscribers", approx = "about"}, {n = 503, unit = "videos"}]
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
@@ -636,18 +634,19 @@ id = "mr-bricksteen"
 name = "Mr.Bricksteen"
 url = "https://www.youtube.com/@Mr.Bricksteen"
 group = "alternative-brand-reviews"
+rank = {intl = 5, en = 3}
+rank_reason_en = "About 37700 subscribers and 309 videos comparing sets of the LEGO brand with alternative brands, with mixed content; latest video on 21 November 2026."
+rank_reason_fr = "Environ 37700 abonnés et 309 vidéos comparant des sets de marque LEGO et de marques alternatives, au contenu mêlé ; dernière vidéo le 21 novembre 2026."
 covers = ["alternative", "official"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Builds, reviews and comparisons of LEGO sets with alternative brands."
-summary_fr = "Constructions, tests et comparaisons de sets LEGO avec des marques alternatives."
+summary_en = "Comparisons of LEGO sets with alternative brands, alongside builds and reviews."
+summary_fr = "Comparaisons de sets LEGO avec des marques alternatives, en plus de constructions et de tests."
 strengths_en = ["Compares LEGO with alternative brands and marketplace sets"]
 strengths_fr = ["Compare LEGO avec des marques alternatives et des sets de places de marché"]
 weaknesses_en = ["Mixed content (F1 sets, unboxings)"]
 weaknesses_fr = ["Contenu varié (sets F1, déballages)"]
-size_en = "37.7 thousand subscribers, 309 videos"
-size_fr = "37.7 mille abonnés, 309 vidéos"
+size = [{n = 37700, unit = "subscribers", approx = "about"}, {n = 309, unit = "videos"}]
 status = "active"
 last_activity = "2026-11-21"
 checked = "2026-11-23"
@@ -675,15 +674,13 @@ group = "alternative-brand-reviews"
 covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Unboxings, reviews and build impressions of sets beyond LEGO; the channel published a ranking of 32 alternative brands in August 2026."
-summary_fr = "Déballages, tests et impressions de construction de sets hors LEGO ; la chaîne a publié en août 2026 un classement de 32 marques alternatives."
+summary_en = "Published a ranking of 32 alternative brands in August 2026; also unboxings, reviews and build impressions of sets beyond LEGO."
+summary_fr = "A publié en août 2026 un classement de 32 marques alternatives ; aussi des déballages, tests et impressions de construction de sets hors LEGO."
 strengths_en = ["Covers many lesser-known brands", "Ranking criteria stated in the ranking video (design, engineering, instructions, consistency, customer support)"]
 strengths_fr = ["Couvre de nombreuses marques peu connues", "Critères du classement indiqués dans la vidéo (conception, ingénierie, notices, constance, service client)"]
 weaknesses_en = ["Small channel; ranking limited to brands the author built (BlueBrixx and Cobi not ranked)"]
 weaknesses_fr = ["Petite chaîne ; classement limité aux marques construites par l'auteur (BlueBrixx et Cobi absentes)"]
-size_en = "2.13 thousand subscribers, 294 videos"
-size_fr = "2.13 mille abonnés, 294 vidéos"
+size = [{n = 2130, unit = "subscribers", approx = "about"}, {n = 294, unit = "videos"}]
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
@@ -716,15 +713,13 @@ group = "alternative-brand-reviews"
 covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Live builds and reviews of alternative brick sets (Lumibricks, Pantasy, Barweer)."
-summary_fr = "Constructions en direct et tests de sets de briques alternatives (Lumibricks, Pantasy, Barweer)."
+summary_en = "Live builds of Lumibricks, Pantasy and Barweer sets, with reviews."
+summary_fr = "Constructions en direct de sets Lumibricks, Pantasy et Barweer, avec des tests."
 strengths_en = ["Live builds show the full construction"]
 strengths_fr = ["Les constructions en direct montrent l'ensemble du montage"]
 weaknesses_en = ["Small channel"]
 weaknesses_fr = ["Petite chaîne"]
-size_en = "2.46 thousand subscribers, 459 videos"
-size_fr = "2.46 mille abonnés, 459 vidéos"
+size = [{n = 2460, unit = "subscribers", approx = "about"}, {n = 459, unit = "videos"}]
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
@@ -749,19 +744,19 @@ id = "brickmeet"
 name = "BrickMeet"
 url = "https://www.youtube.com/@BrickMeet"
 group = "alternative-brand-reviews"
-featured = true
+rank = {intl = 4, en = 2}
+rank_reason_en = "About 299000 subscribers and 553 videos on military and vehicle sets, mainly Cobi, CaDA, Panlos and Mould King; latest video on 12 July 2026."
+rank_reason_fr = "Environ 299000 abonnés et 553 vidéos sur des sets militaires et de véhicules, surtout Cobi, CaDA, Panlos et Mould King ; dernière vidéo le 12 juillet 2026."
 covers = ["alternative", "official"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Speed-build reviews of military and vehicle sets, mainly Cobi, CaDA, Panlos and Mould King; the author also runs German and English blogs."
-summary_fr = "Tests en construction accélérée de sets militaires et de véhicules, surtout Cobi, CaDA, Panlos et Mould King ; l'auteur tient aussi des blogs en allemand et en anglais."
+summary_en = "Military and vehicle sets in speed-build reviews, mainly Cobi, CaDA, Panlos and Mould King; the author also runs German and English blogs."
+summary_fr = "Sets militaires et de véhicules en tests de construction accélérée, surtout Cobi, CaDA, Panlos et Mould King ; l'auteur tient aussi des blogs en allemand et en anglais."
 strengths_en = ["Detailed Cobi coverage", "Videos in English with a German-language blog"]
 strengths_fr = ["Couverture détaillée de Cobi", "Vidéos en anglais, blog en allemand"]
 weaknesses_en = ["Military and vehicle themes only", "Amazon affiliate links in descriptions"]
 weaknesses_fr = ["Thèmes militaires et véhicules uniquement", "Liens d'affiliation Amazon dans les descriptions"]
-size_en = "299 thousand subscribers, 553 videos"
-size_fr = "299 mille abonnés, 553 vidéos"
+size = [{n = 299000, unit = "subscribers", approx = "about"}, {n = 553, unit = "videos"}]
 status = "active"
 last_activity = "2026-07-12"
 checked = "2026-11-23"
@@ -786,19 +781,19 @@ id = "brickvault"
 name = "BrickVault"
 url = "https://www.youtube.com/channel/UCrhb3SP2lZBgguLHIWWuHOQ"
 group = "building-and-custom"
-featured = true
+rank = {intl = 3, en = 3}
+rank_reason_en = "About 679000 subscribers and about 2000 videos, with weekly top-10 selections of custom builds; latest video on 11 November 2026."
+rank_reason_fr = "Environ 679000 abonnés et environ 2000 vidéos, avec des sélections hebdomadaires des 10 meilleures créations originales ; dernière vidéo le 11 novembre 2026."
 covers = ["custom-builds", "official"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Showcase of LEGO custom models, with weekly top-10 selections of custom builds and display ideas."
-summary_fr = "Présentation de créations originales en LEGO, avec des sélections hebdomadaires de dix créations et des idées d'exposition."
+summary_en = "Weekly top-10 selections of LEGO custom builds, and display ideas."
+summary_fr = "Sélections hebdomadaires du top 10 des créations originales en LEGO, et idées d'exposition."
 strengths_en = ["Large number of custom builds shown", "Frequent uploads"]
 strengths_fr = ["Grand nombre de créations originales présentées", "Publication fréquente"]
 weaknesses_en = ["Not a set-review channel: unsuited to choosing a set to buy"]
 weaknesses_fr = ["Pas une chaîne de tests de sets : peu adaptée au choix d'un set à acheter"]
-size_en = "679 thousand subscribers, about 2000 videos"
-size_fr = "679 mille abonnés, environ 2000 vidéos"
+size = [{n = 679000, unit = "subscribers", approx = "about"}, {n = 2000, unit = "videos", approx = "about"}]
 status = "active"
 last_activity = "2026-11-11"
 checked = "2026-11-23"
@@ -822,18 +817,19 @@ id = "bricksie"
 name = "Bricksie"
 url = "https://www.youtube.com/@Bricksie"
 group = "building-and-custom"
+rank = {intl = 4, en = 4}
+rank_reason_en = "About 476000 subscribers and about 2900 videos, daily uploads, with vlog content mixed in with builds; latest video on 22 November 2026."
+rank_reason_fr = "Environ 476000 abonnés et environ 2900 vidéos, publiées tous les jours, avec du contenu de vlog mêlé aux constructions ; dernière vidéo le 22 novembre 2026."
 covers = ["official", "custom-builds"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "City builds, custom builds, vlogs, set reviews and live builds by an adult fan based in Canada."
-summary_fr = "Constructions de ville, créations originales, vlogs, tests de sets et constructions en direct par un fan adulte installé au Canada."
+summary_en = "Adult fan based in Canada: city builds, custom builds, vlogs, set reviews and live builds."
+summary_fr = "Fan adulte installé au Canada : constructions de ville, créations originales, vlogs, tests de sets et constructions en direct."
 strengths_en = ["Large community channel", "Daily uploads"]
 strengths_fr = ["Chaîne communautaire importante", "Publication quotidienne"]
 weaknesses_en = ["Vlog and entertainment content is mixed with builds"]
 weaknesses_fr = ["Du contenu vlog et divertissement est mêlé aux constructions"]
-size_en = "476 thousand subscribers, 2.9 thousand videos"
-size_fr = "476 mille abonnés, 2.9 mille vidéos"
+size = [{n = 476000, unit = "subscribers", approx = "about"}, {n = 2900, unit = "videos", approx = "about"}]
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
@@ -857,18 +853,19 @@ id = "mabrikville"
 name = "Mabrikville"
 url = "https://www.youtube.com/@Mabrikville"
 group = "building-and-custom"
+rank = {fr = 1}
+rank_reason_en = "About 6950 subscribers and 106 videos on a LEGO town project, with a low upload rhythm; latest video on 22 February 2026."
+rank_reason_fr = "Environ 6950 abonnés et 106 vidéos sur un projet de ville LEGO, au rythme de publication faible ; dernière vidéo le 22 février 2026."
 covers = ["custom-builds", "official"]
 languages = ["fr"]
 countries = ["FR"]
-access = "free"
-summary_en = "French-language channel on building a LEGO town (landscape, trains, techniques), by a member of a French LEGO user group."
-summary_fr = "Chaîne en français sur la construction d'une ville LEGO (paysage, trains, techniques), tenue par un membre d'un groupe d'utilisateurs LEGO francophone."
+summary_en = "LEGO town project (landscape, trains, techniques), by a member of a French LEGO user group."
+summary_fr = "Projet de ville LEGO (paysage, trains, techniques), tenu par un membre d'un groupe d'utilisateurs LEGO francophone."
 strengths_en = ["Building techniques for beginners and experts (QuéLUG forum, 2024)"]
 strengths_fr = ["Techniques de construction pour débutants et experts (forum QuéLUG, 2024)"]
 weaknesses_en = ["Low upload rhythm", "Not a set-review channel"]
 weaknesses_fr = ["Rythme de publication faible", "Pas une chaîne de tests de sets"]
-size_en = "6.95 thousand subscribers, 106 videos"
-size_fr = "6.95 mille abonnés, 106 vidéos"
+size = [{n = 6950, unit = "subscribers", approx = "about"}, {n = 106, unit = "videos"}]
 status = "slow"
 last_activity = "2026-02-22"
 checked = "2026-11-23"
@@ -897,19 +894,19 @@ id = "beyond-the-brick"
 name = "Beyond the Brick"
 url = "https://www.youtube.com/@BeyondtheBrick"
 group = "news"
-featured = true
+rank = {intl = 1, en = 1}
+rank_reason_en = "About 1560000 subscribers and about 4700 videos, running since November 2011 with first-look coverage of new sets; latest video on 13 November 2026."
+rank_reason_fr = "Environ 1560000 abonnés et environ 4700 vidéos, en ligne depuis novembre 2011 avec une couverture en avant-première des nouveaux sets ; dernière vidéo le 13 novembre 2026."
 covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "LEGO news and reveal coverage; the channel states it began in November 2011 as an audio-only podcast and sells merchandise."
-summary_fr = "Actualité et nouveautés LEGO ; la chaîne indique avoir débuté en novembre 2011 comme podcast audio et vend des produits dérivés."
+summary_en = "Began in November 2011 as an audio-only podcast, as the channel states; it also sells merchandise and covers LEGO news and reveals."
+summary_fr = "A débuté en novembre 2011 comme podcast audio, d'après la chaîne ; elle vend aussi des produits dérivés et couvre l'actualité et les nouveautés LEGO."
 strengths_en = ["Long-running channel with first-look coverage of new sets"]
 strengths_fr = ["Chaîne ancienne, avec des présentations en avant-première des nouveaux sets"]
 weaknesses_en = ["News format more than buying guidance"]
 weaknesses_fr = ["Format actualité plus que conseil d'achat"]
-size_en = "1.56 million subscribers, 4.7 thousand videos"
-size_fr = "1.56 million d'abonnés, 4.7 mille vidéos"
+size = [{n = 1560000, unit = "subscribers", approx = "about"}, {n = 4700, unit = "videos", approx = "about"}]
 status = "active"
 last_activity = "2026-11-13"
 checked = "2026-11-23"
@@ -933,18 +930,19 @@ id = "briquefan"
 name = "Briquefan"
 url = "https://www.youtube.com/channel/UCeohvTWYjZDOubRaSIlpBCQ"
 group = "news"
+rank = {fr = 2}
+rank_reason_en = "About 9940 subscribers and 127 videos on LEGO fans and their community, with a slowed upload rhythm; latest video on 10 January 2026."
+rank_reason_fr = "Environ 9940 abonnés et 127 vidéos sur les fans de LEGO et leur communauté, au rythme de publication ralenti ; dernière vidéo le 10 janvier 2026."
 covers = ["news"]
 languages = ["fr"]
 countries = ["FR"]
-access = "free"
-summary_en = "French-language show about LEGO fans and their community."
-summary_fr = "Émission en français sur les fans de LEGO et leur communauté."
+summary_en = "Show about LEGO fans and their community."
+summary_fr = "Émission sur les fans de LEGO et leur communauté."
 strengths_en = ["Community focus"]
 strengths_fr = ["Orientée communauté"]
 weaknesses_en = ["Upload rhythm slowed", "Not a set-review channel"]
 weaknesses_fr = ["Rythme ralenti", "Pas une chaîne de tests de sets"]
-size_en = "9.94 thousand subscribers, 127 videos"
-size_fr = "9.94 mille abonnés, 127 vidéos"
+size = [{n = 9940, unit = "subscribers", approx = "about"}, {n = 127, unit = "videos"}]
 status = "slow"
 last_activity = "2026-01-10"
 checked = "2026-11-23"
@@ -968,18 +966,19 @@ id = "frostiize"
 name = "FrosTiize"
 url = "https://www.youtube.com/@FrosTiize"
 group = "news"
+rank = {intl = 3, fr = 1}
+rank_reason_en = "About 14600 subscribers and 576 videos with frequent uploads, in an entertainment format of challenges and tier lists; latest video on 20 November 2026."
+rank_reason_fr = "Environ 14600 abonnés et 576 vidéos publiées fréquemment, dans un format de divertissement avec défis et classements ; dernière vidéo le 20 novembre 2026."
 covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
-access = "free"
-summary_en = "French-language LEGO content creator: challenges, tier lists, set reviews and news."
-summary_fr = "Créateur de contenu LEGO francophone : défis, classements, tests de sets et actualités."
+summary_en = "Challenges, tier lists, set reviews and news from a LEGO content creator."
+summary_fr = "Défis, classements, tests de sets et actualités d'un créateur de contenu LEGO."
 strengths_en = ["Frequent uploads", "French-language news on new ranges"]
 strengths_fr = ["Publication fréquente", "Actualité en français sur les nouvelles gammes"]
 weaknesses_en = ["Entertainment format (challenges, tier lists)"]
 weaknesses_fr = ["Format divertissement (défis, classements)"]
-size_en = "14.6 thousand subscribers, 576 videos"
-size_fr = "14.6 mille abonnés, 576 vidéos"
+size = [{n = 14600, unit = "subscribers", approx = "about"}, {n = 576, unit = "videos"}]
 status = "active"
 last_activity = "2026-11-20"
 checked = "2026-11-23"
@@ -1008,18 +1007,19 @@ id = "brickonaute-youtube"
 name = "Brickonaute (YouTube)"
 url = "https://www.youtube.com/@Brickonaute"
 group = "news"
+rank = {fr = 3}
+rank_reason_en = "714 subscribers, linked to an active news blog, with fewer uploads than the blog; latest video on 15 October 2026."
+rank_reason_fr = "714 abonnés, liée à un blog d'actualité actif, avec moins de publications que le blog ; dernière vidéo le 15 octobre 2026."
 covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
-access = "free"
-summary_en = "YouTube channel of the French-language LEGO news and review blog brickonaute.fr: new releases, tests and set information."
-summary_fr = "Chaîne YouTube du blog francophone d'actualité et de tests LEGO brickonaute.fr : nouveautés, tests et informations sur les sets."
+summary_en = "Channel of the blog brickonaute.fr, on LEGO news and reviews: new releases, tests and set information."
+summary_fr = "Chaîne du blog brickonaute.fr, consacré à l'actualité et aux tests LEGO : nouveautés, tests et informations sur les sets."
 strengths_en = ["Linked to an active news blog"]
 strengths_fr = ["Liée à un blog d'actualité actif"]
 weaknesses_en = ["Small channel, fewer uploads than the blog"]
 weaknesses_fr = ["Petite chaîne, moins de vidéos que le blog"]
-size_en = "714 subscribers"
-size_fr = "714 abonnés"
+size = [{n = 714, unit = "subscribers"}]
 status = "active"
 last_activity = "2026-10-15"
 checked = "2026-11-23"
@@ -1048,18 +1048,19 @@ id = "jays-brick-blog-youtube"
 name = "Jay's Brick Blog (YouTube)"
 url = "https://www.youtube.com/@Jaysbrickblog"
 group = "news"
+rank = {en = 3}
+rank_reason_en = "About 3770 subscribers and 122 videos, linked to a long-running blog; latest video on 6 November 2026."
+rank_reason_fr = "Environ 3770 abonnés et 122 vidéos, liée à un blog ancien ; dernière vidéo le 6 novembre 2026."
 covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "YouTube channel of the Jay's Brick Blog LEGO blog: speed builds, reviews and reveal videos."
-summary_fr = "Chaîne YouTube du blog LEGO Jay's Brick Blog : constructions accélérées, tests et présentations de nouveautés."
+summary_en = "Speed builds, reviews and reveal videos from the Jay's Brick Blog LEGO blog."
+summary_fr = "Constructions accélérées, tests et présentations de nouveautés du blog LEGO Jay's Brick Blog."
 strengths_en = ["Linked to a long-running blog"]
 strengths_fr = ["Liée à un blog ancien"]
 weaknesses_en = ["Small channel"]
 weaknesses_fr = ["Petite chaîne"]
-size_en = "3.77 thousand subscribers, 122 videos"
-size_fr = "3.77 mille abonnés, 122 vidéos"
+size = [{n = 3770, unit = "subscribers", approx = "about"}, {n = 122, unit = "videos"}]
 status = "active"
 last_activity = "2026-11-06"
 checked = "2026-11-23"
@@ -1083,19 +1084,19 @@ id = "briques-en-vrac"
 name = "Briques en Vrac"
 url = "https://www.vodio.fr/vodiotheque/c/1753/briques-en-vrac-actualites-et-nouveautes-lego/"
 group = "podcasts"
-featured = true
+rank = {fr = 1}
+rank_reason_en = "64 episodes at a weekly rhythm on LEGO news and new releases; latest episode on 16 November 2026."
+rank_reason_fr = "64 épisodes à rythme hebdomadaire sur l'actualité LEGO et les nouveautés ; dernier épisode le 16 novembre 2026."
 covers = ["news", "official"]
 languages = ["fr"]
 countries = ["FR"]
-access = "free"
-summary_en = "French-language podcast on LEGO news and new releases."
-summary_fr = "Podcast francophone sur l'actualité et les nouveautés LEGO."
+summary_en = "LEGO news and new releases."
+summary_fr = "Actualité et nouveautés LEGO."
 strengths_en = ["French-language", "Weekly rhythm"]
 strengths_fr = ["En français", "Rythme hebdomadaire"]
 weaknesses_en = ["News format: not a buying guide"]
 weaknesses_fr = ["Format actualité : pas un guide d'achat"]
-size_en = "64 episodes in the RSS feed"
-size_fr = "64 épisodes dans le flux RSS"
+size = [{n = 64, unit = "episodes"}]
 status = "active"
 last_activity = "2026-11-16"
 checked = "2026-11-23"
@@ -1119,18 +1120,19 @@ id = "men-in-bricks"
 name = "Men in Bricks"
 url = "https://www.meninbricks.fr/"
 group = "podcasts"
+rank = {fr = 2}
+rank_reason_en = "73 episodes at an irregular rhythm by three LEGO fans; latest episode on 20 November 2026."
+rank_reason_fr = "73 épisodes à rythme irrégulier de trois fans de LEGO ; dernier épisode le 20 novembre 2026."
 covers = ["news"]
 languages = ["fr"]
 countries = ["FR"]
-access = "free"
-summary_en = "French-language podcast by three LEGO fans sharing their passion."
-summary_fr = "Podcast francophone de trois fans de LEGO partageant leur passion."
+summary_en = "Three LEGO fans sharing their passion."
+summary_fr = "Trois fans de LEGO qui partagent leur passion."
 strengths_en = ["French-language"]
 strengths_fr = ["En français"]
 weaknesses_en = ["Irregular rhythm"]
 weaknesses_fr = ["Rythme irrégulier"]
-size_en = "73 episodes in the RSS feed"
-size_fr = "73 épisodes dans le flux RSS"
+size = [{n = 73, unit = "episodes"}]
 status = "active"
 last_activity = "2026-11-20"
 checked = "2026-11-23"
@@ -1154,18 +1156,19 @@ id = "bricks-king-podcast"
 name = "The Bricks King Podcast"
 url = "https://www.spreaker.com/podcast/the-bricks-king-podcast-lego--4920139"
 group = "podcasts"
+rank = {intl = 4, en = 2}
+rank_reason_en = "505 episodes with interviews of LEGO artists, the latest dated 8 April 2026."
+rank_reason_fr = "505 épisodes avec des interviews d'artistes LEGO, le dernier daté du 8 avril 2026."
 covers = ["news", "custom-builds"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Podcast with interviews of LEGO artists and reviews of recent models."
-summary_fr = "Podcast avec des entretiens d'artistes LEGO et des tests de modèles récents."
+summary_en = "Interviews of LEGO artists and reviews of recent models."
+summary_fr = "Entretiens avec des artistes LEGO et tests de modèles récents."
 strengths_en = ["Long archive"]
 strengths_fr = ["Archive importante"]
-weaknesses_en = ["Last episode on 2026-04-08"]
-weaknesses_fr = ["Dernier épisode le 08/04/2026"]
-size_en = "505 episodes in the RSS feed"
-size_fr = "505 épisodes dans le flux RSS"
+weaknesses_en = ["Last episode on 8 April 2026"]
+weaknesses_fr = ["Dernier épisode le 8 avril 2026"]
+size = [{n = 505, unit = "episodes"}]
 status = "slow"
 last_activity = "2026-04-08"
 checked = "2026-11-23"
@@ -1189,18 +1192,17 @@ id = "afols-welcome"
 name = "AFOLs Welcome"
 url = "https://bleav.com/shows/afols-welcome-a-lego-podcast/"
 group = "podcasts"
+rank = {en = 5}
+rank_reason_en = "125 weekly episodes by two co-hosts on the brick-built world of LEGO; latest episode on 23 November 2026."
+rank_reason_fr = "125 épisodes hebdomadaires de deux animateurs sur le monde construit en briques LEGO ; dernier épisode le 23 novembre 2026."
 covers = ["news"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Weekly podcast on the brick-built world of LEGO, with two co-hosts discussing hot topics and themes."
-summary_fr = "Podcast hebdomadaire sur l'univers des briques LEGO, avec deux animateurs discutant d'actualités et de thèmes."
+summary_en = "Two co-hosts discussing hot topics and themes in the brick-built world of LEGO."
+summary_fr = "Deux animateurs qui discutent de sujets d'actualité et de thèmes de l'univers des briques LEGO."
 strengths_en = ["Weekly episodes"]
 strengths_fr = ["Épisodes hebdomadaires"]
-weaknesses_en = ["Home page behind an anti-robot challenge: content read from the RSS feed only"]
-weaknesses_fr = ["Page d'accueil derrière un contrôle anti-robot : contenu lu uniquement dans le flux RSS"]
-size_en = "125 episodes in the RSS feed"
-size_fr = "125 épisodes dans le flux RSS"
+size = [{n = 125, unit = "episodes"}]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
@@ -1219,19 +1221,19 @@ id = "back-2-brick"
 name = "Back 2 Brick LEGO Podcast"
 url = "https://back2brick.buzzsprout.com/"
 group = "podcasts"
-featured = true
+rank = {intl = 1, en = 1}
+rank_reason_en = "427 episodes with a weekly news recap and interviews with LEGO designers, and news centred on the United States; latest episode on 19 November 2026."
+rank_reason_fr = "427 épisodes avec un résumé hebdomadaire de l'actualité et des interviews de concepteurs LEGO, et une actualité centrée sur les États-Unis ; dernier épisode le 19 novembre 2026."
 covers = ["news", "custom-builds"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Podcast hosted by an adult fan: LEGO news, custom builds and interviews with LEGO designers, with a weekly news recap on Fridays."
-summary_fr = "Podcast animé par un fan adulte : actualité LEGO, créations originales et entretiens avec des concepteurs LEGO, avec un récapitulatif hebdomadaire le vendredi."
+summary_en = "Hosted by an adult fan: LEGO news, custom builds and interviews with LEGO designers, with a weekly news recap on Fridays."
+summary_fr = "Animé par un fan adulte : actualité LEGO, créations originales et entretiens avec des concepteurs LEGO, avec un récapitulatif hebdomadaire le vendredi."
 strengths_en = ["Weekly news recap", "Designer interviews"]
 strengths_fr = ["Récapitulatif hebdomadaire de l'actualité", "Entretiens avec des concepteurs"]
 weaknesses_en = ["United States-centred news"]
 weaknesses_fr = ["Actualité centrée sur les États-Unis"]
-size_en = "427 episodes in the RSS feed"
-size_fr = "427 épisodes dans le flux RSS"
+size = [{n = 427, unit = "episodes"}]
 status = "active"
 last_activity = "2026-11-19"
 checked = "2026-11-23"
@@ -1255,18 +1257,19 @@ id = "london-calling-lego-podcast"
 name = "London Calling LEGO Podcast"
 url = "https://shows.acast.com/londoncalling"
 group = "podcasts"
+rank = {en = 4}
+rank_reason_en = "122 episodes at a weekly rhythm, in a conversation format with guests from several countries; latest episode on 21 November 2026."
+rank_reason_fr = "122 épisodes à rythme hebdomadaire, en format de conversation avec des invités de plusieurs pays ; dernier épisode le 21 novembre 2026."
 covers = ["news"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Live LEGO podcast, audio edition, with guests from several countries discussing LEGO and life."
-summary_fr = "Podcast LEGO en direct, édition audio, avec des invités de plusieurs pays parlant de LEGO et de la vie."
+summary_en = "Live show, audio edition, with guests from several countries discussing LEGO and life."
+summary_fr = "Émission en direct, édition audio, avec des invités de plusieurs pays qui parlent de LEGO et de la vie."
 strengths_en = ["Weekly rhythm"]
 strengths_fr = ["Rythme hebdomadaire"]
 weaknesses_en = ["Conversation format, little buying guidance"]
 weaknesses_fr = ["Format conversation, peu de conseils d'achat"]
-size_en = "122 episodes in the RSS feed"
-size_fr = "122 épisodes dans le flux RSS"
+size = [{n = 122, unit = "episodes"}]
 status = "active"
 last_activity = "2026-11-21"
 checked = "2026-11-23"
@@ -1290,18 +1293,19 @@ id = "full-of-brick"
 name = "Full of Brick"
 url = "https://creators.spotify.com/pod/profile/gerald-dumol/"
 group = "podcasts"
+rank = {intl = 5, en = 3}
+rank_reason_en = "233 episodes of show and tell and the week's LEGO news at a weekly rhythm; latest episode on 22 November 2026."
+rank_reason_fr = "233 épisodes de présentations et d'actualité LEGO de la semaine, à rythme hebdomadaire ; dernier épisode le 22 novembre 2026."
 covers = ["news"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "Weekly LEGO podcast with show and tell and the week's LEGO news."
-summary_fr = "Podcast LEGO hebdomadaire avec présentations de créations et actualité de la semaine."
+summary_en = "Show and tell, and the week's LEGO news."
+summary_fr = "Présentations de créations et actualité LEGO de la semaine."
 strengths_en = ["Weekly rhythm"]
 strengths_fr = ["Rythme hebdomadaire"]
 weaknesses_en = ["Hosting page gives little information"]
 weaknesses_fr = ["La page d'hébergement donne peu d'informations"]
-size_en = "233 episodes in the RSS feed"
-size_fr = "233 épisodes dans le flux RSS"
+size = [{n = 233, unit = "episodes"}]
 status = "active"
 last_activity = "2026-11-22"
 checked = "2026-11-23"
@@ -1323,15 +1327,13 @@ group = "podcasts"
 covers = ["news"]
 languages = ["en"]
 countries = ["international"]
-access = "free"
-summary_en = "LEGO podcast on set news, reviews and stories from the building community."
-summary_fr = "Podcast LEGO sur l'actualité des sets, les tests et les récits de la communauté de construction."
+summary_en = "LEGO set news, reviews and stories from the building community."
+summary_fr = "Actualité des sets LEGO, tests et récits de la communauté de construction."
 strengths_en = ["Episodes listed in an RSS feed"]
 strengths_fr = ["Épisodes listés dans un flux RSS"]
 weaknesses_en = ["Hosting page gives little information"]
 weaknesses_fr = ["La page d'hébergement donne peu d'informations"]
-size_en = "63 episodes in the RSS feed"
-size_fr = "63 épisodes dans le flux RSS"
+size = [{n = 63, unit = "episodes"}]
 status = "active"
 last_activity = "2026-11-16"
 checked = "2026-11-23"
@@ -1343,4 +1345,893 @@ feed = "https://anchor.fm/s/1044a5254/podcast/rss"
 [[resource.sources]]
 url = "https://anchor.fm/s/1044a5254/podcast/rss"
 date = "2026-11-23"
+kind = "read"
+
+[[resource]]
+id = "brick-experiment-channel"
+name = "Brick Experiment Channel"
+url = "https://www.youtube.com/@BrickExperimentChannel"
+group = "building-and-custom"
+rank = {intl = 1, en = 1}
+rank_reason_en = "About 6150000 subscribers and 125 videos on motorised mechanisms and engineering experiments, with part lists of some designs published; latest video on 7 November 2026."
+rank_reason_fr = "Environ 6150000 abonnés et 125 vidéos sur des mécanismes motorisés et des expériences d'ingénierie, avec les listes de pièces de certains modèles publiées ; dernière vidéo le 7 novembre 2026."
+covers = ["custom-builds"]
+languages = ["en"]
+countries = ["international"]
+summary_en = "Motorised mechanisms and engineering experiments built with LEGO parts and third-party motors and battery boxes; part lists and instructions of some designs are published on a separate blog."
+summary_fr = "Mécanismes motorisés et expériences d'ingénierie construits avec des pièces de marque LEGO et des moteurs tiers ; listes de pièces et notices de certaines créations publiées sur un blog distinct."
+strengths_en = ["Largest channel of its group by subscribers", "FAQ and part-list page linked from the channel description"]
+strengths_fr = ["Plus grande chaîne de son groupe par le nombre d'abonnés", "FAQ et page de listes de pièces liées dans la description de la chaîne"]
+weaknesses_en = ["Few uploads: 125 videos, the latest on 7 November 2026", "Designs sold on a third-party marketplace; referral links to retailers in descriptions"]
+weaknesses_fr = ["Peu de vidéos : 125, la dernière le 7 novembre 2026", "Créations vendues sur une place de marché tierce ; liens de parrainage vers des revendeurs dans les descriptions"]
+status = "active"
+last_activity = "2026-11-07"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 6150000, unit = "subscribers", approx = "about"}, {n = 125, unit = "videos"}]
+funding = ["shop"]
+youtube_channel_id = "UClsFdM0HzTdF1JYoraQ0aUw"
+brands = ["cada"]
+
+[[resource.sources]]
+url = "https://www.youtube.com/@BrickExperimentChannel"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UClsFdM0HzTdF1JYoraQ0aUw"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "jk-brickworks"
+name = "JK Brickworks"
+url = "https://www.youtube.com/@JKBrickworks"
+group = "building-and-custom"
+rank = {intl = 2, en = 2}
+rank_reason_en = "About 2340000 subscribers and 398 videos with the workings of each model explained; latest video on 30 October 2026."
+rank_reason_fr = "Environ 2340000 abonnés et 398 vidéos expliquant le fonctionnement de chaque modèle ; dernière vidéo le 30 octobre 2026."
+covers = ["custom-builds"]
+languages = ["en"]
+countries = ["international"]
+summary_en = "Kinetic sculptures, automata and robots designed by a couple, with the mechanisms explained, including modified official sets such as a road bike."
+summary_fr = "Sculptures cinétiques, automates et robots conçus par un couple, avec explication des mécanismes, y compris des sets de marque LEGO transformés comme un vélo de route."
+strengths_en = ["398 videos with the workings of each model explained", "Own website linked from the channel description"]
+strengths_fr = ["398 vidéos avec le fonctionnement de chaque modèle expliqué", "Site propre lié dans la description de la chaîne"]
+weaknesses_en = ["Support asked through Patreon (stated)", "Latest video on 30 October 2026"]
+weaknesses_fr = ["Soutien demandé par Patreon (indiqué)", "Dernière vidéo le 30 octobre 2026"]
+status = "active"
+last_activity = "2026-10-30"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 2340000, unit = "subscribers", approx = "about"}, {n = 398, unit = "videos"}]
+funding = ["donations"]
+youtube_channel_id = "UCUaiGrBfRCaC6pL7ZnZjWbg"
+
+[[resource.sources]]
+url = "https://www.youtube.com/@JKBrickworks"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCUaiGrBfRCaC6pL7ZnZjWbg"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "akiyuki-brick-channel"
+name = "Akiyuki Brick Channel"
+url = "https://www.youtube.com/@akiyuky"
+group = "building-and-custom"
+rank = {intl = 5, en = 5, ja = 1}
+rank_reason_en = "About 353000 subscribers and 93 videos on Great Ball Contraption modules, with instructions on a separate website (stated); latest video on 4 November 2026."
+rank_reason_fr = "Environ 353000 abonnés et 93 vidéos sur des modules de Great Ball Contraption, avec des instructions sur un site séparé (déclaré) ; dernière vidéo le 4 novembre 2026."
+covers = ["custom-builds"]
+languages = ["ja", "en"]
+countries = ["JP"]
+summary_en = "Great Ball Contraption modules and machines built from LEGO bricks, with photos, explanations and instructions on a separate website (stated)."
+summary_fr = "Modules de Great Ball Contraption et machines construits en briques de marque LEGO, avec photos, explications et notices sur un site distinct (indiqué)."
+strengths_en = ["Models shown at Japan Brickfest (2023 to 2025)", "Bilingual description, Japanese and English"]
+strengths_fr = ["Modèles présentés au Japan Brickfest (2023 à 2025)", "Description bilingue, japonais et anglais"]
+weaknesses_en = ["Infrequent uploads: the video before 4 November 2026 dates from 9 November 2025"]
+weaknesses_fr = ["Vidéos peu fréquentes : la précédente avant le 4 novembre 2026 date du 9 novembre 2025"]
+status = "active"
+last_activity = "2026-11-04"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 353000, unit = "subscribers", approx = "about"}, {n = 93, unit = "videos"}]
+funding = ["unknown"]
+youtube_channel_id = "UCCJJNQIhS15ypcHqDfEPNXg"
+
+[[resource.sources]]
+url = "https://www.youtube.com/@akiyuky"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCCJJNQIhS15ypcHqDfEPNXg"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "held-der-steine"
+name = "Held der Steine"
+url = "https://www.youtube.com/@HeldderSteine"
+group = "alternative-brand-reviews"
+rank = {intl = 2, de = 1}
+rank_reason_en = "About 1190000 subscribers and about 2500 videos, uploads every day, with alternative brands as only part of the content; latest video on 24 November 2026."
+rank_reason_fr = "Environ 1190000 abonnés et environ 2500 vidéos, publiées tous les jours, les marques alternatives ne formant qu'une partie du contenu ; dernière vidéo le 24 novembre 2026."
+covers = ["alternative", "official", "news"]
+languages = ["de"]
+countries = ["DE", "AT", "CH"]
+summary_en = "One billion views announced on 20 November 2026; set reviews of the LEGO brand and of alternative brands, catalogue walk-throughs, live builds and pre-Christmas brick news."
+summary_fr = "Un milliard de vues annoncé le 20 novembre 2026 ; tests de sets de marque LEGO et de marques alternatives, présentations de catalogues, constructions en direct et actualités avant Noël."
+strengths_en = ["Uploads every day: latest on 24 November 2026", "One billion views announced on 20 November 2026", "Legal notice of the producing company in the channel description"]
+strengths_fr = ["Vidéos tous les jours : dernière le 24 novembre 2026", "Un milliard de vues annoncé le 20 novembre 2026", "Mentions légales de la société productrice dans la description de la chaîne"]
+weaknesses_en = ["Affiliate links, merchandise and channel memberships fund the channel (stated)", "Alternative brands are only part of the content next to official sets"]
+weaknesses_fr = ["Liens d'affiliation, produits dérivés et abonnements à la chaîne financent la chaîne (indiqué)", "Les marques alternatives ne forment qu'une partie du contenu, à côté des sets de marque LEGO"]
+status = "active"
+last_activity = "2026-11-24"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 1190000, unit = "subscribers", approx = "about"}, {n = 2500, unit = "videos", approx = "about"}]
+funding = ["affiliation", "shop", "subscription"]
+youtube_channel_id = "UC_EZd3lsmxudu3IQzpTzOgw"
+brands = ["pantasy"]
+
+[[resource.sources]]
+url = "https://www.youtube.com/@HeldderSteine"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC_EZd3lsmxudu3IQzpTzOgw"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "steine-kanal-youtube"
+name = "Steine Kanal"
+url = "https://www.youtube.com/@SteineKanal"
+group = "alternative-brand-reviews"
+rank = {de = 2}
+rank_reason_en = "About 7550 subscribers and 482 videos, about three a week, with numbered news series for BlueBrixx, COBI and Lumibricks; latest video on 24 November 2026."
+rank_reason_fr = "Environ 7550 abonnés et 482 vidéos, environ trois par semaine, avec des séries d'actualités numérotées sur BlueBrixx, COBI et Lumibricks ; dernière vidéo le 24 novembre 2026."
+covers = ["alternative", "official", "news"]
+languages = ["de"]
+countries = ["DE"]
+summary_en = "About three videos a week, with numbered news series for BlueBrixx, COBI and Lumibricks beside reviews of many alternative brands."
+summary_fr = "Environ trois vidéos par semaine, avec des séries d'actualités numérotées pour BlueBrixx, COBI et Lumibricks à côté de tests de nombreuses marques alternatives."
+strengths_en = ["Channel description lists COBI, CaDA, Qihui, Ausini, Mega Construx, Xingbao, Kazi, Sembo, N-Bricks and Wange", "Latest video on 24 November 2026"]
+strengths_fr = ["La description de la chaîne cite COBI, CaDA, Qihui, Ausini, Mega Construx, Xingbao, Kazi, Sembo, N-Bricks et Wange", "Dernière vidéo le 24 novembre 2026"]
+weaknesses_en = ["Small audience", "Links marked with an asterisk are affiliate links (stated)"]
+weaknesses_fr = ["Petite audience", "Les liens marqués d'un astérisque sont des liens d'affiliation (indiqué)"]
+status = "active"
+last_activity = "2026-11-24"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 7550, unit = "subscribers", approx = "about"}, {n = 482, unit = "videos"}]
+funding = ["affiliation"]
+youtube_channel_id = "UCDjYc97eDoOCZ7z4MqZNnDw"
+brands = ["cobi", "cada", "mattel-brick-shop", "xingbao", "sembo-block", "wange", "bluebrixx", "lumibricks", "pantasy"]
+
+[[resource.sources]]
+url = "https://www.youtube.com/@SteineKanal"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCDjYc97eDoOCZ7z4MqZNnDw"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "klemmbausteinlyrik-youtube"
+name = "Klemmbausteinlyrik (YouTube)"
+url = "https://www.youtube.com/@Klemmbausteinlyrik"
+group = "official-lego-reviews"
+rank = {de = 1}
+rank_reason_en = "About 60300 subscribers and about 2800 videos, online since 2011; latest video on 25 November 2026."
+rank_reason_fr = "Environ 60300 abonnés et environ 2800 vidéos, en ligne depuis 2011 ; dernière vidéo le 25 novembre 2026."
+covers = ["official", "news"]
+languages = ["de"]
+countries = ["DE"]
+summary_en = "Online since 2011: interviews, custom builds, speed builds, set reviews and a recurring night-news series on discounts."
+summary_fr = "En ligne depuis 2011 : interviews, créations originales, constructions accélérées, présentations de sets et une série d'actualités nocturnes sur les réductions."
+strengths_en = ["Videos since 2011 (stated)", "Latest video on 25 November 2026"]
+strengths_fr = ["Vidéos depuis 2011 (indiqué)", "Dernière vidéo le 25 novembre 2026"]
+weaknesses_en = ["Review copies from the LEGO Group marked as advertising", "Affiliate links to the LEGO Shop and Amazon"]
+weaknesses_fr = ["Exemplaires de test du groupe LEGO signalés comme publicité", "Liens d'affiliation vers le LEGO Shop et Amazon"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 60300, unit = "subscribers", approx = "about"}, {n = 2800, unit = "videos", approx = "about"}]
+funding = ["affiliation", "sponsorship"]
+youtube_channel_id = "UCIoT96lA9unTWy_n2jV2F5g"
+
+[[resource.sources]]
+url = "https://www.youtube.com/@Klemmbausteinlyrik"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCIoT96lA9unTWy_n2jV2F5g"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "austrianbrickfan"
+name = "AustrianBrickFan"
+url = "https://www.youtube.com/@AustrianBrickFan"
+group = "official-lego-reviews"
+rank = {intl = 5, en = 5, de = 2}
+rank_reason_en = "About 2090000 subscribers and about 5200 videos, uploads every day, but mostly speed builds with little spoken evaluation; latest video on 24 November 2026."
+rank_reason_fr = "Environ 2090000 abonnés et environ 5200 vidéos, publiées tous les jours, mais surtout des constructions accélérées avec peu d'évaluation parlée ; dernière vidéo le 24 novembre 2026."
+covers = ["official"]
+languages = ["de", "en"]
+countries = ["AT"]
+summary_en = "Speed builds and builds without commentary of almost every new and older set, aimed at adult fans (stated); recognised as a LEGO Fan Creator since May 2022 (stated)."
+summary_fr = "Constructions accélérées et sans commentaire de presque tous les sets récents et anciens, destinées aux fans adultes (indiqué) ; reconnu comme LEGO Fan Creator depuis mai 2022 (indiqué)."
+strengths_en = ["Uploads every day: latest on 24 November 2026", "About 5200 videos"]
+strengths_fr = ["Vidéos tous les jours : dernière le 24 novembre 2026", "Environ 5200 vidéos"]
+weaknesses_en = ["Little spoken evaluation: mostly speed builds", "Affiliate links marked with an asterisk (stated)"]
+weaknesses_fr = ["Peu d'évaluation orale : surtout des constructions accélérées", "Liens d'affiliation marqués d'un astérisque (indiqué)"]
+status = "active"
+last_activity = "2026-11-24"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 2090000, unit = "subscribers", approx = "about"}, {n = 5200, unit = "videos", approx = "about"}]
+funding = ["affiliation"]
+youtube_channel_id = "UCuk26DMu7ewAkC-ntx7esiA"
+
+[[resource.sources]]
+url = "https://www.youtube.com/@AustrianBrickFan"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCuk26DMu7ewAkC-ntx7esiA"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "promobricks-youtube"
+name = "Promobricks (YouTube)"
+url = "https://www.youtube.com/@promobricks"
+group = "official-lego-reviews"
+rank = {de = 3}
+rank_reason_en = "About 25600 subscribers and 752 videos with event reports, but irregular uploads, the latest on 15 October 2026."
+rank_reason_fr = "Environ 25600 abonnés et 752 vidéos avec des comptes rendus d'événements, mais des publications irrégulières, la dernière le 15 octobre 2026."
+covers = ["official", "news"]
+languages = ["de"]
+countries = ["DE"]
+summary_en = "Videos of a news blog run by fans: news, leaks and reports from fan events such as Bricking Bavaria."
+summary_fr = "Vidéos d'un blog d'actualités tenu par des fans : actualités, fuites et reportages sur des événements de fans comme Bricking Bavaria."
+strengths_en = ["Event reports with custom builds shown by their builders"]
+strengths_fr = ["Reportages d'événements avec des créations montrées par leurs auteurs"]
+weaknesses_en = ["Irregular uploads: the latest on 15 October 2026, the one before on 10 November 2025", "Affiliate links to Amazon and the LEGO Shop (stated)"]
+weaknesses_fr = ["Vidéos irrégulières : la dernière le 15 octobre 2026, la précédente le 10 novembre 2025", "Liens d'affiliation vers Amazon et le LEGO Shop (indiqué)"]
+status = "active"
+last_activity = "2026-10-15"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 25600, unit = "subscribers", approx = "about"}, {n = 752, unit = "videos"}]
+funding = ["affiliation"]
+youtube_channel_id = "UCxr0YK07HfpGSW5_BLCPOsg"
+
+[[resource.sources]]
+url = "https://www.youtube.com/@promobricks"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCxr0YK07HfpGSW5_BLCPOsg"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "zusammengebaut-youtube"
+name = "Zusammengebaut (YouTube)"
+url = "https://www.youtube.com/channel/UCQ6ONDG_QiSfQsdb0hwscGg"
+group = "news"
+rank = {intl = 2, en = 2, de = 1}
+rank_reason_en = "About 114000 subscribers and about 3000 videos, daily in November 2026, with interviews and exhibition reports in German and English; latest video on 24 November 2026."
+rank_reason_fr = "Environ 114000 abonnés et environ 3000 vidéos, quotidiennes en novembre 2026, avec des interviews et des reportages d'exposition en allemand et en anglais ; dernière vidéo le 24 novembre 2026."
+covers = ["news", "custom-builds"]
+languages = ["de", "en"]
+countries = ["DE"]
+summary_en = "Interviews and exhibition reports in German and English, with daily videos from the Zusammengebaut LEGO exhibition in Fritzlar."
+summary_fr = "Interviews et reportages d'exposition en allemand et en anglais, avec des vidéos quotidiennes de l'exposition LEGO Zusammengebaut à Fritzlar."
+strengths_en = ["Uploads every day in November 2026: latest on 24 November 2026", "Legal notice of the publishing company in the channel description"]
+strengths_fr = ["Vidéos tous les jours en novembre 2026 : dernière le 24 novembre 2026", "Mentions légales de la société éditrice dans la description de la chaîne"]
+weaknesses_en = ["Funding not stated on the channel"]
+weaknesses_fr = ["Financement non indiqué sur la chaîne"]
+status = "active"
+last_activity = "2026-11-24"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 114000, unit = "subscribers", approx = "about"}, {n = 3000, unit = "videos", approx = "about"}]
+funding = ["unknown"]
+youtube_channel_id = "UCQ6ONDG_QiSfQsdb0hwscGg"
+
+[[resource.sources]]
+url = "https://www.youtube.com/channel/UCQ6ONDG_QiSfQsdb0hwscGg"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCQ6ONDG_QiSfQsdb0hwscGg"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "il-mastro-costruttore-youtube"
+name = "Il Mastro Costruttore (YouTube)"
+url = "https://www.youtube.com/@IlMastroCostruttore"
+group = "official-lego-reviews"
+rank = {it = 1}
+rank_reason_en = "About 40600 subscribers and 405 videos, all in Italian; latest video on 22 November 2026."
+rank_reason_fr = "Environ 40600 abonnés et 405 vidéos, toutes en italien ; dernière vidéo le 22 novembre 2026."
+covers = ["official", "news"]
+languages = ["it"]
+countries = ["IT"]
+summary_en = "Videos on LEGO Ideas approvals, Insiders weekends and exhibition visits, beside news and set reviews, all in Italian."
+summary_fr = "Vidéos en italien sur les approbations LEGO Ideas, les week-ends Insiders et des visites d'expositions, à côté d'actualités et de présentations de sets."
+strengths_en = ["Latest video on 22 November 2026", "405 videos"]
+strengths_fr = ["Dernière vidéo le 22 novembre 2026", "405 vidéos"]
+weaknesses_en = ["Several recent uploads are shorts", "Funding not stated on the channel"]
+weaknesses_fr = ["Plusieurs vidéos récentes sont des formats courts", "Financement non indiqué sur la chaîne"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 40600, unit = "subscribers", approx = "about"}, {n = 405, unit = "videos"}]
+funding = ["unknown"]
+youtube_channel_id = "UCX_GTkl0YlRsVSC7GPhXWSA"
+
+[[resource.sources]]
+url = "https://www.youtube.com/@IlMastroCostruttore"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCX_GTkl0YlRsVSC7GPhXWSA"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "2ppl"
+name = "2 Pazzi per i LEGO (2PPL)"
+url = "https://www.youtube.com/channel/UC6WEV6_jaNLwV8umKim_xOQ"
+group = "news"
+rank = {intl = 4, it = 1}
+rank_reason_en = "About 10800 subscribers and about 1100 videos, with numbered live shows; latest video on 24 November 2026."
+rank_reason_fr = "Environ 10800 abonnés et environ 1100 vidéos, avec des émissions en direct numérotées ; dernière vidéo le 24 novembre 2026."
+covers = ["news", "official"]
+languages = ["it"]
+countries = ["IT"]
+summary_en = "Two adult fans with numbered live shows (LEGO LIVE) and videos on news, rumours, tutorials, LEGO Ideas and the history of the brand."
+summary_fr = "Deux fans adultes avec des émissions en direct numérotées (LEGO LIVE) et des vidéos sur l'actualité, les rumeurs, les tutoriels, LEGO Ideas et l'histoire de la marque."
+strengths_en = ["Latest video on 24 November 2026", "About 1100 videos"]
+strengths_fr = ["Dernière vidéo le 24 novembre 2026", "Environ 1100 vidéos"]
+weaknesses_en = ["Discount-code collaborations with a shop (stated)"]
+weaknesses_fr = ["Collaborations avec un code de réduction chez une boutique (indiqué)"]
+status = "active"
+last_activity = "2026-11-24"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 10800, unit = "subscribers", approx = "about"}, {n = 1100, unit = "videos", approx = "about"}]
+funding = ["sponsorship"]
+youtube_channel_id = "UC6WEV6_jaNLwV8umKim_xOQ"
+
+[[resource.sources]]
+url = "https://www.youtube.com/channel/UC6WEV6_jaNLwV8umKim_xOQ"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC6WEV6_jaNLwV8umKim_xOQ"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "alego73"
+name = "ALEGO73"
+url = "https://www.youtube.com/@ALEGO73"
+group = "building-and-custom"
+rank = {it = 1}
+rank_reason_en = "About 21500 subscribers and 660 videos on original models, 12-volt trains and vintage sets; latest video on 22 November 2026."
+rank_reason_fr = "Environ 21500 abonnés et 660 vidéos sur des modèles originaux, des trains 12 volts et des sets anciens ; dernière vidéo le 22 novembre 2026."
+covers = ["custom-builds", "official"]
+languages = ["it"]
+countries = ["IT"]
+summary_en = "Original models, 12-volt trains and vintage sets, with technical analysis of the building system and of how to design models."
+summary_fr = "Modèles originaux, trains 12 volts et sets anciens, avec une analyse technique du système de construction et de la conception de modèles."
+strengths_en = ["660 videos", "Latest video on 22 November 2026"]
+strengths_fr = ["660 vidéos", "Dernière vidéo le 22 novembre 2026"]
+weaknesses_en = ["Amazon affiliate links and discount-code collaborations (stated)"]
+weaknesses_fr = ["Liens d'affiliation Amazon et collaborations avec codes de réduction (indiqué)"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 21500, unit = "subscribers", approx = "about"}, {n = 660, unit = "videos"}]
+funding = ["affiliation", "sponsorship"]
+youtube_channel_id = "UCgQEtuWyIMe-3c-3ngVskoQ"
+
+[[resource.sources]]
+url = "https://www.youtube.com/@ALEGO73"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCgQEtuWyIMe-3c-3ngVskoQ"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "juanjo-bricks"
+name = "Juanjo Bricks"
+url = "https://www.youtube.com/@Juanjobricks"
+group = "official-lego-reviews"
+rank = {es = 1}
+rank_reason_en = "About 163000 subscribers and about 1000 videos, uploads every day, with decoration content mixed in; latest video on 25 November 2026."
+rank_reason_fr = "Environ 163000 abonnés et environ 1000 vidéos, publiées tous les jours, avec du contenu de décoration mêlé ; dernière vidéo le 25 novembre 2026."
+covers = ["official", "news"]
+languages = ["es"]
+countries = ["ES"]
+summary_en = "Daily videos mixing set reviews, news, live builds and decoration or do-it-yourself ideas, with a Discord community of several hundred adult fans (stated)."
+summary_fr = "Vidéos quotidiennes mêlant sets présentés, actualités, constructions en direct et idées de décoration ou de bricolage, avec une communauté Discord de plusieurs centaines de fans adultes (indiqué)."
+strengths_en = ["Uploads every day: latest on 25 November 2026", "Site with reviews by theme and a community page"]
+strengths_fr = ["Vidéos tous les jours : dernière le 25 novembre 2026", "Site avec tests par thème et page de communauté"]
+weaknesses_en = ["Decoration and do-it-yourself content mixed with reviews", "Gifted products declared in some videos"]
+weaknesses_fr = ["Contenu de décoration et de bricolage mêlé aux tests", "Produits offerts déclarés dans certaines vidéos"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 163000, unit = "subscribers", approx = "about"}, {n = 1000, unit = "videos", approx = "about"}]
+funding = ["sponsorship"]
+youtube_channel_id = "UCHzmAVaBC9ORwY7i91k5l1Q"
+
+[[resource.sources]]
+url = "https://www.youtube.com/@Juanjobricks"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCHzmAVaBC9ORwY7i91k5l1Q"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://juanjobricks.com/sobre-mi"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "todobrick-youtube"
+name = "TodoBrick (YouTube)"
+url = "https://www.youtube.com/@TodoBrick"
+group = "official-lego-reviews"
+rank = {es = 2}
+rank_reason_en = "About 131000 subscribers and about 1200 videos on news and previews of the next ranges; latest video on 24 November 2026."
+rank_reason_fr = "Environ 131000 abonnés et environ 1200 vidéos sur l'actualité et les aperçus des prochaines gammes ; dernière vidéo le 24 novembre 2026."
+covers = ["official", "news"]
+languages = ["es"]
+countries = ["ES"]
+summary_en = "News and previews of the next ranges (Star Wars, Harry Potter, Technic, Icons), live shows and a Spanish-language community on Telegram."
+summary_fr = "Actualités et aperçus des prochaines gammes (Star Wars, Harry Potter, Technic, Icons), émissions en direct et communauté hispanophone sur Telegram."
+strengths_en = ["Latest video on 24 November 2026", "Three years of the Telegram community celebrated on 16 November 2026"]
+strengths_fr = ["Dernière vidéo le 24 novembre 2026", "Trois ans de la communauté Telegram fêtés le 16 novembre 2026"]
+weaknesses_en = ["Commission links to shops in descriptions (stated)"]
+weaknesses_fr = ["Liens à commission vers des boutiques dans les descriptions (indiqué)"]
+status = "active"
+last_activity = "2026-11-24"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 131000, unit = "subscribers", approx = "about"}, {n = 1200, unit = "videos", approx = "about"}]
+funding = ["affiliation"]
+youtube_channel_id = "UClapRt6gOp0bJH_XOZEiwsw"
+
+[[resource.sources]]
+url = "https://www.youtube.com/@TodoBrick"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UClapRt6gOp0bJH_XOZEiwsw"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "promoklocki-youtube"
+name = "Promoklocki (YouTube)"
+url = "https://www.youtube.com/channel/UC6ZhUr9Et5xw4eEC1ZMyFqQ"
+group = "news"
+rank = {intl = 5, pl = 1}
+rank_reason_en = "About 6730 subscribers and 889 videos, short daily formats from the team of a Polish price comparator; latest video on 24 November 2026."
+rank_reason_fr = "Environ 6730 abonnés et 889 vidéos, des formats courts quotidiens de l'équipe d'un comparateur de prix polonais ; dernière vidéo le 24 novembre 2026."
+covers = ["news"]
+languages = ["pl"]
+countries = ["PL"]
+summary_en = "Short daily videos on promotions, gifts with purchase and new sets, from the team of a Polish price comparator."
+summary_fr = "Courtes vidéos quotidiennes sur les promotions, les cadeaux à l'achat et les nouveautés, par l'équipe d'un comparateur de prix polonais."
+strengths_en = ["Uploads every day: latest on 24 November 2026", "889 videos"]
+strengths_fr = ["Vidéos tous les jours : dernière le 24 novembre 2026", "889 vidéos"]
+weaknesses_en = ["Mostly short formats with a small audience", "Promotional content of the comparator"]
+weaknesses_fr = ["Surtout des formats courts, avec une petite audience", "Contenu promotionnel du comparateur"]
+status = "active"
+last_activity = "2026-11-24"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 6730, unit = "subscribers", approx = "about"}, {n = 889, unit = "videos"}]
+funding = ["unknown"]
+youtube_channel_id = "UC6ZhUr9Et5xw4eEC1ZMyFqQ"
+
+[[resource.sources]]
+url = "https://www.youtube.com/channel/UC6ZhUr9Et5xw4eEC1ZMyFqQ"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC6ZhUr9Et5xw4eEC1ZMyFqQ"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "quatschen-und-bauen"
+name = "Quatschen & Bauen"
+url = "https://quatschenundbauen.podigee.io/"
+group = "podcasts"
+rank = {intl = 3, de = 2}
+rank_reason_en = "194 weekly episodes of about two hours on the week's news, set discussions and custom builds; episode 194 on 23 November 2026."
+rank_reason_fr = "194 épisodes hebdomadaires d'environ deux heures sur l'actualité de la semaine, les discussions de sets et les créations originales ; épisode 194 le 23 novembre 2026."
+covers = ["news", "official", "custom-builds"]
+languages = ["de"]
+countries = ["DE"]
+summary_en = "Audio version of the weekly Tuesday-evening livestream of a news blog: the week's news, set discussions and custom builds, each episode about two hours."
+summary_fr = "Version audio de l'émission en direct hebdomadaire du mardi soir d'un blog d'actualités : nouvelles de la semaine, discussions de sets et créations originales, chaque épisode durant environ deux heures."
+strengths_en = ["Weekly: episode 194 on 23 November 2026", "Timecodes and links in the show notes"]
+strengths_fr = ["Hebdomadaire : épisode 194 le 23 novembre 2026", "Repères horaires et liens dans les notes d'émission"]
+weaknesses_en = ["Long episodes of two hours or more", "Funding not stated on the podcast page"]
+weaknesses_fr = ["Épisodes longs, de deux heures ou plus", "Financement non indiqué sur la page du podcast"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 194, unit = "episodes"}]
+funding = ["unknown"]
+feed = "https://quatschenundbauen.podigee.io/feed/mp3"
+
+[[resource.sources]]
+url = "https://quatschenundbauen.podigee.io/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://quatschenundbauen.podigee.io/feed/mp3"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "cantina-klatsch"
+name = "Cantina Klatsch"
+url = "https://cantinaklatsch.podigee.io/"
+group = "podcasts"
+rank = {de = 4}
+rank_reason_en = "66 episodes on LEGO Star Wars news and rumours, with episodes presented by an official partner shop (stated); episode 66 on 20 November 2026."
+rank_reason_fr = "66 épisodes sur l'actualité et les rumeurs LEGO Star Wars, avec des épisodes présentés par une boutique partenaire officielle (déclaré) ; épisode 66 le 20 novembre 2026."
+covers = ["news", "official"]
+languages = ["de"]
+countries = ["DE"]
+summary_en = "Two hosts on LEGO Star Wars news and rumours, with investment tips; episodes presented by an official partner shop (stated)."
+summary_fr = "Deux animateurs sur l'actualité et les rumeurs de LEGO Star Wars, avec des conseils d'investissement ; épisodes présentés par une boutique partenaire officielle (indiqué)."
+strengths_en = ["Episode 66 on 20 November 2026", "Links to the sets discussed in the show notes"]
+strengths_fr = ["Épisode 66 le 20 novembre 2026", "Liens vers les sets discutés dans les notes d'émission"]
+weaknesses_en = ["Star Wars focus", "Official partner sponsors episodes (stated)", "Irregular rhythm"]
+weaknesses_fr = ["Centré sur Star Wars", "Partenaire officiel qui parraine des épisodes (indiqué)", "Rythme irrégulier"]
+status = "active"
+last_activity = "2026-11-20"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 66, unit = "episodes"}]
+funding = ["sponsorship"]
+feed = "https://cantinaklatsch.podigee.io/feed/mp3"
+
+[[resource.sources]]
+url = "https://cantinaklatsch.podigee.io/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://cantinaklatsch.podigee.io/feed/mp3"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "brickpod"
+name = "BrickPod.de"
+url = "https://brickpod.de/"
+group = "podcasts"
+rank = {de = 3}
+rank_reason_en = "81 episodes on brick brands other than LEGO, with a public RSS feed; episode 81 on 23 November 2026."
+rank_reason_fr = "81 épisodes sur les marques de briques autres que LEGO, avec un flux RSS public ; épisode 81 le 23 novembre 2026."
+covers = ["alternative", "news"]
+languages = ["de"]
+countries = ["DE"]
+summary_en = "Covers brick brands other than LEGO, with a news section, deals, a forum and fan products on the same site."
+summary_fr = "Traite des marques de briques autres que LEGO, avec sur le même site une rubrique d'actualités, des offres, un forum et des produits pour fans."
+strengths_en = ["Episode 81 on 23 November 2026", "Alternative brands discussed include BlueBrixx, Lumibricks and Pantasy", "Public RSS feed"]
+strengths_fr = ["Épisode 81 le 23 novembre 2026", "Parmi les marques alternatives abordées : BlueBrixx, Lumibricks et Pantasy", "Flux RSS public"]
+weaknesses_en = ["Fan products sold on the site", "One host runs a toy shop (stated)"]
+weaknesses_fr = ["Produits pour fans vendus sur le site", "Un des animateurs tient une boutique de jouets (indiqué)"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 81, unit = "episodes"}]
+funding = ["shop"]
+feed = "https://brickpod.de/feed/"
+brands = ["bluebrixx", "lumibricks", "pantasy"]
+
+[[resource.sources]]
+url = "https://brickpod.de/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickpod.de/wir-ueber-uns/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brickpod.de/feed/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "aobricks"
+name = "AOBricks"
+url = "https://aobricks.podigee.io/"
+group = "podcasts"
+rank = {intl = 2, de = 1}
+rank_reason_en = "266 weekly episodes of about thirty minutes on brick brands, running since 15 September 2021; episode 266 on 20 November 2026."
+rank_reason_fr = "266 épisodes hebdomadaires d'environ trente minutes sur les marques de briques, depuis le 15 septembre 2021 ; épisode 266 le 20 novembre 2026."
+covers = ["alternative", "news"]
+languages = ["de"]
+countries = ["DE"]
+summary_en = "Weekly short episodes of about thirty minutes on brick brands, with most episodes naming BlueBrixx, Lumibricks, Mould King or Pantasy."
+summary_fr = "Épisodes hebdomadaires courts d'environ trente minutes sur les marques de briques, la plupart citant BlueBrixx, Lumibricks, Mould King ou Pantasy."
+strengths_en = ["Episode 266 on 20 November 2026", "Running since 15 September 2021"]
+strengths_fr = ["Épisode 266 le 20 novembre 2026", "En ligne depuis le 15 septembre 2021"]
+weaknesses_en = ["Funding not stated on the podcast page"]
+weaknesses_fr = ["Financement non indiqué sur la page du podcast"]
+status = "active"
+last_activity = "2026-11-20"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 266, unit = "episodes"}]
+funding = ["unknown"]
+feed = "https://aobricks.podigee.io/feed/mp3"
+brands = ["bluebrixx", "lumibricks", "mould-king", "pantasy", "cada", "cobi", "reobrix", "jiestar", "mattel-brick-shop", "xingbao", "wange"]
+
+[[resource.sources]]
+url = "https://aobricks.podigee.io/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://aobricks.podigee.io/feed/mp3"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "steengoed"
+name = "Steengoed"
+url = "https://steengoed.show/"
+group = "podcasts"
+rank = {nl = 1}
+rank_reason_en = "127 episodes alternating news and detailed reviews of one set built by all three hosts; episode 127 on 24 November 2026."
+rank_reason_fr = "127 épisodes alternant actualité et tests détaillés d'un set construit par les trois animateurs ; épisode 127 le 24 novembre 2026."
+covers = ["news", "official"]
+languages = ["nl"]
+countries = ["NL", "BE"]
+summary_en = "Three hosts alternate news episodes and detailed reviews of one set built by all of them, such as Main Street, U.S.A."
+summary_fr = "Trois animateurs alternent épisodes d'actualités et tests détaillés d'un même set construit par tous, comme Main Street, U.S.A."
+strengths_en = ["Episode 127 on 24 November 2026", "Show notes with the sets named in each episode", "Public podcast feed"]
+strengths_fr = ["Épisode 127 le 24 novembre 2026", "Notes d'émission avec les sets cités dans chaque épisode", "Flux de podcast public"]
+weaknesses_en = ["A purchase menu opens a tracked link to the LEGO shop"]
+weaknesses_fr = ["Un menu d'achat ouvre un lien suivi vers la boutique du groupe LEGO"]
+status = "active"
+last_activity = "2026-11-24"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 127, unit = "episodes"}]
+funding = ["affiliation"]
+feed = "https://feeds.acast.com/public/shows/6504ab71fbef8800113b914b"
+
+[[resource.sources]]
+url = "https://steengoed.show/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://feeds.acast.com/public/shows/6504ab71fbef8800113b914b"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "bloque-a-bloque"
+name = "Bloque a Bloque LEGO Podcast"
+url = "https://www.youtube.com/channel/UC5_1pjeTg2wwFFqqksRaLNQ"
+group = "podcasts"
+rank = {es = 1}
+rank_reason_en = "43 episodes of four to ten hours with news, interviews and a history section; episode 43 on 20 November 2026."
+rank_reason_fr = "43 épisodes de quatre à dix heures avec actualité, interviews et rubrique d'histoire ; épisode 43 le 20 novembre 2026."
+covers = ["news", "official"]
+languages = ["es"]
+countries = ["ES"]
+summary_en = "Very long episodes of four to ten hours with news, interviews, guests and a history section, published on YouTube and audio platforms for adult fans (stated)."
+summary_fr = "Épisodes très longs, de quatre à dix heures, avec actualités, interviews, invités et une rubrique d'histoire, publiés sur YouTube et les plateformes audio pour les fans adultes (indiqué)."
+strengths_en = ["Episode 43 on 20 November 2026", "Seasons announced, the third started on 13 October 2026"]
+strengths_fr = ["Épisode 43 le 20 novembre 2026", "Saisons annoncées, la troisième a commencé le 13 octobre 2026"]
+weaknesses_en = ["Small YouTube audience", "Episodes up to ten hours", "Affiliate links and channel membership fund the show (stated)"]
+weaknesses_fr = ["Petite audience sur YouTube", "Épisodes allant jusqu'à dix heures", "Liens d'affiliation et abonnement à la chaîne financent l'émission (indiqué)"]
+status = "active"
+last_activity = "2026-11-20"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 43, unit = "episodes"}]
+funding = ["affiliation", "subscription"]
+youtube_channel_id = "UC5_1pjeTg2wwFFqqksRaLNQ"
+
+[[resource.sources]]
+url = "https://www.youtube.com/channel/UC5_1pjeTg2wwFFqqksRaLNQ"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC5_1pjeTg2wwFFqqksRaLNQ"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://linktr.ee/legopodcast"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "brickeando"
+name = "Brickeando LEGO Podcast"
+url = "https://www.youtube.com/@BrickeandoPodcast"
+group = "podcasts"
+rank = {es = 2}
+rank_reason_en = "Episode 46 on 1 November 2026, published on the first of each month since January 2026 at least."
+rank_reason_fr = "Épisode 46 le 1er novembre 2026, publication le 1er de chaque mois depuis janvier 2026 au moins."
+covers = ["news", "official"]
+languages = ["es"]
+countries = ["ES"]
+summary_en = "Humorous tone: news, games at the end of episodes and live specials by three hosts, with an episode on the first of each month."
+summary_fr = "Ton humoristique : actualités, jeux en fin d'épisode et émissions spéciales en direct par trois animateurs, avec un épisode le premier de chaque mois."
+strengths_en = ["Episode 46 on 1 November 2026", "Episodes on the first of each month from January to November 2026"]
+strengths_fr = ["Épisode 46 le 1er novembre 2026", "Épisodes le premier de chaque mois de janvier à novembre 2026"]
+weaknesses_en = ["Small YouTube audience"]
+weaknesses_fr = ["Petite audience sur YouTube"]
+status = "active"
+last_activity = "2026-11-01"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 46, unit = "episodes"}]
+funding = ["unknown"]
+youtube_channel_id = "UCBvAJ9Q2cRVEfj9G5YX65tw"
+
+[[resource.sources]]
+url = "https://www.youtube.com/@BrickeandoPodcast"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCBvAJ9Q2cRVEfj9G5YX65tw"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "conversas-em-construcao"
+name = "Conversas em Construção"
+url = "https://creators.spotify.com/pod/profile/conversasemconstrucao/"
+group = "podcasts"
+rank = {pt = 1}
+rank_reason_en = "92 episodes since April 2020, round-table conversations of Portuguese bloggers, YouTubers and a former LEGO designer (stated); latest episode on 23 November 2026."
+rank_reason_fr = "92 épisodes depuis avril 2020, des conversations de table ronde de blogueurs et YouTubeurs portugais et d'un ancien concepteur LEGO (déclaré) ; dernier épisode le 23 novembre 2026."
+covers = ["news", "official"]
+languages = ["pt"]
+countries = ["PT"]
+summary_en = "Round-table conversations of Portuguese bloggers, YouTubers and a former LEGO designer (stated), each episode on one theme such as gift ideas or building contests."
+summary_fr = "Conversations de bloggeurs et de youtubeurs portugais et d'un ancien designer LEGO (indiqué), chaque épisode portant sur un thème comme les idées de cadeaux ou les concours de construction."
+strengths_en = ["Episode 44 of season 2 on 23 November 2026", "92 episodes since April 2020"]
+strengths_fr = ["Épisode 44 de la saison 2 le 23 novembre 2026", "92 épisodes depuis avril 2020"]
+weaknesses_en = ["Hosting page only: episodes announced on a partner site", "Funding not stated"]
+weaknesses_fr = ["Page d'hébergement seulement : épisodes annoncés sur le site d'un partenaire", "Financement non indiqué"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 92, unit = "episodes"}]
+funding = ["unknown"]
+feed = "https://anchor.fm/s/1d31b4c0/podcast/rss"
+
+[[resource.sources]]
+url = "https://creators.spotify.com/pod/profile/conversasemconstrucao/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://anchor.fm/s/1d31b4c0/podcast/rss"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "brickmic"
+name = "BrickMic"
+url = "https://brickmic.com/"
+group = "podcasts"
+rank = {sk = 1}
+rank_reason_en = "138 weekly episodes of news, reviews and gossip with a public RSS feed; episode 138 on 22 November 2026."
+rank_reason_fr = "138 épisodes hebdomadaires d'actualité, de tests et de potins avec un flux RSS public ; épisode 138 le 22 novembre 2026."
+covers = ["news", "official"]
+languages = ["sk"]
+countries = ["SK"]
+summary_en = "Two hosts, one of whom organises exhibitions under the AFOL Slovensko name; weekly news, reviews and gossip, with contests."
+summary_fr = "Deux animateurs, dont l'un organise des expositions sous le nom AFOL Slovensko ; actualités, tests et potins chaque semaine, avec des concours."
+strengths_en = ["Episode 138 on 22 November 2026", "Public RSS feed"]
+strengths_fr = ["Épisode 138 le 22 novembre 2026", "Flux RSS public"]
+weaknesses_en = ["Funding not stated on the site"]
+weaknesses_fr = ["Financement non indiqué sur le site"]
+status = "active"
+last_activity = "2026-11-22"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+size = [{n = 138, unit = "episodes"}]
+funding = ["unknown"]
+feed = "https://brickmic.com/feed/"
+
+[[resource.sources]]
+url = "https://brickmic.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickmic.com/o-nas/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brickmic.com/feed/"
+date = "2026-11-25"
 kind = "read"

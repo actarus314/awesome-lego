@@ -33,7 +33,7 @@ body:
     id: why
     attributes:
       label: What it is and why it belongs here
-      description: Facts, with a link that supports them
+      description: In English. Facts, with a link that supports them
     validations:
       required: true
   - type: checkboxes

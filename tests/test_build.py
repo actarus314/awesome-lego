@@ -144,6 +144,17 @@ def entry_of(text, rid):
     return i, (j if j > 0 else len(text))
 
 
+def set_field(rid, key, value):
+    """An edit that sets `key = value` (TOML) in the entry `rid`, replacing its current line or adding one after its id."""
+    def edit(t):
+        m = re.search(rf'(?ms)^id = "{re.escape(rid)}"\n.*?(?=^\[\[resource\]\]|\Z)', t)
+        block = m.group(0)
+        line = f"{key} = {value}\n"
+        new = re.sub(rf"(?m)^{re.escape(key)} = .*\n", lambda _: line, block, count=1) if re.search(rf"(?m)^{re.escape(key)} = ", block) else block.replace(f'id = "{rid}"\n', f'id = "{rid}"\n{line}', 1)
+        return t[:m.start()] + new + t[m.end():]
+    return edit
+
+
 def add_field(rid, line):
     """An edit that adds `line` to the entry `rid`, right after its id."""
     return lambda t: t.replace(f'id = "{rid}"\n', f'id = "{rid}"\n{line}\n', 1)
@@ -178,12 +189,13 @@ class Lot3Model(unittest.TestCase):
 
     def test_rank_form(self):
         for bad in ('rank = {intl = 6}', 'rank = {fr = 1}', 'rank = {intl = true}', 'rank = 1'):
-            errs = load_with("comparators.toml", add_field("brick-broker", bad))  # price comparators: ranked per country
+            k, v = bad.split(" = ", 1)
+            errs = load_with("comparators.toml", set_field("brick-broker", k, v))  # price comparators: ranked per country
             self.assertTrue(any("rank is a table" in e for e in errs), (bad, errs))
-        self.assertEqual(load_with("comparators.toml", add_field("brick-broker", 'rank = {intl = 2, FR = 1}\nrank_reason_en = "x"\nrank_reason_fr = "x"')), [])
+        self.assertEqual(load_with("comparators.toml", set_field("brick-broker", "rank", "{intl = 2, FR = 1}")), [])
 
     def test_one_entry_per_rank(self):
-        two = lambda t: add_field("brickmitri", 'rank = {FR = 1}')(add_field("brick-broker", 'rank = {FR = 1}')(t))
+        two = lambda t: set_field("brickmitri", "rank", "{FR = 1}")(set_field("brick-broker", "rank", "{FR = 1}")(t))
         load_with("comparators.toml", two)
         cats, _ = load_quiet(two)
         build.rank_check(cats)
@@ -202,21 +214,27 @@ class Lot3Model(unittest.TestCase):
         self.assertTrue(any("access 'freemium' says nothing for entry" in n for n in ns), ns)
 
     def test_size_form(self):
-        errs = load_with("places.toml", add_field("lego-house", 'size = [{n = 12000, unit = "acres"}]'))
+        errs = load_with("places.toml", set_field("lego-house", "size", '[{n = 12000, unit = "acres"}]'))
         self.assertTrue(any("size is a list" in e for e in errs), errs)
-        self.assertEqual(load_with("places.toml", add_field("lego-house", 'size = [{n = 12000, unit = "square-metres"}, {n = 25000000, unit = "bricks", approx = "about"}]')), [])
+        self.assertEqual(load_with("places.toml", set_field("lego-house", "size", '[{n = 12000, unit = "square-metres"}, {n = 25000000, unit = "bricks", approx = "about"}]')), [])
 
     def test_operator(self):
-        self.assertTrue(any("operator" in e for e in load_with("places.toml", add_field("lego-house", 'operator = "merlin"'))))
+        self.assertTrue(any("operator" in e for e in load_with("places.toml", lambda t: t.replace('operator = "lego-group"', 'operator = "merlin"', 1))))
+
+    def test_no_rank_on_a_dead_entry(self):
+        def edit(t):
+            t = set_field("lego-house", "status", '"dead"')(t)
+            return set_field("lego-house", "rank", "{intl = 1}")(t)
+        self.assertTrue(any("rank on an entry whose status is dead" in n for n in notes_with("places.toml", edit)))
 
 
 class Lot3Texts(unittest.TestCase):
     def test_brand_in_french_sentences(self):
-        ns = notes_with("places.toml", lambda t: t.replace('summary_fr = "Centre', 'summary_fr = "Des sets LEGO officiels. Centre', 1))
+        ns = notes_with("places.toml", set_field("lego-house", "summary_fr", '"Des sets LEGO officiels."'))
         self.assertTrue(any("lego-house: summary_fr" in n and "LEGO officiels" in n for n in ns), [n for n in ns if "lego-house" in n])
 
     def test_numeric_dates(self):
-        ns = notes_with("places.toml", lambda t: t.replace('summary_en = "Official LEGO experience', 'summary_en = "Opened 2026-07-01. Official LEGO experience', 1))
+        ns = notes_with("places.toml", set_field("lego-house", "summary_en", '"Opened 2026-07-01."'))
         self.assertTrue(any("lego-house" in n and "2026-07-01" in n for n in ns), [n for n in ns if "lego-house" in n])
 
     def test_site_phrases_follow_the_brand_rule(self):
@@ -301,39 +319,39 @@ class Dates(unittest.TestCase):
             titles = re.findall(r"<title>(.*?)</title>", build.content_feed(cats, lang))
             self.assertFalse([x for x in titles if build.NUMERIC_DATE.search(x)])
 
+    def test_feed_batches_a_day_of_many_additions(self):
+        """More than FEED_BATCH entries added on one day make one announcement; fewer stay one item each."""
+        with contextlib.redirect_stdout(io.StringIO()):
+            cats, _ = build.load()
+        rs = [r for c in cats for r in c["resources"]]
+        for r in rs:
+            r["added"] = build.BASELINE
+        for r in rs[:build.FEED_BATCH + 1]:
+            r["added"] = "2030-01-02"
+        for r in rs[build.FEED_BATCH + 1:build.FEED_BATCH + 3]:
+            r["added"] = "2030-01-03"
+        for lang, word in (("en", "resources added"), ("fr", "ressources ajoutées")):
+            titles = re.findall(r"<title>(.*?)</title>", build.content_feed(cats, lang))
+            self.assertEqual(sum(1 for x in titles if word in x), 1)
+            self.assertIn(f"{build.FEED_BATCH + 1} {word}", " ".join(titles))
+            self.assertEqual(sum(1 for x in titles if x.startswith(build.FEED_T["new"][lang] + " ·")), 2)
+
 
 class Selection(unittest.TestCase):
-    def test_ranks_switch_the_selection_group_by_group(self):
-        """A rank in one group changes the selection of that group only: the other groups keep `featured`."""
-        def readme_with(edit):
-            d = Path(tempfile.mkdtemp())
-            try:
-                shutil.copytree(ROOT / "data", d / "data")
-                p = d / "data" / "comparators.toml"
-                p.write_text(edit(p.read_text(encoding="utf-8")), encoding="utf-8")
-                old = build.DATA
-                build.DATA = d / "data"
-                try:
-                    with contextlib.redirect_stdout(io.StringIO()):
-                        cats, _ = build.load()
-                    return build.readme(cats, {}, "en")
-                finally:
-                    build.DATA = old
-            finally:
-                shutil.rmtree(d)
-        before = readme_with(lambda t: t)
-        after = readme_with(add_field("brick-broker", 'rank = {intl = 1, FR = 1}\nrank_reason_en = "x"\nrank_reason_fr = "x"'))
-        lines = lambda x: {l for l in x.splitlines() if l.startswith("- [")}
-        changed = lines(before) ^ lines(after)
-        self.assertTrue(changed, "the ranked group changes")
-        self.assertGreater(len(lines(after)), len(lines(before)) - 15)  # only the price comparators move
+    def test_readme_lists_the_rank_one_of_each_group(self):
+        """The selection: the rank 1 worldwide of each group (lot 3b); `featured` is refused."""
+        with contextlib.redirect_stdout(io.StringIO()):
+            cats, _ = build.load()
+        text = build.readme(cats, {}, "en")
+        ones = [r for c in cats for r in c["resources"] if (r.get("rank") or {}).get("intl") == 1]
+        self.assertEqual(len([l for l in text.splitlines() if l.startswith("- [") and "](http" in l]), len({r["url"] for r in ones}))  # a brand and its shop share one line
+        self.assertEqual(len(ones), sum(len(c["category"]["groups"]) for c in cats))
+        self.assertTrue(any("featured is replaced by rank" in e for e in load_with("places.toml", set_field("lego-house", "featured", "true"))))
 
 
 class Lot3Checks(unittest.TestCase):
-    def test_lego_operator_by_address_until_3b(self):
-        for url, want in (("https://www.lego.com/fr-fr", "lego-group"), ("https://www.legodiscoverycentre.com/", "lego-group"),
-                          ("https://www.legoworld.nl/", "lego-group"), ("https://www.legoland.de/", "licensee"), ("https://brickset.com/", None)):
-            self.assertEqual(build.lego_operator({"url": url}), want, url)
+    def test_lego_operator_from_the_field(self):
+        self.assertEqual(build.lego_operator({"url": "https://www.lego.com/fr-fr"}), None)  # the address no longer says it (lot 3b)
         self.assertEqual(build.lego_operator({"url": "https://example.org/", "operator": "licensee"}), "licensee")
 
     def test_french_card_text(self):
@@ -349,6 +367,43 @@ class Lot3Checks(unittest.TestCase):
             return t[:i] + re.sub(r'summary_fr = "[^"]*"', 'summary_fr = "Chaîne en allemand sur les sets de marque LEGO."', t[i:j], count=1) + t[j:]
         ns = notes_with("video.toml", lang_only)
         self.assertFalse([n for n in ns if "jangbricks: summary_fr starts with a country" in n], "a language is not a country")
+
+class EnglishOnly(unittest.TestCase):
+    """Contributions in English only (decision of 24/11/2026, 13:47): no French text is refused, shown in English."""
+    @staticmethod
+    def drop_french(t):
+        m = re.search(r'(?ms)^id = "lego-house"\n.*?(?=^\[\[resource\]\]|\Z)', t)
+        block = re.sub(r"(?m)^(summary|strengths|weaknesses|recurrence)_fr = .*\n", "", m.group(0))
+        return t[:m.start()] + block + t[m.end():]
+
+    def test_entry_without_french_builds_and_shows_english(self):
+        self.assertEqual(load_with("places.toml", self.drop_french), [])
+        cats, _ = load_quiet(lambda t: t)
+        old = build.DATA
+        d = Path(tempfile.mkdtemp())
+        try:
+            shutil.copytree(ROOT / "data", d / "data")
+            p = d / "data" / "places.toml"
+            p.write_text(self.drop_french(p.read_text(encoding="utf-8")), encoding="utf-8")
+            build.DATA = d / "data"
+            with contextlib.redirect_stdout(io.StringIO()):
+                cats, errs = build.load()
+            self.assertEqual(errs, [])
+            self.assertTrue(any("lego-house" in w for w in build.untranslated))
+            row = next(r for r in build.site_data(cats, {})["resources"] if r["id"] == "lego-house")
+            self.assertEqual(row["fr"]["tl"], "en")
+            self.assertEqual(row["fr"]["summary"], row["en"]["summary"])
+            self.assertNotIn("tl", row["en"])
+        finally:
+            build.DATA = old
+            shutil.rmtree(d)
+
+    def test_french_texts_come_together(self):
+        def partial(t):
+            t = self.drop_french(t)
+            return set_field("lego-house", "strengths_fr", '["Un point"]')(t)
+        self.assertTrue(any("French texts come together" in e for e in load_with("places.toml", partial)))
+
 
 if __name__ == "__main__":
     unittest.main()
