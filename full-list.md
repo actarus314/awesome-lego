@@ -314,7 +314,7 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 - [Tori.fi](https://www.tori.fi/) - Filters for delivery option, condition and seller type, plus a saved-search alert; the search for lego listed more than 29000 ads on 25 Nov 2026, some of them unrelated.
 - [Vinted](https://www.vinted.fr/) - Peer-to-peer sales, used for small recent sets, minifigures and quick purchases from a mobile application. Covers official LEGO.
 - [Wallapop](https://www.wallapop.com/) - Application and website searchable by keyword for LEGO sets and loose parts, covering general classifieds.
-- [willhaben](https://www.willhaben.at/) - A LEGO shortcut on the home page and a category of its own, grouped with other brick systems and Playmobil; PayLivery adds secure online payment and parcel shipping to private sales.
+- [willhaben](https://www.willhaben.at/iad) - A LEGO shortcut on the home page and a category of its own, grouped with other brick systems and Playmobil; PayLivery adds secure online payment and parcel shipping to private sales.
 
 ### Second-hand and refurbished shops
 
@@ -741,7 +741,7 @@ Venues of the brick world that can be visited: official LEGO venues and stores, 
 - [Railway Brick Museum](https://www.railway-brickmuseum.eu/) - Former bakery in Leut built around more than 50 years of LEGO trains, opened in 2021: themed landscapes where visitors start the trains, a mosaic wall and a shop with new and used LEGO. Covers official LEGO.
 - [Steinchenbrüder](https://steinchenbrueder.de/) - Event location called BauWerk where LEGO birthdays for up to 14 children last three hours in a private room, led by a LEGO enthusiast, with school groups, workshops and playdates on request. For children.
 - [Toy and Plastic Brick Museum](https://brickmuseum.com/) - Nonprofit since opening in 2006, with, according to its operator, a Guinness record for the largest LEGO image laid out on the basement floor; seasonal, Tuesday to Sunday from 15 May 2026. Covers official LEGO.
-- [Vanha Palikka](https://www.vanha-palikka.com/) - Self-described largest LEGO museum in Finland: thousands of sets from several decades, themed rooms and a children's play room, with a web shop of used LEGO products; open only on listed dates. Covers official LEGO. For children.
+- [Vanha Palikka](https://vanha-palikka.com/) - Self-described largest LEGO museum in Finland: thousands of sets from several decades, themed rooms and a children's play room, with a web shop of used LEGO products; open only on listed dates. Covers official LEGO. For children.
 
 ### Physical shops (alternative brands and used bricks)
 
@@ -930,7 +930,7 @@ Guides, glossaries, history, compatibility and legal references, education and c
 - [Heyo Vakantiekampen: Legokamp](https://www.heyo.be/activiteiten/legokamp) - School-holiday LEGO camp for pupils of the first to sixth year (ages 7 to 12), without overnight stay: LEGO WeDo programming workshop, an own LEGO city, Light Stax and a LEGO obstacle course. For children.
 - [IET FIRST LEGO League (United Kingdom)](https://education.theiet.org/first-lego-league-programmes/) - Run by the Institution of Engineering and Technology, the national delivery partner: Explore regional festivals, Challenge regional and national tournaments, and sponsor-funded support for teams that need it. Covers official LEGO. For children.
 - [LEGO Education](https://education.lego.com/) - Classroom solutions in science, computer science and artificial intelligence, from kindergarten to grade 8; the partnership with FIRST for the competition program ends after the 2026-2027 season. Covers official LEGO. For children.
-- [LEGO SERIOUS PLAY](https://www.lego.com/en-us/seriousplay) - Workshop method that uses bricks with adults to prompt dialogue, reflection and problem solving, with four kits on sale from the Starter Kit to the Identity and Landscape Kit. Covers official LEGO. For adults.
+- [LEGO SERIOUS PLAY](https://www.lego.com/en-us/themes/serious-play) - Workshop method that uses bricks with adults to prompt dialogue, reflection and problem solving, with four kits on sale from the Starter Kit to the Identity and Landscape Kit. Covers official LEGO. For adults.
 - [Liga der Roboter](https://ligaderroboter.de/) - Weekly robotics courses for ages 5 to 12 with LEGO sets (four levels, from a first robot without screen to artificial intelligence), plus holiday camps, five-day intensive courses and birthday parties. For children.
 
 ### Books and magazines

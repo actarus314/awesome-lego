@@ -2414,7 +2414,7 @@ date = "2026-11-25"
 [[resource]]
 id = "vanha-palikka"
 name = "Vanha Palikka"
-url = "https://www.vanha-palikka.com/"
+url = "https://vanha-palikka.com/"
 group = "museums-and-exhibitions"
 rank = {FI = 1}
 rank_reason_en = "Thousands of sets from several decades in themed rooms, open on listed dates from 15 Nov 2026 to 3 Jan 2027, with a web shop of used products."
