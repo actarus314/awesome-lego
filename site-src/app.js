@@ -185,8 +185,10 @@ const el=document.getElementById('v-pulse');const cats=C.map(c=>c.id),today=new 
   :`Among sites, channels, forums and software, ${old.length} have shown no sign of life for 6 months${top?`, mostly in "${catName(top[0])}" (${top[1]})`:''}; ${nolast} have no observable date. Works, places, shops and brands are left out: their posts do not measure them.`;
  let s=`<svg class="pulse" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t('p_title'))}">`;
  s+=`<rect x="${xs}" y="2" width="${x1-xs}" height="${H-26}" fill="var(--sunk)" rx="4"/><text class="ax" x="${(xs+x1)/2}" y="${H-6}" text-anchor="middle">${t('p_recent')}</text>`;
- const ks=W<520?[0]:[0,6,12],dOf=k=>{const d=new Date(from);d.setMonth(d.getMonth()+k);return d};
- for(const k of ks){const d=dOf(k);s+=`<text class="ax tick" x="${X(d)}" y="${H-6}" text-anchor="${k?'middle':'start'}" data-short="${k?MONTHS[d.getMonth()]:'≤ '+d.getFullYear()}">${k?'':'≤ '}${MONTHS[d.getMonth()]} ${d.getFullYear()}</text>`}
+ const mm=d=>String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear();  // the axis in figures, month and year (decision of 25/11/2026: no day, no ambiguity)
+ // marks at fixed places, chosen by the room the scale leaves (figures have one width: about 7 px each): every 6 months, every 12, the first one only, or none on the narrowest screens
+ const step=(xs-x0)/3,first=9*7,half=4*7,room=(xs+x1)/2-t('p_recent').length*3.6-8-x0,ks=step>=first+half+8?[0,6,12]:2*step>=first+half+8?[0,12]:room>=first?[0]:[];
+ for(const k of ks){const d=new Date(from);d.setMonth(d.getMonth()+k);s+=`<text class="ax" x="${X(d)}" y="${H-6}" text-anchor="${k?'middle':'start'}">${k?'':'≤ '}${mm(d)}</text>`}
  cats.forEach((c,i)=>{const y=14+i*rh,rs=RA.filter(r=>r.cat===c&&r.last);s+=`<text x="${lw}" y="${y+5}" text-anchor="end">${esc(cut(shortCat(c)))}</text><line x1="${x0}" x2="${xs}" y1="${y}" y2="${y}" stroke="var(--line)"/>`;
   const placed=[],old2=rs.filter(r=>new Date(r.last)<from);
   if(old2.length){s+=`<circle cx="${x0}" cy="${y}" r="${old2.length>1?9:5.5}" fill="var(--card)" stroke="var(--warn)" stroke-width="2.5" data-go="${old2[0].id}" data-tip="${esc(old2.map(r=>r.name+' · '+fmt(r.last)).join(' ; '))}" style="cursor:pointer"/>`+(old2.length>1?`<text x="${x0}" y="${y+4}" text-anchor="middle" style="font-size:10px;font-weight:700;fill:var(--warn);pointer-events:none">${old2.length}</text>`:'');placed.push({x:x0,dy:0})}
@@ -195,9 +197,7 @@ const el=document.getElementById('v-pulse');const cats=C.map(c=>c.id),today=new 
   const n=rs.filter(r=>new Date(r.last)>=six).length,bw=(x1-xs-30)*n/Math.max(1,...cats.map(cc=>RA.filter(r=>r.cat===cc&&r.last&&new Date(r.last)>=six).length));
   s+=`<rect x="${xs+6}" y="${y-6}" width="${bw}" height="12" rx="3" fill="var(--other)" data-tip="${esc(shortCat(c))} · ${n}"/><text class="ax" x="${xs+10+bw}" y="${y+4}">${n}</text>`});
  el.innerHTML=`<h3>${t('p_title')}</h3><p class="take">${esc(take)}</p>${s}</svg><p class="note">${t('p_note')}</p>`;
- // the marks of the axis, measured as drawn: the month in letters (never abbreviated) where it fits, else the year alone (first mark) and the month alone; a mark that still meets another text goes
- const ax=[...el.querySelectorAll('svg text.ax')],over=a=>{const b=a.getBBox();return ax.some(x=>x!==a&&x.isConnected&&(c=>b.x<c.x+c.width-1&&c.x<b.x+b.width-1&&b.y<c.y+c.height-1&&c.y<b.y+b.height-1)(x.getBBox()))},ticks=ax.filter(x=>x.classList.contains('tick'));
- if(ticks.some(over))ticks.forEach(x=>x.textContent=x.dataset.short);ticks.forEach(x=>{if(over(x))x.remove()});
+
  el.onclick=e=>{const p=e.target.closest('[data-go]');if(p)openEntry(p.dataset.go)}}
 // insight 3: recognised fan communities against population, by country (backend data)
 function vPassion(){const el=document.getElementById('v-passion'),P=D.passion;if(!el)return;if(!P){el.remove();return}
