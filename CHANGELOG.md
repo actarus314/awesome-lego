@@ -2,7 +2,7 @@
 
 # v3.x — The directory remodelled around what a visitor needs: "Where to start" by need, each brand on a banner of its own, cards whose every line is a structured field, and rules of writing checked by the build.
 
-## v3.3 — 2026-11-25
+## v3.4 — 2026-11-25
 Website: a "Suggest a resource" link right where a search ends — beside the count of the search bar (wide screens only, to keep the sticky bar on one line; kept in place but hidden when nothing matches), under the results, and in the "No resource matches" message — opens the "Add a resource" issue form; when nothing matches, the text searched becomes its title (100 characters at most); the footer keeps "Contribute" for the full guide.
 
 ## v3.2 — 2026-11-25
