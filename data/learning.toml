@@ -1497,7 +1497,6 @@ url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCYPBfLx3dgMxW60CY9u7
 date = "2026-11-07"
 kind = "read"
 
-
 [[resource]]
 id = "brickreport-licensed-themes"
 name = "BrickReport: licensed themes of LEGO alternatives"
