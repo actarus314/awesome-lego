@@ -7,6 +7,7 @@ summary_fr = "Annuaires, listes awesome et listes de chaînes et de marques exis
 
 [[category.groups]]
 id = "site-directories"
+rank_scope = "language"
 name_en = "Site directories and awesome lists"
 name_fr = "Annuaires de sites et listes awesome"
 short_en = "Site directories"
@@ -14,6 +15,7 @@ short_fr = "Annuaires"
 
 [[category.groups]]
 id = "channel-lists"
+rank_scope = "language"
 name_en = "Channel and podcast lists"
 name_fr = "Listes de chaînes et de podcasts"
 short_en = "Channel lists"
@@ -21,6 +23,7 @@ short_fr = "Listes de chaînes"
 
 [[category.groups]]
 id = "brand-lists"
+rank_scope = "language"
 name_en = "Brand lists"
 name_fr = "Listes de marques"
 short_en = "Brand lists"

@@ -7,6 +7,7 @@ summary_fr = "Guides, glossaires, histoire, références sur la compatibilité e
 
 [[category.groups]]
 id = "guides"
+rank_scope = "language"
 name_en = "Guides and reference"
 name_fr = "Guides et références"
 short_en = "Guides"
@@ -15,6 +16,7 @@ regime = "work"
 
 [[category.groups]]
 id = "compatibility-and-law"
+rank_scope = "language"
 name_en = "Compatibility, materials and law"
 name_fr = "Compatibilité, matières et droit"
 short_en = "Law, materials"
@@ -23,12 +25,14 @@ regime = "work"
 
 [[category.groups]]
 id = "history"
+rank_scope = "language"
 name_en = "History"
 name_fr = "Histoire"
 regime = "work"
 
 [[category.groups]]
 id = "education-and-competitions"
+rank_scope = "country"
 name_en = "Education and competitions"
 name_fr = "Éducation et compétitions"
 short_en = "Education"
@@ -37,6 +41,7 @@ regime = "operating"
 
 [[category.groups]]
 id = "books-and-magazines"
+rank_scope = "language"
 name_en = "Books and magazines"
 name_fr = "Livres et magazines"
 short_en = "Books, magazines"
@@ -45,6 +50,7 @@ regime = "work"
 
 [[category.groups]]
 id = "artists"
+rank_scope = "intl"
 name_en = "Artists and designers"
 name_fr = "Artistes et créateurs"
 short_en = "Artists"
@@ -1129,6 +1135,7 @@ checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
 city = "Edinburgh"
+city_fr = "Édimbourg"
 
 [[resource.sources]]
 url = "https://www.warrenelsmore.com/"

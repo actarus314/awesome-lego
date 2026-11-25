@@ -7,6 +7,7 @@ summary_fr = "LEGO officiel, marques alternatives européennes et chinoises, gro
 
 [[category.groups]]
 id = "official-lego"
+rank_scope = "intl"
 name_en = "Official LEGO"
 name_fr = "LEGO officiel"
 short_en = "Official LEGO"
@@ -15,6 +16,7 @@ regime = "operating"
 
 [[category.groups]]
 id = "european-alternatives"
+rank_scope = "intl"
 name_en = "European and American alternatives"
 name_fr = "Alternatives européennes et américaines"
 short_en = "Europe, America"
@@ -23,6 +25,7 @@ regime = "operating"
 
 [[category.groups]]
 id = "chinese-alternatives"
+rank_scope = "intl"
 name_en = "Chinese alternatives"
 name_fr = "Alternatives chinoises"
 short_en = "China"
@@ -31,6 +34,7 @@ regime = "operating"
 
 [[category.groups]]
 id = "manufacturers"
+rank_scope = "intl"
 name_en = "Brick manufacturers and suppliers"
 name_fr = "Fabricants et fournisseurs de briques"
 short_en = "Manufacturers"
@@ -39,6 +43,7 @@ regime = "operating"
 
 [[category.groups]]
 id = "other-formats"
+rank_scope = "intl"
 name_en = "Other formats"
 name_fr = "Autres formats"
 regime = "operating"

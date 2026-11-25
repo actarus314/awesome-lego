@@ -7,6 +7,7 @@ summary_fr = "Lieux du monde de la brique que l'on peut visiter : sites et magas
 
 [[category.groups]]
 id = "official-venues"
+rank_scope = "country"
 name_en = "Official LEGO venues and stores"
 name_fr = "Sites et magasins LEGO officiels"
 short_en = "Official LEGO"
@@ -15,12 +16,14 @@ regime = "operating"
 
 [[category.groups]]
 id = "theme-parks"
+rank_scope = "country"
 name_en = "Theme parks"
 name_fr = "Parcs à thème"
 regime = "operating"
 
 [[category.groups]]
 id = "museums-and-exhibitions"
+rank_scope = "country"
 name_en = "Museums and permanent exhibitions"
 name_fr = "Musées et expositions permanentes"
 short_en = "Museums"
@@ -29,6 +32,7 @@ regime = "operating"
 
 [[category.groups]]
 id = "physical-shops"
+rank_scope = "country"
 name_en = "Physical shops (alternative brands and used bricks)"
 name_fr = "Boutiques physiques (marques alternatives et briques d'occasion)"
 short_en = "Shops"
@@ -37,6 +41,7 @@ regime = "operating"
 
 [[category.groups]]
 id = "cafes-and-bars"
+rank_scope = "country"
 name_en = "Cafés and play spaces"
 name_fr = "Cafés et espaces de jeu"
 short_en = "Cafés and play"
@@ -227,6 +232,7 @@ checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
 city = "London"
+city_fr = "Londres"
 
 [[resource.sources]]
 url = "https://www.lego.com/en-us/aboutus/news/2022/august/lego-store-in-leicester-square"
@@ -627,6 +633,7 @@ checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
 city = "Prague"
+city_local = "Praha"
 
 [[resource.sources]]
 url = "https://museumofbricks.cz/"
@@ -1081,6 +1088,7 @@ checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
 city = "Kraków"
+city_fr = "Cracovie"
 
 [[resource.sources]]
 url = "https://bricksandfigs.pl/en/"
@@ -1274,7 +1282,7 @@ checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
 brands = ["cobi", "lumibricks", "reobrix"]
-city = "Chambéry, Annecy"
+city = "Chambéry"
 
 [[resource.sources]]
 url = "https://www.timeforbricks.fr/"

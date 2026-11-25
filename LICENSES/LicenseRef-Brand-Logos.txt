@@ -1,0 +1,41 @@
+Brand logos (media/logos/)
+
+The files of media/logos/ are logos and trademarks of their owners. They are not covered by the licences of this
+repository (CC BY-NC-SA 4.0 for the content, PolyForm Noncommercial 1.0.0 for the code), and no right to use them is
+granted here. Awesome LEGO shows each logo only to identify the brand next to its own entry, in the brand view of
+its website. Each file was taken from the brand's own website, from the logo of its header, and reduced in size
+(SVG cleaned of scripts and links, raster images at most 96 pixels high).
+
+LEGO, the LEGO logo and the brick configuration are trademarks of the LEGO Group, which does not sponsor, authorize
+or endorse this website. The same holds for every other brand named or shown here.
+
+An owner who wants a logo removed can open an issue: https://github.com/actarus314/awesome-lego/issues
+
+Sources:
+- blokees.svg: https://blokees.com/ (file https://blokees.com/cdn/shop/files/Group_10266.svg?v=1731059951), read on 2026-11-24
+- bluebrixx.svg: https://www.bluebrixx.com/fr/ (file https://www.bluebrixx.com/media/89/b4/64/1748974412/bluebrixx-logo-m.svg?ts=1748974412), read on 2026-11-24
+- brixies.svg: https://brixies.de/ (file https://brixies.de/cdn/shop/files/Beide_Logos.svg?v=1748942796), read on 2026-11-24
+- bryx.svg: https://bryxtoys.com/ (file https://bryxtoys.com/wp-content/uploads/2024/01/BRYX-Logo.svg), read on 2026-11-24
+- cada.png: https://cadatoys.com/ (file https://cadatoys.com/wp-content/uploads/2026/04/4C7B62C2-8B30-40d8-8684-160A5734426C_5d440065-e96f-4417-8faa-c08b06a17a68.webp), read on 2026-11-24
+- cobi.png: https://cobi.com/fr-fr (file https://cobi.com/cdn/shop/files/logo_1.png?v=1785849677), read on 2026-11-24
+- gobricks.png: https://gobricks.net/ (file https://gobricks.net/_nuxt/img/logo.c14ee82.png), read on 2026-11-24
+- im-master.png: https://www.immasterstore.com/ (file https://www.immasterstore.com/cdn/shop/files/IM.master_LOGO-Orange_021C.png?v=1790056114), read on 2026-11-24
+- jiestar.png: https://www.jiestartoys.com/ (file https://www.jiestartoys.com/images/brand/jiestar-logo-color.png), read on 2026-11-24
+- jmbricklayer.png: https://www.jmbricklayer.com/ (file https://www.jmbricklayer.com/cdn/shop/files/JMBricklayer_logo-22.png?v=1764644535), read on 2026-11-24
+- keeppley.png: https://c-en.qmjm.com/ (file https://c-en.qmjm.com/vancheerfile/images/2022/10/20221010151814746.png), read on 2026-11-24
+- lego.svg: https://www.lego.com/fr-fr (file https://assets.lego.com/logos/v4.10.0/brand-lego.svg), read on 2026-11-24
+- loz.png: https://loz-mini.com/en (file https://loz-mini.com/cdn/shop/files/LOGO_2.png?v=1730694613), read on 2026-11-24
+- lumibricks.png: https://www.lumibricks.com/ (file https://cdn.shopify.com/s/files/1/0627/5278/4483/files/LUMIBRICKS_Transparent_LOGO_1000x1000_1.png?v=1745735434), read on 2026-11-24
+- mork.png: http://www.morktoys.com/EN/Index.aspx (file https://www.morktoys.com/EN/images/logo.jpg), read on 2026-11-24
+- mould-king.png: https://mouldkingcorp.com/ (file https://mouldkingcorp.com/cdn/shop/files/Mould_King_Logo2.png?v=1711347103), read on 2026-11-24
+- nanoblock.png: https://www.kawada-toys.com/en/brand/nanoblock/ (file https://www.kawada-toys.com/wp-content/uploads/2021/10/logo_nb-1.png), read on 2026-11-24
+- nifeliz.png: https://www.nifeliz.com/ (file https://www.nifeliz.com/wp-content/uploads/2025/01/Nifeliz_2025logoB1.png), read on 2026-11-24
+- panlos.png: http://www.panlos.com/ (file inline data:image/png;base64 in http://www.panlos.com/assets/index.81e507c9.js (header logo, found by rendering the page)), read on 2026-11-24
+- pantasy.png: https://pantasy.com/ (file https://pantasy.com/cdn/shop/files/logo_a0de1878-1d7f-4064-b5de-dec72a95cb9f.png?v=1677484417), read on 2026-11-24
+- rastar.png: https://www.rastar.com/ (file https://ttad.resources.3737.com/gw-uploads/rastar/uploads/190619/9-1Z619151342102.png), read on 2026-11-24
+- reobrix.png: https://reobrix.fr/fr_FR/index (file https://reobrix.fr/environment/cache/images/storefrontImages_995dc0e0-f24a-4b5f-ba4e-896ad6a34054_120_0.png), read on 2026-11-24
+- revell-brick-system.png: https://revell.com/collections/brick-system (file https://revell.com/cdn/shop/files/Revell_Logo_4c.png?v=1766177169), read on 2026-11-24
+- sluban.png: https://www.sluban.com.cn/en/ (file https://www.sluban.com.cn/en/images/logox.png), read on 2026-11-24
+- wange.png: http://www.wangetoys.com/ (file http://www.wangetoys.com/UploadFile/Config/logo.png), read on 2026-11-24
+- wiseblock.png: https://www.wiseblock-alpha.com/ (file https://www.wiseblock-alpha.com/cdn/shop/files/WISEBLOCK_logo.png?v=1777284864), read on 2026-11-24
+- xingbao.png: https://xingbaostore.com/ (file https://xingbaostore.b-cdn.net/wp-content/uploads/2021/09/xingbao-store-logo.png), read on 2026-11-24
