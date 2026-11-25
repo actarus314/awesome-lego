@@ -364,7 +364,7 @@ def readme(cats, m, lang, kind="readme"):
     logo = [f'<a href="{PAGES}"><img src="media/logo.svg" align="right" width="120" alt="Awesome LEGO logo"></a>', ""] if kind == "readme" else []
     out = [f"# {title}{badge}", "", *logo, f"> {T['tagline'][lang]}", "",
            f"**[{T['site'][lang]}]({PAGES})** · [{T['site_fr'][lang]}]({PAGES}fr/) · [{T['feed'][lang]}]({PAGES}feed.xml)", "",
-           *([f'<p align="center"><a href="{PAGES}"><img src="media/site-preview.png" width="880" alt="The website: the map of the brick world, one stud per resource by category, above the directory; tabs Directory and Observatory"></a></p>', ""] if kind == "readme" else []),
+           *([f'<p align="center"><a href="{PAGES}"><picture><source media="(prefers-color-scheme: dark)" srcset="media/site-preview-dark.png"><img src="media/site-preview.png" width="880" alt="The website: Where to start, one card per need with its best resources, beside the map of the brick world, one stud per resource by category"></picture></a></p>', ""] if kind == "readme" else []),
            MORE[kind][lang], "", f"## {T['contents'][lang]}", ""]
     seen = {}
 
@@ -723,6 +723,36 @@ def issue_form(cats):
     return re.sub(r"(label: Category\n      options:\n)(?:        - [^\n]*\n)+", lambda m: m.group(1) + opts, text, count=1)
 
 
+README_IMAGES = ("site-preview.png", "site-preview-dark.png")  # written by scripts/readme_image.py
+
+
+def png_text(path, key):
+    """The value of a text chunk of a PNG (tEXt), or None."""
+    b = path.read_bytes()
+    i = 8
+    while i + 8 <= len(b):
+        n, kind = int.from_bytes(b[i:i + 4], "big"), b[i + 4:i + 8]
+        if kind == b"tEXt":
+            k, _, v = b[i + 8:i + 8 + n].partition(b"\0")
+            if k.decode("latin-1") == key:
+                return v.decode("latin-1")
+        if kind == b"IEND":
+            break
+        i += 12 + n
+    return None
+
+
+def check_readme_images(version):
+    """The README image shows the current version: a pull request that raises VERSION regenerates it."""
+    errors = []
+    for name in README_IMAGES:
+        f = ROOT / "media" / name
+        shown = png_text(f, "version") if f.exists() else None
+        if shown != version:
+            errors.append(f"media/{name} shows v{shown or '?'}, VERSION is {version}: run python3 scripts/build.py --site-only && python3 scripts/readme_image.py, then commit both images")
+    return errors
+
+
 def check_docs():
     """The documents that describe the data and the automation must name what exists."""
     errors = []
@@ -783,6 +813,8 @@ def main():
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
     if not re.search(rf"^## v{re.escape(version)} — \d{{4}}-\d{{2}}-\d{{2}}$", (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), re.M):
         fail([f"CHANGELOG.md has no '## v{version} — YYYY-MM-DD' section for VERSION {version}"])
+    if "--check" in sys.argv and (errs := check_readme_images(version)):
+        fail(errs)
     texts = {f: readme(cats, m, lang, kind) for (kind, lang), f in FILES.items()}
     texts[".github/ISSUE_TEMPLATE/add-resource.yml"] = issue_form(cats)
     print(f"✓ v{version}: {sum(len(c['resources']) for c in cats)} resources in {len(cats)} categories")
@@ -812,7 +844,7 @@ def main():
     (SITE / "changes.xml").write_text(changes_feed(), encoding="utf-8")
     (SITE / "favicon.ico").write_bytes((ROOT / "media" / "favicon.ico").read_bytes())  # readers that look for <site>/favicon.ico
     for f in (ROOT / "media").rglob("*"):
-        if f.is_file() and f.name != "site-preview.png":  # the README image is read on GitHub, not on the website
+        if f.is_file() and f.name not in README_IMAGES:  # the README image is read on GitHub, not on the website
             out = SITE / f.relative_to(ROOT)
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_bytes(f.read_bytes())
