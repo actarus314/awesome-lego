@@ -309,7 +309,7 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 - [Tori.fi](https://www.tori.fi/) - Filters for delivery option, condition and seller type, plus a saved-search alert; the search for lego listed more than 29000 ads on 25 November 2026, some of them unrelated.
 - [Vinted](https://www.vinted.fr/) - Peer-to-peer sales, used for small recent sets, minifigures and quick purchases from a mobile application. Covers official LEGO.
 - [Wallapop](https://www.wallapop.com/) - Application and website searchable by keyword for LEGO sets and loose parts, covering general classifieds.
-- [willhaben](https://www.willhaben.at/) - A LEGO shortcut on the home page and a category of its own, grouped with other brick systems and Playmobil; PayLivery adds secure online payment and parcel shipping to private sales.
+- [willhaben](https://www.willhaben.at/iad) - A LEGO shortcut on the home page and a category of its own, grouped with other brick systems and Playmobil; PayLivery adds secure online payment and parcel shipping to private sales.
 
 ### Second-hand and refurbished shops
 
@@ -726,7 +726,7 @@ Venues of the brick world that can be visited: official LEGO venues and stores, 
 - [Palais de la Maquette - Musée du Jouet](http://www.palaisdelamaquette.com/) - Giant animated LEGO and K'NEX models: seaside resort, harbour, medieval town, amusement park. Building tables available for up to one hour after the visit. Toy museum in Valras-Plage (Hérault). Covers official LEGO.
 - [Railway Brick Museum](https://www.railway-brickmuseum.eu/) - Former bakery in Leut built around more than 50 years of LEGO trains, opened in 2021: themed landscapes where visitors start the trains, a mosaic wall and a shop with new and used LEGO. Covers official LEGO.
 - [Toy and Plastic Brick Museum](https://brickmuseum.com/) - Nonprofit since opening in 2006, with, according to its operator, a Guinness record for the largest LEGO image laid out on the basement floor; seasonal, Tuesday to Sunday from 15 May 2026. Covers official LEGO.
-- [Vanha Palikka](https://www.vanha-palikka.com/) - Self-described largest LEGO museum in Finland: thousands of sets from several decades, themed rooms and a children's play room, with a web shop of used LEGO products; open only on listed dates. Covers official LEGO.
+- [Vanha Palikka](https://vanha-palikka.com/) - Self-described largest LEGO museum in Finland: thousands of sets from several decades, themed rooms and a children's play room, with a web shop of used LEGO products; open only on listed dates. Covers official LEGO.
 
 ### Physical shops (alternative brands and used bricks)
 
@@ -907,7 +907,7 @@ Guides, glossaries, history, compatibility and legal references, education and c
 - [FIRST LEGO League Suomi](https://www.fllsuomi.org/) - National operator Aurora Math since June 2026, successor to Robotiikka- ja tiedekasvatus ry: regional qualifiers from January to March 2027, then a national championship in March or April 2027. Covers official LEGO.
 - [IET FIRST LEGO League (United Kingdom)](https://education.theiet.org/first-lego-league-programmes/) - Run by the Institution of Engineering and Technology, the national delivery partner: Explore regional festivals, Challenge regional and national tournaments, and sponsor-funded support for teams that need it. Covers official LEGO.
 - [LEGO Education](https://education.lego.com/) - Classroom solutions in science, computer science and artificial intelligence, from kindergarten to grade 8; the partnership with FIRST for the competition program ends after the 2026-2027 season. Covers official LEGO.
-- [LEGO SERIOUS PLAY](https://www.lego.com/en-us/seriousplay) - Workshop method that uses bricks with adults to prompt dialogue, reflection and problem solving, with four kits on sale from the Starter Kit to the Identity and Landscape Kit. Covers official LEGO.
+- [LEGO SERIOUS PLAY](https://www.lego.com/en-us/themes/serious-play) - Workshop method that uses bricks with adults to prompt dialogue, reflection and problem solving, with four kits on sale from the Starter Kit to the Identity and Landscape Kit. Covers official LEGO.
 
 ### Books and magazines
 

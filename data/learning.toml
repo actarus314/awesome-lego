@@ -2206,7 +2206,7 @@ kind = "official"
 [[resource]]
 id = "lego-serious-play"
 name = "LEGO SERIOUS PLAY"
-url = "https://www.lego.com/en-us/seriousplay"
+url = "https://www.lego.com/en-us/themes/serious-play"
 group = "education-and-competitions"
 rank = {intl = 3}
 rank_reason_en = "Workshop method using bricks with adults to prompt dialogue and problem solving, with four kits on sale; the page lists kits and does not detail workshops or facilitator training."
