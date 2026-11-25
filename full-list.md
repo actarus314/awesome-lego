@@ -762,26 +762,26 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 
 ### Design software
 
-- [BrickLink Studio](https://www.bricklink.com/v3/studio/download.page) - Free 3D design software for LEGO models with BrickLink parts list, instruction editor and photorealistic rendering. Covers official LEGO and alternative brands.
+- [BrickLink Studio](https://www.bricklink.com/v3/studio/download.page) - 3D editor for LEGO models with BrickLink parts list, instruction editor and photorealistic rendering. Covers official LEGO and alternative brands.
 - [LDCad](https://www.melkert.net/LDCad) - Multiplatform LDraw editor for editing virtual LEGO model documents in real time. Covers official LEGO. Status: no update for 6 months.
 - [LDView](https://github.com/tcobbs/ldview) - Real-time 3D viewer for LDraw models (Windows, macOS, Linux). Covers official LEGO.
-- [LeoCAD](https://www.leocad.org/) - Open-source computer-aided design program for virtual LEGO models based on the LDraw library, for Windows, macOS and Linux. Covers official LEGO.
+- [LeoCAD](https://www.leocad.org/) - Open-source program to build virtual LEGO models on the LDraw library, for Windows, macOS and Linux. Covers official LEGO.
 - [LPub3D](https://trevorsandy.github.io/lpub3d/) - Open-source what-you-see-is-what-you-get editor for LEGO-style digital building instructions from LDraw files, with PDF, image, POV-Ray, STL and parts list export. Covers official LEGO.
 - [Mecabricks](https://www.mecabricks.com/) - In-browser 3D LEGO model editor with Blender add-on for photorealistic renders and a BrickLink parts list export. Covers official LEGO and alternative brands.
 
 ### Apps
 
-- [Brick Search](https://bricksearch.app/) - Mobile app (iOS, Android) scanning collectible minifigure QR codes, with collection tracking, wish list, set archive and price comparison by country. Covers official LEGO.
+- [Brick Search](https://bricksearch.app/) - Scans QR codes of collectible minifigures on iOS and Android, with collection tracking, wish list, set archive and price comparison by country. Covers official LEGO.
 - [Brick.Deals minifigure identifier](https://brick.deals/tools/identify-minifigure) - Web tool that suggests catalog matches for a photo of one assembled minifigure and lists the sets it appears in; the user confirms the match. Covers official LEGO.
-- [Brickfact app](https://brickfact.com/blog/guides/brickfact-app-the-best-tool-for-every-lego-fan) - Brickfact companion app for collection tracking, value, offers, price alerts and price history, sharing an account with the website. Covers official LEGO.
+- [Brickfact app](https://brickfact.com/blog/guides/brickfact-app-the-best-tool-for-every-lego-fan) - Collection tracking, value, offers, price alerts and price history, with an account shared with the Brickfact website. Covers official LEGO.
 - [Bricklog](https://bricklog.co/) - Web collection tracker on the Rebrickable catalogue: owned sets, aggregated parts inventory, storage-location tags, missing parts and loose-part matching.
-- [BrickScan](https://brickscan.com/) - Phone app identifying loose minifigures and parts from a photo, with exports to BrickStore and similar inventory software (formerly BrickMonkey). Covers official LEGO.
+- [BrickScan](https://brickscan.com/) - Identifies loose minifigures and parts from a photo taken with a phone, with exports to BrickStore and similar inventory software (formerly BrickMonkey). Covers official LEGO.
 - [Instabrick](https://www.instabrick.org/) - Artificial intelligence identification of LEGO bricks and minifigures with cloud inventory, BrickLink sync, a fee-free marketplace and a sorting scanner. Covers official LEGO.
-- [LEGO Builder](https://www.lego.com/en-us/builder-app) - Official LEGO app for interactive 3D building instructions with zoom, rotation and shared building, plus a collection of past instructions. Covers official LEGO.
-- [Minifig Scan](https://pacolabs.com/MinifigScan/) - Mobile app that scans the data code on Collectible Minifigures boxes, several at once, with collection counters and a blind mode that flags duplicates without revealing figures. Covers official LEGO.
-- [myBricks](https://mybricks.app/) - iOS app to browse the Brickset catalog, search by number, name, theme or barcode, and track owned and wanted sets with a Brickset account. Covers official LEGO.
-- [omgbricks](https://omgbricks.com/) - Mobile app that reads the data code under Collectible Minifigures boxes to show the figure inside, with a collection tracker and a set database. Covers official LEGO.
-- [Pile[o]meter](https://pileometer.app/) - Mobile app and storage system from the makers of Brickit: scans photos of loose parts to build a digital catalogue of what is owned.
+- [LEGO Builder](https://www.lego.com/en-us/builder-app) - Interactive 3D building instructions with zoom, rotation and shared building, plus a collection of past instructions; official LEGO app. Covers official LEGO.
+- [Minifig Scan](https://pacolabs.com/MinifigScan/) - Phone scan of the data code on Collectible Minifigures boxes, several at once, with collection counters and a blind mode that flags duplicates without revealing figures. Covers official LEGO.
+- [myBricks](https://mybricks.app/) - Browses the Brickset catalog on iOS: search by number, name, theme or barcode, tracking of owned and wanted sets with a Brickset account. Covers official LEGO.
+- [omgbricks](https://omgbricks.com/) - Reads, on a phone, the data code under Collectible Minifigures boxes to show the figure inside, with a collection tracker and a set database. Covers official LEGO.
+- [Pile[o]meter](https://pileometer.app/) - Scans photos of loose parts to build a digital catalogue of what is owned; from the makers of Brickit, with a storage system.
 
 ### APIs and open data
 
@@ -792,16 +792,16 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 - [BrickLink API](https://www.bricklink.com/v3/api.page) - REST interface to the BrickLink marketplace: catalog, price guide, store inventories, orders, messages, feedback. Covers official LEGO and alternative brands.
 - [Brickognize](https://brickognize.com/) - Image search for LEGO parts, minifigures, sets and sticker sheets from a photo; free API without key used by several open-source collection tools. Covers official LEGO.
 - [Brickset API v3](https://brickset.com/article/52666/brickset-web-services) - JSON and SOAP interface to the Brickset catalog: sets, extra images, instructions, reviews, member collections (read and write). Covers official LEGO.
-- [LDraw open standard and parts library](https://www.ldraw.org/) - Open format for digital LEGO models and official parts library, basis of LeoCAD, LDView, LPub3D and Studio export. Covers official LEGO.
+- [LDraw open standard and parts library](https://www.ldraw.org/) - Digital LEGO model format and official parts library, open standard underlying LeoCAD, LDView, LPub3D and Studio export. Covers official LEGO.
 - [LEGO Wireless Protocol 3.0 documentation](https://lego.github.io/lego-ble-wireless-protocol-docs/) - Documentation published by LEGO of the Bluetooth Low Energy protocol of its smart hubs: one GATT service to read hub information and to drive the motors and sensors connected to the ports. Covers official LEGO.
 - [Rebrickable API v3](https://rebrickable.com/api/) - REST interface to the official LEGO catalog (sets, parts, minifigures, themes, colours) and to Rebrickable user collections. Covers official LEGO.
 - [Rebrickable catalog CSV downloads](https://rebrickable.com/downloads/) - Daily archive of CSV files: themes, colours, parts, elements, sets, minifigures, inventories, and identifier mappings to Brickset, BrickLink, Brick Owl, LEGO and LDraw. Covers official LEGO.
 
 ### Open-source projects
 
-- [basicallysource sorter](https://github.com/basicallysource/sorter) - Open repository of a LEGO sorting machine project using machine learning, developed by a group of makers. Status: no update for 6 months.
+- [basicallysource sorter](https://github.com/basicallysource/sorter) - Machine-learning LEGO sorting machine developed by a group of makers, with an open repository. Status: no update for 6 months.
 - [Brick Work](https://github.com/Ulef1005/brick-work) - Self-hosted collection app: set copies, loose parts, missing-parts workbench, BrickLink orders, REST API, command line and MCP server. Covers official LEGO.
-- [BrickHoard](https://github.com/ZehJulianLp/brickhoard) - Flask self-hosted app with Rebrickable set lists, parts checklists and printable missing-parts sheets; German-language interface. Covers official LEGO.
+- [BrickHoard](https://github.com/ZehJulianLp/brickhoard) - Flask self-hosted app with Rebrickable set lists, parts checklists and printable missing-parts sheets. Covers official LEGO.
 - [bricks-mcp (wendehals)](https://github.com/wendehals/bricks-mcp) - MCP server in Go for the Rebrickable API: set overview, parts, user sets and lists. Covers official LEGO. Status: no update for 6 months.
 - [BrickSortingMachine](https://bricksortingmachine.com) - DIY plans (scanner, electronics) and open-source software stack for an automated LEGO brick sorting machine, with a classification web service. Status: no update for a year.
 - [BrickStore](https://github.com/rgriebl/brickstore) - Offline BrickLink inventory management tool for Windows, macOS, Linux, iOS and Android. Covers official LEGO and alternative brands.
@@ -810,11 +810,11 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 
 ### Programming, control and robotics
 
-- [BrickController 2](https://github.com/imurvai/brickcontroller2) - Mobile application (Android, iOS) that controls LEGO creations with a Bluetooth gamepad through SBrick, BuWizz 1 to 3, Powered Up, BOOST, Technic hub, WeDo 2.0 and Circuit Cubes receivers; Power Functions infrared on Android devices with an emitter. Covers official LEGO. Status: no update for a year.
-- [Brickrail](https://github.com/Novakasa/brickrail) - Desktop software to automate LEGO Powered Up train layouts: virtual layout, routing and block detection with colour sensors, hubs running Pybricks. Only LEGO hubs, motors and sensors are required besides a computer with Bluetooth. Covers official LEGO. Status: no update for 6 months.
-- [ev3dev](https://www.ev3dev.org/) - Debian Linux operating system started from a microSD card on LEGO MINDSTORMS EV3 and compatible platforms (BrickPi, PiStorms), with libraries for Python, Java, Go, C++, Rust and other languages. Historical reference for programming Mindstorms EV3. Covers official LEGO. Status: no update for a year.
+- [BrickController 2](https://github.com/imurvai/brickcontroller2) - Drives LEGO creations with a Bluetooth gamepad on Android and iOS, through SBrick, BuWizz 1 to 3, Powered Up, BOOST, Technic hub, WeDo 2.0 and Circuit Cubes receivers. Covers official LEGO. Status: no update for a year.
+- [Brickrail](https://github.com/Novakasa/brickrail) - Desktop software automating LEGO Powered Up train layouts: virtual layout, routing and block detection with colour sensors, hubs running Pybricks. Covers official LEGO. Status: no update for 6 months.
+- [ev3dev](https://www.ev3dev.org/) - Debian Linux operating system started from a microSD card on LEGO MINDSTORMS EV3 and compatible platforms (BrickPi, PiStorms), with libraries for Python, Java, Go, C++, Rust and other languages. Covers official LEGO. Status: no update for a year.
 - [node-poweredup](https://github.com/nathankellenicki/node-poweredup) - JavaScript and TypeScript module controlling Powered Up devices from Node.js over Bluetooth: WeDo 2.0, BOOST, Powered Up, Technic Control+, SPIKE Prime and Essential, MINDSTORMS Robot Inventor, Duplo trains. Covers official LEGO. Status: no update for 6 months.
-- [Pybricks](https://pybricks.com/) - Python and block coding for LEGO smart hubs (Technic, City, BOOST, MINDSTORMS, SPIKE): programs are stored on the hub and run without a phone, with a web editor, a reference manual and projects for official sets. Covers official LEGO.
+- [Pybricks](https://pybricks.com/) - Python and block coding for LEGO smart hubs (Technic, City, BOOST, MINDSTORMS, SPIKE); programs are stored on the hub and run without a phone, with a web editor and a reference manual. Covers official LEGO.
 
 <br>
 
@@ -826,35 +826,35 @@ Existing directories, awesome lists and lists of channels and brands about LEGO 
 
 ### Site directories and awesome lists
 
-- [Avenue de la brique - Associations de fans de LEGO](https://www.avenuedelabrique.com/associations-lego) - French-language list of fan associations in France, Belgium and Switzerland, with a page per association and its exhibitions. Covers official LEGO.
-- [awesome-lego (ad-si)](https://github.com/ad-si/awesome-lego) - Community awesome list of LEGO software, archives, libraries, marketplaces, channels, books, blogs and games. Covers official LEGO.
-- [awesome-lego (brickventory)](https://github.com/brickventory/awesome-lego) - Short awesome list of official LEGO links, marketplaces, resources and software. Covers official LEGO. Status: no update for a year.
-- [awesome-lego-machine-learning](https://github.com/360er0/awesome-lego-machine-learning) - Curated list of machine-learning resources applied to LEGO bricks: part classification, datasets, applications such as Brickognize. Status: no update for a year.
-- [Brick Discovery](https://www.brickdiscovery.com/buy-sell-invest/) - Curated directory of LEGO communities, shops, marketplaces, price trackers and tools with tags and free or paid labels. Covers official LEGO and alternative brands.
-- [BrickMap](https://brickmap.info/) - Directory of LEGO-related business and service websites by category. Covers official LEGO and alternative brands. Status: archived.
-- [Brickset app directory](https://brickset.com/article/131478/app-directory) - Brickset list of apps, websites, code libraries and utilities that use its API, grouped by iOS, Android, websites and other. Covers official LEGO.
-- [Deparkatre clubs and associations directory](https://deparkatre.fr/associations) - French-language directory of LEGO user groups, clubs and online communities in France, Europe and elsewhere, with national, regional and local scope. Covers official LEGO.
-- [Deparkatre: LEGO creators and designers directory](https://deparkatre.fr/en/lego-creators) - French directory of LEGO Certified Professionals, artists, custom-build creators, designers and studios, with profiles and locations. Covers official LEGO.
-- [Eurobricks LEGO Site Directory](https://www.eurobricks.com/forum/forums/topic/38481-lego-site-directory/) - Forum thread of 2010 intended as an overview of every LEGO-related website. Covers official LEGO. Status: archived.
-- [Kostky.eu](https://kostky.eu/) - Czech directory of practical LEGO websites: Czech blogs, a forum registered as a user group, marketplaces, set databases, global blogs and a section on where to buy LEGO in Czechia.
-- [LEGO Fan CoLab community directory](https://fancolab.lego.com/communities/) - Official LEGO directory of recognised fan communities, including French associations. Covers official LEGO.
-- [Spielzeug-Fuchs: price comparison platforms for building bricks](https://spielzeug-fuchs.de/klemmbaustein-preisvergleichsplattformen/) - German-language guide with a table of price comparison platforms for LEGO and compatible bricks (Brickfact, BrickLink, Brickmerge, BrickEconomy and others). Covers official LEGO and alternative brands.
+- [Avenue de la brique - Associations de fans de LEGO](https://www.avenuedelabrique.com/associations-lego) - Fan associations, each with its own page and exhibitions, across France, Belgium and Switzerland. Covers official LEGO.
+- [awesome-lego (ad-si)](https://github.com/ad-si/awesome-lego) - LEGO software, archives, libraries, marketplaces, channels, books, blogs and games, curated by the community. Covers official LEGO.
+- [awesome-lego (brickventory)](https://github.com/brickventory/awesome-lego) - Short selection of official LEGO links, marketplaces, resources and software. Covers official LEGO. Status: no update for a year.
+- [awesome-lego-machine-learning](https://github.com/360er0/awesome-lego-machine-learning) - Curated machine-learning resources applied to LEGO bricks: part classification, datasets, applications such as Brickognize. Status: no update for a year.
+- [Brick Discovery](https://www.brickdiscovery.com/buy-sell-invest/) - Curated, with tags and free or paid labels: LEGO communities, shops, marketplaces, price trackers and tools. Covers official LEGO and alternative brands.
+- [BrickMap](https://brickmap.info/) - LEGO-related business and service websites, mapped by category. Covers official LEGO and alternative brands. Status: archived.
+- [Brickset app directory](https://brickset.com/article/131478/app-directory) - Apps, websites, code libraries and utilities using the Brickset API, grouped by iOS, Android, websites and other. Covers official LEGO.
+- [Deparkatre clubs and associations directory](https://deparkatre.fr/associations) - LEGO user groups, clubs and online communities, national, regional and local, in France, Europe and elsewhere. Covers official LEGO.
+- [Deparkatre: LEGO creators and designers directory](https://deparkatre.fr/en/lego-creators) - LEGO Certified Professionals, artists, custom-build creators, designers and studios, with profiles and locations. Covers official LEGO.
+- [Eurobricks LEGO Site Directory](https://www.eurobricks.com/forum/forums/topic/38481-lego-site-directory/) - Overview of every LEGO-related website, started as a forum thread in 2010. Covers official LEGO. Status: archived.
+- [Kostky.eu](https://kostky.eu/) - Practical LEGO websites: Czech blogs, a forum registered as a user group, marketplaces, set databases, global blogs and a section on where to buy LEGO in Czechia.
+- [LEGO Fan CoLab community directory](https://fancolab.lego.com/communities/) - Fan communities recognised by LEGO, French associations among them. Covers official LEGO.
+- [Spielzeug-Fuchs: price comparison platforms for building bricks](https://spielzeug-fuchs.de/klemmbaustein-preisvergleichsplattformen/) - Guide in German with a table of price comparison platforms for LEGO and compatible bricks (Brickfact, BrickLink, Brickmerge, BrickEconomy and others). Covers official LEGO and alternative brands.
 
 ### Channel and podcast lists
 
-- [BrickTubed channel directory](https://bricktubed.com/channels/) - Directory of LEGO YouTube channels with subscribers, views, video count, country, last video and active status; a podcast page also exists. Covers official LEGO and alternative brands.
-- [Deparkatre LEGO influencer directory](https://deparkatre.fr/influenceurs) - French-language directory of LEGO YouTube channels, Instagram accounts, blogs and other creators, with an interactive map. Covers official LEGO and alternative brands.
-- [Feedspot LEGO podcasts](https://podcast.feedspot.com/lego_podcasts/) - Automated ranking list of LEGO podcasts. Covers official LEGO.
-- [Polscy LEGO Youtuberzy (promoklocki.pl)](https://promoklocki.pl/polscy-lego-youtuberzy) - List of Polish YouTube channels about LEGO with subscriber, video and view counts, sortable by subscribers.
-- [QuéLUG thread: interesting YouTube channels](https://forums.quelug.org/t/canaux-youtube-interessants/3294) - French-language forum thread where members recommend LEGO YouTube channels (Mabrikville, Brickmitri, Brick Science). Covers official LEGO. Status: no update for a year.
+- [BrickTubed channel directory](https://bricktubed.com/channels/) - Subscribers, views, video count, country, last video and active status for each LEGO YouTube channel; a podcast page also exists. Covers official LEGO and alternative brands.
+- [Deparkatre LEGO influencer directory](https://deparkatre.fr/influenceurs) - Creators with an interactive map: LEGO YouTube channels, Instagram accounts, blogs and others. Covers official LEGO and alternative brands.
+- [Feedspot LEGO podcasts](https://podcast.feedspot.com/lego_podcasts/) - Automatically generated ranking of LEGO podcasts. Covers official LEGO.
+- [Polscy LEGO Youtuberzy (promoklocki.pl)](https://promoklocki.pl/polscy-lego-youtuberzy) - Subscriber, video and view counts for Polish YouTube channels about LEGO, sortable by subscribers.
+- [QuéLUG thread: interesting YouTube channels](https://forums.quelug.org/t/canaux-youtube-interessants/3294) - Members recommend LEGO YouTube channels (Mabrikville, Brickmitri, Brick Science) in a forum thread. Covers official LEGO. Status: no update for a year.
 
 ### Brand lists
 
-- [Klemmbaustein Hersteller (Spielzeug-Fuchs)](https://spielzeug-fuchs.de/klemmbaustein-hersteller/) - German-language table of brick brands with set maker, brick maker, country and remarks. Covers official LEGO and alternative brands.
-- [Klemmbaustein Hersteller Lexikon (Steine-Kanal)](https://www.steine-kanal.de/klemmbaustein-hersteller-lexikon/) - German-language lexicon of established brick manufacturers by country with themes and notes; excludes copy brands. Covers official LEGO and alternative brands. Status: no update for 6 months.
+- [Klemmbaustein Hersteller (Spielzeug-Fuchs)](https://spielzeug-fuchs.de/klemmbaustein-hersteller/) - Table, in German, of brick brands with set maker, brick maker, country and remarks. Covers official LEGO and alternative brands.
+- [Klemmbaustein Hersteller Lexikon (Steine-Kanal)](https://www.steine-kanal.de/klemmbaustein-hersteller-lexikon/) - Lexicon of established brick manufacturers by country, in German, with themes and notes; excludes copy brands. Covers official LEGO and alternative brands. Status: no update for 6 months.
 - [Liste von Klemmbausteinherstellern (German Wikipedia)](https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern) - Table of LEGO-compatible brick manufacturers with set maker, brick maker, stud pitch and remarks. Covers official LEGO and alternative brands.
-- [other-bricks.com brands](https://other-bricks.com/en/brands/) - Brand pages comparing building block brands by origin, quality and collection size, with set counts. Covers alternative brands.
-- [Welt des Steins (baustein.info)](https://baustein.info/welt-des-steins/) - German-language overview of brick brands that reached the German market, without claim to completeness. Covers alternative brands. Status: no update for a year.
+- [other-bricks.com brands](https://other-bricks.com/en/brands/) - Pages comparing building block brands by origin, quality and collection size, with set counts. Covers alternative brands.
+- [Welt des Steins (baustein.info)](https://baustein.info/welt-des-steins/) - Overview of brick brands that reached the German market, in German, without claim to completeness. Covers alternative brands. Status: no update for a year.
 
 ## Contributing
 

@@ -359,19 +359,19 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 
 ### Design software
 
-- [BrickLink Studio](https://www.bricklink.com/v3/studio/download.page) - Free 3D design software for LEGO models with BrickLink parts list, instruction editor and photorealistic rendering. Covers official LEGO and alternative brands.
-- [LeoCAD](https://www.leocad.org/) - Open-source computer-aided design program for virtual LEGO models based on the LDraw library, for Windows, macOS and Linux. Covers official LEGO.
+- [BrickLink Studio](https://www.bricklink.com/v3/studio/download.page) - 3D editor for LEGO models with BrickLink parts list, instruction editor and photorealistic rendering. Covers official LEGO and alternative brands.
+- [LeoCAD](https://www.leocad.org/) - Open-source program to build virtual LEGO models on the LDraw library, for Windows, macOS and Linux. Covers official LEGO.
 
 ### Apps
 
-- [Brick Search](https://bricksearch.app/) - Mobile app (iOS, Android) scanning collectible minifigure QR codes, with collection tracking, wish list, set archive and price comparison by country. Covers official LEGO.
+- [Brick Search](https://bricksearch.app/) - Scans QR codes of collectible minifigures on iOS and Android, with collection tracking, wish list, set archive and price comparison by country. Covers official LEGO.
 
 ### APIs and open data
 
 - [BrickLink API](https://www.bricklink.com/v3/api.page) - REST interface to the BrickLink marketplace: catalog, price guide, store inventories, orders, messages, feedback. Covers official LEGO and alternative brands.
 - [Brickognize](https://brickognize.com/) - Image search for LEGO parts, minifigures, sets and sticker sheets from a photo; free API without key used by several open-source collection tools. Covers official LEGO.
 - [Brickset API v3](https://brickset.com/article/52666/brickset-web-services) - JSON and SOAP interface to the Brickset catalog: sets, extra images, instructions, reviews, member collections (read and write). Covers official LEGO.
-- [LDraw open standard and parts library](https://www.ldraw.org/) - Open format for digital LEGO models and official parts library, basis of LeoCAD, LDView, LPub3D and Studio export. Covers official LEGO.
+- [LDraw open standard and parts library](https://www.ldraw.org/) - Digital LEGO model format and official parts library, open standard underlying LeoCAD, LDView, LPub3D and Studio export. Covers official LEGO.
 - [Rebrickable API v3](https://rebrickable.com/api/) - REST interface to the official LEGO catalog (sets, parts, minifigures, themes, colours) and to Rebrickable user collections. Covers official LEGO.
 
 ### Open-source projects
@@ -380,7 +380,7 @@ Design software, apps, APIs, open data and open-source projects around LEGO and 
 
 ### Programming, control and robotics
 
-- [Pybricks](https://pybricks.com/) - Python and block coding for LEGO smart hubs (Technic, City, BOOST, MINDSTORMS, SPIKE): programs are stored on the hub and run without a phone, with a web editor, a reference manual and projects for official sets. Covers official LEGO.
+- [Pybricks](https://pybricks.com/) - Python and block coding for LEGO smart hubs (Technic, City, BOOST, MINDSTORMS, SPIKE); programs are stored on the hub and run without a phone, with a web editor and a reference manual. Covers official LEGO.
 
 <br>
 
@@ -392,19 +392,19 @@ Existing directories, awesome lists and lists of channels and brands about LEGO 
 
 ### Site directories and awesome lists
 
-- [awesome-lego (ad-si)](https://github.com/ad-si/awesome-lego) - Community awesome list of LEGO software, archives, libraries, marketplaces, channels, books, blogs and games. Covers official LEGO.
-- [Deparkatre clubs and associations directory](https://deparkatre.fr/associations) - French-language directory of LEGO user groups, clubs and online communities in France, Europe and elsewhere, with national, regional and local scope. Covers official LEGO.
-- [LEGO Fan CoLab community directory](https://fancolab.lego.com/communities/) - Official LEGO directory of recognised fan communities, including French associations. Covers official LEGO.
+- [awesome-lego (ad-si)](https://github.com/ad-si/awesome-lego) - LEGO software, archives, libraries, marketplaces, channels, books, blogs and games, curated by the community. Covers official LEGO.
+- [Deparkatre clubs and associations directory](https://deparkatre.fr/associations) - LEGO user groups, clubs and online communities, national, regional and local, in France, Europe and elsewhere. Covers official LEGO.
+- [LEGO Fan CoLab community directory](https://fancolab.lego.com/communities/) - Fan communities recognised by LEGO, French associations among them. Covers official LEGO.
 
 ### Channel and podcast lists
 
-- [BrickTubed channel directory](https://bricktubed.com/channels/) - Directory of LEGO YouTube channels with subscribers, views, video count, country, last video and active status; a podcast page also exists. Covers official LEGO and alternative brands.
-- [Deparkatre LEGO influencer directory](https://deparkatre.fr/influenceurs) - French-language directory of LEGO YouTube channels, Instagram accounts, blogs and other creators, with an interactive map. Covers official LEGO and alternative brands.
+- [BrickTubed channel directory](https://bricktubed.com/channels/) - Subscribers, views, video count, country, last video and active status for each LEGO YouTube channel; a podcast page also exists. Covers official LEGO and alternative brands.
+- [Deparkatre LEGO influencer directory](https://deparkatre.fr/influenceurs) - Creators with an interactive map: LEGO YouTube channels, Instagram accounts, blogs and others. Covers official LEGO and alternative brands.
 
 ### Brand lists
 
 - [Liste von Klemmbausteinherstellern (German Wikipedia)](https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern) - Table of LEGO-compatible brick manufacturers with set maker, brick maker, stud pitch and remarks. Covers official LEGO and alternative brands.
-- [other-bricks.com brands](https://other-bricks.com/en/brands/) - Brand pages comparing building block brands by origin, quality and collection size, with set counts. Covers alternative brands.
+- [other-bricks.com brands](https://other-bricks.com/en/brands/) - Pages comparing building block brands by origin, quality and collection size, with set counts. Covers alternative brands.
 
 ## Contributing
 
