@@ -1,6 +1,5 @@
 name: Scorecard
 on:
-  branch_protection_rule:   # a change of the rules of the repository is scored again at once
   push:
     branches: [main]
   schedule:
