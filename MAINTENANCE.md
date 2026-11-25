@@ -27,7 +27,7 @@ flowchart LR
 |---|---|---|---|
 | **Pages** | every day 04:17, every push to `main`, after **Preview** | reads activity, builds and publishes the website with the previews | the website; one file a day on branch `history` |
 | **Links** | Wednesdays 05:23 | tests every link, from GitHub then from home and office probes | issue **Broken links** |
-| **Data fixes** | when **Links** ends | moved addresses, past event dates | pull request **Data fixes** |
+| **Data fixes** | when **Links** ends, except a dry run | moved addresses, past event dates | pull request **Data fixes** |
 | **Data report** | the 4th of each month, 03:41 | monthly report for the review | issue **Monthly data report** |
 | Review pass (language model) | the 5th of each month, 10:13 Paris time | full review of the data | pull request **Monthly review vX.Y** |
 | **Workflow audit** | Mondays 05:37 | security audit of the workflows | alerts in the **Security** tab |
@@ -45,7 +45,7 @@ Started by hand (**Run workflow**): **Pages**, **Links** (with *dry run*), **Dat
 | **Workflow audit** | when a workflow changes | the workflows are safe |
 | **Release** | when `VERSION` changes on `main` | tag `vX.Y` and the GitHub release |
 
-## Owner's tasks
+## Maintainer's tasks
 
 | Task | When | If not done |
 |---|---|---|
@@ -83,8 +83,10 @@ How, task by task:
 - The daily run (or one started by hand without previews) hands the day's measurements to a separate job, the only one allowed to write, which keeps them on the branch `history` (`metrics/YYYY-MM-DD.json`).
 
 ### Preview
-- Runs when a pull request that changes the website is opened, updated, reopened or closed (`site-src/`, `scripts/build.py`, `scripts/previews.py`, `media/` except the image of the README, `data/`, `VERSION`, `CHANGELOG.md`, its own workflow), at every push to `dev`, and when a branch or tag is deleted.
-- `scripts/previews.py` builds, without the token and in a job that can write nowhere, the website of `dev` if it exists and of every open pull request of this repository opened by a person (never a fork, never a bot; drafts included; 20 at most), with the measurements of the published website.
+- Starts when a pull request that changes the website is opened, updated, reopened or closed; at every push to `dev`; when a branch or tag is deleted.
+- Files that count as the website: `site-src/`, `scripts/build.py`, `scripts/previews.py`, `media/` (not the image of the README), `data/`, `VERSION`, `CHANGELOG.md`, its own workflow.
+- Builds the website of `dev`, if it exists, and of every open pull request of this repository opened by a person: never a fork or a bot; drafts included; 20 at most (`scripts/previews.py`).
+- The branch's code runs without the token, in a job that can write nowhere, with the measurements of the published website.
 - Each preview, at `preview/<number>/` (or `preview/dev/`), carries a banner and `noindex`; a failed build gets an error page.
 - Then starts **Pages** and keeps one comment on the pull request with the address. A closed request loses its preview at the next run.
 - A preview is served by the same website: anyone can open it, and it shares the browser storage of the published pages (theme, language, new tab). A request opened with the personal token of **Data fixes** counts as a person's.
@@ -93,7 +95,8 @@ How, task by task:
 - lychee reads `data/`, the README, contributing.md and this file from the machines of GitHub (401, 403, 405 and 429 accepted; loopback addresses skipped).
 - Each failure is opened again from 3 Globalping probes on home and office networks (2 in Europe, 1 in North America, else any 3), never from data centres; a redirect is followed for 3 hops at most.
 - Broken: fails from every probe that read it (2 at least) and again 90 seconds later. Otherwise it only blocks GitHub. A secure connection refused everywhere is listed apart.
-- Dead pages that answer 200 (parked or expired domain, unrelated content, closure notice) are looked for in the address of every open entry, platforms left out (YouTube, Reddit, GitHub, Facebook, Instagram, Discord, X, TikTok, Flickr, Patreon, Twitch).
+- Dead pages that answer 200 (parked or expired domain, unrelated content, closure notice) are looked for at the address of every open entry.
+- Platforms are left out of that search: YouTube, Reddit, GitHub, Facebook, Instagram, Discord, X, TikTok, Flickr, Patreon, Twitch.
 - `scripts/links_issue.py` keeps the issue **Broken links** (label `links`): open when a link is broken, a page is dead, or a link failed twice in a row without a verdict; closed otherwise. If lychee writes no report, the issue is left as it is.
 - When the hourly limit of Globalping cuts the list, the links of the previous run go first.
 - *Dry run* writes the issue body in the run summary, changes no issue and does not start **Data fixes**. `python3 scripts/links_issue.py --sample tests/links-sample.json` reads its yardstick again.
@@ -105,8 +108,20 @@ How, task by task:
 
 ### Data report
 - `scripts/refresh.py --month` reads the activity again and writes the issue **Monthly data report** (label `automatic`), read by the review the next day.
-- It holds: a guard line (what the previous report listed and is still there); read failures; archived repositories; selected entries no longer eligible; entries not checked for a year; coverage gaps (countries with 3 or more fan communities recognised by LEGO and at most one entry per community); the selection check; what changed in the month on branch `history`; the links that block GitHub; reliability per category; trends over two windows of 90 days (`scripts/trends.py`).
-- Selection check: a selected entry scoring 2 or more below an active unselected one of its group (score out of 7: activity or how recent the check, confidence, sources read). The selection is the rank 1 worldwide of each group.
+
+| Section | What it lists |
+|---|---|
+| Guard line | what the previous report listed and is still there |
+| Read failures, archived repositories | sources that could not be read, repositories archived |
+| Selection no longer eligible | selected entries without activity for 6 months, archived, not active, or on a weak source |
+| Not checked for a year | entries to read again |
+| Coverage gaps | countries with 3 or more fan communities recognised by LEGO and at most one entry per community |
+| Selection check | a selected entry scoring 2 or more below an active one of its group (score out of 7: activity or how recent the check, confidence, sources read) |
+| Changes of the month | statuses, archived repositories, entries measured or no longer measured (branch `history`) |
+| Links that block GitHub | copied from **Broken links** |
+| Reliability, trends | confidence and kinds of sources per category; two windows of 90 days (`scripts/trends.py`) |
+
+- The selection is the rank 1 worldwide of each group.
 
 ### Review pass (language model)
 - Scheduled task outside this repository; never pushes to `main`.
@@ -123,7 +138,12 @@ How, task by task:
 
 ### Render
 - `scripts/check_site.py` opens every view (directory as cards and table, brand mode of an alternative brand and of LEGO, observatory, about page, Brick Vault) in English and French at 1440, 1024, 768, 390 and 320 px, light theme; dark theme at 1440 and 390 px.
-- Fails on a sideways scroll, an element out of its box, a phone, email, date, tag or button label split over two lines, a word split inside itself, overlapping chart labels, a frame inherited by an inner list, a script or security policy error, and a word of the strengths or weaknesses that the search does not find.
+- Fails on:
+  - a sideways scroll, an element out of its box;
+  - a phone, email, date, tag or button label split over two lines, a word split inside itself;
+  - overlapping chart labels, a frame inherited by an inner list;
+  - a script or security policy error;
+  - a word of the strengths or weaknesses that the search does not find.
 - Accessibility (axe-core, WCAG 2.2 A and AA) at 1440 and 390 px, both themes: a guard, not a conformance target (the 13 px studs of the map are accepted).
 - First checks itself on `tests/render-fixture.html`, where one sound and one faulty case of each defect are planted. On failure, the findings are kept 7 days as the artefact `render-findings`.
 - A pull request that changes only data and the files generated from it gets a lighter pass (`--data-only`: 1440, 390 and 320 px, light theme, no accessibility; about 30 seconds instead of 3 minutes). A push to `main` gets every check.
