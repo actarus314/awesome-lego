@@ -3,8 +3,8 @@
 
 The header of the website above two blocks side by side, "Where to start" and "Map of the brick world", fading at
 the bottom; captured from the built site (site/) in English, en-GB, in both themes. Each PNG carries the version
-it shows (text chunk `version`): `scripts/build.py --check` fails when it differs from VERSION, so a pull request
-that raises the version regenerates the image.
+it shows (text chunk `version`): `scripts/build.py --check` warns when it differs from VERSION, so a pull request
+that raises the version takes the image again.
 
 Usage: python3 scripts/build.py --site-only && python3 scripts/readme_image.py [--site site] [--chrome /path/to/chrome]
 Needs `pip install playwright pillow` and `playwright install chromium` (or --chrome).

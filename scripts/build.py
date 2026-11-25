@@ -743,7 +743,7 @@ def png_text(path, key):
 
 
 def check_readme_images(version):
-    """The README image shows the current version: a pull request that raises VERSION regenerates it."""
+    """The README image shows the current version: a pull request that raises VERSION should take it again (a warning)."""
     errors = []
     for name in README_IMAGES:
         f = ROOT / "media" / name
@@ -813,8 +813,8 @@ def main():
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
     if not re.search(rf"^## v{re.escape(version)} — \d{{4}}-\d{{2}}-\d{{2}}$", (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), re.M):
         fail([f"CHANGELOG.md has no '## v{version} — YYYY-MM-DD' section for VERSION {version}"])
-    if "--check" in sys.argv and (errs := check_readme_images(version)):
-        fail(errs)
+    for w in check_readme_images(version) if "--check" in sys.argv else []:  # a warning, never an error: decision of 25/11/2026
+        print("! " + w)
     texts = {f: readme(cats, m, lang, kind) for (kind, lang), f in FILES.items()}
     texts[".github/ISSUE_TEMPLATE/add-resource.yml"] = issue_form(cats)
     print(f"✓ v{version}: {sum(len(c['resources']) for c in cats)} resources in {len(cats)} categories")
