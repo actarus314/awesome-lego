@@ -328,8 +328,8 @@ Guides, glossaries, history, compatibility and legal references, education and c
 
 ### Guides and reference
 
-- [Brick Architect](https://brickarchitect.com/) - Independent site by an architect and author: online LEGO Parts Guide, LEGO Storage Guide, set reviews and monthly news roundups. Covers official LEGO.
-- [BrickNerd storage guide](https://bricknerd.com/home/an-opinionated-guide-to-lego-storage-containers-and-cost-5-25-23) - Opinionated guide by an adult fan on sorting loose parts and choosing containers, with a cost comparison of drawer units.
+- [Brick Architect](https://brickarchitect.com/) - By an independent architect and author: the online LEGO Parts Guide and LEGO Storage Guide, set reviews and monthly news roundups. Covers official LEGO.
+- [BrickNerd storage guide](https://bricknerd.com/home/an-opinionated-guide-to-lego-storage-containers-and-cost-5-25-23) - Opinionated advice from an adult fan on sorting loose parts and choosing containers, with a cost comparison of drawer units.
 
 ### Compatibility, materials and law
 
@@ -341,13 +341,13 @@ Guides, glossaries, history, compatibility and legal references, education and c
 
 ### Books and magazines
 
-- [Blocks magazine](https://blocksmag.com/) - Monthly magazine for adult fans of LEGO, 116 pages, published in the United Kingdom since November 2014 by Silverback Publishing. Covers official LEGO.
+- [Blocks magazine](https://blocksmag.com/) - Monthly, 116 pages, for adult fans of LEGO, published in the United Kingdom since November 2014 by Silverback Publishing. Covers official LEGO.
 - [No Starch Press: LEGO books](https://nostarch.com/catalog/lego) - Publisher catalogue of unofficial LEGO books for builders: technique, Technic, robotics, lighting, trains and art. Covers official LEGO.
 
 ### Artists and designers
 
-- [LEGO Certified Professionals (official LEGO list)](https://www.lego.com/en-us/aboutus/lego-certified-professionals) - Official list of adult builders officially recognised by LEGO who run a business with bricks, by region, with the rules on what they may build for clients. Covers official LEGO.
-- [Nico71's Technic Creations](https://www.nico71.fr/) - French independent LEGO Technic designer, a mechanical engineer: motorised vehicles and machines, PDF instructions, custom kits, videos explaining design choices and commissioned models for companies.
+- [LEGO Certified Professionals (official LEGO list)](https://www.lego.com/en-us/aboutus/lego-certified-professionals) - Adult builders officially recognised by LEGO who run a business with bricks, listed by region, with the rules on what they may build for clients. Covers official LEGO.
+- [Nico71's Technic Creations](https://www.nico71.fr/) - Motorised LEGO Technic vehicles and machines, PDF instructions, custom kits, videos explaining design choices and models built to order for companies, by an independent mechanical engineer.
 
 <br>
 
