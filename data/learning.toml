@@ -398,7 +398,7 @@ languages = ["en", "fr", "de"]
 countries = ["international"]
 access = "free"
 summary_en = "Judgment of 14 September 2010: the three-dimensional shape of a LEGO brick cannot be registered as a trade mark, as it consists of a shape necessary to obtain a technical result."
-summary_fr = "Arrêt du 14 septembre 2010 : la forme tridimensionnelle d'une brique de marque LEGO ne peut pas être enregistrée comme marque, car elle se compose d'une forme nécessaire à l'obtention d'un résultat technique."
+summary_fr = "Arrêt du 14 septembre 2010 : la forme tridimensionnelle de la brique LEGO ne peut pas être enregistrée comme marque, car elle se compose d'une forme nécessaire à l'obtention d'un résultat technique."
 strengths_en = ["Primary source, full text", "Explains why compatible bricks are legal in the European Union"]
 strengths_fr = ["Source primaire, texte intégral", "Explique pourquoi les briques compatibles sont légales dans l'Union européenne"]
 weaknesses_en = ["Concerns the shape of the brick only, not copies of sets, logos or packaging", "Legal text, not a buyer's guide"]
@@ -1130,7 +1130,7 @@ url = "https://brickartist.com/"
 group = "artists"
 rank = {intl = 3}
 rank_reason_en = "Touring exhibition The Art of the Brick running since 2007, with Certified Professional status confirmed by the official LEGO biography; mostly an exhibition schedule."
-rank_reason_fr = "Exposition itinérante The Art of the Brick depuis 2007, statut de professionnel certifié confirmé par la biographie officielle de LEGO ; surtout un calendrier d'expositions."
+rank_reason_fr = "Exposition itinérante The Art of the Brick depuis 2007, statut de professionnel certifié confirmé par la biographie publiée par le groupe LEGO ; surtout un calendrier d'expositions."
 covers = ["learning", "official"]
 languages = ["en"]
 countries = ["international"]
@@ -1671,32 +1671,6 @@ confidence = "high"
 
 [[resource.sources]]
 url = "https://itlug.org/guida-non-ufficiale-delle-tecniche-avanzate-di-costruzione-lego/"
-date = "2026-11-25"
-kind = "read"
-
-[[resource]]
-id = "mils-hispabrick"
-name = "MILS: Modular Integrated Landscaping System"
-url = "https://www.abellon.net/MILS/"
-group = "guides"
-covers = ["learning", "clubs"]
-languages = ["en"]
-countries = ["ES"]
-access = "free"
-summary_en = "Rules for assembling shared dioramas from terrain modules of 32 by 32 studs, approved by the HispaBrick Magazine team; counterpart for scenery of the L-Gauge Modular System for trains."
-summary_fr = "Règles pour assembler des dioramas collectifs à partir de modules de terrain de 32 par 32 tenons, approuvées par l'équipe de HispaBrick Magazine ; pendant paysager du L-Gauge Modular System pour les trains."
-strengths_en = ["Two kinds of modules: basic terrain modules usable in any orientation and compatible terrain modules for rivers, roads and shores", "Rules cover only the sides where builders connect, not the content of the builds"]
-strengths_fr = ["Deux sortes de modules : modules de terrain de base orientables librement et modules de terrain compatibles pour rivières, routes et rivages", "Les règles ne portent que sur les côtés où les constructeurs se raccordent, pas sur le contenu des créations"]
-weaknesses_en = ["Page last modified on 3 January 2021, according to the server", "Written for the dioramas of the HispaBrick Magazine community"]
-weaknesses_fr = ["Page modifiée pour la dernière fois le 3 janvier 2021, d'après le serveur", "Rédigées pour les dioramas de la communauté de HispaBrick Magazine"]
-last_activity = "2021-01-03"
-status = "active"
-checked = "2026-11-25"
-added = "2026-11-25"
-confidence = "high"
-
-[[resource.sources]]
-url = "https://www.abellon.net/MILS/"
 date = "2026-11-25"
 kind = "read"
 

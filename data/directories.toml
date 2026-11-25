@@ -699,38 +699,6 @@ date = "2026-11-25"
 kind = "official"
 
 [[resource]]
-id = "feedspot-lego-blogs"
-name = "Feedspot LEGO blogs"
-url = "https://bloggers.feedspot.com/lego_blogs/"
-group = "site-directories"
-covers = ["official", "alternative", "news"]
-languages = ["en"]
-countries = ["international"]
-summary_en = "56 blogs, updated on 17 November 2026, ordered by an automated score of relevance, expertise, posting frequency and freshness."
-summary_fr = "56 blogs, mis à jour le 17 novembre 2026, ordonnés selon un score automatique de pertinence, d'expertise, de fréquence de publication et de fraîcheur."
-strengths_en = ["56 blogs with an update date", "Opens with The Brick Fan, Jay's Brick Blog and The Brothers Brick"]
-strengths_fr = ["56 blogs avec une date de mise à jour", "S'ouvre sur The Brick Fan, Jay's Brick Blog et The Brothers Brick"]
-weaknesses_en = ["Automated ranking by a commercial service that also sells contact exports", "English-language blogs only"]
-weaknesses_fr = ["Classement automatique par un service commercial qui vend aussi des exports de contacts", "Blogs en anglais uniquement"]
-status = "active"
-last_activity = "2026-11-17"
-checked = "2026-11-25"
-added = "2026-11-25"
-confidence = "medium"
-size = [{n = 56, unit = "entries"}]
-brands = []
-
-[[resource.sources]]
-url = "https://bloggers.feedspot.com/lego_blogs/"
-date = "2026-11-17"
-kind = "read"
-
-[[resource.sources]]
-url = "https://bloggers.feedspot.com/"
-date = "2026-11-25"
-kind = "read"
-
-[[resource]]
 id = "feedspot-lego-youtube"
 name = "Feedspot LEGO YouTubers"
 url = "https://videos.feedspot.com/lego_youtube_channels/"

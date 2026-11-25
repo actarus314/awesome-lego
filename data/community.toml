@@ -702,27 +702,33 @@ name = "r/lego"
 url = "https://www.reddit.com/r/lego/"
 group = "reddit"
 rank = {intl = 1, en = 1}
-rank_reason_en = "Described as the largest LEGO audience on Reddit; size not verified and Reddit not read directly."
-rank_reason_fr = "Décrit comme la plus grande audience LEGO sur Reddit ; taille non vérifiée et Reddit non lu directement."
+rank_reason_en = "Largest LEGO subreddit, 2828580 members in the Arctic Shift archive on 23 November 2026, far ahead of the others."
+rank_reason_fr = "Plus grand sous-reddit LEGO, 2828580 membres dans l'archive Arctic Shift le 23 novembre 2026, loin devant les autres."
 covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]
 summary_en = "News, photos and discussion on LEGO; sales and trades are sent to other subreddits."
 summary_fr = "Actualités, photos et discussions sur LEGO ; ventes et échanges renvoyés vers d'autres sous-reddits."
-strengths_en = ["Largest LEGO audience on Reddit (size not verified)"]
-strengths_fr = ["Plus grande audience LEGO sur Reddit (taille non vérifiée)"]
-weaknesses_en = ["Alternative brands off topic", "Not read directly; activity and size unverified"]
-weaknesses_fr = ["Marques alternatives hors sujet", "Non lu directement ; activité et taille non vérifiées"]
+strengths_en = ["Largest LEGO audience on Reddit: 2828580 members and 858320 posts in the Arctic Shift archive on 23 November 2026"]
+strengths_fr = ["Plus grande audience LEGO sur Reddit : 2828580 membres et 858320 messages dans l'archive Arctic Shift le 23 novembre 2026"]
+weaknesses_en = ["Alternative brands off topic", "Reddit not read directly: figures from the Arctic Shift archive"]
+weaknesses_fr = ["Marques alternatives hors sujet", "Reddit non lu directement : chiffres de l'archive Arctic Shift"]
 status = "active"
-checked = "2026-11-23"
+checked = "2026-11-25"
 added = "2026-11-23"
-confidence = "low"
+confidence = "medium"
 subreddit = "lego"
+size = [{n = 2828580, unit = "members"}]
 
 [[resource.sources]]
 url = "https://www.reddit.com/r/lego/"
 date = "2026-11-23"
 kind = "indexed"
+
+[[resource.sources]]
+url = "https://arctic-shift.photon-reddit.com/api/subreddits/search?subreddit=lego"
+date = "2026-11-23"
+kind = "third-party"
 
 [[resource]]
 id = "reddit-legodeal"
@@ -1649,7 +1655,7 @@ id = "reddit-legotechnic"
 name = "r/LEGOtechnic"
 url = "https://www.reddit.com/r/legotechnic/"
 group = "reddit"
-rank = {intl = 4, en = 4}
+rank = {intl = 3, en = 3}
 rank_reason_en = "At least 40141 members (February 2025 snapshot) and 242 posts in 30 days, read on 23 November 2026."
 rank_reason_fr = "Au moins 40141 membres (relevé de février 2025) et 242 messages en 30 jours, lus le 23 novembre 2026."
 covers = ["official", "parts"]
@@ -1679,6 +1685,7 @@ id = "reddit-legotrains"
 name = "r/LEGOtrains"
 url = "https://www.reddit.com/r/LEGOtrains/"
 group = "reddit"
+rank = {intl = 5, en = 5}
 covers = ["official", "custom-builds"]
 languages = ["en"]
 countries = ["international"]
@@ -1695,6 +1702,8 @@ checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
 subreddit = "LEGOtrains"
+rank_reason_en = "At least 23760 members in the February 2025 snapshot, the reference subreddit for LEGO trains."
+rank_reason_fr = "Au moins 23760 membres au relevé de février 2025, le sous-reddit de référence des trains LEGO."
 
 [[resource.sources]]
 url = "https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=LEGOtrains&limit=1&sort=desc"
@@ -1706,7 +1715,7 @@ id = "reddit-afol"
 name = "r/AFOL"
 url = "https://www.reddit.com/r/AFOL/"
 group = "reddit"
-rank = {intl = 5, en = 5}
+rank = {intl = 4, en = 4}
 rank_reason_en = "At least 32404 members (February 2025 snapshot) and 247 posts in 30 days, read on 23 November 2026."
 rank_reason_fr = "Au moins 32404 membres (relevé de février 2025) et 247 messages en 30 jours, lus le 23 novembre 2026."
 covers = ["official", "custom-builds"]
@@ -2443,38 +2452,3 @@ kind = "read"
 url = "https://api.flickr.com/services/feeds/groups_pool.gne?id=44124304756@N01&lang=en-us&format=rss_200"
 date = "2026-11-25"
 kind = "read"
-
-[[resource]]
-id = "reddit-bioniclelego"
-name = "r/bioniclelego"
-url = "https://www.reddit.com/r/bioniclelego/"
-group = "reddit"
-rank = {intl = 3, en = 3}
-rank_reason_en = "83626 members and 825 posts in 30 days according to the Arctic Shift archive, read on 25 November 2026; Reddit not read directly."
-rank_reason_fr = "83626 membres et 825 messages en 30 jours selon l'archive Arctic Shift, lue le 25 novembre 2026 ; Reddit non lu directement."
-covers = ["official", "custom-builds"]
-languages = ["en"]
-countries = ["international"]
-summary_en = "Main BIONICLE community on Reddit, with flairs for art, collections, custom builds, discussion and lore, and a linked Discord server."
-summary_fr = "Principale communauté BIONICLE sur Reddit, avec des étiquettes pour les illustrations, les collections, les créations originales, les discussions et l'histoire, et un serveur Discord lié."
-strengths_en = ["Active: 825 posts in 30 days (archive read 25 November 2026)", "Created on 2 September 2012"]
-strengths_fr = ["Actif : 825 messages en 30 jours (archive lue le 25 novembre 2026)", "Créé le 2 septembre 2012"]
-weaknesses_en = ["Figures read from the Arctic Shift archive, not from Reddit, which refuses readers"]
-weaknesses_fr = ["Chiffres lus dans l'archive Arctic Shift, non sur Reddit, qui refuse les lecteurs"]
-status = "active"
-last_activity = "2026-11-25"
-checked = "2026-11-25"
-added = "2026-11-25"
-confidence = "medium"
-size = [{n = 83626, unit = "members", approx = "about"}]
-subreddit = "bioniclelego"
-
-[[resource.sources]]
-url = "https://arctic-shift.photon-reddit.com/api/subreddits/search?subreddit=bioniclelego"
-date = "2026-11-25"
-kind = "third-party"
-
-[[resource.sources]]
-url = "https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=bioniclelego&limit=1&sort=desc"
-date = "2026-11-25"
-kind = "third-party"

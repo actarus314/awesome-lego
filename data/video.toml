@@ -1385,39 +1385,6 @@ date = "2026-11-25"
 kind = "read"
 
 [[resource]]
-id = "brick-technology"
-name = "Brick Technology"
-url = "https://www.youtube.com/@BrickTechnology"
-group = "building-and-custom"
-covers = ["custom-builds"]
-languages = ["en"]
-countries = ["international"]
-summary_en = "Large Technic cars, cranes and test tracks with motors and remote control, shown in stress tests such as speed bumps, loops and gaps."
-summary_fr = "Grandes voitures, grues et pistes d'essai Technic avec moteurs et télécommande, présentées dans des essais extrêmes : ralentisseurs, boucles et fossés."
-strengths_en = ["More than 5 million views on each of the latest eight videos"]
-strengths_fr = ["Plus de 5 millions de vues pour chacune des huit dernières vidéos"]
-weaknesses_en = ["Instructions and part lists not provided (stated)", "Few uploads: 43 videos, the latest on 29 August 2026", "Amazon commission links in descriptions (stated)"]
-weaknesses_fr = ["Notices et listes de pièces non fournies (indiqué)", "Peu de vidéos : 43, la dernière le 29 août 2026", "Liens Amazon à commission dans les descriptions (indiqué)"]
-status = "active"
-last_activity = "2026-08-29"
-checked = "2026-11-25"
-added = "2026-11-25"
-confidence = "high"
-size = [{n = 2690000, unit = "subscribers", approx = "about"}, {n = 43, unit = "videos"}]
-funding = ["affiliation"]
-youtube_channel_id = "UCUuvZ0skL2WYZ3rhPMZbfdA"
-
-[[resource.sources]]
-url = "https://www.youtube.com/@BrickTechnology"
-date = "2026-11-25"
-kind = "read"
-
-[[resource.sources]]
-url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCUuvZ0skL2WYZ3rhPMZbfdA"
-date = "2026-11-25"
-kind = "read"
-
-[[resource]]
 id = "jk-brickworks"
 name = "JK Brickworks"
 url = "https://www.youtube.com/@JKBrickworks"
@@ -2162,8 +2129,8 @@ name = "Brickeando LEGO Podcast"
 url = "https://www.youtube.com/@BrickeandoPodcast"
 group = "podcasts"
 rank = {es = 2}
-rank_reason_en = "46 episodes published on the first of each month from July to November 2026; episode 46 on 1 November 2026."
-rank_reason_fr = "46 épisodes publiés le 1er de chaque mois de juillet à novembre 2026 ; épisode 46 le 1er novembre 2026."
+rank_reason_en = "Episode 46 on 1 November 2026, published monthly on the first of the month since July 2026."
+rank_reason_fr = "Épisode 46 le 1er novembre 2026, publication mensuelle le 1er du mois depuis juillet 2026."
 covers = ["news", "official"]
 languages = ["es"]
 countries = ["ES"]

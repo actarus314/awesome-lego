@@ -248,7 +248,6 @@ rank = {intl = 5, BE = 1, DE = 1, US = 1}
 rank_reason_en = "Centres under the new LEGO Discovery Centre name (Brussels, Hamburg, Atlanta, Boston, Washington DC), acquired by the LEGO Group on 27 February 2026; Hamburg runs LEGO After Work evenings reserved for adult fans."
 rank_reason_fr = "Centres au nouveau nom LEGO Discovery Centre (Bruxelles, Hambourg, Atlanta, Boston, Washington DC), rachetés par le groupe LEGO le 27 février 2026 ; Hambourg organise des soirées LEGO After Work réservées aux adultes fans de LEGO."
 operator = "lego-group"
-aliases = ["LEGO Discovery Center"]
 covers = ["official", "places"]
 languages = ["en", "fr", "de", "nl"]
 countries = ["BE", "DE", "US"]
@@ -287,7 +286,6 @@ name = "LEGOLAND Discovery Centers"
 url = "https://www.legolanddiscoverycenter.com/"
 group = "official-venues"
 operator = "lego-group"
-aliases = ["LEGOLAND Discovery Centre"]
 covers = ["official", "places"]
 languages = ["en", "de", "nl"]
 countries = ["international"]
@@ -1742,7 +1740,6 @@ rank = {JP = 1}
 rank_reason_en = "More than 40 attractions, workshops, a themed hotel and the Nagoya SEA LIFE Aquarium, with a site in Japanese, English and Chinese."
 rank_reason_fr = "Plus de 40 attractions, des ateliers, un hôtel thématique et le Nagoya SEA LIFE Aquarium, avec un site en japonais, en anglais et en chinois."
 operator = "licensee"
-aliases = ["レゴランド・ジャパン"]
 covers = ["official", "places"]
 languages = ["ja", "en", "zh"]
 countries = ["JP"]
@@ -1786,7 +1783,6 @@ rank = {KR = 1}
 rank_reason_en = "More than 40 LEGO-themed attractions and a themed hotel, one hour from Seoul according to its site."
 rank_reason_fr = "Plus de 40 attractions sur le thème LEGO et un hôtel thématique, à une heure de Séoul selon son site."
 operator = "licensee"
-aliases = ["레고랜드 코리아"]
 covers = ["official", "places"]
 languages = ["ko", "en"]
 countries = ["KR"]
@@ -1869,7 +1865,6 @@ rank = {intl = 3, CN = 1}
 rank_reason_en = "Eight themed lands, more than 75 rides, shows and attractions and more than 85000000 bricks in the models, with opening hours published day by day."
 rank_reason_fr = "Huit univers thématiques, plus de 75 attractions et spectacles, plus de 85000000 briques dans les modèles, horaires publiés jour par jour."
 operator = "licensee"
-aliases = ["上海乐高乐园"]
 covers = ["official", "places"]
 languages = ["zh", "en"]
 countries = ["CN"]
@@ -1949,7 +1944,6 @@ rank = {JP = 1}
 rank_reason_en = "In the DECKS Tokyo Beach mall in Odaiba, with 11 attractions and a site in Japanese and English."
 rank_reason_fr = "Dans le centre commercial DECKS Tokyo Beach à Odaiba, avec 11 attractions et un site en japonais et en anglais."
 operator = "lego-group"
-aliases = ["LEGOLAND Discovery Center Tokyo", "レゴランド・ディスカバリー・センター東京"]
 covers = ["official", "places"]
 languages = ["ja", "en"]
 countries = ["JP"]
@@ -1993,7 +1987,6 @@ rank = {JP = 2}
 rank_reason_en = "On the third floor of the Tempozan Marketplace, with 11 attractions and a site in Japanese, English and Chinese."
 rank_reason_fr = "Au troisième étage du Tempozan Marketplace, avec 11 attractions et un site en japonais, en anglais et en chinois."
 operator = "lego-group"
-aliases = ["LEGOLAND Discovery Center Osaka", "レゴランド・ディスカバリー・センター大阪"]
 covers = ["official", "places"]
 languages = ["ja", "en", "zh"]
 countries = ["JP"]
@@ -2037,7 +2030,6 @@ rank = {NL = 1}
 rank_reason_en = "Only LEGOLAND Discovery Centre of the Netherlands, with more than 3000000 bricks, 7 or more play zones and one ride."
 rank_reason_fr = "Seul LEGOLAND Discovery Centre des Pays-Bas, avec plus de 3000000 briques, 7 zones de jeu ou plus et une attraction."
 operator = "lego-group"
-aliases = ["LEGOLAND Discovery Center Scheveningen"]
 covers = ["official", "places"]
 languages = ["nl", "en", "de"]
 countries = ["NL"]
@@ -2084,7 +2076,6 @@ rank = {CA = 1}
 rank_reason_en = "In the Vaughan Mills mall, with 12 or more attractions, rides and experiences, LEGO play zones and a 4D cinema."
 rank_reason_fr = "Dans le centre commercial Vaughan Mills, avec 12 attractions ou plus, des zones de jeu LEGO et un cinéma 4D."
 operator = "lego-group"
-aliases = ["LEGOLAND Discovery Center Toronto"]
 covers = ["official", "places"]
 languages = ["en"]
 countries = ["CA"]
@@ -2127,7 +2118,6 @@ rank = {AU = 1}
 rank_reason_en = "Adult Nights for guests aged 18 and over with workshops by a Master Model Builder, 13 attractions and more than 2000000 bricks."
 rank_reason_fr = "Soirées adultes pour les personnes de 18 ans et plus, avec ateliers d'un Master Model Builder, 13 attractions et plus de 2000000 briques."
 operator = "lego-group"
-aliases = ["LEGOLAND Discovery Center Melbourne"]
 covers = ["official", "places"]
 languages = ["en"]
 countries = ["AU"]
@@ -2135,7 +2125,7 @@ access = "paid"
 summary_en = "Adult Nights for guests aged 18 and over, with workshops by a Master Model Builder, build challenges, set auctions and a 4D cinema; the next one is on Saturday 12 December 2026."
 summary_fr = "Soirées adultes dès 18 ans, avec ateliers d'un Master Model Builder, défis de construction, ventes aux enchères de sets et cinéma 4D ; la prochaine a lieu le samedi 12 décembre 2026."
 strengths_en = ["13 attractions and more than 2 million bricks, including a Miniland of Melbourne", "On level 2 of the Chadstone shopping centre, with a LEGO retail store on site"]
-strengths_fr = ["13 attractions et plus de 2 millions de briques, dont un Miniland de Melbourne", "Au niveau 2 du centre commercial Chadstone, avec un magasin LEGO sur place"]
+strengths_fr = ["13 attractions et plus de 2 millions de briques, dont un Miniland de Melbourne", "Au niveau 2 du centre commercial Chadstone, avec un magasin du groupe LEGO sur place"]
 weaknesses_en = ["During standard hours adults must be accompanied by a child aged 17 or under", "Designed primarily for children aged 3 to 10"]
 weaknesses_fr = ["Aux horaires habituels, les adultes doivent être accompagnés d'un enfant de 17 ans ou moins", "Conçu avant tout pour les enfants de 3 à 10 ans"]
 size = [{n = 2000000, unit = "bricks", approx = "more-than"}]
@@ -2176,7 +2166,6 @@ rank = {HK = 1}
 rank_reason_en = "A Miniland of Hong Kong landmarks with more than 1500000 bricks, 2 rides and a 4D studio."
 rank_reason_fr = "Un Miniland de monuments de Hong Kong avec plus de 1500000 briques, 2 attractions et un studio 4D."
 operator = "lego-group"
-aliases = ["LEGOLAND Discovery Center Hong Kong"]
 covers = ["official", "places"]
 languages = ["en", "zh"]
 countries = ["HK"]
@@ -2208,7 +2197,6 @@ kind = "read"
 
 [resource.contact]
 address = "Shop B131-133, B1, K11 MUSEA, Victoria Dockside, 18 Salisbury Road, Tsim Sha Tsui, Kowloon, Hong Kong"
-email = "LDCHK.info@legodiscoverycentre.com"
 url = "https://www.legolanddiscoverycentre.com/hong-kong/en/information/contact-us/"
 date = "2026-11-25"
 
@@ -2220,7 +2208,6 @@ group = "museums-and-exhibitions"
 rank = {PL = 2}
 rank_reason_en = "Interactive models run with buttons and joysticks, open every day from 10:00 to 18:00, with a combined ticket with a Video Game Museum."
 rank_reason_fr = "Modèles interactifs commandés par boutons et manettes, ouvert tous les jours de 10 h à 18 h, avec un billet combiné avec un musée du jeu vidéo."
-aliases = ["Muzeum Klocków Karpacz"]
 covers = ["official", "places"]
 languages = ["pl", "en", "de", "cs"]
 countries = ["PL"]
@@ -2304,7 +2291,6 @@ group = "museums-and-exhibitions"
 rank = {NL = 2}
 rank_reason_en = "Two galleries from a collection taken over from an entire LEGO museum, plus Brick-City at Hoorn railway station; free with the Museumkaart."
 rank_reason_fr = "Deux galeries issues d'une collection reprise d'un musée LEGO entier, plus Brick-City à la gare de Hoorn ; gratuit avec la Museumkaart."
-aliases = ["LEGO in het Museum", "Museum Hoorn"]
 covers = ["official", "places"]
 languages = ["nl", "en", "de"]
 countries = ["NL"]
@@ -2356,7 +2342,7 @@ covers = ["official", "places"]
 languages = ["hu", "en"]
 countries = ["HU"]
 access = "paid"
-summary_en = "Dioramas by Hungarian builders, including a three-year build of Budapest's Western Railway Station, with a playhouse holding a sea of bricks and a shop selling sets, inside the Campona mall."
+summary_en = "Dioramas by local builders, including a three-year build of Budapest's Western Railway Station, with a playhouse holding a sea of bricks and a shop selling sets, inside the Campona mall."
 summary_fr = "Dioramas de constructeurs locaux, dont la gare de l'Ouest de Budapest reconstituée en trois ans, avec une aire de jeu remplie de briques et une boutique de sets, dans le centre commercial Campona."
 strengths_en = ["Exhibits change regularly", "Open every day, 10:00 to 19:00 (to 20:00 on Friday and Saturday)", "Site news dated 27 October 2026"]
 strengths_fr = ["Les modèles exposés changent régulièrement", "Ouvert tous les jours de 10 h à 19 h (jusqu'à 20 h le vendredi et le samedi)", "Actualités du site datées du 27 octobre 2026"]
@@ -2399,7 +2385,6 @@ group = "museums-and-exhibitions"
 rank = {FI = 1}
 rank_reason_en = "Thousands of sets from several decades in themed rooms, open on listed dates from 15 November 2026 to 3 January 2027, with a web shop of used products."
 rank_reason_fr = "Des milliers de sets de plusieurs décennies dans des salles thématiques, ouvert à des dates indiquées du 15 novembre 2026 au 3 janvier 2027, avec une boutique en ligne de produits d'occasion."
-aliases = ["Vanha-palikka", "Old Brick"]
 covers = ["official", "second-hand", "places"]
 languages = ["fi"]
 countries = ["FI"]
@@ -2477,7 +2462,6 @@ group = "museums-and-exhibitions"
 rank = {TW = 1}
 rank_reason_en = "More than 1000000 bricks and over 1000 exhibits, open every day of the year from 10:00 to 17:00."
 rank_reason_fr = "Plus de 1000000 briques et plus de 1000 pièces exposées, ouvert tous les jours de l'année de 10 h à 17 h."
-aliases = ["積木博物館"]
 covers = ["official", "places"]
 languages = ["zh"]
 countries = ["TW"]
@@ -2557,7 +2541,6 @@ group = "museums-and-exhibitions"
 rank = {US = 1}
 rank_reason_en = "More than 4000000 bricks, 500 statues and about 20 themed rooms according to its operator, open Tuesday to Sunday from 15 May 2026, seasonal."
 rank_reason_fr = "Plus de 4000000 briques, 500 statues et environ 20 salles thématiques selon son exploitant, ouvert du mardi au dimanche depuis le 15 mai 2026, saisonnier."
-aliases = ["Brick Museum Bellaire", "Unofficial Toy and Plastic Brick Museum"]
 covers = ["official", "places"]
 languages = ["en"]
 countries = ["US"]

@@ -39,7 +39,7 @@ UNITS = {"sets", "brands", "members", "topics", "posts", "subscribers", "videos"
          "square-metres", "bricks", "parks", "minifigures", "parts", "products", "shops", "ads", "visitors", "exhibitors",
          "models", "articles", "countries", "events", "clubs", "communities", "instructions", "reviews", "followers", "editions"}
 APPROX = {"about", "more-than", "at-least"}
-# Rules of lot 3 that the current data do not meet yet: warnings until the content is converted (lot 3b), errors after.
+# Rules of lot 3 (writing, access, sizes, ranks): errors since the content was converted in lot 3b; False turns them into warnings.
 NEW_RULES_BLOCKING = True
 STATUS = {"active", "slow", "inactive", "archived", "dead"}
 CARD_LABEL = 17  # characters of a group label on a card, beside the entry's name, on one line down to 320 px
@@ -261,7 +261,7 @@ STOP = {"and", "the", "of", "for", "with", "official", "lego", "other", "brands"
 
 
 def text_notes(cats):
-    """Writing rules of lot 3 on the texts of the entries: warnings until lot 3b."""
+    """Writing rules of lot 3 on the texts of the entries (errors while NEW_RULES_BLOCKING)."""
     for c in cats:
         cid = c["category"]["id"]
         gname = {(g["id"], lang): g["name_" + lang] for g in c["category"].get("groups", []) for lang in LANGS}
@@ -763,7 +763,7 @@ def report_notes():
         k = re.sub(r"^[\w.-]+\.toml: [\w-]+: |^[^:]+: ", "", n)
         k = re.sub(r"'[^']*'|\"[^\"]*\"|«[^»]*»|\([^)]*\)|\[[^\]]*\]|\d+|^[\w-]+: ", "…", k)[:90]
         kinds[k] = kinds.get(k, 0) + 1
-    print(f"! {len(notes)} breaches of the rules of lot 3, warnings until the data are converted (python3 scripts/build.py --notes lists them):")
+    print(f"! {len(notes)} breaches of the rules of lot 3, warnings while NEW_RULES_BLOCKING is False (python3 scripts/build.py --notes lists them):")
     for k, n in sorted(kinds.items(), key=lambda x: -x[1]):
         print(f"   {n:4} {k}")
     if "--notes" in sys.argv:

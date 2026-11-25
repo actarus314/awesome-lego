@@ -835,7 +835,6 @@ date = "2023-04-18"
 kind = "forum"
 
 [resource.contact]
-address = "Schulgasse 25, 2124 Niederkreuzstetten"
 email = "office@derhelfendestein.at"
 url = "https://derhelfendestein.at/"
 date = "2026-11-24"
@@ -1362,16 +1361,16 @@ id = "well-lug"
 name = "Well-LUG"
 url = "https://www.well-lug.nz/"
 rank = {NZ = 2}
-rank_reason_en = "Four branches (Wellington, Palmerston North, Hawke's Bay, Whanganui), organiser of New Zealand's brick shows and of an AFOL day drawing fans from New Zealand and Australia; last activity on 23 November 2026, confidence high."
-rank_reason_fr = "Quatre antennes (Wellington, Palmerston North, Hawke's Bay, Whanganui), organisateur des salons de la brique néo-zélandais et d'une journée AFOL réunissant des fans de Nouvelle-Zélande et d'Australie ; dernière activité le 23 novembre 2026, confiance haute."
+rank_reason_en = "Four branches (Wellington, Palmerston North, Hawke's Bay, Whanganui), organiser of New Zealand's brick shows and of an adult fans day drawing fans from New Zealand and Australia; last activity on 23 November 2026, confidence high."
+rank_reason_fr = "Quatre antennes (Wellington, Palmerston North, Hawke's Bay, Whanganui), organisateur des salons de la brique néo-zélandais et d'une journée des fans adultes réunissant des fans de Nouvelle-Zélande et d'Australie ; dernière activité le 23 novembre 2026, confiance haute."
 feed = "https://www.well-lug.nz/blog-feed.xml"
 group = "regional-clubs"
 covers = ["clubs", "events"]
 languages = ["en"]
 countries = ["NZ"]
 access = "paid"
-summary_en = "Four branches (Wellington, Palmerston North, Hawke's Bay, Whanganui), organiser of New Zealand's brick shows and of an AFOL day drawing fans from across New Zealand and Australia; full name Wellington LEGO User Group."
-summary_fr = "Quatre antennes (Wellington, Palmerston North, Hawke's Bay, Whanganui), salons de la brique néo-zélandais et journée AFOL réunissant des fans de toute la Nouvelle-Zélande et d'Australie ; nom complet Wellington LEGO User Group."
+summary_en = "Four branches (Wellington, Palmerston North, Hawke's Bay, Whanganui), organiser of New Zealand's brick shows and of an adult fans day drawing fans from across New Zealand and Australia; full name Wellington LEGO User Group."
+summary_fr = "Quatre antennes (Wellington, Palmerston North, Hawke's Bay, Whanganui), salons de la brique néo-zélandais et journée des fans adultes réunissant des fans de toute la Nouvelle-Zélande et d'Australie ; nom complet Wellington LEGO User Group."
 strengths_en = ["Next club days published for all four branches", "Brick show results and charity donations documented", "Free associate status"]
 strengths_fr = ["Prochaines journées de club publiées pour les quatre antennes", "Résultats des salons et dons caritatifs documentés", "Statut d'associé gratuit"]
 weaknesses_en = ["Lower North Island base", "Annual membership fee for adults and teenagers"]
@@ -1454,7 +1453,7 @@ countries = ["ZA"]
 access = "paid"
 summary_en = "Meetings every second month with talks, swap table and build games, and an annual display at Clearwater Mall; LEGO user group of adult fans based in Gauteng."
 summary_fr = "Réunions tous les deux mois avec exposés, table d'échange et jeux de construction, et exposition annuelle au centre Clearwater Mall ; groupe d'utilisateurs LEGO d'adultes fans basé dans le Gauteng."
-strengths_en = ["Stated first recognised LUG of South Africa (CapeLUG links page)", "Fifty-nine members exhibited at Clearwater Mall in 2023"]
+strengths_en = ["Stated first recognised LEGO user group of South Africa (CapeLUG links page)", "Fifty-nine members exhibited at Clearwater Mall in 2023"]
 strengths_fr = ["Présenté comme premier groupe reconnu d'Afrique du Sud (page de liens de CapeLUG)", "Cinquante-neuf membres ont exposé à Clearwater Mall en 2023"]
 weaknesses_en = ["Gauteng-centred despite the national name", "Annual membership fee of 600 ZAR, membership approved by the committee"]
 weaknesses_fr = ["Centré sur le Gauteng malgré le nom national", "Cotisation annuelle de 600 ZAR, adhésion validée par le comité"]

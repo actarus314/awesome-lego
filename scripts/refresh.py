@@ -102,9 +102,10 @@ def regime(r, category):
 
 
 def score(r, last):
-    """Fixed yardstick for the README selection, 0 to 9; reported, never shown on the website.
+    """Fixed yardstick for the README selection, 0 to 7; reported, never shown on the website.
     Activity (0-3; for an operating entry, how recent its check; a finished work 2) + confidence (0-2)
-    + sources read at the source (0-2) + serves a French reader (0-2)."""
+    + sources read at the source (0-2). The selection is the best worldwide of each group (rank 1 intl, lot 3b):
+    serving a French reader no longer counts."""
     if r.get("_regime", "activity") == "operating":
         last = str(r.get("checked") or "")  # open or closed: what counts is a recent check at the source
     days = (TODAY - dt.date.fromisoformat(last)).days if last else None
@@ -113,8 +114,7 @@ def score(r, last):
         act = 2  # a finished work does not age by its date; its review keeps it or archives it
     conf = {"high": 2, "medium": 1}.get(r.get("confidence"), 0)
     src = min(2, sum(1 for x in r.get("sources", []) if x.get("kind") in ("official", "read")))
-    fr = ("fr" in r.get("languages", [])) + ("FR" in r.get("countries", []) or bool(r.get("ships_to_france")))
-    return act + conf + src + fr
+    return act + conf + src
 
 
 def selection_check(rows):
@@ -348,7 +348,7 @@ def main():
         lines.append("- Coverage gaps (countries with 3 or more fan communities recognized by LEGO and at most one entry per community): " + ", ".join(gaps))
     swaps = selection_check(rows)
     if swaps:
-        lines.append("- Selection check (score out of 9: activity, confidence, sources read, French reader), selected entry far below an unselected one of its group: " + "; ".join(swaps))
+        lines.append("- Selection check (score out of 7: activity, confidence, sources read), selected entry far below an unselected one of its group: " + "; ".join(swaps))
     if stale:
         lines.append("- Not checked by hand for more than a year: " + ", ".join(stale))
     if failed:

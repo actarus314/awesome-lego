@@ -98,14 +98,14 @@ date = "2026-11-23"
 kind = "read"
 
 [[resource.sources]]
-url = "https://static.bricklink.com/alpha/default/api_wiki.html"
-date = "2026-11-23"
-kind = "official"
-
-[[resource.sources]]
 url = "https://www.brickfanatics.com/lego-bricklink-returns-after-second-outage"
 date = "2026-11-24"
 kind = "indexed"
+
+[[resource.sources]]
+url = "https://stonewars.com/news/bricklink-offline-update/"
+date = "2026-11-12"
+kind = "third-party"
 
 [[resource]]
 id = "brick-owl-marketplace"
@@ -2145,8 +2145,8 @@ languages = ["de", "fr"]
 countries = ["CH"]
 summary_en = "Auctions with bid counts next to fixed-price offers: vintage 9V trains, 10 kg lots of loose bricks, minifigures and sealed sets, listed in German and in French."
 summary_fr = "Enchères avec nombre d'offres à côté de prix fixes : trains 9V anciens, lots de 10 kg de briques en vrac, minifigurines et sets scellés, annoncés en allemand et en français."
-strengths_en = ["Auction and buy-now formats on the same search page", "An auction of a 75159 Death Star UCS had 42 bids on 25 November 2026"]
-strengths_fr = ["Enchères et achat immédiat sur la même page de recherche", "Une enchère d'un 75159 Death Star UCS comptait 42 offres le 25 novembre 2026"]
+strengths_en = ["Auction and buy-now formats on the same search page"]
+strengths_fr = ["Enchères et achat immédiat sur la même page de recherche"]
 weaknesses_en = ["Not specific to LEGO: the search for lego also returns games, figurines and a copy of a LEGO set"]
 weaknesses_fr = ["Pas spécifique à LEGO : la recherche lego renvoie aussi des jeux, des figurines et une copie d'un set de marque LEGO"]
 status = "active"
@@ -2275,8 +2275,8 @@ rank_reason_fr = "Filtres sur la livraison OLX et sur les photos ; la recherche 
 covers = ["second-hand"]
 languages = ["pt"]
 countries = ["PT"]
-summary_en = "Filter for ads available with OLX delivery and for ads with photos; the search for lego lists more than 1000 ads, such as a Botanical Collection set at 48 €."
-summary_fr = "Filtres sur la livraison OLX et sur les photos ; la recherche lego liste plus de 1000 annonces, comme un set Botanical Collection à 48 €."
+summary_en = "Filter for ads available with OLX delivery and for ads with photos; the search for lego lists more than 1000 ads."
+summary_fr = "Filtres sur la livraison OLX et sur les photos ; la recherche lego liste plus de 1000 annonces."
 strengths_en = ["Ads show their date, such as 24 November 2026", "Delivery service of the platform on part of the ads"]
 strengths_fr = ["Les annonces affichent leur date, comme le 24 novembre 2026", "Service de livraison de la plateforme sur une partie des annonces"]
 weaknesses_en = ["Not specific to LEGO"]
