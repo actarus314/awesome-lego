@@ -445,7 +445,7 @@ def body(report, previous="", rechecked=None, dead=(), today=None):
                     "Some sites refuse the machines of GitHub but open in a browser: open a link before changing its entry.", ""]
             for title, urls in (("Failed twice in a row", twice), ("Failed in this run only", once)):
                 if urls:
-                    out += [f"### {title}", ""] + [f"* <{u}> ({at(u)}) | {gh(u)}" + (f" | Globalping: {gp(u)}" if u in rechecked else "")
+                    out += [f"### {title}", ""] + [f"* <{u}> ({at(u)}) | {gh(u)}" + (f" | Globalping: {gp(u)}" if u in rechecked and gp(u) else "")
                                                    for u in order(urls)] + [""]
         for urls, summary in ((blocked, f"They block GitHub, alive according to Globalping on {date_en(today)}"),
                               (tls, "Their secure connection is refused by GitHub and by Globalping; a browser often still opens them")):

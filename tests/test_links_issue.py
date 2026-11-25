@@ -105,7 +105,7 @@ class Globalping(unittest.TestCase):
         blocked = text.split("<details>")[1]
         self.assertIn("alive according to Globalping on 25 November 2026 (1)", blocked)
         self.assertIn("<https://a.example/>", blocked)
-        self.assertNotIn("Not opened again", text)
+        self.assertNotIn("Not judged by Globalping", text)
         self.assertTrue(needed)
 
     def test_only_links_that_block_github_close_the_issue(self):
@@ -228,6 +228,9 @@ class Globalping(unittest.TestCase):
         internal = [probe("failed", raw="invalid", source="internal")] * 3
         out = links_issue.recheck(["https://a.example/"], api=fake(100, internal), sleep=lambda s: None)   # budget read again: 0
         self.assertEqual(out["https://a.example/"][0], "unchecked")
+        empty, _ = links_issue.body("### Errors in data/x.toml\n\n* [ERROR] <https://a.example/> (at 1:1) | Network error\n",
+                                    rechecked={"https://a.example/": ("unchecked", [""], None)}, today=DAY)
+        self.assertNotIn("Globalping: \n", empty + "\n")   # nothing read: no empty field
         text, needed = links_issue.body("### Errors in data/x.toml\n\n* [ERROR] <https://a.example/> (at 1:1) | Network error\n",
                                         rechecked=out, today=DAY)
         self.assertIn("## Not judged by Globalping", text)
