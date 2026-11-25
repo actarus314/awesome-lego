@@ -280,30 +280,47 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 
 ### Marketplaces and classified ads
 
-- [2dehands](https://www.2dehands.be/) - General platform for new and second-hand goods in Flanders, searchable by keyword for LEGO.
+- [2dehands and 2ememain](https://www.2dehands.be/) - One platform in two languages, Dutch as 2dehands and French as 2ememain; lego returned 52331 results on 25 November 2026, 44775 of them in the Duplo and Lego category.
 - [afols.nl](https://afols.nl/) - For adult LEGO fans: forum where members buy, sell and look for sets, promotional gifts with purchase and play-theme sets.
+- [Bazoš.cz](https://www.bazos.cz/) - Free ads that can be browsed without an account, with promoted ads dated the day itself; the search for lego returned 14551 results on 25 November 2026, some of them unrelated.
+- [Bazoš.sk](https://www.bazos.sk/) - Free ads that can be browsed without an account, with promoted ads dated the day itself; the search for lego returned 7290 results on 25 November 2026, some of them unrelated.
 - [Blocket](https://www.blocket.se/) - General platform: a keyword search for LEGO returns listings of sets and parts.
+- [Bob Shop](https://www.bobshop.co.za/) - Auctions, Buy Now and Offers in one marketplace; its LEGO and building toys category mixes new sets, used lots described as complete, loose minifigures and other brands such as Cobi. Covers official LEGO.
 - [Brick Owl](https://www.brickowl.com/) - Independent alternative to BrickLink for LEGO parts, minifigures and sets, with a catalogue searchable by part number or set number. Covers official LEGO.
 - [BrickLink](https://www.bricklink.com/) - Specialised in new and used official LEGO sets, parts, minifigures and instructions; catalogue and price guide based on past sales. Covers official LEGO.
 - [Catawiki](https://www.catawiki.com/fr) - Curated online auctions of LEGO sets, lots, parts and vintage items. Covers official LEGO.
 - [DBA](https://www.dba.dk/) - General platform: a keyword search for LEGO returns listings of sets and parts.
+- [DoneDeal](https://www.donedeal.ie/) - Seller rating and ad age shown on each private-seller ad; the search for lego returned 631 ads on 25 November 2026, from lots at 1 € to a 375 € bundle.
 - [eBay.fr](https://www.ebay.fr/) - Generalist: private and professional sellers list complete sets, lots and bulk bricks, sealed or used. Covers official LEGO and alternative brands.
 - [FINN.no](https://www.finn.no/) - General platform: a keyword search for LEGO returns listings of sets and parts.
+- [Gumtree UK](https://www.gumtree.com/) - Local pickup is the norm: boxes of mixed pieces marked collection only, Star Wars sets and Disney, Friends and Technic collections, from private sellers who can pay to feature their ad.
+- [Kijiji](https://www.kijiji.ca/) - Interface switchable between English and French; the search for lego returned 31492 ads across Canada on 25 November 2026, 31489 of them in Buy and Sell.
 - [Kleinanzeigen](https://www.kleinanzeigen.de/) - Used sets from private sellers, many of them Technic and City; formerly eBay Kleinanzeigen. Covers official LEGO.
 - [klodivo](https://klodivo.com/fr) - Recent platform of independent LEGO shops and collectors: sets, minifigures, parts and instructions, with one payment across several shops. Covers official LEGO.
 - [Leboncoin](https://www.leboncoin.fr/) - Sets, large lots, bulk and family collections, with hand-over in person possible. Covers official LEGO and alternative brands.
 - [Marktplaats](https://www.marktplaats.nl/) - Owned by eBay, with complete sets from private sellers. Covers official LEGO.
+- [OLX Portugal](https://www.olx.pt/) - Filter for ads available with OLX delivery and for ads with photos; the search for lego lists more than 1000 ads, such as a Botanical Collection set at 48 €.
+- [OLX.pl](https://www.olx.pl/) - Filter for used or new condition and for ads with shipping; the search for lego lists more than 1000 ads, from single minifigures to a Simpsons Kwik-E-Mart set.
 - [r/Legomarket](https://www.reddit.com/r/Legomarket/) - Subreddit for selling, buying and trading LEGO. Covers official LEGO.
+- [Ricardo](https://www.ricardo.ch/) - Auctions with bid counts next to fixed-price offers: vintage 9V trains, 10 kg lots of loose bricks, minifigures and sealed sets, listed in German and in French.
+- [Subito](https://www.subito.it/) - LEGO ads mostly filed under collectibles, with the seller's town shown on each: mixed lots, sets such as the 10232 Cinema Palace, minifigures and BrickLink limited editions.
 - [TechLUG, buy and sell section](https://www.techlug.fr/Forum/viewforum.php?f=6) - Buy and sell section of a LEGO forum, with a seller white list and black list thread (2008 to 2017). Covers official LEGO. Status: no update for 6 months.
+- [todocoleccion](https://www.todocoleccion.net/) - Collectors' auctions and fixed-price lots, with a LEGO construction games category of vintage items: a 1960s System lot at 1850 €, catalogues such as the 1988 one at 3 €.
+- [Tori.fi](https://www.tori.fi/) - Filters for delivery option, condition and seller type, plus a saved-search alert; the search for lego listed more than 29000 ads on 25 November 2026, some of them unrelated.
 - [Vinted](https://www.vinted.fr/) - Peer-to-peer sales, used for small recent sets, minifigures and quick purchases from a mobile application. Covers official LEGO.
 - [Wallapop](https://www.wallapop.com/) - Application and website searchable by keyword for LEGO sets and loose parts, covering general classifieds.
+- [willhaben](https://www.willhaben.at/) - A LEGO shortcut on the home page and a category of its own, grouped with other brick systems and Playmobil; PayLivery adds secure online payment and parcel shipping to private sales.
 
 ### Second-hand and refurbished shops
 
+- [barando](https://www.barando.de/) - Cleaned used bricks sold by the kilogram, plus a BrickLink store of more than 23000 items and more than a million parts; its own brick skyline sets of Münster, Düsseldorf and Cologne. Covers official LEGO.
 - [Brickland](https://brickland.fr/) - LEGO sets checked piece by piece, bulk, minifigures and baseplates, with collection buy-back. Covers official LEGO.
 - [BrickPlus](https://brickplus.fr/) - Online, based in Paris 5: new and verified used LEGO sets and minifigures, with buy-back. Covers official LEGO.
+- [Bricks & Minifigs](https://bricksandminifigs.com/) - Franchised stores that buy, sell and trade: Certified Used sets checked complete with figures and instructions, Minifig Maker tables and bulk bricks sold by the cup, trade-ins paid in cash or store credit. Covers official LEGO.
+- [Bricktraders](https://bricktraders.co.uk/) - Make a Minifig counter, Brick'n'mix loose parts and retired sets such as the 10188 Death Star UCS, with a form to sell a collection to the shop; the shop is in St Albans. Covers official LEGO.
 - [Brickville](https://brickville.com.au/) - Melbourne LEGO store selling retired, vintage and pre-loved sets (checked for completeness by the shop), new sets and minifigures, online with prices in Australian and New Zealand dollars. Covers official LEGO.
 - [De BrickPlaats](https://brickplaats.nl/) - Based in Oss: new sealed and checked used sets, parts, minifigures and a few custom builds. Covers official LEGO.
+- [Hadley Bricks](https://hadleybricks.co.uk/) - Used sets restored by hand and checked piece by piece against the official inventory, each with a Hadley Bricks Verified card; sealed retired sets priced at least 10% under the shop's other platforms. Covers official LEGO.
 - [Rebloxe](https://www.rebloxe.com/fr-fr) - Used LEGO sets checked piece by piece, with condition grades (used, damaged box) and adult-oriented themes. Covers official LEGO.
 - [Reliczone](https://reliczone.fr/collections/lego) - Online sales of vintage used LEGO sets, bricks and minifigures. Covers official LEGO.
 - [Retrobriques](https://www.retrobriques.com/) - New and used LEGO sets browsable by theme and release year (before 2010 to 2024), with a used section. Covers official LEGO.
@@ -315,6 +332,7 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 - [Brickwith (formerly Webrick)](https://www.brickwith.com/en) - Made by GoBricks: compatible bulk parts for custom builds; webrick.com now redirects to brickwith.com. Covers alternative brands.
 - [BuildaMOC](https://buildamoc.com/) - Complete kits by independent designers: custom builds made only of original LEGO elements with the designer's instructions; custom kits for companies.
 - [BuyMeBricks](https://buymebricks.com/) - Studio, Rebrickable or BrickLink part lists imported to order GoBricks compatible parts, and custom build kits with PDF instructions. Covers alternative brands.
+- [LesDiy](https://www.lesdiy.de/) - Kits authorised by their independent designers, who are paid a commission on sales; part of the range ships from a warehouse in Czechia, 2 to 4 working days to Germany. Covers alternative brands.
 - [MOC Brick Land](https://mocbrickland.com/) - Kits made of compatible bricks, for custom builds. Covers alternative brands.
 - [Official LEGO building instructions](https://www.lego.com/fr-fr/service/building-instructions) - Official LEGO page to find the instructions of a set by name or number, and the LEGO Builder application. Covers official LEGO.
 - [Open L-Gauge](https://open-l-gauge.eu/) - Community library with free instructions for LEGO train models, among them German locomotives (Baureihe 152, 185, 189, Vectron), shared under CC BY-NC-SA 4.0; resources page on track, electronics and digital building.
@@ -322,9 +340,11 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 - [Pick a Brick (LEGO.com)](https://www.lego.com/fr-fr/pick-and-build/pick-a-brick) - Sold by LEGO: new individual parts, ordered on the French LEGO.com site. Covers official LEGO.
 - [ToyPro](https://www.toypro.com/fr) - Genuine new LEGO products: sets, parts and minifigures. Covers official LEGO.
 - [train-moc](https://train-moc.com/) - Sale of plans of French railway models built 8 studs wide, designed for 9V systems, with a practical page on 9V track and a subscription for a built SNCF BB25525 locomotive.
+- [Wobrick](https://wobrick.com/) - Exclusive overseas agent for GoBricks: loose parts by the piece, an upload tool matching Studio, Rebrickable and CSV lists, and brick kits made from designers' parts lists on a free quote. Covers alternative brands.
 
 ### Services and accessories (lighting, display, sorting, data)
 
+- [24BRICK](https://www.24brick.cz/) - LED kits for sets by theme, from Architecture and Technic to Star Wars and Harry Potter, plus display cases and stands for sets and minifigures, custom parts and printed heads and torsos.
 - [Brick In It](https://brick-in-it.com/collections/lego-display-cases) - Tabletop and wall-mounted acrylic cases to display LEGO sets, with wall mounts and a custom size option. Covers official LEGO.
 - [Brickcessories](https://brickcessories.com/) - Do-it-yourself plywood brick sorter kits with trays of varying hole sizes, among display solutions and accessories.
 - [Brickstuff](https://www.brickstuff.com/) - Family business in Minnesota making small modular lights, sound modules and video screens for LEGO sets and custom builds, with guides and user forums.
@@ -344,14 +364,18 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 
 - [Bedrukjeblokje](https://bedrukjeblokje.nl/) - Printing of user designs (photo, logo, text) onto LEGO parts such as torsos and tiles, with an online designer; also sells printed and collectible minifigures.
 - [Brick Manufacture](https://brick-manufacture.com/en) - Hamburg workshop, active since 2023, printing and assembling personalised LEGO minifigures and bricks in house; site in four languages with a country selector including France.
+- [BrickForge](https://brickforge.com/) - Swords, helms, backpacks and firearms for minifigures, sold singly or in wholesale cases of 12; a blind bag of 10 discontinued or slightly misprinted pieces at $5.
 - [BrickTactical](https://bricktactical.com/) - Maker of injection-molded weapons, helmets, vests and accessories for LEGO-compatible minifigures, and printer of minifigures on genuine LEGO parts.
 - [BrickWarriors](https://www.brickwarriors.com/) - Founded in 2011: weapons, armor, helmets, heads and capes in ABS plastic, custom accessories for minifigures.
 - [Briquestore](https://www.briquestore.fr/fr/) - Online shop of new LEGO minifigures and single parts (founded 2015, Charente-Maritime), with a figure composer and a personalisation service by UV printing. Covers official LEGO.
 - [Citizen Brick](https://citizenbrick.com/) - Maker active since 2010 of custom printed minifigures and bricks, with injection-molded parts and a custom printing service for businesses.
+- [FireStar Toys](https://www.firestartoys.com/) - Own designs, 3D-printed upgrades and buildable mini sets, plus parts by BrickArms, BrickForge and BrickWarriors; StarPoints loyalty rewards and themed events such as Halloween 2026. Covers official LEGO.
 - [Hall of Bricks](https://hallofbricks.shop/) - Studio printing in house with UV printers on original LEGO elements, making custom minifigures since 2012; ships worldwide.
 - [Minifigs.me](https://minifigs.me/) - Printed onto genuine LEGO parts: custom minifigures, small builds and frames; ships worldwide from the United Kingdom.
 - [minifiguren.com](https://www.minifiguren.com/) - UV digital printing on original LEGO parts (names, text, graphics): configurable personalised minifigures, plus printed bricks and tiles and single parts.
 - [Pepe Bricks](https://www.pepebricks.com/) - Torsos, heads, shields, tiles and minifigures, custom printed, on classic space, castle and game themes, with prices in euros.
+- [The Minifig Co.](https://minifigco.com/) - Printed bodies and heads sold separately, such as WWII bodies at $16 and zombie heads at $3.50, with ranges for the Revolutionary War, British troops and Imperial troopers.
+- [United Bricks](https://www.unitedbricks.com/) - Historical and military figures printed in the United Kingdom on new LEGO parts, with a monthly Brick Legends Box on one-time or subscription terms; also resells BrickArms parts.
 
 ### Decals and stickers
 
@@ -362,6 +386,9 @@ Where to buy used sets and loose parts, find custom builds and instructions, and
 
 ### Motors, controllers and track
 
+- [Big Ben Bricks](https://bigbenbricks.com/) - Train wheels only: 15 types from #4 flanged thin wheels to #13 drivers, fitted on Technic axles, from $3 each to an 8-wheel kit at $29.
+- [Brick Train Depot](https://www.bricktraindepot.com/) - Instructions, decals, wheels and track from 13 designers in one shop, in 1:48 and 8-wide scales; a BNSF train kit at $799.99, new locomotive instructions on 20 November 2026.
+- [BrickTracks](https://bricktracks.com/) - Curves of R56, R104 and R120 radius, with Power Functions variants, plus switch kits, wheelsets and metal axles for LEGO trains; also limited seasonal train kits with instruction books.
 - [BuWizz](https://buwizz.com/) - Driven from a phone application: Bluetooth controllers with a rechargeable battery and motors for LEGO Technic, System and train models. BuWizz 4.0 Ultra was announced on Kickstarter on 4 November 2026.
 - [Fx Bricks](https://shop.fxbricks.com/) - Maker of L-Gauge train products: Fx Track metal track compatible with the 9V system (wide curves, switches), PFx Brick light and sound controller, and the Fx 9V electrical system.
 - [Trixbrix](https://trixbrix.eu/en/) - Curves from R24 to R184, many switch types, ballast plates, bridges, UV-printed tiles and automation parts (train detection, motorised points, signals), all in plastic made to fit LEGO trains.

@@ -179,24 +179,29 @@ url = "https://www.vinted.fr/"
 group = "marketplaces"
 featured = true
 covers = ["official", "second-hand", "minifigures"]
-languages = ["fr"]
-countries = ["FR"]
+languages = ["fr", "de", "it", "es", "pl", "cs", "en", "nl", "pt", "sv", "da", "fi", "lt", "sk", "hu", "ro", "hr"]
+countries = ["FR", "DE", "IT", "ES", "PL", "CZ", "GB", "BE", "NL", "PT", "AT", "LU", "SE", "DK", "FI", "LT", "SK", "HU", "RO", "HR"]
 ships_to_france = true
 summary_en = "Peer-to-peer sales, used for small recent sets, minifigures and quick purchases from a mobile application."
 summary_fr = "Ventes entre particuliers, utilisées pour de petits sets récents, des figurines et des achats rapides depuis une application."
-strengths_en = ["Easy for small recent sets and price comparison", "Refund policy for items bought from non-professional sellers that are lost, damaged or not as described"]
-strengths_fr = ["Pratique pour les petits sets récents et la comparaison de prix", "Politique de remboursement pour les articles perdus, abîmés ou non conformes achetés auprès de vendeurs non professionnels"]
-weaknesses_en = ["Buyer fee generally 5 % + 0.70 €, taxes included, added at payment", "Sellers are rarely specialists: completeness, minifigures and photos need checking"]
-weaknesses_fr = ["Frais acheteur généralement 5 % + 0.70 €, taxes comprises, ajoutés au paiement", "Vendeurs rarement spécialistes : complétude, figurines et photos à vérifier"]
+strengths_en = ["Easy for small recent sets and price comparison", "Refund policy for items bought from non-professional sellers that are lost, damaged or not as described", "National sites in 20 countries, each returning ads for the search lego on 25 November 2026"]
+strengths_fr = ["Pratique pour les petits sets récents et la comparaison de prix", "Politique de remboursement pour les articles perdus, abîmés ou non conformes achetés auprès de vendeurs non professionnels", "Sites nationaux dans 20 pays, chacun renvoyant des annonces pour la recherche lego le 25 novembre 2026"]
+weaknesses_en = ["Buyer fee generally 5 % + 0.70 €, taxes included, added at payment (read on the French site only)", "Sellers are rarely specialists: completeness, minifigures and photos need checking"]
+weaknesses_fr = ["Frais acheteur généralement 5 % + 0.70 €, taxes comprises, ajoutés au paiement (lus sur le site français uniquement)", "Vendeurs rarement spécialistes : complétude, figurines et photos à vérifier"]
 status = "active"
-last_activity = "2026-11-23"
-checked = "2026-11-23"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
 added = "2026-11-23"
 confidence = "high"
 
 [[resource.sources]]
 url = "https://www.vinted.fr/help/342-frais-de-protection-acheteurs-sur-vinted"
 date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.vinted.de/catalog?search_text=lego"
+date = "2026-11-25"
 kind = "read"
 
 [[resource]]
@@ -365,17 +370,17 @@ name = "De BrickPlaats"
 url = "https://brickplaats.nl/"
 group = "second-hand-shops"
 covers = ["official", "second-hand", "parts", "minifigures", "custom-builds", "instructions"]
-languages = ["nl", "en"]
-countries = ["NL"]
+languages = ["nl", "de", "en"]
+countries = ["NL", "DE"]
 summary_en = "Based in Oss: new sealed and checked used sets, parts, minifigures and a few custom builds."
 summary_fr = "Installée à Oss : sets neufs scellés et d'occasion contrôlés, pièces, figurines et quelques créations originales."
-strengths_en = ["Used sets checked before sale", "Several themes including vintage, instructions and BrickLink Designer Program"]
-strengths_fr = ["Sets d'occasion contrôlés avant la vente", "Plusieurs thèmes dont vintage, notices et BrickLink Designer Program"]
-weaknesses_en = ["Main site in Dutch", "Free shipping threshold of 75 € shown without country; shipping to France not established"]
-weaknesses_fr = ["Site principal en néerlandais", "Seuil de livraison gratuite de 75 € affiché sans précision du pays ; port vers la France non établi"]
+strengths_en = ["Used sets checked before sale", "Several themes including vintage, instructions and BrickLink Designer Program", "German-language site brickplaats.de with 3020 products and customer reviews dated up to 11 November 2026", "Online orders can be picked up in the shop in Oss"]
+strengths_fr = ["Sets d'occasion contrôlés avant la vente", "Plusieurs thèmes dont vintage, notices et BrickLink Designer Program", "Site en allemand brickplaats.de avec 3020 produits et des avis clients datés jusqu'au 11 novembre 2026", "Retrait en magasin à Oss pour les commandes en ligne"]
+weaknesses_en = ["Free shipping threshold shown as 75 € on some pages and 89.95 € on others", "Shipping to France not established"]
+weaknesses_fr = ["Seuil de livraison gratuite affiché à 75 € sur certaines pages et à 89.95 € sur d'autres", "Livraison vers la France non établie"]
 status = "active"
-last_activity = "2026-11-23"
-checked = "2026-11-23"
+last_activity = "2026-11-24"
+checked = "2026-11-25"
 added = "2026-11-23"
 confidence = "medium"
 
@@ -387,6 +392,11 @@ kind = "read"
 [[resource.sources]]
 url = "https://brickplaats.nl/blogs/nieuws/gebruikte-lego-sets-kopen"
 date = "2026-08-11"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickplaats.de/collections/lego"
+date = "2026-11-25"
 kind = "read"
 
 [[resource]]
@@ -1648,27 +1658,32 @@ kind = "read"
 
 [[resource]]
 id = "2dehands-be"
-name = "2dehands"
+name = "2dehands and 2ememain"
 url = "https://www.2dehands.be/"
 group = "marketplaces"
 covers = ["second-hand"]
-languages = ["nl"]
+languages = ["nl", "fr"]
 countries = ["BE"]
-summary_en = "General platform for new and second-hand goods in Flanders, searchable by keyword for LEGO."
-summary_fr = "Plateforme généraliste de biens neufs et d'occasion en Flandre, avec recherche par mot-clé pour LEGO."
-strengths_en = ["Main general classifieds in Dutch-speaking Belgium"]
-strengths_fr = ["Principale plateforme généraliste en Belgique néerlandophone"]
+summary_en = "One platform in two languages, Dutch as 2dehands and French as 2ememain; lego returned 52331 results on 25 November 2026, 44775 of them in the Duplo and Lego category."
+summary_fr = "Une même plateforme en deux langues, néerlandais sous 2dehands et français sous 2ememain ; lego a renvoyé 52331 résultats le 25 novembre 2026, dont 44775 dans la catégorie Duplo et Lego."
+strengths_en = ["Main general classifieds in Dutch-speaking Belgium", "The French-language site 2ememain.be describes itself as the largest classifieds site in Belgium"]
+strengths_fr = ["Principale plateforme généraliste en Belgique néerlandophone", "Le site francophone 2ememain.be se décrit comme le plus grand site de petites annonces de Belgique"]
 weaknesses_en = ["Not specific to LEGO"]
 weaknesses_fr = ["Pas spécifique à LEGO"]
 status = "active"
-last_activity = "2026-11-23"
-checked = "2026-11-23"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
 added = "2026-11-23"
 confidence = "medium"
 
 [[resource.sources]]
 url = "https://www.2dehands.be/q/lego/"
 date = "2026-11-23"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.2ememain.be/q/lego/"
+date = "2026-11-25"
 kind = "read"
 
 [[resource]]
@@ -1939,3 +1954,819 @@ kind = "read"
 url = "https://brickville.co.nz/"
 date = "2026-11-23"
 kind = "read"
+
+[[resource]]
+id = "subito"
+name = "Subito"
+url = "https://www.subito.it/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["it"]
+countries = ["IT"]
+summary_en = "LEGO ads mostly filed under collectibles, with the seller's town shown on each: mixed lots, sets such as the 10232 Cinema Palace, minifigures and BrickLink limited editions."
+summary_fr = "Produits de marque LEGO classés surtout dans le collectionnisme, avec la commune du vendeur sur chaque annonce : lots mélangés, sets comme le 10232 Cinema Palace, minifigurines et éditions limitées BrickLink."
+strengths_en = ["Sets, mixed lots and loose minifigures from private sellers, for example a 10232 Cinema Palace at 350 €", "Seller's town shown on every ad"]
+strengths_fr = ["Sets, lots mélangés et minifigurines vendus par des particuliers, par exemple un 10232 Cinema Palace à 350 €", "Commune du vendeur indiquée sur chaque annonce"]
+weaknesses_en = ["Not specific to LEGO: a search for lego in the used goods section returns mostly cars and wheel rims"]
+weaknesses_fr = ["Pas spécifique à LEGO : la recherche lego dans la rubrique occasion renvoie surtout des voitures et des jantes"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.subito.it/annunci-italia/vendita/hobby-collezionismo/?q=lego"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.subito.it/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "willhaben"
+name = "willhaben"
+url = "https://www.willhaben.at/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["de"]
+countries = ["AT"]
+summary_en = "A LEGO shortcut on the home page and a category of its own, grouped with other brick systems and Playmobil; PayLivery adds secure online payment and parcel shipping to private sales."
+summary_fr = "Un raccourci LEGO en page d'accueil et une catégorie dédiée, regroupée avec d'autres systèmes de briques et Playmobil ; PayLivery ajoute paiement en ligne sécurisé et envoi de colis aux ventes entre particuliers."
+strengths_en = ["139940 ads in the Lego category on 25 November 2026", "Presents itself as the largest digital marketplace in Austria, with 14207909 ads in all categories"]
+strengths_fr = ["139940 annonces dans la catégorie Lego le 25 novembre 2026", "Se présente comme la plus grande place de marché numérique d'Autriche, avec 14207909 annonces toutes catégories"]
+weaknesses_en = ["Not specific to LEGO: the category is shared with Playmobil and other brick systems"]
+weaknesses_fr = ["Pas spécifique à LEGO : la catégorie est partagée avec Playmobil et d'autres systèmes de briques"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.willhaben.at/iad/kaufen-und-verkaufen/marktplatz/klemmbausteine-lego-playmobil/lego-5191"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.willhaben.at/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "ricardo"
+name = "Ricardo"
+url = "https://www.ricardo.ch/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["de", "fr"]
+countries = ["CH"]
+summary_en = "Auctions with bid counts next to fixed-price offers: vintage 9V trains, 10 kg lots of loose bricks, minifigures and sealed sets, listed in German and in French."
+summary_fr = "Enchères avec nombre d'offres à côté de prix fixes : trains 9V anciens, lots de 10 kg de briques en vrac, minifigurines et sets scellés, annoncés en allemand et en français."
+strengths_en = ["Auction and buy-now formats on the same search page", "An auction of a 75159 Death Star UCS had 42 bids on 25 November 2026"]
+strengths_fr = ["Enchères et achat immédiat sur la même page de recherche", "Une enchère d'un 75159 Death Star UCS comptait 42 offres le 25 novembre 2026"]
+weaknesses_en = ["Not specific to LEGO: the search for lego also returns games, figurines and a copy of a LEGO set"]
+weaknesses_fr = ["Pas spécifique à LEGO : la recherche lego renvoie aussi des jeux, des figurines et une copie d'un set de marque LEGO"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.ricardo.ch/de/s/lego"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.ricardo.ch/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "olx-pl"
+name = "OLX.pl"
+url = "https://www.olx.pl/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["pl"]
+countries = ["PL"]
+summary_en = "Filter for used or new condition and for ads with shipping; the search for lego lists more than 1000 ads, from single minifigures to a Simpsons Kwik-E-Mart set."
+summary_fr = "Filtre par état, neuf ou occasion, et par annonces avec envoi ; la recherche lego liste plus de 1000 annonces, de la minifigurine seule au set Simpsons Kwik-E-Mart."
+strengths_en = ["Ads show their last refresh date, such as 24 November 2026", "Some ads are marked with free delivery"]
+strengths_fr = ["Les annonces affichent leur date d'actualisation, comme le 24 novembre 2026", "Certaines annonces portent la mention de livraison gratuite"]
+weaknesses_en = ["Not specific to LEGO: the search also returns Duplo and other toys"]
+weaknesses_fr = ["Pas spécifique à LEGO : la recherche renvoie aussi du Duplo et d'autres jouets"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.olx.pl/q-lego/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.olx.pl/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "bazos-cz"
+name = "Bazoš.cz"
+url = "https://www.bazos.cz/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["cs"]
+countries = ["CZ"]
+summary_en = "Free ads that can be browsed without an account, with promoted ads dated the day itself; the search for lego returned 14551 results on 25 November 2026, some of them unrelated."
+summary_fr = "Gratuit et consultable sans compte, avec des annonces promues datées du jour même ; la recherche lego a renvoyé 14551 résultats le 25 novembre 2026, dont certains sans rapport."
+strengths_en = ["1590422 ads online and 65728 posted in the last 24 hours, all categories", "Each ad shows its posting date"]
+strengths_fr = ["1590422 annonces en ligne et 65728 publiées en 24 heures, toutes rubriques", "Chaque annonce affiche sa date de publication"]
+weaknesses_en = ["Not specific to LEGO: the search matches unrelated ads"]
+weaknesses_fr = ["Pas spécifique à LEGO : la recherche renvoie des annonces sans rapport"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.bazos.cz/search.php?hledat=lego"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.bazos.cz/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "bazos-sk"
+name = "Bazoš.sk"
+url = "https://www.bazos.sk/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["sk"]
+countries = ["SK"]
+summary_en = "Free ads that can be browsed without an account, with promoted ads dated the day itself; the search for lego returned 7290 results on 25 November 2026, some of them unrelated."
+summary_fr = "Gratuit et consultable sans compte, avec des annonces promues datées du jour même ; la recherche lego a renvoyé 7290 résultats le 25 novembre 2026, dont certains sans rapport."
+strengths_en = ["1039802 ads online, all categories", "Each ad shows its posting date"]
+strengths_fr = ["1039802 annonces en ligne, toutes rubriques", "Chaque annonce affiche sa date de publication"]
+weaknesses_en = ["Not specific to LEGO: the search matches unrelated ads"]
+weaknesses_fr = ["Pas spécifique à LEGO : la recherche renvoie des annonces sans rapport"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.bazos.sk/search.php?hladat=lego&rubriky=www&hlokalita=&humkreis=25&cenaod=&cenado=&order=&crp=&kitx=ano"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.bazos.sk/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "olx-pt"
+name = "OLX Portugal"
+url = "https://www.olx.pt/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["pt"]
+countries = ["PT"]
+summary_en = "Filter for ads available with OLX delivery and for ads with photos; the search for lego lists more than 1000 ads, such as a Botanical Collection set at 48 €."
+summary_fr = "Filtres sur la livraison OLX et sur les photos ; la recherche lego liste plus de 1000 annonces, comme un set Botanical Collection à 48 €."
+strengths_en = ["Ads show their date, such as 24 November 2026", "Delivery service of the platform on part of the ads"]
+strengths_fr = ["Les annonces affichent leur date, comme le 24 novembre 2026", "Service de livraison de la plateforme sur une partie des annonces"]
+weaknesses_en = ["Not specific to LEGO"]
+weaknesses_fr = ["Pas spécifique à LEGO"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.olx.pt/ads/q-lego/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.olx.pt/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "tori-fi"
+name = "Tori.fi"
+url = "https://www.tori.fi/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["fi"]
+countries = ["FI"]
+summary_en = "Filters for delivery option, condition and seller type, plus a saved-search alert; the search for lego listed more than 29000 ads on 25 November 2026, some of them unrelated."
+summary_fr = "Filtres par mode de livraison, état et type de vendeur, avec une alerte de recherche enregistrée ; la recherche lego a listé plus de 29000 annonces le 25 novembre 2026, dont certaines sans rapport."
+strengths_en = ["Newest-first sorting", "Map view of the ads"]
+strengths_fr = ["Tri des plus récentes en premier", "Vue des annonces sur une carte"]
+weaknesses_en = ["Not specific to LEGO: the search matches unrelated ads"]
+weaknesses_fr = ["Pas spécifique à LEGO : la recherche renvoie des annonces sans rapport"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.tori.fi/recommerce/forsale/search?q=lego"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.tori.fi/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "gumtree-uk"
+name = "Gumtree UK"
+url = "https://www.gumtree.com/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["en"]
+countries = ["GB"]
+summary_en = "Local pickup is the norm: boxes of mixed pieces marked collection only, Star Wars sets and Disney, Friends and Technic collections, from private sellers who can pay to feature their ad."
+summary_fr = "Remise en main propre : boîtes de pièces mélangées en collection uniquement, sets Star Wars, collections Disney, Friends et Technic, de particuliers pouvant payer pour mettre leur annonce en avant."
+strengths_en = ["Large boxes and set collections near the buyer, for example a Disney, Friends and Technic lot with vintage space panels", "Star Wars items from £25 on the page read"]
+strengths_fr = ["Grandes boîtes et collections de sets près de l'acheteur, par exemple un lot Disney, Friends et Technic avec des panneaux spatiaux anciens", "Articles Star Wars à partir de 25 £ sur la page lue"]
+weaknesses_en = ["Not specific to LEGO", "Many ads are collection only"]
+weaknesses_fr = ["Pas spécifique à LEGO", "Beaucoup d'annonces sont en retrait sur place uniquement"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.gumtree.com/search?q=lego"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.gumtree.com/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "kijiji"
+name = "Kijiji"
+url = "https://www.kijiji.ca/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["en", "fr"]
+countries = ["CA"]
+summary_en = "Interface switchable between English and French; the search for lego returned 31492 ads across Canada on 25 November 2026, 31489 of them in Buy and Sell."
+summary_fr = "Site bilingue, bascule d'un clic de langue ; la recherche lego a renvoyé 31492 annonces dans tout le pays le 25 novembre 2026, dont 31489 dans Acheter et vendre."
+strengths_en = ["Filter for verified ads", "Notification when new ads matching the search are posted"]
+strengths_fr = ["Filtre des annonces vérifiées", "Notification lors de la publication de nouvelles annonces correspondant à la recherche"]
+weaknesses_en = ["Not specific to LEGO"]
+weaknesses_fr = ["Pas spécifique à LEGO"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.kijiji.ca/b-canada/lego/k0l0"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.kijiji.ca/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "donedeal"
+name = "DoneDeal"
+url = "https://www.donedeal.ie/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["en"]
+countries = ["IE"]
+summary_en = "Seller rating and ad age shown on each private-seller ad; the search for lego returned 631 ads on 25 November 2026, from lots at 1 € to a 375 € bundle."
+summary_fr = "Note du vendeur et ancienneté affichées sur chaque annonce de particulier ; la recherche lego a renvoyé 631 annonces le 25 novembre 2026, de lots à 1 € à un ensemble à 375 €."
+strengths_en = ["Seller ratings shown on ads, such as 4.5 and 5", "Ads dated by age in minutes, hours or days"]
+strengths_fr = ["Notes des vendeurs affichées sur les annonces, comme 4.5 et 5", "Annonces datées par ancienneté en minutes, heures ou jours"]
+weaknesses_en = ["Not specific to LEGO"]
+weaknesses_fr = ["Pas spécifique à LEGO"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.donedeal.ie/all?words=lego"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.donedeal.ie/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "bob-shop"
+name = "Bob Shop"
+url = "https://www.bobshop.co.za/"
+group = "marketplaces"
+covers = ["official", "second-hand"]
+languages = ["en"]
+countries = ["ZA"]
+summary_en = "Auctions, Buy Now and Offers in one marketplace; its LEGO and building toys category mixes new sets, used lots described as complete, loose minifigures and other brands such as Cobi."
+summary_fr = "Enchères, achat immédiat et offres dans une même place de marché ; sa catégorie LEGO et jeux de construction mêle sets neufs, lots d'occasion décrits comme complets, minifigurines seules et autres marques comme Cobi."
+strengths_en = ["Operating since 1999 under the name bidorbuy, renamed Bob Shop in March 2023", "Buyer Protection stated on the platform"]
+strengths_fr = ["Actif depuis 1999 sous le nom bidorbuy, renommé Bob Shop en mars 2023", "Protection des acheteurs annoncée par la plateforme"]
+weaknesses_en = ["Not specific to LEGO: the category also holds other building toys"]
+weaknesses_fr = ["Pas spécifique à LEGO : la catégorie contient aussi d'autres jeux de construction"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.bobshop.co.za/toys-hobbies/lego-building-toys/c/5517"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://help.bobshop.co.za/portal/en/kb/articles/welcome-to-bob-shop"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "todocoleccion"
+name = "todocoleccion"
+url = "https://www.todocoleccion.net/"
+group = "marketplaces"
+covers = ["second-hand"]
+languages = ["es", "en"]
+countries = ["ES"]
+summary_en = "Collectors' auctions and fixed-price lots, with a LEGO construction games category of vintage items: a 1960s System lot at 1850 €, catalogues such as the 1988 one at 3 €."
+summary_fr = "Enchères et lots à prix fixe pour collectionneurs, avec une catégorie d'objets anciens LEGO : un lot System des années 1960 à 1850 €, des catalogues comme celui de 1988 à 3 €."
+strengths_en = ["Vintage and retired lots that general classifieds rarely list", "Auctions with bid counts alongside fixed-price lots"]
+strengths_fr = ["Lots anciens et retirés que les petites annonces généralistes listent rarement", "Enchères avec nombre d'offres à côté de lots à prix fixe"]
+weaknesses_en = ["General collectibles catalogue, not specific to LEGO"]
+weaknesses_fr = ["Catalogue généraliste de collection, pas spécifique à LEGO"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.todocoleccion.net/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.todocoleccion.net/juegos-construccion-lego/lego~x192953820"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "bricks-and-minifigs"
+name = "Bricks & Minifigs"
+url = "https://bricksandminifigs.com/"
+group = "second-hand-shops"
+covers = ["official", "second-hand", "minifigures", "parts"]
+languages = ["en"]
+countries = ["US", "CA"]
+summary_en = "Franchised stores that buy, sell and trade: Certified Used sets checked complete with figures and instructions, Minifig Maker tables and bulk bricks sold by the cup, trade-ins paid in cash or store credit."
+summary_fr = "Magasins franchisés qui achètent, vendent et échangent : sets Certified Used vérifiés complets avec figurines et notices, tables Minifig Maker et briques en vrac vendues au gobelet, reprises payées en espèces ou en crédit magasin."
+strengths_en = ["More than 250 open stores in the United States and Canada, with 60 more opening soon (as stated)", "Authorised reseller for the LEGO Group, so new and sealed sets are also stocked", "Store credit gives a higher trade-in offer than cash (as stated)"]
+strengths_fr = ["Plus de 250 magasins ouverts aux États-Unis et au Canada, 60 autres bientôt (selon l'enseigne)", "Revendeur agréé du groupe LEGO : sets neufs et scellés aussi en stock", "Le crédit magasin donne une offre de reprise plus élevée que les espèces (selon l'enseigne)"]
+weaknesses_en = ["Only genuine LEGO bricks are bought: imitation brands are refused", "Trade-in offers follow a reseller model, below collector prices", "No quotes by phone: sets are evaluated in store; stock differs from store to store"]
+weaknesses_fr = ["Seules les briques de marque LEGO authentiques sont rachetées : les marques d'imitation sont refusées", "Les offres de reprise suivent un modèle de revendeur, sous les prix de collection", "Pas de devis par téléphone : évaluation en magasin ; le stock varie d'un magasin à l'autre"]
+status = "active"
+last_activity = "2026-11-21"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://bricksandminifigs.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://bricksandminifigs.com/faq/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://opelikaobserver.com/2026/11/21/bricks-minifigs-opens-in-opelika-bringing-creativity-and-collectibles-to-lego-fans/"
+date = "2026-11-21"
+kind = "third-party"
+
+[[resource]]
+id = "bricktraders"
+name = "Bricktraders"
+url = "https://bricktraders.co.uk/"
+group = "second-hand-shops"
+covers = ["official", "second-hand", "minifigures", "parts"]
+languages = ["en"]
+countries = ["GB"]
+summary_en = "Make a Minifig counter, Brick'n'mix loose parts and retired sets such as the 10188 Death Star UCS, with a form to sell a collection to the shop; the shop is in St Albans."
+summary_fr = "Comptoir Make a Minifig, pièces en vrac Brick'n'mix et sets retirés comme le 10188 Death Star UCS, avec un formulaire pour vendre une collection à la boutique ; magasin à St Albans."
+strengths_en = ["Buys, sells and trades new and pre-loved sets, minifigures and bricks", "Shop at 57 Catherine Street, open every day from 10:00 to 17:00", "Polybag sets and specialist stock of discontinued sets"]
+strengths_fr = ["Achète, vend et échange sets, minifigurines et briques neufs ou d'occasion", "Magasin au 57 Catherine Street, ouvert tous les jours de 10 h à 17 h", "Sets en sachet et stock spécialisé de sets arrêtés"]
+weaknesses_en = ["Collector prices on retired sets, for example £799 for the 10188 Death Star UCS"]
+weaknesses_fr = ["Prix de collection pour les sets retirés, par exemple 799 £ pour le 10188 Death Star UCS"]
+status = "active"
+last_activity = "2026-11-21"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://bricktraders.co.uk/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://bricktraders.co.uk/contact-us/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "hadley-bricks"
+name = "Hadley Bricks"
+url = "https://hadleybricks.co.uk/"
+group = "second-hand-shops"
+covers = ["official", "second-hand"]
+languages = ["en"]
+countries = ["GB"]
+ships_to_france = false
+summary_en = "Used sets restored by hand and checked piece by piece against the official inventory, each with a Hadley Bricks Verified card; sealed retired sets priced at least 10% under the shop's other platforms."
+summary_fr = "Restauration à la main et contrôle pièce par pièce selon l'inventaire officiel, avec une fiche Hadley Bricks Verified ; sets retirés scellés au moins 10 % moins chers que sur les autres plateformes."
+strengths_en = ["Free tracked delivery from £50, £3.99 below that", "14 days to return an item not as described, return postage paid by the shop (as stated)", "Orders dispatched within 1 to 2 working days"]
+strengths_fr = ["Livraison suivie gratuite dès 50 £, 3.99 £ en dessous", "14 jours pour retourner un article non conforme, frais de retour payés par la boutique (selon la boutique)", "Commandes expédiées sous 1 à 2 jours ouvrés"]
+weaknesses_en = ["Delivers to UK addresses only"]
+weaknesses_fr = ["Livre uniquement à des adresses au Royaume-Uni"]
+status = "active"
+last_activity = "2026-11-24"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://hadleybricks.co.uk/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://hadleybricks.co.uk/policies/shipping-policy"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "barando"
+name = "barando"
+url = "https://www.barando.de/"
+group = "second-hand-shops"
+covers = ["official", "second-hand", "parts", "minifigures"]
+languages = ["de"]
+countries = ["DE"]
+ships_to_france = true
+summary_en = "Cleaned used bricks sold by the kilogram, plus a BrickLink store of more than 23000 items and more than a million parts; its own brick skyline sets of Münster, Düsseldorf and Cologne."
+summary_fr = "Briques nettoyées vendues au kilogramme, plus une boutique BrickLink de plus de 23000 références et plus d'un million de pièces ; ses propres sets de silhouettes de Münster, Düsseldorf et Cologne."
+strengths_en = ["Prices include 19% VAT", "Ships worldwide; to France from 14.95 € up to 1 kg, in 3 to 10 working days", "Retailer of new sets since 2021 and BrickLink seller since 2018"]
+strengths_fr = ["Prix avec TVA de 19 % comprise", "Expédie dans le monde ; vers la France dès 14.95 € jusqu'à 1 kg, en 3 à 10 jours ouvrés", "Revendeur de sets neufs depuis 2021 et vendeur BrickLink depuis 2018"]
+weaknesses_en = ["Minimum order of 15 €", "The premises are a warehouse for online orders, not a shop to browse; pick-up on request"]
+weaknesses_fr = ["Commande minimale de 15 €", "Les locaux sont un entrepôt de commandes en ligne, pas un magasin où flâner ; retrait sur demande"]
+status = "active"
+last_activity = "2026-11-24"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.barando.de/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.barando.de/pages/zahlung-und-versand"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.barando.de/pages/lego-shop-muenster"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "wobrick"
+name = "Wobrick"
+url = "https://wobrick.com/"
+group = "parts-and-custom-builds"
+covers = ["alternative", "parts", "custom-builds"]
+languages = ["en"]
+countries = ["international"]
+brands = ["gobricks"]
+ships_to_france = true
+summary_en = "Exclusive overseas agent for GoBricks: loose parts by the piece, an upload tool matching Studio, Rebrickable and CSV lists, and brick kits made from designers' parts lists on a free quote."
+summary_fr = "Agent exclusif de GoBricks à l'étranger : pièces détachées à l'unité, outil d'import comparant les listes Studio, Rebrickable et CSV, et kits de briques tirés des listes de pièces de concepteurs, sur devis gratuit."
+strengths_en = ["Upload of Studio, Rebrickable or custom files to check availability, with a stated match rate above 95%", "Free global shipping over $20", "Discount codes by order size, from 10% to 16%"]
+strengths_fr = ["Import de fichiers Studio, Rebrickable ou personnalisés pour vérifier la disponibilité, avec un taux de correspondance annoncé supérieur à 95 %", "Livraison mondiale gratuite au-delà de 20 $", "Codes de réduction selon le montant, de 10 % à 16 %"]
+weaknesses_en = ["Prices in US dollars", "Surcharge of $5.60 on orders to the European Union", "Out-of-stock items take about 15 days; in-stock orders about 5 working days"]
+weaknesses_fr = ["Prix en dollars américains", "Supplément de 5.60 $ sur les commandes vers l'Union européenne", "Articles en rupture : environ 15 jours ; commandes en stock : environ 5 jours ouvrés"]
+status = "active"
+last_activity = "2026-11-18"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://wobrick.com/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "lesdiy"
+name = "LesDiy"
+url = "https://www.lesdiy.de/"
+group = "parts-and-custom-builds"
+covers = ["alternative", "custom-builds"]
+languages = ["de", "en"]
+countries = ["DE", "international"]
+ships_to_france = true
+summary_en = "Kits authorised by their independent designers, who are paid a commission on sales; part of the range ships from a warehouse in Czechia, 2 to 4 working days to Germany."
+summary_fr = "Kits autorisés par leurs concepteurs indépendants, rémunérés par une commission sur les ventes ; une partie de la gamme part d'un entrepôt en Tchéquie, 2 à 4 jours ouvrés vers l'Allemagne."
+strengths_en = ["Company founded in 2014, according to its home page", "Designers keep control of their custom builds and receive sales figures (as stated)", "Free standard shipping outside Switzerland (as stated on the lesdiy.com shipping page)"]
+strengths_fr = ["Société fondée en 2014, selon sa page d'accueil", "Les concepteurs gardent la maîtrise de leurs créations et reçoivent les chiffres de vente (selon le site)", "Livraison standard gratuite hors Suisse (selon la page de livraison de lesdiy.com)"]
+weaknesses_en = ["Brand-new custom builds take 15 days to process and about 15 days to ship; standard delivery is stated as 25 to 35 working days", "Partner designers counted as more than 400 on one page and more than 800 on another"]
+weaknesses_fr = ["Les créations neuves demandent 15 jours de préparation et environ 15 jours d'envoi ; livraison standard annoncée de 25 à 35 jours ouvrés", "Concepteurs partenaires comptés à plus de 400 sur une page et à plus de 800 sur une autre"]
+status = "active"
+last_activity = "2026-11-23"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.lesdiy.de/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.lesdiy.de/pages/werden-sie-designer-bei-lesdiy"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.lesdiy.com/de/pages/shipping-and-delivery"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "united-bricks"
+name = "United Bricks"
+url = "https://www.unitedbricks.com/"
+group = "custom-minifigures-and-accessories"
+covers = ["minifigures", "custom-builds", "parts"]
+languages = ["en"]
+countries = ["GB", "international"]
+summary_en = "Historical and military figures printed in the United Kingdom on new LEGO parts, with a monthly Brick Legends Box on one-time or subscription terms; also resells BrickArms parts."
+summary_fr = "Figurines historiques et militaires imprimées au Royaume-Uni sur des pièces de marque LEGO neuves, avec une Brick Legends Box mensuelle à l'unité ou par abonnement ; revend aussi des pièces BrickArms."
+strengths_en = ["Army builder figures from £8.75, with 10% off for 10 or more on selected figures", "Printed in house by UV process on genuine new LEGO parts (as stated)", "Brick Legends Box in one-time, 3-month and 6-month subscription options"]
+strengths_fr = ["Figurines d'armées dès 8.75 £, 10 % de moins à partir de 10 sur certaines figurines", "Impression dans l'atelier par procédé UV sur des pièces LEGO authentiques neuves (selon la boutique)", "Brick Legends Box à l'unité ou en abonnement de 3 ou 6 mois"]
+weaknesses_en = ["Prices shown excluding VAT", "Bulky items cost extra postage, more for international customers", "Products for ages 14 and over"]
+weaknesses_fr = ["Prix affichés hors TVA", "Frais de port supplémentaires pour les articles volumineux, plus élevés à l'international", "Produits pour 14 ans et plus"]
+status = "active"
+last_activity = "2026-10-30"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.unitedbricks.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.unitedbricks.com/product-page/ww1-french-mg-team"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.globuya.com/GB/Castle-Douglas/787311797964737/United-Bricks"
+date = "2026-10-30"
+kind = "third-party"
+
+[[resource]]
+id = "firestar-toys"
+name = "FireStar Toys"
+url = "https://www.firestartoys.com/"
+group = "custom-minifigures-and-accessories"
+covers = ["official", "minifigures", "custom-builds", "parts"]
+languages = ["en"]
+countries = ["GB", "international"]
+ships_to_france = true
+summary_en = "Own designs, 3D-printed upgrades and buildable mini sets, plus parts by BrickArms, BrickForge and BrickWarriors; StarPoints loyalty rewards and themed events such as Halloween 2026."
+summary_fr = "Créations propres, améliorations imprimées en 3D et mini sets à construire, plus pièces BrickArms, BrickForge et BrickWarriors ; points de fidélité StarPoints et événements à thème comme Halloween 2026."
+strengths_en = ["Delivery to the United Kingdom, the United States, the European Union and the rest of the world", "Bespoke printing service and trade accounts", "News page updated on 24 November 2026"]
+strengths_fr = ["Livraison au Royaume-Uni, aux États-Unis, dans l'Union européenne et dans le reste du monde", "Service d'impression sur mesure et comptes professionnels", "Page d'actualités mise à jour le 24 novembre 2026"]
+weaknesses_en = ["Dispatch 3 to 7 working days, plus 5 working days for personalised items"]
+weaknesses_fr = ["Expédition en 3 à 7 jours ouvrés, plus 5 jours ouvrés pour les articles personnalisés"]
+status = "active"
+last_activity = "2026-11-24"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.firestartoys.com/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.firestartoys.com/news-and-updates.htm"
+date = "2026-11-24"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.firestartoys.com/delivery-and-returns.htm"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "brickforge"
+name = "BrickForge"
+url = "https://brickforge.com/"
+group = "custom-minifigures-and-accessories"
+covers = ["parts", "minifigures"]
+languages = ["en"]
+countries = ["US"]
+summary_en = "Swords, helms, backpacks and firearms for minifigures, sold singly or in wholesale cases of 12; a blind bag of 10 discontinued or slightly misprinted pieces at $5."
+summary_fr = "Épées, casques, sacs à dos et armes à feu pour minifigurines, à l'unité ou en cartons de gros de 12 ; sachet aléatoire de 10 pièces arrêtées ou mal imprimées à 5 $."
+strengths_en = ["Wholesale case of 12 assorted tactical character packs", "Sale prices of 30% on several items on the page read"]
+strengths_fr = ["Carton de gros de 12 packs de personnage tactique assortis", "Prix soldés à 30 % sur plusieurs articles de la page lue"]
+weaknesses_en = ["Prices in US dollars", "Several items sold out on the page read"]
+weaknesses_fr = ["Prix en dollars américains", "Plusieurs articles épuisés sur la page lue"]
+status = "active"
+last_activity = "2026-11-05"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brickforge.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "minifig-co"
+name = "The Minifig Co."
+url = "https://minifigco.com/"
+group = "custom-minifigures-and-accessories"
+covers = ["minifigures", "custom-builds", "parts"]
+languages = ["en"]
+countries = ["US"]
+summary_en = "Printed bodies and heads sold separately, such as WWII bodies at $16 and zombie heads at $3.50, with ranges for the Revolutionary War, British troops and Imperial troopers."
+summary_fr = "Corps et têtes imprimés vendus séparément, comme des corps de la Seconde Guerre mondiale à 16 $ et des têtes de zombie à 3.50 $, avec des gammes guerre d'Indépendance, troupes britanniques et soldats impériaux."
+strengths_en = ["Bodies with 360-degree printing", "Blaster and rifle accessories from $1.95"]
+strengths_fr = ["Corps imprimés sur 360 degrés", "Accessoires de blasters et fusils dès 1.95 $"]
+weaknesses_en = ["Prices in US dollars", "Military and Star Wars themes dominate the range"]
+weaknesses_fr = ["Prix en dollars américains", "Les thèmes militaires et Star Wars dominent la gamme"]
+status = "active"
+last_activity = "2026-10-28"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://minifigco.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "bricktracks"
+name = "BrickTracks"
+url = "https://bricktracks.com/"
+group = "motors-and-track"
+covers = ["parts"]
+languages = ["en"]
+countries = ["US", "international"]
+summary_en = "Curves of R56, R104 and R120 radius, with Power Functions variants, plus switch kits, wheelsets and metal axles for LEGO trains; also limited seasonal train kits with instruction books."
+summary_fr = "Courbes de rayon R56, R104 et R120, avec variantes Power Functions, plus kits d'aiguillages, jeux de roues et essieux métalliques pour trains LEGO ; aussi des kits de trains saisonniers en série limitée avec livret."
+strengths_en = ["Engineering done in the United States, tracks used on the makers' own layouts (as stated)", "Pack of 50 metal train axles and 100-piece wheel packs", "Flat $10 shipping outside the United States on one seasonal kit"]
+strengths_fr = ["Conception réalisée aux États-Unis, voies utilisées sur les propres réseaux des fabricants (selon le fabricant)", "Lot de 50 essieux métalliques et lots de 100 roues", "Livraison forfaitaire à 10 $ hors des États-Unis sur un kit saisonnier"]
+weaknesses_en = ["Seasonal kits are limited releases, available until Christmas"]
+weaknesses_fr = ["Les kits saisonniers sont des séries limitées, disponibles jusqu'à Noël"]
+status = "active"
+last_activity = "2026-11-13"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://bricktracks.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://bricktracks.com/pages/about-us"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+id = "brick-train-depot"
+name = "Brick Train Depot"
+url = "https://www.bricktraindepot.com/"
+group = "motors-and-track"
+covers = ["parts", "instructions"]
+languages = ["en"]
+countries = ["US", "international"]
+summary_en = "Instructions, decals, wheels and track from 13 designers in one shop, in 1:48 and 8-wide scales; a BNSF train kit at $799.99, new locomotive instructions on 20 November 2026."
+summary_fr = "Notices, décalcomanies, roues et voies de 13 concepteurs dans une seule boutique, aux échelles 1:48 et 8 studs ; un kit de train BNSF à 799.99 $, nouvelles notices de locomotive le 20 novembre 2026."
+strengths_en = ["Locomotive instructions from $65 and freight car instructions from $30", "Free resources and a guide to optimising LEGO purchases"]
+strengths_fr = ["Notices de locomotive dès 65 $ et notices de wagons de marchandises dès 30 $", "Ressources gratuites et guide pour optimiser ses achats de marque LEGO"]
+weaknesses_en = ["Fan site: its products are not LEGO products and instructions may not be resold or shared"]
+weaknesses_fr = ["Site de fans : ses produits ne sont pas de marque LEGO et les notices ne peuvent être ni revendues ni diffusées"]
+status = "active"
+last_activity = "2026-11-20"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.bricktraindepot.com/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://bricktraindepot.com/about/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "big-ben-bricks"
+name = "Big Ben Bricks"
+url = "https://bigbenbricks.com/"
+group = "motors-and-track"
+covers = ["parts"]
+languages = ["en"]
+countries = ["US"]
+summary_en = "Train wheels only: 15 types from #4 flanged thin wheels to #13 drivers, fitted on Technic axles, from $3 each to an 8-wheel kit at $29."
+summary_fr = "Uniquement des roues de train : 15 types, des roues fines à boudin n°4 aux roues motrices n°13, montées sur essieux Technic, de 3 $ pièce à un kit de 8 roues à 29 $."
+strengths_en = ["Wheels designed to fit 5 or 6 stud Technic axles", "Sizes from XS to XXL, spoked and solid"]
+strengths_fr = ["Roues conçues pour des essieux Technic de 5 ou 6 studs", "Tailles de XS à XXL, à rayons ou pleines"]
+weaknesses_en = ["Single product category: train wheels"]
+weaknesses_fr = ["Une seule catégorie de produits : les roues de train"]
+status = "active"
+last_activity = "2026-09-20"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://bigbenbricks.com/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+id = "24brick"
+name = "24BRICK"
+url = "https://www.24brick.cz/"
+group = "services-and-accessories"
+covers = ["parts", "minifigures"]
+languages = ["cs"]
+countries = ["CZ"]
+summary_en = "LED kits for sets by theme, from Architecture and Technic to Star Wars and Harry Potter, plus display cases and stands for sets and minifigures, custom parts and printed heads and torsos."
+summary_fr = "Kits LED pour sets par thème, d'Architecture et Technic à Star Wars et Harry Potter, plus vitrines et supports pour sets et minifigurines, pièces personnalisées, têtes et torses imprimés."
+strengths_en = ["Prices shown in koruna or in euros", "Blog with articles, the latest dated 9 April 2026"]
+strengths_fr = ["Prix affichés en couronnes ou en euros", "Blog d'articles, le dernier daté du 9 avril 2026"]
+weaknesses_en = ["Interface in Czech"]
+weaknesses_fr = ["Interface en tchèque"]
+status = "active"
+last_activity = "2026-04-09"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.24brick.cz/"
+date = "2026-11-25"
+kind = "official"
