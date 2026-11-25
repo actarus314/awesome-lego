@@ -54,6 +54,9 @@ name = "LEGO"
 url = "https://www.lego.com/fr-fr"
 group = "official-lego"
 featured = true
+rank = {intl = 1}
+rank_reason_en = "Only entry of its group: original maker of the 8 mm stud brick system, with an adult range and the largest licence portfolio, active on 23 November 2026, sources read at the source."
+rank_reason_fr = "Seule fiche de son groupe : fabricant d'origine du système de briques à tenons de 8 mm, avec une gamme adulte et le plus grand portefeuille de licences, active le 23 novembre 2026, sources lues à la source."
 operator = "lego-group"
 covers = ["official", "minifigures"]
 languages = ["fr", "en", "de"]
@@ -92,6 +95,9 @@ name = "COBI"
 url = "https://cobi.com/fr-fr"
 group = "european-alternatives"
 featured = true
+rank = {intl = 1}
+rank_reason_en = "Own factory in Mielec, Poland and bricks produced in the European Union, with printed parts and licensed vehicles; active on 23 November 2026, confidence high, sources read at the source."
+rank_reason_fr = "Usine propre à Mielec, en Pologne, et briques produites dans l'Union européenne, avec pièces imprimées et véhicules sous licence ; active le 23 novembre 2026, confiance haute, sources lues à la source."
 covers = ["alternative"]
 languages = ["fr", "en", "pl", "de"]
 countries = ["international"]
@@ -136,6 +142,9 @@ name = "BlueBrixx"
 url = "https://www.bluebrixx.com/fr/"
 group = "european-alternatives"
 featured = true
+rank = {intl = 2}
+rank_reason_en = "Range for adults (BlueBrixx Pro) with trains, architecture and licences, designed and distributed in Germany, delivery to all European Union countries stated on 14 October 2026; confidence high."
+rank_reason_fr = "Gamme pour adultes (BlueBrixx Pro) avec trains, architecture et licences, conçue et distribuée en Allemagne, livraison dans tous les pays de l'Union européenne indiquée le 14 octobre 2026 ; confiance haute."
 covers = ["alternative", "parts"]
 languages = ["fr", "de", "en"]
 countries = ["FR", "DE"]
@@ -240,6 +249,9 @@ kind = "read"
 
 [[resource]]
 id = "cada"
+rank = {intl = 1}
+rank_reason_en = "Double Eagle group making its own bricks, with licensed Technic-style cars (Mercedes-AMG, Lamborghini, Land Rover) and the Master series at 1:8; active on 23 November 2026, confidence medium."
+rank_reason_fr = "Groupe Double Eagle fabriquant ses propres briques, avec voitures de type Technic sous licence (Mercedes-AMG, Lamborghini, Land Rover) et la série Master au 1:8 ; active le 23 novembre 2026, confiance moyenne."
 aliases = ["Double Eagle"]
 name = "CaDA (Double Eagle)"
 url = "https://cadatoys.com/"
@@ -288,6 +300,9 @@ name = "Mould King"
 url = "https://mouldkingcorp.com/"
 group = "chinese-alternatives"
 featured = true
+rank = {intl = 2}
+rank_reason_en = "Very large motorised Technic models at the lowest price per piece, bricks mostly from GoBricks, free delivery to France stated; active on 20 November 2026, confidence medium."
+rank_reason_fr = "Très grands modèles Technic motorisés au plus faible prix par pièce, briques surtout de GoBricks, livraison gratuite en France indiquée ; active le 20 novembre 2026, confiance moyenne."
 covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
@@ -338,6 +353,9 @@ id = "reobrix"
 name = "Reobrix"
 url = "https://reobrix.fr/fr_FR/index"
 group = "chinese-alternatives"
+rank = {intl = 5}
+rank_reason_en = "Large mechanical and display models (ships up to 108 cm, construction machines, trains), French-language shop shipping from Poland; active on 23 November 2026, confidence medium."
+rank_reason_fr = "Grandes maquettes mécaniques et d'exposition (navires jusqu'à 108 cm, engins de chantier, trains), boutique en français expédiant depuis la Pologne ; active le 23 novembre 2026, confiance moyenne."
 covers = ["alternative"]
 languages = ["fr", "en"]
 countries = ["FR"]
@@ -370,6 +388,9 @@ name = "Pantasy"
 url = "https://pantasy.com/"
 group = "chinese-alternatives"
 featured = true
+rank = {intl = 3}
+rank_reason_en = "Modular buildings, retro objects and licences with printed parts for adult collectors, bricks from GoBricks; shipping policy updated in July 2026, confidence medium."
+rank_reason_fr = "Bâtiments modulaires, objets rétro et licences avec pièces imprimées pour collectionneurs adultes, briques de GoBricks ; politique d'expédition mise à jour en juillet 2026, confiance moyenne."
 covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
@@ -414,6 +435,9 @@ name = "Lumibricks (formerly Funwhole)"
 url = "https://www.lumibricks.com/"
 group = "chinese-alternatives"
 featured = true
+rank = {intl = 4}
+rank_reason_en = "Complete sets of buildings and scenes with integrated light in 13 collections, printed parts and 2-year warranty, delivery from a German warehouse; active on 29 September 2026, confidence high."
+rank_reason_fr = "Sets complets de bâtiments et de scènes avec éclairage intégré en 13 collections, pièces imprimées et garantie de 2 ans, livraison depuis un entrepôt allemand ; active le 29 septembre 2026, confiance haute."
 covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
@@ -860,6 +884,9 @@ kind = "third-party"
 
 [[resource]]
 id = "mattel-brick-shop"
+rank = {intl = 4}
+rank_reason_en = "Adult line launched in 2025 by Mattel, with licensed Hot Wheels cars, metal parts and a 1:64 die-cast model in each set; range still small, confidence medium."
+rank_reason_fr = "Ligne adulte lancée en 2025 par Mattel, avec voitures Hot Wheels sous licence, pièces métalliques et un modèle moulé au 1:64 dans chaque set ; gamme encore réduite, confiance moyenne."
 aliases = ["Mattel"]
 name = "Mattel Brick Shop (MEGA)"
 url = "https://shopping.mattel.com/de-de/collections/bausteine-sets"
@@ -893,6 +920,9 @@ kind = "third-party"
 
 [[resource]]
 id = "revell-brick-system"
+rank = {intl = 3}
+rank_reason_en = "Adult line of a plastic model-kit maker launched in 2025, with fully printed sets, large licensed models (Das Boot submarine of 6483 pieces) and additions in 2026; active on 23 November 2026, confidence medium."
+rank_reason_fr = "Ligne adulte d'un fabricant de maquettes en plastique lancée en 2025, avec sets entièrement imprimés, grands modèles sous licence (sous-marin de Das Boot de 6483 pièces) et ajouts en 2026 ; active le 23 novembre 2026, confiance moyenne."
 aliases = ["Revell"]
 name = "Revell Brick System"
 url = "https://revell.com/collections/brick-system"
@@ -930,6 +960,9 @@ name = "GoBricks (Shantou Golds Precision Technology)"
 url = "https://gobricks.net/"
 group = "manufacturers"
 featured = true
+rank = {intl = 1}
+rank_reason_en = "Regarded as the community reference for alternative bricks, with 327 injection machines, more than 2000 own moulds and supply to Mould King and Pantasy; confidence medium."
+rank_reason_fr = "Réputé la référence de la communauté pour les briques alternatives, avec 327 presses à injection, plus de 2000 moules propres et fourniture de Mould King et Pantasy ; confiance moyenne."
 covers = ["parts", "alternative"]
 languages = ["en"]
 countries = ["international"]
@@ -979,6 +1012,9 @@ id = "panlos"
 name = "Panlos"
 url = "http://www.panlos.com/"
 group = "manufacturers"
+rank = {intl = 2}
+rank_reason_en = "Own parts covering most current parts of the brick system, a showroom in Shantou, and supply to Kiddicraft and Lidl Playtive Clippys; confidence low, official site read in Chinese."
+rank_reason_fr = "Pièces propres couvrant la plupart des pièces courantes du système de briques, salle d'exposition à Shantou, et fourniture de Kiddicraft et des Playtive Clippys de Lidl ; confiance basse, site officiel lu en chinois."
 covers = ["alternative"]
 languages = ["zh", "en"]
 countries = ["international"]
@@ -1020,6 +1056,9 @@ id = "blokees"
 name = "Blokees"
 url = "https://blokees.com/"
 group = "other-formats"
+rank = {intl = 4}
+rank_reason_en = "Articulated assemble-and-pose figures and vehicles under licence (Transformers, Ultraman), outside the 8 mm stud system; active on 23 November 2026, confidence medium."
+rank_reason_fr = "Figurines et véhicules articulés à assembler sous licence (Transformers, Ultraman), hors du système à tenons de 8 mm ; active le 23 novembre 2026, confiance moyenne."
 covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
@@ -1045,6 +1084,9 @@ id = "loz"
 name = "LOZ"
 url = "https://loz-mini.com/en"
 group = "other-formats"
+rank = {intl = 2}
+rank_reason_en = "Micro-blocks and Diamond Blocks of 4 to 6 mm with licensed city collections, an established format outside the 8 mm pitch; confidence low, no recent activity date."
+rank_reason_fr = "Micro-blocs et Diamond Blocks de 4 à 6 mm avec collections urbaines sous licence, format établi hors du pas de 8 mm ; confiance basse, aucune date d'activité récente."
 covers = ["alternative"]
 languages = ["en", "zh"]
 countries = ["international"]
@@ -1081,6 +1123,9 @@ id = "nanoblock"
 name = "nanoblock (Kawada)"
 url = "https://www.kawada-toys.com/en/brand/nanoblock/"
 group = "other-formats"
+rank = {intl = 1}
+rank_reason_en = "Micro-blocks on sale since October 2008, more than 32 million units sold by October 2018, an Advanced Hobby series for adults and a flagship store in Tokyo; confidence medium."
+rank_reason_fr = "Micro-blocs en vente depuis octobre 2008, plus de 32 millions d'unités vendues en octobre 2018, série Advanced Hobby pour adultes et boutique phare à Tokyo ; confiance moyenne."
 covers = ["alternative"]
 languages = ["en", "ja"]
 countries = ["international"]
@@ -1310,6 +1355,9 @@ id = "jekca"
 name = "JEKCA"
 url = "https://www.jekca.com/"
 group = "other-formats"
+rank = {intl = 3}
+rank_reason_en = "Animals, monsters and characters with an own locking system, regional official stores in euros for France and the European Union; active on 25 November 2026, confidence high."
+rank_reason_fr = "Animaux, monstres et personnages avec un système de verrouillage propre, boutiques officielles régionales en euros pour la France et l'Union européenne ; active le 25 novembre 2026, confiance haute."
 covers = ["alternative"]
 languages = ["en", "de", "fr"]
 countries = ["international"]
@@ -1388,6 +1436,9 @@ id = "stone-heap"
 name = "Stone Heap"
 url = "https://stone-heap.com/"
 group = "european-alternatives"
+rank = {intl = 5}
+rank_reason_en = "Trains, trams and buses with Deutsche Bahn and Swiss Federal Railways licences, sold in 22 stores, catalogue published on 2 September 2026; active on 25 November 2026, confidence high, but distribution mostly German."
+rank_reason_fr = "Trains, tramways et bus avec licences Deutsche Bahn et Chemins de fer fédéraux suisses, vendus dans 22 magasins, catalogue publié le 2 septembre 2026 ; active le 25 novembre 2026, confiance haute, mais diffusion surtout allemande."
 covers = ["alternative"]
 languages = ["de", "en"]
 countries = ["DE"]

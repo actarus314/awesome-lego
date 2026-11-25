@@ -17,6 +17,7 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
   - [European and American alternatives](#european-and-american-alternatives)
   - [Chinese alternatives](#chinese-alternatives)
   - [Brick manufacturers and suppliers](#brick-manufacturers-and-suppliers)
+  - [Other formats](#other-formats)
 - [Shops](#shops)
   - [Official LEGO](#official-lego-1)
   - [Alternative brands](#alternative-brands)
@@ -85,21 +86,19 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 ### European and American alternatives
 
-- [BlueBrixx](https://www.bluebrixx.com/fr/) - Architecture, trains, medieval, vehicles and licences (BlueBrixx Pro for adults), by BB Services GmbH. Bricks come from several Chinese manufacturers; design and distribution in Germany. Covers alternative brands.
 - [COBI](https://cobi.com/fr-fr) - Compatible bricks, own factory in Mielec, Poland; specialised in historical and military models (tanks, aircraft, ships) and licensed vehicles. Covers alternative brands.
-- [Mattel Brick Shop (MEGA)](https://shopping.mattel.com/de-de/collections/bausteine-sets) - Adult line launched in 2025: licensed Hot Wheels cars (Lamborghini, Audi, Honda, Aston Martin), Masters of the Universe, Halo, Xbox. Covers alternative brands.
-- [Revell Brick System](https://revell.com/collections/brick-system) - Brick line of the plastic model-kit maker, aimed at adults and launched in 2025 with the submarine from Das Boot (6483 pieces, 1:56). Covers alternative brands.
 
 ### Chinese alternatives
 
 - [CaDA (Double Eagle)](https://cadatoys.com/) - Technic-style cars, often motorised or remote-controlled and licensed (Master series at 1:8), plus space and military models. Covers alternative brands.
-- [Lumibricks (formerly Funwhole)](https://www.lumibricks.com/) - Complete sets of buildings and scenes with integrated light, in 13 collections including Cyberpunk Neoncity and the Blade Runner 2049 licence; Guangzhou, China. Covers alternative brands.
-- [Mould King](https://mouldkingcorp.com/) - Very large motorised Technic models, cranes, vehicles and trains from Shantou, China, at a very low price per piece. Covers alternative brands.
-- [Pantasy](https://pantasy.com/) - Modular buildings, retro objects, flowers and licences with printed parts, aimed at adult collectors. Covers alternative brands.
 
 ### Brick manufacturers and suppliers
 
 - [GoBricks (Shantou Golds Precision Technology)](https://gobricks.net/) - Regarded as the community reference for alternative bricks, with 327 injection machines and a stated 10 billion pieces per year. Covers alternative brands.
+
+### Other formats
+
+- [nanoblock (Kawada)](https://www.kawada-toys.com/en/brand/nanoblock/) - Micro-blocks whose smallest piece measures 4 mm by 4 mm by 5 mm, on sale since October 2008: animals, landmarks, ships and castles, with an Advanced Hobby series for adults. Covers alternative brands.
 
 <br>
 
@@ -115,6 +114,7 @@ Online and physical shops selling official LEGO, alternative brick brands and ge
 
 ### Alternative brands
 
+- [BlueBrixx](https://www.bluebrixx.com/fr/) - Own sets under licences not held by LEGO (Stargate, RoboCop, emergency vehicles); brand and retailer operated by BB Services GmbH, Flörsheim am Main. Covers alternative brands.
 - [Brickeez](https://www.brickeez.com) - New official LEGO, Lumibricks, Pantasy, COBI and CaDA; shop in the Hérault. Covers official LEGO and alternative brands.
 - [KBS Shop](https://kbs-shop.com) - Technical and remote-controlled bricks: Mould King, CaDA, Reobrix, Wange, Jie Star, Panlos. Covers alternative brands.
 
