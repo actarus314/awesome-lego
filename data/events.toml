@@ -1741,7 +1741,7 @@ name = "Bricks in the Six"
 url = "https://bricksinthe6.ca/"
 rank = {CA = 1}
 rank_reason_en = "Presented by the organisers as the largest LEGO fan event in Canada, in a five-day format; 2026 edition on 11 to 15 Nov."
-rank_reason_fr = "Présenté par les organisateurs comme le plus grand événement de fans LEGO du Canada, sur cinq jours ; édition 2026 du 11 au 15 nov.."
+rank_reason_fr = "Présenté par les organisateurs comme le plus grand événement de fans LEGO du Canada, sur cinq jours ; édition 2026 du 11 au 15 nov."
 feed = "https://bricksinthe6.ca/feed/"
 group = "conventions"
 covers = ["events"]
@@ -1901,7 +1901,7 @@ name = "Brickfair South Africa"
 url = "https://www.brickfair.co.za/"
 rank = {ZA = 1}
 rank_reason_en = "More than 200 exhibits and competitions in nine categories with free entry; 2026 edition on 24 and 25 Oct."
-rank_reason_fr = "Plus de 200 pièces exposées et des concours dans neuf catégories avec entrée gratuite ; édition 2026 les 24 et 25 oct.."
+rank_reason_fr = "Plus de 200 pièces exposées et des concours dans neuf catégories avec entrée gratuite ; édition 2026 les 24 et 25 oct."
 feed = "https://www.brickfair.co.za/feed/"
 group = "conventions"
 covers = ["events"]
@@ -2099,7 +2099,7 @@ url = "https://imagination-station.org.nz/pages/the-christchurch-brick-show"
 group = "conventions"
 rank = {NZ = 1}
 rank_reason_en = "More than 350 exhibitors on 4000 square metres, billed as the biggest LEGO show in New Zealand since 2012; 2026 edition on 11 and 12 Jul."
-rank_reason_fr = "Plus de 350 exposants sur 4000 mètres carrés, présenté comme la plus grande exposition LEGO de Nouvelle-Zélande depuis 2012 ; édition 2026 les 11 et 12 juil.."
+rank_reason_fr = "Plus de 350 exposants sur 4000 mètres carrés, présenté comme la plus grande exposition LEGO de Nouvelle-Zélande depuis 2012 ; édition 2026 les 11 et 12 juil."
 covers = ["events", "official"]
 languages = ["en"]
 countries = ["NZ"]

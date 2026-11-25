@@ -203,7 +203,7 @@ def date_en(day):
 
 
 def since(iso):
-    """'since 12 November 2026, 22 days' for a past ISO date."""
+    """'since 12 Nov 2026, 22 days' for a past ISO date."""
     return f"since {date_en(iso)}, {day_count(iso)}"
 
 
