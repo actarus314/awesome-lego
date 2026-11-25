@@ -37,6 +37,7 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
 - [Communities and news](#communities-and-news)
   - [News and reviews](#news-and-reviews)
   - [Forums and chat](#forums-and-chat)
+  - [Reddit](#reddit)
   - [Wikis](#wikis)
   - [Deals](#deals)
 - [YouTube and podcasts](#youtube-and-podcasts)
@@ -199,16 +200,15 @@ Forums, subreddits, wikis, news and review sites, deal communities and chat serv
 
 ### News and reviews
 
-- [Hoth Bricks](https://www.hothbricks.com/) - Contests, rumours and deals alongside new sets, reviews and sets about to retire. Covers official LEGO.
 - [Merlins Bricks (Merlins Steine)](https://www.merlinsbricks.com/) - Independent platform covering all brands (German version merlinssteine.de): SetDB, a database of more than 39000 sets, a reviews archive and a weekly podcast. Covers official LEGO and alternative brands.
-- [New Elementary](https://www.newelementary.com/) - Tracking of Pick a Brick prices and new parts in sets, with articles on LEGO parts, sets and building techniques. Covers official LEGO.
-- [The Brothers Brick](https://www.brothers-brick.com/) - Describes itself as the world's number one source of LEGO news, reviews and fan creations. Covers official LEGO.
 
 ### Forums and chat
 
 - [Eurobricks Forums](https://www.eurobricks.com/forum/) - Sections on custom builds, reviews and marketplace for adult fans of LEGO, plus one on alternative brands. Covers official LEGO and alternative brands.
-- [HardWare.fr: compatible bricks topic](https://forum.hardware.fr/hfr/Discussions/Loisirs/briques-construction-compatibles-sujet_119659_1.htm) - Long-running topic on LEGO-compatible brick brands (started 16 December 2021), with an introduction kept up to date on brands, compatibility and after-sales service. Covers alternative brands.
-- [TechLug.fr forum](https://www.techlug.fr/Forum/) - LEGO Technic and Mindstorms: news, set discussions, modifications of official sets, custom builds and a section on theory of mechanisms and gearing. Covers official LEGO.
+
+### Reddit
+
+- [r/lego](https://www.reddit.com/r/lego/) - News, photos and discussion on LEGO; sales and trades are sent to other subreddits. Covers official LEGO.
 
 ### Wikis
 
@@ -228,20 +228,15 @@ English- and French-language YouTube channels and podcasts: reviews of official 
 
 ### Official LEGO reviews
 
-- [Brickmitri (YouTube)](https://www.youtube.com/@brickmitri) - Describes itself as an independent medium; LEGO news and set reviews. Covers official LEGO.
 - [JANGBRiCKS](https://www.youtube.com/@JANGBRiCKS) - Run by an adult fan; the channel description states the content is unsponsored and titles carry a #NotAd tag. Covers official LEGO.
-- [RacingBrick](https://www.youtube.com/@RacingBrick) - LEGO Technic and vehicle sets in detailed build reviews, with Powered Up tutorials. Covers official LEGO.
-- [Tiago Catarino](https://www.youtube.com/@TiagoCatarino) - Former official LEGO designer reviewing sets, with building tips. Covers official LEGO.
 
 ### Alternative brand reviews
 
-- [BrickMeet](https://www.youtube.com/@BrickMeet) - Military and vehicle sets in speed-build reviews, mainly Cobi, CaDA, Panlos and Mould King; the author also runs German and English blogs. Covers official LEGO and alternative brands.
 - [JANG's Other Bricks](https://www.youtube.com/@JANGsOtherBricks) - Run by the author of JANGBRiCKS; non-sponsored reviews of brick-built construction toys from many brands. Covers official LEGO and alternative brands.
-- [The Laser Symphony](https://www.youtube.com/@TheLaserSymphony) - CaDA, Cobi, Pantasy and Lumibricks tested next to official LEGO sets; some videos state that products were supplied. Covers official LEGO and alternative brands.
 
 ### Building and custom builds
 
-- [BrickVault](https://www.youtube.com/channel/UCrhb3SP2lZBgguLHIWWuHOQ) - Weekly top-10 selections of LEGO custom builds, and display ideas. Covers official LEGO.
+- [Brick Experiment Channel](https://www.youtube.com/@BrickExperimentChannel) - Motorised mechanisms and engineering experiments built with LEGO parts and third-party motors and battery boxes; part lists and instructions of some designs are published on a separate blog.
 
 ### News and community
 
@@ -250,7 +245,6 @@ English- and French-language YouTube channels and podcasts: reviews of official 
 ### Podcasts
 
 - [Back 2 Brick LEGO Podcast](https://back2brick.buzzsprout.com/) - Hosted by an adult fan: LEGO news, custom builds and interviews with LEGO designers, with a weekly news recap on Fridays.
-- [Briques en Vrac](https://www.vodio.fr/vodiotheque/c/1753/briques-en-vrac-actualites-et-nouveautes-lego/) - LEGO news and new releases. Covers official LEGO.
 
 <br>
 
@@ -395,18 +389,14 @@ Existing directories, awesome lists and lists of channels and brands about LEGO 
 ### Site directories and awesome lists
 
 - [awesome-lego (ad-si)](https://github.com/ad-si/awesome-lego) - LEGO software, archives, libraries, marketplaces, channels, books, blogs and games, curated by the community. Covers official LEGO.
-- [Deparkatre clubs and associations directory](https://deparkatre.fr/associations) - LEGO user groups, clubs and online communities, national, regional and local, in France, Europe and elsewhere. Covers official LEGO.
-- [LEGO Fan CoLab community directory](https://fancolab.lego.com/communities/) - Fan communities recognised by LEGO, French associations among them. Covers official LEGO.
 
 ### Channel and podcast lists
 
 - [BrickTubed channel directory](https://bricktubed.com/channels/) - Subscribers, views, video count, country, last video and active status for each LEGO YouTube channel; a podcast page also exists. Covers official LEGO and alternative brands.
-- [Deparkatre LEGO influencer directory](https://deparkatre.fr/influenceurs) - Creators with an interactive map: LEGO YouTube channels, Instagram accounts, blogs and others. Covers official LEGO and alternative brands.
 
 ### Brand lists
 
 - [Liste von Klemmbausteinherstellern (German Wikipedia)](https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern) - Table of LEGO-compatible brick manufacturers with set maker, brick maker, stud pitch and remarks. Covers official LEGO and alternative brands.
-- [other-bricks.com brands](https://other-bricks.com/en/brands/) - Pages comparing building block brands by origin, quality and collection size, with set counts. Covers alternative brands.
 
 ## Contributing
 

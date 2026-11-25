@@ -35,6 +35,9 @@ name = "awesome-lego (ad-si)"
 url = "https://github.com/ad-si/awesome-lego"
 group = "site-directories"
 featured = true
+rank = {intl = 1, en = 1}
+rank_reason_en = "About 90 entries in 17 sections on software, archives, libraries, blogs and games, under a CC0 licence; latest activity on 2 November 2026."
+rank_reason_fr = "Environ 90 entrées en 17 sections sur les logiciels, archives, bibliothèques, blogs et jeux, sous licence CC0 ; dernière activité le 2 novembre 2026."
 covers = ["official", "custom-builds", "instructions", "news"]
 languages = ["en"]
 countries = ["international"]
@@ -141,6 +144,9 @@ id = "brick-discovery"
 name = "Brick Discovery"
 url = "https://www.brickdiscovery.com/buy-sell-invest/"
 group = "site-directories"
+rank = {intl = 4, en = 4}
+rank_reason_en = "Curated list of communities, shops, marketplaces, price trackers and tools with free or paid labels, with no update date shown; latest activity on 23 November 2026."
+rank_reason_fr = "Liste choisie de communautés, boutiques, places de marché, suivis de prix et outils avec des étiquettes gratuit ou payant, sans date de mise à jour affichée ; dernière activité le 23 novembre 2026."
 covers = ["official", "alternative", "second-hand", "custom-builds", "minifigures"]
 languages = ["en"]
 countries = ["international"]
@@ -218,6 +224,9 @@ name = "Deparkatre clubs and associations directory"
 url = "https://deparkatre.fr/associations"
 group = "site-directories"
 featured = true
+rank = {fr = 1}
+rank_reason_en = "About 77 clubs (9 national, 20 regional, 48 local), with entries needing checking marked; latest activity on 23 November 2026."
+rank_reason_fr = "Environ 77 clubs (9 nationaux, 20 régionaux, 48 locaux), avec les entrées à vérifier signalées ; dernière activité le 23 novembre 2026."
 covers = ["official", "custom-builds", "news"]
 languages = ["fr"]
 countries = ["FR"]
@@ -244,6 +253,9 @@ name = "LEGO Fan CoLab community directory"
 url = "https://fancolab.lego.com/communities/"
 group = "site-directories"
 featured = true
+rank = {intl = 2, en = 2}
+rank_reason_en = "Official source listing fan communities recognised by LEGO, French associations among them, limited to recognised communities; latest activity on 23 November 2026."
+rank_reason_fr = "Source officielle listant les communautés de fans reconnues par LEGO, dont des associations françaises, limitée aux communautés reconnues ; dernière activité le 23 novembre 2026."
 operator = "lego-group"
 covers = ["official", "news"]
 languages = ["en"]
@@ -270,6 +282,9 @@ id = "spielzeug-fuchs-price-platforms"
 name = "Spielzeug-Fuchs: price comparison platforms for building bricks"
 url = "https://spielzeug-fuchs.de/klemmbaustein-preisvergleichsplattformen/"
 group = "site-directories"
+rank = {de = 2}
+rank_reason_en = "Single German table of price comparison platforms for LEGO and compatible bricks, from a retailer-affiliated blog; page not re-read in this review."
+rank_reason_fr = "Tableau unique en allemand des plateformes de comparaison de prix pour les briques LEGO et compatibles, d'un blog lié à un revendeur ; page non relue dans cette revue."
 covers = ["official", "alternative"]
 languages = ["de"]
 countries = ["DE"]
@@ -297,6 +312,9 @@ name = "BrickTubed channel directory"
 url = "https://bricktubed.com/channels/"
 group = "channel-lists"
 featured = true
+rank = {intl = 1, en = 1}
+rank_reason_en = "429 channels with subscribers, views, video count, country, last video and active status for each."
+rank_reason_fr = "429 chaînes avec abonnés, vues, nombre de vidéos, pays, dernière vidéo et statut d'activité pour chacune."
 covers = ["official", "alternative", "news"]
 languages = ["en"]
 countries = ["international"]
@@ -324,6 +342,9 @@ name = "Deparkatre LEGO influencer directory"
 url = "https://deparkatre.fr/influenceurs"
 group = "channel-lists"
 featured = true
+rank = {intl = 3, fr = 1}
+rank_reason_en = "30 YouTube channels, 30 Instagram accounts and 93 other profiles on an interactive map, with no update date shown."
+rank_reason_fr = "30 chaînes YouTube, 30 comptes Instagram et 93 autres profils sur une carte interactive, sans date de mise à jour affichée."
 covers = ["official", "alternative", "news"]
 languages = ["fr"]
 countries = ["FR"]
@@ -376,6 +397,9 @@ id = "feedspot-lego-podcasts"
 name = "Feedspot LEGO podcasts"
 url = "https://podcast.feedspot.com/lego_podcasts/"
 group = "channel-lists"
+rank = {intl = 4, en = 3}
+rank_reason_en = "59 podcasts in an automatically generated ranking; page not re-read in this review."
+rank_reason_fr = "59 podcasts dans un classement généré automatiquement ; page non relue dans cette revue."
 covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]
@@ -402,6 +426,9 @@ name = "Liste von Klemmbausteinherstellern (German Wikipedia)"
 url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
 group = "brand-lists"
 featured = true
+rank = {intl = 1, de = 1}
+rank_reason_en = "Table of brick manufacturers that distinguishes set maker from brick maker, with stud pitch and remarks; latest edit on 27 September 2026."
+rank_reason_fr = "Tableau des fabricants de briques qui distingue le fabricant de sets du fabricant de briques, avec l'écartement des tenons et des remarques ; dernière modification le 27 septembre 2026."
 covers = ["official", "alternative"]
 languages = ["de"]
 countries = ["international"]
@@ -428,6 +455,9 @@ id = "steine-kanal-hersteller-lexikon"
 name = "Klemmbaustein Hersteller Lexikon (Steine-Kanal)"
 url = "https://www.steine-kanal.de/klemmbaustein-hersteller-lexikon/"
 group = "brand-lists"
+rank = {intl = 3, de = 2}
+rank_reason_en = "About 100 established brands by country with themes and notes, updated on 7 November 2025."
+rank_reason_fr = "Environ 100 marques établies par pays avec thèmes et notes, mise à jour le 7 novembre 2025."
 covers = ["official", "alternative"]
 languages = ["de"]
 countries = ["international"]
@@ -453,6 +483,9 @@ id = "spielzeug-fuchs-hersteller"
 name = "Klemmbaustein Hersteller (Spielzeug-Fuchs)"
 url = "https://spielzeug-fuchs.de/klemmbaustein-hersteller/"
 group = "brand-lists"
+rank = {intl = 4, de = 3}
+rank_reason_en = "Table of brick brands with set maker, brick maker, country and remarks; undated page."
+rank_reason_fr = "Tableau de marques de briques avec fabricant de sets, fabricant de briques, pays et remarques ; page non datée."
 covers = ["official", "alternative"]
 languages = ["de"]
 countries = ["international"]
@@ -480,6 +513,9 @@ name = "other-bricks.com brands"
 url = "https://other-bricks.com/en/brands/"
 group = "brand-lists"
 featured = true
+rank = {intl = 2, en = 1}
+rank_reason_en = "32 brands compared by origin, quality and collection size, with set counts; update date not shown."
+rank_reason_fr = "32 marques comparées par origine, qualité et taille de collection, avec le nombre de sets ; date de mise à jour non indiquée."
 covers = ["alternative"]
 languages = ["en"]
 countries = ["international"]
@@ -532,6 +568,9 @@ id = "promoklocki-youtuberzy"
 name = "Polscy LEGO Youtuberzy (promoklocki.pl)"
 url = "https://promoklocki.pl/polscy-lego-youtuberzy"
 group = "channel-lists"
+rank = {pl = 1}
+rank_reason_en = "Subscriber, video and view counts per Polish YouTube channel about LEGO, sortable by subscribers, with the date of the counts not stated."
+rank_reason_fr = "Nombres d'abonnés, de vidéos et de vues par chaîne YouTube polonaise sur LEGO, triables par abonnés, la date des relevés n'étant pas indiquée."
 covers = ["news", "learning"]
 languages = ["pl"]
 countries = ["PL"]
@@ -557,6 +596,9 @@ id = "kostky-eu"
 name = "Kostky.eu"
 url = "https://kostky.eu/"
 group = "site-directories"
+rank = {cs = 1}
+rank_reason_en = "Annotated list of Czech blogs, a forum, marketplaces and set databases, with a section on where to buy LEGO in Czechia; no publication date on the page."
+rank_reason_fr = "Liste annotée de blogs tchèques, d'un forum, de places de marché et de bases de sets, avec une section sur où acheter LEGO en Tchéquie ; aucune date de publication sur la page."
 covers = ["news", "data"]
 languages = ["cs"]
 countries = ["CZ", "SK"]
@@ -582,6 +624,9 @@ id = "avenue-de-la-brique-associations"
 name = "Avenue de la brique - Associations de fans de LEGO"
 url = "https://www.avenuedelabrique.com/associations-lego"
 group = "site-directories"
+rank = {fr = 2}
+rank_reason_en = "About 80 associations in France, Belgium and Switzerland, each with its own page, website, contact and past exhibitions; latest activity on 23 November 2026."
+rank_reason_fr = "Environ 80 associations en France, en Belgique et en Suisse, chacune avec sa page, son site, son contact et ses expositions passées ; dernière activité le 23 novembre 2026."
 covers = ["clubs", "official", "events"]
 languages = ["fr"]
 countries = ["FR", "BE", "CH"]
@@ -608,6 +653,9 @@ id = "deparkatre-creators"
 name = "Deparkatre: LEGO creators and designers directory"
 url = "https://deparkatre.fr/en/lego-creators"
 group = "site-directories"
+rank = {fr = 3}
+rank_reason_en = "61 entries of certified professionals, artists, custom-build creators and studios, community-submitted and not all verified."
+rank_reason_fr = "61 entrées de professionnels certifiés, artistes, créateurs de constructions originales et studios, proposées par la communauté et non toutes vérifiées."
 covers = ["learning", "official", "custom-builds"]
 languages = ["fr", "en"]
 countries = ["FR"]
@@ -633,6 +681,9 @@ id = "lakea-store-list"
 name = "Lakea: store list by shipping country"
 url = "https://lakea.net/retailers"
 group = "site-directories"
+rank = {intl = 5, en = 5, fr = 4, de = 1, nl = 1}
+rank_reason_en = "83 stores tracked in 31 countries, filtered by shipping country and refreshed minutes before the reading on 25 November 2026; sets of the LEGO brand only, alternative brands not covered."
+rank_reason_fr = "83 boutiques suivies dans 31 pays, filtrées par pays de livraison et actualisées quelques minutes avant la lecture du 25 novembre 2026 ; sets de marque LEGO seulement, marques alternatives non couvertes."
 covers = ["official"]
 languages = ["en", "fr", "de", "nl"]
 countries = ["international"]
@@ -691,6 +742,9 @@ id = "feedspot-lego-youtube"
 name = "Feedspot LEGO YouTubers"
 url = "https://videos.feedspot.com/lego_youtube_channels/"
 group = "channel-lists"
+rank = {intl = 2, en = 2}
+rank_reason_en = "100 YouTubers with subscriber figures, ordered by following and engagement and updated on 2 July 2026."
+rank_reason_fr = "100 YouTubeurs avec leurs chiffres d'abonnés, classés par audience et engagement et mis à jour le 2 juillet 2026."
 covers = ["official", "alternative", "news"]
 languages = ["en"]
 countries = ["international"]
@@ -723,6 +777,9 @@ id = "podcast-de-lego"
 name = "podcast.de: LEGO podcasts"
 url = "https://www.podcast.de/podcasts/lego"
 group = "channel-lists"
+rank = {intl = 5, de = 1}
+rank_reason_en = "49 German-language podcasts with the latest episode shown, the newest dated 23 November 2026, in an unvetted automatic index."
+rank_reason_fr = "49 podcasts en allemand avec le dernier épisode affiché, le plus récent daté du 23 novembre 2026, dans un index automatique non trié."
 covers = ["news", "official"]
 languages = ["de"]
 countries = ["DE", "AT", "CH"]
@@ -750,6 +807,9 @@ id = "bricks-in-bits-spanish-podcasts"
 name = "Bricks in Bits: Spanish-language LEGO podcasts"
 url = "https://www.bricksinbits.com/los-mejores-podcasts-sobre-lego-de-habla-hispana/"
 group = "channel-lists"
+rank = {es = 1}
+rank_reason_en = "Article of 27 December 2024 presenting six Spanish-language podcasts with their hosts and platforms, not updated since publication."
+rank_reason_fr = "Article du 27 décembre 2024 présentant six podcasts en espagnol avec leurs animateurs et leurs plateformes, non mis à jour depuis sa publication."
 covers = ["news", "official"]
 languages = ["es"]
 countries = ["international"]
@@ -783,6 +843,9 @@ id = "brick-discovery-community-events"
 name = "Brick Discovery: Community & Events"
 url = "https://www.brickdiscovery.com/community-events/"
 group = "site-directories"
+rank = {intl = 3, en = 3}
+rank_reason_en = "171 forums, Discords, podcasts and event pages tagged by language and cost, with no update date shown; read on 25 November 2026."
+rank_reason_fr = "171 forums, serveurs Discord, podcasts et pages d'événements étiquetés par langue et par coût, sans date de mise à jour affichée ; lu le 25 novembre 2026."
 covers = ["clubs", "events", "news"]
 languages = ["en"]
 countries = ["international"]

@@ -45,6 +45,9 @@ name = "Hoth Bricks"
 url = "https://www.hothbricks.com/"
 group = "news-and-reviews"
 featured = true
+rank = {intl = 4, fr = 1}
+rank_reason_en = "Several articles per day, with sections on retiring sets, deals and best sellers and an RSS feed; latest post on 23 November 2026."
+rank_reason_fr = "Plusieurs articles par jour, avec des rubriques sur les sets bientôt retirés, les offres et les meilleures ventes et un flux RSS ; dernier article le 23 novembre 2026."
 covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
@@ -77,6 +80,9 @@ id = "hellobricks"
 name = "HelloBricks"
 url = "https://www.hellobricks.com/"
 group = "news-and-reviews"
+rank = {fr = 3}
+rank_reason_en = "Active blog with a glossary of fan vocabulary and monthly new-set lists; latest post on 20 November 2026."
+rank_reason_fr = "Blog actif avec un glossaire du vocabulaire des fans et des listes mensuelles des nouveaux sets ; dernier article le 20 novembre 2026."
 covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
@@ -109,6 +115,9 @@ id = "brickonaute"
 name = "Brickonaute"
 url = "https://brickonaute.fr/"
 group = "news-and-reviews"
+rank = {fr = 2}
+rank_reason_en = "2125 news items and 836 reviews, with reader reviews and a forum of 564 topics; latest post on 21 November 2026."
+rank_reason_fr = "2125 actualités et 836 tests, avec des tests de lecteurs et un forum de 564 sujets ; dernier article le 21 novembre 2026."
 covers = ["official", "news"]
 languages = ["fr"]
 countries = ["FR"]
@@ -143,6 +152,9 @@ name = "The Brothers Brick"
 url = "https://www.brothers-brick.com/"
 group = "news-and-reviews"
 featured = true
+rank = {intl = 2, en = 2}
+rank_reason_en = "Describes itself as the world's number one source of LEGO news, reviews and fan creations, with a showcase of fan creations; latest post on 22 November 2026."
+rank_reason_fr = "Se décrit comme la première source mondiale d'actualité, de tests et de créations de fans LEGO, avec une vitrine de créations de fans ; dernier article le 22 novembre 2026."
 covers = ["official", "news", "custom-builds"]
 languages = ["en"]
 countries = ["international"]
@@ -176,6 +188,9 @@ name = "New Elementary"
 url = "https://www.newelementary.com/"
 group = "news-and-reviews"
 featured = true
+rank = {intl = 3, en = 3}
+rank_reason_en = "Tracks Pick a Brick prices and new parts in sets, with articles on parts, sets and building techniques; latest post on 23 November 2026."
+rank_reason_fr = "Suit les prix de Pick a Brick et les nouvelles pièces des sets, avec des articles sur les pièces, les sets et les techniques de construction ; dernier article le 23 novembre 2026."
 covers = ["official", "parts", "news"]
 languages = ["en"]
 countries = ["international"]
@@ -257,6 +272,9 @@ id = "promobricks"
 name = "Promobricks"
 url = "https://www.promobricks.de/"
 group = "news-and-reviews"
+rank = {de = 2}
+rank_reason_en = "Independent online magazine since 2013 with several items per day, an event calendar and a podcast; latest post on 23 November 2026."
+rank_reason_fr = "Magazine en ligne indépendant depuis 2013, avec plusieurs articles par jour, un calendrier d'événements et un podcast ; dernier article le 23 novembre 2026."
 covers = ["official", "alternative", "news"]
 languages = ["de"]
 countries = ["DE"]
@@ -289,6 +307,9 @@ kind = "read"
 id = "zusammengebaut"
 name = "Zusammengebaut"
 url = "https://zusammengebaut.com/"
+rank = {de = 4}
+rank_reason_en = "Several posts per week, run alongside a LEGO exhibition in Fritzlar; latest post on 22 November 2026."
+rank_reason_fr = "Plusieurs articles par semaine, en parallèle d'une exposition LEGO à Fritzlar ; dernier article le 22 novembre 2026."
 feed = "https://www.zusammengebaut.com/feed/"
 group = "news-and-reviews"
 covers = ["official", "news"]
@@ -318,6 +339,9 @@ name = "Merlins Bricks (Merlins Steine)"
 url = "https://www.merlinsbricks.com/"
 group = "news-and-reviews"
 featured = true
+rank = {intl = 1, fr = 4, en = 1, de = 1}
+rank_reason_en = "Covers all brands, with a database of more than 39000 sets, systematic reviews of alternative brands, a weekly podcast and an interface in German, English and French."
+rank_reason_fr = "Couvre toutes les marques, avec une base de plus de 39000 sets, des tests systématiques des marques alternatives, un podcast hebdomadaire et une interface en allemand, en anglais et en français."
 covers = ["official", "alternative", "data", "news"]
 languages = ["en", "de", "fr"]
 countries = ["international"]
@@ -357,6 +381,9 @@ id = "klemmbausteinlyrik"
 name = "Klemmbausteinlyrik"
 url = "https://klemmbausteinlyrik.de/"
 group = "news-and-reviews"
+rank = {de = 3}
+rank_reason_en = "Weekly podcast and blog running since 2011, from an adult fan's point of view; latest post on 16 November 2026."
+rank_reason_fr = "Podcast et blog hebdomadaires depuis 2011, du point de vue d'un fan adulte ; dernier article le 16 novembre 2026."
 covers = ["official", "news"]
 languages = ["de"]
 countries = ["DE"]
@@ -454,6 +481,9 @@ id = "the-brick-fan"
 name = "The Brick Fan"
 url = "https://www.thebrickfan.com/"
 group = "news-and-reviews"
+rank = {intl = 5, en = 4}
+rank_reason_en = "Weekly tracking of LEGO Ideas projects with a large archive and several items per day; latest post on 23 November 2026; United States orientation."
+rank_reason_fr = "Suivi hebdomadaire des projets LEGO Ideas avec une grande archive et plusieurs articles par jour ; dernier article le 23 novembre 2026 ; orientation vers les États-Unis."
 covers = ["official", "news"]
 languages = ["en"]
 countries = ["US"]
@@ -513,6 +543,9 @@ id = "klemmbaustein-com"
 name = "Klemmbaustein.com"
 url = "https://klemmbaustein.com/"
 group = "news-and-reviews"
+rank = {de = 5}
+rank_reason_en = "Brand-by-brand experience reports on BlueBrixx, CaDA, COBI, Mould King and Pantasy, on pages largely made of commercial product listings with affiliate links; latest post on 23 November 2026."
+rank_reason_fr = "Retours d'expérience marque par marque sur BlueBrixx, CaDA, COBI, Mould King et Pantasy, sur des pages largement composées de fiches produits commerciales avec des liens d'affiliation ; dernier article le 23 novembre 2026."
 covers = ["alternative", "official", "news"]
 languages = ["de"]
 countries = ["DE"]
@@ -547,6 +580,9 @@ name = "Eurobricks Forums"
 url = "https://www.eurobricks.com/forum/"
 group = "forums"
 featured = true
+rank = {intl = 1, en = 1}
+rank_reason_en = "Large archive of discussions and builds, with sections on custom builds, reviews and marketplace and one on alternative brands; registration required to post."
+rank_reason_fr = "Grande archive de discussions et de constructions, avec des sections sur les créations originales, les tests et le marché et une section sur les marques alternatives ; inscription requise pour publier."
 covers = ["official", "alternative", "custom-builds", "news"]
 languages = ["en"]
 countries = ["international"]
@@ -574,6 +610,9 @@ id = "brickpirate"
 name = "BrickPirate"
 url = "https://www.brickpirate.net/"
 group = "forums"
+rank = {fr = 3}
+rank_reason_en = "Long-running site with a gallery of member creations, a blog and a forum, with rare blog posts; latest activity on 9 November 2026."
+rank_reason_fr = "Site ancien avec une galerie de créations de membres, un blog et un forum, aux articles de blog rares ; dernière activité le 9 novembre 2026."
 covers = ["official", "custom-builds"]
 languages = ["fr"]
 countries = ["FR"]
@@ -600,6 +639,9 @@ kind = "read"
 id = "1000steine-forum"
 name = "1000steine.de forum"
 url = "https://www.1000steine.de/de/gemeinschaft/forum/"
+rank = {intl = 2, de = 1}
+rank_reason_en = "About 228856 entries in 36325 topics in the general section, plus a section on other manufacturers and clones; latest activity on 22 November 2026."
+rank_reason_fr = "Environ 228856 messages dans 36325 sujets dans la section générale, plus une section sur les autres fabricants et les clones ; dernière activité le 22 novembre 2026."
 size = [{n = 228856, unit = "entries"}, {n = 36325, unit = "topics"}]
 feed = "https://www.1000steine.de/de/gemeinschaft/forum/rss.xml"
 group = "forums"
@@ -631,6 +673,9 @@ name = "HardWare.fr: compatible bricks topic"
 url = "https://forum.hardware.fr/hfr/Discussions/Loisirs/briques-construction-compatibles-sujet_119659_1.htm"
 group = "forums"
 featured = true
+rank = {fr = 2}
+rank_reason_en = "Topic on LEGO-compatible brick brands started on 16 December 2021, 32 pages long, with an introduction kept up to date; latest activity on 6 November 2026."
+rank_reason_fr = "Sujet sur les marques de briques compatibles LEGO ouvert le 16 décembre 2021, long de 32 pages, avec une introduction tenue à jour ; dernière activité le 6 novembre 2026."
 covers = ["alternative"]
 languages = ["fr"]
 countries = ["FR"]
@@ -662,6 +707,9 @@ id = "reddit-lego"
 name = "r/lego"
 url = "https://www.reddit.com/r/lego/"
 group = "reddit"
+rank = {intl = 1, en = 1}
+rank_reason_en = "Described as the largest LEGO audience on Reddit; size not verified and Reddit not read directly."
+rank_reason_fr = "Décrit comme la plus grande audience LEGO sur Reddit ; taille non vérifiée et Reddit non lu directement."
 covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]
@@ -738,6 +786,9 @@ id = "reddit-lepin"
 name = "r/lepin"
 url = "https://www.reddit.com/r/lepin/"
 group = "reddit"
+rank = {intl = 2, en = 2}
+rank_reason_en = "About 128000 members according to third-party trackers, the main alternative-brick community indexed; latest activity on 31 October 2026."
+rank_reason_fr = "Environ 128000 membres selon des relevés tiers, principale communauté de briques alternatives indexée ; dernière activité le 31 octobre 2026."
 covers = ["alternative", "minifigures"]
 languages = ["en"]
 countries = ["international"]
@@ -825,6 +876,9 @@ id = "reddit-klemmbausteine"
 name = "r/klemmbausteine"
 url = "https://www.reddit.com/r/klemmbausteine/"
 group = "reddit"
+rank = {de = 2}
+rank_reason_en = "Construction bricks of all brands, with comparison threads on manufacturers; small community (an old count showed 982 members), current size and activity unverified."
+rank_reason_fr = "Briques de construction de toutes marques, avec des fils de comparaison de fabricants ; petite communauté (un ancien relevé indiquait 982 membres), taille et activité actuelles non vérifiées."
 covers = ["official", "alternative"]
 languages = ["de"]
 countries = ["international"]
@@ -904,6 +958,9 @@ name = "Brickipedia"
 url = "https://en.brickimedia.org/wiki/Main_Page"
 group = "wikis"
 featured = true
+rank = {intl = 1, en = 1}
+rank_reason_en = "30157 content pages and 108324 uploaded files, founded on 29 January 2006; latest activity on 23 November 2026."
+rank_reason_fr = "30157 pages de contenu et 108324 fichiers téléversés, fondée le 29 janvier 2006 ; dernière activité le 23 novembre 2026."
 covers = ["official", "data", "instructions"]
 languages = ["en"]
 countries = ["international"]
@@ -937,6 +994,9 @@ name = "Dealabs: LEGO group"
 url = "https://www.dealabs.com/groupe/lego"
 group = "deals"
 featured = true
+rank = {intl = 1, FR = 1}
+rank_reason_en = "LEGO offers voted and discussed by members, from LEGO.com and French retailers, with an RSS feed per group; latest activity on 23 November 2026."
+rank_reason_fr = "Offres LEGO votées et commentées par les membres, issues de LEGO.com et de distributeurs français, avec un flux RSS par groupe ; dernière activité le 23 novembre 2026."
 covers = ["official"]
 languages = ["fr"]
 countries = ["FR"]
@@ -969,6 +1029,9 @@ id = "mydealz-lego"
 name = "mydealz: LEGO group"
 url = "https://www.mydealz.de/gruppe/lego"
 group = "deals"
+rank = {intl = 2, DE = 1}
+rank_reason_en = "LEGO offers posted and commented by members (Amazon, Smyths Toys, Alternate and others), with an RSS feed; latest activity on 23 November 2026."
+rank_reason_fr = "Offres LEGO publiées et commentées par les membres (Amazon, Smyths Toys, Alternate et autres), avec un flux RSS ; dernière activité le 23 novembre 2026."
 covers = ["official", "alternative"]
 languages = ["de"]
 countries = ["DE"]
@@ -1028,6 +1091,9 @@ id = "merlins-discord"
 name = "Merlins Steine community (Discord)"
 url = "https://www.merlinssteine.de/communityreviews/"
 group = "forums"
+rank = {de = 3}
+rank_reason_en = "Experience reports and build help on BlueBrixx, Cobi, CaDA, LEGO, Wange and Xingbao, on Discord (not indexable, account required); latest activity on 16 October 2026."
+rank_reason_fr = "Retours d'expérience et aide à la construction sur BlueBrixx, Cobi, CaDA, LEGO, Wange et Xingbao, sur Discord (non indexable, compte requis) ; dernière activité le 16 octobre 2026."
 covers = ["official", "alternative", "instructions"]
 languages = ["de"]
 countries = ["DE"]
@@ -1163,6 +1229,9 @@ id = "orangeteam-lug"
 name = "OrangeTeam LUG"
 url = "https://www.orangeteamlug.it/"
 group = "news-and-reviews"
+rank = {it = 2}
+rank_reason_en = "Volunteer-written site of a user group of adult fans with reviews, tutorials, a forum and an event calendar, without a fixed publication rhythm; latest post on 3 November 2026."
+rank_reason_fr = "Site rédigé par des bénévoles d'un groupe d'utilisateurs de fans adultes, avec des tests, des tutoriels, un forum et un calendrier d'événements, sans rythme de publication fixe ; dernier article le 3 novembre 2026."
 covers = ["news", "clubs", "events"]
 languages = ["it"]
 countries = ["IT"]
@@ -1194,6 +1263,9 @@ id = "il-mastro-costruttore"
 name = "Il Mastro Costruttore"
 url = "https://www.ilmastrocostruttore.it/"
 group = "deals"
+rank = {intl = 3, IT = 1}
+rank_reason_en = "Daily posts on promotions and an updated list of retiring sets for 2026 and 2027; latest post on 23 November 2026."
+rank_reason_fr = "Articles quotidiens sur les promotions et liste à jour des sets bientôt retirés pour 2026 et 2027 ; dernier article le 23 novembre 2026."
 covers = ["official", "news"]
 languages = ["it"]
 countries = ["IT"]
@@ -1226,6 +1298,9 @@ id = "elcatalejo"
 name = "elCatalejo"
 url = "https://elcatalejo.es/"
 group = "news-and-reviews"
+rank = {es = 1}
+rank_reason_en = "Several posts per week, with dedicated pages for retiring sets, modular buildings and trains and a guide for new readers; latest post on 23 November 2026."
+rank_reason_fr = "Plusieurs articles par semaine, avec des pages dédiées aux sets bientôt retirés, aux bâtiments modulaires et aux trains et un guide pour les nouveaux lecteurs ; dernier article le 23 novembre 2026."
 covers = ["official", "news"]
 languages = ["es"]
 countries = ["ES"]
@@ -1257,6 +1332,9 @@ kind = "read"
 id = "todobrick"
 name = "TodoBrick"
 url = "https://todobrick.com/"
+rank = {es = 2}
+rank_reason_en = "Run by two fans, with lists of exclusive sets by Spanish shop and of all modular buildings; publication dates not visible in the page read."
+rank_reason_fr = "Tenu par deux fans, avec des listes de sets exclusifs par boutique espagnole et de tous les bâtiments modulaires ; dates de publication non visibles dans la page lue."
 feed = "https://todobrick.com/feed/"
 group = "news-and-reviews"
 covers = ["official", "news"]
@@ -1285,6 +1363,9 @@ id = "fani-klockow"
 name = "Fani Klocków"
 url = "https://faniklockow.pl/"
 group = "news-and-reviews"
+rank = {pl = 1}
+rank_reason_en = "Several posts per day and a price comparison and collection tracking application, with an investment angle on part of the content; latest post on 23 November 2026."
+rank_reason_fr = "Plusieurs articles par jour et une application de comparaison de prix et de suivi de collection, avec un angle d'investissement sur une partie du contenu ; dernier article le 23 novembre 2026."
 covers = ["official", "news"]
 languages = ["pl"]
 countries = ["PL"]
@@ -1317,6 +1398,9 @@ id = "bouwsteentjes"
 name = "Bouwsteentjes.info"
 url = "https://bouwsteentjes.info/"
 group = "news-and-reviews"
+rank = {nl = 1}
+rank_reason_en = "Recognised by the LEGO Group as fan media, with news, reviews and pages for deals and gifts with purchase for the Benelux; latest post read dated 10 October 2026."
+rank_reason_fr = "Reconnu par le groupe LEGO comme média de fans, avec des actualités, des tests et des pages sur les offres et les cadeaux à l'achat pour le Benelux ; dernier article lu daté du 10 octobre 2026."
 covers = ["official", "news"]
 languages = ["nl"]
 countries = ["NL", "BE"]
@@ -1349,6 +1433,9 @@ id = "kostkoviny"
 name = "Kostkoviny"
 url = "https://kostkoviny.cz/"
 group = "news-and-reviews"
+rank = {cs = 1}
+rank_reason_en = "Dedicated reviews section, prices in Czech koruna and coverage of the 2027 City and Speed Champions ranges; latest post on 19 November 2026."
+rank_reason_fr = "Rubrique de tests dédiée, prix en couronnes tchèques et couverture des gammes City et Speed Champions de 2027 ; dernier article le 19 novembre 2026."
 covers = ["official", "news"]
 languages = ["cs"]
 countries = ["CZ"]
@@ -1375,6 +1462,9 @@ id = "eurobricks-train-tech"
 name = "Eurobricks: LEGO Train Tech"
 url = "https://www.eurobricks.com/forum/forums/forum/122-lego-train-tech/"
 group = "forums"
+rank = {en = 4}
+rank_reason_en = "7201 topics and about 117700 posts on LEGO trains, track geometry and electronics; topic of 21 November 2026."
+rank_reason_fr = "7201 sujets et environ 117700 messages sur les trains LEGO, la géométrie des voies et l'électronique ; sujet du 21 novembre 2026."
 covers = ["official", "custom-builds", "news"]
 languages = ["en"]
 countries = ["international"]
@@ -1407,6 +1497,9 @@ id = "eurobricks-technic"
 name = "Eurobricks: LEGO Technic, Mindstorms, Model Team and Scale Modeling"
 url = "https://www.eurobricks.com/forum/forums/forum/115-lego-technic-mindstorms-model-team-and-scale-modeling/"
 group = "forums"
+rank = {intl = 4, en = 2}
+rank_reason_en = "About 432900 posts in 18097 topics on Technic, Mindstorms, Model Team and scale modeling; latest activity on 14 November 2026."
+rank_reason_fr = "Environ 432900 messages dans 18097 sujets sur Technic, Mindstorms, Model Team et la modélisation à l'échelle ; dernière activité le 14 novembre 2026."
 covers = ["official", "custom-builds", "news"]
 languages = ["en"]
 countries = ["international"]
@@ -1440,6 +1533,9 @@ name = "TechLug.fr forum"
 url = "https://www.techlug.fr/Forum/"
 group = "forums"
 featured = true
+rank = {fr = 1}
+rank_reason_en = "Technic custom builds section with 2363 topics and 47293 messages and a section on modifications of official sets with 610 topics; news message dated 10 November 2026."
+rank_reason_fr = "Section de créations originales Technic avec 2363 sujets et 47293 messages et section de modifications de sets de marque LEGO avec 610 sujets ; message d'actualité daté du 10 novembre 2026."
 covers = ["official", "custom-builds", "news"]
 languages = ["fr", "en"]
 countries = ["FR"]
@@ -1466,6 +1562,9 @@ id = "l-gauge-wiki"
 name = "L-Gauge"
 url = "https://l-gauge.org/wiki/index.php?title=Main_Page"
 group = "wikis"
+rank = {intl = 2, en = 2}
+rank_reason_en = "246 pages and 221 images on the LEGO System train gauge, with 2 registered users and a last edit on 17 February 2026."
+rank_reason_fr = "246 pages et 221 images sur l'écartement des trains du système LEGO, avec 2 utilisateurs inscrits et une dernière modification le 17 février 2026."
 covers = ["official", "learning"]
 languages = ["en"]
 countries = ["international"]
@@ -1559,6 +1658,9 @@ id = "reddit-legotechnic"
 name = "r/LEGOtechnic"
 url = "https://www.reddit.com/r/legotechnic/"
 group = "reddit"
+rank = {intl = 4, en = 4}
+rank_reason_en = "At least 40141 members (February 2025 snapshot) and 242 posts in 30 days, read on 23 November 2026."
+rank_reason_fr = "Au moins 40141 membres (relevé de février 2025) et 242 messages en 30 jours, lus le 23 novembre 2026."
 covers = ["official", "parts"]
 languages = ["en"]
 countries = ["international"]
@@ -1613,6 +1715,9 @@ id = "reddit-afol"
 name = "r/AFOL"
 url = "https://www.reddit.com/r/AFOL/"
 group = "reddit"
+rank = {intl = 5, en = 5}
+rank_reason_en = "At least 32404 members (February 2025 snapshot) and 247 posts in 30 days, read on 23 November 2026."
+rank_reason_fr = "Au moins 32404 membres (relevé de février 2025) et 247 messages en 30 jours, lus le 23 novembre 2026."
 covers = ["official", "custom-builds"]
 languages = ["en"]
 countries = ["international"]
@@ -1749,6 +1854,9 @@ id = "reddit-bluebrixx"
 name = "r/BlueBrixx"
 url = "https://www.reddit.com/r/bluebrixx/"
 group = "reddit"
+rank = {de = 1}
+rank_reason_en = "At least 1408 members (February 2025 snapshot) and 117 posts in 30 days, read on 23 November 2026."
+rank_reason_fr = "Au moins 1408 membres (relevé de février 2025) et 117 messages en 30 jours, lus le 23 novembre 2026."
 covers = ["alternative"]
 languages = ["de"]
 countries = ["DE"]
@@ -1830,6 +1938,9 @@ kind = "third-party"
 id = "bricknerd"
 name = "BrickNerd"
 url = "https://bricknerd.com/"
+rank = {en = 5}
+rank_reason_en = "Deep dives, builder interviews, building techniques and event reports written by fan builders, not by a retailer; latest post on 13 November 2026."
+rank_reason_fr = "Analyses approfondies, entretiens avec des constructeurs, techniques de construction et comptes rendus d'événements écrits par des fans constructeurs, non par un revendeur ; dernier article le 13 novembre 2026."
 feed = "https://bricknerd.com/home?format=rss"
 group = "news-and-reviews"
 covers = ["news"]
@@ -1891,6 +2002,9 @@ id = "toys-n-bricks"
 name = "Toys N Bricks"
 url = "https://www.toysnbricks.com/"
 group = "deals"
+rank = {intl = 4, CA = 1}
+rank_reason_en = "Daily lists of LEGO sales at Amazon Canada, Walmart Canada and LEGO.com, with alerts, read through a search index; latest post on 23 November 2026."
+rank_reason_fr = "Listes quotidiennes des promotions LEGO chez Amazon Canada, Walmart Canada et LEGO.com, avec des alertes, lues par un index de recherche ; dernier article le 23 novembre 2026."
 covers = ["news", "official"]
 languages = ["en"]
 countries = ["CA"]
@@ -1922,6 +2036,9 @@ id = "lego-forum-italia"
 name = "LEGO Forum Italia"
 url = "https://legoforum.forumcommunity.net/"
 group = "forums"
+rank = {it = 1}
+rank_reason_en = "Long-running archive with monthly build contests, an Italian guide to BrickLink and a scam-reporting section; latest activity on 8 August 2026."
+rank_reason_fr = "Archive ancienne avec des concours de construction mensuels, un guide italien de BrickLink et une section de signalement des arnaques ; dernière activité le 8 août 2026."
 covers = ["news", "parts"]
 languages = ["it"]
 countries = ["IT"]
@@ -1947,6 +2064,9 @@ kind = "indexed"
 id = "brick-it-magazine"
 name = "Brick.it Magazine"
 url = "https://www.brickitmagazine.com/"
+rank = {it = 1}
+rank_reason_en = "Daily posts, weekly LEGO Ideas review updates and a printed and digital magazine whose issue 28 came out in August 2026."
+rank_reason_fr = "Articles quotidiens, mises à jour hebdomadaires des tests LEGO Ideas et magazine papier et numérique dont le numéro 28 est paru en août 2026."
 feed = "https://www.brickitmagazine.com/feed/"
 group = "news-and-reviews"
 covers = ["news"]
@@ -1981,6 +2101,9 @@ id = "bricktastic-nl"
 name = "BrickTastic"
 url = "https://www.bricktastic.nl/"
 group = "news-and-reviews"
+rank = {nl = 2}
+rank_reason_en = "Several posts a day, a public RSS feed and pages for deals and for the sets of the year, with deals making up much of the home page; latest post on 25 November 2026."
+rank_reason_fr = "Plusieurs articles par jour, un flux RSS public et des pages sur les offres et les sets de l'année, les offres occupant une grande part de la page d'accueil ; dernier article le 25 novembre 2026."
 covers = ["official", "news"]
 languages = ["nl"]
 countries = ["NL", "BE"]
@@ -2013,6 +2136,9 @@ id = "matyho-kostky"
 name = "Matyho kostky"
 url = "https://matyhokostky.cz/"
 group = "news-and-reviews"
+rank = {cs = 2}
+rank_reason_en = "Archive of catalogues of sets of the LEGO brand sold in Czechia from 1987 to today, with reviews and a public RSS feed, written by one author; latest post on 24 November 2026."
+rank_reason_fr = "Archive des catalogues des sets de marque LEGO vendus en Tchéquie de 1987 à aujourd'hui, avec des tests et un flux RSS public, rédigée par un seul auteur ; dernier article le 24 novembre 2026."
 covers = ["official", "news"]
 languages = ["cs"]
 countries = ["CZ", "SK"]
@@ -2045,6 +2171,9 @@ id = "studs-jp"
 name = "Studs (スタッズ)"
 url = "https://stds.jp/"
 group = "news-and-reviews"
+rank = {ja = 1}
+rank_reason_en = "Founded in 2010; posts every day, with more than 30 exclusive purchase-gift campaigns run with the LEGO Shop since 2022 (stated); latest post on 25 November 2026."
+rank_reason_fr = "Fondé en 2010 ; articles tous les jours, avec plus de 30 campagnes de cadeaux à l'achat exclusifs menées avec le LEGO Shop depuis 2022 (déclaré) ; dernier article le 25 novembre 2026."
 covers = ["official", "news"]
 languages = ["ja"]
 countries = ["JP"]
@@ -2082,6 +2211,9 @@ id = "brimaga"
 name = "Brimaga"
 url = "https://brimaga.com/"
 group = "news-and-reviews"
+rank = {ja = 2}
+rank_reason_en = "Price tracking with history compared with the lowest price and the 90-day and one-year median, beside daily news; latest post on 25 November 2026."
+rank_reason_fr = "Suivi des prix avec un historique comparé au prix le plus bas et à la médiane sur 90 jours et sur un an, en plus d'une actualité quotidienne ; dernier article le 25 novembre 2026."
 covers = ["official", "news", "data"]
 languages = ["ja"]
 countries = ["JP"]
@@ -2119,6 +2251,9 @@ id = "felix-playground"
 name = "Felix's Playground (菲力克斯的遊樂園)"
 url = "https://cfelixplayground.com/"
 group = "news-and-reviews"
+rank = {zh = 1}
+rank_reason_en = "Database of more than 2000 sets and 5000 minifigures with price drops from five Taiwanese shops, written by one person in Traditional Chinese."
+rank_reason_fr = "Base de plus de 2000 sets et 5000 minifigurines avec les baisses de prix de cinq boutiques taïwanaises, rédigée par une seule personne en chinois traditionnel."
 covers = ["official", "news", "data"]
 languages = ["zh"]
 countries = ["TW"]
@@ -2157,6 +2292,9 @@ id = "bzpower"
 name = "BZPower"
 url = "https://www.bzpower.com/"
 group = "forums"
+rank = {intl = 5, en = 3}
+rank_reason_en = "Centred on BIONICLE, with 83294 posts in its discussion section and a newest thread posted within the hour of reading on 25 November 2026."
+rank_reason_fr = "Centré sur BIONICLE, avec 83294 messages dans sa section de discussion et un fil le plus récent publié dans l'heure de la lecture, le 25 novembre 2026."
 covers = ["official", "custom-builds", "news"]
 languages = ["en"]
 countries = ["international"]
@@ -2188,6 +2326,9 @@ id = "das-klemmbrett"
 name = "Das Klemmbrett"
 url = "https://klemmbrett.info/"
 group = "forums"
+rank = {intl = 3, de = 2}
+rank_reason_en = "124392 posts in 6646 topics and 624 members, given over to alternative brick brands; latest post on 24 November 2026."
+rank_reason_fr = "124392 messages dans 6646 sujets et 624 membres, consacré aux marques de briques alternatives ; dernier message le 24 novembre 2026."
 covers = ["alternative", "custom-builds"]
 languages = ["de"]
 countries = ["DE", "AT", "CH"]
@@ -2225,6 +2366,9 @@ id = "lelezhen"
 name = "LeLeZhen (乐乐镇)"
 url = "https://www.lelezhen.com/"
 group = "forums"
+rank = {zh = 1}
+rank_reason_en = "Threads mostly present custom builds, with building contests of its own announced and judged on the forum; newest thread 3 days old at reading (relative times only)."
+rank_reason_fr = "Les fils présentent surtout des créations originales, avec des concours de construction propres annoncés et jugés sur le forum ; fil le plus récent daté de 3 jours à la lecture (durées relatives seulement)."
 covers = ["official", "custom-builds"]
 languages = ["zh"]
 countries = ["CN"]
@@ -2250,6 +2394,9 @@ id = "cmnxt-forum"
 name = "CMNXT Chinese LEGO forum (中文乐高)"
 url = "https://bbs.cmnxt.com/"
 group = "forums"
+rank = {zh = 2}
+rank_reason_en = "722231 posts and 78161 members on robotics and programming with LEGO sets, with threads dated up to 11 November 2026."
+rank_reason_fr = "722231 messages et 78161 membres sur la robotique et la programmation avec des sets LEGO, avec des fils datés jusqu'au 11 novembre 2026."
 covers = ["learning", "custom-builds"]
 languages = ["zh"]
 countries = ["CN"]
@@ -2276,6 +2423,9 @@ id = "flickr-lego-pool"
 name = "Flickr: The LEGO Pool"
 url = "https://www.flickr.com/groups/lego/"
 group = "forums"
+rank = {en = 5}
+rank_reason_en = "Photo pool open since 9 June 2004, with 650177 photos shared by 21668 members; photos added on 24 November 2026."
+rank_reason_fr = "Groupe de photos ouvert depuis le 9 juin 2004, avec 650177 photos partagées par 21668 membres ; photos ajoutées le 24 novembre 2026."
 covers = ["custom-builds"]
 languages = ["en"]
 countries = ["international"]
@@ -2308,6 +2458,9 @@ id = "reddit-bioniclelego"
 name = "r/bioniclelego"
 url = "https://www.reddit.com/r/bioniclelego/"
 group = "reddit"
+rank = {intl = 3, en = 3}
+rank_reason_en = "83626 members and 825 posts in 30 days according to the Arctic Shift archive, read on 25 November 2026; Reddit not read directly."
+rank_reason_fr = "83626 membres et 825 messages en 30 jours selon l'archive Arctic Shift, lue le 25 novembre 2026 ; Reddit non lu directement."
 covers = ["official", "custom-builds"]
 languages = ["en"]
 countries = ["international"]
