@@ -568,21 +568,26 @@ kind = "official"
 id = "sembo-block"
 aliases = ["Sembo"]
 name = "Sembo Block"
-url = "https://www.sembo-block.com/"
+url = "https://www.semboblock.com/"
 group = "chinese-alternatives"
 covers = ["alternative"]
-languages = ["en"]
+languages = ["zh"]
 countries = ["international"]
 summary_en = "Architecture, street scenes, military and cars; bricks partly its own, partly GoBricks. Sembo Toys, China."
 summary_fr = "Architecture, scènes de rue, militaire et voitures ; briques en partie propres, en partie GoBricks. Sembo Toys, Chine."
 strengths_en = ["Named by GoBricks representatives among its client brands (Seven Star Bricks, 4 June 2024)"]
 strengths_fr = ["Citée par des représentants de GoBricks parmi ses marques clientes (Seven Star Bricks, 4 juin 2024)"]
-weaknesses_en = ["Official site could not be read by the tools used: range, shop and delivery not verified", "Mixed brick origin (Wikipedia German list, 27 September 2026)"]
-weaknesses_fr = ["Site officiel non lisible avec les outils utilisés : gamme, boutique et livraison non vérifiées", "Origine mixte des briques (liste Wikipédia allemand, 27 septembre 2026)"]
+weaknesses_en = ["Official site in Chinese only (read on 25 November 2026); the former address sembo-block.com no longer answers; shop and delivery to Europe not established", "Mixed brick origin (Wikipedia German list, 27 September 2026)"]
+weaknesses_fr = ["Site officiel en chinois seulement (lu le 25 novembre 2026) ; l'ancienne adresse sembo-block.com ne répond plus ; boutique et livraison vers l'Europe non établies", "Origine mixte des briques (liste Wikipédia allemand, 27 septembre 2026)"]
 status = "active"
-checked = "2026-11-23"
+checked = "2026-11-25"
 added = "2026-11-23"
-confidence = "low"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.semboblock.com/"
+date = "2026-11-25"
+kind = "official"
 
 [[resource.sources]]
 url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
