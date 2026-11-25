@@ -1,67 +1,101 @@
-# "Where to start": one ranked list per need. The website keeps, in this order, the first 5 that suit the visitor:
-# scope "country": international entries and those of the visitor's country (from the browser; for France, also shops that deliver there);
-# scope "language": entries in the visitor's language or in English; scope "global": all. `always`: shown whatever the visitor.
+# "Where to start": the needs of a visitor, in display order (data/SCHEMA.md, "Where to start").
+# Each tile: the icon of `category`, the reference of the visitor's country or language in `reference` (else its
+# `default`), then 2 or 3 entries of `groups` ranked for the visitor (`rank` of the entries, read with `scope`),
+# then the whole category. `fallback`: the entries shown until the entries carry their ranks (lot 3b), then removed.
 
-[[journey]]
+
+[[need]]
 id = "buy"
-title_en = "Buy a set, official LEGO or alternative"
-title_fr = "Acheter un set, LEGO officiel ou alternative"
+title_en = "Buy a set"
+title_fr = "Acheter un set"
+category = "shops"
+groups = ["shops/official-lego", "shops/alternative-brands", "shops/general-retailers", "comparators/price-comparators"]
 scope = "country"
-resources = ["brick-broker", "brickmitri", "lego-com-fr", "brickmerge", "ltoys", "kbs-shop", "bluebrixx-shop", "baustein-store", "bricksdeal", "promoklocki", "brickzone-dk", "prisjakt-se", "brickitalia", "brickturtle", "lego-price-tracker-nz", "brickfact", "lakea", "cobi-europe"]
+reference = {FR = "brick-broker", DE = "brickmerge", PL = "promoklocki", DK = "brickzone-dk", SE = "prisjakt-se", NL = "bricksdeal", BE = "bricksdeal", AU = "brickturtle", NZ = "lego-price-tracker-nz"}
+fallback = ["brick-broker", "brickmitri", "lego-com-fr", "brickmerge", "ltoys", "kbs-shop", "bluebrixx-shop", "baustein-store", "bricksdeal", "promoklocki", "brickzone-dk", "prisjakt-se", "brickitalia", "brickturtle", "lego-price-tracker-nz", "brickfact", "lakea", "cobi-europe"]
 
-[[journey]]
-id = "reviews"
-title_en = "Judge an alternative brand"
-title_fr = "Juger une marque alternative"
-scope = "language"
-resources = ["merlins-bricks", "the-laser-symphony", "hardware-fr-compatible-bricks", "klemmbaustein-com", "jangs-other-bricks", "brickmeet", "seven-star-bricks", "monster-brick-reviews"]
-
-[[journey]]
+[[need]]
 id = "second-hand"
-title_en = "Buy second-hand or retired sets"
-title_fr = "Acheter d'occasion ou un set retiré"
+title_en = "Second-hand sets and parts"
+title_fr = "Occasion et pièces"
+category = "second-hand"
+groups = ["second-hand/marketplaces", "second-hand/second-hand-shops", "second-hand/parts-and-custom-builds"]
 scope = "country"
-resources = ["leboncoin", "vinted", "kleinanzeigen", "2dehands-be", "blocket-se", "dba-dk", "finn-no", "bricklink-marketplace", "brick-owl-marketplace", "catawiki"]
+reference = {FR = "leboncoin", DE = "kleinanzeigen", BE = "2dehands-be", SE = "blocket-se", DK = "dba-dk", NO = "finn-no", default = "bricklink-marketplace"}
+fallback = ["leboncoin", "vinted", "kleinanzeigen", "2dehands-be", "blocket-se", "dba-dk", "finn-no", "bricklink-marketplace", "brick-owl-marketplace", "catawiki"]
 
-[[journey]]
-id = "create"
-title_en = "Design and build your own models"
-title_fr = "Concevoir et construire ses propres modèles"
-scope = "global"
-resources = ["rebrickable", "bricklink-studio", "pick-a-brick", "brickognize"]
+[[need]]
+id = "brand"
+title_en = "Choose a brand"
+title_fr = "Choisir une marque"
+category = "brands"
+groups = ["brands/official-lego", "brands/european-alternatives", "brands/chinese-alternatives", "brands/manufacturers", "brands/other-formats"]
+scope = "intl"
+mode = "brand"  # entries open the brand mode of the search
 
-[[journey]]
+[[need]]
 id = "news"
-title_en = "Follow the news and reviews"
-title_fr = "Suivre l'actualité et les tests"
+title_en = "Follow the news"
+title_fr = "Suivre l'actualité"
+category = "community"
+groups = ["community/news-and-reviews", "video/news", "video/official-lego-reviews", "video/alternative-brand-reviews"]
 scope = "language"
-resources = ["hothbricks", "promobricks", "zusammengebaut", "orangeteam-lug", "elcatalejo", "fani-klockow", "bouwsteentjes", "kostkoviny", "brothers-brick", "new-elementary", "jangbricks", "brick-fanatics"]
+fallback = ["hothbricks", "promobricks", "zusammengebaut", "orangeteam-lug", "elcatalejo", "fani-klockow", "bouwsteentjes", "kostkoviny", "brothers-brick", "new-elementary", "jangbricks", "brick-fanatics", "merlins-bricks", "the-laser-symphony", "hardware-fr-compatible-bricks", "klemmbaustein-com", "jangs-other-bricks", "brickmeet", "seven-star-bricks", "monster-brick-reviews"]
 
-[[journey]]
-id = "value"
-title_en = "Know what a set is worth"
-title_fr = "Connaître la valeur d'un set"
-scope = "global"
-resources = ["brickeconomy", "brickset", "setdb"]
+[[need]]
+id = "exhibition"
+title_en = "Find an exhibition"
+title_fr = "Trouver une exposition"
+category = "events"
+groups = ["events/conventions", "events/calendars"]
+scope = "country"
+reference = {FR = "avenue-de-la-brique-expositions", BE = "avenue-de-la-brique-expositions", CH = "swiss-brick-events", DE = "steine-kanal-veranstaltungskalender", AT = "steine-kanal-veranstaltungskalender", GB = "bricks-mcgee-uk-ireland-events", IE = "bricks-mcgee-uk-ireland-events", default = "brick-news-calendar"}
+fallback = ["avenue-de-la-brique-expositions", "steine-kanal-veranstaltungskalender", "stonewars-events", "bricking-bavaria", "bricks-mcgee-uk-ireland-events", "brick-mania-antwerp", "bricktopia-world", "brickworld", "northern-bricks", "brickvention", "skaerbaek-fan-weekend", "fan-colab-events"]
 
-[[journey]]
+[[need]]
+id = "club"
+title_en = "Find a club"
+title_fr = "Trouver un club"
+category = "clubs"
+groups = ["clubs/national-clubs", "clubs/regional-clubs", "clubs/alternative-brand-clubs", "clubs/online-clubs"]
+scope = "country"
+reference = {FR = "avenue-de-la-brique-associations", BE = "avenue-de-la-brique-associations", CH = "avenue-de-la-brique-associations", default = "lego-fan-colab-communities"}
+fallback = ["freelug", "fanabriques", "lgoe", "brickish", "belug", "lowlug", "itlug", "ale-spain", "lugpol", "byggepladen", "swebrick", "brikkelauget", "palikkatakomo", "plug-pt", "zalug"]
+
+[[need]]
 id = "visit"
 title_en = "Visit a place"
 title_fr = "Visiter un lieu"
+category = "places"
+groups = ["places/official-venues", "places/theme-parks", "places/museums-and-exhibitions", "places/physical-shops", "places/cafes-and-bars"]
 scope = "country"
-resources = ["lego-house", "palais-de-la-maquette", "lego-store-paris-les-halles", "time-for-bricks", "frankensteins-klemmbaustein-museum", "legoland-deutschland", "merlins-steine-permanent-exhibitions", "lebrickgo", "museum-of-bricks", "railway-brick-museum", "elbabrick", "bricks-and-figs", "legoland-windsor", "lego-store-locator", "legoland-parks"]
-always = ["lego-house"]
+reference = {default = "lego-store-locator"}
+fallback = ["lego-house", "palais-de-la-maquette", "lego-store-paris-les-halles", "time-for-bricks", "frankensteins-klemmbaustein-museum", "legoland-deutschland", "merlins-steine-permanent-exhibitions", "lebrickgo", "museum-of-bricks", "railway-brick-museum", "elbabrick", "bricks-and-figs", "legoland-windsor", "legoland-parks"]
+always = ["lego-house"]  # until lot 3b: shown whatever the visitor
 
-[[journey]]
-id = "meet"
-title_en = "Meet other fans"
-title_fr = "Rencontrer d'autres fans"
-scope = "country"
-resources = ["avenue-de-la-brique-associations", "freelug", "avenue-de-la-brique-expositions", "fanabriques", "steine-kanal-veranstaltungskalender", "stonewars-events", "bricking-bavaria", "lgoe", "brickish", "bricks-mcgee-uk-ireland-events", "belug", "brick-mania-antwerp", "lowlug", "bricktopia-world", "itlug", "ale-spain", "lugpol", "byggepladen", "swebrick", "brikkelauget", "palikkatakomo", "plug-pt", "brickworld", "northern-bricks", "brickvention", "zalug", "lego-fan-colab-communities", "skaerbaek-fan-weekend", "fan-colab-events"]
+[[need]]
+id = "create"
+title_en = "Create your own models"
+title_fr = "Créer ses modèles"
+category = "tools"
+groups = ["tools/design-software", "comparators/set-databases", "second-hand/parts-and-custom-builds"]
+scope = "intl"
+fallback = ["rebrickable", "bricklink-studio", "pick-a-brick", "brickognize"]
 
-[[journey]]
+[[need]]
+id = "value"
+title_en = "Follow the value of a set"
+title_fr = "Suivre la valeur d'un set"
+category = "comparators"
+groups = ["comparators/value-tracking", "comparators/set-databases"]
+scope = "intl"
+fallback = ["brickeconomy", "brickset", "setdb"]
+
+[[need]]
 id = "learn"
-title_en = "Understand bricks and their history"
-title_fr = "Comprendre la brique et son histoire"
+title_en = "Learn"
+title_fr = "Apprendre"
+category = "learning"
+groups = ["learning/guides", "learning/history", "learning/compatibility-and-law", "learning/books-and-magazines"]
 scope = "language"
-resources = ["hellobricks-lexique", "spielzeug-fuchs-lexikon", "brick-architect", "lego-history", "cjeu-lego-juris", "blocks-magazine", "sariel"]
+fallback = ["hellobricks-lexique", "spielzeug-fuchs-lexikon", "brick-architect", "lego-history", "cjeu-lego-juris", "blocks-magazine", "sariel"]

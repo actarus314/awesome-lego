@@ -1,0 +1,23 @@
+{
+  "about": "Yardstick of scripts/links_issue.py, read live by `python3 scripts/links_issue.py --sample tests/links-sample.json`. Real addresses with and without the defect looked for, each with the verdict expected when it was read. check = globalping: a link that failed from the machines of GitHub, opened again from 3 probes (down: broken; alive: it blocks GitHub; tls: the secure connection is refused by the checkers). check = page: the page is opened and judged (healthy, parked or expired, taken over, closed). An expected list accepts any of its verdicts. A site can change: a mismatch is read before the script is changed.",
+  "cases": [
+    {"url": "https://www.sembo-block.com/", "check": "globalping", "expected": "down", "read": "2026-11-24", "why": "name not found from every probe"},
+    {"url": "https://toy-links.com/mouldking", "check": "globalping", "expected": "down", "read": "2026-11-24", "why": "525 from every probe"},
+    {"url": "https://mocbrickland.com/", "check": "globalping", "expected": "down", "read": "2026-11-24", "why": "no connection from any probe"},
+    {"url": "https://cadatoys.com/", "check": "globalping", "expected": "alive", "read": "2026-11-24", "why": "503 from GitHub and Hetzner, 200 elsewhere"},
+    {"url": "https://c-en.qmjm.com/", "check": "globalping", "expected": "alive", "read": "2026-11-24", "why": "fails from GitHub, 200 elsewhere"},
+    {"url": "https://www.minifiguren.com/", "check": "globalping", "expected": "alive", "read": "2026-11-24", "why": "fails from GitHub, 200 elsewhere"},
+    {"url": "https://byggepladen.dk/", "check": "globalping", "expected": "alive", "read": "2026-11-24", "why": "301: a redirect, left to Data fixes"},
+    {"url": "https://chtilug.fr/", "check": "globalping", "expected": "alive", "read": "2026-11-24", "why": "301: a redirect, left to Data fixes"},
+    {"url": "https://www.vodio.fr/rssmedias.php?valeur=1753", "check": "globalping", "expected": ["alive", "tls"], "read": "2026-11-24", "why": "never broken: TLS refused by lychee and by the 3 probes of the run from GitHub, 200 from other probes, curl and browsers"},
+    {"url": "https://acreativeteam.net/", "check": "page", "expected": "taken over", "read": "2026-11-24", "why": "club site now an online casino"},
+    {"url": "https://klemmbausteine.com/", "check": "page", "expected": "parked or expired", "read": "2026-11-24", "why": "domain for sale on a marketplace"},
+    {"url": "https://mocbricks.com/", "check": "page", "expected": "parked or expired", "read": "2026-11-24", "why": "parking page that sends to /lander"},
+    {"url": "https://jmag286.wixsite.com/briquesmag1", "check": "page", "expected": "closed", "read": "2026-11-24", "why": "the magazine announces its end (entry briques-mag, status dead)"},
+    {"url": "https://www.cremonabricks.it/", "check": "page", "expected": "healthy", "read": "2026-11-24", "why": "the inventory of 24 November once read unrelated commercial content here; read again from 6 probes and a reader the same day, the club page was there"},
+    {"url": "https://autourdesbriques.fr/", "check": "page", "expected": "healthy", "read": "2026-11-24", "why": "trap: “spécialiste” holds a word of spam"},
+    {"url": "https://www.brightontoymuseum.co.uk/index/Category:Self-Locking_Building_Bricks_%28Kiddicraft%29", "check": "page", "expected": "healthy", "read": "2026-11-24", "why": "trap: “slots” in a heading about bricks"},
+    {"url": "https://www.brickyes.com/nl-nl/lego", "check": "page", "expected": "healthy", "read": "2026-11-24", "why": "trap: Dutch heading “Slot”"},
+    {"url": "https://brickset.com/", "check": "page", "expected": "healthy", "read": "2026-11-24", "why": "a healthy reference"}
+  ]
+}

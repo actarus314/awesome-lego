@@ -1,8 +1,14 @@
 name: Links
+run-name: ${{ inputs.dry_run && 'Links (dry run)' || 'Links' }}   # Data fixes does not follow a dry run
 on:
   schedule:
-    - cron: "23 5 * * 3"   # weekly
+    - cron: "23 5 * * 3"   # weekly, Wednesdays; Data fixes starts when this run ends
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Write the issue body in the run summary and change no issue"
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -14,22 +20,41 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      # 401 and 403: a bot check in front of a public page; 405: an endpoint that answers only another method (an MCP server)
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.15"
+      # 401 and 403: a bot check in front of a public page; 405: an endpoint that answers only another method (an MCP server); 429: a rate limit
       - id: lychee
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
           args: --no-progress --max-retries 3 --timeout 30 --accept 200..=299,401,403,405,429 --exclude-loopback --exclude-path site 'data/*.toml' README.md contributing.md MAINTENANCE.md
           output: lychee-report.md
           fail: false
-      - name: Open, update or close the links issue   # one issue, kept up to date, closed when every link answers
+      # One issue, kept up to date: reopened when something needs a person, closed otherwise (its body keeps the
+      # links that only block GitHub, read by the monthly report). Each failure is opened again from Globalping;
+      # the address of every entry is opened to find dead pages that answer 200 (scripts/links_issue.py).
+      - name: Check failures again from Globalping, look for dead pages, keep the links issue up to date
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          FAILED: ${{ steps.lychee.outputs.exit_code != 0 }}
+          GLOBALPING_TOKEN: ${{ secrets.GLOBALPING_TOKEN }}   # optional: a higher hourly limit than the runner's address shares
+          LYCHEE_CODE: ${{ steps.lychee.outputs.exit_code }}
+          DRY_RUN: ${{ inputs.dry_run }}
         run: |
-          n=$(gh issue list --label links --state open --json number -q '.[0].number')
-          if [ "$FAILED" = "true" ] && [ -f lychee-report.md ]; then
-            if [ -n "$n" ]; then gh issue view "$n" --json body -q .body > previous.md; else : > previous.md; fi
-            python3 scripts/links_issue.py lychee-report.md previous.md > body.md   # links failing twice in a row first
-            if [ -n "$n" ]; then gh issue edit "$n" --body-file body.md; else gh issue create --title "Broken links" --label links --label automatic --body-file body.md; fi
-          elif [ "$FAILED" != "true" ] && [ -n "$n" ]; then gh issue close "$n" --comment "Every link answers again."; fi   # a run without a report closes nothing
+          if [ "$LYCHEE_CODE" != "0" ] && [ ! -s lychee-report.md ]; then echo "::warning::lychee wrote no report: the links issue is left as it is"; exit 0; fi
+          [ "$LYCHEE_CODE" = "0" ] && : > lychee-report.md   # no failure
+          last=$(gh issue list --label links --state all --limit 1 --json number,state -q '.[] | "\(.number) \(.state)"')   # the newest links issue, open or closed; a failure stops the step
+          read -r n state <<< "$last" || true
+          if [ -n "$n" ]; then gh issue view "$n" --json body -q .body > previous.md; else : > previous.md; fi
+          python3 scripts/links_issue.py lychee-report.md previous.md --recheck --pages --state needed.txt > body.md
+          if [ "$DRY_RUN" = "true" ]; then { echo "Issue: $(cat needed.txt)"; echo; cat body.md; } | tee -a "$GITHUB_STEP_SUMMARY"; exit 0; fi   # summary and log
+          if [ "$(cat needed.txt)" = "open" ]; then
+            if [ -z "$n" ]; then gh issue create --title "Broken links" --label links --label automatic --body-file body.md
+            else gh issue edit "$n" --body-file body.md; [ "$state" = "OPEN" ] || gh issue reopen "$n"; fi
+          elif [ -n "$n" ]; then
+            gh issue edit "$n" --body-file body.md
+            [ "$state" != "OPEN" ] || gh issue close "$n" --comment "Nothing needs a person this week: no broken link, no dead page."
+          elif grep -q "<details>" body.md; then   # no issue yet: one is written and closed, for its folded lists (read by the monthly report)
+            url=$(gh issue create --title "Broken links" --label links --label automatic --body-file body.md)
+            gh issue close "$url" --comment "Nothing needs a person this week: no broken link, no dead page."
+          fi

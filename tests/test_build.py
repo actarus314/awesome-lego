@@ -5,6 +5,7 @@ import contextlib
 import hashlib
 import base64
 import io
+import json
 import re
 import shutil
 import sys
@@ -122,8 +123,8 @@ class Pages(unittest.TestCase):
                 self.assertIn(h, policy, lang)
 
     def test_static_texts_at_first_paint(self):
-        self.assertIn('data-t="nav_out">Sortir</a>', self.pages["fr"])
-        self.assertIn('data-t="nav_out">Out and about</a>', self.pages["en"])
+        self.assertIn('data-t="nav_obs">Observatoire</a>', self.pages["fr"])
+        self.assertIn('data-t="nav_obs">Observatory</a>', self.pages["en"])
         for lang, doc in self.pages.items():
             self.assertNotRegex(doc, r'data-t="\w+"[^>]*></(a|h1|h2|h3|span|button|p)>', lang)
 
@@ -134,17 +135,220 @@ class Pages(unittest.TestCase):
             self.assertEqual(doc[j:j + 9], "</script>")
 
 
-class Calendar(unittest.TestCase):
-    def test_lines_folded_and_closed(self):
+
+def entry_of(text, rid):
+    """Span of the [[resource]] block with id `rid`."""
+    i = text.index(f'id = "{rid}"')
+    i = text.rindex("[[resource]]", 0, i)
+    j = text.find("\n[[resource]]", i + 1)
+    return i, (j if j > 0 else len(text))
+
+
+def add_field(rid, line):
+    """An edit that adds `line` to the entry `rid`, right after its id."""
+    return lambda t: t.replace(f'id = "{rid}"\n', f'id = "{rid}"\n{line}\n', 1)
+
+
+def notes_with(file, edit):
+    """Warnings of the rules of lot 3 (load, ranks, texts) on a copy of data/ changed by `edit`."""
+    d = Path(tempfile.mkdtemp())
+    try:
+        shutil.copytree(ROOT / "data", d / "data")
+        p = d / "data" / file
+        p.write_text(edit(p.read_text(encoding="utf-8")), encoding="utf-8")
+        old = build.DATA
+        build.DATA = d / "data"
+        try:
+            with contextlib.redirect_stdout(io.StringIO()):
+                cats, _ = build.load()
+            build.rank_check(cats)
+            build.text_notes(cats)
+            return list(build.notes)
+        finally:
+            build.DATA = old
+    finally:
+        shutil.rmtree(d)
+
+
+class Lot3Model(unittest.TestCase):
+    """Fields of v3.0 (data/SCHEMA.md): their form fails the build, their content rules warn until lot 3b."""
+    def test_current_data_has_no_form_error(self):
+        with contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(build.load()[1], [])
+
+    def test_rank_form(self):
+        for bad in ('rank = {intl = 6}', 'rank = {fr = 1}', 'rank = {intl = true}', 'rank = 1'):
+            errs = load_with("comparators.toml", add_field("brick-broker", bad))  # price comparators: ranked per country
+            self.assertTrue(any("rank is a table" in e for e in errs), (bad, errs))
+        self.assertEqual(load_with("comparators.toml", add_field("brick-broker", 'rank = {intl = 2, FR = 1}\nrank_reason_en = "x"\nrank_reason_fr = "x"')), [])
+
+    def test_one_entry_per_rank(self):
+        two = lambda t: add_field("brickmitri", 'rank = {FR = 1}')(add_field("brick-broker", 'rank = {FR = 1}')(t))
+        load_with("comparators.toml", two)
+        cats, _ = load_quiet(two)
+        build.rank_check(cats)
+        self.assertTrue(any("rank 1 given to" in n for n in build.notes), build.notes)
+
+    def test_group_rank_scope(self):
+        errs = load_with("places.toml", lambda t: t.replace('rank_scope = "country"\n', "", 1))
+        self.assertTrue(any("rank_scope" in e for e in errs), errs)
+
+    def test_city_names(self):
+        self.assertTrue(any("city_fr" in e for e in load_with("places.toml", lambda t: t.replace('city_fr = "Londres"', 'city_fr = "London"', 1))))
+        self.assertTrue(any("one city" in n for n in notes_with("places.toml", lambda t: t.replace('city = "Paderborn"', 'city = "Paderborn, Lippstadt"', 1))))
+
+    def test_access_by_category(self):
+        ns = notes_with("places.toml", lambda t: t.replace('access = "paid"', 'access = "freemium"', 1))
+        self.assertTrue(any("access 'freemium' says nothing for entry" in n for n in ns), ns)
+
+    def test_size_form(self):
+        errs = load_with("places.toml", add_field("lego-house", 'size = [{n = 12000, unit = "acres"}]'))
+        self.assertTrue(any("size is a list" in e for e in errs), errs)
+        self.assertEqual(load_with("places.toml", add_field("lego-house", 'size = [{n = 12000, unit = "square-metres"}, {n = 25000000, unit = "bricks", approx = "about"}]')), [])
+
+    def test_operator(self):
+        self.assertTrue(any("operator" in e for e in load_with("places.toml", add_field("lego-house", 'operator = "merlin"'))))
+
+
+class Lot3Texts(unittest.TestCase):
+    def test_brand_in_french_sentences(self):
+        ns = notes_with("places.toml", lambda t: t.replace('summary_fr = "Centre', 'summary_fr = "Des sets LEGO officiels. Centre', 1))
+        self.assertTrue(any("lego-house: summary_fr" in n and "LEGO officiels" in n for n in ns), [n for n in ns if "lego-house" in n])
+
+    def test_numeric_dates(self):
+        ns = notes_with("places.toml", lambda t: t.replace('summary_en = "Official LEGO experience', 'summary_en = "Opened 2026-07-01. Official LEGO experience', 1))
+        self.assertTrue(any("lego-house" in n and "2026-07-01" in n for n in ns), [n for n in ns if "lego-house" in n])
+
+    def test_site_phrases_follow_the_brand_rule(self):
+        build.notes.clear()
+        build.site_notes()
+        self.assertEqual(build.notes, [])
+
+    def test_labels_exist(self):
+        self.assertEqual(build.check_docs(), [])
+
+
+class Needs(unittest.TestCase):
+    def test_unknown_group_fails(self):
+        cats, _ = load_quiet(lambda t: t)
+        ids = {r["id"] for c in cats for r in c["resources"]}
+        good = build.needs(cats, ids)
+        self.assertGreaterEqual(len(good), 10)
+        old = build.DATA
+        d = Path(tempfile.mkdtemp())
+        try:
+            shutil.copytree(ROOT / "data", d / "data")
+            p = d / "data" / "journeys.toml"
+            p.write_text(p.read_text(encoding="utf-8").replace('"shops/official-lego"', '"shops/nothing"', 1), encoding="utf-8")
+            build.DATA = d / "data"
+            with self.assertRaises(SystemExit), contextlib.redirect_stderr(io.StringIO()):
+                build.needs(cats, ids)
+        finally:
+            build.DATA = old
+            shutil.rmtree(d)
+
+    def test_same_site_leaves_out_platforms(self):
+        with contextlib.redirect_stdout(io.StringIO()):
+            cats, _ = build.load()
+            rows = {r["id"]: r for r in build.site_data(cats, {})["resources"]}
+        self.assertEqual(rows["jangbricks"]["same"], [])  # youtube.com
+        self.assertIn("brickset-api-v3", rows["brickset"]["same"])
+
+
+def load_quiet(edit):
+    d = Path(tempfile.mkdtemp())
+    try:
+        shutil.copytree(ROOT / "data", d / "data")
+        p = d / "data" / "comparators.toml"
+        p.write_text(edit(p.read_text(encoding="utf-8")), encoding="utf-8")
+        old = build.DATA
+        build.DATA = d / "data"
+        try:
+            with contextlib.redirect_stdout(io.StringIO()):
+                return build.load()
+        finally:
+            build.DATA = old
+    finally:
+        shutil.rmtree(d)
+
+
+class Details(unittest.TestCase):
+    def test_strengths_leave_the_page_for_details_json(self):
+        with contextlib.redirect_stdout(io.StringIO()):
+            cats, _ = build.load()
+            data = build.site_data(cats, {})
+        data["version"] = "0"
+        for lang in ("en", "fr"):
+            doc = build.page(lang, data)
+            blob = json.loads(re.search(r'<script id="data" type="application/json">(.*?)</script>', doc, re.S).group(1).replace("\\u003c", "<"))
+            self.assertFalse(any("strengths" in r[lang] for r in blob["resources"]))
+            det = json.loads(build.details(lang, data))
+            n = sum(1 for r in data["resources"] if r[lang]["strengths"] or r[lang]["weaknesses"])
+            self.assertEqual(len(det), n)
+            self.assertEqual(sum(1 for r in blob["resources"] if r[lang]["d"]), n)
+
+
+class Dates(unittest.TestCase):
+    def test_in_letters(self):
+        self.assertEqual(build.in_letters("2027-07-03", "en"), "3 July 2027")
+        self.assertEqual(build.in_letters("2027-04-01", "fr"), "1er avril 2027")
+        self.assertEqual(build.in_letters("2027-04-01", "en"), "1 April 2027")
+
+    def test_feed_has_no_numeric_date_in_titles(self):
         with contextlib.redirect_stdout(io.StringIO()):
             cats, _ = build.load()
         for lang in ("en", "fr"):
-            ics = build.calendar(cats, lang)
-            self.assertTrue(ics.startswith("BEGIN:VCALENDAR") and ics.rstrip().endswith("END:VCALENDAR"))
-            self.assertEqual(ics.count("BEGIN:VEVENT"), ics.count("END:VEVENT"))
-            for line in ics.split("\r\n"):
-                self.assertLessEqual(len(line.encode()), 75, line)
+            titles = re.findall(r"<title>(.*?)</title>", build.content_feed(cats, lang))
+            self.assertFalse([x for x in titles if build.NUMERIC_DATE.search(x)])
 
+
+class Selection(unittest.TestCase):
+    def test_ranks_switch_the_selection_group_by_group(self):
+        """A rank in one group changes the selection of that group only: the other groups keep `featured`."""
+        def readme_with(edit):
+            d = Path(tempfile.mkdtemp())
+            try:
+                shutil.copytree(ROOT / "data", d / "data")
+                p = d / "data" / "comparators.toml"
+                p.write_text(edit(p.read_text(encoding="utf-8")), encoding="utf-8")
+                old = build.DATA
+                build.DATA = d / "data"
+                try:
+                    with contextlib.redirect_stdout(io.StringIO()):
+                        cats, _ = build.load()
+                    return build.readme(cats, {}, "en")
+                finally:
+                    build.DATA = old
+            finally:
+                shutil.rmtree(d)
+        before = readme_with(lambda t: t)
+        after = readme_with(add_field("brick-broker", 'rank = {intl = 1, FR = 1}\nrank_reason_en = "x"\nrank_reason_fr = "x"'))
+        lines = lambda x: {l for l in x.splitlines() if l.startswith("- [")}
+        changed = lines(before) ^ lines(after)
+        self.assertTrue(changed, "the ranked group changes")
+        self.assertGreater(len(lines(after)), len(lines(before)) - 15)  # only the price comparators move
+
+
+class Lot3Checks(unittest.TestCase):
+    def test_lego_operator_by_address_until_3b(self):
+        for url, want in (("https://www.lego.com/fr-fr", "lego-group"), ("https://www.legodiscoverycentre.com/", "lego-group"),
+                          ("https://www.legoworld.nl/", "lego-group"), ("https://www.legoland.de/", "licensee"), ("https://brickset.com/", None)):
+            self.assertEqual(build.lego_operator({"url": url}), want, url)
+        self.assertEqual(build.lego_operator({"url": "https://example.org/", "operator": "licensee"}), "licensee")
+
+    def test_french_card_text(self):
+        def planted(t):
+            i, j = entry_of(t, "brickset")
+            return t[:i] + re.sub(r'summary_fr = "[^"]*"', 'summary_fr = "Base de données allemande de sets et de figurines."', t[i:j], count=1) + t[j:]
+        before = notes_with("comparators.toml", lambda t: t)
+        self.assertFalse([n for n in before if "brickset: summary_fr starts with a country" in n])
+        ns = notes_with("comparators.toml", planted)
+        self.assertTrue([n for n in ns if "brickset: summary_fr starts with a country" in n], "a demonym after the noun is found")
+        def lang_only(t):
+            i, j = entry_of(t, "jangbricks")
+            return t[:i] + re.sub(r'summary_fr = "[^"]*"', 'summary_fr = "Chaîne en allemand sur les sets de marque LEGO."', t[i:j], count=1) + t[j:]
+        ns = notes_with("video.toml", lang_only)
+        self.assertFalse([n for n in ns if "jangbricks: summary_fr starts with a country" in n], "a language is not a country")
 
 if __name__ == "__main__":
     unittest.main()

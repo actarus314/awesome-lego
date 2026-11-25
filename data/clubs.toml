@@ -7,12 +7,14 @@ summary_fr = "Groupes d'utilisateurs, clubs et associations de fans de LEGO et d
 
 [[category.groups]]
 id = "national-clubs"
+rank_scope = "country"
 name_en = "National clubs"
 name_fr = "Clubs nationaux"
 regime = "operating"
 
 [[category.groups]]
 id = "regional-clubs"
+rank_scope = "country"
 name_en = "Regional and local clubs"
 name_fr = "Clubs régionaux et locaux"
 short_en = "Regional clubs"
@@ -21,6 +23,7 @@ regime = "operating"
 
 [[category.groups]]
 id = "alternative-brand-clubs"
+rank_scope = "country"
 name_en = "Clubs for alternative brands"
 name_fr = "Clubs des marques alternatives"
 short_en = "Alternative clubs"
@@ -29,6 +32,7 @@ regime = "operating"
 
 [[category.groups]]
 id = "online-clubs"
+rank_scope = "language"
 name_en = "Online clubs"
 name_fr = "Clubs en ligne"
 
@@ -97,7 +101,7 @@ kind = "official"
 [[resource]]
 id = "byggepladen"
 name = "Byggepladen"
-url = "https://byggepladen.dk/"
+url = "https://www.byggepladen.dk/"
 group = "national-clubs"
 covers = ["clubs", "official", "events"]
 languages = ["da"]
@@ -161,7 +165,7 @@ kind = "official"
 [[resource]]
 id = "itlug"
 name = "ItLUG"
-url = "https://www.itlug.org/"
+url = "https://itlug.org/"
 group = "national-clubs"
 featured = true
 covers = ["clubs", "official", "events"]
@@ -350,7 +354,9 @@ last_activity = "2026-10-24"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
-city = "Wien"
+city = "Vienna"
+city_fr = "Vienne"
+city_local = "Wien"
 
 [[resource.sources]]
 url = "https://www.lgoe.at/"
@@ -391,7 +397,7 @@ kind = "official"
 [[resource]]
 id = "chti-lug"
 name = "Ch'ti LUG"
-url = "https://chtilug.fr/"
+url = "https://www.chtilug.fr/"
 feed = "https://www.chtilug.fr/feed/"
 group = "regional-clubs"
 covers = ["clubs", "official", "events"]
@@ -584,6 +590,7 @@ checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
 city = "London"
+city_fr = "Londres"
 
 [[resource.sources]]
 url = "https://www.londonafols.uk/"
@@ -1162,7 +1169,6 @@ last_activity = "2026-11-23"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
-city = "San Francisco Bay Area"
 
 [[resource.sources]]
 url = "https://baylug.org/frequently-asked-questions/"
@@ -1375,7 +1381,6 @@ last_activity = "2026-11-04"
 checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "high"
-city = "Gauteng"
 
 [[resource.sources]]
 url = "https://www.zalug.co.za/about-zalug/"
@@ -1445,6 +1450,7 @@ checked = "2026-11-23"
 added = "2026-11-23"
 confidence = "medium"
 city = "Florence"
+city_local = "Firenze"
 
 [[resource.sources]]
 url = "https://www.toscanabricks.it/toscanabricks/"

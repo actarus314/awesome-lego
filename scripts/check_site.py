@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 """Rendering checks of the built website (site/), in a real browser (Playwright, Chromium).
 
-Every view and state a visitor reaches (directory as cards and as a table, brand mode, out and about with
-every entry unfolded, observatory, hidden vault), in English and French, at several widths and in both
+Every view and state a visitor reaches (directory as cards and as a table, brand mode of an alternative brand and of LEGO, observatory,
+hidden vault), in English and French, at several widths and in both
 themes. Fails on:
 - overflow: the page scrolls sideways, or an element sticks out of the box (card, panel, row) it sits in;
 - broken token: a phone number, an email, a website, a date, a tag, a chip, a button label or a short
   part of an address split over two lines;
 - broken word: a word split inside itself (not at a hyphen) when it fits on a line;
+- overlapping text: two texts of a chart (SVG) drawn over one another (axis marks, labels);
 - inherited frame: a list item framed or filled inside another framed list item (a rule meant for the
   outer rows reaching the inner ones);
 - script error, console error, or content security policy violation;
+- search: a word found only in the strengths or weaknesses of an entry (details.json, read after the page) must find it;
 - accessibility (axe-core, WCAG 2.2 A and AA rules: contrast on the real background, names of controls,
   target sizes, landmarks, ARIA): every violation, on the same views, at 1440 and 390 px in both themes. A guard,
   not a conformance target: the 13 px studs of the category map are accepted, and marks told apart by colour
@@ -61,7 +63,7 @@ PROBE = r"""
   const lines = el => { const tops = []; const tw = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); const rg = document.createRange(); let n;
     while ((n = tw.nextNode())) { if (!n.textContent.trim()) continue; rg.selectNodeContents(n); for (const q of rg.getClientRects()) if (q.width > 0.5) tops.push(q.top) }
     tops.sort((x, y) => x - y); let k = tops.length ? 1 : 0; for (let i = 1; i < tops.length; i++) if (tops[i] - tops[i - 1] > 6) k++; return k };
-  const ATOM = '.ct .tel a, .ct .mail a, .ct .web a, .ct .nw, .ct button, time, .tag:not(.langs), .chip, .btn, .kpi b, .city .ch > span, .agenda .w, .pill';
+  const ATOM = '.ct .tel a, .ct .mail a, .ct .nw, time, .tag:not(.langs), .chip, .btn:not(.all), .kpi b, .pill';  // a full-width button may take two lines
   for (const el of document.querySelectorAll(ATOM)) if (vis(el) && lines(el) > 1) add('broken token', el, txt(el));
 
   // words split inside themselves (not at a hyphen or a slash) although they fit on a line
@@ -74,6 +76,12 @@ PROBE = r"""
     const ra = a.getBoundingClientRect(), r = document.createRange(); r.selectNodeContents(g); const ls = [...r.getClientRects()].filter(q => q.width > 0.5);
     const top = [...a.getClientRects()][0]; if (ls.length === 1 && top && ls[0].left >= top.right - 1 && ls[0].top < top.bottom) continue; add('misaligned label', g, txt(g)) }  // each text line, not the box
 
+  // texts of a chart (SVG) drawn over one another: axis marks, labels
+  for (const svg of document.querySelectorAll('svg')) { if (!vis(svg)) continue;
+    const ts = [...svg.querySelectorAll('text')].filter(t => t.textContent.trim()).map(t => [t, t.getBBox()]);
+    for (let i = 0; i < ts.length; i++) for (let j = i + 1; j < ts.length; j++) { const a = ts[i][1], b = ts[j][1];
+      if (a.x < b.x + b.width - 1 && b.x < a.x + a.width - 1 && a.y < b.y + b.height - 1 && b.y < a.y + a.height - 1) add('overlapping text', ts[j][0], ts[i][0].textContent.trim() + ' / ' + ts[j][0].textContent.trim()) } }
+
   // a framed list item inside another framed list item
   const framed = el => { const s = getComputedStyle(el); return parseFloat(s.borderTopWidth) > 0 || (s.backgroundColor !== 'rgba(0, 0, 0, 0)' && s.backgroundColor !== 'transparent') };
   for (const li of document.querySelectorAll('li li')) if (vis(li) && framed(li)) { const o = li.parentElement.closest('li'); if (o && framed(o)) add('inherited frame', li, txt(li)) }
@@ -83,13 +91,12 @@ PROBE = r"""
 """
 
 # states: (name, path, script run before the probe)
-UNFOLD = """(()=>{const n=document.getElementById('nearall');if(n)n.click();document.querySelectorAll('#near .tg[aria-expanded=false], #ag .tg[aria-expanded=false]').forEach(b=>b.click())})()"""
 # axe reads every node: the directory is narrowed to three categories (134 cards, the richest ones) to keep a run short
 AXE_STATES = [
     ("directory", "#cat=places,events,clubs", "document.querySelectorAll('#list details').forEach(d=>d.open=true)"),
     ("table", "#cat=places,events,clubs&view=table", ""),
     ("brand mode", "#q=COBI", ""),
-    ("out and about", "#out", None),
+    ("brand mode of LEGO", "#q=LEGO", ""),
     ("observatory", "#observatory", ""),
     ("observatory after a theme switch", "#observatory",  # colours computed by the page must follow the theme button
      "(()=>{const want=matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark',tb=document.getElementById('theme');for(let i=0;i<3&&document.documentElement.dataset.theme!==want;i++)tb.click()})()"),
@@ -98,9 +105,27 @@ STATES = [
     ("directory", "#map", "document.querySelectorAll('#list details').forEach(d=>d.open=true)"),
     ("table", "#view=table", ""),
     ("brand mode", "#q=COBI", ""),
-    ("out and about", "#out", UNFOLD),
+    ("brand mode of LEGO", "#q=LEGO", ""),
     ("observatory", "#observatory", ""),
 ]
+
+
+def details_word(site, lang):
+    """A word of the strengths or weaknesses of one entry that no other text of the directory holds."""
+    import re
+    import unicodedata
+    fold = lambda x: unicodedata.normalize("NFD", x.lower()).encode("ascii", "ignore").decode()
+    data = json.loads((site / "data.json").read_text(encoding="utf-8"))  # every text, as scripts/build.py wrote it
+    det = {r["id"]: (r[lang]["strengths"], r[lang]["weaknesses"]) for r in data["resources"]}
+    other = fold(" ".join(" ".join([r["name"], r[lang]["summary"], r[lang]["group"], str(r[lang].get("size", "")), str(r.get("city") or "")]) for r in data["resources"]))
+    words = {}
+    for rid, (st, wk) in det.items():
+        for w in set(re.findall(r"[a-zà-ÿ]{7,}", fold(" ".join(st + wk)))):
+            words.setdefault(w, set()).add(rid)
+    for w, ids in sorted(words.items()):
+        if len(ids) == 1 and w not in other:
+            return w, next(iter(ids))
+    raise SystemExit("no word found only in the strengths and weaknesses")
 
 
 def main():
@@ -171,7 +196,6 @@ def main():
                     c = b.new_context(viewport={"width": w, "height": 900}, locale="fr-FR" if lang == "fr" else "en-GB",
                                       color_scheme=theme, is_mobile=mobile, has_touch=mobile, device_scale_factor=2 if mobile else 1)
                     c.add_init_script("addEventListener('securitypolicyviolation',e=>console.error('CSP '+e.violatedDirective+' '+e.blockedURI))")
-                    c.route("https://nominatim.openstreetmap.org/**", lambda r: r.abort())
                     pg = c.new_page()
                     errs = []
                     pg.on("pageerror", lambda e: errs.append(str(e)))
@@ -180,8 +204,6 @@ def main():
                         pg.goto(base + root + frag)
                         pg.reload()
                         pg.wait_for_selector("html.ready", state="attached")
-                        if name == "out and about":
-                            pg.wait_for_selector("#geo .pt, body.nomap", state="attached", timeout=15000)
                         pg.wait_for_timeout(300)
                         pg.add_style_tag(content="*{content-visibility:visible!important}")  # every card laid out, so that every card is checked
                         if js:
@@ -195,6 +217,18 @@ def main():
                     for e in errs:
                         found.setdefault(("script error", "", e[:160]), []).append(f"{lang} {w} {theme}")
                     c.close()
+        # search: strengths and weaknesses come from details.json, read after the page; a word found only there must still find its entry
+        for lang, root in (("en", ""), ("fr", "fr/")):
+            word, rid = details_word(Path(a.site), lang)
+            c = b.new_context(viewport={"width": 1440, "height": 900}, locale="fr-FR" if lang == "fr" else "en-GB")
+            pg = c.new_page()
+            pg.goto(base + root)
+            pg.wait_for_selector("html.ready", state="attached")
+            pg.fill("#q", word)
+            pg.wait_for_timeout(1200)  # details.json read, index rebuilt, results drawn
+            if not pg.query_selector(f"#list #r-{rid}"):
+                found.setdefault(("search", "#q", f"'{word}', only in the strengths or weaknesses of {rid}, does not find it"), []).append(lang)
+            c.close()
         # accessibility: axe-core injected into the page (the page's own security policy is bypassed for that only)
         axe = Path(a.axe)
         if a.no_axe:
@@ -208,16 +242,12 @@ def main():
                         mobile = w < 700
                         c = b.new_context(viewport={"width": w, "height": 900}, locale="fr-FR" if lang == "fr" else "en-GB", color_scheme=theme,
                                           is_mobile=mobile, has_touch=mobile, bypass_csp=True)
-                        c.route("https://nominatim.openstreetmap.org/**", lambda r: r.abort())
                         pg = c.new_page()
                         for name, frag, js in AXE_STATES + ([("vault", "vault/", "")] if lang == "en" else []):
-                            js = UNFOLD if js is None else js
                             pg.goto(base + (frag if name == "vault" else root + frag))
                             if name != "vault":
                                 pg.reload()
                                 pg.wait_for_selector("html.ready", state="attached")
-                                if name == "out and about":
-                                    pg.wait_for_selector("#geo .pt, body.nomap", state="attached", timeout=15000)
                             pg.wait_for_timeout(300)
                             if js:
                                 pg.evaluate(js)

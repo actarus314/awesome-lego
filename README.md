@@ -6,7 +6,7 @@
 
 **[Explore the website: every resource, with search, filters and a map](https://actarus314.github.io/awesome-lego/)** · [French version of the website](https://actarus314.github.io/awesome-lego/fr/) · [Feed of new resources (RSS)](https://actarus314.github.io/awesome-lego/feed.xml)
 
-<p align="center"><a href="https://actarus314.github.io/awesome-lego/"><img src="media/site-preview.png" width="880" alt="The website: the map of the brick world, one stud per resource by category, above the directory; tabs Directory, Out and about, Observatory"></a></p>
+<p align="center"><a href="https://actarus314.github.io/awesome-lego/"><img src="media/site-preview.png" width="880" alt="The website: the map of the brick world, one stud per resource by category, above the directory; tabs Directory and Observatory"></a></p>
 
 Only the best of each group is listed here. The [full list](full-list.md) has every resource, including inactive and dead ones.
 
@@ -316,7 +316,7 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 - [BeLUG](https://www.belug.be/) - Belgian LEGO User Group: club for adult LEGO builders and collectors, independent of the LEGO Group, taking part in fairs in Belgium and abroad and organising Brick Mania. Covers official LEGO.
 - [Brickish](https://brickish.org/) - UK-wide club of adult fans of LEGO, active since 2002 and described by itself as the first user group in the country; local meet-ups, public shows and a members-only forum. Covers official LEGO.
 - [FreeLUG](https://www.freelug.org/) - French national association of LEGO fans since 2003, with a Discourse forum, exhibitions and meeting reports. Covers official LEGO.
-- [ItLUG](https://www.itlug.org/) - Italian LEGO Users Group: national association of adult LEGO fans founded in 1999 and legally constituted in November 2010, with a forum, national events and local exhibitions. Covers official LEGO.
+- [ItLUG](https://itlug.org/) - Italian LEGO Users Group: national association of adult LEGO fans founded in 1999 and legally constituted in November 2010, with a forum, national events and local exhibitions. Covers official LEGO.
 
 <br>
 
