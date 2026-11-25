@@ -7,7 +7,7 @@ const R=D.resources,C=D.categories,catName=id=>(C.find(c=>c.id===id)||{})[L]||id
 const ci=id=>`<img class="ci" src="${L==='fr'?'../':''}media/icons/${id}.svg" alt="">`;  // category icon: headings of the directory and tiles of "Where to start" only
 const host=u=>{try{return new URL(u).hostname.replace(/^www\./,'')}catch(e){return u}};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const MONTHS=t('months').split(',');  // the month in letters, never abbreviated: 3 July 2027, 3 juillet 2027, 1er avril
+const MONTHS=t('months').split(',');  // the month in letters, abbreviated: 3 Jul 2027, 3 juil. 2027, 1er avr.
 const fmt=d=>{if(!d)return'';const[y,m,j]=String(d).split('-').map(Number);return m?(j?(L==='fr'&&j===1?'1er':j)+' ':'')+MONTHS[m-1]+' '+y:String(y)};
 const dt=d=>d?`<time datetime="${esc(d)}">${esc(fmt(d))}</time>`:'';  // every date shown, machine-readable and never broken over two lines
 const TITLE0=document.title;
@@ -24,7 +24,10 @@ const lab={auto:ic('<circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18
 const tname={auto:{en:'Theme: auto',fr:'Thème : auto'},light:{en:'Theme: light',fr:'Thème : clair'},dark:{en:'Theme: dark',fr:'Thème : sombre'}};
 const getT=()=>{try{return localStorage.getItem('theme')||'auto'}catch(e){return 'auto'}};
 const setT=v=>{if(v==='auto')delete root.dataset.theme;else root.dataset.theme=v;if(drawn)vBrands();tb.innerHTML=lab[v];tb.setAttribute('aria-label',tname[v][L]);try{localStorage.setItem('theme',v)}catch(e){}};
-document.getElementById('langbtn').onclick=()=>{try{localStorage.setItem('lang',L==='fr'?'en':'fr')}catch(e){}};
+const LB=document.getElementById('langbtn'),LB0=LB.getAttribute('href');
+LB.onclick=()=>{try{localStorage.setItem('lang',L==='fr'?'en':'fr')}catch(e){}LB.href=LB0+location.hash;  // the other language opens where the visitor is: same view, search and filters
+ const top=hdr()+(document.querySelector('.bar')&&!document.getElementById('view-dir').hidden?document.querySelector('.bar').offsetHeight:0),ids=[...document.querySelectorAll('main [id]')].filter(e=>!e.querySelector('[id]')&&e.offsetParent),el=ids.find(e=>e.getBoundingClientRect().top>=top-2)||ids.find(e=>e.getBoundingClientRect().bottom>top);
+ try{if(el&&scrollY>0)sessionStorage.setItem('langpos',JSON.stringify({id:el.id,dy:Math.round(el.getBoundingClientRect().top)}))}catch(e){}};  // and at the same place on the page: the first element in view
 setT(getT());tb.onclick=()=>{const o=['auto','light','dark'];setT(o[(o.indexOf(getT())+1)%3])};
 // external links in a new tab or not: one setting for the whole page, kept by this browser (request of 25/11/2026)
 const nb=document.getElementById('newtab'),getN=()=>{try{return localStorage.getItem('newtab')==='1'}catch(e){return false}};
@@ -126,9 +129,9 @@ function drawTable(rs){if(st.sort){const c=COLS.find(c=>c[0]===st.sort.k),d=st.s
 document.getElementById('list').addEventListener('click',e=>{if(e.target.closest('[data-exit]')){resetAll();update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()});document.getElementById('q').focus({preventScroll:true});return}const go=e.target.closest('a[data-go]');if(go){e.preventDefault();openEntry(go.dataset.go);return}const sc=e.target.closest('[data-scope]');if(sc){resetAll();st.cov.add(sc.dataset.scope);update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()});return}const wb=e.target.closest('[data-brand]');if(wb){resetAll();setQuery(brandName(wb.dataset.brand));update();const h=document.getElementById('bn-h');document.getElementById('directory').scrollIntoView({behavior:SMOOTH()});if(h)h.focus({preventScroll:true});return}const h=e.target.closest('button[data-k]');if(h){const k=h.dataset.k;st.sort=!st.sort||st.sort.k!==k?{k,d:1}:st.sort.d>0?{k,d:-1}:null;keepFocus(drawList);return}const row=e.target.closest('tr[data-go]');if(row&&!e.target.closest('a')){st.view='cards';openEntry(row.dataset.go)}});
 document.getElementById('viewsw').onclick=e=>{const b=e.target.closest('[data-v]');if(b){st.view=b.dataset.v;update(false)}};
 // a resource that cannot be found: suggested at once, the search typed becomes the title of the proposal (GitHub issue form)
-const MISS=document.getElementById('miss'),MISS0=MISS.href,missUrl=n=>{const s=st.q.trim().slice(0,100);return s&&!n?MISS0+'&title='+encodeURIComponent('Add: '+s):MISS0};  // the title only when nothing matches (a search with results names something already there), 100 characters at most (GitHub refuses a very long address)
+const MISS0=document.getElementById('top').dataset.add,missUrl=n=>{const s=st.q.trim().slice(0,100);return s&&!n?MISS0+'&title='+encodeURIComponent('Add: '+s):MISS0};  // the title only when nothing matches (a search with results names something already there), 100 characters at most (GitHub refuses a very long address)
 const missLine=n=>`<p class="missl"><a class="miss" href="${esc(missUrl(n))}">${t('suggest')}</a></p>`;
-function drawList(){const rs=R.filter(r=>match(r)),n=rs.length;MISS.href=missUrl(n);MISS.classList.toggle('off',!n);  // with nothing found, the message below carries the link: the one of the bar keeps its place, hidden
+function drawList(){const rs=R.filter(r=>match(r)),n=rs.length;
  document.getElementById('count').innerHTML=rs.length+' / '+R.length+'<span class="cw"> '+t('shown')+'</span>';const list=document.getElementById('list');
  document.querySelectorAll('#viewsw [data-v]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===st.view));
  if(!rs.length){list.innerHTML=(BM?banner(R.find(r=>r.id===BM),BRANDS.find(x=>x.id===BM),rs):'')+`<div class="empty">${t('none')}${missLine(n)}</div>`;return}
@@ -172,12 +175,11 @@ function vMakers(){const el=document.getElementById('v-makers');const all=D.bran
  const items=ext.map(b=>{const g={};b.ext.forEach(x=>{const k=mkKey(x);(g[k]=g[k]||[]).push(x)});return{b,g:Object.entries(g).sort((x,y)=>x[0].localeCompare(y[0]))}});
  const size={};items.forEach(({g})=>g.forEach(([k])=>size[k]=(size[k]||0)+1));
  items.sort((x,y)=>size[y.g[0][0]]-size[x.g[0][0]]||x.g[0][0].localeCompare(y.g[0][0])||x.b.name.localeCompare(y.b.name));
- const op=matchMedia('(max-width:640px)').matches?'':' open';  // on a phone the three lists start folded: their names and counts first
- const btn=(id,label)=>`<button type="button" data-brand="${id}">${esc(label)}</button>`,src=xs=>`<div class="src">${t('sources')}${COLON}${mkSrc(xs,true)}</div>`;
+ const btn=(id,label)=>`<button type="button" data-brand="${id}">${esc(label)}</button>`,src=xs=>`<div class="src"><span class="lb">${t('sources')}${COLON}</span>${mkSrc(xs,true)}</div>`;  // on a phone the line runs on: brand, maker, sources
  el.innerHTML=`<h3>${t('mk_title')}</h3><div class="mk">`+
-  `<details class="own"${op}><summary>${t('mk_own')} (${own.length})</summary><ul>${own.map(b=>`<li>${btn(b.id,b.name)}${src(b.own)}</li>`).join('')}</ul></details>`+
-  `<details${op}><summary>${t('mk_ext')} (${ext.length})</summary><ul>${items.map(({b,g})=>`<li>${btn(b.id,b.name)}${g.map(([k,xs])=>`<div class="by">${esc(t('mk_by').replace('{m}',k))}</div>${src(xs)}`).join('')}</li>`).join('')}</ul></details>`+
-  `<details class="none"${op}><summary>${t('mk_none')} (${none.length})</summary><ul>${none.map(b=>`<li>${btn(b.id,b.name)}</li>`).join('')}</ul></details></div><p class="note">${t('mk_note')}</p>`;
+  `<div class="own"><h4>${t('mk_own')} (${own.length})</h4><ul>${own.map(b=>`<li>${btn(b.id,b.name)}${src(b.own)}</li>`).join('')}</ul></div>`+
+  `<div><h4>${t('mk_ext')} (${ext.length})</h4><ul>${items.map(({b,g})=>`<li>${btn(b.id,b.name)}${g.map(([k,xs])=>`<div class="by">${esc(t('mk_by').replace('{m}',k))}</div>${src(xs)}`).join('')}</li>`).join('')}</ul></div>`+
+  `<div class="none"><h4>${t('mk_none')} (${none.length})</h4><ul>${none.map(b=>`<li>${btn(b.id,b.name)}</li>`).join('')}</ul></div></div><p class="note">${t('mk_note')}</p>`;
  el.onclick=e=>{const b=e.target.closest('button[data-brand]');if(b)brandMode(b.dataset.brand)}}
 function brandMode(id){toDir();resetAll();setQuery(brandName(id));update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()});const h=document.getElementById('bn-h');if(h)h.focus({preventScroll:true})}
 // insight 1: which listed resources name each alternative brand, by category
@@ -261,7 +263,9 @@ addEventListener('hashchange',()=>{const v=viewOf(location.hash);if(v!=='dir'||c
 function writeHash(){if(cur!=='dir')return;const p=new URLSearchParams();if(st.q.trim())p.set('q',st.q.trim());if(st.cat.size)p.set('cat',[...st.cat].join(','));if(st.cov.size)p.set('scope',[...st.cov].join(','));const cr=['featured','active','kids','adults'].filter(k=>st[k]);if(cr.length)p.set('crit',cr.join(','));if(st.langs.size)p.set('lang',[...st.langs].join(','));if(st.country)p.set('country',st.country);if(st.view!=='cards')p.set('view',st.view);const h=p.toString();history.replaceState(null,'',h?'#'+h:location.pathname+location.search)}
 function readHash(){const h=location.hash.slice(1);if(!h||viewOf(location.hash)!=='dir')return;const p=new URLSearchParams(h);(p.get('cat')||'').split(',').filter(Boolean).forEach(c=>st.cat.add(c));(p.get('scope')||'').split(',').filter(Boolean).forEach(c=>st.cov.add(c));(p.get('crit')||'').split(',').forEach(k=>{if(k==='fr')st.langs.add('fr');else if(k in st&&typeof st[k]==='boolean')st[k]=true});(p.get('lang')||'').split(',').filter(Boolean).forEach(l=>st.langs.add(l));if(p.get('country'))st.country=p.get('country');if(p.get('view')==='table')st.view='table';if(p.get('q'))setQuery(p.get('q'))}
 const ft=document.getElementById('ftoggle'),bar=document.querySelector('.bar');
-ft.onclick=()=>{const o=bar.classList.toggle('open');ft.setAttribute('aria-expanded',o)};
+let fy=0;const fOpen=o=>{bar.classList.toggle('open',o);ft.setAttribute('aria-expanded',o);fy=scrollY};ft.onclick=()=>fOpen(!bar.classList.contains('open'));
+bar.addEventListener('click',()=>{fy=scrollY});  // a filter chosen can move the page: the panel closes only when the visitor scrolls on
+addEventListener('scroll',()=>{if(bar.classList.contains('open')&&Math.abs(scrollY-fy)>48&&!bar.contains(document.activeElement&&document.activeElement.tagName==='SELECT'?document.activeElement:null))fOpen(false)},{passive:true});  // on a phone, the panel of filters folds when the visitor scrolls through the results
 function nActive(){return st.cat.size+st.cov.size+['featured','active','kids','adults'].filter(k=>st[k]).length+st.langs.size+(st.country?1:0)}
 const FKEYS=['cat','cov','m','lang','k','v','brand'];  // a control redrawn by innerHTML gets the focus back
 function keepFocus(draw){const a=document.activeElement,k=a&&a.dataset?FKEYS.find(x=>a.dataset[x]!==undefined):null,v=k&&a.dataset[k],box=k&&a.closest('[id]'),cls=a&&a.className;draw();
@@ -313,6 +317,7 @@ drawNeeds();
 document.getElementById('journeys').onclick=e=>{const a=e.target.closest('a');if(!a)return;e.preventDefault();if(a.dataset.go)openEntry(a.dataset.go);else if(a.dataset.brand)brandMode(a.dataset.brand);else if(a.dataset.cat||a.dataset.crit){resetAll();if(a.dataset.cat)st.cat.add(a.dataset.cat);else st[a.dataset.crit]=true;update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()})}};
 const landing=new URLSearchParams(location.hash.slice(1)).get('entry');  // #entry=<id>: a link to one entry (feed, outside pages)
 const v0=viewOf(location.hash),OUT0=OUT.test(location.hash);cur=v0;readHash();update();show(v0,true);if(landing)openEntry(landing);document.documentElement.classList.add('ready');
+try{const p=JSON.parse(sessionStorage.getItem('langpos')||'null');sessionStorage.removeItem('langpos');const el=p&&document.getElementById(p.id);if(el&&!landing)requestAnimationFrame(()=>scrollTo(0,el.getBoundingClientRect().top+scrollY-p.dy))}catch(e){}
 q.addEventListener('focus',()=>{det();index()},{once:true});
 (window.requestIdleCallback||(f=>setTimeout(f,1500)))(()=>det());  // the search index is built when the search field is first used
 })();

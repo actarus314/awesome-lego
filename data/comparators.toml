@@ -305,8 +305,8 @@ id = "lakea"
 name = "Lakea"
 url = "https://lakea.net/?lang=fr"
 rank = {intl = 1}
-rank_reason_en = "Independent service on its own price collection covering 21675 sets, 138 shops, 7509 parts and 7243 minifigures, with a commission declared to play no part in ranking; tracked since April 2026 only."
-rank_reason_fr = "Service indépendant fondé sur son propre relevé de prix couvrant 21675 sets, 138 boutiques, 7509 pièces et 7243 minifigurines, avec une commission déclarée sans effet sur le classement ; suivi depuis avril 2026 seulement."
+rank_reason_en = "Independent service on its own price collection covering 21675 sets, 138 shops, 7509 parts and 7243 minifigures, with a commission declared to play no part in ranking; tracked since Apr 2026 only."
+rank_reason_fr = "Service indépendant fondé sur son propre relevé de prix couvrant 21675 sets, 138 boutiques, 7509 pièces et 7243 minifigurines, avec une commission déclarée sans effet sur le classement ; suivi depuis avr. 2026 seulement."
 size = [{n = 21675, unit = "sets"}, {n = 138, unit = "shops"}, {n = 7509, unit = "parts"}, {n = 7243, unit = "minifigures"}]
 feed = "https://lakea.net/rss.xml"
 group = "price-comparators"
@@ -316,10 +316,10 @@ countries = ["international"]
 access = "free"
 summary_en = "Independent service built on its own price collection for official LEGO, also covering parts, minifigures and display cases."
 summary_fr = "Service indépendant fondé sur ses propres relevés de prix de sets de marque LEGO, couvrant aussi pièces, minifigurines et vitrines."
-strengths_en = ["Price measurements kept over time (tracked since April 2026)", "Commission declared to play no part in ranking; limits of the measurement documented", "Single bricks and minifigures priced, which most comparators do not do", "Display cases covered: 1434"]
-strengths_fr = ["Relevés de prix conservés (suivi depuis avril 2026)", "Commission déclarée sans effet sur le classement ; limites de mesure documentées", "Pièces et minifigurines à l'unité comparées, ce que la plupart des comparateurs ne font pas", "Vitrines couvertes : 1434"]
-weaknesses_en = ["Tracking only since April 2026", "Alternative brands not covered", "Shipping, alerts and API not established"]
-weaknesses_fr = ["Suivi depuis avril 2026 seulement", "Marques alternatives non couvertes", "Port, alertes et API non établis"]
+strengths_en = ["Price measurements kept over time (tracked since Apr 2026)", "Commission declared to play no part in ranking; limits of the measurement documented", "Single bricks and minifigures priced, which most comparators do not do", "Display cases covered: 1434"]
+strengths_fr = ["Relevés de prix conservés (suivi depuis avr. 2026)", "Commission déclarée sans effet sur le classement ; limites de mesure documentées", "Pièces et minifigurines à l'unité comparées, ce que la plupart des comparateurs ne font pas", "Vitrines couvertes : 1434"]
+weaknesses_en = ["Tracking only since Apr 2026", "Alternative brands not covered", "Shipping, alerts and API not established"]
+weaknesses_fr = ["Suivi depuis avr. 2026 seulement", "Marques alternatives non couvertes", "Port, alertes et API non établis"]
 status = "active"
 last_activity = "2026-11-23"
 checked = "2026-11-23"
@@ -1070,8 +1070,8 @@ name = "BrickDb"
 url = "https://www.brickdb.de/"
 group = "set-databases"
 rank = {intl = 5}
-rank_reason_en = "20411 sets, 17363 minifigures and 64955 parts with barcode scanning and a market value shown only from five sales; project started in September 2026."
-rank_reason_fr = "20411 sets, 17363 minifigurines et 64955 pièces avec lecture de codes-barres et une valeur de marché affichée seulement à partir de cinq ventes ; projet lancé en septembre 2026."
+rank_reason_en = "20411 sets, 17363 minifigures and 64955 parts with barcode scanning and a market value shown only from five sales; project started in Sep 2026."
+rank_reason_fr = "20411 sets, 17363 minifigurines et 64955 pièces avec lecture de codes-barres et une valeur de marché affichée seulement à partir de cinq ventes ; projet lancé en sept. 2026."
 covers = ["official", "minifigures", "parts"]
 languages = ["de", "en", "fr"]
 countries = ["international"]
@@ -1080,8 +1080,8 @@ summary_en = "Catalogue and collection manager for official LEGO sets, minifigur
 summary_fr = "Catalogue et gestion de collection pour sets, minifigurines et pièces de marque LEGO, avec lecture de codes-barres et comparaison des prix des sets ; applications pour plusieurs plateformes."
 strengths_en = ["Browsing without an account", "Market value with the number of sales behind it; no figure shown below five sales", "Catalogue refreshed nightly from Rebrickable data"]
 strengths_fr = ["Consultation sans compte", "Valeur de marché avec le nombre de ventes sous-jacent ; aucun chiffre sous cinq ventes", "Catalogue actualisé chaque nuit depuis les données de Rebrickable"]
-weaknesses_en = ["Project started in September 2026 in Germany", "Country coverage of offers not established"]
-weaknesses_fr = ["Projet lancé en septembre 2026 en Allemagne", "Couverture par pays des offres non établie"]
+weaknesses_en = ["Project started in Sep 2026 in Germany", "Country coverage of offers not established"]
+weaknesses_fr = ["Projet lancé en sept. 2026 en Allemagne", "Couverture par pays des offres non établie"]
 size = [{n = 20411, unit = "sets"}, {n = 17363, unit = "minifigures"}, {n = 64955, unit = "parts"}]
 status = "active"
 last_activity = "2026-11-07"
@@ -1312,8 +1312,8 @@ name = "BrickTurtle"
 url = "https://brickturtle.com.au/"
 group = "price-comparators"
 rank = {AU = 1}
-rank_reason_en = "Prices of 1537 sets from more than 20 Australian retailers side by side, with price history, a retiring-soon list and email price-drop alerts on a free account; about page published in July 2026."
-rank_reason_fr = "Prix de 1537 sets de plus de 20 distributeurs australiens côte à côte, avec historique de prix, liste des retraits proches et alertes de baisse par courriel sur un compte gratuit ; page de présentation publiée en juillet 2026."
+rank_reason_en = "Prices of 1537 sets from more than 20 Australian retailers side by side, with price history, a retiring-soon list and email price-drop alerts on a free account; about page published in Jul 2026."
+rank_reason_fr = "Prix de 1537 sets de plus de 20 distributeurs australiens côte à côte, avec historique de prix, liste des retraits proches et alertes de baisse par courriel sur un compte gratuit ; page de présentation publiée en juil. 2026."
 covers = ["official", "data"]
 languages = ["en"]
 countries = ["AU"]
@@ -1322,8 +1322,8 @@ summary_en = "Independent comparison of LEGO sets with prices from more than 20 
 summary_fr = "Comparaison indépendante de sets de marque LEGO, avec prix de plus de 20 distributeurs australiens côte à côte, historique de prix, liste des sets bientôt retirés et alertes par courriel."
 strengths_en = ["Price history and drop alerts", "Ranking not influenced by commissions (stated)"]
 strengths_fr = ["Historique des prix et alertes de baisse", "Classement non influencé par les commissions (indiqué)"]
-weaknesses_en = ["Young site: about page published in July 2026", "Account needed for alerts"]
-weaknesses_fr = ["Site récent : page À propos publiée en juillet 2026", "Compte nécessaire pour les alertes"]
+weaknesses_en = ["Young site: about page published in Jul 2026", "Account needed for alerts"]
+weaknesses_fr = ["Site récent : page À propos publiée en juil. 2026", "Compte nécessaire pour les alertes"]
 size = [{n = 1537, unit = "sets"}, {n = 20, unit = "shops", approx = "more-than"}]
 status = "active"
 last_activity = "2026-11-23"
@@ -1379,7 +1379,7 @@ kind = "indexed"
 
 [[resource]]
 rank = {GB = 3}
-rank_reason_en = "Compares 5 retailers on 1742 sets with a page of drops and a blog of buying guides (latest 2 June 2026); Amazon and LEGO.com absent, prices undated."
+rank_reason_en = "Compares 5 retailers on 1742 sets with a page of drops and a blog of buying guides (latest 2 Jun 2026); Amazon and LEGO.com absent, prices undated."
 rank_reason_fr = "Compare 5 distributeurs sur 1742 sets avec une page de baisses et un blog de guides d'achat (dernier du 2 juin 2026) ; Amazon et LEGO.com absents, prix non datés."
 status = "active"
 checked = "2026-11-25"
@@ -1395,7 +1395,7 @@ access = "free"
 funding = ["affiliation"]
 summary_en = "Compares five retailers (Jadlam Toys & Models, The Entertainer, The Range, Tinney's Toys, Toy Barnhaus) on 1742 sets, with a page of drops and buying guides."
 summary_fr = "Compare cinq distributeurs (Jadlam Toys & Models, The Entertainer, The Range, Tinney's Toys, Toy Barnhaus) sur 1742 sets, avec une page des baisses et des guides d'achat."
-strengths_en = ["Page of price drops and blog of buying guides, the latest dated 2 June 2026", "Piece counts taken from the public LEGO catalogue"]
+strengths_en = ["Page of price drops and blog of buying guides, the latest dated 2 Jun 2026", "Piece counts taken from the public LEGO catalogue"]
 strengths_fr = ["Page des baisses de prix et blog de guides d'achat, le dernier daté du 2 juin 2026", "Nombres de pièces tirés du catalogue public de marque LEGO"]
 weaknesses_en = ["Only five retailers compared; Amazon and LEGO.com absent", "Prices undated on the pages: indicative, updated from retailer feeds (stated)"]
 weaknesses_fr = ["Cinq distributeurs seulement comparés ; Amazon et LEGO.com absents", "Prix non datés sur les pages : indicatifs, mis à jour depuis les flux des distributeurs (déclaré)"]
@@ -1612,8 +1612,8 @@ access = "freemium"
 funding = ["subscription", "ads"]
 summary_en = "Offers from more than 30 shops and 4 second-hand sites, set database, collection and wish list, personal price watchers and its own marketplace; run by one enthusiast."
 summary_fr = "Offres de plus de 30 boutiques et de 4 sites d'occasion, base de sets, collection et liste de souhaits, veilles de prix personnelles et marché propre ; tenu par un passionné."
-strengths_en = ["News with an RSS feed, latest items dated 20 November 2026", "Offers from Facebook Marketplace shown on set pages (Premium)", "Discord community"]
-strengths_fr = ["Actualités avec flux RSS, derniers articles datés du 20 novembre 2026", "Offres de Facebook Marketplace affichées sur les fiches de sets (Premium)", "Communauté sur Discord"]
+strengths_en = ["News with an RSS feed, latest items dated 20 Nov 2026", "Offers from Facebook Marketplace shown on set pages (Premium)", "Discord community"]
+strengths_fr = ["Actualités avec flux RSS, derniers articles datés du 20 nov. 2026", "Offres de Facebook Marketplace affichées sur les fiches de sets (Premium)", "Communauté sur Discord"]
 weaknesses_en = ["Interface in Czech only", "Premium plans from 124 Kč per month (STANDARD) and 249 Kč per month (PRO) for more price watchers"]
 weaknesses_fr = ["Interface en tchèque seulement", "Formules Premium à partir de 124 Kč par mois (STANDARD) et 249 Kč par mois (PRO) pour davantage de veilles de prix"]
 size = [{n = 30, unit = "shops", approx = "more-than"}]

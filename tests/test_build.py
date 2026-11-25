@@ -330,9 +330,10 @@ class Details(unittest.TestCase):
 
 class Dates(unittest.TestCase):
     def test_in_letters(self):
-        self.assertEqual(build.in_letters("2027-07-03", "en"), "3 July 2027")
-        self.assertEqual(build.in_letters("2027-04-01", "fr"), "1er avril 2027")
-        self.assertEqual(build.in_letters("2027-04-01", "en"), "1 April 2027")
+        self.assertEqual(build.in_letters("2027-07-03", "en"), "3 Jul 2027")
+        self.assertEqual(build.in_letters("2027-04-01", "fr"), "1er avr. 2027")
+        self.assertEqual(build.in_letters("2027-04-01", "en"), "1 Apr 2027")
+        self.assertEqual(build.in_letters("2027-09-30", "en"), "30 Sep 2027")
 
     def test_feed_has_no_numeric_date_in_titles(self):
         with contextlib.redirect_stdout(io.StringIO()):
