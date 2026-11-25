@@ -467,14 +467,14 @@ countries = ["CZ"]
 access = "paid"
 summary_en = "Built on the collection of Miloš Křeček, with 5 sites: Prague flagship on Národní třída, Kutná Hora, Špindlerův Mlýn, Poděbrady, Hatě near Znojmo. Private LEGO museum, not run by the LEGO Group."
 summary_fr = "Fondé sur la collection de Miloš Křeček, avec 5 sites : site principal à Prague (avenue Národní), Kutná Hora, Špindlerův Mlýn, Poděbrady, Hatě près de Znojmo. Musée LEGO privé, non exploité par le groupe LEGO."
-strengths_en = ["Very large collection of original sets, with a Guinness World Records entry for 6005 sets", "Prague site open every day, 10:00 to 20:00, with a shop selling limited editions"]
-strengths_fr = ["Très grande collection de sets originaux, inscrite au Guinness World Records pour 6005 sets", "Site de Prague ouvert tous les jours de 10 h à 20 h, avec une boutique d'éditions limitées"]
-weaknesses_en = ["Collection size is stated differently across pages (more than 9000 models on the home page, 6751 sets on the history page)"]
-weaknesses_fr = ["La taille de la collection varie selon les pages (plus de 9000 modèles en page d'accueil, 6751 sets en page d'histoire)"]
+strengths_en = ["Very large collection of original sets, with a Guinness World Records entry for 6005 sets", "Prague site open every day, 10:00 to 20:00, with a shop selling limited editions", "Each site shows part of the collection: more than 1000 models in Kutná Hora, 2500 models on 250 m² in Hatě near Znojmo", "Online tickets valid for six months, for the five sites"]
+strengths_fr = ["Très grande collection de sets originaux, inscrite au Guinness World Records pour 6005 sets", "Site de Prague ouvert tous les jours de 10 h à 20 h, avec une boutique d'éditions limitées", "Chaque site montre une partie de la collection : plus de 1000 modèles à Kutná Hora, 2500 modèles sur 250 m² à Hatě près de Znojmo", "Billets en ligne valables six mois, pour les cinq sites"]
+weaknesses_en = ["Collection size is stated differently across pages (more than 9000 models on the home page, 6751 sets on the history page)", "Opening hours differ by site, from 09:00 to 20:00"]
+weaknesses_fr = ["La taille de la collection varie selon les pages (plus de 9000 modèles en page d'accueil, 6751 sets en page d'histoire)", "Les horaires diffèrent selon le site, entre 9 h et 20 h"]
 size = [{n = 9000, unit = "models", approx = "more-than"}]
 status = "active"
-last_activity = "2026-11-23"
-checked = "2026-11-23"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
 added = "2026-11-23"
 confidence = "high"
 city = "Prague"
@@ -482,7 +482,12 @@ city_local = "Praha"
 
 [[resource.sources]]
 url = "https://museumofbricks.cz/"
-date = "2026-11-23"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://museumofbricks.cz/en/contact/"
+date = "2026-11-25"
 kind = "read"
 
 [[resource.sources]]
@@ -491,10 +496,10 @@ date = "2026-11-23"
 kind = "third-party"
 
 [resource.contact]
-address = "Národní 362/31, 110 00 Praha 1"
+address = "Národní 362/31, 110 00 Praha 1 ; Zámecká 52, 284 01 Kutná Hora ; Bedřichov 22, 543 51 Špindlerův Mlýn ; Jiřího náměstí 7, 290 01 Poděbrady ; Chvalovice – Hatě 186, 669 02 Hatě u Znojma"
 email = "info@museumofbricks.cz"
-url = "https://museumofbricks.cz/kontakt/"
-date = "2026-11-24"
+url = "https://museumofbricks.cz/en/contact/"
+date = "2026-11-25"
 
 [[resource]]
 id = "muzeum-lega-tabor"
@@ -1444,3 +1449,980 @@ address = "165 Impasse de la Garriguette, ZA La Garrigue De Chalançon, 84270 Ve
 phone = "+33 4 32 74 22 69"
 url = "https://bricksfactory.fr/contact/"
 date = "2026-11-24"
+
+[[resource]]
+id = "legoland-california"
+name = "LEGOLAND California Resort"
+url = "https://www.legoland.com/california/"
+group = "theme-parks"
+operator = "licensee"
+covers = ["official", "places"]
+languages = ["en"]
+countries = ["US"]
+access = "paid"
+summary_en = "SEA LIFE Aquarium, two themed hotels and a water park on the same resort; the new space-themed land LEGO Galaxy has the Galacticoaster, an indoor family coaster."
+summary_fr = "Aquarium SEA LIFE et deux hôtels à thème sur le même site, avec un parc aquatique ; la nouvelle zone spatiale LEGO Galaxy compte le Galacticoaster, une montagne russe familiale couverte."
+strengths_en = ["More than 60 rides, shows and attractions", "Two themed hotels on site: LEGOLAND Hotel and LEGOLAND Castle Hotel", "Christmas Bricktacular on select dates until 3 January"]
+strengths_fr = ["Plus de 60 attractions et spectacles", "Deux hôtels à thème sur place : LEGOLAND Hotel et LEGOLAND Castle Hotel", "Christmas Bricktacular à dates choisies jusqu'au 3 janvier"]
+weaknesses_en = ["Aimed at families with children aged 2 to 12", "LEGOLAND Water Park closed on the day read (25 November 2026)"]
+weaknesses_fr = ["Destiné aux familles avec des enfants de 2 à 12 ans", "LEGOLAND Water Park fermé le jour de la lecture (25 novembre 2026)"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Carlsbad"
+
+[[resource.sources]]
+url = "https://www.legoland.com/california/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legoland.com/california/our-company/contact-us/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "One LEGOLAND Drive, Carlsbad, CA 92008"
+phone = "+1 760 918 5346"
+email = "experience@legoland.com"
+url = "https://www.legoland.com/california/our-company/contact-us/"
+date = "2026-11-25"
+
+[[resource]]
+id = "legoland-florida"
+name = "LEGOLAND Florida Resort"
+url = "https://www.legoland.com/florida/"
+group = "theme-parks"
+operator = "licensee"
+covers = ["official", "places"]
+languages = ["en"]
+countries = ["US"]
+access = "paid"
+summary_en = "Home to Peppa Pig Theme Park as well as LEGOLAND, with a water park, a SEA LIFE Aquarium, a botanical garden and three themed hotels."
+summary_fr = "Abrite aussi Peppa Pig Theme Park en plus de LEGOLAND, avec un parc aquatique, un aquarium SEA LIFE, un jardin botanique et trois hôtels à thème."
+strengths_en = ["Theme park of 150 acres with more than 50 rides, shows and attractions", "Three themed hotels: LEGOLAND Hotel, Pirate Island Hotel and the seasonal LEGOLAND Beach Retreat", "Park open on the day read, 10am to 6pm"]
+strengths_fr = ["Parc de 150 acres avec plus de 50 attractions et spectacles", "Trois hôtels à thème : LEGOLAND Hotel, Pirate Island Hotel et le LEGOLAND Beach Retreat, saisonnier", "Parc ouvert le jour de la lecture, de 10 h à 18 h"]
+weaknesses_en = ["Described by the resort as a vacation destination built for kids", "LEGOLAND Water Park closed on the day read (25 November 2026)"]
+weaknesses_fr = ["Décrit par le site comme une destination de vacances conçue pour les enfants", "LEGOLAND Water Park fermé le jour de la lecture (25 novembre 2026)"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Winter Haven"
+
+[[resource.sources]]
+url = "https://www.legoland.com/florida/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legoland.com/florida/our-company/contact-us/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "1 Legoland Way, Winter Haven, FL 33884"
+phone = "+1 877 350 5346"
+email = "LLF.Experience@LEGOLAND.com"
+url = "https://www.legoland.com/florida/our-company/contact-us/"
+date = "2026-11-25"
+
+[[resource]]
+id = "legoland-new-york"
+name = "LEGOLAND New York Resort"
+url = "https://www.legoland.com/new-york/"
+group = "theme-parks"
+operator = "licensee"
+covers = ["official", "places"]
+languages = ["en"]
+countries = ["US"]
+access = "paid"
+summary_en = "Seasonal opening in the Hudson Valley, 60 miles from New York City, with 7 themed lands and a themed hotel; Holiday Bricktacular runs on every open date from 27 November to 2 January."
+summary_fr = "Saisonnier, dans la vallée de l'Hudson à 60 miles de New York, avec 7 zones à thème et un hôtel ; Holiday Bricktacular a lieu à chaque date d'ouverture, du 27 novembre au 2 janvier."
+strengths_en = ["Open-dated tickets for 2027 already on sale", "Premium season pass includes unlimited admission to more than 20 Merlin attractions", "7 themed lands and an immersive LEGOLAND Hotel"]
+strengths_fr = ["Billets à date ouverte pour 2027 déjà en vente", "L'abonnement de saison Premium inclut l'accès illimité à plus de 20 attractions Merlin", "7 zones à thème et un hôtel LEGOLAND immersif"]
+weaknesses_en = ["Seasonal: closed on the day read (25 November 2026)", "Aimed at families, with children's rides and entertainment"]
+weaknesses_fr = ["Saisonnier : fermé le jour de la lecture (25 novembre 2026)", "Destiné aux familles, avec des attractions et des animations pour enfants"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Goshen"
+
+[[resource.sources]]
+url = "https://www.legoland.com/new-york/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legoland.com/new-york/plan-your-visit/planning-tools/directions-parking/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legoland.com/new-york/about-us/contact-us/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "1 LEGOLAND Way, Goshen, NY 10924"
+phone = "+1 866 249 0908"
+email = "LLNY.Experience@LEGOLAND.com"
+url = "https://www.legoland.com/new-york/about-us/contact-us/"
+date = "2026-11-25"
+
+[[resource]]
+id = "legoland-dubai"
+name = "LEGOLAND Dubai"
+url = "https://www.legoland.com/dubai/"
+group = "theme-parks"
+operator = "licensee"
+covers = ["official", "places"]
+languages = ["en", "ar"]
+countries = ["AE"]
+access = "paid"
+summary_en = "With a themed hotel and a water park of more than 20 slides and attractions, inside Dubai Parks and Resorts; the Festive Season runs from 12 December 2026 to 10 January 2027."
+summary_fr = "Avec un hôtel à thème et un parc aquatique de plus de 20 toboggans et attractions, au sein de Dubai Parks and Resorts ; saison festive du 12 décembre 2026 au 10 janvier 2027."
+strengths_en = ["More than 40 rides and attractions, indoor and outdoor", "Site in English and Arabic", "55th Eid Al Etihad programme from 27 November to 6 December 2026"]
+strengths_fr = ["Plus de 40 attractions, en intérieur et en extérieur", "Site en anglais et en arabe", "Programme du 55e Eid Al Etihad du 27 novembre au 6 décembre 2026"]
+weaknesses_en = ["Presented as a family park with a kids' water park"]
+weaknesses_fr = ["Présenté comme un parc familial avec un parc aquatique pour enfants"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Dubai"
+city_fr = "Dubaï"
+city_local = "دبي"
+
+[[resource.sources]]
+url = "https://www.legoland.com/dubai/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legoland.com/dubai/about-us/contact-us/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legoland.com/dubai/plan-your-visit/planning-tools/directions/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "Dubai Parks and Resorts, Sheikh Zayed Road, Dubai"
+phone = "+971 4 820 0000"
+email = "GuestServices@LEGOLAND.ae"
+url = "https://www.legoland.com/dubai/about-us/contact-us/"
+date = "2026-11-25"
+
+[[resource]]
+id = "legoland-japan"
+name = "LEGOLAND Japan Resort"
+url = "https://www.legoland.jp/"
+group = "theme-parks"
+operator = "licensee"
+aliases = ["レゴランド・ジャパン"]
+covers = ["official", "places"]
+languages = ["ja", "en", "zh"]
+countries = ["JP"]
+access = "paid"
+summary_en = "More than 40 attractions suited from age 3, workshops, a themed hotel and the Nagoya SEA LIFE Aquarium; the site shows an expansion area under construction and the Christmas Night event."
+summary_fr = "Plus de 40 attractions accessibles dès 3 ans, des ateliers, un hôtel à thème et l'aquarium SEA LIFE de Nagoya ; le site présente une zone d'extension en construction et l'événement Christmas Night."
+strengths_en = ["Tickets for Christmas Night 2026 on sale since 16 November 2026", "Site in Japanese, English and Chinese", "Hotel described as the only LEGO-themed hotel in Japan"]
+strengths_fr = ["Billets de Christmas Night 2026 en vente depuis le 16 novembre 2026", "Site en japonais, en anglais et en chinois", "Hôtel présenté comme le seul hôtel à thème LEGO du Japon"]
+weaknesses_en = ["Presented as a kids' resort", "Notice of 18 November 2026 on unauthorized access to the personal data of annual pass buyers"]
+weaknesses_fr = ["Présenté comme un resort pour enfants", "Avis du 18 novembre 2026 sur un accès non autorisé aux données personnelles d'acheteurs de passeports annuels"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Nagoya"
+city_local = "名古屋"
+
+[[resource.sources]]
+url = "https://www.legoland.jp/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legoland.jp/about-us/contact-us/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "名古屋市港区金城ふ頭二丁目7番地1"
+phone = "+81 50 5840 0505"
+url = "https://www.legoland.jp/about-us/contact-us/"
+date = "2026-11-25"
+
+[[resource]]
+id = "legoland-korea"
+name = "LEGOLAND Korea Resort"
+url = "https://www.legoland.kr/"
+group = "theme-parks"
+operator = "licensee"
+aliases = ["레고랜드 코리아"]
+covers = ["official", "places"]
+languages = ["ko", "en"]
+countries = ["KR"]
+access = "paid"
+summary_en = "One hour from Seoul according to its site, with more than 40 LEGO-themed attractions and a themed hotel; Christmas at LEGOLAND runs from 20 November to 27 December 2026."
+summary_fr = "À une heure de Séoul selon son site, avec plus de 40 attractions sur le thème LEGO et un hôtel à thème ; Christmas at LEGOLAND dure du 20 novembre au 27 décembre 2026."
+strengths_en = ["Up to 20 percent off one-day tickets bought on the official site", "Winter-season operating calendar and hotel packages published", "Site in Korean and English"]
+strengths_fr = ["Jusqu'à 20 % de réduction sur les billets d'un jour achetés sur le site officiel", "Calendrier d'ouverture de la saison d'hiver et formules hôtel publiés", "Site en coréen et en anglais"]
+weaknesses_en = ["Closed on the day read (25 November 2026); the site asks visitors to check operating days and hours before visiting"]
+weaknesses_fr = ["Fermé le jour de la lecture (25 novembre 2026) ; le site demande de vérifier les jours et horaires d'ouverture avant la visite"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Chuncheon"
+city_local = "춘천"
+
+[[resource.sources]]
+url = "https://www.legoland.kr/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "강원도 춘천시 하중도길128"
+phone = "+82 33 815 2300"
+email = "LLKR.Experiences@legoland.com"
+url = "https://www.legoland.kr/"
+date = "2026-11-25"
+
+[[resource]]
+id = "legoland-malaysia"
+name = "LEGOLAND Malaysia Resort"
+url = "https://www.legoland.com.my/"
+group = "theme-parks"
+operator = "licensee"
+covers = ["official", "places"]
+languages = ["en"]
+countries = ["MY"]
+access = "paid"
+summary_en = "Self-described only LEGOLAND resort in Southeast Asia: more than 80 rides, a water park, a SEA LIFE Aquarium and a themed hotel, with annual family passes for Malaysia and for Singapore."
+summary_fr = "Se présente comme le seul resort LEGOLAND d'Asie du Sud-Est : plus de 80 attractions, parc aquatique, aquarium SEA LIFE, hôtel à thème, avec des abonnements annuels famille pour la Malaisie et Singapour."
+strengths_en = ["Theme park, water park and SEA LIFE Aquarium on one site", "Open on the day read, 10am to 6pm (last entry at 5pm for the theme park and the aquarium)", "Brick-tacular holiday season listed on the site"]
+strengths_fr = ["Parc, parc aquatique et aquarium SEA LIFE sur un même site", "Ouvert le jour de la lecture, de 10 h à 18 h (dernière entrée à 17 h pour le parc et l'aquarium)", "Saison des fêtes Brick-tacular présentée sur le site"]
+weaknesses_en = ["Aimed at families, with children's rides and birthday packages"]
+weaknesses_fr = ["Destiné aux familles, avec des attractions et des formules d'anniversaire pour enfants"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Johor Bahru"
+
+[[resource.sources]]
+url = "https://www.legoland.com.my/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legoland.com.my/plan-your-day/help-center/contact-us/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "7 Jalan LEGOLAND, Bandar Medini Iskandar Malaysia, 79250 Iskandar Puteri (Nusajaya), Johor"
+phone = "+60 7 597 8888"
+email = "info@LEGOLAND.my"
+url = "https://www.legoland.com.my/plan-your-day/help-center/contact-us/"
+date = "2026-11-25"
+
+[[resource]]
+id = "legoland-shanghai"
+name = "LEGOLAND Shanghai Resort"
+url = "https://legolandshanghai.cn/"
+group = "theme-parks"
+operator = "licensee"
+aliases = ["上海乐高乐园"]
+covers = ["official", "places"]
+languages = ["zh", "en"]
+countries = ["CN"]
+access = "paid"
+summary_en = "Eight themed lands and more than 75 rides, shows and attractions, plus a hotel with five types of themed rooms; the site counts more than 85 million bricks in the models."
+summary_fr = "Huit zones thématiques et plus de 75 attractions, manèges et spectacles, plus un hôtel avec cinq types de chambres à thème ; le site compte plus de 85 millions de briques dans les modèles."
+strengths_en = ["Opening hours published day by day: 10:00 to 18:00 on 25 November 2026", "A ticket can be upgraded to an annual pass with the full ticket price credited", "Site also in English"]
+strengths_fr = ["Horaires publiés jour par jour : de 10 h à 18 h le 25 novembre 2026", "Un billet peut être converti en abonnement annuel, prix du billet déduit en totalité", "Site aussi en anglais"]
+weaknesses_en = ["Designed for families with children aged 2 to 12", "Home page is a script-driven application, readable only with scripts or a reader"]
+weaknesses_fr = ["Conçu pour les familles avec des enfants de 2 à 12 ans", "Page d'accueil construite en application à scripts, lisible seulement avec les scripts ou un lecteur"]
+size = [{n = 85000000, unit = "bricks", approx = "more-than"}]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Shanghai"
+city_local = "上海"
+
+[[resource.sources]]
+url = "https://legolandshanghai.cn/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "上海市金山区枫泾镇乐缤路999号"
+email = "GuestContactCenter@LEGOLANDshanghai.cn"
+url = "https://legolandshanghai.cn/"
+date = "2026-11-25"
+
+[[resource]]
+id = "legoland-water-park-gardaland"
+name = "LEGOLAND Water Park Gardaland"
+url = "https://www.gardaland.it/en/explore-gardaland/legoland-water-park/"
+group = "theme-parks"
+operator = "licensee"
+covers = ["official", "places"]
+languages = ["en", "it", "de"]
+countries = ["IT"]
+access = "paid"
+summary_en = "Fully LEGO-themed water slides and pools inside Gardaland, including a DUPLO Splash pool and Jungle Adventures slides; entry only with a combined ticket, or a supplement on a Gardaland ticket."
+summary_fr = "Toboggans et bassins entièrement sur le thème LEGO dans Gardaland, dont une piscine DUPLO Splash et les toboggans Jungle Adventures ; entrée seulement avec un billet combiné ou un supplément sur un billet Gardaland."
+strengths_en = ["Described as the first fully LEGO-themed water park in Europe", "People over 18 may enter alone or as accompanying adults", "Site in Italian, English and German"]
+strengths_fr = ["Présenté comme le premier parc aquatique entièrement sur le thème LEGO en Europe", "Les personnes de plus de 18 ans peuvent entrer seules ou comme adultes accompagnateurs", "Site en italien, en anglais et en allemand"]
+weaknesses_en = ["Designed for families with children; under-14s only with an adult", "No season dates on the page; the Gardaland site showed the park closed on the day read (25 November 2026)"]
+weaknesses_fr = ["Conçu pour les familles avec enfants ; moins de 14 ans seulement avec un adulte", "Aucune date de saison sur la page ; le site de Gardaland indiquait le parc fermé le jour de la lecture (25 novembre 2026)"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Castelnuovo del Garda"
+
+[[resource.sources]]
+url = "https://www.gardaland.it/en/explore-gardaland/legoland-water-park/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.gardaland.it/en/useful-information/plan-your-visit/directions/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "Via Derna 4, 37014 Castelnuovo del Garda (VR)"
+url = "https://www.gardaland.it/en/useful-information/plan-your-visit/directions/"
+date = "2026-11-25"
+
+[[resource]]
+id = "legoland-discovery-centre-tokyo"
+name = "LEGOLAND Discovery Centre Tokyo"
+url = "https://www.legolanddiscoverycenter.com/tokyo/"
+group = "official-venues"
+operator = "lego-group"
+aliases = ["LEGOLAND Discovery Center Tokyo", "レゴランド・ディスカバリー・センター東京"]
+covers = ["official", "places"]
+languages = ["ja", "en"]
+countries = ["JP"]
+access = "paid"
+summary_en = "In the DECKS Tokyo Beach mall in Odaiba, with 11 attractions: Miniland, LEGO Factory, LEGO NINJAGO City Adventure, Creative Workshop and City Builders."
+summary_fr = "Dans le centre commercial DECKS Tokyo Beach à Odaiba, avec 11 attractions : Miniland, LEGO Factory, LEGO NINJAGO City Adventure, Creative Workshop et City Builders."
+strengths_en = ["Tickets bought by the day before are up to 550 yen cheaper", "Annual pass valid for 12 months", "Site in Japanese and English"]
+strengths_fr = ["Billets achetés au plus tard la veille jusqu'à 550 yens moins chers", "Abonnement annuel valable 12 mois", "Site en japonais et en anglais"]
+weaknesses_en = ["4D cinema closed for periodic inspection from 30 November to 4 December 2026", "Attractions presented as designed to stimulate children's creativity"]
+weaknesses_fr = ["Cinéma 4D fermé pour contrôle périodique du 30 novembre au 4 décembre 2026", "Attractions présentées comme conçues pour stimuler la créativité des enfants"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Tokyo"
+city_local = "東京"
+
+[[resource.sources]]
+url = "https://www.legolanddiscoverycenter.com/tokyo/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legolanddiscoverycenter.com/tokyo/information/contact-us/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "〒135-0091 東京都港区台場1-6-1 デックス東京ビーチ アイランドモール6階"
+email = "Tokyo@legolanddiscoverycenter.com"
+url = "https://www.legolanddiscoverycenter.com/tokyo/information/contact-us/"
+date = "2026-11-25"
+
+[[resource]]
+id = "legoland-discovery-centre-osaka"
+name = "LEGOLAND Discovery Centre Osaka"
+url = "https://www.legolanddiscoverycenter.com/osaka/"
+group = "official-venues"
+operator = "lego-group"
+aliases = ["LEGOLAND Discovery Center Osaka", "レゴランド・ディスカバリー・センター大阪"]
+covers = ["official", "places"]
+languages = ["ja", "en", "zh"]
+countries = ["JP"]
+access = "paid"
+summary_en = "On the third floor of the Tempozan Marketplace, with 11 attractions; the site is in Japanese, English and Chinese."
+summary_fr = "Au troisième étage du Tempozan Marketplace, avec 11 attractions ; le site est en japonais, en anglais et en chinois."
+strengths_en = ["Annual pass valid for 12 months, usable at events too", "Opening hours published for the day: 10:00 to 18:00 on 25 November 2026"]
+strengths_fr = ["Abonnement annuel valable 12 mois, utilisable aussi pour les événements", "Horaires publiés pour le jour : de 10 h à 18 h le 25 novembre 2026"]
+weaknesses_en = ["Attractions presented as designed to stimulate children's creativity"]
+weaknesses_fr = ["Attractions présentées comme conçues pour stimuler la créativité des enfants"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Osaka"
+city_local = "大阪"
+
+[[resource.sources]]
+url = "https://www.legolanddiscoverycenter.com/osaka/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legolanddiscoverycenter.com/osaka/plan/information/contact-us/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "〒552-0022 大阪市港区海岸通1-1-10 天保山マーケットプレース 3階"
+email = "osaka@legolanddiscoverycenter.com"
+url = "https://www.legolanddiscoverycenter.com/osaka/plan/information/contact-us/"
+date = "2026-11-25"
+
+[[resource]]
+id = "legoland-discovery-centre-scheveningen"
+name = "LEGOLAND Discovery Centre Scheveningen"
+url = "https://www.legolanddiscoverycentre.com/scheveningen/"
+group = "official-venues"
+operator = "lego-group"
+aliases = ["LEGOLAND Discovery Center Scheveningen"]
+covers = ["official", "places"]
+languages = ["nl", "en", "de"]
+countries = ["NL"]
+access = "paid"
+summary_en = "On the Strandweg, with more than 3 million bricks, 7 or more play zones and one ride; the only LEGOLAND Discovery Centre of the Netherlands."
+summary_fr = "Sur le Strandweg, avec plus de 3 millions de briques, 7 zones de jeu ou plus et une attraction ; le seul LEGOLAND Discovery Centre des Pays-Bas."
+strengths_en = ["Tickets from 21 euros when bought online", "Annual pass for 12 months of unlimited play", "Site in Dutch, English and German"]
+strengths_fr = ["Billets à partir de 21 euros en ligne", "Abonnement annuel de 12 mois de jeu illimité", "Site en néerlandais, en anglais et en allemand"]
+weaknesses_en = ["Entry closed at 14:30 on the day read (open until 17:00 on 25 November 2026)"]
+weaknesses_fr = ["Entrée close à 14 h 30 le jour de la lecture (ouvert jusqu'à 17 h le 25 novembre 2026)"]
+size = [{n = 3000000, unit = "bricks", approx = "more-than"}]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "The Hague"
+city_fr = "La Haye"
+city_local = "Den Haag"
+
+[[resource.sources]]
+url = "https://www.legolanddiscoverycentre.com/scheveningen/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legolanddiscoverycentre.com/scheveningen/overige-informatie/contact/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "Strandweg 13K, 2586 JK Den Haag"
+phone = "+31 488 715017"
+email = "ldc-nl@support.lego.com"
+url = "https://www.legolanddiscoverycentre.com/scheveningen/overige-informatie/contact/"
+date = "2026-11-25"
+
+[[resource]]
+id = "legoland-discovery-centre-toronto"
+name = "LEGOLAND Discovery Centre Toronto"
+url = "https://www.legolanddiscoverycentre.com/toronto/"
+group = "official-venues"
+operator = "lego-group"
+aliases = ["LEGOLAND Discovery Center Toronto"]
+covers = ["official", "places"]
+languages = ["en"]
+countries = ["CA"]
+access = "paid"
+summary_en = "In the Vaughan Mills mall, north of Toronto, with 12 or more attractions, rides and experiences, LEGO play zones and a 4D cinema."
+summary_fr = "Dans le centre commercial Vaughan Mills, au nord de Toronto, avec 12 attractions, manèges et expériences ou plus, des espaces de jeu LEGO et un cinéma 4D."
+strengths_en = ["Ticket time can be changed online through a re-booking portal", "Annual pass for 12 months of unlimited play"]
+strengths_fr = ["L'heure du billet peut être modifiée en ligne par un portail de réservation", "Abonnement annuel de 12 mois de jeu illimité"]
+weaknesses_en = ["Described as made for children aged 3 to 10"]
+weaknesses_fr = ["Décrit comme conçu pour les enfants de 3 à 10 ans"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Vaughan"
+
+[[resource.sources]]
+url = "https://www.legolanddiscoverycentre.com/toronto/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legolanddiscoverycentre.com/toronto/plan-your-day/information/contact-us/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "1 Bass Pro Mills Drive, Vaughan ON L4K 5W4, Canada"
+email = "ldc@support.lego.com"
+url = "https://www.legolanddiscoverycentre.com/toronto/plan-your-day/information/contact-us/"
+date = "2026-11-25"
+
+[[resource]]
+id = "legoland-discovery-centre-melbourne"
+name = "LEGOLAND Discovery Centre Melbourne"
+url = "https://www.legolanddiscoverycentre.com/melbourne/"
+group = "official-venues"
+operator = "lego-group"
+aliases = ["LEGOLAND Discovery Center Melbourne"]
+covers = ["official", "places"]
+languages = ["en"]
+countries = ["AU"]
+access = "paid"
+summary_en = "Adult Nights for guests aged 18 and over, with workshops by a Master Model Builder, build challenges, set auctions and a 4D cinema; the next one is on Saturday 12 December 2026."
+summary_fr = "Soirées adultes dès 18 ans, avec ateliers d'un Master Model Builder, défis de construction, ventes aux enchères de sets et cinéma 4D ; la prochaine a lieu le samedi 12 décembre 2026."
+strengths_en = ["13 attractions and more than 2 million bricks, including a Miniland of Melbourne", "On level 2 of the Chadstone shopping centre, with a LEGO retail store on site"]
+strengths_fr = ["13 attractions et plus de 2 millions de briques, dont un Miniland de Melbourne", "Au niveau 2 du centre commercial Chadstone, avec un magasin LEGO sur place"]
+weaknesses_en = ["During standard hours adults must be accompanied by a child aged 17 or under", "Designed primarily for children aged 3 to 10"]
+weaknesses_fr = ["Aux horaires habituels, les adultes doivent être accompagnés d'un enfant de 17 ans ou moins", "Conçu avant tout pour les enfants de 3 à 10 ans"]
+size = [{n = 2000000, unit = "bricks", approx = "more-than"}]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Melbourne"
+
+[[resource.sources]]
+url = "https://www.legolanddiscoverycentre.com/melbourne/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legolanddiscoverycentre.com/melbourne/tickets-passes/other-tickets/adult-nights/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legolanddiscoverycentre.com/melbourne/plan-your-day/information/contact-us/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "Level 2, Chadstone – The Fashion Capital, 1341 Dandenong Road, Chadstone VIC 3148"
+email = "ldc.melbourne@lego.com"
+url = "https://www.legolanddiscoverycentre.com/melbourne/plan-your-day/information/contact-us/"
+date = "2026-11-25"
+
+[[resource]]
+id = "legoland-discovery-centre-hong-kong"
+name = "LEGOLAND Discovery Centre Hong Kong"
+url = "https://www.legolanddiscoverycentre.com/hong-kong/en/"
+group = "official-venues"
+operator = "lego-group"
+aliases = ["LEGOLAND Discovery Center Hong Kong"]
+covers = ["official", "places"]
+languages = ["en", "zh"]
+countries = ["HK"]
+access = "paid"
+summary_en = "A Miniland of Hong Kong landmarks built with more than 1.5 million bricks, plus 2 rides and a 4D studio, in the K11 MUSEA mall in Tsim Sha Tsui."
+summary_fr = "Un Miniland de monuments de Hong Kong construit avec plus de 1,5 million de briques, plus 2 attractions et un studio 4D, dans le centre commercial K11 MUSEA à Tsim Sha Tsui."
+strengths_en = ["Holiday Workshop of seasonal creative building", "Contact by WhatsApp from Monday to Friday, 11am to 5pm, public holidays excluded", "Gift shop with more than 400 products"]
+strengths_fr = ["Holiday Workshop : construction créative de saison", "Contact par WhatsApp du lundi au vendredi de 11 h à 17 h, jours fériés exclus", "Boutique avec plus de 400 produits"]
+weaknesses_en = ["Adults must bring at least one child into the attraction"]
+weaknesses_fr = ["Les adultes doivent entrer avec au moins un enfant"]
+size = [{n = 1500000, unit = "bricks", approx = "more-than"}]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Hong Kong"
+city_local = "香港"
+
+[[resource.sources]]
+url = "https://www.legolanddiscoverycentre.com/hong-kong/en/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.legolanddiscoverycentre.com/hong-kong/en/information/contact-us/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "Shop B131-133, B1, K11 MUSEA, Victoria Dockside, 18 Salisbury Road, Tsim Sha Tsui, Kowloon, Hong Kong"
+email = "LDCHK.info@legodiscoverycentre.com"
+url = "https://www.legolanddiscoverycentre.com/hong-kong/en/information/contact-us/"
+date = "2026-11-25"
+
+[[resource]]
+id = "brick-museum-karpacz"
+name = "Brick Museum Karpacz"
+url = "https://www.muzeumklockow.pl/en/"
+group = "museums-and-exhibitions"
+aliases = ["Muzeum Klocków Karpacz"]
+covers = ["official", "places"]
+languages = ["pl", "en", "de", "cs"]
+countries = ["PL"]
+access = "paid"
+summary_en = "Interactive models run with buttons and joysticks (trains, rockets, a disco) in what it calls the first permanent brick model museum in Poland; a combined ticket adds a Video Game Museum."
+summary_fr = "Modèles interactifs actionnés par boutons et manettes (trains, fusées, discothèque), dans ce qui se présente comme le premier musée permanent de modèles en briques de Pologne ; billet combiné avec un musée du jeu vidéo."
+strengths_en = ["Open every day, 10:00 to 18:00; open on the day read (25 November 2026)", "Combined ticket Bricks + Video Games cheaper than two separate tickets", "Site in Polish, English, German and Czech"]
+strengths_fr = ["Ouvert tous les jours de 10 h à 18 h ; ouvert le jour de la lecture (25 novembre 2026)", "Billet combiné Bricks + Video Games moins cher que deux billets séparés", "Site en polonais, en anglais, en allemand et en tchèque"]
+weaknesses_en = ["Presented as a family attraction, for ages 0 to 100, not for adult builders", "Claims such as first permanent brick museum in Poland come from the museum itself"]
+weaknesses_fr = ["Présenté comme une attraction familiale, de 0 à 100 ans, et non pour les constructeurs adultes", "Les affirmations comme « premier musée permanent de briques de Pologne » viennent du musée lui-même"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Karpacz"
+
+[[resource.sources]]
+url = "https://www.muzeumklockow.pl/en/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.muzeumklockow.pl/en/kontakt"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "ul. Mickiewicza 11, 58-540 Karpacz"
+email = "Kontakt@muzeumklockow.pl"
+url = "https://www.muzeumklockow.pl/en/kontakt"
+date = "2026-11-25"
+
+[[resource]]
+id = "legio-museum"
+name = "LEGiO Museum"
+url = "https://www.museumpleingrootegast.nl/"
+group = "museums-and-exhibitions"
+covers = ["official", "places"]
+languages = ["nl"]
+countries = ["NL"]
+access = "paid"
+summary_en = "In the former LEGO Nederland building on the Legolaan (1963 to 1998), with a new floor opened on 29 March 2026; one ticket also admits to the Victory Museum and the Vintage Motor Museum."
+summary_fr = "Dans l'ancien bâtiment de LEGO Nederland (1963 à 1998), avec un étage ouvert le 29 mars 2026 ; un seul billet donne aussi accès au Victory Museum et au Vintage Motor Museum."
+strengths_en = ["Original sets, dioramas and display cases, with LEGO to build and play with", "Rotating themed exhibitions of several collectors", "Free parking on site; groups do not need to reserve"]
+strengths_fr = ["Sets originaux, dioramas et vitrines, avec des briques LEGO pour construire et jouer", "Expositions thématiques temporaires de plusieurs collectionneurs", "Parking gratuit sur place ; pas de réservation pour les groupes"]
+weaknesses_en = ["Open Wednesday, Friday, Saturday and Sunday only", "Museumkaart not valid"]
+weaknesses_fr = ["Ouvert seulement du mercredi, vendredi, samedi et dimanche", "Museumkaart non valable"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Grootegast"
+
+[[resource.sources]]
+url = "https://www.museumpleingrootegast.nl/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.xgn.nl/nieuws/dit-wil-elke-fan-zien-gigantische-uitbreiding-van-nederlands-grootste-lego-museum"
+date = "2026-03-30"
+kind = "third-party"
+
+[resource.contact]
+address = "Legolaan 1C, 9861 AT Grootegast"
+phone = "+31 594 745605"
+email = "info@legiomuseum.nl"
+url = "https://www.museumpleingrootegast.nl/"
+date = "2026-11-25"
+
+[[resource]]
+id = "museum-van-de-20e-eeuw-lego"
+name = "Museum van de 20e Eeuw: LEGO in het Museum"
+url = "https://www.museumhoorn.nl/en/"
+group = "museums-and-exhibitions"
+aliases = ["LEGO in het Museum", "Museum Hoorn"]
+covers = ["official", "places"]
+languages = ["nl", "en", "de"]
+countries = ["NL"]
+access = "paid"
+summary_en = "Two galleries from what the museum calls one of the largest LEGO collections in Europe, with towering models and running trains; Brick-City at Hoorn railway station is a second site."
+summary_fr = "Deux salles tirées de ce que le musée présente comme l'une des plus grandes collections LEGO d'Europe, avec des trains en marche ; second site, Brick-City, à la gare de Hoorn."
+strengths_en = ["Collection taken over from an entire LEGO museum, redesigned and shown in two galleries", "Brick-City: tens of thousands of bricks to build with and a diorama with running LEGO trains", "Free with the Museumkaart"]
+strengths_fr = ["Collection reprise d'un musée LEGO entier, réaménagée et présentée en deux salles", "Brick-City : des dizaines de milliers de briques pour construire et un diorama avec trains LEGO en marche", "Gratuit avec la Museumkaart"]
+weaknesses_en = ["Part of a general museum of the 20th century, with one ticket for all exhibitions", "Brick-City has its own admission price"]
+weaknesses_fr = ["Intégré à un musée généraliste du XXe siècle, avec un seul billet pour toutes les expositions", "Brick-City a son propre tarif d'entrée"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Hoorn"
+
+[[resource.sources]]
+url = "https://www.museumhoorn.nl/en/exhibitions/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.museumhoorn.nl/en/news/exhibition-lego-in-the-museum/"
+date = "2026-10-09"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.museumhoorn.nl/en/visit/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "Krententuin 24 (Oostereiland), 1621 DG Hoorn"
+phone = "+31 229 214001"
+email = "info@museumhoorn.nl"
+url = "https://www.museumhoorn.nl/en/visit/"
+date = "2026-11-25"
+
+[[resource]]
+id = "campona-kockapark"
+name = "Campona KockaPark"
+url = "https://kockapark.com/en/"
+group = "museums-and-exhibitions"
+covers = ["official", "places"]
+languages = ["hu", "en"]
+countries = ["HU"]
+access = "paid"
+summary_en = "Dioramas by Hungarian builders, including a three-year build of Budapest's Western Railway Station, with a playhouse holding a sea of bricks and a shop selling sets, inside the Campona mall."
+summary_fr = "Dioramas de constructeurs locaux, dont la gare de l'Ouest de Budapest reconstituée en trois ans, avec une aire de jeu remplie de briques et une boutique de sets, dans le centre commercial Campona."
+strengths_en = ["Exhibits change regularly", "Open every day, 10:00 to 19:00 (to 20:00 on Friday and Saturday)", "Site news dated 27 October 2026"]
+strengths_fr = ["Les modèles exposés changent régulièrement", "Ouvert tous les jours de 10 h à 19 h (jusqu'à 20 h le vendredi et le samedi)", "Actualités du site datées du 27 octobre 2026"]
+weaknesses_en = ["Token-based activities need an additional ticket", "Some pages are out of date: a play pass is shown as valid until 31 December 2021"]
+weaknesses_fr = ["Les activités à jetons demandent un billet supplémentaire", "Certaines pages sont périmées : un abonnement de jeu y est indiqué valable jusqu'au 31 décembre 2021"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Budapest"
+
+[[resource.sources]]
+url = "https://kockapark.com/en/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://kockapark.com/en/campona-kockapark-lego-exhibition/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://kockapark.com/"
+date = "2026-10-27"
+kind = "read"
+
+[resource.contact]
+address = "1222 Budapest, Nagytétényi út 37-43"
+phone = "+36 30 623 2388"
+email = "info@kockapark.com"
+url = "https://kockapark.com/en/contact-us/"
+date = "2026-11-25"
+
+[[resource]]
+id = "vanha-palikka"
+name = "Vanha Palikka"
+url = "https://www.vanha-palikka.com/"
+group = "museums-and-exhibitions"
+aliases = ["Vanha-palikka", "Old Brick"]
+covers = ["official", "second-hand", "places"]
+languages = ["fi"]
+countries = ["FI"]
+access = "paid"
+summary_en = "Self-described largest LEGO museum in Finland: thousands of sets from several decades, themed rooms and a children's play room, with a web shop of used LEGO products; open only on listed dates."
+summary_fr = "Se présente comme le plus grand musée LEGO de Finlande : des milliers de sets, salles à thème, salle de jeu et boutique en ligne de produits d'occasion ; ouvert seulement à certaines dates."
+strengths_en = ["Collection from classics to rarities: Star Wars, NINJAGO, Technic, Friends", "Web shop with 3448 parts, 196 minifigures and 202 sets listed on the day read", "Used products can also be bought on site"]
+strengths_fr = ["Collection des classiques aux raretés : Star Wars, NINJAGO, Technic, Friends", "Boutique en ligne avec 3448 pièces, 196 figurines et 202 sets le jour de la lecture", "Produits d'occasion aussi achetables sur place"]
+weaknesses_en = ["Open only on listed dates, mostly 13:00 to 16:00, from 15 November 2026 to 3 January 2027", "Site in Finnish only"]
+weaknesses_fr = ["Ouvert seulement aux dates indiquées, surtout de 13 h à 16 h, du 15 novembre 2026 au 3 janvier 2027", "Site en finnois seulement"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Pöytyä"
+
+[[resource.sources]]
+url = "https://www.vanha-palikka.com/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "Kyröntie 75, 21800 Kyrö, Pöytyä"
+email = "vanha.palikka@gmail.com"
+url = "https://www.vanha-palikka.com/"
+date = "2026-11-25"
+
+[[resource]]
+id = "brickiseum"
+name = "Brickiseum"
+url = "https://www.brickiseum.com/"
+group = "museums-and-exhibitions"
+covers = ["official", "places"]
+languages = ["en"]
+countries = ["AU"]
+access = "paid"
+summary_en = "A Star Wars Wing with nearly 1600 minifigures and every Ultimate Collector Series set, plus a nine-hole LEGO-inspired mini golf, a LEGO store and a food truck."
+summary_fr = "Une aile Star Wars avec près de 1600 figurines et tous les sets Ultimate Collector Series, plus un mini-golf de neuf trous inspiré de LEGO, un magasin de LEGO et un camion de restauration."
+strengths_en = ["Every Star Wars minifigure ever released, as stated by the museum", "Store open every weekend with rare, retired and collectible sets", "Buys LEGO collections (Sell Lego page)"]
+strengths_fr = ["Toutes les figurines Star Wars jamais sorties, selon le musée", "Magasin ouvert chaque week-end avec des sets rares, retirés du catalogue et de collection", "Rachète des collections LEGO (page Sell Lego)"]
+weaknesses_en = ["Open Saturday and Sunday only, 10:00 to 16:00", "A LEGO City Wing is announced but not yet open"]
+weaknesses_fr = ["Ouvert seulement le samedi et le dimanche, de 10 h à 16 h", "Une aile LEGO City est annoncée mais pas encore ouverte"]
+size = [{n = 1600, unit = "minifigures", approx = "about"}]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Sunbury"
+
+[[resource.sources]]
+url = "https://www.brickiseum.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.brickiseum.com/find-us"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "22 Kurrle Road, Sunbury, Victoria 3429"
+url = "https://www.brickiseum.com/find-us"
+date = "2026-11-25"
+
+[[resource]]
+id = "brick-ark-museum"
+name = "Brick Ark Museum"
+url = "https://www.brickark.com/"
+group = "museums-and-exhibitions"
+aliases = ["積木博物館"]
+covers = ["official", "places"]
+languages = ["zh"]
+countries = ["TW"]
+access = "paid"
+summary_en = "Self-described first brick museum in Asia: more than one million bricks and over 1000 exhibits, from early brick prototypes to works by American master builders; open every day of the year."
+summary_fr = "Se présente comme le premier musée de briques d'Asie : plus d'un million de briques et plus de 1000 pièces, des premiers prototypes aux œuvres de maîtres américains ; ouvert tous les jours de l'année."
+strengths_en = ["Open every day, 10:00 to 17:00, last ticket at 16:15", "Brick classes, including a take-away fuse-bead kit", "Exhibition of minifigures, very tall building models and glowing bricks"]
+strengths_fr = ["Ouvert tous les jours de 10 h à 17 h, dernier billet à 16 h 15", "Cours de construction, dont un kit de perles à repasser à emporter", "Exposition de figurines, de modèles de bâtiments très hauts et de briques lumineuses"]
+weaknesses_en = ["No food, drink, pets or strollers inside; entry only after a staff briefing", "Claims such as first brick museum in Asia come from the museum itself"]
+weaknesses_fr = ["Ni nourriture, ni boissons, ni animaux, ni poussettes à l'intérieur ; entrée seulement après les explications du personnel", "Les affirmations comme « premier musée de briques d'Asie » viennent du musée lui-même"]
+size = [{n = 1000000, unit = "bricks", approx = "more-than"}]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Yilan"
+city_local = "宜蘭"
+
+[[resource.sources]]
+url = "https://www.brickark.com/"
+date = "2026-11-25"
+kind = "read"
+
+[resource.contact]
+address = "260011 宜蘭縣宜蘭市縣政北路 2 號"
+phone = "+886 3 925 6180"
+email = "museumbrick@gmail.com"
+url = "https://www.brickark.com/"
+date = "2026-11-25"
+
+[[resource]]
+id = "brickseum"
+name = "Brickseum"
+url = "https://brickseum.com/"
+group = "museums-and-exhibitions"
+covers = ["official", "places"]
+languages = ["en"]
+countries = ["PH"]
+access = "paid"
+summary_en = "Self-described first purpose-built, privately owned brick museum in the Philippines, with a vintage LEGO collection of early wooden toys, a shop of hard-to-find sets, a play area and a kiddie zipline."
+summary_fr = "Se présente comme le premier musée de briques privé construit à cet effet aux Philippines : collection LEGO ancienne de jouets en bois, boutique de sets introuvables, aire de jeu et tyrolienne pour enfants."
+strengths_en = ["All-day access includes the galleries, an indoor brick play area, a kiddie zipline, an outdoor playground and free brewed coffee", "Tickets sold at the entrance, no reservation needed", "Opened to the public on 26 October 2025, according to The Manila Times"]
+strengths_fr = ["L'accès à la journée comprend les galeries, une aire de jeu en briques en intérieur, une tyrolienne pour enfants, une aire de jeux en extérieur et du café filtre offert", "Billets vendus à l'entrée, sans réservation", "Ouvert au public le 26 octobre 2025, selon The Manila Times"]
+weaknesses_en = ["Closed on Tuesday and Wednesday", "No street address, phone or email on the site: the location is given only as Buho-Talon Road near Tagaytay Rotonda; the town comes from a newspaper article"]
+weaknesses_fr = ["Fermé le mardi et le mercredi", "Ni adresse postale, ni téléphone, ni courriel sur le site : l'emplacement est donné seulement comme Buho-Talon Road près de Tagaytay Rotonda ; la commune vient d'un article de presse"]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Amadeo"
+
+[[resource.sources]]
+url = "https://brickseum.com/visit/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickseum.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://next.manilatimes.net/2026/08/02/the-sunday-times/cover-story/the-legacy-he-built-brick-by-brick/2396317"
+date = "2026-08-02"
+kind = "third-party"
+
+[[resource]]
+id = "toy-and-plastic-brick-museum"
+name = "Toy and Plastic Brick Museum"
+url = "https://brickmuseum.com/"
+group = "museums-and-exhibitions"
+aliases = ["Brick Museum Bellaire", "Unofficial Toy and Plastic Brick Museum"]
+covers = ["official", "places"]
+languages = ["en"]
+countries = ["US"]
+access = "paid"
+summary_en = "Nonprofit since opening in 2006, with, according to its operator, a Guinness record for the largest LEGO image laid out on the basement floor; seasonal, Tuesday to Sunday from 15 May 2026."
+summary_fr = "Sans but lucratif depuis son ouverture en 2006, avec, selon son exploitante, un record Guinness de la plus grande image en LEGO, au sous-sol ; saisonnier, du mardi au dimanche dès le 15 mai 2026."
+strengths_en = ["More than 4 million bricks, 500 statues, more than 1000 creations and about 20 themed rooms, according to its operator quoted by The Times Leader", "Open 10:00 to 17:00, Tuesday to Sunday"]
+strengths_fr = ["Plus de 4 millions de briques, 500 statues, plus de 1000 créations et une vingtaine de salles à thème, selon son exploitante citée par The Times Leader", "Ouvert de 10 h à 17 h, du mardi au dimanche"]
+weaknesses_en = ["Seasonal, from May to September: closed on the day read, and the site announces no date for 2027", "Official home page is thin: dates, prices and contact only"]
+weaknesses_fr = ["Saisonnier, de mai à septembre : fermé le jour de la lecture, et le site n'annonce aucune date pour 2027", "Page d'accueil officielle succincte : dates, tarifs et contact seulement"]
+status = "active"
+last_activity = "2026-05-15"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+city = "Bellaire"
+
+[[resource.sources]]
+url = "https://brickmuseum.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickmuseum.com/about/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.timesleaderonline.com/news/local-news/2026/05/brick-by-brick-bellaire-lego-museum-stacks-up-another-season/"
+date = "2026-05-16"
+kind = "third-party"
+
+[resource.contact]
+address = "4597 Noble St., Bellaire, OH 43906"
+phone = "+1 740 671 8890"
+email = "toymuseum@hotmail.com"
+url = "https://brickmuseum.com/contact/"
+date = "2026-11-25"
