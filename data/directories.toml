@@ -34,7 +34,6 @@ id = "awesome-lego-ad-si"
 name = "awesome-lego (ad-si)"
 url = "https://github.com/ad-si/awesome-lego"
 group = "site-directories"
-featured = true
 rank = {intl = 1, en = 1}
 rank_reason_en = "About 90 entries in 17 sections on software, archives, libraries, blogs and games, under a CC0 licence; latest activity on 2 November 2026."
 rank_reason_fr = "Environ 90 entrées en 17 sections sur les logiciels, archives, bibliothèques, blogs et jeux, sous licence CC0 ; dernière activité le 2 novembre 2026."
@@ -223,7 +222,6 @@ id = "deparkatre-associations"
 name = "Deparkatre clubs and associations directory"
 url = "https://deparkatre.fr/associations"
 group = "site-directories"
-featured = true
 rank = {fr = 1}
 rank_reason_en = "About 77 clubs (9 national, 20 regional, 48 local), with entries needing checking marked; latest activity on 23 November 2026."
 rank_reason_fr = "Environ 77 clubs (9 nationaux, 20 régionaux, 48 locaux), avec les entrées à vérifier signalées ; dernière activité le 23 novembre 2026."
@@ -252,7 +250,6 @@ id = "lego-fan-colab-communities"
 name = "LEGO Fan CoLab community directory"
 url = "https://fancolab.lego.com/communities/"
 group = "site-directories"
-featured = true
 rank = {intl = 2, en = 2}
 rank_reason_en = "Official source listing fan communities recognised by LEGO, French associations among them, limited to recognised communities; latest activity on 23 November 2026."
 rank_reason_fr = "Source officielle listant les communautés de fans reconnues par LEGO, dont des associations françaises, limitée aux communautés reconnues ; dernière activité le 23 novembre 2026."
@@ -311,7 +308,6 @@ id = "bricktubed-channels"
 name = "BrickTubed channel directory"
 url = "https://bricktubed.com/channels/"
 group = "channel-lists"
-featured = true
 rank = {intl = 1, en = 1}
 rank_reason_en = "429 channels with subscribers, views, video count, country, last video and active status for each."
 rank_reason_fr = "429 chaînes avec abonnés, vues, nombre de vidéos, pays, dernière vidéo et statut d'activité pour chacune."
@@ -341,7 +337,6 @@ id = "deparkatre-influenceurs"
 name = "Deparkatre LEGO influencer directory"
 url = "https://deparkatre.fr/influenceurs"
 group = "channel-lists"
-featured = true
 rank = {intl = 3, fr = 1}
 rank_reason_en = "30 YouTube channels, 30 Instagram accounts and 93 other profiles on an interactive map, with no update date shown."
 rank_reason_fr = "30 chaînes YouTube, 30 comptes Instagram et 93 autres profils sur une carte interactive, sans date de mise à jour affichée."
@@ -425,7 +420,6 @@ id = "wikipedia-de-klemmbausteinhersteller"
 name = "Liste von Klemmbausteinherstellern (German Wikipedia)"
 url = "https://de.wikipedia.org/wiki/Liste_von_Klemmbausteinherstellern"
 group = "brand-lists"
-featured = true
 rank = {intl = 1, de = 1}
 rank_reason_en = "Table of brick manufacturers that distinguishes set maker from brick maker, with stud pitch and remarks; latest edit on 27 September 2026."
 rank_reason_fr = "Tableau des fabricants de briques qui distingue le fabricant de sets du fabricant de briques, avec l'écartement des tenons et des remarques ; dernière modification le 27 septembre 2026."
@@ -512,7 +506,6 @@ id = "other-bricks-brands"
 name = "other-bricks.com brands"
 url = "https://other-bricks.com/en/brands/"
 group = "brand-lists"
-featured = true
 rank = {intl = 2, en = 1}
 rank_reason_en = "32 brands compared by origin, quality and collection size, with set counts; update date not shown."
 rank_reason_fr = "32 marques comparées par origine, qualité et taille de collection, avec le nombre de sets ; date de mise à jour non indiquée."

@@ -32,7 +32,6 @@ id = "skaerbaek-fan-weekend"
 name = "Skærbæk Fan Weekend"
 url = "https://www.fanweekend.dk/"
 group = "conventions"
-featured = true
 rank = {intl = 1, DK = 1}
 rank_reason_en = "More than 1000 adult fans gather each year in southern Jutland, with a public exhibition of custom builds, held the last complete weekend of September."
 rank_reason_fr = "Plus de 1000 fans adultes se réunissent chaque année dans le sud du Jutland, avec une exposition publique de créations originales, le dernier week-end complet de septembre."
@@ -416,7 +415,6 @@ id = "brick-mania-antwerp"
 name = "Brick Mania Antwerpen"
 url = "https://www.belug.be/brickmania/antwerpen/"
 group = "conventions"
-featured = true
 rank = {BE = 1}
 rank_reason_en = "13th edition in 2026 with more than 250 exhibitors on 6000 square metres at Antwerp Expo and about 8000 visitors per year according to the press."
 rank_reason_fr = "13e édition en 2026 avec plus de 250 exposants sur 6000 mètres carrés à Antwerp Expo et environ 8000 visiteurs par an selon la presse."
@@ -797,7 +795,6 @@ id = "fanabriques"
 name = "Fana'briques"
 url = "https://expo.fanabriques.fr/fr/"
 group = "conventions"
-featured = true
 rank = {FR = 1}
 rank_reason_en = "7000 square metres and about 150 exhibitors from several European countries at the Parc des expositions, 19th edition in 2026."
 rank_reason_fr = "7000 mètres carrés et environ 150 exposants de plusieurs pays européens au Parc des expositions, 19e édition en 2026."
@@ -1038,7 +1035,6 @@ id = "lego-ideas-challenges"
 name = "LEGO Ideas challenges"
 url = "https://ideas.lego.com/challenges"
 group = "competitions"
-featured = true
 rank = {intl = 1}
 rank_reason_en = "Building challenges on the LEGO Ideas platform, with set prizes and, for some, a path to an official product; review phase and fan vote with results dates published per challenge."
 rank_reason_fr = "Défis de construction sur la plateforme LEGO Ideas, avec des sets en prix et, pour certains, une voie vers un produit de marque LEGO ; phase d'examen et vote des fans avec dates des résultats publiées par défi."
@@ -1242,7 +1238,6 @@ rank_reason_en = "Agenda of LEGO exhibitions and international events with a lon
 rank_reason_fr = "Agenda d'expositions LEGO et d'événements internationaux avec une longue liste allant jusqu'au printemps 2027, en français et en anglais."
 feed = "https://www.hothbricks.com/expos/feed/"
 group = "calendars"
-featured = true
 covers = ["events", "official"]
 languages = ["fr", "en"]
 countries = ["FR", "BE", "CH"]
@@ -1353,7 +1348,6 @@ id = "steine-kanal-veranstaltungskalender"
 name = "steine-kanal: Veranstaltungskalender"
 url = "https://www.steine-kanal.de/veranstaltungskalender-2027-alle-lego-fan-veranstaltungen-und-boersen-im-uberblick/"
 group = "calendars"
-featured = true
 rank = {intl = 4, DE = 1, AT = 1, LU = 1, NL = 2, CH = 2}
 rank_reason_en = "Yearly month-by-month list for Germany, Austria, Switzerland, the Netherlands and Luxembourg, with a separate section for exhibitions of other manufacturers; last update on 23 November 2026."
 rank_reason_fr = "Liste annuelle mois par mois pour l'Allemagne, l'Autriche, la Suisse, les Pays-Bas et le Luxembourg, avec une section séparée pour les expositions d'autres fabricants ; dernière mise à jour le 23 novembre 2026."

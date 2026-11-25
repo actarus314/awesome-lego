@@ -26,6 +26,14 @@ def resources(text_by_file):
     return out
 
 
+SELECTION = {"featured", "rank", "rank_reason_en", "rank_reason_fr"}  # a change of selection is listed on its own line
+
+
+def picked(r):
+    """In the README selection: the rank 1 worldwide of its group; `featured` in data older than lot 3b (v3.2)."""
+    return (r.get("rank") or {}).get("intl") == 1 if "rank" in r or "featured" not in r else bool(r["featured"])
+
+
 def main():
     ref = sys.argv[1] if len(sys.argv) > 1 else git("describe", "--tags", "--abbrev=0").strip()
     files = [f for f in git("ls-tree", "--name-only", ref, "data/").split() if f.endswith(".toml")]
@@ -34,10 +42,10 @@ def main():
     added = sorted(set(new) - set(old))
     removed = sorted(set(old) - set(new))
     corrected = sorted(i for i in set(new) & set(old)
-                       if {k: v for k, v in new[i].items() if k not in QUIET | {"featured"}}
-                       != {k: v for k, v in old[i].items() if k not in QUIET | {"featured"}})
-    selected = sorted(i for i in new if new[i].get("featured") and not old.get(i, {}).get("featured"))
-    unselected = sorted(i for i in old if old[i].get("featured") and not new.get(i, {}).get("featured"))
+                       if {k: v for k, v in new[i].items() if k not in QUIET | SELECTION}
+                       != {k: v for k, v in old[i].items() if k not in QUIET | SELECTION})
+    selected = sorted(i for i in new if picked(new[i]) and not picked(old.get(i, {})))
+    unselected = sorted(i for i in old if picked(old[i]) and not picked(new.get(i, {})))
     name = lambda i: (new.get(i) or old.get(i))["name"]
     print(f"Changes since {ref}: {len(added)} added, {len(removed)} removed, {len(corrected)} corrected; "
           f"README selection: {len(selected)} in, {len(unselected)} out.")

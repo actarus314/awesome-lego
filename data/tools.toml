@@ -48,7 +48,6 @@ id = "rebrickable-api-v3"
 name = "Rebrickable API v3"
 url = "https://rebrickable.com/api/"
 group = "apis-and-data"
-featured = true
 rank = {intl = 1}
 rank_reason_en = "REST interface to the official LEGO catalog of sets, parts, minifigures, themes and colours, with a free key, commercial use allowed with credit and read and write access to collections; active on 22 November 2026."
 rank_reason_fr = "Interface REST du catalogue de marque LEGO (sets, pièces, figurines, thèmes, couleurs), avec clé gratuite, usage commercial autorisé avec mention de la source et lecture et écriture des collections ; actif le 22 novembre 2026."
@@ -117,7 +116,6 @@ id = "brickset-api-v3"
 name = "Brickset API v3"
 url = "https://brickset.com/article/52666/brickset-web-services"
 group = "apis-and-data"
-featured = true
 rank = {intl = 5}
 rank_reason_en = "Catalog interface with recommended retail prices for four countries, instructions, reviews and member collections, free key; initial limit of 100 calls per day per key."
 rank_reason_fr = "Interface du catalogue avec prix de vente conseillés pour quatre pays, instructions, avis et collections des membres, clé gratuite ; plafond initial de 100 appels par jour et par clé."
@@ -152,7 +150,6 @@ id = "bricklink-api"
 name = "BrickLink API"
 url = "https://www.bricklink.com/v3/api.page"
 group = "apis-and-data"
-featured = true
 rank = {intl = 2}
 rank_reason_en = "Only large-scale source of resale prices for parts and sets, with a free key and 5000 calls per day by default; active on 18 November 2026."
 rank_reason_fr = "Seule source à grande échelle de prix de revente des pièces et des sets, avec clé gratuite et 5000 appels par jour par défaut ; actif le 18 novembre 2026."
@@ -320,7 +317,6 @@ id = "brickognize"
 name = "Brickognize"
 url = "https://brickognize.com/"
 group = "apis-and-data"
-featured = true
 covers = ["official", "parts", "minifigures"]
 languages = ["en"]
 countries = ["international"]
@@ -352,7 +348,6 @@ id = "ldraw"
 name = "LDraw open standard and parts library"
 url = "https://www.ldraw.org/"
 group = "apis-and-data"
-featured = true
 rank = {intl = 3}
 rank_reason_en = "Open standard format and parts library of 17230 parts underlying LeoCAD, LDView, LPub3D and Studio export; geometry only, no catalog or price API; active on 23 November 2026."
 rank_reason_fr = "Format ouvert et bibliothèque de 17230 pièces sur lesquels reposent LeoCAD, LDView, LPub3D et l'export de Studio ; géométrie seulement, sans catalogue ni API de prix ; actif le 23 novembre 2026."
@@ -388,7 +383,6 @@ id = "bricklink-studio"
 name = "BrickLink Studio"
 url = "https://www.bricklink.com/v3/studio/download.page"
 group = "design-software"
-featured = true
 rank = {intl = 1}
 rank_reason_en = "Free editor combining a parts list, an instruction editor and photorealistic rendering, with BrickLink catalog integration and LDraw export; updated on 27 October 2026."
 rank_reason_fr = "Éditeur gratuit réunissant liste de pièces, éditeur d'instructions et rendu photoréaliste, avec intégration du catalogue BrickLink et export LDraw ; mis à jour le 27 octobre 2026."
@@ -424,7 +418,6 @@ id = "leocad"
 name = "LeoCAD"
 url = "https://www.leocad.org/"
 group = "design-software"
-featured = true
 rank = {intl = 2}
 rank_reason_en = "Free open-source editor on the LDraw library for Windows, macOS and Linux that handles large models and multi-step instructions; active on 21 November 2026."
 rank_reason_fr = "Éditeur libre et gratuit sur la bibliothèque LDraw pour Windows, macOS et Linux, qui gère les grands modèles et les instructions en plusieurs étapes ; actif le 21 novembre 2026."
@@ -609,7 +602,6 @@ rank_reason_en = "Scans collectible minifigure QR codes with collection tracking
 rank_reason_fr = "Lit les codes QR des figurines à collectionner, avec suivi de collection, archive de plus de 10000 sets et synchronisation avec Brickset ; dernière activité le 29 mai 2026, fonctions premium payantes."
 feed = "https://bricksearch.app/feed/"
 group = "apps"
-featured = true
 covers = ["official", "minifigures"]
 languages = ["en"]
 countries = ["international"]
@@ -831,7 +823,6 @@ id = "brickstore"
 name = "BrickStore"
 url = "https://github.com/rgriebl/brickstore"
 group = "open-source"
-featured = true
 rank = {intl = 1}
 rank_reason_en = "Offline BrickLink inventory tool on five platforms under GPL version 3, interface in five languages, with mass upload and price guide pricing; aimed at BrickLink sellers; active on 12 September 2026."
 rank_reason_fr = "Outil d'inventaire BrickLink hors ligne sur cinq plateformes sous licence GPL version 3, interface en cinq langues, avec envoi en masse et prix du guide de prix ; destiné aux vendeurs BrickLink ; actif le 12 septembre 2026."
@@ -1137,7 +1128,6 @@ id = "pybricks"
 name = "Pybricks"
 url = "https://pybricks.com/"
 group = "programming-and-control"
-featured = true
 rank = {intl = 1}
 rank_reason_en = "Python coding for LEGO smart hubs across Technic, City, BOOST, MINDSTORMS and SPIKE with programs stored on the hub, open-source firmware with commits on 14 November 2026."
 rank_reason_fr = "Programmation en Python des hubs LEGO (Technic, City, BOOST, MINDSTORMS, SPIKE) avec programmes stockés sur le hub, micrologiciel libre avec contributions le 14 novembre 2026."

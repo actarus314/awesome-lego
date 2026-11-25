@@ -34,7 +34,6 @@ id = "brick-broker"
 name = "Brick Broker"
 url = "https://brick-broker.com/"
 group = "price-comparators"
-featured = true
 rank = {intl = 2, FR = 1}
 rank_reason_en = "Official LEGO and about 95 alternative brands in one search, 42003 sets, price history over 90 days and email alerts without an account; offers deliverable to France."
 rank_reason_fr = "Sets de marque LEGO et environ 95 marques alternatives dans une même recherche, 42003 sets, historique de prix sur 90 jours et alertes par courriel sans compte ; offres livrables en France."
@@ -180,7 +179,6 @@ id = "brickmitri"
 name = "Brickmitri"
 url = "https://brickmitri.com/comparateur-lego/"
 group = "price-comparators"
-featured = true
 rank = {FR = 2}
 rank_reason_en = "Built from the affiliate feeds of French retailers (1384 sets, 14 shops), Amazon re-read hourly, price history per retailer and price alert by email without an account."
 rank_reason_fr = "Construit sur les flux d'affiliation de distributeurs français (1384 sets, 14 boutiques), Amazon relu toutes les heures, historique de prix par distributeur et alerte de prix par courriel sans compte."
@@ -312,7 +310,6 @@ rank_reason_fr = "Service indépendant fondé sur son propre relevé de prix cou
 size = [{n = 21675, unit = "sets"}, {n = 138, unit = "shops"}, {n = 7509, unit = "parts"}, {n = 7243, unit = "minifigures"}]
 feed = "https://lakea.net/rss.xml"
 group = "price-comparators"
-featured = true
 covers = ["official", "parts", "minifigures"]
 languages = ["fr", "en", "de", "nl"]
 countries = ["international"]
@@ -873,7 +870,6 @@ rank_reason_fr = "Référence des sets de marque LEGO depuis 1997 avec minifigur
 size = [{n = 23674, unit = "entries"}]
 feed = "https://brickset.com/feed/"
 group = "set-databases"
-featured = true
 covers = ["official", "minifigures", "parts", "news"]
 languages = ["en"]
 countries = ["international"]
@@ -911,7 +907,6 @@ rank_reason_fr = "Catalogue des sets, pièces et minifigurines de marque LEGO en
 size = [{n = 206000, unit = "models", approx = "more-than"}]
 feed = "https://rebrickable.com/blog/rss/"
 group = "set-databases"
-featured = true
 covers = ["official", "custom-builds", "instructions", "parts", "minifigures", "data"]
 languages = ["en"]
 countries = ["international"]
@@ -972,7 +967,6 @@ id = "setdb"
 name = "SetDB (Merlins Steine)"
 url = "https://www.merlinsbricks.com/setdb/"
 group = "set-databases"
-featured = true
 rank = {intl = 3}
 rank_reason_en = "39690 sets from 92 brands including alternative brands, 17561 minifigures and 42256 bricks and parts, next to reviews and a weekly podcast of the same magazine; no price comparison seen."
 rank_reason_fr = "39690 sets de 92 marques dont des marques alternatives, 17561 minifigurines et 42256 briques et pièces, à côté de tests et d'un podcast hebdomadaire du même magazine ; aucune comparaison de prix vue."
@@ -1111,7 +1105,6 @@ id = "brickeconomy"
 name = "BrickEconomy"
 url = "https://www.brickeconomy.com/"
 group = "value-tracking"
-featured = true
 rank = {intl = 1}
 rank_reason_en = "Machine-learning growth forecasts and secondary-market value estimates for sets and minifigures, with value history, retirement dates and a REST API v1 for Premium members; values are model estimates."
 rank_reason_fr = "Prévisions de croissance par apprentissage automatique et estimations de valeur sur le marché secondaire pour les sets et minifigurines, avec historique de valeur, dates de retrait et API REST v1 pour les membres Premium ; valeurs estimées par un modèle."

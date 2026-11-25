@@ -1,7 +1,7 @@
 # "Where to start": the needs of a visitor, in display order (data/SCHEMA.md, "Where to start").
 # Each tile: the icon of `category`, the reference of the visitor's country or language in `reference` (else its
 # `default`), then 2 or 3 entries of `groups` ranked for the visitor (`rank` of the entries, read with `scope`),
-# then the whole category. `fallback`: the entries shown until the entries carry their ranks (lot 3b), then removed.
+# then the whole category.
 
 
 [[need]]
@@ -11,8 +11,7 @@ title_fr = "Acheter un set"
 category = "shops"
 groups = ["shops/official-lego", "shops/alternative-brands", "shops/general-retailers", "comparators/price-comparators"]
 scope = "country"
-reference = {FR = "brick-broker", DE = "brickmerge", PL = "promoklocki", DK = "brickzone-dk", SE = "prisjakt-se", NL = "bricksdeal", BE = "bricksdeal", AU = "brickturtle", NZ = "lego-price-tracker-nz"}
-fallback = ["brick-broker", "brickmitri", "lego-com-fr", "brickmerge", "ltoys", "kbs-shop", "bluebrixx-shop", "baustein-store", "bricksdeal", "promoklocki", "brickzone-dk", "prisjakt-se", "brickitalia", "brickturtle", "lego-price-tracker-nz", "brickfact", "lakea", "cobi-europe"]
+reference = {FR = "brick-broker", DE = "brickmerge", PL = "promoklocki", DK = "brickzone-dk", SE = "prisjakt-se", NO = "prisjakt-se", FI = "prisjakt-se", NL = "bricksdeal", BE = "bricksdeal", GB = "brick-compare", US = "brickfall", ES = "brickprism", PT = "brickprism", CZ = "briky", AU = "brickturtle", NZ = "lego-price-tracker-nz", default = "lakea-store-list"}
 
 [[need]]
 id = "second-hand"
@@ -21,8 +20,7 @@ title_fr = "Occasion et pièces"
 category = "second-hand"
 groups = ["second-hand/marketplaces", "second-hand/second-hand-shops", "second-hand/parts-and-custom-builds"]
 scope = "country"
-reference = {FR = "leboncoin", DE = "kleinanzeigen", BE = "2dehands-be", SE = "blocket-se", DK = "dba-dk", NO = "finn-no", default = "bricklink-marketplace"}
-fallback = ["leboncoin", "vinted", "kleinanzeigen", "2dehands-be", "blocket-se", "dba-dk", "finn-no", "bricklink-marketplace", "brick-owl-marketplace", "catawiki"]
+reference = {FR = "leboncoin", DE = "kleinanzeigen", BE = "2dehands-be", SE = "blocket-se", DK = "dba-dk", NO = "finn-no", IT = "subito", AT = "willhaben", CH = "ricardo", PL = "olx-pl", CZ = "bazos-cz", GB = "gumtree-uk", CA = "kijiji", default = "bricklink-marketplace"}
 
 [[need]]
 id = "brand"
@@ -40,7 +38,6 @@ title_fr = "Suivre l'actualité"
 category = "community"
 groups = ["community/news-and-reviews", "video/news", "video/official-lego-reviews", "video/alternative-brand-reviews"]
 scope = "language"
-fallback = ["hothbricks", "promobricks", "zusammengebaut", "orangeteam-lug", "elcatalejo", "fani-klockow", "bouwsteentjes", "kostkoviny", "brothers-brick", "new-elementary", "jangbricks", "brick-fanatics", "merlins-bricks", "the-laser-symphony", "hardware-fr-compatible-bricks", "klemmbaustein-com", "jangs-other-bricks", "brickmeet", "seven-star-bricks", "monster-brick-reviews"]
 
 [[need]]
 id = "exhibition"
@@ -49,8 +46,7 @@ title_fr = "Trouver une exposition"
 category = "events"
 groups = ["events/conventions", "events/calendars"]
 scope = "country"
-reference = {FR = "avenue-de-la-brique-expositions", BE = "avenue-de-la-brique-expositions", CH = "swiss-brick-events", DE = "steine-kanal-veranstaltungskalender", AT = "steine-kanal-veranstaltungskalender", GB = "bricks-mcgee-uk-ireland-events", IE = "bricks-mcgee-uk-ireland-events", default = "brick-news-calendar"}
-fallback = ["avenue-de-la-brique-expositions", "steine-kanal-veranstaltungskalender", "stonewars-events", "bricking-bavaria", "bricks-mcgee-uk-ireland-events", "brick-mania-antwerp", "bricktopia-world", "brickworld", "northern-bricks", "brickvention", "skaerbaek-fan-weekend", "fan-colab-events"]
+reference = {FR = "avenue-de-la-brique-expositions", BE = "avenue-de-la-brique-expositions", CH = "swiss-brick-events", DE = "steine-kanal-veranstaltungskalender", AT = "steine-kanal-veranstaltungskalender", GB = "bricks-mcgee-uk-ireland-events", IE = "bricks-mcgee-uk-ireland-events", NL = "lowlug-calendar", IT = "alego73-eventi", ES = "brickmaniacos-eventos", MX = "brickmaniacos-eventos", PL = "fani-klockow-kalendarz-2027", default = "brick-news-calendar"}
 
 [[need]]
 id = "club"
@@ -60,7 +56,6 @@ category = "clubs"
 groups = ["clubs/national-clubs", "clubs/regional-clubs", "clubs/alternative-brand-clubs", "clubs/online-clubs"]
 scope = "country"
 reference = {FR = "avenue-de-la-brique-associations", BE = "avenue-de-la-brique-associations", CH = "avenue-de-la-brique-associations", default = "lego-fan-colab-communities"}
-fallback = ["freelug", "fanabriques", "lgoe", "brickish", "belug", "lowlug", "itlug", "ale-spain", "lugpol", "byggepladen", "swebrick", "brikkelauget", "palikkatakomo", "plug-pt", "zalug"]
 
 [[need]]
 id = "visit"
@@ -70,8 +65,6 @@ category = "places"
 groups = ["places/official-venues", "places/theme-parks", "places/museums-and-exhibitions", "places/physical-shops", "places/cafes-and-bars"]
 scope = "country"
 reference = {default = "lego-store-locator"}
-fallback = ["lego-house", "palais-de-la-maquette", "lego-store-paris-les-halles", "time-for-bricks", "frankensteins-klemmbaustein-museum", "legoland-deutschland", "merlins-steine-permanent-exhibitions", "lebrickgo", "museum-of-bricks", "railway-brick-museum", "elbabrick", "bricks-and-figs", "legoland-windsor", "legoland-parks"]
-always = ["lego-house"]  # until lot 3b: shown whatever the visitor
 
 [[need]]
 id = "create"
@@ -80,7 +73,6 @@ title_fr = "Créer ses modèles"
 category = "tools"
 groups = ["tools/design-software", "comparators/set-databases", "second-hand/parts-and-custom-builds"]
 scope = "intl"
-fallback = ["rebrickable", "bricklink-studio", "pick-a-brick", "brickognize"]
 
 [[need]]
 id = "value"
@@ -89,7 +81,6 @@ title_fr = "Suivre la valeur d'un set"
 category = "comparators"
 groups = ["comparators/value-tracking", "comparators/set-databases"]
 scope = "intl"
-fallback = ["brickeconomy", "brickset", "setdb"]
 
 [[need]]
 id = "learn"
@@ -98,4 +89,3 @@ title_fr = "Apprendre"
 category = "learning"
 groups = ["learning/guides", "learning/history", "learning/compatibility-and-law", "learning/books-and-magazines"]
 scope = "language"
-fallback = ["hellobricks-lexique", "spielzeug-fuchs-lexikon", "brick-architect", "lego-history", "cjeu-lego-juris", "blocks-magazine", "sariel"]

@@ -277,15 +277,11 @@ q.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){e.preventDefault();if(s
 sugg.addEventListener('mousedown',e=>e.preventDefault());  // keep the focus in the field
 sugg.addEventListener('click',e=>{const o=e.target.closest('[data-i]');if(o)sgPick(sgItems[+o.dataset.i])});
 q.addEventListener('blur',()=>setTimeout(sgClose,100));
-const suits=(j,r)=>{if((j.always||[]).includes(r.id)||j.scope==='intl')return true;const c=r.countries||[],l=r.languages||[];
- return j.scope==='language'?(l.includes(VL)||l.includes('en')):(c.includes('international')||(VC&&c.includes(VC))||(VC==='FR'&&r.ships_to_france))};
 // "Where to start" (data/journeys.toml): per need, the reference of the visitor's country or language, then entries of its groups ranked
 // for the visitor (their rank in the visitor's country or language first, then worldwide), then the whole category; 4 lines at most
 const byId=id=>R.find(r=>r.id===id);
 function needEntries(j,skip,n){const key=j.scope==='country'?VC:j.scope==='language'?VL:'',inG=r=>j.groups.includes(r.cat+'/'+r.group)&&r.id!==skip&&r.status!=='dead';
- const RANKED=R.some(r=>j.groups.includes(r.cat+'/'+r.group)&&r.rank);  // the groups of this need carry ranks (lot 3b), else its fallback list
- if(j.mode==='brand'){const bs=R.filter(r=>inG(r)&&BN[r.id]!=null);return (RANKED?bs.filter(r=>r.rank).sort((a,b)=>((a.rank.intl||9)-(b.rank.intl||9))):bs.sort((a,b)=>BN[b.id]-BN[a.id])).slice(0,n)}  // until the ranks: the brands most entries talk about
- if(!RANKED)return (j.fallback||[]).map(byId).filter(r=>r&&r.id!==skip&&suits(j,r)).slice(0,n);
+ if(j.mode==='brand')return R.filter(r=>inG(r)&&BN[r.id]!=null&&r.rank&&r.rank.intl).sort((a,b)=>a.rank.intl-b.rank.intl).slice(0,n);
  const rk=r=>{const x=r.rank||{};return key&&x[key]?[0,x[key]]:x.intl?[1,x.intl]:null};
  return R.filter(r=>inG(r)&&rk(r)).sort((a,b)=>{const x=rk(a),y=rk(b);return x[0]-y[0]||x[1]-y[1]||lrank(a)-lrank(b)}).slice(0,n)}
 function drawNeeds(){document.getElementById('journeys').innerHTML=(D.journeys||[]).map(j=>{const key=j.scope==='country'?VC:j.scope==='language'?VL:'',rf=j.reference||{},ref=byId(rf[key]||rf.default),es=needEntries(j,ref&&ref.id,ref?2:3),n=R.filter(r=>r.cat===j.category).length;

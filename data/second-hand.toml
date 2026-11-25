@@ -73,7 +73,9 @@ id = "bricklink-marketplace"
 name = "BrickLink"
 url = "https://www.bricklink.com/"
 group = "marketplaces"
-featured = true
+rank = {intl = 1}
+rank_reason_en = "Marketplace specialised in new and used official LEGO sets, parts, minifigures and instructions, with a catalogue and price guide based on past sales and a public API; international in scope."
+rank_reason_fr = "Place de marché spécialisée dans les sets, pièces, figurines et notices de marque LEGO, neufs ou d'occasion, avec catalogue, guide des prix fondé sur les ventes passées et API publique ; portée internationale."
 operator = "lego-group"
 covers = ["official", "second-hand", "parts", "minifigures", "instructions", "data"]
 languages = ["en", "fr"]
@@ -110,6 +112,9 @@ id = "brick-owl-marketplace"
 name = "Brick Owl"
 url = "https://www.brickowl.com/"
 group = "marketplaces"
+rank = {intl = 2}
+rank_reason_en = "Independent alternative to BrickLink for LEGO parts, minifigures and sets, with a catalogue searchable by part or set number, wishlists and an API; fewer shops than BrickLink."
+rank_reason_fr = "Alternative indépendante à BrickLink pour pièces, figurines et sets LEGO, avec catalogue interrogeable par numéro de pièce ou de set, listes de souhaits et API ; moins de boutiques que BrickLink."
 covers = ["official", "second-hand", "parts", "minifigures"]
 languages = ["en", "fr"]
 countries = ["international"]
@@ -146,6 +151,9 @@ id = "ebay-fr"
 name = "eBay.fr"
 url = "https://www.ebay.fr/"
 group = "marketplaces"
+rank = {FR = 3}
+rank_reason_en = "Private and professional sellers listing complete sets, lots and bulk bricks, with a sold-items filter to estimate a price and buyer protection; a mandatory buyer protection fee is included in the price since 1 September 2026 for purchases from private sellers in France or Italy."
+rank_reason_fr = "Particuliers et professionnels vendant sets complets, lots et vrac, avec un filtre des objets vendus pour estimer un prix et une protection acheteurs ; des frais obligatoires de protection acheteurs sont inclus dans le prix depuis le 1er septembre 2026 pour les achats auprès de vendeurs particuliers en France ou en Italie."
 covers = ["official", "alternative", "second-hand", "parts", "minifigures"]
 languages = ["fr"]
 countries = ["FR"]
@@ -177,7 +185,9 @@ id = "vinted"
 name = "Vinted"
 url = "https://www.vinted.fr/"
 group = "marketplaces"
-featured = true
+rank = {intl = 3, FR = 2, DE = 2, IT = 2, ES = 3, PL = 2, CZ = 2, GB = 2, BE = 2, NL = 3, PT = 2, AT = 2, LU = 1, SE = 2, DK = 2, FI = 2, LT = 1, SK = 2, HU = 1, RO = 1, HR = 1}
+rank_reason_en = "National sites in 20 countries, each returning ads for the search lego on 25 November 2026, with a refund policy for items bought from non-professional sellers; ranked after the national classifieds where the group lists one."
+rank_reason_fr = "Sites nationaux dans 20 pays, chacun renvoyant des annonces pour la recherche lego le 25 novembre 2026, avec une politique de remboursement pour les articles achetés auprès de vendeurs non professionnels ; classé après les petites annonces nationales là où le groupe en répertorie une."
 covers = ["official", "second-hand", "minifigures"]
 languages = ["fr", "de", "it", "es", "pl", "cs", "en", "nl", "pt", "sv", "da", "fi", "lt", "sk", "hu", "ro", "hr"]
 countries = ["FR", "DE", "IT", "ES", "PL", "CZ", "GB", "BE", "NL", "PT", "AT", "LU", "SE", "DK", "FI", "LT", "SK", "HU", "RO", "HR"]
@@ -209,7 +219,9 @@ id = "leboncoin"
 name = "Leboncoin"
 url = "https://www.leboncoin.fr/"
 group = "marketplaces"
-featured = true
+rank = {intl = 5, FR = 1}
+rank_reason_en = "339511 ads, with hand-over in person (check before paying, no shipping) and direct negotiation for large lots and family collections."
+rank_reason_fr = "339511 annonces, avec remise en main propre (vérification avant paiement, pas de port) et négociation directe pour les gros lots et les collections familiales."
 covers = ["official", "alternative", "second-hand", "parts", "minifigures"]
 languages = ["fr"]
 countries = ["FR"]
@@ -243,6 +255,9 @@ id = "catawiki"
 name = "Catawiki"
 url = "https://www.catawiki.com/fr"
 group = "marketplaces"
+rank = {intl = 4}
+rank_reason_en = "Curated online auctions of LEGO sets, lots, parts and vintage items, with weekly themed LEGO auctions selected by experts and 826 objects in the LEGO collection."
+rank_reason_fr = "Enchères en ligne sélectionnées de sets, lots, pièces et objets vintage LEGO, avec des enchères thématiques hebdomadaires choisies par des experts et 826 objets dans la collection LEGO."
 covers = ["official", "second-hand", "parts"]
 languages = ["fr", "en", "nl", "de"]
 countries = ["international"]
@@ -274,6 +289,9 @@ id = "marktplaats"
 name = "Marktplaats"
 url = "https://www.marktplaats.nl/"
 group = "marketplaces"
+rank = {NL = 1}
+rank_reason_en = "Owned by eBay, with a large volume of private listings of complete sets in the Netherlands; shipping through the platform is described for the Netherlands."
+rank_reason_fr = "Propriété d'eBay, avec un grand volume d'annonces de particuliers de sets complets aux Pays-Bas ; l'envoi via la plateforme est décrit pour les Pays-Bas."
 covers = ["official", "second-hand"]
 languages = ["nl"]
 countries = ["NL"]
@@ -304,6 +322,9 @@ id = "kleinanzeigen"
 name = "Kleinanzeigen"
 url = "https://www.kleinanzeigen.de/"
 group = "marketplaces"
+rank = {DE = 1}
+rank_reason_en = "Used sets from private sellers, many of them Technic and City, in a large volume of listings; secured payment with shipping and buyer protection only inside Germany."
+rank_reason_fr = "Sets d'occasion vendus par des particuliers, beaucoup de Technic et de City, en gros volume d'annonces ; paiement sécurisé avec envoi et protection acheteur seulement en Allemagne."
 covers = ["official", "second-hand"]
 languages = ["de"]
 countries = ["DE"]
@@ -369,6 +390,9 @@ id = "de-brickplaats"
 name = "De BrickPlaats"
 url = "https://brickplaats.nl/"
 group = "second-hand-shops"
+rank = {NL = 1, DE = 2}
+rank_reason_en = "Shop in Oss with used sets checked before sale and 3020 products on the German-language site brickplaats.de, with online orders that can be picked up in the shop."
+rank_reason_fr = "Boutique installée à Oss avec sets d'occasion contrôlés avant la vente et 3020 produits sur le site en allemand brickplaats.de, avec retrait en magasin possible pour les commandes en ligne."
 covers = ["official", "second-hand", "parts", "minifigures", "custom-builds", "instructions"]
 languages = ["nl", "de", "en"]
 countries = ["NL", "DE"]
@@ -403,9 +427,11 @@ kind = "read"
 id = "brickland"
 name = "Brickland"
 url = "https://brickland.fr/"
+rank = {intl = 2, FR = 1}
+rank_reason_en = "Inventory checked piece by piece, with bulk by the kilo, rental, buy-back and Google reviews displayed on the home page (figures displayed by the shop itself)."
+rank_reason_fr = "Inventaire contrôlé pièce par pièce, avec vrac au kilo, location, rachat et avis Google affichés sur la page d'accueil (chiffres affichés par la boutique elle-même)."
 feed = "https://brickland.fr/feed/"
 group = "second-hand-shops"
-featured = true
 covers = ["official", "second-hand", "parts", "minifigures"]
 languages = ["fr"]
 countries = ["FR"]
@@ -436,6 +462,9 @@ kind = "third-party"
 id = "brickplus"
 name = "BrickPlus"
 url = "https://brickplus.fr/"
+rank = {FR = 2}
+rank_reason_en = "Online shop based in Paris 5 stating condition, contents and presence of box or instructions per set, with buy-back and more than 1500 sets bought back and resold, a figure declared by the site."
+rank_reason_fr = "Boutique en ligne basée à Paris 5 indiquant l'état, le contenu et la présence de la boîte ou de la notice par set, avec rachat et plus de 1500 sets rachetés et revendus, chiffre déclaré par le site."
 size = [{n = 1500, unit = "sets", approx = "more-than"}]
 feed = "https://brickplus.fr/feed/"
 group = "second-hand-shops"
@@ -470,6 +499,9 @@ id = "retrobriques"
 name = "Retrobriques"
 url = "https://www.retrobriques.com/"
 group = "second-hand-shops"
+rank = {FR = 3}
+rank_reason_en = "New and used sets browsable by theme and release year (before 2010 to 2024) with a used section and prices shown in the listing; independent reviews and shipping terms not checked."
+rank_reason_fr = "Sets neufs et d'occasion classés par thème et année de sortie (avant 2010 à 2024) avec une rubrique d'occasion et des prix affichés dans les listes ; avis indépendants et conditions de livraison non vérifiés."
 covers = ["official", "second-hand"]
 languages = ["fr"]
 countries = ["FR"]
@@ -522,6 +554,9 @@ kind = "read"
 id = "reliczone"
 name = "Reliczone"
 url = "https://reliczone.fr/collections/lego"
+rank = {FR = 4}
+rank_reason_en = "Used and vintage sets, bricks and minifigures shipped from France from 3 € by Mondial Relay, in a collection made of small sets and lots."
+rank_reason_fr = "Sets, briques et figurines d'occasion et vintage expédiés depuis la France dès 3 € en Mondial Relay, dans une collection composée de petits sets et de lots."
 feed = "https://reliczone.fr/collections/lego.atom"
 group = "second-hand-shops"
 covers = ["official", "second-hand", "minifigures"]
@@ -550,6 +585,9 @@ id = "reddit-legomarket"
 name = "r/Legomarket"
 url = "https://www.reddit.com/r/Legomarket/"
 group = "marketplaces"
+rank = {US = 1}
+rank_reason_en = "Subreddit for selling, buying and trading LEGO with public posts and sellers identifiable by account; centred on the United States, with no payment protection."
+rank_reason_fr = "Sous-reddit de vente, d'achat et d'échange de LEGO avec annonces publiques et vendeurs identifiables par leur compte ; centré sur les États-Unis, sans protection de paiement."
 regime = "activity"
 covers = ["official", "second-hand"]
 languages = ["en"]
@@ -577,6 +615,9 @@ id = "techlug-vente-achat"
 name = "TechLUG, buy and sell section"
 url = "https://www.techlug.fr/Forum/viewforum.php?f=6"
 group = "marketplaces"
+rank = {FR = 4}
+rank_reason_en = "Buy and sell section of a LEGO forum with a seller white list and black list thread (2008 to 2017) and identifiable sellers; low activity, last observed on 25 March 2026."
+rank_reason_fr = "Section d'achat et de vente d'un forum LEGO avec un fil de liste blanche et noire de vendeurs (2008 à 2017) et des vendeurs identifiables ; activité faible, dernière observée le 25 mars 2026."
 regime = "activity"
 covers = ["official", "second-hand", "custom-builds"]
 languages = ["fr"]
@@ -603,7 +644,6 @@ id = "pick-a-brick"
 name = "Pick a Brick (LEGO.com)"
 url = "https://www.lego.com/fr-fr/pick-and-build/pick-a-brick"
 group = "parts-and-custom-builds"
-featured = true
 operator = "lego-group"
 covers = ["official", "parts", "minifigures"]
 languages = ["fr"]
@@ -631,7 +671,9 @@ id = "toypro"
 name = "ToyPro"
 url = "https://www.toypro.com/fr"
 group = "parts-and-custom-builds"
-featured = true
+rank = {intl = 2}
+rank_reason_en = "Genuine new LEGO sets, parts and minifigures with a large choice of parts, prices including taxes and free shipping to France from 150 € of parts and minifigures."
+rank_reason_fr = "Produits de marque LEGO authentiques neufs : sets, pièces et figurines, avec grand choix de pièces, prix taxes comprises et livraison gratuite vers la France dès 150 € de pièces et figurines."
 covers = ["official", "parts", "minifigures"]
 languages = ["fr", "en", "nl", "de"]
 countries = ["international"]
@@ -690,7 +732,9 @@ id = "buymebricks"
 name = "BuyMeBricks"
 url = "https://buymebricks.com/"
 group = "parts-and-custom-builds"
-featured = true
+rank = {intl = 1}
+rank_reason_en = "Studio, Rebrickable or BrickLink part lists imported to order GoBricks compatible parts in one shipment, in 65 countries with more than 41000 parts and colours, run by a French company."
+rank_reason_fr = "Listes de pièces Studio, Rebrickable ou BrickLink importées pour commander des pièces compatibles GoBricks en un seul envoi, dans 65 pays avec plus de 41000 pièces et couleurs, exploitée par une société française."
 covers = ["alternative", "parts", "custom-builds", "instructions"]
 languages = ["en", "fr"]
 countries = ["international"]
@@ -719,6 +763,9 @@ id = "buildamoc"
 name = "BuildaMOC"
 url = "https://buildamoc.com/"
 group = "parts-and-custom-builds"
+rank = {intl = 4}
+rank_reason_en = "Complete kits by independent designers made only of original LEGO elements with the designer's instructions, with at least 10 % of each kit going to the designer."
+rank_reason_fr = "Kits complets de créateurs indépendants en éléments LEGO d'origine uniquement, avec les instructions du créateur, et au moins 10 % de chaque kit reversé au créateur."
 covers = ["custom-builds", "parts", "instructions"]
 languages = ["en"]
 countries = ["international"]
@@ -848,7 +895,9 @@ id = "lego-building-instructions"
 name = "Official LEGO building instructions"
 url = "https://www.lego.com/fr-fr/service/building-instructions"
 group = "parts-and-custom-builds"
-featured = true
+rank = {intl = 3}
+rank_reason_en = "Page of the LEGO Group to find the instructions of an official LEGO set by name or number, with the LEGO Builder application covering old and new sets."
+rank_reason_fr = "Page du groupe LEGO pour retrouver les instructions d'un set de marque LEGO par nom ou numéro, avec l'application LEGO Builder pour des sets anciens et récents."
 operator = "lego-group"
 covers = ["official", "instructions"]
 languages = ["fr", "en"]
@@ -875,7 +924,9 @@ id = "lightailing-briksmax"
 name = "Lightailing and Briksmax"
 url = "https://www.lightailing.com/fr"
 group = "services-and-accessories"
-featured = true
+rank = {intl = 2}
+rank_reason_en = "LED light kits for specific LEGO sets searchable by set number, with several versions per set (Briksmax 2.0, remote control, RGB, sound), shipped from China with import duties possible."
+rank_reason_fr = "Kits à LED pour des sets LEGO précis, avec recherche par numéro de set et plusieurs versions par set (Briksmax 2.0, télécommande, RVB, sonore), envoyés de Chine avec droits d'importation possibles."
 covers = ["official"]
 languages = ["fr", "en"]
 countries = ["international"]
@@ -1011,7 +1062,9 @@ id = "wicked-brick"
 name = "Wicked Brick"
 url = "https://www.wickedbrick.com/"
 group = "services-and-accessories"
-featured = true
+rank = {intl = 4}
+rank_reason_en = "Made-to-order acrylic display cases and stands for LEGO sets and minifigures, with a large catalogue by set and a European version of the store in euros."
+rank_reason_fr = "Vitrines et supports acryliques pour sets et figurines LEGO fabriqués à la commande, avec grand catalogue par set et version européenne de la boutique en euros."
 covers = ["official", "minifigures"]
 languages = ["en", "fr"]
 countries = ["international"]
@@ -1062,6 +1115,9 @@ kind = "read"
 id = "brick-in-it"
 name = "Brick In It"
 url = "https://brick-in-it.com/collections/lego-display-cases"
+rank = {intl = 5}
+rank_reason_en = "Tabletop and wall-mounted acrylic display cases searchable by set number, with 453 products listed, a custom size option and worldwide shipping stated."
+rank_reason_fr = "Vitrines en acrylique de table ou murales avec recherche par numéro de set, 453 produits listés, option sur mesure et envoi dans le monde indiqué."
 feed = "https://brick-in-it.com/collections/lego-display-cases.atom"
 group = "services-and-accessories"
 covers = ["official"]
@@ -1114,7 +1170,6 @@ id = "sticknbricks"
 name = "Stick N' Bricks"
 url = "https://sticknbricks.com/"
 group = "services-and-accessories"
-featured = true
 covers = ["minifigures"]
 languages = ["fr"]
 countries = ["FR"]
@@ -1140,7 +1195,9 @@ id = "bright-my-bricks"
 name = "Bright My Bricks"
 url = "https://brightmybricks.com/"
 group = "services-and-accessories"
-featured = true
+rank = {intl = 1}
+rank_reason_en = "LED light kits each designed for one LEGO set (570 kits stated), with lighting components, acrylic displays, a kit request form and a site in English, French and German."
+rank_reason_fr = "Kits à LED chacun conçu pour un set LEGO (570 kits annoncés), avec composants d'éclairage, vitrines en acrylique, formulaire de demande de kit et site en anglais, français et allemand."
 covers = ["official"]
 languages = ["en", "fr", "de"]
 countries = ["international"]
@@ -1190,6 +1247,9 @@ kind = "read"
 id = "brickstuff"
 name = "Brickstuff"
 url = "https://www.brickstuff.com/"
+rank = {intl = 3}
+rank_reason_en = "Family business in Minnesota making modular lights, sound modules and video screens for LEGO sets and custom builds, with parts that work together from starter kits to bulk, guides and user forums."
+rank_reason_fr = "Entreprise familiale du Minnesota fabriquant des éclairages modulaires, modules sonores et écrans vidéo pour sets LEGO et créations originales, avec pièces compatibles entre elles des kits de départ au vrac, guides et forums d'utilisateurs."
 feed = "https://www.brickstuff.com/blog/feed/"
 group = "services-and-accessories"
 covers = ["custom-builds"]
@@ -1272,6 +1332,9 @@ id = "brickwarriors"
 name = "BrickWarriors"
 url = "https://www.brickwarriors.com/"
 group = "custom-minifigures-and-accessories"
+rank = {intl = 3}
+rank_reason_en = "Founded in 2011, weapons, armor, helmets, heads and capes in ABS plastic, with a range of more than 400 items (as published) and volume discounts shown on the site."
+rank_reason_fr = "Fondé en 2011 : armes, armures, casques, têtes et capes en plastique ABS, avec une gamme de plus de 400 articles (selon le site) et des remises de volume affichées sur le site."
 covers = ["custom-builds", "minifigures", "parts"]
 languages = ["en"]
 countries = ["US"]
@@ -1297,6 +1360,9 @@ id = "citizen-brick"
 name = "Citizen Brick"
 url = "https://citizenbrick.com/"
 group = "custom-minifigures-and-accessories"
+rank = {intl = 4}
+rank_reason_en = "Maker active since 2010 of custom printed minifigures and bricks with original designs rather than licensed characters, injection-molded parts and a custom printing service for businesses."
+rank_reason_fr = "Fabricant actif depuis 2010 de minifigurines et de briques imprimées sur mesure, avec créations originales plutôt que personnages sous licence, pièces moulées par injection et service d'impression pour entreprises."
 covers = ["custom-builds", "minifigures", "parts"]
 languages = ["en"]
 countries = ["US"]
@@ -1322,7 +1388,9 @@ id = "minifigs-me"
 name = "Minifigs.me"
 url = "https://minifigs.me/"
 group = "custom-minifigures-and-accessories"
-featured = true
+rank = {intl = 2}
+rank_reason_en = "Custom minifigures, small builds and frames printed onto genuine LEGO parts, shipped worldwide from the United Kingdom with 2 to 5 days of processing (as stated on the site)."
+rank_reason_fr = "Minifigurines sur mesure, petites constructions et cadres imprimés sur pièces LEGO authentiques, expédiés dans le monde depuis le Royaume-Uni avec 2 à 5 jours de préparation (selon le site)."
 covers = ["custom-builds", "minifigures", "parts"]
 languages = ["en"]
 countries = ["international"]
@@ -1348,6 +1416,9 @@ id = "hall-of-bricks"
 name = "Hall of Bricks"
 url = "https://hallofbricks.shop/"
 group = "custom-minifigures-and-accessories"
+rank = {intl = 1}
+rank_reason_en = "Studio printing custom minifigures in house with UV printers on original LEGO elements since 2012, with its own designs, prices in euros, worldwide shipping and a rating of 4.86 stars on 946 reviews given by the shop itself."
+rank_reason_fr = "Studio imprimant sur place des minifigurines sur mesure par impression UV sur éléments LEGO d'origine depuis 2012, avec créations propres, prix en euros, expédition dans le monde et note de 4.86 étoiles sur 946 avis fournie par la boutique elle-même."
 covers = ["custom-builds", "minifigures"]
 languages = ["de", "en"]
 countries = ["DE", "international"]
@@ -1373,7 +1444,6 @@ id = "brick-manufacture"
 name = "Brick Manufacture"
 url = "https://brick-manufacture.com/en"
 group = "custom-minifigures-and-accessories"
-featured = true
 covers = ["custom-builds", "minifigures"]
 languages = ["de", "en", "fr", "es"]
 countries = ["DE", "FR", "international"]
@@ -1501,9 +1571,11 @@ kind = "indexed"
 id = "brickstickershop"
 name = "BrickStickerShop"
 url = "https://www.brickstickershop.com/"
+rank = {intl = 1}
+rank_reason_en = "Replacement vinyl stickers for old sets by theme and year, vector drawn with ink calibrated to brick colours, shipped worldwide."
+rank_reason_fr = "Autocollants de remplacement en vinyle pour anciens sets, par thème et année, dessinés en vectoriel avec encre calibrée sur les couleurs des briques, expédiés dans le monde."
 feed = "https://www.brickstickershop.com/ExportBestanden/RSS.php?Type=product"
 group = "decals-and-stickers"
-featured = true
 covers = ["custom-builds", "parts"]
 languages = ["en"]
 countries = ["NL", "international"]
@@ -1534,6 +1606,9 @@ id = "ultimate-collector-stickers"
 name = "Ultimate Collector Stickers"
 url = "https://www.ultimatecollectorstickers.co.uk/"
 group = "decals-and-stickers"
+rank = {intl = 4}
+rank_reason_en = "Die-cut, colour-matched stickers in the style of LEGO Ultimate Collector Series sets, with a custom design, printing and cutting service from 20 pounds."
+rank_reason_fr = "Autocollants découpés aux couleurs ajustées dans le style des sets LEGO Ultimate Collector Series, avec un service sur mesure de conception, d'impression et de découpe dès 20 livres."
 covers = ["custom-builds", "parts"]
 languages = ["en"]
 countries = ["GB"]
@@ -1559,6 +1634,9 @@ id = "forwartsticker"
 name = "ForwartSticker"
 url = "https://forwartsticker.com/"
 group = "decals-and-stickers"
+rank = {intl = 3}
+rank_reason_en = "Die-cut stickers for sets and custom builds designed with custom-build designers, with sheets for community models and Icons sets priced in euros, worldwide shipping and a refund guarantee stated."
+rank_reason_fr = "Adhésifs prédécoupés pour sets et créations originales conçus avec des concepteurs de créations, avec planches pour modèles de la communauté et sets Icons en euros, expédition dans le monde et garantie de remboursement annoncée."
 covers = ["custom-builds", "parts"]
 languages = ["en"]
 countries = ["international"]
@@ -1584,6 +1662,9 @@ id = "moc-sticker-shop"
 name = "The MOC Sticker Shop"
 url = "https://themocstickershop.com/"
 group = "decals-and-stickers"
+rank = {intl = 2}
+rank_reason_en = "Hand-drawn vinyl decals for modular scenes and custom builds, with custom jobs from 5 pounds for one design, a proof before printing and delivery to the European Union at 4.95 pounds (as stated)."
+rank_reason_fr = "Décalcomanies en vinyle dessinées à la main pour scènes modulaires et créations originales, avec travaux sur mesure dès 5 livres pour un motif, épreuve avant impression et livraison vers l'Union européenne à 4.95 livres (selon le site)."
 covers = ["custom-builds", "parts"]
 languages = ["en"]
 countries = ["GB", "international"]
@@ -1609,6 +1690,9 @@ id = "wallapop"
 name = "Wallapop"
 url = "https://www.wallapop.com/"
 group = "marketplaces"
+rank = {ES = 1}
+rank_reason_en = "Application and website with a large Spanish user base, searchable by keyword for LEGO sets and loose parts among general classifieds; listing content not read."
+rank_reason_fr = "Application et site avec une large base d'utilisateurs en Espagne, interrogeables par mot-clé pour des sets et pièces LEGO parmi des petites annonces généralistes ; contenu des annonces non lu."
 covers = ["second-hand"]
 languages = ["es"]
 countries = ["ES"]
@@ -1634,6 +1718,9 @@ id = "afols-nl"
 name = "afols.nl"
 url = "https://afols.nl/"
 group = "marketplaces"
+rank = {NL = 2}
+rank_reason_en = "Forum for adult LEGO fans where members buy, sell and look for sets, with free membership, members verified by a payment of one cent and 497 listings of sets for adults."
+rank_reason_fr = "Forum pour fans adultes de LEGO où les membres achètent, vendent et recherchent des sets, avec inscription gratuite, membres vérifiés par un paiement d'un cent et 497 annonces de sets pour adultes."
 size = [{n = 497, unit = "ads"}]
 regime = "activity"
 covers = ["second-hand", "news"]
@@ -1661,6 +1748,9 @@ id = "2dehands-be"
 name = "2dehands and 2ememain"
 url = "https://www.2dehands.be/"
 group = "marketplaces"
+rank = {BE = 1}
+rank_reason_en = "One platform in two languages, 2dehands in Dutch and 2ememain in French, with 52331 results for the search lego on 25 November 2026, 44775 of them in the Duplo and Lego category."
+rank_reason_fr = "Une même plateforme en deux langues, 2dehands en néerlandais et 2ememain en français, avec 52331 résultats pour la recherche lego le 25 novembre 2026, dont 44775 dans la catégorie Duplo et Lego."
 covers = ["second-hand"]
 languages = ["nl", "fr"]
 countries = ["BE"]
@@ -1691,6 +1781,9 @@ id = "blocket-se"
 name = "Blocket"
 url = "https://www.blocket.se/"
 group = "marketplaces"
+rank = {SE = 1}
+rank_reason_en = "General classifieds described as the main ones in Sweden, where a keyword search for LEGO returns listings of sets and parts."
+rank_reason_fr = "Plateforme généraliste décrite comme la principale de Suède, où une recherche par mot-clé pour LEGO renvoie des annonces de sets et de pièces."
 covers = ["second-hand"]
 languages = ["sv"]
 countries = ["SE"]
@@ -1716,6 +1809,9 @@ id = "dba-dk"
 name = "DBA"
 url = "https://www.dba.dk/"
 group = "marketplaces"
+rank = {DK = 1}
+rank_reason_en = "General classifieds described as the main ones in Denmark, where a keyword search for LEGO returns listings of sets and parts."
+rank_reason_fr = "Plateforme généraliste décrite comme la principale du Danemark, où une recherche par mot-clé pour LEGO renvoie des annonces de sets et de pièces."
 covers = ["second-hand"]
 languages = ["da"]
 countries = ["DK"]
@@ -1741,6 +1837,9 @@ id = "finn-no"
 name = "FINN.no"
 url = "https://www.finn.no/"
 group = "marketplaces"
+rank = {NO = 1}
+rank_reason_en = "General classifieds described as the main ones in Norway, where a keyword search for LEGO returns listings of sets and parts."
+rank_reason_fr = "Plateforme généraliste décrite comme la principale de Norvège, où une recherche par mot-clé pour LEGO renvoie des annonces de sets et de pièces."
 covers = ["second-hand"]
 languages = ["no"]
 countries = ["NO"]
@@ -1765,9 +1864,11 @@ kind = "read"
 id = "buwizz"
 name = "BuWizz"
 url = "https://buwizz.com/"
+rank = {intl = 1}
+rank_reason_en = "Bluetooth controllers with a rechargeable battery and motors for LEGO Technic, System and train models, the BuWizz 3.0 Pro driving Power Functions, 9V and Powered Up motors; BuWizz 4.0 Ultra announced on Kickstarter on 4 November 2026."
+rank_reason_fr = "Contrôleurs Bluetooth à batterie rechargeable et moteurs pour modèles LEGO Technic, System et trains, le BuWizz 3.0 Pro pilotant des moteurs Power Functions, 9V et Powered Up ; BuWizz 4.0 Ultra annoncé sur Kickstarter le 4 novembre 2026."
 feed = "https://buwizz.com/feed/"
 group = "motors-and-track"
-featured = true
 covers = ["parts"]
 languages = ["en", "sl"]
 countries = ["international"]
@@ -1798,6 +1899,9 @@ id = "fx-bricks"
 name = "Fx Bricks"
 url = "https://shop.fxbricks.com/"
 group = "motors-and-track"
+rank = {intl = 3}
+rank_reason_en = "Metal track compatible with LEGO 9V accessories, the PFx Brick light and sound controller and the Fx 9V system launched on 3 June 2026 (as stated); several track items listed as sold out."
+rank_reason_fr = "Voie métallique compatible avec les accessoires LEGO 9V, contrôleur de lumière et de son PFx Brick et système Fx 9V lancé le 3 juin 2026 (selon le fabricant) ; plusieurs voies indiquées en rupture."
 covers = ["parts"]
 languages = ["en"]
 countries = ["international"]
@@ -1828,7 +1932,9 @@ id = "trixbrix"
 name = "Trixbrix"
 url = "https://trixbrix.eu/en/"
 group = "motors-and-track"
-featured = true
+rank = {intl = 2}
+rank_reason_en = "Plastic track with curves from R24 to R184, many switch types, bridges and automation parts for LEGO trains, delivered from Poland in 2 to 4 working days within the European Union (as stated) and global sponsor of the Brick Train Awards 2026."
+rank_reason_fr = "Voie en plastique avec courbes de R24 à R184, nombreux types d'aiguillages, ponts et éléments d'automatisation pour trains LEGO, livrée depuis la Pologne en 2 à 4 jours ouvrés dans l'Union européenne (selon le site) et sponsor mondial des Brick Train Awards 2026."
 covers = ["parts"]
 languages = ["en", "de"]
 countries = ["international"]
@@ -1864,7 +1970,9 @@ id = "open-l-gauge"
 name = "Open L-Gauge"
 url = "https://open-l-gauge.eu/"
 group = "parts-and-custom-builds"
-featured = true
+rank = {intl = 5}
+rank_reason_en = "Community library of free instructions for LEGO train models under CC BY-NC-SA 4.0, with models added on 7 and 21 November 2026 and a resources page on track, electronics and software."
+rank_reason_fr = "Bibliothèque communautaire gratuite d'instructions de modèles de trains LEGO sous licence CC BY-NC-SA 4.0, avec modèles ajoutés les 7 et 21 novembre 2026 et une page de ressources sur les voies, l'électronique et les logiciels."
 covers = ["instructions", "custom-builds"]
 languages = ["en"]
 countries = ["international"]
@@ -1930,6 +2038,9 @@ id = "brickville"
 name = "Brickville"
 url = "https://brickville.com.au/"
 group = "second-hand-shops"
+rank = {AU = 1, NZ = 1}
+rank_reason_en = "Melbourne store with a large catalogue of retired and vintage sets checked for completeness by the shop, a physical store in Kensington, Victoria, and prices in Australian and New Zealand dollars."
+rank_reason_fr = "Boutique de Melbourne avec un large catalogue de sets retirés et anciens vérifiés pour leur complétude par la boutique, un magasin physique à Kensington (Victoria) et des prix en dollars australiens et néo-zélandais."
 covers = ["official", "second-hand"]
 languages = ["en"]
 countries = ["AU", "NZ"]
@@ -1960,6 +2071,9 @@ id = "subito"
 name = "Subito"
 url = "https://www.subito.it/"
 group = "marketplaces"
+rank = {IT = 1}
+rank_reason_en = "Sets, mixed lots and loose minifigures from private sellers, mostly filed under collectibles, with the seller's town shown on every ad; not specific to LEGO."
+rank_reason_fr = "Sets, lots mélangés et minifigurines vendus par des particuliers, classés surtout dans le collectionnisme, avec la commune du vendeur sur chaque annonce ; pas spécifique à LEGO."
 covers = ["second-hand"]
 languages = ["it"]
 countries = ["IT"]
@@ -1990,6 +2104,9 @@ id = "willhaben"
 name = "willhaben"
 url = "https://www.willhaben.at/"
 group = "marketplaces"
+rank = {AT = 1}
+rank_reason_en = "Presents itself as the largest digital marketplace in Austria, with a category of its own holding 139940 ads on 25 November 2026 and secure payment and parcel shipping through PayLivery."
+rank_reason_fr = "Se présente comme la plus grande place de marché numérique d'Autriche, avec une catégorie dédiée de 139940 annonces le 25 novembre 2026 et un paiement sécurisé et un envoi de colis par PayLivery."
 covers = ["second-hand"]
 languages = ["de"]
 countries = ["AT"]
@@ -2020,6 +2137,9 @@ id = "ricardo"
 name = "Ricardo"
 url = "https://www.ricardo.ch/"
 group = "marketplaces"
+rank = {CH = 1}
+rank_reason_en = "Auction and buy-now formats on the same search page, with vintage 9V trains, 10 kg lots of loose bricks, minifigures and sealed sets, listed in German and in French."
+rank_reason_fr = "Enchères et achat immédiat sur la même page de recherche, avec trains 9V anciens, lots de 10 kg de briques en vrac, minifigurines et sets scellés, annoncés en allemand et en français."
 covers = ["second-hand"]
 languages = ["de", "fr"]
 countries = ["CH"]
@@ -2050,6 +2170,9 @@ id = "olx-pl"
 name = "OLX.pl"
 url = "https://www.olx.pl/"
 group = "marketplaces"
+rank = {PL = 1}
+rank_reason_en = "Filter for used or new condition and for ads with shipping; the search for lego lists more than 1000 ads, each showing its last refresh date."
+rank_reason_fr = "Filtre par état, neuf ou occasion, et par annonces avec envoi ; la recherche lego liste plus de 1000 annonces, chacune affichant sa date d'actualisation."
 covers = ["second-hand"]
 languages = ["pl"]
 countries = ["PL"]
@@ -2080,6 +2203,9 @@ id = "bazos-cz"
 name = "Bazoš.cz"
 url = "https://www.bazos.cz/"
 group = "marketplaces"
+rank = {CZ = 1}
+rank_reason_en = "Free ads browsable without an account, with 1590422 ads online in all categories and 14551 results for the search lego on 25 November 2026, each ad showing its posting date."
+rank_reason_fr = "Annonces gratuites consultables sans compte, avec 1590422 annonces en ligne toutes rubriques et 14551 résultats pour la recherche lego le 25 novembre 2026, chaque annonce affichant sa date de publication."
 covers = ["second-hand"]
 languages = ["cs"]
 countries = ["CZ"]
@@ -2110,6 +2236,9 @@ id = "bazos-sk"
 name = "Bazoš.sk"
 url = "https://www.bazos.sk/"
 group = "marketplaces"
+rank = {SK = 1}
+rank_reason_en = "Free ads browsable without an account, with 1039802 ads online in all categories and 7290 results for the search lego on 25 November 2026, each ad showing its posting date."
+rank_reason_fr = "Annonces gratuites consultables sans compte, avec 1039802 annonces en ligne toutes rubriques et 7290 résultats pour la recherche lego le 25 novembre 2026, chaque annonce affichant sa date de publication."
 covers = ["second-hand"]
 languages = ["sk"]
 countries = ["SK"]
@@ -2140,6 +2269,9 @@ id = "olx-pt"
 name = "OLX Portugal"
 url = "https://www.olx.pt/"
 group = "marketplaces"
+rank = {PT = 1}
+rank_reason_en = "Filters for OLX delivery and for ads with photos; the search for lego lists more than 1000 ads showing their date, with the delivery service of the platform on part of them."
+rank_reason_fr = "Filtres sur la livraison OLX et sur les photos ; la recherche lego liste plus de 1000 annonces datées, avec le service de livraison de la plateforme sur une partie d'entre elles."
 covers = ["second-hand"]
 languages = ["pt"]
 countries = ["PT"]
@@ -2170,6 +2302,9 @@ id = "tori-fi"
 name = "Tori.fi"
 url = "https://www.tori.fi/"
 group = "marketplaces"
+rank = {FI = 1}
+rank_reason_en = "Filters for delivery option, condition and seller type with a saved-search alert, newest-first sorting and a map view; more than 29000 ads for the search lego on 25 November 2026."
+rank_reason_fr = "Filtres par mode de livraison, état et type de vendeur avec alerte de recherche enregistrée, tri des plus récentes en premier et vue sur carte ; plus de 29000 annonces pour la recherche lego le 25 novembre 2026."
 covers = ["second-hand"]
 languages = ["fi"]
 countries = ["FI"]
@@ -2200,6 +2335,9 @@ id = "gumtree-uk"
 name = "Gumtree UK"
 url = "https://www.gumtree.com/"
 group = "marketplaces"
+rank = {GB = 1}
+rank_reason_en = "Local pickup is the norm, with large boxes and set collections near the buyer from private sellers; many ads are collection only."
+rank_reason_fr = "Remise en main propre : grandes boîtes et collections de sets près de l'acheteur, de particuliers ; beaucoup d'annonces sont en retrait sur place uniquement."
 covers = ["second-hand"]
 languages = ["en"]
 countries = ["GB"]
@@ -2230,6 +2368,9 @@ id = "kijiji"
 name = "Kijiji"
 url = "https://www.kijiji.ca/"
 group = "marketplaces"
+rank = {CA = 1}
+rank_reason_en = "Interface switchable between English and French, with 31492 ads for the search lego across Canada on 25 November 2026, a filter for verified ads and notifications of new ads."
+rank_reason_fr = "Site bilingue, bascule d'un clic de langue, avec 31492 annonces pour la recherche lego dans tout le pays le 25 novembre 2026, un filtre des annonces vérifiées et des notifications de nouvelles annonces."
 covers = ["second-hand"]
 languages = ["en", "fr"]
 countries = ["CA"]
@@ -2260,6 +2401,9 @@ id = "donedeal"
 name = "DoneDeal"
 url = "https://www.donedeal.ie/"
 group = "marketplaces"
+rank = {IE = 1}
+rank_reason_en = "Seller rating and ad age shown on each private-seller ad, with 631 ads for the search lego on 25 November 2026."
+rank_reason_fr = "Note du vendeur et ancienneté affichées sur chaque annonce de particulier, avec 631 annonces pour la recherche lego le 25 novembre 2026."
 covers = ["second-hand"]
 languages = ["en"]
 countries = ["IE"]
@@ -2290,6 +2434,9 @@ id = "bob-shop"
 name = "Bob Shop"
 url = "https://www.bobshop.co.za/"
 group = "marketplaces"
+rank = {ZA = 1}
+rank_reason_en = "Auctions, Buy Now and Offers in one marketplace, operating since 1999 under the name bidorbuy and renamed Bob Shop in March 2023, with buyer protection stated on the platform."
+rank_reason_fr = "Enchères, achat immédiat et offres dans une même place de marché, active depuis 1999 sous le nom bidorbuy et renommée Bob Shop en mars 2023, avec protection des acheteurs annoncée par la plateforme."
 covers = ["official", "second-hand"]
 languages = ["en"]
 countries = ["ZA"]
@@ -2320,6 +2467,9 @@ id = "todocoleccion"
 name = "todocoleccion"
 url = "https://www.todocoleccion.net/"
 group = "marketplaces"
+rank = {ES = 2}
+rank_reason_en = "Collectors' auctions and fixed-price lots with a LEGO category of vintage items, such as a 1960s System lot at 1850 € and a 1988 catalogue at 3 €, that general classifieds rarely list."
+rank_reason_fr = "Enchères et lots à prix fixe pour collectionneurs avec une catégorie LEGO d'objets anciens, comme un lot System des années 1960 à 1850 € et un catalogue de 1988 à 3 €, que les petites annonces généralistes listent rarement."
 covers = ["second-hand"]
 languages = ["es", "en"]
 countries = ["ES"]
@@ -2350,6 +2500,9 @@ id = "bricks-and-minifigs"
 name = "Bricks & Minifigs"
 url = "https://bricksandminifigs.com/"
 group = "second-hand-shops"
+rank = {intl = 1, US = 1, CA = 1}
+rank_reason_en = "More than 250 open stores in the United States and Canada (as stated), with Certified Used sets checked complete with figures and instructions, bulk bricks and trade-ins paid in cash or store credit."
+rank_reason_fr = "Plus de 250 magasins ouverts aux États-Unis et au Canada (selon l'enseigne), avec sets Certified Used vérifiés complets avec figurines et notices, briques en vrac et reprises payées en espèces ou en crédit magasin."
 covers = ["official", "second-hand", "minifigures", "parts"]
 languages = ["en"]
 countries = ["US", "CA"]
@@ -2385,6 +2538,9 @@ id = "bricktraders"
 name = "Bricktraders"
 url = "https://bricktraders.co.uk/"
 group = "second-hand-shops"
+rank = {intl = 4, GB = 1}
+rank_reason_en = "Buys, sells and trades new and pre-loved sets, minifigures and bricks in a shop in St Albans, with a Make a Minifig counter, Brick'n'mix loose parts and retired sets."
+rank_reason_fr = "Achète, vend et échange sets, minifigurines et briques neufs ou d'occasion dans un magasin à St Albans, avec comptoir Make a Minifig, pièces en vrac Brick'n'mix et sets retirés."
 covers = ["official", "second-hand", "minifigures", "parts"]
 languages = ["en"]
 countries = ["GB"]
@@ -2415,6 +2571,9 @@ id = "hadley-bricks"
 name = "Hadley Bricks"
 url = "https://hadleybricks.co.uk/"
 group = "second-hand-shops"
+rank = {intl = 5, GB = 2}
+rank_reason_en = "Used sets restored by hand and checked piece by piece against the official inventory, each with a Hadley Bricks Verified card, and 14 days to return an item not as described; delivers to addresses in the United Kingdom only."
+rank_reason_fr = "Sets d'occasion restaurés à la main et contrôlés pièce par pièce selon l'inventaire officiel, chacun avec une fiche Hadley Bricks Verified, et 14 jours pour retourner un article non conforme ; livre uniquement à des adresses au Royaume-Uni."
 covers = ["official", "second-hand"]
 languages = ["en"]
 countries = ["GB"]
@@ -2446,6 +2605,9 @@ id = "barando"
 name = "barando"
 url = "https://www.barando.de/"
 group = "second-hand-shops"
+rank = {intl = 3, DE = 1}
+rank_reason_en = "Cleaned used bricks sold by the kilogram and a BrickLink store of more than 23000 items, shipping worldwide, BrickLink seller since 2018 and retailer of new sets since 2021."
+rank_reason_fr = "Briques nettoyées vendues au kilogramme et boutique BrickLink de plus de 23000 références, expédition dans le monde, vendeur BrickLink depuis 2018 et revendeur de sets neufs depuis 2021."
 covers = ["official", "second-hand", "parts", "minifigures"]
 languages = ["de"]
 countries = ["DE"]
@@ -2545,6 +2707,9 @@ id = "united-bricks"
 name = "United Bricks"
 url = "https://www.unitedbricks.com/"
 group = "custom-minifigures-and-accessories"
+rank = {intl = 5}
+rank_reason_en = "Historical and military figures printed in the United Kingdom by UV process on new LEGO parts, with a monthly Brick Legends Box on one-time or subscription terms."
+rank_reason_fr = "Figurines historiques et militaires imprimées au Royaume-Uni par procédé UV sur des pièces LEGO neuves, avec une Brick Legends Box mensuelle à l'unité ou par abonnement."
 covers = ["minifigures", "custom-builds", "parts"]
 languages = ["en"]
 countries = ["GB", "international"]
@@ -2666,6 +2831,9 @@ id = "bricktracks"
 name = "BrickTracks"
 url = "https://bricktracks.com/"
 group = "motors-and-track"
+rank = {intl = 4}
+rank_reason_en = "Curves of R56, R104 and R120 radius with Power Functions variants, switch kits, wheelsets and metal axles for LEGO trains, plus limited seasonal train kits with instruction books."
+rank_reason_fr = "Courbes de rayon R56, R104 et R120 avec variantes Power Functions, kits d'aiguillages, jeux de roues et essieux métalliques pour trains LEGO, plus kits de trains saisonniers en série limitée avec livret."
 covers = ["parts"]
 languages = ["en"]
 countries = ["US", "international"]
@@ -2696,6 +2864,9 @@ id = "brick-train-depot"
 name = "Brick Train Depot"
 url = "https://www.bricktraindepot.com/"
 group = "motors-and-track"
+rank = {intl = 5}
+rank_reason_en = "Instructions, decals, wheels and track from 13 designers in one shop, in 1:48 and 8-wide scales, with new locomotive instructions on 20 November 2026."
+rank_reason_fr = "Notices, décalcomanies, roues et voies de 13 concepteurs dans une seule boutique, aux échelles 1:48 et 8 studs, avec nouvelles notices de locomotive le 20 novembre 2026."
 covers = ["parts", "instructions"]
 languages = ["en"]
 countries = ["US", "international"]

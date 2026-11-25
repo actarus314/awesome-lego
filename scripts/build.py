@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate data/*.toml, write README.md (entries marked `featured`) and full-list.md
+"""Validate data/*.toml, write README.md (the rank 1 worldwide of each group) and full-list.md
 (every entry), and build the bilingual GitHub Pages site (site/).
 
 Usage: python3 scripts/build.py [--check | --site-only] [--notes]   (standard library only, latest Python release)
@@ -40,7 +40,7 @@ UNITS = {"sets", "brands", "members", "topics", "posts", "subscribers", "videos"
          "models", "articles", "countries", "events", "clubs", "communities", "instructions", "reviews", "followers", "editions"}
 APPROX = {"about", "more-than", "at-least"}
 # Rules of lot 3 that the current data do not meet yet: warnings until the content is converted (lot 3b), errors after.
-NEW_RULES_BLOCKING = False
+NEW_RULES_BLOCKING = True
 STATUS = {"active", "slow", "inactive", "archived", "dead"}
 CARD_LABEL = 17  # characters of a group label on a card, beside the entry's name, on one line down to 320 px
 REGIMES = {"activity", "work", "operating"}  # what keeps an entry current: recent activity, nothing (a finished work), being open
@@ -112,8 +112,10 @@ def load():
             for k in ("name", "url", "group", "summary_en", "status", "checked", "added", "confidence"):
                 if not r.get(k):
                     errors.append(f"{w}: {k} missing")
+            if "featured" in r:  # replaced by the ranks in lot 3b
+                errors.append(f"{w}: featured is replaced by rank (the rank 1 worldwide of a group is its selection)")
             if not r.get("summary_fr"):  # contributions in English only (decision of 24/11/2026, 13:47): the monthly review translates
-                frk = [k for k in r if k.endswith("_fr") and k not in ("city_fr",)]
+                frk = [k for k in r if k.endswith("_fr") and k not in ("city_fr", "rank_reason_fr")]
                 if frk:
                     errors.append(f"{w}: French texts come together, with summary_fr ({', '.join(frk)} without it)")
                 untranslated.append(w)
@@ -347,7 +349,7 @@ def effective(r, m):
 
 
 def anchor(s):
-    return re.sub(r"[^a-z0-9 -]", "", s.lower().replace("’", "").replace("'", "")).strip().replace(" ", "-")
+    return re.sub(r"[^\w -]", "", s.lower().replace("’", "").replace("'", "")).strip().replace(" ", "-")  # as GitHub: letters with accents stay (« cafés »)
 
 
 FILES = {("readme", "en"): "README.md", ("full", "en"): "full-list.md"}
@@ -358,8 +360,7 @@ MORE = {"readme": {"en": "Only the best of each group is listed here. The [full 
 def readme(cats, m, lang, kind="readme"):
     title = T["title"][lang] if kind == "readme" else "Awesome LEGO: full list"
     badge = " [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)" if kind == "readme" else ""
-    ranked = has_ranks(cats)
-    keep = (lambda r: picked(r, ranked, c["category"]["id"])) if kind == "readme" else (lambda r: True)
+    keep = picked if kind == "readme" else (lambda r: True)
     logo = [f'<a href="{PAGES}"><img src="media/logo.svg" align="right" width="120" alt="Awesome LEGO logo"></a>', ""] if kind == "readme" else []
     out = [f"# {title}{badge}", "", *logo, f"> {T['tagline'][lang]}", "",
            f"**[{T['site'][lang]}]({PAGES})** · [{T['site_fr'][lang]}]({PAGES}fr/) · [{T['feed'][lang]}]({PAGES}feed.xml)", "",
@@ -376,26 +377,31 @@ def readme(cats, m, lang, kind="readme"):
         seen[a] = n + 1
         return a if n == 0 else f"{a}-{n}"
     uniq(T["contents"][lang])
+    shown, listed = {}, set()  # entries of each group; the README gives a link once (awesome-lint: double-link), the full list every entry
     for c in cats:
-        if not any(keep(r) for r in c["resources"]):
+        for g in c["category"].get("groups", []):
+            rs = [r for r in c["resources"] if r["group"] == g["id"] and keep(r) and (kind != "readme" or r["url"] not in listed)]
+            listed.update(r["url"] for r in rs)
+            shown[(c["category"]["id"], g["id"])] = rs
+    has = lambda c: any(shown[(c["category"]["id"], g["id"])] for g in c["category"].get("groups", []))
+    for c in cats:
+        if not has(c):
             continue
         name = c["category"][f"name_{lang}"]
         out.append(f"- [{name}](#{uniq(name)})")
         for g in c["category"].get("groups", []):
-            if any(r["group"] == g["id"] and keep(r) for r in c["resources"]):
+            if shown[(c["category"]["id"], g["id"])]:
                 out.append(f"  - [{g['name_' + lang]}](#{uniq(g['name_' + lang])})")
-    listed = set()
     for c in cats:
         cat = c["category"]
-        if not any(keep(r) for r in c["resources"]):
+        if not has(c):
             continue
         # the icon floats left of the heading: inside the heading, awesome-lint and GitHub disagree on its anchor
         out += ["", "<br>", "", *([icon(cat["id"]), ""] if icon(cat["id"]) else []), f"## {cat['name_' + lang]}", ""]
         if cat.get("summary_" + lang):
             out += [cat["summary_" + lang], ""]
         for g in cat.get("groups", []):
-            rs = [r for r in c["resources"] if r["group"] == g["id"] and keep(r) and (kind != "readme" or r["url"] not in listed)]
-            listed.update(r["url"] for r in rs)  # the README gives a link once (awesome-lint: double-link); the full list gives every entry
+            rs = shown[(cat["id"], g["id"])]
             if not rs:
                 continue
             out += [f"### {g['name_' + lang]}", ""]
@@ -435,7 +441,6 @@ def alt_brands(cats):
 
 def site_data(cats, m):
     rows = []
-    ranked = has_ranks(cats)
     by_host = {}
     for c in cats:
         for r in c["resources"]:
@@ -448,7 +453,7 @@ def site_data(cats, m):
             status, last = effective(r, m)
             row = {k: r.get(k) for k in ("id", "name", "url", "covers", "languages", "countries", "confidence", "checked", "github", "subreddit", "city", "city_fr", "city_local", "ships_to_france", "rank", "size")}
             row = {k: v for k, v in row.items() if v is not None}
-            row["featured"] = picked(r, ranked, cat["id"])
+            row["featured"] = picked(r)  # the selection: rank 1 worldwide of its group (★, filter, README)
             ctx = access_context(cat["id"], r["group"])
             row["access"] = f"{ctx}_{r['access']}" if r.get("access") in ACCESS_BY.get(ctx, set()) else None  # label of strings.json
             row["operator"] = lego_operator(r)
@@ -506,9 +511,8 @@ def needs(cats, ids):
                 bad.append(f"{w}: reference key {k} is a {j.get('scope')} code or default")
             if v not in ids:
                 bad.append(f"{w}: unknown resource {v}")
-        bad += [f"{w}: unknown resource {i}" for i in j.get("fallback", []) + j.get("always", []) if i not in ids]
-        if set(j) - {"id", "title_en", "title_fr", "category", "groups", "scope", "mode", "reference", "fallback", "always"}:
-            bad.append(f"{w}: unknown keys {sorted(set(j) - {'id', 'title_en', 'title_fr', 'category', 'groups', 'scope', 'mode', 'reference', 'fallback', 'always'})}")
+        if set(j) - {"id", "title_en", "title_fr", "category", "groups", "scope", "mode", "reference"}:
+            bad.append(f"{w}: unknown keys {sorted(set(j) - {'id', 'title_en', 'title_fr', 'category', 'groups', 'scope', 'mode', 'reference'})}")
     if bad:
         fail(bad)
     return js
@@ -523,24 +527,13 @@ def host(url):
 
 def lego_operator(r):
     """Sites and places of the LEGO Group (lego-group) or under the LEGO brand by a partner (licensee): the `operator`
-    field, else, until lot 3b fills it, the address (lego.com, LEGO House, BrickLink, Discovery Centres; LEGOLAND parks)."""
-    if r.get("operator"):
-        return r["operator"]
-    h = host(r["url"])
-    if re.search(r"(^|\.)(lego\.com|legohouse\.com|bricklink\.com|legolanddiscoverycenter\.com|legodiscoverycentre\.com|legoworld\.nl)$", h):
-        return "lego-group"
-    return "licensee" if re.match(r"legoland\.", h) else None
+    field (filled in lot 3b; the address served until then)."""
+    return r.get("operator")
 
 
-def has_ranks(cats):
-    """Groups whose entries carry ranks (lot 3b ranks them group by group): {(category, group)}."""
-    return {(c["category"]["id"], r["group"]) for c in cats for r in c["resources"] if r.get("rank")}
-
-
-def picked(r, ranked, cat):
-    """The selection (★, README, filter, suggestions): rank 1 worldwide once the group of the entry carries ranks,
-    `featured` before."""
-    return (r.get("rank") or {}).get("intl") == 1 if (cat, r["group"]) in ranked else bool(r.get("featured"))
+def picked(r):
+    """The selection (★, README, filter, suggestions): the rank 1 worldwide of each group (lot 3b; `featured` before)."""
+    return (r.get("rank") or {}).get("intl") == 1
 
 
 def passion():

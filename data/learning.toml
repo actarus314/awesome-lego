@@ -66,7 +66,6 @@ rank_reason_fr = "Guide des pièces actuelles (près de 2500) et guide de rangem
 feed = "https://brickarchitect.com/feed/"
 group = "guides"
 regime = "activity"
-featured = true
 covers = ["learning", "official"]
 languages = ["en"]
 countries = ["international"]
@@ -391,7 +390,6 @@ id = "cjeu-lego-juris"
 name = "Court of Justice judgment C-48/09 P, Lego Juris v OHIM"
 url = "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A62009CJ0048"
 group = "compatibility-and-law"
-featured = true
 rank = {intl = 1, en = 1, fr = 1, de = 1}
 rank_reason_en = "Full text of the judgment of 14 September 2010 on the three-dimensional shape of the brick as a trade mark, in English, French and German; explains why compatible bricks are legal in the European Union."
 rank_reason_fr = "Texte intégral de l'arrêt du 14 septembre 2010 sur la forme en trois dimensions de la brique comme marque, en anglais, français et allemand ; explique pourquoi les briques compatibles sont légales dans l'Union européenne."
@@ -544,7 +542,6 @@ id = "lego-history"
 name = "LEGO History (official LEGO)"
 url = "https://www.lego.com/en-us/history"
 group = "history"
-featured = true
 rank = {intl = 1, en = 1}
 rank_reason_en = "Chronology of the LEGO Group from 1890 with articles on the Automatic Binding Bricks of 1949, Kiddicraft and the stud and tube principle; primary source, company viewpoint."
 rank_reason_fr = "Chronologie du groupe LEGO depuis 1890 avec des articles sur les Automatic Binding Bricks de 1949, Kiddicraft et le principe tenon et tube ; source primaire, point de vue de l'entreprise."
@@ -865,7 +862,6 @@ rank_reason_fr = "Mensuel de 116 pages pour les fans adultes depuis novembre 201
 feed = "https://blocksmag.com/feed/"
 group = "books-and-magazines"
 regime = "activity"
-featured = true
 covers = ["learning", "official", "news"]
 languages = ["en"]
 countries = ["international"]
@@ -1011,7 +1007,6 @@ rank = {intl = 2, en = 2}
 rank_reason_en = "Publisher catalogue of unofficial books on technique, Technic, robotics, lighting, trains and art, with titles in September and December 2026; English only, books sold."
 rank_reason_fr = "Catalogue d'un éditeur de livres non officiels sur la technique, Technic, la robotique, l'éclairage, les trains et l'art, avec des titres en septembre et décembre 2026 ; en anglais seulement, livres payants."
 regime = "operating"
-featured = true
 covers = ["learning", "official"]
 languages = ["en"]
 countries = ["international"]
@@ -1104,7 +1099,6 @@ id = "lego-certified-professionals"
 name = "LEGO Certified Professionals (official LEGO list)"
 url = "https://www.lego.com/en-us/aboutus/lego-certified-professionals"
 group = "artists"
-featured = true
 rank = {intl = 1}
 rank_reason_en = "Directory of 27 adult builders recognised by LEGO who run a business with bricks, listed by region, with the rules on what they may build for clients; page not dated."
 rank_reason_fr = "Annuaire de 27 adultes constructeurs reconnus par LEGO qui exercent une activité avec des briques, classés par région, avec les règles sur ce qu'ils peuvent construire pour des clients ; page non datée."
@@ -1384,7 +1378,6 @@ id = "bricknerd-storage-guide"
 name = "BrickNerd storage guide"
 url = "https://bricknerd.com/home/an-opinionated-guide-to-lego-storage-containers-and-cost-5-25-23"
 group = "guides"
-featured = true
 covers = ["learning"]
 languages = ["en"]
 countries = ["international"]
@@ -1557,7 +1550,6 @@ id = "nico71"
 name = "Nico71's Technic Creations"
 url = "https://www.nico71.fr/"
 group = "artists"
-featured = true
 rank = {intl = 2}
 rank_reason_en = "Motorised Technic vehicles with PDF instructions and free videos explaining design choices, posts on 7 and 12 November 2026; instructions and kits are paid."
 rank_reason_fr = "Véhicules Technic motorisés avec instructions en PDF et vidéos gratuites expliquant les choix de conception, publications des 7 et 12 novembre 2026 ; instructions et kits payants."

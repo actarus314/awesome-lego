@@ -48,7 +48,6 @@ id = "jangbricks"
 name = "JANGBRiCKS"
 url = "https://www.youtube.com/@JANGBRiCKS"
 group = "official-lego-reviews"
-featured = true
 rank = {intl = 1, en = 1}
 rank_reason_en = "About 1360000 subscribers and 538 videos, declared unsponsored in the channel description; latest video on 19 November 2026."
 rank_reason_fr = "Environ 1360000 abonnés et 538 vidéos, déclarées sans parrainage dans la description de la chaîne ; dernière vidéo le 19 novembre 2026."
@@ -85,7 +84,6 @@ id = "tiago-catarino"
 name = "Tiago Catarino"
 url = "https://www.youtube.com/@TiagoCatarino"
 group = "official-lego-reviews"
-featured = true
 rank = {intl = 2, en = 2}
 rank_reason_en = "About 579000 subscribers and 727 videos by a former LEGO designer, per the channel description; latest video on 20 November 2026."
 rank_reason_fr = "Environ 579000 abonnés et 727 vidéos d'un ancien concepteur LEGO, selon la description de la chaîne ; dernière vidéo le 20 novembre 2026."
@@ -122,7 +120,6 @@ id = "racingbrick"
 name = "RacingBrick"
 url = "https://www.youtube.com/@RacingBrick"
 group = "official-lego-reviews"
-featured = true
 rank = {intl = 4, en = 4}
 rank_reason_en = "About 263000 subscribers and detailed build reviews of Technic and vehicle sets; latest video on 23 November 2026."
 rank_reason_fr = "Environ 263000 abonnés et des tests détaillés de construction de sets Technic et de véhicules ; dernière vidéo le 23 novembre 2026."
@@ -269,7 +266,6 @@ id = "brickmitri-youtube"
 name = "Brickmitri (YouTube)"
 url = "https://www.youtube.com/@brickmitri"
 group = "official-lego-reviews"
-featured = true
 rank = {fr = 1}
 rank_reason_en = "About 51900 subscribers and frequent uploads, describing itself as an independent medium; latest video on 22 November 2026."
 rank_reason_fr = "Environ 51900 abonnés et des publications fréquentes, se décrit comme un média indépendant ; dernière vidéo le 22 novembre 2026."
@@ -380,7 +376,6 @@ id = "the-laser-symphony"
 name = "The Laser Symphony"
 url = "https://www.youtube.com/@TheLaserSymphony"
 group = "alternative-brand-reviews"
-featured = true
 rank = {intl = 3, fr = 1}
 rank_reason_en = "About 117000 subscribers; compares alternative brands with each other and with sets of the LEGO brand and states when products were supplied; latest video on 23 November 2026."
 rank_reason_fr = "Environ 117000 abonnés ; compare les marques alternatives entre elles et avec des sets de marque LEGO et indique quand les produits ont été fournis ; dernière vidéo le 23 novembre 2026."
@@ -528,7 +523,6 @@ id = "jangs-other-bricks"
 name = "JANG's Other Bricks"
 url = "https://www.youtube.com/@JANGsOtherBricks"
 group = "alternative-brand-reviews"
-featured = true
 rank = {intl = 1, en = 1}
 rank_reason_en = "About 29200 subscribers and 848 videos of reviews declared non-sponsored, on brick-built construction toys from many brands; latest video on 21 November 2026."
 rank_reason_fr = "Environ 29200 abonnés et 848 vidéos de tests déclarés sans parrainage, sur des jouets de construction en briques de nombreuses marques ; dernière vidéo le 21 novembre 2026."
@@ -750,7 +744,6 @@ id = "brickmeet"
 name = "BrickMeet"
 url = "https://www.youtube.com/@BrickMeet"
 group = "alternative-brand-reviews"
-featured = true
 rank = {intl = 4, en = 2}
 rank_reason_en = "About 299000 subscribers and 553 videos on military and vehicle sets, mainly Cobi, CaDA, Panlos and Mould King; latest video on 12 July 2026."
 rank_reason_fr = "Environ 299000 abonnés et 553 vidéos sur des sets militaires et de véhicules, surtout Cobi, CaDA, Panlos et Mould King ; dernière vidéo le 12 juillet 2026."
@@ -788,7 +781,6 @@ id = "brickvault"
 name = "BrickVault"
 url = "https://www.youtube.com/channel/UCrhb3SP2lZBgguLHIWWuHOQ"
 group = "building-and-custom"
-featured = true
 rank = {intl = 3, en = 3}
 rank_reason_en = "About 679000 subscribers and about 2000 videos, with weekly top-10 selections of custom builds; latest video on 11 November 2026."
 rank_reason_fr = "Environ 679000 abonnés et environ 2000 vidéos, avec des sélections hebdomadaires des 10 meilleures créations originales ; dernière vidéo le 11 novembre 2026."
@@ -902,7 +894,6 @@ id = "beyond-the-brick"
 name = "Beyond the Brick"
 url = "https://www.youtube.com/@BeyondtheBrick"
 group = "news"
-featured = true
 rank = {intl = 1, en = 1}
 rank_reason_en = "About 1560000 subscribers and about 4700 videos, running since November 2011 with first-look coverage of new sets; latest video on 13 November 2026."
 rank_reason_fr = "Environ 1560000 abonnés et environ 4700 vidéos, en ligne depuis novembre 2011 avec une couverture en avant-première des nouveaux sets ; dernière vidéo le 13 novembre 2026."
@@ -1093,7 +1084,6 @@ id = "briques-en-vrac"
 name = "Briques en Vrac"
 url = "https://www.vodio.fr/vodiotheque/c/1753/briques-en-vrac-actualites-et-nouveautes-lego/"
 group = "podcasts"
-featured = true
 rank = {fr = 1}
 rank_reason_en = "64 episodes at a weekly rhythm on LEGO news and new releases; latest episode on 16 November 2026."
 rank_reason_fr = "64 épisodes à rythme hebdomadaire sur l'actualité LEGO et les nouveautés ; dernier épisode le 16 novembre 2026."
@@ -1231,7 +1221,6 @@ id = "back-2-brick"
 name = "Back 2 Brick LEGO Podcast"
 url = "https://back2brick.buzzsprout.com/"
 group = "podcasts"
-featured = true
 rank = {intl = 1, en = 1}
 rank_reason_en = "427 episodes with a weekly news recap and interviews with LEGO designers, and news centred on the United States; latest episode on 19 November 2026."
 rank_reason_fr = "427 épisodes avec un résumé hebdomadaire de l'actualité et des interviews de concepteurs LEGO, et une actualité centrée sur les États-Unis ; dernier épisode le 19 novembre 2026."

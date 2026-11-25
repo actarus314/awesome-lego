@@ -24,8 +24,7 @@ id = "brick-broker"                      # unique across all files, lowercase, h
 name = "Brick Broker"
 url = "https://brick-broker.com/"        # canonical home page, https
 group = "price-comparators"              # one of category.groups
-featured = true                          # until lot 3b: listed in the README selection (best of its group); replaced by the rank 1 of scope intl
-rank = {intl = 1, FR = 2}                # optional: rank 1 to 5 of the entry in its group, worldwide (intl) and per country or language (codes of the group's rank_scope); one entry per rank, group and scope
+rank = {intl = 1, FR = 2}                # optional: rank 1 to 5 of the entry in its group, worldwide (intl) and per country or language (codes of the group's rank_scope); one entry per rank, group and scope; none on a dead, archived or inactive entry. The rank 1 intl of each group is the selection (README, ★, filter)
 rank_reason_en = "Largest comparator of French shops, prices read every day"   # with rank: why (not shown)
 rank_reason_fr = "Plus grand comparateur des boutiques françaises, prix relevés chaque jour"
 operator = "lego-group"                  # optional: lego-group | licensee, sites and places run by the LEGO Group itself, or under the LEGO brand by a partner (LEGO Certified Stores, LEGOLAND parks)
@@ -35,8 +34,6 @@ languages = ["fr", "en"]                 # ISO 639-1 codes of the interface or c
 countries = ["FR"]                       # ISO 3166-1 alpha-2 codes served, or ["international"]
 ships_to_france = true                   # shops only; omit when not relevant
 access = "free"                          # free | free-account | freemium | paid, with a meaning that depends on the category (see Access below)
-business_model_en = "Affiliate links"    # until lot 3b, not shown: becomes funding (read at the source) or goes
-business_model_fr = "Liens d'affiliation"
 summary_en = "What is particular about it, one or two sentences, 35 words at most."   # see Writing rules: the card already shows the name, the group, the country and the tags
 summary_fr = "Ce qu'elle a de particulier, une ou deux phrases, 35 mots au plus."
 strengths_en = ["Short factual point", "…"]
@@ -44,8 +41,6 @@ strengths_fr = ["Point factuel court", "…"]
 weaknesses_en = ["…"]
 weaknesses_fr = ["…"]
 size = [{n = 42003, unit = "sets"}, {n = 95, unit = "brands"}]   # optional, figures as published by the resource; approx = "about" | "more-than" | "at-least" when published so; unit: see Sizes below
-size_en = "42003 sets, 95 brands"        # until lot 3b: free text, replaced by size
-size_fr = "42003 sets, 95 marques"
 status = "active"                        # active | slow (no update for 6 months) | inactive (12 months) | archived | dead; slow and inactive for the regime activity only
 regime = "work"                          # optional, also on category.groups (default for the group, else activity): activity | work | operating
 last_activity = "2026-11-23"             # ISO date of the last observed activity (post, video, commit, price update)
@@ -91,7 +86,7 @@ Regimes (`regime`, on a group or an entry): what keeps an entry current, and so 
 - `work`: a finished work whose value does not depend on new posts (book, article, guide, glossary, standard, ruling, patent). `last_activity` is the date of its latest edition or revision, shown as such; the status is active, or archived once a review finds it outdated, or dead when it is gone.
 - `operating`: an entity that is open or closed (place, shop, marketplace, brand, club, programme). Its posts do not measure it; the review checks that it still operates (`checked`); the status is active, archived or dead.
 
-Access (`access`): what the value describes depends on the category, and a value outside its category fails the build (a warning until lot 3b). Labels: `site-src/strings.json`, keys `acc_<context>_<value>`.
+Access (`access`): what the value describes depends on the category, and a value outside its category fails the build. Labels: `site-src/strings.json`, keys `acc_<context>_<value>`.
 - `entry` (places, events): free | paid entry.
 - `membership` (clubs): free | paid membership (a fee).
 - `competition` (events, group competitions): free | free-account (an account is required to enter).
@@ -113,6 +108,6 @@ Writing rules:
 ## Other data files
 
 - `brands`, `funding` and `makers` are read at the source and never deduced from the texts.
-- `data/journeys.toml`: the needs of "Where to start" (`[[need]]`), in display order: `id`, `title_en`, `title_fr`; `category` (the icon of the tile and its last link, the whole category); `groups` (`<category>/<group>`, where the entries of the tile come from); `scope` (`country`, `language` or `intl`: how the visitor is matched, from the browser); optional `mode = "brand"` (entries open the brand mode of the search); optional `reference = {FR = "<id>", default = "<id>"}` (the reference of the visitor's country or language first: national calendar, directory of associations, comparator; else `default`). The entries of a tile are those of its groups ranked for the visitor (`rank` in the visitor's country or language, then `intl`). Until lot 3b, `fallback` lists them instead (the first that suit the visitor: international ones, those of their country, for France also shops with `ships_to_france`, or those of their language or in English), and ids of `always` are shown to everyone. An unknown id, group, category, scope or key fails the build.
+- `data/journeys.toml`: the needs of "Where to start" (`[[need]]`), in display order: `id`, `title_en`, `title_fr`; `category` (the icon of the tile and its last link, the whole category); `groups` (`<category>/<group>`, where the entries of the tile come from); `scope` (`country`, `language` or `intl`: how the visitor is matched, from the browser); optional `mode = "brand"` (entries open the brand mode of the search); optional `reference = {FR = "<id>", default = "<id>"}` (the reference of the visitor's country or language first: national calendar, directory of associations, comparator; else `default`). The entries of a tile are those of its groups ranked for the visitor (`rank` in the visitor's country or language, then `intl`). An unknown id, group, category, scope or key fails the build.
 - `data/backend/`: figures used by the website but not listed as entries, each file with its `source`, its reading `date` and its source `kind`. `clubs-by-country.json`: fan communities per country (ISO 3166-1 alpha-2) in the official LEGO Fan CoLab directory. `population.json`: World Bank population (SP.POP.TOTL) of the same countries.
 - `data/metrics.json`: local cache of the last activity reading, written by `scripts/refresh.py`.

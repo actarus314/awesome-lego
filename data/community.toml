@@ -44,7 +44,6 @@ id = "hothbricks"
 name = "Hoth Bricks"
 url = "https://www.hothbricks.com/"
 group = "news-and-reviews"
-featured = true
 rank = {intl = 4, fr = 1}
 rank_reason_en = "Several articles per day, with sections on retiring sets, deals and best sellers and an RSS feed; latest post on 23 November 2026."
 rank_reason_fr = "Plusieurs articles par jour, avec des rubriques sur les sets bientôt retirés, les offres et les meilleures ventes et un flux RSS ; dernier article le 23 novembre 2026."
@@ -151,7 +150,6 @@ id = "brothers-brick"
 name = "The Brothers Brick"
 url = "https://www.brothers-brick.com/"
 group = "news-and-reviews"
-featured = true
 rank = {intl = 2, en = 2}
 rank_reason_en = "Describes itself as the world's number one source of LEGO news, reviews and fan creations, with a showcase of fan creations; latest post on 22 November 2026."
 rank_reason_fr = "Se décrit comme la première source mondiale d'actualité, de tests et de créations de fans LEGO, avec une vitrine de créations de fans ; dernier article le 22 novembre 2026."
@@ -187,7 +185,6 @@ id = "new-elementary"
 name = "New Elementary"
 url = "https://www.newelementary.com/"
 group = "news-and-reviews"
-featured = true
 rank = {intl = 3, en = 3}
 rank_reason_en = "Tracks Pick a Brick prices and new parts in sets, with articles on parts, sets and building techniques; latest post on 23 November 2026."
 rank_reason_fr = "Suit les prix de Pick a Brick et les nouvelles pièces des sets, avec des articles sur les pièces, les sets et les techniques de construction ; dernier article le 23 novembre 2026."
@@ -338,7 +335,6 @@ id = "merlins-bricks"
 name = "Merlins Bricks (Merlins Steine)"
 url = "https://www.merlinsbricks.com/"
 group = "news-and-reviews"
-featured = true
 rank = {intl = 1, fr = 4, en = 1, de = 1}
 rank_reason_en = "Covers all brands, with a database of more than 39000 sets, systematic reviews of alternative brands, a weekly podcast and an interface in German, English and French."
 rank_reason_fr = "Couvre toutes les marques, avec une base de plus de 39000 sets, des tests systématiques des marques alternatives, un podcast hebdomadaire et une interface en allemand, en anglais et en français."
@@ -579,7 +575,6 @@ id = "eurobricks"
 name = "Eurobricks Forums"
 url = "https://www.eurobricks.com/forum/"
 group = "forums"
-featured = true
 rank = {intl = 1, en = 1}
 rank_reason_en = "Large archive of discussions and builds, with sections on custom builds, reviews and marketplace and one on alternative brands; registration required to post."
 rank_reason_fr = "Grande archive de discussions et de constructions, avec des sections sur les créations originales, les tests et le marché et une section sur les marques alternatives ; inscription requise pour publier."
@@ -672,7 +667,6 @@ id = "hardware-fr-compatible-bricks"
 name = "HardWare.fr: compatible bricks topic"
 url = "https://forum.hardware.fr/hfr/Discussions/Loisirs/briques-construction-compatibles-sujet_119659_1.htm"
 group = "forums"
-featured = true
 rank = {fr = 2}
 rank_reason_en = "Topic on LEGO-compatible brick brands started on 16 December 2021, 32 pages long, with an introduction kept up to date; latest activity on 6 November 2026."
 rank_reason_fr = "Sujet sur les marques de briques compatibles LEGO ouvert le 16 décembre 2021, long de 32 pages, avec une introduction tenue à jour ; dernière activité le 6 novembre 2026."
@@ -957,7 +951,6 @@ id = "brickipedia"
 name = "Brickipedia"
 url = "https://en.brickimedia.org/wiki/Main_Page"
 group = "wikis"
-featured = true
 rank = {intl = 1, en = 1}
 rank_reason_en = "30157 content pages and 108324 uploaded files, founded on 29 January 2006; latest activity on 23 November 2026."
 rank_reason_fr = "30157 pages de contenu et 108324 fichiers téléversés, fondée le 29 janvier 2006 ; dernière activité le 23 novembre 2026."
@@ -993,7 +986,6 @@ id = "dealabs-lego"
 name = "Dealabs: LEGO group"
 url = "https://www.dealabs.com/groupe/lego"
 group = "deals"
-featured = true
 rank = {intl = 1, FR = 1}
 rank_reason_en = "LEGO offers voted and discussed by members, from LEGO.com and French retailers, with an RSS feed per group; latest activity on 23 November 2026."
 rank_reason_fr = "Offres LEGO votées et commentées par les membres, issues de LEGO.com et de distributeurs français, avec un flux RSS par groupe ; dernière activité le 23 novembre 2026."
@@ -1532,7 +1524,6 @@ id = "techlug-forum"
 name = "TechLug.fr forum"
 url = "https://www.techlug.fr/Forum/"
 group = "forums"
-featured = true
 rank = {fr = 1}
 rank_reason_en = "Technic custom builds section with 2363 topics and 47293 messages and a section on modifications of official sets with 610 topics; news message dated 10 November 2026."
 rank_reason_fr = "Section de créations originales Technic avec 2363 sujets et 47293 messages et section de modifications de sets de marque LEGO avec 610 sujets ; message d'actualité daté du 10 novembre 2026."

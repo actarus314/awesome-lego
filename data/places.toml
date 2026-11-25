@@ -53,7 +53,6 @@ id = "lego-house"
 name = "LEGO House"
 url = "https://legohouse.com/en-gb"
 group = "official-venues"
-featured = true
 rank = {intl = 1, DK = 1}
 rank_reason_en = "Four Experience Zones, a historical collection on the LEGO Group and the brick, products sold only in its LEGO Store, 25000000 bricks on 12000 square metres."
 rank_reason_fr = "Quatre zones d'expérience, une collection historique sur le groupe LEGO et la brique, des produits vendus uniquement dans son LEGO Store, 25000000 briques sur 12000 mètres carrés."
@@ -98,7 +97,6 @@ id = "lego-store-locator"
 name = "LEGO Stores directory"
 url = "https://www.lego.com/fr-fr/stores"
 group = "official-venues"
-featured = true
 rank = {intl = 2}
 rank_reason_en = "Single directory of the official LEGO Stores, with address, opening hours and features per store; Certified Stores run by partners are marked in it."
 rank_reason_fr = "Annuaire unique des LEGO Stores du groupe LEGO, avec adresse, horaires et services par magasin ; les Certified Stores tenus par des partenaires y sont signalés."
@@ -490,7 +488,6 @@ id = "museum-of-bricks"
 name = "Museum of Bricks"
 url = "https://museumofbricks.cz/"
 group = "museums-and-exhibitions"
-featured = true
 rank = {intl = 1, CZ = 1}
 rank_reason_en = "More than 9000 models on 5 sites (Prague, Kutná Hora, Špindlerův Mlýn, Poděbrady, Hatě), a Guinness World Records entry for 6005 sets and online tickets valid for six months for the five sites."
 rank_reason_fr = "Plus de 9000 modèles sur 5 sites (Prague, Kutná Hora, Špindlerův Mlýn, Poděbrady, Hatě), une inscription au Guinness World Records pour 6005 sets et des billets en ligne valables six mois pour les cinq sites."
@@ -624,7 +621,6 @@ rank_reason_fr = "Marques LEGO et compatibles (COBI, Mould King, Wange, Cada, Re
 size = [{n = 500, unit = "square-metres", approx = "more-than"}, {n = 1600000, unit = "bricks", approx = "about"}]
 feed = "https://frankensteins.de/feed/"
 group = "museums-and-exhibitions"
-featured = true
 covers = ["official", "alternative", "places"]
 languages = ["de"]
 countries = ["DE"]
@@ -697,7 +693,6 @@ id = "palais-de-la-maquette"
 name = "Palais de la Maquette - Musée du Jouet"
 url = "http://www.palaisdelamaquette.com/"
 group = "museums-and-exhibitions"
-featured = true
 rank = {FR = 1}
 rank_reason_en = "Giant animated LEGO and K'NEX models, with 650000 LEGO pieces and 170000 K'NEX pieces on show according to the tourist office, and building tables for up to one hour after the visit."
 rank_reason_fr = "Maquettes géantes animées en LEGO et K'NEX, avec 650000 pièces LEGO et 170000 pièces K'NEX exposées selon l'office de tourisme, et des tables de construction jusqu'à une heure après la visite."
@@ -1003,7 +998,6 @@ id = "time-for-bricks"
 name = "Time For Bricks"
 url = "https://www.timeforbricks.fr/"
 group = "physical-shops"
-featured = true
 rank = {intl = 1, FR = 1}
 rank_reason_en = "About thirty alternative brands sold in Chambéry since 2023 and in Annecy (opened in July 2026), with free building tables."
 rank_reason_fr = "Une trentaine de marques alternatives vendues à Chambéry depuis 2023 et à Annecy (ouvert en juillet 2026), avec des tables de construction gratuites."

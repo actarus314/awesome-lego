@@ -51,7 +51,7 @@ Every resource, including inactive and dead ones, generated from [`data/`](data/
   - [Theme parks](#theme-parks)
   - [Museums and permanent exhibitions](#museums-and-permanent-exhibitions)
   - [Physical shops (alternative brands and used bricks)](#physical-shops-alternative-brands-and-used-bricks)
-  - [Cafés and play spaces](#cafs-and-play-spaces)
+  - [Cafés and play spaces](#cafés-and-play-spaces)
 - [Clubs and associations](#clubs-and-associations)
   - [National clubs](#national-clubs)
   - [Regional and local clubs](#regional-and-local-clubs)

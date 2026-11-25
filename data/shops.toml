@@ -35,7 +35,6 @@ id = "lego-com-fr"
 name = "LEGO.com (France)"
 url = "https://www.lego.com/fr-fr"
 group = "official-lego"
-featured = true
 rank = {intl = 1, FR = 1}
 rank_reason_en = "Shop of the manufacturer with the full catalogue, exclusives, gift cards and Pick a Brick; delivers to addresses in France only, at the reference price."
 rank_reason_fr = "Boutique du fabricant avec le catalogue complet, les exclusivités, les cartes-cadeaux et Pick a Brick ; livraison uniquement vers des adresses en France, au prix de référence."
@@ -71,7 +70,6 @@ id = "ltoys"
 name = "LToys"
 url = "https://www.ltoys.lu/fr"
 group = "official-lego"
-featured = true
 rank = {intl = 2, FR = 2, DE = 1, BE = 2, NL = 2, LU = 1, AT = 1}
 rank_reason_en = "Delivers to 6 countries (Luxembourg, France, Belgium, Germany, the Netherlands, Austria) the official LEGO range and 5 alternative brands, with more than 1000 products and a physical store in Niederanven."
 rank_reason_fr = "Livre dans 6 pays (Luxembourg, France, Belgique, Allemagne, Pays-Bas, Autriche) la gamme de marque LEGO et 5 marques alternatives, avec plus de 1000 produits et un magasin à Niederanven."
@@ -206,7 +204,6 @@ id = "kbs-shop"
 name = "KBS Shop"
 url = "https://kbs-shop.com"
 group = "alternative-brands"
-featured = true
 rank = {intl = 1, FR = 2, BE = 1, DE = 1}
 rank_reason_en = "Technical and remote-controlled models of 6 brands (349 sets), shipping to France 4.95 € in 1 to 3 days, missing parts sent free of charge, rating 4.73 on 712 reviews on Trusted Shops (figure supplied, not re-checked)."
 rank_reason_fr = "Modèles techniques et télécommandés de 6 marques (349 sets), port vers la France 4.95 € en 1 à 3 jours, pièces manquantes envoyées gratuitement, note de 4.73 sur 712 avis sur Trusted Shops (chiffre fourni, non revérifié)."
@@ -272,7 +269,6 @@ id = "bluebrixx-shop"
 name = "BlueBrixx"
 url = "https://www.bluebrixx.com/fr/"
 group = "alternative-brands"
-featured = true
 rank = {intl = 2, FR = 3, DE = 2}
 rank_reason_en = "Own sets under licences not held by LEGO, shipping to France 9.95 € and free from 99 €; an independent test of March 2026 reported uneven colours, variable clutch power and few printed parts."
 rank_reason_fr = "Sets propres sous des licences que LEGO ne détient pas, port vers la France 9.95 € et gratuit dès 99 € ; un test indépendant de mars 2026 relève des couleurs inégales, une force d'emboîtement variable et peu de pièces imprimées."
@@ -435,7 +431,6 @@ id = "brickeez"
 name = "Brickeez"
 url = "https://www.brickeez.com"
 group = "alternative-brands"
-featured = true
 rank = {intl = 3, FR = 1, BE = 2}
 rank_reason_en = "Shop in the Hérault dispatching from France in 1 to 2 working days, prices in euros with taxes and no customs, pick-up point delivery from 4.99 € and free from 20 €; official LEGO, Lumibricks, Pantasy, COBI and CaDA."
 rank_reason_fr = "Boutique dans l'Hérault expédiant depuis la France en 1 à 2 jours ouvrables, prix en euros taxes comprises et sans douane, livraison en point relais à 4.99 € puis gratuite dès 20 € ; sets de marque LEGO, Lumibricks, Pantasy, COBI et CaDA."
@@ -762,7 +757,6 @@ id = "alternate-fr"
 name = "Alternate (alternate.fr)"
 url = "https://www.alternate.fr/Jouets/LEGO"
 group = "general-retailers"
-featured = true
 rank = {intl = 1, FR = 1}
 rank_reason_en = "Per a third-party survey, 99 % of its sets are below the official price, cheapest on 39 % of sets, median discount 26.8 %; Trustpilot 4.3 on 1396 reviews (14 November 2026)."
 rank_reason_fr = "Selon un relevé tiers, 99 % de ses sets sont sous le prix officiel, la moins chère sur 39 % des sets, remise médiane de 26.8 % ; Trustpilot 4.3 sur 1396 avis (14 novembre 2026)."
@@ -828,7 +822,6 @@ id = "joybuy-fr"
 name = "Joybuy France"
 url = "https://www.joybuy.fr"
 group = "general-retailers"
-featured = true
 rank = {intl = 3, FR = 3}
 rank_reason_en = "Opened in France on 16 March 2026, free shipping from 29 € on items sold and shipped by Joybuy, 97 % of sets below the official price, median discount 23.6 %; Trustpilot 4.6 on 20086 reviews (23 November 2026)."
 rank_reason_fr = "Ouverte en France le 16 mars 2026, port gratuit dès 29 € sur les articles vendus et expédiés par Joybuy, 97 % des sets sous le prix officiel, remise médiane de 23.6 % ; Trustpilot 4.6 sur 20086 avis (23 novembre 2026)."

@@ -90,10 +90,9 @@ def subreddit_last(name):
 
 
 def selected(r):
-    """In the README selection: `featured` until the entries carry ranks (lot 3 of 24/11/2026), then rank 1 at the
-    international scope of the entry's group ("rank 1 of its group", decision of 24/11/2026 at 13:02)."""
-    rank = r.get("rank")
-    return rank.get("intl") == 1 if isinstance(rank, dict) else bool(r.get("featured"))
+    """In the README selection: the rank 1 worldwide of the entry's group ("rank 1 of its group", decision of
+    24/11/2026 at 13:02; `featured` until lot 3b)."""
+    return (r.get("rank") or {}).get("intl") == 1
 
 
 def regime(r, category):

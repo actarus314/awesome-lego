@@ -45,7 +45,6 @@ rank_reason_en = "Self-described first user group of the United Kingdom, active 
 rank_reason_fr = "Premier groupe d'utilisateurs du Royaume-Uni selon ses propres termes, actif depuis 2002, avec rencontres ouvertes, expositions publiques et participation aux programmes réservés aux groupes reconnus ; confiance haute, lu à la source le 23 novembre 2026."
 feed = "https://brickish.org/feed/"
 group = "national-clubs"
-featured = true
 covers = ["clubs", "official", "events"]
 languages = ["en"]
 countries = ["GB"]
@@ -77,7 +76,6 @@ id = "belug"
 name = "BeLUG"
 url = "https://www.belug.be/"
 group = "national-clubs"
-featured = true
 rank = {intl = 3, BE = 1}
 rank_reason_en = "Organiser of Brick Mania (Antwerpen, 21 and 22 November 2026) and present at fairs in Belgium and abroad; active on 22 November 2026, confidence high; only fiche of its group for Belgium."
 rank_reason_fr = "Organisateur de Brick Mania (Anvers, 21 et 22 novembre 2026) et présent dans des salons en Belgique et à l'étranger ; actif le 22 novembre 2026, confiance haute ; seule fiche de son groupe pour la Belgique."
@@ -176,7 +174,6 @@ id = "itlug"
 name = "ItLUG"
 url = "https://itlug.org/"
 group = "national-clubs"
-featured = true
 rank = {intl = 2, IT = 1}
 rank_reason_en = "Founded in 1999 and legally constituted in November 2010, with a forum on construction techniques and a calendar of national and local events up to July 2027; active on 23 November 2026, confidence high; only fiche of its group for Italy."
 rank_reason_fr = "Fondée en 1999 et constituée légalement en novembre 2010, avec un forum de techniques de construction et un calendrier d'événements nationaux et locaux jusqu'en juillet 2027 ; active le 23 novembre 2026, confiance haute ; seule fiche de son groupe pour l'Italie."
@@ -1557,7 +1554,6 @@ id = "freelug"
 name = "FreeLUG"
 url = "https://www.freelug.org/"
 group = "national-clubs"
-featured = true
 rank = {FR = 1}
 rank_reason_en = "National non-profit association of LEGO fans since 2003, with a forum free to read, exhibitions and a regional network of members; confidence medium because the main site is protected against robots; only fiche of its group for France."
 rank_reason_fr = "Association nationale à but non lucratif de passionnés de LEGO depuis 2003, avec un forum en lecture libre, des expositions et un réseau régional de membres ; confiance moyenne, le site principal étant protégé contre les robots ; seule fiche de son groupe pour la France."
