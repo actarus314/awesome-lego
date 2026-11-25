@@ -71,7 +71,7 @@ id = "children"
 title_en = "With children"
 title_fr = "Avec des enfants"
 category = "places"
-groups = ["places/theme-parks", "places/official-venues", "places/museums-and-exhibitions", "events/conventions", "events/competitions", "learning/education-and-competitions", "clubs/national-clubs", "clubs/regional-clubs"]
+groups = ["places/theme-parks", "places/official-venues", "places/museums-and-exhibitions", "events/conventions", "events/competitions", "learning/education-and-competitions", "places/cafes-and-bars", "clubs/national-clubs", "clubs/regional-clubs"]
 scope = "country"
 audience = "children"  # only the entries that state an offer for children; the tile ends on the filter "For children"
 
