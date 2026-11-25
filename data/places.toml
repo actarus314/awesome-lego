@@ -1896,7 +1896,6 @@ kind = "read"
 
 [resource.contact]
 address = "上海市金山区枫泾镇乐缤路999号"
-email = "GuestContactCenter@LEGOLANDshanghai.cn"
 url = "https://legolandshanghai.cn/"
 date = "2026-11-25"
 

@@ -66,9 +66,10 @@ PROBE = r"""
   const ATOM = '.ct .tel a, .ct .mail a, .ct .nw, time, .tag:not(.langs), .chip, .btn:not(.all), .kpi b, .pill';  // a full-width button may take two lines
   for (const el of document.querySelectorAll(ATOM)) if (vis(el) && lines(el) > 1) add('broken token', el, txt(el));
 
-  // words split inside themselves (not at a hyphen or a slash) although they fit on a line
+  // words split inside themselves (not at a hyphen or a slash) although they fit on a line; Chinese, Japanese and Korean
+  // text breaks between any two characters, so it is not a word here
   const rg = document.createRange();
-  for (const el of leaves) { const cw = el.getBoundingClientRect().width; for (const n of el.childNodes) { if (n.nodeType !== 3) continue; const t = n.textContent; const re = /[^\s\-\/‐-―]{4,}/g; let m;
+  for (const el of leaves) { const cw = el.getBoundingClientRect().width; for (const n of el.childNodes) { if (n.nodeType !== 3) continue; const t = n.textContent; const re = /[^\s\-\/‐-―\u3000-\u30ff\u3400-\u9fff\uac00-\ud7af\uff00-\uffef]{4,}/g; let m;
       while ((m = re.exec(t))) { rg.setStart(n, m.index); rg.setEnd(n, m.index + m[0].length); const rs = rg.getClientRects(); if (rs.length > 1) { const w = [...rs].reduce((a, x) => a + x.width, 0); if (w < cw - 2) add('broken word', el, m[0]) } } } }
 
   // a card's group label: beside the name, on its first line, never below it
