@@ -7,6 +7,7 @@ summary_fr = "Sites qui comparent les prix des sets entre boutiques, cataloguent
 
 [[category.groups]]
 id = "price-comparators"
+rank_scope = "country"
 name_en = "Price comparators"
 name_fr = "Comparateurs de prix"
 short_en = "Price comparison"
@@ -14,6 +15,7 @@ short_fr = "Comparateurs"
 
 [[category.groups]]
 id = "set-databases"
+rank_scope = "intl"
 name_en = "Set and parts databases"
 name_fr = "Bases de sets et de pièces"
 short_en = "Databases"
@@ -21,6 +23,7 @@ short_fr = "Bases de données"
 
 [[category.groups]]
 id = "value-tracking"
+rank_scope = "intl"
 name_en = "Value and investment tracking"
 name_fr = "Suivi de valeur et d'investissement"
 short_en = "Value tracking"

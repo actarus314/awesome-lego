@@ -6,7 +6,7 @@
 
 **[Explore the website: every resource, with search, filters and a map](https://actarus314.github.io/awesome-lego/)** · [French version of the website](https://actarus314.github.io/awesome-lego/fr/) · [Feed of new resources (RSS)](https://actarus314.github.io/awesome-lego/feed.xml)
 
-<p align="center"><a href="https://actarus314.github.io/awesome-lego/"><img src="media/site-preview.png" width="880" alt="The website: the map of the brick world, one stud per resource by category, above the directory; tabs Directory, Out and about, Observatory"></a></p>
+<p align="center"><a href="https://actarus314.github.io/awesome-lego/"><img src="media/site-preview.png" width="880" alt="The website: the map of the brick world, one stud per resource by category, above the directory; tabs Directory and Observatory"></a></p>
 
 Only the best of each group is listed here. The [full list](full-list.md) has every resource, including inactive and dead ones.
 
