@@ -207,7 +207,7 @@ class Lot3Model(unittest.TestCase):
         self.assertEqual(load_with("places.toml", add_field("lego-house", 'size = [{n = 12000, unit = "square-metres"}, {n = 25000000, unit = "bricks", approx = "about"}]')), [])
 
     def test_operator(self):
-        self.assertTrue(any("operator" in e for e in load_with("places.toml", add_field("lego-house", 'operator = "merlin"'))))
+        self.assertTrue(any("operator" in e for e in load_with("places.toml", lambda t: t.replace('operator = "lego-group"', 'operator = "merlin"', 1))))
 
 
 class Lot3Texts(unittest.TestCase):
@@ -300,6 +300,23 @@ class Dates(unittest.TestCase):
         for lang in ("en", "fr"):
             titles = re.findall(r"<title>(.*?)</title>", build.content_feed(cats, lang))
             self.assertFalse([x for x in titles if build.NUMERIC_DATE.search(x)])
+
+    def test_feed_batches_a_day_of_many_additions(self):
+        """More than FEED_BATCH entries added on one day make one announcement; fewer stay one item each."""
+        with contextlib.redirect_stdout(io.StringIO()):
+            cats, _ = build.load()
+        rs = [r for c in cats for r in c["resources"]]
+        for r in rs:
+            r["added"] = build.BASELINE
+        for r in rs[:build.FEED_BATCH + 1]:
+            r["added"] = "2030-01-02"
+        for r in rs[build.FEED_BATCH + 1:build.FEED_BATCH + 3]:
+            r["added"] = "2030-01-03"
+        for lang, word in (("en", "resources added"), ("fr", "ressources ajoutées")):
+            titles = re.findall(r"<title>(.*?)</title>", build.content_feed(cats, lang))
+            self.assertEqual(sum(1 for x in titles if word in x), 1)
+            self.assertIn(f"{build.FEED_BATCH + 1} {word}", " ".join(titles))
+            self.assertEqual(sum(1 for x in titles if x.startswith(build.FEED_T["new"][lang] + " ·")), 2)
 
 
 class Selection(unittest.TestCase):

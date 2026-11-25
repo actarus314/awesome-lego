@@ -631,11 +631,14 @@ def vault():
 
 
 BASELINE = "2026-11-23"  # the directory's first day: its entries make one opening item, not 400 separate ones
+FEED_BATCH = 20  # more entries added on one day make one announcement, like the opening (lot 3b)
 FEED_T = {
     "title": {"en": "Awesome LEGO: new in the directory", "fr": "Awesome LEGO : nouveautés de l'annuaire"},
     "new": {"en": "New", "fr": "Nouveau"},
     "next": {"en": "Next edition", "fr": "Prochaine édition"},
     "open": {"en": "Awesome LEGO opens with {n} resources", "fr": "Awesome LEGO ouvre avec {n} ressources"},
+    "batch": {"en": "{n} resources added to the directory", "fr": "{n} ressources ajoutées à l'annuaire"},
+    "batch_body": {"en": "Added on {date}, each checked at its source: {cats}.", "fr": "Ajoutées le {date}, chacune vérifiée à sa source : {cats}."},
     "open_body": {"en": "{n} resources of the brick world, each checked at its source: brands, shops, prices, second-hand, communities, videos, events, places, clubs, learning and tools.",
                   "fr": "{n} ressources du monde de la brique, chacune vérifiée à sa source : marques, boutiques, prix, occasion, communautés, vidéos, événements, lieux, clubs, apprendre et outils."},
 }
@@ -667,20 +670,29 @@ def content_feed(cats, lang):
     """What readers follow: entries added to the directory and announced editions of events, in one language."""
     site = PAGES + ("fr/" if lang == "fr" else "")
     today = dt.date.today().isoformat()
-    items, base = [], 0
+    items, base, days = [], 0, {}
+    for c in cats:
+        for r in c["resources"]:
+            if str(r["added"]) > BASELINE:
+                days.setdefault(str(r["added"]), []).append(c["category"]["name_" + lang])
     for c in cats:
         cname = c["category"]["name_" + lang]
         for r in c["resources"]:
             link = f"{site}#entry={r['id']}"
             if str(r["added"]) <= BASELINE:
                 base += 1
-            else:
+            elif len(days[str(r["added"])]) <= FEED_BATCH:
                 items.append((f"{site}#added-{r['id']}", f"{FEED_T['new'][lang]} · {cname} · {r['name']}", link, str(r["added"]), r["summary_" + lang]))
             if r.get("next_date") and str(r["next_date"]) >= today:
                 city = r.get("city_fr") if lang == "fr" and r.get("city_fr") else r.get("city")
                 where = f" · {city}" if city else ""
                 items.append((f"{site}#next-{r['id']}-{r['next_date']}", f"{FEED_T['next'][lang]} · {r['name']} · {in_letters(str(r['next_date']), lang)}{where}",
                               link, str(r["checked"]), r["summary_" + lang]))
+    for day, names in days.items():
+        if len(names) > FEED_BATCH:
+            per = ", ".join(f"{n} {sum(1 for x in names if x == n)}" for n in dict.fromkeys(names))
+            items.append((f"{site}#added-{day}", FEED_T["batch"][lang].format(n=len(names)), site, day,
+                          FEED_T["batch_body"][lang].format(date=in_letters(day, lang), cats=per)))
     if base:
         items.append((f"{site}#opening", FEED_T["open"][lang].format(n=base), site, BASELINE, FEED_T["open_body"][lang].format(n=base)))
     items.sort(key=lambda x: (x[3], x[1]), reverse=True)
