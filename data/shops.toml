@@ -36,6 +36,7 @@ name = "LEGO.com (France)"
 url = "https://www.lego.com/fr-fr"
 group = "official-lego"
 featured = true
+operator = "lego-group"
 covers = ["official"]
 languages = ["fr"]
 countries = ["FR"]

@@ -246,6 +246,7 @@ name = "LEGO Fan CoLab community directory"
 url = "https://fancolab.lego.com/communities/"
 group = "site-directories"
 featured = true
+operator = "lego-group"
 covers = ["official", "news"]
 languages = ["en"]
 countries = ["international"]

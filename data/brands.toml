@@ -54,6 +54,7 @@ name = "LEGO"
 url = "https://www.lego.com/fr-fr"
 group = "official-lego"
 featured = true
+operator = "lego-group"
 covers = ["official", "minifigures"]
 languages = ["fr", "en", "de"]
 countries = ["international"]
