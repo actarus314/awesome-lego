@@ -1043,3 +1043,541 @@ confidence = "medium"
 url = "https://www.brickitalia.com/"
 date = "2026-11-23"
 kind = "read"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "unieke-bricks"
+name = "Unieke Bricks"
+url = "https://uniekebricks.nl/"
+group = "official-lego"
+covers = ["official", "parts", "minifigures"]
+languages = ["nl"]
+countries = ["NL", "BE"]
+ships_to_france = true
+summary_en = "Hard-to-find sets, a category of sets with box damage, loose parts and minifigures; free gift wrapping, showroom by appointment only, same-day dispatch when ordered before 14:00 on working days."
+summary_fr = "Sets difficiles à trouver, catégorie de sets à boîte abîmée, pièces détachées et minifigurines ; emballage cadeau gratuit, showroom sur rendez-vous, expédition le jour même avant 14 h les jours ouvrables."
+strengths_en = ["Shipping 5.95 € in the Netherlands and 8.95 € to Belgium, free from 150 €; delivery by GLS in 1 working day in the Netherlands and 1 to 2 in Belgium", "Delivery to Germany, France, Italy and Luxembourg tested in a pilot since 19 June 2026, rates shown in the cart", "Prices shown including taxes; free gift wrapping"]
+strengths_fr = ["Port de 5.95 € aux Pays-Bas et de 8.95 € vers la Belgique, gratuit dès 150 € ; livraison par GLS en 1 jour ouvrable aux Pays-Bas et en 1 à 2 jours en Belgique", "Livraison vers l'Allemagne, la France, l'Italie et le Luxembourg à l'essai depuis le 19 juin 2026, tarifs affichés dans le panier", "Prix affichés taxes comprises ; emballage cadeau gratuit"]
+weaknesses_en = ["Delivery to France is a pilot: rates only visible in the cart", "Showroom closed at the reading, open by appointment only"]
+weaknesses_fr = ["Livraison vers la France à l'essai : tarifs visibles seulement dans le panier", "Showroom fermé à la lecture, accessible uniquement sur rendez-vous"]
+last_activity = "2026-11-24"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://uniekebricks.nl/verzendkosten/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://uniekebricks.nl/contact/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "planeta-klockow"
+name = "Planeta Klocków"
+url = "https://planetaklockow.pl/"
+group = "official-lego"
+covers = ["official"]
+languages = ["pl"]
+countries = ["PL"]
+ships_to_france = false
+summary_en = "Own store with same-day delivery in Łódź for orders paid between 9:00 and 14:00; orders placed before 14:00 ship the same day elsewhere in the country."
+summary_fr = "Magasin propre et livraison le jour même à Łódź pour les commandes payées entre 9 h et 14 h ; commandes passées avant 14 h expédiées le jour même ailleurs dans le pays."
+strengths_en = ["Store at ul. Wygodna 23 in Łódź, open Monday to Friday 8:00 to 15:00, free pick-up", "Delivery by InPost parcel locker from 9.99 zł, by InPost courier 14.99 zł, by DPD courier 15.99 zł (prepayment)", "30-day right of return stated; LEGO catalogue of July to December 2026 offered"]
+strengths_fr = ["Magasin au ul. Wygodna 23 à Łódź, ouvert du lundi au vendredi de 8 h à 15 h, retrait gratuit", "Livraison en consigne InPost dès 9.99 zł, par coursier InPost 14.99 zł, par coursier DPD 15.99 zł (paiement d'avance)", "Droit de retour de 30 jours annoncé ; catalogue de juillet à décembre 2026 proposé"]
+weaknesses_en = ["Delivery limited to Poland", "Same-day delivery only for postcodes 90 to 94 in Łódź, at 27.99 zł"]
+weaknesses_fr = ["Livraison limitée à la Pologne", "Livraison le jour même réservée aux codes postaux 90 à 94 de Łódź, à 27.99 zł"]
+last_activity = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://planetaklockow.pl/koszty-dostawy"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://planetaklockow.pl/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "klockowo"
+name = "Klockowo.pl"
+url = "https://klockowo.pl/"
+group = "official-lego"
+covers = ["official"]
+languages = ["pl"]
+countries = ["PL"]
+summary_en = "Store in Kraków with free pick-up; products browsable by release year (1419 listed, 321 of 2026 and 320 of 2025), plus 299 Playmobil items."
+summary_fr = "Magasin à Kraków avec retrait gratuit ; produits classés par année de sortie (1419 listés, dont 321 de 2026 et 320 de 2025), plus 299 articles Playmobil."
+strengths_en = ["Store at ul. Borkowska 3, open Tuesday to Friday 10:00 to 18:00 and Saturday 10:00 to 14:00", "DPD courier 13 zł (prepayment), DPD pick-up point 12 zł; parcel locker pick-up free from 150 zł"]
+strengths_fr = ["Magasin au ul. Borkowska 3, ouvert du mardi au vendredi de 10 h à 18 h et le samedi de 10 h à 14 h", "Coursier DPD 13 zł (paiement d'avance), point relais DPD 12 zł ; retrait en consigne gratuit dès 150 zł"]
+weaknesses_en = ["Delivery outside Poland not stated on the shipping page", "Shipping rates published in złoty only"]
+weaknesses_fr = ["Livraison hors de Pologne non indiquée sur la page des frais de port", "Frais de port publiés en złoty seulement"]
+last_activity = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://klockowo.pl/koszty-dostawy,p5.html"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://klockowo.pl/kontakt,p1.html"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "playzeug"
+name = "Playzeug"
+url = "https://www.playzeug.de/"
+group = "official-lego"
+covers = ["official"]
+languages = ["de"]
+countries = ["DE"]
+ships_to_france = false
+summary_en = "PlayPoints loyalty scheme, Click and Collect and personal delivery in Berlin and its surroundings; 961 products listed; founded in November 2022 by one person."
+summary_fr = "Programme de fidélité PlayPoints, Click and Collect et livraison personnelle à Berlin et alentours ; 961 produits listés ; fondée en novembre 2022 par une seule personne."
+strengths_en = ["GLS standard shipping free from 300 € within Germany; small parcels from 3.49 €; express in 1 working day", "Delivery time shown on each product page"]
+strengths_fr = ["Livraison standard GLS gratuite dès 300 € en Allemagne ; petits colis dès 3.49 € ; express en 1 jour ouvrable", "Délai de livraison affiché sur chaque fiche produit"]
+weaknesses_en = ["Delivery within Germany only", "Personal delivery costs from 0 € to 79.90 € depending on the postcode"]
+weaknesses_fr = ["Livraison en Allemagne uniquement", "La livraison personnelle coûte de 0 € à 79.90 € selon le code postal"]
+size = [{n = 961, unit = "products"}]
+last_activity = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.playzeug.de/pages/versand"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.playzeug.de/pages/uberuns"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "steinehelden"
+name = "Steinehelden"
+url = "https://steinehelden.de/"
+group = "official-lego"
+covers = ["official"]
+languages = ["de"]
+countries = ["DE"]
+ships_to_france = false
+summary_en = "Run as a non-profit inclusion enterprise employing people with and without disabilities; Click and Collect and store delivery; also sells Pokémon cards and books."
+summary_fr = "Exploité comme entreprise d'inclusion à but non lucratif employant des personnes avec et sans handicap ; Click and Collect et livraison en magasin ; vend aussi des cartes Pokémon et des livres."
+strengths_en = ["Delivery by DHL or DPD in 2 to 3 working days; priority handling by DHL for 1.50 € more", "Purchase on invoice possible for businesses on request"]
+strengths_fr = ["Livraison par DHL ou DPD en 2 à 3 jours ouvrables ; traitement prioritaire par DHL pour 1.50 € de plus", "Achat sur facture possible pour les entreprises sur demande"]
+weaknesses_en = ["Delivery within Germany only: no delivery to other countries"]
+weaknesses_fr = ["Livraison en Allemagne uniquement : aucune livraison vers d'autres pays"]
+last_activity = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://steinehelden.de/Informationen/Versand/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://steinehelden.de/ueber-uns"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "retiredsets"
+name = "Retiredsets.co.uk"
+url = "https://retiredsets.co.uk/"
+group = "official-lego"
+covers = ["official", "minifigures"]
+languages = ["en"]
+countries = ["GB"]
+summary_en = "Brand new sealed retired sets (over 4500 online), trade-in of boxed sets for credit, Click and Collect and a collectors' club; stores in Aylesbury and Glasgow."
+summary_fr = "Sets retirés neufs et scellés (plus de 4500 en ligne), reprise de sets en boîte contre un crédit, Click and Collect et club de collectionneurs ; magasins à Aylesbury et à Glasgow."
+strengths_en = ["Free tracked shipping on orders over £75", "Opening hours shown for the Glasgow store: Monday to Friday 10:00 to 17:00, Saturday 9:00 to 17:00, Sunday 10:00 to 16:00"]
+strengths_fr = ["Livraison suivie gratuite dès £75", "Horaires indiqués pour le magasin de Glasgow : du lundi au vendredi de 10 h à 17 h, samedi de 9 h à 17 h, dimanche de 10 h à 16 h"]
+weaknesses_en = ["International delivery on a custom quote after an order with store pickup: no published rate"]
+weaknesses_fr = ["Livraison internationale sur devis après une commande en retrait magasin : aucun tarif publié"]
+size = [{n = 4500, unit = "sets", approx = "more-than"}]
+last_activity = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://retiredsets.co.uk/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://retiredsets.co.uk/pages/contact"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "lego-certified-store-za"
+name = "LEGO Certified Store South Africa"
+url = "https://lego-gybc.co.za/"
+group = "official-lego"
+operator = "licensee"
+covers = ["official"]
+languages = ["en"]
+countries = ["ZA"]
+ships_to_france = false
+summary_en = "Run by the Great Yellow Brick Company, licensed operator since 2017, with free delivery on every online order and Click and Collect; stores in Johannesburg, Pretoria, Cape Town and Durban."
+summary_fr = "Exploitée par la Great Yellow Brick Company, opérateur sous licence depuis 2017, avec livraison gratuite sur toute commande en ligne et Click and Collect ; magasins à Johannesburg, Pretoria, Le Cap et Durban."
+strengths_en = ["Free delivery on all online orders, no minimum; 2 to 5 business days", "Brick Rewards points; 30 % off selected sets from 1 to 29 November 2026"]
+strengths_fr = ["Livraison gratuite sur toutes les commandes en ligne, sans minimum ; 2 à 5 jours ouvrables", "Points Brick Rewards ; 30 % de remise sur une sélection de sets du 1er au 29 novembre 2026"]
+weaknesses_en = ["Delivery only within South Africa", "Some items available in store only"]
+weaknesses_fr = ["Livraison uniquement en Afrique du Sud", "Certains articles disponibles en magasin seulement"]
+last_activity = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://lego-gybc.co.za/pages/shipping-handling"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://lego-gybc.co.za/pages/about-us"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "bricknique"
+name = "Bricknique"
+url = "https://bricknique.com/"
+group = "alternative-brands"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["GB"]
+ships_to_france = true
+summary_en = "Price promise, free standard shipping from £30 and a sales line staffed 12:00 to 17:00 on weekdays; sets from Lumibricks, CaDA, Pantasy and Sluban."
+summary_fr = "Promesse de prix, livraison standard gratuite dès £30 et ligne de vente tenue de 12 h à 17 h en semaine ; sets de Lumibricks, CaDA, Pantasy et Sluban."
+strengths_en = ["Express tracked shipping £5.99 within the United Kingdom", "Delivery abroad at an estimated £14.99 to £23.99; France in the country list", "Customer reviews dated up to 18 November 2026"]
+strengths_fr = ["Livraison express suivie £5.99 au Royaume-Uni", "Livraison à l'étranger à un tarif estimé de £14.99 à £23.99 ; France dans la liste des pays", "Avis clients datés jusqu'au 18 novembre 2026"]
+weaknesses_en = ["International shipping is an estimate: the exact charge is emailed when it is higher"]
+weaknesses_fr = ["Port international estimé : le montant exact est envoyé par courriel s'il est plus élevé"]
+brands = ["lumibricks", "cada", "pantasy", "sluban"]
+last_activity = "2026-11-18"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://bricknique.com/policies/shipping-policy"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://bricknique.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "building-block-world"
+name = "Building Block World"
+url = "https://bbworld.co.uk/"
+group = "alternative-brands"
+covers = ["alternative", "parts"]
+languages = ["en"]
+countries = ["GB"]
+ships_to_france = true
+summary_en = "Retail outlet in Driffield open Thursday to Monday, stock held in the country with next-day delivery, and a spare and missing parts service; 13339 models and accessories sold since March 2022."
+summary_fr = "Point de vente à Driffield ouvert du jeudi au lundi, stock dans le pays livré le lendemain, service de pièces de rechange et manquantes ; 13339 modèles et accessoires vendus depuis mars 2022."
+strengths_en = ["Ships from Driffield, East Yorkshire, without dropshipping (stated)", "European orders ship by DPD with duties paid; France in the country list", "Delivery by Evri in 4 to 5 days or by DHL in 2 days"]
+strengths_fr = ["Expédition depuis Driffield, East Yorkshire, sans livraison directe par un tiers (déclaré)", "Commandes européennes expédiées par DPD, droits de douane payés ; France dans la liste des pays", "Livraison par Evri en 4 à 5 jours ou par DHL en 2 jours"]
+weaknesses_en = ["European countries are added gradually; others on request"]
+weaknesses_fr = ["Pays européens ajoutés progressivement ; les autres sur demande"]
+brands = ["mould-king", "cada"]
+last_activity = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://bbworld.co.uk/pages/faq"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://bbworld.co.uk/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "mattoncini-compatibili"
+name = "Mattoncini Compatibili"
+url = "https://www.mattoncinicompatibili.it/"
+group = "alternative-brands"
+covers = ["alternative"]
+languages = ["it"]
+countries = ["IT"]
+summary_en = "Store in Santarcangelo di Romagna with in-store pick-up, gifts with a personal dedication and a blog; CaDA, Mould King, Reobrix, Sembo Block, Rastar and Wange; part of the Sherwood Store network."
+summary_fr = "Magasin à Santarcangelo di Romagna avec retrait sur place, cadeaux avec dédicace personnelle et blog ; CaDA, Mould King, Reobrix, Sembo Block, Rastar et Wange ; membre du réseau Sherwood Store."
+strengths_en = ["Free shipping for all of November 2026, otherwise by BRT from 5.90 €", "Store open Monday to Saturday 9:00 to 12:30 and 16:00 to 19:00"]
+strengths_fr = ["Livraison gratuite pendant tout novembre 2026, sinon par BRT dès 5.90 €", "Magasin ouvert du lundi au samedi de 9 h à 12 h 30 et de 16 h à 19 h"]
+weaknesses_en = ["Delivery outside Italy quoted on request, customs charges possible", "Latest blog article dated 19 May 2025"]
+weaknesses_fr = ["Livraison hors d'Italie sur devis, droits de douane possibles", "Dernier article du blog daté du 19 mai 2025"]
+brands = ["cada", "jiestar", "mould-king", "rastar", "reobrix", "sembo-block", "wange"]
+last_activity = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.mattoncinicompatibili.it/spedizioni-pacchi-mattoncini-compatibili/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.mattoncinicompatibili.it/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "latericius"
+name = "Latericius"
+url = "https://latericius.com/"
+group = "alternative-brands"
+covers = ["alternative"]
+languages = ["es", "en"]
+countries = ["ES"]
+ships_to_france = true
+summary_en = "Ships in original boxes, with brand guides, a builder quiz and TOP 10 packs; its founder presents it as the country's only shop specialised in quality compatible bricks."
+summary_fr = "Expédie dans les boîtes d'origine, avec guides des marques, test du constructeur et packs TOP 10 ; son fondateur la présente comme la seule boutique du pays spécialisée dans les briques compatibles de qualité."
+strengths_en = ["Free shipping from 65 € in mainland Spain and from 120 € in the European Union, France included", "309 customer reviews, latest dated 18 November 2026", "Returns extended until 31 January for Christmas"]
+strengths_fr = ["Livraison gratuite dès 65 € en Espagne continentale et dès 120 € dans l'Union européenne, France comprise", "309 avis clients, le dernier daté du 18 novembre 2026", "Retours prolongés jusqu'au 31 janvier pour Noël"]
+weaknesses_en = ["Free shipping threshold to the European Union (120 €) higher than in mainland Spain (65 €)"]
+weaknesses_fr = ["Seuil de livraison gratuite vers l'Union européenne (120 €) plus élevé qu'en Espagne continentale (65 €)"]
+brands = ["pantasy", "cada", "mould-king", "cobi", "lumibricks", "sluban"]
+last_activity = "2026-11-18"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://latericius.com/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://latericius.com/pages/about-us"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "todobloque"
+name = "TodoBloque"
+url = "https://todobloque.es/"
+group = "alternative-brands"
+covers = ["alternative", "official"]
+languages = ["es"]
+countries = ["ES"]
+ships_to_france = true
+summary_en = "Sells LEGO and compatible bricks together, takes custom-design orders and publishes buying guides on its blog; free shipping to France and seven other European countries from 99 €."
+summary_fr = "LEGO et briques compatibles vendus ensemble, commandes de créations sur mesure, guides d'achat sur le blog ; livraison gratuite vers la France et sept autres pays européens dès 99 €."
+strengths_en = ["Free shipping from 50 € in mainland Spain, from 99 € to the Balearic Islands and to Portugal, France, Germany, Italy, the Netherlands, Belgium, Luxembourg and Austria", "Delivery by TIPSA from stock in Spain"]
+strengths_fr = ["Livraison gratuite dès 50 € en Espagne continentale, dès 99 € vers les îles Baléares, le Portugal, la France, l'Allemagne, l'Italie, les Pays-Bas, la Belgique, le Luxembourg et l'Autriche", "Livraison par TIPSA depuis le stock en Espagne"]
+weaknesses_en = ["Special rates for the Canary Islands, other European countries and the United States, not published on the page read"]
+weaknesses_fr = ["Tarifs spéciaux pour les îles Canaries, les autres pays européens et les États-Unis, non publiés sur la page lue"]
+brands = ["cada", "pantasy", "xingbao"]
+last_activity = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://todobloque.es/nuestro-envio/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://todobloque.es/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "swissbrixx"
+name = "Swissbrixx"
+url = "https://swissbrixx.ch/"
+group = "alternative-brands"
+covers = ["alternative"]
+languages = ["de"]
+countries = ["CH"]
+ships_to_france = false
+summary_en = "Stock held in Zürich, delivered in 2 to 3 working days with free shipping; Reobrix, CaDA, Mould King and COBI, more brands announced."
+summary_fr = "Stock détenu à Zürich, livré en 2 à 3 jours ouvrables avec livraison gratuite ; Reobrix, CaDA, Mould King et COBI, d'autres marques annoncées."
+strengths_en = ["All orders shipped from the Swiss stock, no dropshipping (stated)", "Product list refreshed on 25 November 2026"]
+strengths_fr = ["Toutes les commandes expédiées depuis le stock suisse, sans livraison directe par un tiers (déclaré)", "Liste de produits mise à jour le 25 novembre 2026"]
+weaknesses_en = ["Only 10 products listed at the reading", "Newly launched shop; delivery within Switzerland only"]
+weaknesses_fr = ["10 produits seulement listés à la lecture", "Boutique récemment lancée ; livraison en Suisse uniquement"]
+size = [{n = 10, unit = "products"}]
+brands = ["reobrix", "cada", "mould-king", "cobi"]
+last_activity = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://swissbrixx.ch/policies/shipping-policy"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://swissbrixx.ch/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "snoopys-brick-shop"
+name = "Snoopy's Brick Shop"
+url = "https://www.snoopysbrickshop.nl/"
+group = "alternative-brands"
+covers = ["alternative", "parts"]
+languages = ["nl"]
+countries = ["NL", "BE", "DE"]
+summary_en = "Run by a couple from Brunssum since 2014, starting with a BrickLink store for loose parts; stocks COBI, CaDA, FunWhole, Reobrix, Mould King and Brixies Plus."
+summary_fr = "Tenue par un couple de Brunssum depuis 2014, à partir d'une boutique BrickLink de pièces détachées ; propose COBI, CaDA, FunWhole, Reobrix, Mould King et Brixies Plus."
+strengths_en = ["Shipping 5.99 € in the Netherlands, free from 75 €; 8.99 € to Belgium and Germany, free from 150 €", "Customer reviews dated up to 8 November 2026", "Loose parts also sold through its BrickLink and Brick Owl stores"]
+strengths_fr = ["Port de 5.99 € aux Pays-Bas, gratuit dès 75 € ; 8.99 € vers la Belgique et l'Allemagne, gratuit dès 150 €", "Avis clients datés jusqu'au 8 novembre 2026", "Pièces détachées vendues aussi par ses boutiques BrickLink et Brick Owl"]
+weaknesses_en = ["Other countries of the European Union only on request: France not listed"]
+weaknesses_fr = ["Autres pays de l'Union européenne sur demande seulement : France non listée"]
+brands = ["cobi", "cada", "lumibricks", "reobrix", "mould-king", "brixies"]
+last_activity = "2026-11-08"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.snoopysbrickshop.nl/courses/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.snoopysbrickshop.nl/about-us/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "dutchfunbricks"
+name = "DutchFunBricks"
+url = "https://www.dutchfunbricks.nl/"
+group = "alternative-brands"
+covers = ["alternative", "official"]
+languages = ["nl"]
+countries = ["NL", "BE", "DE"]
+ships_to_france = false
+summary_en = "Lit building sets from Lumibricks and FunWhole, with Pantasy and CaDA besides; Black Friday warehouse clearance running at the reading; ships by DHL from the Netherlands."
+summary_fr = "Sets de construction éclairés de Lumibricks et FunWhole, avec Pantasy et CaDA en plus ; déstockage Black Friday en cours à la lecture ; expédition par DHL depuis les Pays-Bas."
+strengths_en = ["Shipping 6.95 € in the Netherlands, free from 100 €", "Delivery to Belgium 18 € and to Germany 21.50 €"]
+strengths_fr = ["Port de 6.95 € aux Pays-Bas, gratuit dès 100 €", "Livraison vers la Belgique 18 € et vers l'Allemagne 21.50 €"]
+weaknesses_en = ["No free shipping to Belgium and Germany; France not served"]
+weaknesses_fr = ["Pas de livraison gratuite vers la Belgique et l'Allemagne ; France non desservie"]
+brands = ["lumibricks", "pantasy", "cada"]
+last_activity = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.dutchfunbricks.nl/verzending/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.dutchfunbricks.nl/over-ons/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "universal-bricks"
+name = "Universal Bricks"
+url = "https://universalbricks.com.au/"
+group = "alternative-brands"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["AU"]
+ships_to_france = false
+summary_en = "Wide brand range (CaDA, Cobi, Mould King, Pantasy, Lumibricks, Sluban, Wange and others) with Click and Collect and a missing-bricks service; VIP Black Friday sale at the reading."
+summary_fr = "Large éventail de marques (CaDA, Cobi, Mould King, Pantasy, Lumibricks, Sluban, Wange et d'autres) avec Click and Collect et service de pièces manquantes ; vente VIP Black Friday à la lecture."
+strengths_en = ["Pages for payment methods, returns and missing bricks published", "Local stock for Australian buyers"]
+strengths_fr = ["Pages publiées sur les moyens de paiement, les retours et les pièces manquantes", "Stock local pour les acheteurs australiens"]
+weaknesses_en = ["International shipping not available (stated)"]
+weaknesses_fr = ["Livraison internationale non disponible (déclaré)"]
+brands = ["cada", "cobi", "im-master", "jiestar", "lumibricks", "mould-king", "panlos", "pantasy", "sluban", "wange"]
+last_activity = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://universalbricks.com.au/pages/shipping-delivery"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://universalbricks.com.au/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "bricksewer"
+name = "BrickSewer"
+url = "https://bricksewer.com/"
+group = "alternative-brands"
+covers = ["alternative"]
+languages = ["en"]
+countries = ["US", "international"]
+ships_to_france = true
+summary_en = "493 sets from 24 brands, many tied to licensed characters (Yu-Gi-Oh!, SpongeBob SquarePants, Sanrio); ships from a warehouse in the United States, a European one announced."
+summary_fr = "493 sets de 24 marques, beaucoup liés à des personnages sous licence (Yu-Gi-Oh!, Bob l'éponge, Sanrio) ; expédie depuis un entrepôt aux États-Unis, un entrepôt européen annoncé."
+strengths_en = ["Free shipping from $75 in the United States", "Ships worldwide, typically about 2 weeks; factory-stock items ship from the maker in 7 to 20 business days", "Replacement form for missing or damaged parts"]
+strengths_fr = ["Livraison gratuite dès $75 aux États-Unis", "Expédie dans le monde entier, en général sous environ 2 semaines ; articles en stock usine expédiés par le fabricant en 7 à 20 jours ouvrables", "Formulaire de remplacement des pièces manquantes ou abîmées"]
+weaknesses_en = ["International shipping fees and import taxes paid by the customer", "European warehouse announced, not open at the reading"]
+weaknesses_fr = ["Frais de port internationaux et taxes d'importation à la charge du client", "Entrepôt européen annoncé, pas encore ouvert à la lecture"]
+size = [{n = 493, unit = "sets"}, {n = 24, unit = "brands"}]
+brands = ["pantasy", "keeppley", "mould-king", "cada", "jiestar", "wange", "loz", "panlos", "sluban"]
+last_activity = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://bricksewer.com/pages/faq"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://bricksewer.com/pages/about-bricksewer"
+date = "2026-11-25"
+kind = "read"

@@ -149,8 +149,15 @@ Online and physical shops selling official LEGO, alternative brick brands and ge
 - [Baustein Store](https://bausteinstore.de) - Delivery by DHL across the European Union and Monaco. Covers official LEGO.
 - [Brickitalia](https://www.brickitalia.com/) - Aimed at collectors and builders; sets, loose parts and minifigures. Covers official LEGO.
 - [idee+spiel (duo idee+spiel)](https://www.ideeundspiel.com) - Online shop of a toy retail cooperative formed by the merger of duo and idee+spiel on 1 January 2026; delivery to France not established. Covers official LEGO.
+- [Klockowo.pl](https://klockowo.pl/) - Store in Kraków with free pick-up; products browsable by release year (1419 listed, 321 of 2026 and 320 of 2025), plus 299 Playmobil items. Covers official LEGO.
+- [LEGO Certified Store South Africa](https://lego-gybc.co.za/) - Run by the Great Yellow Brick Company, licensed operator since 2017, with free delivery on every online order and Click and Collect; stores in Johannesburg, Pretoria, Cape Town and Durban. Covers official LEGO.
 - [LEGO.com (France)](https://www.lego.com/fr-fr) - Full catalogue, exclusives, gift cards and Pick a Brick from the manufacturer; delivers only to addresses in France. Covers official LEGO.
 - [LToys](https://www.ltoys.lu/fr) - Store in Niederanven of LTOYS S.A R.L. (founded 2017); official LEGO range plus COBI, CaDA, Pantasy, Lumibricks, Blokees and die-cast cars. Covers official LEGO and alternative brands.
+- [Planeta Klocków](https://planetaklockow.pl/) - Own store with same-day delivery in Łódź for orders paid between 9:00 and 14:00; orders placed before 14:00 ship the same day elsewhere in the country. Covers official LEGO.
+- [Playzeug](https://www.playzeug.de/) - PlayPoints loyalty scheme, Click and Collect and personal delivery in Berlin and its surroundings; 961 products listed; founded in November 2022 by one person. Covers official LEGO.
+- [Retiredsets.co.uk](https://retiredsets.co.uk/) - Brand new sealed retired sets (over 4500 online), trade-in of boxed sets for credit, Click and Collect and a collectors' club; stores in Aylesbury and Glasgow. Covers official LEGO.
+- [Steinehelden](https://steinehelden.de/) - Run as a non-profit inclusion enterprise employing people with and without disabilities; Click and Collect and store delivery; also sells Pokémon cards and books. Covers official LEGO.
+- [Unieke Bricks](https://uniekebricks.nl/) - Hard-to-find sets, a category of sets with box damage, loose parts and minifigures; free gift wrapping, showroom by appointment only, same-day dispatch when ordered before 14:00 on working days. Covers official LEGO.
 
 ### Alternative brands
 
@@ -162,14 +169,24 @@ Online and physical shops selling official LEGO, alternative brick brands and ge
 - [Brickcoast](https://brickcoast.de) - Online and physical store in Castrop-Rauxel (Steinebande GmbH): official LEGO, Mould King and Cobi. Covers official LEGO and alternative brands.
 - [Brickeez](https://www.brickeez.com) - New official LEGO, Lumibricks, Pantasy, COBI and CaDA; shop in the Hérault. Covers official LEGO and alternative brands.
 - [Brickmo](https://www.brickmo.com/fr/) - Store of Scalemo GmbH with official LEGO and alternative brands (Cobi, CaDA, Sluban, Wange, Xingbao, Jekca). Covers official LEGO and alternative brands.
+- [Bricknique](https://bricknique.com/) - Price promise, free standard shipping from £30 and a sales line staffed 12:00 to 17:00 on weekdays; sets from Lumibricks, CaDA, Pantasy and Sluban. Covers alternative brands.
 - [Brickparts.nl](https://brickparts.nl) - Sets, and parts sold separately in a section of loose parts; shop based in Kuinre. Covers alternative brands.
+- [BrickSewer](https://bricksewer.com/) - 493 sets from 24 brands, many tied to licensed characters (Yu-Gi-Oh!, SpongeBob SquarePants, Sanrio); ships from a warehouse in the United States, a European one announced. Covers alternative brands.
+- [Building Block World](https://bbworld.co.uk/) - Retail outlet in Driffield open Thursday to Monday, stock held in the country with next-day delivery, and a spare and missing parts service; 13339 models and accessories sold since March 2022. Covers alternative brands.
 - [ChowBrick](https://www.chowbrick.com) - Bricks shipped from China to the rest of the world. Covers alternative brands.
 - [COBI Europe (official store)](https://cobi.com/fr-fr) - Historical military models, licensed cars, ships and aircraft from the manufacturer COBI S.A. (Warsaw), shipping across the European Union. Covers alternative brands.
+- [DutchFunBricks](https://www.dutchfunbricks.nl/) - Lit building sets from Lumibricks and FunWhole, with Pantasy and CaDA besides; Black Friday warehouse clearance running at the reading; ships by DHL from the Netherlands. Covers official LEGO and alternative brands.
 - [JoyGobricks](https://joygobricks.com) - Reseller of GoBricks parts and sets; ships from China. Covers alternative brands.
 - [KBS Shop](https://kbs-shop.com) - Technical and remote-controlled bricks: Mould King, CaDA, Reobrix, Wange, Jie Star, Panlos. Covers alternative brands.
+- [Latericius](https://latericius.com/) - Ships in original boxes, with brand guides, a builder quiz and TOP 10 packs; its founder presents it as the country's only shop specialised in quality compatible bricks. Covers alternative brands.
+- [Mattoncini Compatibili](https://www.mattoncinicompatibili.it/) - Store in Santarcangelo di Romagna with in-store pick-up, gifts with a personal dedication and a blog; CaDA, Mould King, Reobrix, Sembo Block, Rastar and Wange; part of the Sherwood Store network. Covers alternative brands.
 - [Mister Brixx](https://www.misterbrixx.de) - Buys and resells LEGO; also sells official LEGO, Mould King, CaDA, Reobrix, Panlos and Cobi, online and in a store in Duisburg. Covers official LEGO and alternative brands.
 - [MyGoBricks (Brickbulk)](https://bricksbulk.com/) - Authorised distributor of GoBricks bulk parts and sets; French version (bricksbulk.fr) run by SOUFEEL INTERNATIONAL TRADING CO., LIMITED, Beckenham, United Kingdom. Renamed Brickbulk: mygobricks.com redirects to bricksbulk.com. Covers alternative brands.
+- [Snoopy's Brick Shop](https://www.snoopysbrickshop.nl/) - Run by a couple from Brunssum since 2014, starting with a BrickLink store for loose parts; stocks COBI, CaDA, FunWhole, Reobrix, Mould King and Brixies Plus. Covers alternative brands.
 - [Spielzeug-Fuchs](https://spielzeug-fuchs.de) - Catalogue of COBI, CaDA, Mould King, Pantasy, Lumibricks, Reobrix and other brands. Covers alternative brands.
+- [Swissbrixx](https://swissbrixx.ch/) - Stock held in Zürich, delivered in 2 to 3 working days with free shipping; Reobrix, CaDA, Mould King and COBI, more brands announced. Covers alternative brands.
+- [TodoBloque](https://todobloque.es/) - Sells LEGO and compatible bricks together, takes custom-design orders and publishes buying guides on its blog; free shipping to France and seven other European countries from 99 €. Covers official LEGO and alternative brands.
+- [Universal Bricks](https://universalbricks.com.au/) - Wide brand range (CaDA, Cobi, Mould King, Pantasy, Lumibricks, Sluban, Wange and others) with Click and Collect and a missing-bricks service; VIP Black Friday sale at the reading. Covers alternative brands.
 - [Warbrix.fr](https://www.warbrix.fr) - COBI and Reobrix; states it was the first distributor to introduce COBI in France (2012). Covers alternative brands.
 - [YWOBB](https://yourwobb.com) - Multi-brand range, more than 60 brands in its menu (CaDA, Mould King, Pantasy, Sembo, Keeppley and others), prices in United States dollars; some CaDA sets offered as 'European Union warehouse' versions. Covers alternative brands.
 
@@ -201,21 +218,27 @@ Sites that compare set prices across shops, catalogue sets and parts, track seco
 - [AltBrickScan](https://altbrickscan.com/fr-FR/) - Described as a prototype: multi-brand, announced as showing prices with delivery to the chosen country, plus price history and an email alert. Covers official LEGO and alternative brands.
 - [Avenue de la Brique](https://www.avenuedelabrique.com/) - Specialised in official LEGO, gathering French online shops. Covers official LEGO.
 - [Brick Broker](https://brick-broker.com/) - Official LEGO and about 95 alternative brands in one search, with offers deliverable to France; published by Doux Labs SASU, based in Allonzier-la-Caille. Covers official LEGO and alternative brands.
+- [Brick Budget](https://www.brickbudget.com/) - Imports parts lists from BrickLink, Rebrickable or BrickStore and shows when a whole set costs less than the parts; budget kept in the browser, no account. Covers official LEGO.
+- [Brick Compare](https://brick.compare/) - Compares five retailers (Jadlam Toys & Models, The Entertainer, The Range, Tinney's Toys, Toy Barnhaus) on 1742 sets, with a page of drops and buying guides. Covers official LEGO.
 - [Brick-Tracker.de](https://www.brick-tracker.de/index.php) - Market analysis of retiring sets, with price alert, wish list and collection tool, for official LEGO. Covers official LEGO.
 - [Brickfact](https://brickfact.com/) - Secondary-market value of sealed sets, collection tracker shared with its application and regional sites (USD, GBP, CHF, EUR). Covers official LEGO.
+- [Brickfall](https://www.brickfall.com/) - Daily and weekly drop lists, 52-week-low markers and a discount shown per offer, across more than two dozen retail shops. Covers official LEGO.
 - [brickguide.de](https://brickguide.de/) - Set base and collection manager for official LEGO, with prices from merchant feeds and a price history. Covers official LEGO.
 - [Brickmerge](https://www.brickmerge.de/) - Running since 2014 for official LEGO, with price alert, discount alert and price history. Covers official LEGO.
 - [Brickmitri](https://brickmitri.com/comparateur-lego/) - Built from the affiliate feeds of French retailers; no account required. Covers official LEGO.
+- [BrickPrism](https://brickprism.com/es) - History over 90 days, alerts before retirement and deals posted on Telegram and Bluesky; 1156 sets with prices checked three times a day. Covers official LEGO.
 - [BricksDeal](https://bricksdeal.com/de-en) - Official LEGO compared by set number, with shops in the Netherlands, Belgium and Germany. Covers official LEGO.
-- [BricksValue](https://bricksvalue.com/fr) - Daily comparison of official LEGO sets, with tracking of sets about to be retired by LEGO and price per piece; variants for France, Germany and the United States. Covers official LEGO.
+- [BricksValue](https://bricksvalue.com/fr) - Daily comparison of official LEGO sets, with tracking of sets about to be retired by LEGO and price per piece; one variant and one where-to-buy guide per country, 13 countries. Covers official LEGO.
 - [BrickTracker.eu](https://bricktracker.eu/fr) - Full history and alerts (price drop, back in stock, target price) on a free account. Covers official LEGO.
 - [BrickTurtle](https://brickturtle.com.au/) - Independent comparison of LEGO sets with prices from more than 20 Australian retailers side by side, price history, retiring-soon list and email price-drop alerts. Covers official LEGO.
 - [Brickwatch](https://www.brickwatch.net/fr-FR/) - Watch on official LEGO prices at several retailers, published by Kiobi BV (Netherlands), with France and United Kingdom variants. Covers official LEGO.
 - [Brickyes](https://www.brickyes.com/nl-nl/lego) - In-stock official LEGO, shipping included, with a watchlist and email alerts. Covers official LEGO.
 - [brickzone](https://brickzone.dk/) - LEGO sets with a history of prices, a price barometer and a list of Black Friday offers priced below the year's lowest price. Covers official LEGO.
+- [Briky](https://www.briky.cz/) - Offers from more than 30 shops and 4 second-hand sites, set database, collection and wish list, personal price watchers and its own marketplace; run by one enthusiast. Covers official LEGO.
 - [Ceneo](https://www.ceneo.pl/) - General service for comparing prices, usable for LEGO sets across Polish online shops. Covers official LEGO.
 - [Chez Emil](https://chezemil.fr/) - Multi-category (official LEGO, consumer electronics, video games), with merchant offers grouped per product and price history. Covers official LEGO.
 - [ComparoBrick](https://www.comparobrick.fr/) - Official LEGO sets identified by set number and barcode, with French merchants only. Covers official LEGO.
+- [Fandery](https://www.fandery.com/lego) - Checks Amazon, El Corte Inglés, LEGO.com, Fnac, Miravia, ToysRus, Carrefour and Abacus every day for about 1000 sets, with a Telegram channel and daily offers. Covers official LEGO.
 - [Geizhals](https://geizhals.at/) - General catalogue with a LEGO category and a separate category for alternative brick brands (CaDA, Cobi and others). Covers official LEGO and alternative brands.
 - [idealo](https://www.idealo.fr/) - LEGO category with offers per set, a price chart and reviews. Covers official LEGO.
 - [Klockometr](https://klockometr.pl/) - Five-level assessment of each offer against the previous 365 days and the median of offers for retired sets, on top of a price history for official LEGO. Useful as a method reference. Covers official LEGO.
@@ -243,6 +266,7 @@ Sites that compare set prices across shops, catalogue sets and parts, track seco
 
 ### Value and investment tracking
 
+- [Brick Ranker](https://www.brickranker.com/) - Over 7 million recorded sales of sets and minifigures feed resale indices, a retirement tracker and minifigure collections; part prices also tracked. Covers official LEGO.
 - [BrickEconomy](https://www.brickeconomy.com/) - Machine-learning growth forecasts and secondary-market value estimates for official LEGO sets and minifigures. Covers official LEGO.
 - [BrickPicker](https://brickpicker.com/) - Price guide based on completed sales, part-out value, portfolio tracking, retirement watch and deal alerts, for LEGO investing; free to browse without an account, advanced tools in Premium. Covers official LEGO.
 
@@ -945,6 +969,7 @@ Existing directories, awesome lists and lists of channels and brands about LEGO 
 - [Deparkatre: LEGO creators and designers directory](https://deparkatre.fr/en/lego-creators) - LEGO Certified Professionals, artists, custom-build creators, designers and studios, with profiles and locations. Covers official LEGO.
 - [Eurobricks LEGO Site Directory](https://www.eurobricks.com/forum/forums/topic/38481-lego-site-directory/) - Overview of every LEGO-related website, started as a forum thread in 2010. Covers official LEGO. Status: archived.
 - [Kostky.eu](https://kostky.eu/) - Practical LEGO websites: Czech blogs, a forum registered as a user group, marketplaces, set databases, global blogs and a section on where to buy LEGO in Czechia.
+- [Lakea: store list by shipping country](https://lakea.net/retailers) - Each store with its tracked sets, share in stock and a data-quality score, filtered by shipping country, refreshed minutes before the reading. Covers official LEGO.
 - [LEGO Fan CoLab community directory](https://fancolab.lego.com/communities/) - Fan communities recognised by LEGO, French associations among them. Covers official LEGO.
 - [Spielzeug-Fuchs: price comparison platforms for building bricks](https://spielzeug-fuchs.de/klemmbaustein-preisvergleichsplattformen/) - Guide in German with a table of price comparison platforms for LEGO and compatible bricks (Brickfact, BrickLink, Brickmerge, BrickEconomy and others). Covers official LEGO and alternative brands.
 

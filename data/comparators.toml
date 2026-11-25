@@ -229,19 +229,19 @@ name = "BricksValue"
 url = "https://bricksvalue.com/fr"
 group = "price-comparators"
 covers = ["official"]
-languages = ["fr", "de", "en"]
-countries = ["FR", "DE", "US"]
+languages = ["fr", "de", "en", "it", "es", "nl", "pl"]
+countries = ["FR", "DE", "US", "GB", "IT", "ES", "AT", "CH", "NL", "BE", "PL", "CA", "AU"]
 access = "free"
-summary_en = "Daily comparison of official LEGO sets, with tracking of sets about to be retired by LEGO and price per piece; variants for France, Germany and the United States."
-summary_fr = "Comparaison quotidienne des sets de marque LEGO avec suivi des retraits annoncés par LEGO et prix par pièce ; variantes France, Allemagne et États-Unis."
-strengths_en = ["France variant compares 16 retailers daily", "Tracking of sets about to be retired", "Price per piece shown"]
-strengths_fr = ["Variante France : 16 enseignes comparées chaque jour", "Suivi des sets bientôt retirés", "Prix par pièce affiché"]
+summary_en = "Daily comparison of official LEGO sets, with tracking of sets about to be retired by LEGO and price per piece; one variant and one where-to-buy guide per country, 13 countries."
+summary_fr = "Comparaison quotidienne des sets de marque LEGO avec suivi des retraits annoncés par LEGO et prix par pièce ; une variante et un guide d'achat par pays, 13 pays."
+strengths_en = ["France variant compares 16 retailers daily", "Where-to-buy guide per country with delivery terms: 6 retailers in the United States, 8 in the United Kingdom, 10 in Italy, 14 in Germany and the Netherlands, 16 in Canada", "Tracking of sets about to be retired", "Price per piece shown"]
+strengths_fr = ["Variante France : 16 enseignes comparées chaque jour", "Guide d'achat par pays avec conditions de livraison : 6 enseignes aux États-Unis, 8 au Royaume-Uni, 10 en Italie, 14 en Allemagne et aux Pays-Bas, 16 au Canada", "Suivi des sets bientôt retirés", "Prix par pièce affiché"]
 weaknesses_en = ["Official LEGO only", "Price history, alerts, API and shipping not established"]
 weaknesses_fr = ["Sets de marque LEGO seulement", "Historique de prix, alertes, API et port non établis"]
-size = [{n = 16, unit = "shops"}]
+size = [{n = 13, unit = "countries"}]
 status = "active"
-last_activity = "2026-11-23"
-checked = "2026-11-23"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
 added = "2026-11-23"
 confidence = "medium"
 funding = ["affiliation"]
@@ -250,6 +250,11 @@ funding = ["affiliation"]
 url = "https://bricksvalue.com/fr"
 date = "2026-11-23"
 kind = "read"
+
+[[resource.sources]]
+url = "https://bricksvalue.com/uk/where-to-buy-lego"
+date = "2026-11-25"
+kind = "official"
 
 [[resource]]
 id = "bricktracker-eu"
@@ -1199,25 +1204,35 @@ name = "Prisjakt"
 url = "https://www.prisjakt.nu/c/lego"
 group = "price-comparators"
 covers = ["official"]
-languages = ["sv"]
-countries = ["SE"]
+languages = ["sv", "no", "da", "fi"]
+countries = ["SE", "NO", "DK", "FI"]
 access = "free"
 summary_en = "LEGO category listing sets with age range, piece count and lowest price, and editorial buying guides."
 summary_fr = "Catégorie LEGO listant les sets avec âge, nombre de pièces et prix le plus bas, et des guides d'achat éditoriaux."
-strengths_en = ["Piece count and age range shown per set", "Same service exists for Denmark and Norway"]
-strengths_fr = ["Nombre de pièces et âge indiqués par set", "Même service pour le Danemark et la Norvège"]
+strengths_en = ["Piece count and age range shown per set", "Same service for Norway (prisjakt.no, 4778 products in the LEGO category), Denmark (prisjagt.dk, 5129) and Finland (hintaopas.fi, 2788); 3831 products in the Swedish category"]
+strengths_fr = ["Nombre de pièces et âge indiqués par set", "Même service pour la Norvège (prisjakt.no, 4778 produits dans la catégorie LEGO), le Danemark (prisjagt.dk, 5129) et la Finlande (hintaopas.fi, 2788) ; 3831 produits dans la catégorie suédoise"]
 weaknesses_en = ["Not specific to LEGO"]
 weaknesses_fr = ["Pas spécifique à LEGO"]
 status = "active"
-last_activity = "2026-11-23"
-checked = "2026-11-23"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
 added = "2026-11-23"
 confidence = "medium"
 funding = ["ads", "affiliation"]
 
 [[resource.sources]]
 url = "https://www.prisjakt.nu/c/lego"
-date = "2026-11-23"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.prisjakt.no/c/lego"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://hintaopas.fi/c/lego"
+date = "2026-11-25"
 kind = "read"
 
 [[resource]]
@@ -1284,3 +1299,244 @@ kind = "read"
 url = "https://legopricetracker.co.nz/retailers/the-warehouse"
 date = "2026-11-23"
 kind = "indexed"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "brick-compare"
+name = "Brick Compare"
+url = "https://brick.compare/"
+group = "price-comparators"
+covers = ["official"]
+languages = ["en"]
+countries = ["GB"]
+access = "free"
+funding = ["affiliation"]
+summary_en = "Compares five retailers (Jadlam Toys & Models, The Entertainer, The Range, Tinney's Toys, Toy Barnhaus) on 1742 sets, with a page of drops and buying guides."
+summary_fr = "Compare cinq distributeurs (Jadlam Toys & Models, The Entertainer, The Range, Tinney's Toys, Toy Barnhaus) sur 1742 sets, avec une page des baisses et des guides d'achat."
+strengths_en = ["Page of price drops and blog of buying guides, the latest dated 2 June 2026", "Piece counts taken from the public LEGO catalogue"]
+strengths_fr = ["Page des baisses de prix et blog de guides d'achat, le dernier daté du 2 juin 2026", "Nombres de pièces tirés du catalogue public de marque LEGO"]
+weaknesses_en = ["Only five retailers compared; Amazon and LEGO.com absent", "Prices undated on the pages: indicative, updated from retailer feeds (stated)"]
+weaknesses_fr = ["Cinq distributeurs seulement comparés ; Amazon et LEGO.com absents", "Prix non datés sur les pages : indicatifs, mis à jour depuis les flux des distributeurs (déclaré)"]
+size = [{n = 1742, unit = "sets"}, {n = 5, unit = "shops"}]
+last_activity = "2026-06-02"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://brick.compare/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brick.compare/blog"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "brickfall"
+name = "Brickfall"
+url = "https://www.brickfall.com/"
+group = "price-comparators"
+covers = ["official"]
+languages = ["en"]
+countries = ["US"]
+access = "free"
+funding = ["affiliation"]
+summary_en = "Daily and weekly drop lists, 52-week-low markers and a discount shown per offer, across more than two dozen retail shops."
+summary_fr = "Listes quotidiennes et hebdomadaires de baisses, repères de plus bas sur 52 semaines et remise affichée par offre, sur plus de deux douzaines de boutiques."
+strengths_en = ["Pages for new releases, coming soon sets, themes and tags", "Active since 2022 (copyright 2022 to 2026)"]
+strengths_fr = ["Pages des nouveautés, des sets à venir, des thèmes et des étiquettes", "Actif depuis 2022 (droits d'auteur 2022 à 2026)"]
+weaknesses_en = ["Amazon Associates participant: affiliate links", "Shops limited to the United States"]
+weaknesses_fr = ["Participant au programme Amazon Associates : liens d'affiliation", "Boutiques limitées aux États-Unis"]
+size = [{n = 24, unit = "shops", approx = "more-than"}]
+last_activity = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.brickfall.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "brickprism"
+name = "BrickPrism"
+url = "https://brickprism.com/es"
+group = "price-comparators"
+covers = ["official"]
+languages = ["es", "pt", "en", "de", "it", "nl"]
+countries = ["ES", "PT"]
+access = "free"
+funding = ["affiliation"]
+summary_en = "History over 90 days, alerts before retirement and deals posted on Telegram and Bluesky; 1156 sets with prices checked three times a day."
+summary_fr = "Historique sur 90 jours, alertes avant retrait et bonnes affaires publiées sur Telegram et Bluesky ; 1156 sets dont les prix sont relevés trois fois par jour."
+strengths_en = ["8 stores indexed, among them Worten, Auchan, PCDiga, Continente and El Corte Inglés", "Price alerts by email without an account", "Dedicated page of sets for adults; methodology and change log published"]
+strengths_fr = ["8 boutiques indexées, dont Worten, Auchan, PCDiga, Continente et El Corte Inglés", "Alertes de prix par courriel sans compte", "Page dédiée aux sets pour adultes ; méthodologie et journal des changements publiés"]
+weaknesses_en = ["Run by one enthusiast from Portugal", "Amazon ES and FNAC list no sets on the stores page at the reading"]
+weaknesses_fr = ["Tenu par un passionné installé au Portugal", "Amazon ES et FNAC ne listent aucun set sur la page des boutiques à la lecture"]
+size = [{n = 1156, unit = "sets"}, {n = 8, unit = "shops"}]
+last_activity = "2026-11-24"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://brickprism.com/es"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brickprism.com/es/about"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://brickprism.com/es/retailers"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "fandery"
+name = "Fandery"
+url = "https://www.fandery.com/lego"
+group = "price-comparators"
+covers = ["official"]
+languages = ["es"]
+countries = ["ES"]
+access = "free"
+funding = ["affiliation"]
+summary_en = "Checks Amazon, El Corte Inglés, LEGO.com, Fnac, Miravia, ToysRus, Carrefour and Abacus every day for about 1000 sets, with a Telegram channel and daily offers."
+summary_fr = "Relève chaque jour Amazon, El Corte Inglés, LEGO.com, Fnac, Miravia, ToysRus, Carrefour et Abacus pour environ 1000 sets, avec un canal Telegram et des offres du jour."
+strengths_en = ["Price history on each set page to tell a real offer from a usual price", "Shops, discount and history shown on each set page"]
+strengths_fr = ["Historique de prix sur chaque fiche de set pour distinguer une vraie offre d'un prix habituel", "Boutiques, remise et historique affichés sur chaque fiche de set"]
+weaknesses_en = ["Amazon prices excluded from price history and alerts", "Site also covers Funko, video games and toys"]
+weaknesses_fr = ["Prix Amazon exclus de l'historique et des alertes", "Le site couvre aussi Funko, jeux vidéo et jouets"]
+size = [{n = 1000, unit = "sets", approx = "about"}]
+last_activity = "2026-11-25"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.fandery.com/lego"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.fandery.com/about-us"
+date = "2026-11-25"
+kind = "official"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "brick-budget"
+name = "Brick Budget"
+url = "https://www.brickbudget.com/"
+group = "price-comparators"
+covers = ["official", "parts", "data"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+funding = ["affiliation", "donations"]
+summary_en = "Imports parts lists from BrickLink, Rebrickable or BrickStore and shows when a whole set costs less than the parts; budget kept in the browser, no account."
+summary_fr = "Importe des listes de pièces de BrickLink, Rebrickable ou BrickStore et indique quand un set entier coûte moins cher que les pièces ; budget gardé dans le navigateur, sans compte."
+strengths_en = ["Wanted-list file generated for BrickLink stores", "Page for use with AI assistants; changelog newest first with RSS"]
+strengths_fr = ["Fichier de liste de souhaits généré pour les boutiques BrickLink", "Page d'utilisation avec des assistants d'IA ; journal des changements du plus récent au plus ancien avec RSS"]
+weaknesses_en = ["Currencies not converted; shipping and checkout fees not included", "Run by one enthusiast based in Portugal"]
+weaknesses_fr = ["Devises non converties ; frais de port et de paiement non inclus", "Tenu par un passionné installé au Portugal"]
+last_activity = "2026-09-12"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.brickbudget.com/about"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.brickbudget.com/changelog"
+date = "2026-09-12"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.brickbudget.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "brick-ranker"
+name = "Brick Ranker"
+url = "https://www.brickranker.com/"
+group = "value-tracking"
+covers = ["official", "minifigures", "parts", "data", "news"]
+languages = ["en"]
+countries = ["international"]
+access = "free"
+funding = ["affiliation"]
+summary_en = "Over 7 million recorded sales of sets and minifigures feed resale indices, a retirement tracker and minifigure collections; part prices also tracked."
+summary_fr = "Plus de 7 millions de ventes enregistrées de sets et de minifigurines alimentent des indices de revente, un suivi des retraits et des collections de minifigurines ; prix des pièces aussi suivis."
+strengths_en = ["24265 sets and 18080 minifigures in the database", "13878 users have started a collection (168838 sets and 633450 minifigures catalogued)", "Retirement tracker and eBay buying guide"]
+strengths_fr = ["24265 sets et 18080 minifigurines dans la base", "13878 utilisateurs ont commencé une collection (168838 sets et 633450 minifigurines cataloguées)", "Suivi des retraits et guide d'achat eBay"]
+weaknesses_en = ["News section shows items of 2025 at the reading", "Affiliate links through Rakuten Advertising"]
+weaknesses_fr = ["La section des actualités montre des articles de 2025 à la lecture", "Liens d'affiliation via Rakuten Advertising"]
+size = [{n = 24265, unit = "sets"}, {n = 18080, unit = "minifigures"}]
+last_activity = "2026-09-04"
+confidence = "medium"
+
+[[resource.sources]]
+url = "https://www.brickranker.com/"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://brickranker.com/rankings/set/76355-1/batman-returns-batmobile"
+date = "2026-11-25"
+kind = "read"
+
+[[resource]]
+status = "active"
+checked = "2026-11-25"
+added = "2026-11-25"
+id = "briky"
+name = "Briky"
+url = "https://www.briky.cz/"
+group = "price-comparators"
+covers = ["official", "data", "news"]
+languages = ["cs"]
+countries = ["CZ"]
+access = "freemium"
+funding = ["subscription", "ads"]
+summary_en = "Offers from more than 30 shops and 4 second-hand sites, set database, collection and wish list, personal price watchers and its own marketplace; run by one enthusiast."
+summary_fr = "Offres de plus de 30 boutiques et de 4 sites d'occasion, base de sets, collection et liste de souhaits, veilles de prix personnelles et marché propre ; tenu par un passionné."
+strengths_en = ["News with an RSS feed, latest items dated 20 November 2026", "Offers from Facebook Marketplace shown on set pages (Premium)", "Discord community"]
+strengths_fr = ["Actualités avec flux RSS, derniers articles datés du 20 novembre 2026", "Offres de Facebook Marketplace affichées sur les fiches de sets (Premium)", "Communauté sur Discord"]
+weaknesses_en = ["Interface in Czech only", "Premium plans from 124 Kč per month (STANDARD) and 249 Kč per month (PRO) for more price watchers"]
+weaknesses_fr = ["Interface en tchèque seulement", "Formules Premium à partir de 124 Kč par mois (STANDARD) et 249 Kč par mois (PRO) pour davantage de veilles de prix"]
+size = [{n = 30, unit = "shops", approx = "more-than"}]
+feed = "https://www.briky.cz/rss/novinky/google"
+last_activity = "2026-11-20"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://www.briky.cz/"
+date = "2026-11-25"
+kind = "official"
+
+[[resource.sources]]
+url = "https://www.briky.cz/o-projektu"
+date = "2026-11-25"
+kind = "read"
+
+[[resource.sources]]
+url = "https://www.briky.cz/premium"
+date = "2026-11-25"
+kind = "read"

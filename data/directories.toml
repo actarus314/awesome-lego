@@ -627,3 +627,29 @@ confidence = "medium"
 url = "https://deparkatre.fr/en/lego-creators"
 date = "2026-11-23"
 kind = "read"
+
+[[resource]]
+id = "lakea-store-list"
+name = "Lakea: store list by shipping country"
+url = "https://lakea.net/retailers"
+group = "site-directories"
+covers = ["official"]
+languages = ["en", "fr", "de", "nl"]
+countries = ["international"]
+summary_en = "Each store with its tracked sets, share in stock and a data-quality score, filtered by shipping country, refreshed minutes before the reading."
+summary_fr = "Chaque boutique avec ses sets suivis, sa part en stock et une note de qualité des données, filtrée par pays de livraison, actualisée quelques minutes avant la lecture."
+strengths_en = ["83 stores tracked in 31 countries, with 108380 sets and 85940 live offers", "Country filter shows which stores ship there, independent specialists included", "Free to read"]
+strengths_fr = ["83 boutiques suivies dans 31 pays, avec 108380 sets et 85940 offres en cours", "Le filtre par pays montre quelles boutiques y livrent, spécialistes indépendants compris", "Lecture gratuite"]
+weaknesses_en = ["Official LEGO only: alternative brands not covered", "Stores can join as partners for a monthly fee (12 € for the first 3 months, then 9.99 €)"]
+weaknesses_fr = ["Sets de marque LEGO seulement : marques alternatives non couvertes", "Les boutiques peuvent devenir partenaires moyennant un abonnement mensuel (12 € les 3 premiers mois, puis 9.99 €)"]
+size = [{n = 83, unit = "shops"}, {n = 31, unit = "countries"}]
+status = "active"
+last_activity = "2026-11-25"
+checked = "2026-11-25"
+added = "2026-11-25"
+confidence = "high"
+
+[[resource.sources]]
+url = "https://lakea.net/retailers"
+date = "2026-11-25"
+kind = "official"
