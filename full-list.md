@@ -433,53 +433,53 @@ English- and French-language YouTube channels and podcasts: reviews of official 
 ### Official LEGO reviews
 
 - [Ashnflash](https://www.youtube.com/@Ashnflash) - Daily LEGO news, reveals, minifigure and set reviews. Covers official LEGO.
-- [Brickmitri (YouTube)](https://www.youtube.com/@brickmitri) - French-language LEGO news and set reviews; the channel describes itself as an independent medium. Covers official LEGO.
-- [Hoth Bricks (YouTube)](https://www.youtube.com/@hoth_bricks) - French-language LEGO news and set reviews with euro prices; the channel is linked to the hothbricks.com site. Covers official LEGO.
-- [JANGBRiCKS](https://www.youtube.com/@JANGBRiCKS) - Set reviews and reveals of official LEGO sets by an adult fan; the channel description states unsponsored content and titles carry a #NotAd tag. Covers official LEGO.
-- [Lego Leader](https://www.youtube.com/@LegoLeader) - French-language channel on LEGO Star Wars and custom builds; set reviews, deals and news. Declares itself an independent fan channel. Covers official LEGO.
-- [MandRproductions](https://www.youtube.com/@MandRproductions) - Reviews of LEGO Star Wars, Harry Potter and Architecture sets by an adult fan, including retired sets. Covers official LEGO.
+- [Brickmitri (YouTube)](https://www.youtube.com/@brickmitri) - Describes itself as an independent medium; LEGO news and set reviews. Covers official LEGO.
+- [Hoth Bricks (YouTube)](https://www.youtube.com/@hoth_bricks) - Euro prices on LEGO news and set reviews; the channel is linked to the hothbricks.com site. Covers official LEGO.
+- [JANGBRiCKS](https://www.youtube.com/@JANGBRiCKS) - Run by an adult fan; the channel description states the content is unsponsored and titles carry a #NotAd tag. Reviews and reveals of official LEGO sets. Covers official LEGO.
+- [Lego Leader](https://www.youtube.com/@LegoLeader) - Declares itself an independent fan channel; LEGO Star Wars and custom builds, set reviews, deals and news. Covers official LEGO.
+- [MandRproductions](https://www.youtube.com/@MandRproductions) - LEGO Star Wars, Harry Potter and Architecture sets, retired ones included, reviewed by an adult fan. Covers official LEGO.
 - [New Elementary (YouTube)](https://www.youtube.com/@NewElementary) - New LEGO pieces and colours, set reviews, building techniques and interviews with designers. Covers official LEGO.
-- [RacingBrick](https://www.youtube.com/@RacingBrick) - Detailed building reviews of LEGO Technic and vehicle sets, with Powered Up tutorials. Covers official LEGO.
-- [Tiago Catarino](https://www.youtube.com/@TiagoCatarino) - Set reviews by a former official LEGO designer, with building tips. Covers official LEGO.
+- [RacingBrick](https://www.youtube.com/@RacingBrick) - LEGO Technic and vehicle sets in detailed build reviews, with Powered Up tutorials. Covers official LEGO.
+- [Tiago Catarino](https://www.youtube.com/@TiagoCatarino) - Former official LEGO designer reviewing sets, with building tips. Covers official LEGO.
 
 ### Alternative brand reviews
 
-- [Brick Me Up Scottie](https://www.youtube.com/@BrickMeUpScottie) - Reviews of unique, high-quality sets from alternative brands such as Pantasy. Covers alternative brands.
-- [BrickMeet](https://www.youtube.com/@BrickMeet) - Speed-build reviews of military and vehicle sets, mainly Cobi, CaDA, Panlos and Mould King; the author also runs German and English blogs. Covers official LEGO and alternative brands.
-- [CurKymBrickBuilds](https://www.youtube.com/@curkymbrickbuilds) - Set builds and reviews by a husband-and-wife team covering LEGO and other brick brands. Covers official LEGO and alternative brands.
-- [GodOfTheBricks](https://www.youtube.com/@godofthebricks) - French-language channel on LEGO and alternative bricks: stop-motion, large projects and rare sets. Covers official LEGO and alternative brands.
-- [JANG's Other Bricks](https://www.youtube.com/@JANGsOtherBricks) - Non-sponsored reviews of brick-built construction toys from many brands, run by the author of JANGBRiCKS. Covers official LEGO and alternative brands.
-- [Mark Builds BRIX](https://www.youtube.com/@markbuildsbrix) - Live builds and reviews of alternative brick sets (Lumibricks, Pantasy, Barweer). Covers alternative brands.
-- [Monster Brick Reviews](https://www.youtube.com/@MonsterBrickReviews) - Unboxings, reviews and build impressions of sets beyond LEGO; the channel published a ranking of 32 alternative brands in August 2026. Covers alternative brands.
-- [Mr.Bricksteen](https://www.youtube.com/@Mr.Bricksteen) - Builds, reviews and comparisons of LEGO sets with alternative brands. Covers official LEGO and alternative brands.
-- [Seven Star Bricks](https://www.youtube.com/@SevenStarBricks) - Reviews of Mould King, BlueBrixx, LesDIY and Nifeliz sets and comparisons with official LEGO sets ("set showdown" videos). Covers official LEGO and alternative brands.
-- [SheClicksBricks](https://www.youtube.com/@SheClicksBricks) - Reviews of alternative brick brands (Pantasy, Lumibricks, CaDA, Cobi) by a couple; channel memberships are offered. Covers alternative brands.
-- [The Laser Symphony](https://www.youtube.com/@TheLaserSymphony) - French-language channel testing alternative brick brands (CaDA, Cobi, Pantasy, Lumibricks) next to official LEGO sets; some videos state that products were supplied. Covers official LEGO and alternative brands.
+- [Brick Me Up Scottie](https://www.youtube.com/@BrickMeUpScottie) - Unique, high-quality sets from brands such as Pantasy. Covers alternative brands.
+- [BrickMeet](https://www.youtube.com/@BrickMeet) - Military and vehicle sets in speed-build reviews, mainly Cobi, CaDA, Panlos and Mould King; the author also runs German and English blogs. Covers official LEGO and alternative brands.
+- [CurKymBrickBuilds](https://www.youtube.com/@curkymbrickbuilds) - Husband-and-wife team building and reviewing sets from LEGO and other brick brands. Covers official LEGO and alternative brands.
+- [GodOfTheBricks](https://www.youtube.com/@godofthebricks) - Stop-motion, large projects and rare sets, on LEGO and alternative bricks. Covers official LEGO and alternative brands.
+- [JANG's Other Bricks](https://www.youtube.com/@JANGsOtherBricks) - Run by the author of JANGBRiCKS; non-sponsored reviews of brick-built construction toys from many brands. Covers official LEGO and alternative brands.
+- [Mark Builds BRIX](https://www.youtube.com/@markbuildsbrix) - Live builds of Lumibricks, Pantasy and Barweer sets, with reviews. Covers alternative brands.
+- [Monster Brick Reviews](https://www.youtube.com/@MonsterBrickReviews) - Published a ranking of 32 alternative brands in August 2026; also unboxings, reviews and build impressions of sets beyond LEGO. Covers alternative brands.
+- [Mr.Bricksteen](https://www.youtube.com/@Mr.Bricksteen) - Comparisons of LEGO sets with alternative brands, alongside builds and reviews. Covers official LEGO and alternative brands.
+- [Seven Star Bricks](https://www.youtube.com/@SevenStarBricks) - Sets from Mould King, BlueBrixx, LesDIY and Nifeliz, reviewed and compared with official LEGO sets ("set showdown" videos). Covers official LEGO and alternative brands.
+- [SheClicksBricks](https://www.youtube.com/@SheClicksBricks) - Couple testing Pantasy, Lumibricks, CaDA and Cobi; channel memberships are offered. Covers alternative brands.
+- [The Laser Symphony](https://www.youtube.com/@TheLaserSymphony) - CaDA, Cobi, Pantasy and Lumibricks tested next to official LEGO sets; some videos state that products were supplied. Covers official LEGO and alternative brands.
 
 ### Building and custom builds
 
-- [Bricksie](https://www.youtube.com/@Bricksie) - City builds, custom builds, vlogs, set reviews and live builds by an adult fan based in Canada. Covers official LEGO.
-- [BrickVault](https://www.youtube.com/channel/UCrhb3SP2lZBgguLHIWWuHOQ) - Showcase of LEGO custom models, with weekly top-10 selections of custom builds and display ideas. Covers official LEGO.
-- [Mabrikville](https://www.youtube.com/@Mabrikville) - French-language channel on building a LEGO town (landscape, trains, techniques), by a member of a French LEGO user group. Covers official LEGO. Status: no update for 6 months.
+- [Bricksie](https://www.youtube.com/@Bricksie) - Adult fan based in Canada: city builds, custom builds, vlogs, set reviews and live builds. Covers official LEGO.
+- [BrickVault](https://www.youtube.com/channel/UCrhb3SP2lZBgguLHIWWuHOQ) - Weekly top-10 selections of LEGO custom builds, and display ideas. Covers official LEGO.
+- [Mabrikville](https://www.youtube.com/@Mabrikville) - LEGO town project (landscape, trains, techniques), by a member of a French LEGO user group. Covers official LEGO. Status: no update for 6 months.
 
 ### News and community
 
-- [Beyond the Brick](https://www.youtube.com/@BeyondtheBrick) - LEGO news and reveal coverage; the channel states it began in November 2011 as an audio-only podcast and sells merchandise. Covers official LEGO.
-- [Brickonaute (YouTube)](https://www.youtube.com/@Brickonaute) - YouTube channel of the French-language LEGO news and review blog brickonaute.fr: new releases, tests and set information. Covers official LEGO.
-- [Briquefan](https://www.youtube.com/channel/UCeohvTWYjZDOubRaSIlpBCQ) - French-language show about LEGO fans and their community. Status: no update for 6 months.
-- [FrosTiize](https://www.youtube.com/@FrosTiize) - French-language LEGO content creator: challenges, tier lists, set reviews and news. Covers official LEGO.
-- [Jay's Brick Blog (YouTube)](https://www.youtube.com/@Jaysbrickblog) - YouTube channel of the Jay's Brick Blog LEGO blog: speed builds, reviews and reveal videos. Covers official LEGO.
+- [Beyond the Brick](https://www.youtube.com/@BeyondtheBrick) - Began in November 2011 as an audio-only podcast, as the channel states; it also sells merchandise and covers LEGO news and reveals. Covers official LEGO.
+- [Brickonaute (YouTube)](https://www.youtube.com/@Brickonaute) - Channel of the blog brickonaute.fr, on LEGO news and reviews: new releases, tests and set information. Covers official LEGO.
+- [Briquefan](https://www.youtube.com/channel/UCeohvTWYjZDOubRaSIlpBCQ) - Show about LEGO fans and their community. Status: no update for 6 months.
+- [FrosTiize](https://www.youtube.com/@FrosTiize) - Challenges, tier lists, set reviews and news from a LEGO content creator. Covers official LEGO.
+- [Jay's Brick Blog (YouTube)](https://www.youtube.com/@Jaysbrickblog) - Speed builds, reviews and reveal videos from the Jay's Brick Blog LEGO blog. Covers official LEGO.
 
 ### Podcasts
 
-- [AFOLs Welcome](https://bleav.com/shows/afols-welcome-a-lego-podcast/) - Weekly podcast on the brick-built world of LEGO, with two co-hosts discussing hot topics and themes.
-- [Back 2 Brick LEGO Podcast](https://back2brick.buzzsprout.com/) - Podcast hosted by an adult fan: LEGO news, custom builds and interviews with LEGO designers, with a weekly news recap on Fridays.
-- [Briques en Vrac](https://www.vodio.fr/vodiotheque/c/1753/briques-en-vrac-actualites-et-nouveautes-lego/) - French-language podcast on LEGO news and new releases. Covers official LEGO.
-- [Full of Brick](https://creators.spotify.com/pod/profile/gerald-dumol/) - Weekly LEGO podcast with show and tell and the week's LEGO news.
-- [London Calling LEGO Podcast](https://shows.acast.com/londoncalling) - Live LEGO podcast, audio edition, with guests from several countries discussing LEGO and life.
-- [Men in Bricks](https://www.meninbricks.fr/) - French-language podcast by three LEGO fans sharing their passion.
-- [The Bricks King Podcast](https://www.spreaker.com/podcast/the-bricks-king-podcast-lego--4920139) - Podcast with interviews of LEGO artists and reviews of recent models. Status: no update for 6 months.
-- [The Hidden Bricks](https://creators.spotify.com/pod/profile/the-hidden-bricks/) - LEGO podcast on set news, reviews and stories from the building community.
+- [AFOLs Welcome](https://bleav.com/shows/afols-welcome-a-lego-podcast/) - Two co-hosts discussing hot topics and themes in the brick-built world of LEGO.
+- [Back 2 Brick LEGO Podcast](https://back2brick.buzzsprout.com/) - Hosted by an adult fan: LEGO news, custom builds and interviews with LEGO designers, with a weekly news recap on Fridays.
+- [Briques en Vrac](https://www.vodio.fr/vodiotheque/c/1753/briques-en-vrac-actualites-et-nouveautes-lego/) - LEGO news and new releases. Covers official LEGO.
+- [Full of Brick](https://creators.spotify.com/pod/profile/gerald-dumol/) - Show and tell, and the week's LEGO news.
+- [London Calling LEGO Podcast](https://shows.acast.com/londoncalling) - Live show, audio edition, with guests from several countries discussing LEGO and life.
+- [Men in Bricks](https://www.meninbricks.fr/) - Three LEGO fans sharing their passion.
+- [The Bricks King Podcast](https://www.spreaker.com/podcast/the-bricks-king-podcast-lego--4920139) - Interviews of LEGO artists and reviews of recent models. Status: no update for 6 months.
+- [The Hidden Bricks](https://creators.spotify.com/pod/profile/the-hidden-bricks/) - LEGO set news, reviews and stories from the building community.
 
 <br>
 
