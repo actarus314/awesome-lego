@@ -3,7 +3,7 @@ id = "places"
 name_en = "Places to visit"
 name_fr = "Lieux à visiter"
 summary_en = "Venues of the brick world that can be visited: official LEGO venues and stores, theme parks, museums and permanent exhibitions, physical shops for alternative brands and used bricks, and cafés with bricks."
-summary_fr = "Lieux du monde de la brique que l'on peut visiter : sites et magasins LEGO officiels, parcs à thème, musées et expositions permanentes, boutiques physiques de marques alternatives et de briques d'occasion, cafés avec des briques."
+summary_fr = "Lieux du monde de la brique que l'on peut visiter : sites et magasins du groupe LEGO ou sous enseigne LEGO, parcs à thème, musées et expositions permanentes, boutiques physiques de marques alternatives et de briques d'occasion, cafés avec des briques."
 
 [[category.groups]]
 id = "official-venues"

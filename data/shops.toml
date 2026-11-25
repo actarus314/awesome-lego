@@ -3,7 +3,7 @@ id = "shops"
 name_en = "Shops"
 name_fr = "Boutiques"
 summary_en = "Online and physical shops selling official LEGO, alternative brick brands and general goods to customers in Europe, with delivery to France noted when established."
-summary_fr = "Boutiques en ligne et en magasin vendant du LEGO officiel, des marques de briques alternatives et des produits généralistes à des clients en Europe, avec la livraison vers la France indiquée lorsqu'elle est établie."
+summary_fr = "Boutiques en ligne et en magasin vendant des sets de marque LEGO, des marques de briques alternatives et des produits généralistes à des clients en Europe, avec la livraison vers la France indiquée lorsqu'elle est établie."
 
 [[category.groups]]
 id = "official-lego"

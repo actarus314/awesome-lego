@@ -3,7 +3,7 @@ id = "comparators"
 name_en = "Price comparators and databases"
 name_fr = "Comparateurs et bases de données"
 summary_en = "Sites that compare set prices across shops, catalogue sets and parts, track secondary-market value or gather deals, for official LEGO and alternative brands."
-summary_fr = "Sites qui comparent les prix des sets entre boutiques, cataloguent sets et pièces, suivent la valeur sur le marché secondaire ou rassemblent les bons plans, pour LEGO officiel et marques alternatives."
+summary_fr = "Sites qui comparent les prix des sets entre boutiques, cataloguent sets et pièces, suivent la valeur sur le marché secondaire ou rassemblent les bons plans, pour les sets de marque LEGO et les marques alternatives."
 
 [[category.groups]]
 id = "price-comparators"

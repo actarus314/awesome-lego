@@ -3,7 +3,7 @@ id = "community"
 name_en = "Communities and news"
 name_fr = "Communautés et actualité"
 summary_en = "Forums, subreddits, wikis, news and review sites, deal communities and chat servers about official LEGO and alternative bricks."
-summary_fr = "Forums, sous-reddits, wikis, sites d'actualité et de tests, communautés de bons plans et serveurs de discussion sur LEGO officiel et les briques alternatives."
+summary_fr = "Forums, sous-reddits, wikis, sites d'actualité et de tests, communautés de bons plans et serveurs de discussion sur les produits de marque LEGO et les briques alternatives."
 
 [[category.groups]]
 id = "news-and-reviews"

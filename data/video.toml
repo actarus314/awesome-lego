@@ -3,7 +3,7 @@ id = "video"
 name_en = "YouTube and podcasts"
 name_fr = "YouTube et podcasts"
 summary_en = "English- and French-language YouTube channels and podcasts: reviews of official LEGO and alternative brands, builds and news."
-summary_fr = "Chaînes YouTube et podcasts en anglais et en français : tests de LEGO officiel et de marques alternatives, constructions et actualité."
+summary_fr = "Chaînes YouTube et podcasts en anglais et en français : tests de sets de marque LEGO et de marques alternatives, constructions et actualité."
 
 [[category.groups]]
 id = "official-lego-reviews"

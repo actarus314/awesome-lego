@@ -3,7 +3,7 @@ id = "brands"
 name_en = "Brands and manufacturers"
 name_fr = "Marques et fabricants"
 summary_en = "Official LEGO, European and Chinese alternative brands, toy-industry entrants, brick manufacturers and other building formats, with country and brick maker where established."
-summary_fr = "LEGO officiel, marques alternatives européennes et chinoises, groupes de jouets, fabricants de briques et autres formats de construction, avec pays et fabricant des briques lorsqu'il est établi."
+summary_fr = "La marque LEGO, marques alternatives européennes et chinoises, groupes de jouets, fabricants de briques et autres formats de construction, avec pays et fabricant des briques lorsqu'il est établi."
 
 [[category.groups]]
 id = "official-lego"
