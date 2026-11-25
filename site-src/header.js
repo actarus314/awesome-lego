@@ -4,7 +4,7 @@ const lab={auto:ic('<circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18
 const tname={auto:{en:'Theme: auto',fr:'Thème : auto'},light:{en:'Theme: light',fr:'Thème : clair'},dark:{en:'Theme: dark',fr:'Thème : sombre'}};
 const getT=()=>{try{return localStorage.getItem('theme')||'auto'}catch(e){return 'auto'}};
 const setT=v=>{if(v==='auto')delete root.dataset.theme;else root.dataset.theme=v;document.dispatchEvent(new Event('themechange'));tb.innerHTML=lab[v];tb.setAttribute('aria-label',tname[v][L]);try{localStorage.setItem('theme',v)}catch(e){}};
-document.getElementById('langbtn').onclick=()=>{try{localStorage.setItem('lang',L==='fr'?'en':'fr')}catch(e){}};
+const LB=document.getElementById('langbtn'),LB0=LB.getAttribute('href');LB.onclick=()=>{try{localStorage.setItem('lang',L==='fr'?'en':'fr')}catch(e){}LB.href=LB0+location.hash};  // the other language opens at the same section; app.js of the home pages replaces it to keep the place exactly
 setT(getT());tb.onclick=()=>{const o=['auto','light','dark'];setT(o[(o.indexOf(getT())+1)%3])};
 // external links in a new tab or not: one setting for the whole page, kept by this browser (request of 25/11/2026)
 const nb=document.getElementById('newtab'),getN=()=>{try{return localStorage.getItem('newtab')==='1'}catch(e){return false}};

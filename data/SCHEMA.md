@@ -101,9 +101,9 @@ Writing rules:
 - Impersonal, factual, short. No marketing words. Facts not verified are left out or marked in `confidence`.
 - Numbers: decimal point, no thousands separator (`42003`, `4.95 €`).
 - The brand. English: "official LEGO". French: « LEGO officiel » is a label only (a filter, a legend, a heading against « marques alternatives »); in a sentence, « de marque LEGO » for a product (sets, parts, minifigures, prices), « du groupe LEGO » for what the company runs (shop, stores, centres), « sous enseigne LEGO » for a store or a place run by a partner (LEGO Certified Stores, LEGOLAND parks). Proper names keep their form (LEGO Ideas, LEGO.com).
-- Dates in texts: the month in letters, never abbreviated (3 July 2027, 3 juillet 2027, 1er avril), never 2027-07-03 nor 03/07/2027. Data fields (`checked`, `next_date`…) stay ISO dates; the website writes them in letters.
+- Dates in texts: the month in letters, abbreviated (3 Jul 2027, 3 juil. 2027, 1er avr.; Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec; janv. févr. mars avr. mai juin juil. août sept. oct. nov. déc.), never 2027-07-03 nor 03/07/2027. Data fields (`checked`, `next_date`…) stay ISO dates; the website writes them the same way.
 - The card's text (`summary_*`): what sets the entry apart, in one or two sentences of 35 words at most; it does not repeat the name, the group, the country or the tags, and starts with what distinguishes the entry. Everything else of the card's legend comes from structured fields (`city`, `size`, `next_date`, `funding`).
-- No abbreviations except proper names and technical terms (API, CSV, RSS). Write "custom builds" / « créations originales » rather than MOC.
+- No abbreviations except proper names, technical terms (API, CSV, RSS) and the months of dates. Write "custom builds" / « créations originales » rather than MOC.
 - Prices including taxes.
 
 ## Other data files

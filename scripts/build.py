@@ -255,8 +255,9 @@ def access_context(cat, group):
 # French: "LEGO officiel" is a label only (filter, legend, heading); in a sentence, "de marque LEGO" for a product,
 # "du groupe LEGO" for what the company runs, "sous enseigne LEGO" for a place run by a partner (decision of 24/11/2026, 10:13)
 OFFICIEL = re.compile(r"\bLEGO\s+officiel(le)?s?\b|\bofficiel(le)?s?\s+LEGO\b")
-# dates in texts: the month in letters (3 July 2027, 3 juillet 2027), never 2027-07-03 nor 03/07/2027 (decision of 10:45)
+# dates in texts: the month in letters, abbreviated (3 Jul 2027, 3 juil. 2027), never 2027-07-03 nor 03/07/2027 (decisions of 24/11/2026, 10:45, and 25/11/2026, 20:14)
 NUMERIC_DATE = re.compile(r"\b\d{4}-\d{2}-\d{2}\b|\b\d{1,2}/\d{1,2}/\d{4}\b")
+FULL_MONTH = re.compile(r"\b(?:\d{1,2}|1er) (?:January|February|March|April|June|July|August|September|October|November|December|janvier|février|avril|juillet|septembre|octobre|novembre|décembre)\b|\b(?:January|February|March|April|June|July|August|September|October|November|December|janvier|février|avril|juillet|septembre|octobre|novembre|décembre) \d{4}\b")
 SUMMARY_WORDS = 35  # a card's text: what is particular, one or two sentences (decision of 12:28)
 COUNTRY_WORDS = re.compile(r"^(?:an? |the )?(?:french|german|polish|italian|spanish|dutch|belgian|swiss|austrian|danish|swedish|norwegian|finnish|czech|slovak|british|english|scottish|welsh|irish|american|canadian|australian|chinese|japanese|portuguese|luxembourg\w*|south african|new zealand\w*|european|hungarian|greek|icelandic|estonian|latvian|lithuanian|slovenian|croatian|romanian|bulgarian|ukrainian|korean|taiwanese|brazilian|mexican)\b", re.I)
 COUNTRY_WORDS_FR = re.compile(r"(?<!\ben )\b(?:français|allemand|polonais|italien|espagnol|néerlandais|belge|suisse|autrichien|danois|suédois|norvégien|finlandais|tchèque|slovaque|britannique|anglais|écossais|gallois|irlandais|américain|canadien|australien|chinois|japonais|portugais|luxembourgeois|sud-africain|néo-zélandais|européen|hongrois|grec|grecque|islandais|estonien|letton|lituanien|slovène|croate|roumain|bulgare|ukrainien|coréen|taïwanais|brésilien|mexicain)(?:ne|e)?s?\b", re.I)  # in French the demonym follows the noun: « Comparateur de prix allemand »; « en allemand » is a language
@@ -282,6 +283,8 @@ def text_notes(cats):
                         notes.append(f"{w}: {k}: « {OFFICIEL.search(x).group(0)} » in a sentence: de marque LEGO (a product), du groupe LEGO (the company), sous enseigne LEGO (a partner)")
                     if (k.endswith("_en") or k.endswith("_fr")) and NUMERIC_DATE.search(x):
                         notes.append(f"{w}: {k}: date {NUMERIC_DATE.search(x).group(0)} with the month in letters")
+                    if (k.endswith("_en") or k.endswith("_fr")) and FULL_MONTH.search(x):
+                        notes.append(f"{w}: {k}: date « {FULL_MONTH.search(x).group(0)} » with the month abbreviated (Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec; janv. févr. mars avr. mai juin juil. août sept. oct. nov. déc.)")
             sm = r.get("summary_en", "")
             if len(sm.split()) > SUMMARY_WORDS or len(r.get("summary_fr", "").split()) > SUMMARY_WORDS:
                 notes.append(f"{w}: summary of {max(len(sm.split()), len(r.get('summary_fr', '').split()))} words, {SUMMARY_WORDS} at most")
@@ -712,12 +715,12 @@ def atom(title, self_url, site_url, items):
             f'<updated>{updated}T00:00:00Z</updated><author><name>Awesome LEGO</name></author>{entries}</feed>\n')
 
 
-MONTHS = {"en": "January February March April May June July August September October November December".split(),
-          "fr": "janvier février mars avril mai juin juillet août septembre octobre novembre décembre".split()}
+MONTHS = {"en": "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(),  # months abbreviated everywhere (decision of 25/11/2026, 20:14)
+          "fr": "janv. févr. mars avr. mai juin juil. août sept. oct. nov. déc.".split()}
 
 
 def in_letters(iso, lang):
-    """2027-07-03: 3 July 2027, 3 juillet 2027; the first of the month in French: 1er avril 2027."""
+    """2027-07-03: 3 Jul 2027, 3 juil. 2027; the first of the month in French: 1er avr. 2027."""
     y, m, d = (int(x) for x in iso.split("-"))
     return f"{'1er' if lang == 'fr' and d == 1 else d} {MONTHS[lang][m - 1]} {y}"
 

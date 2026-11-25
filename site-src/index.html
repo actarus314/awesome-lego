@@ -26,14 +26,14 @@ try{if('{{LANG}}'==='en'){const l=localStorage.getItem('lang');if(l==='fr'||(!l&
 <!-- Not every wall here is just a wall. Old arcade players know the way in. -->
 <a class="skip" href="#q" id="skip" data-t="skip"></a>
 {{HEADER}}
-<main class="wrap" id="top">
+<main class="wrap" id="top" data-add="https://github.com/{{REPO}}/issues/new?template=add-resource.yml">
 <div id="view-dir">
 <section class="hero"><div><h1>{{TITLE}}</h1><p>{{TAGLINE}}</p><p class="fresh" id="fresh"></p></div><div class="kpis" id="kpis"></div></section>
 <h2 id="start" data-t="start"></h2><div class="journeys" id="journeys"></div>
 <h2 id="map" data-t="map"></h2><div class="map" id="mapgrid"></div><div class="key" id="mapkey"></div>
 <h2 id="directory" data-t="nav_dir"></h2>
 <div class="bar">
-<div class="row"><span class="qbox"><input type="search" id="q" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugg"><div id="sugg" role="listbox" hidden></div></span><span class="count" id="count" role="status"></span><a class="miss" id="miss" href="https://github.com/{{REPO}}/issues/new?template=add-resource.yml" data-t="suggest"></a><span class="seg" role="group" id="viewsw"><button type="button" data-v="cards" data-t="v_cards"></button><button type="button" data-v="table" data-t="v_table"></button></span><button class="btn" id="reset" type="button" data-t="reset"></button><button class="btn" id="ftoggle" type="button" aria-expanded="false" aria-controls="fams"></button></div>
+<div class="row"><span class="qbox"><input type="search" id="q" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugg"><div id="sugg" role="listbox" hidden></div></span><span class="count" id="count" role="status"></span><span class="seg" role="group" id="viewsw"><button type="button" data-v="cards" data-t="v_cards"></button><button type="button" data-v="table" data-t="v_table"></button></span><button class="btn" id="reset" type="button" data-t="reset"></button><button class="btn" id="ftoggle" type="button" aria-expanded="false" aria-controls="fams"></button></div>
 <div id="fams">
 <div class="fam"><span class="label" data-t="f_cat"></span><div class="chips" id="f-cat"></div></div>
 <div class="fam cov"><span class="label" data-t="f_cov"></span><div class="chips" id="f-cov"></div></div>
@@ -51,7 +51,7 @@ try{if('{{LANG}}'==='en'){const l=localStorage.getItem('lang');if(l==='fr'||(!l&
 </div>
 </main>
 <button type="button" id="totop" class="btn totop" hidden></button>
-<footer><div class="wrap"><span class="kn" aria-hidden="true">▲ ▲ ▼ ▼ ◀ ▶ ◀ ▶ B A</span><span><a href="{{ABOUT}}" data-t="about"></a> · <a href="https://github.com/{{REPO}}/blob/main/contributing.md" data-t="contribute"></a> · <a href="https://github.com/{{REPO}}/issues/new/choose" data-t="report"></a> · <a href="feed.xml" type="application/atom+xml" data-t="feed"></a> · <a href="https://github.com/{{REPO}}/blob/main/LICENSE">CC BY-NC-SA 4.0</a></span></div></footer>
+<footer><div class="wrap"><span class="kn" aria-hidden="true">▲ ▲ ▼ ▼ ◀ ▶ ◀ ▶ B A</span><span><a href="{{ABOUT}}" data-t="about"></a> · <a href="https://github.com/{{REPO}}/issues/new/choose" data-t="contribute"></a> · <a href="feed.xml" type="application/atom+xml" data-t="feed"></a> · <a href="https://github.com/{{REPO}}/blob/main/LICENSE">CC BY-NC-SA 4.0</a></span></div></footer>
 <div id="tip" aria-hidden="true"></div>
 <script>/* MiniSearch 7.2.0, MIT licence, see site-src/vendor/minisearch-LICENSE.txt */
 {{MINISEARCH}}</script>

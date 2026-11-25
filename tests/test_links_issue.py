@@ -39,7 +39,7 @@ def probe(status="finished", code=None, raw="", body=None, location=None, source
 class Lychee(unittest.TestCase):
     def test_first_run_lists_everything_once(self):
         text, needed = links_issue.body(REPORT, today=DAY)
-        self.assertIn("3 links failed from the machines of GitHub on 25 November 2026.", text)
+        self.assertIn("3 links failed from the machines of GitHub on 25 Nov 2026.", text)
         self.assertNotIn("Failed twice in a row", text)
         self.assertEqual(text.count("<https://a.example/>"), 1)
         self.assertIn("(data/clubs.toml 7:8)", text)
@@ -55,18 +55,18 @@ class Lychee(unittest.TestCase):
 
     def test_nothing_failed(self):
         text, needed = links_issue.body("", today=DAY)
-        self.assertEqual(text.strip(), "Every link answers (25 November 2026).")
+        self.assertEqual(text.strip(), "Every link answers (25 Nov 2026).")
         self.assertFalse(needed)
 
     def test_one_link(self):
         report = "### Errors in data/brands.toml\n\n* [503] <https://a.example/> (at 3:8) | 503\n"
         text, _ = links_issue.body(report, rechecked={"https://a.example/": ("alive", ["200, 200, 200"], None)}, today=DAY)
-        self.assertIn("1 link failed from the machines of GitHub on 25 November 2026; 1 was opened again", text)
+        self.assertIn("1 link failed from the machines of GitHub on 25 Nov 2026; 1 was opened again", text)
 
     def test_dead_pages_without_failures(self):
         dead = [("https://a.example/", "entry `a`", "closed", "`fermeture définitive`")]
         text, needed = links_issue.body("", dead=dead, today=DAY)
-        self.assertTrue(text.startswith("Every link answers from the machines of GitHub (25 November 2026)."))
+        self.assertTrue(text.startswith("Every link answers from the machines of GitHub (25 Nov 2026)."))
         self.assertIn("## They answer, but the page is dead", text)
         self.assertTrue(needed)
 
@@ -103,7 +103,7 @@ class Globalping(unittest.TestCase):
                       "name not found, name not found | also in the previous run", broken)
         self.assertIn("<https://c.example/> (data/clubs.toml 7:8) | taken over", text.split("page is dead")[1])
         blocked = text.split("<details>")[1]
-        self.assertIn("alive according to Globalping on 25 November 2026 (1)", blocked)
+        self.assertIn("alive according to Globalping on 25 Nov 2026 (1)", blocked)
         self.assertIn("<https://a.example/>", blocked)
         self.assertNotIn("Not judged by Globalping", text)
         self.assertTrue(needed)
