@@ -55,6 +55,9 @@ Only the best of each group is listed here. The [full list](full-list.md) has ev
   - [Physical shops (alternative brands and used bricks)](#physical-shops-alternative-brands-and-used-bricks)
 - [Clubs and associations](#clubs-and-associations)
   - [National clubs](#national-clubs)
+  - [Regional and local clubs](#regional-and-local-clubs)
+  - [Clubs for alternative brands](#clubs-for-alternative-brands)
+  - [Online clubs](#online-clubs)
 - [Learning](#learning)
   - [Guides and reference](#guides-and-reference)
   - [Compatibility, materials and law](#compatibility-materials-and-law)
@@ -314,10 +317,19 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 
 ### National clubs
 
-- [BeLUG](https://www.belug.be/) - Independent of the LEGO Group, for adult builders and collectors; present at fairs in Belgium and abroad and organiser of Brick Mania. Covers official LEGO.
 - [Brickish](https://brickish.org/) - Active since 2002 and self-described as the first user group in the United Kingdom; local meet-ups, public shows and a members-only forum for adult fans of LEGO. Covers official LEGO.
-- [FreeLUG](https://www.freelug.org/) - Discourse forum, exhibitions and meeting reports; national non-profit association of LEGO fans since 2003. Covers official LEGO.
-- [ItLUG](https://itlug.org/) - Founded in 1999 and legally constituted in November 2010; forum, national events and local exhibitions for adult LEGO fans. Covers official LEGO.
+
+### Regional and local clubs
+
+- [Stein Hanse e.V.](https://steinhanse.eu/) - More than 500 members across northern Germany, in regional sections, with its own yearly exhibition in Kaltenkirchen (3407 visitors on 11 and 12 April 2026) and trips such as a Baltic Sea cruise. Covers official LEGO.
+
+### Clubs for alternative brands
+
+- [Der helfende Stein](https://derhelfendestein.at/) - Supports children's homes and social facilities with donations in kind; club evenings, a members' forum and a Klemmbaustein Tour exhibition; non-profit association for fans of building bricks of all brands. Covers official LEGO and alternative brands.
+
+### Online clubs
+
+- [BioniLUG](https://bionilug.com/) - Member spotlights and displays at fan conventions for fans of Bionicle and Constraction; user group recognised by the LEGO Group. Covers official LEGO.
 
 <br>
 
