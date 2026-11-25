@@ -316,7 +316,7 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 - [BeLUG](https://www.belug.be/) - Belgian LEGO User Group: club for adult LEGO builders and collectors, independent of the LEGO Group, taking part in fairs in Belgium and abroad and organising Brick Mania. Covers official LEGO.
 - [Brickish](https://brickish.org/) - UK-wide club of adult fans of LEGO, active since 2002 and described by itself as the first user group in the country; local meet-ups, public shows and a members-only forum. Covers official LEGO.
 - [FreeLUG](https://www.freelug.org/) - French national association of LEGO fans since 2003, with a Discourse forum, exhibitions and meeting reports. Covers official LEGO.
-- [ItLUG](https://www.itlug.org/) - Italian LEGO Users Group: national association of adult LEGO fans founded in 1999 and legally constituted in November 2010, with a forum, national events and local exhibitions. Covers official LEGO.
+- [ItLUG](https://itlug.org/) - Italian LEGO Users Group: national association of adult LEGO fans founded in 1999 and legally constituted in November 2010, with a forum, national events and local exhibitions. Covers official LEGO.
 
 <br>
 
