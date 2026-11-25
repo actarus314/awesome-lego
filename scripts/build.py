@@ -509,6 +509,8 @@ def needs(cats, ids):
             bad.append(f"{w}: groups must be <category>/<group> ids: {sorted(set(j.get('groups', [])) - groups)}")
         if j.get("scope") not in RANK_SCOPES:
             bad.append(f"{w}: scope must be one of {sorted(RANK_SCOPES)}")
+        if j.get("icon") is not None and not (ROOT / "media" / "icons" / f"{j['icon']}.svg").exists():
+            bad.append(f"{w}: icon must name a file of media/icons/ (without .svg)")
         if j.get("audience") not in (None, *AUDIENCES):
             bad.append(f"{w}: audience must be one of {list(AUDIENCES)}")
         if j.get("mode") not in (None, "brand"):
@@ -519,8 +521,8 @@ def needs(cats, ids):
                 bad.append(f"{w}: reference key {k} is a {j.get('scope')} code or default")
             if v not in ids:
                 bad.append(f"{w}: unknown resource {v}")
-        if set(j) - {"id", "title_en", "title_fr", "category", "groups", "scope", "mode", "audience", "reference"}:
-            bad.append(f"{w}: unknown keys {sorted(set(j) - {'id', 'title_en', 'title_fr', 'category', 'groups', 'scope', 'mode', 'audience', 'reference'})}")
+        if set(j) - {"id", "title_en", "title_fr", "category", "icon", "groups", "scope", "mode", "audience", "reference"}:
+            bad.append(f"{w}: unknown keys {sorted(set(j) - {'id', 'title_en', 'title_fr', 'category', 'icon', 'groups', 'scope', 'mode', 'audience', 'reference'})}")
     if bad:
         fail(bad)
     return js
