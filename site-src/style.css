@@ -37,6 +37,7 @@ nav.tabs a[aria-current=page]{color:var(--fg);box-shadow:inset 0 -2px 0 var(--hi
 @media (max-width:640px){.hero{gap:14px}.kpis{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.kpi{padding:7px 8px 8px;border-radius:10px}.kpi b{font-size:19px}.kpi span{font-size:9.5px;letter-spacing:.03em}.kpi .kl{display:none}.kpi .ks{display:inline}}@media (max-width:359px){.kpi{padding:7px 6px 8px}.kpi b{font-size:17px}}  /* phones: the same four cards in one row, the long label shortened */
 h2{font-size:22px;margin:44px 0 6px;letter-spacing:-.01em;border-left:4px solid var(--hi);padding-left:.7rem}
 .lead{color:var(--muted);margin:0 0 16px}
+#list>.rk{color:var(--muted);font-size:14px;margin:0 0 12px}
 @media (max-width:640px){#directory+.bar{margin-top:18px}#start,#startd,#mapd,#all{scroll-margin-top:var(--lead-top,110px)}#intro h2{margin-top:26px}}
 .mapd{border:0;padding:0}.mapd>summary{list-style:none;color:var(--fg);font-size:inherit;font-weight:inherit;width:max-content;max-width:100%}.mapd>summary::-webkit-details-marker{display:none}
 .mapd>summary h2{display:inline-block;margin-bottom:6px}.mapd>summary h2::after{content:"";display:inline-block;margin-left:.5em;vertical-align:.08em;border:.3em solid transparent;border-left:.42em solid var(--muted);border-right:0}.mapd[open]>summary h2::after{vertical-align:-.05em;border:.3em solid transparent;border-top:.42em solid var(--muted);border-bottom:0}  /* the same triangle as the other folds of the site, drawn without a transform */

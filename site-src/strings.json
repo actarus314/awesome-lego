@@ -46,7 +46,7 @@
 "shown":{"en":"shown","fr":"affichées"},
 "none":{"en":"No resource matches.","fr":"Aucune ressource ne correspond."},
 "suggest":{"en":"Suggest a resource","fr":"Proposer une ressource"},
-"ranked":{"en":"Results by relevance","fr":"Résultats par pertinence"},
+"ranked":{"en":"Results by relevance, grouped by category","fr":"Résultats par pertinence, rangés par catégorie"},
 "official":{"en":"official LEGO","fr":"LEGO officiel","label":true},
 "alternative":{"en":"alternative brands","fr":"marques alternatives"},
 "both":{"en":"both","fr":"les deux"},
