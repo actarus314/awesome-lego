@@ -4,6 +4,9 @@ One short entry per version; the details are in its pull request and its commits
 
 # v4.x — The directory for builders of every age: children, their parents and teachers, as well as adults; an about page says how it is made and how to take part.
 
+## v4.4 — 2026-11-26
+Website: the about page keeps the place being read when the language changes, the share of active entries reads "still current" on one line, and the phone bar keeps to two lines with wider fonts too. Feed: named Awesome LEGO, without the event dates left from the calendar removed in v3.0.
+
 ## v4.3 — 2026-11-26
 Website: search results grouped by category, each in the order of its best match; on a wide screen, a brand's strengths and weaknesses open with its banner and a filter panel used over the list stays open; phones: French bar on two lines, no zoom into the search field; page data 11 % lighter. Also: one short entry per version in this changelog.
 

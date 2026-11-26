@@ -406,6 +406,14 @@ class Dates(unittest.TestCase):
             titles = re.findall(r"<title>(.*?)</title>", build.content_feed(cats, lang))
             self.assertFalse([x for x in titles if build.NUMERIC_DATE.search(x)])
 
+    def test_feed_is_named_after_the_site_and_has_no_event_date(self):
+        with contextlib.redirect_stdout(io.StringIO()):
+            cats, _ = build.load()
+        for lang in ("en", "fr"):
+            feed = build.content_feed(cats, lang)
+            self.assertEqual(re.search(r"<title>(.*?)</title>", feed).group(1), "Awesome LEGO")
+            self.assertNotIn("#next-", feed)
+
     def test_feed_batches_a_day_of_many_additions(self):
         """More than FEED_BATCH entries added on one day make one announcement; fewer stay one item each."""
         with contextlib.redirect_stdout(io.StringIO()):

@@ -2,7 +2,7 @@
 
 *Maintainer's working notes, in French: what is left to do, check, decide or watch.*
 
-Seul registre de ce qui reste à faire, à vérifier, à décider ou à surveiller pour l'annuaire (skill `passation`) ; contexte : `dev/contexte.md`. Une ligne ne disparaît jamais : `fait vX.Y`, `abandonné : raison` ou `fusionné → ID` ; à la clôture d'un lot, les lignes closes descendent dans `dev/registre-clos.md`. Identifiants `AL-n` : 1 à 47 reprennent l'ancienne liste « Ouvert » (projet claude.ai) ; AL-57 à AL-64 viennent de l'audit Opus du 26/11 (34 constats : 18 corrigés dans la #28, 15 rangés ici, 1 écarté : Scorecard à chaque poussée sur `main`, sans coût d'attente). Mis à jour le 26/11/2026 à 23 h 55 (registre rangé par lot).
+Seul registre de ce qui reste à faire, à vérifier, à décider ou à surveiller pour l'annuaire (skill `passation`) ; contexte : `dev/contexte.md`. Une ligne ne disparaît jamais : `fait vX.Y`, `abandonné : raison` ou `fusionné → ID` ; à la clôture d'un lot, les lignes closes descendent dans `dev/registre-clos.md`. Identifiants `AL-n` : 1 à 47 reprennent l'ancienne liste « Ouvert » (projet claude.ai) ; AL-57 à AL-64 viennent de l'audit Opus du 26/11 (34 constats : 18 corrigés dans la #28, 15 rangés ici, 1 écarté : Scorecard à chaque poussée sur `main`, sans coût d'attente). Mis à jour le 27/11/2026 à 0 h 55 (demandes #30 et #31 ouvertes).
 
 Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 confort, P4 à l'occasion, V veille. Exécutant : C (Claude), CC (Claude dans le Chrome de Romain), R (Romain), RM (revue mensuelle planifiée).
 
@@ -21,7 +21,7 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 | Lot | Items | Fichiers | Prérequis | Statut |
 |---|---|---|---|---|
 | notes-dev | AL-48, AL-67 | `dev/`, `passation.conf`, `CLAUDE.md`, `REUSE.toml` | — | fait 26/11 : demande #29 fusionnée par Romain à 23 h 26 ; arrivé : `dev/contexte.md`, `passation.conf` |
-| gardes-fous | AL-50 | `scripts/hygiene.py`, `scripts/check_site.py`, `tests/test_hygiene.py`, `.github/workflows/check.yml`, `.github/workflows/tidy.yml`, `tests/requirements-check.in`, `tests/requirements-check.txt` | — | en cours (26/11 23:58) : `dev/lots/gardes-fous.md` |
+| gardes-fous | AL-50 | `scripts/hygiene.py`, `scripts/check_site.py`, `tests/test_hygiene.py`, `.github/workflows/check.yml`, `.github/workflows/tidy.yml`, `tests/requirements-check.in`, `tests/requirements-check.txt` | — | en cours (26/11 23:58) : `dev/lots/gardes-fous.md` ; demande #31 (brouillon), à fusionner après #30 |
 | entretien | AL-22, AL-46, AL-57, AL-59, AL-60, AL-61, AL-62, AL-64 | `scripts/`, `site-src/`, `data/SCHEMA.md`, `.github/workflows/fixes.yml` | gardes-fous (mêmes fichiers ; ses contrôles trouveront une partie du travail) | proposé : `dev/lots/entretien.md` |
 | vitesse | AL-58 | `site-src/app.js` | entretien | proposé : `dev/lots/vitesse.md` |
 | publication | AL-49, AL-51, AL-63 | `.github/workflows/`, `scripts/changelog.py`, `renovate.json`, `CLAUDE.md` | accord de Romain et application de Data fixes ajoutée aux exceptions du ruleset (AL-49) | proposé : `dev/lots/publication.md` |
@@ -31,7 +31,7 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 
 | ID | P | Objet | Exécutant | Lot | Statut |
 |---|---|---|---|---|---|
-| AL-52 | P3 | Cartes de skills proposées le 26/11 (document-versionne : éviter les reprises, CHANGELOG contrôlé ; interface-outil : quatre pistes et règles techniques ; audit-depot) | R | — | ouverte : `audit-depot` enregistrée ; `document-versionne` et `interface-outil` à enregistrer (feu vert donné le 26/11 à 23 h 50) ; carte `passation` proposée le 26/11 à 23 h 50 |
+| AL-52 | P3 | Cartes de skills proposées le 26/11 (document-versionne : éviter les reprises, CHANGELOG contrôlé ; interface-outil : quatre pistes et règles techniques ; audit-depot) | R | — | ouverte : `audit-depot` enregistrée ; `document-versionne` et `interface-outil` à enregistrer (feu vert donné le 26/11 à 23 h 50) ; carte `passation` proposée le 26/11 à 23 h 50 (à enregistrer) |
 | AL-34 | P3 | Application « Claude Design Import » installée sur le dépôt, usage inconnu : garder ou retirer | R | — | ouverte |
 | AL-53 | P3 | Alertes Scorecard ouvertes : Branch-Protection (#12) à écarter « won't fix » (geste refusé à Claude par le classement automatique le 26/11) ; Maintained (#17) se ferme seule quand le dépôt a 90 jours (vers le 21/02/2027) ; CII-Best-Practices (#19) : badge OpenSSF à demander par Romain, facultatif | R | — | ouverte |
 | AL-55 | P4 | Branche `v4.3` poussée par erreur le 26/11 (e4a5df2, en retard sur `search-by-category`) : à supprimer, la session ne peut pas (proxy) | R | — | ouverte |
@@ -46,7 +46,7 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 
 | ID | P | Objet | Exécutant | Lot | Statut |
 |---|---|---|---|---|---|
-| AL-50 | P3 | **Gardes-fous mécaniques** (skill `audit-depot`, réécrite le 26/11 sur la demande de Romain : « je pensais à des gardes-fous et optimisateurs mécaniques ») : code mort (`vulture`, `ruff`, couverture CSS, chaînes et champs jamais lus), budgets de poids et de recalcul, barre sur 2 lignes à 320 px, champs à 16 px, `timeout-minutes` et `concurrency`, codes pays et langue ; correcteurs hebdomadaires ; audit Opus trimestriel ; la consigne de la tâche mensuelle du 26/11 (projet claude.ai, claude/awesome-lego-consigne-audit.md) est remplacée | R | gardes-fous | ouverte : lot gardes-fous lancé le 26/11 (« mettre en place l'outillage pour audit-depot », Romain, 23 h 29) |
+| AL-50 | P3 | **Gardes-fous mécaniques** (skill `audit-depot`, réécrite le 26/11 sur la demande de Romain : « je pensais à des gardes-fous et optimisateurs mécaniques ») : code mort (`vulture`, `ruff`, couverture CSS, chaînes et champs jamais lus), budgets de poids et de recalcul, barre sur 2 lignes à 320 px, champs à 16 px, `timeout-minutes` et `concurrency`, codes pays et langue ; correcteurs hebdomadaires ; audit Opus trimestriel ; la consigne de la tâche mensuelle du 26/11 (projet claude.ai, claude/awesome-lego-consigne-audit.md) est remplacée | R | gardes-fous | ouverte : demande #31 (contrôles dans Check et Render, workflow Tidy), relecture en cours ; après fusion de #30 puis #31 : surveiller le premier Tidy (lundi 30/11) et les faux positifs |
 
 ## Lot entretien
 
