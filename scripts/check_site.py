@@ -27,6 +27,7 @@ import argparse
 import functools
 import http.server
 import json
+import re
 import os
 import queue
 import tempfile
@@ -114,6 +115,18 @@ STATES = [
     ("brand mode of LEGO", "#q=LEGO", ""),
     ("observatory", "#observatory", ""),
 ]
+
+
+# CSS of a selector that matches nothing in any view and state checked here: dead, unless tests/css-states.txt names the state it is for
+CSS_SELECTORS = r"""()=>{const out=[];const dyn=/::?(hover|focus-visible|focus-within|focus|active|visited|link|target|placeholder|before|after|marker|selection|backdrop|first-letter|first-line|-webkit-[a-z-]+|-moz-[a-z-]+)(\([^)]*\))?/g;
+const walk=rules=>{for(const r of rules){if(r.cssRules&&!r.selectorText)walk(r.cssRules);else if(r.selectorText){for(const s of r.selectorText.split(/,(?![^(]*\))/)){const t=s.replace(dyn,'').trim()||'*';let m=true;try{m=!!document.querySelector(t)}catch(e){m=true}out.push([s.trim(),m])}}}};
+for(const sh of document.styleSheets){try{walk(sh.cssRules)}catch(e){}}return out}"""
+
+# phones: the search bar on two lines at most (search line, then one row of controls), fields at 16 px or more (a phone zooms into a smaller one)
+PHONE = r"""(w)=>{const out=[],row=document.querySelector('.bar .row');
+if(row){const rs=[...row.children].filter(e=>e.offsetParent&&getComputedStyle(e).display!=='none').map(e=>e.getBoundingClientRect()).sort((x,y)=>x.top-y.top);let n=0,low=-1e9;for(const r of rs){if(r.top>=low-2)n++;low=Math.max(low,r.bottom)}if(n>2)out.push(['bar on more than two lines','.bar .row',n+' lines, the search field included'])}
+for(const e of document.querySelectorAll('input:not([type=checkbox]):not([type=radio]),select,textarea')){if(!e.offsetParent)continue;const f=parseFloat(getComputedStyle(e).fontSize);if(f<16)out.push(['field under 16 px',(e.id?'#'+e.id:e.tagName.toLowerCase()),f+' px: a phone zooms into it'])}
+return out}"""
 
 
 def details_word(site, lang):
@@ -205,6 +218,16 @@ def main():
         return 1
     print(f"✓ calibration: {len(want)} planted defects found, nothing else")
 
+    css_seen, css_used = set(), set()
+
+    def selectors(pg):
+        if a.data_only:
+            return
+        got = pg.evaluate(CSS_SELECTORS)
+        with lock:
+            css_seen.update(x for x, _ in got)
+            css_used.update(x for x, m in got if m)
+
     # each job opens its own browser context and records what it finds; the jobs run side by side (--jobs browsers)
     def layout(b, lang, root, w, theme):
         mobile = w < 700
@@ -225,13 +248,18 @@ def main():
                 pg.evaluate(js)
                 pg.wait_for_timeout(400)
             record(f"{lang} {w} {theme} {name}", pg.evaluate(PROBE, {"mobile": mobile, "width": w}))
+            if name == "directory" and w <= 640:
+                record(f"{lang} {w} {theme} {name}", pg.evaluate(PHONE, w))
+            selectors(pg)
         pg.goto(base + root + "about/")  # the about page of the language: shared header, its own layout
         pg.wait_for_timeout(300)
         record(f"{lang} {w} {theme} about", pg.evaluate(PROBE, {"mobile": mobile, "width": w}))
+        selectors(pg)
         if lang == "en":
             pg.goto(base + "vault/")
             pg.wait_for_timeout(700)
             record(f"{lang} {w} {theme} vault", pg.evaluate(PROBE, {"mobile": mobile, "width": w}))
+            selectors(pg)
         record(f"{lang} {w} {theme}", [("script error", "", e[:160]) for e in errs])
         c.close()
 
@@ -316,6 +344,13 @@ def main():
     if errors:
         raise errors[0]
     srv.shutdown()
+    if not a.data_only:
+        known = {re.split(r"\s+#\s", l)[0].strip() for l in (ROOT / "tests" / "css-states.txt").read_text(encoding="utf-8").splitlines()
+                 if l.strip() and not l.startswith("# ")}  # "selector   # state"; a line starting "# " is a comment
+        record("css", [("CSS matching nothing", x, "in no view or state checked: remove it, or name its state in tests/css-states.txt")
+                       for x in sorted(css_seen - css_used - known)])
+        record("css", [("CSS states list", x, "names a selector that no longer exists: remove it from tests/css-states.txt")
+                       for x in sorted(known - css_seen)])
 
     states = [n for n, _, _ in STATES + AXE_STATES] + ["about", "vault"]
 

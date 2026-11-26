@@ -8,6 +8,9 @@ on:
   schedule:
     - cron: "37 5 * * 1"   # Mondays: new advisories on the actions in use
 permissions: {}
+concurrency:
+  group: zizmor-${{ github.event_name == 'pull_request' && github.ref || github.sha }}   # one group per pull request; on main and on schedule, one per run
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   zizmor:
     runs-on: ubuntu-latest

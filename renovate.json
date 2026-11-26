@@ -42,14 +42,15 @@
       ],
       "matchFileNames": [
         "tests/requirements.txt",
-        "tests/requirements-check.txt"
+        "tests/requirements-check.txt",
+        "tests/requirements-tidy.txt"
       ],
       "enabled": false
     }
   ],
   "pip-compile": {
     "managerFilePatterns": [
-      "/^tests/requirements(-check)?\\.txt$/"
+      "/^tests/requirements(-check|-tidy)?\\.txt$/"
     ]
   }
 }

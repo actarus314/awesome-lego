@@ -1,1 +1,3 @@
 reuse==6.3.0   # licence of every file (REUSE.toml, LICENSES/), checked by `reuse lint` in Check
+ruff==0.17.6   # Python: unused names and imports, syntax errors (scripts/hygiene.py)
+vulture==2.16   # Python: dead code (scripts/hygiene.py)

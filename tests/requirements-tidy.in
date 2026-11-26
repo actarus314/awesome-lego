@@ -1,0 +1,2 @@
+ruff==0.17.6   # safe fixes of the Python code (scripts/tidy.py)
+pyoxipng==9.1.1   # lossless compression of the PNG files of media/ (scripts/tidy.py); wheels up to Python 3.13

@@ -27,7 +27,7 @@ jobs:
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Third-party files kept in the repository match the locked packages
         run: python3 scripts/vendor.py --check
-      - name: Licence of every file (REUSE specification)
+      - name: Tools of the checks and licence of every file (REUSE specification)
         run: |
           python3 -m pip install --quiet --require-hashes -r tests/requirements-check.txt
           reuse lint
@@ -37,5 +37,7 @@ jobs:
         run: python3 -m unittest discover -s tests
       - name: Build the site
         run: python3 scripts/build.py --site-only   # the generated files were just checked up to date: only the website is left to build
+      - name: Mechanical guards (dead code, unread strings and fields, workflows, weight budgets)
+        run: python3 scripts/hygiene.py   # after the build: the weight budgets read site/
       - name: awesome-lint
         run: npx --no-install awesome-lint README.md

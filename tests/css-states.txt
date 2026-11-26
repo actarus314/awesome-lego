@@ -1,0 +1,34 @@
+# Selectors of scripts/check_site.py's dead-CSS check that match only in states it does not visit: one per line, with the state.
+#f-country.on                                   # a country chosen in the filters
+#sugg .sg                                       # suggestions while typing in the search field
+#sugg [role="option"]                           # suggestions while typing
+#sugg [role="option"] .d                        # suggestions while typing
+#sugg [role="option"]:hover                     # suggestions while typing
+#sugg [role="option"][aria-selected="true"]     # a suggestion chosen with the keyboard
+#sugg mark                                      # the typed letters within a suggestion
+.banner:not(:has(.logo)) .bt > .meta            # brand mode of a brand without a logo
+.banner:not(:has(.logo)) .bt > h3               # brand mode of a brand without a logo
+.bar:not(.open) .fsum:not([hidden])             # filters chosen while the bar is folded
+.brand svg.hop                                  # the logo's hop of the Brick Vault code
+.card.focus                                     # a card opened by a link (#entry=)
+.dt th[aria-sort="ascending"]::after            # the table sorted by a column
+.dt th[aria-sort="descending"]::after           # the table sorted by a column
+.fam.opt .chip.on::before                       # a criterion chosen
+.hint .slot .g                                  # Brick Vault: a hint shown
+.msg.show                                       # Brick Vault: a message
+.quake                                          # Brick Vault: a wrong answer
+.shake                                          # Brick Vault: a wrong answer
+.slot.on                                        # Brick Vault: a slot filled
+.slot.on .g                                     # Brick Vault: a slot filled
+.slot.on::before                                # Brick Vault: a slot filled
+.sw input:checked                               # the new-tab setting switched on
+.sw input:checked::before                       # the new-tab setting switched on
+.toast.show                                     # a short message (link copied)
+:root[data-theme="dark"]                        # theme chosen by the button
+:root[data-theme="light"]                       # theme chosen by the button
+html:not(.ready) #view-dir > :not(.hero)        # before the script has drawn the page
+html:not(.ready) footer                         # before the script has drawn the page
+li.got .badge                                   # Brick Vault: a badge earned
+#list > .rk                                     # results of a search (heading of the grouped results)
+.empty                                          # a search or filters that match nothing
+.empty .missl                                   # a search or filters that match nothing

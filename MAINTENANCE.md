@@ -11,11 +11,13 @@ flowchart LR
     wed["Wednesday 05:23<br/>Links: test every link"] --> fix["Data fixes<br/>pull request"]
     m4["4th of the month 03:41<br/>Data report: issue"] --> m5["5th, 10:13 Paris time<br/>Review pass: pull request"]
     sec["Monday 05:37 Workflow audit<br/>Tuesday 04:43 Scorecard"]
+    tidy["Monday 06:41<br/>Tidy: mechanical fixes"] --> tpr["Tidy<br/>pull request"]
   end
   reno["Renovate<br/>pull requests"] --> merge
   contrib["Contributors<br/>issues, pull requests"] --> merge
   fix --> merge
   m5 --> merge
+  tpr --> merge
   merge{{"Maintainer reads<br/>and merges"}} --> main[("main")]
   main --> pub["Pages publishes"]
   main -->|VERSION changed| rel["Release: tag<br/>and release notes"]
@@ -32,14 +34,15 @@ flowchart LR
 | Review pass (language model) | the 5th of each month, 10:13 Paris time | full review of the data | pull request **Monthly review vX.Y** |
 | **Workflow audit** | Mondays 05:37 | security audit of the workflows | alerts in the **Security** tab |
 | **Scorecard** | Tuesdays 04:43, every push to `main` | score of the repository practices | alerts in the **Security** tab, score at `api.scorecard.dev` |
+| **Tidy** | Mondays 06:41 | fixes that need no judgement: unused Python imports, lossless compression of the PNG files of `media/` (README images excepted) | pull request **Tidy**, only when a file changed |
 
-Started by hand (**Run workflow**): **Pages**, **Links** (with *dry run*), **Data fixes**, **Data report**, **Render**.
+Started by hand (**Run workflow**): **Pages**, **Links** (with *dry run*), **Data fixes**, **Data report**, **Render**, **Tidy**.
 
 ## On each pull request
 
 | Check | When | What it tells |
 |---|---|---|
-| **Check** (required) | every pull request, every push to `main` | data valid, generated files up to date, tests, licences |
+| **Check** (required) | every pull request, every push to `main` | data valid, generated files up to date, tests, licences, mechanical guards (`scripts/hygiene.py`) |
 | **Render** | when the website, its data or its checks change | the website drawn in a real browser, without defect |
 | **Preview** | when the website changes, for a branch of this repository opened by a person | a link to the website of the branch, in a comment |
 | **Workflow audit** | when a workflow changes | the workflows are safe |
@@ -135,6 +138,7 @@ How, task by task:
 - Checks that this file names every workflow and schedule, and that `data/SCHEMA.md` names every controlled word and backend file.
 - Warns, without failing, when the image of the README shows another version.
 - `reuse lint` (`REUSE.toml`, `LICENSES/`); unit tests (`tests/`: data, pages, about pages, links issue, monthly report, previews); awesome-lint as locked in `package-lock.json`; MiniSearch and the fonts of the Brick Vault match their locked packages (`scripts/vendor.py`).
+- Mechanical guards (`scripts/hygiene.py`, after the build): ruff and vulture on the Python code; strings of `site-src/strings.json` and fields of the page data that nothing reads; every job with `timeout-minutes` and every pull-request workflow with a `concurrency` group; weight budgets of the pages (per resource, so that the directory may grow) and of the about pages in `tests/budgets.json`, raised only with a reason in the pull request.
 - Runs on the latest Python release only; a new push to a pull request cancels its previous run (every push to `main` keeps its own).
 
 ### Render
@@ -144,7 +148,9 @@ How, task by task:
   - a phone, email, date, tag or button label split over two lines, a word split inside itself;
   - overlapping chart labels, a frame inherited by an inner list;
   - a script or security policy error;
-  - a word of the strengths or weaknesses that the search does not find.
+  - a word of the strengths or weaknesses that the search does not find;
+  - on phones, a search bar on more than two lines, a field under 16 px (a phone zooms into it);
+  - a CSS selector that matches nothing in any view and state checked (except data-only runs), unless `tests/css-states.txt` names the state it is for.
 - Accessibility (axe-core, WCAG 2.2 A and AA) at 1440 and 390 px, both themes: a guard, not a conformance target (the 13 px studs of the map are accepted).
 - First checks itself on `tests/render-fixture.html`, where one sound and one faulty case of each defect are planted. On failure, the findings are kept 7 days as the artefact `render-findings`.
 - A pull request that changes only data and the files generated from it gets a lighter pass (`--data-only`: 1440, 390 and 320 px, light theme, no accessibility; about a fifth of the time of the full checks, measured locally). A push to `main` gets every check.
