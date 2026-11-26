@@ -20,6 +20,41 @@ class Selection(unittest.TestCase):
         self.assertFalse(refresh.selected({"rank": {"intl": 2, "FR": 1}}))
 
 
+class Get(unittest.TestCase):
+    """get() reads at most refresh.MAX_BYTES: a longer answer is refused by name, never held in memory."""
+
+    class Answer:
+        def __init__(self, size):
+            self.size, self.asked = size, []
+
+        def read(self, n=-1):
+            self.asked.append(n)
+            return b"x" * (self.size if n < 0 else min(n, self.size))
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return False
+
+    def get(self, size):
+        from unittest import mock
+        answer = self.Answer(size)
+        with mock.patch.object(refresh.urllib.request, "urlopen", return_value=answer):
+            return refresh.get("https://example.org/feed"), answer
+
+    def test_within_the_cap(self):
+        body, answer = self.get(refresh.MAX_BYTES)
+        self.assertEqual(len(body), refresh.MAX_BYTES)
+        self.assertNotIn(-1, answer.asked)   # never an unbounded read
+
+    def test_over_the_cap(self):
+        with self.assertRaises(refresh.TooLarge):
+            self.get(refresh.MAX_BYTES + 1)
+        with self.assertRaises(refresh.TooLarge):
+            self.get(10 * refresh.MAX_BYTES)   # the stream is read up to the cap, not to its end
+
+
 class Month(unittest.TestCase):
     def test_changes_of_the_month(self):
         days = {iso(40): {"a": {"last_activity": iso(170)}, "b": {"archived": False}, "gone": {}},

@@ -380,6 +380,17 @@ class Details(unittest.TestCase):
             n = sum(1 for r in data["resources"] if r[lang]["strengths"] or r[lang]["weaknesses"])
             self.assertEqual(len(det), n)
             self.assertEqual(sum(1 for r in blob["resources"] if r[lang]["d"]), n)
+            app = (ROOT / "site-src" / "app.js").read_text(encoding="utf-8") + (ROOT / "site-src" / "header.js").read_text(encoding="utf-8")
+            for k in build.PAGE_UNREAD:  # left out of the page because the page never reads them
+                self.assertFalse(any(k in r for r in blob["resources"]), k)
+                self.assertNotRegex(app, rf"\.{k}\b", k)
+            self.assertFalse(any(v is None or v == [] or v == {} or v is False for r in blob["resources"] for v in r.values()))  # empty values read as absent
+
+
+class Changelog(unittest.TestCase):
+    def test_a_long_entry_is_refused(self):
+        self.assertEqual(build.changelog_long("## v9.1 — 2026-01-01\nShort.\n\n## v9.0 — 2026-01-01\n" + "x" * 551 + "\n"), ["v9.0: 551 characters"])
+        self.assertEqual(build.changelog_long((ROOT / "CHANGELOG.md").read_text(encoding="utf-8")), [])
 
 
 class Dates(unittest.TestCase):
@@ -419,7 +430,7 @@ class Selection(unittest.TestCase):
         """The selection: the rank 1 worldwide of each group (lot 3b); `featured` is refused."""
         with contextlib.redirect_stdout(io.StringIO()):
             cats, _ = build.load()
-        text = build.readme(cats, {}, "en")
+        text = build.readme(cats, "en")
         ones = [r for c in cats for r in c["resources"] if (r.get("rank") or {}).get("intl") == 1]
         self.assertEqual(len([l for l in text.splitlines() if l.startswith("- [") and "](http" in l]), len({r["url"] for r in ones}))  # a brand and its shop share one line
         self.assertEqual(len(ones), sum(len(c["category"]["groups"]) for c in cats))
@@ -427,9 +438,13 @@ class Selection(unittest.TestCase):
 
 
 class Lot3Checks(unittest.TestCase):
-    def test_lego_operator_from_the_field(self):
-        self.assertEqual(build.lego_operator({"url": "https://www.lego.com/fr-fr"}), None)  # the address no longer says it (lot 3b)
-        self.assertEqual(build.lego_operator({"url": "https://example.org/", "operator": "licensee"}), "licensee")
+    def test_operator_from_the_field(self):
+        with contextlib.redirect_stdout(io.StringIO()):
+            cats, _ = build.load()
+            rows = {r["id"]: r for r in build.site_data(cats, {})["resources"]}
+        self.assertEqual(rows["lego-house"]["operator"], "lego-group")
+        self.assertEqual(rows["libraries-ni-lego-club"]["operator"], "licensee")
+        self.assertIsNone(rows["jangbricks"]["operator"])
 
     def test_french_card_text(self):
         def planted(t):
@@ -504,9 +519,7 @@ class ReadmeImage(unittest.TestCase):
             f.write_bytes(tiny_png())
             self.assertIsNone(build.png_text(f, "version"))
 
-    def test_the_committed_images_show_the_current_version(self):
-        version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
-        self.assertEqual(build.check_readme_images(version), [])
+    def test_an_image_of_another_version_is_reported(self):  # reported as a warning by build.py, never an error (decision of 25/11/2026)
         self.assertEqual(len(build.check_readme_images("0.1")), len(build.README_IMAGES))
 
 

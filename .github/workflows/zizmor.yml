@@ -11,6 +11,7 @@ permissions: {}
 jobs:
   zizmor:
     runs-on: ubuntu-latest
+    timeout-minutes: 5   # about 20 seconds
     permissions:
       contents: read
       actions: read

@@ -57,7 +57,6 @@ Started by hand (**Run workflow**): **Pages**, **Links** (with *dry run*), **Dat
 | Handle security alerts | when GitHub sends one | the flaw stays open |
 | Answer contributors | when an issue or a pull request opens | the suggestion waits |
 | Renew the key of **Data fixes** | when the workflow warns | its checks wait for **Approve and run workflows** |
-| Give **Links** its own Globalping token (optional, once) | once | **Links** shares the anonymous limit of 250 tests an hour |
 | Watch the scheduled runs | after a day without **Pages**, a Wednesday without **Links**, a 4th without **Data report** | dates stop moving, reports are not written |
 
 How, task by task:
@@ -69,7 +68,7 @@ How, task by task:
 - **Security alerts** (**Security** tab, `SECURITY.md`): fix by a pull request, or dismiss a code scanning alert with its reason; for a secret, revoke it at its service first; only the maintainer dismisses a secret scanning alert.
 - **Contributors**: before merging, add the French texts, `VERSION`, the `CHANGELOG.md` entry and the image of the README (`scripts/readme_image.py`); approve the workflows of an outside contributor after reading the change.
 - **Key of Data fixes**: generate a new private key for its GitHub App and store it as the secret `DATA_FIXES_APP_KEY`.
-- **Globalping token**: on [dash.globalping.io](https://dash.globalping.io/), sign in with GitHub and create a token; store it as the secret `GLOBALPING_TOKEN` (**Settings**, **Secrets and variables**, **Actions**).
+- **Globalping token** (secret `GLOBALPING_TOKEN`, set on 26 Nov 2026): **Links** writes in its log how many tests are left this hour and whether the token was used; a warning means the token is refused: create a new one on [dash.globalping.io](https://dash.globalping.io/) and store it again (**Settings**, **Secrets and variables**, **Actions**).
 - **Scheduled runs**: **Actions** tab, filter *Event: schedule*; start a missing one with **Run workflow**. GitHub starts scheduled runs on a best-effort basis, often hours late, and can skip them.
 
 ## Workflows in detail
@@ -78,17 +77,17 @@ How, task by task:
 - Reads GitHub stars, last pushes and archived flags, YouTube channel feeds, subreddits (public Arctic Shift archive, one at a time: Reddit refuses automated reads) and site feeds (`scripts/refresh.py`).
 - After a push, or when started by **Preview**, reuses the measurements of the published website instead of reading again; it reads again only if the website cannot be reached.
 - Statuses `active`, `slow` and `inactive` follow the last activity date; past event dates disappear at the next daily run.
-- Builds `site/` (`scripts/build.py --site-only`): pages, `details.json` (strengths and weaknesses, read when a card unfolds), feeds of new resources (`feed.xml`, `fr/feed.xml`) and of versions (`changes.xml`).
+- Builds `site/` (`scripts/build.py --site-only`): pages, `details.json` (strengths and weaknesses, read when the browser is idle after the page, so that the search finds them too), feeds of new resources (`feed.xml`, `fr/feed.xml`) and of versions (`changes.xml`).
 - Puts under `preview/` the previews of the last successful **Preview** run; runs no branch code; without such a run, or once its artefact is older than 30 days, publishes the website without previews.
 - The daily run (or one started by hand without previews) hands the day's measurements to a separate job, the only one allowed to write, which keeps them on the branch `history` (`metrics/YYYY-MM-DD.json`).
 
 ### Preview
-- Starts when a pull request that changes the website is opened, updated, reopened or closed; at every push to `dev`; when a branch or tag is deleted.
+- Starts when a pull request that changes the website is opened, updated, reopened or closed.
 - Files that count as the website: `site-src/`, `scripts/build.py`, `scripts/previews.py`, `media/` (not the image of the README), `data/`, `VERSION`, `CHANGELOG.md`, its own workflow.
-- Builds the website of `dev`, if it exists, and of every open pull request of this repository opened by a person: never a fork or a bot; drafts included; 20 at most (`scripts/previews.py`).
-- The branch's code runs without the token, in a job that can write nowhere, with the measurements of the published website.
-- Each preview, at `preview/<number>/` (or `preview/dev/`), carries a banner, a red-tinted sticky header with a red band, a tab title that starts with "Preview #<number>" and `noindex`; a failed build gets an error page.
-- Then starts **Pages** and keeps one comment on the pull request with the address. A closed request loses its preview at the next run.
+- Builds the website of every open pull request of this repository opened by a person: never a fork or a bot; drafts included; 20 at most (`scripts/previews.py`).
+- The job can write nowhere. `scripts/previews.py` and `scripts/refresh.py` come from the pull request itself and see the token, read-only; the build of each branch (`scripts/build.py`) runs without it, with the measurements of the published website.
+- Each preview, at `preview/<number>/`, carries a banner, a red-tinted sticky header with a red band, a tab title that starts with "Preview #<number>" and `noindex`; a failed build gets an error page.
+- Then starts **Pages** and keeps one comment on the pull request with the address. A closed request is no longer listed, so it loses its preview at the next run.
 - A preview is served by the same website: anyone can open it, and it shares the browser storage of the published pages (theme, language, new tab). A request opened with the personal token of **Data fixes** counts as a person's.
 
 ### Links
@@ -130,11 +129,11 @@ How, task by task:
 - Raises the minor version, writes the `CHANGELOG.md` entry from `scripts/changelog.py`, takes the image of the README again, and opens **Monthly review vX.Y**.
 
 ### Check
-- Validates `data/`; checks that `README.md`, `full-list.md` and the category list of the **Add a resource** form are up to date, and that `CHANGELOG.md` has a section for `VERSION`.
+- Validates `data/`; checks that `README.md`, `full-list.md` and the category list of the **Add a resource** form are up to date, and that `CHANGELOG.md` has a section for `VERSION`, each entry at most 550 characters (the details belong to the pull request).
 - Checks that this file names every workflow and schedule, and that `data/SCHEMA.md` names every controlled word and backend file.
 - Warns, without failing, when the image of the README shows another version.
 - `reuse lint` (`REUSE.toml`, `LICENSES/`); unit tests (`tests/`: data, pages, about pages, links issue, monthly report, previews); awesome-lint as locked in `package-lock.json`; MiniSearch and the fonts of the Brick Vault match their locked packages (`scripts/vendor.py`).
-- Runs on the latest Python release only.
+- Runs on the latest Python release only; a new push to a pull request cancels its previous run (every push to `main` keeps its own).
 
 ### Render
 - `scripts/check_site.py` opens every view (directory as cards and table, brand mode of an alternative brand and of LEGO, observatory, about page, Brick Vault) in English and French at 1440, 1024, 768, 390 and 320 px, light theme; dark theme at 1440 and 390 px.
