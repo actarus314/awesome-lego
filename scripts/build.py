@@ -584,9 +584,12 @@ def static_texts(tpl, lang):
                   lambda m: m.group(1) + html.escape(S[m.group(3)], quote=False) + m.group(4) if m.group(3) in S else m.group(0), tpl)
 
 
+PAGE_UNREAD = {"confidence", "github", "subreddit"}  # in data.json for the scripts, never read by the page
+
+
 def page_texts(x):
     """The texts of an entry carried by the page; strengths and weaknesses go to details.json, read when needed."""
-    return {**{k: v for k, v in x.items() if k not in ("strengths", "weaknesses")}, "d": bool(x["strengths"] or x["weaknesses"])}
+    return {**{k: v for k, v in x.items() if k not in ("strengths", "weaknesses", "rec")}, "d": bool(x["strengths"] or x["weaknesses"])}
 
 
 def details(lang, data):
@@ -599,7 +602,8 @@ def page(lang, data):
     tpl = static_texts(assemble(), lang)
     other = "fr/" if lang == "en" else "../"
     other_lang = "fr" if lang == "en" else "en"
-    lean = dict(data, resources=[{**{k: v for k, v in r.items() if k not in LANGS}, lang: page_texts(r[lang])} for r in data["resources"]])  # each page carries its own language only
+    lean = dict(data, resources=[{**{k: v for k, v in r.items() if k not in LANGS and k not in PAGE_UNREAD and not (v is None or v is False or v == [] or v == {})}, lang: page_texts(r[lang])}
+                                 for r in data["resources"]])  # each page carries its own language only, without what app.js never reads nor empty values (read as absent)
     blob = json.dumps(lean, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")  # no "</script" nor "<!--" inside the data block
     values = {"LANG": lang, "OTHER": other, "TITLE": html.escape(T["title"][lang]), "TAGLINE": html.escape(T["site_tagline"][lang]),
               "MINISEARCH": (ROOT / "site-src" / "vendor" / "minisearch.min.js").read_text(encoding="utf-8"),

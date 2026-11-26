@@ -77,7 +77,7 @@ How, task by task:
 - Reads GitHub stars, last pushes and archived flags, YouTube channel feeds, subreddits (public Arctic Shift archive, one at a time: Reddit refuses automated reads) and site feeds (`scripts/refresh.py`).
 - After a push, or when started by **Preview**, reuses the measurements of the published website instead of reading again; it reads again only if the website cannot be reached.
 - Statuses `active`, `slow` and `inactive` follow the last activity date; past event dates disappear at the next daily run.
-- Builds `site/` (`scripts/build.py --site-only`): pages, `details.json` (strengths and weaknesses, read when a card unfolds), feeds of new resources (`feed.xml`, `fr/feed.xml`) and of versions (`changes.xml`).
+- Builds `site/` (`scripts/build.py --site-only`): pages, `details.json` (strengths and weaknesses, read when the browser is idle after the page, so that the search finds them too), feeds of new resources (`feed.xml`, `fr/feed.xml`) and of versions (`changes.xml`).
 - Puts under `preview/` the previews of the last successful **Preview** run; runs no branch code; without such a run, or once its artefact is older than 30 days, publishes the website without previews.
 - The daily run (or one started by hand without previews) hands the day's measurements to a separate job, the only one allowed to write, which keeps them on the branch `history` (`metrics/YYYY-MM-DD.json`).
 

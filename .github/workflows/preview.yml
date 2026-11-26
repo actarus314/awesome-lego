@@ -41,6 +41,7 @@ jobs:
   publish:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 5   # one call, a few seconds
     permissions:
       actions: write   # to start the Pages workflow of main, the only one allowed to publish
     steps:
@@ -50,6 +51,7 @@ jobs:
   link:
     if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.user.type != 'Bot'
     runs-on: ubuntu-latest
+    timeout-minutes: 5   # one comment, a few seconds
     permissions:
       pull-requests: write   # one comment with the link, kept up to date
     steps:

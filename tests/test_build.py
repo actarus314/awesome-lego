@@ -508,9 +508,7 @@ class ReadmeImage(unittest.TestCase):
             f.write_bytes(tiny_png())
             self.assertIsNone(build.png_text(f, "version"))
 
-    def test_the_committed_images_show_the_current_version(self):
-        version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
-        self.assertEqual(build.check_readme_images(version), [])
+    def test_an_image_of_another_version_is_reported(self):  # reported as a warning by build.py, never an error (decision of 25/11/2026)
         self.assertEqual(len(build.check_readme_images("0.1")), len(build.README_IMAGES))
 
 
