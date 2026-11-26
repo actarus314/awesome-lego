@@ -84,7 +84,7 @@ input[type=search]{flex:1;min-width:220px;height:40px;border:1px solid var(--lin
 #sugg [role=option][aria-selected=true],#sugg [role=option]:hover{background:var(--sunk)}
 #sugg mark{background:none;color:var(--accent);font-weight:700}
 .more{margin-top:18px}.more>summary{font-size:14px}
-.chip.wb{align-self:flex-start;--f:var(--alt-ink)}.chip .c{color:var(--faint);font-variant-numeric:tabular-nums;margin-left:5px}
+.chip.wb{align-self:flex-start;--f:var(--alt-ink)}.chip .c{color:var(--faint);font-variant-numeric:tabular-nums;margin-left:5px}.chip .fs{display:none}@media (max-width:359px){.chip .fl{display:none}.chip .fs{display:inline}}  /* a category chip keeps to one line: its short name on the narrowest phones */
 .fam{--f:var(--f-cat)}.fam.cov{--f:var(--f-cov)}.fam.opt{--f:var(--f-opt)}
 .fam>.label{color:var(--f)}.fam>.label::before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--f);margin-right:6px;vertical-align:1px}
 .chip:hover{border-color:var(--f)}
