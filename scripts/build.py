@@ -660,7 +660,7 @@ ABOUT_PATH = {"en": "about/", "fr": "fr/about/"}
 
 def about(lang, data):
     """site/about/ and site/fr/about/: what the directory is, how it is made and kept current, why a selection and how
-    it is made, how to write to the maintainer. Plain text that search engines read without running the page's script;
+    it is made, how to take part. Plain text that search engines read without running the page's script;
     its figures come from the data at each build. Texts in site-src/about.json, page in about.html, styles in about.css."""
     A = {k: v[lang] for k, v in json.loads(source("about.json")).items()}
     R = data["resources"]

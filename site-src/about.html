@@ -51,24 +51,20 @@ try{if('{{LANG}}'==='en'){const l=localStorage.getItem('lang');if(l==='fr'||(!l&
 
 <h2 id="selection">{{a:s_h}}</h2>
 <p class="lead">{{a:s_lead}}</p>
-<div class="funnel">
-<div class="step" style="--w:100%"><b>{{N}}</b><span class="track"><span class="fill"></span></span><span class="what">{{a:s1}}</span></div>
-<div class="step" style="--w:{{RANKEDW}}"><b>{{RANKED}}</b><span class="track"><span class="fill"></span></span><span class="what">{{a:s2}}</span></div>
-<div class="step" style="--w:{{SELW}}"><b>{{SEL}}</b><span class="track"><span class="fill"></span></span><span class="what">{{a:s3}}</span></div>
-</div>
-<div class="rules">
-<section class="panel"><h3>{{a:r0}}</h3><p>{{a:r0d}}</p></section>
-<section class="panel"><h3>{{a:r1}}</h3><p>{{a:r1d}}</p></section>
-<section class="panel"><h3>{{a:r2}}</h3><p>{{a:r2d}}</p></section>
-</div>
-<div class="inout">
-<section class="panel in"><h3>{{a:in_h}}</h3><ul>{{a:in}}</ul></section>
-<section class="panel out"><h3>{{a:out_h}}</h3><ul>{{a:out}}</ul></section>
-</div>
-<section class="welcome"><h3>{{a:good_h}}</h3><p>{{a:good}}</p></section>
+<ol class="stages">
+<li class="stage"><div class="gauge" style="--w:100%"><b>{{N}}</b><span class="unit">{{a:s1}}</span><span class="track"><span class="fill"></span></span></div>
+<div class="why"><h3>{{a:st1}}</h3><p>{{a:st1d}}</p>
+<div class="inout"><div class="in"><h4>{{a:in_h}}</h4><ul>{{a:in}}</ul></div><div class="out"><h4>{{a:out_h}}</h4><ul>{{a:out}}</ul></div></div></div></li>
+<li class="stage"><div class="gauge" style="--w:{{RANKEDW}}"><b>{{RANKED}}</b><span class="unit">{{a:s2}}</span><span class="track"><span class="fill"></span></span></div>
+<div class="why"><h3>{{a:st2}}</h3><p>{{a:st2d}}</p></div></li>
+<li class="stage"><div class="gauge" style="--w:{{SELW}}"><b>{{SEL}}</b><span class="unit">{{a:s3}}</span><span class="track"><span class="fill"></span></span></div>
+<div class="why"><h3>{{a:st3}}</h3><p>{{a:st3d}}</p></div></li>
+</ol>
 
-<h2 id="contact">{{a:x_h}}</h2>
+<h2 id="participate">{{a:x_h}}</h2>
 <p class="lead">{{a:x_lead}}</p>
+<section class="welcome"><h3>{{a:good_h}}</h3><p>{{a:good}}</p></section>
+<p class="note">{{a:x_how}}</p>
 <div class="contact">
 <a class="panel act" href="https://github.com/{{REPO}}/issues/new?template=add-resource.yml"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><b>{{a:x1}}</b><span>{{a:x1d}}</span></a>
 <a class="panel act" href="https://github.com/{{REPO}}/issues/new?template=fix-entry.yml"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg><b>{{a:x2}}</b><span>{{a:x2d}}</span></a>
