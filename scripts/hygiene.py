@@ -30,7 +30,7 @@ def tools():
         try:
             r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
         except FileNotFoundError:
-            out.append(f"{cmd[0]} is not installed (pip install --require-hashes -r tests/requirements-check.txt)")
+            out.append(f"{cmd[0]} is not installed (pip install --require-hashes --only-binary=:all: -r tests/requirements-check.txt)")
             continue
         if r.returncode:
             out += [f"{cmd[0]}: {line}" for line in (r.stdout + r.stderr).strip().splitlines() if line.strip()]

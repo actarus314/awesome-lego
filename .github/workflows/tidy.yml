@@ -23,7 +23,8 @@ jobs:
         with:
           python-version: "3.13"   # oxipng has wheels up to Python 3.13
       - name: Tools, locked by hash
-        run: python3 -m pip install --quiet --require-hashes -r tests/requirements-tidy.txt
+        run: |
+          python3 -m pip install --quiet --require-hashes --only-binary=:all: -r tests/requirements-tidy.txt
       - name: Mechanical fixes (unused imports, lossless PNG compression)
         run: python3 scripts/tidy.py > tidy.md
       # Same token as Data fixes: a pull request opened by the app starts its checks on its own.

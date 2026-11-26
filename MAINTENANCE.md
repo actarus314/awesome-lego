@@ -167,7 +167,7 @@ How, task by task:
 
 ### Renovate
 - Proposes the latest version of the workflows' actions (grouped in one pull request), Python, Node, the tools of the checks, MiniSearch, terser and the fonts, 3 days after it is published, at once for a security fix.
-- The Python tools of the checks are locked with their hashes (`tests/*.in`, compiled by `uv pip compile --generate-hashes` into `tests/*.txt`, installed with `--require-hashes`); Renovate compiles the lock again.
+- The Python tools of the checks are locked with their hashes (`tests/*.in`, compiled by `uv pip compile --generate-hashes` into `tests/*.txt`, installed with `--require-hashes --only-binary=:all:`, so no package runs a build script at installation); Renovate compiles the lock again.
 
 ## The website
 
