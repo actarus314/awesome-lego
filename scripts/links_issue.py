@@ -211,8 +211,10 @@ def recheck(urls, token=None, api=_api, sleep=time.sleep, confirm=True):
     address read); links over the hourly limit are left out (unchecked)."""
     try:
         left = api("/limits", token=token)["rateLimit"]["measurements"]["create"]["remaining"]
-    except Exception:
+    except Exception as e:
         left = 0
+        print(f"::warning::Globalping: limits unreadable ({e}){' with GLOBALPING_TOKEN: check the token' if token else ''}", file=sys.stderr)
+    print(f"Globalping: {left} tests left this hour ({'token' if token else 'anonymous'})", file=sys.stderr)   # read in the run log
     out, path, current = {}, {u: [] for u in urls}, {u: u for u in urls}
     pending = list(urls)
     for hop in range(HOPS + 1):

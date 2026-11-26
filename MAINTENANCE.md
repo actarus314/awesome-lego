@@ -57,7 +57,6 @@ Started by hand (**Run workflow**): **Pages**, **Links** (with *dry run*), **Dat
 | Handle security alerts | when GitHub sends one | the flaw stays open |
 | Answer contributors | when an issue or a pull request opens | the suggestion waits |
 | Renew the key of **Data fixes** | when the workflow warns | its checks wait for **Approve and run workflows** |
-| Give **Links** its own Globalping token (optional, once) | once | **Links** shares the anonymous limit of 250 tests an hour |
 | Watch the scheduled runs | after a day without **Pages**, a Wednesday without **Links**, a 4th without **Data report** | dates stop moving, reports are not written |
 
 How, task by task:
@@ -69,7 +68,7 @@ How, task by task:
 - **Security alerts** (**Security** tab, `SECURITY.md`): fix by a pull request, or dismiss a code scanning alert with its reason; for a secret, revoke it at its service first; only the maintainer dismisses a secret scanning alert.
 - **Contributors**: before merging, add the French texts, `VERSION`, the `CHANGELOG.md` entry and the image of the README (`scripts/readme_image.py`); approve the workflows of an outside contributor after reading the change.
 - **Key of Data fixes**: generate a new private key for its GitHub App and store it as the secret `DATA_FIXES_APP_KEY`.
-- **Globalping token**: on [dash.globalping.io](https://dash.globalping.io/), sign in with GitHub and create a token; store it as the secret `GLOBALPING_TOKEN` (**Settings**, **Secrets and variables**, **Actions**).
+- **Globalping token** (secret `GLOBALPING_TOKEN`, set on 26 Nov 2026): **Links** writes in its log how many tests are left this hour and whether the token was used; a warning means the token is refused: create a new one on [dash.globalping.io](https://dash.globalping.io/) and store it again (**Settings**, **Secrets and variables**, **Actions**).
 - **Scheduled runs**: **Actions** tab, filter *Event: schedule*; start a missing one with **Run workflow**. GitHub starts scheduled runs on a best-effort basis, often hours late, and can skip them.
 
 ## Workflows in detail
