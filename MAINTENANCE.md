@@ -87,7 +87,7 @@ How, task by task:
 - Files that count as the website: `site-src/`, `scripts/build.py`, `scripts/previews.py`, `media/` (not the image of the README), `data/`, `VERSION`, `CHANGELOG.md`, its own workflow.
 - Builds the website of `dev`, if it exists, and of every open pull request of this repository opened by a person: never a fork or a bot; drafts included; 20 at most (`scripts/previews.py`).
 - The branch's code runs without the token, in a job that can write nowhere, with the measurements of the published website.
-- Each preview, at `preview/<number>/` (or `preview/dev/`), carries a banner and `noindex`; a failed build gets an error page.
+- Each preview, at `preview/<number>/` (or `preview/dev/`), carries a banner, a red-tinted sticky header with a red band, a tab title that starts with "Preview #<number>" and `noindex`; a failed build gets an error page.
 - Then starts **Pages** and keeps one comment on the pull request with the address. A closed request loses its preview at the next run.
 - A preview is served by the same website: anyone can open it, and it shares the browser storage of the published pages (theme, language, new tab). A request opened with the personal token of **Data fixes** counts as a person's.
 
@@ -146,7 +146,9 @@ How, task by task:
   - a word of the strengths or weaknesses that the search does not find.
 - Accessibility (axe-core, WCAG 2.2 A and AA) at 1440 and 390 px, both themes: a guard, not a conformance target (the 13 px studs of the map are accepted).
 - First checks itself on `tests/render-fixture.html`, where one sound and one faulty case of each defect are planted. On failure, the findings are kept 7 days as the artefact `render-findings`.
-- A pull request that changes only data and the files generated from it gets a lighter pass (`--data-only`: 1440, 390 and 320 px, light theme, no accessibility; about 30 seconds instead of 3 minutes). A push to `main` gets every check.
+- A pull request that changes only data and the files generated from it gets a lighter pass (`--data-only`: 1440, 390 and 320 px, light theme, no accessibility; about a fifth of the time of the full checks, measured locally). A push to `main` gets every check.
+- Its jobs (layout and accessibility of each width, theme and language, search) are shared between browsers, one per processor, 8 at most (`--jobs`): about 1.5 minutes for the run, 1 minute of it for the checks.
+- The font packages Playwright installs are kept between runs (`actions/cache`, saved from `main` only, a new key each week, with each change of `tests/requirements.txt` and with each runner image): the Ubuntu mirror sometimes served them at 60 kB/s.
 - Not a required check (a path filter would leave it pending): its result is read before merging.
 
 ### Release

@@ -45,6 +45,7 @@ def capture(browser, base, theme):
     background = wide.evaluate("getComputedStyle(document.body).backgroundColor")
     version = wide.evaluate("(document.querySelector('header').innerText.match(/v(\\d+\\.\\d+)/)||[])[1]||''")
     narrow = page(COLUMN, 4000)
+    narrow.evaluate("(document.getElementById('mapd')||{}).open=true")  # the map is folded by default
     blocks = []
     for sel in ("#start", "#map"):
         y = narrow.evaluate(f"document.querySelector('{sel}').getBoundingClientRect().top + scrollY")

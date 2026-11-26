@@ -32,9 +32,15 @@ nav.tabs a[aria-current=page]{color:var(--fg);box-shadow:inset 0 -2px 0 var(--hi
 .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .kpi{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--r);padding:12px 14px}
 .kpi b{display:block;font:750 28px/1.1 system-ui,sans-serif;font-variant-numeric:tabular-nums}
-.label,.kpi span{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.kpi b{white-space:nowrap}.label,.kpi span{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.kpi .ks{display:none}
+@media (max-width:640px){.hero{gap:14px}.kpis{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.kpi{padding:7px 8px 8px;border-radius:10px}.kpi b{font-size:19px}.kpi span{font-size:9.5px;letter-spacing:.03em}.kpi .kl{display:none}.kpi .ks{display:inline}}@media (max-width:359px){.kpi{padding:7px 6px 8px}.kpi b{font-size:17px}}  /* phones: the same four cards in one row, the long label shortened */
 h2{font-size:22px;margin:44px 0 6px;letter-spacing:-.01em;border-left:4px solid var(--hi);padding-left:.7rem}
 .lead{color:var(--muted);margin:0 0 16px}
+@media (max-width:640px){#directory+.bar{margin-top:18px}#start,#startd,#mapd,#all{scroll-margin-top:var(--lead-top,110px)}#intro h2{margin-top:26px}}
+.mapd{border:0;padding:0}.mapd>summary{list-style:none;color:var(--fg);font-size:inherit;font-weight:inherit;width:max-content;max-width:100%}.mapd>summary::-webkit-details-marker{display:none}
+.mapd>summary h2{display:inline-block;margin-bottom:6px}.mapd>summary h2::after{content:"";display:inline-block;margin-left:.5em;vertical-align:.08em;border:.3em solid transparent;border-left:.42em solid var(--muted);border-right:0}.mapd[open]>summary h2::after{vertical-align:-.05em;border:.3em solid transparent;border-top:.42em solid var(--muted);border-bottom:0}  /* the same triangle as the other folds of the site, drawn without a transform */
+.mapd>summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:4px}.mapd[open]{margin-bottom:8px}
 .map{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
 .tile{grid-column:span var(--span,3);background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:8px;cursor:pointer;min-height:120px}
 .tile:hover,.tile.on{border-color:var(--accent)}.tile.on{box-shadow:0 0 0 2px var(--accent) inset}
@@ -66,7 +72,7 @@ h2{font-size:22px;margin:44px 0 6px;letter-spacing:-.01em;border-left:4px solid 
 .dumb,.pulse{display:block;max-width:100%}
 .dumb text,.pulse text{fill:var(--muted);font:13px system-ui,sans-serif}.dumb .v{fill:var(--fg);font-weight:650;font-variant-numeric:tabular-nums}.dumb .ax,.pulse .ax{fill:var(--faint);font-size:12px}
 .bar{position:sticky;top:var(--hdr,56px);z-index:10;background:var(--bg);padding:12px 0 10px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
-.bar .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bar .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.acts{display:inline-flex;gap:8px}  /* Filtres and Tout afficher stay together when the row wraps */
 input[type=search]{flex:1;min-width:220px;height:40px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg);padding:0 12px;font:15px system-ui,sans-serif}
 .count{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
 .fam{display:grid;grid-template-columns:110px 1fr;gap:8px;align-items:start}
@@ -81,7 +87,7 @@ input[type=search]{flex:1;min-width:220px;height:40px;border:1px solid var(--lin
 #sugg [role=option][aria-selected=true],#sugg [role=option]:hover{background:var(--sunk)}
 #sugg mark{background:none;color:var(--accent);font-weight:700}
 .more{margin-top:18px}.more>summary{font-size:14px}
-.chip.wb{align-self:flex-start;--f:var(--alt-ink)}.chip .c{color:var(--faint);font-variant-numeric:tabular-nums;margin-left:5px}
+.chip.wb{align-self:flex-start;--f:var(--alt-ink)}.chip .c{color:var(--faint);font-variant-numeric:tabular-nums;margin-left:5px}.chip .fs{display:none}@media (max-width:359px){.chip .fl{display:none}.chip .fs{display:inline}}  /* a category chip keeps to one line: its short name on the narrowest phones */
 .fam{--f:var(--f-cat)}.fam.cov{--f:var(--f-cov)}.fam.opt{--f:var(--f-opt)}
 .fam>.label{color:var(--f)}.fam>.label::before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--f);margin-right:6px;vertical-align:1px}
 .chip:hover{border-color:var(--f)}
@@ -120,7 +126,11 @@ details ul{margin:6px 0;padding-left:18px;font-size:13.5px}details li{margin:2px
 .plus li::marker{content:"＋ ";color:var(--ok)}.minus li::marker{content:"－ ";color:var(--bad)}
 .src{font-size:12.5px;color:var(--muted)}
 .empty{padding:40px;text-align:center;color:var(--muted)}
-.miss{white-space:nowrap;font-weight:600}.fsum{display:none}@media (max-width:640px),(max-height:520px) and (min-width:641px){.bar:not(.open) .fsum:not([hidden]){display:block;flex:1 1 100%;order:5;min-width:0;border:0;background:none;padding:0;font:600 13px system-ui,sans-serif;color:var(--muted);text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}}.missl{margin:22px 0 0;text-align:center}.empty .missl{margin-top:12px}
+.miss{white-space:nowrap;font-weight:600}.fsum{display:none}@media (max-width:640px),(max-height:520px) and (min-width:641px){.bar:not(.open) .fsum:not([hidden]){display:block;flex:1 1 100%;order:5;min-width:0;border:0;background:none;padding:0;font:600 13px system-ui,sans-serif;color:var(--muted);text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}}
+/* wide screens: once the bar is stuck under the header and its rows of filters would have gone under it, it folds like on a phone: the filters in a panel over the list, the active ones on a line */
+.bar.compact #ftoggle{display:inline-flex}.bar.compact #fams{display:none}.bar.compact #ftoggle[aria-expanded=true]{border-color:var(--accent);color:var(--accent)}
+.bar.compact.open #fams{display:flex;position:absolute;left:0;right:0;top:100%;max-height:62vh;overflow:auto;overscroll-behavior:contain;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 0 12px;box-shadow:0 14px 24px -14px rgb(0 0 0 / .3)}
+.bar.compact .fsum:not([hidden]){display:block;flex:1 1 100%;order:5;min-width:0;border:0;background:none;padding:0;font:600 13px system-ui,sans-serif;color:var(--muted);text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}.missl{margin:22px 0 0;text-align:center}.empty .missl{margin-top:12px}
 footer{margin:60px 0 0;padding:24px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
 footer .kn{color:var(--line);font-size:11px;letter-spacing:.2em;user-select:none;white-space:nowrap}footer .kn:hover{color:var(--muted)}
@@ -158,10 +168,10 @@ html:not(.ready) #view-dir>:not(.hero),html:not(.ready) footer{visibility:hidden
 .mk{display:grid;grid-template-columns:1fr;gap:18px 28px}@media (min-width:900px){.mk{grid-template-columns:2fr 1fr}}.mk .none{grid-column:1/-1}.mk h4{margin:0 0 6px;font-size:14px}.mk ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;font-size:14px}.mk li{line-height:1.35}.mk .by{font-size:14px}.mk .src{margin-top:5px}.mk .own ul{display:block;columns:230px;column-gap:28px}.mk .own li{break-inside:avoid;margin-bottom:9px}.mk .none ul{flex-direction:row;flex-wrap:wrap;gap:6px 18px}
 .mkline{font-size:13px;color:var(--muted)}
 #tip{position:fixed;z-index:50;pointer-events:none;background:var(--fg);color:var(--bg);padding:6px 9px;border-radius:7px;font-size:13px;max-width:300px;opacity:0;transition:opacity .08s}
-@media (max-width:980px){.hero{grid-template-columns:1fr}.tile{grid-column:span 6 !important}}
-#fams{display:flex;flex-direction:column;gap:8px}#ftoggle,#reset2{display:none}
-@media (max-width:640px){#ftoggle{display:inline-flex}#fams{display:none;max-height:62vh;overflow:auto;padding-bottom:4px}.bar.open #fams{display:flex}#ftoggle[aria-expanded=true]{border-color:var(--accent);color:var(--accent)}.bar input[type=search],.qbox{min-width:0;flex-basis:100%}#reset,.count .cw{display:none}#reset2{display:inline-flex;align-self:flex-start}.bar .row{gap:6px}}
-@media (max-width:640px){.brand span{display:none}header.top .wrap{gap:8px}nav.tabs a{padding:6px 7px}.tools .btn{padding:0 7px}.tile{grid-column:span 12 !important}.kpi b{font-size:22px}.fam{grid-template-columns:1fr;gap:4px}.fam>.label{padding-top:0}.pill{display:none}}
+@media (max-width:980px){.hero{grid-template-columns:minmax(0,1fr)}.tile{grid-column:span 6 !important}}
+#fams{display:flex;flex-direction:column;gap:8px}#ftoggle{display:none}
+@media (max-width:640px){#ftoggle{display:inline-flex}#fams{display:none;max-height:62vh;overflow:auto;overscroll-behavior:contain;padding-bottom:4px}.bar.open #fams{display:flex}#ftoggle[aria-expanded=true]{border-color:var(--accent);color:var(--accent)}.bar input[type=search],.qbox{min-width:0;flex-basis:100%}.count .cw{display:none}.bar .row,.acts{gap:6px}.bar .count{font-size:13px}#viewsw button{padding-left:9px;padding-right:9px}.acts .btn{padding-left:8px;padding-right:8px}}@media (max-width:379px){.count .ctot{display:none}}  /* the total is said by the header; the bar keeps to two lines */
+@media (max-width:640px){.brand span{display:none}header.top .wrap{gap:8px}nav.tabs a{padding:6px 7px}.tools .btn{padding:0 7px}.tile{grid-column:span 12 !important}.fam{grid-template-columns:1fr;gap:4px}.fam>.label{padding-top:0}.pill{display:none}}
 .same{font-size:13px;color:var(--muted)}.same a{color:var(--fg);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:2px}.same a:hover{text-decoration-color:currentColor}
 .btn.all{width:100%;height:auto;min-height:34px;padding:6px 10px;white-space:normal;text-align:center;margin-top:auto}
 .banner{display:flex;gap:18px;align-items:center;background:var(--card);border:1px solid var(--other);border-left-width:6px;border-radius:var(--r);padding:16px 18px;margin:18px 0 4px}
@@ -170,12 +180,13 @@ html:not(.ready) #view-dir>:not(.hero),html:not(.ready) footer{visibility:hidden
 .banner .bt{min-width:0;flex:1}.banner h3{margin:0;font-size:28px;line-height:1.1;letter-spacing:-.01em}.banner p{margin:6px 0 0}.banner .meta{color:var(--muted)}.banner .counts{font-size:14px}.banner .btn.all{width:auto;margin-top:10px}
 .banner .bn-x{position:absolute;top:10px;right:10px}.banner h3{padding-right:230px}.banner .why{font-size:13.5px;color:var(--muted)}
 .setw{position:relative}.setmenu{position:absolute;right:0;top:calc(100% + 8px);width:max-content;max-width:min(320px,calc(100vw - 24px));background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:0 8px 24px rgb(0 0 0 / .16);display:flex;flex-direction:column;gap:12px;z-index:30}.setmenu[hidden]{display:none}.sw{display:flex;gap:10px;align-items:center;font:600 14px system-ui,sans-serif;color:var(--fg);cursor:pointer}.sw input{appearance:none;-webkit-appearance:none;position:relative;width:36px;height:20px;margin:0;flex:none;border-radius:999px;background:var(--line);cursor:pointer;transition:background .15s}.sw input::before{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgb(0 0 0 / .3);transition:transform .15s}.sw input:checked{background:var(--accent)}.sw input:checked::before{transform:translateX(16px)}.sw input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}@media (prefers-reduced-motion:reduce){.sw input,.sw input::before{transition:none}}@media (min-width:641px){.setmenu .mob{display:none}}@media (min-width:641px){#langbtn .sh{display:none}}
-@media (max-width:640px){.banner{flex-direction:column;align-items:flex-start;gap:10px}.banner .btn.all{width:100%}.banner .logo{height:80px}.banner .bn-x{position:static;order:-1;align-self:stretch}.banner h3{padding-right:0}}
+@media (max-width:640px){.banner{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;align-items:center}.banner .bn-x{position:static;grid-column:1/-1}.banner .logo{grid-column:1;grid-row:span 2;height:60px;max-width:96px;padding:6px}.banner .bt{display:contents}.banner .bt>*{grid-column:1/-1;margin:0}.banner .bt>h3,.banner .bt>.meta{grid-column:2}.banner:not(:has(.logo)) .bt>h3,.banner:not(:has(.logo)) .bt>.meta{grid-column:1/-1}.banner .btn.all{width:100%}.banner h3{padding-right:0;font-size:24px}}  /* phones: the logo beside the name and its group, the rest under them */
 .jr .nw{white-space:nowrap}.same .lk{border:0;background:none;padding:0;font:inherit;color:var(--fg);cursor:pointer;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:2px}.same .lk:hover{text-decoration-color:currentColor}
 time{white-space:nowrap}
 .totop{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:40;width:44px;height:44px;border-radius:999px;box-shadow:0 6px 18px -6px rgba(0,0,0,.35)}.totop[hidden]{display:none}
 @media print{.totop{display:none}}
-@media (max-height:520px) and (min-width:641px){#ftoggle{display:inline-flex}#fams{display:none;max-height:62vh;overflow:auto;padding-bottom:4px}.bar.open #fams{display:flex}#ftoggle[aria-expanded=true]{border-color:var(--accent);color:var(--accent)}#reset{display:none}#reset2{display:inline-flex;align-self:flex-start}}
+@media (max-height:520px) and (min-width:641px){.count .cw{display:none}.bar .row,.acts{gap:6px}#ftoggle{display:inline-flex}#fams{display:none;max-height:calc(100vh - var(--hdr,56px) - 150px);overflow:auto;overscroll-behavior:contain;padding-bottom:4px}.bar.open #fams{display:flex}#ftoggle[aria-expanded=true]{border-color:var(--accent);color:var(--accent)}}
 @media (pointer:coarse){.stud{pointer-events:none}}
-.jr li a{display:inline-block;padding:3px 0}.setmenu a{padding:3px 0}
+.jr li a{display:inline-block;padding:3px 0}
+@media (max-width:640px){.journeys{gap:8px}.jr{padding:10px 12px}.jr h3{margin-bottom:2px}.jr ul{display:block;line-height:1.9}.jr li{display:inline}.jr li:not(:last-child)::after{content:"\00a0· ";color:var(--faint);font-weight:400}.jr li a{display:inline;padding:4px 0}.jr li.all{margin:0;font-size:inherit}}  /* phones: each need on two or three running lines, its picks then the way to the whole category */.setmenu a{padding:3px 0}
 @media (max-width:640px){#sugg [role=option]{flex-direction:column;gap:0}#sugg [role=option] .d{white-space:normal;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}}

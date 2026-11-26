@@ -6,6 +6,7 @@
 "figures":{"en":"Data as of {date}","fr":"Données du {date}"},
 "k_res":{"en":"resources","fr":"ressources"},
 "k_countries":{"en":"countries and territories","fr":"pays et territoires"},
+"k_countries_short":{"en":"countries","fr":"pays"},
 "k_langs":{"en":"languages","fr":"langues"},
 "k_sources":{"en":"dated sources","fr":"sources datées"},
 "m_h":{"en":"How it is made","fr":"Comment il est fait"},
