@@ -16,10 +16,16 @@ ROOT = Path(__file__).resolve().parent.parent
 
 def main():
     lines = []
-    r = subprocess.run(["ruff", "check", "--select", "F401", "--fix", "--quiet", "scripts", "tests"], cwd=ROOT, capture_output=True, text=True)
+    try:
+        r = subprocess.run(["ruff", "check", "--select", "F401", "--fix", "--quiet", "scripts", "tests"], cwd=ROOT, capture_output=True, text=True)
+    except FileNotFoundError:
+        sys.exit("ruff is not installed: pip install --require-hashes --only-binary=:all: -r tests/requirements-tidy.txt")
     if r.stdout.strip() or r.stderr.strip():
         lines.append("Python: " + (r.stdout + r.stderr).strip().replace("\n", "; ")[:2000])
-    import oxipng
+    try:
+        import oxipng
+    except ImportError:
+        sys.exit("pyoxipng is not installed: pip install --require-hashes --only-binary=:all: -r tests/requirements-tidy.txt")
     saved = []
     for p in sorted((ROOT / "media").rglob("*.png")):
         if p.name.startswith("site-preview"):

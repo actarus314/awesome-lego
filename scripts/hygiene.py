@@ -2,7 +2,8 @@
 """Mechanical guards run by Check (skill `audit-depot` of the maintainer, batch "gardes-fous", 26 Nov 2026).
 
 What an audit used to find by hand and a script can see fails here, with a message that says what to fix:
-- Python: ruff (unused names and imports, syntax errors) and vulture (dead code, 80 % confidence or more);
+- Python: ruff (unused names and imports, syntax errors) and vulture (functions, classes, variables and attributes
+  of the scripts that nothing uses; unused arguments and unreachable code of the tests);
 - strings of site-src/strings.json that no page, script or template reads;
 - fields of the data block of the page that app.js never reads;
 - workflows: every job has `timeout-minutes`; every workflow started by pull requests has a `concurrency` group;
@@ -22,13 +23,19 @@ PAGE_CODE = ["app.js", "header.js", "index.html", "header.html", "footer.html", 
 BUDGETS = ROOT / "tests" / "budgets.json"
 
 
-def tools():
-    """ruff and vulture on the Python code; their output names file and line."""
+def tools(root=ROOT):
+    """ruff and vulture on the Python code; their output names file and line. vulture reads the scripts from 60 %
+    confidence (functions, classes, variables and attributes that nothing uses), tests/vulture-allow.py naming what the
+    standard library calls; scripts and tests together from 80 % (unused imports,
+    arguments and variables, unreachable code), since unittest finds its test classes and methods by name and a fake
+    keeps the parameters of what it replaces."""
     out = []
+    allow = [str(root / "tests" / "vulture-allow.py")] if (root / "tests" / "vulture-allow.py").exists() else []
     for cmd in (["ruff", "check", "--select", "F,E9", "--output-format", "concise", "--quiet", "scripts", "tests"],
-                ["vulture", "scripts", "tests", "--min-confidence", "80"]):
+                ["vulture", "scripts", *allow, "--min-confidence", "60"],
+                ["vulture", "scripts", "tests", "--exclude", "vulture-allow.py", "--min-confidence", "80"]):
         try:
-            r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
+            r = subprocess.run(cmd, cwd=root, capture_output=True, text=True)
         except FileNotFoundError:
             out.append(f"{cmd[0]} is not installed (pip install --require-hashes --only-binary=:all: -r tests/requirements-check.txt)")
             continue
@@ -39,7 +46,8 @@ def tools():
 
 def unread_strings(strings=None, code=None):
     """Keys of strings.json read by no page, script or template. A key read by composition ('st_' + status,
-    `u_${unit}`) counts as read through its prefix; a key read by tn('k', n) also reads its singular 'k1'."""
+    `u_${unit}`) counts as read through its prefix; a key read by tn('k', n) also reads its singular 'k1'.
+    Limit: a prefix read by composition covers every key that starts with it, the unread ones included."""
     strings = strings if strings is not None else json.loads((SITE_SRC / "strings.json").read_text(encoding="utf-8"))
     code = code if code is not None else "".join((SITE_SRC / f).read_text(encoding="utf-8") for f in PAGE_CODE) \
         + (ROOT / "scripts" / "build.py").read_text(encoding="utf-8")
@@ -53,7 +61,8 @@ def unread_strings(strings=None, code=None):
 
 
 def unread_fields(blob_keys=None, code=None):
-    """Fields of an entry in the data block of the page that app.js never reads (r.x, r[L].x, r['x'])."""
+    """Fields of an entry in the data block of the page that app.js never reads (r.x, r[L].x, r['x']).
+    Limit: a field counts as read when its last part (`summary` of `en.summary`) is read anywhere in app.js or header.js."""
     if blob_keys is None:
         sys.path.insert(0, str(ROOT / "scripts"))
         import build  # noqa: E402 (the build is imported only when the check runs on the repository)
@@ -75,20 +84,24 @@ def unread_fields(blob_keys=None, code=None):
 
 
 def workflows(folder=None):
-    """Jobs without timeout-minutes; workflows run on pull requests without a concurrency group."""
+    """Jobs without timeout-minutes; workflows run on pull requests without a concurrency group.
+    Read as text, in the layout of this repository (two spaces per level); a job that calls a reusable workflow
+    (`uses:` at job level) takes its timeouts from that workflow."""
     out = []
+    job = re.compile(r"""(?m)^  (["']?)([\w-]+)\1:[ \t]*(?:#.*)?$""")
     for f in sorted((folder or ROOT / ".github" / "workflows").glob("*.yml")):
         text = f.read_text(encoding="utf-8")
-        jobs = text.split("\njobs:\n", 1)[1] if "\njobs:\n" in text else ""
-        names = re.findall(r"(?m)^  ([\w-]+):\s*$", jobs)
-        blocks = re.split(r"(?m)^  [\w-]+:\s*$", jobs)[1:]
-        for name, block in zip(names, blocks):
-            if "uses: ./" in block or re.search(r"(?m)^    uses:", block):
-                continue  # a call of a reusable workflow takes its timeouts from that workflow
+        head, _, jobs = text.partition("\njobs:\n")
+        marks = list(job.finditer(jobs))
+        for i, m in enumerate(marks):
+            block = jobs[m.end():marks[i + 1].start() if i + 1 < len(marks) else len(jobs)]
+            if re.search(r"(?m)^    uses:", block):
+                continue
             if not re.search(r"(?m)^    timeout-minutes:", block):
-                out.append(f"{f.name}: job `{name}` has no timeout-minutes (a stuck job holds a runner for 6 hours)")
-        head = text.split("\njobs:\n", 1)[0]
-        if re.search(r"(?m)^  pull_request(_target)?:", head) and not re.search(r"(?m)^concurrency:", head) and not re.search(r"(?m)^    concurrency:", jobs):
+                out.append(f"{f.name}: job `{m.group(2)}` has no timeout-minutes (a stuck job holds a runner for 6 hours)")
+        on = re.search(r"""(?ms)^["']?on["']?:(.*?)(?=^\S|\Z)""", head)
+        if on and re.search(r"\bpull_request(_target)?\b", on.group(1)) and not re.search(r"(?m)^concurrency:", head) \
+                and not re.search(r"(?m)^    concurrency:", jobs):
             out.append(f"{f.name}: runs on pull requests without a concurrency group (a new push leaves the old run going)")
     return out
 
@@ -129,7 +142,8 @@ def main():
         print(f"✗ {p}")
     if problems:
         sys.exit(1)
-    print("✓ hygiene: Python, strings, page data, workflows, weight budgets")
+    weights = "weight budgets" if (ROOT / "site" / "index.html").exists() else "no weight budget (site/ not built: python3 scripts/build.py --site-only)"
+    print(f"✓ hygiene: {'' if '--skip-tools' in sys.argv else 'Python, '}strings, page data, workflows, {weights}")
 
 
 if __name__ == "__main__":

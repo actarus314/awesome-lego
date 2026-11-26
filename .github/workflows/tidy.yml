@@ -40,8 +40,10 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.app.outputs.token || secrets.DATA_FIXES_TOKEN || secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
+          OWN_TOKEN: ${{ steps.app.outputs.token != '' || secrets.DATA_FIXES_TOKEN != '' }}
         run: |
           if git diff --quiet -- scripts tests media; then echo "Nothing to tidy."; exit 0; fi
+          [ "$OWN_TOKEN" = "true" ] || echo "::warning::No app or personal token: the checks of the pull request wait for Approve and run workflows"
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -q -B auto/tidy
           git add scripts tests media

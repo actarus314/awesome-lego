@@ -208,11 +208,6 @@ def set_field(rid, key, value):
     return edit
 
 
-def add_field(rid, line):
-    """An edit that adds `line` to the entry `rid`, right after its id."""
-    return lambda t: t.replace(f'id = "{rid}"\n', f'id = "{rid}"\n{line}\n', 1)
-
-
 def notes_with(file, edit):
     """Warnings of the rules of lot 3 (load, ranks, texts) on a copy of data/ changed by `edit`."""
     d = Path(tempfile.mkdtemp())

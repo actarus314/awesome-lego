@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- Calibration page for the phone and dead-CSS checks of scripts/check_site.py, which must report exactly:
+     the bar on three lines, the 12 px field #tiny, and the rule .dead-rule. The 16 px field and the check box are sound. -->
+<html lang="en"><head><meta charset="utf-8"><title>Phone and CSS checks: calibration</title>
+<style>
+body{margin:0;width:390px;font:16px/1.4 system-ui,sans-serif}
+.bar .row{display:flex;flex-wrap:wrap;gap:4px}
+.bar .row>*{flex:0 0 100%;height:30px}
+.ok-field{font-size:16px}
+.small{font-size:12px}
+.dead-rule{color:red}
+</style></head><body>
+<div class="bar"><div class="row"><input class="ok-field" aria-label="search"><span>filters</span><span>sort</span></div></div>
+<input class="small" id="tiny" aria-label="tiny">
+<input type="checkbox" class="small" aria-label="box">
+</body></html>

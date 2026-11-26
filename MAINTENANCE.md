@@ -55,6 +55,7 @@ The maintainer's working notes (state, decisions, open items, briefs) are in `de
 | Task | When | If not done |
 |---|---|---|
 | Accept **Data fixes** | Wednesdays, after **Links** | old addresses and past dates stay; the next run proposes them again |
+| Accept **Tidy** | Mondays, when it opens | unused imports and heavy images stay; the next run proposes them again |
 | Read **Broken links** | Wednesdays, when the issue is open | broken links stay until the monthly review |
 | Accept **Monthly review vX.Y** | after the 5th | corrections and additions wait; merge or close it before the next 5th |
 | Keep the review's instructions up to date | when a rule of the data changes | the review writes entries the build refuses |
@@ -110,6 +111,12 @@ How, task by task:
 - Recreates the branch `auto/data-fixes` from `main` at each run and opens or updates the pull request **Data fixes** (label `automatic`): a commit added by hand on that branch is lost at the next run.
 - Opens the pull request with its GitHub App (variable `DATA_FIXES_APP_ID`: the app's client ID; secret `DATA_FIXES_APP_KEY`) or, failing that, a personal token (secret `DATA_FIXES_TOKEN`), so that **Check** and **Render** start on their own.
 
+### Tidy
+- `scripts/tidy.py` removes unused Python imports (ruff's safe fix) and compresses the PNG files of `media/` without loss (oxipng, text chunks kept); the README images (`media/site-preview*.png`) are left to the version pull requests.
+- Recreates the branch `auto/tidy` from `main` at each run and opens or updates the pull request **Tidy** (label `automatic`) only when a file changed: a commit added by hand on that branch is lost at the next run.
+- Opens it with the app or token of **Data fixes**, so that its checks start on their own.
+- Runs on Python 3.13, the last one pyoxipng ships wheels for: a Renovate pull request that raises the Python of `tidy.yml` breaks the next Monday's run, and is closed until pyoxipng ships wheels for that version.
+
 ### Data report
 - `scripts/refresh.py --month` reads the activity again and writes the issue **Monthly data report** (label `automatic`), read by the review the next day.
 
@@ -138,7 +145,7 @@ How, task by task:
 - Checks that this file names every workflow and schedule, and that `data/SCHEMA.md` names every controlled word and backend file.
 - Warns, without failing, when the image of the README shows another version.
 - `reuse lint` (`REUSE.toml`, `LICENSES/`); unit tests (`tests/`: data, pages, about pages, links issue, monthly report, previews); awesome-lint as locked in `package-lock.json`; MiniSearch and the fonts of the Brick Vault match their locked packages (`scripts/vendor.py`).
-- Mechanical guards (`scripts/hygiene.py`, after the build): ruff and vulture on the Python code; strings of `site-src/strings.json` and fields of the page data that nothing reads; every job with `timeout-minutes` and every pull-request workflow with a `concurrency` group; weight budgets of the pages (per resource, so that the directory may grow) and of the about pages in `tests/budgets.json`, raised only with a reason in the pull request.
+- Mechanical guards (`scripts/hygiene.py`, after the build): ruff and vulture on the Python code (unused imports, functions, classes and variables, unreachable code; `tests/vulture-allow.py` names what the standard library calls); strings of `site-src/strings.json` and fields of the page data that nothing reads; every job with `timeout-minutes` and every pull-request workflow with a `concurrency` group; weight budgets of the pages (per resource, so that the directory may grow) and of the about pages in `tests/budgets.json`, raised only with a reason in the pull request.
 - Runs on the latest Python release only; a new push to a pull request cancels its previous run (every push to `main` keeps its own).
 
 ### Render
@@ -152,7 +159,7 @@ How, task by task:
   - on phones, a search bar on more than two lines, a field under 16 px (a phone zooms into it);
   - a CSS selector that matches nothing in any view and state checked (except data-only runs), unless `tests/css-states.txt` names the state it is for.
 - Accessibility (axe-core, WCAG 2.2 A and AA) at 1440 and 390 px, both themes: a guard, not a conformance target (the 13 px studs of the map are accepted).
-- First checks itself on `tests/render-fixture.html`, where one sound and one faulty case of each defect are planted. On failure, the findings are kept 7 days as the artefact `render-findings`.
+- First checks itself on `tests/render-fixture.html` and `tests/phone-fixture.html`, where the defects of each check are planted beside sound cases. On failure, the findings are kept 7 days as the artefact `render-findings`.
 - A pull request that changes only data and the files generated from it gets a lighter pass (`--data-only`: 1440, 390 and 320 px, light theme, no accessibility; about a fifth of the time of the full checks, measured locally). A push to `main` gets every check.
 - Its jobs (layout and accessibility of each width, theme and language, search) are shared between browsers, one per processor, 8 at most (`--jobs`): 1.5 to 2.5 minutes for the run (2 min 18 s measured on 26 Nov 2026 with the about pages).
 - The font packages Playwright installs are kept between runs (`actions/cache`, saved from `main` only, a new key each week, with each change of `tests/requirements.txt` and with each runner image): the Ubuntu mirror sometimes served them at 60 kB/s.
