@@ -2,6 +2,9 @@
 
 # v4.x — The directory for builders of every age: children, their parents and teachers, as well as adults; an about page says how it is made and how to take part.
 
+## v4.2 — 2026-11-26
+Website: the title of the about pages says how to take part, like their section (it still said how to write).
+
 ## v4.1 — 2026-11-26
 Website: an about page in English and French, a tab of the header (Settings menu on a phone) and a footer link: what the directory is, how it is made and kept current, how the selection works, what gets in and stays out, how to take part through GitHub, licences and the LEGO trademark notice; plain text with its own title, description and canonical address. Header and footer shared by every page. The **Add a resource** form links to the criteria; contributing.md states the selection rule; MAINTENANCE.md rewritten as a diagram and short tables, and corrected.
 
