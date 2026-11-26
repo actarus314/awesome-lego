@@ -21,6 +21,7 @@
 "own_make":{"en":"own production","fr":"fabrication propre"},
 "no_maker":{"en":"maker not established","fr":"fabricant non établi"},
 "reset":{"en":"Show all","fr":"Tout afficher"},
+"reset_short":{"en":"All","fr":"Tout"},
 "all_res":{"en":"All resources","fr":"Toutes les ressources"},
 "start":{"en":"Where to start","fr":"Par où commencer"},
 "v_cards":{"en":"Cards","fr":"Cartes"},

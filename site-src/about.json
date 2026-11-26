@@ -33,7 +33,7 @@
 "who":{"en":"The reading at the source and the monthly review are done by a language model, under written rules; the maintainer reads and accepts each correction and each addition. The method is described in full in <a href=\"https://github.com/{REPO}/blob/main/MAINTENANCE.md\">MAINTENANCE.md</a>.","fr":"La lecture à la source et la revue mensuelle sont faites par un modèle de langage, selon des règles écrites ; le mainteneur lit et accepte chaque correction et chaque ajout. La méthode complète est décrite dans <a href=\"https://github.com/{REPO}/blob/main/MAINTENANCE.md\">MAINTENANCE.md</a> (en anglais)."},
 "s_h":{"en":"Why a selection","fr":"Pourquoi une sélection"},
 "s_lead":{"en":"The directory does not try to list everything: it chooses, in three steps, and says how.","fr":"L'annuaire ne cherche pas à tout lister : il choisit, en trois étapes, et dit comment."},
-"s1":{"en":"resources, {active} of them active","fr":"ressources, dont {active} actives"},
+"s1":{"en":"resources, {active} of them still current","fr":"ressources, dont {active} toujours d'actualité"},
 "s2":{"en":"ranked in their group","fr":"classées dans leur groupe"},
 "s3":{"en":"best picks","fr":"mises en avant"},
 "in_h":{"en":"What gets in","fr":"Ce qui entre"},
