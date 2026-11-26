@@ -46,15 +46,15 @@ class Month(unittest.TestCase):
 
     def test_guard(self):
         month = (T.replace(day=1) - dt.timedelta(days=1)).isoformat()[:7]   # last month
-        previous = ('Monthly data report: 4 November 2026. Read by the monthly review.\n<!-- report-ids '
-                    + json.dumps({"month": month, "date": "4 November 2026", "ids": {"read failures": ["a", "b"], "archived": []}}) + " -->")
+        previous = ('Monthly data report: 4 Nov 2026. Read by the monthly review.\n<!-- report-ids '
+                    + json.dumps({"month": month, "date": "4 Nov 2026", "ids": {"read failures": ["a", "b"], "archived": []}}) + " -->")
         when, kept, base = refresh.guard(previous, {"read failures": ["b", "c"], "archived": ["d"]})
-        self.assertEqual(when, "4 November 2026")
+        self.assertEqual(when, "4 Nov 2026")
         self.assertEqual(kept, {"read failures": ["b"]})
         self.assertEqual(refresh.guard("", {"read failures": ["b"]}), (None, {}, {}))
         # written again the same month: compared with last month's report, not with itself
         again = "<!-- report-ids " + json.dumps({"month": T.isoformat()[:7], "date": refresh.date_en(T), "ids": {"read failures": ["b", "c"]}, "base": base}) + " -->"
-        self.assertEqual(refresh.guard(again, {"read failures": ["b", "c"]})[:2], ("4 November 2026", {"read failures": ["b"]}))
+        self.assertEqual(refresh.guard(again, {"read failures": ["b", "c"]})[:2], ("4 Nov 2026", {"read failures": ["b"]}))
 
     def test_history_that_cannot_be_read(self):
         self.assertEqual(refresh.month_changes(None, set()), ("The `history` branch could not be read this month.", []))
@@ -64,7 +64,7 @@ class Month(unittest.TestCase):
         report = "### Errors in data/brands.toml\n\n* [503] <https://a.example/> (at 3:8) | Rejected status code: 503\n"
         text, _ = links_issue.body(report, rechecked={"https://a.example/": ("alive", ["200, 200, 200"], None)}, today=dt.date(2026, 11, 25))
         title, lines = refresh.links_blocking(text)
-        self.assertEqual(title, "They block GitHub, alive according to Globalping on 25 November 2026 (1)")
+        self.assertEqual(title, "They block GitHub, alive according to Globalping on 25 Nov 2026 (1)")
         self.assertEqual(len(lines), 1)
         self.assertIn("<https://a.example/>", lines[0])
         self.assertEqual(refresh.links_blocking("Every link answers."), (None, []))

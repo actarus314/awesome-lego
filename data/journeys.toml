@@ -67,6 +67,16 @@ scope = "country"
 reference = {default = "lego-store-locator"}
 
 [[need]]
+id = "children"
+title_en = "With children"
+title_fr = "Avec des enfants"
+category = "places"
+icon = "children"  # media/icons/children.svg instead of the icon of the category
+groups = ["places/theme-parks", "places/official-venues", "places/museums-and-exhibitions", "events/conventions", "events/competitions", "learning/education-and-competitions", "places/cafes-and-bars", "clubs/national-clubs", "clubs/regional-clubs"]
+scope = "country"
+audience = "children"  # only the entries that state an offer for children; the tile ends on the filter "For children"
+
+[[need]]
 id = "create"
 title_en = "Create your own models"
 title_fr = "Créer ses modèles"

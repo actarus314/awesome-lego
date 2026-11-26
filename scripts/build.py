@@ -32,6 +32,7 @@ ACCESS_CONTEXT = {"places": "entry", "events": "entry", "clubs": "membership", "
 ACCESS_GROUP = {("events", "competitions"): "competition", ("events", "calendars"): "open"}  # websites, not events one enters
 ACCESS_BY = {"entry": {"free", "paid"}, "membership": {"free", "paid"}, "competition": {"free", "free-account"},
              "use": {"free", "freemium", "paid", "free-account"}, "open": {"free-account", "freemium"}}
+AUDIENCES = ("children", "adults")  # the publics an entry states it is made for or has a specific offer for; absent: no particular public
 OPERATORS = {"lego-group", "licensee"}  # sites and places of the LEGO Group itself, or under the LEGO brand by a partner
 RANK_SCOPES = {"country", "language", "intl"}  # a group ranks its entries per country, per language, or once worldwide
 RANK = range(1, 6)
@@ -54,8 +55,8 @@ T = {  # interface strings
     "title": {"en": "Awesome LEGO", "fr": "Awesome LEGO"},
     "tagline": {"en": "Interlocking plastic construction bricks, from the official LEGO system to compatible brands.",
                 "fr": "Briques de construction en plastique à emboîter, du système LEGO aux marques compatibles."},
-    "site_tagline": {"en": "The best of the brick world for adult builders, in official LEGO and compatible brands.",
-                     "fr": "Le meilleur du monde de la brique pour les adultes qui construisent, en sets de marque LEGO comme en marques compatibles."},
+    "site_tagline": {"en": "The best of the brick world for building at any age, in official LEGO and compatible brands.",
+                     "fr": "Le meilleur du monde de la brique pour construire à tout âge, en sets de marque LEGO comme en marques compatibles."},
     "feed": {"en": "Feed of new resources (RSS)", "fr": "Flux des nouveautés (RSS)"},
     "contents": {"en": "Contents", "fr": "Sommaire"},
     "contributing": {"en": "Contributing", "fr": "Contribuer"},
@@ -147,6 +148,9 @@ def load():
                 errors.append(f"{w}: city_fr only when the French name differs from city")
             if r.get("city_local") is not None and (not r["city_local"] or r["city_local"] == r.get("city") or not r.get("city")):
                 errors.append(f"{w}: city_local only when the local name differs from city")
+            au = r.get("audience")
+            if au is not None and (not isinstance(au, list) or not au or set(au) - set(AUDIENCES) or len(set(au)) != len(au)):
+                errors.append(f"{w}: audience is a list of {list(AUDIENCES)} (absent when no particular public is stated)")
             if r.get("operator") is not None and r["operator"] not in OPERATORS:
                 errors.append(f"{w}: operator must be one of {sorted(OPERATORS)}")
             rk = r.get("rank")
@@ -251,8 +255,9 @@ def access_context(cat, group):
 # French: "LEGO officiel" is a label only (filter, legend, heading); in a sentence, "de marque LEGO" for a product,
 # "du groupe LEGO" for what the company runs, "sous enseigne LEGO" for a place run by a partner (decision of 24/11/2026, 10:13)
 OFFICIEL = re.compile(r"\bLEGO\s+officiel(le)?s?\b|\bofficiel(le)?s?\s+LEGO\b")
-# dates in texts: the month in letters (3 July 2027, 3 juillet 2027), never 2027-07-03 nor 03/07/2027 (decision of 10:45)
+# dates in texts: the month in letters, abbreviated (3 Jul 2027, 3 juil. 2027), never 2027-07-03 nor 03/07/2027 (decisions of 24/11/2026, 10:45, and 25/11/2026, 20:14)
 NUMERIC_DATE = re.compile(r"\b\d{4}-\d{2}-\d{2}\b|\b\d{1,2}/\d{1,2}/\d{4}\b")
+FULL_MONTH = re.compile(r"\b(?:\d{1,2}|1er) (?:January|February|March|April|June|July|August|September|October|November|December|janvier|février|avril|juillet|septembre|octobre|novembre|décembre)\b|\b(?:January|February|March|April|June|July|August|September|October|November|December|janvier|février|avril|juillet|septembre|octobre|novembre|décembre) \d{4}\b")
 SUMMARY_WORDS = 35  # a card's text: what is particular, one or two sentences (decision of 12:28)
 COUNTRY_WORDS = re.compile(r"^(?:an? |the )?(?:french|german|polish|italian|spanish|dutch|belgian|swiss|austrian|danish|swedish|norwegian|finnish|czech|slovak|british|english|scottish|welsh|irish|american|canadian|australian|chinese|japanese|portuguese|luxembourg\w*|south african|new zealand\w*|european|hungarian|greek|icelandic|estonian|latvian|lithuanian|slovenian|croatian|romanian|bulgarian|ukrainian|korean|taiwanese|brazilian|mexican)\b", re.I)
 COUNTRY_WORDS_FR = re.compile(r"(?<!\ben )\b(?:français|allemand|polonais|italien|espagnol|néerlandais|belge|suisse|autrichien|danois|suédois|norvégien|finlandais|tchèque|slovaque|britannique|anglais|écossais|gallois|irlandais|américain|canadien|australien|chinois|japonais|portugais|luxembourgeois|sud-africain|néo-zélandais|européen|hongrois|grec|grecque|islandais|estonien|letton|lituanien|slovène|croate|roumain|bulgare|ukrainien|coréen|taïwanais|brésilien|mexicain)(?:ne|e)?s?\b", re.I)  # in French the demonym follows the noun: « Comparateur de prix allemand »; « en allemand » is a language
@@ -278,6 +283,10 @@ def text_notes(cats):
                         notes.append(f"{w}: {k}: « {OFFICIEL.search(x).group(0)} » in a sentence: de marque LEGO (a product), du groupe LEGO (the company), sous enseigne LEGO (a partner)")
                     if (k.endswith("_en") or k.endswith("_fr")) and NUMERIC_DATE.search(x):
                         notes.append(f"{w}: {k}: date {NUMERIC_DATE.search(x).group(0)} with the month in letters")
+                    if (k.endswith("_en") or k.endswith("_fr")) and re.search(r"(?<!\.)\.\.(?!\.)", x):
+                        notes.append(f"{w}: {k}: double period")
+                    if (k.endswith("_en") or k.endswith("_fr")) and FULL_MONTH.search(x):
+                        notes.append(f"{w}: {k}: date « {FULL_MONTH.search(x).group(0)} » with the month abbreviated (Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec; janv. févr. mars avr. mai juin juil. août sept. oct. nov. déc.)")
             sm = r.get("summary_en", "")
             if len(sm.split()) > SUMMARY_WORDS or len(r.get("summary_fr", "").split()) > SUMMARY_WORDS:
                 notes.append(f"{w}: summary of {max(len(sm.split()), len(r.get('summary_fr', '').split()))} words, {SUMMARY_WORDS} at most")
@@ -409,6 +418,8 @@ def readme(cats, m, lang, kind="readme"):
                 status = r["status"]  # declared status: generated files stay stable between data changes
                 worlds = [w for k, w in (("official", "official LEGO"), ("alternative", "alternative brands")) if k in r.get("covers", [])]
                 marks = (f"Covers {' and '.join(worlds)}." if worlds else "")
+                if r.get("audience"):  # the publics the entry states (data/SCHEMA.md, audience)
+                    marks += (" " if marks else "") + "For " + " and ".join(a for a in AUDIENCES if a in r["audience"]) + "."
                 if status != "active":
                     marks += " Status: " + {"slow": "no update for 6 months", "inactive": "no update for a year"}.get(status, status) + "."
                 desc = r["summary_" + lang].strip()
@@ -451,7 +462,7 @@ def site_data(cats, m):
         gnames = {g["id"]: {lang: g.get("short_" + lang) or g["name_" + lang] for lang in LANGS} for g in cat.get("groups", [])}  # card labels
         for r in c["resources"]:
             status, last = effective(r, m)
-            row = {k: r.get(k) for k in ("id", "name", "url", "covers", "languages", "countries", "confidence", "checked", "github", "subreddit", "city", "city_fr", "city_local", "ships_to_france", "rank", "size")}
+            row = {k: r.get(k) for k in ("id", "name", "url", "covers", "languages", "countries", "confidence", "checked", "github", "subreddit", "city", "city_fr", "city_local", "ships_to_france", "rank", "size", "audience")}
             row = {k: v for k, v in row.items() if v is not None}
             row["featured"] = picked(r)  # the selection: rank 1 worldwide of its group (★, filter, README)
             ctx = access_context(cat["id"], r["group"])
@@ -503,6 +514,10 @@ def needs(cats, ids):
             bad.append(f"{w}: groups must be <category>/<group> ids: {sorted(set(j.get('groups', [])) - groups)}")
         if j.get("scope") not in RANK_SCOPES:
             bad.append(f"{w}: scope must be one of {sorted(RANK_SCOPES)}")
+        if j.get("icon") is not None and not (ROOT / "media" / "icons" / f"{j['icon']}.svg").exists():
+            bad.append(f"{w}: icon must name a file of media/icons/ (without .svg)")
+        if j.get("audience") not in (None, *AUDIENCES):
+            bad.append(f"{w}: audience must be one of {list(AUDIENCES)}")
         if j.get("mode") not in (None, "brand"):
             bad.append(f"{w}: mode can only be brand")
         code = {"country": r"[A-Z]{2}", "language": r"[a-z]{2}"}.get(j.get("scope"), r"(?!)")
@@ -511,8 +526,8 @@ def needs(cats, ids):
                 bad.append(f"{w}: reference key {k} is a {j.get('scope')} code or default")
             if v not in ids:
                 bad.append(f"{w}: unknown resource {v}")
-        if set(j) - {"id", "title_en", "title_fr", "category", "groups", "scope", "mode", "reference"}:
-            bad.append(f"{w}: unknown keys {sorted(set(j) - {'id', 'title_en', 'title_fr', 'category', 'groups', 'scope', 'mode', 'reference'})}")
+        if set(j) - {"id", "title_en", "title_fr", "category", "icon", "groups", "scope", "mode", "audience", "reference"}:
+            bad.append(f"{w}: unknown keys {sorted(set(j) - {'id', 'title_en', 'title_fr', 'category', 'icon', 'groups', 'scope', 'mode', 'audience', 'reference'})}")
     if bad:
         fail(bad)
     return js
@@ -664,12 +679,12 @@ def atom(title, self_url, site_url, items):
             f'<updated>{updated}T00:00:00Z</updated><author><name>Awesome LEGO</name></author>{entries}</feed>\n')
 
 
-MONTHS = {"en": "January February March April May June July August September October November December".split(),
-          "fr": "janvier février mars avril mai juin juillet août septembre octobre novembre décembre".split()}
+MONTHS = {"en": "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(),  # months abbreviated everywhere (decision of 25/11/2026, 20:14)
+          "fr": "janv. févr. mars avr. mai juin juil. août sept. oct. nov. déc.".split()}
 
 
 def in_letters(iso, lang):
-    """2027-07-03: 3 July 2027, 3 juillet 2027; the first of the month in French: 1er avril 2027."""
+    """2027-07-03: 3 Jul 2027, 3 juil. 2027; the first of the month in French: 1er avr. 2027."""
     y, m, d = (int(x) for x in iso.split("-"))
     return f"{'1er' if lang == 'fr' and d == 1 else d} {MONTHS[lang][m - 1]} {y}"
 

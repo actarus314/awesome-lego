@@ -88,7 +88,7 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 ### Official LEGO
 
-- [LEGO](https://www.lego.com/fr-fr) - Original maker of the 8 mm stud brick system (Denmark), with an adult range (Icons, Technic, Botanicals, Art) and the largest licence portfolio. Covers official LEGO.
+- [LEGO](https://www.lego.com/fr-fr) - Original maker of the 8 mm stud brick system (Denmark), with an adult range (Icons, Technic, Botanicals, Art) and the largest licence portfolio. Covers official LEGO. For children and adults.
 
 ### European and American alternatives
 
@@ -104,7 +104,7 @@ Official LEGO, European and Chinese alternative brands, toy-industry entrants, b
 
 ### Other formats
 
-- [nanoblock (Kawada)](https://www.kawada-toys.com/en/brand/nanoblock/) - Micro-blocks whose smallest piece measures 4 mm by 4 mm by 5 mm, on sale since October 2008: animals, landmarks, ships and castles, with an Advanced Hobby series for adults. Covers alternative brands.
+- [nanoblock (Kawada)](https://www.kawada-toys.com/en/brand/nanoblock/) - Micro-blocks whose smallest piece measures 4 mm by 4 mm by 5 mm, on sale since Oct 2008: animals, landmarks, ships and castles, with an Advanced Hobby series for adults. Covers alternative brands.
 
 <br>
 
@@ -192,7 +192,7 @@ Forums, subreddits, wikis, news and review sites, deal communities and chat serv
 
 ### Forums and chat
 
-- [Eurobricks Forums](https://www.eurobricks.com/forum/) - Sections on custom builds, reviews and marketplace for adult fans of LEGO, plus one on alternative brands. Covers official LEGO and alternative brands.
+- [Eurobricks Forums](https://www.eurobricks.com/forum/) - Sections on custom builds, reviews and marketplace for adult fans of LEGO, plus one on alternative brands. Covers official LEGO and alternative brands. For adults.
 
 ### Reddit
 
@@ -200,7 +200,7 @@ Forums, subreddits, wikis, news and review sites, deal communities and chat serv
 
 ### Wikis
 
-- [Brickipedia](https://en.brickimedia.org/wiki/Main_Page) - Collaborative encyclopedia of official LEGO sets, themes, minifigures and history; founded 29 January 2006. Covers official LEGO.
+- [Brickipedia](https://en.brickimedia.org/wiki/Main_Page) - Collaborative encyclopedia of official LEGO sets, themes, minifigures and history; founded 29 Jan 2006. Covers official LEGO.
 
 ### Deals
 
@@ -228,7 +228,7 @@ English- and French-language YouTube channels and podcasts: reviews of official 
 
 ### News and community
 
-- [Beyond the Brick](https://www.youtube.com/@BeyondtheBrick) - Began in November 2011 as an audio-only podcast, as the channel states; it also sells merchandise and covers LEGO news and reveals. Covers official LEGO.
+- [Beyond the Brick](https://www.youtube.com/@BeyondtheBrick) - Began in Nov 2011 as an audio-only podcast, as the channel states; it also sells merchandise and covers LEGO news and reveals. Covers official LEGO.
 
 ### Podcasts
 
@@ -244,7 +244,7 @@ Conventions, fan exhibitions, artist shows, public competitions and calendars li
 
 ### Conventions, fairs and exhibitions
 
-- [Skærbæk Fan Weekend](https://www.fanweekend.dk/) - International gathering of adult fans of LEGO in southern Jutland, 80 km south of Billund, with a public exhibition of custom builds on the Saturday and Sunday. Covers official LEGO.
+- [Skærbæk Fan Weekend](https://www.fanweekend.dk/) - International gathering of adult fans of LEGO in southern Jutland, 80 km south of Billund, with a public exhibition of custom builds on the Saturday and Sunday. Covers official LEGO. For adults.
 
 ### Competitions
 
@@ -264,11 +264,11 @@ Venues of the brick world that can be visited: official LEGO venues and stores, 
 
 ### Official LEGO venues and stores
 
-- [LEGO House](https://legohouse.com/en-gb) - Four Experience Zones, a historical collection on the LEGO Group and the brick, a LEGO Store and restaurants. Covers official LEGO.
+- [LEGO House](https://legohouse.com/en-gb) - Four Experience Zones, a historical collection on the LEGO Group and the brick, a LEGO Store and restaurants. Covers official LEGO. For children.
 
 ### Theme parks
 
-- [LEGOLAND Billund Resort](https://www.legoland.dk/) - The original LEGOLAND, opened in 1968 next to LEGO House in Billund. Covers official LEGO.
+- [LEGOLAND Billund Resort](https://www.legoland.dk/) - The original LEGOLAND, opened in 1968 next to LEGO House in Billund. Covers official LEGO. For children.
 
 ### Museums and permanent exhibitions
 
@@ -276,11 +276,11 @@ Venues of the brick world that can be visited: official LEGO venues and stores, 
 
 ### Physical shops (alternative brands and used bricks)
 
-- [Time For Bricks](https://www.timeforbricks.fr/) - About thirty brands of alternative bricks compatible with standard bricks, sold in Chambéry (since 2023) and Annecy (opened in July 2026), with free building tables and a hot drink corner in Annecy. Covers alternative brands.
+- [Time For Bricks](https://www.timeforbricks.fr/) - About thirty brands of alternative bricks compatible with standard bricks, sold in Chambéry (since 2023) and Annecy (opened in Jul 2026), with free building tables and a hot drink corner in Annecy. Covers alternative brands. For children and adults.
 
 ### Cafés and play spaces
 
-- [Brick Bank Café](https://www.brickbankcafe.org/) - LEGO sets or trays of loose bricks hired by the half hour or hour and built at the table, in a former bank, opened in June 2025 in Bingley (West Yorkshire). Covers official LEGO.
+- [Brick Bank Café](https://www.brickbankcafe.org/) - LEGO sets or trays of loose bricks hired by the half hour or hour and built at the table, in a former bank, opened in Jun 2025 in Bingley (West Yorkshire). Covers official LEGO. For children.
 
 <br>
 
@@ -292,11 +292,11 @@ User groups, clubs and associations of LEGO and brick fans, from the LEGO Fan Co
 
 ### National clubs
 
-- [Brickish](https://brickish.org/) - Active since 2002 and self-described as the first user group in the United Kingdom; local meet-ups, public shows and a members-only forum for adult fans of LEGO. Covers official LEGO.
+- [Brickish](https://brickish.org/) - Active since 2002 and self-described as the first user group in the United Kingdom; local meet-ups, public shows and a members-only forum for adult fans of LEGO. Covers official LEGO. For adults.
 
 ### Regional and local clubs
 
-- [Stein Hanse e.V.](https://steinhanse.eu/) - More than 500 members across northern Germany, in regional sections, with its own yearly exhibition in Kaltenkirchen (3407 visitors on 11 and 12 April 2026) and trips such as a Baltic Sea cruise. Covers official LEGO.
+- [Stein Hanse e.V.](https://steinhanse.eu/) - More than 500 members across northern Germany, in regional sections, with its own yearly exhibition in Kaltenkirchen (3407 visitors on 11 and 12 Apr 2026) and trips such as a Baltic Sea cruise. Covers official LEGO.
 
 ### Clubs for alternative brands
 
@@ -320,19 +320,19 @@ Guides, glossaries, history, compatibility and legal references, education and c
 
 ### Compatibility, materials and law
 
-- [Court of Justice judgment C-48/09 P, Lego Juris v OHIM](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A62009CJ0048) - Judgment of 14 September 2010: the three-dimensional shape of a LEGO brick cannot be registered as a trade mark, as it consists of a shape necessary to obtain a technical result. Covers official LEGO and alternative brands.
+- [Court of Justice judgment C-48/09 P, Lego Juris v OHIM](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A62009CJ0048) - Judgment of 14 Sep 2010: the three-dimensional shape of a LEGO brick cannot be registered as a trade mark, as it consists of a shape necessary to obtain a technical result. Covers official LEGO and alternative brands.
 
 ### History
 
-- [LEGO History (official LEGO)](https://www.lego.com/en-us/history) - Official chronology of the LEGO Group from 1890, with articles on the Automatic Binding Bricks (1949), Kiddicraft and the stud and tube principle (patent application of 28 January 1958). Covers official LEGO.
+- [LEGO History (official LEGO)](https://www.lego.com/en-us/history) - Official chronology of the LEGO Group from 1890, with articles on the Automatic Binding Bricks (1949), Kiddicraft and the stud and tube principle (patent application of 28 Jan 1958). Covers official LEGO.
 
 ### Education and competitions
 
-- [FIRST LEGO League (global)](https://firstlegoleague.org/) - The 2026-2027 BIOGLOW season is the last under this name and ends the partnership between FIRST and LEGO Education, which will launch its own season in 2027-2028. Covers official LEGO.
+- [FIRST LEGO League (global)](https://firstlegoleague.org/) - The 2026-2027 BIOGLOW season is the last under this name and ends the partnership between FIRST and LEGO Education, which will launch its own season in 2027-2028. Covers official LEGO. For children.
 
 ### Books and magazines
 
-- [Blocks magazine](https://blocksmag.com/) - Monthly, 116 pages, for adult fans of LEGO, published in the United Kingdom since November 2014 by Silverback Publishing. Covers official LEGO.
+- [Blocks magazine](https://blocksmag.com/) - Monthly, 116 pages, for adult fans of LEGO, published in the United Kingdom since Nov 2014 by Silverback Publishing. Covers official LEGO. For adults.
 
 ### Artists and designers
 

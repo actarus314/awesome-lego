@@ -197,13 +197,13 @@ def read(r, old, token):
 
 
 def date_en(day):
-    """A date as the website and the reports write it: "24 November 2026" (a date or an ISO string)."""
+    """A date as the website and the reports write it: "24 Nov 2026" (a date or an ISO string; months abbreviated)."""
     d = dt.date.fromisoformat(day) if isinstance(day, str) else day
-    return f"{d.day} {d:%B} {d.year}"
+    return f"{d.day} {'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split()[d.month - 1]} {d.year}"
 
 
 def since(iso):
-    """'since 12 November 2026, 22 days' for a past ISO date."""
+    """'since 12 Nov 2026, 22 days' for a past ISO date."""
     return f"since {date_en(iso)}, {day_count(iso)}"
 
 

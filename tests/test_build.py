@@ -221,6 +221,12 @@ class Lot3Model(unittest.TestCase):
     def test_operator(self):
         self.assertTrue(any("operator" in e for e in load_with("places.toml", lambda t: t.replace('operator = "lego-group"', 'operator = "merlin"', 1))))
 
+    def test_audience(self):
+        for bad in ('"children"', '[]', '["kids"]', '["adults", "adults"]'):
+            errs = load_with("places.toml", set_field("lego-house", "audience", bad))
+            self.assertTrue(any("audience is a list" in e for e in errs), (bad, errs))
+        self.assertEqual(load_with("places.toml", set_field("lego-house", "audience", '["children", "adults"]')), [])
+
     def test_no_rank_on_a_dead_entry(self):
         def edit(t):
             t = set_field("lego-house", "status", '"dead"')(t)
@@ -258,6 +264,22 @@ class Needs(unittest.TestCase):
             shutil.copytree(ROOT / "data", d / "data")
             p = d / "data" / "journeys.toml"
             p.write_text(p.read_text(encoding="utf-8").replace('"shops/official-lego"', '"shops/nothing"', 1), encoding="utf-8")
+            build.DATA = d / "data"
+            with self.assertRaises(SystemExit), contextlib.redirect_stderr(io.StringIO()):
+                build.needs(cats, ids)
+        finally:
+            build.DATA = old
+            shutil.rmtree(d)
+
+    def test_need_audience(self):
+        cats, _ = load_quiet(lambda t: t)
+        ids = {r["id"] for c in cats for r in c["resources"]}
+        old = build.DATA
+        d = Path(tempfile.mkdtemp())
+        try:
+            shutil.copytree(ROOT / "data", d / "data")
+            p = d / "data" / "journeys.toml"
+            p.write_text(p.read_text(encoding="utf-8").replace('audience = "children"', 'audience = "kids"', 1), encoding="utf-8")
             build.DATA = d / "data"
             with self.assertRaises(SystemExit), contextlib.redirect_stderr(io.StringIO()):
                 build.needs(cats, ids)
@@ -308,9 +330,10 @@ class Details(unittest.TestCase):
 
 class Dates(unittest.TestCase):
     def test_in_letters(self):
-        self.assertEqual(build.in_letters("2027-07-03", "en"), "3 July 2027")
-        self.assertEqual(build.in_letters("2027-04-01", "fr"), "1er avril 2027")
-        self.assertEqual(build.in_letters("2027-04-01", "en"), "1 April 2027")
+        self.assertEqual(build.in_letters("2027-07-03", "en"), "3 Jul 2027")
+        self.assertEqual(build.in_letters("2027-04-01", "fr"), "1er avr. 2027")
+        self.assertEqual(build.in_letters("2027-04-01", "en"), "1 Apr 2027")
+        self.assertEqual(build.in_letters("2027-09-30", "en"), "30 Sep 2027")
 
     def test_feed_has_no_numeric_date_in_titles(self):
         with contextlib.redirect_stdout(io.StringIO()):
