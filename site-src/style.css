@@ -182,7 +182,7 @@ html:not(.ready) #view-dir>:not(.hero),html:not(.ready) footer{visibility:hidden
 time{white-space:nowrap}
 .totop{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:40;width:44px;height:44px;border-radius:999px;box-shadow:0 6px 18px -6px rgba(0,0,0,.35)}.totop[hidden]{display:none}
 @media print{.totop{display:none}}
-@media (max-height:520px) and (min-width:641px){#ftoggle{display:inline-flex}#fams{display:none;max-height:62vh;overflow:auto;overscroll-behavior:contain;padding-bottom:4px}.bar.open #fams{display:flex}#ftoggle[aria-expanded=true]{border-color:var(--accent);color:var(--accent)}}
+@media (max-height:520px) and (min-width:641px){.count .cw{display:none}.bar .row,.acts{gap:6px}#ftoggle{display:inline-flex}#fams{display:none;max-height:calc(100vh - var(--hdr,56px) - 150px);overflow:auto;overscroll-behavior:contain;padding-bottom:4px}.bar.open #fams{display:flex}#ftoggle[aria-expanded=true]{border-color:var(--accent);color:var(--accent)}}
 @media (pointer:coarse){.stud{pointer-events:none}}
 .jr li a{display:inline-block;padding:3px 0}.setmenu a{padding:3px 0}
 @media (max-width:640px){#sugg [role=option]{flex-direction:column;gap:0}#sugg [role=option] .d{white-space:normal;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}}
