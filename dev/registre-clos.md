@@ -6,6 +6,7 @@ Lignes closes de `dev/registre.md`, la plus récente en tête ; un identifiant n
 
 | ID | P | Objet | Statut |
 |---|---|---|---|
+| AL-67 | P2 | Lignes RM du registre invisibles pour la revue mensuelle | fait 26/11 : consigne de `dev/consigne-revue.md` (lecture de `CLAUDE.md`, `dev/contexte.md` et des lignes RM, version seule si aucune autre demande ne la porte, devenir des lignes RM dans la demande) recollée dans la tâche à 23 h 31 sur « Mets la consigne à jour » de Romain ; l'ancienne copie du projet claude.ai renvoie désormais ici |
 | AL-48 | P2 | Où vivent contexte, registre et cahiers | fait 26/11 : `dev/` du dépôt, en français (décision de Romain, 23 h 13), demande #29 fusionnée à 23 h 26 ; reste à Romain : la ligne des instructions du projet claude.ai qui désigne claude/awesome-lego.md |
 | AL-56 | P2 | v4.3, demande #28 : marque dépliée, filtres gardés ouverts, résultats par catégorie, passe d'optimisation, CHANGELOG court | fait v4.3 : fusionnée par Romain le 26/11 à 23 h 04 (c912e1f) ; Release v4.3 créée ; Check, Render, Pages, CodeQL, zizmor verts sur c912e1f ; site servi en v4.3 et aperçu #28 retiré (vérifiés à 23 h 08) |
 | AL-31 | P3 | Façon de travailler (commit direct, demandes avec aperçu, pas de branche `dev`) | fait v4.3 : branche `dev` et déclencheur `delete` des aperçus retirés |

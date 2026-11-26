@@ -84,7 +84,6 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 |---|---|---|---|---|
 | AL-52 | P3 | Cartes de skills proposées le 26/11 (document-versionne : éviter les reprises, CHANGELOG contrôlé ; interface-outil : quatre pistes et règles techniques ; audit-depot) | R | ouverte : `audit-depot` enregistrée (vue dans la liste des skills le 26/11 à 23 h 13) ; les deux autres : non revérifié |
 | AL-68 | P3 | Nom de domaine grand public pour le site (dépôt gardé en « awesome-lego ») : recherche ouverte par Romain le 26/11 à 13 h 40 dans une autre conversation ; détail : projet claude.ai, claude/awesome-lego-nom-de-domaine.md | R, avec C | ouverte : pistes à juger par Romain |
-| AL-67 | P2 | Les lignes RM (AL-05, 06, 13, 18, 24, 38) n'atteignent la revue mensuelle que si sa consigne lit `dev/registre.md` et `dev/contexte.md` : ajouter à l'étape 1 de `dev/consigne-revue.md` « lis `dev/contexte.md` (décisions) et les lignes RM de `dev/registre.md` », et à l'étape 7 « dis dans la demande ce que devient chaque ligne RM », puis recoller la consigne dans la tâche | C sur « Mets la consigne à jour » de Romain | ouverte : à faire avant le 05/12/2026 ; `dev/consigne-revue.md` est une recopie non comparée par script à la tâche (aucun outil ne rend le texte de la tâche ni ne lit le document du projet depuis un script) : le recollage la rend source ; ensuite, supprimer l'ancienne copie du projet claude.ai (claude/awesome-lego-consigne-revue.md) |
 
 ## Clos
 
