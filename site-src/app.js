@@ -27,7 +27,7 @@ const setT=v=>{if(v==='auto')delete root.dataset.theme;else root.dataset.theme=v
 const LB=document.getElementById('langbtn'),LB0=LB.getAttribute('href');
 LB.onclick=()=>{try{localStorage.setItem('lang',L==='fr'?'en':'fr')}catch(e){}LB.href=LB0+location.hash;  // the other language opens where the visitor is: same view, search and filters
  const a=anchor();try{if(a&&scrollY>0)sessionStorage.setItem('langpos',JSON.stringify({...a,map:MQ.matches&&MAPD.open}))}catch(e){}};  // and at the same place on the page: the first element in view, the map open if it was
-function anchor(){const top=hdr()+(document.querySelector('.bar')&&!document.getElementById('view-dir').hidden?document.querySelector('.bar').offsetHeight:0),ids=[...document.querySelectorAll('main [id]')].filter(e=>!e.querySelector('[id]')&&e.offsetParent&&!e.closest('.bar')),el=ids.find(e=>{const r=e.getBoundingClientRect();return r.top<=top+2&&r.bottom>top+40})||ids.find(e=>e.getBoundingClientRect().top>=top-2);
+function anchor(){const top=hdr()+(document.querySelector('.bar')&&!document.getElementById('view-dir').hidden?document.querySelector('.bar').offsetHeight:0),ids=[...document.querySelectorAll('main [id]')].filter(e=>!e.querySelector('[id]')&&e.offsetParent&&!e.closest('.bar')&&!(e.closest('details:not([open])')&&!e.closest('summary'))),el=ids.find(e=>{const r=e.getBoundingClientRect();return r.top<=top+2&&r.bottom>top+40})||ids.find(e=>e.getBoundingClientRect().top>=top-2);
  return el?{id:el.id,dy:Math.round(el.getBoundingClientRect().top)}:null}  // the element across the top of the view under the header and the bar (a tall map, a card), else the first one below
 setT(getT());tb.onclick=()=>{const o=['auto','light','dark'];setT(o[(o.indexOf(getT())+1)%3])};
 // external links in a new tab or not: one setting for the whole page, kept by this browser (request of 25/11/2026)
@@ -47,7 +47,7 @@ const hideTip=()=>tip.style.opacity=0;addEventListener('scroll',hideTip,{passive
 document.addEventListener('focusin',e=>{const el=e.target.closest&&e.target.closest('[data-tip]');if(!el||!el.matches(':focus-visible'))return;tip.textContent=el.dataset.tip;tip.style.opacity=1;const r=el.getBoundingClientRect(),w=tip.offsetWidth;tip.style.left=Math.min(innerWidth-w-8,Math.max(8,r.left))+'px';tip.style.top=(r.bottom+8)+'px'});document.addEventListener('focusout',hideTip);addEventListener('keydown',e=>{if(e.key==='Escape')hideTip()});
 document.addEventListener('mousemove',e=>{const el=e.target.closest('[data-tip]');if(!el){hideTip();return}tip.textContent=el.dataset.tip;tip.style.opacity=1;const w=tip.offsetWidth,h=tip.offsetHeight;let x=e.clientX+12,y=e.clientY+14;if(x+w>innerWidth-8)x=e.clientX-w-12;if(y+h>innerHeight-8)y=e.clientY-h-14;tip.style.left=x+'px';tip.style.top=y+'px'});
 const active=R.filter(r=>r.status==='active').length,langs=new Set(R.flatMap(r=>r.languages||[]));
-document.getElementById('kpis').innerHTML=[[R.length,t('resources')],[C.length,t('categories')],[Math.round(100*active/R.length)+' %',t('active')],[langs.size,t('languages')]].map(([v,l])=>`<div class="kpi"><b>${v}</b><span>${l}</span></div>`).join('');
+document.getElementById('kpis').innerHTML=[[R.length,t('resources')],[C.length,t('categories')],[Math.round(100*active/R.length)+' %',`<span class="kl">${t('active')}</span><span class="ks">${t('active_short')}</span>`],[langs.size,t('languages')]].map(([v,l])=>`<div class="kpi"><b>${v}</b><span>${l}</span></div>`).join('');
 // search index: MiniSearch, fuzzy and prefix matching, results ranked by relevance
 const LEGO=R.find(r=>r.cat==='brands'&&(r.covers||[]).includes('official'));  // the LEGO brand: its brand mode shows where official LEGO is
 const BRANDS=[...D.brands,...(LEGO?[{id:LEGO.id,name:LEGO.name,aka:[],lego:true}]:[])];
@@ -262,7 +262,7 @@ const VIEWS={dir:document.getElementById('view-dir'),obs:document.getElementById
 const viewOf=h=>(h==='#observatory'||h==='#findings')?'obs':'dir';  // #findings: address of the former "Findings" view
 const OUT=/^#(out|agenda|near-me)$/;  // addresses of the former "Out and about" view: "Where to start" now points to the calendars, clubs and places
 function show(view,first){const was=cur;cur=view;if(view==='dir')requestAnimationFrame(()=>measureBar());document.title=view==='dir'?TITLE0:t('nav_'+view)+' · '+TITLE0;Object.entries(VIEWS).forEach(([k,el])=>el.hidden=k!==view);document.querySelectorAll('nav.tabs a').forEach(a=>{if(a.dataset.view===view)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
- if(view==='obs'){if(!drawn)drawInsights();else{vPulse();vPassion()}}const sec=view==='dir'&&(first?OUT0:OUT.test(location.hash))?document.getElementById('start'):null;if(sec){if(MQ.matches){barH();STD.open=true}sec.scrollIntoView()}else if(!first&&was!==view)scrollTo({top:0})}  // no forced layout on the first display
+ if(view==='obs'){if(!drawn)drawInsights();else{vPulse();vPassion()}}const sec=view==='dir'&&(first?OUT0:OUT.test(location.hash))?document.getElementById('start'):null;if(sec){if(MQ.matches){barH();if(!STD.open){STAUTO=true;STD.open=true}}sec.scrollIntoView()}else if(!first&&was!==view)scrollTo({top:0})}  // no forced layout on the first display
 document.getElementById('skip').onclick=e=>{e.preventDefault();toDir();const q=document.getElementById('q');q.scrollIntoView({block:'center'});q.focus()};
 document.querySelector('nav.tabs a[data-view=obs]').addEventListener('click',saveY);
 document.querySelector('nav.tabs a[data-view=dir]').onclick=e=>{e.preventDefault();go(()=>{toDir();writeHash()});if(MQ.matches)scrollTo({top:0,behavior:SMOOTH()});else document.getElementById('map').scrollIntoView({behavior:SMOOTH()})};
@@ -288,7 +288,7 @@ function keepFocus(draw){const a=document.activeElement,k=a&&a.dataset?FKEYS.fin
  if(k&&box&&!document.body.contains(a)){const b=document.getElementById(box.id);if(!b)return;const n=[...b.querySelectorAll(`[data-${k}]`)].find(x=>x.dataset[k]===v&&x.className.split(' ')[0]===String(cls).split(' ')[0])||[...b.querySelectorAll(`[data-${k}]`)].find(x=>x.dataset[k]===v);if(n)n.focus({preventScroll:true})}}
 function update(all=true){keepFocus(()=>update0(all))}
 function update0(all){const n=nActive();ft.textContent=t('filters')+(n?` (${n})`:'');fsum();drawFilters();drawList();if(all)drawMap();writeHash();measureBar()}
-const VC=(()=>{const tags=navigator.languages||[navigator.language];for(const t of tags){const m=/^[a-z]{2,3}-([A-Z]{2})$/i.exec(t||'');if(m)return m[1].toUpperCase()}
+const VC=(()=>{const tags=navigator.languages||[navigator.language],l0=String(tags[0]||'').toLowerCase().split('-')[0];for(const t of tags){const m=/^([a-z]{2,3})-([A-Z]{2})$/i.exec(t||'');if(m&&m[1].toLowerCase()===l0)return m[2].toUpperCase()}  // a region of the visitor's first language only: fr, en-US reads as France, not the United States
  return {fr:'FR',de:'DE',it:'IT',es:'ES',nl:'NL',pl:'PL',pt:'PT',da:'DK',sv:'SE',nb:'NO',no:'NO',fi:'FI',cs:'CZ'}[VL]||''})();
 const here=r=>(VC&&(r.countries||[]).includes(VC))||(VC==='FR'&&r.ships_to_france)?0:1;  // the directory: the visitor's country first in each category (shops that deliver to France count for France), then the usual order
 const crank=r=>{const c=r.countries||[];return (VC&&c.includes(VC))||(VC==='FR'&&r.ships_to_france)?0:c.includes('international')?1:2};
@@ -341,9 +341,9 @@ let mapOpen=location.hash==='#map';MAPD.addEventListener('toggle',()=>{if(MQ.mat
 function barH(){root.style.setProperty('--lead-top',document.querySelector('.bar').offsetHeight+'px')}  // the headings of the lead-in stop under the sticky bar (scroll-padding already counts the header)
 function lead(){const busy=MQ.matches&&!!(st.q.trim()||nActive()||BM);if(INTRO.hidden!==busy){const past=DIRH.getBoundingClientRect().top<0,had=INTRO.contains(document.activeElement);INTRO.hidden=busy;if(past){DIRH.scrollIntoView();fy=scrollY}if(had)LIST.focus({preventScroll:true})}}  // focus left in the lead-in goes to the results
 const STD=document.getElementById('startd'),STH=document.getElementById('start'),JR=document.getElementById('journeys');let stOpen=true;try{stOpen=localStorage.getItem('awl-start')!=='folded'}catch(e){}
-STD.addEventListener('toggle',()=>{if(!MQ.matches)return;stOpen=STD.open;try{if(stOpen)localStorage.removeItem('awl-start');else localStorage.setItem('awl-start','folded')}catch(e){}});  // phones: "Where to start" can be folded, and stays folded on the next visits
+let STAUTO=false;STD.addEventListener('toggle',()=>{if(!MQ.matches||STAUTO){STAUTO=false;return}stOpen=STD.open;try{if(stOpen)localStorage.removeItem('awl-start');else localStorage.setItem('awl-start','folded')}catch(e){}});  // phones: "Where to start" can be folded, and stays folded on the next visits
 function layout(){const m=MQ.matches,all=document.getElementById('all'),parts=[document.getElementById('map'),mg,document.getElementById('mapkey')],a=document.documentElement.classList.contains('ready')?anchor():null;
- if(m){STD.querySelector('summary').append(STH);STD.append(JR);STD.hidden=false;STD.open=stOpen;}else{STD.before(STH,JR);STD.hidden=true}
+ if(m){STD.querySelector('summary').append(STH);STD.append(JR);STD.hidden=false;if(STD.open!==stOpen){STAUTO=true;STD.open=stOpen}}else{STD.before(STH,JR);STD.hidden=true}
  if(m){MAPD.querySelector('summary').append(parts[0]);MAPD.append(parts[1],parts[2]);all.before(MAPD);document.querySelector('.bar').after(INTRO);MAPD.open=mapOpen;barH()}
  else{MAPD.remove();all.before(...parts);DIRH.before(INTRO)}
  DIRH.classList.toggle('vh',m);all.hidden=!m;lead();
