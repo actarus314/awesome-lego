@@ -1,10 +1,11 @@
-# Awesome LEGO — contexte (révisé en place le 26/11/2026 à 23 h 20 ; v4.3 en ligne)
+# Awesome LEGO — contexte (révisé en place le 26/11/2026 à 23 h 30 ; v4.3 en ligne, notes dans `dev/` depuis la #29)
 
 *Maintainer's working notes, in French (state, decisions, pitfalls). The open items are in `dev/registre.md`.*
 
 Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour le Carnet de briques (dépôt actarus314/lego). Dépôt public **actarus314/awesome-lego**, site **https://actarus314.github.io/awesome-lego/** (anglais) et **/fr/**. Ce document porte l'état, les décisions, les pièges et le savoir ; **tout ce qui reste à faire est dans `dev/registre.md`** (identifiants AL-n), les lignes closes dans `dev/registre-clos.md`. Depuis le 26/11/2026 (décision de Romain, 23 h 13), ces notes vivent dans `dev/` du dépôt, en français, contrôlées par `dev/outils/passation.sh` ; avant, dans les documents du projet claude.ai « lego », où le journal détaillé jusqu'à la v4.2 reste gelé (claude/archive/awesome-lego-journal-2026-11-26.md).
 
 ## Savoir
+- Notes du mainteneur dans le dépôt et leurs contrôles (registre, contexte, section « Savoir », carte des fichiers) : `passation.conf`, `dev/outils/passation.sh`, `CLAUDE.md` ; vérifié 26/11/2026
 - Fonctionnement du dépôt, workflows, horaires, tâches du mainteneur : `MAINTENANCE.md` ; vérifié 26/11/2026
 - Règles des données (champs, `audience`, rangs, dates abrégées) : `data/SCHEMA.md` ; règle de sélection : `contributing.md`, `site-src/about.json` ; vérifié 26/11/2026
 - Cahiers des lots 2 et 3, tri des audits du 24/11 : projet claude.ai « lego », claude/awesome-lego-lot-2.md, claude/awesome-lego-lot-3.md, claude/audit-24-11-tri.md ; vérifié 26/11/2026
@@ -61,6 +62,7 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 ## Décisions de Romain (une ligne chacune ; le détail est dans les demandes et l'historique)
 - 26/11, 13 h 18 (demande de la conversation) : bandeau de marque déplié sauf sur mobile ; filtres gardés ouverts après réouverture et action, grand écran seulement ; pertinence et catégories combinées, « je te laisse juger » ; règles à généraliser ; audits automatisés « de sorte que je n'aie plus à y penser » ; passe d'optimisation ; conflits des demandes à expliquer ; workflows encore plus rapides sans perte de qualité ? ; CHANGELOG illisible ; jeton Globalping posé ; propositions de skills ; mise en conformité `passation`. Fait dans la #28 (v4.3) et dans le projet (registre, contexte réécrit, cartes de skills AL-52).
 - 26/11, 23 h 10 et 23 h 13 : notes du mainteneur dans `dev/` du dépôt public, **en français** (l'outil `passation.sh` lit ses colonnes et statuts en français ; exception à « tout le reste en anglais » limitée à `dev/`) ; audit : « je pensais à des gardes-fous et optimisateurs mécaniques » (skill `audit-depot` réécrite en ce sens, enregistrée par Romain) ; question sur la file de fusion (indisponible pour un compte personnel, vérifié dans la documentation de GitHub).
+- 26/11, 23 h 26 : #29 fusionnée (notes dans `dev/`).
 - 26/11, 23 h 04 : #28 fusionnée (v4.3).
 - 26/11, 13 h 03 et 13 h 09 : consigne de la revue mensuelle mise à jour pour la page À propos.
 - 26/11, 12 h 06, 12 h 42, 12 h 54 : #23 (v4.0), #25 (v4.1), #27 (v4.2) fusionnées ; 11 h 42 : #26 (Render accéléré).

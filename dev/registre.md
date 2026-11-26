@@ -20,14 +20,13 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 
 | Lot | Items | Fichiers | Prérequis | Statut |
 |---|---|---|---|---|
-| notes-dev | AL-48, AL-67 | `dev/`, `passation.conf`, `CLAUDE.md`, `REUSE.toml` | — | en cours (26/11 23:15) : demande #29, sans numéro de version |
+| notes-dev | AL-48, AL-67 | `dev/`, `passation.conf`, `CLAUDE.md`, `REUSE.toml` | — | fait 26/11 : demande #29 fusionnée par Romain à 23 h 26 ; arrivé : `dev/contexte.md`, `passation.conf` |
 | gardes-fous | AL-50, AL-58, AL-59, AL-61, AL-64 | `scripts/build.py`, `scripts/check_site.py`, `tests/`, `.github/workflows/check.yml`, `.github/workflows/render.yml` | accord de Romain (AL-50) | proposé : gardes-fous mécaniques de la skill `audit-depot`, question posée le 26/11 à 23 h 10 |
 
 ## Décisions attendues de Romain
 
 | ID | P | Objet | Exécutant | Statut |
 |---|---|---|---|---|
-| AL-48 | P2 | Où vivent contexte, registre et cahiers : tranché par Romain le 26/11 (23 h 10 et 23 h 13) : `dev/` du dépôt public, en français | C | ouverte : lot notes-dev ; après fusion, Romain change la ligne des instructions du projet claude.ai qui dit que claude/awesome-lego.md fait foi |
 | AL-49 | P2 | **Numéro de version et CHANGELOG écrits à la fusion** (un fragment par demande, assemblé après la fusion) pour supprimer les reprises de `VERSION`, `CHANGELOG.md` et des fichiers générés ; exige qu'un workflow écrive sur `main` : l'application de Data fixes ajoutée aux acteurs de contournement du ruleset (réglage de Romain), ou un numéro tiré de l'étiquette sans commit | R | ouverte : à proposer en détail ; en attendant, règle « une demande à la fois » du `CLAUDE.md` du dépôt |
 | AL-50 | P3 | **Gardes-fous mécaniques** (skill `audit-depot`, réécrite le 26/11 sur la demande de Romain : « je pensais à des gardes-fous et optimisateurs mécaniques ») : code mort (`vulture`, `ruff`, couverture CSS, chaînes et champs jamais lus), budgets de poids et de recalcul, barre sur 2 lignes à 320 px, champs à 16 px, `timeout-minutes` et `concurrency`, codes pays et langue ; correcteurs hebdomadaires ; audit Opus trimestriel ; la consigne de la tâche mensuelle du 26/11 (projet claude.ai, claude/awesome-lego-consigne-audit.md) est remplacée | R | ouverte : « Je le fais ? » posé le 26/11 à 23 h 10 ; lot gardes-fous |
 | AL-51 | P3 | Render encore plus court (passage médian ≈ 140 s) : paquets de polices gardés installés directement, sans la résolution de `--with-deps` (10 à 14 s mesurés sur un journal ; polices inchangées, à essayer), contrôles en deux jobs parallèles (25 à 35 s estimés, non essayés) ; aucun contrôle retiré | R | ouverte : proposée le 26/11 |
