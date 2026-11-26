@@ -95,6 +95,7 @@ PROBE = r"""
 # axe reads every node: the directory is narrowed to three categories (134 cards, the richest ones) to keep a run short
 AXE_STATES = [
     ("directory", "#cat=places,events,clubs", "document.querySelectorAll('#list details').forEach(d=>d.open=true)"),
+    ("bar folded, filters open", "#cat=shops", "scrollTo(0,document.getElementById('list').getBoundingClientRect().top+scrollY+400);setTimeout(()=>document.getElementById('ftoggle').click(),100)"),  # the stuck bar folds; its panel opens over the list
     ("lead-in", "", "(document.getElementById('mapd')||{}).open=true;document.getElementById('list').hidden=true"),  # "Where to start" and the map, shown when nothing is asked
     ("table", "#cat=places,events,clubs&view=table", ""),
     ("brand mode", "#q=COBI", ""),
@@ -106,6 +107,7 @@ AXE_STATES = [
 STATES = [
     ("directory", "", "(document.getElementById('mapd')||{}).open=true;document.querySelectorAll('#list details').forEach(d=>d.open=true)"),
     ("table", "#view=table", ""),
+    ("bar folded, filters open", "#cat=shops", "scrollTo(0,document.getElementById('list').getBoundingClientRect().top+scrollY+400);setTimeout(()=>document.getElementById('ftoggle').click(),100)"),  # the stuck bar folds; its panel opens over the list
     ("brand mode", "#q=COBI", ""),
     ("brand mode of LEGO", "#q=LEGO", ""),
     ("observatory", "#observatory", ""),
