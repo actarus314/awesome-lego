@@ -15,7 +15,7 @@ concurrency:
 jobs:
   render:   # not a required check: a path filter would leave a required check pending
     runs-on: ubuntu-latest
-    timeout-minutes: 15   # about 2 minutes in all: a run still going after 15 is stuck
+    timeout-minutes: 20   # about 1.5 minutes in all, 10 on the slowest runs before the fonts were kept
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -27,9 +27,11 @@ jobs:
         with:
           node-version: "26"
           cache: npm
-      - name: Week and runner image (key of the fonts kept between runs)
+      - name: Runner image and week (key of the fonts kept between runs)
         id: week
-        run: echo "key=fonts-${ImageOS:-linux}-$(date -u +%G-%V)" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "prefix=fonts-${ImageOS:-linux}-" >> "$GITHUB_OUTPUT"
+          echo "week=$(date -u +%G-%V)" >> "$GITHUB_OUTPUT"
       # the fonts that Playwright installs for Chromium (21.9 MB) came at 60 kB/s from the Ubuntu mirror on some runs, up to 6 minutes:
       # their packages are kept between runs; apt checks each kept package against its signed index and downloads only what is missing or newer
       - name: Fonts kept by an earlier run
@@ -37,23 +39,30 @@ jobs:
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: ~/fonts
-          key: ${{ steps.week.outputs.key }}-${{ hashFiles('tests/requirements.txt') }}
-          restore-keys: fonts-
+          key: ${{ steps.week.outputs.prefix }}${{ steps.week.outputs.week }}-${{ hashFiles('tests/requirements.txt') }}
+          restore-keys: ${{ steps.week.outputs.prefix }}
       - name: Tools (axe-core from package-lock.json, Playwright, Chromium and its fonts)
+        id: tools
         run: |
           npm ci --ignore-scripts --no-audit --no-fund
           python3 -m pip install --quiet --require-hashes -r tests/requirements.txt
           if compgen -G "$HOME/fonts/*.deb" > /dev/null; then sudo cp "$HOME"/fonts/*.deb /var/cache/apt/archives/; fi
           python3 -m playwright install --with-deps chromium
-          mkdir -p "$HOME/fonts"
-          if compgen -G "/var/cache/apt/archives/*.deb" > /dev/null; then cp /var/cache/apt/archives/*.deb "$HOME/fonts/"; fi
+          # kept for the next runs: the packages of the versions now installed, and no others (older ones would pile up week after week)
+          rm -rf "$HOME/fonts" && mkdir "$HOME/fonts"
+          for f in /var/cache/apt/archives/*.deb; do
+            [ -e "$f" ] || continue
+            pkg=$(dpkg-deb -f "$f" Package) ver=$(dpkg-deb -f "$f" Version)
+            if [ "$(dpkg-query -W -f='${Version}' "$pkg" 2>/dev/null)" = "$ver" ]; then cp "$f" "$HOME/fonts/"; fi
+          done
           ls "$HOME/fonts"
-      - name: Keep the fonts for the next runs (once a week, or when Playwright changes)
-        if: steps.fonts.outputs.cache-hit != 'true'
+          echo "kept=$(find "$HOME/fonts" -name '*.deb' | wc -l)" >> "$GITHUB_OUTPUT"
+      - name: Keep the fonts for the next runs (from main only, once a week or when tests/requirements.txt changes)
+        if: github.ref == 'refs/heads/main' && steps.fonts.outputs.cache-hit != 'true' && steps.tools.outputs.kept != '0'
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: ~/fonts
-          key: ${{ steps.week.outputs.key }}-${{ hashFiles('tests/requirements.txt') }}
+          key: ${{ steps.week.outputs.prefix }}${{ steps.week.outputs.week }}-${{ hashFiles('tests/requirements.txt') }}
       - run: python3 scripts/build.py --site-only
       - name: What changed (a pull request that changes data alone gets the lighter pass)
         id: scope

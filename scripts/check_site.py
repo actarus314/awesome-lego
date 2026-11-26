@@ -142,9 +142,9 @@ def main():
                     "no accessibility pass; colours, controls and landmarks come from the source of the website, not from the data")
     ap.add_argument("--dejavu", action="store_true", help="draw system-ui and sans-serif with DejaVu Sans, as on the Ubuntu runners of GitHub Actions (wider than most desktop fonts)")
     ap.add_argument("--axe", default=str(ROOT / "node_modules" / "axe-core" / "axe.min.js"), help="axe-core build (npm install axe-core)")
-    ap.add_argument("--jobs", type=int, default=os.cpu_count() or 1, help="browsers run side by side (default: one per processor)")
+    ap.add_argument("--jobs", type=int, default=min(8, getattr(os, "process_cpu_count", os.cpu_count)() or 1), help="browsers run side by side (default: one per processor, 8 at most)")
     a = ap.parse_args()
-    from playwright.sync_api import sync_playwright
+    from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
 
     class Quiet(http.server.SimpleHTTPRequestHandler):
         def log_message(self, *x):
@@ -156,7 +156,9 @@ def main():
             except (BrokenPipeError, ConnectionResetError):
                 pass  # the browser closed a page while a file was being sent
     h = functools.partial(Quiet, directory=a.site)
-    srv = socketserver.ThreadingTCPServer(("127.0.0.1", 0), h)
+    class Server(socketserver.ThreadingTCPServer):
+        request_queue_size = 128  # several browsers open their connections at once
+    srv = Server(("127.0.0.1", 0), h)
     threading.Thread(target=srv.serve_forever, daemon=True).start()
     base = f"http://127.0.0.1:{srv.server_address[1]}/"
     widths = [1440, 390, 320] if a.data_only else [1440, 390] if a.quick else [1440, 1024, 768, 390, 320]
@@ -227,16 +229,16 @@ def main():
         record(f"{lang} {w} {theme}", [("script error", "", e[:160]) for e in errs])
         c.close()
 
-    def search(b, lang, root):
+    def search(b, lang, root, word, rid):
         # strengths and weaknesses come from details.json, read after the page; a word found only there must still find its entry
-        word, rid = details_word(Path(a.site), lang)
         c = b.new_context(viewport={"width": 1440, "height": 900}, locale="fr-FR" if lang == "fr" else "en-GB")
         pg = c.new_page()
         pg.goto(base + root)
         pg.wait_for_selector("html.ready", state="attached")
         pg.fill("#q", word)
-        pg.wait_for_timeout(1200)  # details.json read, index rebuilt, results drawn
-        if not pg.query_selector(f"#list #r-{rid}"):
+        try:  # details.json read, index rebuilt, results drawn
+            pg.wait_for_selector(f"#list #r-{rid}", state="attached", timeout=10000)
+        except PlaywrightTimeout:
             record(lang, [("search", "#q", f"'{word}', only in the strengths or weaknesses of {rid}, does not find it")])
         c.close()
 
@@ -275,7 +277,7 @@ def main():
         jobs += [(access, lang, root, w, theme) for lang, root in langs for w in (1440, 390) for theme in ("light", "dark")]
     jobs += [(layout, lang, root, w, theme) for lang, root in langs for w in widths for theme in ("light", "dark")
              if not (theme == "dark" and (a.data_only or w not in (1440, 390)))]  # colours do not depend on the width; layout is checked in light
-    jobs += [(search, lang, root) for lang, root in langs]
+    jobs += [(search, lang, root, *details_word(Path(a.site), lang)) for lang, root in langs]  # in the main thread: its SystemExit must stop the run
     todo = queue.Queue()
     for j in jobs:
         todo.put(j)
@@ -293,8 +295,13 @@ def main():
                         break
                     j[0](b, *j[1:])
                 b.close()
-        except Exception as e:  # noqa: BLE001 (raised again below, in the main thread)
+        except BaseException as e:  # noqa: BLE001 (raised again below, in the main thread; a thread swallows SystemExit)
             errors.append(e)
+            while not todo.empty():  # the run fails: the other threads stop after their current job
+                try:
+                    todo.get_nowait()
+                except queue.Empty:
+                    break
     threads = [threading.Thread(target=worker) for _ in range(max(1, min(a.jobs, len(jobs))))]
     for t in threads:
         t.start()
@@ -304,9 +311,19 @@ def main():
         raise errors[0]
     srv.shutdown()
 
+    states = [n for n, _, _ in STATES + AXE_STATES] + ["vault"]
+
+    def order(where):  # "en 1440 light directory": language, widest first, light first, states in their order
+        t = where.split(" ")
+        w = int(t[1]) if len(t) > 1 and t[1].isdigit() else 0
+        st = " ".join(t[3:])
+        return (t[0], -w, t[2] != "light" if len(t) > 2 else False, states.index(st) if st in states else -1, where)
+
     by = {}
     for (k, where, detail), ctx in found.items():
-        by.setdefault(k, []).append((where, detail, sorted(ctx)))  # the jobs end in any order
+        by.setdefault(k, []).append((where, detail, sorted(ctx, key=order)))
+    for v in by.values():
+        v.sort(key=lambda x: (order(x[2][0]), x[0], x[1]))  # the jobs end in any order: findings and their contexts in the order of the checks
     if a.json:
         Path(a.json).write_text(json.dumps({k: [{"where": w, "detail": d, "seen": c} for w, d, c in v] for k, v in by.items()}, ensure_ascii=False, indent=1))
     for k, v in sorted(by.items()):
