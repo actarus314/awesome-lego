@@ -37,6 +37,7 @@ OUT = ROOT / "data" / "metrics.json"
 UA = "awesome-lego-refresh/1.0 (+https://github.com/actarus314/awesome-lego)"
 TODAY = dt.date.today()
 SITE_DATA = "https://actarus314.github.io/awesome-lego/data.json"
+MAX_BYTES = 2_000_000   # a feed or an API answer read in full is far below; the same cap as scripts/discover_feeds.py
 IDLE_DAYS = 183   # an entry of regime activity is no longer eligible for the selection after 6 months without activity
 LIMIT = 60000   # body of the monthly report: the rest of the issue, trends included, must fit in 65536 characters
 
@@ -50,10 +51,17 @@ def site_metrics():
     return {r["id"]: r["metrics"] for r in rows if r.get("metrics")}
 
 
+class TooLarge(Exception):
+    """An answer longer than MAX_BYTES: cut XML or JSON would only fail to parse, so the report names the cause."""
+
+
 def get(url, headers=None):
     req = urllib.request.Request(url, headers={"User-Agent": UA, **(headers or {})})
     with urllib.request.urlopen(req, timeout=20) as r:
-        return r.read()
+        raw = r.read(MAX_BYTES + 1)   # never the whole of a stream that does not end
+    if len(raw) > MAX_BYTES:
+        raise TooLarge(url)
+    return raw
 
 
 def newest_date(xml_bytes):
