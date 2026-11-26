@@ -2,11 +2,11 @@
 
 *Maintainer's working notes, in French: closed items of `dev/registre.md`.*
 
-Lignes closes de `dev/registre.md`, la plus récente en tête ; un identifiant n'existe qu'une fois sur les deux fichiers. Le détail des lignes closes avant le 26/11/2026 est dans le journal gelé du projet claude.ai « lego » (claude/archive/awesome-lego-journal-2026-11-26.md, section « Ouvert »).
+Lignes closes de `dev/registre.md`, la plus récente en tête ; un identifiant n'existe qu'une fois sur les deux fichiers ; AL-66 n'a jamais été attribué. Le détail des lignes closes avant le 26/11/2026 est dans le journal gelé du projet claude.ai « lego » (claude/archive/awesome-lego-journal-2026-11-26.md, section « Ouvert »).
 
 | ID | P | Objet | Statut |
 |---|---|---|---|
-| AL-56 | P2 | v4.3, demande #28 : marque dépliée, filtres gardés ouverts, résultats par catégorie, passe d'optimisation, CHANGELOG court | fait v4.3 : fusionnée par Romain le 26/11 à 23 h 04 (c912e1f), Release, Check, Render, Pages verts, site vérifié à 23 h 08 |
+| AL-56 | P2 | v4.3, demande #28 : marque dépliée, filtres gardés ouverts, résultats par catégorie, passe d'optimisation, CHANGELOG court | fait v4.3 : fusionnée par Romain le 26/11 à 23 h 04 (c912e1f) ; Release v4.3 créée ; Check, Render, Pages, CodeQL, zizmor verts sur c912e1f ; site servi en v4.3 et aperçu #28 retiré (vérifiés à 23 h 08) |
 | AL-31 | P3 | Façon de travailler (commit direct, demandes avec aperçu, pas de branche `dev`) | fait v4.3 : branche `dev` et déclencheur `delete` des aperçus retirés |
 | AL-33 | P3 | Cartes des skills `document-versionne` et `interface-outil` du 25/11 | fait 26/11 : enregistrées par Romain (vues dans la copie synchronisée) ; les cartes du 26/11 sont AL-52 |
 | AL-47 | P2 | Demande #27 (v4.2, titre des pages À propos) | fait v4.2 |

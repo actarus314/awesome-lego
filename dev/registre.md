@@ -20,7 +20,7 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 
 | Lot | Items | Fichiers | Prérequis | Statut |
 |---|---|---|---|---|
-| notes-dev | AL-48, AL-67 | `dev/`, `passation.conf`, `CLAUDE.md`, `REUSE.toml` | — | en cours (26/11 23:15) : demande sans numéro de version |
+| notes-dev | AL-48, AL-67 | `dev/`, `passation.conf`, `CLAUDE.md`, `REUSE.toml` | — | en cours (26/11 23:15) : demande #29, sans numéro de version |
 | gardes-fous | AL-50, AL-58, AL-59, AL-61, AL-64 | `scripts/build.py`, `scripts/check_site.py`, `tests/`, `.github/workflows/check.yml`, `.github/workflows/render.yml` | accord de Romain (AL-50) | proposé : gardes-fous mécaniques de la skill `audit-depot`, question posée le 26/11 à 23 h 10 |
 
 ## Décisions attendues de Romain
