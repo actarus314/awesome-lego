@@ -147,7 +147,7 @@ How, task by task:
 - Accessibility (axe-core, WCAG 2.2 A and AA) at 1440 and 390 px, both themes: a guard, not a conformance target (the 13 px studs of the map are accepted).
 - First checks itself on `tests/render-fixture.html`, where one sound and one faulty case of each defect are planted. On failure, the findings are kept 7 days as the artefact `render-findings`.
 - A pull request that changes only data and the files generated from it gets a lighter pass (`--data-only`: 1440, 390 and 320 px, light theme, no accessibility; about a fifth of the time of the full checks, measured locally). A push to `main` gets every check.
-- Its jobs (layout and accessibility of each width, theme and language, search) are shared between browsers, one per processor, 8 at most (`--jobs`): about 1.5 minutes for the run, 1 minute of it for the checks.
+- Its jobs (layout and accessibility of each width, theme and language, search) are shared between browsers, one per processor, 8 at most (`--jobs`): 1.5 to 2.5 minutes for the run (2 min 18 s measured on 26 Nov 2026 with the about pages).
 - The font packages Playwright installs are kept between runs (`actions/cache`, saved from `main` only, a new key each week, with each change of `tests/requirements.txt` and with each runner image): the Ubuntu mirror sometimes served them at 60 kB/s.
 - Not a required check (a path filter would leave it pending): its result is read before merging.
 
