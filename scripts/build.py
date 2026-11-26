@@ -691,9 +691,8 @@ def vault():
 BASELINE = "2026-11-23"  # the directory's first day: its entries make one opening item, not 400 separate ones
 FEED_BATCH = 20  # more entries added on one day make one announcement, like the opening (lot 3b)
 FEED_T = {
-    "title": {"en": "Awesome LEGO: new in the directory", "fr": "Awesome LEGO : nouveautés de l'annuaire"},
+    "title": {"en": "Awesome LEGO", "fr": "Awesome LEGO"},  # the feed is named after the website (request of 26/11/2026)
     "new": {"en": "New", "fr": "Nouveau"},
-    "next": {"en": "Next edition", "fr": "Prochaine édition"},
     "open": {"en": "Awesome LEGO opens with {n} resources", "fr": "Awesome LEGO ouvre avec {n} ressources"},
     "batch": {"en": "{n} resources added to the directory", "fr": "{n} ressources ajoutées à l'annuaire"},
     "batch_body": {"en": "Added on {date}, each checked at its source: {cats}.", "fr": "Ajoutées le {date}, chacune vérifiée à sa source : {cats}."},
@@ -725,9 +724,8 @@ def in_letters(iso, lang):
 
 
 def content_feed(cats, lang):
-    """What readers follow: entries added to the directory and announced editions of events, in one language."""
+    """What readers follow: entries added to the directory, in one language (no event dates: the calendar was removed in v3.0)."""
     site = PAGES + ("fr/" if lang == "fr" else "")
-    today = dt.date.today().isoformat()
     items, base, days = [], 0, {}
     for c in cats:
         for r in c["resources"]:
@@ -741,11 +739,6 @@ def content_feed(cats, lang):
                 base += 1
             elif len(days[str(r["added"])]) <= FEED_BATCH:
                 items.append((f"{site}#added-{r['id']}", f"{FEED_T['new'][lang]} · {cname} · {r['name']}", link, str(r["added"]), text(r, "summary", lang)))
-            if r.get("next_date") and str(r["next_date"]) >= today:
-                city = r.get("city_fr") if lang == "fr" and r.get("city_fr") else r.get("city")
-                where = f" · {city}" if city else ""
-                items.append((f"{site}#next-{r['id']}-{r['next_date']}", f"{FEED_T['next'][lang]} · {r['name']} · {in_letters(str(r['next_date']), lang)}{where}",
-                              link, str(r["checked"]), text(r, "summary", lang)))
     for day, names in days.items():
         if len(names) > FEED_BATCH:
             per = ", ".join(f"{n} {sum(1 for x in names if x == n)}" for n in dict.fromkeys(names))
