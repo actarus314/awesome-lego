@@ -2,7 +2,7 @@
   "name": "awesome-lego-checks",
   "private": true,
   "description": "Tools of the checks (README lint, accessibility of the website) and third-party files the website keeps (MiniSearch, fonts), copied by scripts/vendor.py; the website itself needs no build step from npm.",
-  "license": "UNLICENSED",
+  "license": "PolyForm-Noncommercial-1.0.0",
   "devDependencies": {
     "@fontsource-variable/nunito": "5.3.0",
     "@fontsource/press-start-2p": "5.3.0",
