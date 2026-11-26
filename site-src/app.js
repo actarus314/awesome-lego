@@ -262,7 +262,7 @@ const VIEWS={dir:document.getElementById('view-dir'),obs:document.getElementById
 const viewOf=h=>(h==='#observatory'||h==='#findings')?'obs':'dir';  // #findings: address of the former "Findings" view
 const OUT=/^#(out|agenda|near-me)$/;  // addresses of the former "Out and about" view: "Where to start" now points to the calendars, clubs and places
 function show(view,first){const was=cur;cur=view;if(view==='dir')requestAnimationFrame(()=>measureBar());document.title=view==='dir'?TITLE0:t('nav_'+view)+' · '+TITLE0;Object.entries(VIEWS).forEach(([k,el])=>el.hidden=k!==view);document.querySelectorAll('nav.tabs a').forEach(a=>{if(a.dataset.view===view)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
- if(view==='obs'){if(!drawn)drawInsights();else{vPulse();vPassion()}}const sec=view==='dir'&&(first?OUT0:OUT.test(location.hash))?document.getElementById('start'):null;if(sec){if(MQ.matches)barH();sec.scrollIntoView()}else if(!first&&was!==view)scrollTo({top:0})}  // no forced layout on the first display
+ if(view==='obs'){if(!drawn)drawInsights();else{vPulse();vPassion()}}const sec=view==='dir'&&(first?OUT0:OUT.test(location.hash))?document.getElementById('start'):null;if(sec){if(MQ.matches){barH();STD.open=true}sec.scrollIntoView()}else if(!first&&was!==view)scrollTo({top:0})}  // no forced layout on the first display
 document.getElementById('skip').onclick=e=>{e.preventDefault();toDir();const q=document.getElementById('q');q.scrollIntoView({block:'center'});q.focus()};
 document.querySelector('nav.tabs a[data-view=obs]').addEventListener('click',saveY);
 document.querySelector('nav.tabs a[data-view=dir]').onclick=e=>{e.preventDefault();go(()=>{toDir();writeHash()});if(MQ.matches)scrollTo({top:0,behavior:SMOOTH()});else document.getElementById('map').scrollIntoView({behavior:SMOOTH()})};
@@ -340,7 +340,10 @@ const LIST=document.getElementById('list');LIST.tabIndex=-1;
 let mapOpen=location.hash==='#map';MAPD.addEventListener('toggle',()=>{if(MQ.matches)mapOpen=MAPD.open});  // a link to the map opens it; the visitor's choice survives a turn of the phone
 function barH(){root.style.setProperty('--lead-top',document.querySelector('.bar').offsetHeight+'px')}  // the headings of the lead-in stop under the sticky bar (scroll-padding already counts the header)
 function lead(){const busy=MQ.matches&&!!(st.q.trim()||nActive()||BM);if(INTRO.hidden!==busy){const past=DIRH.getBoundingClientRect().top<0,had=INTRO.contains(document.activeElement);INTRO.hidden=busy;if(past){DIRH.scrollIntoView();fy=scrollY}if(had)LIST.focus({preventScroll:true})}}  // focus left in the lead-in goes to the results
+const STD=document.getElementById('startd'),STH=document.getElementById('start'),JR=document.getElementById('journeys');let stOpen=true;try{stOpen=localStorage.getItem('awl-start')!=='folded'}catch(e){}
+STD.addEventListener('toggle',()=>{if(!MQ.matches)return;stOpen=STD.open;try{if(stOpen)localStorage.removeItem('awl-start');else localStorage.setItem('awl-start','folded')}catch(e){}});  // phones: "Where to start" can be folded, and stays folded on the next visits
 function layout(){const m=MQ.matches,all=document.getElementById('all'),parts=[document.getElementById('map'),mg,document.getElementById('mapkey')],a=document.documentElement.classList.contains('ready')?anchor():null;
+ if(m){STD.querySelector('summary').append(STH);STD.append(JR);STD.hidden=false;STD.open=stOpen;}else{STD.before(STH,JR);STD.hidden=true}
  if(m){MAPD.querySelector('summary').append(parts[0]);MAPD.append(parts[1],parts[2]);all.before(MAPD);document.querySelector('.bar').after(INTRO);MAPD.open=mapOpen;barH()}
  else{MAPD.remove();all.before(...parts);DIRH.before(INTRO)}
  DIRH.classList.toggle('vh',m);all.hidden=!m;lead();
