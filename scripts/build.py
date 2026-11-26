@@ -2,7 +2,7 @@
 """Validate data/*.toml, write README.md (the rank 1 worldwide of each group) and full-list.md
 (every entry), and build the bilingual GitHub Pages site (site/).
 
-Usage: python3 scripts/build.py [--check | --site-only] [--notes]   (standard library only, latest Python release)
+Usage: python3 scripts/build.py [--check | --site-only]   (standard library only, latest Python release)
 """
 import base64
 import datetime as dt
@@ -40,8 +40,6 @@ UNITS = {"sets", "brands", "members", "topics", "posts", "subscribers", "videos"
          "square-metres", "bricks", "parks", "minifigures", "parts", "products", "shops", "ads", "visitors", "exhibitors",
          "models", "articles", "countries", "events", "clubs", "communities", "instructions", "reviews", "followers", "editions"}
 APPROX = {"about", "more-than", "at-least"}
-# Rules of lot 3 (writing, access, sizes, ranks): errors since the content was converted in lot 3b; False turns them into warnings.
-NEW_RULES_BLOCKING = True
 STATUS = {"active", "slow", "inactive", "archived", "dead"}
 CARD_LABEL = 17  # characters of a group label on a card, beside the entry's name, on one line down to 320 px
 REGIMES = {"activity", "work", "operating"}  # what keeps an entry current: recent activity, nothing (a finished work), being open
@@ -63,8 +61,6 @@ T = {  # interface strings
     "contrib_text": {"en": "Additions and corrections are welcome: read [how the directory is made and what gets in](https://actarus314.github.io/awesome-lego/about/), then [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them."},
     "site_fr": {"en": "French version of the website", "fr": "Version française du site"},
     "site": {"en": "Explore the website: every resource, with search, filters and a map", "fr": "Explorer le site : toutes les ressources, avec recherche, filtres et carte"},
-    "updated": {"en": "Updated", "fr": "Mis à jour"},
-    "resources": {"en": "resources", "fr": "ressources"},
 }
 
 
@@ -239,7 +235,7 @@ def load():
     return cats, errors
 
 
-notes = []  # breaches of the rules of writing of v3.0 (errors while NEW_RULES_BLOCKING)
+notes = []  # breaches of the rules of lot 3 (writing, access, sizes, ranks): they fail the build
 untranslated = []  # entries proposed in English only: warned, never refused; the monthly review adds the French texts
 
 
@@ -266,7 +262,7 @@ STOP = {"and", "the", "of", "for", "with", "official", "lego", "other", "brands"
 
 
 def text_notes(cats):
-    """Writing rules of lot 3 on the texts of the entries (errors while NEW_RULES_BLOCKING)."""
+    """Writing rules of lot 3 on the texts of the entries (breaches go to notes)."""
     for c in cats:
         cid = c["category"]["id"]
         gname = {(g["id"], lang): g["name_" + lang] for g in c["category"].get("groups", []) for lang in LANGS}
@@ -366,7 +362,7 @@ MORE = {"readme": {"en": "Only the best of each group is listed here. The [full 
         "full": {"en": "Every resource, including inactive and dead ones, generated from [`data/`](data/). The selection of the best is in the [README](README.md)."}}
 
 
-def readme(cats, m, lang, kind="readme"):
+def readme(cats, lang, kind="readme"):
     title = T["title"][lang] if kind == "readme" else "Awesome LEGO: full list"
     badge = " [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)" if kind == "readme" else ""
     keep = picked if kind == "readme" else (lambda r: True)
@@ -467,7 +463,7 @@ def site_data(cats, m):
             row["featured"] = picked(r)  # the selection: rank 1 worldwide of its group (★, filter, README)
             ctx = access_context(cat["id"], r["group"])
             row["access"] = f"{ctx}_{r['access']}" if r.get("access") in ACCESS_BY.get(ctx, set()) else None  # label of strings.json
-            row["operator"] = lego_operator(r)
+            row["operator"] = r.get("operator")  # sites and places of the LEGO Group (lego-group) or under the LEGO brand by a partner (licensee)
             row["same"] = same.get(host(r["url"]), [])
             if cat["id"] == "brands":  # logo of the brand, from its official site (media/logos/, licence apart in REUSE.toml)
                 row["logo"] = next((f"media/logos/{r['id']}.{x}" for x in ("svg", "png") if (ROOT / "media" / "logos" / f"{r['id']}.{x}").exists()), None)
@@ -538,12 +534,6 @@ PLATFORMS = re.compile(r"(^|\.)(youtube\.com|youtu\.be|reddit\.com|github\.com|s
 
 def host(url):
     return re.sub(r"^www\.", "", re.sub(r"^https?://", "", url).split("/")[0].lower())
-
-
-def lego_operator(r):
-    """Sites and places of the LEGO Group (lego-group) or under the LEGO brand by a partner (licensee): the `operator`
-    field."""
-    return r.get("operator")
 
 
 def picked(r):
@@ -839,22 +829,9 @@ def check_docs():
 
 
 def report_notes():
-    """The breaches of the rules of lot 3: counted by rule, listed with --notes; errors once NEW_RULES_BLOCKING."""
-    if NEW_RULES_BLOCKING and notes:
+    """The breaches of the rules of lot 3 fail the build."""
+    if notes:
         fail(notes)
-    if not notes:
-        return
-    kinds = {}
-    for n in notes:
-        k = re.sub(r"^[\w.-]+\.toml: [\w-]+: |^[^:]+: ", "", n)
-        k = re.sub(r"'[^']*'|\"[^\"]*\"|«[^»]*»|\([^)]*\)|\[[^\]]*\]|\d+|^[\w-]+: ", "…", k)[:90]
-        kinds[k] = kinds.get(k, 0) + 1
-    print(f"! {len(notes)} breaches of the rules of lot 3, warnings while NEW_RULES_BLOCKING is False (python3 scripts/build.py --notes lists them):")
-    for k, n in sorted(kinds.items(), key=lambda x: -x[1]):
-        print(f"   {n:4} {k}")
-    if "--notes" in sys.argv:
-        for n in notes:
-            print("  !", n)
 
 
 CHANGELOG_MAX = 550  # rule of a changelog entry: about 250 characters, 550 at most when dense with facts
@@ -878,7 +855,7 @@ def main():
         fail([f"CHANGELOG.md entry longer than {CHANGELOG_MAX} characters ({x}): say what changes in two sentences" for x in long])
     for w in check_readme_images(version) if "--check" in sys.argv else []:  # a warning, never an error: decision of 25/11/2026
         print("! " + w)
-    texts = {f: readme(cats, m, lang, kind) for (kind, lang), f in FILES.items()}
+    texts = {f: readme(cats, lang, kind) for (kind, lang), f in FILES.items()}
     texts[".github/ISSUE_TEMPLATE/add-resource.yml"] = issue_form(cats)
     print(f"✓ v{version}: {sum(len(c['resources']) for c in cats)} resources in {len(cats)} categories")
     if untranslated:  # a warning, never an error: contributions come in English only

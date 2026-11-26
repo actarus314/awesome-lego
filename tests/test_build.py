@@ -419,7 +419,7 @@ class Selection(unittest.TestCase):
         """The selection: the rank 1 worldwide of each group (lot 3b); `featured` is refused."""
         with contextlib.redirect_stdout(io.StringIO()):
             cats, _ = build.load()
-        text = build.readme(cats, {}, "en")
+        text = build.readme(cats, "en")
         ones = [r for c in cats for r in c["resources"] if (r.get("rank") or {}).get("intl") == 1]
         self.assertEqual(len([l for l in text.splitlines() if l.startswith("- [") and "](http" in l]), len({r["url"] for r in ones}))  # a brand and its shop share one line
         self.assertEqual(len(ones), sum(len(c["category"]["groups"]) for c in cats))
@@ -427,9 +427,13 @@ class Selection(unittest.TestCase):
 
 
 class Lot3Checks(unittest.TestCase):
-    def test_lego_operator_from_the_field(self):
-        self.assertEqual(build.lego_operator({"url": "https://www.lego.com/fr-fr"}), None)  # the address no longer says it (lot 3b)
-        self.assertEqual(build.lego_operator({"url": "https://example.org/", "operator": "licensee"}), "licensee")
+    def test_operator_from_the_field(self):
+        with contextlib.redirect_stdout(io.StringIO()):
+            cats, _ = build.load()
+            rows = {r["id"]: r for r in build.site_data(cats, {})["resources"]}
+        self.assertEqual(rows["lego-house"]["operator"], "lego-group")
+        self.assertEqual(rows["libraries-ni-lego-club"]["operator"], "licensee")
+        self.assertIsNone(rows["jangbricks"]["operator"])
 
     def test_french_card_text(self):
         def planted(t):
