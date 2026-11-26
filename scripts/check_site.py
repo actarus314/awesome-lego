@@ -95,6 +95,7 @@ PROBE = r"""
 # axe reads every node: the directory is narrowed to three categories (134 cards, the richest ones) to keep a run short
 AXE_STATES = [
     ("directory", "#cat=places,events,clubs", "document.querySelectorAll('#list details').forEach(d=>d.open=true)"),
+    ("lead-in", "", "(document.getElementById('mapd')||{}).open=true;document.getElementById('list').hidden=true"),  # "Where to start" and the map, shown when nothing is asked
     ("table", "#cat=places,events,clubs&view=table", ""),
     ("brand mode", "#q=COBI", ""),
     ("brand mode of LEGO", "#q=LEGO", ""),
@@ -103,7 +104,7 @@ AXE_STATES = [
      "(()=>{const want=matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark',tb=document.getElementById('theme');for(let i=0;i<3&&document.documentElement.dataset.theme!==want;i++)tb.click()})()"),
 ]
 STATES = [
-    ("directory", "#map", "document.querySelectorAll('#list details').forEach(d=>d.open=true)"),
+    ("directory", "", "(document.getElementById('mapd')||{}).open=true;document.querySelectorAll('#list details').forEach(d=>d.open=true)"),
     ("table", "#view=table", ""),
     ("brand mode", "#q=COBI", ""),
     ("brand mode of LEGO", "#q=LEGO", ""),

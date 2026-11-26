@@ -34,6 +34,10 @@ nav.tabs a[aria-current=page]{color:var(--fg);box-shadow:inset 0 -2px 0 var(--hi
 .label,.kpi span{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
 h2{font-size:22px;margin:44px 0 6px;letter-spacing:-.01em;border-left:4px solid var(--hi);padding-left:.7rem}
 .lead{color:var(--muted);margin:0 0 16px}
+@media (max-width:640px){#directory+.bar{margin-top:18px}#start{margin-top:28px}#start,#mapd,#all{scroll-margin-top:var(--lead-top,110px)}}
+.mapd{border:0;padding:0}.mapd>summary{list-style:none;color:var(--fg);font-size:inherit;font-weight:inherit;width:max-content;max-width:100%}.mapd>summary::-webkit-details-marker{display:none}
+.mapd>summary h2{display:inline-block;margin-bottom:6px}.mapd>summary h2::after{content:"";display:inline-block;margin-left:.5em;vertical-align:.08em;border:.3em solid transparent;border-left:.42em solid var(--muted);border-right:0}.mapd[open]>summary h2::after{vertical-align:-.05em;border:.3em solid transparent;border-top:.42em solid var(--muted);border-bottom:0}  /* the same triangle as the other folds of the site, drawn without a transform */
+.mapd>summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:4px}.mapd[open]{margin-bottom:8px}
 .map{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
 .tile{grid-column:span var(--span,3);background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:8px;cursor:pointer;min-height:120px}
 .tile:hover,.tile.on{border-color:var(--accent)}.tile.on{box-shadow:0 0 0 2px var(--accent) inset}

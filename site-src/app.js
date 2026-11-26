@@ -26,8 +26,9 @@ const getT=()=>{try{return localStorage.getItem('theme')||'auto'}catch(e){return
 const setT=v=>{if(v==='auto')delete root.dataset.theme;else root.dataset.theme=v;if(drawn)vBrands();tb.innerHTML=lab[v];tb.setAttribute('aria-label',tname[v][L]);try{localStorage.setItem('theme',v)}catch(e){}};
 const LB=document.getElementById('langbtn'),LB0=LB.getAttribute('href');
 LB.onclick=()=>{try{localStorage.setItem('lang',L==='fr'?'en':'fr')}catch(e){}LB.href=LB0+location.hash;  // the other language opens where the visitor is: same view, search and filters
- const top=hdr()+(document.querySelector('.bar')&&!document.getElementById('view-dir').hidden?document.querySelector('.bar').offsetHeight:0),ids=[...document.querySelectorAll('main [id]')].filter(e=>!e.querySelector('[id]')&&e.offsetParent&&!e.closest('.bar')),el=ids.find(e=>e.getBoundingClientRect().top>=top-2)||ids.find(e=>e.getBoundingClientRect().bottom>top);
- try{if(el&&scrollY>0)sessionStorage.setItem('langpos',JSON.stringify({id:el.id,dy:Math.round(el.getBoundingClientRect().top)}))}catch(e){}};  // and at the same place on the page: the first element in view
+ const a=anchor();try{if(a&&scrollY>0)sessionStorage.setItem('langpos',JSON.stringify({...a,map:MQ.matches&&MAPD.open}))}catch(e){}};  // and at the same place on the page: the first element in view, the map open if it was
+function anchor(){const top=hdr()+(document.querySelector('.bar')&&!document.getElementById('view-dir').hidden?document.querySelector('.bar').offsetHeight:0),ids=[...document.querySelectorAll('main [id]')].filter(e=>!e.querySelector('[id]')&&e.offsetParent&&!e.closest('.bar')),el=ids.find(e=>{const r=e.getBoundingClientRect();return r.top<=top+2&&r.bottom>top+40})||ids.find(e=>e.getBoundingClientRect().top>=top-2);
+ return el?{id:el.id,dy:Math.round(el.getBoundingClientRect().top)}:null}  // the element across the top of the view under the header and the bar (a tall map, a card), else the first one below
 setT(getT());tb.onclick=()=>{const o=['auto','light','dark'];setT(o[(o.indexOf(getT())+1)%3])};
 // external links in a new tab or not: one setting for the whole page, kept by this browser (request of 25/11/2026)
 const nb=document.getElementById('newtab'),getN=()=>{try{return localStorage.getItem('newtab')==='1'}catch(e){return false}};
@@ -62,7 +63,7 @@ const index=()=>{if(ms)return ms;ms=new MiniSearch({fields:['name','summary','st
  covers:[...(r.covers||[]).map(t),...(r.audience||[]).map(a=>t('aud_'+a)+' '+t('aud_'+a+'_kw'))].join(' '),countries:(r.countries||[]).map(cname).join(' '),city:[r.city,r.city_fr,r.city_local].filter(Boolean).join(' '),size:sizeOf(r),brands:(r.brands||[]).map(brandName).join(' '),cat:[catName(r.cat),((C.find(c=>c.id===r.cat)||{groups:[]}).groups.find(g=>g.id===r.group)||{})[L]||'',KW[r.cat]||''].join(' ')})));return ms};
 const KW={shops:'shop store magasin boutique',places:'visit visite',events:'event exhibition show salon exposition',clubs:'club association',comparators:'price prix'};  // everyday words the texts may not use
 const st={cat:new Set(),cov:new Set(),langs:new Set(),active:false,featured:false,kids:false,adults:false,country:'',q:'',view:'cards',sort:null};
-let BM='';  // brand mode: the query is exactly a brand's name or other name
+let BM='',fy=0;  // brand mode: the query is exactly a brand's name or other name
 const BNAME=new Map(BRANDS.flatMap(b=>[b.name,...b.aka].map(n=>[fold(n),b.id])));
 const BN=Object.fromEntries(BRANDS.map(b=>[b.id,R.filter(r=>linked(r,b.id)).length]));
 const CTRY=Object.entries(R.flatMap(r=>(r.countries||[]).filter(c=>c!=='international')).reduce((a,c)=>(a[c]=(a[c]||0)+1,a),{})).sort((a,b)=>b[1]-a[1]||cname(a[0]).localeCompare(cname(b[0])));
@@ -133,6 +134,7 @@ document.getElementById('viewsw').onclick=e=>{const b=e.target.closest('[data-v]
 const MISS0=document.getElementById('top').dataset.add,missUrl=n=>{const s=st.q.trim().slice(0,100);return s&&!n?MISS0+'&title='+encodeURIComponent('Add: '+s):MISS0};  // the title only when nothing matches (a search with results names something already there), 100 characters at most (GitHub refuses a very long address)
 const missLine=n=>`<p class="missl"><a class="miss" href="${esc(missUrl(n))}">${t('suggest')}</a></p>`;
 function drawList(){const rs=R.filter(r=>match(r)),n=rs.length;
+ lead();
  document.getElementById('count').innerHTML=rs.length+' / '+R.length+'<span class="cw"> '+t('shown')+'</span>';const list=document.getElementById('list');
  document.querySelectorAll('#viewsw [data-v]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===st.view));
  if(!rs.length){list.innerHTML=(BM?banner(R.find(r=>r.id===BM),BRANDS.find(x=>x.id===BM),rs):'')+`<div class="empty">${t('none')}${missLine(n)}</div>`;return}
@@ -251,20 +253,20 @@ function vPassion(){const el=document.getElementById('v-passion'),P=D.passion;if
  el.onclick=e=>{const p=e.target.closest('[data-c]');if(!p)return;toDir();resetAll();st.country=p.dataset.c;update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()})}}
 var drawn=false;matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{if(drawn)vBrands()});  // colours chosen by contrast are chosen again
 function drawInsights(){vPassion();vMakers();vBrands();vPulse();drawn=true}
-let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{hdr();if(cur==='obs'){vPulse();vPassion()}},150)});
+let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{hdr();if(MQ.matches)barH();if(cur==='obs'){vPulse();vPassion()}},150)});
 // two views: directory, observatory; the address keeps the view
 const VIEWS={dir:document.getElementById('view-dir'),obs:document.getElementById('view-obs')};let cur='dir';
 const viewOf=h=>(h==='#observatory'||h==='#findings')?'obs':'dir';  // #findings: address of the former "Findings" view
 const OUT=/^#(out|agenda|near-me)$/;  // addresses of the former "Out and about" view: "Where to start" now points to the calendars, clubs and places
 function show(view,first){const was=cur;cur=view;document.title=view==='dir'?TITLE0:t('nav_'+view)+' · '+TITLE0;Object.entries(VIEWS).forEach(([k,el])=>el.hidden=k!==view);document.querySelectorAll('nav.tabs a').forEach(a=>{if(a.dataset.view===view)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
- if(view==='obs'){if(!drawn)drawInsights();else{vPulse();vPassion()}}const sec=view==='dir'&&(first?OUT0:OUT.test(location.hash))?document.getElementById('start'):null;if(sec)sec.scrollIntoView();else if(!first&&was!==view)scrollTo({top:0})}  // no forced layout on the first display
+ if(view==='obs'){if(!drawn)drawInsights();else{vPulse();vPassion()}}const sec=view==='dir'&&(first?OUT0:OUT.test(location.hash))?document.getElementById('start'):null;if(sec){if(MQ.matches)barH();sec.scrollIntoView()}else if(!first&&was!==view)scrollTo({top:0})}  // no forced layout on the first display
 document.getElementById('skip').onclick=e=>{e.preventDefault();toDir();const q=document.getElementById('q');q.scrollIntoView({block:'center'});q.focus()};
-document.querySelector('nav.tabs a[data-view=dir]').onclick=e=>{e.preventDefault();toDir();writeHash();document.getElementById('map').scrollIntoView({behavior:SMOOTH()})};
+document.querySelector('nav.tabs a[data-view=dir]').onclick=e=>{e.preventDefault();toDir();writeHash();if(MQ.matches)scrollTo({top:0,behavior:SMOOTH()});else document.getElementById('map').scrollIntoView({behavior:SMOOTH()})};
 addEventListener('hashchange',()=>{const v=viewOf(location.hash);if(v!=='dir'||cur!=='dir'||OUT.test(location.hash))show(v)});
 function writeHash(){if(cur!=='dir')return;document.title=TITLE0;setTimeout(()=>{LB.href=LB0+location.hash});const p=new URLSearchParams();if(st.q.trim())p.set('q',st.q.trim());if(st.cat.size)p.set('cat',[...st.cat].join(','));if(st.cov.size)p.set('scope',[...st.cov].join(','));const cr=['featured','active','kids','adults'].filter(k=>st[k]);if(cr.length)p.set('crit',cr.join(','));if(st.langs.size)p.set('lang',[...st.langs].join(','));if(st.country)p.set('country',st.country);if(st.view!=='cards')p.set('view',st.view);const h=p.toString();history.replaceState(null,'',h?'#'+h:location.pathname+location.search)}
 function readHash(){const h=location.hash.slice(1);if(!h||viewOf(location.hash)!=='dir')return;const p=new URLSearchParams(h);(p.get('cat')||'').split(',').filter(Boolean).forEach(c=>st.cat.add(c));(p.get('scope')||'').split(',').filter(Boolean).forEach(c=>st.cov.add(c));(p.get('crit')||'').split(',').forEach(k=>{if(k==='fr')st.langs.add('fr');else if(k in st&&typeof st[k]==='boolean')st[k]=true});(p.get('lang')||'').split(',').filter(Boolean).forEach(l=>st.langs.add(l));if(p.get('country'))st.country=p.get('country');if(p.get('view')==='table')st.view='table';if(p.get('q'))setQuery(p.get('q'))}
 const ft=document.getElementById('ftoggle'),bar=document.querySelector('.bar');
-let fy=0;const fOpen=o=>{bar.classList.toggle('open',o);ft.setAttribute('aria-expanded',o);fy=scrollY};ft.onclick=()=>fOpen(!bar.classList.contains('open'));
+const fOpen=o=>{bar.classList.toggle('open',o);ft.setAttribute('aria-expanded',o);fy=scrollY};ft.onclick=()=>fOpen(!bar.classList.contains('open'));
 bar.addEventListener('click',()=>{fy=scrollY});
 addEventListener('scroll',()=>{if(st.view==='table'){const y=Math.round(bar.getBoundingClientRect().bottom);if(y>0)root.style.setProperty('--bar-h',y+'px')}},{passive:true});  // the header row of the table sits right under the bar, whatever its height  // a filter chosen can move the page: the panel closes only when the visitor scrolls on
 addEventListener('scroll',()=>{if(bar.classList.contains('open')&&Math.abs(scrollY-fy)>48&&!bar.contains(document.activeElement&&document.activeElement.tagName==='SELECT'?document.activeElement:null))fOpen(false)},{passive:true});  // on a phone, the panel of filters folds when the visitor scrolls through the results
@@ -320,8 +322,23 @@ function drawNeeds(){document.getElementById('journeys').innerHTML=(D.journeys||
 drawNeeds();
 document.getElementById('journeys').onclick=e=>{const a=e.target.closest('a');if(!a)return;e.preventDefault();if(a.dataset.go)openEntry(a.dataset.go);else if(a.dataset.brand)brandMode(a.dataset.brand);else if(a.dataset.cat||a.dataset.crit){resetAll();if(a.dataset.cat)st.cat.add(a.dataset.cat);else st[a.dataset.crit]=true;update();document.getElementById('directory').scrollIntoView({behavior:SMOOTH()})}};
 const landing=new URLSearchParams(location.hash.slice(1)).get('entry');  // #entry=<id>: a link to one entry (feed, outside pages)
-const v0=viewOf(location.hash),OUT0=OUT.test(location.hash);cur=v0;readHash();update();show(v0,true);if(landing)openEntry(landing);document.documentElement.classList.add('ready');
-try{const p=JSON.parse(sessionStorage.getItem('langpos')||'null');sessionStorage.removeItem('langpos');const el=p&&document.getElementById(p.id);if(el&&!landing){let stop=false;const halt=()=>{stop=true};['wheel','touchstart','keydown'].forEach(k=>addEventListener(k,halt,{once:true,passive:true}));const t0=Date.now(),fix=()=>{if(stop||Date.now()-t0>2500)return;const d=el.getBoundingClientRect().top-p.dy;if(Math.abs(d)>1)scrollBy(0,d);requestAnimationFrame(fix)};fix()}}catch(e){}  // again as the cards and charts above get their real height
+// phones: the search bar comes right after the title, then "Where to start" and the map, folded, as a lead-in to "All resources";
+// a search, a filter or a brand puts the results right under the bar, without the lead-in. Wide screens keep "Where to start" and the open map above the directory.
+const MQ=matchMedia('(max-width:640px)'),INTRO=document.getElementById('intro'),MAPD=document.getElementById('mapd'),DIRH=document.getElementById('directory');
+const LIST=document.getElementById('list');LIST.tabIndex=-1;
+let mapOpen=location.hash==='#map';MAPD.addEventListener('toggle',()=>{if(MQ.matches)mapOpen=MAPD.open});  // a link to the map opens it; the visitor's choice survives a turn of the phone
+function barH(){root.style.setProperty('--lead-top',document.querySelector('.bar').offsetHeight+'px')}  // the headings of the lead-in stop under the sticky bar (scroll-padding already counts the header)
+function lead(){const busy=MQ.matches&&!!(st.q.trim()||nActive()||BM);if(INTRO.hidden!==busy){const past=DIRH.getBoundingClientRect().top<0,had=INTRO.contains(document.activeElement);INTRO.hidden=busy;if(past){DIRH.scrollIntoView();fy=scrollY}if(had)LIST.focus({preventScroll:true})}}  // focus left in the lead-in goes to the results
+function layout(){const m=MQ.matches,all=document.getElementById('all'),parts=[document.getElementById('map'),mg,document.getElementById('mapkey')],a=document.documentElement.classList.contains('ready')?anchor():null;
+ if(m){MAPD.querySelector('summary').append(parts[0]);MAPD.append(parts[1],parts[2]);all.before(MAPD);document.querySelector('.bar').after(INTRO);MAPD.open=mapOpen;barH()}
+ else{MAPD.remove();all.before(...parts);DIRH.before(INTRO)}
+ DIRH.classList.toggle('vh',m);all.hidden=!m;lead();
+ const el=a&&document.getElementById(a.id);if(el&&el.offsetParent)scrollBy(0,el.getBoundingClientRect().top-a.dy)}  // a turn of the phone keeps the same element in view
+layout();MQ.addEventListener('change',layout);
+function toMap(){const t=MQ.matches?MAPD:document.getElementById('map');if(MQ.matches){MAPD.open=mapOpen=true;barH()}t.scrollIntoView()}
+addEventListener('hashchange',()=>{if(location.hash==='#map')toMap()});
+const v0=viewOf(location.hash),OUT0=OUT.test(location.hash);cur=v0;readHash();update();show(v0,true);if(landing)openEntry(landing);document.documentElement.classList.add('ready');if(location.hash==='#map')requestAnimationFrame(toMap);
+try{const p=JSON.parse(sessionStorage.getItem('langpos')||'null');sessionStorage.removeItem('langpos');if(p&&p.map&&MQ.matches)MAPD.open=mapOpen=true;const el=p&&document.getElementById(p.id);if(el&&!landing){let stop=false;const halt=()=>{stop=true};['wheel','touchstart','keydown'].forEach(k=>addEventListener(k,halt,{once:true,passive:true}));const t0=Date.now(),fix=()=>{if(stop||Date.now()-t0>2500)return;const d=el.getBoundingClientRect().top-p.dy;if(Math.abs(d)>1)scrollBy(0,d);requestAnimationFrame(fix)};fix()}}catch(e){}  // again as the cards and charts above get their real height
 q.addEventListener('focus',()=>{det();index()},{once:true});
 (window.requestIdleCallback||(f=>setTimeout(f,1500)))(()=>det());  // the search index is built when the search field is first used
 })();
