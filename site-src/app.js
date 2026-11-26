@@ -207,7 +207,7 @@ function vBrands(){const el=document.getElementById('v-brands');
 function vPulse(){const RA=R.filter(r=>r.regime==='activity');  // finished works and places open or closed are not measured by their posts
 const el=document.getElementById('v-pulse');const cats=C.map(c=>c.id),today=new Date(D.built),from=new Date(today);from.setMonth(from.getMonth()-24);
  const six=new Date(today);six.setMonth(six.getMonth()-6);
- const W=Math.max(300,el.clientWidth-40),lw=Math.min(170,W*.36),cut=v=>v.length*7.6>lw?v.slice(0,Math.max(4,Math.floor(lw/7.6)-1))+'…':v,x0=lw+14,x1=W-90,xs=Math.min(x0+(W-x0-90)*0.82,x1-70),rh=34,H=cats.length*rh+30,X=d=>x0+(xs-x0)*Math.max(0,Math.min(1,(d-from)/(six-from)));
+ const W=Math.max(280,el.clientWidth-40),nar=W<480,lw=nar?0:Math.min(170,W*.36),cut=v=>nar||v.length*7.6<=lw?v:v.slice(0,Math.max(4,Math.floor(lw/7.6)-1))+'…',x0=nar?8:lw+14,x1=nar?W-4:W-90,xs=nar?x1-100:Math.min(x0+(W-x0-90)*0.82,x1-70),rh=nar?48:34,y0=nar?34:14,H=cats.length*rh+y0+16,X=d=>x0+(xs-x0)*Math.max(0,Math.min(1,(d-from)/(six-from)));
  const old=RA.filter(r=>r.last&&new Date(r.last)<six),nolast=RA.filter(r=>!r.last).length;
  const top=Object.entries(old.reduce((a,r)=>(a[r.cat]=(a[r.cat]||0)+1,a),{})).sort((a,b)=>b[1]-a[1])[0];
  const take=L==='fr'?`Parmi les sites, chaînes, forums et logiciels, ${old.length} n'ont montré aucun signe de vie depuis 6 mois${top?`, surtout dans « ${catName(top[0])} » (${top[1]})`:''} ; ${nolast} n'ont pas de date observable. Œuvres, lieux, boutiques et marques n'y figurent pas : leurs publications ne les mesurent pas.`
@@ -218,12 +218,12 @@ const el=document.getElementById('v-pulse');const cats=C.map(c=>c.id),today=new 
  // marks at fixed places, chosen by the room the scale leaves (figures have one width: about 7 px each): every 6 months, every 12, the first one only, or none on the narrowest screens
  const step=(xs-x0)/3,first=9*7,half=4*7,room=(xs+x1)/2-t('p_recent').length*3.6-8-x0,ks=step>=first+half+8?[0,6,12]:2*step>=first+half+8?[0,12]:room>=first?[0]:[];
  for(const k of ks){const d=new Date(from);d.setMonth(d.getMonth()+k);s+=`<text class="ax" x="${X(d)}" y="${H-6}" text-anchor="${k?'middle':'start'}">${k?'':'≤ '}${mm(d)}</text>`}
- cats.forEach((c,i)=>{const y=14+i*rh,rs=RA.filter(r=>r.cat===c&&r.last);s+=`<text x="${lw}" y="${y+5}" text-anchor="end">${esc(cut(shortCat(c)))}</text><line x1="${x0}" x2="${xs}" y1="${y}" y2="${y}" stroke="var(--line)"/>`;
+ cats.forEach((c,i)=>{const y=y0+i*rh,rs=RA.filter(r=>r.cat===c&&r.last);s+=(nar?`<text x="0" y="${y-17}">${esc(shortCat(c))}</text>`:`<text x="${lw}" y="${y+5}" text-anchor="end">${esc(cut(shortCat(c)))}</text>`)+`<line x1="${x0}" x2="${xs}" y1="${y}" y2="${y}" stroke="var(--line)"/>`;
   const placed=[],old2=rs.filter(r=>new Date(r.last)<from);
   if(old2.length){s+=`<circle cx="${x0}" cy="${y}" r="${old2.length>1?9:5.5}" fill="var(--card)" stroke="var(--warn)" stroke-width="2.5" data-go="${old2[0].id}" data-tip="${esc(old2.map(r=>r.name+' · '+fmt(r.last)).join(' ; '))}" style="cursor:pointer"/>`+(old2.length>1?`<text x="${x0}" y="${y+4}" text-anchor="middle" style="font-size:10px;font-weight:700;fill:var(--warn);pointer-events:none">${old2.length}</text>`:'');placed.push({x:x0,dy:0})}
   rs.filter(r=>new Date(r.last)<six&&new Date(r.last)>=from).sort((a,b)=>a.last<b.last?-1:1).forEach(r=>{const x=X(new Date(r.last));let dy=0;for(const k of [0,-9,9,-18,18]){if(!placed.some(p=>Math.abs(p.x-x)<10&&p.dy===k)){dy=k;break}}placed.push({x,dy});
    s+=`<circle cx="${x}" cy="${y+dy}" r="5.5" fill="var(--card)" stroke="var(--warn)" stroke-width="2.5" data-go="${r.id}" data-tip="${esc(r.name)} · ${fmt(r.last)}" style="cursor:pointer"/>`});
-  const n=rs.filter(r=>new Date(r.last)>=six).length,bw=(x1-xs-30)*n/Math.max(1,...cats.map(cc=>RA.filter(r=>r.cat===cc&&r.last&&new Date(r.last)>=six).length));
+  const n=rs.filter(r=>new Date(r.last)>=six).length,bw=(x1-xs-(nar?34:30))*n/Math.max(1,...cats.map(cc=>RA.filter(r=>r.cat===cc&&r.last&&new Date(r.last)>=six).length));
   s+=`<rect x="${xs+6}" y="${y-6}" width="${bw}" height="12" rx="3" fill="var(--other)" data-tip="${esc(shortCat(c))} · ${n}"/><text class="ax" x="${xs+10+bw}" y="${y+4}">${n}</text>`});
  el.innerHTML=`<h3>${t('p_title')}</h3><p class="take">${esc(take)}</p>${s}</svg><p class="note">${t('p_note')}</p>`;
 
