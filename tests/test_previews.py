@@ -18,7 +18,7 @@ class Mark(unittest.TestCase):
         self.assertEqual(out.count('role="note"'), 1)
         self.assertNotIn("<script", out)  # nothing the page's security policy would refuse
         self.assertIn("<title>Aperçu #17 · t</title>", out)
-        self.assertIn("header.top{background:color-mix(in srgb,#c62828", out)  # the sticky header stays marked while scrolling
+        self.assertIn("header.top,#vault header{background:color-mix(in srgb,#c62828", out)  # the sticky header stays marked while scrolling
 
     def test_branch_in_english(self):
         out = previews.mark(self.PAGE.replace('lang="fr"', 'lang="en"'), "dev", "abc1234", "https://github.com/o/r/tree/dev")

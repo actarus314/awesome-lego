@@ -41,11 +41,12 @@ def mark(page, n, sha, url):
               f'padding:8px 14px;text-align:center">{html.escape(BANNER[lang].format(what=WHAT[lang][k].format(n=n), sha=sha))} '
               f'<a href="{html.escape(url)}" style="color:#fff">{LINK[lang][k]}</a></div>')
     # the banner scrolls away with the page; the sticky header stays red-tinted with a red band, and the tab title says it
-    keep = ('<style>header.top{background:color-mix(in srgb,#c62828 18%,var(--bg))!important;'
+    keep = ('<style>header.top,#vault header{background:color-mix(in srgb,#c62828 16%,color-mix(in srgb,var(--bg) 88%,transparent))!important;'
             'box-shadow:inset 0 -4px 0 #c62828}</style>')
     page = re.sub(r"(<head[^>]*>)", lambda m: m.group(1) + '<meta name="robots" content="noindex, nofollow">' + keep, page, count=1)
     tag = html.escape(f"{TAB[lang]} {'#' if k == 0 else ''}{n} · ")
-    page = re.sub(r"(<title[^>]*>)", lambda m: m.group(1) + tag, page, count=1)
+    if not re.search(r"<title[^>]*>\s*" + re.escape(TAB[lang]), page):  # a page of a failed build already says it
+        page = re.sub(r"(<title[^>]*>)", lambda m: m.group(1) + tag, page, count=1)
     return re.sub(r"(<body[^>]*>)", lambda m: m.group(1) + banner, page, count=1)
 
 
