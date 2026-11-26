@@ -18,6 +18,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15   # about 30 seconds, 4 minutes when the activity data is read again
     permissions:
       contents: read   # the job that reads outside feeds cannot write to the repository
       actions: read    # to fetch the previews built by the last successful Preview run
@@ -58,6 +59,7 @@ jobs:
     needs: build
     if: github.event_name != 'push' && !inputs.previews
     runs-on: ubuntu-latest
+    timeout-minutes: 5   # about 10 seconds
     permissions:
       contents: write   # the only job that can write to the repository; its steps push to the "history" branch and nowhere else
     steps:
@@ -80,6 +82,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 10   # about 30 seconds; the deployment itself gives up after 10 minutes
     permissions:
       pages: write
       id-token: write

@@ -8,6 +8,7 @@ permissions: {}
 jobs:
   analysis:
     runs-on: ubuntu-latest
+    timeout-minutes: 5   # about 35 seconds
     permissions:
       contents: read
       actions: read
