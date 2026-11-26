@@ -20,10 +20,11 @@ class Mark(unittest.TestCase):
         self.assertIn("<title>Aperçu #17 · t</title>", out)
         self.assertIn("header.top,#vault header{background:color-mix(in srgb,#c62828", out)  # the sticky header stays marked while scrolling
 
-    def test_branch_in_english(self):
-        out = previews.mark(self.PAGE.replace('lang="fr"', 'lang="en"'), "dev", "abc1234", "https://github.com/o/r/tree/dev")
-        self.assertIn("Preview of the branch dev (commit abc1234)", out)
-        self.assertIn("Open the branch", out)
+    def test_in_english(self):
+        out = previews.mark(self.PAGE.replace('lang="fr"', 'lang="en"'), 4, "abc1234", "https://github.com/o/r/pull/4")
+        self.assertIn("Preview of pull request #4 (commit abc1234)", out)
+        self.assertIn("Open the pull request", out)
+        self.assertIn("<title>Preview #4 · t</title>", out)
 
     def test_escaped(self):
         out = previews.mark(self.PAGE, 3, "<b>", 'https://x/"y')
@@ -32,10 +33,10 @@ class Mark(unittest.TestCase):
 
     def test_index(self):
         out = previews.index([{"n": 5, "title": "A <b>", "sha": "1", "url": "u", "failed": False},
-                              {"n": "dev", "title": "branch dev", "sha": "2", "url": "v", "failed": True},
+                              {"n": 7, "title": "C", "sha": "2", "url": "v", "failed": True},
                               {"n": 9, "title": "B", "sha": "3", "url": "w", "failed": False}])
-        self.assertLess(out.index('href="dev/"'), out.index('href="9/"'))
-        self.assertLess(out.index('href="9/"'), out.index('href="5/"'))
+        self.assertLess(out.index('href="9/"'), out.index('href="7/"'))
+        self.assertLess(out.index('href="7/"'), out.index('href="5/"'))
         self.assertIn("A &lt;b&gt;", out)
         self.assertIn("build failed", out)
         self.assertIn("noindex", out)

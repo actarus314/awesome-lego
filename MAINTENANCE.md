@@ -82,12 +82,12 @@ How, task by task:
 - The daily run (or one started by hand without previews) hands the day's measurements to a separate job, the only one allowed to write, which keeps them on the branch `history` (`metrics/YYYY-MM-DD.json`).
 
 ### Preview
-- Starts when a pull request that changes the website is opened, updated, reopened or closed; at every push to `dev`; when a branch or tag is deleted.
+- Starts when a pull request that changes the website is opened, updated, reopened or closed.
 - Files that count as the website: `site-src/`, `scripts/build.py`, `scripts/previews.py`, `media/` (not the image of the README), `data/`, `VERSION`, `CHANGELOG.md`, its own workflow.
-- Builds the website of `dev`, if it exists, and of every open pull request of this repository opened by a person: never a fork or a bot; drafts included; 20 at most (`scripts/previews.py`).
-- The branch's code runs without the token, in a job that can write nowhere, with the measurements of the published website.
-- Each preview, at `preview/<number>/` (or `preview/dev/`), carries a banner, a red-tinted sticky header with a red band, a tab title that starts with "Preview #<number>" and `noindex`; a failed build gets an error page.
-- Then starts **Pages** and keeps one comment on the pull request with the address. A closed request loses its preview at the next run.
+- Builds the website of every open pull request of this repository opened by a person: never a fork or a bot; drafts included; 20 at most (`scripts/previews.py`).
+- The job can write nowhere. `scripts/previews.py` and `scripts/refresh.py` come from the pull request itself and see the token, read-only; the build of each branch (`scripts/build.py`) runs without it, with the measurements of the published website.
+- Each preview, at `preview/<number>/`, carries a banner, a red-tinted sticky header with a red band, a tab title that starts with "Preview #<number>" and `noindex`; a failed build gets an error page.
+- Then starts **Pages** and keeps one comment on the pull request with the address. A closed request is no longer listed, so it loses its preview at the next run.
 - A preview is served by the same website: anyone can open it, and it shares the browser storage of the published pages (theme, language, new tab). A request opened with the personal token of **Data fixes** counts as a person's.
 
 ### Links
