@@ -47,6 +47,8 @@ Started by hand (**Run workflow**): **Pages**, **Links** (with *dry run*), **Dat
 
 ## Maintainer's tasks
 
+The maintainer's working notes (state, decisions, open items, briefs) are in `dev/`, in French; `CLAUDE.md` says how they are kept.
+
 | Task | When | If not done |
 |---|---|---|
 | Accept **Data fixes** | Wednesdays, after **Links** | old addresses and past dates stay; the next run proposes them again |
