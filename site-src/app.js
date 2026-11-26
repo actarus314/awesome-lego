@@ -146,7 +146,7 @@ function drawList(){const rs=R.filter(r=>match(r)),n=rs.length;
    others=b.lego?[]:R.filter(r=>r.id!==BM&&!linked(r,BM)&&re.test(fold([r.name,r[L].summary,...r[L].strengths,...r[L].weaknesses,sizeOf(r)].join(' '))));  // for LEGO, every entry would
   list.innerHTML=banner(R.find(r=>r.id===BM),b,rs)+byCat(rs,crank)+(others.length?`<details class="more"><summary>${esc(tn('bm_more',others.length).replace('{b}',nm))}</summary><div class="grid" style="margin-top:10px">${others.map(r=>card(r,true)).join('')}</div></details>`:'')+missLine(n);return}
  if(hits){const sc=r=>hits.get(r.id)*(crank(r)===0?1.15:1);rs.sort((a,b)=>sc(b)-sc(a));list.innerHTML=`<section class="cat"><h3>${t('ranked')}</h3><div class="grid">${rs.map(r=>card(r,true)).join('')}</div></section>`+missLine(n);return}
- list.innerHTML=byCat(rs)+missLine(n)}
+ list.innerHTML=byCat(rs,here)+missLine(n)}
 function byCat(rs,first){return C.map(c=>{const cr=rs.filter(r=>r.cat===c.id);if(!cr.length)return'';
   cr.sort((a,b)=>(first?first(a)-first(b):0)||((a.next?0:1)-(b.next?0:1))||(a.next&&b.next?a.next.localeCompare(b.next):0)||(c.groups.findIndex(g=>g.id===a.group)-c.groups.findIndex(g=>g.id===b.group))||(lrank(a)-lrank(b))||a.name.localeCompare(b.name));
   return `<section class="cat"><h3>${ci(c.id)}${esc(c[L])} <span class="count">${cr.length}</span></h3><div class="grid">${cr.map(r=>card(r,false)).join('')}</div></section>`}).join('')}
@@ -290,6 +290,7 @@ function update(all=true){keepFocus(()=>update0(all))}
 function update0(all){const n=nActive();ft.textContent=t('filters')+(n?` (${n})`:'');fsum();drawFilters();drawList();if(all)drawMap();writeHash();measureBar()}
 const VC=(()=>{const tags=navigator.languages||[navigator.language];for(const t of tags){const m=/^[a-z]{2,3}-([A-Z]{2})$/i.exec(t||'');if(m)return m[1].toUpperCase()}
  return {fr:'FR',de:'DE',it:'IT',es:'ES',nl:'NL',pl:'PL',pt:'PT',da:'DK',sv:'SE',nb:'NO',no:'NO',fi:'FI',cs:'CZ'}[VL]||''})();
+const here=r=>(VC&&(r.countries||[]).includes(VC))||(VC==='FR'&&r.ships_to_france)?0:1;  // the directory: the visitor's country first in each category (shops that deliver to France count for France), then the usual order
 const crank=r=>{const c=r.countries||[];return (VC&&c.includes(VC))||(VC==='FR'&&r.ships_to_france)?0:c.includes('international')?1:2};
 // search suggestions, built from the data: brands (with their other names), entries, categories, countries and cities
 const SG=(()=>{const out=[],add=(g,label,names,w,go,d)=>out.push({g,label,keys:names.map(fold),w,go,d});
