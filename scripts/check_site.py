@@ -2,7 +2,7 @@
 """Rendering checks of the built website (site/), in a real browser (Playwright, Chromium).
 
 Every view and state a visitor reaches (directory as cards and as a table, brand mode of an alternative brand and of LEGO, observatory,
-hidden vault), in English and French, at several widths and in both
+about page, hidden vault), in English and French, at several widths and in both
 themes. Fails on:
 - overflow: the page scrolls sideways, or an element sticks out of the box (card, panel, row) it sits in;
 - broken token: a phone number, an email, a website, a date, a tag, a chip, a button label or a short
@@ -225,6 +225,9 @@ def main():
                 pg.evaluate(js)
                 pg.wait_for_timeout(400)
             record(f"{lang} {w} {theme} {name}", pg.evaluate(PROBE, {"mobile": mobile, "width": w}))
+        pg.goto(base + root + "about/")  # the about page of the language: shared header, its own layout
+        pg.wait_for_timeout(300)
+        record(f"{lang} {w} {theme} about", pg.evaluate(PROBE, {"mobile": mobile, "width": w}))
         if lang == "en":
             pg.goto(base + "vault/")
             pg.wait_for_timeout(700)
@@ -251,9 +254,9 @@ def main():
         c = b.new_context(viewport={"width": w, "height": 900}, locale="fr-FR" if lang == "fr" else "en-GB", color_scheme=theme,
                           is_mobile=mobile, has_touch=mobile, bypass_csp=True)
         pg = c.new_page()
-        for name, frag, js in AXE_STATES + ([("vault", "vault/", "")] if lang == "en" else []):
+        for name, frag, js in AXE_STATES + [("about", "about/", "")] + ([("vault", "vault/", "")] if lang == "en" else []):
             pg.goto(base + (frag if name == "vault" else root + frag))
-            if name != "vault":
+            if name not in ("vault", "about"):
                 pg.reload()
                 pg.wait_for_selector("html.ready", state="attached")
             pg.wait_for_timeout(300)
@@ -314,7 +317,7 @@ def main():
         raise errors[0]
     srv.shutdown()
 
-    states = [n for n, _, _ in STATES + AXE_STATES] + ["vault"]
+    states = [n for n, _, _ in STATES + AXE_STATES] + ["about", "vault"]
 
     def order(where):  # "en 1440 light directory": language, widest first, light first, states in their order
         t = where.split(" ")

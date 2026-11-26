@@ -1084,4 +1084,4 @@ Existing directories, awesome lists and lists of channels and brands about LEGO 
 
 ## Contributing
 
-Additions and corrections are welcome: read [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them.
+Additions and corrections are welcome: read [how the directory is made and what gets in](https://actarus314.github.io/awesome-lego/about/), then [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them.

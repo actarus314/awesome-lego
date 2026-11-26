@@ -8,6 +8,8 @@
 "part_in":{"en":"What the directory reveals","fr":"Ce que révèle l'annuaire"},
 "views":{"en":"Views","fr":"Vues"},
 "skip":{"en":"Skip to the search","fr":"Aller à la recherche"},
+"skip_content":{"en":"Skip to the content","fr":"Aller au contenu"},
+"about":{"en":"About","fr":"À propos"},
 "addr_map":{"en":"Open in Google Maps","fr":"Ouvrir dans Google Maps"},
 "mk_title":{"en":"Who makes the bricks","fr":"Qui fabrique les briques"},
 "mk_own":{"en":"Make their own bricks","fr":"Fabriquent leurs briques"},

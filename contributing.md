@@ -1,6 +1,6 @@
 # Contributing
 
-This list aims to be complete, accurate and current. Every entry is checked at its source. Contributions are written in English. The website is bilingual: an entry proposed without French texts is accepted (the build warns « French translation missing »), shown in English on the French page, and the monthly review adds the French texts.
+This list aims to be accurate and current, and complete where no reference exists. Every entry is checked at its source. Contributions are written in English. The website is bilingual: an entry proposed without French texts is accepted (the build warns « French translation missing »), shown in English on the French page, and the monthly review adds the French texts.
 
 **Suggest without editing files:** open an issue with the [Add a resource](https://github.com/actarus314/awesome-lego/issues/new?template=add-resource.yml) or [Fix an entry](https://github.com/actarus314/awesome-lego/issues/new?template=fix-entry.yml) form. A maintainer writes the entry.
 
@@ -10,6 +10,8 @@ This list aims to be complete, accurate and current. Every entry is checked at i
 3. Open a pull request. The maintainer adds the version number and the CHANGELOG entry when merging. Checks validate the data and build the site; links are tested every week by a separate job.
 
 **Selection:** each entry may carry ranks 1 to 5 within its group, worldwide and per country or language (`rank`, with its reasons; see [`data/SCHEMA.md`](data/SCHEMA.md)); the README lists the rank 1 worldwide of each group, and "Where to start" on the website shows the entries ranked for the visitor's country or language. The [full list](full-list.md) keeps every entry, inactive and dead ones included. See [MAINTENANCE.md](MAINTENANCE.md).
+
+**What is listed:** where a reference directory kept up to date already lists every resource of a kind (clubs of a country, channels of a language), the directory points to it and keeps the 3 to 5 that stand out per country or language in each group; unique places (museums, permanent exhibitions) and every active brand of compatible bricks that sells sets in Europe are listed in full. The [about page](https://actarus314.github.io/awesome-lego/about/) says the same for visitors.
 
 **What gets in:** resources useful to builders of every age (children, their parents and teachers, adults) of official LEGO or compatible bricks, in the 8 mm stud system, a smaller format or a construction system of its own ("Other formats"); resources only about large toddler blocks such as DUPLO stay out; publicly reachable, active or still a reference. Shops must state their delivery terms; brands must have an official site. Each entry needs at least one source with a date.
 
