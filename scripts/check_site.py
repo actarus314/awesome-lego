@@ -18,7 +18,8 @@ themes. Fails on:
   not a conformance target: the 13 px studs of the category map are accepted, and marks told apart by colour
   alone (WCAG 1.4.1) are not checked (decision of 24/11/2026).
 
-Usage: python3 scripts/check_site.py [--site site] [--quick | --data-only] [--chrome /path/to/chrome] [--axe path/to/axe.min.js]
+Usage: python3 scripts/check_site.py [--site site] [--quick | --data-only] [--jobs N] [--chrome /path/to/chrome] [--axe path/to/axe.min.js]
+Each width, theme and language opens in its own browser context; --jobs browsers (one per processor by default) take them in turn.
 Needs `pip install playwright`, `playwright install chromium` (or --chrome) and `npm install axe-core`
 (found in node_modules/ by default). Exit status 1 on any failure.
 """
@@ -27,6 +28,7 @@ import functools
 import http.server
 import json
 import os
+import queue
 import tempfile
 import socketserver
 import sys
@@ -140,6 +142,7 @@ def main():
                     "no accessibility pass; colours, controls and landmarks come from the source of the website, not from the data")
     ap.add_argument("--dejavu", action="store_true", help="draw system-ui and sans-serif with DejaVu Sans, as on the Ubuntu runners of GitHub Actions (wider than most desktop fonts)")
     ap.add_argument("--axe", default=str(ROOT / "node_modules" / "axe-core" / "axe.min.js"), help="axe-core build (npm install axe-core)")
+    ap.add_argument("--jobs", type=int, default=os.cpu_count() or 1, help="browsers run side by side (default: one per processor)")
     a = ap.parse_args()
     from playwright.sync_api import sync_playwright
 
@@ -158,20 +161,26 @@ def main():
     base = f"http://127.0.0.1:{srv.server_address[1]}/"
     widths = [1440, 390, 320] if a.data_only else [1440, 390] if a.quick else [1440, 1024, 768, 390, 320]
     found = {}
+    lock = threading.Lock()
 
-    def record(lang, w, theme, state, items):
-        for k, where, detail in items:
-            found.setdefault((k, where, detail), []).append(f"{lang} {w} {theme} {state}")
+    def record(where, items):
+        with lock:
+            for k, at, detail in items:
+                found.setdefault((k, at, detail), []).append(where)
+
+    env = dict(os.environ)
+    if a.dejavu:
+        conf = Path(tempfile.mkdtemp()) / "fonts.conf"
+        conf.write_text('<?xml version="1.0"?><!DOCTYPE fontconfig SYSTEM "fonts.dtd"><fontconfig><include ignore_missing="yes">/etc/fonts/fonts.conf</include>'
+                        + "".join(f'<alias binding="strong"><family>{f}</family><prefer><family>{t}</family></prefer></alias>' for f, t in
+                                  (("system-ui", "DejaVu Sans"), ("sans-serif", "DejaVu Sans"), ("monospace", "DejaVu Sans Mono"))) + "</fontconfig>")
+        env["FONTCONFIG_FILE"] = str(conf)
+
+    def launch(p):
+        return p.chromium.launch(**({"executable_path": a.chrome} if a.chrome else {}), args=["--no-sandbox"], env=env)
 
     with sync_playwright() as p:
-        env = dict(os.environ)
-        if a.dejavu:
-            conf = Path(tempfile.mkdtemp()) / "fonts.conf"
-            conf.write_text('<?xml version="1.0"?><!DOCTYPE fontconfig SYSTEM "fonts.dtd"><fontconfig><include ignore_missing="yes">/etc/fonts/fonts.conf</include>'
-                            + "".join(f'<alias binding="strong"><family>{f}</family><prefer><family>{t}</family></prefer></alias>' for f, t in
-                                      (("system-ui", "DejaVu Sans"), ("sans-serif", "DejaVu Sans"), ("monospace", "DejaVu Sans Mono"))) + "</fontconfig>")
-            env["FONTCONFIG_FILE"] = str(conf)
-        b = p.chromium.launch(**({"executable_path": a.chrome} if a.chrome else {}), args=["--no-sandbox"], env=env)
+        b = launch(p)
         # calibration: the probe must find exactly the defects planted in tests/render-fixture.html
         pg = b.new_page(viewport={"width": 390, "height": 900})
         pg.set_content((ROOT / "tests" / "render-fixture.html").read_text(encoding="utf-8"))
@@ -181,94 +190,123 @@ def main():
             return any(k == gk and (gd.split(': ')[-1][:20] in d or d[:20] in gd) for gk, gd in got)
         missed = [f"{k}: {d}" for k, d in want if not hit(k, d)]
         extra = [f"{k}: {d}" for k, d in got if not any(k == wk and (d.split(': ')[-1][:20] in wd or wd[:20] in d) for wk, wd in want)]
-        pg.close()
-        if missed or extra:
-            print("✗ calibration of the checks failed (tests/render-fixture.html)")
-            for m in missed:
-                print("   not found:", m)
-            for x in extra:
-                print("   unexpected:", x)
-            return 1
-        print(f"✓ calibration: {len(want)} planted defects found, nothing else")
-        for lang, root in (("en", ""), ("fr", "fr/")):
-            for w in widths:
-                for theme in ("light", "dark"):
-                    if theme == "dark" and (a.data_only or w not in (1440, 390)):
-                        continue  # colours do not depend on the width; layout is checked in light
-                    mobile = w < 700
-                    c = b.new_context(viewport={"width": w, "height": 900}, locale="fr-FR" if lang == "fr" else "en-GB",
-                                      color_scheme=theme, is_mobile=mobile, has_touch=mobile, device_scale_factor=2 if mobile else 1)
-                    c.add_init_script("addEventListener('securitypolicyviolation',e=>console.error('CSP '+e.violatedDirective+' '+e.blockedURI))")
-                    pg = c.new_page()
-                    errs = []
-                    pg.on("pageerror", lambda e: errs.append(str(e)))
-                    pg.on("console", lambda m: errs.append(m.text) if m.type == "error" else None)
-                    for name, frag, js in STATES:
-                        pg.goto(base + root + frag)
-                        pg.reload()
-                        pg.wait_for_selector("html.ready", state="attached")
-                        pg.wait_for_timeout(300)
-                        pg.add_style_tag(content="*{content-visibility:visible!important}")  # every card laid out, so that every card is checked
-                        if js:
-                            pg.evaluate(js)
-                            pg.wait_for_timeout(400)
-                        record(lang, w, theme, name, pg.evaluate(PROBE, {"mobile": mobile, "width": w}))
-                    if lang == "en":
-                        pg.goto(base + "vault/")
-                        pg.wait_for_timeout(700)
-                        record(lang, w, theme, "vault", pg.evaluate(PROBE, {"mobile": mobile, "width": w}))
-                    for e in errs:
-                        found.setdefault(("script error", "", e[:160]), []).append(f"{lang} {w} {theme}")
-                    c.close()
-        # search: strengths and weaknesses come from details.json, read after the page; a word found only there must still find its entry
-        for lang, root in (("en", ""), ("fr", "fr/")):
-            word, rid = details_word(Path(a.site), lang)
-            c = b.new_context(viewport={"width": 1440, "height": 900}, locale="fr-FR" if lang == "fr" else "en-GB")
-            pg = c.new_page()
-            pg.goto(base + root)
-            pg.wait_for_selector("html.ready", state="attached")
-            pg.fill("#q", word)
-            pg.wait_for_timeout(1200)  # details.json read, index rebuilt, results drawn
-            if not pg.query_selector(f"#list #r-{rid}"):
-                found.setdefault(("search", "#q", f"'{word}', only in the strengths or weaknesses of {rid}, does not find it"), []).append(lang)
-            c.close()
-        # accessibility: axe-core injected into the page (the page's own security policy is bypassed for that only)
-        axe = Path(a.axe)
-        if a.no_axe or a.data_only:
-            pass
-        elif not axe.exists():
-            found.setdefault(("accessibility", "", f"axe-core not found at {axe}: npm install axe-core"), []).append("setup")
-        else:
-            for lang, root in (("en", ""), ("fr", "fr/")):
-                for w in (1440, 390):
-                    for theme in ("light", "dark"):
-                        mobile = w < 700
-                        c = b.new_context(viewport={"width": w, "height": 900}, locale="fr-FR" if lang == "fr" else "en-GB", color_scheme=theme,
-                                          is_mobile=mobile, has_touch=mobile, bypass_csp=True)
-                        pg = c.new_page()
-                        for name, frag, js in AXE_STATES + ([("vault", "vault/", "")] if lang == "en" else []):
-                            pg.goto(base + (frag if name == "vault" else root + frag))
-                            if name != "vault":
-                                pg.reload()
-                                pg.wait_for_selector("html.ready", state="attached")
-                            pg.wait_for_timeout(300)
-                            if js:
-                                pg.evaluate(js)
-                                pg.wait_for_timeout(400)
-                            pg.add_style_tag(content="*{content-visibility:visible!important}")
-                            pg.add_script_tag(path=str(axe))
-                            pg.evaluate("window.scrollTo(0,0)")  # a sticky header over a scrolled view would count as covering its targets
-                            res = pg.evaluate("""async()=>{const r=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']},resultTypes:['violations']});
-                              return r.violations.flatMap(v=>v.nodes.map(n=>[v.id,n.target.join(' '),(n.failureSummary||'').split('\\n').slice(1,2).join('').trim().slice(0,120)]))}""")
-                            res = [x for x in res if not (x[0] == "target-size" and ".stud" in x[1])]  # accepted: 13 px studs (decision of 24/11/2026)
-                            record(lang, w, theme, name, [["a11y " + k, t, d] for k, t, d in res])
-                        c.close()
         b.close()
+    if missed or extra:
+        print("✗ calibration of the checks failed (tests/render-fixture.html)")
+        for m in missed:
+            print("   not found:", m)
+        for x in extra:
+            print("   unexpected:", x)
+        return 1
+    print(f"✓ calibration: {len(want)} planted defects found, nothing else")
+
+    # each job opens its own browser context and records what it finds; the jobs run side by side (--jobs browsers)
+    def layout(b, lang, root, w, theme):
+        mobile = w < 700
+        c = b.new_context(viewport={"width": w, "height": 900}, locale="fr-FR" if lang == "fr" else "en-GB",
+                          color_scheme=theme, is_mobile=mobile, has_touch=mobile, device_scale_factor=2 if mobile else 1)
+        c.add_init_script("addEventListener('securitypolicyviolation',e=>console.error('CSP '+e.violatedDirective+' '+e.blockedURI))")
+        pg = c.new_page()
+        errs = []
+        pg.on("pageerror", lambda e: errs.append(str(e)))
+        pg.on("console", lambda m: errs.append(m.text) if m.type == "error" else None)
+        for name, frag, js in STATES:
+            pg.goto(base + root + frag)
+            pg.reload()
+            pg.wait_for_selector("html.ready", state="attached")
+            pg.wait_for_timeout(300)
+            pg.add_style_tag(content="*{content-visibility:visible!important}")  # every card laid out, so that every card is checked
+            if js:
+                pg.evaluate(js)
+                pg.wait_for_timeout(400)
+            record(f"{lang} {w} {theme} {name}", pg.evaluate(PROBE, {"mobile": mobile, "width": w}))
+        if lang == "en":
+            pg.goto(base + "vault/")
+            pg.wait_for_timeout(700)
+            record(f"{lang} {w} {theme} vault", pg.evaluate(PROBE, {"mobile": mobile, "width": w}))
+        record(f"{lang} {w} {theme}", [("script error", "", e[:160]) for e in errs])
+        c.close()
+
+    def search(b, lang, root):
+        # strengths and weaknesses come from details.json, read after the page; a word found only there must still find its entry
+        word, rid = details_word(Path(a.site), lang)
+        c = b.new_context(viewport={"width": 1440, "height": 900}, locale="fr-FR" if lang == "fr" else "en-GB")
+        pg = c.new_page()
+        pg.goto(base + root)
+        pg.wait_for_selector("html.ready", state="attached")
+        pg.fill("#q", word)
+        pg.wait_for_timeout(1200)  # details.json read, index rebuilt, results drawn
+        if not pg.query_selector(f"#list #r-{rid}"):
+            record(lang, [("search", "#q", f"'{word}', only in the strengths or weaknesses of {rid}, does not find it")])
+        c.close()
+
+    def access(b, lang, root, w, theme):
+        # accessibility: axe-core injected into the page (the page's own security policy is bypassed for that only)
+        mobile = w < 700
+        c = b.new_context(viewport={"width": w, "height": 900}, locale="fr-FR" if lang == "fr" else "en-GB", color_scheme=theme,
+                          is_mobile=mobile, has_touch=mobile, bypass_csp=True)
+        pg = c.new_page()
+        for name, frag, js in AXE_STATES + ([("vault", "vault/", "")] if lang == "en" else []):
+            pg.goto(base + (frag if name == "vault" else root + frag))
+            if name != "vault":
+                pg.reload()
+                pg.wait_for_selector("html.ready", state="attached")
+            pg.wait_for_timeout(300)
+            if js:
+                pg.evaluate(js)
+                pg.wait_for_timeout(400)
+            pg.add_style_tag(content="*{content-visibility:visible!important}")
+            pg.add_script_tag(path=str(axe))
+            pg.evaluate("window.scrollTo(0,0)")  # a sticky header over a scrolled view would count as covering its targets
+            res = pg.evaluate("""async()=>{const r=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']},resultTypes:['violations']});
+              return r.violations.flatMap(v=>v.nodes.map(n=>[v.id,n.target.join(' '),(n.failureSummary||'').split('\\n').slice(1,2).join('').trim().slice(0,120)]))}""")
+            res = [x for x in res if not (x[0] == "target-size" and ".stud" in x[1])]  # accepted: 13 px studs (decision of 24/11/2026)
+            record(f"{lang} {w} {theme} {name}", [["a11y " + k, t, d] for k, t, d in res])
+        c.close()
+
+    langs = (("en", ""), ("fr", "fr/"))
+    jobs = []  # longest first, so that no long job starts last
+    axe = Path(a.axe)
+    if a.no_axe or a.data_only:
+        pass
+    elif not axe.exists():
+        record("setup", [("accessibility", "", f"axe-core not found at {axe}: npm install axe-core")])
+    else:
+        jobs += [(access, lang, root, w, theme) for lang, root in langs for w in (1440, 390) for theme in ("light", "dark")]
+    jobs += [(layout, lang, root, w, theme) for lang, root in langs for w in widths for theme in ("light", "dark")
+             if not (theme == "dark" and (a.data_only or w not in (1440, 390)))]  # colours do not depend on the width; layout is checked in light
+    jobs += [(search, lang, root) for lang, root in langs]
+    todo = queue.Queue()
+    for j in jobs:
+        todo.put(j)
+    errors = []
+
+    def worker():
+        # one Playwright and one browser per thread: the synchronous API of Playwright is not shared between threads
+        try:
+            with sync_playwright() as p:
+                b = launch(p)
+                while True:
+                    try:
+                        j = todo.get_nowait()
+                    except queue.Empty:
+                        break
+                    j[0](b, *j[1:])
+                b.close()
+        except Exception as e:  # noqa: BLE001 (raised again below, in the main thread)
+            errors.append(e)
+    threads = [threading.Thread(target=worker) for _ in range(max(1, min(a.jobs, len(jobs))))]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    if errors:
+        raise errors[0]
     srv.shutdown()
 
     by = {}
     for (k, where, detail), ctx in found.items():
-        by.setdefault(k, []).append((where, detail, ctx))
+        by.setdefault(k, []).append((where, detail, sorted(ctx)))  # the jobs end in any order
     if a.json:
         Path(a.json).write_text(json.dumps({k: [{"where": w, "detail": d, "seen": c} for w, d, c in v] for k, v in by.items()}, ensure_ascii=False, indent=1))
     for k, v in sorted(by.items()):
