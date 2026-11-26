@@ -5,7 +5,7 @@ One short entry per version; the details are in its pull request and its commits
 # v4.x — The directory for builders of every age: children, their parents and teachers, as well as adults; an about page says how it is made and how to take part.
 
 ## v4.3 — 2026-11-26
-Website: on a wide screen, a brand's strengths and weaknesses open with its banner, and a filter panel used over the list stays open until closed; search results are grouped by category, each in the order of its best match; on phones, the French bar keeps to two lines and the search field no longer zooms in; the page data is 11 % lighter. Also: one short changelog entry per version, previews without the unused `dev` branch, a timeout on every workflow job.
+Website: search results grouped by category, each in the order of its best match; on a wide screen, a brand's strengths and weaknesses open with its banner and a filter panel used over the list stays open; phones: French bar on two lines, no zoom into the search field; page data 11 % lighter. Also: one short entry per version in this changelog.
 
 ## v4.2 — 2026-11-26
 Website: the title of the about pages says how to take part, like their section (it still said how to write).

@@ -129,11 +129,11 @@ How, task by task:
 - Raises the minor version, writes the `CHANGELOG.md` entry from `scripts/changelog.py`, takes the image of the README again, and opens **Monthly review vX.Y**.
 
 ### Check
-- Validates `data/`; checks that `README.md`, `full-list.md` and the category list of the **Add a resource** form are up to date, and that `CHANGELOG.md` has a section for `VERSION`.
+- Validates `data/`; checks that `README.md`, `full-list.md` and the category list of the **Add a resource** form are up to date, and that `CHANGELOG.md` has a section for `VERSION`, each entry at most 550 characters (the details belong to the pull request).
 - Checks that this file names every workflow and schedule, and that `data/SCHEMA.md` names every controlled word and backend file.
 - Warns, without failing, when the image of the README shows another version.
 - `reuse lint` (`REUSE.toml`, `LICENSES/`); unit tests (`tests/`: data, pages, about pages, links issue, monthly report, previews); awesome-lint as locked in `package-lock.json`; MiniSearch and the fonts of the Brick Vault match their locked packages (`scripts/vendor.py`).
-- Runs on the latest Python release only.
+- Runs on the latest Python release only; a new push to a pull request cancels its previous run (every push to `main` keeps its own).
 
 ### Render
 - `scripts/check_site.py` opens every view (directory as cards and table, brand mode of an alternative brand and of LEGO, observatory, about page, Brick Vault) in English and French at 1440, 1024, 768, 390 and 320 px, light theme; dark theme at 1440 and 390 px.

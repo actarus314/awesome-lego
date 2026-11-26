@@ -841,6 +841,12 @@ def report_notes():
 CHANGELOG_MAX = 550  # rule of a changelog entry: about 250 characters, 550 at most when dense with facts
 
 
+def changelog_long(text):
+    """The entries of CHANGELOG.md longer than CHANGELOG_MAX, as "vX.Y: n characters"."""
+    return [f"v{v}: {len(body.strip())} characters" for v, body in re.findall(r"(?m)^## v(\d+\.\d+) — [\d-]+\n(.*?)(?=^## v|^# v|\Z)", text, re.S)
+            if len(body.strip()) > CHANGELOG_MAX]
+
+
 def main():
     cats, errors = load()
     errors += check_docs()
@@ -853,8 +859,7 @@ def main():
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
     if not re.search(rf"^## v{re.escape(version)} — \d{{4}}-\d{{2}}-\d{{2}}$", (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), re.M):
         fail([f"CHANGELOG.md has no '## v{version} — YYYY-MM-DD' section for VERSION {version}"])
-    long = [f"v{v}: {len(body.strip())} characters" for v, body in re.findall(r"(?m)^## v(\d+\.\d+) — [\d-]+\n(.*?)(?=^## v|^# v|\Z)", (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), re.S)
-            if len(body.strip()) > CHANGELOG_MAX]
+    long = changelog_long((ROOT / "CHANGELOG.md").read_text(encoding="utf-8"))
     if long:  # one short entry per version; the details belong to the pull request
         fail([f"CHANGELOG.md entry longer than {CHANGELOG_MAX} characters ({x}): say what changes in two sentences" for x in long])
     for w in check_readme_images(version) if "--check" in sys.argv else []:  # a warning, never an error: decision of 25/11/2026

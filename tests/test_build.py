@@ -380,6 +380,17 @@ class Details(unittest.TestCase):
             n = sum(1 for r in data["resources"] if r[lang]["strengths"] or r[lang]["weaknesses"])
             self.assertEqual(len(det), n)
             self.assertEqual(sum(1 for r in blob["resources"] if r[lang]["d"]), n)
+            app = (ROOT / "site-src" / "app.js").read_text(encoding="utf-8") + (ROOT / "site-src" / "header.js").read_text(encoding="utf-8")
+            for k in build.PAGE_UNREAD:  # left out of the page because the page never reads them
+                self.assertFalse(any(k in r for r in blob["resources"]), k)
+                self.assertNotRegex(app, rf"\.{k}\b", k)
+            self.assertFalse(any(v is None or v == [] or v == {} or v is False for r in blob["resources"] for v in r.values()))  # empty values read as absent
+
+
+class Changelog(unittest.TestCase):
+    def test_a_long_entry_is_refused(self):
+        self.assertEqual(build.changelog_long("## v9.1 — 2026-01-01\nShort.\n\n## v9.0 — 2026-01-01\n" + "x" * 551 + "\n"), ["v9.0: 551 characters"])
+        self.assertEqual(build.changelog_long((ROOT / "CHANGELOG.md").read_text(encoding="utf-8")), [])
 
 
 class Dates(unittest.TestCase):
