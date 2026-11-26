@@ -14,7 +14,7 @@ permissions:
 jobs:
   links:
     runs-on: ubuntu-latest
-    timeout-minutes: 45   # lychee, the Globalping readings with a 90-second pause, the dead pages: several minutes, 15 at most
+    timeout-minutes: 30   # lychee, the Globalping readings with a 90-second pause, the dead pages: 4 to 9 minutes measured
     permissions:
       issues: write
     steps:
