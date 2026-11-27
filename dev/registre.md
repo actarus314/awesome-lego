@@ -2,7 +2,7 @@
 
 *Maintainer's working notes, in French: what is left to do, check, decide or watch.*
 
-Seul registre de ce qui reste à faire, à vérifier, à décider ou à surveiller pour l'annuaire (skill `passation`) ; contexte : `dev/contexte.md`. Une ligne ne disparaît jamais : `fait vX.Y`, `abandonné : raison` ou `fusionné → ID` ; à la clôture d'un lot, les lignes closes descendent dans `dev/registre-clos.md`. Identifiants `AL-n` : 1 à 47 reprennent l'ancienne liste « Ouvert » (projet claude.ai) ; AL-57 à AL-64 viennent de l'audit Opus du 26/11 (34 constats : 18 corrigés dans la #28, 15 rangés ici, 1 écarté : Scorecard à chaque poussée sur `main`, sans coût d'attente). Mis à jour le 27/11/2026 à 14 h 58 (v4.8 en ligne ; aucune demande ouverte ; AL-08, AL-09, AL-15, AL-63, AL-68 et AL-74 descendues dans `dev/registre-clos.md`).
+Seul registre de ce qui reste à faire, à vérifier, à décider ou à surveiller pour l'annuaire (skill `passation`) ; contexte : `dev/contexte.md`. Une ligne ne disparaît jamais : `fait vX.Y`, `abandonné : raison` ou `fusionné → ID` ; à la clôture d'un lot, les lignes closes descendent dans `dev/registre-clos.md`. Identifiants `AL-n` : 1 à 47 reprennent l'ancienne liste « Ouvert » (projet claude.ai) ; AL-57 à AL-64 viennent de l'audit Opus du 26/11 (34 constats : 18 corrigés dans la #28, 15 rangés ici, 1 écarté : Scorecard à chaque poussée sur `main`, sans coût d'attente). Mis à jour le 27/11/2026 à 19 h 04 (v4.8 en ligne ; demande « brique 3001 » ouverte : section « Pourquoi 3001 » de la page À propos et brique du pied de page ; AL-78 à décider).
 
 Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 confort, P4 à l'occasion, V veille. Exécutant : C (Claude), CC (Claude dans le Chrome de Romain), R (Romain), RM (revue mensuelle planifiée).
 
@@ -47,6 +47,7 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 
 | ID | P | Objet | Exécutant | Lot | Statut |
 |---|---|---|---|---|---|
+| AL-78 | P4 | Fond du site, demande de Romain du 27/11 (vocal) : A quadrillage actuel, B quadrillage et briques 3001 au trait, C quadrillage et briques variées (maquettes posées par CSS sur le site construit, captures montrées le 27/11 à 19 h) ; constat : les cartes couvrent le fond sur l'annuaire, et les briques passent sous les titres et le texte de l'accueil (téléphone surtout) ; recommandation de Claude : A, le thème porté par la brique du pied de page et de la page À propos ; un motif retenu se sert depuis `media/` (la politique de sécurité refuse les images `data:`), en masque CSS sur la couleur du thème | R | — | ouverte : choix de Romain |
 
 ## Revue mensuelle
 

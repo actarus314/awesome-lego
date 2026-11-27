@@ -1,5 +1,5 @@
 {
- "measured": "2026-11-27, v4.4 (749 resources)",
+ "measured": "2026-11-27, v4.4 (749 resources); about pages again on 2026-11-27, v4.8 with the brick 3001 (+4.7 kB)",
  "margin": "5 %",
  "per_resource": {
   "index.html": 1047,
@@ -8,7 +8,7 @@
   "fr/details.json": 297
  },
  "files": {
-  "about/index.html": 55410,
-  "fr/about/index.html": 56271
+  "about/index.html": 60161,
+  "fr/about/index.html": 61167
  }
 }

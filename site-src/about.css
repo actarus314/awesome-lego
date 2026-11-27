@@ -1,6 +1,11 @@
 /* about pages (site/about/, site/fr/about/): what the directory is, how it is made, why a selection, how to write */
 .ab{padding-bottom:8px}.ab .hero{padding-top:28px}.ab .lead{font-size:16px}.ab .note{color:var(--muted);font-size:14px;margin:14px 0 0}
 .ab h3.sub{font-size:16px;margin:26px 0 10px}
+/* why 3001: the brick of the name, drawn again with its dimensions (the drawing is the footer's, site-src/footer.html) */
+.b3-why{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:28px;align-items:center;margin:34px 0 0;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--hi);border-radius:var(--r);padding:18px 24px}
+.b3-why svg{width:100%;height:auto;--bw:1.6px}.b3-why h2{margin:0 0 8px}.b3-why p{margin:0;font-size:15px;line-height:1.6}.b3-why .note{margin-top:10px}
+.b3-dim{fill:none;stroke:var(--muted);stroke-width:1px;vector-effect:non-scaling-stroke}.b3-dt text{font:600 4.4px var(--mono);fill:var(--muted);text-anchor:middle;dominant-baseline:middle}.b3-dt .b3-pn{text-anchor:start;dominant-baseline:auto;fill:var(--fg);font-size:5.2px;letter-spacing:.05em}
+@media (max-width:640px){.b3-why{grid-template-columns:1fr;gap:12px;padding:16px}.b3-why svg{max-width:260px}}
 /* the chain: five steps joined by arrows, in a column on a phone */
 .flow{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:28px;counter-reset:f}
 .flow li{position:relative;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:6px;counter-increment:f}
