@@ -17,7 +17,8 @@
 .lost h1{font-size:clamp(28px,4vw,40px);line-height:1.1;margin:0 0 10px;letter-spacing:-.02em}.lost p{margin:0 0 10px;font-size:16px;line-height:1.55}
 .lost .fr{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}.lost .fr h2{font-size:20px;margin:0 0 8px;border:0;padding:0}
 .lost .go{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:6px;font-weight:600}
-.b3-tilt{transform:rotate(-12deg);transform-origin:9px 9px}.lost .b3-dim{fill:none;stroke:var(--muted);stroke-width:1px;vector-effect:non-scaling-stroke}
+/* an illegal technique of the fans: a tile wedged on edge between two rows of studs, in the yellow of the logo */
+.b3-x,.b3-xr,.b3-xt{stroke:currentColor;stroke-width:var(--bw,1.1px);stroke-linejoin:round;vector-effect:non-scaling-stroke}.b3-xt{fill:color-mix(in srgb,var(--hi) 55%,var(--card))}.b3-x{fill:color-mix(in srgb,var(--hi) 75%,var(--card))}.b3-xr{fill:color-mix(in srgb,var(--hi) 75%,var(--fg) 25%)}.lost .b3-dim{fill:none;stroke:var(--muted);stroke-width:1px;vector-effect:non-scaling-stroke}
 @media (max-width:720px){.lost{grid-template-columns:1fr;gap:16px;padding-top:28px}.lost svg{max-width:240px}}
 </style>
 </head>
@@ -25,8 +26,8 @@
 <a class="skip" href="#lost" data-t="skip_content"></a>
 {{HEADER}}
 <main class="wrap lost" id="lost">
-<svg class="b3001" viewBox="-32 -30 82 72" aria-hidden="true"><g class="b3-tilt"><use href="#brick-3001" x="-18.82" y="-13.5" width="54.96" height="45"/></g>
-<path class="b3-dim" d="M-28,-21H-14L-7,-13"/><text class="b3-pn" x="-29" y="-23">404</text></svg>
+<svg class="b3001" viewBox="-32 -30 72 66" aria-hidden="true"><path class="b3-l" d="M-17.32,6 17.32,26 17.32,30 -17.32,10Z"/><path class="b3-r" d="M34.64,16 17.32,26 17.32,30 34.64,20Z"/><path class="b3-t" d="M0,-4 34.64,16 17.32,26 -17.32,6Z"/><path class="b3-s" d="M-3.67,-1.2V1A3.67,2.12 0 0 0 3.67,1V-1.2Z"/><ellipse class="b3-c" cx="0" cy="-1.2" rx="3.67" ry="2.12"/><path class="b3-s" d="M4.99,3.8V6A3.67,2.12 0 0 0 12.33,6V3.8Z"/><ellipse class="b3-c" cx="8.66" cy="3.8" rx="3.67" ry="2.12"/><path class="b3-s" d="M13.65,8.8V11A3.67,2.12 0 0 0 20.99,11V8.8Z"/><ellipse class="b3-c" cx="17.32" cy="8.8" rx="3.67" ry="2.12"/><path class="b3-s" d="M22.31,13.8V16A3.67,2.12 0 0 0 29.65,16V13.8Z"/><ellipse class="b3-c" cx="25.98" cy="13.8" rx="3.67" ry="2.12"/><path class="b3-x" d="M-10.39,-8 24.25,12 24.25,22 -10.39,2Z"/><path class="b3-xr" d="M27.71,10 24.25,12 24.25,22 27.71,20Z"/><path class="b3-xt" d="M-6.93,-10 27.71,10 24.25,12 -10.39,-8Z"/><path class="b3-s" d="M-12.33,3.8V6A3.67,2.12 0 0 0 -4.99,6V3.8Z"/><ellipse class="b3-c" cx="-8.66" cy="3.8" rx="3.67" ry="2.12"/><path class="b3-s" d="M-3.67,8.8V11A3.67,2.12 0 0 0 3.67,11V8.8Z"/><ellipse class="b3-c" cx="0" cy="8.8" rx="3.67" ry="2.12"/><path class="b3-s" d="M4.99,13.8V16A3.67,2.12 0 0 0 12.33,16V13.8Z"/><ellipse class="b3-c" cx="8.66" cy="13.8" rx="3.67" ry="2.12"/><path class="b3-s" d="M13.65,18.8V21A3.67,2.12 0 0 0 20.99,21V18.8Z"/><ellipse class="b3-c" cx="17.32" cy="18.8" rx="3.67" ry="2.12"/>
+<path class="b3-dim" d="M-28,-21H-14L-4,-8"/><text class="b3-pn" x="-29" y="-23">404</text></svg>
 <div>
 <h1>Brick not found</h1>
 <p>This page is not in the bin: its address may have changed, or it never existed.</p>
