@@ -8,7 +8,7 @@ permissions:
   contents: read
 concurrency:
   group: version
-  cancel-in-progress: false   # the run going ends; only the latest waiting one follows it
+  queue: max   # one run at a time, none dropped: a run that sees main moved stops, the next numbers both merges
 jobs:
   # Two jobs: the build runs pip packages and the browser without any secret; the publication runs no third-party code (git, gh and
   # scripts/version_files.sh of main), and only it holds the token that writes.

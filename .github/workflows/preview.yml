@@ -10,13 +10,14 @@ on:
 permissions: {}
 jobs:
   build:
-    # branches of this repository only (people, Data fixes, Renovate, Tidy), never a fork
-    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+    # branches of this repository only (people, Data fixes, Renovate, Tidy), never a fork; a merged pull request is rebuilt
+    # by the run of its push to main (same files), not a second time by its closing
+    if: github.event_name == 'push' || (github.event.pull_request.head.repo.full_name == github.repository && !github.event.pull_request.merged)
     runs-on: ubuntu-latest
     timeout-minutes: 20
     concurrency:
-      group: preview-build   # each run builds every preview: a newer run makes an older one useless
-      cancel-in-progress: true
+      group: preview-build   # each run builds every preview from main as it is when it starts: one at a time, none
+      queue: max             # dropped (a cancelled run on main would read as a failure)
     permissions:
       contents: read        # the code of the pull request runs here: this job can write nowhere and publishes nothing
       pull-requests: read   # to list the open pull requests

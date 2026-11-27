@@ -1,0 +1,6 @@
+# actionlint 1.7.12, the latest on 28/11/2026, does not know `queue` in a concurrency group (GitHub, 07/05/2026:
+# up to 100 runs waiting, none dropped; MAINTENANCE.md, Workflows). Remove this file once actionlint knows it.
+paths:
+  .github/workflows/**/*.{yml,yaml}:
+    ignore:
+      - 'unexpected key "queue" for "concurrency" section'

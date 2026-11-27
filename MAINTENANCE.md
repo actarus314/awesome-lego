@@ -83,6 +83,8 @@ How, task by task:
 
 ## Workflows in detail
 
+- **Runs that wait** (`concurrency`): on a pull request, a new push cancels the run of the previous one (Check, zizmor, Render); on `main`, nothing is cancelled, since a cancelled run reads as a failure on its commit: every push keeps its own run, and **Version**, **Release**, **Pages** and **Preview** pass one at a time in the order started, up to 100 waiting (`queue: max`, GitHub, 7 May 2026), because each run does something the next does not redo (a tag, the day's measurements, a deployment). actionlint does not know `queue` yet: `.github/actionlint.yaml` lets it pass.
+
 ### Pages
 - Publishes the website at https://3001.club/ (the address of `PAGES` in `scripts/build.py`, its one place), the custom domain of GitHub Pages (Settings › Pages, HTTPS enforced). The Atom identifiers keep the former address (`FEED_ID`), so that a move never shows readers the same entries again as new. The domain is registered at Porkbun, with its DNS there: the four `A` and four `AAAA` records of GitHub Pages on the apex, `www` as a `CNAME` to `actarus314.github.io`, the `TXT` record that verifies the domain for the account, DNSSEC, transfer lock and automatic renewal (expiry 27 Nov 2027). The former address `actarus314.github.io/awesome-lego/` redirects there.
 - Reads GitHub stars, last pushes and archived flags, YouTube channel feeds, subreddits (public Arctic Shift archive, one at a time: Reddit refuses automated reads) and site feeds (`scripts/refresh.py`).
@@ -91,11 +93,11 @@ How, task by task:
 - Statuses `active`, `slow` and `inactive` follow the last activity date; past event dates disappear at the next daily run.
 - Builds `site/` (`scripts/build.py --site-only`): pages, `details.json` (strengths and weaknesses, read when the browser is idle after the page, so that the search finds them too), `data.json` (every field), `metrics.json` (the measurements alone), feeds of new resources (`feed.xml`, `fr/feed.xml`) and of versions (`changes.xml`).
 - Puts under `preview/` the newest artefact `previews` of a **Preview** run on a branch of this repository (never a fork's); runs no branch code; without one, or once it is older than 30 days, publishes the website without previews.
-- One run at a time, in the order started: each builds what `main` holds when it starts, so a later run is never older and an earlier preview run cannot put back the previous version. A waiting run is replaced by a newer one: a daily run replaced that way (a run already going at 04:17) keeps no measurements that day.
+- One run at a time, in the order started, none dropped (`queue: max`, below): each builds what `main` holds when it starts, so a later run is never older and an earlier preview run cannot put back the previous version.
 - The daily run (or one started by hand without previews) hands the day's measurements to a separate job, the only one allowed to write, which keeps them on the branch `history` (`metrics/YYYY-MM-DD.json`).
 
 ### Preview
-- Starts when a pull request that changes the website is opened, updated, reopened or closed, and when such files change on `main`: each preview is the pull request merged with `main`, so another merge rebuilds it.
+- Starts when a pull request that changes the website is opened, updated, reopened or closed without being merged (a merge rebuilds the previews through `main`), and when such files change on `main`: each preview is the pull request merged with `main`, so another merge rebuilds it.
 - Files that count: `site-src/`, `scripts/build.py`, `scripts/previews.py`, `media/` (not the image of the README), `data/`, `changes/`, `VERSION`, `CHANGELOG.md`, its own workflow.
 - Builds the website of every open pull request of this repository (people and bots alike, never a fork), merged with `main` as its merge will publish it, its fragments assembled as **Version** will (`scripts/changes.py assemble`): the number and the changelog entry its merge gives; the branch alone when it conflicts with `main`, which the banner says; drafts included; 20 at most (`scripts/previews.py`).
 - The job can write nowhere. `scripts/previews.py` and `scripts/refresh.py` come from the pull request itself and see the token, read-only; the build of each branch (`scripts/build.py`) runs without it, with the measurements of the published website.

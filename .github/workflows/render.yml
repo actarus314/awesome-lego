@@ -10,8 +10,8 @@ permissions:
   contents: read
   pull-requests: read   # the list of changed files, read by the step "What changed"
 concurrency:
-  group: render-${{ github.ref }}
-  cancel-in-progress: true
+  group: render-${{ github.event_name == 'pull_request' && github.ref || github.sha }}   # one group per pull request; on main, one per push
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}   # a new push to a pull request makes the previous run useless; main keeps every run
 jobs:
   render:   # not a required check: a path filter would leave a required check pending
     runs-on: ubuntu-latest

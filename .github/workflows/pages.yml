@@ -14,8 +14,8 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: pages   # one deployment at a time, the last one started goes last: each run builds the version main holds when it
-  cancel-in-progress: false   # starts, so a later run is never older; a waiting run is replaced by a newer one
+  group: pages   # one deployment at a time, in the order started: each run builds the version main holds when it starts,
+  queue: max      # so a later run is never older; none is dropped (the daily run keeps its measurements)
 jobs:
   build:
     runs-on: ubuntu-latest
