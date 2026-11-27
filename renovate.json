@@ -46,6 +46,19 @@
         "tests/requirements-tidy.txt"
       ],
       "enabled": false
+    },
+    {
+      "description": "Python of the Tidy workflow: pyoxipng has wheels for Python 3.13 only (tests/requirements-tidy.in); raise it with that lock once pyoxipng ships wheels for a newer Python.",
+      "matchFileNames": [
+        ".github/workflows/tidy.yml"
+      ],
+      "matchDepTypes": [
+        "uses-with"
+      ],
+      "matchDepNames": [
+        "python"
+      ],
+      "allowedVersions": "<3.14"
     }
   ],
   "pip-compile": {

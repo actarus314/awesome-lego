@@ -115,7 +115,7 @@ How, task by task:
 - `scripts/tidy.py` removes unused Python imports (ruff's safe fix) and compresses the PNG files of `media/` without loss (oxipng, text chunks kept); the README images (`media/site-preview*.png`) are left to the version pull requests.
 - Recreates the branch `auto/tidy` from `main` at each run and opens or updates the pull request **Tidy** (label `automatic`) only when a file changed: a commit added by hand on that branch is lost at the next run.
 - Opens it with the app or token of **Data fixes**, so that its checks start on their own.
-- Runs on Python 3.13, the last one pyoxipng ships wheels for: a Renovate pull request that raises the Python of `tidy.yml` breaks the next Monday's run, and is closed until pyoxipng ships wheels for that version.
+- Runs on Python 3.13, the only one pyoxipng ships wheels for: Renovate keeps the Python of `tidy.yml` below 3.14 (`renovate.json`); raise it, with `tests/requirements-tidy.txt`, once pyoxipng ships wheels for a newer version.
 
 ### Data report
 - `scripts/refresh.py --month` reads the activity again and writes the issue **Monthly data report** (label `automatic`), read by the review the next day.
