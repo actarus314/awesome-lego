@@ -13,6 +13,8 @@ themes. Fails on:
   outer rows reaching the inner ones);
 - script error, console error, or content security policy violation;
 - search: a word found only in the strengths or weaknesses of an entry (details.json, read after the page) must find it;
+- the list drawn in parts (app.js, fillAll): every card drawn in the end; before that, printing, a link to one entry,
+  a search typed at once and the change of language find every card where it should be (phone width, both languages);
 - phones (640 px and less): the search bar on more than two lines, a field under 16 px (a phone zooms into it);
 - dead CSS: a selector that matches nothing in any view and state checked, unless tests/css-states.txt names its
   state (not in --data-only runs);
@@ -119,6 +121,10 @@ STATES = [
     ("observatory", "#observatory", ""),
 ]
 
+
+# the results of a search hold this entry (the whole directory, shown before the search, holds every entry: it is not a result)
+FOUND = "id => !!document.querySelector('#list .rk') && !!document.getElementById('r-' + id)"
+FILLED = "() => !document.querySelector('#list [data-ph]')"  # every card of the list drawn (app.js draws the first ones at once, the others when the browser is idle)
 
 # CSS of a selector that matches nothing in any view and state checked here: dead, unless tests/css-states.txt names the state it is for
 CSS_SELECTORS = r"""()=>{const out=[],err=[];const dyn=/::?(hover|focus-visible|focus-within|focus|active|visited|link|target|placeholder|before|after|marker|selection|backdrop|first-letter|first-line|-webkit-[a-z-]+|-moz-[a-z-]+)(\([^)]*\))?/g;
@@ -240,6 +246,12 @@ def main():
             css_seen.update(x for x, _ in got["sel"])
             css_used.update(x for x, m in got["sel"] if m)
 
+    def filled(pg, where):
+        try:
+            pg.wait_for_function(FILLED, timeout=20000)
+        except PlaywrightTimeout:
+            record(where, [("list in parts", "#list", "empty cards left 20 s after the page")])
+
     # each job opens its own browser context and records what it finds; the jobs run side by side (--jobs browsers)
     def layout(b, lang, root, w, theme):
         mobile = w < 700
@@ -254,6 +266,7 @@ def main():
             pg.goto(base + root + frag)
             pg.reload()
             pg.wait_for_selector("html.ready", state="attached")
+            filled(pg, f"{lang} {w} {theme} {name}")  # the cards drawn after the first ones, while the browser is idle
             pg.wait_for_timeout(300)
             pg.add_style_tag(content="*{content-visibility:visible!important}")  # every card laid out, so that every card is checked
             if js:
@@ -283,9 +296,69 @@ def main():
         pg.wait_for_selector("html.ready", state="attached")
         pg.fill("#q", word)
         try:  # details.json read, index rebuilt, results drawn
-            pg.wait_for_selector(f"#list #r-{rid}", state="attached", timeout=10000)
+            pg.wait_for_function(FOUND, arg=rid, timeout=10000)
         except PlaywrightTimeout:
             record(lang, [("search", "#q", f"'{word}', only in the strengths or weaknesses of {rid}, does not find it")])
+        c.close()
+
+    def parts(b, lang, root, last):
+        # the list is drawn in parts: the first cards at once, the others while the browser is idle (empty cards until then, data-ph);
+        # what needs every card where it will be fills them all first. Checked in a browser that is never idle (requestIdleCallback
+        # never calls back), so that only the cards near the screen and those filled on purpose are drawn; then in a normal one.
+        where = f"{lang} 390 light list in parts"
+        errs, out = [], []
+        c = b.new_context(viewport={"width": 390, "height": 844}, locale="fr-FR" if lang == "fr" else "en-GB", is_mobile=True, has_touch=True, device_scale_factor=2)
+        pg = c.new_page()
+        pg.on("pageerror", lambda e: errs.append(str(e)))
+        pg.goto(base + root)
+        pg.wait_for_selector("html.ready", state="attached")
+        filled(pg, where)
+        n = pg.evaluate("document.querySelectorAll('#list .card .h').length")
+        if n != total:
+            out.append(("list in parts", "#list", f"{n} cards drawn, {total} entries"))
+        c.close()
+        c = b.new_context(viewport={"width": 390, "height": 844}, locale="fr-FR" if lang == "fr" else "en-GB", is_mobile=True, has_touch=True, device_scale_factor=2)
+        c.add_init_script("window.requestIdleCallback=()=>0")
+        pg = c.new_page()
+        pg.on("pageerror", lambda e: errs.append(str(e)))
+
+        def load(frag=""):
+            pg.goto(base + root + frag)
+            pg.reload()
+            pg.wait_for_selector("html.ready", state="attached")
+        load()
+        if pg.evaluate("document.querySelectorAll('#list [data-ph]').length") == 0:
+            out.append(("list in parts", "#list", "every card drawn at once: the checks below see nothing"))
+        if pg.evaluate("dispatchEvent(new Event('beforeprint')),document.querySelectorAll('#list [data-ph]').length"):
+            out.append(("list in parts", "#list", "printing leaves empty cards"))
+        load(f"#entry={last}")  # the last entry of the data: its card is among the empty ones at first
+        pg.wait_for_timeout(1500)
+        got = pg.evaluate(f"(()=>{{const e=document.getElementById('r-{last}');if(!e)return 'no card';if(!e.querySelector('.h'))return 'empty card';if(!e.classList.contains('focus'))return 'card not marked';"
+                          f"const r=e.getBoundingClientRect();return r.top>=0&&r.top<innerHeight?'':'card out of view at '+Math.round(r.top)}})()")
+        if got:
+            out.append(("list in parts", f"#entry={last}", got))
+        load()
+        pg.fill("#q", re.sub(r"[^\w ]+", " ", lastname).strip())  # the search typed at once: the index is not built yet
+        try:
+            pg.wait_for_function(FOUND, arg=last, timeout=10000)
+        except PlaywrightTimeout:
+            out.append(("list in parts", "#q", f"a search typed at once does not find {last}"))
+        if lang == "en":  # the change of language keeps the element at the top of the view in place, although the other page draws it later
+            load()
+            pg.evaluate(f"document.getElementById('r-{last}').scrollIntoView({{block:'start'}})")
+            pg.wait_for_timeout(300)
+            pg.evaluate("document.getElementById('langbtn').addEventListener('click',e=>e.preventDefault(),{once:true})")  # after the page's own handler, which keeps the place
+            pg.click("#langbtn")
+            at = pg.evaluate("(()=>{try{return JSON.parse(sessionStorage.getItem('langpos'))}catch(e){return null}})()") or {}
+            pg.goto(pg.evaluate("document.getElementById('langbtn').href"))
+            pg.wait_for_selector("html[lang=fr].ready", state="attached")
+            pg.wait_for_timeout(3000)
+            top = pg.evaluate(f"(()=>{{const e=document.getElementById({json.dumps(at.get('id', ''))});return e&&e.offsetParent?Math.round(e.getBoundingClientRect().top):null}})()")
+            if not at.get("id"):
+                out.append(("list in parts", "#langbtn", "the change of language keeps no place"))
+            elif top is None or abs(top - at["dy"]) > 4:
+                out.append(("list in parts", "#langbtn", f"after the change of language, #{at['id']} moved from {at['dy']} to {top} px"))
+        record(where, out + [("script error", "", e[:160]) for e in errs])
         c.close()
 
     def access(b, lang, root, w, theme):
@@ -299,6 +372,7 @@ def main():
             if name not in ("vault", "about"):
                 pg.reload()
                 pg.wait_for_selector("html.ready", state="attached")
+                filled(pg, f"{lang} {w} {theme} {name}")
             pg.wait_for_timeout(300)
             if js:
                 pg.evaluate(js)
@@ -324,6 +398,9 @@ def main():
     jobs += [(layout, lang, root, w, theme) for lang, root in langs for w in widths for theme in ("light", "dark")
              if not (theme == "dark" and (a.data_only or w not in (1440, 390)))]  # colours do not depend on the width; layout is checked in light
     jobs += [(search, lang, root, *details_word(Path(a.site), lang)) for lang, root in langs]  # in the main thread: its SystemExit must stop the run
+    rows = json.loads((Path(a.site) / "data.json").read_text(encoding="utf-8"))["resources"]
+    total, lastname = len(rows), rows[-1]["name"]
+    jobs += [(parts, lang, root, rows[-1]["id"]) for lang, root in langs]
     todo = queue.Queue()
     for j in jobs:
         todo.put(j)
@@ -366,7 +443,7 @@ def main():
         if not css_seen:
             record("css", [("CSS check", "", "no CSS rule read in any view: the dead-CSS check sees nothing")])
 
-    states = [n for n, _, _ in STATES + AXE_STATES] + ["about", "vault"]
+    states = [n for n, _, _ in STATES + AXE_STATES] + ["about", "vault", "list in parts"]
 
     def order(where):  # "en 1440 light directory": language, widest first, light first, states in their order
         t = where.split(" ")

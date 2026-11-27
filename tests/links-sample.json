@@ -14,7 +14,7 @@
     {"url": "https://klemmbausteine.com/", "check": "page", "expected": "parked or expired", "read": "2026-11-24", "why": "domain for sale on a marketplace"},
     {"url": "https://mocbricks.com/", "check": "page", "expected": "parked or expired", "read": "2026-11-24", "why": "parking page that sends to /lander"},
     {"url": "https://jmag286.wixsite.com/briquesmag1", "check": "page", "expected": "closed", "read": "2026-11-24", "why": "the magazine announces its end (entry briques-mag, status dead)"},
-    {"url": "https://www.cremonabricks.it/", "check": "page", "expected": "healthy", "read": "2026-11-24", "why": "the inventory of 24 November once read unrelated commercial content here; read again from 6 probes and a reader the same day, the club page was there"},
+    {"url": "https://cremonaebricks.it/", "check": "page", "expected": "healthy", "read": "2026-11-27", "why": "address of the entry cremona-bricks since v3.2 (it replaced www.cremonabricks.it, another site, no longer in the directory); the inventory of 24 November once read unrelated commercial content at the former address"},
     {"url": "https://autourdesbriques.fr/", "check": "page", "expected": "healthy", "read": "2026-11-24", "why": "trap: “spécialiste” holds a word of spam"},
     {"url": "https://www.brightontoymuseum.co.uk/index/Category:Self-Locking_Building_Bricks_%28Kiddicraft%29", "check": "page", "expected": "healthy", "read": "2026-11-24", "why": "trap: “slots” in a heading about bricks"},
     {"url": "https://www.brickyes.com/nl-nl/lego", "check": "page", "expected": "healthy", "read": "2026-11-24", "why": "trap: Dutch heading “Slot”"},

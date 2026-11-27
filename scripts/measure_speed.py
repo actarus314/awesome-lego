@@ -6,7 +6,11 @@ two pages (decision of 24/11/2026, 10:40). Conditions: Chromium, processor slowe
 round trip, 1.6 Mbit/s down, 750 kbit/s up), files compressed with gzip as GitHub Pages sends them, empty cache, a 390 px wide phone; each page loaded 5 times, the median
 kept. Measured on every load:
 - list: from the start of the navigation to the first frame painted after the list holds its cards;
-- longest task and total blocking time (the part of each task beyond 50 ms) until then, for information.
+- longest task and total blocking time (the part of each task beyond 50 ms) until then;
+- quiet: the longest task from the list to the first focus of the search field, 5 seconds later (what the page does
+  while the visitor reads: the rest of the list, details.json, the search index);
+- focus: the longest task in the 1.5 seconds after the search field takes the focus;
+- search: the longest task in the 1.5 seconds after a word is typed into it (the first results).
 
 Usage: python3 scripts/measure_speed.py [--site site] [--runs 5] [--json out.json] [--chrome /path/to/chrome]
 Needs `pip install playwright` and `playwright install chromium` (or --chrome). Prints one line per page.
@@ -23,6 +27,8 @@ import threading
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+QUIET, WINDOW = 5000, 1500  # ms: from the list to the focus of the search field; then the time watched after the focus and after the word typed
+WORD = "castle"  # the first search: a word of many entries
 
 WATCH = """
 window.__speed = {tasks: []};
@@ -51,11 +57,19 @@ def measure(browser, url):
     cdp.send("Emulation.setCPUThrottlingRate", {"rate": 4})
     pg.goto(url, wait_until="load", timeout=120000)
     pg.wait_for_function("window.__speed && window.__speed.list > 0", timeout=120000)
-    pg.wait_for_timeout(300)
+    pg.wait_for_timeout(QUIET)
+    focus = pg.evaluate("performance.now()")  # read before the task that gives the focus, which starts before its own first line
+    pg.evaluate("document.getElementById('q').focus()")
+    pg.wait_for_timeout(WINDOW)
+    typed = pg.evaluate("performance.now()")
+    pg.keyboard.type(WORD)
+    pg.wait_for_timeout(WINDOW)
     s = pg.evaluate("window.__speed")
     c.close()
+    longest = lambda a, b: round(max((d for t, d in s["tasks"] if a <= t < b), default=0))
     before = [(t, d) for t, d in s["tasks"] if t < s["list"]]
-    return {"list": round(s["list"]), "longest": round(max((d for _, d in before), default=0)), "blocking": round(sum(max(0, d - 50) for _, d in before))}
+    return {"list": round(s["list"]), "longest": round(max((d for _, d in before), default=0)), "blocking": round(sum(max(0, d - 50) for _, d in before)),
+            "quiet": longest(s["list"], focus), "focus": longest(focus, typed), "search": longest(typed, float("inf"))}
 
 
 def main():
@@ -90,8 +104,7 @@ def main():
                 self.send_header("Content-Encoding", "gzip")
             self.end_headers()
             self.wfile.write(body)
-    Quiet = Gzip
-    srv = socketserver.ThreadingTCPServer(("127.0.0.1", 0), functools.partial(Quiet, directory=a.site))
+    srv = socketserver.ThreadingTCPServer(("127.0.0.1", 0), functools.partial(Gzip, directory=a.site))
     threading.Thread(target=srv.serve_forever, daemon=True).start()
     base = f"http://127.0.0.1:{srv.server_address[1]}/"
     out = {}
@@ -101,7 +114,8 @@ def main():
             runs = [measure(b, base + path) for _ in range(a.runs)]
             med = {k: statistics.median(r[k] for r in runs) for k in runs[0]}
             out[name] = {"median": med, "runs": runs}
-            print(f"{name}: list {med['list']:.0f} ms, longest task {med['longest']:.0f} ms, blocking {med['blocking']:.0f} ms  (runs: {', '.join(str(r['list']) for r in runs)})")
+            print(f"{name}: list {med['list']:.0f} ms, longest task {med['longest']:.0f} ms, blocking {med['blocking']:.0f} ms; then longest task: quiet {med['quiet']:.0f} ms, "
+                  f"focus {med['focus']:.0f} ms, search {med['search']:.0f} ms  (list of each run: {', '.join(str(r['list']) for r in runs)})")
         b.close()
     srv.shutdown()
     worst = max(out[k]["median"]["list"] for k in out)

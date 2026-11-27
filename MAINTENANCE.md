@@ -81,9 +81,9 @@ How, task by task:
 
 ### Pages
 - Reads GitHub stars, last pushes and archived flags, YouTube channel feeds, subreddits (public Arctic Shift archive, one at a time: Reddit refuses automated reads) and site feeds (`scripts/refresh.py`).
-- After a push, or when started by **Preview**, reuses the measurements of the published website instead of reading again; it reads again only if the website cannot be reached.
+- After a push, or when started by **Preview**, reuses the measurements of the published website (its `metrics.json`, a few kilobytes) instead of reading again; it reads again only if the website cannot be reached.
 - Statuses `active`, `slow` and `inactive` follow the last activity date; past event dates disappear at the next daily run.
-- Builds `site/` (`scripts/build.py --site-only`): pages, `details.json` (strengths and weaknesses, read when the browser is idle after the page, so that the search finds them too), feeds of new resources (`feed.xml`, `fr/feed.xml`) and of versions (`changes.xml`).
+- Builds `site/` (`scripts/build.py --site-only`): pages, `details.json` (strengths and weaknesses, read when the browser is idle after the page, so that the search finds them too), `data.json` (every field), `metrics.json` (the measurements alone), feeds of new resources (`feed.xml`, `fr/feed.xml`) and of versions (`changes.xml`).
 - Puts under `preview/` the previews of the last successful **Preview** run; runs no branch code; without such a run, or once its artefact is older than 30 days, publishes the website without previews.
 - The daily run (or one started by hand without previews) hands the day's measurements to a separate job, the only one allowed to write, which keeps them on the branch `history` (`metrics/YYYY-MM-DD.json`).
 
@@ -108,6 +108,7 @@ How, task by task:
 
 ### Data fixes
 - `scripts/autofix.py` replaces an address only after a permanent redirect (301 or 308) that ends on a 200 without a query, in 5 hops at most, and removes past `next_date` values; `data/journeys.toml` is left out.
+- Two jobs: the first opens the third-party sites and rebuilds the generated files with read-only rights, and hands its changes over as a patch; the second, the only one allowed to write, applies it and opens the pull request, without running any script of the repository.
 - Recreates the branch `auto/data-fixes` from `main` at each run and opens or updates the pull request **Data fixes** (label `automatic`): a commit added by hand on that branch is lost at the next run.
 - Opens the pull request with its GitHub App (variable `DATA_FIXES_APP_ID`: the app's client ID; secret `DATA_FIXES_APP_KEY`) or, failing that, a personal token (secret `DATA_FIXES_TOKEN`), so that **Check** and **Render** start on their own.
 
@@ -149,6 +150,7 @@ How, task by task:
 - Runs on the latest Python release only; a new push to a pull request cancels its previous run (every push to `main` keeps its own).
 
 ### Render
+- Builds the website with the measurements of the published website (`scripts/refresh.py --from-site-only`: stars and last activity as published; without them if it cannot be read, never by reading the sources).
 - `scripts/check_site.py` opens every view (directory as cards and table, brand mode of an alternative brand and of LEGO, observatory, about page, Brick Vault) in English and French at 1440, 1024, 768, 390 and 320 px, light theme; dark theme at 1440 and 390 px.
 - Fails on:
   - a sideways scroll, an element out of its box;
@@ -156,6 +158,7 @@ How, task by task:
   - overlapping chart labels, a frame inherited by an inner list;
   - a script or security policy error;
   - a word of the strengths or weaknesses that the search does not find;
+  - the list drawn in parts (the first cards at once, the others when the browser is idle): empty cards left, or a link to one entry, printing, a search typed at once or the change of language that misses a card not drawn yet;
   - on phones, a search bar on more than two lines, a field under 16 px (a phone zooms into it);
   - a CSS selector that matches nothing in any view and state checked (except data-only runs), unless `tests/css-states.txt` names the state it is for.
 - Accessibility (axe-core, WCAG 2.2 A and AA) at 1440 and 390 px, both themes: a guard, not a conformance target (the 13 px studs of the map are accepted).
@@ -180,10 +183,13 @@ How, task by task:
 ## The website
 
 - Generated, never edited by hand: `README.md`, `full-list.md`, the category list of `.github/ISSUE_TEMPLATE/add-resource.yml` and `site/` (not kept in git), all from `data/` by `scripts/build.py`.
-- `data/backend/` holds figures used by the website but listed nowhere as entries (fan communities per country, population), each with its source and date. `data/metrics.json` is a local cache of the last reading.
+- `data/backend/` holds figures used by the website but listed nowhere as entries (fan communities per country, population), each with its source and date. `data/metrics.json` is the last reading, written by `scripts/refresh.py` where it runs and not kept in git: a copy in the repository would only grow old (the published one is the reference).
 - The website calls no outside service: the page reads only its own `details.json` (`connect-src 'self'` in `scripts/build.py`).
 - Every page shares the header (`site-src/header.html`, `header.js`) and the footer (`site-src/footer.html`).
 - About pages (`site-src/about.html`, texts in `about.json`, styles in `about.css`; built as `site/about/` and `site/fr/about/`): what the directory is, how it is made, why a selection, how to take part. Their figures come from the data; their texts restate this file and contributing.md in plain words, so a change of the schedule, the method or the criteria goes into `site-src/about.json` in the same pull request.
+- The page draws the first cards of the directory at once and the others while the browser is idle, or as their category nears the screen; the search index is built the same way once `details.json` is read. What needs every card (a link to one entry, Back, the change of language, printing) draws the rest first.
+- Addresses of former views (`#findings`, `#out`, `#agenda`, `#near-me`) and of the former filter `crit=fr` still lead to their place, until the date written beside them in `site-src/app.js`.
+- Speed: `python3 scripts/measure_speed.py [--runs 5] [--json out.json]` loads both home pages of the built website (`site/`) as a slow phone would (processor slowed 4 times, slow 4G, gzip, empty cache, 390 px) and prints the medians: time until the list is shown, longest task and blocking time until then, then the longest task while the page settles, at the first focus of the search field and at the first search. A change made for speed is kept only if it gains 10 % at least on what it aims at; the pull request gives the figures before and after.
 - The Brick Vault (`site-src/vault.html`, built as `site/vault/`): an English-only easter egg opened by the Konami code from any page, with its own fonts (`media/fonts/`, SIL Open Font License) and security policy. Hints: arrows in the footer, a comment and a console message, a search suggestion, the logo hopping as the code is typed.
 
 ## Versions

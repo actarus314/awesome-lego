@@ -4,6 +4,9 @@ One short entry per version; the details are in its pull request and its commits
 
 # v4.x — The directory for builders of every age: children, their parents and teachers, as well as adults; an about page says how it is made and how to take part.
 
+## v4.5 — 2026-11-27
+Website: on a slow phone the list shows sooner and the search answers at once, both prepared while the browser is idle; events say how often they recur; the chart of fan communities keeps its text size at 320 px. Also, without a number since v4.4: mechanical guards and the Tidy workflow (#31), a Renovate rule for the Python of Tidy (#32), release notes taken from this changelog (#33).
+
 ## v4.4 — 2026-11-26
 Website: the about page keeps the place being read when the language changes, the share of active entries reads "still current" on one line, and the phone bar keeps to two lines with wider fonts too. Feed: named Awesome LEGO, without the event dates left from the calendar removed in v3.0.
 
