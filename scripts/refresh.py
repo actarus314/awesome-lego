@@ -6,9 +6,10 @@
 - Subreddits (`subreddit`): date of the newest post (public Arctic Shift archive, else Reddit's feed).
 - Sites with a `feed`: date of the newest item (public RSS or Atom feed).
 Reads run in parallel (subreddits one at a time, the archive asks for it). A failed read keeps the previous
-values, taken from the published website when they are newer than the repository's copy. With `--from-site`
-(builds that follow a push), nothing is read: the measurements of the published website are reused, and a
-full reading runs only if the website cannot be reached. Writes a Markdown report to stdout: entries that failed,
+values, taken from the published website when they are newer than the local copy. With `--from-site`
+(builds that follow a push), nothing is read: the measurements of the published website (its metrics.json) are
+reused, and a full reading runs only if the website cannot be reached; with `--from-site-only` (Render), nothing
+is read at all: without the website, the build goes on without measurements. Writes a Markdown report to stdout: entries that failed,
 became archived, left the conditions of the README selection, or were not checked by hand for more than 365 days.
 
 With `--month [--previous FILE] [--links FILE]` (the Data report workflow, the 4th of each month), the report is the
@@ -30,27 +31,37 @@ import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import build  # noqa: E402  (one rule for the regime, the selection and the dates)
 import trends  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "metrics.json"
 UA = "awesome-lego-refresh/1.0 (+https://github.com/actarus314/awesome-lego)"
 TODAY = dt.date.today()
-SITE_DATA = "https://actarus314.github.io/awesome-lego/data.json"
+SITE_METRICS = build.PAGES + "metrics.json"   # the measurements of the published website alone (scripts/build.py), not its whole data.json
 MAX_BYTES = 2_000_000   # a feed or an API answer read in full is far below; the same cap as scripts/discover_feeds.py
-SITE_MAX = 30_000_000   # data.json of the website, 1.25 MB with 749 entries: grows with the directory
 IDLE_DAYS = 183   # an entry of regime activity is no longer eligible for the selection after 6 months without activity
-LIMIT = 60000   # body of the monthly report: the rest of the issue, trends included, must fit in 65536 characters
+ISSUE_MAX = 65000   # the body of an issue: GitHub takes 65536 characters at most, with room for the note of the cut
+LIMIT = 60000   # the body of a report before what follows it in the same issue (the trends of the monthly report), under ISSUE_MAX
 
 
 def site_metrics():
     """Measurements of the published website, by entry id (None if the website cannot be read)."""
     try:
-        rows = json.loads(get(SITE_DATA, limit=SITE_MAX))["resources"]
+        m = json.loads(get(SITE_METRICS))
+        if not isinstance(m, dict):
+            raise ValueError("not a table of entries")
     except Exception as e:
-        print(f"::warning::measurements of the website unreadable ({e}): every source is read again", file=sys.stderr)
+        print(f"::warning::measurements of the website unreadable ({e})" + ("" if "--from-site-only" in sys.argv else ": every source is read again"), file=sys.stderr)
         return None
-    return {r["id"]: r["metrics"] for r in rows if r.get("metrics")}
+    return m
+
+
+def cut(text, limit=ISSUE_MAX, keep=""):
+    """A text that fits in an issue: cut at a line, with a note, and `keep` (the end that must stay) after it."""
+    if len(text) <= limit:
+        return text
+    return text[: limit - len(keep) - 40].rsplit("\n", 1)[0] + "\n\n(cut: too long for an issue)\n" + ("\n" + keep if keep else "")
 
 
 class TooLarge(Exception):
@@ -97,18 +108,6 @@ def subreddit_last(name):
     return newest_date(get(f"https://www.reddit.com/r/{name}/new/.rss"))
 
 
-def selected(r):
-    """In the README selection: the rank 1 worldwide of the entry's group ("rank 1 of its group", decision of
-    24/11/2026 at 13:02; `featured` until lot 3b)."""
-    return (r.get("rank") or {}).get("intl") == 1
-
-
-def regime(r, category):
-    """Same rule as scripts/build.py: the entry's regime, else its group's, else activity."""
-    group = next((g for g in category.get("groups", []) if g["id"] == r.get("group")), {})
-    return r.get("regime") or group.get("regime") or "activity"
-
-
 def score(r, last):
     """Fixed yardstick for the README selection, 0 to 7; reported, never shown on the website.
     Activity (0-3; for an operating entry, how recent its check; a finished work 2) + confidence (0-2)
@@ -131,9 +130,9 @@ def selection_check(rows):
     for r, last in rows:
         groups.setdefault((r["_cat"], r["group"]), []).append((score(r, last), r))
     for (cat, g), items in sorted(groups.items()):
-        out_best = max((x for x in items if not selected(x[1]) and x[1].get("status") == "active"), default=None, key=lambda x: x[0])
+        out_best = max((x for x in items if not build.picked(x[1]) and x[1].get("status") == "active"), default=None, key=lambda x: x[0])
         for sc, r in items:
-            if selected(r) and out_best and out_best[0] - sc >= 2:
+            if build.picked(r) and out_best and out_best[0] - sc >= 2:
                 out.append(f"{cat}/{g}: {r['id']} ({sc}) against {out_best[1]['id']} ({out_best[0]})")
     return out
 
@@ -206,8 +205,7 @@ def read(r, old, token):
 
 def date_en(day):
     """A date as the website and the reports write it: "24 Nov 2026" (a date or an ISO string; months abbreviated)."""
-    d = dt.date.fromisoformat(day) if isinstance(day, str) else day
-    return f"{d.day} {'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split()[d.month - 1]} {d.year}"
+    return build.in_letters(str(day)[:10], "en")
 
 
 def since(iso):
@@ -288,6 +286,11 @@ def arg(name):
 def main():
     old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
     site = site_metrics()
+    if "--from-site-only" in sys.argv:
+        if site is not None:
+            OUT.write_text(json.dumps(site, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+        print(f"Measurements of the published website: {len(site) if site is not None else 'none, the build goes on without them'}")
+        return 0
     if "--from-site" in sys.argv and site:
         OUT.write_text(json.dumps(site, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
         print(f"Measurements reused from the published website: {len(site)}")
@@ -304,7 +307,7 @@ def main():
             days = None   # never loses the rest of the report; said in its section
     new, failed, archived, stale, unfeature = {}, [], [], [], []
     token = os.environ.get("GITHUB_TOKEN")
-    entries = [dict(r, _cat=path.stem, _regime=regime(r, d.get("category", {}))) for path in sorted((ROOT / "data").glob("*.toml"))
+    entries = [dict(r, _cat=path.stem, _regime=build.regime(r, d.get("category", {}))) for path in sorted((ROOT / "data").glob("*.toml"))
                for d in [tomllib.loads(pathlib.Path(path).read_text(encoding="utf-8"))] for r in d.get("resource", [])]
     with ThreadPoolExecutor(12) as pool, ThreadPoolExecutor(1) as slow:  # network waits overlap; subreddits stay one at a time
         jobs = [(slow if r.get("subreddit") and not r.get("github") and not r.get("youtube_channel_id") else pool).submit(read, r, old, token) for r in entries]
@@ -321,7 +324,7 @@ def main():
         last = (new.get(r["id"]) or {}).get("last_activity") or str(r.get("last_activity") or "")
         idle = r["_regime"] == "activity" and last and (TODAY - dt.date.fromisoformat(last)).days > IDLE_DAYS
         gone = (new.get(r["id"]) or {}).get("archived")
-        if selected(r) and (idle or gone or r.get("status") != "active" or r.get("confidence") == "low"):
+        if build.picked(r) and (idle or gone or r.get("status") != "active" or r.get("confidence") == "low"):
             why = []
             if idle:
                 why.append("inactive " + since((dt.date.fromisoformat(last) + dt.timedelta(days=IDLE_DAYS + 1)).isoformat()) if month else f"last activity {date_en(last)}")
@@ -375,10 +378,7 @@ def main():
         lines += ["", "<!-- report-ids " + json.dumps({"month": TODAY.isoformat()[:7], "date": date_en(TODAY), "ids": ids, "base": base},
                                                       sort_keys=True, ensure_ascii=False) + " -->"]
     text = "\n".join(lines)
-    if len(text) > LIMIT:   # an issue body holds 65536 characters at most; the ids line stays
-        tail = text[text.rindex("<!-- report-ids"):] if month else ""
-        text = text[: LIMIT - len(tail) - 40].rsplit("\n", 1)[0] + "\n\n(cut: too long for an issue)\n\n" + tail
-    print(text)
+    print(cut(text, LIMIT, text[text.rindex("<!-- report-ids"):] if month else ""))  # the ids line stays
     return 0
 
 

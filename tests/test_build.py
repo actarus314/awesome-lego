@@ -380,6 +380,27 @@ class Details(unittest.TestCase):
                 self.assertNotRegex(app, rf"\.{k}\b", k)
             self.assertFalse(any(v is None or v == [] or v == {} or v is False for r in blob["resources"] for v in r.values()))  # empty values read as absent
 
+    def test_metrics_file_holds_the_measurements_alone(self):
+        """site/metrics.json: what refresh.py --from-site reads back, the measured entries and nothing else."""
+        data = {"resources": [{"id": "a", "metrics": {"stars": 2}, "name": "A"}, {"id": "b", "metrics": {}, "name": "B"}]}
+        self.assertEqual(json.loads(build.site_metrics(data)), {"a": {"stars": 2}})
+
+    def test_recurrence_reaches_the_card(self):
+        """AL-57: the recurrence of an entry (recurrence_en, recurrence_fr) is carried by the page and drawn on its card."""
+        with contextlib.redirect_stdout(io.StringIO()):
+            cats, _ = build.load()
+            data = build.site_data(cats, {})
+        data["version"] = "0"
+        want = {r["id"]: r for c in cats for r in c["resources"] if r.get("recurrence_en")}
+        self.assertGreater(len(want), 50)
+        for lang in ("en", "fr"):
+            blob = json.loads(re.search(r'<script id="data" type="application/json">(.*?)</script>', build.page(lang, data), re.S).group(1).replace("\\u003c", "<"))
+            got = {r["id"]: r[lang].get("rec") for r in blob["resources"]}
+            for i, r in want.items():
+                self.assertEqual(got[i], build.text(r, "recurrence", lang), f"{lang} {i}")
+            self.assertFalse(any(v for i, v in got.items() if i not in want))
+        self.assertRegex((ROOT / "site-src" / "app.js").read_text(encoding="utf-8"), r"x\.rec\?")  # the card's legend reads it
+
 
 class Changelog(unittest.TestCase):
     def test_a_long_entry_is_refused(self):
