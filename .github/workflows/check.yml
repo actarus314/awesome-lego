@@ -32,15 +32,13 @@ jobs:
         run: |
           python3 -m pip install --quiet --require-hashes --only-binary=:all: -r tests/requirements-check.txt
           reuse lint
-      # the pull request of Version (a branch of this repository) is held to the generated files up to date and no fragment
-      # left; any other pull request leaves VERSION, CHANGELOG.md sections and the generated files to Version
+      # a pull request leaves VERSION, CHANGELOG.md sections and the generated files to Version, which writes them on main
       - name: Fragments of changes/ (and, on a pull request, the files left to the Version workflow)
         env:
-          KIND: ${{ github.event_name != 'pull_request' && 'main' || (github.head_ref == 'auto/version' && github.event.pull_request.head.repo.full_name == github.repository) && 'version' || 'other' }}
+          KIND: ${{ github.event_name != 'pull_request' && 'main' || 'other' }}
           BRANCH: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.head_ref || '' }}   # a fork names its branches as it likes
         run: |
           case "$KIND" in
-            version) python3 scripts/changes.py check --strict; echo "MODE=--strict" >> "$GITHUB_ENV" ;;
             other) python3 scripts/changes.py check --base HEAD^1 --branch "$BRANCH"; echo "MODE=--pull-request" >> "$GITHUB_ENV" ;;
             *) python3 scripts/changes.py check ;;
           esac

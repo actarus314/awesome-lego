@@ -10,22 +10,29 @@ for example
 
     Website: the about page keeps the place being read when the language changes. Feed: named Awesome LEGO.
 
-The type is major, minor or none, as MAINTENANCE.md defines them (section Versions); a fragment of type none gives no
-number and waits, cited by the entry of the next version. A major fragment adds a line `series: <one sentence>` under
+The type is major, minor, patch or none, as MAINTENANCE.md defines them (section Versions); a fragment of type none
+gives no number and waits, cited by the entry of the next version. A major fragment adds a line `series: <one sentence>` under
 its type: the heading of the new series of versions. The text says what changes in two sentences, CHANGELOG_MAX
 characters at most (scripts/build.py), with no bare @ (GitHub would notify the account) and no bare < (HTML): both in
 backticks.
 
 Usage:
-  python3 scripts/changes.py check [--base REF [--branch NAME]] [--strict]
+  python3 scripts/changes.py check [--base REF [--branch NAME]]
       every fragment well formed. --base REF (on a pull request: the branch it merges into; what changed since their
       merge base): the pull request leaves VERSION, the sections of CHANGELOG.md, the generated files and the README
-      images to Version, and fails when it changes data/ or site-src/ without adding a fragment (a warning for the
-      branches renovate/*, whose bot writes none). --strict (the pull request of Version): no major or minor
-      fragment is left.
+      images to Version, and fails when it changes the data, the website or the scripts that build it without adding
+      a fragment (a warning for the branches renovate/*, whose bot writes none).
   python3 scripts/changes.py assemble [--date YYYY-MM-DD]
       VERSION raised by the strongest type, the entry written at the top of CHANGELOG.md, the fragments removed;
-      prints version=X.Y (for $GITHUB_OUTPUT), or nothing and changes nothing when every fragment is of type none.
+      prints version=X.Y or X.Y.Z (for $GITHUB_OUTPUT), or nothing and changes nothing when nothing gives a number.
+      When no fragment gives a number but what the website serves changed since the commit of the current version
+      (the last one that changed VERSION: a dependency Renovate raised, a file Tidy rebuilt), a patch whose entry
+      says so. Run by Version on main, and by previews.py on each pull request merged with main: the preview shows
+      the number and the entry its merge gives. Needs the history back to that commit (a shallow clone: a warning,
+      no such patch).
+
+A version is MAJOR.MINOR, or MAJOR.MINOR.PATCH when its patch is not zero: 4.10, then 4.10.1, 4.10.2, then 4.11; a
+tag of an earlier version (vX.Y) keeps its name.
 """
 import datetime as dt
 import re
@@ -37,11 +44,16 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build import CHANGELOG_MAX, FILES, ID, README_IMAGES  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-TYPES = ("major", "minor", "none")  # strongest first
+TYPES = ("major", "minor", "patch", "none")  # strongest first
+NUMBERED = {"major", "minor", "patch"}
+SITE_ONLY = "Website: rebuilt with updated dependencies or files, nothing a visitor reads changes."  # the entry of a patch given by --site-changed alone
 LEFT_TO_VERSION = ["VERSION", *FILES.values(), *(f"media/{n}" for n in README_IMAGES)]
 FORM = ".github/ISSUE_TEMPLATE/add-resource.yml"  # its category list is generated (build.issue_form); the rest of it is written by hand
-CONTENT = re.compile(r"^(data|site-src)/")  # what a reader sees: a pull request that changes it says so in a fragment
+CONTENT = re.compile(r"^(data|site-src)/|^scripts/(build|refresh|trends)\.py$")  # what a reader sees, or what makes it: a pull
+# request that changes it says so in a fragment (type none for a change no page shows)
 BOTS = re.compile(r"^renovate/")  # branches of a bot that cannot write a fragment: a warning instead of a failure
+SITE = re.compile(r"^(data|site-src|media)/")  # what the website serves (vendored files: site-src/vendor/): changed by a bot
+# without fragment, a patch
 MENTION = re.compile(r"(?<![\w.`])@[A-Za-z0-9][\w-]*")
 
 
@@ -54,7 +66,7 @@ def parse(path):
     lines = path.read_text(encoding="utf-8-sig").strip().splitlines()  # a byte order mark left by an editor is no defect
     m = re.fullmatch(r"type: (\S+)", lines[0].strip()) if lines else None
     if not m or m.group(1) not in TYPES:
-        raise ValueError("the first line is `type: major`, `type: minor` or `type: none`")
+        raise ValueError("the first line is `type: major`, `type: minor`, `type: patch` or `type: none`")
     kind, rest, series = m.group(1), lines[1:], None
     if rest and rest[0].startswith("series:"):
         series, rest = rest[0].removeprefix("series:").strip(), rest[1:]
@@ -95,14 +107,37 @@ def fragments(folder):
     return out, errors
 
 
-def assemble(found, version, changelog, date):
+def bump(version, kinds):
+    """The next version for these fragment types, or None: X.Y, or X.Y.Z when the patch is not zero."""
+    parts = [int(x) for x in version.split(".")]
+    if len(parts) not in (2, 3):
+        raise SystemExit(f"VERSION {version!r}: MAJOR.MINOR or MAJOR.MINOR.PATCH")
+    major, minor, patch = (parts + [0])[:3]
+    if "major" in kinds:
+        return f"{major + 1}.0"
+    if "minor" in kinds:
+        return f"{major}.{minor + 1}"
+    if "patch" in kinds:
+        return f"{major}.{minor}.{patch + 1}"
+    return None
+
+
+def site_changed(paths):
+    """True if one of these paths changes what the website serves (the README images are not served)."""
+    return any(SITE.match(p) and not p.startswith(tuple(f"media/{n}" for n in README_IMAGES)) for p in paths)
+
+
+def assemble(found, version, changelog, date, site_changed=False):
     """(new version, new CHANGELOG.md) from the fragments, or (None, changelog) when none of them gives a number."""
     kinds = {f[1] for f in found}
-    if not kinds & {"major", "minor"}:
+    texts = [f[3] for f in found]
+    if not kinds & NUMBERED and site_changed:
+        kinds, texts = {"patch"}, [SITE_ONLY, *texts]
+    new = bump(version, kinds)
+    if new is None:
         return None, changelog
-    major, minor = (int(x) for x in version.split("."))
-    new = f"{major + 1}.0" if "major" in kinds else f"{major}.{minor + 1}"
-    entry = f"## v{new} — {date}\n" + "\n\n".join(f[3] for f in found) + "\n\n"
+    major = int(version.split(".")[0])
+    entry = f"## v{new} — {date}\n" + "\n\n".join(texts) + "\n\n"
     first = re.search(r"(?m)^# v", changelog)
     if not first:
         raise SystemExit("CHANGELOG.md has no series heading `# vN.x — …`")
@@ -115,14 +150,8 @@ def assemble(found, version, changelog, date):
     return new, changelog[:end] + entry + changelog[end:]
 
 
-def left(found):
-    """On the pull request of Version: a major or minor fragment still there reached main after the branch was built."""
-    return [f"changes/{f[0].name} ({f[1]}) is left: it reached main after this pull request was built; the Version workflow updates it"
-            for f in found if f[1] != "none"]
-
-
 def sections(text):
-    return set(re.findall(r"(?m)^## v(\d+\.\d+) ", text))
+    return set(re.findall(r"(?m)^## v(\d+\.\d+(?:\.\d+)?) ", text))
 
 
 def categories(form):
@@ -151,11 +180,24 @@ def git(*args):
     return subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True, check=True).stdout
 
 
+def site_changed_since_version():
+    """True if what the website serves changed since the commit of the current version (the last one that changed
+    VERSION, which Release tags); False, with a warning, when the history does not reach it (a shallow clone)."""
+    try:
+        base = git("log", "-1", "--format=%H", "--", "VERSION").strip()
+        shallow = ROOT / git("rev-parse", "--git-path", "shallow").strip()  # the commits where a shallow history stops: one of
+        # them seems to add every file, VERSION included
+        if base and base not in (shallow.read_text(encoding="utf-8").split() if shallow.exists() else []):
+            return site_changed(git("diff", "--name-only", "--no-renames", base, "HEAD").split())
+    except (subprocess.CalledProcessError, OSError):
+        pass
+    print("! the history does not reach the commit of the current version: no patch for a website change without fragment", file=sys.stderr)
+    return False
+
+
 def main(argv):
     found, errors = fragments(ROOT / "changes")
     if argv[:1] == ["check"]:
-        if "--strict" in argv:
-            errors += left(found)
         warnings = []
         if "--base" in argv:
             base = git("merge-base", argv[argv.index("--base") + 1], "HEAD").strip()  # what this branch changed, not what the base did since
@@ -180,7 +222,8 @@ def main(argv):
             return 1
         date = argv[argv.index("--date") + 1] if "--date" in argv else dt.datetime.now(dt.timezone.utc).date().isoformat()
         version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
-        new, text = assemble(found, version, (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), date)
+        moved = site_changed_since_version()
+        new, text = assemble(found, version, (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), date, moved)
         if new is None:
             print(f"{len(found)} fragment(s) of type none wait for the next version", file=sys.stderr)
             return 0

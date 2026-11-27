@@ -92,12 +92,12 @@ jobs:
             echo "Files changed, as verified in the workflow:"; echo; echo '```'; git diff --stat=120; echo '```'; echo
             cat "$FIXES/fixes.md"; } > "$RUNNER_TEMP/full.md"
           head -c 60000 "$RUNNER_TEMP/full.md" | iconv -f utf-8 -t utf-8 -c > "$RUNNER_TEMP/body.md"   # a pull request body: 65536 characters at most
-      # The fragment of changes/ is written here, with a fixed text, never taken from the patch: type none, the exception named
-      # in MAINTENANCE.md (section Versions); date and time make its name unique from one run to the next.
+      # The fragment of changes/ is written here, with a fixed text, never taken from the patch: type patch, a correction of
+      # content (MAINTENANCE.md, section Versions); date and time make its name unique from one run to the next.
       - name: Fragment of changes/ for the next version (no token in this step)
         run: |
           mkdir -p changes
-          printf 'type: none\n\n%s\n' "Data fixes: addresses moved for good and past event dates removed, as listed in the pull request Data fixes." \
+          printf 'type: patch\n\n%s\n' "Data fixes: addresses moved for good and past event dates removed, as listed in the pull request Data fixes." \
             > "changes/data-fixes-$(date -u +%Y-%m-%d-%H%M).md"
       # A pull request opened with the token of Actions waits for "Approve and run workflows" before its checks.
       # A GitHub App token (client ID in the variable DATA_FIXES_APP_ID, private key in the secret DATA_FIXES_APP_KEY)

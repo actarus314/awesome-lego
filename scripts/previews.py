@@ -2,9 +2,12 @@
 
 Usage: python3 scripts/previews.py OUT   (run by the Preview workflow; standard library only)
 
-Builds the open pull requests whose branch is in this repository (never a fork or a bot; OUT/<number>/), each with
-that branch's own scripts and the measurements of the published website, every page marked: a banner that says it is
-a preview, and `noindex` for search engines. OUT/index.html lists the previews. A branch whose build fails gets a page
+Builds the open pull requests whose branch is in this repository (never a fork; OUT/<number>/), each merged with
+main as its merge will publish it (the branch alone when it conflicts with main), its fragments assembled as Version
+will (scripts/changes.py assemble: the number and the entry its merge gives), with the merged scripts and the
+measurements of the published website, every page marked: a banner that says it is a preview and the number its
+merge gives, and `noindex` for search engines. The Preview workflow runs again when main moves, so the number stays
+right. OUT/index.html lists the previews. A branch whose build fails gets a page
 that says so; the others go on. On a pull_request event, this script and refresh.py come from the pull request itself
 and see GH_TOKEN, read-only, in a job that can write nowhere; the build of each branch (build.py) runs in a process
 without the token. The Pages workflow only fetches the result (see .github/workflows/preview.yml and pages.yml).
@@ -29,19 +32,25 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 REPO = os.environ.get("GITHUB_REPOSITORY", "actarus314/awesome-lego")
 PAGES = build.PAGES
 MAX = 20   # previews built per run: beyond, the oldest open requests go without
-BANNER = {"en": "Preview of {what} (commit {sha}): not the published website.",
-          "fr": "Aperçu de {what} (commit {sha}) : ce n'est pas le site publié."}
+BANNER = {"en": "Preview of {what} (commit {sha}{merged}){gives}: not the published website.",
+          "fr": "Aperçu de {what} (commit {sha}{merged}){gives} : ce n'est pas le site publié."}
+GIVES = {"en": ", its merge gives v{v}", "fr": ", sa fusion donne la v{v}"}
+NO_NUMBER = {"en": ", its merge gives no new number", "fr": ", sa fusion ne donne aucun nouveau numéro"}
+MERGED = {True: {"en": ", merged with main", "fr": ", fusionné avec main"},
+          False: {"en": ", alone: it conflicts with main", "fr": ", seul : en conflit avec main"}}
 WHAT = {"en": "pull request #{n}", "fr": "la demande de fusion #{n}"}
 LINK = {"en": "Open the pull request", "fr": "Ouvrir la demande"}
 TAB = {"en": "Preview", "fr": "Aperçu"}
 
 
-def mark(page, n, sha, url):
+def mark(page, n, sha, url, merged=True, version=None):
     """A built page marked as a preview: `noindex` in its head, a banner at the top of its body (styles inline, no script:
-    the page's security policy allows inline styles and only the scripts it lists)."""
+    the page's security policy allows inline styles and only the scripts it lists). version: the number its merge gives,
+    "" for none, None when unknown (a failed build)."""
     lang = "fr" if re.search(r'<html[^>]*\blang="fr"', page) else "en"
+    gives = "" if version is None else GIVES[lang].format(v=version) if version else NO_NUMBER[lang]
     banner = (f'<div role="note" style="position:relative;z-index:100;background:#7a1f1f;color:#fff;font:600 14px system-ui,sans-serif;'
-              f'padding:8px 14px;text-align:center">{html.escape(BANNER[lang].format(what=WHAT[lang].format(n=n), sha=sha))} '
+              f'padding:8px 14px;text-align:center">{html.escape(BANNER[lang].format(what=WHAT[lang].format(n=n), sha=sha, merged=MERGED[merged][lang], gives=gives))} '
               f'<a href="{html.escape(url)}" style="color:#fff">{LINK[lang]}</a></div>')
     # the banner scrolls away with the page; the sticky header stays red-tinted with a red band, and the tab title says it
     keep = ('<style>header.top,#vault header{background:color-mix(in srgb,#c62828 16%,color-mix(in srgb,var(--bg) 88%,transparent))!important;'
@@ -88,20 +97,38 @@ def targets():
     """What to preview: the open pull requests of this repository's branches."""
     out = []
     for p in api("/pulls?state=open&per_page=50") or []:
-        if p["head"]["repo"] and p["head"]["repo"]["full_name"] == REPO and p["user"]["type"] != "Bot":  # dependency and data-fix requests change no page worth looking at
+        if p["head"]["repo"] and p["head"]["repo"]["full_name"] == REPO:
             out.append({"n": p["number"], "sha": p["head"]["sha"], "title": p["title"], "url": p["html_url"]})
     return out[:MAX]
 
 
+def merge_with_main(wt, sha):
+    """In the worktree wt, on main: merge sha as its merge will publish it; True if merged, False (wt on sha alone) if it
+    conflicts with main or shares no history with it within the commits fetched."""
+    git = ["git", "-c", "user.name=preview", "-c", "user.email=preview@invalid"]
+    if subprocess.run([*git, "merge", "-q", "--no-edit", "--no-ff", sha], cwd=wt, capture_output=True, timeout=120).returncode == 0:
+        return True
+    subprocess.run([*git, "merge", "--abort"], cwd=wt, capture_output=True, timeout=60)
+    subprocess.run(["git", "checkout", "-q", "--detach", sha], cwd=wt, check=True, timeout=120)
+    return False
+
+
 def build(p, out):
-    """The website of one branch, built by the branch's own build.py; True if it built."""
+    """The website of one pull request merged with main, built by the merged build.py; True if it built."""
     n, sha = p["n"], p["sha"]
     env = {k: v for k, v in os.environ.items() if k not in ("GH_TOKEN", "GITHUB_TOKEN")}  # the branch's code never sees a token
     with tempfile.TemporaryDirectory() as tmp:
         wt = pathlib.Path(tmp) / "branch"
+        merged = True
         try:
-            subprocess.run(["git", "fetch", "-q", "--depth=1", "origin", sha], cwd=ROOT, check=True, timeout=120)
-            subprocess.run(["git", "worktree", "add", "-q", "--detach", str(wt), sha], cwd=ROOT, check=True, timeout=120)
+            subprocess.run(["git", "fetch", "-q", "--depth=200", "origin", "+refs/heads/main:refs/remotes/origin/main", sha],
+                           cwd=ROOT, check=True, timeout=120)  # enough history for their merge base
+            main_sha = subprocess.run(["git", "rev-parse", "refs/remotes/origin/main"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+            subprocess.run(["git", "worktree", "add", "-q", "--detach", str(wt), main_sha], cwd=ROOT, check=True, timeout=120)
+            merged = merge_with_main(wt, sha)
+            done = subprocess.run([sys.executable, "scripts/changes.py", "assemble"], cwd=wt, env=env, capture_output=True,
+                                  text=True, check=True, timeout=120).stdout  # VERSION and CHANGELOG.md as Version will write them
+            version = re.sub(r"^version=", "", done.strip()) if done.startswith("version=") else ""
             metrics = ROOT / "data" / "metrics.json"
             if metrics.exists():
                 shutil.copy(metrics, wt / "data" / "metrics.json")  # measurements of the published website, read by the step before
@@ -111,7 +138,7 @@ def build(p, out):
             for f in [f for f in dest.rglob("*") if f.is_symlink()]:
                 f.unlink()  # a link would publish a file of the machine
             for f in dest.rglob("*.html"):
-                f.write_text(mark(f.read_text(encoding="utf-8"), n, sha[:7], p["url"]), encoding="utf-8")
+                f.write_text(mark(f.read_text(encoding="utf-8"), n, sha[:7], p["url"], merged, version), encoding="utf-8")
             return True
         except (subprocess.CalledProcessError, subprocess.TimeoutExpired, OSError) as e:
             print(f"::warning::preview of #{n} not built: {e}")

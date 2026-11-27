@@ -50,6 +50,20 @@ Lot parallèle : demande #57 (modèle de publication C, AL-80), en brouillon, to
 
 Se corrigent les constats de relecture qui touchent l'objet du lot (fichiers pour machines, liens, contrôle), l'étalon, une régression de l'affichage ou des fichiers générés, ou la règle de la marque LEGO dans les textes français. Les autres suivent l'étape 3 de la clôture (geste sûr, registre, écart motivé).
 
-## Mesure du rendu à l'avance
+## Mesure du rendu à l'avance (27/11/2026, 23 h 35 à 23 h 50)
 
-(remplie par le lot)
+Prototype sur une copie de `site/` (v4.9, 749 fiches), rien de commité : la liste telle que `app.js` la dessine (749 cartes, relevées dans Chrome après 6 s) écrite dans `<div id="list">` ; `app.js` inchangé, qui la redessine en arrivant. Conditions de `scripts/measure_speed.py` (Chrome 4 fois ralenti, 4G lente, gzip, téléphone de 390 px, 5 chargements, médiane) ; fin des scripts et chargement relevés par un script à part dans les mêmes conditions.
+
+| Mesure (en / fr) | Actuel | Rendu à l'avance | Écart |
+|---|---|---|---|
+| Liste affichée (règle des 10 %) | 1424 / 1447 ms | 371 / 388 ms | −74 % |
+| Tâche la plus longue jusqu'à la liste | 303 / 289 ms | 102 / 111 ms | −66 % |
+| Tâche la plus longue pendant la lecture | sous 50 ms | 432 / 440 ms | `app.js` redessine tout |
+| Fin des scripts (recherche et filtres utilisables) | 1355 / 1458 ms | 2051 / 2111 ms | +51 % |
+| Chargement complet | 1799 / 1812 ms | 2154 / 2202 ms | +20 % |
+| Poids de l'accueil, brut | 752159 / 768808 octets | 1347602 / 1390970 | +79 % |
+| Poids de l'accueil, gzip | 162957 / 167505 octets | 259112 / 268046 | +59 % |
+| Budget par fiche (`tests/budgets.json` : 1047 / 1069) | 1004 / 1026 | 1799 / 1857 | dépassé |
+| Construction (rendu des cartes en Python, simplifié) | 0.48 s | ≈ +5 ms | négligeable |
+
+Lecture : la liste paraît près de quatre fois plus tôt et les robots qui n'exécutent pas le JavaScript liraient les fiches ; en contrepartie, la recherche et les filtres répondent 0.7 s plus tard (page plus lourde à télécharger avant le script), et un redessin de 0.43 s gèle la page pendant la lecture. Ce redessin disparaîtrait si `app.js` reprenait les cartes déjà là au lieu de les redessiner (travail non mesuré) ; le retard de la recherche, non. La construction ne ralentit pas. Décision laissée à Romain : AL-82.

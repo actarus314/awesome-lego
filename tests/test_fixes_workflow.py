@@ -97,7 +97,7 @@ class PatchCheck(unittest.TestCase):
         made = list((self.repo / "changes").iterdir())
         self.assertEqual(len(made), 1)
         self.assertRegex(made[0].name, r"^data-fixes-\d{4}-\d{2}-\d{2}-\d{4}\.md$")
-        self.assertEqual(changes.parse(made[0])[0], "none")
+        self.assertEqual(changes.parse(made[0])[0], "patch")  # a correction of content: a patch (MAINTENANCE.md, Versions)
         y = (ROOT / ".github" / "workflows" / "fixes.yml").read_text(encoding="utf-8")
         block = y[y.index("- name: " + FRAGMENT):]
         block = block[:re.search(r"\n      [-#]", block).start()]
