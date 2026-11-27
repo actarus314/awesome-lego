@@ -783,6 +783,23 @@ def issue_form(cats):
 README_IMAGES = ("site-preview.png", "site-preview-dark.png")  # written by scripts/readme_image.py
 
 
+def social_host():
+    """The address of the website as the image of shared pages writes it: its host, without scheme nor final slash."""
+    return re.sub(r"^https?://|/$", "", PAGES)
+
+
+def social_shows():
+    """What media/social.png shows (scripts/social_image.py), kept in its text chunk `shows`."""
+    return " | ".join((T["title"]["en"], T["site_tagline"]["en"], social_host()))
+
+
+def check_social_image():
+    """The image of shared pages says what the website says: drawn again when the title, the tagline or the address change."""
+    f = ROOT / "media" / "social.png"
+    shown = png_text(f, "shows") if f.exists() else None
+    return [] if shown == social_shows() else [f"media/social.png shows « {shown or '?'} », not « {social_shows()} »: python3 scripts/social_image.py"]
+
+
 def png_text(path, key):
     """The value of a text chunk of a PNG (tEXt), or None."""
     b = path.read_bytes()
@@ -876,6 +893,7 @@ def waiting_types():
 def main():
     cats, errors = load()
     errors += check_docs()
+    errors += check_social_image()
     if errors:
         fail(errors)
     rank_check(cats)
