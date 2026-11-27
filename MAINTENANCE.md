@@ -36,7 +36,7 @@ flowchart LR
 | **Scorecard** | Tuesdays 04:43, every push to `main` | score of the repository practices | alerts in the **Security** tab, score at `api.scorecard.dev` |
 | **Tidy** | Mondays 06:41 | fixes that need no judgement: unused Python imports, lossless compression of the PNG files of `media/` (README images excepted) | pull request **Tidy**, only when a file changed |
 
-Started by hand (**Run workflow**): **Pages**, **Links** (with *dry run*), **Data fixes**, **Data report**, **Render**, **Tidy**.
+Started by hand (**Run workflow**): **Pages**, **Links** (with *dry run*), **Data fixes**, **Data report**, **Render**, **Tidy**, **Release** (notes of the releases).
 
 ## On each pull request
 
@@ -46,7 +46,7 @@ Started by hand (**Run workflow**): **Pages**, **Links** (with *dry run*), **Dat
 | **Render** | when the website, its data or its checks change | the website drawn in a real browser, without defect |
 | **Preview** | when the website changes, for a branch of this repository opened by a person | a link to the website of the branch, in a comment |
 | **Workflow audit** | when a workflow changes | the workflows are safe |
-| **Release** | when `VERSION` changes on `main` | tag `vX.Y` and the GitHub release |
+| **Release** | when `VERSION` or `CHANGELOG.md` changes on `main` | tag `vX.Y` and the GitHub release; notes of earlier releases set again from `CHANGELOG.md` |
 
 ## Maintainer's tasks
 
@@ -166,7 +166,8 @@ How, task by task:
 - Not a required check (a path filter would leave it pending): its result is read before merging.
 
 ### Release
-- Tags `vX.Y` and publishes the GitHub release with its `CHANGELOG.md` section; fails if the section is missing, does nothing if the version exists. Releases are immutable: read the entry before merging.
+- Tags `vX.Y` and publishes the GitHub release with its `CHANGELOG.md` section (`scripts/release_notes.py`); fails if the section is missing, does nothing if the version exists. Releases are immutable: read the entry before merging.
+- At each change of `CHANGELOG.md` on `main` (or by hand), the notes of every earlier release are set again to its section when they differ: an entry shortened in the changelog is shortened in its release too.
 
 ### Workflow audit and Scorecard
 - **Workflow audit**: zizmor reads `.github/workflows/` (dangerous triggers, injections, excessive permissions, unpinned or vulnerable actions) on every pull request or push to `main` that changes a workflow, and Mondays.
