@@ -44,7 +44,7 @@ jobs:
       - name: Tools (axe-core from package-lock.json, Playwright, Chromium and its fonts)
         id: tools
         env:
-          KEPT_THIS_WEEK: "false"   # TEMPORARY test of the fallback; kept this week: installed directly, without apt-get update (scripts/browser.sh)
+          KEPT_THIS_WEEK: ${{ steps.fonts.outputs.cache-hit }}   # kept this week: installed directly, without apt-get update (scripts/browser.sh)
         run: |
           npm ci --ignore-scripts --no-audit --no-fund
           python3 -m pip install --quiet --require-hashes --only-binary=:all: -r tests/requirements.txt
