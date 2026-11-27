@@ -127,6 +127,25 @@ class Pages(unittest.TestCase):
         for lang, doc in self.pages.items():
             self.assertNotRegex(doc, r'data-t="\w+"[^>]*></(a|h1|h2|h3|span|button|p)>', lang)
 
+    def test_address_of_the_website(self):
+        here = {"en": build.PAGES, "fr": build.PAGES + "fr/"}
+        for lang, doc in self.pages.items():
+            self.assertIn(f'<link rel="canonical" href="{here[lang]}">', doc)
+            self.assertNotIn("github.io", doc.split("</head>")[0], lang)
+        # the job "link" of .github/workflows/preview.yml reads PAGES with this pattern, without running Python
+        found = re.findall(r'^PAGES = "([^"]*)"', (ROOT / "scripts" / "build.py").read_text(encoding="utf-8"), re.M)
+        self.assertEqual(found, [build.PAGES])
+
+    def test_feed_identifiers_stay(self):  # RFC 4287, 4.2.6: an identifier does not change when the website moves
+        with contextlib.redirect_stdout(io.StringIO()):
+            cats, _ = build.load()
+        for lang in ("en", "fr"):
+            feed = build.content_feed(cats, lang)
+            ids = re.findall(r"<id>([^<]*)</id>", feed)
+            self.assertTrue(ids, lang)
+            self.assertTrue(all(i.startswith(build.FEED_ID) for i in ids), lang)
+            self.assertIn(f'rel="self" href="{build.PAGES}', feed)
+
     def test_data_block_cannot_close_the_script(self):
         for doc in self.pages.values():
             i = doc.index('<script id="data" type="application/json">')  # the data block ends at the first "</": it must hold no "<"
