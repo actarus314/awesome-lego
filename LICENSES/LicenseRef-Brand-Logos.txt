@@ -1,7 +1,7 @@
 Brand logos (media/logos/)
 
 The files of media/logos/ are logos and trademarks of their owners. They are not covered by the licences of this
-repository (CC BY-NC-SA 4.0 for the content, PolyForm Noncommercial 1.0.0 for the code), and no right to use them is
+repository (CC BY-NC-SA 4.0 for the content, GNU AGPL 3.0 for the code), and no right to use them is
 granted here. Awesome LEGO shows each logo only to identify the brand next to its own entry, in the brand view of
 its website. Each file was taken from the brand's own website, from the logo of its header, and reduced in size
 (SVG cleaned of scripts and links, raster images at most 96 pixels high).
