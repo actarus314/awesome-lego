@@ -80,6 +80,16 @@
         "* * 1 * *"
       ],
       "minimumReleaseAge": null
+    },
+    {
+      "description": "npm for Renovate's own lock updates (constraints.npm): kept on the major version that Node gives the workflows (npm 11 with Node 26), which reads min-release-age since 11.10; raise it by hand when the Node of the workflows ships a new npm major.",
+      "matchFileNames": [
+        "renovate.json"
+      ],
+      "matchDepNames": [
+        "npm"
+      ],
+      "enabled": false
     }
   ],
   "pip-compile": {
