@@ -2,7 +2,7 @@
 
 *Maintainer's working notes, in French: what is left to do, check, decide or watch.*
 
-Seul registre de ce qui reste à faire, à vérifier, à décider ou à surveiller pour l'annuaire (skill `passation`) ; contexte : `dev/contexte.md`. Une ligne ne disparaît jamais : `fait vX.Y`, `abandonné : raison` ou `fusionné → ID` ; à la clôture d'un lot, les lignes closes descendent dans `dev/registre-clos.md`. Identifiants `AL-n` : 1 à 47 reprennent l'ancienne liste « Ouvert » (projet claude.ai) ; AL-57 à AL-64 viennent de l'audit Opus du 26/11 (34 constats : 18 corrigés dans la #28, 15 rangés ici, 1 écarté : Scorecard à chaque poussée sur `main`, sans coût d'attente). Mis à jour le 27/11/2026 à 6 h 25 (passe ligne à ligne avec Romain ; v4.7 en ligne ; demande #43 ouverte).
+Seul registre de ce qui reste à faire, à vérifier, à décider ou à surveiller pour l'annuaire (skill `passation`) ; contexte : `dev/contexte.md`. Une ligne ne disparaît jamais : `fait vX.Y`, `abandonné : raison` ou `fusionné → ID` ; à la clôture d'un lot, les lignes closes descendent dans `dev/registre-clos.md`. Identifiants `AL-n` : 1 à 47 reprennent l'ancienne liste « Ouvert » (projet claude.ai) ; AL-57 à AL-64 viennent de l'audit Opus du 26/11 (34 constats : 18 corrigés dans la #28, 15 rangés ici, 1 écarté : Scorecard à chaque poussée sur `main`, sans coût d'attente). Mis à jour le 27/11/2026 à 7 h 10 (passe ligne à ligne avec Romain ; v4.7 en ligne ; demandes #48 et #49 ouvertes).
 
 Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 confort, P4 à l'occasion, V veille. Exécutant : C (Claude), CC (Claude dans le Chrome de Romain), R (Romain), RM (revue mensuelle planifiée).
 
@@ -39,8 +39,8 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 | AL-68 | P3 | Nom de domaine grand public pour le site (dépôt gardé en « awesome-lego ») : recherche ouverte par Romain le 26/11 à 13 h 40 dans une autre conversation ; détail : projet claude.ai, claude/awesome-lego-nom-de-domaine.md | R, avec C | — | ouverte : suivie dans l'autre conversation (Romain, 27/11 à 05 h 49) ; domaine 3001.club acheté chez Porkbun (27/11, dit par Romain), mise en service à suivre là-bas |
 | AL-77 | P4 | Badges du README (OpenSSF Best Practices, OpenSSF Scorecard, REUSE), demande de Romain du 27/11 à 05 h 32 ; dépôt inscrit sur api.reuse.software à 05 h 39 (courriel général, vérifié par Romain) | C | — | ouverte : #43 fusionnée par Romain à 06 h 36 (14152a2) avec les deux badges OpenSSF (REUSE encore « uninitialised » à 06 h 26, 45 minutes après la vérification du courriel) ; badge REUSE à ajouter dans une demande à part quand `https://api.reuse.software/status/github.com/actarus314/awesome-lego` dira « compliant » ; badges visibles à la prochaine version numérotée |
 | AL-15 | P4 | Coffre : glissés tactiles et son non vérifiés sur un vrai téléphone | R | — | ouverte : à essayer par Romain sur son téléphone |
-| AL-08 | P4 | Idées gardées : distinguer par la forme ce que la couleur seule distingue ; langues d'interface allemande et italienne | R | — | ouverte : en attente d'une demande de Romain |
-| AL-09 | P4 | Archivage des sources (copie datée de chaque page citée) : non mis en place | R | — | ouverte : en attente d'une demande de Romain |
+| AL-08 | P4 | Idées gardées : distinguer par la forme ce que la couleur seule distingue ; langues d'interface allemande et italienne | R | — | abandonné : fermée par Romain le 27/11 à 07 h 03, sans suite |
+| AL-09 | P4 | Archivage des sources (copie datée de chaque page citée) : non mis en place | R | — | abandonné : fermée par Romain le 27/11 à 07 h 03, sans suite |
 
 ## À l'occasion
 
