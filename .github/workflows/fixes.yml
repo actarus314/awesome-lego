@@ -27,10 +27,10 @@ jobs:
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.15"
-      - name: Find mechanical fixes (addresses moved for good, past event dates)
+      - name: Find mechanical fixes (addresses moved for good, past event dates), with their fragment of changes/
         run: python3 scripts/autofix.py --write > fixes.md
-      - name: Rebuild the generated files and check them
-        run: python3 scripts/build.py && python3 scripts/build.py --check
+      - name: Check the data and the fragment (the generated files are rebuilt by the Version workflow after the merge)
+        run: python3 scripts/build.py --check && python3 scripts/changes.py check
       # A pull request opened with the token of Actions waits for "Approve and run workflows" before its checks.
       # A GitHub App token (client ID in the variable DATA_FIXES_APP_ID, private key in the secret DATA_FIXES_APP_KEY)
       # or a personal token (secret DATA_FIXES_TOKEN) lets Check and Render start on their own.
@@ -48,11 +48,11 @@ jobs:
           OWN_TOKEN: ${{ steps.app.outputs.token != '' || secrets.DATA_FIXES_TOKEN != '' }}
           GH_REPO: ${{ github.repository }}
         run: |
-          if git diff --quiet -- data README.md full-list.md; then echo "Nothing to fix."; exit 0; fi
+          if git diff --quiet -- data; then echo "Nothing to fix."; exit 0; fi
           [ "$OWN_TOKEN" = "true" ] || echo "::warning::No app or personal token: the checks of the pull request wait for Approve and run workflows"
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -q -B auto/data-fixes
-          git add data README.md full-list.md
+          git add data changes
           git commit -qm "Data fixes: addresses moved for good, past event dates"
           git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" auto/data-fixes
           printf '%s\n\n%s\n' "Mechanical fixes found by scripts/autofix.py. Each line is checked by a person before merging." "$(cat fixes.md)" > body.md

@@ -2,7 +2,8 @@
 """Validate data/*.toml, write README.md (the rank 1 worldwide of each group) and full-list.md
 (every entry), and build the bilingual GitHub Pages site (site/).
 
-Usage: python3 scripts/build.py [--check | --site-only]   (standard library only, latest Python release)
+Usage: python3 scripts/build.py [--check [--strict] | --site-only]   (standard library only, latest Python release)
+--strict: generated files out of date fail even while a fragment of changes/ waits (the pull request of Version).
 """
 import base64
 import datetime as dt
@@ -834,9 +835,20 @@ CHANGELOG_MAX = 550  # rule of a changelog entry: about 250 characters, 550 at m
 
 
 def changelog_long(text):
-    """The entries of CHANGELOG.md longer than CHANGELOG_MAX, as "vX.Y: n characters"."""
-    return [f"v{v}: {len(body.strip())} characters" for v, body in re.findall(r"(?m)^## v(\d+\.\d+) — [\d-]+\n(.*?)(?=^## v|^# v|\Z)", text, re.S)
-            if len(body.strip()) > CHANGELOG_MAX]
+    """The paragraphs of CHANGELOG.md entries longer than CHANGELOG_MAX, as "vX.Y: n characters". An entry assembled
+    by the workflow Version has one paragraph per fragment of changes/ (scripts/changes.py)."""
+    return [f"v{v}: {len(para.strip())} characters" for v, body in re.findall(r"(?m)^## v(\d+\.\d+) — [\d-]+\n(.*?)(?=^## v|^# v|\Z)", text, re.S)
+            for para in body.split("\n\n") if len(para.strip()) > CHANGELOG_MAX]
+
+
+def out_of_date(stale, waiting, strict):
+    """(errors, warnings) for generated files out of date. While a fragment of changes/ waits (a pull request, or main
+    before the pull request of Version is merged), the workflow Version rebuilds them: a warning. With no fragment,
+    or with --strict (the pull request of Version itself), an error."""
+    if stale and waiting and not strict:
+        return [], [f"{f} is out of date: the Version workflow rebuilds it after the merge ({len(waiting)} fragment(s) in changes/)" for f in stale]
+    return [f"{f} is out of date: a pull request leaves it to the Version workflow and adds changes/<name>.md (contributing.md); "
+            "elsewhere, run python3 scripts/build.py and commit it" for f in stale], []
 
 
 def main():
@@ -864,8 +876,11 @@ def main():
     report_notes()
     if "--check" in sys.argv:
         stale = [f for f, t in texts.items() if not (ROOT / f).exists() or (ROOT / f).read_text(encoding="utf-8") != t]
-        if stale:
-            fail([f"{f} is out of date: run python3 scripts/build.py and commit it" for f in stale])
+        errors, warnings = out_of_date(stale, sorted((ROOT / "changes").glob("*.md")), "--strict" in sys.argv)
+        for w in warnings:
+            print("! " + w)
+        if errors:
+            fail(errors)
         return
     if "--site-only" not in sys.argv:
         for f, t in texts.items():

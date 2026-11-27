@@ -6,6 +6,13 @@
   ],
   "minimumReleaseAge": "3 days",
   "internalChecksFilter": "strict",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "* * * * 4"
+    ],
+    "description": "Indirect dependencies of package-lock.json and of the locks of tests/ refreshed in one pull request a week, on Thursdays: Tidy opens on Mondays, Data fixes on Wednesdays."
+  },
   "ignorePaths": [
     "**/node_modules/**",
     "**/bower_components/**",

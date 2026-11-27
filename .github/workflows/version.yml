@@ -1,0 +1,88 @@
+name: Version
+on:
+  push:
+    branches: [main]   # after each merge: the fragments of changes/ that main holds become the pull request vX.Y
+  workflow_dispatch:   # by hand: also rebuilds the generated files when no fragment gives a number
+permissions:
+  contents: read
+concurrency:
+  group: version
+  cancel-in-progress: false   # the run going ends; only the latest waiting one follows it
+jobs:
+  version:
+    if: github.ref == 'refs/heads/main'   # started by hand from another branch: nothing to do
+    runs-on: ubuntu-latest
+    timeout-minutes: 20   # about 20 seconds; 2 minutes with the image of the README, more when the font mirror is slow
+    permissions:
+      contents: read   # the branch and the pull request are written with the token of the app of Data fixes
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.15"
+      - name: Fragments of changes/ into VERSION and the CHANGELOG.md entry (nothing when every fragment is of type none)
+        id: assemble
+        run: python3 scripts/changes.py assemble >> "$GITHUB_OUTPUT"
+      - name: Rebuild the generated files and check them as the pull request of Version
+        if: steps.assemble.outputs.version != '' || github.event_name == 'workflow_dispatch'
+        run: python3 scripts/build.py && python3 scripts/build.py --check --strict && python3 scripts/changes.py check --strict
+      - name: Runner image and week (key of the fonts kept by Render)
+        if: steps.assemble.outputs.version != ''
+        id: week
+        run: |
+          echo "prefix=fonts-${ImageOS:-linux}-" >> "$GITHUB_OUTPUT"
+          echo "week=$(date -u +%G-%V)" >> "$GITHUB_OUTPUT"
+      - name: Fonts kept by Render (read only)
+        if: steps.assemble.outputs.version != ''
+        id: fonts
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/fonts
+          key: ${{ steps.week.outputs.prefix }}${{ steps.week.outputs.week }}-${{ hashFiles('tests/requirements.txt') }}
+          restore-keys: ${{ steps.week.outputs.prefix }}
+      - name: Image of the README at the new version
+        if: steps.assemble.outputs.version != ''
+        env:
+          KEPT_THIS_WEEK: ${{ steps.fonts.outputs.cache-hit }}
+        run: |
+          python3 -m pip install --quiet --require-hashes --only-binary=:all: -r tests/requirements.txt
+          bash scripts/browser.sh
+          python3 scripts/build.py --site-only && python3 scripts/readme_image.py
+      # Same token as Data fixes: a pull request opened by the app starts its checks on its own.
+      # The app cannot push to main (the ruleset lets only the admin role bypass it): hence a pull request.
+      - id: app
+        if: (steps.assemble.outputs.version != '' || github.event_name == 'workflow_dispatch') && vars.DATA_FIXES_APP_ID != ''
+        uses: actions/create-github-app-token@f418cff399f7aef4c2f0ad47e25ca7a6abbdd6fc # v3.4.0
+        with:
+          client-id: ${{ vars.DATA_FIXES_APP_ID }}
+          private-key: ${{ secrets.DATA_FIXES_APP_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+      - name: Open or update the pull request vX.Y
+        if: steps.assemble.outputs.version != '' || github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token || secrets.DATA_FIXES_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          OWN_TOKEN: ${{ steps.app.outputs.token != '' || secrets.DATA_FIXES_TOKEN != '' }}
+          VERSION: ${{ steps.assemble.outputs.version }}
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then echo "Nothing to number or rebuild."; exit 0; fi
+          [ "$OWN_TOKEN" = "true" ] || echo "::warning::No app or personal token: the checks of the pull request wait for Approve and run workflows"
+          title=${VERSION:+v$VERSION}; title=${title:-Generated files}
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -q -B auto/version
+          git add -A VERSION CHANGELOG.md changes README.md full-list.md .github/ISSUE_TEMPLATE media/site-preview.png media/site-preview-dark.png
+          git commit -qm "$title"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" auto/version
+          {
+            echo "Written by the Version workflow from the fragments of \`changes/\` merged on \`main\`, with the generated files and the image of the README rebuilt. Merging it publishes $title: **Release** tags it."
+            echo
+            echo "Rebuilt after each merge on \`main\`: a commit added by hand on this branch is lost at the next run; a fragment is corrected by a pull request to \`main\`."
+            echo
+            if [ -n "$VERSION" ]; then echo "**Entry of CHANGELOG.md:**"; echo; python3 scripts/release_notes.py section "v$VERSION"; echo; fi
+            echo "**Files:**"; echo; echo '```'; git show --stat --format= HEAD; echo '```'
+          } > body.md
+          n=$(gh pr list --head auto/version --state open --json number -q '.[0].number')
+          if [ -n "$n" ]; then gh pr edit "$n" --title "$title" --body-file body.md; else gh pr create --head auto/version --base main --title "$title" --label automatic --body-file body.md; fi

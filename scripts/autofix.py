@@ -4,7 +4,8 @@
 - An address that moved for good (every hop a 301 or 308 redirect, final page answers 200) is replaced by
   its new address. Temporary redirects (302, 303, 307: language, country or login pages) are left alone.
 - A `next_date` already past is removed: the next edition is unknown until someone reads it.
-Prints a Markdown summary; with --write, edits the TOML files in place.
+Prints a Markdown summary; with --write, edits the TOML files in place and writes the fragment
+changes/data-fixes-<date>.md (type none: no number, cited by the next version's entry; scripts/changes.py).
 """
 import concurrent.futures as cf
 import datetime as dt
@@ -53,6 +54,14 @@ def moved(url):
     return None if same(cur, url) or same(cur.replace("http://", "https://"), url) else cur
 
 
+def fragment(moved_n, past_n):
+    """The text of the fragment of changes/: what Data fixes changed, in one sentence."""
+    say = lambda n, one, many: f"{n} {one if n == 1 else many}"
+    parts = [say(moved_n, "address moved for good", "addresses moved for good") if moved_n else "",
+             say(past_n, "past event date removed", "past event dates removed") if past_n else ""]
+    return "Data fixes: " + " and ".join(p for p in parts if p) + "."
+
+
 def main():
     write = "--write" in sys.argv
     urls, dates, files = {}, [], {}
@@ -83,6 +92,9 @@ def main():
             tomllib.loads(text)
             if text != path.read_text(encoding="utf-8"):
                 path.write_text(text, encoding="utf-8")
+        if lines:
+            (ROOT / "changes").mkdir(exist_ok=True)
+            (ROOT / "changes" / f"data-fixes-{TODAY}.md").write_text(f"type: none\n\n{fragment(sum(1 for v in new.values() if v), len(dates))}\n", encoding="utf-8")
     lines.sort(key=lambda l: "**" not in l)  # changes of site first, for the person who merges
     print("\n".join(lines) if lines else "Nothing to fix.")
     return 0

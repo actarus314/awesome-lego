@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+          fetch-depth: 2   # on a pull request, the merge commit and its parents: HEAD^1 is the branch it merges into
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.15"
@@ -31,12 +32,24 @@ jobs:
         run: |
           python3 -m pip install --quiet --require-hashes --only-binary=:all: -r tests/requirements-check.txt
           reuse lint
-      - name: Validate data and check that generated files are up to date
-        run: python3 scripts/build.py --check
+      # the pull request of Version (a branch of this repository) is held to the generated files up to date and no fragment
+      # left; any other pull request leaves VERSION, CHANGELOG.md sections and the generated files to Version
+      - name: Fragments of changes/ (and, on a pull request, the files left to the Version workflow)
+        env:
+          KIND: ${{ github.event_name != 'pull_request' && 'main' || (github.head_ref == 'auto/version' && github.event.pull_request.head.repo.full_name == github.repository) && 'version' || 'other' }}
+        run: |
+          case "$KIND" in
+            version) python3 scripts/changes.py check --strict ;;
+            other) python3 scripts/changes.py check --base HEAD^1 ;;
+            *) python3 scripts/changes.py check ;;
+          esac
+          echo "STRICT=$([ "$KIND" = version ] && echo --strict)" >> "$GITHUB_ENV"
+      - name: Validate data and check that generated files are up to date (left to Version while a fragment waits)
+        run: python3 scripts/build.py --check ${STRICT:+"$STRICT"}
       - name: Unit tests (validation, pages)
         run: python3 -m unittest discover -s tests
-      - name: Build the site
-        run: python3 scripts/build.py --site-only   # the generated files were just checked up to date: only the website is left to build
+      - name: Build the generated files and the site
+        run: python3 scripts/build.py   # README.md as this pull request makes it, for awesome-lint (Version commits it after the merge)
       - name: Mechanical guards (dead code, unread strings and fields, workflows, weight budgets)
         run: python3 scripts/hygiene.py   # after the build: the weight budgets read site/
       - name: awesome-lint
