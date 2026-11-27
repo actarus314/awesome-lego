@@ -3,6 +3,7 @@ generated files left to Version while a fragment waits (scripts/build.py). Each 
 import contextlib
 import io
 import os
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -53,7 +54,7 @@ class Fragments(unittest.TestCase):
     def test_defects_are_refused(self):
         bad = {"Bad_Name.md": "type: minor\n\nText.\n",
                "no-type.md": "Website: text.\n",
-               "odd-type.md": "type: patch\n\nText.\n",
+               "odd-type.md": "type: fix\n\nText.\n",
                "no-blank.md": "type: minor\nText.\n",
                "empty.md": "type: minor\n\n",
                "two-paragraphs.md": "type: minor\n\nOne.\n\nTwo.\n",
@@ -104,6 +105,33 @@ class Assemble(unittest.TestCase):
         self.assertEqual(new, "5.0")
         self.assertIn("# Changelog\n\n# v5.x — Series five.\n\n## v5.0 — 2026-12-01\nData: new format.\n\nWebsite: two.\n\n# v4.x — Series four.\n", text)
 
+    def test_patch_raises_the_third_number_shown_only_when_not_zero(self):
+        new, text = changes.assemble([self.frag("fix.md", "patch", "Data: two addresses moved.")], "4.4", CHANGELOG, "2026-12-01")
+        self.assertEqual(new, "4.4.1")
+        self.assertIn("# v4.x — Series four.\n\n## v4.4.1 — 2026-12-01\nData: two addresses moved.\n\n## v4.4 — 2026-11-26\n", text)
+        self.assertEqual(changes.bump("4.4.1", {"patch"}), "4.4.2")
+        self.assertEqual(changes.bump("4.4.2", {"minor", "patch"}), "4.5")
+        self.assertEqual(changes.bump("4.4.2", {"major"}), "5.0")
+        self.assertEqual(changes.bump("4.4.2", {"none"}), None)
+
+    def test_a_version_of_another_shape_is_refused(self):
+        for bad in ("4", "4.4.1.1", "v4.4"):
+            with self.assertRaises((SystemExit, ValueError)):
+                changes.bump(bad, {"patch"})
+
+    def test_a_website_change_without_fragment_gives_a_patch(self):
+        new, text = changes.assemble([self.frag("a.md", "none", "Automation: one.")], "4.4", CHANGELOG, "2026-12-01", site_changed=True)
+        self.assertEqual(new, "4.4.1")
+        self.assertIn("## v4.4.1 — 2026-12-01\n" + changes.SITE_ONLY + "\n\nAutomation: one.\n", text)
+        new, _ = changes.assemble([self.frag("b.md", "minor", "Website: two.")], "4.4", CHANGELOG, "2026-12-01", site_changed=True)
+        self.assertEqual(new, "4.5")
+        self.assertEqual(changes.assemble([], "4.4", CHANGELOG, "2026-12-01"), (None, CHANGELOG))
+
+    def test_the_readers_of_the_changelog_see_three_numbers(self):
+        text = "## v4.4.1 — 2026-12-01\n" + "x" * (build.CHANGELOG_MAX + 1) + "\n"
+        self.assertEqual(build.changelog_long(text), [f"v4.4.1: {build.CHANGELOG_MAX + 1} characters"])
+        self.assertEqual(changes.sections(text + "## v4.4 — 2026-11-26\nOne.\n"), {"4.4.1", "4.4"})
+
     def test_fragments_of_type_none_wait(self):
         self.assertEqual(changes.assemble([self.frag("a.md", "none", "Automation: one.")], "4.4", CHANGELOG, "2026-12-01"), (None, CHANGELOG))
         self.assertEqual(changes.assemble([], "4.4", CHANGELOG, "2026-12-01"), (None, CHANGELOG))
@@ -151,10 +179,11 @@ class Command(unittest.TestCase):
             self.assertEqual(code, 1, argv)
             self.assertEqual((root / "VERSION").read_text(encoding="utf-8"), "4.4\n")
 
-    def test_strict_refuses_a_minor_fragment_left(self):
-        self.assertEqual(self.run_in({"site.md": "type: minor\n\nWebsite: two.\n"}, "check", "--strict")[0], 1)
-        self.assertEqual(self.run_in({"tidy.md": "type: none\n\nAutomation: one.\n"}, "check", "--strict")[0], 0)
-        self.assertEqual(self.run_in({"site.md": "type: minor\n\nWebsite: two.\n"}, "check")[0], 0)
+    def test_what_the_website_serves(self):
+        self.assertTrue(changes.site_changed(["data/shops.toml"]))
+        self.assertTrue(changes.site_changed(["site-src/app.js", "dev/x.md"]))
+        self.assertFalse(changes.site_changed(["scripts/build.py"]))
+        self.assertFalse(changes.site_changed(["media/site-preview.png", "media/site-preview-dark.png", "README.md", "scripts/check_site.py", ".github/workflows/pages.yml"]))
 
 
 class PullRequest(unittest.TestCase):
@@ -186,6 +215,8 @@ class PullRequest(unittest.TestCase):
         self.assertEqual((errors, len(warnings)), ([], 1))
         self.assertEqual(changes.pull_request({"data/shops.toml", "changes/x.md"}, self.texts(), self.texts(), True), ([], []))
         self.assertEqual(changes.pull_request({"scripts/tidy.py", "media/logos/x.png"}, self.texts(), self.texts(), False, "auto/tidy"), ([], []))
+        for f in ("scripts/build.py", "scripts/refresh.py", "scripts/trends.py"):  # what builds the pages: a fragment, of type none if no page shows it
+            self.assertEqual(len(changes.pull_request({f}, self.texts(), self.texts(), False)[0]), 1, f)
 
 
 class Git(unittest.TestCase):
@@ -232,6 +263,38 @@ class Git(unittest.TestCase):
         code, err = self.check("--base", "main")
         self.assertEqual(code, 1)
         self.assertIn("VERSION is written by the Version workflow", err)
+
+    def assemble(self, root=None):
+        old, changes.ROOT = changes.ROOT, root or self.root
+        try:
+            with contextlib.redirect_stdout(io.StringIO()) as out, contextlib.redirect_stderr(io.StringIO()) as err:
+                return changes.main(["assemble", "--date", "2026-12-01"]), out.getvalue(), err.getvalue()
+        finally:
+            changes.ROOT = old
+
+    def test_a_website_change_since_the_commit_of_the_version_gives_a_patch(self):
+        (self.root / ".github/workflows/check.yml").write_text("# edited\n", encoding="utf-8")
+        self.commit("tools only")
+        self.assertEqual(self.assemble()[:2], (0, ""))
+        (self.root / "site-src/vendor").mkdir(parents=True)
+        (self.root / "site-src/vendor/minisearch.min.js").write_text("// raised\n", encoding="utf-8")
+        self.commit("Renovate")
+        v = (self.root / "VERSION").read_text(encoding="utf-8").strip()
+        self.assertEqual(self.assemble()[:2], (0, f"version={changes.bump(v, {'patch'})}\n"))
+        self.assertIn(changes.SITE_ONLY, (self.root / "CHANGELOG.md").read_text(encoding="utf-8"))
+        self.commit("the version")   # VERSION changed: the base moves to this commit
+        self.assertEqual(self.assemble()[:2], (0, ""))
+
+    def test_a_shallow_history_gives_no_patch_and_says_so(self):
+        (self.root / "site-src").mkdir()
+        (self.root / "site-src/app.js").write_text("// edited\n", encoding="utf-8")
+        self.commit("website")
+        clone = self.root.parent / (self.root.name + "-shallow")
+        subprocess.run(["git", "clone", "-q", "--depth=1", f"file://{self.root}", str(clone)], check=True, capture_output=True)
+        self.addCleanup(shutil.rmtree, clone, True)
+        code, out, err = self.assemble(clone)
+        self.assertEqual((code, out), (0, ""))
+        self.assertIn("the history does not reach the commit of the current version", err)
 
     def test_a_branch_without_fragment_that_changes_data_fails(self):
         self.git("checkout", "-q", "-b", "topic")
@@ -303,7 +366,7 @@ class GeneratedFiles(unittest.TestCase):
         self.assertEqual(build.out_of_date([], [], ""), ([], []))
         errors, warnings = build.out_of_date(["README.md"], ["minor"], "")
         self.assertEqual(errors, [])
-        self.assertIn("by the next pull request vX.Y", warnings[0])
+        self.assertIn("right after the merge", warnings[0])
 
     def test_the_message_says_when_only_fragments_of_type_none_wait(self):
         errors, warnings = build.out_of_date(["README.md"], ["none"], "")
@@ -315,9 +378,9 @@ class GeneratedFiles(unittest.TestCase):
             errors, warnings = build.out_of_date(["README.md"], waiting, "pull-request")
             self.assertEqual((errors, len(warnings)), ([], 1), waiting)
 
-    def test_an_error_without_fragment_on_main_or_on_the_pull_request_of_version(self):
+    def test_an_error_without_fragment_on_main(self):
         self.assertEqual(len(build.out_of_date(["README.md"], [], "")[0]), 1)
-        self.assertEqual(len(build.out_of_date(["README.md", "full-list.md"], ["minor"], "strict")[0]), 2)
+        self.assertEqual(len(build.out_of_date(["README.md", "full-list.md"], ["patch"], "")[0]), 0)
 
 
 if __name__ == "__main__":

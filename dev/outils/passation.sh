@@ -855,7 +855,7 @@ elif MODE in ("suite", "cibles"):          # suite des constats (06/11/2026) : c
         sys.exit(0)
     # 1. blocs Constats: des étiquettes livrées depuis CONSTATS_DEPUIS
     p = [re.escape(x) for x in E("PREFS").split()]
-    rx = re.compile("^(" + "|".join(p) + r")[0-9]+\.[0-9]+$") if p else None
+    rx = re.compile("^(" + "|".join(p) + r")[0-9]+\.[0-9]+(\.[0-9]+)?$") if p else None
     c, t = git("for-each-ref", "--sort=creatordate", "--format=%(refname:short) %(committerdate:unix) %(*committerdate:unix)", "refs/tags")
     etiq = [(x[0], int(x[-1])) for x in (l.split() for l in t.splitlines()) if rx and len(x) >= 2 and rx.match(x[0]) and int(x[-1]) >= int(E("CD") or 0)]
     vus, compte, delais, signaux = set(), {"corrigé": 0, "renvoyé": 0, "fait": 0, "écarté": 0}, [], []
@@ -1161,7 +1161,7 @@ for L in $LIVRABLES; do
 done
 # documents web (DOCS) : étiquettes vX.Y de document-versionne, contrôlés même sans LIVRABLES
 if [ -n "$DOCS" ]; then
-  T=$($GIT tag -l 'v[0-9]*' --sort=-v:refname 2>/dev/null | grep -E '^v[0-9]+\.[0-9]+$' | head -1)
+  T=$($GIT tag -l 'v[0-9]*' --sort=-v:refname 2>/dev/null | grep -E '^v[0-9]+\.[0-9]+(\.[0-9]+)?$' | head -1)
   if [ -z "$T" ]; then echec "aucune étiquette vX.Y pour les documents : $DOCS"
   else
     case " $ETIQ " in *" $T "*) ;; *) ETIQ="$ETIQ $T"
@@ -1226,7 +1226,7 @@ print(" ".join(vus[:5]) + (f" (+{len(vus) - 5})" if len(vus) > 5 else ""), end="
     # (script python entre apostrophes : n y écrire aucune apostrophe)
     L=$(AVANCEMENT="$AVANCEMENT" python3 -c '
 import os, re
-ok = re.compile(r"(proposé|à cadrer|préparé|en cours \(\d{2}/\d{2} \d{2}:\d{2}\)|reste\b|fait (v\d+\.\d+|\d{2}/\d{2})|abandonné)")
+ok = re.compile(r"(proposé|à cadrer|préparé|en cours \(\d{2}/\d{2} \d{2}:\d{2}\)|reste\b|fait (v\d+\.\d+(?:\.\d+)?|\d{2}/\d{2})|abandonné)")
 fautifs, entete = [], None
 for l in open(os.environ["AVANCEMENT"], encoding="utf-8").read().splitlines():
     if not l.startswith("|"):
@@ -1241,7 +1241,7 @@ for l in open(os.environ["AVANCEMENT"], encoding="utf-8").read().splitlines():
 print(" ".join(fautifs), end=" " if fautifs else "")
 '); rc=$?
     if [ $rc -ne 0 ]; then echec "contrôle des statuts de lots de $AVANCEMENT en erreur (python3, code $rc)"
-    elif [ -n "$L" ]; then echec "statut de lot hors des mots de passation (proposé, à cadrer, préparé, en cours (JJ/MM HH:MM), reste, fait vX.Y ou JJ/MM, abandonné) : $L"
+    elif [ -n "$L" ]; then echec "statut de lot hors des mots de passation (proposé, à cadrer, préparé, en cours (JJ/MM HH:MM), reste, fait vX.Y, vX.Y.Z ou JJ/MM, abandonné) : $L"
     else ok "$AVANCEMENT : statuts des lots conformes"; fi
     if [ -n "$LIGNE_MAX" ]; then S=$(registre longueurs) || echec "contrôle de LIGNE_MAX en erreur (python3)"; rendre "$S"; fi
     # carte des fichiers (02/10/2026) : chaque fichier versionné y a un rôle (chemin, dossier finissant par /, ou motif *)
@@ -1515,7 +1515,7 @@ if [ "$REVUE_MOTIFS" -gt 0 ] 2>/dev/null; then
       PREFS="$PREFS" DEPUIS="$CONSTATS_DEPUIS" python3 -c '
 import os, re, sys
 p = [re.escape(x) for x in os.environ["PREFS"].split()]
-rx = re.compile("^(" + "|".join(p) + r")[0-9]+\.[0-9]+$") if p else None
+rx = re.compile("^(" + "|".join(p) + r")[0-9]+\.[0-9]+(\.[0-9]+)?$") if p else None
 n, majeures = 0, []
 for l in sys.stdin:
     c = l.split()

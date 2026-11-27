@@ -1,4 +1,6 @@
-# Lot publication 2 — ce qui est en ligne est ce qui se télécharge (à décider par Romain)
+# Lot publication 2 — ce qui est en ligne est ce qui se télécharge
+
+**Décision de Romain (27/11, 23 h 03)** : modèle C, avec une numérotation à trois niveaux (le troisième chiffre seulement s'il n'est pas nul), pour l'annuaire et pour toutes les skills. Un lot est une demande ; la demande `vX.Y` disparaît. Mise en œuvre : demande « publish-c ».
 
 *Maintainer's working notes, in French: brief of the publication model, to be decided by the maintainer before any code.*
 
