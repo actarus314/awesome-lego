@@ -13,6 +13,9 @@ themes. Fails on:
   outer rows reaching the inner ones);
 - script error, console error, or content security policy violation;
 - search: a word found only in the strengths or weaknesses of an entry (details.json, read after the page) must find it;
+- phones (640 px and less): the search bar on more than two lines, a field under 16 px (a phone zooms into it);
+- dead CSS: a selector that matches nothing in any view and state checked, unless tests/css-states.txt names its
+  state (not in --data-only runs);
 - accessibility (axe-core, WCAG 2.2 A and AA rules: contrast on the real background, names of controls,
   target sizes, landmarks, ARIA): every violation, on the same views, at 1440 and 390 px in both themes. A guard,
   not a conformance target: the 13 px studs of the category map are accepted, and marks told apart by colour
@@ -27,6 +30,7 @@ import argparse
 import functools
 import http.server
 import json
+import re
 import os
 import queue
 import tempfile
@@ -116,6 +120,18 @@ STATES = [
 ]
 
 
+# CSS of a selector that matches nothing in any view and state checked here: dead, unless tests/css-states.txt names the state it is for
+CSS_SELECTORS = r"""()=>{const out=[],err=[];const dyn=/::?(hover|focus-visible|focus-within|focus|active|visited|link|target|placeholder|before|after|marker|selection|backdrop|first-letter|first-line|-webkit-[a-z-]+|-moz-[a-z-]+)(\([^)]*\))?/g;
+const walk=rules=>{for(const r of rules){if(r.cssRules&&!r.selectorText)walk(r.cssRules);else if(r.selectorText){for(const s of r.selectorText.split(/,(?![^(]*\))/)){const t=s.replace(dyn,'').trim()||'*';let m=true;try{m=!!document.querySelector(t)}catch(e){m=true}out.push([s.trim(),m])}}}};
+for(const sh of document.styleSheets){try{walk(sh.cssRules)}catch(e){err.push(sh.href||'inline style')}}return {sel:out,err}}"""
+
+# phones: the search bar on two lines at most (search line, then one row of controls), fields at 16 px or more (a phone zooms into a smaller one)
+PHONE = r"""(w)=>{const out=[],row=document.querySelector('.bar .row');
+if(!row)out.push(['phone check','.bar .row','no search bar found: the bar check sees nothing']);else{const rs=[...row.children].filter(e=>e.offsetParent&&getComputedStyle(e).display!=='none').map(e=>e.getBoundingClientRect()).sort((x,y)=>x.top-y.top);let n=0,low=-1e9;for(const r of rs){if(r.top>=low-2)n++;low=Math.max(low,r.bottom)}if(n>2)out.push(['bar on more than two lines','.bar .row',n+' lines, the search field included'])}
+for(const e of document.querySelectorAll('input:not([type=checkbox]):not([type=radio]),select,textarea')){if(!e.offsetParent)continue;const f=parseFloat(getComputedStyle(e).fontSize);if(f<16)out.push(['field under 16 px',(e.id?'#'+e.id:e.tagName.toLowerCase()),f+' px: a phone zooms into it'])}
+return out}"""
+
+
 def details_word(site, lang):
     """A word of the strengths or weaknesses of one entry that no other text of the directory holds."""
     import re
@@ -195,15 +211,34 @@ def main():
             return any(k == gk and (gd.split(': ')[-1][:20] in d or d[:20] in gd) for gk, gd in got)
         missed = [f"{k}: {d}" for k, d in want if not hit(k, d)]
         extra = [f"{k}: {d}" for k, d in got if not any(k == wk and (d.split(': ')[-1][:20] in wd or wd[:20] in d) for wk, wd in want)]
+        # the phone and dead-CSS checks on tests/phone-fixture.html: exactly the three defects it plants
+        pg.set_content((ROOT / "tests" / "phone-fixture.html").read_text(encoding="utf-8"))
+        phone = {(k, where) for k, where, _ in pg.evaluate(PHONE, 390)}
+        css = pg.evaluate(CSS_SELECTORS)
+        dead = {x for x, m in css["sel"] if not m}
+        planted = {("bar on more than two lines", ".bar .row"), ("field under 16 px", "#tiny")}
+        missed += [f"{k}: {w}" for k, w in planted - phone] + ([] if ".dead-rule" in dead else ["CSS matching nothing: .dead-rule"])
+        extra += [f"{k}: {w}" for k, w in phone - planted] + [f"CSS matching nothing: {x}" for x in dead - {".dead-rule"}] + css["err"]
         b.close()
     if missed or extra:
-        print("✗ calibration of the checks failed (tests/render-fixture.html)")
+        print("✗ calibration of the checks failed (tests/render-fixture.html, tests/phone-fixture.html)")
         for m in missed:
             print("   not found:", m)
         for x in extra:
             print("   unexpected:", x)
         return 1
-    print(f"✓ calibration: {len(want)} planted defects found, nothing else")
+    print(f"✓ calibration: {len(want) + len(planted) + 1} planted defects found, nothing else")
+
+    css_seen, css_used = set(), set()
+
+    def selectors(pg):
+        if a.data_only:
+            return
+        got = pg.evaluate(CSS_SELECTORS)
+        record("css", [("CSS check", h, "stylesheet unreadable: the dead-CSS check cannot see its rules") for h in got["err"]])
+        with lock:
+            css_seen.update(x for x, _ in got["sel"])
+            css_used.update(x for x, m in got["sel"] if m)
 
     # each job opens its own browser context and records what it finds; the jobs run side by side (--jobs browsers)
     def layout(b, lang, root, w, theme):
@@ -225,13 +260,18 @@ def main():
                 pg.evaluate(js)
                 pg.wait_for_timeout(400)
             record(f"{lang} {w} {theme} {name}", pg.evaluate(PROBE, {"mobile": mobile, "width": w}))
+            if name == "directory" and w <= 640:
+                record(f"{lang} {w} {theme} {name}", pg.evaluate(PHONE, w))
+            selectors(pg)
         pg.goto(base + root + "about/")  # the about page of the language: shared header, its own layout
         pg.wait_for_timeout(300)
         record(f"{lang} {w} {theme} about", pg.evaluate(PROBE, {"mobile": mobile, "width": w}))
+        selectors(pg)
         if lang == "en":
             pg.goto(base + "vault/")
             pg.wait_for_timeout(700)
             record(f"{lang} {w} {theme} vault", pg.evaluate(PROBE, {"mobile": mobile, "width": w}))
+            selectors(pg)
         record(f"{lang} {w} {theme}", [("script error", "", e[:160]) for e in errs])
         c.close()
 
@@ -316,6 +356,15 @@ def main():
     if errors:
         raise errors[0]
     srv.shutdown()
+    if not a.data_only:
+        known = {re.split(r"\s+#\s", l)[0].strip() for l in (ROOT / "tests" / "css-states.txt").read_text(encoding="utf-8").splitlines()
+                 if l.strip() and not l.startswith("# ")}  # "selector   # state"; a line starting "# " is a comment
+        record("css", [("CSS matching nothing", x, "in no view or state checked: remove it, or name its state in tests/css-states.txt")
+                       for x in sorted(css_seen - css_used - known)])
+        record("css", [("CSS states list", x, "names a selector that no longer exists: remove it from tests/css-states.txt")
+                       for x in sorted(known - css_seen)])
+        if not css_seen:
+            record("css", [("CSS check", "", "no CSS rule read in any view: the dead-CSS check sees nothing")])
 
     states = [n for n, _, _ in STATES + AXE_STATES] + ["about", "vault"]
 

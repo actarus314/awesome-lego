@@ -1,0 +1,54 @@
+name: Tidy
+on:
+  schedule:
+    - cron: "41 6 * * 1"   # Mondays: mechanical fixes of the week (scripts/tidy.py)
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: tidy
+  cancel-in-progress: false
+jobs:
+  tidy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10   # about one minute
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.13"   # oxipng has wheels up to Python 3.13
+      - name: Tools, locked by hash
+        run: |
+          python3 -m pip install --quiet --require-hashes --only-binary=:all: -r tests/requirements-tidy.txt
+      - name: Mechanical fixes (unused imports, lossless PNG compression)
+        run: python3 scripts/tidy.py > tidy.md
+      # Same token as Data fixes: a pull request opened by the app starts its checks on its own.
+      - id: app
+        if: vars.DATA_FIXES_APP_ID != ''
+        uses: actions/create-github-app-token@f418cff399f7aef4c2f0ad47e25ca7a6abbdd6fc # v3.4.0
+        with:
+          client-id: ${{ vars.DATA_FIXES_APP_ID }}
+          private-key: ${{ secrets.DATA_FIXES_APP_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+      - name: Open or update the pull request
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token || secrets.DATA_FIXES_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          OWN_TOKEN: ${{ steps.app.outputs.token != '' || secrets.DATA_FIXES_TOKEN != '' }}
+        run: |
+          if git diff --quiet -- scripts tests media; then echo "Nothing to tidy."; exit 0; fi
+          [ "$OWN_TOKEN" = "true" ] || echo "::warning::No app or personal token: the checks of the pull request wait for Approve and run workflows"
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -q -B auto/tidy
+          git add scripts tests media
+          git commit -qm "Tidy: mechanical fixes of the week"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" auto/tidy
+          printf '%s\n\n%s\n' "Mechanical fixes found by scripts/tidy.py: nothing that needs judgement. No version number." "$(cat tidy.md)" > body.md
+          n=$(gh pr list --head auto/tidy --state open --json number -q '.[0].number')
+          if [ -n "$n" ]; then gh pr edit "$n" --body-file body.md; else gh pr create --head auto/tidy --base main --title "Tidy" --label automatic --body-file body.md; fi

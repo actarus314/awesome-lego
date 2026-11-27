@@ -10,7 +10,6 @@ import re
 import shutil
 import sys
 import tempfile
-import tomllib
 import unittest
 from pathlib import Path
 
@@ -207,11 +206,6 @@ def set_field(rid, key, value):
         new = re.sub(rf"(?m)^{re.escape(key)} = .*\n", lambda _: line, block, count=1) if re.search(rf"(?m)^{re.escape(key)} = ", block) else block.replace(f'id = "{rid}"\n', f'id = "{rid}"\n{line}', 1)
         return t[:m.start()] + new + t[m.end():]
     return edit
-
-
-def add_field(rid, line):
-    """An edit that adds `line` to the entry `rid`, right after its id."""
-    return lambda t: t.replace(f'id = "{rid}"\n', f'id = "{rid}"\n{line}\n', 1)
 
 
 def notes_with(file, edit):

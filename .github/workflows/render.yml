@@ -1,10 +1,10 @@
 name: Render
 on:
   pull_request:
-    paths: ["site-src/**", "scripts/build.py", "scripts/check_site.py", "media/**", "!media/site-preview*.png", "data/**", "tests/render-fixture.html", "tests/requirements.txt", "package-lock.json", ".github/workflows/render.yml"]   # the README image alone changes nothing on the website
+    paths: ["site-src/**", "scripts/build.py", "scripts/check_site.py", "media/**", "!media/site-preview*.png", "data/**", "tests/render-fixture.html", "tests/phone-fixture.html", "tests/css-states.txt", "tests/requirements.txt", "package-lock.json", ".github/workflows/render.yml"]   # the README image alone changes nothing on the website
   push:
     branches: [main]
-    paths: ["site-src/**", "scripts/build.py", "scripts/check_site.py", "media/**", "!media/site-preview*.png", "data/**", "tests/render-fixture.html", "tests/requirements.txt", "package-lock.json", ".github/workflows/render.yml"]   # the README image alone changes nothing on the website
+    paths: ["site-src/**", "scripts/build.py", "scripts/check_site.py", "media/**", "!media/site-preview*.png", "data/**", "tests/render-fixture.html", "tests/phone-fixture.html", "tests/css-states.txt", "tests/requirements.txt", "package-lock.json", ".github/workflows/render.yml"]   # the README image alone changes nothing on the website
   workflow_dispatch:
 permissions:
   contents: read
@@ -45,7 +45,7 @@ jobs:
         id: tools
         run: |
           npm ci --ignore-scripts --no-audit --no-fund
-          python3 -m pip install --quiet --require-hashes -r tests/requirements.txt
+          python3 -m pip install --quiet --require-hashes --only-binary=:all: -r tests/requirements.txt
           if compgen -G "$HOME/fonts/*.deb" > /dev/null; then sudo cp "$HOME"/fonts/*.deb /var/cache/apt/archives/; fi
           python3 -m playwright install --with-deps chromium
           # kept for the next runs: the packages of the versions now installed, and no others (older ones would pile up week after week)

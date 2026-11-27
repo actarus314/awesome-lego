@@ -601,7 +601,6 @@ def details(lang, data):
 def page(lang, data):
     tpl = static_texts(assemble(), lang)
     other = "fr/" if lang == "en" else "../"
-    other_lang = "fr" if lang == "en" else "en"
     lean = dict(data, resources=[{**{k: v for k, v in r.items() if k not in LANGS and k not in PAGE_UNREAD and not (v is None or v is False or v == [] or v == {})}, lang: page_texts(r[lang])}
                                  for r in data["resources"]])  # each page carries its own language only, without what app.js never reads nor empty values (read as absent)
     blob = json.dumps(lean, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")  # no "</script" nor "<!--" inside the data block

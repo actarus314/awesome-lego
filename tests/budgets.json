@@ -1,0 +1,14 @@
+{
+ "measured": "2026-11-27, v4.4 (749 resources)",
+ "margin": "5 %",
+ "per_resource": {
+  "index.html": 1047,
+  "fr/index.html": 1069,
+  "details.json": 261,
+  "fr/details.json": 297
+ },
+ "files": {
+  "about/index.html": 55410,
+  "fr/about/index.html": 56271
+ }
+}
