@@ -21,7 +21,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 SITE = ROOT / "site"
 REPO = "actarus314/awesome-lego"
-PAGES = "https://actarus314.github.io/awesome-lego/"
+PAGES = "https://3001.club/"  # the website (custom domain of GitHub Pages, since 27/11/2026); the one place this address is written
 LANGS = ("en", "fr")
 ORDER = ["brands", "shops", "comparators", "second-hand", "community", "video", "events", "places", "clubs", "learning", "tools", "directories"]
 COVERS = {"official", "alternative", "second-hand", "parts", "custom-builds", "minifigures", "instructions", "news", "data", "events", "places", "clubs", "learning"}
@@ -60,7 +60,7 @@ T = {  # interface strings
     "feed": {"en": "Feed of new resources (RSS)", "fr": "Flux des nouveautés (RSS)"},
     "contents": {"en": "Contents", "fr": "Sommaire"},
     "contributing": {"en": "Contributing", "fr": "Contribuer"},
-    "contrib_text": {"en": "Additions and corrections are welcome: read [how the directory is made and what gets in](https://actarus314.github.io/awesome-lego/about/), then [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them."},
+    "contrib_text": {"en": f"Additions and corrections are welcome: read [how the directory is made and what gets in]({PAGES}about/), then [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them."},
     "site_fr": {"en": "French version of the website", "fr": "Version française du site"},
     "site": {"en": "Explore the website: every resource, with search, filters and a map", "fr": "Explorer le site : toutes les ressources, avec recherche, filtres et carte"},
 }
@@ -619,7 +619,7 @@ def page(lang, data):
     blob = json.dumps(lean, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")  # no "</script" nor "<!--" inside the data block
     values = {"LANG": lang, "OTHER": other, "TITLE": html.escape(T["title"][lang]), "TAGLINE": html.escape(T["site_tagline"][lang]),
               "MINISEARCH": (ROOT / "site-src" / "vendor" / "minisearch.min.js").read_text(encoding="utf-8"),
-              "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "",
+              "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "", "SITE": PAGES,
               "DATA": blob, "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": "#top", "HOME": "", "ABOUT": "about/", "ABOUTCUR": "", "ROOT": "../" if lang == "fr" else ""}
     out = re.sub(r"\{\{(\w+)\}\}", lambda m: values[m.group(1)], tpl)  # one pass: a text of the data that contains {{…}} is never replaced again
     i = out.index("{{CSP}}")  # the policy is the template's own placeholder, before any data
@@ -653,7 +653,7 @@ def inline_scripts(doc):
     return p.bodies
 
 
-def csp(doc, rest="; style-src 'unsafe-inline'; img-src 'self' https://actarus314.github.io; connect-src 'self'; base-uri 'none'; form-action 'none'"):
+def csp(doc, rest=f"; style-src 'unsafe-inline'; img-src 'self' {PAGES.rstrip('/')}; connect-src 'self'; base-uri 'none'; form-action 'none'"):
     """Content security policy (GitHub Pages sends no headers: a meta element, placed before the first script).
     Only the page's own inline scripts run, each allowed by its hash; nothing is loaded from elsewhere."""
     hashes = [base64.b64encode(hashlib.sha256(m.encode("utf-8")).digest()).decode()
@@ -680,7 +680,7 @@ def about(lang, data):
                     ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
     pct = lambda k: f"{max(1, round(100 * k / n))}%"
     values = {"LANG": lang, "PTITLE": html.escape(A["ptitle"]), "PDESC": html.escape(A["pdesc"]), "CANON": canon, "LD": ld,
-              "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "", "ASTYLE": source("about.css"),
+              "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "", "SITE": PAGES, "ASTYLE": source("about.css"),
               "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": home, "HOME": home, "ABOUT": "./", "ABOUTCUR": ' aria-current="page"', "ROOT": "../../" if lang == "fr" else "../",
               "OTHER": "../fr/about/" if lang == "en" else "../../about/",
               "N": str(n), "RANKED": str(ranked), "SEL": str(sel), "RANKEDW": pct(ranked), "SELW": pct(sel),

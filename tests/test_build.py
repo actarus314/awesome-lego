@@ -159,8 +159,8 @@ class About(unittest.TestCase):
     def test_found_by_search_engines(self):
         for lang, doc in self.pages.items():
             self.assertIn(f'<link rel="canonical" href="{build.PAGES}{build.ABOUT_PATH[lang]}">', doc)
-            self.assertIn('hreflang="en" href="https://actarus314.github.io/awesome-lego/about/"', doc)
-            self.assertIn('hreflang="fr" href="https://actarus314.github.io/awesome-lego/fr/about/"', doc)
+            self.assertIn(f'hreflang="en" href="{build.PAGES}about/"', doc)
+            self.assertIn(f'hreflang="fr" href="{build.PAGES}fr/about/"', doc)
             ld = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', doc).group(1))
             self.assertEqual(ld["@type"], "AboutPage")
 

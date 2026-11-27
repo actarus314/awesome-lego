@@ -55,13 +55,18 @@ jobs:
     permissions:
       pull-requests: write   # one comment with the link, kept up to date
     steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}   # the base branch, never the pull request's code: only to read the address of the website
+          sparse-checkout: scripts
+          persist-credentials: false
       - env:
           GH_TOKEN: ${{ github.token }}
           N: ${{ github.event.pull_request.number }}
           SHA: ${{ github.event.pull_request.head.sha }}
           ACTION: ${{ github.event.action }}
         run: |
-          url="https://${GITHUB_REPOSITORY%/*}.github.io/${GITHUB_REPOSITORY#*/}/preview/${N}/"
+          url="$(python3 -c 'import sys; sys.path.insert(0, "scripts"); import build; print(build.PAGES)')preview/${N}/"
           if [ "$ACTION" = closed ]; then body="<!-- preview -->
           Preview removed: the pull request is closed."
           else body="<!-- preview -->

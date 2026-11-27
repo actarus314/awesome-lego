@@ -86,6 +86,7 @@ How, task by task:
 ## Workflows in detail
 
 ### Pages
+- Publishes the website at https://3001.club/ (the address of `PAGES` in `scripts/build.py`, its one place), the custom domain of GitHub Pages (Settings › Pages; HTTPS enforced there once GitHub has issued its certificate). The domain is registered at Porkbun, with its DNS there: the four `A` and four `AAAA` records of GitHub Pages on the apex, `www` as a `CNAME` to `actarus314.github.io`, the `TXT` record that verifies the domain for the account, DNSSEC, transfer lock and automatic renewal (expiry 27 Nov 2027). The former address `actarus314.github.io/awesome-lego/` redirects there.
 - Reads GitHub stars, last pushes and archived flags, YouTube channel feeds, subreddits (public Arctic Shift archive, one at a time: Reddit refuses automated reads) and site feeds (`scripts/refresh.py`).
 - After a push, or when started by **Preview**, reuses the measurements of the published website (its `metrics.json`, a few kilobytes) instead of reading again; it reads again only if the website cannot be reached.
 - Statuses `active`, `slow` and `inactive` follow the last activity date; past event dates disappear at the next daily run.

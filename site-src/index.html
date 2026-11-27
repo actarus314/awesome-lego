@@ -7,13 +7,13 @@
 <title>{{TITLE}}</title>
 <meta name="description" content="{{TAGLINE}}">
 <meta property="og:type" content="website"><meta property="og:title" content="{{TITLE}}"><meta property="og:description" content="{{TAGLINE}}">
-<meta property="og:image" content="https://actarus314.github.io/awesome-lego/media/social.png"><meta name="twitter:card" content="summary_large_image">
-<link rel="alternate" hreflang="en" href="https://actarus314.github.io/awesome-lego/">
-<link rel="alternate" hreflang="fr" href="https://actarus314.github.io/awesome-lego/fr/">
-<link rel="alternate" type="application/atom+xml" title="{{FEEDTITLE}}" href="https://actarus314.github.io/awesome-lego/{{FEEDPATH}}feed.xml">
-<link rel="icon" type="image/svg+xml" href="https://actarus314.github.io/awesome-lego/media/logo.svg">
-<link rel="icon" type="image/png" sizes="64x64" href="https://actarus314.github.io/awesome-lego/media/favicon.png">
-<link rel="apple-touch-icon" href="https://actarus314.github.io/awesome-lego/media/apple-touch-icon.png">
+<meta property="og:image" content="{{SITE}}media/social.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="{{SITE}}">
+<link rel="alternate" hreflang="fr" href="{{SITE}}fr/">
+<link rel="alternate" type="application/atom+xml" title="{{FEEDTITLE}}" href="{{SITE}}{{FEEDPATH}}feed.xml">
+<link rel="icon" type="image/svg+xml" href="{{SITE}}media/logo.svg">
+<link rel="icon" type="image/png" sizes="64x64" href="{{SITE}}media/favicon.png">
+<link rel="apple-touch-icon" href="{{SITE}}media/apple-touch-icon.png">
 <script>/* language: the English home page sends a French-speaking browser to /fr/, unless a language was chosen with the button */
 try{if('{{LANG}}'==='en'){const l=localStorage.getItem('lang');if(l==='fr'||(!l&&/^fr\b/i.test((navigator.languages||[navigator.language])[0]||'')))location.replace('fr/'+location.search+location.hash)}}catch(e){}</script>
 <script>setTimeout(()=>document.documentElement.classList.add('ready'),3000);try{const t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
