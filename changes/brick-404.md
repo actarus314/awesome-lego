@@ -1,3 +1,3 @@
 type: minor
 
-Website: the page of an unknown address shows the brick turned over, its tubes in the air, instead of the brick of the footer.
+Website: the page of an unknown address shows a tile wedged on edge between two rows of studs, a technique the builders call illegal, instead of the brick of the footer.
