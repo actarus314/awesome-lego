@@ -30,7 +30,7 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 - **Exécutions planifiées** (horaires : `MAINTENANCE.md`) : environ 10 h de retard, jamais sautées pour Pages, Links et Data fixes ; Data report, Workflow audit et Scorecard pas encore vus en planifié (AL-01). Revue mensuelle par Claude : tâche trig_01FfntrWbosebDjkMh4MhNAm, consigne identique à `dev/consigne-revue.md` (recopiée le 27/11 à 02 h 58 : fragment au lieu de `VERSION`) ; après la fusion d'une revue, la conversation suivante met ce document et le registre à jour.
 - **Branches** : `main`, `history` (une mesure par jour, à ne jamais supprimer : historique des tendances), `auto/tidy` dès le premier Tidy ; `v4.3` supprimée par Romain le 27/11.
 - **Réglages** : posés le 25/11 selon la skill `document-versionne` (« Dépôt sur GitHub ») ; application Claude Design Import retirée par Romain le 27/11 (AL-34).
-- **Licences** : contenu CC BY-NC-SA 4.0, code PolyForm Noncommercial 1.0.0, REUSE ; mention de marque LEGO sur la page À propos.
+- **Licences** : contenu CC BY-NC-SA 4.0 (pas de reprise commerciale), code GNU AGPL 3.0 only depuis le 27/11 (#36 ; avant : PolyForm Noncommercial 1.0.0), REUSE ; mention de marque LEGO sur la page À propos ; badge OpenSSF « passing » (projet 17176) depuis le 27/11.
 - **Numérotation** : mineure à chaque changement de contenu ou de site, majeure si la structure ou le format des données change ; rien pour l'automatisation seule (citée par l'entrée suivante). Release étiquette à la fusion, versions immuables (titre et notes restent modifiables).
 
 ## Façon de travailler (Romain, 25/11 à 10 h 52, complété le 26/11)

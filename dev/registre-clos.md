@@ -6,6 +6,7 @@ Lignes closes de `dev/registre.md`, la plus récente en tête ; un identifiant n
 
 | ID | P | Objet | Statut |
 |---|---|---|---|
+| AL-72 | P3 | Code sous GNU AGPL 3.0 au lieu de PolyForm Noncommercial, contenu inchangé (CC BY-NC-SA 4.0) | fait 27/11 : #36 fusionnée par Romain à 03 h 59 (variante « only ») ; politique de tests écrite dans `contributing.md` (#38, fusionnée par Claude) ; badge OpenSSF « passing » le 27/11 à 04 h 05 ; numéro dans la demande v4.6 (#37) |
 | AL-49 | — | Numéro de version et CHANGELOG écrits après la fusion | fait 27/11 : #34 ; fragments `changes/`, workflow Version qui ouvre la demande `vX.Y` ; relecture complète Opus (2 bloquants, 8 à corriger) et contre-vérification Sonnet (1 bloquant : correctif réécrivant son propre contrôle) corrigées |
 | AL-51 | — | Render plus court | fait 27/11 : #34 ; polices gardées installées par `dpkg` sans `--with-deps`, navigateur sans interface seul : étape Tools 24 s → 12.5 s (médianes) ; deux jobs parallèles non essayés |
 | AL-57 | — | Récurrence des événements affichée sur leur carte | fait v4.5 : demande #35 (47ddb7b) |
