@@ -12,7 +12,7 @@ SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
 path = ["scripts/**", "site-src/index.html", "site-src/app.js", "site-src/style.css", "site-src/vault.html", "site-src/about.html", "site-src/about.css", "site-src/header.html", "site-src/header.js", "site-src/footer.html", "tests/**", ".github/workflows/**", "package.json", "package-lock.json", "renovate.json", ".editorconfig", ".gitignore", "REUSE.toml", "passation.conf", "dev/outils/**"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 actarus314 and the contributors of Awesome LEGO"
-SPDX-License-Identifier = "PolyForm-Noncommercial-1.0.0"
+SPDX-License-Identifier = "AGPL-3.0-only"
 
 [[annotations]]
 path = "CODE_OF_CONDUCT.md"
