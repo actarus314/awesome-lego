@@ -13,6 +13,7 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 | `data/`, `site-src/`, `scripts/`, `tests/`, `.github/`, `CHANGELOG.md`, `VERSION`, `MAINTENANCE.md`, `contributing.md`, `CLAUDE.md`, `passation.conf`, `dev/contexte.md`, `dev/registre.md`, `dev/consigne-revue.md` | source |
 | `README.md`, `full-list.md`, `media/`, `package-lock.json` | détail : générés ou verrouillés (README, liste, images, verrou npm) ; les logos et icônes de `media/` sont des sources |
 | `dev/registre-clos.md`, `dev/lots/` | détail : lignes closes, cahiers des lots |
+| `fuzz/`, `.clusterfuzzlite/` | source : cibles, graines et dictionnaires du fuzzing hebdomadaire, construction de ClusterFuzzLite |
 | `changes/` | source : fragments des demandes fusionnées (type et entrée), assemblés puis supprimés par le workflow Version |
 | `dev/outils/` | source : copies des outils de la skill `outils-versionnement`, remplacées à chaque reprise |
 | `LICENSE`, `LICENSE-CODE.md`, `LICENSES/`, `REUSE.toml`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `.editorconfig`, `.gitignore`, `package.json`, `renovate.json` | source : licences, règles du dépôt, configuration |
