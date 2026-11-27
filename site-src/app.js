@@ -148,7 +148,7 @@ function drawList0(){const rs=R.filter(r=>match(r)),n=rs.length;
  lead();
  document.getElementById('count').innerHTML=rs.length+'<span class="ctot"> / '+R.length+'</span><span class="cw"> '+t('shown')+'</span>';const list=document.getElementById('list');
  document.querySelectorAll('#viewsw [data-v]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===st.view));
- if(!rs.length){list.innerHTML=banner(rs)+`<div class="empty">${t('none')}${missLine(n)}</div>`;return}
+ if(!rs.length){list.innerHTML=banner(rs)+`<div class="empty"><svg class="b3001" viewBox="-18.82 -13.5 54.96 45" aria-hidden="true"><use href="#brick-3001" x="-18.82" y="-13.5" width="54.96" height="45"/></svg><p>${t('none')}</p>${missLine(n)}</div>`;return}
  if(st.view==='table'){root.style.setProperty('--bar-h',(document.querySelector('.bar').offsetHeight+hdr())+'px');if(hits&&!st.sort)rs.sort((a,b)=>hits.get(b.id)-hits.get(a.id));list.innerHTML=banner(rs)+drawTable(rs)+missLine(n);return}
  if(BM){const nm=brandName(BM),b=bOf(BM),re=new RegExp('(^|[^a-z0-9])('+[b.name,...b.aka].map(n=>fold(n).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')+')([^a-z0-9]|$)'),
    others=b.lego?[]:R.filter(r=>r.id!==BM&&!linked(r,BM)&&re.test(fold([r.name,r[L].summary,...r[L].strengths,...r[L].weaknesses,sizeOf(r)].join(' '))));  // for LEGO, every entry would name it: no second list

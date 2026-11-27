@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="{{CSP}}">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Brick not found · Brique introuvable · Awesome LEGO</title>
+<link rel="icon" type="image/svg+xml" href="/media/logo.svg">
+<link rel="icon" type="image/png" sizes="64x64" href="/media/favicon.png">
+<script>document.documentElement.classList.add('ready');try{const t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<style>
+{{STYLE}}
+/* the page GitHub Pages serves for any address it does not know, at any depth: every link is absolute */
+.lost{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:40px;align-items:center;padding-top:56px;padding-bottom:12px}
+.lost svg{width:100%;height:auto;--bw:1.6px}.lost .b3-pn{font:700 6px var(--mono);fill:var(--fg);letter-spacing:.05em}.lost .b3-dt text{font:600 4.4px var(--mono);fill:var(--muted)}
+.lost h1{font-size:clamp(28px,4vw,40px);line-height:1.1;margin:0 0 10px;letter-spacing:-.02em}.lost p{margin:0 0 10px;font-size:16px;line-height:1.55}
+.lost .fr{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}.lost .fr h2{font-size:20px;margin:0 0 8px;border:0;padding:0}
+.lost .go{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:6px;font-weight:600}
+.b3-tilt{transform:rotate(-12deg);transform-origin:9px 9px}.lost .b3-dim{fill:none;stroke:var(--muted);stroke-width:1px;vector-effect:non-scaling-stroke}
+@media (max-width:720px){.lost{grid-template-columns:1fr;gap:16px;padding-top:28px}.lost svg{max-width:240px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#lost" data-t="skip_content"></a>
+{{HEADER}}
+<main class="wrap lost" id="lost">
+<svg class="b3001" viewBox="-32 -30 82 72" aria-hidden="true"><g class="b3-tilt"><use href="#brick-3001" x="-18.82" y="-13.5" width="54.96" height="45"/></g>
+<path class="b3-dim" d="M-28,-21H-14L-7,-13"/><text class="b3-pn" x="-29" y="-23">404</text></svg>
+<div>
+<h1>Brick not found</h1>
+<p>This page is not in the bin: its address may have changed, or it never existed.</p>
+<p class="go"><a href="/">Back to the directory</a><a href="/about/">About the directory</a></p>
+<div class="fr" lang="fr">
+<h2>Brique introuvable</h2>
+<p>Cette page n'est pas dans le bac : son adresse a pu changer, ou elle n'a jamais existé.</p>
+<p class="go"><a href="/fr/">Retour à l'annuaire</a><a href="/fr/about/">À propos de l'annuaire</a></p>
+</div>
+</div>
+</main>
+{{FOOTER}}
+<script>
+{{HEADERJS}}
+</script>
+</body>
+</html>
