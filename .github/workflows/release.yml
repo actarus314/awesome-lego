@@ -8,7 +8,7 @@ permissions:
   contents: read
 concurrency:
   group: release
-  cancel-in-progress: false
+  queue: max   # each push of a version tags its own commit: a dropped run would leave a version without its tag
 jobs:
   release:
     runs-on: ubuntu-latest
