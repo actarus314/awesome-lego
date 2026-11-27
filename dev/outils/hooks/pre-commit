@@ -1,0 +1,15 @@
+#!/bin/bash
+# Refuse un commit qui porte un secret (clé, jeton, mot de passe) : le seul contrôle armé avant le commit, parce
+# qu'un secret entré dans l'historique ne se découvre pas après coup. Armé par passation.sh --maj-outils
+# (core.hooksPath) ; un clone arrive désarmé, passation.sh --strict le signale.
+if ! command -v gitleaks >/dev/null 2>&1; then
+  [ "${SANS_GITLEAKS:-}" = 1 ] && { echo "· gitleaks absent : commit non contrôlé (SANS_GITLEAKS=1)" >&2; exit 0; }
+  echo "✗ gitleaks absent : ce commit n'est pas contrôlé, donc refusé. Installer gitleaks (brew install gitleaks)," >&2
+  echo "  ou commiter en connaissance de cause : SANS_GITLEAKS=1 git commit …" >&2
+  exit 1
+fi
+gitleaks git --pre-commit --staged --redact --no-banner --log-level error; rc=$?
+[ $rc -eq 0 ] && exit 0
+if [ $rc -eq 1 ]; then echo "✗ secret détecté dans ce commit (détail ci-dessus, valeur masquée) : le retirer du fichier, jamais de --no-verify." >&2
+else echo "✗ gitleaks en erreur (code $rc) : commit non contrôlé, donc refusé ; version trop ancienne ? (gitleaks version)" >&2; fi
+exit 1
