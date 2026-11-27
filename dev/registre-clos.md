@@ -6,6 +6,8 @@ Lignes closes de `dev/registre.md`, la plus récente en tête ; un identifiant n
 
 | ID | P | Objet | Statut |
 |---|---|---|---|
+| AL-55 | P4 | Branche `v4.3` poussée par erreur le 26/11 | fait 27/11 : supprimée par Romain ; absente de la liste des branches du dépôt à 01 h 08 |
+| AL-34 | P3 | Application « Claude Design Import » installée sur le dépôt, usage inconnu | fait 27/11 : retirée par Romain (dit par Romain à 01 h 06, non revérifié : la session ne lit pas les installations) |
 | AL-50 | P3 | Gardes-fous mécaniques (skill `audit-depot`) | fait 27/11 : demande #31 fusionnée à 01 h 03 (d63bc99) : `scripts/hygiene.py` dans Check (ruff, vulture, chaînes et champs non lus, `timeout-minutes` et `concurrency`, budgets de poids), barre et champs du téléphone et CSS mort dans Render, calibrés sur `tests/phone-fixture.html`, workflow Tidy du lundi ; relecture Sonnet : 2 bloquants et 8 à corriger, corrigés en 0ba4d35 ; veille : AL-71 ; règle Renovate du Python de Tidy : AL-70 |
 | AL-52 | P3 | Cartes de skills du 26/11 (document-versionne, interface-outil, audit-depot, passation, correction de citation de document-versionne) | fait 27/11 : toutes enregistrées par Romain (vues dans la copie synchronisée à 01 h 05) |
 | AL-67 | P2 | Lignes RM du registre invisibles pour la revue mensuelle | fait 26/11 : consigne de `dev/consigne-revue.md` (lecture de `CLAUDE.md`, `dev/contexte.md` et des lignes RM, version seule si aucune autre demande ne la porte, devenir des lignes RM dans la demande) recollée dans la tâche à 23 h 31 sur « Mets la consigne à jour » de Romain ; l'ancienne copie du projet claude.ai renvoie désormais ici |

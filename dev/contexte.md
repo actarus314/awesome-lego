@@ -27,8 +27,8 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 - **Scorecard 6.8/10** au 25/11 ; ce qui manque est attendu pour un dépôt d'une personne.
 - **Workflows** (655 passages lus par l'API le 26/11) : Render est seul sur le chemin critique d'une demande (passage médian ≈ 140 s depuis la #26, ≈ 190 s avant ; le job seul ≈ 126 s), puis CodeQL (≈ 50 s), Check (≈ 35 s) ; attente en file 3 à 4 s.
 - **Exécutions planifiées** (horaires : `MAINTENANCE.md`) : environ 10 h de retard, jamais sautées pour Pages, Links et Data fixes ; Data report, Workflow audit et Scorecard pas encore vus en planifié (AL-01). Revue mensuelle par Claude : tâche trig_01FfntrWbosebDjkMh4MhNAm, consigne identique à `dev/consigne-revue.md` (26/11, 13 h 09) ; elle ne lit que le dépôt : `dev/` lui devient lisible, mais sa consigne ne le cite pas encore (AL-67) ; après la fusion d'une revue, la conversation suivante met ce document et le registre à jour.
-- **Branches** : `main`, `history` (une mesure par jour, à ne jamais supprimer : historique des tendances), `v4.3` (AL-55, toujours là le 26/11 à 23 h 08), `auto/tidy` dès le premier Tidy.
-- **Réglages** : posés le 25/11 selon la skill `document-versionne` (« Dépôt sur GitHub ») ; écart : application Claude Design Import (AL-34).
+- **Branches** : `main`, `history` (une mesure par jour, à ne jamais supprimer : historique des tendances), `auto/tidy` dès le premier Tidy ; `v4.3` supprimée par Romain le 27/11.
+- **Réglages** : posés le 25/11 selon la skill `document-versionne` (« Dépôt sur GitHub ») ; application Claude Design Import retirée par Romain le 27/11 (AL-34).
 - **Licences** : contenu CC BY-NC-SA 4.0, code PolyForm Noncommercial 1.0.0, REUSE ; mention de marque LEGO sur la page À propos.
 - **Numérotation** : mineure à chaque changement de contenu ou de site, majeure si la structure ou le format des données change ; rien pour l'automatisation seule (citée par l'entrée suivante). Release étiquette à la fusion, versions immuables (titre et notes restent modifiables).
 
