@@ -1,14 +1,12 @@
-# Awesome LEGO [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# <a href="https://scorecard.dev/viewer/?uri=github.com/actarus314/awesome-lego"><img align="right" src="https://img.shields.io/ossf-scorecard/github.com/actarus314/awesome-lego?label=scorecard" alt="OpenSSF Scorecard" height="20" hspace="2"></a><a href="https://www.bestpractices.dev/projects/17176"><img align="right" src="https://img.shields.io/cii/level/17176?label=best%20practices" alt="OpenSSF Best Practices" height="20" hspace="2"></a>Awesome LEGO [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-<a href="https://actarus314.github.io/awesome-lego/"><img src="media/logo.svg" align="right" width="120" alt="Awesome LEGO logo"></a>
+<a href="https://3001.club/"><img src="media/logo.svg" align="right" width="120" alt="Awesome LEGO logo"></a>
 
 > Interlocking plastic construction bricks, from the official LEGO system to compatible brands.
 
-**[Explore the website: every resource, with search, filters and a map](https://actarus314.github.io/awesome-lego/)** · [French version of the website](https://actarus314.github.io/awesome-lego/fr/) · [Feed of new resources (RSS)](https://actarus314.github.io/awesome-lego/feed.xml)
+**[Explore the website: every resource, with search, filters and a map](https://3001.club/)** · [French version of the website](https://3001.club/fr/) · [Feed of new resources (RSS)](https://3001.club/feed.xml)
 
-[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/17176/badge)](https://www.bestpractices.dev/projects/17176) [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/actarus314/awesome-lego/badge)](https://scorecard.dev/viewer/?uri=github.com/actarus314/awesome-lego)
-
-<p align="center"><a href="https://actarus314.github.io/awesome-lego/"><picture><source media="(prefers-color-scheme: dark)" srcset="media/site-preview-dark.png"><img src="media/site-preview.png" width="880" alt="The website: Where to start, one card per need with its best resources, beside the map of the brick world, one stud per resource by category"></picture></a></p>
+<p align="center"><a href="https://3001.club/"><picture><source media="(prefers-color-scheme: dark)" srcset="media/site-preview-dark.png"><img src="media/site-preview.png" width="880" alt="The website: Where to start, one card per need with its best resources, beside the map of the brick world, one stud per resource by category"></picture></a></p>
 
 Only the best of each group is listed here. The [full list](full-list.md) has every resource, including inactive and dead ones.
 
@@ -390,4 +388,4 @@ Existing directories, awesome lists and lists of channels and brands about LEGO 
 
 ## Contributing
 
-Additions and corrections are welcome: read [how the directory is made and what gets in](https://actarus314.github.io/awesome-lego/about/), then [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them.
+Additions and corrections are welcome: read [how the directory is made and what gets in](https://3001.club/about/), then [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them.
