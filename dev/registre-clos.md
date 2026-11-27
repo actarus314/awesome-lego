@@ -6,6 +6,7 @@ Lignes closes de `dev/registre.md`, la plus récente en tête ; un identifiant n
 
 | ID | P | Objet | Statut |
 |---|---|---|---|
+| AL-68 | P3 | Nom de domaine grand public pour le site (dépôt gardé en « awesome-lego ») : recherche ouverte par Romain le 26/11 à 13 h 40 dans une autre conversation ; détail : projet claude.ai, claude/awesome-lego-nom-de-domaine.md | fait 27/11 : 3001.club acheté chez Porkbun et configuré par Romain (27/11) ; site passé à https://3001.club/ par la demande #49 fusionnée par Romain à 07 h 26 (7f651ed) ; champ « Website » du dépôt et adresse du projet sur bestpractices.dev mis à jour par Claude dans le Chrome de Romain à 07 h 28 ; Google Search Console écartée par Romain à 07 h 31 |
 | AL-15 | P4 | Coffre : glissés tactiles et son non vérifiés sur un vrai téléphone | fait 27/11 : essayé par Romain sur son téléphone à 07 h 11 (glissés, son et entrée par le code Konami au doigt) |
 | AL-08 | P4 | Idées gardées : distinguer par la forme ce que la couleur seule distingue ; langues d'interface allemande et italienne | abandonné : fermée par Romain le 27/11 à 07 h 03, sans suite |
 | AL-09 | P4 | Archivage des sources (copie datée de chaque page citée) : non mis en place | abandonné : fermée par Romain le 27/11 à 07 h 03, sans suite |
