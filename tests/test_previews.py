@@ -27,6 +27,13 @@ class Mark(unittest.TestCase):
         self.assertIn("Open the pull request", out)
         self.assertIn("<title>Preview #4 · t</title>", out)
 
+    def test_the_number_its_merge_gives(self):
+        en = self.PAGE.replace('lang="fr"', 'lang="en"')
+        self.assertIn("(commit abc1234, merged with main), its merge gives v4.10: not the published website.", previews.mark(en, 4, "abc1234", "u", True, "4.10"))
+        self.assertIn("(commit abc1234, merged with main), its merge gives no new number: not", previews.mark(en, 4, "abc1234", "u", True, ""))
+        self.assertIn("(commit abc1234, merged with main): not", previews.mark(en, 4, "abc1234", "u"))   # unknown: a failed build
+        self.assertIn("sa fusion donne la v4.9.1 : ce n&#x27;est pas le site publié.", previews.mark(self.PAGE, 4, "abc1234", "u", True, "4.9.1"))
+
     def test_escaped(self):
         out = previews.mark(self.PAGE, 3, "<b>", 'https://x/"y')
         self.assertIn("&lt;b&gt;", out)

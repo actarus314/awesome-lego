@@ -3,6 +3,7 @@ generated files left to Version while a fragment waits (scripts/build.py). Each 
 import contextlib
 import io
 import os
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -178,23 +179,6 @@ class Command(unittest.TestCase):
             self.assertEqual(code, 1, argv)
             self.assertEqual((root / "VERSION").read_text(encoding="utf-8"), "4.4\n")
 
-    def test_next_says_the_number_a_merge_would_give(self):
-        self.assertEqual(self.run_in({"fix.md": "type: patch\n\nData: one.\n"}, "next")[:2], (0, "4.4.1\n"))
-        self.assertEqual(self.run_in({"site.md": "type: minor\n\nWebsite: two.\n", "fix.md": "type: patch\n\nData: one.\n"}, "next")[:2], (0, "4.5\n"))
-        self.assertEqual(self.run_in({"tidy.md": "type: none\n\nAutomation: one.\n"}, "next")[:2], (0, ""))
-        self.assertEqual(self.run_in({}, "next", "--types", "minor,none")[:2], (0, "4.5\n"))
-        self.assertEqual(self.run_in({}, "next", "--types", "fix")[0], 1)
-
-    def test_next_gives_a_patch_for_a_website_change_without_fragment(self):
-        tmp = tempfile.TemporaryDirectory()
-        self.addCleanup(tmp.cleanup)
-        served, tools = Path(tmp.name) / "served.txt", Path(tmp.name) / "tools.txt"
-        served.write_text("site-src/vendor/minisearch.min.js\n.github/workflows/check.yml\n", encoding="utf-8")
-        tools.write_text(".github/workflows/check.yml\nmedia/site-preview.png\npackage-lock.json\ndev/registre.md\n", encoding="utf-8")
-        self.assertEqual(self.run_in({}, "next", "--types", "", "--changed", str(served))[:2], (0, "4.4.1\n"))
-        self.assertEqual(self.run_in({}, "next", "--types", "none", "--changed", str(tools))[:2], (0, ""))
-        self.assertEqual(self.run_in({}, "next", "--types", "minor", "--changed", str(served))[:2], (0, "4.5\n"))
-
     def test_what_the_website_serves(self):
         self.assertTrue(changes.site_changed(["data/shops.toml"]))
         self.assertTrue(changes.site_changed(["site-src/app.js", "dev/x.md"]))
@@ -231,6 +215,8 @@ class PullRequest(unittest.TestCase):
         self.assertEqual((errors, len(warnings)), ([], 1))
         self.assertEqual(changes.pull_request({"data/shops.toml", "changes/x.md"}, self.texts(), self.texts(), True), ([], []))
         self.assertEqual(changes.pull_request({"scripts/tidy.py", "media/logos/x.png"}, self.texts(), self.texts(), False, "auto/tidy"), ([], []))
+        for f in ("scripts/build.py", "scripts/refresh.py", "scripts/trends.py"):  # what builds the pages: a fragment, of type none if no page shows it
+            self.assertEqual(len(changes.pull_request({f}, self.texts(), self.texts(), False)[0]), 1, f)
 
 
 class Git(unittest.TestCase):
@@ -277,6 +263,38 @@ class Git(unittest.TestCase):
         code, err = self.check("--base", "main")
         self.assertEqual(code, 1)
         self.assertIn("VERSION is written by the Version workflow", err)
+
+    def assemble(self, root=None):
+        old, changes.ROOT = changes.ROOT, root or self.root
+        try:
+            with contextlib.redirect_stdout(io.StringIO()) as out, contextlib.redirect_stderr(io.StringIO()) as err:
+                return changes.main(["assemble", "--date", "2026-12-01"]), out.getvalue(), err.getvalue()
+        finally:
+            changes.ROOT = old
+
+    def test_a_website_change_since_the_commit_of_the_version_gives_a_patch(self):
+        (self.root / ".github/workflows/check.yml").write_text("# edited\n", encoding="utf-8")
+        self.commit("tools only")
+        self.assertEqual(self.assemble()[:2], (0, ""))
+        (self.root / "site-src/vendor").mkdir(parents=True)
+        (self.root / "site-src/vendor/minisearch.min.js").write_text("// raised\n", encoding="utf-8")
+        self.commit("Renovate")
+        v = (self.root / "VERSION").read_text(encoding="utf-8").strip()
+        self.assertEqual(self.assemble()[:2], (0, f"version={changes.bump(v, {'patch'})}\n"))
+        self.assertIn(changes.SITE_ONLY, (self.root / "CHANGELOG.md").read_text(encoding="utf-8"))
+        self.commit("the version")   # VERSION changed: the base moves to this commit
+        self.assertEqual(self.assemble()[:2], (0, ""))
+
+    def test_a_shallow_history_gives_no_patch_and_says_so(self):
+        (self.root / "site-src").mkdir()
+        (self.root / "site-src/app.js").write_text("// edited\n", encoding="utf-8")
+        self.commit("website")
+        clone = self.root.parent / (self.root.name + "-shallow")
+        subprocess.run(["git", "clone", "-q", "--depth=1", f"file://{self.root}", str(clone)], check=True, capture_output=True)
+        self.addCleanup(shutil.rmtree, clone, True)
+        code, out, err = self.assemble(clone)
+        self.assertEqual((code, out), (0, ""))
+        self.assertIn("the history does not reach the commit of the current version", err)
 
     def test_a_branch_without_fragment_that_changes_data_fails(self):
         self.git("checkout", "-q", "-b", "topic")

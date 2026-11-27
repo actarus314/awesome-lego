@@ -14,8 +14,8 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: pages-${{ inputs.previews && 'previews' || 'site' }}   # a run started for the previews never replaces a waiting daily run
-  cancel-in-progress: false
+  group: pages   # one deployment at a time, the last one started goes last: each run builds the version main holds when it
+  cancel-in-progress: false   # starts, so a later run is never older; a waiting run is replaced by a newer one
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,15 +27,13 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      # Online is always a version, tagged: the daily run and the previews build the tag of the version main holds, so a merge
-      # Version has not numbered yet (a minute) never goes out; after a push, the commit of Version itself (Release may not
-      # have tagged it yet). Not tagged at all: main, and a warning.
+          fetch-depth: 0   # the history back to the commit of the version (about 10 MB)
+      # Online is always a version: the commit of main that last changed VERSION, the one Version wrote and Release tags
+      # (without waiting for the tag), so a merge Version has not numbered yet never goes out
       - name: The version online
-        if: github.event_name != 'push'
         run: |
-          v="v$(tr -d '[:space:]' < VERSION)"
-          if git fetch -q --depth=1 origin "refs/tags/$v:refs/tags/$v"; then git checkout -q --detach "$v"; echo "Website of $v"
-          else echo "::warning::$v is not tagged: the website is built from main"; fi
+          c=$(git log -1 --format=%H -- VERSION)
+          git checkout -q --detach "$c"; echo "Website of v$(tr -d '[:space:]' < VERSION) (commit ${c:0:7})"
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.15"
@@ -56,9 +54,12 @@ jobs:
         continue-on-error: true   # without previews, the website is still published
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_ID: ${{ github.repository_id }}
         run: |
-          id=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow preview.yml --status success --limit 1 --json databaseId --jq '.[0].databaseId')
-          if [ -z "$id" ]; then echo "No successful Preview run: no previews."; exit 0; fi
+          # the newest artifact "previews" of a run on a branch of this repository (never a fork's), not the newest run: a run
+          # whose jobs were all skipped succeeds without any
+          id=$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?name=previews&per_page=30" --jq '[.artifacts[] | select((.expired | not) and .workflow_run.head_repository_id == (env.REPO_ID | tonumber))][0].workflow_run.id // empty')
+          if [ -z "$id" ]; then echo "No previews built: none published."; exit 0; fi
           gh run download "$id" --repo "$GITHUB_REPOSITORY" --name previews --dir site/preview
           find site/preview -type l -delete   # never a link in the published files
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0

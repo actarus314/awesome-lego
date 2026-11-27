@@ -13,7 +13,8 @@ jobs:
   # Two jobs: the build runs pip packages and the browser without any secret; the publication runs no third-party code (git, gh and
   # scripts/version_files.sh of main), and only it holds the token that writes.
   build:
-    if: github.ref == 'refs/heads/main'   # started by hand from another branch: nothing to do
+    # started by hand from another branch: nothing to do; its own commit (author github-actions[bot]): nothing left to number
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || github.event.head_commit.author.email != '41898282+github-actions[bot]@users.noreply.github.com')
     runs-on: ubuntu-latest
     timeout-minutes: 20   # about 20 seconds; 2 minutes with the image of the README, more when the font mirror is slow
     permissions:
@@ -25,18 +26,13 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+          fetch-depth: 0   # back to the commit of the current version: what the website serves changed since it gives a patch
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.15"
-      # the tag of the current version, to see whether what the website serves changed since (a merge without fragment, from
-      # Renovate or Tidy); not tagged yet (Release runs in parallel after a version): no such patch
-      - name: Tag of the current version
-        run: |
-          v="v$(tr -d '[:space:]' < VERSION)"
-          git fetch -q --depth=1 origin "refs/tags/$v:refs/tags/$v" || echo "$v not tagged yet: no patch for a website change without fragment."
       - name: Fragments of changes/ into VERSION and the CHANGELOG.md entry (nothing when nothing gives a number)
         id: assemble
-        run: python3 scripts/changes.py assemble --since "v$(tr -d '[:space:]' < VERSION)" >> "$GITHUB_OUTPUT"
+        run: python3 scripts/changes.py assemble >> "$GITHUB_OUTPUT"
       - name: Rebuild the generated files and check them
         if: steps.assemble.outputs.version != '' || github.event_name == 'workflow_dispatch'
         run: python3 scripts/build.py && python3 scripts/build.py --check && python3 scripts/changes.py check

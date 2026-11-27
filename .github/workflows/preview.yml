@@ -3,15 +3,15 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, closed]
     # what changes the website; a closed request matches when it changed one of these, the only case with a preview to remove
-    paths: ["site-src/**", "scripts/build.py", "scripts/previews.py", "media/**", "!media/site-preview*.png", "data/**", "VERSION", "CHANGELOG.md", ".github/workflows/preview.yml"]
+    paths: ["site-src/**", "scripts/build.py", "scripts/previews.py", "media/**", "!media/site-preview*.png", "data/**", "changes/**", "VERSION", "CHANGELOG.md", ".github/workflows/preview.yml"]
   push:
     branches: [main]   # each preview is the pull request merged with main: rebuilt when main moves
-    paths: ["site-src/**", "scripts/build.py", "scripts/previews.py", "media/**", "!media/site-preview*.png", "data/**", "VERSION", "CHANGELOG.md", ".github/workflows/preview.yml"]   # the same list as above
+    paths: ["site-src/**", "scripts/build.py", "scripts/previews.py", "media/**", "!media/site-preview*.png", "data/**", "changes/**", "VERSION", "CHANGELOG.md", ".github/workflows/preview.yml"]   # the same list as above
 permissions: {}
 jobs:
   build:
-    # branches of this repository only, never a fork; of the bots, only Data fixes (it changes entries), not Renovate
-    if: github.event_name == 'push' || (github.event.pull_request.head.repo.full_name == github.repository && (github.event.pull_request.user.type != 'Bot' || github.head_ref == 'auto/data-fixes'))
+    # branches of this repository only (people, Data fixes, Renovate, Tidy), never a fork
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 20
     concurrency:
@@ -52,7 +52,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref main -f previews=true
   link:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && (github.event.pull_request.user.type != 'Bot' || github.head_ref == 'auto/data-fixes')
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 5   # one comment, a few seconds
     permissions:
@@ -63,37 +63,13 @@ jobs:
           ref: ${{ github.event.repository.default_branch }}   # main's scripts only: nothing of the pull request runs here
           sparse-checkout: |
             scripts/build.py
-            scripts/changes.py
-            VERSION
           sparse-checkout-cone-mode: false
           persist-credentials: false
-      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
-        with:
-          python-version: "3.15"
-      # The number its merge gives, by main's scripts/changes.py: the types of the fragments it adds (only their first line,
-      # matched, is read) and the paths it changes (a website change without fragment gives a patch)
-      - name: The version this merge gives
-        id: next
-        if: github.event.action != 'closed'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          N: ${{ github.event.pull_request.number }}
-          SHA: ${{ github.event.pull_request.head.sha }}
-        run: |
-          gh api "repos/$GITHUB_REPOSITORY/pulls/$N/files" --paginate --jq '.[].filename' > "$RUNNER_TEMP/changed.txt"
-          types=""
-          for f in $(gh api "repos/$GITHUB_REPOSITORY/pulls/$N/files" --paginate --jq '.[] | select(.status == "added" and (.filename | test("^changes/[a-z0-9-]+\\.md$"))) | .filename'); do
-            t=$(gh api "repos/$GITHUB_REPOSITORY/contents/$f?ref=$SHA" --jq .content | base64 -d | head -n1 | sed -n 's/^\xEF\xBB\xBF//; s/^type: \(major\|minor\|patch\|none\)[[:space:]]*$/\1/p')
-            types="$types,$t"
-          done
-          v=$(python3 scripts/changes.py next --types "$types" --changed "$RUNNER_TEMP/changed.txt") || v=""
-          echo "version=$v" >> "$GITHUB_OUTPUT"
       - env:
           GH_TOKEN: ${{ github.token }}
           N: ${{ github.event.pull_request.number }}
           SHA: ${{ github.event.pull_request.head.sha }}
           ACTION: ${{ github.event.action }}
-          NEXT: ${{ steps.next.outputs.version }}
         run: |
           pages=$(sed -n 's/^PAGES = "\([^"]*\)".*/\1/p' scripts/build.py)   # the address of the website (tests/test_build.py checks this reading)
           [ -n "$pages" ] || { echo "PAGES not found in scripts/build.py"; exit 1; }
@@ -101,14 +77,10 @@ jobs:
           if [ "$ACTION" = closed ]; then body="<!-- preview -->
           Preview removed: the pull request is closed."
           else
-          if [ -n "$NEXT" ]; then number="Merging it publishes **v${NEXT}** (if no other merge comes first)."
-          else number="Merging it gives no new number: nothing it changes is served by the website."; fi
           body="<!-- preview -->
           **Preview of this pull request**: ${url} (French: ${url}fr/)
 
-          ${number}
-
-          Commit ${SHA:0:7}, merged with \`main\` (alone if they conflict), online a few minutes after this comment, once the **Preview** run and the **Pages** run it starts have ended. Every page carries a banner and is hidden from search engines; the preview disappears when the pull request is closed."
+          Commit ${SHA:0:7}, merged with \`main\` (alone if they conflict), online a few minutes after this comment (the **Preview** run, then the **Pages** run it starts). The banner of each page gives the number its merge gives, and the website its changelog entry, as Version will write them; rebuilt each time \`main\` moves, hidden from search engines, removed when the pull request is closed."
           fi
           id=$(gh api "repos/$GITHUB_REPOSITORY/issues/$N/comments" --paginate --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | startswith("<!-- preview -->"))) | .id' | head -n1)
           if [ -n "$id" ]; then gh api -X PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$id" -f body="$body" >/dev/null
