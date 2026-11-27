@@ -362,9 +362,10 @@ def anchor(s):
 
 FILES = {("readme", "en"): "README.md", ("full", "en"): "full-list.md"}
 BESTPRACTICES = 17176  # project of the OpenSSF Best Practices badge (bestpractices.dev)
-BADGES = " ".join([  # health of the repository; awesome-lint forbids a CI badge
-    f"[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/{BESTPRACTICES}/badge)](https://www.bestpractices.dev/projects/{BESTPRACTICES})",
-    f"[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/{REPO}/badge)](https://scorecard.dev/viewer/?uri=github.com/{REPO})"])
+BADGES = "".join(  # health of the repository, floated at the right of the title (placed before its text, so that they share its line; short labels from shields.io, so that the title, the Awesome badge and these fit one line of the README on GitHub); awesome-lint forbids a CI badge
+    f'<a href="{link}"><img align="right" src="{img}" alt="{alt}" height="20" hspace="2"></a>' for alt, img, link in (
+        ("OpenSSF Scorecard", f"https://img.shields.io/ossf-scorecard/github.com/{REPO}?label=scorecard", f"https://scorecard.dev/viewer/?uri=github.com/{REPO}"),
+        ("OpenSSF Best Practices", f"https://img.shields.io/cii/level/{BESTPRACTICES}?label=best%20practices", f"https://www.bestpractices.dev/projects/{BESTPRACTICES}")))
 MORE = {"readme": {"en": "Only the best of each group is listed here. The [full list](full-list.md) has every resource, including inactive and dead ones."},
         "full": {"en": "Every resource, including inactive and dead ones, generated from [`data/`](data/). The selection of the best is in the [README](README.md)."}}
 
@@ -374,9 +375,8 @@ def readme(cats, lang, kind="readme"):
     badge = " [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)" if kind == "readme" else ""
     keep = picked if kind == "readme" else (lambda r: True)
     logo = [f'<a href="{PAGES}"><img src="media/logo.svg" align="right" width="120" alt="Awesome LEGO logo"></a>', ""] if kind == "readme" else []
-    out = [f"# {title}{badge}", "", *logo, f"> {T['tagline'][lang]}", "",
+    out = [f"# {BADGES if kind == 'readme' else ''}{title}{badge}", "", *logo, f"> {T['tagline'][lang]}", "",
            f"**[{T['site'][lang]}]({PAGES})** · [{T['site_fr'][lang]}]({PAGES}fr/) · [{T['feed'][lang]}]({PAGES}feed.xml)", "",
-           *([BADGES, ""] if kind == "readme" else []),
            *([f'<p align="center"><a href="{PAGES}"><picture><source media="(prefers-color-scheme: dark)" srcset="media/site-preview-dark.png"><img src="media/site-preview.png" width="880" alt="The website: Where to start, one card per need with its best resources, beside the map of the brick world, one stud per resource by category"></picture></a></p>', ""] if kind == "readme" else []),
            MORE[kind][lang], "", f"## {T['contents'][lang]}", ""]
     seen = {}
