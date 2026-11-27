@@ -46,7 +46,7 @@
 "active_short":{"en":"active","fr":"actives"},
 "languages":{"en":"languages","fr":"langues"},
 "shown":{"en":"shown","fr":"affichées"},
-"none":{"en":"No resource matches.","fr":"Aucune ressource ne correspond."},
+"none":{"en":"No resource matches: that brick is not in the bin yet.","fr":"Aucune ressource ne correspond : cette brique n'est pas encore dans le bac."},
 "suggest":{"en":"Suggest a resource","fr":"Proposer une ressource"},
 "ranked":{"en":"Results by relevance, grouped by category","fr":"Résultats par pertinence, rangés par catégorie"},
 "official":{"en":"official LEGO","fr":"LEGO officiel","label":true},

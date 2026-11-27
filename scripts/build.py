@@ -694,6 +694,16 @@ def about(lang, data):
     return out[:i] + csp(out) + out[i + len("{{CSP}}"):]
 
 
+def not_found(data):
+    """site/404.html: the page GitHub Pages serves for any address it does not know, in English with French below
+    (one page for every depth of address, so every link is absolute). Shared header and footer; hidden from search engines."""
+    values = {"REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": "/", "HOME": "/", "ABOUT": "/about/", "ABOUTCUR": "", "ROOT": "/", "OTHER": "/fr/"}
+    tpl = static_texts(shared((SRC / "404.html").read_text(encoding="utf-8")), "en")
+    out = re.sub(r"\{\{(\w+)\}\}", lambda m: values[m.group(1)], tpl)
+    i = out.index("{{CSP}}")
+    return out[:i] + csp(out) + out[i + len("{{CSP}}"):]
+
+
 def vault():
     """The Brick Vault (site/vault/): an English-only easter egg that the Konami code opens from either home page.
     Its fonts are served by the site itself (media/fonts/, SIL Open Font License); it contacts nothing else."""
@@ -937,6 +947,7 @@ def main():
     for lang, path in ABOUT_PATH.items():
         (SITE / path).mkdir(parents=True, exist_ok=True)
         (SITE / path / "index.html").write_text(about(lang, data), encoding="utf-8")
+    (SITE / "404.html").write_text(not_found(data), encoding="utf-8")
     (SITE / "vault").mkdir(parents=True, exist_ok=True)
     (SITE / "vault" / "index.html").write_text(vault(), encoding="utf-8")
     (SITE / "feed.xml").write_text(content_feed(cats, "en"), encoding="utf-8")

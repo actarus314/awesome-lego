@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Rendering checks of the built website (site/), in a real browser (Playwright, Chromium).
 
-Every view and state a visitor reaches (directory as cards and as a table, brand mode of an alternative brand and of LEGO, observatory,
-about page, hidden vault), in English and French, at several widths and in both
+Every view and state a visitor reaches (directory as cards and as a table, brand mode of an alternative brand and of LEGO, a search without result, observatory,
+about page, hidden vault, page of an unknown address), in English and French, at several widths and in both
 themes. Fails on:
 - overflow: the page scrolls sideways, or an element sticks out of the box (card, panel, row) it sits in;
 - broken token: a phone number, an email, a website, a date, a tag, a chip, a button label or a short
@@ -108,6 +108,7 @@ AXE_STATES = [
     ("table", "#cat=places,events,clubs&view=table", ""),
     ("brand mode", "#q=COBI", ""),
     ("brand mode of LEGO", "#q=LEGO", ""),
+    ("no result", "#q=qqzzxxkw", ""),  # a search that finds nothing: the drawing and the way to suggest a resource
     ("observatory", "#observatory", ""),
     ("observatory after a theme switch", "#observatory",  # colours computed by the page must follow the theme button
      "(()=>{const want=matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark',tb=document.getElementById('theme');for(let i=0;i<3&&document.documentElement.dataset.theme!==want;i++)tb.click()})()"),
@@ -118,6 +119,7 @@ STATES = [
     ("bar folded, filters open", "#cat=shops", "scrollTo(0,document.getElementById('list').getBoundingClientRect().top+scrollY+400);setTimeout(()=>document.getElementById('ftoggle').click(),100)"),  # the stuck bar folds; its panel opens over the list
     ("brand mode", "#q=COBI", ""),
     ("brand mode of LEGO", "#q=LEGO", ""),
+    ("no result", "#q=qqzzxxkw", ""),
     ("observatory", "#observatory", ""),
 ]
 
@@ -285,6 +287,10 @@ def main():
             pg.wait_for_timeout(700)
             record(f"{lang} {w} {theme} vault", pg.evaluate(PROBE, {"mobile": mobile, "width": w}))
             selectors(pg)
+            pg.goto(base + "404.html")  # the page GitHub Pages serves for an unknown address, in both languages
+            pg.wait_for_timeout(300)
+            record(f"{lang} {w} {theme} not found", pg.evaluate(PROBE, {"mobile": mobile, "width": w}))
+            selectors(pg)
         record(f"{lang} {w} {theme}", [("script error", "", e[:160]) for e in errs])
         c.close()
 
@@ -375,9 +381,9 @@ def main():
         c = b.new_context(viewport={"width": w, "height": 900}, locale="fr-FR" if lang == "fr" else "en-GB", color_scheme=theme,
                           is_mobile=mobile, has_touch=mobile, bypass_csp=True)
         pg = c.new_page()
-        for name, frag, js in AXE_STATES + [("about", "about/", "")] + ([("vault", "vault/", "")] if lang == "en" else []):
-            pg.goto(base + (frag if name == "vault" else root + frag))
-            if name not in ("vault", "about"):
+        for name, frag, js in AXE_STATES + [("about", "about/", "")] + ([("vault", "vault/", ""), ("not found", "404.html", "")] if lang == "en" else []):
+            pg.goto(base + (frag if name in ("vault", "not found") else root + frag))
+            if name not in ("vault", "about", "not found"):
                 pg.reload()
                 pg.wait_for_selector("html.ready", state="attached")
                 filled(pg, f"{lang} {w} {theme} {name}")

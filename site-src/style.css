@@ -126,7 +126,7 @@ details{border-top:1px solid var(--line);padding-top:6px}summary{cursor:pointer;
 details ul{margin:6px 0;padding-left:18px;font-size:13.5px}details li{margin:2px 0}
 .plus li::marker{content:"＋ ";color:var(--ok)}.minus li::marker{content:"－ ";color:var(--bad)}
 .src{font-size:12.5px;color:var(--muted)}
-.empty{padding:40px;text-align:center;color:var(--muted)}
+.empty{padding:40px 16px;text-align:center;color:var(--muted)}.empty svg{display:block;width:120px;height:auto;margin:0 auto 14px}.b3-g{fill:none;stroke:var(--muted);stroke-width:1.1px;stroke-dasharray:4 3;stroke-linejoin:round;vector-effect:non-scaling-stroke}.empty p{margin:0;font-size:16px;color:var(--fg)}.empty .miss{display:inline-flex;align-items:center;height:38px;padding:0 16px;border-radius:10px;background:var(--accent);color:var(--on-accent);text-decoration:none}.empty .miss:hover{text-decoration:underline}  /* a search that finds nothing: a plate waiting for a missing brick (dashed), and the way to add what is missing */
 .miss{white-space:nowrap;font-weight:600}.fsum{display:none}@media (max-width:640px),(max-height:520px) and (min-width:641px){.bar:not(.open) .fsum:not([hidden]){display:block;flex:1 1 100%;order:5;min-width:0;border:0;background:none;padding:0;font:600 13px system-ui,sans-serif;color:var(--muted);text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}}
 /* wide screens: once the bar is stuck under the header and its rows of filters would have gone under it, it folds like on a phone: the filters in a panel over the list, the active ones on a line */
 .bar.compact #ftoggle{display:inline-flex}.bar.compact #fams{display:none}.bar.compact #ftoggle[aria-expanded=true]{border-color:var(--accent);color:var(--accent)}
