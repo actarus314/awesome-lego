@@ -134,7 +134,7 @@ details ul{margin:6px 0;padding-left:18px;font-size:13.5px}details li{margin:2px
 .bar.compact .fsum:not([hidden]){display:block;flex:1 1 100%;order:5;min-width:0;border:0;background:none;padding:0;font:600 13px system-ui,sans-serif;color:var(--muted);text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}.missl{margin:22px 0 0;text-align:center}.empty .missl{margin-top:12px}
 footer{margin:60px 0 0;padding:24px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:14px 18px;justify-content:space-between;align-items:center}
-footer .kn{flex-basis:100%;text-align:center;color:var(--line);font-size:11px;letter-spacing:.2em;user-select:none;white-space:nowrap}footer .kn:hover{color:var(--muted)}  /* the Konami hint keeps a line of its own, apart from the brick */
+footer .kn{flex-basis:100%;text-align:center;color:color-mix(in srgb,var(--muted) 45%,var(--line));font-size:11px;letter-spacing:.2em;user-select:none;white-space:nowrap}footer .kn:hover{color:var(--muted)}  /* the Konami hint keeps a line of its own, apart from the brick */
 /* the brick 3001, drawn in isometric view: outlines in the text colour, faces in the card colours, studs in the yellow of the logo */
 .b3001{color:var(--fg);overflow:visible}.b3-l,.b3-r,.b3-t,.b3-s,.b3-c{stroke:currentColor;stroke-width:var(--bw,1.1px);stroke-linejoin:round;vector-effect:non-scaling-stroke}
 .b3-t,.b3-s{fill:var(--card)}.b3-l{fill:color-mix(in srgb,var(--card) 88%,var(--fg))}.b3-r{fill:color-mix(in srgb,var(--card) 76%,var(--fg))}.b3-c{fill:var(--hi)}
