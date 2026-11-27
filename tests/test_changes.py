@@ -198,7 +198,7 @@ class Command(unittest.TestCase):
     def test_what_the_website_serves(self):
         self.assertTrue(changes.site_changed(["data/shops.toml"]))
         self.assertTrue(changes.site_changed(["site-src/app.js", "dev/x.md"]))
-        self.assertTrue(changes.site_changed(["scripts/build.py"]))
+        self.assertFalse(changes.site_changed(["scripts/build.py"]))
         self.assertFalse(changes.site_changed(["media/site-preview.png", "media/site-preview-dark.png", "README.md", "scripts/check_site.py", ".github/workflows/pages.yml"]))
 
 

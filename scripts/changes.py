@@ -53,7 +53,8 @@ LEFT_TO_VERSION = ["VERSION", *FILES.values(), *(f"media/{n}" for n in README_IM
 FORM = ".github/ISSUE_TEMPLATE/add-resource.yml"  # its category list is generated (build.issue_form); the rest of it is written by hand
 CONTENT = re.compile(r"^(data|site-src)/")  # what a reader sees: a pull request that changes it says so in a fragment
 BOTS = re.compile(r"^renovate/")  # branches of a bot that cannot write a fragment: a warning instead of a failure
-SITE = re.compile(r"^(data|site-src|media)/|^scripts/build\.py$")  # what the website serves or is built from (vendored files: site-src/vendor/)
+SITE = re.compile(r"^(data|site-src|media)/")  # what the website serves (vendored files: site-src/vendor/); a change of the
+# build that alters a page comes with its fragment, a refactoring of it is no version
 MENTION = re.compile(r"(?<![\w.`])@[A-Za-z0-9][\w-]*")
 
 
