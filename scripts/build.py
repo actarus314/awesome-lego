@@ -363,8 +363,7 @@ FILES = {("readme", "en"): "README.md", ("full", "en"): "full-list.md"}
 BESTPRACTICES = 17176  # project of the OpenSSF Best Practices badge (bestpractices.dev)
 BADGES = " ".join([  # health of the repository; awesome-lint forbids a CI badge
     f"[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/{BESTPRACTICES}/badge)](https://www.bestpractices.dev/projects/{BESTPRACTICES})",
-    f"[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/{REPO}/badge)](https://scorecard.dev/viewer/?uri=github.com/{REPO})",
-    f"[![REUSE status](https://api.reuse.software/badge/github.com/{REPO})](https://api.reuse.software/info/github.com/{REPO})"])
+    f"[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/{REPO}/badge)](https://scorecard.dev/viewer/?uri=github.com/{REPO})"])
 MORE = {"readme": {"en": "Only the best of each group is listed here. The [full list](full-list.md) has every resource, including inactive and dead ones."},
         "full": {"en": "Every resource, including inactive and dead ones, generated from [`data/`](data/). The selection of the best is in the [README](README.md)."}}
 
