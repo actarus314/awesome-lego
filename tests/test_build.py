@@ -179,6 +179,36 @@ class MachineFiles(unittest.TestCase):
         for (kind, lang), f in build.FILES.items():
             self.assertEqual(build.readme(self.cats, lang, kind), (ROOT / f).read_text(encoding="utf-8"), f)
 
+    def test_llms_txt_follows_the_convention(self):  # llmstxt.org: H1, summary in a quotation, H2 lists of "[name](url): notes", Optional last
+        lines = build.llms_txt(self.data).splitlines()
+        self.assertEqual(lines[0], "# Awesome LEGO")
+        self.assertTrue(lines[2].startswith("> "))
+        h2 = [x for x in lines if x.startswith("## ")]
+        self.assertEqual(h2[-1], "## Optional")
+        items = [x for x in lines if x.startswith("- ")]
+        self.assertTrue(items)
+        for x in items:
+            self.assertRegex(x, r"^- \[[^\]]+\]\(https://[^)\s]+\): \S", x)
+        self.assertNotRegex("\n".join(lines), r"\n- (?!\[)")
+
+    def test_sitemap_is_well_formed(self):
+        import xml.etree.ElementTree as ET
+        root = ET.fromstring(build.sitemap(self.data))
+        ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9", "x": "http://www.w3.org/1999/xhtml"}
+        locs = [u.find("s:loc", ns).text for u in root.findall("s:url", ns)]
+        self.assertEqual(locs, [build.PAGES + p for p in ("", "fr/", build.ABOUT_PATH["en"], build.ABOUT_PATH["fr"])])
+        for u in root.findall("s:url", ns):
+            self.assertEqual(sorted(a.get("hreflang") for a in u.findall("x:link", ns)), ["en", "fr", "x-default"])
+
+    def test_footer_and_about_pages_point_machines_too(self):
+        for lang in build.LANGS:
+            home = build.page(lang, self.data)
+            self.assertIn('<a href="index.md" type="text/markdown" data-t="as_text">', home.split("<footer")[1])
+            self.assertIn('type="application/json" data-t="as_json">', home.split("<footer")[1])
+            about = build.about(lang, self.data)
+            self.assertIn(f'rel="describedby" type="text/plain" href="{build.PAGES}llms.txt"', about.split("</head>")[0])
+            self.assertIn('<a href="../index.md" type="text/markdown" data-t="as_text">', about.split("<footer")[1])
+
     def test_robots_allow_everything_and_give_the_sitemap(self):
         robots = build.robots_txt()
         self.assertNotRegex(robots, r"(?im)^\s*Disallow\s*:\s*\S")

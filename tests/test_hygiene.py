@@ -100,19 +100,29 @@ class MachineAccess(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             self.assertEqual(hygiene.machine_access(self.site(d)), [])
 
-    def test_each_planted_defect_is_reported(self):
+    def test_each_planted_defect_is_reported(self):  # each with the file and the address it names
+        P = self.P
         defects = {
-            "missing": lambda s: (s / "llms.txt").unlink(),
-            "llms": lambda s: (s / "llms.txt").write_text(f"# A\n\n- [Gone]({self.P}gone.xml)\n", encoding="utf-8"),
-            "footer": lambda s: (s / "fr" / "about" / "index.html").write_text('<a href="data.json" type="application/json">j</a>', encoding="utf-8"),
-            "robots": lambda s: (s / "robots.txt").write_text(f"User-agent: GPTBot\nDisallow: /\n\nSitemap: {self.P}sitemap.xml\n", encoding="utf-8"),
-            "sitemap": lambda s: (s / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8"),
+            "index.md missing": (lambda s: (s / "index.md").unlink(), ["site/index.md is not built", f"site/llms.txt: {P}index.md leads to no built file",
+                                                                        f"site/index.html: {P}index.md leads to no built file"]),
+            "llms.txt missing": (lambda s: (s / "llms.txt").unlink(), ["site/llms.txt is not built", f"site/index.html: {P}llms.txt leads to no built file"]),
+            "address of llms.txt": (lambda s: (s / "llms.txt").write_text(f"# A\n\n- [Gone]({P}gone.xml)\n", encoding="utf-8"),
+                                    [f"site/llms.txt: {P}gone.xml leads to no built file"]),
+            "footer link": (lambda s: (s / "fr" / "about" / "index.html").write_text('<a href="data.json" type="application/json">j</a>', encoding="utf-8"),
+                            [f"site/fr/about/index.html: {P}fr/about/data.json leads to no built file"]),
+            "robots refusing": (lambda s: (s / "robots.txt").write_text(f"User-agent: GPTBot\nDisallow: /\n\nSitemap: {P}sitemap.xml\n", encoding="utf-8"),
+                                ["site/robots.txt: 'Disallow: /' refuses something"]),
+            "robots without sitemap": (lambda s: (s / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8"),
+                                       [f"site/robots.txt: no line 'Sitemap: {P}sitemap.xml'"]),
         }
-        for name, plant in defects.items():
+        for name, (plant, expected) in defects.items():
             with self.subTest(name), tempfile.TemporaryDirectory() as d:
                 s = self.site(d)
                 plant(s)
-                self.assertGreaterEqual(len(hygiene.machine_access(s)), 1)
+                found = hygiene.machine_access(s)
+                self.assertEqual(len(found), len(expected), found)
+                for e in expected:
+                    self.assertTrue(any(f.startswith(e) for f in found), (e, found))
 
     def test_nothing_without_a_built_site(self):
         with tempfile.TemporaryDirectory() as d:

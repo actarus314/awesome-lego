@@ -393,7 +393,8 @@ MD_T = {  # texts of the generated lists: the marks of an entry (README, full-li
     "dead": {"en": "dead", "fr": "disparu"},
 }
 LICENSE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/"  # licence of the content (LICENSE)
-GITHUB = f"https://github.com/{REPO}/blob/main/"  # files of the repository, linked from the lists served on the website
+REPO_URL = f"https://github.com/{REPO}"  # the repository
+GITHUB = REPO_URL + "/blob/main/"  # files of the repository, linked from the lists served on the website
 MD_PATH = {"en": "index.md", "fr": "fr/index.md"}  # the list served on the website, beside each home page (convention of llmstxt.org: index.md for an address without file name)
 
 
@@ -401,7 +402,7 @@ def readme(cats, lang, kind="readme", web=None):
     """README.md (kind "readme": the best of each group), full-list.md (kind "full": every entry), and with web, a dict with the
     version and the build date, the full list served on the website (site/index.md, site/fr/index.md): absolute links, no HTML, texts in lang."""
     M = {k: v[lang] for k, v in MD_T.items()}
-    title = T["title"][lang] if kind == "readme" else M["web_title"] if web else "Awesome LEGO: full list"
+    title = T["title"][lang] if kind == "readme" else MD_T["web_title"]["en" if not web else lang]
     badge = " [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)" if kind == "readme" else ""
     keep = picked if kind == "readme" else (lambda r: True)
     logo = [f'<a href="{PAGES}"><img src="media/logo.svg" align="right" width="120" alt="Awesome LEGO logo"></a>', ""] if kind == "readme" else []
@@ -461,9 +462,9 @@ def readme(cats, lang, kind="readme", web=None):
                 worlds = [M[k] for k in ("official", "alternative") if k in r.get("covers", [])]
                 marks = (M["covers"].format(w=M["and"].join(worlds)) if worlds else "")
                 if r.get("audience"):  # the publics the entry states (data/SCHEMA.md, audience)
-                    marks += (" " if marks else "") + M["for"].format(a=M["and"].join(M[a] for a in AUDIENCES if a in r["audience"]))
+                    marks += (" " if marks else "") + M["for"].format(a=M["and"].join(M.get(a, a) for a in AUDIENCES if a in r["audience"]))
                 if status != "active":
-                    marks += " " + M["status"].format(s=M[status])
+                    marks += " " + M["status"].format(s=M.get(status, status))
                 desc = r["summary_" + lang].strip()
                 if kind == "readme":  # awesome style: one short sentence
                     parts = re.split(r"(?<=[a-z0-9)])\.\s+(?=[A-Z])", desc)
@@ -761,9 +762,9 @@ def home_ld(lang, data):
             "fr": f"{T['site_tagline']['fr']} {n} ressources en {len(data['categories'])} catégories, en anglais et en français, avec leur statut, leurs pays, leurs langues et leurs sources."}[lang]
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "WebSite", "@id": here + "#website", "name": T["title"][lang], "url": here, "inLanguage": lang, "description": T["site_tagline"][lang]},
-        {"@type": "Dataset", "@id": PAGES + "#dataset", "name": T["title"][lang], "description": desc, "url": here, "inLanguage": list(LANGS),
+        {"@type": "Dataset", "@id": here + "#dataset", "name": T["title"][lang], "description": desc, "url": here, "inLanguage": list(LANGS),
          "license": LICENSE_URL, "isAccessibleForFree": True, "version": data["version"], "dateModified": data["built"],
-         "creator": {"@type": "Organization", "name": "Awesome LEGO", "url": f"https://github.com/{REPO}"},
+         "creator": {"@type": "Organization", "name": "Awesome LEGO", "url": REPO_URL},
          "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": PAGES + "data.json"},
                           *({"@type": "DataDownload", "encodingFormat": "text/markdown", "inLanguage": x, "contentUrl": PAGES + MD_PATH[x]} for x in LANGS)]}]}
     return json.dumps(ld, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
@@ -778,7 +779,7 @@ def llms_txt(data):
     lines = [
         "# Awesome LEGO", "",
         f"> {T['site_tagline']['en']} A curated directory of {len(R)} resources in {len(data['categories'])} categories ({cats}), in English and French.", "",
-        f"The website draws its list with JavaScript; the same entries are below as Markdown and JSON, rebuilt from the same data at each publication (version {data['version']}, built on {in_letters(data['built'], 'en')}). "
+        f"The website draws its list with JavaScript; the same entries are in Markdown and JSON at the links below, rebuilt from the same data at each publication (version {data['version']}, built on {in_letters(data['built'], 'en')}). "
         f"Content under CC BY-NC-SA 4.0 ({LICENSE_URL}): no commercial reuse; code under GNU AGPL 3.0.", "",
         "## Directory", "",
         f"- [Full list]({PAGES + MD_PATH['en']}): every resource by category and group, with its summary, what it covers, its public and its status, including inactive and dead ones",
@@ -792,7 +793,7 @@ def llms_txt(data):
         "## Optional", "",
         f"- [About]({PAGES}{ABOUT_PATH['en']}): how the directory is made, what gets in, how the selection is made",
         f"- [À propos]({PAGES}{ABOUT_PATH['fr']}): the same page in French",
-        f"- [Source](https://github.com/{REPO}): the entries in `data/*.toml`, their rules in `data/SCHEMA.md`, how to contribute in `contributing.md`", ""]
+        f"- [Source]({REPO_URL}): the entries in `data/*.toml`, their rules in `data/SCHEMA.md`, how to contribute in `contributing.md`", ""]
     return "\n".join(lines)
 
 
@@ -882,7 +883,7 @@ def changes_feed():
     text = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
     found = re.findall(r"(?m)^## v(\d+\.\d+(?:\.\d+)?) — (\d{4}-\d{2}-\d{2})\n(.*?)(?=^## v|^# v|\Z)", text, re.S)[:30]
     items = [(f"https://github.com/{REPO}/releases/tag/v{v}", f"v{v}", f"https://github.com/{REPO}/releases/tag/v{v}", d, body) for v, d, body in found]
-    return atom("Awesome LEGO: changes", PAGES + "changes.xml", f"https://github.com/{REPO}", items, FEED_ID + "changes.xml")
+    return atom("Awesome LEGO: changes", PAGES + "changes.xml", REPO_URL, items, FEED_ID + "changes.xml")
 
 
 def issue_form(cats):
