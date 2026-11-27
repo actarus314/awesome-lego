@@ -5,6 +5,13 @@
     "helpers:pinGitHubActionDigests"
   ],
   "minimumReleaseAge": "3 days",
+  "constraints": {
+    "npm": ">=11.10.0"
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "minimumReleaseAge": null
+  },
   "internalChecksFilter": "strict",
   "ignorePaths": [
     "**/node_modules/**",

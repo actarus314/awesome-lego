@@ -205,6 +205,7 @@ How, task by task:
 
 ### Renovate
 - Proposes the latest version of the workflows' actions (grouped in one pull request), Python, Node, the tools of the checks, MiniSearch, terser and the fonts, 3 days after it is published, at once for a security fix.
+- Refreshes `package-lock.json` once a week (lock file maintenance, Monday before 04:00), for the indirect npm packages that would otherwise move only with a direct one. Renovate raises it without its own 3-day wait, which a lock file without a publication date would never pass; npm keeps the delay itself: `.npmrc` sets `min-release-age=3`, so the new lock holds no version younger than 3 days, and `renovate.json` asks for npm 11.10 or later, the first that reads it. To go back: remove `lockFileMaintenance`, `constraints` and `.npmrc`.
 - The Python tools of the checks are locked with their hashes (`tests/*.in`, compiled by `uv pip compile --generate-hashes` into `tests/*.txt`, installed with `--require-hashes --only-binary=:all:`, so no package runs a build script at installation); Renovate compiles the lock again.
 
 ## The website
