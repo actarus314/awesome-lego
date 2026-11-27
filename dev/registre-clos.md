@@ -6,6 +6,8 @@ Lignes closes de `dev/registre.md`, la plus récente en tête ; un identifiant n
 
 | ID | P | Objet | Statut |
 |---|---|---|---|
+| AL-49 | — | Numéro de version et CHANGELOG écrits après la fusion | fait 27/11 : #34 ; fragments `changes/`, workflow Version qui ouvre la demande `vX.Y` ; relecture complète Opus (2 bloquants, 8 à corriger) et contre-vérification Sonnet (1 bloquant : correctif réécrivant son propre contrôle) corrigées |
+| AL-51 | — | Render plus court | fait 27/11 : #34 ; polices gardées installées par `dpkg` sans `--with-deps`, navigateur sans interface seul : étape Tools 24 s → 12.5 s (médianes) ; deux jobs parallèles non essayés |
 | AL-57 | — | Récurrence des événements affichée sur leur carte | fait v4.5 : demande #35 (47ddb7b) |
 | AL-58 | — | Liste dessinée en parties, index de recherche construit au repos (liste −13 à −15 %, plus longue tâche −33 à −35 %, première prise de focus sous 50 ms) | fait v4.5 : demande #35 (47ddb7b) |
 | AL-60 | — | `data/metrics.json` sorti de git ; Render lit les mesures publiées | fait v4.5 : demande #35 (47ddb7b) |

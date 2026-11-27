@@ -13,6 +13,7 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 | `data/`, `site-src/`, `scripts/`, `tests/`, `.github/`, `CHANGELOG.md`, `VERSION`, `MAINTENANCE.md`, `contributing.md`, `CLAUDE.md`, `passation.conf`, `dev/contexte.md`, `dev/registre.md`, `dev/consigne-revue.md` | source |
 | `README.md`, `full-list.md`, `media/`, `package-lock.json` | détail : générés ou verrouillés (README, liste, images, verrou npm) ; les logos et icônes de `media/` sont des sources |
 | `dev/registre-clos.md`, `dev/lots/` | détail : lignes closes, cahiers des lots |
+| `changes/` | source : fragments des demandes fusionnées (type et entrée), assemblés puis supprimés par le workflow Version |
 | `dev/outils/` | source : copies des outils de la skill `outils-versionnement`, remplacées à chaque reprise |
 | `LICENSE`, `LICENSE-CODE.md`, `LICENSES/`, `REUSE.toml`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `.editorconfig`, `.gitignore`, `package.json`, `renovate.json` | source : licences, règles du dépôt, configuration |
 
@@ -24,7 +25,7 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 | gardes-fous | AL-50 | `scripts/hygiene.py`, `scripts/check_site.py`, `scripts/tidy.py`, `tests/`, `.github/workflows/check.yml`, `.github/workflows/render.yml`, `.github/workflows/tidy.yml`, `MAINTENANCE.md` | — | fait 27/11 : `dev/lots/gardes-fous.md` ; demande #31 fusionnée par Romain à 01 h 03 (d63bc99, sans numéro de version) ; arrivé : `dev/contexte.md` |
 | entretien | AL-22, AL-46, AL-57, AL-59, AL-60, AL-61, AL-62, AL-64 | `scripts/`, `site-src/`, `data/SCHEMA.md`, `.github/workflows/fixes.yml` | — | fait v4.5 : demande #35 fusionnée par Romain le 27/11 à 03 h 25 (47ddb7b) ; AL-59 abandonné, AL-46 laissé en veille |
 | vitesse | AL-58 | `site-src/app.js` | — | fait v4.5 : même demande #35 |
-| publication | AL-49, AL-51, AL-63 | `.github/workflows/`, `scripts/changelog.py`, `renovate.json`, `CLAUDE.md` | accord de Romain et application de Data fixes ajoutée aux exceptions du ruleset (AL-49) | en cours (27/11 01:22) : `dev/lots/publication.md` ; accord de Romain le 27/11 à 01 h 18 ; l'application n'est pas dans les exceptions du ruleset (lu le 27/11 à 01 h 21) : variante sans écriture directe sur `main` |
+| publication | AL-49, AL-51, AL-63 | `.github/workflows/`, `scripts/changes.py`, `renovate.json`, `CLAUDE.md` | — | fait 27/11 : `dev/lots/publication.md` ; demande #34 fusionnée par Romain à 03 h 42 (b4e0a0f, sans numéro : fragment `none`) ; variante sans écriture directe sur `main` (l'application n'est pas dans les exceptions du ruleset) ; arrivé : `dev/contexte.md` |
 | rangement | AL-69 | `contributing.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `renovate.json` | accord de Romain ; après publication | abandonné : décision de Romain le 27/11 à 01 h 18 (gain faible) ; cahier `dev/lots/rangement.md` gardé |
 
 ## Gestes et décisions de Romain
@@ -46,13 +47,11 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 |---|---|---|---|---|---|
 | AL-46 | P4 | Mineurs laissés par les relectures de la v4.0 : cercles de « Dernier signe de vie » petits au doigt, libellés des chiffres à 1.5 px du bord à 320 px, graphique entre 480 et 640 px, survol d'onglet sur l'en-tête des aperçus, lien de catégorie gris, `:has()` avant Firefox 121, étiquettes `pt` et `es`, `#` vide du bouton de langue de la page À propos | C | — | ouverte : si un usage le montre |
 
-## Lot publication
+## À décider
 
 | ID | P | Objet | Exécutant | Lot | Statut |
 |---|---|---|---|---|---|
-| AL-49 | P2 | **Numéro de version et CHANGELOG écrits à la fusion** (un fragment par demande, assemblé après la fusion) pour supprimer les reprises de `VERSION`, `CHANGELOG.md` et des fichiers générés ; exige qu'un workflow écrive sur `main` : l'application de Data fixes ajoutée aux acteurs de contournement du ruleset (réglage de Romain), ou un numéro tiré de l'étiquette sans commit | R | publication | ouverte : à proposer en détail ; en attendant, règle « une demande à la fois » du `CLAUDE.md` du dépôt |
-| AL-51 | P3 | Render encore plus court (passage médian ≈ 140 s) : paquets de polices gardés installés directement, sans la résolution de `--with-deps` (10 à 14 s mesurés sur un journal ; polices inchangées, à essayer), contrôles en deux jobs parallèles (25 à 35 s estimés, non essayés) ; aucun contrôle retiré | R | publication | ouverte : proposée le 26/11 |
-| AL-63 | P4 | Renovate sans `lockFileMaintenance` : dépendances npm indirectes figées entre deux mises à jour directes ; l'activer ajoute une demande par semaine à fusionner | R | publication | ouverte : à proposer avec AL-49 (même sujet : demandes à fusionner) |
+| AL-63 | P4 | Renovate sans `lockFileMaintenance` : dépendances npm indirectes figées entre deux mises à jour directes. Essayé dans #34 puis retiré : avec le délai global de 3 jours (`minimumReleaseAge`), la maintenance des verrous n'a pas de date de publication et ne s'ouvrirait jamais (documentation de Renovate, relecture de #34) ; la faire marcher demande de lever ce délai pour elle, donc d'accepter des dépendances indirectes sans délai | R | — | ouverte : à décider (garder le délai partout, ou l'exception pour les verrous) |
 
 ## Revue mensuelle
 
@@ -77,7 +76,7 @@ Lignes que la revue du 5 lit et traite (consigne : `dev/consigne-revue.md`) ; la
 | AL-03 | V | Tendances dans l'Observatoire ; changements de statut dans le flux | deux fenêtres de 90 jours dans `history` | C, à la conversation qui suit le 23/05/2027 | ouverte : échéance 23/05/2027 |
 | AL-14 | V | Lecture d'activité en parallèle | un rapport mensuel qui diverge | C, à la lecture du rapport du 4 | ouverte |
 | AL-35 | V | Renovate et les verrous Python (`pip-compile`) | première demande de Renovate sur un outil Python : verrou recompilé avec empreintes, sinon recompilation par une session | R (la demande arrive chez lui), puis C | ouverte |
-| AL-43 | V | Revue mensuelle et page À propos | la demande du 05/12 dit « about page unchanged » ou ce qui a changé ; elle monte aussi `VERSION` : à fusionner seule, sans autre demande de version ouverte | R à la lecture, C ensuite | ouverte : échéance 05/12/2026 |
+| AL-43 | V | Revue mensuelle et page À propos | la demande du 05/12 dit « about page unchanged » ou ce qui a changé ; avec #34, elle dépose un fragment au lieu de monter `VERSION` (consigne recopiée dans la tâche le 27/11 à 02 h 58, avec un repli devenu inutile) | R à la lecture, C ensuite | ouverte : échéance 05/12/2026 |
 | AL-45 | V | Render accéléré (#26) : décidé par Claude le 26/11 (demande de Romain) ; risque : constats instables sous la charge de plusieurs navigateurs | un Render au-delà de 3 min, un constat qui apparaît et disparaît sans changement du site, un avertissement de quota de cache ; retour : `--jobs 1` dans `render.yml`, ou annuler a298cc2 | C à chaque demande | ouverte |
 | AL-65 | V | Check annule le passage précédent d'une même demande (v4.3) : décidé par Claude le 26/11 ; risque : le contrôle requis affiché « annulé » sur un ancien commit | une demande bloquée par un contrôle annulé ; retour : retirer `concurrency` de `check.yml` | C à chaque demande | ouverte : en place depuis la v4.3 (26/11, 23 h 04) |
 | AL-01 | V | Exécutions planifiées (clos le 25/11 : en retard d'environ 10 h, jamais sautées pour Pages, Links et Data fixes ; Data report, Workflow audit et Scorecard pas encore vus en planifié) | une exécution planifiée sautée (ligne « Watch the scheduled runs » de `MAINTENANCE.md`) ; premier Data report le 04/12 | C | ouverte : vérifier le 04/12/2026 |
