@@ -2,7 +2,7 @@
 
 *Maintainer's working notes, in French: what is left to do, check, decide or watch.*
 
-Seul registre de ce qui reste à faire, à vérifier, à décider ou à surveiller pour l'annuaire (skill `passation`) ; contexte : `dev/contexte.md`. Une ligne ne disparaît jamais : `fait vX.Y`, `abandonné : raison` ou `fusionné → ID` ; à la clôture d'un lot, les lignes closes descendent dans `dev/registre-clos.md`. Identifiants `AL-n` : 1 à 47 reprennent l'ancienne liste « Ouvert » (projet claude.ai) ; AL-57 à AL-64 viennent de l'audit Opus du 26/11 (34 constats : 18 corrigés dans la #28, 15 rangés ici, 1 écarté : Scorecard à chaque poussée sur `main`, sans coût d'attente). Mis à jour le 27/11/2026 à 23 h 50 (v4.8 en ligne ; #53, #55 et #56 fusionnées par Romain ce soir : brique 3001, page 404 et recherche sans résultat, dessin de la 404 en technique illégale ; v4.9 en ligne (#54 fusionnée par Romain) ; AL-78 fait, à descendre dans `dev/registre-clos.md` à la prochaine passe ; AL-80 à décider).
+Seul registre de ce qui reste à faire, à vérifier, à décider ou à surveiller pour l'annuaire (skill `passation`) ; contexte : `dev/contexte.md`. Une ligne ne disparaît jamais : `fait vX.Y`, `abandonné : raison` ou `fusionné → ID` ; à la clôture d'un lot, les lignes closes descendent dans `dev/registre-clos.md`. Identifiants `AL-n` : 1 à 47 reprennent l'ancienne liste « Ouvert » (projet claude.ai) ; AL-57 à AL-64 viennent de l'audit Opus du 26/11 (34 constats : 18 corrigés dans la #28, 15 rangés ici, 1 écarté : Scorecard à chaque poussée sur `main`, sans coût d'attente). Mis à jour le 28/11/2026 à 00 h 51 (v4.10 en ligne ; AL-78, AL-79 et AL-81 closes par Romain et descendues dans `dev/registre-clos.md`).
 
 Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 confort, P4 à l'occasion, V veille. Exécutant : C (Claude), CC (Claude dans le Chrome de Romain), R (Romain), RM (revue mensuelle planifiée).
 
@@ -44,16 +44,13 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 
 | ID | P | Objet | Exécutant | Lot | Statut |
 |---|---|---|---|---|---|
-| AL-79 | P4 | Égayer l'interface (Romain, 27/11, vocal, après #53), sans charger les fiches ni le fond ; retenu, abandonné et refusé : décision du 27/11 à 19 h 41 dans `dev/contexte.md` | C | — | ouverte : reste les icônes de catégorie en briques isométriques au trait, retenues à l'oral, pas encore maquettées ; fait le 27/11 : page des adresses inconnues et recherche sans résultat illustrée (#55), dessin de la 404 en technique illégale (#56) |
 | AL-46 | P4 | Mineurs laissés par les relectures de la v4.0 : cercles de « Dernier signe de vie » petits au doigt, libellés des chiffres à 1.5 px du bord à 320 px, graphique entre 480 et 640 px, survol d'onglet sur l'en-tête des aperçus, lien de catégorie gris, `:has()` avant Firefox 121, étiquettes `pt` et `es`, `#` vide du bouton de langue de la page À propos | C | — | ouverte : si un usage le montre |
-| AL-81 | P3 | Accès des machines (robots, modèles de langage, agents) : `robots.txt` qui autorise tout, `sitemap.xml`, `llms.txt`, liste complète en Markdown sur le domaine (en, fr), liens `alternate` et `describedby`, lien du pied de page, `noscript`, JSON-LD de l'accueil, contrôle dans Check ; rendu HTML à l'avance mesuré en comparaison seulement ; question et décisions de Romain du 27/11 (vocal) | C | acces-machines | fait v4.10 : fichiers lus en ligne le 28/11 à 00 h 32 (`robots.txt`, `sitemap.xml`, `llms.txt`, `index.md`, `fr/index.md`, types servis attendus) |
 
 ## À décider
 
 | ID | P | Objet | Exécutant | Lot | Statut |
 |---|---|---|---|---|---|
 | AL-82 | P3 | Rendu de la liste à l'avance (les 749 cartes en HTML dans la page, que `app.js` reprendrait) : mesure du 27/11 dans `dev/lots/acces-machines.md` : liste affichée −74 % (1424 → 371 ms), recherche et filtres utilisables +51 % (+0.7 s), redessin de 0.43 s pendant la lecture tant que `app.js` redessine tout, accueil +59 % compressé, budget par fiche dépassé, construction inchangée ; les robots qui n'exécutent pas le JavaScript ont déjà `index.md` et `llms.txt` (AL-81) | R | — | ouverte : choix de Romain : garder la page actuelle, ou un lot de rendu à l'avance avec reprise des cartes par `app.js`, à remesurer selon la règle des 10 % |
-| AL-78 | P4 | Fond du site, demande de Romain du 27/11 (vocal) : A quadrillage actuel, B quadrillage et briques 3001 au trait, C quadrillage et briques variées (maquettes posées par CSS sur le site construit, captures montrées le 27/11 à 19 h) ; constat : les cartes couvrent le fond sur l'annuaire, et les briques passent sous les titres et le texte de l'accueil (téléphone surtout) ; recommandation de Claude : A, le thème porté par la brique du pied de page et de la page À propos ; un motif retenu se sert depuis `media/` (la politique de sécurité refuse les images `data:`), en masque CSS sur la couleur du thème | R | — | fait : A gardé, décision de Romain le 27/11 à 19 h 15 ; rien à poser |
 
 ## Revue mensuelle
 
