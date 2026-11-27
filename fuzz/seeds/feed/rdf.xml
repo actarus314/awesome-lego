@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://purl.org/rss/1.0/">
+<item rdf:about="https://club.example/1"><title>One</title><dc:date>2026-09-01</dc:date></item>
+</rdf:RDF>

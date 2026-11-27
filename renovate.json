@@ -59,6 +59,20 @@
         "python"
       ],
       "allowedVersions": "<3.14"
+    },
+    {
+      "description": "Base image of the fuzzing (.clusterfuzzlite/Dockerfile), rebuilt upstream every day: its digest is renewed once a month, in one pull request. Without the 3-day delay, which a digest replaced every day would never pass; the fuzzing job holds no secret and only reads.",
+      "matchFileNames": [
+        ".clusterfuzzlite/Dockerfile"
+      ],
+      "matchUpdateTypes": [
+        "digest"
+      ],
+      "groupName": "fuzzing base image",
+      "schedule": [
+        "* * 1 * *"
+      ],
+      "minimumReleaseAge": null
     }
   ],
   "pip-compile": {

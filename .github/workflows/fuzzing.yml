@@ -1,0 +1,30 @@
+name: Fuzzing
+on:
+  schedule:
+    - cron: "29 3 * * 4"   # Thursdays: the fuzz targets of fuzz/ for 10 minutes (ClusterFuzzLite, batch)
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: fuzzing
+  cancel-in-progress: false
+jobs:
+  fuzzing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40   # about 15 minutes: 10 of fuzzing, the rest to pull the images of OSS-Fuzz and build
+    permissions:
+      contents: read   # ClusterFuzzLite clones this repository itself (no checkout step, as in its documentation)
+      actions: read    # it lists and downloads the artifacts of earlier runs with the token: the corpus grows from week to week
+    steps:
+      - name: Build the fuzz targets (.clusterfuzzlite/)
+        uses: google/clusterfuzzlite/actions/build_fuzzers@884713a6c30a92e5e8544c39945cd7cb630abcd1 # v1
+        with:
+          language: python
+          sanitizer: address
+      - name: Fuzz for 10 minutes in all
+        uses: google/clusterfuzzlite/actions/run_fuzzers@884713a6c30a92e5e8544c39945cd7cb630abcd1 # v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}   # read-only (permissions above); required by the action
+          mode: batch
+          fuzz-seconds: 600
+          sanitizer: address
+          language: python

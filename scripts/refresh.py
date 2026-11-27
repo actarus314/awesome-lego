@@ -84,12 +84,10 @@ def newest_date(xml_bytes):
         tag = el.tag.rsplit("}", 1)[-1]
         if tag in ("published", "updated", "pubDate", "date") and el.text:
             t = el.text.strip()
-            m = re.match(r"(\d{4}-\d{2}-\d{2})", t)
-            if m:
-                dates.append(m.group(1))
-                continue
-            try:
-                dates.append(dt.datetime.strptime(t[:25].strip(), "%a, %d %b %Y %H:%M:%S").date().isoformat())
+            try:   # a day of the calendar only: "2025-13-45" would stop refresh.py and build.py (fuzz/feed_fuzzer.py)
+                m = re.match(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", t)
+                dates.append(dt.date.fromisoformat(m.group(0)).isoformat() if m else
+                             dt.datetime.strptime(t[:25].strip(), "%a, %d %b %Y %H:%M:%S").date().isoformat())
             except ValueError:
                 pass
     dates = [d for d in dates if d <= TODAY.isoformat()]

@@ -228,10 +228,14 @@ def recheck(urls, token=None, api=_api, sleep=time.sleep, confirm=True):
                 continue
             v, reasons, extra = verdict(results[current[u]])
             if v == "redirect" and hop < HOPS:
-                current[u] = urllib.parse.urljoin(current[u], extra)
-                path[u].append(f"{', '.join(reasons)} to {code(current[u])}")   # the address comes from a third party
-                nxt.append(u)
-                continue
+                try:
+                    current[u] = urllib.parse.urljoin(current[u], extra)
+                except ValueError:   # a Location that urllib cannot read ("http://[x", fuzz/globalping_fuzzer.py): the server answers
+                    v, extra = "alive", None
+                else:
+                    path[u].append(f"{', '.join(reasons)} to {code(current[u])}")   # the address comes from a third party
+                    nxt.append(u)
+                    continue
             if v == "redirect":
                 v, extra = "alive", None   # still redirecting after HOPS: the server answers
             out[u] = (v, [*path[u], ", ".join(reasons)], extra)   # one line per address read: "301, 301, 301 to …", "404, 404, 404"

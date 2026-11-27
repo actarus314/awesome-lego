@@ -37,9 +37,10 @@ flowchart LR
 | Review pass (language model) | the 5th of each month, 10:13 Paris time | full review of the data | pull request **Monthly review YYYY-MM** |
 | **Workflow audit** | Mondays 05:37 | security audit of the workflows | alerts in the **Security** tab |
 | **Scorecard** | Tuesdays 04:43, every push to `main` | score of the repository practices | alerts in the **Security** tab, score at `api.scorecard.dev` |
+| **Fuzzing** | Thursdays 03:29 | the fuzz targets of `fuzz/` for 10 minutes: scripts that read third-party pages, feeds and answers | a failed run, the inputs found as an artefact; the corpus kept as an artefact |
 | **Tidy** | Mondays 06:41 | fixes that need no judgement: unused Python imports, lossless compression of the PNG files of `media/` (README images excepted) | pull request **Tidy**, only when a file changed |
 
-Started by hand (**Run workflow**): **Pages**, **Links** (with *dry run*), **Data fixes**, **Data report**, **Render**, **Tidy**, **Version** (also rebuilds the generated files without a number), **Release** (notes of the releases).
+Started by hand (**Run workflow**): **Pages**, **Links** (with *dry run*), **Data fixes**, **Data report**, **Render**, **Tidy**, **Version** (also rebuilds the generated files without a number), **Release** (notes of the releases), **Fuzzing**.
 
 ## On each pull request
 
@@ -195,6 +196,12 @@ How, task by task:
 ### Workflow audit and Scorecard
 - **Workflow audit**: zizmor reads `.github/workflows/` (dangerous triggers, injections, excessive permissions, unpinned or vulnerable actions) on every pull request or push to `main` that changes a workflow, and Mondays.
 - **Scorecard**: OpenSSF Scorecard scores the rules of `main`, pinned dependencies, token permissions, dangerous workflows and security policy; a change of the ruleset is scored at the next run.
+
+### Fuzzing
+- Thursdays 03:29, or by hand: ClusterFuzzLite builds the fuzz targets of `fuzz/` in the Python image of OSS-Fuzz (`.clusterfuzzlite/`: Python 3.11, Atheris) and runs them 10 minutes in all, shared between the targets; about 15 minutes with the images, free for a public repository. No run on pull requests, no secret, read-only token.
+- Fuzzed, the code that reads what third parties write: feeds (`newest_date` of `scripts/refresh.py`), pages (`classify` of `scripts/links_issue.py`, `find` of `scripts/discover_feeds.py`), redirects of **Data fixes** (`moved` of `scripts/autofix.py`, through the real `http.client`), probes of Globalping (`recheck` and the issue body).
+- A finding: an exception the caller does not handle, a result the data or the issue cannot hold, more than 25 seconds or 2.5 GB for one input. The run fails (GitHub mails it) and keeps the input: replay it with `python3 fuzz/<target>.py <file>` (`pip install atheris`), fix the script and add the case to `tests/test_fuzzing.py`.
+- The corpus of each target is kept as an artefact from one run to the next (`actions: read` lets the token read the artefacts of earlier runs). The scripts must stay readable by Python 3.11, the version of the image. The image is pinned by digest; it is rebuilt upstream every day, and Renovate renews the digest once a month, on the 1st, in one pull request. The images that the actions of ClusterFuzzLite start themselves (`base-runner`, its builders) follow their `v1` tag, out of reach of Renovate: accepted, since the job holds no secret and only reads.
 
 ### Renovate
 - Proposes the latest version of the workflows' actions (grouped in one pull request), Python, Node, the tools of the checks, MiniSearch, terser and the fonts, 3 days after it is published, at once for a security fix.

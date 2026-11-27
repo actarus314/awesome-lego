@@ -33,21 +33,24 @@ def moved(url):
     """New address if the page moved permanently, else None."""
     cur, hops = url, 0
     while hops < 5:
-        req = urllib.request.Request(cur, headers={"User-Agent": UA}, method="GET")
-        try:
+        try:   # the Request too: "Location: URL:x" leaves an address without a scheme (fuzz/redirect_fuzzer.py)
+            req = urllib.request.Request(cur, headers={"User-Agent": UA}, method="GET")
             with OPENER.open(req, timeout=15) as r:
                 code = r.status
         except urllib.error.HTTPError as e:
             code = e.code
             if code in (301, 308) and e.headers.get("Location"):
-                cur = urllib.parse.urljoin(cur, e.headers["Location"])
+                try:   # an unclosed IPv6 bracket ("http://[x") makes urljoin raise (review of #39)
+                    cur = urllib.parse.urljoin(cur, e.headers["Location"])
+                except ValueError:
+                    return None
                 hops += 1
                 continue
             return None
         except Exception:
             return None
         break
-    if not hops or code != 200 or "?" in cur or not re.fullmatch(r"https?://[^\s\"\\<>`]+", cur):
+    if not hops or code != 200 or "?" in cur or not re.fullmatch(r"https?://[^\s\"\\<>`\x00-\x1f\x7f]+", cur):   # control characters: a fragment is never sent, so it can hold them (fuzz/redirect_fuzzer.py)
         return None  # an address with characters that would break the data file or the pull request is left to a person
     same = lambda a, b: a.rstrip("/").lower() == b.rstrip("/").lower()
     return None if same(cur, url) or same(cur.replace("http://", "https://"), url) else cur

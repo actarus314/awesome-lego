@@ -1,0 +1,2 @@
+# ClusterFuzzLite (https://google.github.io/clusterfuzzlite/): the fuzz targets of fuzz/, run by the workflow Fuzzing.
+language: python
