@@ -91,6 +91,11 @@ class Moved(unittest.TestCase):
             with mock.patch.object(autofix, "OPENER", Opener(redirect(f"https://club.example/new#a{c}b"), Answer())):
                 self.assertIsNone(autofix.moved("https://club.example/news/"), repr(c))
 
+    def test_a_malformed_location_is_left_alone(self):   # relecture de #39: urljoin raises on an unclosed IPv6 bracket
+        for loc in ("http://[x", "//[x", "https://[::1"):
+            with mock.patch.object(autofix, "OPENER", Opener(redirect(loc))):
+                self.assertIsNone(autofix.moved("https://club.example/news/"), loc)
+
     def test_a_permanent_move_is_still_followed(self):
         with mock.patch.object(autofix, "OPENER", Opener(redirect("/new#top"), Answer())):
             self.assertEqual(autofix.moved("https://club.example/news/"), "https://club.example/new#top")

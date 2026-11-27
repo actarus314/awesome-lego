@@ -40,7 +40,10 @@ def moved(url):
         except urllib.error.HTTPError as e:
             code = e.code
             if code in (301, 308) and e.headers.get("Location"):
-                cur = urllib.parse.urljoin(cur, e.headers["Location"])
+                try:   # an unclosed IPv6 bracket ("http://[x") makes urljoin raise (review of #39)
+                    cur = urllib.parse.urljoin(cur, e.headers["Location"])
+                except ValueError:
+                    return None
                 hops += 1
                 continue
             return None

@@ -86,6 +86,7 @@ def TestOneInput(data):
     bare = CODE_SPAN.sub("", body)
     for u in urls:
         bare = bare.replace(f"<{u}>", "")
+    # the fixed sentences of links_issue.body hold no "@", "<http" or "`" today: one added there would fail this check every week
     if "@" in bare or "<http" in bare or "`" in bare:
         raise AssertionError("the issue quotes third-party text outside a code span:\n" + bare)
 
