@@ -6,13 +6,6 @@
   ],
   "minimumReleaseAge": "3 days",
   "internalChecksFilter": "strict",
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": [
-      "* * * * 4"
-    ],
-    "description": "Indirect dependencies of package-lock.json and of the locks of tests/ refreshed in one pull request a week, on Thursdays: Tidy opens on Mondays, Data fixes on Wednesdays."
-  },
   "ignorePaths": [
     "**/node_modules/**",
     "**/bower_components/**",
@@ -39,7 +32,7 @@
         "terser"
       ],
       "prBodyNotes": [
-        "Files of this package are kept in the repository: on this branch, run `npm ci --ignore-scripts && python3 scripts/vendor.py && python3 scripts/build.py` and commit the result before merging (Check fails until then)."
+        "Files of this package are kept in the repository: on this branch, run `npm ci --ignore-scripts && python3 scripts/vendor.py && python3 scripts/build.py --check` and commit the files `vendor.py` changed, nothing else (README.md and full-list.md are left to the Version workflow), before merging (Check fails until then)."
       ]
     },
     {

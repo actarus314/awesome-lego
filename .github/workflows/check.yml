@@ -37,15 +37,15 @@ jobs:
       - name: Fragments of changes/ (and, on a pull request, the files left to the Version workflow)
         env:
           KIND: ${{ github.event_name != 'pull_request' && 'main' || (github.head_ref == 'auto/version' && github.event.pull_request.head.repo.full_name == github.repository) && 'version' || 'other' }}
+          BRANCH: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.head_ref || '' }}   # a fork names its branches as it likes
         run: |
           case "$KIND" in
-            version) python3 scripts/changes.py check --strict ;;
-            other) python3 scripts/changes.py check --base HEAD^1 ;;
+            version) python3 scripts/changes.py check --strict; echo "MODE=--strict" >> "$GITHUB_ENV" ;;
+            other) python3 scripts/changes.py check --base HEAD^1 --branch "$BRANCH"; echo "MODE=--pull-request" >> "$GITHUB_ENV" ;;
             *) python3 scripts/changes.py check ;;
           esac
-          echo "STRICT=$([ "$KIND" = version ] && echo --strict)" >> "$GITHUB_ENV"
-      - name: Validate data and check that generated files are up to date (left to Version while a fragment waits)
-        run: python3 scripts/build.py --check ${STRICT:+"$STRICT"}
+      - name: Validate data and check that generated files are up to date (left to Version on a pull request)
+        run: python3 scripts/build.py --check ${MODE:+"$MODE"}
       - name: Unit tests (validation, pages)
         run: python3 -m unittest discover -s tests
       - name: Build the generated files and the site

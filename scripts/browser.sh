@@ -4,7 +4,8 @@
 #
 # ~/fonts holds the packages kept by an earlier run (actions/cache): the fonts that Playwright installs came at
 # 60 kB/s from the Ubuntu mirror on some runs. KEPT_THIS_WEEK=true (exact hit of the weekly key): they are installed
-# directly with dpkg, without `apt-get update` and the resolution of `--with-deps`, and Playwright then checks that
+# directly with dpkg (not checked against the signed index of apt: the cache of main is written only by runs on main),
+# without `apt-get update` and the resolution of `--with-deps`, and Playwright then checks that
 # nothing it needs is missing; if anything is, or on any other run, `--with-deps` as before, and ~/fonts is filled
 # again with the packages of the versions now installed (saved by the workflow, from main only).
 set -euo pipefail
@@ -13,7 +14,13 @@ lap() { echo "[$(( SECONDS - t0 )) s] $1"; }
 kept=$HOME/fonts
 direct=false
 if [ "${KEPT_THIS_WEEK:-}" = true ] && compgen -G "$kept/*.deb" > /dev/null; then
-  if sudo dpkg -i --skip-same-version "$kept"/*.deb > /dev/null; then direct=true; fi
+  newer=()   # only a package missing or older on the runner: an image updated during the week is never downgraded
+  for f in "$kept"/*.deb; do
+    pkg=$(dpkg-deb -f "$f" Package) ver=$(dpkg-deb -f "$f" Version)
+    cur=$(dpkg-query -W -f='${Version}' "$pkg" 2>/dev/null || true)
+    if [ -z "$cur" ] || dpkg --compare-versions "$ver" gt "$cur"; then newer+=("$f"); fi
+  done
+  if [ ${#newer[@]} -eq 0 ] || sudo dpkg -i "${newer[@]}" > /dev/null; then direct=true; fi
   lap "kept packages installed with dpkg ($direct)"
 fi
 python3 -m playwright install --only-shell chromium   # check_site.py and readme_image.py launch the headless shell only

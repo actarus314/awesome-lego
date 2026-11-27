@@ -32,7 +32,7 @@ flowchart LR
 | **Pages** | every day 04:17, every push to `main`, after **Preview** | reads activity, builds and publishes the website with the previews | the website; one file a day on branch `history` |
 | **Links** | Wednesdays 05:23 | tests every link, from GitHub then from home and office probes | issue **Broken links** |
 | **Data fixes** | when **Links** ends, except a dry run | moved addresses, past event dates | pull request **Data fixes** |
-| **Version** | after each push to `main` | assembles the fragments of `changes/` into the next version | pull request **vX.Y**, when a fragment gives a number |
+| **Version** | after each push to `main` (not one that changes `dev/` alone) | assembles the fragments of `changes/` into the next version | pull request **vX.Y**, when a fragment gives a number |
 | **Data report** | the 4th of each month, 03:41 | monthly report for the review | issue **Monthly data report** |
 | Review pass (language model) | the 5th of each month, 10:13 Paris time | full review of the data | pull request **Monthly review YYYY-MM** |
 | **Workflow audit** | Mondays 05:37 | security audit of the workflows | alerts in the **Security** tab |
@@ -61,7 +61,7 @@ The maintainer's working notes (state, decisions, open items, briefs) are in `de
 | Accept **Tidy** | Mondays, when it opens | unused imports and heavy images stay; the next run proposes them again |
 | Read **Broken links** | Wednesdays, when the issue is open | broken links stay until the monthly review |
 | Accept **Monthly review YYYY-MM** | after the 5th | corrections and additions wait; merge or close it before the next 5th |
-| Accept **vX.Y** | when its entry reads well, after the merges it gathers | the version, its entry, the README and full-list.md wait; the website is published anyway |
+| Accept **vX.Y** | when its entry reads well, after the merges it gathers, once the last run of **Version** has ended | the version, its entry, the README and full-list.md wait; the website is published anyway |
 | Keep the review's instructions up to date | when a rule of the data changes | the review writes entries the build refuses |
 | Accept Renovate's pull requests | when one opens | tools fall behind, security fixes included |
 | Handle security alerts | when GitHub sends one | the flaw stays open |
@@ -75,7 +75,7 @@ How, task by task:
 - **Monthly review**: read its summary, the guard line first, then squash and merge.
 - **vX.Y**: read the entry of `CHANGELOG.md` in its description (releases are immutable; a fragment is reworded by a pull request to `main`, and the pull request follows), then squash and merge: **Release** tags it.
 - **Review instructions**: they live in the scheduled task of the review pass, outside this repository; replace them with the text written for the change.
-- **Renovate**: squash and merge when **Check** passes. For MiniSearch, a font or terser, first run `npm ci --ignore-scripts && python3 scripts/vendor.py && python3 scripts/build.py` on its branch and commit the result (the pull request says so).
+- **Renovate**: squash and merge when **Check** passes. For MiniSearch, a font or terser, first run `npm ci --ignore-scripts && python3 scripts/vendor.py && python3 scripts/build.py --check` on its branch and commit the files `vendor.py` changed, nothing else (the pull request says so).
 - **Security alerts** (**Security** tab, `SECURITY.md`): fix by a pull request, or dismiss a code scanning alert with its reason; for a secret, revoke it at its service first; only the maintainer dismisses a secret scanning alert.
 - **Contributors**: before merging, add the French texts and, when it is missing, the fragment `changes/<name>.md`; approve the workflows of an outside contributor after reading the change.
 - **Key of Data fixes**: generate a new private key for its GitHub App and store it as the secret `DATA_FIXES_APP_KEY`.
@@ -114,7 +114,7 @@ How, task by task:
 ### Data fixes
 - `scripts/autofix.py` replaces an address only after a permanent redirect (301 or 308) that ends on a 200 without a query, in 5 hops at most, and removes past `next_date` values; `data/journeys.toml` is left out.
 - Recreates the branch `auto/data-fixes` from `main` at each run and opens or updates the pull request **Data fixes** (label `automatic`): a commit added by hand on that branch is lost at the next run.
-- Writes the fragment `changes/data-fixes-YYYY-MM-DD.md` (type `none`: cited by the next version's entry) and leaves `README.md` and `full-list.md` to **Version**.
+- Writes the fragment `changes/data-fixes-YYYY-MM-DD-HHMM.md` (type `none`, see Versions) and leaves `README.md` and `full-list.md` to **Version**.
 - Opens the pull request with its GitHub App (variable `DATA_FIXES_APP_ID`: the app's client ID; secret `DATA_FIXES_APP_KEY`) or, failing that, a personal token (secret `DATA_FIXES_TOKEN`), so that **Check** and **Render** start on their own.
 
 ### Tidy
@@ -147,8 +147,8 @@ How, task by task:
 - Writes the fragment `changes/review-YYYY-MM.md` (type `minor`) from the draft of `scripts/changelog.py` and opens **Monthly review YYYY-MM**; **Version** gives the number after the merge.
 
 ### Check
-- Validates `data/`, and the fragments of `changes/` (`scripts/changes.py`: type, one paragraph of 550 characters at most); checks that `CHANGELOG.md` has a section for `VERSION`, each paragraph of an entry at most 550 characters (the details belong to the pull request).
-- A pull request leaves to **Version** `VERSION`, new sections of `CHANGELOG.md`, `README.md`, `full-list.md` and the README images: it fails if it changes them, and is warned when it changes the data or the website without a fragment. `README.md`, `full-list.md` and the category list of the **Add a resource** form may then be out of date (a warning); awesome-lint reads the README as the pull request makes it.
+- Validates `data/`, and the fragments of `changes/` (`scripts/changes.py`: type, one paragraph of 550 characters at most, no bare `@name`, one major fragment at most); checks that `CHANGELOG.md` has a section for `VERSION`, each paragraph of an entry at most 550 characters (the details belong to the pull request).
+- A pull request leaves to **Version** `VERSION`, new sections of `CHANGELOG.md`, `README.md`, `full-list.md`, the category list of the **Add a resource** form and the README images: it fails if it changes them, and fails when it changes `data/` or `site-src/` without adding a fragment (a warning on the branches `renovate/*`, whose bot writes none). Its generated files may then be out of date, whatever `main` holds (a warning); awesome-lint reads the README as the pull request makes it.
 - These generated files must be up to date on the pull request of **Version** (no major or minor fragment left either), and on `main` once no fragment waits.
 - Checks that this file names every workflow and schedule, and that `data/SCHEMA.md` names every controlled word and backend file.
 - Warns, without failing, when the image of the README shows another version.
@@ -174,10 +174,14 @@ How, task by task:
 - Not a required check (a path filter would leave it pending): its result is read before merging.
 
 ### Version
-- A pull request says what it changes in `changes/<name>.md` (`contributing.md`, `scripts/changes.py`): type `major`, `minor` or `none`, then one paragraph of two sentences; a major one also gives the heading of its series.
+- A pull request says what it changes in `changes/<name>.md` (`contributing.md`, format in `scripts/changes.py`): its type (see Versions), then one paragraph of two sentences; a major one also gives the heading of its series.
 - After each push to `main` that leaves a fragment of type `major` or `minor`, assembles the fragments into one entry of `CHANGELOG.md` (one paragraph each, strongest type first), raises `VERSION` by the strongest type, removes the fragments, rebuilds `README.md`, `full-list.md`, the category list of the form and the image of the README, then opens or updates the pull request **vX.Y** (label `automatic`) on the branch `auto/version`, recreated from `main` at each run: a commit added by hand on that branch is lost at the next run.
-- Fragments of type `none` alone give no number: they wait, with the generated files, and the entry of the next version cites them. Started by hand, it also rebuilds the generated files without a number (pull request **Generated files**).
-- Writes with the app or token of **Data fixes**, so that its checks start on their own: the ruleset of `main` lets only the admin role bypass it, so no workflow pushes to `main`.
+- Fragments of type `none` alone give no number: they wait, with the generated files, and the entry of the next version cites them. Started by hand, it also rebuilds the generated files without a number (pull request **Generated files**): the repair when `main` fails **Check** with generated files out of date and no fragment waiting.
+- After a push that gives no number, closes a pull request **vX.Y** left open (its fragments are gone).
+- Two jobs: the build (pip packages, the browser, the fonts kept by **Render**) holds no secret and hands its changes over as an artefact, checked against the list of files Version writes (`scripts/version_files.sh`); the publication runs no third-party code and alone holds the token.
+- Writes with the app of **Data fixes** or its personal token, so that its checks start on their own; without either it fails with a message: the token of Actions does not push from this job, and the ruleset of `main` lets only the admin role bypass it, so no workflow pushes to `main`.
+- Pushes nothing if `main` moved during the run: the run of the newer push, waiting behind it, publishes.
+- If the image of the README cannot be taken, the pull request keeps the previous image and says so (a warning, never a failure).
 - A pull request, and its preview, shows the version before it: the number exists only once **Version** has run after the merge.
 - To write on `main` directly instead (once the app is added to the bypass list of the ruleset): in `version.yml`, push `HEAD:main` in place of `auto/version` and drop the lines of the pull request; Check then needs no exception for `auto/version`.
 
@@ -191,7 +195,6 @@ How, task by task:
 
 ### Renovate
 - Proposes the latest version of the workflows' actions (grouped in one pull request), Python, Node, the tools of the checks, MiniSearch, terser and the fonts, 3 days after it is published, at once for a security fix.
-- On Thursdays (a day without **Tidy** or **Data fixes**), one pull request refreshes the indirect dependencies of `package-lock.json` and of the locks of `tests/` (lock file maintenance).
 - The Python tools of the checks are locked with their hashes (`tests/*.in`, compiled by `uv pip compile --generate-hashes` into `tests/*.txt`, installed with `--require-hashes --only-binary=:all:`, so no package runs a build script at installation); Renovate compiles the lock again.
 
 ## The website
@@ -205,5 +208,5 @@ How, task by task:
 
 ## Versions
 
-- Minor (`4.1`) for every merge that changes content or the website; major (`5.0`) for a change of structure or data format; none for activity data, automation or the README alone.
+- Types of a fragment of `changes/` (the one definition; elsewhere a reference to it): `minor` (`4.1`) for every merge that changes content or the website; `major` (`5.0`) for a change of structure or data format; `none` for activity data, automation, documents or the README alone. Exception: **Data fixes** writes `none` although it corrects content (moved addresses, past dates), so that its weekly pull request gives no number of its own.
 - Each pull request gives its type in its fragment of `changes/`; the number lives in `VERSION` and `CHANGELOG.md`, written by **Version** with the image of the README; **Release** tags it at the merge of **vX.Y**.
