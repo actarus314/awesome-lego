@@ -75,6 +75,50 @@ class Budgets(unittest.TestCase):
                 hygiene.BUDGETS = old
 
 
+
+class MachineAccess(unittest.TestCase):
+    """The étalon of dev/lots/acces-machines.md: a complete site passes; a missing file, an address of llms.txt that leads
+    nowhere, a broken footer link and a robots.txt that refuses a robot each give a message."""
+    P = hygiene.PAGES
+
+    def site(self, d):
+        s = Path(d)
+        (s / "fr" / "about").mkdir(parents=True)
+        (s / "about").mkdir()
+        for f in ("data.json", "sitemap.xml", "fr/index.html", "about/index.html", "fr/about/index.html", "404.html"):
+            (s / f).write_text("{}" if f.endswith(".json") else "", encoding="utf-8")
+        (s / "index.html").write_text(f'<link rel="describedby" type="text/plain" href="{self.P}llms.txt"><a href="index.md" type="text/markdown">t</a>'
+                                      '<a href="data.json" type="application/json">j</a><a href="https://example.org/x" rel="noopener">x</a>', encoding="utf-8")
+        (s / "fr" / "about" / "index.html").write_text('<a href="../index.md" type="text/markdown">t</a><a href="../../data.json" type="application/json">j</a>', encoding="utf-8")
+        (s / "llms.txt").write_text(f"# A\n\n- [List]({self.P}index.md): all\n- [Liste]({self.P}fr/index.md)\n- [About]({self.P}fr/about/)\n", encoding="utf-8")
+        (s / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {self.P}sitemap.xml\n", encoding="utf-8")
+        for f in hygiene.MD_PATH.values():
+            (s / f).write_text(f"# List\n\n[site]({self.P})\n", encoding="utf-8")
+        return s
+
+    def test_a_complete_site_passes(self):
+        with tempfile.TemporaryDirectory() as d:
+            self.assertEqual(hygiene.machine_access(self.site(d)), [])
+
+    def test_each_planted_defect_is_reported(self):
+        defects = {
+            "missing": lambda s: (s / "llms.txt").unlink(),
+            "llms": lambda s: (s / "llms.txt").write_text(f"# A\n\n- [Gone]({self.P}gone.xml)\n", encoding="utf-8"),
+            "footer": lambda s: (s / "fr" / "about" / "index.html").write_text('<a href="data.json" type="application/json">j</a>', encoding="utf-8"),
+            "robots": lambda s: (s / "robots.txt").write_text(f"User-agent: GPTBot\nDisallow: /\n\nSitemap: {self.P}sitemap.xml\n", encoding="utf-8"),
+            "sitemap": lambda s: (s / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8"),
+        }
+        for name, plant in defects.items():
+            with self.subTest(name), tempfile.TemporaryDirectory() as d:
+                s = self.site(d)
+                plant(s)
+                self.assertGreaterEqual(len(hygiene.machine_access(s)), 1)
+
+    def test_nothing_without_a_built_site(self):
+        with tempfile.TemporaryDirectory() as d:
+            self.assertEqual(hygiene.machine_access(Path(d)), [])
+
+
 if __name__ == "__main__":
     unittest.main()
 

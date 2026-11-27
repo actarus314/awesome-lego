@@ -300,9 +300,9 @@ def text_notes(cats):
 
 
 def site_notes():
-    """The same rule of the brand on the French sentences of the site: build.py (T, FEED_T) and site-src (strings.json
+    """The same rule of the brand on the French sentences of the site: build.py (T, FEED_T, MD_T) and site-src (strings.json
     except the strings marked as labels, French branches of app.js)."""
-    for name, table in (("T", T), ("FEED_T", FEED_T)):
+    for name, table in (("T", T), ("FEED_T", FEED_T), ("MD_T", MD_T)):
         for k, v in table.items():
             if isinstance(v, dict) and OFFICIEL.search(str(v.get("fr", ""))):
                 notes.append(f"scripts/build.py: {name}[{k}]: « LEGO officiel » in a sentence")
@@ -370,18 +370,56 @@ MORE = {"readme": {"en": "Only the best of each group is listed here. The [full 
         "full": {"en": "Every resource, including inactive and dead ones, generated from [`data/`](data/). The selection of the best is in the [README](README.md)."}}
 
 
-def readme(cats, lang, kind="readme"):
-    title = T["title"][lang] if kind == "readme" else "Awesome LEGO: full list"
+MD_T = {  # texts of the generated lists: the marks of an entry (README, full-list.md) and the list served on the website (site/index.md, site/fr/index.md)
+    "web_title": {"en": "Awesome LEGO: full list", "fr": "Awesome LEGO : liste complète"},
+    "web_about": {"en": "Every resource of the directory, including inactive and dead ones, by category and group: version {v}, built on {date} from the same data as [the website]({site}). "
+                        "The selection of the best: [README]({readme}). Every field, for scripts: [data.json]({json}). Content under [CC BY-NC-SA 4.0]({lic}): no commercial reuse.",
+                  "fr": "Toutes les ressources de l'annuaire, inactives et disparues comprises, par catégorie et groupe : version {v}, construite le {date} à partir des mêmes données que [le site]({site}). "
+                        "La sélection des meilleures : [README]({readme}), en anglais. Tous les champs, pour les scripts : [data.json]({json}). Contenu sous [CC BY-NC-SA 4.0]({lic}) : pas de reprise commerciale."},
+    "web_other": {"en": "Liste en français", "fr": "List in English"},
+    "web_contrib": {"en": "Additions and corrections are welcome: read [how the directory is made and what gets in]({about}), then [contributing.md]({contrib}).",
+                    "fr": "Ajouts et corrections bienvenus : lire [comment est fait l'annuaire et ce qui y entre]({about}), puis [contributing.md]({contrib}), en anglais."},
+    "covers": {"en": "Covers {w}.", "fr": "Couvre {w}."},
+    "official": {"en": "official LEGO", "fr": "les sets de marque LEGO"},
+    "alternative": {"en": "alternative brands", "fr": "les marques alternatives"},
+    "and": {"en": " and ", "fr": " et "},
+    "for": {"en": "For {a}.", "fr": "Pour {a}."},
+    "children": {"en": "children", "fr": "les enfants"},
+    "adults": {"en": "adults", "fr": "les adultes"},
+    "status": {"en": "Status: {s}.", "fr": "Statut : {s}."},
+    "slow": {"en": "no update for 6 months", "fr": "aucune mise à jour depuis 6 mois"},
+    "inactive": {"en": "no update for a year", "fr": "aucune mise à jour depuis un an"},
+    "archived": {"en": "archived", "fr": "archivé"},
+    "dead": {"en": "dead", "fr": "disparu"},
+}
+LICENSE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/"  # licence of the content (LICENSE)
+GITHUB = f"https://github.com/{REPO}/blob/main/"  # files of the repository, linked from the lists served on the website
+MD_PATH = {"en": "index.md", "fr": "fr/index.md"}  # the list served on the website, beside each home page (convention of llmstxt.org: index.md for an address without file name)
+
+
+def readme(cats, lang, kind="readme", web=None):
+    """README.md (kind "readme": the best of each group), full-list.md (kind "full": every entry), and with web, a dict with the
+    version and the build date, the full list served on the website (site/index.md, site/fr/index.md): absolute links, no HTML, texts in lang."""
+    M = {k: v[lang] for k, v in MD_T.items()}
+    title = T["title"][lang] if kind == "readme" else M["web_title"] if web else "Awesome LEGO: full list"
     badge = " [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)" if kind == "readme" else ""
     keep = picked if kind == "readme" else (lambda r: True)
     logo = [f'<a href="{PAGES}"><img src="media/logo.svg" align="right" width="120" alt="Awesome LEGO logo"></a>', ""] if kind == "readme" else []
-    out = [f"# {BADGES if kind == 'readme' else ''}{title}{badge}", "", *logo, f"> {T['tagline'][lang]}", "",
-           f"**[{T['site'][lang]}]({PAGES})** · [{T['site_fr'][lang]}]({PAGES}fr/) · [{T['feed'][lang]}]({PAGES}feed.xml)", "",
-           *([f'<p align="center"><a href="{PAGES}"><picture><source media="(prefers-color-scheme: dark)" srcset="media/site-preview-dark.png"><img src="media/site-preview.png" width="880" alt="The website: Where to start, one card per need with its best resources, beside the map of the brick world, one stud per resource by category"></picture></a></p>', ""] if kind == "readme" else []),
-           MORE[kind][lang], "", f"## {T['contents'][lang]}", ""]
+    here = PAGES + ("fr/" if lang == "fr" else "")
+    if web:
+        other = "en" if lang == "fr" else "fr"
+        head = [f"**[{T['site'][lang]}]({here})** · [{M['web_other']}]({PAGES + MD_PATH[other]}) · [{T['feed'][lang]}]({here}feed.xml)", "",
+                M["web_about"].format(v=web["version"], date=in_letters(web["built"], lang), site=here, readme=GITHUB + "README.md", json=PAGES + "data.json", lic=LICENSE_URL)]
+    else:
+        head = [f"**[{T['site'][lang]}]({PAGES})** · [{T['site_fr'][lang]}]({PAGES}fr/) · [{T['feed'][lang]}]({PAGES}feed.xml)", "",
+                *([f'<p align="center"><a href="{PAGES}"><picture><source media="(prefers-color-scheme: dark)" srcset="media/site-preview-dark.png"><img src="media/site-preview.png" width="880" alt="The website: Where to start, one card per need with its best resources, beside the map of the brick world, one stud per resource by category"></picture></a></p>', ""] if kind == "readme" else []),
+                MORE[kind][lang]]
+    out = [f"# {BADGES if kind == 'readme' else ''}{title}{badge}", "", *logo, f"> {T['tagline'][lang]}", "", *head, "", f"## {T['contents'][lang]}", ""]
     seen = {}
 
     def icon(cid):
+        if web:  # plain Markdown for the readers of the website's list: no HTML
+            return ""
         return f'<img src="media/icons/heading/{cid}.svg" width="40" height="56" align="left" hspace="4" alt="">' if (ROOT / "media" / "icons" / "heading" / f"{cid}.svg").exists() else ""  # heading/: same icons with a transparent top margin, so the floated icon lines up with the heading text
 
     def uniq(name):  # GitHub suffixes repeated heading anchors with -1, -2…
@@ -410,7 +448,7 @@ def readme(cats, lang, kind="readme"):
         if not has(c):
             continue
         # the icon floats left of the heading: inside the heading, awesome-lint and GitHub disagree on its anchor
-        out += ["", "<br>", "", *([icon(cat["id"]), ""] if icon(cat["id"]) else []), f"## {cat['name_' + lang]}", ""]
+        out += ["", *([] if web else ["<br>", ""]), *([icon(cat["id"]), ""] if icon(cat["id"]) else []), f"## {cat['name_' + lang]}", ""]
         if cat.get("summary_" + lang):
             out += [cat["summary_" + lang], ""]
         for g in cat.get("groups", []):
@@ -420,12 +458,12 @@ def readme(cats, lang, kind="readme"):
             out += [f"### {g['name_' + lang]}", ""]
             for r in sorted(rs, key=lambda r: r["name"].lower()):
                 status = r["status"]  # declared status: generated files stay stable between data changes
-                worlds = [w for k, w in (("official", "official LEGO"), ("alternative", "alternative brands")) if k in r.get("covers", [])]
-                marks = (f"Covers {' and '.join(worlds)}." if worlds else "")
+                worlds = [M[k] for k in ("official", "alternative") if k in r.get("covers", [])]
+                marks = (M["covers"].format(w=M["and"].join(worlds)) if worlds else "")
                 if r.get("audience"):  # the publics the entry states (data/SCHEMA.md, audience)
-                    marks += (" " if marks else "") + "For " + " and ".join(a for a in AUDIENCES if a in r["audience"]) + "."
+                    marks += (" " if marks else "") + M["for"].format(a=M["and"].join(M[a] for a in AUDIENCES if a in r["audience"]))
                 if status != "active":
-                    marks += " Status: " + {"slow": "no update for 6 months", "inactive": "no update for a year"}.get(status, status) + "."
+                    marks += " " + M["status"].format(s=M[status])
                 desc = r["summary_" + lang].strip()
                 if kind == "readme":  # awesome style: one short sentence
                     parts = re.split(r"(?<=[a-z0-9)])\.\s+(?=[A-Z])", desc)
@@ -434,7 +472,8 @@ def readme(cats, lang, kind="readme"):
                     desc += "."
                 out.append(f"- [{r['name']}]({r['url']}) - {desc}{(' ' + marks.strip()) if marks.strip() else ''}")
             out.append("")
-    out += [f"## {T['contributing'][lang]}", "", T["contrib_text"][lang], ""]
+    contrib = M["web_contrib"].format(about=here + "about/", contrib=GITHUB + "contributing.md") if web else T["contrib_text"][lang]
+    out += [f"## {T['contributing'][lang]}", "", contrib, ""]
     return "\n".join(out).replace("\n\n\n", "\n\n")
 
 
@@ -621,7 +660,8 @@ def page(lang, data):
     values = {"LANG": lang, "OTHER": other, "TITLE": html.escape(T["title"][lang]), "TAGLINE": html.escape(T["site_tagline"][lang]),
               "MINISEARCH": (ROOT / "site-src" / "vendor" / "minisearch.min.js").read_text(encoding="utf-8"),
               "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "", "SITE": PAGES, "HERE": PAGES + ("fr/" if lang == "fr" else ""),
-              "DATA": blob, "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": "#top", "HOME": "", "ABOUT": "about/", "ABOUTCUR": "", "ROOT": "../" if lang == "fr" else ""}
+              "DATA": blob, "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": "#top", "HOME": "", "ABOUT": "about/", "ABOUTCUR": "", "ROOT": "../" if lang == "fr" else "",
+              "LD": home_ld(lang, data), "MDTITLE": html.escape(MD_T["web_title"][lang])}
     out = re.sub(r"\{\{(\w+)\}\}", lambda m: values[m.group(1)], tpl)  # one pass: a text of the data that contains {{…}} is never replaced again
     i = out.index("{{CSP}}")  # the policy is the template's own placeholder, before any data
     return out[:i] + csp(out) + out[i + len("{{CSP}}"):]
@@ -709,6 +749,69 @@ def vault():
     Its fonts are served by the site itself (media/fonts/, SIL Open Font License); it contacts nothing else."""
     doc = (ROOT / "site-src" / "vault.html").read_text(encoding="utf-8")
     return doc.replace("{{CSP}}", csp(doc, "; style-src 'unsafe-inline'; font-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'"))
+
+
+
+def home_ld(lang, data):
+    """Structured data of a home page (schema.org): the website, and the directory as a dataset with its licence and its
+    two machine-readable copies (data.json, the Markdown list); read by search engines without running the page's script."""
+    here = PAGES + ("fr/" if lang == "fr" else "")
+    n = len(data["resources"])
+    desc = {"en": f"{T['site_tagline']['en']} {n} resources in {len(data['categories'])} categories, in English and French, with their status, countries, languages and sources.",
+            "fr": f"{T['site_tagline']['fr']} {n} ressources en {len(data['categories'])} catégories, en anglais et en français, avec leur statut, leurs pays, leurs langues et leurs sources."}[lang]
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "WebSite", "@id": here + "#website", "name": T["title"][lang], "url": here, "inLanguage": lang, "description": T["site_tagline"][lang]},
+        {"@type": "Dataset", "@id": PAGES + "#dataset", "name": T["title"][lang], "description": desc, "url": here, "inLanguage": list(LANGS),
+         "license": LICENSE_URL, "isAccessibleForFree": True, "version": data["version"], "dateModified": data["built"],
+         "creator": {"@type": "Organization", "name": "Awesome LEGO", "url": f"https://github.com/{REPO}"},
+         "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": PAGES + "data.json"},
+                          *({"@type": "DataDownload", "encodingFormat": "text/markdown", "inLanguage": x, "contentUrl": PAGES + MD_PATH[x]} for x in LANGS)]}]}
+    return json.dumps(ld, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+
+
+def llms_txt(data):
+    """site/llms.txt: what the directory is and where its content is for language models and agents, which mostly do not
+    run the page's script (convention of llmstxt.org: title, summary in a quotation, lists of links, an Optional section).
+    In English, like the repository; every figure from the data of this build."""
+    R = data["resources"]
+    cats = "; ".join(c["en"] for c in data["categories"])
+    lines = [
+        "# Awesome LEGO", "",
+        f"> {T['site_tagline']['en']} A curated directory of {len(R)} resources in {len(data['categories'])} categories ({cats}), in English and French.", "",
+        f"The website draws its list with JavaScript; the same entries are below as Markdown and JSON, rebuilt from the same data at each publication (version {data['version']}, built on {in_letters(data['built'], 'en')}). "
+        f"Content under CC BY-NC-SA 4.0 ({LICENSE_URL}): no commercial reuse; code under GNU AGPL 3.0.", "",
+        "## Directory", "",
+        f"- [Full list]({PAGES + MD_PATH['en']}): every resource by category and group, with its summary, what it covers, its public and its status, including inactive and dead ones",
+        f"- [Liste complète]({PAGES + MD_PATH['fr']}): the same list in French",
+        f"- [Selection]({GITHUB}README.md): only the best of each group",
+        f"- [Data]({PAGES}data.json): every field of every resource (category, group, countries, languages, rank, status, metrics, sources), for scripts", "",
+        "## Feeds", "",
+        f"- [New resources]({PAGES}feed.xml): Atom feed",
+        f"- [Nouveautés]({PAGES}fr/feed.xml): Atom feed, in French",
+        f"- [Changes]({PAGES}changes.xml): Atom feed of the versions of the directory", "",
+        "## Optional", "",
+        f"- [About]({PAGES}{ABOUT_PATH['en']}): how the directory is made, what gets in, how the selection is made",
+        f"- [À propos]({PAGES}{ABOUT_PATH['fr']}): the same page in French",
+        f"- [Source](https://github.com/{REPO}): the entries in `data/*.toml`, their rules in `data/SCHEMA.md`, how to contribute in `contributing.md`", ""]
+    return "\n".join(lines)
+
+
+def robots_txt():
+    """site/robots.txt: every robot is welcome, for search, answers and training alike (decision of the maintainer, 27/11/2026:
+    blocking would only be declared, never enforced); it points to the sitemap and to llms.txt."""
+    return (f"# Awesome LEGO ({PAGES}): every robot is welcome.\n# For language models and agents: {PAGES}llms.txt\n"
+            f"User-agent: *\nAllow: /\n\nSitemap: {PAGES}sitemap.xml\n")
+
+
+def sitemap(data):
+    """site/sitemap.xml: the pages of the website (home and about, in English and French) with their other language."""
+    pages = [("", "fr/"), (ABOUT_PATH["en"], ABOUT_PATH["fr"])]
+    urls = []
+    for en, fr in pages:
+        alt = "".join(f'<xhtml:link rel="alternate" hreflang="{h}" href="{PAGES}{p}"/>' for h, p in (("en", en), ("fr", fr), ("x-default", en)))
+        urls += [f"<url><loc>{PAGES}{p}</loc><lastmod>{data['built']}</lastmod>{alt}</url>" for p in (en, fr)]
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+            + "\n".join(urls) + "\n</urlset>\n")
 
 
 BASELINE = "2026-11-23"  # the directory's first day: its entries make one opening item, not 400 separate ones
@@ -961,7 +1064,12 @@ def main():
             out.write_bytes(f.read_bytes())
     (SITE / "data.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")  # every field, for machines and the checks (scripts/check_site.py, hygiene.py)
     (SITE / "metrics.json").write_text(site_metrics(data), encoding="utf-8")
-    print("✓ site/index.html, site/fr/index.html, site/about/, site/fr/about/, site/data.json, site/metrics.json")
+    for lang, path in MD_PATH.items():  # for machines, which mostly do not run the page's script (batch acces-machines)
+        (SITE / path).write_text(readme(cats, lang, "full", web=data), encoding="utf-8")
+    (SITE / "llms.txt").write_text(llms_txt(data), encoding="utf-8")
+    (SITE / "robots.txt").write_text(robots_txt(), encoding="utf-8")
+    (SITE / "sitemap.xml").write_text(sitemap(data), encoding="utf-8")
+    print("✓ site/index.html, site/fr/index.html, site/about/, site/fr/about/, site/data.json, site/metrics.json, site/index.md, site/fr/index.md, site/llms.txt, site/robots.txt, site/sitemap.xml")
 
 
 if __name__ == "__main__":

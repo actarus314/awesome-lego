@@ -153,6 +153,50 @@ class Pages(unittest.TestCase):
             self.assertEqual(doc[j:j + 9], "</script>")
 
 
+class MachineFiles(unittest.TestCase):
+    """The files for robots, language models and agents (dev/lots/acces-machines.md), from the same data as the pages."""
+    @classmethod
+    def setUpClass(cls):
+        with contextlib.redirect_stdout(io.StringIO()):
+            cls.cats, _ = build.load()
+            cls.data = build.site_data(cls.cats, build.metrics())
+        cls.data["version"] = (ROOT / "VERSION").read_text().strip()
+        cls.md = {lang: build.readme(cls.cats, lang, "full", web=cls.data) for lang in build.LANGS}
+
+    def test_lists_are_plain_markdown_with_absolute_links(self):
+        for lang, md in self.md.items():
+            self.assertNotRegex(md, r"<(img|br|p|a|picture)\b", lang)
+            self.assertNotRegex(md, r"\]\((?!https?://|#)", lang)  # no link relative to the repository: the list is read on the website
+            entries = md.split(f"\n## {build.T['contents'][lang]}\n")[1].split("\n## ", 1)[1]  # after the table of contents
+            self.assertEqual(entries.count("\n- ["), sum(len(c["resources"]) for c in self.cats), lang)
+
+    def test_french_list_speaks_french(self):
+        self.assertIn("Couvre les sets de marque LEGO.", self.md["fr"])
+        self.assertNotIn("Covers ", self.md["fr"])
+        self.assertNotIn("Couvre LEGO officiel", self.md["fr"])  # in a French sentence, "de marque LEGO"
+
+    def test_repository_lists_unchanged_by_the_web_mode(self):
+        for (kind, lang), f in build.FILES.items():
+            self.assertEqual(build.readme(self.cats, lang, kind), (ROOT / f).read_text(encoding="utf-8"), f)
+
+    def test_robots_allow_everything_and_give_the_sitemap(self):
+        robots = build.robots_txt()
+        self.assertNotRegex(robots, r"(?im)^\s*Disallow\s*:\s*\S")
+        self.assertIn(f"Sitemap: {build.PAGES}sitemap.xml", robots)
+
+    def test_home_pages_point_machines_to_the_lists(self):
+        for lang in build.LANGS:
+            doc = build.page(lang, self.data)
+            head = doc.split("</head>")[0]
+            here = build.PAGES + ("fr/" if lang == "fr" else "")
+            self.assertIn(f'type="text/markdown" title="{build.MD_T["web_title"][lang]}" href="{here}index.md"', head)
+            self.assertIn(f'rel="describedby" type="text/plain" href="{build.PAGES}llms.txt"', head)
+            ld = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', head).group(1))
+            dataset = next(x for x in ld["@graph"] if x["@type"] == "Dataset")
+            self.assertEqual(dataset["license"], build.LICENSE_URL)
+            self.assertGreaterEqual(len(dataset["description"]), 50)  # the minimum of Google's dataset search
+
+
 
 class About(unittest.TestCase):
     """site/about/ and site/fr/about/: plain text pages, figures from the data, the header of the home pages."""
