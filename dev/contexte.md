@@ -6,11 +6,11 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 
 ## Savoir
 - Notes du mainteneur dans le dépôt et leurs contrôles (registre, contexte, section « Savoir », carte des fichiers) : `passation.conf`, `dev/outils/passation.sh`, `CLAUDE.md` ; vérifié 27/11/2026
-- Fonctionnement du dépôt, workflows, horaires, tâches du mainteneur : `MAINTENANCE.md` ; vérifié 27/11/2026
+- Fonctionnement du dépôt, workflows, horaires, tâches du mainteneur : `MAINTENANCE.md` ; vérifié 28/11/2026
 - Règles des données (champs, `audience`, rangs, dates abrégées) : `data/SCHEMA.md` ; règle de sélection : `contributing.md`, `site-src/about.json` ; vérifié 27/11/2026
 - Cahiers des lots 2 et 3, tri des audits du 24/11 : projet claude.ai « lego », claude/awesome-lego-lot-2.md, claude/awesome-lego-lot-3.md, claude/audit-24-11-tri.md ; vérifié 26/11/2026
 - Consigne de la revue mensuelle (texte de la tâche planifiée) : `dev/consigne-revue.md` ; vérifié 27/11/2026
-- Publication (fragments, version écrite sur `main` juste après chaque fusion, Pages qui ne publie que les versions, aperçus fusionnés avec `main`, files d'attente des workflows) : `MAINTENANCE.md` (Pages, Preview, Version, Versions), `scripts/changes.py`, cahiers `dev/lots/publication.md` puis `dev/lots/publication-2.md` (modèle C) ; vérifié 28/11/2026
+- Publication (fragments, Version, Pages, aperçus, files d'attente des workflows) : `MAINTENANCE.md` (Workflows in detail, Pages, Preview, Version, Versions), `scripts/changes.py`, `dev/lots/publication.md` puis `dev/lots/publication-2.md` (modèle C) ; vérifié 28/11/2026
 - Nom de domaine du site (recherche ouverte le 26/11 par une autre conversation) : projet claude.ai, claude/awesome-lego-nom-de-domaine.md ; vérifié 26/11/2026
 - Statistiques de visite (outils comparés, décision de n'en rien poser) : projet claude.ai, claude/awesome-lego-statistiques.md ; vérifié 25/11/2026
 - Reprises des demandes #13 à #27 (causes mesurées) et durée des workflows : section « Conflits » ci-dessous (mesure d'un sous-agent par l'API, 26/11) ; vérifié 26/11/2026
