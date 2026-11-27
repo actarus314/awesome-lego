@@ -223,11 +223,11 @@ class Git(unittest.TestCase):
         (self.root / "data/shops.toml").write_text("# edited\n", encoding="utf-8")
         self.commit("topic")
         self.git("checkout", "-q", "main")
-        (self.root / "VERSION").write_text("4.5\n", encoding="utf-8")  # a version merged on main after the branch left it
+        (self.root / "VERSION").write_text("0.1\n", encoding="utf-8")  # a version merged on main after the branch left it (0.x: never the version of the repository, which the copy starts from)
         self.commit("v4.5")
         self.git("checkout", "-q", "topic")
         self.assertEqual(self.check("--base", "main"), (0, ""))
-        (self.root / "VERSION").write_text("4.6\n", encoding="utf-8")  # the branch itself changes VERSION: refused
+        (self.root / "VERSION").write_text("0.2\n", encoding="utf-8")  # the branch itself changes VERSION: refused
         self.commit("bump")
         code, err = self.check("--base", "main")
         self.assertEqual(code, 1)
