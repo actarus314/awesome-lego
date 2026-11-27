@@ -2,6 +2,7 @@ name: Pages
 on:
   push:
     branches: [main]
+    paths: [VERSION]   # what goes online is a version: the commit Version writes on main right after a merge
   schedule:
     - cron: "17 4 * * *"   # daily: fresh activity data and statuses
   workflow_dispatch:
@@ -26,6 +27,15 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      # Online is always a version, tagged: the daily run and the previews build the tag of the version main holds, so a merge
+      # Version has not numbered yet (a minute) never goes out; after a push, the commit of Version itself (Release may not
+      # have tagged it yet). Not tagged at all: main, and a warning.
+      - name: The version online
+        if: github.event_name != 'push'
+        run: |
+          v="v$(tr -d '[:space:]' < VERSION)"
+          if git fetch -q --depth=1 origin "refs/tags/$v:refs/tags/$v"; then git checkout -q --detach "$v"; echo "Website of $v"
+          else echo "::warning::$v is not tagged: the website is built from main"; fi
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.15"

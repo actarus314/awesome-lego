@@ -2,9 +2,9 @@
 """Validate data/*.toml, write README.md (the rank 1 worldwide of each group) and full-list.md
 (every entry), and build the bilingual GitHub Pages site (site/).
 
-Usage: python3 scripts/build.py [--check [--strict | --pull-request] | --site-only]   (standard library only, latest Python release)
+Usage: python3 scripts/build.py [--check [--pull-request] | --site-only]   (standard library only, latest Python release)
 --check: generated files out of date warn while a fragment of changes/ waits, fail otherwise; --pull-request (Check on
-a pull request): always a warning; --strict (the pull request of the workflow Version): always an error.
+a pull request): always a warning.
 """
 import base64
 import datetime as dt
@@ -777,7 +777,7 @@ def content_feed(cats, lang):
 def changes_feed():
     """For whoever follows the development: one item per version, from CHANGELOG.md."""
     text = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
-    found = re.findall(r"(?m)^## v(\d+\.\d+) — (\d{4}-\d{2}-\d{2})\n(.*?)(?=^## v|^# v|\Z)", text, re.S)[:30]
+    found = re.findall(r"(?m)^## v(\d+\.\d+(?:\.\d+)?) — (\d{4}-\d{2}-\d{2})\n(.*?)(?=^## v|^# v|\Z)", text, re.S)[:30]
     items = [(f"https://github.com/{REPO}/releases/tag/v{v}", f"v{v}", f"https://github.com/{REPO}/releases/tag/v{v}", d, body) for v, d, body in found]
     return atom("Awesome LEGO: changes", PAGES + "changes.xml", f"https://github.com/{REPO}", items, FEED_ID + "changes.xml")
 
@@ -876,21 +876,21 @@ CHANGELOG_MAX = 550  # rule of a changelog entry: about 250 characters, 550 at m
 
 
 def changelog_long(text):
-    """The paragraphs of CHANGELOG.md entries longer than CHANGELOG_MAX, as "vX.Y: n characters". An entry assembled
+    """The paragraphs of CHANGELOG.md entries longer than CHANGELOG_MAX, as "vX.Y: n characters" (or vX.Y.Z). An entry assembled
     by the workflow Version has one paragraph per fragment of changes/ (scripts/changes.py)."""
-    return [f"v{v}: {len(para.strip())} characters" for v, body in re.findall(r"(?m)^## v(\d+\.\d+) — [\d-]+\n(.*?)(?=^## v|^# v|\Z)", text, re.S)
+    return [f"v{v}: {len(para.strip())} characters" for v, body in re.findall(r"(?m)^## v(\d+\.\d+(?:\.\d+)?) — [\d-]+\n(.*?)(?=^## v|^# v|\Z)", text, re.S)
             for para in body.split("\n\n") if len(para.strip()) > CHANGELOG_MAX]
 
 
 def out_of_date(stale, waiting, mode):
     """(errors, warnings) for generated files out of date. waiting: the types of the fragments of changes/.
-    mode "pull-request" (Check on a pull request other than Version's): a warning whatever main holds, the workflow
-    Version rebuilds them after the merge (scripts/changes.py says when a fragment is missing); "strict" (the pull
-    request of Version): an error; "" (main, or a local run): a warning while a fragment waits, an error otherwise."""
-    if not stale or mode == "strict" or (mode != "pull-request" and not waiting):
+    mode "pull-request" (Check on a pull request): a warning whatever main holds, the workflow Version rebuilds them
+    after the merge (scripts/changes.py says when a fragment is missing); "" (main, or a local run): a warning while a
+    fragment waits, an error otherwise."""
+    if not stale or (mode != "pull-request" and not waiting):
         return [f"{f} is out of date: a pull request leaves it to the Version workflow and adds changes/<name>.md (contributing.md); "
                 "on main, start Version by hand (MAINTENANCE.md)" for f in stale], []
-    when = ("by the next pull request vX.Y" if set(waiting) - {"none"} else
+    when = ("right after the merge" if set(waiting) - {"none"} else
             "with the next version: only fragments of type none wait, so nothing is numbered yet (Version started by hand rebuilds it now)")
     return [], [f"{f} is out of date: the Version workflow rebuilds it {when}" for f in stale]
 
@@ -926,7 +926,7 @@ def main():
     report_notes()
     if "--check" in sys.argv:
         stale = [f for f, t in texts.items() if not (ROOT / f).exists() or (ROOT / f).read_text(encoding="utf-8") != t]
-        mode = "strict" if "--strict" in sys.argv else "pull-request" if "--pull-request" in sys.argv else ""
+        mode = "pull-request" if "--pull-request" in sys.argv else ""
         errors, warnings = out_of_date(stale, waiting_types(), mode)
         for w in warnings:
             print("! " + w)

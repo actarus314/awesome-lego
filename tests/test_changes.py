@@ -53,7 +53,7 @@ class Fragments(unittest.TestCase):
     def test_defects_are_refused(self):
         bad = {"Bad_Name.md": "type: minor\n\nText.\n",
                "no-type.md": "Website: text.\n",
-               "odd-type.md": "type: patch\n\nText.\n",
+               "odd-type.md": "type: fix\n\nText.\n",
                "no-blank.md": "type: minor\nText.\n",
                "empty.md": "type: minor\n\n",
                "two-paragraphs.md": "type: minor\n\nOne.\n\nTwo.\n",
@@ -104,6 +104,33 @@ class Assemble(unittest.TestCase):
         self.assertEqual(new, "5.0")
         self.assertIn("# Changelog\n\n# v5.x — Series five.\n\n## v5.0 — 2026-12-01\nData: new format.\n\nWebsite: two.\n\n# v4.x — Series four.\n", text)
 
+    def test_patch_raises_the_third_number_shown_only_when_not_zero(self):
+        new, text = changes.assemble([self.frag("fix.md", "patch", "Data: two addresses moved.")], "4.4", CHANGELOG, "2026-12-01")
+        self.assertEqual(new, "4.4.1")
+        self.assertIn("# v4.x — Series four.\n\n## v4.4.1 — 2026-12-01\nData: two addresses moved.\n\n## v4.4 — 2026-11-26\n", text)
+        self.assertEqual(changes.bump("4.4.1", {"patch"}), "4.4.2")
+        self.assertEqual(changes.bump("4.4.2", {"minor", "patch"}), "4.5")
+        self.assertEqual(changes.bump("4.4.2", {"major"}), "5.0")
+        self.assertEqual(changes.bump("4.4.2", {"none"}), None)
+
+    def test_a_version_of_another_shape_is_refused(self):
+        for bad in ("4", "4.4.1.1", "v4.4"):
+            with self.assertRaises((SystemExit, ValueError)):
+                changes.bump(bad, {"patch"})
+
+    def test_a_website_change_without_fragment_gives_a_patch(self):
+        new, text = changes.assemble([self.frag("a.md", "none", "Automation: one.")], "4.4", CHANGELOG, "2026-12-01", site_changed=True)
+        self.assertEqual(new, "4.4.1")
+        self.assertIn("## v4.4.1 — 2026-12-01\n" + changes.SITE_ONLY + "\n\nAutomation: one.\n", text)
+        new, _ = changes.assemble([self.frag("b.md", "minor", "Website: two.")], "4.4", CHANGELOG, "2026-12-01", site_changed=True)
+        self.assertEqual(new, "4.5")
+        self.assertEqual(changes.assemble([], "4.4", CHANGELOG, "2026-12-01"), (None, CHANGELOG))
+
+    def test_the_readers_of_the_changelog_see_three_numbers(self):
+        text = "## v4.4.1 — 2026-12-01\n" + "x" * (build.CHANGELOG_MAX + 1) + "\n"
+        self.assertEqual(build.changelog_long(text), [f"v4.4.1: {build.CHANGELOG_MAX + 1} characters"])
+        self.assertEqual(changes.sections(text + "## v4.4 — 2026-11-26\nOne.\n"), {"4.4.1", "4.4"})
+
     def test_fragments_of_type_none_wait(self):
         self.assertEqual(changes.assemble([self.frag("a.md", "none", "Automation: one.")], "4.4", CHANGELOG, "2026-12-01"), (None, CHANGELOG))
         self.assertEqual(changes.assemble([], "4.4", CHANGELOG, "2026-12-01"), (None, CHANGELOG))
@@ -151,10 +178,28 @@ class Command(unittest.TestCase):
             self.assertEqual(code, 1, argv)
             self.assertEqual((root / "VERSION").read_text(encoding="utf-8"), "4.4\n")
 
-    def test_strict_refuses_a_minor_fragment_left(self):
-        self.assertEqual(self.run_in({"site.md": "type: minor\n\nWebsite: two.\n"}, "check", "--strict")[0], 1)
-        self.assertEqual(self.run_in({"tidy.md": "type: none\n\nAutomation: one.\n"}, "check", "--strict")[0], 0)
-        self.assertEqual(self.run_in({"site.md": "type: minor\n\nWebsite: two.\n"}, "check")[0], 0)
+    def test_next_says_the_number_a_merge_would_give(self):
+        self.assertEqual(self.run_in({"fix.md": "type: patch\n\nData: one.\n"}, "next")[:2], (0, "4.4.1\n"))
+        self.assertEqual(self.run_in({"site.md": "type: minor\n\nWebsite: two.\n", "fix.md": "type: patch\n\nData: one.\n"}, "next")[:2], (0, "4.5\n"))
+        self.assertEqual(self.run_in({"tidy.md": "type: none\n\nAutomation: one.\n"}, "next")[:2], (0, ""))
+        self.assertEqual(self.run_in({}, "next", "--types", "minor,none")[:2], (0, "4.5\n"))
+        self.assertEqual(self.run_in({}, "next", "--types", "fix")[0], 1)
+
+    def test_next_gives_a_patch_for_a_website_change_without_fragment(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        served, tools = Path(tmp.name) / "served.txt", Path(tmp.name) / "tools.txt"
+        served.write_text("site-src/vendor/minisearch.min.js\n.github/workflows/check.yml\n", encoding="utf-8")
+        tools.write_text(".github/workflows/check.yml\nmedia/site-preview.png\npackage-lock.json\ndev/registre.md\n", encoding="utf-8")
+        self.assertEqual(self.run_in({}, "next", "--types", "", "--changed", str(served))[:2], (0, "4.4.1\n"))
+        self.assertEqual(self.run_in({}, "next", "--types", "none", "--changed", str(tools))[:2], (0, ""))
+        self.assertEqual(self.run_in({}, "next", "--types", "minor", "--changed", str(served))[:2], (0, "4.5\n"))
+
+    def test_what_the_website_serves(self):
+        self.assertTrue(changes.site_changed(["data/shops.toml"]))
+        self.assertTrue(changes.site_changed(["site-src/app.js", "dev/x.md"]))
+        self.assertTrue(changes.site_changed(["scripts/build.py"]))
+        self.assertFalse(changes.site_changed(["media/site-preview.png", "media/site-preview-dark.png", "README.md", "scripts/check_site.py", ".github/workflows/pages.yml"]))
 
 
 class PullRequest(unittest.TestCase):
@@ -303,7 +348,7 @@ class GeneratedFiles(unittest.TestCase):
         self.assertEqual(build.out_of_date([], [], ""), ([], []))
         errors, warnings = build.out_of_date(["README.md"], ["minor"], "")
         self.assertEqual(errors, [])
-        self.assertIn("by the next pull request vX.Y", warnings[0])
+        self.assertIn("right after the merge", warnings[0])
 
     def test_the_message_says_when_only_fragments_of_type_none_wait(self):
         errors, warnings = build.out_of_date(["README.md"], ["none"], "")
@@ -315,9 +360,9 @@ class GeneratedFiles(unittest.TestCase):
             errors, warnings = build.out_of_date(["README.md"], waiting, "pull-request")
             self.assertEqual((errors, len(warnings)), ([], 1), waiting)
 
-    def test_an_error_without_fragment_on_main_or_on_the_pull_request_of_version(self):
+    def test_an_error_without_fragment_on_main(self):
         self.assertEqual(len(build.out_of_date(["README.md"], [], "")[0]), 1)
-        self.assertEqual(len(build.out_of_date(["README.md", "full-list.md"], ["minor"], "strict")[0]), 2)
+        self.assertEqual(len(build.out_of_date(["README.md", "full-list.md"], ["patch"], "")[0]), 0)
 
 
 if __name__ == "__main__":
