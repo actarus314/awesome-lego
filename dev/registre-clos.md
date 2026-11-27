@@ -6,6 +6,7 @@ Lignes closes de `dev/registre.md`, la plus récente en tête ; un identifiant n
 
 | ID | P | Objet | Statut |
 |---|---|---|---|
+| AL-70 | P3 | Règle Renovate qui retient le Python de `tidy.yml` sous 3.14 (pyoxipng 9.1.1 n'a de roue que pour Python 3.13, vérifié le 27/11 à 01 h 02) | fait 27/11 : accord de Romain à 01 h 03, demande #32 fusionnée à 01 h 07 (`renovate.json`, `MAINTENANCE.md`, section Tidy) |
 | AL-55 | P4 | Branche `v4.3` poussée par erreur le 26/11 | fait 27/11 : supprimée par Romain ; absente de la liste des branches du dépôt à 01 h 08 |
 | AL-34 | P3 | Application « Claude Design Import » installée sur le dépôt, usage inconnu | fait 27/11 : retirée par Romain (dit par Romain à 01 h 06, non revérifié : la session ne lit pas les installations) |
 | AL-50 | P3 | Gardes-fous mécaniques (skill `audit-depot`) | fait 27/11 : demande #31 fusionnée à 01 h 03 (d63bc99) : `scripts/hygiene.py` dans Check (ruff, vulture, chaînes et champs non lus, `timeout-minutes` et `concurrency`, budgets de poids), barre et champs du téléphone et CSS mort dans Render, calibrés sur `tests/phone-fixture.html`, workflow Tidy du lundi ; relecture Sonnet : 2 bloquants et 8 à corriger, corrigés en 0ba4d35 ; veille : AL-71 ; règle Renovate du Python de Tidy : AL-70 |
