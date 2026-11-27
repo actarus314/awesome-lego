@@ -2,7 +2,7 @@
 
 > Interlocking plastic construction bricks, from the official LEGO system to compatible brands.
 
-**[Explore the website: every resource, with search, filters and a map](https://actarus314.github.io/awesome-lego/)** · [French version of the website](https://actarus314.github.io/awesome-lego/fr/) · [Feed of new resources (RSS)](https://actarus314.github.io/awesome-lego/feed.xml)
+**[Explore the website: every resource, with search, filters and a map](https://3001.club/)** · [French version of the website](https://3001.club/fr/) · [Feed of new resources (RSS)](https://3001.club/feed.xml)
 
 Every resource, including inactive and dead ones, generated from [`data/`](data/). The selection of the best is in the [README](README.md).
 
@@ -1084,4 +1084,4 @@ Existing directories, awesome lists and lists of channels and brands about LEGO 
 
 ## Contributing
 
-Additions and corrections are welcome: read [how the directory is made and what gets in](https://actarus314.github.io/awesome-lego/about/), then [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them.
+Additions and corrections are welcome: read [how the directory is made and what gets in](https://3001.club/about/), then [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them.

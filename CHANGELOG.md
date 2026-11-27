@@ -4,6 +4,13 @@ One short entry per version; the details are in its pull request and its commits
 
 # v4.x — The directory for builders of every age: children, their parents and teachers, as well as adults; an about page says how it is made and how to take part.
 
+## v4.8 — 2026-11-27
+The website moves to its own address, https://3001.club/: links, previews, feeds and search engine tags use it; the former address redirects there.
+
+The image shown when a page is shared gives the new address, 3001.club, and the current tagline; a script draws it from the website itself, and Check fails when it falls behind.
+
+The README shows two badges of the health of the repository at the right of its title, beside the Awesome badge: OpenSSF Best Practices and OpenSSF Scorecard.
+
 ## v4.7 — 2026-11-27
 Website: the addresses of the views and filter removed in v3.0 (#findings, #out, #agenda, #near-me, crit=fr) no longer lead to their former place; such a link opens the directory.
 
