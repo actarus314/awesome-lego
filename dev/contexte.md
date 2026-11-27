@@ -35,6 +35,8 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 ## Façon de travailler (Romain, 25/11 à 10 h 52, complété le 26/11)
 - Commit direct sur `main` pour ce qui ne change pas le site (contournement administrateur) ; demande de fusion avec aperçu pour ce qui se voit ; branche dédiée en brouillon pour un dossier long ou incertain ; pas de branche `dev`.
 - **Une seule demande à la fois porte `VERSION`, `CHANGELOG.md` et les fichiers générés** ; jamais de demande empilée sur une branche non fusionnée (constats du 26/11, ci-dessous).
+- **Brouillon ou prête** (Romain, 27/11 à 03 h 17) : une demande reste en brouillon tant que Claude y travaille ou qu'une relecture tourne ; Claude la passe en « prête » quand la CI est verte, la relecture du barème faite et chaque constat bloquant ou à corriger corrigé et recontrôlé. Romain ne fusionne que des demandes prêtes, sans lire de conversation.
+- **Fusion par Claude** (même demande) : Claude fusionne lui-même une demande prête qui ne touche ni les droits, jetons, secrets ou déclencheurs d'un workflow (ni un workflow nouveau), ni les réglages ou le ruleset, ni les licences (`LICENSE*`, `REUSE.toml`), ni une décision réglée de `CLAUDE.md` ou de ce fichier, ni la façon de publier, ni un numéro majeur, et qui ne retire pas de fiches au-delà de corrections ; sinon il la passe en prête avec, en tête du corps, « À valider par Romain : <raison> ».
 - Chrome de Romain : dépannage pour un acte unique, jamais un geste régulier (24/11, 13 h 25) ; « si tu peux le faire autrement (via Chrome par exemple), fais-le » (25/11, 5 h 51).
 
 ## Conflits entre demandes (mesure du 26/11 sur #13 à #27)

@@ -13,13 +13,14 @@ concurrency:
   group: data-fixes
   cancel-in-progress: false
 jobs:
-  fixes:
+  find:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.display_title != 'Links (dry run)'
     runs-on: ubuntu-latest
     timeout-minutes: 15   # a few minutes
     permissions:
-      contents: write
-      pull-requests: write
+      contents: read   # this job opens third-party sites (moved addresses): it can write nowhere; the job "open" writes
+    outputs:
+      changed: ${{ steps.diff.outputs.changed }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -27,10 +28,77 @@ jobs:
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.15"
-      - name: Find mechanical fixes (addresses moved for good, past event dates), with their fragment of changes/
+      - name: Find mechanical fixes (addresses moved for good, past event dates)
         run: python3 scripts/autofix.py --write > fixes.md
-      - name: Check the data and the fragment (the generated files are rebuilt by the Version workflow after the merge)
-        run: python3 scripts/build.py --check && python3 scripts/changes.py check
+      - name: Check the data (README.md and full-list.md are left to the Version workflow)
+        run: python3 scripts/build.py --check --pull-request
+      - name: The fixes as a patch, for the job that opens the pull request
+        id: diff
+        run: |
+          git diff -- data > fixes.patch
+          if [ -s fixes.patch ]; then echo "changed=true" >> "$GITHUB_OUTPUT"; else echo "Nothing to fix."; fi
+      - if: steps.diff.outputs.changed == 'true'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: data-fixes
+          path: |
+            fixes.patch
+            fixes.md
+          retention-days: 1
+  open:
+    needs: find
+    if: needs.find.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5   # a few seconds
+    permissions:
+      contents: write   # the only job that can write; it runs no script of the repository, reads no other site, and checks the patch before applying it
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false   # the same commit as the job "find"
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: data-fixes
+          path: ${{ runner.temp }}/fixes
+      # The patch comes from the job "find", which reads third-party sites: it is checked here, before it is applied, by a script
+      # written in this workflow (never one of the tree it changes), in a step that holds no token. Only plain edits of files
+      # already tracked as regular files: data/<name>.toml (README.md and full-list.md are rebuilt by the Version workflow);
+      # no binary patch, no file created, deleted, renamed or linked, no change of mode, 1 MB at most. The body of the pull
+      # request shows the verified changes (git diff --stat).
+      - name: Check the patch, then apply it (no token in this step)
+        env:
+          FIXES: ${{ runner.temp }}/fixes
+        run: |
+          set -euo pipefail
+          p="$FIXES/fixes.patch"
+          allowed='^data/[a-z0-9-]+\.toml$'
+          [ "$(wc -c < "$p")" -le 1000000 ] || { echo "::error::patch over 1 MB"; exit 1; }
+          if grep -q '^GIT binary patch' "$p"; then echo "::error::binary patch"; exit 1; fi
+          s=$(git apply --summary "$p")   # creation, deletion, rename, copy, change of mode (a link is one of them)
+          [ -z "$s" ] || { echo "::error::not a plain edit: $s"; exit 1; }
+          git apply --numstat -z "$p" | tr '\0' '\n' | awk -F'\t' 'NF>=3{print $3}' > "$RUNNER_TEMP/paths.txt"
+          [ -s "$RUNNER_TEMP/paths.txt" ] || { echo "::error::the patch changes no file"; exit 1; }
+          while IFS= read -r f; do
+            [[ "$f" =~ $allowed ]] || { echo "::error::path not allowed: $f"; exit 1; }
+            [ "$(git ls-files -s -- "$f" | cut -c1-6)" = 100644 ] || { echo "::error::not a regular file already tracked: $f"; exit 1; }
+          done < "$RUNNER_TEMP/paths.txt"
+          git apply "$p"
+          [ -z "$(git diff --summary)" ] || { echo "::error::a mode changed"; exit 1; }
+          git status --porcelain=v1 --untracked-files=all | while IFS= read -r l; do
+            [[ "${l:0:3}" == " M " && "${l:3}" =~ $allowed ]] || { echo "::error::unexpected change: $l"; exit 1; }
+          done
+          { echo "Mechanical fixes found by scripts/autofix.py. Each line is checked by a person before merging."; echo
+            echo "Files changed, as verified in the workflow:"; echo; echo '```'; git diff --stat=120; echo '```'; echo
+            cat "$FIXES/fixes.md"; } > "$RUNNER_TEMP/full.md"
+          head -c 60000 "$RUNNER_TEMP/full.md" | iconv -f utf-8 -t utf-8 -c > "$RUNNER_TEMP/body.md"   # a pull request body: 65536 characters at most
+      # The fragment of changes/ is written here, with a fixed text, never taken from the patch: type none, the exception named
+      # in MAINTENANCE.md (section Versions); date and time make its name unique from one run to the next.
+      - name: Fragment of changes/ for the next version (no token in this step)
+        run: |
+          mkdir -p changes
+          printf 'type: none\n\n%s\n' "Data fixes: addresses moved for good and past event dates removed, as listed in the pull request Data fixes." \
+            > "changes/data-fixes-$(date -u +%Y-%m-%d-%H%M).md"
       # A pull request opened with the token of Actions waits for "Approve and run workflows" before its checks.
       # A GitHub App token (client ID in the variable DATA_FIXES_APP_ID, private key in the secret DATA_FIXES_APP_KEY)
       # or a personal token (secret DATA_FIXES_TOKEN) lets Check and Render start on their own.
@@ -48,13 +116,11 @@ jobs:
           OWN_TOKEN: ${{ steps.app.outputs.token != '' || secrets.DATA_FIXES_TOKEN != '' }}
           GH_REPO: ${{ github.repository }}
         run: |
-          if git diff --quiet -- data; then echo "Nothing to fix."; exit 0; fi
           [ "$OWN_TOKEN" = "true" ] || echo "::warning::No app or personal token: the checks of the pull request wait for Approve and run workflows"
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -q -B auto/data-fixes
           git add data changes
           git commit -qm "Data fixes: addresses moved for good, past event dates"
           git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" auto/data-fixes
-          printf '%s\n\n%s\n' "Mechanical fixes found by scripts/autofix.py. Each line is checked by a person before merging." "$(cat fixes.md)" > body.md
           n=$(gh pr list --head auto/data-fixes --state open --json number -q '.[0].number')
-          if [ -n "$n" ]; then gh pr edit "$n" --body-file body.md; else gh pr create --head auto/data-fixes --base main --title "Data fixes" --label automatic --body-file body.md; fi
+          if [ -n "$n" ]; then gh pr edit "$n" --body-file "$RUNNER_TEMP/body.md"; else gh pr create --head auto/data-fixes --base main --title "Data fixes" --label automatic --body-file "$RUNNER_TEMP/body.md"; fi

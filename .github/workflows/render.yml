@@ -56,6 +56,8 @@ jobs:
         with:
           path: ~/fonts
           key: ${{ steps.week.outputs.prefix }}${{ steps.week.outputs.week }}-${{ hashFiles('tests/requirements.txt') }}
+      - name: Measurements of the published website (stars, last activity), so that the cards are drawn as published; none if it cannot be read
+        run: python3 scripts/refresh.py --from-site-only   # reads no other site; data/metrics.json is not kept in git
       - run: python3 scripts/build.py --site-only
       - name: What changed (a pull request that changes data alone gets the lighter pass)
         id: scope

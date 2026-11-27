@@ -13,11 +13,56 @@ iso = lambda n: (T - dt.timedelta(days=n)).isoformat()
 
 
 class Selection(unittest.TestCase):
-    def test_rank_one_international(self):
-        self.assertFalse(refresh.selected({"featured": True}))
-        self.assertFalse(refresh.selected({}))
-        self.assertTrue(refresh.selected({"rank": {"intl": 1}}))
-        self.assertFalse(refresh.selected({"rank": {"intl": 2, "FR": 1}}))
+    def test_rank_one_international(self):  # the rule of scripts/build.py, which the reports use too
+        self.assertFalse(refresh.build.picked({"featured": True}))
+        self.assertFalse(refresh.build.picked({}))
+        self.assertTrue(refresh.build.picked({"rank": {"intl": 1}}))
+        self.assertFalse(refresh.build.picked({"rank": {"intl": 2, "FR": 1}}))
+
+
+class Cut(unittest.TestCase):
+    def test_a_long_body_fits_an_issue_and_keeps_its_end(self):
+        text = "\n".join(f"line {i}" for i in range(20000)) + "\n<!-- report-ids {} -->"
+        out = refresh.cut(text, refresh.LIMIT, "<!-- report-ids {} -->")
+        self.assertLessEqual(len(out), refresh.LIMIT)
+        self.assertIn("(cut: too long for an issue)", out)
+        self.assertTrue(out.endswith("<!-- report-ids {} -->"))
+        self.assertNotIn("line 19999", out)
+        self.assertLessEqual(len(refresh.cut(text)), refresh.ISSUE_MAX)
+
+    def test_a_short_body_is_left_as_it_is(self):
+        self.assertEqual(refresh.cut("short"), "short")
+
+
+class FromSite(unittest.TestCase):
+    """Render builds with the measurements of the published website (--from-site-only), and never reads another site."""
+    def run_main(self, site):
+        import contextlib
+        import io
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            out = pathlib.Path(d) / "metrics.json"
+            never = mock.Mock(side_effect=AssertionError("a source was read"))
+            with mock.patch.object(refresh, "OUT", out), mock.patch.object(refresh, "site_metrics", return_value=site), \
+                 mock.patch.object(refresh, "read", never), mock.patch.object(sys, "argv", ["refresh.py", "--from-site-only"]), \
+                 contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(refresh.main(), 0)
+            return json.loads(out.read_text(encoding="utf-8")) if out.exists() else None
+
+    def test_published_measurements_are_written(self):
+        self.assertEqual(self.run_main({"x": {"stars": 3}}), {"x": {"stars": 3}})
+
+    def test_without_the_website_nothing_is_read_nor_written(self):
+        self.assertIsNone(self.run_main(None))
+
+    def test_the_website_file_is_a_table_of_entries(self):
+        from unittest import mock
+        import contextlib
+        import io
+        for body, want in ((b'{"x": {"stars": 3}}', {"x": {"stars": 3}}), (b'[1, 2]', None)):
+            with mock.patch.object(refresh, "get", return_value=body), contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(refresh.site_metrics(), want)
 
 
 class Get(unittest.TestCase):

@@ -41,12 +41,11 @@ import urllib.parse
 import urllib.request
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from refresh import date_en  # noqa: E402  (one way of writing a date)
+from refresh import LIMIT, cut, date_en  # noqa: E402  (one way of writing a date, one size of an issue)
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LINE = re.compile(r"^\* \[[^\]]+\] <(?P<url>[^>]+)> \(at (?P<at>\d+:\d+)\) \| (?P<why>.*)$")
 FILE = re.compile(r"^### (?:Errors|Timeouts) in (?P<file>\S+)")
-LIMIT = 60000   # an issue body holds 65536 characters at most
 UA = "awesome-lego-links/1.0 (+https://github.com/actarus314/awesome-lego)"
 API = "https://api.globalping.io/v1"
 ACCEPT = {401, 403, 405, 429}   # as lychee in links.yml: a bot check, another method, a rate limit
@@ -465,9 +464,7 @@ def body(report, previous="", rechecked=None, dead=(), today=None):
         if len(out) <= LIMIT:
             break
         out = text(fold)
-    if len(out) > LIMIT:
-        out = out[:LIMIT].rsplit("\n", 1)[0] + "\n\n(cut: too long for an issue)\n"
-    return out, bool(broken or dead or twice)
+    return cut(out, LIMIT), bool(broken or dead or twice)
 
 
 # --- Sample: the yardstick of the checks, read live --------------------------------------------------------------

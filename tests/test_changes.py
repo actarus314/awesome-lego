@@ -11,7 +11,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
-import autofix  # noqa: E402
 import build  # noqa: E402
 import changes  # noqa: E402
 
@@ -319,17 +318,6 @@ class GeneratedFiles(unittest.TestCase):
     def test_an_error_without_fragment_on_main_or_on_the_pull_request_of_version(self):
         self.assertEqual(len(build.out_of_date(["README.md"], [], "")[0]), 1)
         self.assertEqual(len(build.out_of_date(["README.md", "full-list.md"], ["minor"], "strict")[0]), 2)
-
-
-class DataFixes(unittest.TestCase):
-    def test_the_fragment_of_data_fixes_is_well_formed(self):
-        for moved, past, text in ((1, 0, "Data fixes: 1 address moved for good."), (3, 2, "Data fixes: 3 addresses moved for good and 2 past event dates removed."),
-                                  (0, 1, "Data fixes: 1 past event date removed.")):
-            self.assertEqual(autofix.fragment(moved, past), text)
-            with tempfile.TemporaryDirectory() as d:
-                p = Path(d) / "data-fixes-2026-12-02-0617.md"  # the name autofix.py writes: date and time, unique per run
-                p.write_text(f"type: none\n\n{text}\n", encoding="utf-8")
-                self.assertEqual(changes.parse(p), ("none", "", text))
 
 
 if __name__ == "__main__":

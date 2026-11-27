@@ -496,6 +496,12 @@ def site_data(cats, m):
             "brands": alt_brands(cats), "passion": passion()}
 
 
+def site_metrics(data):
+    """site/metrics.json: the measurements of the published website by entry id, what scripts/refresh.py --from-site reads
+    back (a few kilobytes, instead of the whole data.json)."""
+    return json.dumps({r["id"]: r["metrics"] for r in data["resources"] if r["metrics"]}, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
+
+
 def needs(cats, ids):
     """data/journeys.toml: the needs of "Where to start", checked against the data."""
     js = tomllib.loads((DATA / "journeys.toml").read_text(encoding="utf-8")).get("need", [])
@@ -590,8 +596,8 @@ PAGE_UNREAD = {"confidence", "github", "subreddit"}  # in data.json for the scri
 
 
 def page_texts(x):
-    """The texts of an entry carried by the page; strengths and weaknesses go to details.json, read when needed."""
-    return {**{k: v for k, v in x.items() if k not in ("strengths", "weaknesses", "rec")}, "d": bool(x["strengths"] or x["weaknesses"])}
+    """The texts of an entry carried by the page (the recurrence of an event, rec, on its card); strengths and weaknesses go to details.json, read when needed."""
+    return {**{k: v for k, v in x.items() if k not in ("strengths", "weaknesses")}, "d": bool(x["strengths"] or x["weaknesses"])}
 
 
 def details(lang, data):
@@ -917,8 +923,9 @@ def main():
             out = SITE / f.relative_to(ROOT)
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_bytes(f.read_bytes())
-    (SITE / "data.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")  # read by scripts/refresh.py --from-site
-    print("✓ site/index.html, site/fr/index.html, site/about/, site/fr/about/, site/data.json")
+    (SITE / "data.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")  # every field, for machines and the checks (scripts/check_site.py, hygiene.py)
+    (SITE / "metrics.json").write_text(site_metrics(data), encoding="utf-8")
+    print("✓ site/index.html, site/fr/index.html, site/about/, site/fr/about/, site/data.json, site/metrics.json")
 
 
 if __name__ == "__main__":
