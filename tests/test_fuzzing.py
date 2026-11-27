@@ -96,6 +96,11 @@ class Moved(unittest.TestCase):
             with mock.patch.object(autofix, "OPENER", Opener(redirect(loc))):
                 self.assertIsNone(autofix.moved("https://club.example/news/"), loc)
 
+    def test_an_address_without_a_host_is_left_alone(self):   # Fuzzing, first run on GitHub (27 Nov 2026): "http://::"
+        for loc in ("http://::", "http://:80/x", "https://@/x"):
+            with mock.patch.object(autofix, "OPENER", Opener(redirect(loc), Answer())):
+                self.assertIsNone(autofix.moved("https://club.example/news/"), loc)
+
     def test_a_permanent_move_is_still_followed(self):
         with mock.patch.object(autofix, "OPENER", Opener(redirect("/new#top"), Answer())):
             self.assertEqual(autofix.moved("https://club.example/news/"), "https://club.example/new#top")
