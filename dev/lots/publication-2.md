@@ -1,4 +1,4 @@
-# Lot publication 2 — ce qui est en ligne est ce qui se télécharge
+# Lot publication 2 — ce qui est en ligne est ce qui se télécharge (à décider par Romain)
 
 *Maintainer's working notes, in French: brief of the publication model, to be decided by the maintainer before any code.*
 
@@ -36,67 +36,77 @@ Recherche du 27/11 (sous-agent, pages lues le 27/11 sauf mention) ; ce qui n'est
 - **Écrasement entre deux branches longues** : les commits écrasés n'entrent jamais dans l'historique de la cible, les deux branches divergent et chaque passage suivant reconflit, sauf fusion en retour ou avance rapide ([discussion 23249](https://github.com/orgs/community/discussions/23249)).
 - **Rulesets** (gratuits sur un dépôt public) : « Restrict updates » réserve les poussées aux acteurs de la liste de contournement ; une application GitHub peut y figurer ; le jeton `GITHUB_TOKEN` d'un workflow n'y est mentionné nulle part (non établi) ([règles disponibles](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets)). Combinaison « Restrict updates » et historique linéaire avec une application en contournement : non documentée, déduite ; **à vérifier en premier** si ce modèle est retenu.
 - **Jeton et événements** : ce qui est fait avec `GITHUB_TOKEN` ne lance pas d'autre workflow, sauf `workflow_dispatch` et `repository_dispatch` ; une demande ouverte avec le jeton d'une application lance bien les workflows `pull_request` ([documentation](https://docs.github.com/en/actions/using-workflows/triggering-a-workflow) ; [peter-evans, guide](https://github.com/peter-evans/create-pull-request/blob/main/docs/concepts-guidelines.md)). L'application de Data fixes, qui ouvre déjà la demande de version, convient.
-- **Passages planifiés** : toujours sur le dernier commit de la branche par défaut ; un passage quotidien qui doit construire autre chose doit le récupérer lui-même ([événements](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows)).
+- **Passages planifiés et `workflow_run`** : toujours avec le fichier de workflow de la branche par défaut (Pages quotidien, Links, Data fixes, Tidy, Fuzzing, Scorecard) ; un passage qui doit construire autre chose doit le récupérer lui-même ; un correctif de workflow n'agit qu'une fois sur la branche par défaut ([événements](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows)).
 - **Pages depuis une étiquette** : possible si l'environnement `github-pages` l'autorise (motifs d'étiquettes depuis le 06/10/2023), mais hors du chemin documenté, avec des échecs rapportés ([changelog](https://github.blog/changelog/2023-10-06-actions-secure-deployment-rollouts-to-protected-environments-based-on-select-tag-patterns/) ; [discussion 39054](https://github.com/orgs/community/discussions/39054), dernier message du 13/01/2026).
 - **Environnement à approbation** : relecteurs requis disponibles pour un dépôt public gratuit ; le seul mainteneur doit laisser « Prevent self-review » coupé ([environnements](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-deployments/managing-environments-for-deployment)).
 - **Renovate** : `baseBranchPatterns` (ancien `baseBranches`), par exemple `["next"]` ; la configuration se lit sur la branche par défaut ([documentation](https://docs.renovatebot.com/configuration-options/#basebranchpatterns)).
-- **Changer la base d'une demande** : `PATCH /repos/{o}/{r}/pulls/{n}` avec `base` ([changelog de 2016](https://developer.github.com/changes/2016-08-23-change-base)), pas revu dans la référence actuelle ; l'événement produit est `pull_request` de type `edited`, absent des types par défaut ; relance des contrôles non documentée ([changer la base](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-base-branch-of-a-pull-request)).
+- **Changer la base d'une demande** : `PATCH /repos/{o}/{r}/pulls/{n}` avec `base` (présent dans la référence actuelle « Update a pull request », relu par la relecture du 27/11) ; l'événement produit est `pull_request` de type `edited`, absent des types par défaut ; relance des contrôles non documentée ([changer la base](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-base-branch-of-a-pull-request)).
 - **Téléchargement** : clone et « Download ZIP » prennent la branche par défaut (déduit, non écrit dans la page lue) ; la page Releases offre les sources de chaque étiquette ; `/releases/latest` est un lien stable documenté ([liens vers les versions](https://docs.github.com/en/repositories/releasing-projects-on-github/linking-to-releases)).
 - **Pratiques** : release-please et changesets mettent la production sur une étiquette, la publication étant un workflow à part ([release-please](https://github.com/googleapis/release-please/blob/main/docs/manifest-releaser.md) ; [changesets](https://github.com/changesets/changesets/blob/main/docs/versioning-apps.md), page dite périmée) ; git-flow la met sur la branche `main`, étiquetée ; aucun projet nommé trouvé qui publie Pages depuis une étiquette.
 
-Conséquence qui structure tout : sur GitHub, **la branche par défaut sert à la fois au téléchargement et de base par défaut aux demandes**. E1 veut que la branche par défaut soit la production ; la simplicité des contributions veut qu'elle soit la branche d'intégration. Aucun modèle n'échappe à ce choix : il se règle soit en redirigeant les demandes (modèle A), soit en renvoyant le téléchargement vers la page Releases (modèle B).
+Conséquence qui structure tout : sur GitHub, **la branche par défaut sert à la fois au téléchargement et de base par défaut aux demandes**. E1 veut que la branche par défaut soit la production ; la simplicité des contributions veut qu'elle soit la branche d'intégration. Deux modèles le tranchent (A redirige les demandes, B renvoie le téléchargement vers la page Releases) ; le modèle C, trouvé par la relecture, l'évite : une seule branche, et chaque fusion devient aussitôt une version publiée.
 
-## 3. Trois modèles, notés sur les mêmes exigences
+## 3. Quatre modèles, notés sur les mêmes exigences
 
-**Modèle A — deux branches, `next` pour intégrer, `main` pour la production (production = branche).**
-- Les demandes (Romain, Claude, Renovate, Data fixes, Tidy, revue mensuelle) visent `next`, fusionnées par écrasement comme aujourd'hui. Les fragments restent (E3).
-- Version ouvre la demande `vX.Y` vers `next` ; son aperçu est autorisé (garde-fou des robots levé pour la seule branche `auto/version`) : c'est `next` plus le numéro, exactement ce qui partira (E2).
-- **Publier = fusionner la demande `vX.Y`**, le geste d'aujourd'hui. Un workflow Publish voit cette fusion sur `next`, attend `check` vert sur ce commit, puis avance `main` jusqu'à `next` (`git push origin next:main`, jeton de l'application). Pas de bouton dans l'onglet Actions, pas d'écrasement possible vers `main`.
-- `main` reste la branche par défaut : clone, ZIP et dernière étiquette donnent la production (E1). Pages ne change pas : il construit déjà la branche par défaut, à la poussée, chaque jour et pour les aperçus (E8). Release étiquette `main` comme aujourd'hui (E7).
-- Les commits de `main` sont ceux de `next` (mêmes empreintes) : Check et Render, déjà passés sur `next`, ne se relancent pas ; leurs déclencheurs passent de `main` à `next`.
-- Ce qui vise `main` par erreur est rebasculé vers `next` par un petit workflow (API, sans lire le code de la demande), avec un commentaire.
+**Modèle C — une branche, chaque fusion est une version publiée (ajouté après la relecture contradictoire du 27/11).**
+- Une seule branche `main`, par défaut ; les demandes la visent comme aujourd'hui ; les fragments restent (E3).
+- Après chaque fusion, Version écrit directement sur `main` le commit numéroté (`VERSION`, `CHANGELOG.md`, README, liste, images), avec l'application de Data fixes placée dans la liste de contournement du ruleset ; Release l'étiquette. Ce passage est déjà décrit dans `MAINTENANCE.md` (« To write on `main` directly instead ») ; la garde de Version contre deux fusions rapprochées existe (`version.yml`, « main moved outside dev/ ») : la fusion suivante attend et une seule version couvre les deux.
+- **Pages ne publie à la poussée que le commit de Version** (celui qui change `VERSION`) ; le passage quotidien publie toujours l'état de `main` (activité, E8). Le site affiche donc toujours un état numéroté, étiqueté, identique au clone.
+- Une fusion qui change le site sans fragment numéroté (Data fixes, Renovate d'un paquet servi par le site comme MiniSearch) reçoit un numéro de correctif (`4.9.1`) ; l'automatisation et les notes seules ne changent rien en ligne et n'en reçoivent pas.
+- **L'aperçu de chaque demande est construit sur sa fusion avec `main`** (le commit de fusion que GitHub calcule), et refait à chaque poussée sur `main` : c'est exactement ce que sa fusion mettra en ligne (E2). Valider la nouvelle version, c'est fusionner la demande : un clic, pas deux ; la demande `vX.Y` et la tâche « Accept vX.Y » disparaissent.
 
-**Modèle B — une branche `main`, production = dernière étiquette.**
-- Demandes et fragments comme aujourd'hui ; la demande `vX.Y` gagne son aperçu ; sa fusion étiquette, puis Pages construit l'étiquette.
-- Pages doit récupérer lui-même la dernière étiquette dans ses trois modes (poussée, quotidien, aperçus), et Release le relancer (une étiquette posée avec `GITHUB_TOKEN` ne lance rien).
-- Clone et ZIP donnent `main`, en avance sur la production ; le README pointerait vers `/releases/latest` (E1 partiel).
+**Modèle A — deux branches, `next` pour intégrer, `main` pour la production.** Les demandes visent `next` ; Version ouvre `vX.Y` vers `next` ; sa fusion déclenche Publish, qui avance `main` en avance rapide avec l'application ; Pages et Release ne changent pas ; ce qui vise `main` est rebasculé.
+
+**Modèle B — une branche `main`, production = dernière étiquette.** Demandes et fragments comme aujourd'hui ; la demande `vX.Y` gagne son aperçu ; sa fusion étiquette ; Pages, lancé sur `main`, récupère lui-même l'étiquette dans ses trois modes. Clone et ZIP restent en avance sur le site.
 
 **Modèle 0 — aujourd'hui (référence)**, avec la pastille « v4.8+ » proposée le 27/11 pour E7.
 
-| Exigence | A (`next` + `main`) | B (étiquette) | 0 (aujourd'hui) |
-|---|---|---|---|
-| E1 téléchargé = en ligne | oui : clone, ZIP, Releases | partiel : Releases seulement ; clone et ZIP en avance | partiel : clone et ZIP oui, dernière version non |
-| E2 aperçu de l'ensemble avant publication | oui : demande `vX.Y` | oui : demande `vX.Y` | non : tout est déjà en ligne à la fusion |
-| E3 pas de conflit | oui : fragments ; `main` n'avance qu'en avance rapide | oui : fragments | oui : fragments |
-| E4 durée d'une demande | inchangée (≈ 2 min 30) | inchangée | inchangée |
-| E4 publication, après le clic | ≈ 1 min 30 : Check sur `next` (44 s), avance (≈ 10 s), Pages (30 s) | ≈ 1 min : Release (12 s), Pages (30 s) | ≈ 30 s, mais sans clic de version |
-| E4 urgence, de la demande à l'écran | ≈ 5 à 6 min, deux clics | ≈ 5 min, deux clics | ≈ 3 min, un clic |
-| E5 réplicable | oui ; rulesets décrits et posés par script | oui | oui |
-| E6 rien à retenir | oui si `main` n'accepte que l'application (voir défaut A2) | oui | oui |
-| E7 numéro = contenu | oui | oui | approché (pastille) |
-| E8 activité quotidienne | oui, sans changement | oui, Pages récupère l'étiquette | oui |
-| Coût de mise en place | 7 à 8 workflows, 2 rulesets, Renovate, documents | 3 workflows, README | une dizaine de lignes |
-| Décisions réglées rouvertes | « pas de branche `dev` », « ruleset plus strict » | aucune | aucune |
+| Exigence | C (chaque fusion publiée) | A (`next` + `main`) | B (étiquette) | 0 (aujourd'hui) |
+|---|---|---|---|---|
+| E1 téléchargé = en ligne | oui, sauf la minute entre une fusion et son commit de version, où le clone a un commit d'avance | oui | partiel : Releases seulement | partiel : clone oui, dernière version non |
+| E2 aperçu de ce qui part en ligne | oui : chaque demande, construite sur sa fusion avec `main` | oui : demande `vX.Y`, par lot | oui : demande `vX.Y`, par lot | non |
+| E3 pas de conflit | oui : fragments, Version seul à écrire les fichiers de version | oui, si `main` n'avance qu'en avance rapide | oui | oui |
+| E4 demande ordinaire | inchangée (≈ 2 min 30) | inchangée | inchangée | inchangée |
+| E4 urgence, de la demande à l'écran | ≈ 4 min, un clic | ≈ 5 à 6 min, deux clics | ≈ 5 min, deux clics | ≈ 3 min, un clic |
+| E5 réplicable | oui ; une entrée de ruleset décrite et posée par script | oui ; deux rulesets, Renovate | oui | oui |
+| E6 rien à retenir | oui : aucune règle d'ordre ni de branche | non sans parades : `--base next`, jamais de demande de `next` vers `main`, attendre Version, notes sur `next` | partiel : « attendre la fin de Version » reste | partiel : idem |
+| E7 numéro = contenu | oui | oui | oui | approché |
+| E8 activité quotidienne | oui | oui | oui | oui |
+| Coût | 4 à 5 fichiers (Version, Pages, Preview, Check, `changes.py`) et une entrée de ruleset | 8 à 10 fichiers, 2 rulesets, Renovate, règles de session | 3 workflows, README | dix lignes |
+| Décisions réglées rouvertes | « rien pour l'automatisation » ne change pas ; un numéro de correctif est neuf | « pas de branche `dev` », « ruleset plus strict » | aucune | aucune |
 
-Écarté :
-- **git-flow complet** (branches de version et de correctif) : deux voies vers `main`, donc fusions en retour et conflits, ce que A évite en n'ayant qu'une voie.
-- **Environnement à approbation** sur Pages : un portail, mais sans aperçu de l'ensemble ni téléchargement aligné ; ajoute une approbation à chaque passage quotidien.
+Écartés : **git-flow complet** (deux voies vers `main`, donc fusions en retour) ; **environnement à approbation** sur Pages (portail sans aperçu d'ensemble, une approbation par passage quotidien) ; **B**, dominé par C (même machinerie d'étiquette, E1 et E6 moins bons) ; **0**, qui ne tient ni E1 ni E2.
 
 ## 4. Recommandation, défauts restants et parades
 
-**Modèle A.** C'est le seul qui tienne E1 au sens de Romain (« quelqu'un qui passe par là » clone ou télécharge le ZIP) ; il ne change rien au geste de publication (fusionner `vX.Y`), il ne fait rien construire depuis une étiquette, et il supprime des contrôles redondants. B est plus léger et plus courant, mais laisse le clone en avance sur le site : c'est précisément le défaut relevé par Romain.
+**Modèle C.** Il tient E1, E2 et E7 sans seconde branche, sans redirection et sans règle à retenir ; il retire un clic et une tâche récurrente à Romain (« Accept vX.Y ») ; il coûte le moins. Ce qu'il abandonne : le lot, c'est-à-dire retenir plusieurs fusions pour les regarder et les publier ensemble ; chaque fusion reste vue en aperçu dans l'état exact où elle partira. Si Romain veut ce lot, la voie est A, avec les corrections listées en section 5.
 
-| N° | Défaut restant de A | Parade |
+| N° | Défaut restant de C | Parade |
 |---|---|---|
-| A1 | Une urgence publie aussi tout ce qui attend sur `next` | `next` toujours publiable : chaque demande y arrive contrôlée et vue en aperçu ; un changement à retenir se retire par une demande d'annulation |
-| A2 | Si Romain fusionne une demande dans `main` (contournement administrateur), `main` diverge et Publish échoue | `main` n'accepte que l'application (ruleset : historique linéaire, avance rapide, contournement réservé à l'application, administrateur retiré) ; c'est plus strict que le réglé « pas de ruleset plus strict » : **à décider** ; sinon Publish refuse, alerte et la réparation est écrite dans `MAINTENANCE.md` |
-| A3 | Ce qui attend sur `next` dort tant que la version n'est pas fusionnée | la demande `vX.Y` ouverte rappelle ; alerte si `next` a plus de 7 jours d'avance |
-| A4 | Les corrections de Data fixes (fragment `none`) attendent la version suivante | **à décider** : Data fixes passe en `minor` (un numéro par semaine), ou ses corrections attendent la revue mensuelle, toujours `minor` |
-| A5 | Une demande extérieure ouverte sur `main` | rebasculée vers `next` par un workflow (jeton de l'application, type `edited` filtré sur le changement de base pour relancer les contrôles) ; `contributing.md` le dit |
-| A6 | La combinaison « Restrict updates » et application en contournement n'est pas documentée | premier geste du lot : essai sur une branche jetable, avant toute bascule |
-| A7 | La consigne de la revue mensuelle vise `main` | à recopier dans la tâche planifiée, sur demande explicite de Romain |
-| A8 | La migration touche 7 à 8 workflows | un seul lot, à valider par Romain (déclencheurs, droits, rulesets) ; retour arrière : `next` supprimé, déclencheurs remis sur `main` |
+| C1 | Une minute entre une fusion et son commit de version : le clone a un commit d'avance sur le site | Pages ne publie que le commit de Version ; le décalage ne touche que le clone, une minute ; écrit dans `MAINTENANCE.md` |
+| C2 | Si Version échoue (clé de l'application expirée, par exemple), la fusion reste sans numéro et le passage quotidien la publierait sans numéro | Version en échec ouvre un ticket ; le passage quotidien publie quand même (E8) et le dit dans son résumé ; la réparation est écrite dans `MAINTENANCE.md` |
+| C3 | L'application écrit sur `main` sans demande | contournement réservé à cette application ; Version n'écrit que ses fichiers, après contrôle du correctif sans jeton (déjà en place) ; Check tourne sur ce commit après coup |
+| C4 | Deux fusions rapprochées | la garde de Version fait publier le passage le plus récent ; une version couvre les deux ; l'aperçu de la seconde a été refait sur la première |
+| C5 | Les aperçus doivent être refaits à chaque poussée sur `main` | Preview se relance à la poussée sur `main` pour les demandes ouvertes (≈ 20 s chacune) |
+| C6 | Numéro de correctif neuf (`4.9.1`) ; l'automatisation et les notes n'en reçoivent pas, donc le clone peut avoir des commits de workflows ou de notes d'avance sur la dernière étiquette, sans effet sur le site | donné par Version seul, quand les fichiers servis par le site changent sans fragment numéroté ; écrit dans `MAINTENANCE.md` |
+| C7 | Les demandes de Renovate et de Data fixes ont aussi leur aperçu, aujourd'hui sauté pour les robots | garde-fou levé pour les branches du dépôt (jamais pour une demande extérieure) |
+| C8 | Combinaison du ruleset (historique linéaire, demande requise) avec une application en contournement : non documentée | premier geste du lot : un essai de poussée de l'application sur une branche jetable couverte par une copie du ruleset |
 
 ## 5. Relecture contradictoire
 
-(à écrire)
+Relecture en contexte neuf (sous-agent Opus, 27/11, 21 h 05), chargée de casser le modèle A recommandé dans la première version de ce cahier ; ses constats, vérifiés sur les fichiers cités, et ce qu'ils ont changé :
+
+| Constat | Gravité | Suite |
+|---|---|---|
+| A publierait une `vX.Y` périmée si Romain la fusionne pendant qu'une autre fusion relance Version (fusions à quelques minutes l'une de l'autre le 27/11) ; seul garde-fou : une règle à retenir | bloquant pour A | parade si A : Publish compare le commit fusionné à la tête de la demande ; sans objet en C |
+| En A, seules les versions numérotées atteignent `main` : Renovate, Data fixes, Tidy, correctifs de workflows et de sécurité dorment sur `next`, alors que les passages planifiés lisent `main` | bloquant pour A | parade si A : une demande de publication dès que `next` diffère de `main` ; sans objet en C |
+| La branche par défaut servirait à chaque session des consignes (`CLAUDE.md`, notes) plus anciennes que `next` | à corriger pour A | sans objet en C |
+| Réflexe des deux branches : « Compare & pull request » de `next` vers `main`, écrasement, suppression de `next` (suppression des branches fusionnées active) | à corriger pour A | sans objet en C |
+| Rebascule des demandes extérieures : `pull_request_target`, signalé par zizmor | à corriger pour A | sans objet en C |
+| Le garde-fou des robots est à trois endroits (`preview.yml` deux fois, `previews.py`) ; les aperçus construisent la tête de la branche, pas sa fusion | à corriger | repris en C5 et C7 |
+| Le cache des polices de Render n'est enregistré que depuis `main` | à corriger pour A | sans objet en C (Render reste sur `main`) |
+| Le risque des déploiements Pages depuis une étiquette ne touche pas B, qui lance Pages sur `main` | équité | corrigé en section 3 |
+| Les passages `workflow_run` lisent aussi la branche par défaut | fait | corrigé en section 2 |
+| Modèle C : une seule branche, chaque fusion devient une version publiée | proposition | retenu, section 4 |
+
+Verdict de la relecture : C, ou A avec les corrections de la colonne « Suite ». Ce cahier recommande C.
