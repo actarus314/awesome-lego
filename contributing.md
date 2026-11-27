@@ -5,9 +5,18 @@ This list aims to be accurate and current, and complete where no reference exist
 **Suggest without editing files:** open an issue with the [Add a resource](https://github.com/actarus314/awesome-lego/issues/new?template=add-resource.yml) or [Fix an entry](https://github.com/actarus314/awesome-lego/issues/new?template=fix-entry.yml) form. A maintainer writes the entry.
 
 **Edit the data yourself:**
-1. Edit the TOML file of the category in [`data/`](data/), following [`data/SCHEMA.md`](data/SCHEMA.md); a new entry gets `added` set to the day it enters the directory (it feeds the site's feed of new resources). `README.md`, `full-list.md`, `data/metrics.json` and the category list of the issue form are generated: do not edit them by hand.
-2. Run `python3 scripts/build.py` (the latest Python release, no dependency; the checks run on it only) and commit the regenerated files with the data. To see the website, run `python3 -m http.server -d site` and open http://localhost:8000. The checks of the pull request also run `python3 -m unittest discover -s tests` and, when the website changes, `python3 scripts/check_site.py` (needs `npm ci` and `pip install -r tests/requirements.txt`, then `python3 -m playwright install chromium`; add `--dejavu` to draw the page with the wider fonts of the GitHub runners).
-3. Open a pull request. The maintainer adds the version number and the CHANGELOG entry when merging. Checks validate the data and build the site; links are tested every week by a separate job.
+1. Edit the TOML file of the category in [`data/`](data/), following [`data/SCHEMA.md`](data/SCHEMA.md); a new entry gets `added` set to the day it enters the directory (it feeds the site's feed of new resources). `README.md`, `full-list.md` and the category list of the issue form are generated: do not edit them by hand.
+2. Run `python3 scripts/build.py --check` (the latest Python release, no dependency; the checks run on it only) and commit the data only: `README.md`, `full-list.md`, the category list of the issue form, `VERSION` and `CHANGELOG.md` are written after the merge (a pull request that changes them fails its checks). To see the website, run `python3 scripts/build.py --site-only && python3 -m http.server -d site` and open http://localhost:8000. The checks of the pull request also run `python3 -m unittest discover -s tests` and, when the website changes, `python3 scripts/check_site.py` (needs `npm ci` and `pip install -r tests/requirements.txt`, then `python3 -m playwright install chromium`; add `--dejavu` to draw the page with the wider fonts of the GitHub runners).
+3. Add a file `changes/<name>.md` (lowercase letters, digits and hyphens) that says what changes in two sentences, 550 characters at most, under its type: `major`, `minor` or `none`, as [MAINTENANCE.md](MAINTENANCE.md#versions) defines them (a major one adds a second line `series:`); a change of `data/` or the website without it fails the checks. For example
+
+   ```
+   type: minor
+
+   Data: 3 museums in Denmark, and the address of a club that moved.
+   ```
+
+   The version number and the CHANGELOG entry are written from it after the merge. `python3 scripts/changes.py check` reads it.
+4. Open a pull request. Checks validate the data, the fragment and the site; links are tested every week by a separate job.
 
 **Selection:** each entry may carry ranks 1 to 5 within its group, worldwide and per country or language (`rank`, with its reasons; see [`data/SCHEMA.md`](data/SCHEMA.md)); the README lists the rank 1 worldwide of each group, and "Where to start" on the website shows the entries ranked for the visitor's country or language. The [full list](full-list.md) keeps every entry, inactive and dead ones included. See [MAINTENANCE.md](MAINTENANCE.md).
 

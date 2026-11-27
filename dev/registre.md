@@ -22,8 +22,8 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 |---|---|---|---|---|
 | notes-dev | AL-48, AL-67 | `dev/`, `passation.conf`, `CLAUDE.md`, `REUSE.toml` | — | fait 26/11 : demande #29 fusionnée par Romain à 23 h 26 ; arrivé : `dev/contexte.md`, `passation.conf` |
 | gardes-fous | AL-50 | `scripts/hygiene.py`, `scripts/check_site.py`, `scripts/tidy.py`, `tests/`, `.github/workflows/check.yml`, `.github/workflows/render.yml`, `.github/workflows/tidy.yml`, `MAINTENANCE.md` | — | fait 27/11 : `dev/lots/gardes-fous.md` ; demande #31 fusionnée par Romain à 01 h 03 (d63bc99, sans numéro de version) ; arrivé : `dev/contexte.md` |
-| entretien | AL-22, AL-46, AL-57, AL-59, AL-60, AL-61, AL-62, AL-64 | `scripts/`, `site-src/`, `data/SCHEMA.md`, `.github/workflows/fixes.yml` | gardes-fous (mêmes fichiers ; ses contrôles trouveront une partie du travail) | en cours (27/11 01:22) : `dev/lots/entretien.md` ; accord de Romain le 27/11 à 01 h 18 ; avec le lot vitesse dans une seule demande de version (v4.5) |
-| vitesse | AL-58 | `site-src/app.js` | entretien | en cours (27/11 01:22) : `dev/lots/vitesse.md` ; accord de Romain le 27/11 à 01 h 18 ; même demande que le lot entretien |
+| entretien | AL-22, AL-46, AL-57, AL-59, AL-60, AL-61, AL-62, AL-64 | `scripts/`, `site-src/`, `data/SCHEMA.md`, `.github/workflows/fixes.yml` | — | fait v4.5 : demande #35 fusionnée par Romain le 27/11 à 03 h 25 (47ddb7b) ; AL-59 abandonné, AL-46 laissé en veille |
+| vitesse | AL-58 | `site-src/app.js` | — | fait v4.5 : même demande #35 |
 | publication | AL-49, AL-51, AL-63 | `.github/workflows/`, `scripts/changelog.py`, `renovate.json`, `CLAUDE.md` | accord de Romain et application de Data fixes ajoutée aux exceptions du ruleset (AL-49) | en cours (27/11 01:22) : `dev/lots/publication.md` ; accord de Romain le 27/11 à 01 h 18 ; l'application n'est pas dans les exceptions du ruleset (lu le 27/11 à 01 h 21) : variante sans écriture directe sur `main` |
 | rangement | AL-69 | `contributing.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `renovate.json` | accord de Romain ; après publication | abandonné : décision de Romain le 27/11 à 01 h 18 (gain faible) ; cahier `dev/lots/rangement.md` gardé |
 
@@ -31,6 +31,8 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 
 | ID | P | Objet | Exécutant | Lot | Statut |
 |---|---|---|---|---|---|
+| AL-72 | P3 | Code sous GNU AGPL 3.0 au lieu de PolyForm Noncommercial, contenu inchangé (CC BY-NC-SA 4.0) : décision de Romain du 27/11 à 03 h 21 (« Code seul »), variante « only » choisie par Claude ; demande #36 ; ensuite, critère `floss_license` du badge OpenSSF (projet 17176) à passer à Met dans le Chrome de Romain | R (fusion), puis C | — | ouverte : #36 en brouillon, à fusionner après #34 |
+| AL-74 | P4 | Décisions laissées par la v4.5 : date de retrait des adresses héritées (1er juin 2027, proposée par Claude) ; Render qui lit les mesures du site publié (`--from-site-only`) ; index de recherche gardé sur la mesure de la première prise de focus (il ne change pas le temps de la liste) | R | — | ouverte : en vigueur tant que Romain ne dit pas autre chose |
 | AL-53 | P3 | Alertes Scorecard : Branch-Protection (#12) écartée par Romain (vue « Dismissed » le 27/11 à 01 h 20) ; Maintained (#17) se ferme seule quand le dépôt a 90 jours (vers le 21/02/2027) ; CII-Best-Practices (#19) : badge OpenSSF rempli par Claude dans le Chrome de Romain le 27/11 (projet 17176, 97 %), mais le niveau « passing » est hors d'atteinte : il exige une licence libre, et PolyForm Noncommercial et CC BY-NC-SA ne le sont pas ; Scorecard donne 2/10 à un badge en cours, 5 au niveau passing : l'alerte #19 reste ouverte tant que le score est sous 10 | R | — | ouverte : écarter #19 « won't fix » (geste de Romain), ou la laisser ouverte |
 | AL-19 | P2 | Ticket « Broken links » #10 : essai à blanc du 26/11 (jeton Globalping actif, 28 liens sur 29 relus) : 9 cassés de partout, dont la page Lidl de Playtive Clippys ajoutée en v4.0 (404), l'article du Manila Times (source de Brickseum, v3.2), le flux de nifeliz, un PDF du Bundesgerichtshof, toy-links.com/mouldking, mocbrickland.com, bricksinbits.com | R | — | ouverte : lire le ticket après Links du mercredi 02/12/2026 |
 | AL-68 | P3 | Nom de domaine grand public pour le site (dépôt gardé en « awesome-lego ») : recherche ouverte par Romain le 26/11 à 13 h 40 dans une autre conversation ; détail : projet claude.ai, claude/awesome-lego-nom-de-domaine.md | R, avec C | — | ouverte : pistes à juger par Romain |
@@ -38,24 +40,11 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 | AL-08 | P4 | Idées gardées : distinguer par la forme ce que la couleur seule distingue ; langues d'interface allemande et italienne | R | — | ouverte : en attente d'une demande de Romain |
 | AL-09 | P4 | Archivage des sources (copie datée de chaque page citée) : non mis en place | R | — | ouverte : en attente d'une demande de Romain |
 
-## Lot entretien
+## À l'occasion
 
 | ID | P | Objet | Exécutant | Lot | Statut |
 |---|---|---|---|---|---|
-| AL-57 | P3 | Champs `recurrence_en` et `recurrence_fr` (68 fiches) saisis mais affichés nulle part depuis la suppression du calendrier (v3.0) : les montrer sur la carte d'un événement ou les retirer du schéma | C, accord de R | entretien | ouverte : audit du 26/11 |
-| AL-62 | P3 | `fixes.yml` : droits d'écriture sur tout le job, y compris l'étape qui lit des sites tiers (séparer comme `pages.yml`) ; Pages et Preview téléchargent tout `data.json` (1.25 Mo) pour les seules mesures | C | entretien | ouverte |
-| AL-59 | P4 | `sources` (131 ko) encore dans le bloc de données de chaque page : à porter dans `details.json` (gain mesuré −8.7 % de chargement avec le reste, sous le seuil de 10 %) ; chaînes des deux langues dans chaque page (7 ko) ; page À propos qui embarque tout `style.css` | C | entretien | ouverte |
-| AL-60 | P4 | `data/metrics.json` versionné et périmé (v1.10), lu par Check et Render sur les demandes | C | entretien | ouverte |
-| AL-61 | P4 | Doublons entre scripts (`regime`, `picked` et `selected`, `in_letters` et `date_en`, plafond du corps d'un ticket : `LIMIT` de 60000 dans `refresh.py` et `links_issue.py`, 65000 dans `refresh.yml`) ; petites redondances d'`app.js` ; mises en page forcées au démarrage | C | entretien | ouverte |
-| AL-64 | P4 | Adresses héritées (`#findings`, `#out`, `#agenda`, `#near-me`, `crit=fr`) sans date de retrait ; `scripts/measure_speed.py` non documenté ; graphique « passion » réduit à 320 px | C | entretien | ouverte |
-| AL-22 | P4 | `tests/links-sample.json` attend encore `cremonabricks.it` comme sain | C | entretien | ouverte : corriger au prochain lot qui touche `links_issue.py` |
-| AL-46 | P4 | Mineurs laissés par les relectures de la v4.0 : cercles de « Dernier signe de vie » petits au doigt, libellés des chiffres à 1.5 px du bord à 320 px, graphique entre 480 et 640 px, survol d'onglet sur l'en-tête des aperçus, lien de catégorie gris, `:has()` avant Firefox 121, étiquettes `pt` et `es`, `#` vide du bouton de langue de la page À propos | C | entretien | ouverte : si un usage le montre |
-
-## Lot vitesse
-
-| ID | P | Objet | Exécutant | Lot | Statut |
-|---|---|---|---|---|---|
-| AL-58 | P3 | Liste entière rendue au chargement (11895 éléments, tâche la plus longue 422 à 485 ms sur téléphone ralenti) ; index de recherche construit à la première prise de focus (358 à 423 ms) | C | vitesse | ouverte : audit du 26/11, à mesurer contre le seuil de 10 % (décision du 24/11) |
+| AL-46 | P4 | Mineurs laissés par les relectures de la v4.0 : cercles de « Dernier signe de vie » petits au doigt, libellés des chiffres à 1.5 px du bord à 320 px, graphique entre 480 et 640 px, survol d'onglet sur l'en-tête des aperçus, lien de catégorie gris, `:has()` avant Firefox 121, étiquettes `pt` et `es`, `#` vide du bouton de langue de la page À propos | C | — | ouverte : si un usage le montre |
 
 ## Lot publication
 
@@ -71,6 +60,7 @@ Lignes que la revue du 5 lit et traite (consigne : `dev/consigne-revue.md`) ; la
 
 | ID | P | Objet | Exécutant | Lot | Statut |
 |---|---|---|---|---|---|
+| AL-75 | P4 | Brick Fan Event : sa récurrence porte des dates (« next dates 20 and 21 Mar 2027 in Charlotte ») à côté de « Next edition: 6 Feb 2027 » : texte qui se périme (relecture de #35) | RM | — | ouverte |
 | AL-05 | P3 | Données laissées à la revue mensuelle (régimes, French'Brick IDF, steine-kanal, confiance basse, TechLUG, abonnés divergents, paliers Patreon, publicités, BrickFair et Brickworld au 03/04/2027, sources à deux dates, Vanha Palikka et Latericius illisibles, r/legostorage, Brickfall, Brick Budget, LEGO Certified Professionals 19/22/27, Japan Brickfest, dates Fan CoLab d'Océanie et d'Asie, tailles Arctic Shift, `last_activity` de r/lego) | RM | — | ouverte : revue du 05/12/2026 |
 | AL-06 | P3 | Filière : indépendance des sources comptée par site ; 16 marques sans fabricant établi (IAMBRICK, JAKI, INSOON, Stone Heap, Build Army sans fabricant déclaré) ; Eikee fondée en 2022 ou 2024 | RM | — | ouverte |
 | AL-13 | P3 | Coordonnées non publiées à la source ; courriels de LEGOLAND Shanghai et du Discovery Centre de Hong Kong trop longs pour 320 px | RM | — | ouverte |
@@ -82,6 +72,7 @@ Lignes que la revue du 5 lit et traite (consigne : `dev/consigne-revue.md`) ; la
 
 | ID | P | Objet | Signal pour agir | Qui regarde | Statut |
 |---|---|---|---|---|---|
+| AL-73 | V | Fuzzing hebdomadaire (ClusterFuzzLite, Atheris) des fonctions qui lisent des pages et flux tiers : décision de Romain du 27/11 à 03 h 17 ; coût visé : nul sur les demandes, une séance bornée par semaine | un plantage trouvé (le corriger avec un test qui le rejoue) ; une séance au-delà de sa durée ; retour : retirer le workflow et `.clusterfuzzlite/` | C | ouverte : demande en préparation |
 | AL-71 | V | Gardes-fous mécaniques (#31) : décidés par Claude le 26/11 sur la demande de Romain ; risques : un faux positif qui bloque Check sur une demande saine, un Tidy qui ouvre une demande chaque semaine ; porteurs : `scripts/hygiene.py`, `scripts/check_site.py`, `.github/workflows/tidy.yml`, `tests/css-states.txt`, `tests/vulture-allow.py`, `tests/budgets.json` | un constat d'un garde-fou que la correction ne justifie pas (le nommer dans la liste blanche du contrôle), ou un Tidy les lundis 30/11 et 07/12 qui ne se vide pas après fusion ; retour : annuler d63bc99, ou retirer l'étape « Mechanical guards » de `check.yml` | C à chaque demande, R pour Tidy | ouverte : premier Tidy le 30/11 |
 | AL-03 | V | Tendances dans l'Observatoire ; changements de statut dans le flux | deux fenêtres de 90 jours dans `history` | C, à la conversation qui suit le 23/05/2027 | ouverte : échéance 23/05/2027 |
 | AL-14 | V | Lecture d'activité en parallèle | un rapport mensuel qui diverge | C, à la lecture du rapport du 4 | ouverte |

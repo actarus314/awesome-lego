@@ -6,6 +6,14 @@ Lignes closes de `dev/registre.md`, la plus récente en tête ; un identifiant n
 
 | ID | P | Objet | Statut |
 |---|---|---|---|
+| AL-57 | — | Récurrence des événements affichée sur leur carte | fait v4.5 : demande #35 (47ddb7b) |
+| AL-58 | — | Liste dessinée en parties, index de recherche construit au repos (liste −13 à −15 %, plus longue tâche −33 à −35 %, première prise de focus sous 50 ms) | fait v4.5 : demande #35 (47ddb7b) |
+| AL-60 | — | `data/metrics.json` sorti de git ; Render lit les mesures publiées | fait v4.5 : demande #35 (47ddb7b) |
+| AL-61 | — | Doublons entre scripts retirés | fait v4.5 : demande #35 (47ddb7b) |
+| AL-62 | — | Data fixes en deux jobs, correctif contrôlé avant application ; site/metrics.json pour Pages et Preview | fait v4.5 : demande #35 (47ddb7b) |
+| AL-64 | — | Date de retrait des adresses héritées (1er juin 2027, proposée), measure_speed.py documenté, graphique à 320 px | fait v4.5 : demande #35 (47ddb7b) |
+| AL-22 | — | links-sample : cremonaebricks.it | fait v4.5 : demande #35 (47ddb7b) |
+| AL-59 | P4 | `sources` dans `details.json` | abandonné : −1.8 % sur la page la plus lente (1793 → 1760 ms), sous le seuil de 10 % (mesure du 27/11, demande #35) |
 | AL-69 | P4 | Rangement de la racine dans `.github/` | abandonné : décision de Romain le 27/11 à 01 h 18 (gain faible, liens extérieurs cassés) |
 | AL-54 | P4 | Notes des versions GitHub v1.0 à v4.2 encore longues | fait 27/11 : demande #33 (Release remet les notes de chaque version à son entrée de `CHANGELOG.md` à chaque changement de celui-ci) fusionnée à 01 h 09 ; Release lancé à la main par Claude à 01 h 10 : 14 versions reprises (v4.0 : 7854 → 551 signes), plus aucun écart à 01 h 11 |
 | AL-70 | P3 | Règle Renovate qui retient le Python de `tidy.yml` sous 3.14 (pyoxipng 9.1.1 n'a de roue que pour Python 3.13, vérifié le 27/11 à 01 h 02) | fait 27/11 : accord de Romain à 01 h 03, demande #32 fusionnée à 01 h 07 (`renovate.json`, `MAINTENANCE.md`, section Tidy) |

@@ -56,7 +56,7 @@ city = "Billund"                         # optional: places, events, clubs; one 
 city_fr = "Vienne"                       # optional: the usual French name, only when it differs from city
 city_local = "Wien"                      # optional: the local name, only when it differs from city (found by the search)
 next_date = "2027-06-12"                 # optional, events: start of the next edition (ISO date)
-recurrence_en = "Every June"             # optional, events: how often it happens
+recurrence_en = "Every June"             # optional, events, clubs, learning: how often it happens, shown on the card before the next date
 recurrence_fr = "Chaque juin"
 brands = ["cobi", "cada"]                # optional, not in brands.toml: ids of the alternative brands of brands.toml that the resource sells, tracks, reviews or admits, as read on its own pages; [] when read and none; absent when not read
 funding = ["affiliation", "ads"]         # optional, comparators, reviews, videos: affiliation | ads | sponsorship | subscription | donations | shop | none | unknown (none and unknown alone), as read at the source
@@ -102,7 +102,7 @@ Writing rules:
 - Numbers: decimal point, no thousands separator (`42003`, `4.95 €`).
 - The brand. English: "official LEGO". French: « LEGO officiel » is a label only (a filter, a legend, a heading against « marques alternatives »); in a sentence, « de marque LEGO » for a product (sets, parts, minifigures, prices), « du groupe LEGO » for what the company runs (shop, stores, centres), « sous enseigne LEGO » for a store or a place run by a partner (LEGO Certified Stores, LEGOLAND parks). Proper names keep their form (LEGO Ideas, LEGO.com).
 - Dates in texts: the month in letters, abbreviated (3 Jul 2027, 3 juil. 2027, 1er avr.; Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec; janv. févr. mars avr. mai juin juil. août sept. oct. nov. déc.), never 2027-07-03 nor 03/07/2027. Data fields (`checked`, `next_date`…) stay ISO dates; the website writes them the same way.
-- The card's text (`summary_*`): what sets the entry apart, in one or two sentences of 35 words at most; it does not repeat the name, the group, the country or the tags, and starts with what distinguishes the entry. Everything else of the card's legend comes from structured fields (`city`, `size`, `next_date`, `funding`).
+- The card's text (`summary_*`): what sets the entry apart, in one or two sentences of 35 words at most; it does not repeat the name, the group, the country or the tags, and starts with what distinguishes the entry. Everything else of the card's legend comes from structured fields (`city`, `size`, `recurrence`, `next_date`, `funding`).
 - No abbreviations except proper names, technical terms (API, CSV, RSS) and the months of dates. Write "custom builds" / « créations originales » rather than MOC.
 - Prices including taxes.
 
@@ -111,4 +111,4 @@ Writing rules:
 - `brands`, `funding`, `makers` and `audience` are read at the source and never deduced from the texts.
 - `data/journeys.toml`: the needs of "Where to start" (`[[need]]`), in display order: `id`, `title_en`, `title_fr`; `category` (the icon of the tile and its last link, the whole category); optional `icon` (a file of `media/icons/`, without `.svg`, when the category's icon does not fit the need); `groups` (`<category>/<group>`, where the entries of the tile come from); `scope` (`country`, `language` or `intl`: how the visitor is matched, from the browser); optional `mode = "brand"` (entries open the brand mode of the search); optional `audience = "children"` or `"adults"` (only the entries of that public; the tile ends on its filter instead of the category); optional `reference = {FR = "<id>", default = "<id>"}` (the reference of the visitor's country or language first: national calendar, directory of associations, comparator; else `default`). The entries of a tile are those of its groups ranked for the visitor (`rank` in the visitor's country or language, then `intl`). An unknown id, group, category, scope or key fails the build.
 - `data/backend/`: figures used by the website but not listed as entries, each file with its `source`, its reading `date` and its source `kind`. `clubs-by-country.json`: fan communities per country (ISO 3166-1 alpha-2) in the official LEGO Fan CoLab directory. `population.json`: World Bank population (SP.POP.TOTL) of the same countries.
-- `data/metrics.json`: local cache of the last activity reading, written by `scripts/refresh.py`.
+- `data/metrics.json`: the last activity reading (stars, last activity, archived), written by `scripts/refresh.py` where it runs, not kept in git; the published website carries it as `metrics.json`.
