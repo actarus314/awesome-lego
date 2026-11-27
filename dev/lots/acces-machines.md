@@ -36,7 +36,7 @@ Hors périmètre : une page par ressource ; la négociation de contenu (`Accept:
 
 ## Fichiers
 
-`scripts/build.py`, `site-src/index.html`, `site-src/about.html`, `site-src/footer.html`, `site-src/strings.json`, `site-src/style.css`, `scripts/hygiene.py`, `tests/`, `tests/budgets.json` si un budget bouge, `changes/acces-machines.md`, `MAINTENANCE.md` (une ligne sur les fichiers pour machines), `dev/`.
+`scripts/build.py`, `site-src/index.html`, `site-src/about.html`, `site-src/footer.html`, `site-src/strings.json`, `site-src/style.css`, `scripts/hygiene.py`, `tests/`, `tests/budgets.json` si un budget bouge, `changes/machine-access.md`, `MAINTENANCE.md` (une ligne sur les fichiers pour machines), `dev/`.
 
 Lot parallèle : demande #57 (modèle de publication C, AL-80), en brouillon, touche aussi `scripts/build.py` (numéros de version), `check.yml`, `dev/contexte.md`, `dev/registre.md`. Ce lot ne touche pas `check.yml` ; la seconde fusionnée se reprend sur la première.
 
@@ -49,6 +49,10 @@ Lot parallèle : demande #57 (modèle de publication C, AL-80), en brouillon, to
 ## Critère de correction écrit d'avance
 
 Se corrigent les constats de relecture qui touchent l'objet du lot (fichiers pour machines, liens, contrôle), l'étalon, une régression de l'affichage ou des fichiers générés, ou la règle de la marque LEGO dans les textes français. Les autres suivent l'étape 3 de la clôture (geste sûr, registre, écart motivé).
+
+## Livraison
+
+Demande #60 (branche `machine-access`), prête le 28/11 à 00 h 30, CI verte sur bfc5dec ; la fusion par la session a été refusée par le classement automatique (28/11, 00 h 31) : Romain fusionne. Vérifié sur l'aperçu (https://3001.club/preview/60/) : `index.md` et `fr/index.md` servis en `text/markdown; charset=utf-8`, `llms.txt` et `robots.txt` en `text/plain`, `sitemap.xml` en `application/xml` ; Chrome affiche la liste Markdown sans la télécharger. Relecture ciblée Sonnet (0 / 2 / 11) et contre-vérification (0 / 0 / 4) : détail dans le corps de la demande.
 
 ## Mesure du rendu à l'avance (27/11/2026, 23 h 35 à 23 h 50)
 

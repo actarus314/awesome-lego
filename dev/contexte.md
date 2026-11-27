@@ -1,4 +1,4 @@
-# Awesome LEGO — contexte (révisé en place le 27/11/2026 à 14 h 58 ; v4.8 en ligne, notes dans `dev/` depuis la #29)
+# Awesome LEGO — contexte (révisé en place le 28/11/2026 à 00 h 30 ; v4.8 en ligne, notes dans `dev/` depuis la #29)
 
 *Maintainer's working notes, in French (state, decisions, pitfalls). The open items are in `dev/registre.md`.*
 
@@ -17,6 +17,7 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 - Audit tous azimuts du 26/11 (34 constats) : corps de la demande #28 pour ce qui est corrigé, lignes AL-57 à AL-64 de `dev/registre.md` pour le reste ; gardes-fous mécaniques : skill `audit-depot` (enregistrée le 26/11) ; vérifié 26/11/2026
 - Journal détaillé jusqu'à la v4.2 : projet claude.ai, claude/archive/awesome-lego-journal-2026-11-26.md ; vérifié 26/11/2026
 - Gardes-fous mécaniques et correcteur hebdomadaire (ce que chaque contrôle voit, ses listes blanches, ses pages de calibrage) : `MAINTENANCE.md`, sections Check, Render et Tidy ; cahier du lot : `dev/lots/gardes-fous.md` ; vérifié 28/11/2026
+- Accès des machines (robots.txt, sitemap, llms.txt, liste Markdown `index.md`, JSON-LD, contrôle `machine_access`) et mesure du rendu à l'avance : `dev/lots/acces-machines.md` (28/11), `MAINTENANCE.md` (The website) ; vérifié 28/11/2026
 - Réglages GitHub à poser, Renovate, uv, contrôles à géométrie variable : skill `document-versionne`, « Travaillé dans GitHub » et « Dépôt sur GitHub » ; vérifié 26/11/2026
 
 ## État
@@ -46,6 +47,8 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 17 commits de reprise sur 9 demandes, 9 fusions en conflit, ≈ 12 % du temps d'exécution de Check, Render, Preview et CodeQL. Causes : demandes empilées puis fusion par squash de la base (5 des 9 conflits, dont les 2 seuls vrais conflits de code, tous dans la #25) ; `VERSION` et `CHANGELOG.md` dans chaque demande (un tiers des reprises, 3 renumérotations) ; `MAINTENANCE.md` touché par 25 des 107 commits des demandes (4 conflits) ; fichiers générés commités (`full-list.md`, images du README, verrou Python) ; branches longues en parallèle. La file de fusion de GitHub n'est pas offerte aux dépôts d'un compte personnel (documentation GitHub, « Managing a merge queue », lue par le sous-agent le 26/11). Remède en place : règles du `CLAUDE.md` ; remède structurel proposé : AL-49. La file de fusion n'aurait pas évité ces reprises (constat du 26/11, 23 h 10) : une demande en conflit n'y entre pas.
 
 ## Pièges
+- (28/11) La session refuse la poussée forcée et la fusion d'une demande (classement automatique) : une branche déjà poussée reçoit `main` par une fusion, jamais par un rebase ; une demande prête attend la fusion de Romain.
+- (28/11) Le crochet de commit posé par la mise à jour des outils exige gitleaks, absent de la session distante (installation du binaire refusée par le classement automatique) : commits faits avec `SANS_GITLEAKS=1` ; la protection des poussées de GitHub reste le contrôle côté serveur.
 - (27/11) L'API des artefacts de GitHub ne les liste pas du plus récent au plus ancien : trier par `created_at` (#58 ; l'aperçu d'une demande fusionnée restait en ligne).
 - (27/11) Un groupe de concurrence GitHub ne garde qu'un passage en attente et annule le précédent quand un troisième arrive : sur `main`, une annulation se lit comme un échec, et un passage de Release annulé laisse une version sans étiquette ; `queue: max` (#59, `MAINTENANCE.md`, Workflows in detail).
 - (27/11) Renovate lit `constraints` de `renovate.json` comme une dépendance et propose de la monter (#44, npm 12) : une règle `enabled: false` la tient (#46).
@@ -72,6 +75,7 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 - Les sous-agents ont l'outil des documents du projet claude.ai (lecture et écriture vues le 26/11).
 
 ## Décisions de Romain (une ligne chacune ; le détail est dans les demandes et l'historique)
+- 27/11, vocal jusqu'à 23 h 27 (AL-81, `dev/lots/acces-machines.md`) : accès des machines sans refonte du site ; tous les robots autorisés, entraînement compris (« bloquer, c'est encore une fois déclaratif ») ; rendu à l'avance mesuré en comparaison seulement (AL-82) ; générateur de site (Hugo, Astro) regardé seulement pour une page par ressource ou une construction devenue pénible, par comparaison mesurée.
 - 27/11, 23 h 03 (AL-80) : modèle de publication C (chaque fusion devient une version publiée ; plus de demande `vX.Y`) et numérotation à trois niveaux, pour l'annuaire et pour toutes les skills. « Je veux que ce soit vraiment la dernière fois que l'on modifie cette architecture de publication ».
 - 27/11, 19 h 41 (AL-79) : page propre aux adresses inconnues ; recherche sans résultat illustrée, par un autre dessin que la brique 3001 ; pastilles de la carte en tenons et brique devant les titres refusées ; indicateur de chargement et rangée de briques en fin de liste abandonnés (19 h 30, vocal).
 - 27/11, 19 h 15 (#53) : fond du site gardé tel quel, le quadrillage (AL-78 ; briques en motif essayées, écartées : sous le texte de l'accueil, cachées par les cartes de l'annuaire) ; code Konami sur la ligne du pied de page, aussi pâle qu'avant ; « Comment est fait l'annuaire » plutôt que « Comment il est fait », la section « Pourquoi 3001 » passant devant.
