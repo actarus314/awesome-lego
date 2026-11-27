@@ -1,0 +1,180 @@
+name: Version
+on:
+  push:
+    branches: [main]   # after each merge: the fragments of changes/ that main holds become the pull request vX.Y
+    paths-ignore: ["dev/**"]   # the maintainer's notes alone change nothing to number
+  workflow_dispatch:   # by hand: also rebuilds the generated files when no fragment gives a number
+permissions:
+  contents: read
+concurrency:
+  group: version
+  cancel-in-progress: false   # the run going ends; only the latest waiting one follows it
+jobs:
+  # Two jobs: the build runs pip packages and the browser without any secret; the publication runs no third-party code (git, gh and
+  # scripts/version_files.sh of main), and only it holds the token that writes.
+  build:
+    if: github.ref == 'refs/heads/main'   # started by hand from another branch: nothing to do
+    runs-on: ubuntu-latest
+    timeout-minutes: 20   # about 20 seconds; 2 minutes with the image of the README, more when the font mirror is slow
+    permissions:
+      contents: read
+    outputs:
+      version: ${{ steps.assemble.outputs.version }}
+      changed: ${{ steps.pack.outputs.changed }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.15"
+      - name: Fragments of changes/ into VERSION and the CHANGELOG.md entry (nothing when every fragment is of type none)
+        id: assemble
+        run: python3 scripts/changes.py assemble >> "$GITHUB_OUTPUT"
+      - name: Rebuild the generated files and check them as the pull request of Version
+        if: steps.assemble.outputs.version != '' || github.event_name == 'workflow_dispatch'
+        run: python3 scripts/build.py && python3 scripts/build.py --check --strict && python3 scripts/changes.py check --strict
+      - name: Runner image and week (key of the fonts kept by Render)
+        if: steps.assemble.outputs.version != ''
+        id: week
+        run: |
+          echo "prefix=fonts-${ImageOS:-linux}-" >> "$GITHUB_OUTPUT"
+          echo "week=$(date -u +%G-%V)" >> "$GITHUB_OUTPUT"
+      - name: Fonts kept by Render (read only)
+        if: steps.assemble.outputs.version != ''
+        id: fonts
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/fonts
+          key: ${{ steps.week.outputs.prefix }}${{ steps.week.outputs.week }}-${{ hashFiles('tests/requirements.txt') }}
+          restore-keys: ${{ steps.week.outputs.prefix }}
+      - name: Image of the README at the new version
+        if: steps.assemble.outputs.version != ''
+        id: image
+        continue-on-error: true   # a stale README image warns, never fails (CLAUDE.md): the version goes out without it
+        env:
+          KEPT_THIS_WEEK: ${{ steps.fonts.outputs.cache-hit }}
+        run: |
+          python3 -m pip install --quiet --require-hashes --only-binary=:all: -r tests/requirements.txt
+          bash scripts/browser.sh
+          python3 scripts/build.py --site-only && python3 scripts/readme_image.py
+      - name: The image of the README could not be taken
+        if: steps.image.outcome == 'failure'
+        run: |
+          git checkout -- media/site-preview.png media/site-preview-dark.png
+          echo "::warning::The image of the README was not taken: the pull request keeps the previous one, and Check warns about it"
+      - name: Changes, title and description of the pull request
+        if: steps.assemble.outputs.version != '' || github.event_name == 'workflow_dispatch'
+        id: pack
+        env:
+          VERSION: ${{ steps.assemble.outputs.version }}
+          IMAGE: ${{ steps.image.outcome }}
+        run: |
+          git add -A
+          bash scripts/version_files.sh staged   # only what Version writes, as plain files
+          mkdir -p "$RUNNER_TEMP/version"; out=$RUNNER_TEMP/version
+          git diff --cached --binary --no-renames > "$out/version.patch"
+          if [ ! -s "$out/version.patch" ]; then echo "Nothing to number or rebuild."; echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          if [ -n "$VERSION" ]; then
+            echo "v$VERSION" > "$out/title"
+            {
+              echo "Written by the Version workflow from the fragments of \`changes/\` merged on \`main\`, with the generated files and the image of the README rebuilt. Merging it publishes v$VERSION: **Release** tags it."
+              if [ "$IMAGE" = failure ]; then echo; echo "The image of the README could not be taken: it still shows the previous version (see the log of the run)."; fi
+              echo
+              echo "**Entry of CHANGELOG.md:**"
+              echo
+              python3 scripts/release_notes.py section "v$VERSION"
+            } > "$out/body.md"
+          else
+            echo "Generated files" > "$out/title"
+            echo "Generated files rebuilt by the Version workflow, started by hand. No number: the fragments of type \`none\` keep waiting for the next version; merging it changes no version and **Release** does nothing." > "$out/body.md"
+          fi
+          {
+            echo
+            echo "Rebuilt after each merge on \`main\`: a commit added by hand on this branch is lost at the next run; a fragment is corrected by a pull request to \`main\`. Merge it once the last run of **Version** has ended."
+            echo
+            echo "**Files:**"; echo; echo '```'; git diff --cached --stat; echo '```'
+          } >> "$out/body.md"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - if: steps.pack.outputs.changed == 'true'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: version
+          path: ${{ runner.temp }}/version
+          retention-days: 3
+  publish:
+    needs: build
+    # something to publish, or, after a push that gives no number, an open pull request vX.Y left behind to close
+    if: needs.build.outputs.changed == 'true' || (github.event_name == 'push' && needs.build.outputs.version == '')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5   # a few seconds
+    permissions:
+      contents: read        # the branch and the pull request are written with the app of Data fixes or its personal token
+      pull-requests: read   # to find a pull request vX.Y left behind
+    steps:
+      - if: needs.build.outputs.changed == 'true'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - if: needs.build.outputs.changed == 'true'
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: version
+          path: ${{ runner.temp }}/version
+      # The patch comes from a job that ran pip packages: it is read before it is applied, by the copy of the check taken from
+      # the commit of main (outside the tree, which the patch could rewrite), and no token is in the environment until it passed.
+      - name: Check the patch, apply it and commit it (no token)
+        if: needs.build.outputs.changed == 'true'
+        run: |
+          out=$RUNNER_TEMP/version
+          git show "$GITHUB_SHA:scripts/version_files.sh" > "$RUNNER_TEMP/version_files.sh"
+          bash "$RUNNER_TEMP/version_files.sh" patch "$out/version.patch"
+          git apply --index "$out/version.patch"
+          bash "$RUNNER_TEMP/version_files.sh" staged
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -q -B auto/version
+          git commit -qm "$(cat "$out/title")"
+      # Same app as Data fixes: a pull request opened by the app starts its checks on its own. The ruleset of main lets
+      # only the admin role bypass it: no workflow pushes to main, hence a pull request. No fallback on the token of
+      # Actions: it cannot push from this job, which stays read-only.
+      - id: app
+        if: vars.DATA_FIXES_APP_ID != ''
+        uses: actions/create-github-app-token@f418cff399f7aef4c2f0ad47e25ca7a6abbdd6fc # v3.4.0
+        with:
+          client-id: ${{ vars.DATA_FIXES_APP_ID }}
+          private-key: ${{ secrets.DATA_FIXES_APP_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+      - name: Close a pull request vX.Y left behind (nothing on main gives a number any more)
+        if: needs.build.outputs.changed != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          WRITE_TOKEN: ${{ steps.app.outputs.token || secrets.DATA_FIXES_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          n=$(gh pr list --head auto/version --state open --json number,title -q '.[] | select(.title | startswith("v")) | .number')
+          if [ -z "$n" ]; then echo "No pull request vX.Y open."; exit 0; fi
+          [ -n "$WRITE_TOKEN" ] || { echo "::error::Version needs the app of Data fixes (DATA_FIXES_APP_ID, DATA_FIXES_APP_KEY) or the secret DATA_FIXES_TOKEN to close #$n"; exit 1; }
+          GH_TOKEN=$WRITE_TOKEN gh pr close "$n" --comment "Nothing left on \`main\` to number: closed by the Version workflow."
+      - name: Push the branch and open or update the pull request vX.Y
+        if: needs.build.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token || secrets.DATA_FIXES_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          [ -n "$GH_TOKEN" ] || { echo "::error::Version needs the app of Data fixes (DATA_FIXES_APP_ID, DATA_FIXES_APP_KEY) or the secret DATA_FIXES_TOKEN: the token of Actions cannot push from this job"; exit 1; }
+          out=$RUNNER_TEMP/version
+          url="https://github.com/${GITHUB_REPOSITORY}.git"
+          # a newer push to main outside dev/ started a run that waits for this one (concurrency): it publishes, this one stops;
+          # a push of dev/ alone starts no run (paths-ignore), so this one publishes anyway
+          head=$(git ls-remote "$url" refs/heads/main | cut -f1)
+          if [ "$head" != "$GITHUB_SHA" ]; then
+            git fetch -q --depth=1 "$url" "$head"
+            if ! git diff --quiet "$GITHUB_SHA" "$head" -- . ':!dev'; then echo "main moved outside dev/ since this run started: the run of the newer push publishes."; exit 0; fi
+            echo "main moved in dev/ only since this run started: this run publishes."
+          fi
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" auto/version
+          title=$(cat "$out/title")
+          n=$(gh pr list --head auto/version --state open --json number -q '.[0].number')
+          if [ -n "$n" ]; then gh pr edit "$n" --title "$title" --body-file "$out/body.md"
+          else gh pr create --head auto/version --base main --title "$title" --label automatic --body-file "$out/body.md"; fi

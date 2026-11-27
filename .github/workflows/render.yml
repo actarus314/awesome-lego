@@ -1,10 +1,10 @@
 name: Render
 on:
   pull_request:
-    paths: ["site-src/**", "scripts/build.py", "scripts/check_site.py", "media/**", "!media/site-preview*.png", "data/**", "tests/render-fixture.html", "tests/phone-fixture.html", "tests/css-states.txt", "tests/requirements.txt", "package-lock.json", ".github/workflows/render.yml"]   # the README image alone changes nothing on the website
+    paths: ["site-src/**", "scripts/build.py", "scripts/check_site.py", "media/**", "!media/site-preview*.png", "data/**", "tests/render-fixture.html", "tests/phone-fixture.html", "tests/css-states.txt", "tests/requirements.txt", "package-lock.json", "scripts/browser.sh", ".github/workflows/render.yml"]   # the README image alone changes nothing on the website
   push:
     branches: [main]
-    paths: ["site-src/**", "scripts/build.py", "scripts/check_site.py", "media/**", "!media/site-preview*.png", "data/**", "tests/render-fixture.html", "tests/phone-fixture.html", "tests/css-states.txt", "tests/requirements.txt", "package-lock.json", ".github/workflows/render.yml"]   # the README image alone changes nothing on the website
+    paths: ["site-src/**", "scripts/build.py", "scripts/check_site.py", "media/**", "!media/site-preview*.png", "data/**", "tests/render-fixture.html", "tests/phone-fixture.html", "tests/css-states.txt", "tests/requirements.txt", "package-lock.json", "scripts/browser.sh", ".github/workflows/render.yml"]   # the README image alone changes nothing on the website
   workflow_dispatch:
 permissions:
   contents: read
@@ -33,7 +33,8 @@ jobs:
           echo "prefix=fonts-${ImageOS:-linux}-" >> "$GITHUB_OUTPUT"
           echo "week=$(date -u +%G-%V)" >> "$GITHUB_OUTPUT"
       # the fonts that Playwright installs for Chromium (21.9 MB) came at 60 kB/s from the Ubuntu mirror on some runs, up to 6 minutes:
-      # their packages are kept between runs; apt checks each kept package against its signed index and downloads only what is missing or newer
+      # their packages are kept between runs. Kept this week, they are installed with dpkg, unchecked by apt (the cache of main is written
+      # only by runs on main; Version reads it in its job without secrets); otherwise apt checks each one against its signed index (scripts/browser.sh)
       - name: Fonts kept by an earlier run
         id: fonts
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
@@ -43,20 +44,12 @@ jobs:
           restore-keys: ${{ steps.week.outputs.prefix }}
       - name: Tools (axe-core from package-lock.json, Playwright, Chromium and its fonts)
         id: tools
+        env:
+          KEPT_THIS_WEEK: ${{ steps.fonts.outputs.cache-hit }}   # kept this week: installed directly, without apt-get update (scripts/browser.sh)
         run: |
           npm ci --ignore-scripts --no-audit --no-fund
           python3 -m pip install --quiet --require-hashes --only-binary=:all: -r tests/requirements.txt
-          if compgen -G "$HOME/fonts/*.deb" > /dev/null; then sudo cp "$HOME"/fonts/*.deb /var/cache/apt/archives/; fi
-          python3 -m playwright install --with-deps chromium
-          # kept for the next runs: the packages of the versions now installed, and no others (older ones would pile up week after week)
-          rm -rf "$HOME/fonts" && mkdir "$HOME/fonts"
-          for f in /var/cache/apt/archives/*.deb; do
-            [ -e "$f" ] || continue
-            pkg=$(dpkg-deb -f "$f" Package) ver=$(dpkg-deb -f "$f" Version)
-            if [ "$(dpkg-query -W -f='${Version}' "$pkg" 2>/dev/null)" = "$ver" ]; then cp "$f" "$HOME/fonts/"; fi
-          done
-          ls "$HOME/fonts"
-          echo "kept=$(find "$HOME/fonts" -name '*.deb' | wc -l)" >> "$GITHUB_OUTPUT"
+          bash scripts/browser.sh
       - name: Keep the fonts for the next runs (from main only, once a week or when tests/requirements.txt changes)
         if: github.ref == 'refs/heads/main' && steps.fonts.outputs.cache-hit != 'true' && steps.tools.outputs.kept != '0'
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
@@ -74,10 +67,10 @@ jobs:
           GH_REPO: ${{ github.repository }}
           PR: ${{ github.event.pull_request.number }}
         run: |
-          # data and the files generated from it only: layout at 1440, 390 and 320 px in the light theme, no accessibility pass;
+          # data, its fragment of changes/ and the files generated from it only: layout at 1440, 390 and 320 px in the light theme, no accessibility pass;
           # anything else, or a list that cannot be read: every check
           if files=$(gh pr diff "$PR" --name-only) && [ -n "$files" ] \
-             && ! grep -qvE '^(data/|README\.md$|full-list\.md$|CHANGELOG\.md$|VERSION$|\.github/ISSUE_TEMPLATE/|media/site-preview)' <<< "$files"; then
+             && ! grep -qvE '^(data/|changes/|README\.md$|full-list\.md$|CHANGELOG\.md$|VERSION$|\.github/ISSUE_TEMPLATE/|media/site-preview)' <<< "$files"; then
             echo "mode=--data-only" >> "$GITHUB_OUTPUT"
           fi
       - name: Rendering checks (every view at five widths and both themes, accessibility with axe-core, one browser per processor; data alone, see above)

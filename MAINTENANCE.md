@@ -20,6 +20,8 @@ flowchart LR
   tpr --> merge
   merge{{"Maintainer reads<br/>and merges"}} --> main[("main")]
   main --> pub["Pages publishes"]
+  main -->|fragments of changes/| ver["Version: pull request vX.Y<br/>(VERSION, CHANGELOG, generated files)"]
+  ver --> merge
   main -->|VERSION changed| rel["Release: tag<br/>and release notes"]
 ```
 
@@ -30,23 +32,24 @@ flowchart LR
 | **Pages** | every day 04:17, every push to `main`, after **Preview** | reads activity, builds and publishes the website with the previews | the website; one file a day on branch `history` |
 | **Links** | Wednesdays 05:23 | tests every link, from GitHub then from home and office probes | issue **Broken links** |
 | **Data fixes** | when **Links** ends, except a dry run | moved addresses, past event dates | pull request **Data fixes** |
+| **Version** | after each push to `main` (not one that changes `dev/` alone) | assembles the fragments of `changes/` into the next version | pull request **vX.Y**, when a fragment gives a number |
 | **Data report** | the 4th of each month, 03:41 | monthly report for the review | issue **Monthly data report** |
-| Review pass (language model) | the 5th of each month, 10:13 Paris time | full review of the data | pull request **Monthly review vX.Y** |
+| Review pass (language model) | the 5th of each month, 10:13 Paris time | full review of the data | pull request **Monthly review YYYY-MM** |
 | **Workflow audit** | Mondays 05:37 | security audit of the workflows | alerts in the **Security** tab |
 | **Scorecard** | Tuesdays 04:43, every push to `main` | score of the repository practices | alerts in the **Security** tab, score at `api.scorecard.dev` |
 | **Tidy** | Mondays 06:41 | fixes that need no judgement: unused Python imports, lossless compression of the PNG files of `media/` (README images excepted) | pull request **Tidy**, only when a file changed |
 
-Started by hand (**Run workflow**): **Pages**, **Links** (with *dry run*), **Data fixes**, **Data report**, **Render**, **Tidy**, **Release** (notes of the releases).
+Started by hand (**Run workflow**): **Pages**, **Links** (with *dry run*), **Data fixes**, **Data report**, **Render**, **Tidy**, **Version** (also rebuilds the generated files without a number), **Release** (notes of the releases).
 
 ## On each pull request
 
 | Check | When | What it tells |
 |---|---|---|
-| **Check** (required) | every pull request, every push to `main` | data valid, generated files up to date, tests, licences, mechanical guards (`scripts/hygiene.py`) |
+| **Check** (required) | every pull request, every push to `main` | data valid, the fragment of `changes/`, `VERSION` and the generated files left to **Version**, tests, licences, mechanical guards (`scripts/hygiene.py`) |
 | **Render** | when the website, its data or its checks change | the website drawn in a real browser, without defect |
 | **Preview** | when the website changes, for a branch of this repository opened by a person | a link to the website of the branch, in a comment |
 | **Workflow audit** | when a workflow changes | the workflows are safe |
-| **Release** | when `VERSION` or `CHANGELOG.md` changes on `main` | tag `vX.Y` and the GitHub release; notes of earlier releases set again from `CHANGELOG.md` |
+| **Release** | when `VERSION` or `CHANGELOG.md` changes on `main` (the merge of **vX.Y**) | tag `vX.Y` and the GitHub release; notes of earlier releases set again from `CHANGELOG.md` |
 
 ## Maintainer's tasks
 
@@ -57,7 +60,8 @@ The maintainer's working notes (state, decisions, open items, briefs) are in `de
 | Accept **Data fixes** | Wednesdays, after **Links** | old addresses and past dates stay; the next run proposes them again |
 | Accept **Tidy** | Mondays, when it opens | unused imports and heavy images stay; the next run proposes them again |
 | Read **Broken links** | Wednesdays, when the issue is open | broken links stay until the monthly review |
-| Accept **Monthly review vX.Y** | after the 5th | corrections and additions wait; merge or close it before the next 5th |
+| Accept **Monthly review YYYY-MM** | after the 5th | corrections and additions wait; merge or close it before the next 5th |
+| Accept **vX.Y** | when its entry reads well, after the merges it gathers, once the last run of **Version** has ended | the version, its entry, the README and full-list.md wait; the website is published anyway |
 | Keep the review's instructions up to date | when a rule of the data changes | the review writes entries the build refuses |
 | Accept Renovate's pull requests | when one opens | tools fall behind, security fixes included |
 | Handle security alerts | when GitHub sends one | the flaw stays open |
@@ -69,10 +73,11 @@ How, task by task:
 - **Data fixes**: read each line; a line in bold says *other site, check the owner* (the address moved to another site); then squash and merge.
 - **Broken links**: open in a browser each link of *Broken*, *They answer, but the page is dead* and *Failed twice in a row*; fix or remove the entry by a pull request, or leave it to the review. The folded lists need nothing.
 - **Monthly review**: read its summary, the guard line first, then squash and merge.
+- **vX.Y**: read the entry of `CHANGELOG.md` in its description (releases are immutable; a fragment is reworded by a pull request to `main`, and the pull request follows), then squash and merge: **Release** tags it.
 - **Review instructions**: they live in the scheduled task of the review pass, outside this repository; replace them with the text written for the change.
-- **Renovate**: squash and merge when **Check** passes. For MiniSearch, a font or terser, first run `npm ci --ignore-scripts && python3 scripts/vendor.py && python3 scripts/build.py` on its branch and commit the result (the pull request says so).
+- **Renovate**: squash and merge when **Check** passes. For MiniSearch, a font or terser, first run `npm ci --ignore-scripts && python3 scripts/vendor.py && python3 scripts/build.py --check` on its branch and commit the files `vendor.py` changed, nothing else (the pull request says so).
 - **Security alerts** (**Security** tab, `SECURITY.md`): fix by a pull request, or dismiss a code scanning alert with its reason; for a secret, revoke it at its service first; only the maintainer dismisses a secret scanning alert.
-- **Contributors**: before merging, add the French texts, `VERSION`, the `CHANGELOG.md` entry and the image of the README (`scripts/readme_image.py`); approve the workflows of an outside contributor after reading the change.
+- **Contributors**: before merging, add the French texts and, when it is missing, the fragment `changes/<name>.md`; approve the workflows of an outside contributor after reading the change.
 - **Key of Data fixes**: generate a new private key for its GitHub App and store it as the secret `DATA_FIXES_APP_KEY`.
 - **Globalping token** (secret `GLOBALPING_TOKEN`, set on 26 Nov 2026): **Links** writes in its log how many tests are left this hour and whether the token was used; a warning means the token is refused: create a new one on [dash.globalping.io](https://dash.globalping.io/) and store it again (**Settings**, **Secrets and variables**, **Actions**).
 - **Scheduled runs**: **Actions** tab, filter *Event: schedule*; start a missing one with **Run workflow**. GitHub starts scheduled runs on a best-effort basis, often hours late, and can skip them.
@@ -108,12 +113,13 @@ How, task by task:
 
 ### Data fixes
 - `scripts/autofix.py` replaces an address only after a permanent redirect (301 or 308) that ends on a 200 without a query, in 5 hops at most, and removes past `next_date` values; `data/journeys.toml` is left out.
-- Two jobs: the first opens the third-party sites and rebuilds the generated files with read-only rights, and hands its changes over as a patch; the second, the only one allowed to write, runs no script of the repository. Before applying the patch, in a step without any token, a check written in the workflow refuses anything but plain edits of files already tracked as regular files (`data/<name>.toml`, `README.md`, `full-list.md`): no binary patch, no file created, deleted, renamed or linked, no change of mode, 1 MB at most (`tests/test_fixes_workflow.py` runs it against hostile patches). The token comes in only at the step that commits, pushes and opens the pull request, whose body starts with the verified list of changed files and is cut at 60000 characters.
+- Two jobs: the first opens the third-party sites and checks the data with read-only rights, and hands its changes over as a patch; the second, the only one allowed to write, runs no script of the repository. Before applying the patch, in a step without any token, a check written in the workflow refuses anything but plain edits of files already tracked as regular files (`data/<name>.toml` alone): no binary patch, no file created, deleted, renamed or linked, no change of mode, 1 MB at most (`tests/test_fixes_workflow.py` runs it against hostile patches). The token comes in only at the step that commits, pushes and opens the pull request, whose body starts with the verified list of changed files and is cut at 60000 characters.
 - Recreates the branch `auto/data-fixes` from `main` at each run and opens or updates the pull request **Data fixes** (label `automatic`): a commit added by hand on that branch is lost at the next run.
+- The second job writes the fragment `changes/data-fixes-YYYY-MM-DD-HHMM.md` itself, with a fixed text, never taken from the patch (type `none`, see Versions); `README.md` and `full-list.md` are left to **Version**.
 - Opens the pull request with its GitHub App (variable `DATA_FIXES_APP_ID`: the app's client ID; secret `DATA_FIXES_APP_KEY`) or, failing that, a personal token (secret `DATA_FIXES_TOKEN`), so that **Check** and **Render** start on their own.
 
 ### Tidy
-- `scripts/tidy.py` removes unused Python imports (ruff's safe fix) and compresses the PNG files of `media/` without loss (oxipng, text chunks kept); the README images (`media/site-preview*.png`) are left to the version pull requests.
+- `scripts/tidy.py` removes unused Python imports (ruff's safe fix) and compresses the PNG files of `media/` without loss (oxipng, text chunks kept); the README images (`media/site-preview*.png`) are left to **Version**.
 - Recreates the branch `auto/tidy` from `main` at each run and opens or updates the pull request **Tidy** (label `automatic`) only when a file changed: a commit added by hand on that branch is lost at the next run.
 - Opens it with the app or token of **Data fixes**, so that its checks start on their own.
 - Runs on Python 3.13, the only one pyoxipng ships wheels for: Renovate keeps the Python of `tidy.yml` below 3.14 (`renovate.json`); raise it, with `tests/requirements-tidy.txt`, once pyoxipng ships wheels for a newer version.
@@ -139,13 +145,15 @@ How, task by task:
 - Scheduled task outside this repository; never pushes to `main`.
 - Reads every entry at its source and corrects it; adds missing resources; finds feeds (`scripts/discover_feeds.py`); reads `brands`, `funding`, `makers` and `audience` again at the source; reviews the ranks of each group and the needs of "Where to start"; writes the French texts of entries proposed in English.
 - Recounts the fan communities per country from the LEGO Fan CoLab directory; renews population figures in January.
-- Raises the minor version, writes the `CHANGELOG.md` entry from `scripts/changelog.py`, takes the image of the README again, and opens **Monthly review vX.Y**.
+- Writes the fragment `changes/review-YYYY-MM.md` (type `minor`) from the draft of `scripts/changelog.py` and opens **Monthly review YYYY-MM**; **Version** gives the number after the merge.
 
 ### Check
-- Validates `data/`; checks that `README.md`, `full-list.md` and the category list of the **Add a resource** form are up to date, and that `CHANGELOG.md` has a section for `VERSION`, each entry at most 550 characters (the details belong to the pull request).
+- Validates `data/`, and the fragments of `changes/` (`scripts/changes.py`: type, one paragraph of 550 characters at most, no bare `@name` or `<`, one major fragment at most); checks that `CHANGELOG.md` has a section for `VERSION`, each paragraph of an entry at most 550 characters (the details belong to the pull request).
+- A pull request leaves to **Version** `VERSION`, new sections of `CHANGELOG.md`, `README.md`, `full-list.md`, the category list of the **Add a resource** form and the README images: it fails if it changes them, and fails when it changes `data/` or `site-src/` without adding a fragment (a warning on the branches `renovate/*`, whose bot writes none). Its generated files may then be out of date, whatever `main` holds (a warning); awesome-lint reads the README as the pull request makes it.
+- These generated files must be up to date on the pull request of **Version** (no major or minor fragment left either), and on `main` once no fragment waits.
 - Checks that this file names every workflow and schedule, and that `data/SCHEMA.md` names every controlled word and backend file.
 - Warns, without failing, when the image of the README shows another version.
-- `reuse lint` (`REUSE.toml`, `LICENSES/`); unit tests (`tests/`: data, pages, about pages, links issue, monthly report, previews); awesome-lint as locked in `package-lock.json`; MiniSearch and the fonts of the Brick Vault match their locked packages (`scripts/vendor.py`).
+- `reuse lint` (`REUSE.toml`, `LICENSES/`); unit tests (`tests/`: data, pages, about pages, fragments of `changes/`, links issue, monthly report, previews); awesome-lint as locked in `package-lock.json`; MiniSearch and the fonts of the Brick Vault match their locked packages (`scripts/vendor.py`).
 - Mechanical guards (`scripts/hygiene.py`, after the build): ruff and vulture on the Python code (unused imports, functions, classes and variables, unreachable code; `tests/vulture-allow.py` names what the standard library calls); strings of `site-src/strings.json` and fields of the page data that nothing reads; every job with `timeout-minutes` and every pull-request workflow with a `concurrency` group; weight budgets of the pages (per resource, so that the directory may grow) and of the about pages in `tests/budgets.json`, raised only with a reason in the pull request.
 - Runs on the latest Python release only; a new push to a pull request cancels its previous run (every push to `main` keeps its own).
 
@@ -165,8 +173,20 @@ How, task by task:
 - First checks itself on `tests/render-fixture.html` and `tests/phone-fixture.html`, where the defects of each check are planted beside sound cases. On failure, the findings are kept 7 days as the artefact `render-findings`.
 - A pull request that changes only data and the files generated from it gets a lighter pass (`--data-only`: 1440, 390 and 320 px, light theme, no accessibility; about a fifth of the time of the full checks, measured locally). A push to `main` gets every check.
 - Its jobs (layout and accessibility of each width, theme and language, search) are shared between browsers, one per processor, 8 at most (`--jobs`): 1.5 to 2.5 minutes for the run (2 min 18 s measured on 26 Nov 2026 with the about pages).
-- The font packages Playwright installs are kept between runs (`actions/cache`, saved from `main` only, a new key each week, with each change of `tests/requirements.txt` and with each runner image): the Ubuntu mirror sometimes served them at 60 kB/s.
+- The font packages Playwright installs are kept between runs (`actions/cache`, saved from `main` only, a new key each week, with each change of `tests/requirements.txt` and with each runner image): the Ubuntu mirror sometimes served them at 60 kB/s. Kept this week, they are installed directly with `dpkg`, without `apt-get update`, and Playwright checks that nothing it needs is missing; otherwise `--with-deps` as before (`scripts/browser.sh`, which also installs the headless shell alone, the only browser the checks launch). Measured on 27 Nov 2026: the step of the tools takes 11 to 20 s (4 runs, median 12.5 s) against 14 to 33 s before (9 runs, median 24 s); 23 s through `--with-deps`.
 - Not a required check (a path filter would leave it pending): its result is read before merging.
+
+### Version
+- A pull request says what it changes in `changes/<name>.md` (`contributing.md`, format in `scripts/changes.py`): its type (see Versions), then one paragraph of two sentences; a major one also gives the heading of its series.
+- After each push to `main` that leaves a fragment of type `major` or `minor`, assembles the fragments into one entry of `CHANGELOG.md` (one paragraph each, strongest type first), raises `VERSION` by the strongest type, removes the fragments, rebuilds `README.md`, `full-list.md`, the category list of the form and the image of the README, then opens or updates the pull request **vX.Y** (label `automatic`) on the branch `auto/version`, recreated from `main` at each run: a commit added by hand on that branch is lost at the next run.
+- Fragments of type `none` alone give no number: they wait, with the generated files, and the entry of the next version cites them. Started by hand, it also rebuilds the generated files without a number (pull request **Generated files**): the repair when `main` fails **Check** with generated files out of date and no fragment waiting.
+- After a push that gives no number, closes a pull request **vX.Y** left open (its fragments are gone).
+- Two jobs: the build (pip packages, the browser, the fonts kept by **Render**) holds no secret and hands its changes over as a patch. The publication runs no third-party code: it reads the patch before applying it, with the copy of `scripts/version_files.sh` taken from the commit of `main` (only the files Version writes, as plain files: no other path, no rename, no link, no executable), and only then makes the token, in the step that pushes.
+- Writes with the app of **Data fixes** or its personal token, so that its checks start on their own; without either it fails with a message: the token of Actions does not push from this job, and the ruleset of `main` lets only the admin role bypass it, so no workflow pushes to `main`.
+- Pushes nothing if `main` moved outside `dev/` during the run: the run of the newer push, waiting behind it, publishes. A push of `dev/` alone starts no run, so the run going publishes anyway.
+- If the image of the README cannot be taken, the pull request keeps the previous image and says so (a warning, never a failure).
+- A pull request, and its preview, shows the version before it: the number exists only once **Version** has run after the merge.
+- To write on `main` directly instead (once the app is added to the bypass list of the ruleset): in `version.yml`, push `HEAD:main` in place of `auto/version` and drop the lines of the pull request; Check then needs no exception for `auto/version`.
 
 ### Release
 - Tags `vX.Y` and publishes the GitHub release with its `CHANGELOG.md` section (`scripts/release_notes.py`); fails if the section is missing, does nothing if the version exists. Releases are immutable: read the entry before merging.
@@ -182,7 +202,7 @@ How, task by task:
 
 ## The website
 
-- Generated, never edited by hand: `README.md`, `full-list.md`, the category list of `.github/ISSUE_TEMPLATE/add-resource.yml` and `site/` (not kept in git), all from `data/` by `scripts/build.py`.
+- Generated, never edited by hand: `README.md`, `full-list.md`, the category list of `.github/ISSUE_TEMPLATE/add-resource.yml` and `site/` (not kept in git), all from `data/` by `scripts/build.py`; the files kept in git are committed by **Version**, the website is built by **Pages**.
 - `data/backend/` holds figures used by the website but listed nowhere as entries (fan communities per country, population), each with its source and date. `data/metrics.json` is the last reading, written by `scripts/refresh.py` where it runs and not kept in git: a copy in the repository would only grow old (the published one is the reference).
 - The website calls no outside service: the page reads only its own `details.json` (`connect-src 'self'` in `scripts/build.py`).
 - Every page shares the header (`site-src/header.html`, `header.js`) and the footer (`site-src/footer.html`).
@@ -194,6 +214,5 @@ How, task by task:
 
 ## Versions
 
-- Minor (`4.1`) for every merge that changes content or the website; major (`5.0`) for a change of structure or data format; none for activity data, automation or the README alone.
-- The number lives in `VERSION` and `CHANGELOG.md`; **Release** tags it at the merge.
-- A pull request that raises `VERSION` takes the image of the README again: `python3 scripts/build.py --site-only && python3 scripts/readme_image.py`.
+- Types of a fragment of `changes/` (the one definition; elsewhere a reference to it): `minor` (`4.1`) for every merge that changes content or the website; `major` (`5.0`) for a change of structure or data format; `none` for activity data, automation, documents or the README alone. Exception: **Data fixes** writes `none` although it corrects content (moved addresses, past dates), so that its weekly pull request gives no number of its own.
+- Each pull request gives its type in its fragment of `changes/`; the number lives in `VERSION` and `CHANGELOG.md`, written by **Version** with the image of the README; **Release** tags it at the merge of **vX.Y**.

@@ -1,21 +1,28 @@
 """The check of .github/workflows/fixes.yml, job "open": the patch handed over by the job that reads third-party sites
-is applied only if it is a plain edit of data/<name>.toml, README.md or full-list.md. The script is read from the
-workflow itself and run in a scratch repository against a sound patch and hostile ones. Needs bash, git and iconv."""
+is applied only if it is a plain edit of data/<name>.toml (README.md and full-list.md are left to the workflow Version),
+and the fragment of changes/ is written by the workflow. The scripts are read from the workflow itself and run in a
+scratch repository against a sound patch and hostile ones. Needs bash, git and iconv."""
 import os
 import pathlib
+import re
 import shutil
 import subprocess
+import sys
 import tempfile
 import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+import changes  # noqa: E402
+
 STEP = "Check the patch, then apply it"
+FRAGMENT = "Fragment of changes/"
 
 
-def step_script():
-    """The `run: |` block of the step named STEP, as written in fixes.yml."""
+def step_script(step=STEP):
+    """The `run: |` block of the step named `step`, as written in fixes.yml."""
     lines = (ROOT / ".github" / "workflows" / "fixes.yml").read_text(encoding="utf-8").splitlines()
-    i = next(k for k, l in enumerate(lines) if l.strip().startswith("- name: " + STEP))
+    i = next(k for k, l in enumerate(lines) if l.strip().startswith("- name: " + step))
     j = next(k for k in range(i, len(lines)) if lines[k].strip() == "run: |")
     ind = len(lines[j + 1]) - len(lines[j + 1].lstrip())
     out = []
@@ -79,6 +86,22 @@ class PatchCheck(unittest.TestCase):
         self.assertNotEqual(code, 0, out)
         self.assertEqual(status, "", "the tree was changed before the patch was refused")
         self.assertIn("::error::", out)
+
+    def test_the_generated_files_are_left_to_version(self):
+        self.hostile(lambda r: (r / "README.md").write_text("# Awesome, rebuilt\n"))
+        self.hostile(lambda r: (r / "full-list.md").write_text("# List, rebuilt\n"))
+
+    def test_the_fragment_is_written_by_the_workflow_and_well_formed(self):
+        r = subprocess.run(["bash", "-c", step_script(FRAGMENT)], cwd=self.repo, capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        made = list((self.repo / "changes").iterdir())
+        self.assertEqual(len(made), 1)
+        self.assertRegex(made[0].name, r"^data-fixes-\d{4}-\d{2}-\d{2}-\d{4}\.md$")
+        self.assertEqual(changes.parse(made[0])[0], "none")
+        y = (ROOT / ".github" / "workflows" / "fixes.yml").read_text(encoding="utf-8")
+        block = y[y.index("- name: " + FRAGMENT):]
+        block = block[:re.search(r"\n      [-#]", block).start()]
+        self.assertNotRegex(block, r"secrets\.|GH_TOKEN|GITHUB_TOKEN|steps\.app|github\.token|\$FIXES|RUNNER_TEMP|fixes\.(patch|md)")  # nothing from the patch
 
     def test_a_link_is_refused(self):
         self.hostile(lambda r: os.symlink("../.github/fixes.yml", r / "data" / "evil.toml"))

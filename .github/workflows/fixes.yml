@@ -30,12 +30,12 @@ jobs:
           python-version: "3.15"
       - name: Find mechanical fixes (addresses moved for good, past event dates)
         run: python3 scripts/autofix.py --write > fixes.md
-      - name: Rebuild the generated files and check them
-        run: python3 scripts/build.py && python3 scripts/build.py --check
+      - name: Check the data (README.md and full-list.md are left to the Version workflow)
+        run: python3 scripts/build.py --check --pull-request
       - name: The fixes as a patch, for the job that opens the pull request
         id: diff
         run: |
-          git diff -- data README.md full-list.md > fixes.patch
+          git diff -- data > fixes.patch
           if [ -s fixes.patch ]; then echo "changed=true" >> "$GITHUB_OUTPUT"; else echo "Nothing to fix."; fi
       - if: steps.diff.outputs.changed == 'true'
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
@@ -63,15 +63,16 @@ jobs:
           path: ${{ runner.temp }}/fixes
       # The patch comes from the job "find", which reads third-party sites: it is checked here, before it is applied, by a script
       # written in this workflow (never one of the tree it changes), in a step that holds no token. Only plain edits of files
-      # already tracked as regular files: data/<name>.toml, README.md, full-list.md; no binary patch, no file created, deleted,
-      # renamed or linked, no change of mode, 1 MB at most. The body of the pull request shows the verified changes (git diff --stat).
+      # already tracked as regular files: data/<name>.toml (README.md and full-list.md are rebuilt by the Version workflow);
+      # no binary patch, no file created, deleted, renamed or linked, no change of mode, 1 MB at most. The body of the pull
+      # request shows the verified changes (git diff --stat).
       - name: Check the patch, then apply it (no token in this step)
         env:
           FIXES: ${{ runner.temp }}/fixes
         run: |
           set -euo pipefail
           p="$FIXES/fixes.patch"
-          allowed='^(data/[a-z0-9-]+\.toml|README\.md|full-list\.md)$'
+          allowed='^data/[a-z0-9-]+\.toml$'
           [ "$(wc -c < "$p")" -le 1000000 ] || { echo "::error::patch over 1 MB"; exit 1; }
           if grep -q '^GIT binary patch' "$p"; then echo "::error::binary patch"; exit 1; fi
           s=$(git apply --summary "$p")   # creation, deletion, rename, copy, change of mode (a link is one of them)
@@ -91,6 +92,13 @@ jobs:
             echo "Files changed, as verified in the workflow:"; echo; echo '```'; git diff --stat=120; echo '```'; echo
             cat "$FIXES/fixes.md"; } > "$RUNNER_TEMP/full.md"
           head -c 60000 "$RUNNER_TEMP/full.md" | iconv -f utf-8 -t utf-8 -c > "$RUNNER_TEMP/body.md"   # a pull request body: 65536 characters at most
+      # The fragment of changes/ is written here, with a fixed text, never taken from the patch: type none, the exception named
+      # in MAINTENANCE.md (section Versions); date and time make its name unique from one run to the next.
+      - name: Fragment of changes/ for the next version (no token in this step)
+        run: |
+          mkdir -p changes
+          printf 'type: none\n\n%s\n' "Data fixes: addresses moved for good and past event dates removed, as listed in the pull request Data fixes." \
+            > "changes/data-fixes-$(date -u +%Y-%m-%d-%H%M).md"
       # A pull request opened with the token of Actions waits for "Approve and run workflows" before its checks.
       # A GitHub App token (client ID in the variable DATA_FIXES_APP_ID, private key in the secret DATA_FIXES_APP_KEY)
       # or a personal token (secret DATA_FIXES_TOKEN) lets Check and Render start on their own.
@@ -111,7 +119,7 @@ jobs:
           [ "$OWN_TOKEN" = "true" ] || echo "::warning::No app or personal token: the checks of the pull request wait for Approve and run workflows"
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -q -B auto/data-fixes
-          git add data README.md full-list.md
+          git add data changes
           git commit -qm "Data fixes: addresses moved for good, past event dates"
           git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" auto/data-fixes
           n=$(gh pr list --head auto/data-fixes --state open --json number -q '.[0].number')
