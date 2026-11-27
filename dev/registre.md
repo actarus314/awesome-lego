@@ -28,6 +28,7 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 | vitesse | AL-58 | `site-src/app.js` | — | fait v4.5 : même demande #35 |
 | publication | AL-49, AL-51, AL-63 | `.github/workflows/`, `scripts/changes.py`, `renovate.json`, `CLAUDE.md` | — | fait 27/11 : `dev/lots/publication.md` ; demande #34 fusionnée par Romain à 03 h 42 (b4e0a0f, sans numéro : fragment `none`) ; variante sans écriture directe sur `main`, dépassée par publication-2 (AL-80 : depuis #57, l'application écrit sur `main`, exception du ruleset du 27/11) ; arrivé : `dev/contexte.md` ; AL-63 fait par #42 |
 | rangement | AL-69 | `contributing.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `renovate.json` | accord de Romain ; après publication | abandonné : décision de Romain le 27/11 à 01 h 18 (gain faible) ; cahier `dev/lots/rangement.md` gardé |
+| publication-2 | AL-80 | `.github/workflows/version.yml`, `pages.yml`, `preview.yml`, `release.yml`, `render.yml`, `fixes.yml`, `check.yml`, `scripts/changes.py`, `scripts/previews.py`, `scripts/build.py`, `MAINTENANCE.md`, `CLAUDE.md`, `contributing.md` | publication | reste : l'essai réel à la première fusion numérotée, puis la clôture ; fait le 27/11 : #57, #58, #59 (`dev/lots/publication-2.md`) |
 | acces-machines | AL-81 | `scripts/build.py`, `scripts/hygiene.py`, `site-src/index.html`, `site-src/about.html`, `site-src/footer.html`, `site-src/strings.json`, `site-src/style.css`, `tests/`, `MAINTENANCE.md` | — | en cours (27/11 23:33) : `dev/lots/acces-machines.md` |
 
 ## Gestes et décisions de Romain
