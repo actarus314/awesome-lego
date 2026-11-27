@@ -4,6 +4,13 @@ One short entry per version; the details are in its pull request and its commits
 
 # v4.x — The directory for builders of every age: children, their parents and teachers, as well as adults; an about page says how it is made and how to take part.
 
+## v4.9 — 2026-11-27
+Website: the about page says why 3001, the part number of the 2×4 brick of the 1958 patent, beside an isometric drawing of it. The footer shows the same brick, linked there, beside the Konami hint.
+
+Website: the page of an unknown address shows a tile wedged on edge between two rows of studs, a technique the builders call illegal, instead of the brick of the footer.
+
+Website: an address the site does not know now shows its own page, in English and French, with links back to the directory. A search that finds nothing shows a plate waiting for a missing brick and a button to suggest a resource.
+
 ## v4.8 — 2026-11-27
 The website moves to its own address, https://3001.club/: links, previews, feeds and search engine tags use it; the former address redirects there.
 
