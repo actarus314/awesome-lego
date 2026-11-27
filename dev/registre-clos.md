@@ -6,6 +6,7 @@ Lignes closes de `dev/registre.md`, la plus récente en tête ; un identifiant n
 
 | ID | P | Objet | Statut |
 |---|---|---|---|
+| AL-54 | P4 | Notes des versions GitHub v1.0 à v4.2 encore longues | fait 27/11 : demande #33 (Release remet les notes de chaque version à son entrée de `CHANGELOG.md` à chaque changement de celui-ci) fusionnée à 01 h 09 ; Release lancé à la main par Claude à 01 h 10 : 14 versions reprises (v4.0 : 7854 → 551 signes), plus aucun écart à 01 h 11 |
 | AL-70 | P3 | Règle Renovate qui retient le Python de `tidy.yml` sous 3.14 (pyoxipng 9.1.1 n'a de roue que pour Python 3.13, vérifié le 27/11 à 01 h 02) | fait 27/11 : accord de Romain à 01 h 03, demande #32 fusionnée à 01 h 07 (`renovate.json`, `MAINTENANCE.md`, section Tidy) |
 | AL-55 | P4 | Branche `v4.3` poussée par erreur le 26/11 | fait 27/11 : supprimée par Romain ; absente de la liste des branches du dépôt à 01 h 08 |
 | AL-34 | P3 | Application « Claude Design Import » installée sur le dépôt, usage inconnu | fait 27/11 : retirée par Romain (dit par Romain à 01 h 06, non revérifié : la session ne lit pas les installations) |
