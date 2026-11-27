@@ -4,6 +4,17 @@ One short entry per version; the details are in its pull request and its commits
 
 # v4.x — The directory for builders of every age: children, their parents and teachers, as well as adults; an about page says how it is made and how to take part.
 
+## v4.6 — 2026-11-27
+Licence: the code is now under the GNU AGPL 3.0, a free software licence, instead of PolyForm Noncommercial; texts and data stay under CC BY-NC-SA 4.0, so they still exclude commercial reuse.
+
+Automation: the scripts that read third-party pages, feeds and redirects are fuzzed every Thursday for 10 minutes (ClusterFuzzLite, fuzz/), and the five faults found by the first runs are fixed.
+
+Automation: a pull request says what it changes in `changes/<name>.md`, and the Version workflow writes the number, the CHANGELOG entry and the generated files after the merge. Render installs its kept fonts without apt-get update.
+
+Contributing: changes of code come with their tests, written down as a policy.
+
+Tests: a check of the fragments no longer depends on the version of the repository.
+
 ## v4.5 — 2026-11-27
 Website: on a slow phone the list shows sooner and the first touch of the search field no longer stalls the page, cards and search index being prepared while the browser is idle; events, clubs and courses say how often they recur; the chart of fan communities keeps its text size at 320 px. Also, without a number since v4.4: mechanical guards and the Tidy workflow (#31), a Renovate rule for the Python of Tidy (#32), release notes taken from this changelog (#33).
 
