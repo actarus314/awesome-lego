@@ -26,14 +26,15 @@ BUDGETS = ROOT / "tests" / "budgets.json"
 def tools(root=ROOT):
     """ruff and vulture on the Python code; their output names file and line. vulture reads the scripts from 60 %
     confidence (functions, classes, variables and attributes that nothing uses), tests/vulture-allow.py naming what the
-    standard library calls; scripts and tests together from 80 % (unused imports,
+    standard library calls; scripts, tests and the fuzz targets together from 80 % (unused imports,
     arguments and variables, unreachable code), since unittest finds its test classes and methods by name and a fake
     keeps the parameters of what it replaces."""
     out = []
     allow = [str(root / "tests" / "vulture-allow.py")] if (root / "tests" / "vulture-allow.py").exists() else []
-    for cmd in (["ruff", "check", "--select", "F,E9", "--output-format", "concise", "--quiet", "scripts", "tests"],
+    code = ["scripts", "tests", *(["fuzz"] if (root / "fuzz").is_dir() else [])]   # fuzz/: the fuzz targets, read as the tests
+    for cmd in (["ruff", "check", "--select", "F,E9", "--output-format", "concise", "--quiet", *code],
                 ["vulture", "scripts", *allow, "--min-confidence", "60"],
-                ["vulture", "scripts", "tests", "--exclude", "vulture-allow.py", "--min-confidence", "80"]):
+                ["vulture", *code, "--exclude", "vulture-allow.py", "--min-confidence", "80"]):
         try:
             r = subprocess.run(cmd, cwd=root, capture_output=True, text=True)
         except FileNotFoundError:

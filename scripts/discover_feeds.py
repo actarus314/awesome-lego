@@ -50,7 +50,10 @@ def find(r):
         if re.search(r'rel=["\']?alternate', tag, re.I) and re.search(r"application/(rss|atom)\+xml", tag, re.I):
             m = re.search(r'href=["\']([^"\']+)', tag, re.I)
             if m and "comment" not in m.group(1).lower():
-                cands.append(urllib.parse.urljoin(final, m.group(1)))
+                try:
+                    cands.append(urllib.parse.urljoin(final, m.group(1)))
+                except ValueError:   # an address urllib cannot read ("http://[x"): the page's error, not the search's
+                    pass
     cands += [urllib.parse.urljoin(final if final.endswith("/") else final + "/", c) for c in COMMON]
     for c in dict.fromkeys(cands):
         if belongs(r["url"], c) and valid(c):

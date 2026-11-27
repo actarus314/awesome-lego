@@ -3,13 +3,13 @@
 version = 1
 
 [[annotations]]
-path = ["data/**", "README.md", "full-list.md", "CHANGELOG.md", "contributing.md", "MAINTENANCE.md", "CLAUDE.md", "dev/*.md", "dev/lots/**", "SECURITY.md", "VERSION", "site-src/strings.json", "site-src/about.json", "media/**", ".github/ISSUE_TEMPLATE/**", ".github/PULL_REQUEST_TEMPLATE.md", ".github/CODEOWNERS"]
+path = ["data/**", "README.md", "full-list.md", "CHANGELOG.md", "changes/**", "contributing.md", "MAINTENANCE.md", "CLAUDE.md", "dev/*.md", "dev/lots/**", "SECURITY.md", "VERSION", "site-src/strings.json", "site-src/about.json", "media/**", ".github/ISSUE_TEMPLATE/**", ".github/PULL_REQUEST_TEMPLATE.md", ".github/CODEOWNERS"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 actarus314 and the contributors of Awesome LEGO"
 SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
 
 [[annotations]]
-path = ["scripts/**", "site-src/index.html", "site-src/app.js", "site-src/style.css", "site-src/vault.html", "site-src/about.html", "site-src/about.css", "site-src/header.html", "site-src/header.js", "site-src/footer.html", "tests/**", ".github/workflows/**", "package.json", "package-lock.json", "renovate.json", ".editorconfig", ".gitignore", "REUSE.toml", "passation.conf", "dev/outils/**"]
+path = ["scripts/**", "site-src/index.html", "site-src/app.js", "site-src/style.css", "site-src/vault.html", "site-src/about.html", "site-src/about.css", "site-src/header.html", "site-src/header.js", "site-src/footer.html", "tests/**", ".github/workflows/**", "package.json", "package-lock.json", "renovate.json", ".editorconfig", ".gitignore", "REUSE.toml", "passation.conf", "dev/outils/**", "fuzz/**", ".clusterfuzzlite/**"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 actarus314 and the contributors of Awesome LEGO"
 SPDX-License-Identifier = "PolyForm-Noncommercial-1.0.0"
