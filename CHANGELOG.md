@@ -4,6 +4,15 @@ One short entry per version; the details are in its pull request and its commits
 
 # v4.x — The directory for builders of every age: children, their parents and teachers, as well as adults; an about page says how it is made and how to take part.
 
+## v4.7 — 2026-11-27
+Website: the addresses of the views and filter removed in v3.0 (#findings, #out, #agenda, #near-me, crit=fr) no longer lead to their former place; such a link opens the directory.
+
+Data fixes: a redirect to an address without a host (found by the first run of Fuzzing) is left to a person.
+
+Renovate refreshes the npm lock file once a week; npm itself keeps the 3-day delay on every package of the new lock (`min-release-age` in `.npmrc`).
+
+Renovate no longer proposes raising the npm it uses for lock updates: it stays on the major version that Node gives the workflows.
+
 ## v4.6 — 2026-11-27
 Licence: the code is now under the GNU AGPL 3.0, a free software licence, instead of PolyForm Noncommercial; texts and data stay under CC BY-NC-SA 4.0, so they still exclude commercial reuse.
 
