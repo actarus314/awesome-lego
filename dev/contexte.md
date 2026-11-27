@@ -1,4 +1,4 @@
-# Awesome LEGO — contexte (révisé en place le 26/11/2026 à 23 h 30 ; v4.3 en ligne, notes dans `dev/` depuis la #29)
+# Awesome LEGO — contexte (révisé en place le 27/11/2026 à 6 h 05 ; v4.6 en ligne, notes dans `dev/` depuis la #29)
 
 *Maintainer's working notes, in French (state, decisions, pitfalls). The open items are in `dev/registre.md`.*
 
@@ -26,7 +26,8 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 - **Pertinence de la recherche** : score MiniSearch (BM25), champs nom ×4, marques ×3, catégorie ×3, groupe ×2, puis résumé, forces, faiblesses, pays, ville, taille ; préfixe et approximation (20 % de la longueur du mot) ; tous les mots exigés ; pays du visiteur ×1.15.
 - **Jeton Globalping** : posé par Romain le 26/11 ; essai à blanc de Links le 26/11 à 13 h 24 : 28 liens sur 29 relus, 9 cassés (AL-19).
 - **Onglet Sécurité** (lu le 26/11 dans le Chrome de Romain) : 3 alertes ouvertes, toutes de Scorecard (Maintained, Branch-Protection, CII-Best-Practices ; AL-53) ; zizmor 10 et 11 fermées comme corrigées ; Code-Review et Fuzzing écartées.
-- **Scorecard 6.8/10** au 25/11 ; ce qui manque est attendu pour un dépôt d'une personne.
+- **Scorecard 7.5/10** au 27/11 à 04 h 15 UTC (6.8 au 25/11) : Fuzzing 10 et CII-Best-Practices 5 depuis le fuzzing et le badge ; ce qui manque (Code-Review, Branch-Protection, Contributors, Maintained jusqu'aux 90 jours) est attendu pour un dépôt d'une personne. **REUSE** : dépôt inscrit sur api.reuse.software le 27/11 (courriel général de Romain, vérifié), badge en attente de la première analyse.
+- **Renovate** (#42, 27/11) : maintenance hebdomadaire de `package-lock.json` ; le délai de 3 jours est tenu par npm (`min-release-age=3` dans `.npmrc`, npm 11 à partir de 11.10 par `constraints`) ; un correctif de sécurité npm attend lui aussi 3 jours (procédure de contournement : `MAINTENANCE.md`, Renovate).
 - **Workflows** (655 passages lus par l'API le 26/11) : Render est seul sur le chemin critique d'une demande (passage médian ≈ 140 s depuis la #26, ≈ 190 s avant ; le job seul ≈ 126 s), puis CodeQL (≈ 50 s), Check (≈ 35 s) ; attente en file 3 à 4 s.
 - **Exécutions planifiées** (horaires : `MAINTENANCE.md`) : environ 10 h de retard, jamais sautées pour Pages, Links et Data fixes ; Data report, Workflow audit et Scorecard pas encore vus en planifié (AL-01). Revue mensuelle par Claude : tâche trig_01FfntrWbosebDjkMh4MhNAm, consigne identique à `dev/consigne-revue.md` (recopiée le 27/11 à 02 h 58 : fragment au lieu de `VERSION`) ; après la fusion d'une revue, la conversation suivante met ce document et le registre à jour.
 - **Branches** : `main`, `history` (une mesure par jour, à ne jamais supprimer : historique des tendances), `auto/tidy` dès le premier Tidy ; `v4.3` supprimée par Romain le 27/11.
@@ -45,6 +46,8 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 17 commits de reprise sur 9 demandes, 9 fusions en conflit, ≈ 12 % du temps d'exécution de Check, Render, Preview et CodeQL. Causes : demandes empilées puis fusion par squash de la base (5 des 9 conflits, dont les 2 seuls vrais conflits de code, tous dans la #25) ; `VERSION` et `CHANGELOG.md` dans chaque demande (un tiers des reprises, 3 renumérotations) ; `MAINTENANCE.md` touché par 25 des 107 commits des demandes (4 conflits) ; fichiers générés commités (`full-list.md`, images du README, verrou Python) ; branches longues en parallèle. La file de fusion de GitHub n'est pas offerte aux dépôts d'un compte personnel (documentation GitHub, « Managing a merge queue », lue par le sous-agent le 26/11). Remède en place : règles du `CLAUDE.md` ; remède structurel proposé : AL-49. La file de fusion n'aurait pas évité ces reprises (constat du 26/11, 23 h 10) : une demande en conflit n'y entre pas.
 
 ## Pièges
+- (27/11) Renovate lit `constraints` de `renovate.json` comme une dépendance et propose de la monter (#44, npm 12) : une règle `enabled: false` la tient (#46).
+- (27/11) Le site api.reuse.software inscrit un dépôt par un formulaire (nom, courriel) puis un lien de confirmation ; la première analyse se fait ensuite, en différé.
 - (27/11) Une action tierce nouvelle dans un workflow doit d'abord entrer dans la liste des actions autorisées (Settings › Actions › General : actions de GitHub, du propriétaire, et `lycheeverse/lychee-action`, `ossf/scorecard-action`, `peter-evans/create-issue-from-file`, `zizmorcore/zizmor-action`) : sinon le workflow tombe en « startup failure » sans journal (Fuzzing, #39) ; la session ne lit pas ce réglage (proxy) : le message d'erreur se lit sur la page du passage.
 - (27/11) Une modification de `renovate.json` qui retient une version a été refusée à la session sans accord explicite de Romain ; posée après son accord (#32, AL-70).
 - (26/11, 23 h 15) La fusion par squash ne garde que le titre de la demande : les blocs `Relecture:`, `Constats:`, `Registre:` et `Savoir:` de `passation` vont dans le corps de la demande, et `passation.conf` n'a pas de `LIVRABLES` (contrôle des commits étiquetés impossible).
@@ -58,7 +61,7 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 - Deux conversations peuvent pousser sur la même branche : lire le retour de `git push` ; un refus se reprend par `git rebase origin/<branche>` sur ses propres commits, jamais par une poussée forcée.
 
 ## Accès de la session (vérifiés du 24 au 26/11)
-- `gh api` en REST (GraphQL refusé) : demandes, commentaires, lancement de workflow (`workflow_dispatch`), relance (`rerun-failed-jobs`), journaux des jobs ; **suppression d'une branche distante refusée** (proxy, 26/11) ; fusion, poussée forcée, annulation d'un passage refusées.
+- `gh api` en REST (GraphQL refusé ; passer une demande en prête : `POST repos/…/pulls/<n>/ccr/ready_for_review`, vu le 27/11) : demandes, commentaires, lancement de workflow (`workflow_dispatch`), relance (`rerun-failed-jobs`), journaux des jobs ; **suppression d'une branche distante refusée** (proxy, 26/11) ; fusion, poussée forcée, annulation d'un passage refusées.
 - Ajout du dépôt en écriture refusé si Romain ne l'a pas demandé ; lecture du dépôt public sans ajout.
 - Onglet Sécurité lu dans le Chrome de Romain ; **écarter une alerte d'analyse de code refusé par le classement automatique** (26/11, alerte 12) ; réglages du dépôt lus et posés dans son Chrome avec son accord.
 - Tâches planifiées modifiables sur demande explicite qui nomme la consigne (« Mets la consigne à jour »).
@@ -67,6 +70,7 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 - Les sous-agents ont l'outil des documents du projet claude.ai (lecture et écriture vues le 26/11).
 
 ## Décisions de Romain (une ligne chacune ; le détail est dans les demandes et l'historique)
+- 27/11, 05 h 24 à 05 h 50 (passe du registre) : maintenance du verrou npm gardée par npm (AL-63, #42) ; badges Best Practices, Scorecard et REUSE sur le README (#43) ; adresses héritées d'avant la v3.0 retirées tout de suite, Render et index de recherche gardés (AL-74, #45) ; nom de domaine laissé à l'autre conversation (AL-68).
 - 26/11, 13 h 18 (demande de la conversation) : bandeau de marque déplié sauf sur mobile ; filtres gardés ouverts après réouverture et action, grand écran seulement ; pertinence et catégories combinées, « je te laisse juger » ; règles à généraliser ; audits automatisés « de sorte que je n'aie plus à y penser » ; passe d'optimisation ; conflits des demandes à expliquer ; workflows encore plus rapides sans perte de qualité ? ; CHANGELOG illisible ; jeton Globalping posé ; propositions de skills ; mise en conformité `passation`. Fait dans la #28 (v4.3) et dans le projet (registre, contexte réécrit, cartes de skills AL-52).
 - 26/11, 23 h 10 et 23 h 13 : notes du mainteneur dans `dev/` du dépôt public, **en français** (l'outil `passation.sh` lit ses colonnes et statuts en français ; exception à « tout le reste en anglais » limitée à `dev/`) ; audit : « je pensais à des gardes-fous et optimisateurs mécaniques » (skill `audit-depot` réécrite en ce sens, enregistrée par Romain) ; question sur la file de fusion (indisponible pour un compte personnel, vérifié dans la documentation de GitHub).
 - 26/11, 23 h 26 : #29 fusionnée (notes dans `dev/`).
