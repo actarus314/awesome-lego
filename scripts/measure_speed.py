@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """Speed of the built website (site/) on a slow phone: the time until the directory's list is displayed.
 
-A step that changes how the page is built is kept only if it lowers this time by 10 % at least on the slower of the
-two pages (decision of 24/11/2026, 10:40). Conditions: Chromium, processor slowed 4 times, slow 4G network (150 ms
+What it takes for a change to be kept: MAINTENANCE.md, "The website" (the rule of 10 %). Conditions: Chromium, processor slowed 4 times, slow 4G network (150 ms
 round trip, 1.6 Mbit/s down, 750 kbit/s up), files compressed with gzip as GitHub Pages sends them, empty cache, a 390 px wide phone; each page loaded 5 times, the median
 kept. Measured on every load:
 - list: from the start of the navigation to the first frame painted after the list holds its cards;
@@ -11,8 +10,10 @@ kept. Measured on every load:
   while the visitor reads: the rest of the list, details.json, the search index);
 - focus: the longest task in the 1.5 seconds after the search field takes the focus;
 - search: the longest task in the 1.5 seconds after a word is typed into it (the first results).
+A task is seen from 50 ms (the browser reports no shorter one): a longest task of 0, printed "under 50 ms", means that none reached 50 ms.
 
-Usage: python3 scripts/measure_speed.py [--site site] [--runs 5] [--json out.json] [--chrome /path/to/chrome]
+Usage: python3 scripts/measure_speed.py [--site site] [--runs 5] [--json out.json] [--chrome /path/to/chrome] [--hash '#entry=<id>']
+(--hash: the arrival by a link to the pages with this address, a shared link to one entry for instance)
 Needs `pip install playwright` and `playwright install chromium` (or --chrome). Prints one line per page.
 """
 import argparse
@@ -78,6 +79,7 @@ def main():
     ap.add_argument("--runs", type=int, default=5)
     ap.add_argument("--json", default="")
     ap.add_argument("--chrome", default="")
+    ap.add_argument("--hash", default="", help="address part added to both pages, e.g. #entry=<id>")
     a = ap.parse_args()
     from playwright.sync_api import sync_playwright
 
@@ -111,11 +113,12 @@ def main():
     with sync_playwright() as p:
         b = p.chromium.launch(**({"executable_path": a.chrome} if a.chrome else {}), args=["--no-sandbox"])
         for name, path in (("en", ""), ("fr", "fr/")):
-            runs = [measure(b, base + path) for _ in range(a.runs)]
+            runs = [measure(b, base + path + a.hash) for _ in range(a.runs)]
             med = {k: statistics.median(r[k] for r in runs) for k in runs[0]}
             out[name] = {"median": med, "runs": runs}
-            print(f"{name}: list {med['list']:.0f} ms, longest task {med['longest']:.0f} ms, blocking {med['blocking']:.0f} ms; then longest task: quiet {med['quiet']:.0f} ms, "
-                  f"focus {med['focus']:.0f} ms, search {med['search']:.0f} ms  (list of each run: {', '.join(str(r['list']) for r in runs)})")
+            ms = lambda v: f"{v:.0f} ms" if v else "under 50 ms"
+            print(f"{name}: list {med['list']:.0f} ms, longest task {ms(med['longest'])}, blocking {med['blocking']:.0f} ms; then longest task: quiet {ms(med['quiet'])}, "
+                  f"focus {ms(med['focus'])}, search {ms(med['search'])}  (list of each run: {', '.join(str(r['list']) for r in runs)})")
         b.close()
     srv.shutdown()
     worst = max(out[k]["median"]["list"] for k in out)

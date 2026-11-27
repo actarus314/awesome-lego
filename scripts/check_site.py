@@ -301,7 +301,7 @@ def main():
             record(lang, [("search", "#q", f"'{word}', only in the strengths or weaknesses of {rid}, does not find it")])
         c.close()
 
-    def parts(b, lang, root, last):
+    def parts(b, lang, root, last, mid):
         # the list is drawn in parts: the first cards at once, the others while the browser is idle (empty cards until then, data-ph);
         # what needs every card where it will be fills them all first. Checked in a browser that is never idle (requestIdleCallback
         # never calls back), so that only the cards near the screen and those filled on purpose are drawn; then in a normal one.
@@ -329,14 +329,22 @@ def main():
         load()
         if pg.evaluate("document.querySelectorAll('#list [data-ph]').length") == 0:
             out.append(("list in parts", "#list", "every card drawn at once: the checks below see nothing"))
+        if pg.evaluate("document.querySelectorAll('#list [data-ph]:not([aria-hidden=true])').length"):
+            out.append(("list in parts", "#list", "an empty card is not hidden from screen readers (aria-hidden)"))
         if pg.evaluate("dispatchEvent(new Event('beforeprint')),document.querySelectorAll('#list [data-ph]').length"):
             out.append(("list in parts", "#list", "printing leaves empty cards"))
-        load(f"#entry={last}")  # the last entry of the data: its card is among the empty ones at first
-        pg.wait_for_timeout(1500)
-        got = pg.evaluate(f"(()=>{{const e=document.getElementById('r-{last}');if(!e)return 'no card';if(!e.querySelector('.h'))return 'empty card';if(!e.classList.contains('focus'))return 'card not marked';"
-                          f"const r=e.getBoundingClientRect();return r.top>=0&&r.top<innerHeight?'':'card out of view at '+Math.round(r.top)}})()")
-        if got:
-            out.append(("list in parts", f"#entry={last}", got))
+        load()
+        pg.keyboard.press("Control+f")  # the search of the browser finds only what is drawn
+        if pg.evaluate("document.querySelectorAll('#list [data-ph]').length"):
+            out.append(("list in parts", "#list", "Ctrl+F leaves empty cards"))
+        for rid in (last, mid):  # the last entry of the data, the first of a middle category: their cards are among the empty ones at first
+            load(f"#entry={rid}")
+            pg.wait_for_timeout(1500)
+            got = pg.evaluate(f"(()=>{{const e=document.getElementById('r-{rid}');if(!e)return 'no card';if(!e.querySelector('.h'))return 'empty card';if(!e.classList.contains('focus'))return 'card not marked';"
+                              "if([...document.querySelectorAll('#list [data-ph]')].some(p=>p.compareDocumentPosition(e)&Node.DOCUMENT_POSITION_FOLLOWING))return 'an empty card above it';"
+                              f"const r=e.getBoundingClientRect();return r.top>=0&&r.top<innerHeight?'':'card out of view at '+Math.round(r.top)}})()")
+            if got:
+                out.append(("list in parts", f"#entry={rid}", got))
         load()
         pg.fill("#q", re.sub(r"[^\w ]+", " ", lastname).strip())  # the search typed at once: the index is not built yet
         try:
@@ -398,9 +406,11 @@ def main():
     jobs += [(layout, lang, root, w, theme) for lang, root in langs for w in widths for theme in ("light", "dark")
              if not (theme == "dark" and (a.data_only or w not in (1440, 390)))]  # colours do not depend on the width; layout is checked in light
     jobs += [(search, lang, root, *details_word(Path(a.site), lang)) for lang, root in langs]  # in the main thread: its SystemExit must stop the run
-    rows = json.loads((Path(a.site) / "data.json").read_text(encoding="utf-8"))["resources"]
+    site_data = json.loads((Path(a.site) / "data.json").read_text(encoding="utf-8"))
+    rows, cats = site_data["resources"], [c["id"] for c in site_data["categories"]]
     total, lastname = len(rows), rows[-1]["name"]
-    jobs += [(parts, lang, root, rows[-1]["id"]) for lang, root in langs]
+    mid = next(r["id"] for r in rows if r["cat"] == cats[len(cats) // 2])  # beyond the first cards, with categories below it
+    jobs += [(parts, lang, root, rows[-1]["id"], mid) for lang, root in langs]
     todo = queue.Queue()
     for j in jobs:
         todo.put(j)

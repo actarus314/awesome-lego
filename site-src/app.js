@@ -135,13 +135,15 @@ const missLine=n=>`<p class="missl"><a class="miss" href="${esc(missUrl(n))}">${
 let BNOPEN=null;  // a brand's strengths and weaknesses: open on a wide screen, folded on a phone, until the visitor opens or folds them
 function drawList(){if(IO)IO.disconnect();drawList0();fillD(LIST.querySelector('.banner details'));LIST.querySelectorAll('section.cat').forEach(s=>{if(IO&&s.querySelector('[data-ph]'))IO.observe(s)});if(LIST.querySelector('[data-ph]'))idle(fillIdle)}
 // the directory drawn in parts: the first cards at once, the others as empty cards of the same estimated height (style.css, .card), filled while the browser is idle
-// or as their category nears the screen; openEntry, Back, the change of language and printing first fill them all (they need every card where it will be)
-const FIRST=24,ph=r=>`<article class="card" id="r-${r.id}" data-ph="${r.id}"></article>`;
+// or as their category nears the screen; Back, the change of language, printing and the search of the browser (Ctrl or Cmd+F) first fill them all, a link to one entry
+// (openEntry) its category and those above it (every card above in place); an empty card is hidden from screen readers
+const FIRST=24,ph=r=>`<article class="card" id="r-${r.id}" data-ph="${r.id}" aria-hidden="true"></article>`;
 function fillRun(ps){if(!ps.length)return;ps[0].insertAdjacentHTML('beforebegin',ps.map(p=>card(byId(p.dataset.ph),false)).join(''));ps.forEach(p=>p.remove())}
 const fillIdle=dl=>{do{const p=LIST.querySelector('[data-ph]');if(!p)return;const ps=[p];while(ps.length<8&&ps[ps.length-1].nextElementSibling&&ps[ps.length-1].nextElementSibling.dataset.ph)ps.push(ps[ps.length-1].nextElementSibling);fillRun(ps)}while(dl.timeRemaining()>25);idle(fillIdle)};
 const IO=window.IntersectionObserver?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){IO.unobserve(e.target);fillRun([...e.target.querySelectorAll('[data-ph]')])}}),{rootMargin:'100% 0px'}):null;
 function fillAll(){if(IO)IO.disconnect();LIST.querySelectorAll('section.cat').forEach(s=>fillRun([...s.querySelectorAll('[data-ph]')]))}
-addEventListener('beforeprint',fillAll);
+function fillTo(id){const el=document.getElementById('r-'+id),last=el&&el.closest('section.cat');if(!last){fillAll();return}for(const s of LIST.querySelectorAll('section.cat')){if(IO)IO.unobserve(s);fillRun([...s.querySelectorAll('[data-ph]')]);if(s===last)break}}  // the rest stays to the idle time
+addEventListener('beforeprint',fillAll);addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&!e.altKey&&e.key.toLowerCase()==='f')fillAll()});  // before the browser opens its search bar
 function drawList0(){const rs=R.filter(r=>match(r)),n=rs.length;
  lead();
  document.getElementById('count').innerHTML=rs.length+'<span class="ctot"> / '+R.length+'</span><span class="cw"> '+t('shown')+'</span>';const list=document.getElementById('list');
@@ -158,7 +160,7 @@ function byCat(rs,first,order){let k=0;return (order?[...C].sort((a,b)=>order(a.
   cr.sort((a,b)=>(first?first(a)-first(b):0)||((a.next?0:1)-(b.next?0:1))||(a.next&&b.next?a.next.localeCompare(b.next):0)||(c.groups.findIndex(g=>g.id===a.group)-c.groups.findIndex(g=>g.id===b.group))||(lrank(a)-lrank(b))||a.name.localeCompare(b.name));
   return `<section class="cat"><h3>${ci(c.id)}${esc(c[L])} <span class="count">${cr.length}</span></h3><div class="grid">${cr.map(r=>k++<FIRST?card(r,false):ph(r)).join('')}</div></section>`}).join('')}
 function toDir(){if(cur!=='dir'){history.pushState(null,'',location.pathname+location.search);if(GO)PUSHED=true}show('dir')}
-function openEntry(id,quiet,keep){if(!quiet&&!GO){go(()=>openEntry(id));return}toDir();resetAll();st.view='cards';NOURL=true;try{update()}finally{NOURL=false}fillAll();const el=document.getElementById('r-'+id);if(!el)return;const d=el.querySelector('details');if(d)d.open=true;document.querySelectorAll('.card.focus').forEach(c=>c.classList.remove('focus'));el.classList.add('focus');root.style.setProperty('--bar-h',barOver(el)+hdr()+'px');setURL('#entry='+id);document.title=byId(id).name+' · '+TITLE0;if(!keep)settle(el)}  // the address names the entry until the next search or filter
+function openEntry(id,quiet,keep){if(!quiet&&!GO){go(()=>openEntry(id));return}toDir();resetAll();st.view='cards';NOURL=true;try{update()}finally{NOURL=false}fillTo(id);const el=document.getElementById('r-'+id);if(!el)return;const d=el.querySelector('details');if(d)d.open=true;document.querySelectorAll('.card.focus').forEach(c=>c.classList.remove('focus'));el.classList.add('focus');root.style.setProperty('--bar-h',barOver(el)+hdr()+'px');setURL('#entry='+id);document.title=byId(id).name+' · '+TITLE0;if(!keep)settle(el)}  // the address names the entry until the next search or filter
 function settle(el,n=0){el.scrollIntoView({block:'start'});if(n<10)requestAnimationFrame(()=>settle(el,n+1));else setTimeout(()=>el.scrollIntoView({block:'start'}),250)}  // the cards above get their real height as they near the screen
 const mg=document.getElementById('mapgrid');
 const spans=(()=>{const n=C.map(c=>R.filter(r=>r.cat===c.id).length),tot=n.reduce((a,b)=>a+b,0),raw=n.map(v=>Math.max(2,Math.round(24*v/tot)));const rows=[];let acc=[];for(const s of raw){if(acc.reduce((a,b)=>a+b,0)+s>12&&acc.length){rows.push(acc);acc=[]}acc.push(s)}if(acc.length)rows.push(acc);
@@ -244,7 +246,7 @@ function vPassion(){const el=document.getElementById('v-passion'),P=D.passion;if
  const list=a=>a.map(r=>`${cname(r.c)} (×${f(r.k)})`).join(', ');
  const take=L==='fr'?`Rapportés à leur population, ${list(top)} comptent le plus de communautés de fans reconnues. ${low.length} grands pays restent sous la moyenne : ${low.map(r=>cname(r.c)).join(', ')}.`
   :`Relative to population, ${list(top)} have the most recognised fan communities. ${low.length} large countries stay below the average: ${low.map(r=>cname(r.c)).join(', ')}.`;
- const W=Math.max(256,el.clientWidth-40),H=Math.min(420,Math.max(280,W*.42)),ml=44,mr=16,mt=10,mb=40;  // the width of the panel down to 320 px screens, like the pulse chart: never drawn wider, then shrunk
+ const W=Math.max(240,el.clientWidth-40),H=Math.min(420,Math.max(280,W*.42)),ml=44,mr=16,mt=10,mb=40;  // the width of its panel (254 px on a 320 px screen), 240 px at least: drawn at its size, not drawn wider and shrunk
  const X=v=>ml+(W-ml-mr)*(lg(v)-lg(3e5))/(lg(5e8)-lg(3e5)),Y=v=>mt+(H-mt-mb)*(1-(Math.log2(v)-Math.log2(.8))/(Math.log2(80)-Math.log2(.8)));
  let s=`<svg class="passion" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t('pa_title'))}"><defs><clipPath id="pc"><rect x="${ml}" y="${mt}" width="${W-ml-mr}" height="${H-mt-mb}"/></clipPath></defs>`;
  for(const v of [1e6,1e7,1e8])s+=`<line x1="${X(v)}" x2="${X(v)}" y1="${mt}" y2="${H-mb}" stroke="var(--line)"/><text class="ax" x="${X(v)}" y="${H-mb+16}" text-anchor="middle">${v/1e6} M</text>`;
