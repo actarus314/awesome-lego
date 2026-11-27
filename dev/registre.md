@@ -22,11 +22,11 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 
 | Lot | Items | Fichiers | Prérequis | Statut |
 |---|---|---|---|---|
-| notes-dev | AL-48, AL-67 | `dev/`, `passation.conf`, `CLAUDE.md`, `REUSE.toml` | — | fait 26/11 : demande #29 fusionnée par Romain à 23 h 26 ; arrivé : `dev/contexte.md`, `passation.conf` |
-| gardes-fous | AL-50 | `scripts/hygiene.py`, `scripts/check_site.py`, `scripts/tidy.py`, `tests/`, `.github/workflows/check.yml`, `.github/workflows/render.yml`, `.github/workflows/tidy.yml`, `MAINTENANCE.md` | — | fait 27/11 : `dev/lots/gardes-fous.md` ; demande #31 fusionnée par Romain à 01 h 03 (d63bc99, sans numéro de version) ; arrivé : `dev/contexte.md` |
+| notes-dev | AL-48, AL-67 | `dev/`, `passation.conf`, `CLAUDE.md`, `REUSE.toml` | — | en cours : réouvert le 27/11 pour écrire ses verdicts (était : fait 26/11 : demande #29 fusionnée par Romain à 23 h 26 ; arrivé : `dev/contexte.md`, `passation.conf`) |
+| gardes-fous | AL-50 | `scripts/hygiene.py`, `scripts/check_site.py`, `scripts/tidy.py`, `tests/`, `.github/workflows/check.yml`, `.github/workflows/render.yml`, `.github/workflows/tidy.yml`, `MAINTENANCE.md` | — | en cours : réouvert le 27/11 pour écrire ses verdicts (était : fait 27/11 : `dev/lots/gardes-fous.md` ; demande #31 fusionnée par Romain à 01 h 03 (d63bc99, sans numéro de version) ; arrivé : `dev/contexte.md`) |
 | entretien | AL-22, AL-46, AL-57, AL-59, AL-60, AL-61, AL-62, AL-64 | `scripts/`, `site-src/`, `data/SCHEMA.md`, `.github/workflows/fixes.yml` | — | fait v4.5 : demande #35 fusionnée par Romain le 27/11 à 03 h 25 (47ddb7b) ; AL-59 abandonné, AL-46 laissé en veille |
 | vitesse | AL-58 | `site-src/app.js` | — | fait v4.5 : même demande #35 |
-| publication | AL-49, AL-51, AL-63 | `.github/workflows/`, `scripts/changes.py`, `renovate.json`, `CLAUDE.md` | — | fait 27/11 : `dev/lots/publication.md` ; demande #34 fusionnée par Romain à 03 h 42 (b4e0a0f, sans numéro : fragment `none`) ; variante sans écriture directe sur `main` (l'application n'est pas dans les exceptions du ruleset) ; arrivé : `dev/contexte.md` |
+| publication | AL-49, AL-51, AL-63 | `.github/workflows/`, `scripts/changes.py`, `renovate.json`, `CLAUDE.md` | — | en cours : réouvert le 27/11 pour écrire ses verdicts (était : fait 27/11 : `dev/lots/publication.md` ; demande #34 fusionnée par Romain à 03 h 42 (b4e0a0f, sans numéro : fragment `none`) ; variante sans écriture directe sur `main` (l'application n'est pas dans les exceptions du ruleset) ; arrivé : `dev/contexte.md`) |
 | rangement | AL-69 | `contributing.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `renovate.json` | accord de Romain ; après publication | abandonné : décision de Romain le 27/11 à 01 h 18 (gain faible) ; cahier `dev/lots/rangement.md` gardé |
 
 ## Gestes et décisions de Romain
