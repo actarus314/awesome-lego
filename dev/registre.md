@@ -21,7 +21,7 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 | Lot | Items | Fichiers | Prérequis | Statut |
 |---|---|---|---|---|
 | notes-dev | AL-48, AL-67 | `dev/`, `passation.conf`, `CLAUDE.md`, `REUSE.toml` | — | fait 26/11 : demande #29 fusionnée par Romain à 23 h 26 ; arrivé : `dev/contexte.md`, `passation.conf` |
-| gardes-fous | AL-50 | `scripts/hygiene.py`, `scripts/check_site.py`, `tests/test_hygiene.py`, `.github/workflows/check.yml`, `.github/workflows/tidy.yml`, `tests/requirements-check.in`, `tests/requirements-check.txt` | — | en cours (26/11 23:58) : `dev/lots/gardes-fous.md` ; demande #31 (brouillon), à fusionner après #30 |
+| gardes-fous | AL-50 | `scripts/hygiene.py`, `scripts/check_site.py`, `scripts/tidy.py`, `tests/`, `.github/workflows/check.yml`, `.github/workflows/render.yml`, `.github/workflows/tidy.yml`, `MAINTENANCE.md` | — | fait 27/11 : `dev/lots/gardes-fous.md` ; demande #31 fusionnée par Romain à 01 h 03 (d63bc99, sans numéro de version) ; arrivé : `dev/contexte.md` |
 | entretien | AL-22, AL-46, AL-57, AL-59, AL-60, AL-61, AL-62, AL-64 | `scripts/`, `site-src/`, `data/SCHEMA.md`, `.github/workflows/fixes.yml` | gardes-fous (mêmes fichiers ; ses contrôles trouveront une partie du travail) | proposé : `dev/lots/entretien.md` |
 | vitesse | AL-58 | `site-src/app.js` | entretien | proposé : `dev/lots/vitesse.md` |
 | publication | AL-49, AL-51, AL-63 | `.github/workflows/`, `scripts/changelog.py`, `renovate.json`, `CLAUDE.md` | accord de Romain et application de Data fixes ajoutée aux exceptions du ruleset (AL-49) | proposé : `dev/lots/publication.md` |
@@ -31,7 +31,7 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 
 | ID | P | Objet | Exécutant | Lot | Statut |
 |---|---|---|---|---|---|
-| AL-52 | P3 | Cartes de skills proposées le 26/11 (document-versionne : éviter les reprises, CHANGELOG contrôlé ; interface-outil : quatre pistes et règles techniques ; audit-depot) | R | — | ouverte : `audit-depot` enregistrée ; `document-versionne` et `interface-outil` à enregistrer (feu vert donné le 26/11 à 23 h 50) ; carte `passation` proposée le 26/11 à 23 h 50 (à enregistrer) |
+| AL-70 | P3 | Règle Renovate qui retient le Python de `tidy.yml` sous 3.14 : pyoxipng 9.1.1, sa dernière version, n'a de roue que pour Python 3.13 (vérifié le 27/11 à 01 h 02) ; sans elle, une demande de Renovate qui monte ce Python casse le Tidy du lundi suivant | C, sur l'accord de Romain du 27/11 à 01 h 03 | — | ouverte : règle dans la demande #32, à fusionner par Romain |
 | AL-34 | P3 | Application « Claude Design Import » installée sur le dépôt, usage inconnu : garder ou retirer | R | — | ouverte |
 | AL-53 | P3 | Alertes Scorecard ouvertes : Branch-Protection (#12) à écarter « won't fix » (geste refusé à Claude par le classement automatique le 26/11) ; Maintained (#17) se ferme seule quand le dépôt a 90 jours (vers le 21/02/2027) ; CII-Best-Practices (#19) : badge OpenSSF à demander par Romain, facultatif | R | — | ouverte |
 | AL-55 | P4 | Branche `v4.3` poussée par erreur le 26/11 (e4a5df2, en retard sur `search-by-category`) : à supprimer, la session ne peut pas (proxy) | R | — | ouverte |
@@ -41,12 +41,6 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 | AL-15 | P4 | Coffre : glissés tactiles et son non vérifiés sur un vrai téléphone | R | — | ouverte : à essayer par Romain sur son téléphone |
 | AL-08 | P4 | Idées gardées : distinguer par la forme ce que la couleur seule distingue ; langues d'interface allemande et italienne | R | — | ouverte : en attente d'une demande de Romain |
 | AL-09 | P4 | Archivage des sources (copie datée de chaque page citée) : non mis en place | R | — | ouverte : en attente d'une demande de Romain |
-
-## Lot gardes-fous
-
-| ID | P | Objet | Exécutant | Lot | Statut |
-|---|---|---|---|---|---|
-| AL-50 | P3 | **Gardes-fous mécaniques** (skill `audit-depot`, réécrite le 26/11 sur la demande de Romain : « je pensais à des gardes-fous et optimisateurs mécaniques ») : code mort (`vulture`, `ruff`, couverture CSS, chaînes et champs jamais lus), budgets de poids et de recalcul, barre sur 2 lignes à 320 px, champs à 16 px, `timeout-minutes` et `concurrency`, codes pays et langue ; correcteurs hebdomadaires ; audit Opus trimestriel ; la consigne de la tâche mensuelle du 26/11 (projet claude.ai, claude/awesome-lego-consigne-audit.md) est remplacée | R | gardes-fous | ouverte : demande #31 (contrôles dans Check et Render, workflow Tidy), relecture en cours ; après fusion de #30 puis #31 : surveiller le premier Tidy (lundi 30/11) et les faux positifs |
 
 ## Lot entretien
 
@@ -98,6 +92,7 @@ Lignes que la revue du 5 lit et traite (consigne : `dev/consigne-revue.md`) ; la
 
 | ID | P | Objet | Signal pour agir | Qui regarde | Statut |
 |---|---|---|---|---|---|
+| AL-71 | V | Gardes-fous mécaniques (#31) : décidés par Claude le 26/11 sur la demande de Romain ; risques : un faux positif qui bloque Check sur une demande saine, un Tidy qui ouvre une demande chaque semaine ; porteurs : `scripts/hygiene.py`, `scripts/check_site.py`, `.github/workflows/tidy.yml`, `tests/css-states.txt`, `tests/vulture-allow.py`, `tests/budgets.json` | un constat d'un garde-fou que la correction ne justifie pas (le nommer dans la liste blanche du contrôle), ou un Tidy les lundis 30/11 et 07/12 qui ne se vide pas après fusion ; retour : annuler d63bc99, ou retirer l'étape « Mechanical guards » de `check.yml` | C à chaque demande, R pour Tidy | ouverte : premier Tidy le 30/11 |
 | AL-03 | V | Tendances dans l'Observatoire ; changements de statut dans le flux | deux fenêtres de 90 jours dans `history` | C, à la conversation qui suit le 23/05/2027 | ouverte : échéance 23/05/2027 |
 | AL-14 | V | Lecture d'activité en parallèle | un rapport mensuel qui diverge | C, à la lecture du rapport du 4 | ouverte |
 | AL-35 | V | Renovate et les verrous Python (`pip-compile`) | première demande de Renovate sur un outil Python : verrou recompilé avec empreintes, sinon recompilation par une session | R (la demande arrive chez lui), puis C | ouverte |
