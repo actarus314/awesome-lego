@@ -2,9 +2,13 @@ name: Release
 on:
   push:
     branches: [main]
-    paths: [VERSION]
+    paths: [VERSION, CHANGELOG.md]
+  workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: release
+  cancel-in-progress: false
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -22,6 +26,16 @@ jobs:
         run: |
           v="v$(tr -d '[:space:]' < VERSION)"
           if gh release view "$v" >/dev/null 2>&1; then echo "$v already released"; exit 0; fi
-          awk -v h="## $v " 'index($0,h)==1{f=1;next} /^## v/{f=0} /^# /{f=0} f' CHANGELOG.md > notes.md
-          [ -s notes.md ] || { echo "No CHANGELOG section for $v"; exit 1; }
+          python3 scripts/release_notes.py section "$v" > notes.md
           gh release create "$v" --target "$GITHUB_SHA" --title "$v" --notes-file notes.md
+      # Releases are immutable, their notes are not: each one follows its CHANGELOG.md section when that section is rewritten.
+      - name: Notes of earlier releases follow CHANGELOG.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh api "repos/$GH_REPO/releases?per_page=100" --paginate --slurp > releases.json
+          for tag in $(python3 scripts/release_notes.py stale releases.json notes); do
+            gh release edit "$tag" --notes-file "notes/$tag.md"
+            echo "notes of $tag: from CHANGELOG.md"
+          done
