@@ -22,16 +22,16 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 |---|---|---|---|---|
 | notes-dev | AL-48, AL-67 | `dev/`, `passation.conf`, `CLAUDE.md`, `REUSE.toml` | — | fait 26/11 : demande #29 fusionnée par Romain à 23 h 26 ; arrivé : `dev/contexte.md`, `passation.conf` |
 | gardes-fous | AL-50 | `scripts/hygiene.py`, `scripts/check_site.py`, `scripts/tidy.py`, `tests/`, `.github/workflows/check.yml`, `.github/workflows/render.yml`, `.github/workflows/tidy.yml`, `MAINTENANCE.md` | — | fait 27/11 : `dev/lots/gardes-fous.md` ; demande #31 fusionnée par Romain à 01 h 03 (d63bc99, sans numéro de version) ; arrivé : `dev/contexte.md` |
-| entretien | AL-22, AL-46, AL-57, AL-59, AL-60, AL-61, AL-62, AL-64 | `scripts/`, `site-src/`, `data/SCHEMA.md`, `.github/workflows/fixes.yml` | gardes-fous (mêmes fichiers ; ses contrôles trouveront une partie du travail) | proposé : `dev/lots/entretien.md` |
-| vitesse | AL-58 | `site-src/app.js` | entretien | proposé : `dev/lots/vitesse.md` |
-| publication | AL-49, AL-51, AL-63 | `.github/workflows/`, `scripts/changelog.py`, `renovate.json`, `CLAUDE.md` | accord de Romain et application de Data fixes ajoutée aux exceptions du ruleset (AL-49) | proposé : `dev/lots/publication.md` |
-| rangement | AL-69 | `contributing.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `renovate.json` | accord de Romain ; après publication | proposé : `dev/lots/rangement.md` |
+| entretien | AL-22, AL-46, AL-57, AL-59, AL-60, AL-61, AL-62, AL-64 | `scripts/`, `site-src/`, `data/SCHEMA.md`, `.github/workflows/fixes.yml` | gardes-fous (mêmes fichiers ; ses contrôles trouveront une partie du travail) | en cours (27/11 01:22) : `dev/lots/entretien.md` ; accord de Romain le 27/11 à 01 h 18 ; avec le lot vitesse dans une seule demande de version (v4.5) |
+| vitesse | AL-58 | `site-src/app.js` | entretien | en cours (27/11 01:22) : `dev/lots/vitesse.md` ; accord de Romain le 27/11 à 01 h 18 ; même demande que le lot entretien |
+| publication | AL-49, AL-51, AL-63 | `.github/workflows/`, `scripts/changelog.py`, `renovate.json`, `CLAUDE.md` | accord de Romain et application de Data fixes ajoutée aux exceptions du ruleset (AL-49) | en cours (27/11 01:22) : `dev/lots/publication.md` ; accord de Romain le 27/11 à 01 h 18 ; l'application n'est pas dans les exceptions du ruleset (lu le 27/11 à 01 h 21) : variante sans écriture directe sur `main` |
+| rangement | AL-69 | `contributing.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `renovate.json` | accord de Romain ; après publication | abandonné : décision de Romain le 27/11 à 01 h 18 (gain faible) ; cahier `dev/lots/rangement.md` gardé |
 
 ## Gestes et décisions de Romain
 
 | ID | P | Objet | Exécutant | Lot | Statut |
 |---|---|---|---|---|---|
-| AL-53 | P3 | Alertes Scorecard ouvertes : Branch-Protection (#12) à écarter « won't fix » (geste refusé à Claude par le classement automatique le 26/11) ; Maintained (#17) se ferme seule quand le dépôt a 90 jours (vers le 21/02/2027) ; CII-Best-Practices (#19) : badge OpenSSF à demander par Romain, facultatif | R | — | ouverte |
+| AL-53 | P3 | Alertes Scorecard : Branch-Protection (#12) écartée par Romain (vue « Dismissed » le 27/11 à 01 h 20) ; Maintained (#17) se ferme seule quand le dépôt a 90 jours (vers le 21/02/2027) ; CII-Best-Practices (#19) : badge OpenSSF rempli par Claude dans le Chrome de Romain le 27/11 (projet 17176, 97 %), mais le niveau « passing » est hors d'atteinte : il exige une licence libre, et PolyForm Noncommercial et CC BY-NC-SA ne le sont pas ; Scorecard donne 2/10 à un badge en cours, 5 au niveau passing : l'alerte #19 reste ouverte tant que le score est sous 10 | R | — | ouverte : écarter #19 « won't fix » (geste de Romain), ou la laisser ouverte |
 | AL-19 | P2 | Ticket « Broken links » #10 : essai à blanc du 26/11 (jeton Globalping actif, 28 liens sur 29 relus) : 9 cassés de partout, dont la page Lidl de Playtive Clippys ajoutée en v4.0 (404), l'article du Manila Times (source de Brickseum, v3.2), le flux de nifeliz, un PDF du Bundesgerichtshof, toy-links.com/mouldking, mocbrickland.com, bricksinbits.com | R | — | ouverte : lire le ticket après Links du mercredi 02/12/2026 |
 | AL-68 | P3 | Nom de domaine grand public pour le site (dépôt gardé en « awesome-lego ») : recherche ouverte par Romain le 26/11 à 13 h 40 dans une autre conversation ; détail : projet claude.ai, claude/awesome-lego-nom-de-domaine.md | R, avec C | — | ouverte : pistes à juger par Romain |
 | AL-15 | P4 | Coffre : glissés tactiles et son non vérifiés sur un vrai téléphone | R | — | ouverte : à essayer par Romain sur son téléphone |
@@ -64,12 +64,6 @@ Priorités : P0 sécurité ou perte, P1 fausse une décision, P2 fiabilité, P3 
 | AL-49 | P2 | **Numéro de version et CHANGELOG écrits à la fusion** (un fragment par demande, assemblé après la fusion) pour supprimer les reprises de `VERSION`, `CHANGELOG.md` et des fichiers générés ; exige qu'un workflow écrive sur `main` : l'application de Data fixes ajoutée aux acteurs de contournement du ruleset (réglage de Romain), ou un numéro tiré de l'étiquette sans commit | R | publication | ouverte : à proposer en détail ; en attendant, règle « une demande à la fois » du `CLAUDE.md` du dépôt |
 | AL-51 | P3 | Render encore plus court (passage médian ≈ 140 s) : paquets de polices gardés installés directement, sans la résolution de `--with-deps` (10 à 14 s mesurés sur un journal ; polices inchangées, à essayer), contrôles en deux jobs parallèles (25 à 35 s estimés, non essayés) ; aucun contrôle retiré | R | publication | ouverte : proposée le 26/11 |
 | AL-63 | P4 | Renovate sans `lockFileMaintenance` : dépendances npm indirectes figées entre deux mises à jour directes ; l'activer ajoute une demande par semaine à fusionner | R | publication | ouverte : à proposer avec AL-49 (même sujet : demandes à fusionner) |
-
-## Lot rangement
-
-| ID | P | Objet | Exécutant | Lot | Statut |
-|---|---|---|---|---|---|
-| AL-69 | P4 | Rangement de la racine : `contributing.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md` et `renovate.json` peuvent aller dans `.github/` (GitHub et Renovate les y trouvent) ; contrepartie : liens extérieurs vers `contributing.md` cassés, liens du site, des formulaires et de la page À propos à reprendre ; le reste de la racine y est requis (licence, README, npm, `full-list.md`, `passation.conf`) | R | rangement | proposé le 26/11 à 23 h 50 ; gain faible |
 
 ## Revue mensuelle
 
