@@ -18,6 +18,8 @@ This list aims to be accurate and current, and complete where no reference exist
    The version number and the CHANGELOG entry are written from it after the merge. `python3 scripts/changes.py check` reads it.
 4. Open a pull request. Checks validate the data, the fragment and the site; links are tested every week by a separate job.
 
+**Code:** a change of the scripts, the workflows or the website comes with its tests in [`tests/`](tests/): a new function or check gets a test that fails without it (a check is tried on a defect planted on purpose), and a fixed bug gets a test that reproduces it. `python3 -m unittest discover -s tests` runs them; the Check workflow runs them on every pull request, and Render checks the website in a browser.
+
 **Selection:** each entry may carry ranks 1 to 5 within its group, worldwide and per country or language (`rank`, with its reasons; see [`data/SCHEMA.md`](data/SCHEMA.md)); the README lists the rank 1 worldwide of each group, and "Where to start" on the website shows the entries ranked for the visitor's country or language. The [full list](full-list.md) keeps every entry, inactive and dead ones included. See [MAINTENANCE.md](MAINTENANCE.md).
 
 **What is listed:** where a reference directory kept up to date already lists every resource of a kind (clubs of a country, channels of a language), the directory points to it and keeps the 3 to 5 that stand out per country or language in each group; unique places (museums, permanent exhibitions) and every active brand of compatible bricks that sells sets in Europe are listed in full. The [about page](https://actarus314.github.io/awesome-lego/about/) says the same for visitors.
