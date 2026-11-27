@@ -4,6 +4,15 @@ One short entry per version; the details are in its pull request and its commits
 
 # v4.x — The directory for builders of every age: children, their parents and teachers, as well as adults; an about page says how it is made and how to take part.
 
+## v4.10 — 2026-11-27
+Website: robots.txt (every robot welcome), a sitemap, llms.txt and the full list in Markdown at index.md and fr/index.md, for language models and agents that do not run the page's script. Home pages point to them and carry schema.org data; the footer links the text version and the data.
+
+Automation: on main, runs wait their turn instead of being cancelled, so every version gets its tag and no cancelled run shows as a failure.
+
+Previews: the website takes the newest previews built, whatever order GitHub lists them in, so a closed pull request loses its preview at once.
+
+Versions: each merge is now a version, written on main right after it and then published, with three numbers when a correction gives a patch (4.10.1). A preview shows the pull request merged with main and the number its merge gives.
+
 ## v4.9 — 2026-11-27
 Website: the about page says why 3001, the part number of the 2×4 brick of the 1958 patent, beside an isometric drawing of it. The footer shows the same brick, linked there, beside the Konami hint.
 
