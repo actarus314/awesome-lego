@@ -2,9 +2,11 @@
 
 **Décision de Romain (27/11, 23 h 03)** : modèle C, avec une numérotation à trois niveaux (le troisième chiffre seulement s'il n'est pas nul), pour l'annuaire et pour toutes les skills. Un lot est une demande ; la demande `vX.Y` disparaît. Mise en œuvre : demande « publish-c ».
 
+**Clos (28/11, fait v4.10)** : #57 (modèle C), #58 (aperçus pris par date), #59 (passages mis en file sur `main`) ; essai réel : #60 fusionnée à 00 h 31, v4.10 écrite sur `main` par Version avec l'application de Data fixes, étiquetée et publiée à 00 h 32, sans passage annulé. Report des skills dans `harnais` : AL-83.
+
 *Maintainer's working notes, in French: brief of the publication model, to be decided by the maintainer before any code.*
 
-Ligne : AL-80 de `dev/registre.md`. Ouvert le 27/11/2026 (échange vocal de Romain, 20 h 15 à 20 h 49). Romain : « je veux que ce soit vraiment la dernière fois que l'on modifie cette architecture de publication ». Méthode convenue : exigences d'abord, sans solution ; comparaison de modèles éprouvés sur les mêmes exigences ; relecture en contradicteur, en contexte neuf ; une décision de Romain, une seule fois, avec la liste des défauts restants et leur parade. Aucun code avant cette décision.
+Ligne : AL-80, close dans `dev/registre-clos.md`. Ouvert le 27/11/2026 (échange vocal de Romain, 20 h 15 à 20 h 49). Romain : « je veux que ce soit vraiment la dernière fois que l'on modifie cette architecture de publication ». Méthode convenue : exigences d'abord, sans solution ; comparaison de modèles éprouvés sur les mêmes exigences ; relecture en contradicteur, en contexte neuf ; une décision de Romain, une seule fois, avec la liste des défauts restants et leur parade. Aucun code avant cette décision.
 
 ## 1. Exigences (sans solution)
 
