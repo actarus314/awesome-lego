@@ -5,7 +5,7 @@ labels: ["new resource"]
 body:
   - type: markdown
     attributes:
-      value: The directory keeps the 3 to 5 resources that stand out per country or language in each group, and points to reference directories for the rest. [What gets in and what stays out](https://actarus314.github.io/awesome-lego/about/#selection).
+      value: The directory keeps the 3 to 5 resources that stand out per country or language in each group, and points to reference directories for the rest. [What gets in and what stays out](https://3001.club/about/#selection).
   - type: input
     id: url
     attributes:

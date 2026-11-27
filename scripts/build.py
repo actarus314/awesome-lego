@@ -21,7 +21,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 SITE = ROOT / "site"
 REPO = "actarus314/awesome-lego"
-PAGES = "https://actarus314.github.io/awesome-lego/"
+PAGES = "https://3001.club/"  # the website (custom domain of GitHub Pages, since 27/11/2026); the one place this address is written
+FEED_ID = "https://actarus314.github.io/awesome-lego/"  # base of the Atom identifiers, not an address: frozen at the first one, so that readers never see the same entries again as new (RFC 4287, 4.2.6)
 LANGS = ("en", "fr")
 ORDER = ["brands", "shops", "comparators", "second-hand", "community", "video", "events", "places", "clubs", "learning", "tools", "directories"]
 COVERS = {"official", "alternative", "second-hand", "parts", "custom-builds", "minifigures", "instructions", "news", "data", "events", "places", "clubs", "learning"}
@@ -60,7 +61,7 @@ T = {  # interface strings
     "feed": {"en": "Feed of new resources (RSS)", "fr": "Flux des nouveautés (RSS)"},
     "contents": {"en": "Contents", "fr": "Sommaire"},
     "contributing": {"en": "Contributing", "fr": "Contribuer"},
-    "contrib_text": {"en": "Additions and corrections are welcome: read [how the directory is made and what gets in](https://actarus314.github.io/awesome-lego/about/), then [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them."},
+    "contrib_text": {"en": f"Additions and corrections are welcome: read [how the directory is made and what gets in]({PAGES}about/), then [contributing.md](contributing.md). Entries live in [`data/`](data/); this file is generated from them."},
     "site_fr": {"en": "French version of the website", "fr": "Version française du site"},
     "site": {"en": "Explore the website: every resource, with search, filters and a map", "fr": "Explorer le site : toutes les ressources, avec recherche, filtres et carte"},
 }
@@ -619,7 +620,7 @@ def page(lang, data):
     blob = json.dumps(lean, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")  # no "</script" nor "<!--" inside the data block
     values = {"LANG": lang, "OTHER": other, "TITLE": html.escape(T["title"][lang]), "TAGLINE": html.escape(T["site_tagline"][lang]),
               "MINISEARCH": (ROOT / "site-src" / "vendor" / "minisearch.min.js").read_text(encoding="utf-8"),
-              "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "",
+              "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "", "SITE": PAGES, "HERE": PAGES + ("fr/" if lang == "fr" else ""),
               "DATA": blob, "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": "#top", "HOME": "", "ABOUT": "about/", "ABOUTCUR": "", "ROOT": "../" if lang == "fr" else ""}
     out = re.sub(r"\{\{(\w+)\}\}", lambda m: values[m.group(1)], tpl)  # one pass: a text of the data that contains {{…}} is never replaced again
     i = out.index("{{CSP}}")  # the policy is the template's own placeholder, before any data
@@ -653,7 +654,7 @@ def inline_scripts(doc):
     return p.bodies
 
 
-def csp(doc, rest="; style-src 'unsafe-inline'; img-src 'self' https://actarus314.github.io; connect-src 'self'; base-uri 'none'; form-action 'none'"):
+def csp(doc, rest="; style-src 'unsafe-inline'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'"):
     """Content security policy (GitHub Pages sends no headers: a meta element, placed before the first script).
     Only the page's own inline scripts run, each allowed by its hash; nothing is loaded from elsewhere."""
     hashes = [base64.b64encode(hashlib.sha256(m.encode("utf-8")).digest()).decode()
@@ -680,7 +681,7 @@ def about(lang, data):
                     ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
     pct = lambda k: f"{max(1, round(100 * k / n))}%"
     values = {"LANG": lang, "PTITLE": html.escape(A["ptitle"]), "PDESC": html.escape(A["pdesc"]), "CANON": canon, "LD": ld,
-              "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "", "ASTYLE": source("about.css"),
+              "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "", "SITE": PAGES, "ASTYLE": source("about.css"),
               "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": home, "HOME": home, "ABOUT": "./", "ABOUTCUR": ' aria-current="page"', "ROOT": "../../" if lang == "fr" else "../",
               "OTHER": "../fr/about/" if lang == "en" else "../../about/",
               "N": str(n), "RANKED": str(ranked), "SEL": str(sel), "RANKEDW": pct(ranked), "SELW": pct(sel),
@@ -713,14 +714,14 @@ FEED_T = {
 }
 
 
-def atom(title, self_url, site_url, items):
-    """items: (id, title, link, date, text), newest first."""
+def atom(title, self_url, site_url, items, feed_id):
+    """items: (id, title, link, date, text), newest first; feed_id: the identifier of the feed, which never changes."""
     esc = lambda x: html.escape(str(x).strip(), quote=True)
     entries = "".join(f"<entry><title>{esc(t)}</title><id>{esc(i)}</id><link href=\"{esc(l)}\"/><updated>{d}T00:00:00Z</updated>"
                       f"<content type=\"text\">{esc(x)}</content></entry>" for i, t, l, d, x in items)
     updated = items[0][3] if items else dt.date.today().isoformat()
     return (f'<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>{esc(title)}</title>'
-            f'<id>{self_url}</id><link href="{site_url}"/><link rel="self" href="{self_url}"/>'
+            f'<id>{feed_id}</id><link href="{site_url}"/><link rel="self" href="{self_url}"/>'
             f'<icon>{PAGES}media/favicon.png</icon><logo>{PAGES}media/apple-touch-icon.png</logo>'
             f'<updated>{updated}T00:00:00Z</updated><author><name>Awesome LEGO</name></author>{entries}</feed>\n')
 
@@ -738,6 +739,7 @@ def in_letters(iso, lang):
 def content_feed(cats, lang):
     """What readers follow: entries added to the directory, in one language (no event dates: the calendar was removed in v3.0)."""
     site = PAGES + ("fr/" if lang == "fr" else "")
+    ids = FEED_ID + ("fr/" if lang == "fr" else "")
     items, base, days = [], 0, {}
     for c in cats:
         for r in c["resources"]:
@@ -750,16 +752,16 @@ def content_feed(cats, lang):
             if str(r["added"]) <= BASELINE:
                 base += 1
             elif len(days[str(r["added"])]) <= FEED_BATCH:
-                items.append((f"{site}#added-{r['id']}", f"{FEED_T['new'][lang]} · {cname} · {r['name']}", link, str(r["added"]), text(r, "summary", lang)))
+                items.append((f"{ids}#added-{r['id']}", f"{FEED_T['new'][lang]} · {cname} · {r['name']}", link, str(r["added"]), text(r, "summary", lang)))
     for day, names in days.items():
         if len(names) > FEED_BATCH:
             per = ", ".join(f"{n} {sum(1 for x in names if x == n)}" for n in dict.fromkeys(names))
-            items.append((f"{site}#added-{day}", FEED_T["batch"][lang].format(n=len(names)), site, day,
+            items.append((f"{ids}#added-{day}", FEED_T["batch"][lang].format(n=len(names)), site, day,
                           FEED_T["batch_body"][lang].format(date=in_letters(day, lang), cats=per)))
     if base:
-        items.append((f"{site}#opening", FEED_T["open"][lang].format(n=base), site, BASELINE, FEED_T["open_body"][lang].format(n=base)))
+        items.append((f"{ids}#opening", FEED_T["open"][lang].format(n=base), site, BASELINE, FEED_T["open_body"][lang].format(n=base)))
     items.sort(key=lambda x: (x[3], x[1]), reverse=True)
-    return atom(FEED_T["title"][lang], site + "feed.xml", site, items[:60])
+    return atom(FEED_T["title"][lang], site + "feed.xml", site, items[:60], ids + "feed.xml")
 
 
 def changes_feed():
@@ -767,7 +769,7 @@ def changes_feed():
     text = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
     found = re.findall(r"(?m)^## v(\d+\.\d+) — (\d{4}-\d{2}-\d{2})\n(.*?)(?=^## v|^# v|\Z)", text, re.S)[:30]
     items = [(f"https://github.com/{REPO}/releases/tag/v{v}", f"v{v}", f"https://github.com/{REPO}/releases/tag/v{v}", d, body) for v, d, body in found]
-    return atom("Awesome LEGO: changes", PAGES + "changes.xml", f"https://github.com/{REPO}", items)
+    return atom("Awesome LEGO: changes", PAGES + "changes.xml", f"https://github.com/{REPO}", items, FEED_ID + "changes.xml")
 
 
 def issue_form(cats):

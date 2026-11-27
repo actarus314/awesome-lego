@@ -22,9 +22,12 @@ import urllib.error
 import urllib.request
 import time
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import build  # noqa: E402  the address of the website, written once
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 REPO = os.environ.get("GITHUB_REPOSITORY", "actarus314/awesome-lego")
-PAGES = "https://actarus314.github.io/awesome-lego/"
+PAGES = build.PAGES
 MAX = 20   # previews built per run: beyond, the oldest open requests go without
 BANNER = {"en": "Preview of {what} (commit {sha}): not the published website.",
           "fr": "Aperçu de {what} (commit {sha}) : ce n'est pas le site publié."}
