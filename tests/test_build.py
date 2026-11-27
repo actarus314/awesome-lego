@@ -11,6 +11,7 @@ import shutil
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -151,6 +152,90 @@ class Pages(unittest.TestCase):
             i = doc.index('<script id="data" type="application/json">')  # the data block ends at the first "</": it must hold no "<"
             j = doc.index("</", i + 1)
             self.assertEqual(doc[j:j + 9], "</script>")
+
+
+class MachineFiles(unittest.TestCase):
+    """The files for robots, language models and agents (dev/lots/acces-machines.md), from the same data as the pages."""
+    @classmethod
+    def setUpClass(cls):
+        with contextlib.redirect_stdout(io.StringIO()):
+            cls.cats, _ = build.load()
+            cls.data = build.site_data(cls.cats, build.metrics())
+        cls.data["version"] = (ROOT / "VERSION").read_text().strip()
+        cls.md = {lang: build.readme(cls.cats, lang, "full", web=cls.data) for lang in build.LANGS}
+
+    def test_lists_are_plain_markdown_with_absolute_links(self):
+        for lang, md in self.md.items():
+            self.assertNotRegex(md, r"<(img|br|p|a|picture)\b", lang)
+            self.assertNotRegex(md, r"\]\((?!https?://|#)", lang)  # no link relative to the repository: the list is read on the website
+            entries = md.split(f"\n## {build.T['contents'][lang]}\n")[1].split("\n## ", 1)[1]  # after the table of contents
+            self.assertEqual(entries.count("\n- ["), sum(len(c["resources"]) for c in self.cats), lang)
+
+    def test_french_list_speaks_french(self):
+        self.assertIn("Couvre les sets de marque LEGO.", self.md["fr"])
+        self.assertNotIn("Covers ", self.md["fr"])
+        self.assertNotIn("Couvre LEGO officiel", self.md["fr"])  # in a French sentence, "de marque LEGO"
+
+    def test_repository_lists_unchanged_by_the_web_mode(self):
+        for (kind, lang), f in build.FILES.items():
+            self.assertEqual(build.readme(self.cats, lang, kind), (ROOT / f).read_text(encoding="utf-8"), f)
+
+    def test_llms_txt_follows_the_convention(self):  # llmstxt.org: H1, summary in a quotation, H2 lists of "[name](url): notes", Optional last
+        lines = build.llms_txt(self.data).splitlines()
+        self.assertEqual(lines[0], "# Awesome LEGO")
+        self.assertTrue(lines[2].startswith("> "))
+        h2 = [x for x in lines if x.startswith("## ")]
+        self.assertEqual(h2[-1], "## Optional")
+        items = [x for x in lines if x.startswith("- ")]
+        self.assertTrue(items)
+        for x in items:
+            self.assertRegex(x, r"^- \[[^\]]+\]\(https://[^)\s]+\): \S", x)
+        self.assertNotRegex("\n".join(lines), r"\n- (?!\[)")
+
+    def test_sitemap_is_well_formed(self):
+        import xml.etree.ElementTree as ET
+        root = ET.fromstring(build.sitemap(self.data))
+        ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9", "x": "http://www.w3.org/1999/xhtml"}
+        locs = [u.find("s:loc", ns).text for u in root.findall("s:url", ns)]
+        self.assertEqual(locs, [build.PAGES + p for p in ("", "fr/", build.ABOUT_PATH["en"], build.ABOUT_PATH["fr"])])
+        for u in root.findall("s:url", ns):
+            self.assertEqual(sorted(a.get("hreflang") for a in u.findall("x:link", ns)), ["en", "fr", "x-default"])
+
+    def test_footer_and_about_pages_point_machines_too(self):
+        for lang in build.LANGS:
+            home = build.page(lang, self.data)
+            self.assertIn('<a href="index.md" type="text/markdown" data-t="as_text">', home.split("<footer")[1])
+            self.assertIn('type="application/json" data-t="as_json">', home.split("<footer")[1])
+            about = build.about(lang, self.data)
+            self.assertIn(f'rel="describedby" type="text/plain" href="{build.PAGES}llms.txt"', about.split("</head>")[0])
+            self.assertIn('<a href="../index.md" type="text/markdown" data-t="as_text">', about.split("<footer")[1])
+
+    def test_robots_allow_everything_and_give_the_sitemap(self):
+        robots = build.robots_txt()
+        self.assertNotRegex(robots, r"(?im)^\s*Disallow\s*:\s*\S")
+        self.assertIn(f"Sitemap: {build.PAGES}sitemap.xml", robots)
+
+    def test_home_pages_point_machines_to_the_lists(self):
+        for lang in build.LANGS:
+            doc = build.page(lang, self.data)
+            head = doc.split("</head>")[0]
+            here = build.PAGES + ("fr/" if lang == "fr" else "")
+            self.assertIn(f'type="text/markdown" title="{build.MD_T["web_title"][lang]}" href="{here}index.md"', head)
+            self.assertIn(f'rel="describedby" type="text/plain" href="{build.PAGES}llms.txt"', head)
+            ld = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', head).group(1))
+            dataset = next(x for x in ld["@graph"] if x["@type"] == "Dataset")
+            self.assertEqual(dataset["license"], build.LICENSE_URL)
+            self.assertGreaterEqual(len(dataset["description"]), 50)  # the minimum of Google's dataset search
+            self.assertEqual(dataset["@id"], here + "#dataset")  # one node per page: the two descriptions are in two languages
+
+    def test_unknown_status_or_public_falls_back_to_its_word(self):  # a value added to data/SCHEMA.md before its text: no failed build
+        r = next(r for c in self.cats for r in c["resources"] if r["status"] == "active")
+        cat = next(c for c in self.cats if r in c["resources"])
+        one = [dict(cat, resources=[dict(r, status="paused", audience=["children", "teens"])])]
+        with mock.patch.object(build, "AUDIENCES", ("children", "teens")):
+            md = build.readme(one, "fr", "full", web=self.data)
+        self.assertIn("Statut : paused.", md)
+        self.assertIn("Pour les enfants et teens.", md)
 
 
 

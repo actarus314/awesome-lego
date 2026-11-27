@@ -7,7 +7,9 @@ What an audit used to find by hand and a script can see fails here, with a messa
 - strings of site-src/strings.json that no page, script or template reads;
 - fields of the data block of the page that app.js never reads;
 - workflows: every job has `timeout-minutes`; every workflow started by pull requests has a `concurrency` group;
-- weight budgets of the files served (tests/budgets.json), checked when site/ is built.
+- weight budgets of the files served (tests/budgets.json), checked when site/ is built;
+- the files for robots, language models and agents (robots.txt, sitemap.xml, llms.txt, the Markdown lists, data.json): built,
+  every robot allowed, and every address of the website they give or the pages give to them leading to a built file.
 
 Usage: python3 scripts/hygiene.py [--skip-tools]   (--skip-tools: without ruff and vulture, for the unit tests)
 """
@@ -16,6 +18,9 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+from urllib.parse import urljoin
+
+from build import MD_PATH, PAGES
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE_SRC = ROOT / "site-src"
@@ -132,6 +137,48 @@ def budgets(site=None):
     return out
 
 
+MACHINE_FILES = ("robots.txt", "sitemap.xml", "llms.txt", "data.json", *MD_PATH.values())
+LINKING_PAGES = {"index.html": "", "fr/index.html": "fr/", "about/index.html": "about/", "fr/about/index.html": "fr/about/",
+                 "404.html": "any/depth/"}  # page: its address; the page of an unknown address is served at any depth
+MACHINE_TYPES = {"text/markdown", "application/json", "text/plain"}
+TAG = re.compile(r"<(?:a|link)\b[^>]*>")
+ATTR = re.compile(r'([\w-]+)="([^"]*)"')
+
+
+def machine_access(site=None):
+    """The files for robots, language models and agents (batch acces-machines, 27/11/2026): all built; robots.txt allows
+    every robot (decision of the maintainer) and gives the sitemap; every address of the website that these files give,
+    and every link of the pages to them (rel="describedby", or type text/markdown, application/json, text/plain), leads
+    to a file of site/. Only when site/ is built."""
+    site = site or ROOT / "site"
+    if not (site / "index.html").exists():
+        return []
+    out = [f"site/{f} is not built: scripts/build.py writes it for robots, language models and agents" for f in MACHINE_FILES if not (site / f).exists()]
+    links = []
+    for f in ("robots.txt", "sitemap.xml", "llms.txt", *MD_PATH.values()):
+        if (site / f).exists():
+            links += [(f, u) for u in re.findall(re.escape(PAGES) + r"[^\s)\"'<>]*", (site / f).read_text(encoding="utf-8"))]
+    for f, address in LINKING_PAGES.items():
+        if (site / f).exists():
+            for tag in TAG.findall((site / f).read_text(encoding="utf-8")):
+                a = dict(ATTR.findall(tag))
+                if "href" in a and (a.get("rel") == "describedby" or a.get("type") in MACHINE_TYPES):
+                    links.append((f, urljoin(PAGES + address, a["href"])))
+    for f, url in dict.fromkeys(links):  # one message per page and address (a page may link the same file from its head, its text and its footer)
+        path = url[len(PAGES):].split("#")[0].split("?")[0] if url.startswith(PAGES) else None
+        if path is None:
+            out.append(f"site/{f}: link {url} for machines leaves the website (expected under {PAGES})")
+        elif not (site / path / "index.html" if path == "" or path.endswith("/") else site / path).is_file():
+            out.append(f"site/{f}: {url} leads to no built file")
+    if (site / "robots.txt").exists():
+        robots = (site / "robots.txt").read_text(encoding="utf-8")
+        if f"Sitemap: {PAGES}sitemap.xml" not in robots:
+            out.append(f"site/robots.txt: no line 'Sitemap: {PAGES}sitemap.xml'")
+        out += [f"site/robots.txt: '{line.strip()}' refuses something, but every robot is allowed (decision of 27/11/2026, dev/lots/acces-machines.md)"
+                for line in robots.splitlines() if re.match(r"\s*Disallow\s*:\s*\S", line, re.I)]
+    return out
+
+
 def main():
     problems = [] if "--skip-tools" in sys.argv else tools()
     problems += [f"site-src/strings.json: `{k}` is read by no page, script or template: remove it, or read it" for k in unread_strings()]
@@ -139,12 +186,13 @@ def main():
                  for k in unread_fields()]
     problems += workflows()
     problems += budgets()
+    problems += machine_access()
     for p in problems:
         print(f"✗ {p}")
     if problems:
         sys.exit(1)
     weights = "weight budgets" if (ROOT / "site" / "index.html").exists() else "no weight budget (site/ not built: python3 scripts/build.py --site-only)"
-    print(f"✓ hygiene: {'' if '--skip-tools' in sys.argv else 'Python, '}strings, page data, workflows, {weights}")
+    print(f"✓ hygiene: {'' if '--skip-tools' in sys.argv else 'Python, '}strings, page data, workflows, {weights}{', machine access' if (ROOT / 'site' / 'index.html').exists() else ''}")
 
 
 if __name__ == "__main__":

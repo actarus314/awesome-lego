@@ -135,6 +135,7 @@ details ul{margin:6px 0;padding-left:18px;font-size:13.5px}details li{margin:2px
 footer{margin:60px 0 0;padding:24px 0 84px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}  /* the bottom clears the back-to-top button (44 px, 16 px from the edge) at the end of the page */
 footer .wrap{display:flex;flex-wrap:wrap;gap:14px 18px;justify-content:space-between;align-items:center}
 footer .kn{color:var(--line);font-size:11px;letter-spacing:.2em;user-select:none;white-space:nowrap}footer .kn:hover{color:var(--muted)}  /* the Konami hint, between the brick and the links */
+footer .wrap>span:last-child a{white-space:nowrap}  /* a link of the footer never breaks over two lines (« CC BY-NC-SA 4.0 » at its hyphens, « Version texte ») */
 /* the brick 3001, drawn in isometric view: outlines in the text colour, faces in the card colours, studs in the yellow of the logo */
 .b3001{color:var(--fg);overflow:visible}.b3-l,.b3-r,.b3-t,.b3-s,.b3-c{stroke:currentColor;stroke-width:var(--bw,1.1px);stroke-linejoin:round;vector-effect:non-scaling-stroke}
 .b3-t,.b3-s{fill:var(--card)}.b3-l{fill:color-mix(in srgb,var(--card) 88%,var(--fg))}.b3-r{fill:color-mix(in srgb,var(--card) 76%,var(--fg))}.b3-c{fill:var(--hi)}

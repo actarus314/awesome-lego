@@ -13,6 +13,10 @@
 <link rel="alternate" hreflang="x-default" href="{{SITE}}">
 <link rel="alternate" hreflang="fr" href="{{SITE}}fr/">
 <link rel="alternate" type="application/atom+xml" title="{{FEEDTITLE}}" href="{{SITE}}{{FEEDPATH}}feed.xml">
+<link rel="alternate" type="text/markdown" title="{{MDTITLE}}" href="{{HERE}}index.md">
+<link rel="alternate" type="application/json" href="{{SITE}}data.json">
+<link rel="describedby" type="text/plain" href="{{SITE}}llms.txt">
+<script type="application/ld+json">{{LD}}</script>
 <link rel="icon" type="image/svg+xml" href="{{ROOT}}media/logo.svg">
 <link rel="icon" type="image/png" sizes="64x64" href="{{ROOT}}media/favicon.png">
 <link rel="apple-touch-icon" href="{{ROOT}}media/apple-touch-icon.png">
@@ -45,6 +49,7 @@ try{if('{{LANG}}'==='en'){const l=localStorage.getItem('lang');if(l==='fr'||(!l&
 <h2 id="all" data-t="all_res" hidden></h2>
 </div>
 <div id="list"></div>
+<noscript><p><span data-t="nojs"></span> <a href="{{HOME}}index.md" type="text/markdown" data-t="as_text"></a> · <a href="{{ROOT}}data.json" type="application/json" data-t="as_json"></a></p></noscript>
 </div>
 </div>
 <div id="view-obs" hidden><h1 class="vh" data-t="nav_obs"></h1>
