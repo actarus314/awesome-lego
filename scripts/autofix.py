@@ -52,6 +52,8 @@ def moved(url):
         break
     if not hops or code != 200 or "?" in cur or not re.fullmatch(r"https?://[^\s\"\\<>`\x00-\x1f\x7f]+", cur):   # control characters: a fragment is never sent, so it can hold them (fuzz/redirect_fuzzer.py)
         return None  # an address with characters that would break the data file or the pull request is left to a person
+    if not urllib.parse.urlsplit(cur).hostname:   # "http://::" (Fuzzing, 27 Nov 2026): main reads the host of every new address
+        return None
     same = lambda a, b: a.rstrip("/").lower() == b.rstrip("/").lower()
     return None if same(cur, url) or same(cur.replace("http://", "https://"), url) else cur
 
