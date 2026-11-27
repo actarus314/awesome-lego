@@ -124,6 +124,12 @@ class MachineAccess(unittest.TestCase):
                 for e in expected:
                     self.assertTrue(any(f.startswith(e) for f in found), (e, found))
 
+    def test_one_message_per_page_and_address(self):  # a home page links the list from its head, its noscript line and its footer
+        with tempfile.TemporaryDirectory() as d:
+            s = self.site(d)
+            (s / "index.html").write_text('<a href="gone.md" type="text/markdown">a</a>' * 3, encoding="utf-8")
+            self.assertEqual(hygiene.machine_access(s), [f"site/index.html: {self.P}gone.md leads to no built file"])
+
     def test_nothing_without_a_built_site(self):
         with tempfile.TemporaryDirectory() as d:
             self.assertEqual(hygiene.machine_access(Path(d)), [])

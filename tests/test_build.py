@@ -11,6 +11,7 @@ import shutil
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -225,6 +226,16 @@ class MachineFiles(unittest.TestCase):
             dataset = next(x for x in ld["@graph"] if x["@type"] == "Dataset")
             self.assertEqual(dataset["license"], build.LICENSE_URL)
             self.assertGreaterEqual(len(dataset["description"]), 50)  # the minimum of Google's dataset search
+            self.assertEqual(dataset["@id"], here + "#dataset")  # one node per page: the two descriptions are in two languages
+
+    def test_unknown_status_or_public_falls_back_to_its_word(self):  # a value added to data/SCHEMA.md before its text: no failed build
+        r = next(r for c in self.cats for r in c["resources"] if r["status"] == "active")
+        cat = next(c for c in self.cats if r in c["resources"])
+        one = [dict(cat, resources=[dict(r, status="paused", audience=["children", "teens"])])]
+        with mock.patch.object(build, "AUDIENCES", ("children", "teens")):
+            md = build.readme(one, "fr", "full", web=self.data)
+        self.assertIn("Statut : paused.", md)
+        self.assertIn("Pour les enfants et teens.", md)
 
 
 

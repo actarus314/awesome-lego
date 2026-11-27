@@ -882,7 +882,7 @@ def changes_feed():
     """For whoever follows the development: one item per version, from CHANGELOG.md."""
     text = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
     found = re.findall(r"(?m)^## v(\d+\.\d+(?:\.\d+)?) — (\d{4}-\d{2}-\d{2})\n(.*?)(?=^## v|^# v|\Z)", text, re.S)[:30]
-    items = [(f"https://github.com/{REPO}/releases/tag/v{v}", f"v{v}", f"https://github.com/{REPO}/releases/tag/v{v}", d, body) for v, d, body in found]
+    items = [(f"{REPO_URL}/releases/tag/v{v}", f"v{v}", f"{REPO_URL}/releases/tag/v{v}", d, body) for v, d, body in found]
     return atom("Awesome LEGO: changes", PAGES + "changes.xml", REPO_URL, items, FEED_ID + "changes.xml")
 
 
