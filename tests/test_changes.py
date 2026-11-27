@@ -64,7 +64,8 @@ class Fragments(unittest.TestCase):
                "minor-series.md": "type: minor\nseries: A series.\n\nText.\n",
                "notes.txt": "type: none\n\nText.\n",
                "empty-series.md": "type: minor\nseries:\n\nText.\n",
-               "mention.md": "type: minor\n\nWebsite: thanks to @someone for the report.\n"}
+               "mention.md": "type: minor\n\nWebsite: thanks to @someone for the report.\n",
+               "html.md": "type: minor\n\nWebsite: a <script> in the text.\n"}
         found, errors = changes.fragments(self.write(bad))
         self.assertEqual(found, [])
         self.assertEqual(sorted(e.split(":")[0] for e in errors), sorted(f"changes/{n}" for n in bad))
@@ -75,7 +76,7 @@ class Fragments(unittest.TestCase):
         self.assertEqual(changes.fragments(d), ([], ["changes/x.md: a fragment is a file, not a folder"]))
 
     def test_a_byte_order_mark_and_a_mention_in_backticks_pass(self):
-        found, errors = changes.fragments(self.write({"bom.md": "\ufefftype: minor\n\nAutomation: the `@types/node` package, and a@b.example.\n"}))
+        found, errors = changes.fragments(self.write({"bom.md": "\ufefftype: minor\n\nAutomation: the `@types/node` package, `changes/<name>.md`, and a@b.example.\n"}))
         self.assertEqual((errors, found[0][1]), ([], "minor"))
 
     def test_two_major_fragments_are_refused(self):
@@ -195,7 +196,7 @@ class Git(unittest.TestCase):
         self.addCleanup(tmp.cleanup)
         self.root = Path(tmp.name)
         self.git("init", "-q", "-b", "main")
-        for name in ("VERSION", "CHANGELOG.md", "README.md", changes.FORM, "data/shops.toml", "scripts/version_files.sh"):
+        for name in ("VERSION", "CHANGELOG.md", "README.md", changes.FORM, "data/shops.toml", "scripts/version_files.sh", "scripts/changes.py", ".github/workflows/check.yml"):
             (self.root / name).parent.mkdir(parents=True, exist_ok=True)
             (self.root / name).write_bytes((ROOT / name).read_bytes())
         self.commit("main")
@@ -240,8 +241,50 @@ class Git(unittest.TestCase):
         self.assertEqual(self.check("--base", "main")[0], 1)
         self.assertEqual(self.check("--base", "main", "--branch", "renovate/x")[0], 0)
 
-    def files(self):
-        return subprocess.run(["bash", "scripts/version_files.sh"], cwd=self.root, capture_output=True, text=True)
+    def files(self, *argv):
+        """The check of the repository itself (never the copy in the scratch tree, which a patch could rewrite)."""
+        return subprocess.run(["bash", str(ROOT / "scripts" / "version_files.sh"), *(argv or ["staged"])], cwd=self.root, capture_output=True, text=True)
+
+    def patch(self, edit, *diff):
+        """The patch of `edit` as the build job of Version writes it, then the tree back as it was."""
+        edit(self.root)
+        self.git("add", "-A")
+        text = self.git("diff", "--cached", "--binary", *(diff or ["--no-renames"])).stdout
+        staged = self.files("staged").returncode
+        self.git("reset", "-q", "--hard")
+        self.git("clean", "-qfd")
+        f = self.root.parent / (self.root.name + ".patch")
+        f.write_text(text, encoding="utf-8")
+        self.addCleanup(f.unlink, missing_ok=True)
+        return self.files("patch", str(f)).returncode, staged
+
+    def test_a_patch_of_version_passes(self):
+        def edit(r):
+            (r / "VERSION").write_text("4.5\n", encoding="utf-8")
+            (r / "changes").mkdir()
+            (r / "changes" / "new.md").write_text("type: none\n\nAutomation: one.\n", encoding="utf-8")
+            (r / changes.FORM).write_text("rebuilt\n", encoding="utf-8")
+        self.assertEqual(self.patch(edit), (0, 0))
+
+    def test_a_patch_that_writes_elsewhere_is_refused_before_it_is_applied(self):
+        def check_script(r):
+            (r / "scripts/version_files.sh").write_text("echo $GH_TOKEN\n", encoding="utf-8")
+        def workflow(r):
+            (r / ".github/workflows/check.yml").write_text("on: push\n", encoding="utf-8")
+        def moved(r):
+            (r / "changes").mkdir()
+            (r / "scripts/changes.py").rename(r / "changes" / "x.md")
+        def link(r):
+            (r / "changes").mkdir()
+            (r / "changes" / "x.md").symlink_to("/etc/passwd")
+        def executable(r):
+            (r / "README.md").chmod(0o755)
+        def odd_name(r):
+            (r / "changes").mkdir()
+            (r / "changes" / "X.sh").write_text("x\n", encoding="utf-8")
+        for edit in (check_script, workflow, moved, link, executable, odd_name):
+            self.assertEqual(self.patch(edit), (1, 1), edit.__name__)
+        self.assertEqual(self.patch(moved, "-M")[0], 1)  # a patch written with renames is refused too
 
     def test_the_files_of_version_without_a_folder_changes(self):
         # the usual state after a version: changes/ is gone (git keeps no empty folder); Version started by hand stages with `git add -A`

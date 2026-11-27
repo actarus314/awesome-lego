@@ -13,7 +13,7 @@ for example
 The type is major, minor or none, as MAINTENANCE.md defines them (section Versions); a fragment of type none gives no
 number and waits, cited by the entry of the next version. A major fragment adds a line `series: <one sentence>` under
 its type: the heading of the new series of versions. The text says what changes in two sentences, CHANGELOG_MAX
-characters at most (scripts/build.py), and names no account with a bare @ (GitHub would notify it): `@name` in
+characters at most (scripts/build.py), with no bare @ (GitHub would notify the account) and no bare < (HTML): both in
 backticks.
 
 Usage:
@@ -72,8 +72,11 @@ def parse(path):
         raise ValueError("the text is no heading: Version writes the heading of the version")
     if len(text) > CHANGELOG_MAX:
         raise ValueError(f"{len(text)} characters, {CHANGELOG_MAX} at most: say what changes in two sentences, the details go to the pull request")
-    if MENTION.search(re.sub(r"`[^`]*`", "", text + " " + (series or ""))):
+    bare = re.sub(r"`[^`]*`", "", text + " " + (series or ""))  # what is not code: read as Markdown in the release and the pull request
+    if MENTION.search(bare):
         raise ValueError("a bare @name notifies that account in the release and its pull request: write `@name` in backticks, or leave it out")
+    if "<" in bare:
+        raise ValueError("a bare < opens HTML in the release and its pull request: write `<name>` in backticks")
     return kind, series or "", text
 
 
