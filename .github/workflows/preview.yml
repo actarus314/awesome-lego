@@ -15,6 +15,8 @@ jobs:
     if: github.event_name == 'push' || (github.event.pull_request.head.repo.full_name == github.repository && !github.event.pull_request.merged)
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    outputs:
+      unchanged: ${{ steps.previews.outputs.unchanged }}   # the pull requests whose website is main's: no preview
     concurrency:
       group: preview-build   # each run builds every preview from main as it is when it starts: one at a time, none
       queue: max             # dropped (a cancelled run on main would read as a failure)
@@ -34,6 +36,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/refresh.py --from-site
       - name: Website of each open pull request
+        id: previews
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # read-only, seen by previews.py (the pull request's own); the build of each branch runs without it
         run: python3 scripts/previews.py previews
@@ -53,7 +56,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref main -f previews=true
   link:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    needs: build   # the comment says when the pull request changes nothing on the website, which only the build knows
+    if: always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 5   # one comment, a few seconds
     permissions:
@@ -71,15 +75,19 @@ jobs:
           N: ${{ github.event.pull_request.number }}
           SHA: ${{ github.event.pull_request.head.sha }}
           ACTION: ${{ github.event.action }}
+          UNCHANGED: ${{ needs.build.outputs.unchanged }}   # written by the pull request's code: read as numbers only
         run: |
           pages=$(sed -n 's/^PAGES = "\([^"]*\)".*/\1/p' scripts/build.py)   # the address of the website (tests/test_build.py checks this reading)
           [ -n "$pages" ] || { echo "PAGES not found in scripts/build.py"; exit 1; }
           url="${pages}preview/${N}/"
+          unchanged=" $(printf '%s' "$UNCHANGED" | tr -cd '0-9 ') "
           if [ "$ACTION" = closed ]; then body="<!-- preview -->
           Preview removed: the pull request is closed."
+          elif [ "${unchanged#* "$N" }" != "$unchanged" ]; then body="<!-- preview -->
+          Commit ${SHA:0:7} changes nothing on the published website: no preview."
           else
           body="<!-- preview -->
-          **Preview of this pull request**: ${url} (French: ${url}fr/); each earlier commit that changes the website: ${url}c/
+          **Preview of this pull request**: ${url} (French: ${url}fr/). Its commits that change the website, oldest first, the versions to compare in bold: ${url}c/ · side by side: ${url}compare/
 
           Commit ${SHA:0:7}, merged with \`main\` (alone if they conflict), online a few minutes after this comment (the **Preview** run, then the **Pages** run it starts). The banner of each page gives the number its merge gives, and the website its changelog entry, as Version will write them; rebuilt each time \`main\` moves, hidden from search engines, removed when the pull request is closed."
           fi

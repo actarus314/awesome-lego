@@ -72,15 +72,20 @@ def mark(page, n, sha, url, merged=True, version=None, commits=None):
     return re.sub(r"(<body[^>]*>)", lambda m: m.group(1) + banner, page, count=1)
 
 
+PAGE = "font:16px/1.5 system-ui,sans-serif;margin:0;padding:32px clamp(16px,4vw,48px)"   # the pages of this script: no width cap on text (rule of the maintainer)
+
+
 def index(previews):
     """OUT/index.html: the list of the previews, newest pull request first."""
-    rows = "".join(f'<li><a href="{p["n"]}/">#{p["n"]}</a> {html.escape(p["title"])} · {p["sha"]}'
-                   f'{" · build failed" if p["failed"] else ""} · <a href="{html.escape(p["url"])}">on GitHub</a></li>'
-                   for p in sorted(previews, key=lambda p: -p["n"]))
+    def row(p):
+        if p.get("unchanged"):
+            return f'<li>#{p["n"]} {html.escape(p["title"])} · {p["sha"]} · changes nothing on the published website: no preview · <a href="{html.escape(p["url"])}">on GitHub</a></li>'
+        return (f'<li><a href="{p["n"]}/">#{p["n"]}</a> {html.escape(p["title"])} · {p["sha"]}{" · build failed" if p["failed"] else ""}'
+                f' · <a href="{p["n"]}/c/">its commits</a> · <a href="{p["n"]}/compare/">side by side</a> · <a href="{html.escape(p["url"])}">on GitHub</a></li>')
+    rows = "".join(row(p) for p in sorted(previews, key=lambda p: -p["n"]))
     return ('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow">'
             '<meta name="viewport" content="width=device-width"><title>Previews · Awesome LEGO</title></head>'
-            '<body style="font:16px/1.5 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 16px">'
-            f'<h1>Previews</h1><ul>{rows or "<li>No open pull request.</li>"}</ul>'
+            f'<body style="{PAGE}"><h1>Previews</h1><ul>{rows or "<li>No open pull request.</li>"}</ul>'
             f'<p><a href="{PAGES}">Published website</a></p></body></html>')
 
 
@@ -202,20 +207,65 @@ def place(site, dest, n, sha, url, merged, version, commits):
             f.write_text(mark(f.read_text(encoding="utf-8"), n, sha[:7], url, merged, version, commits), encoding="utf-8")
 
 
+def notes(sha, cwd=ROOT, main="refs/remotes/origin/main"):
+    """What to compare, from the trailers `Preview-compare:` of the branch's commit messages: `Preview-compare: <note>`
+    marks its own commit; `Preview-compare: <commit> <note>` marks an earlier commit (pushed commits are never rewritten).
+    {full sha: note}, a later trailer replacing an earlier one."""
+    base = subprocess.run(["git", "merge-base", main, sha], cwd=cwd, capture_output=True, text=True).stdout.strip()
+    log = subprocess.run(["git", "log", "--reverse", "--format=%H%x00%(trailers:key=Preview-compare,valueonly,separator=%x01)%x1e",
+                          f"{base}..{sha}" if base else sha, "-n", "200"], cwd=cwd, capture_output=True, text=True).stdout
+    shas = [e.split("\0")[0].strip() for e in log.split("\x1e") if e.strip()]
+    out = {}
+    for entry in log.split("\x1e"):
+        if "\0" not in entry:
+            continue
+        own, values = entry.split("\0", 1)
+        for v in (x.strip() for x in values.split("\x01")):
+            if not v:
+                continue
+            head, _, rest = v.partition(" ")
+            target = next((c for c in shas if len(head) >= 7 and c.startswith(head.lower())), None) if re.fullmatch(r"[0-9a-fA-F]{7,40}", head) else None
+            out[target or own.strip()] = (rest if target else v).strip()
+    return out
+
+
 def commit_list(n, url, rows):
-    """OUT/<number>/c/index.html: the commits of the pull request that have a preview, newest first."""
-    def line(r):
-        made = r.get("made")
-        what = (f'<a href="{html.escape(r["href"])}">{made[:7]}</a> {html.escape(r["date"])} · {html.escape(r["subject"])} · latest '
-                f'(head {r["sha"][:7]}: same website)') if made else (
-               f'<a href="{html.escape(r["href"])}">{r["sha"][:7]}</a> {html.escape(r["date"])} · {html.escape(r["subject"])}{" · latest" if r["head"] else ""}')
-        return f"<li>{what}</li>"
+    """OUT/<number>/c/index.html: the commits of the pull request that have a preview, oldest first, newest last; those
+    to compare (a note, see notes()) in bold with their note; the published website as the reference."""
+    total = len(rows)
+
+    def line(i, r):
+        made, head = r.get("made"), r["sha"][:7]
+        sha = (made or r["sha"])[:7]
+        where = "newest" if i == total else "oldest" if i == 1 else ""
+        text = (f'{i} of {total}{" (" + where + ")" if where else ""} · <a href="{html.escape(r["href"])}">{sha}</a> · {html.escape(r["subject"])}'
+                f'{f" (head {head}: same website)" if made else ""}')
+        note = r.get("note")
+        return f'<li><b>{text}</b><br>To compare: {html.escape(note)}</li>' if note else f"<li>{text}</li>"
     return ('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow">'
             f'<meta name="viewport" content="width=device-width"><title>Preview #{n}: commits · Awesome LEGO</title></head>'
-            '<body style="font:16px/1.5 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 16px">'
-            f'<h1>Pull request #{n}: one preview per commit</h1><p>The commits that change the website, newest first, '
-            f'each merged with main as it is now; at most {MAX_COMMITS}. French pages under <code>fr/</code> of each.</p>'
-            f'<ul>{"".join(line(r) for r in reversed(rows))}</ul><p><a href="{html.escape(url)}">The pull request on GitHub</a> · <a href="../../">All previews</a></p></body></html>')
+            f'<body style="{PAGE}"><h1>Pull request #{n}: one preview per commit</h1>'
+            f'<p>Oldest first, newest last: the commits that change the website, each merged with main as it is now ({MAX_COMMITS} at most). '
+            'In bold, the versions to compare. French pages under <code>fr/</code> of each.</p>'
+            f'<p>Reference: <a href="{PAGES}">the published website</a> · <a href="../compare/">all of them side by side</a></p>'
+            f'<ol style="padding-left:1.2em">{"".join(line(i, r) for i, r in enumerate(rows, 1))}</ol>'
+            f'<p><a href="{html.escape(url)}">The pull request on GitHub</a> · <a href="../../">All previews</a></p></body></html>')
+
+
+def compare_page(n, rows):
+    """OUT/<number>/compare/index.html: versions side by side, 2 frames at first, 5 at most, each with its version
+    (the published website or a commit) and its note on one line of fixed height; a simulated width, scaled to fit;
+    scrolling and the address followed by the other frames unless turned off; the choice kept in the address (#v=…)."""
+    versions = [{"id": "published", "label": "Published website", "root": "../../../", "note": ""}]
+    for i, r in enumerate(rows, 1):
+        sha = (r.get("made") or r["sha"])[:7]
+        versions.append({"id": sha, "label": f'{i} of {len(rows)}{" (newest)" if r["head"] else ""} · {sha} · {r["subject"]}',
+                         "root": "../" if r["head"] else f"../c/{sha}/", "note": r.get("note", "")})
+    data = json.dumps(versions, ensure_ascii=False).replace("<", "\\u003c")
+    return COMPARE.replace("{{N}}", str(n)).replace("{{DATA}}", data)
+
+
+COMPARE = (pathlib.Path(__file__).resolve().parent / "compare.html").read_text(encoding="utf-8")   # the page, its data filled in by compare_page()
 
 
 def log_of(c):
@@ -242,17 +292,43 @@ def one(p, c, dest, listed, env):
             subprocess.run(["git", "worktree", "remove", "--force", str(wt)], cwd=ROOT, check=False)
 
 
+def published(env):
+    """The fingerprint of main's website as it stands, built the same way as the previews (once per run)."""
+    if "main" not in PUBLISHED:
+        with tempfile.TemporaryDirectory() as tmp:
+            wt = pathlib.Path(tmp) / "main"
+            try:
+                main_sha = subprocess.run(["git", "rev-parse", "refs/remotes/origin/main"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+                site_of(main_sha, wt, env)
+                PUBLISHED["main"] = digest(wt / "site")
+            except (subprocess.CalledProcessError, subprocess.TimeoutExpired, OSError) as e:
+                print(f"::warning::main not built, every pull request gets its preview: {e}")
+                PUBLISHED["main"] = None
+            finally:
+                subprocess.run(["git", "worktree", "remove", "--force", str(wt)], cwd=ROOT, check=False)
+    return PUBLISHED["main"]
+
+
+PUBLISHED = {}
+
+
 def heads(p, out, env):
-    """First pass: the head of pull request p, as before; the commits it has to show next. True if the head built."""
+    """First pass: the head of pull request p, as before; the commits it has to show next. True if the head built.
+    A head whose website is the same as main's gets no preview (p["unchanged"]): nothing to see."""
     n, sha = p["n"], p["sha"]
     try:
         fetch(sha)
         p["commits"] = history(sha)
+        p["notes"] = notes(sha)
     except (subprocess.CalledProcessError, subprocess.TimeoutExpired, OSError) as e:
         print(f"::warning::commits of #{n} not read: {e}")
-        p["commits"] = [sha]
+        p["commits"], p["notes"] = [sha], {}
     listed = f"{PAGES}preview/{n}/c/" if len(p["commits"]) > 1 else None
     p["digest"] = one(p, sha, out / str(n), listed, env)
+    if p["digest"] is not None and p["digest"] == published(env):
+        shutil.rmtree(out / str(n), ignore_errors=True)
+        p["unchanged"] = True
+        return True
     if p["digest"] is None:
         dest = out / str(n)
         dest.mkdir(parents=True, exist_ok=True)
@@ -263,8 +339,11 @@ def heads(p, out, env):
 
 
 def earlier(p, out, env, left):
-    """Second pass: the earlier commits of pull request p, while `left()` allows; then the list of its commits."""
+    """Second pass: the earlier commits of pull request p, while `left()` allows; then the list of its commits and the
+    page that puts them side by side."""
     n, sha = p["n"], p["sha"]
+    if p.get("unchanged"):
+        return
     listed = f"{PAGES}preview/{n}/c/"
     rows = []
     for c in p["commits"][:-1]:
@@ -280,10 +359,14 @@ def earlier(p, out, env, left):
         if not r["head"] and r not in kept:
             shutil.rmtree(out / str(n) / "c" / r["sha"][:7], ignore_errors=True)
     for r in kept:
-        r["date"], r["subject"] = log_of(r.get("made", r["sha"]))
+        made = r.get("made", r["sha"])
+        r["date"], r["subject"] = log_of(made)
         r["href"] = "../" if r["head"] else f'{r["sha"][:7]}/'
+        r["note"] = p.get("notes", {}).get(made, "")
     (out / str(n) / "c").mkdir(parents=True, exist_ok=True)
     (out / str(n) / "c" / "index.html").write_text(commit_list(n, p["url"], kept), encoding="utf-8")
+    (out / str(n) / "compare").mkdir(parents=True, exist_ok=True)
+    (out / str(n) / "compare" / "index.html").write_text(compare_page(n, kept), encoding="utf-8")
 
 
 def main():
@@ -295,7 +378,7 @@ def main():
     for p in targets():  # every head first: an earlier commit never costs a pull request its preview
         ok = heads(p, out, env)
         previews.append(p | {"failed": not ok})
-        print(f"{'✓' if ok else '✗'} preview of {p['n']} ({p['sha'][:7]})")
+        print(f"{'✓' if ok else '✗'} preview of {p['n']} ({p['sha'][:7]}){' : same website as main, none' if p.get('unchanged') else ''}")
 
     def left():
         built[0] += 1
@@ -303,6 +386,9 @@ def main():
     for p in previews:
         earlier(p, out, env, left)
     (out / "index.html").write_text(index([{**p, "sha": p["sha"][:7]} for p in previews]), encoding="utf-8")
+    if os.environ.get("GITHUB_OUTPUT"):  # the pull requests without a preview, for the comment of the workflow (numbers only)
+        with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
+            f.write("unchanged=" + " ".join(str(int(p["n"])) for p in previews if p.get("unchanged")) + "\n")
 
 
 if __name__ == "__main__":

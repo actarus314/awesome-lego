@@ -41,16 +41,47 @@ class Mark(unittest.TestCase):
         self.assertNotIn("Tous les commits", previews.mark(self.PAGE, 61, "abc1234", "u"))
 
     def test_commit_list(self):
-        rows = [{"sha": "a" * 40, "href": "aaaaaaa/", "head": False, "date": "2026-11-28", "subject": "first <b>"},
-                {"sha": "b" * 40, "href": "../", "head": True, "date": "2026-11-28", "subject": "second"}]
+        rows = [{"sha": "a" * 40, "href": "aaaaaaa/", "head": False, "date": "2026-11-28", "subject": "first <b>", "note": ""},
+                {"sha": "c" * 40, "href": "ccccccc/", "head": False, "date": "2026-11-28", "subject": "variant A", "note": "the brick <i>"},
+                {"sha": "b" * 40, "href": "../", "head": True, "date": "2026-11-28", "subject": "second", "note": ""}]
         out = previews.commit_list(61, "u", rows)
-        self.assertLess(out.index('href="../"'), out.index('href="aaaaaaa/"'))  # newest first
+        self.assertLess(out.index('href="aaaaaaa/"'), out.index('href="../"'))  # oldest first, newest last
+        self.assertIn("Oldest first, newest last", out)
+        self.assertIn("1 of 3 (oldest)", out)
+        self.assertIn("3 of 3 (newest)", out)
+        self.assertIn("<li><b>2 of 3 · <a", out)  # the version to compare, in bold, with its note
+        self.assertIn("To compare: the brick &lt;i&gt;", out)
         self.assertIn("first &lt;b&gt;", out)
-        self.assertIn("· latest", out)
+        self.assertIn(f'href="{previews.PAGES}"', out)  # the published website, as the reference
+        self.assertIn('href="../compare/"', out)
         self.assertIn("noindex", out)
-        same = previews.commit_list(61, "u", [{**rows[1], "made": "c" * 40}])
-        self.assertIn('>ccccccc</a>', same)  # the commit that made the website, not the head that only touched notes
+        same = previews.commit_list(61, "u", [{**rows[2], "made": "d" * 40}])
+        self.assertIn('>ddddddd</a>', same)  # the commit that made the website, not the head that only touched notes
         self.assertIn("(head bbbbbbb: same website)", same)
+
+    def test_compare_page(self):
+        rows = [{"sha": "a" * 40, "head": False, "subject": "A </script><b>", "note": "the brick"},
+                {"sha": "b" * 40, "head": True, "subject": "B", "note": ""}]
+        out = previews.compare_page(61, rows)
+        self.assertIn("Pull request #61 side by side", out)
+        self.assertNotIn("{{", out)
+        self.assertNotIn("</script><b>", out)  # data never closes the script
+        self.assertIn('"root": "../c/aaaaaaa/"', out)
+        self.assertIn('"root": "../"', out)
+        self.assertIn('"root": "../../../"', out)  # the published website, from preview/<n>/compare/
+        self.assertIn('"note": "the brick"', out)
+
+    def test_no_line_length_cap(self):
+        """The pages written by this script, like the website's, let text fill its block (rule of the maintainer)."""
+        import re
+        for f in ("previews.py", "compare.html"):
+            src = (pathlib.Path(previews.__file__).resolve().parent / f).read_text()
+            self.assertIsNone(re.search(r"(?<!\()max-(width|inline-size)\s*:", src), f)  # a media query is no cap
+
+    def test_unchanged_in_the_index(self):
+        out = previews.index([{"n": 63, "title": "t", "sha": "1", "url": "u", "failed": False, "unchanged": True}])
+        self.assertIn("changes nothing on the published website: no preview", out)
+        self.assertNotIn('href="63/"', out)
 
     def test_escaped(self):
         out = previews.mark(self.PAGE, 3, "<b>", 'https://x/"y')
@@ -189,6 +220,25 @@ class Fetch(unittest.TestCase):
         subprocess.run(["git", "clone", "-q", "--depth", "1", "--no-local", "-b", "main", str(up), str(ci)], check=True, capture_output=True)
         previews.fetch(pr, cwd=ci)
         self.assertEqual(subprocess.run(["git", "merge-base", "refs/remotes/origin/main", pr], cwd=ci, capture_output=True).returncode, 0)
+
+
+class Notes(unittest.TestCase):
+    """What to compare: trailers Preview-compare of the branch's commits, for their own commit or an earlier one."""
+    def test_notes(self):
+        import subprocess
+        import tempfile
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        d = pathlib.Path(tmp.name)
+        git = lambda *a: subprocess.run(["git", "-c", "user.name=t", "-c", "user.email=t@t", *a], cwd=d, check=True, capture_output=True, text=True).stdout.strip()
+        git("init", "-q", "-b", "main"); (d / "a").write_text("0\n"); git("add", "-A"); git("commit", "-qm", "base")
+        git("checkout", "-qb", "pr")
+        (d / "a").write_text("1\n"); git("commit", "-qam", "variant A")
+        a = git("rev-parse", "HEAD")
+        (d / "a").write_text("2\n"); git("commit", "-qam", "variant B\n\nPreview-compare: Variant B, the tiles")
+        b = git("rev-parse", "HEAD")
+        (d / "a").write_text("3\n"); git("commit", "-qam", f"notes\n\nPreview-compare: {a[:7]} Variant A, the brick\nCo-Authored-By: x <x@x>")
+        self.assertEqual(previews.notes(git("rev-parse", "HEAD"), cwd=d, main="main"), {a: "Variant A, the brick", b: "Variant B, the tiles"})
 
 
 class Fold(unittest.TestCase):
