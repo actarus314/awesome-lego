@@ -306,7 +306,7 @@ class About(unittest.TestCase):
 
     def test_way_draws_each_step_at_one_scale(self):
         """The way of an entry: one drawing per step, on boxes of one size (the same scale), each brick or plate with
-        its studs (one per square of its top, unless another piece sits on it), the entry in each, the texts in order."""
+        its studs (one per square of its top, unless another piece sits on it), in the colours of the plate, the texts in order."""
         doc = build.way([(f"n{i}", f"t{i}") for i in range(len(build.WAY))])
         boxes = re.findall(r'<svg class="iso" viewBox="\S+ \S+ (\S+) (\S+)"', doc)
         self.assertEqual(len(boxes), len(build.WAY))
@@ -317,7 +317,7 @@ class About(unittest.TestCase):
             studs = sum(1 for a, b, z, w, d, h, _, kind in step if kind == "brick" for i in range(w) for j in range(d)
                         if (a + i + .5, b + j + .5, z + h) not in hidden)
             self.assertEqual(part.count('href="#way-stud"'), studs)
-            self.assertEqual(sum(1 for *_, colour, _ in step if colour == "y"), 1)
+            self.assertTrue({colour for *_, colour, _ in step} <= {"n", "b", "y", "w"})
         self.assertEqual(re.findall(r"<b>(n\d)</b><p>(t\d)</p>", doc), [(f"n{i}", f"t{i}") for i in range(len(build.WAY))])
 
     def test_icon_buttons_named_without_the_page_script(self):

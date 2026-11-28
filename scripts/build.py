@@ -741,23 +741,25 @@ def plate(counts, label):
 # The way of an entry, in four small builds drawn in the projection of the brick 3001 of the footer: a stud is 10 units
 # of the axes a (down to the right) and b (down to the left), a millimetre 1.25 units of height (a brick 9.6 mm, 12 units;
 # a plate or a tile 3.2 mm, 4 units; a stud 4.8 mm wide and 1.7 mm high). A piece: (a, b, z, studs along a, along b,
-# height, colour, kind); its colour is a class of about.css, "y" for the entry, the one piece in colour, followed from
-# step to step, "w" and "n" for the others; its kind "brick" (studs on top) or "tile" (smooth).
+# height, colour, kind); its colour is a class of about.css, those of the plate of the selection: "n" listed without rank
+# (grey), "b" ranked (blue), "y" put forward (yellow), and "w" for what holds the entries (sources, the baseplate of a
+# category); its kind "brick" (studs on top) or "tile" (smooth). The entry is the 2×4 brick: found grey among the others,
+# ranked once read, placed among the entries of its category, then in a model with the one put forward on top.
 ISO = 8.66  # the horizontal step of a stud on either axis: 10 × cos 30°
 WAY = (
-    (  # find: loose pieces, the entry among them
-        (-2.5, 1, 0, 1, 2, 12, "n", "brick"), (4.5, 0, 0, 2, 2, 4, "w", "brick"), (1.5, 2, 0, 4, 2, 12, "y", "brick"),
+    (  # find: loose pieces, nothing ranked yet, the entry among them
+        (-2.5, 1, 0, 1, 2, 12, "n", "brick"), (4.5, 0, 0, 2, 2, 4, "n", "brick"), (1.5, 2, 0, 4, 2, 12, "n", "brick"),
         (0, 4.5, 0, 3, 1, 4, "n", "tile")),
-    (  # read at the source: the entry on its sources, plates (up to 3)
+    (  # read at the source: the entry, ranked, on its sources, plates (up to 3)
         (0, 0, 0, 4, 2, 4, "w", "brick"), (0, 0, 4, 4, 2, 4, "w", "brick"), (0, 0, 8, 4, 2, 4, "w", "brick"),
-        (0, 0, 12, 4, 2, 12, "y", "brick")),
-    (  # write the entry: it takes its place on the baseplate of its category, among the others
-        (0, 0, 0, 6, 4, 4, "n", "brick"), (0, 0, 4, 4, 2, 12, "w", "brick"), (0, 2, 4, 4, 2, 12, "y", "brick"),
-        (4, 0, 4, 2, 2, 12, "w", "brick")),
-    (  # build: the baseplate becomes a model, the entry in its first course, a tile on the top to finish it
-        (0, 0, 0, 6, 4, 4, "n", "brick"), (0, 0, 4, 4, 2, 12, "w", "brick"), (4, 0, 4, 2, 2, 12, "w", "brick"),
-        (0, 2, 4, 4, 2, 12, "y", "brick"), (4, 2, 4, 2, 2, 12, "w", "brick"), (0, 0, 16, 4, 2, 12, "w", "brick"),
-        (4, 0, 16, 2, 2, 12, "w", "brick"), (0, 0, 28, 2, 2, 12, "w", "brick"), (0, 0, 40, 2, 2, 4, "w", "tile")),
+        (0, 0, 12, 4, 2, 12, "b", "brick")),
+    (  # write the entry: on the baseplate of its category, beside one listed without rank and the one put forward
+        (0, 0, 0, 6, 4, 4, "w", "brick"), (0, 0, 4, 4, 2, 12, "n", "brick"), (0, 2, 4, 4, 2, 12, "b", "brick"),
+        (4, 0, 4, 2, 2, 12, "y", "brick")),
+    (  # build: a model, the entries listed without rank and ranked below, the one put forward on top
+        (0, 0, 0, 6, 4, 4, "w", "brick"), (0, 0, 4, 4, 2, 12, "n", "brick"), (4, 0, 4, 2, 2, 12, "b", "brick"),
+        (0, 2, 4, 4, 2, 12, "b", "brick"), (4, 2, 4, 2, 2, 12, "n", "brick"), (0, 0, 16, 4, 2, 12, "b", "brick"),
+        (4, 0, 16, 2, 2, 12, "b", "brick"), (0, 0, 28, 2, 2, 12, "y", "brick")),
 )
 
 

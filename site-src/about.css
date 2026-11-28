@@ -39,9 +39,9 @@
 .way p{margin:4px 0 0;font-size:14px;line-height:1.5;color:var(--muted)}
 .iso{--bw:1px;color:var(--fg)}
 .iso path,.ws{stroke:currentColor;stroke-width:var(--bw);stroke-linejoin:round;vector-effect:non-scaling-stroke}
-.iso g{--t:color-mix(in srgb,var(--c) 62%,var(--card))}
+.iso g{--t:color-mix(in srgb,var(--c) 80%,var(--card))}
 .iso .ft,.ws{fill:var(--t)}.iso .fl{fill:color-mix(in srgb,var(--t) 86%,var(--fg))}.iso .fr{fill:color-mix(in srgb,var(--t) 74%,var(--fg))}
-.c-y{--c:var(--hi)}.iso .c-y{--t:light-dark(color-mix(in srgb,var(--hi) 62%,var(--card)),color-mix(in srgb,var(--hi) 86%,var(--card)))}.c-n{--c:color-mix(in srgb,var(--other) 45%,var(--card))}.c-w{--c:var(--card)}
+.c-y{--c:var(--hi)}.c-b{--c:var(--accent)}.c-n{--c:var(--other)}.c-w{--c:var(--card)}
 .way+.note{margin-top:22px}
 /* the card of the dark theme: a shadow around the block, so that nothing moves from one theme to the other */
 .night{border-radius:6px;background:light-dark(transparent,var(--card));box-shadow:0 0 0 14px light-dark(transparent,var(--card)),0 0 0 15px light-dark(transparent,var(--line));margin:14px 0}
