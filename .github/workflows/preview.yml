@@ -79,7 +79,7 @@ jobs:
           Preview removed: the pull request is closed."
           else
           body="<!-- preview -->
-          **Preview of this pull request**: ${url} (French: ${url}fr/)
+          **Preview of this pull request**: ${url} (French: ${url}fr/); each earlier commit that changes the website: ${url}c/
 
           Commit ${SHA:0:7}, merged with \`main\` (alone if they conflict), online a few minutes after this comment (the **Preview** run, then the **Pages** run it starts). The banner of each page gives the number its merge gives, and the website its changelog entry, as Version will write them; rebuilt each time \`main\` moves, hidden from search engines, removed when the pull request is closed."
           fi
