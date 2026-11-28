@@ -87,14 +87,17 @@ function make(id){const c={id},col=document.createElement('section');col.classNa
  c.view=document.createElement('div');c.view.className='view';
  c.f=document.createElement('iframe');c.f.title='Version';c.view.append(c.f);
  head.append(sel,rm);col.append(head,c.note,c.view);c.col=col;
- sel.addEventListener('change',()=>{c.id=sel.value;st.v=cols.map(x=>x.id);save();setNote(c);c.f.src=byId(c.id).root+st.p});
+ sel.addEventListener('change',()=>{c.id=sel.value;st.v=cols.map(x=>x.id);save();setNote(c);c.f.src=byId(c.id).root+st.p;draw()});
  rm.addEventListener('click',()=>{if(cols.length<2)return;cols.splice(cols.indexOf(c),1);c.ro.disconnect();col.remove();st.v=cols.map(x=>x.id);st.t=Math.min(st.t,cols.length-1);save();draw()});
  c.f.addEventListener('load',()=>{follow(c);watch(c)});
  setNote(c);c.f.src=byId(id).root+st.p;frames.append(col);cols.push(c);c.ro=new ResizeObserver(()=>fit(c));c.ro.observe(c.view);return c}
-function draw(){document.getElementById('add').disabled=cols.length>=MAX;
+// frames in the order of time, the published website first, whatever the order they were chosen in (skill document-versionne,
+// section 3: panes once followed the order of the clicks); by the flex order, which moves no frame, so none reloads
+const at=c=>V.findIndex(v=>v.id===c.id),inTime=()=>[...cols].sort((a,b)=>at(a)-at(b));
+function draw(){document.getElementById('add').disabled=cols.length>=MAX;cols.forEach(c=>c.col.style.order=at(c));
  cols.forEach(c=>c.col.querySelector('button').disabled=cols.length<2);
- tabs.replaceChildren(...cols.map((c,i)=>{const b=document.createElement('button');b.type='button';b.textContent=String(i+1);b.setAttribute('aria-label','Frame '+(i+1)+': '+byId(c.id).label);b.setAttribute('aria-pressed',String(i===st.t));b.addEventListener('click',()=>{st.t=i;draw()});return b}));
- cols.forEach((c,i)=>c.col.classList.toggle('shown',i===st.t));cols.forEach(fit)}
+ tabs.replaceChildren(...inTime().map((c,i)=>{const b=document.createElement('button');b.type='button';b.textContent=String(i+1);b.setAttribute('aria-label','Frame '+(i+1)+': '+byId(c.id).label);b.setAttribute('aria-pressed',String(i===st.t));b.addEventListener('click',()=>{st.t=i;draw()});return b}));
+ inTime().forEach((c,i)=>c.col.classList.toggle('shown',i===st.t));cols.forEach(fit)}
 st.v.forEach(make);
 document.getElementById('add').addEventListener('click',()=>{if(cols.length>=MAX)return;const free=V.find(v=>!st.v.includes(v.id))||newest;make(free.id);st.v=cols.map(x=>x.id);st.t=cols.length-1;save();draw()});
 const W=document.getElementById('width'),S=document.getElementById('scroll'),A=document.getElementById('addr');
