@@ -9,7 +9,7 @@
 "n1":{"en": "3001 is the part number of the 2×4 brick, the brick of the stud-and-tube patent that the LEGO Group filed on 28 Jan 1958. Six of them combine in more than 915 million ways. A number that means nothing to most people and something to those who build, hence the name of the website, 3001.club.", "fr": "3001 est le numéro de pièce de la brique 2×4, celle du brevet des tenons et tubes déposé par le groupe LEGO le 28 janv. 1958. Six de ces briques s'assemblent de plus de 915 millions de façons. Un numéro qui ne dit rien au plus grand nombre et parle à ceux qui construisent, d'où le nom du site, 3001.club."},
 "n_src":{"en": "Sources: <a href=\"https://www.lego.com/en-gb/history/articles/d-the-stud-and-tube-principle\">LEGO Group history</a>, <a href=\"https://brickarchitect.com/parts/3001\">Brick Architect</a>, read on 27 Nov 2026.", "fr": "Sources : <a href=\"https://www.lego.com/fr-fr/history/articles/d-the-stud-and-tube-principle\">histoire du groupe LEGO</a> (en anglais), <a href=\"https://brickarchitect.com/parts/3001\">Brick Architect</a> (en anglais), lues le 27 nov. 2026."},
 "m_h":{"en": "How the directory is made", "fr": "Comment est fait l'annuaire"},
-"m_lead":{"en": "Resources are searched for country by country and language by language, read at their source by a language model under written rules, then written into open text files on GitHub, one per category, from which this website, the list on GitHub and a feed of new resources are built.", "fr": "Les ressources sont cherchées pays par pays et langue par langue, lues à leur source par un modèle de langage selon des règles écrites, puis écrites dans des fichiers texte ouverts sur GitHub, un par catégorie, d'où sont construits ce site, la liste sur GitHub et un flux des nouvelles ressources."},
+"m_lead":{"en": "Anyone can read these files, reuse them under the licence or propose a correction.", "fr": "Chacun peut lire ces fichiers, les réutiliser sous licence ou y proposer une correction."},
 "c_h":{"en": "What keeps it current", "fr": "Ce qui le tient à jour"},
 "t_when":{"en": "When", "fr": "Quand"},
 "t_who":{"en": "Who", "fr": "Par qui"},
@@ -69,5 +69,13 @@
 "lt3l":{"en": "Their owners", "fr": "Leurs propriétaires"},
 "lt3d":{"en": "Under neither licence.", "fr": "Sous aucune des deux licences."},
 "crit":{"en": "What gets in, what stays out", "fr": "Ce qui entre, ce qui reste dehors"},
-"st2r":{"en": "A rank weighs what the resource offers that others do not, its recent activity, its reach and how solid its sources are; it is written with its reason in the open data, and the monthly review revisits it.", "fr": "Un rang pèse ce que la ressource apporte de propre, son activité récente, sa portée et la solidité de ses sources ; il est écrit avec sa raison dans les données ouvertes, et la revue mensuelle le revoit."}
+"st2r":{"en": "A rank weighs what the resource offers that others do not, its recent activity, its reach and how solid its sources are; it is written with its reason in the open data, and the monthly review revisits it.", "fr": "Un rang pèse ce que la ressource apporte de propre, son activité récente, sa portée et la solidité de ses sources ; il est écrit avec sa raison dans les données ouvertes, et la revue mensuelle le revoit."},
+"w1":{"en": "Find", "fr": "Chercher"},
+"w1d":{"en": "Country by country, language by language: official sites, directories, feeds, public archives.", "fr": "Pays par pays, langue par langue : sites officiels, annuaires, flux, archives publiques."},
+"w2":{"en": "Read at the source", "fr": "Lire à la source"},
+"w2d":{"en": "By a language model, under written rules: 1 to 3 dated sources per entry.", "fr": "Par un modèle de langage, selon des règles écrites : 1 à 3 sources datées par fiche."},
+"w3":{"en": "Write the entry", "fr": "Écrire la fiche"},
+"w3d":{"en": "An open text file per category, on GitHub.", "fr": "Un fichier texte ouvert par catégorie, sur GitHub."},
+"w4":{"en": "Build", "fr": "Construire"},
+"w4d":{"en": "This website in English and French, the list on GitHub, a feed of new resources.", "fr": "Ce site en anglais et en français, la liste sur GitHub, un flux des nouvelles ressources."}
 }
