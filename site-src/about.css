@@ -15,6 +15,8 @@
 .ab-intro .fresh{margin-top:10px}
 /* why 3001: the brick of the name, drawn again with its dimensions (the drawing is the footer's, site-src/footer.html) */
 .b3-why svg{display:block;width:100%;max-width:200px;height:auto;margin:0 auto 6px;--bw:1.6px}
+/* why 3001 stands out on a card in both themes */
+.b3-why{border-radius:6px;background:var(--card);border:1px solid var(--line);padding:22px 24px}
 .b3-why h2{font-size:18px;margin:0 0 6px}.b3-why p{margin:0;font-size:15px;line-height:1.6}.b3-why .note{margin-top:10px;font-size:13px}
 .b3-dim{fill:none;stroke:var(--muted);stroke-width:1px;vector-effect:non-scaling-stroke}.b3-dt text{font:600 4.4px var(--mono);fill:var(--muted);text-anchor:middle;dominant-baseline:middle}.b3-dt .b3-pn{text-anchor:start;dominant-baseline:auto;fill:var(--fg);font-size:5.2px;letter-spacing:.05em}
 /* a section: its heading in the left margin, its body on the right; one column on a phone */
@@ -92,7 +94,7 @@
 @media (max-width:640px){.plate,.b3-dt,.b3-dim{display:none}.stages .fig{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:.3em}.band{display:flex}
  .b3-why{grid-template-columns:88px minmax(0,1fr);column-gap:14px;row-gap:0}.b3-why>div{display:contents}.b3-why svg{grid-row:1;max-width:88px}.b3-why h2{grid-column:2;grid-row:1;margin:0}.b3-why p{grid-column:1/-1;margin-top:10px}
  .way{grid-template-columns:1fr;gap:16px}.way li{display:grid;grid-template-columns:92px minmax(0,1fr);column-gap:16px;align-items:center}.way li::before{display:none}.way svg{grid-row:1/span 2;margin:0}.way b{align-self:end}.way p{align-self:start}
- .doors{grid-template-columns:1fr}.night{box-shadow:0 0 0 8px light-dark(transparent,var(--card)),0 0 0 9px light-dark(transparent,var(--line))}
+ .doors{grid-template-columns:1fr}.b3-why{padding:14px}.night{box-shadow:0 0 0 8px light-dark(transparent,var(--card)),0 0 0 9px light-dark(transparent,var(--line))}
  .cadence thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
  .cadence tr,.lic tr{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
  .cadence tr:last-child{border-bottom:0}
