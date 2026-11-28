@@ -28,7 +28,6 @@
 "c4d":{"en": "The rules of the data and the display on computer and phone are checked; the maintainer reads the change, and its preview when there is one, before accepting it.", "fr": "Les règles des données et l'affichage sur ordinateur et téléphone sont contrôlés ; le mainteneur lit le changement, et son aperçu quand il existe, avant de l'accepter."},
 "who":{"en": "The method is described in full in <a href=\"https://github.com/{REPO}/blob/main/MAINTENANCE.md\">MAINTENANCE.md</a>.", "fr": "La méthode complète est décrite dans <a href=\"https://github.com/{REPO}/blob/main/MAINTENANCE.md\">MAINTENANCE.md</a> (en anglais)."},
 "s_h":{"en": "Why a selection", "fr": "Pourquoi une sélection"},
-"s_lead":{"en": "The directory points to the lists that already exist rather than copying them, ranks the best resources of each group and puts the first one forward.", "fr": "L'annuaire renvoie aux listes qui existent déjà plutôt que de les recopier, classe les meilleures ressources de chaque groupe et met la première en avant."},
 "plate":{"en": "Plate of {{N}} studs, one per resource: {{SEL}} best picks, {{RANKED}} ranked resources in all, the others listed without a rank.", "fr": "Plaque de {{N}} tenons, un par ressource : {{SEL}} mises en avant, {{RANKED}} ressources classées en tout, les autres listées sans rang."},
 "k_sel":{"en": "best picks", "fr": "mises en avant"},
 "k_rank":{"en": "other ranked resources", "fr": "autres ressources classées"},

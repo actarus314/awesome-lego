@@ -54,7 +54,8 @@
 .band{display:none;height:18px;gap:3px;padding:3px;border-radius:5px;background:var(--sunk);border:1px solid var(--line)}
 .band span{min-width:12px;border-radius:2px;background:radial-gradient(circle,var(--stud) 0 3.6px,transparent 4.2px) 0 50%/10px 100% round no-repeat}
 .keys{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px;color:var(--muted)}
-.night+.lead,.night+.note{margin-top:34px}
+.night+.note,.night+.stages{margin-top:34px}
+.ab h3+.night{margin-top:32px}
 .keys li::before{content:"";display:inline-block;width:.8em;height:.8em;border-radius:50%;background:var(--stud);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--fg) 22%,transparent);margin-right:.45em;vertical-align:-.05em}
 /* the three steps under the plate, from the widest to the narrowest */
 .stages{list-style:none;margin:24px 0 0;padding:0}
