@@ -1,5 +1,5 @@
 {
- "measured": "2026-11-27, v4.4 (749 resources); about pages again on 2026-11-28, redesign with the plate of studs (about +4 kB, of which 2.6 kB for the two drawings of the plate, wide and phone)",
+ "measured": "2026-11-27, v4.4 (749 resources); about pages again on 2026-11-28, redesign with the plate of studs and the piles of bricks of the five steps",
  "margin": "5 %",
  "per_resource": {
   "index.html": 1047,
@@ -8,7 +8,7 @@
   "fr/details.json": 297
  },
  "files": {
-  "about/index.html": 64344,
-  "fr/about/index.html": 65328
+  "about/index.html": 68263,
+  "fr/about/index.html": 69225
  }
 }
