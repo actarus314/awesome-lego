@@ -56,6 +56,11 @@ Lignes : AL-84 et AL-85 de `dev/registre.md`. Ouvert le 28/11/2026 à 04 h 08 (d
 - Participer : liens posés sur la carte du thème sombre comme le tableau, agencement en deux colonnes gardé ; rangées alignées au passage (`align-content:start`, une rangée se décalait quand la voisine était plus haute).
 - Reste ouvert : le jaune de la fiche est aussi celui de « mises en avant » sur la plaque.
 
+## Choix de Romain (28/11/2026, 17 h 19)
+
+- Couleurs du schéma : celles de la plaque, avec un sens dans le chemin : gris (listée sans rang) pour les pièces trouvées, la fiche comprise ; bleu (classée) une fois lue ; sur la plaque de sa catégorie, à côté d'une grise et de la mise en avant jaune ; le modèle construit, gris et bleu en bas, la jaune au sommet. Blanc pour ce qui porte les fiches (sources, plaques de base). Tuile du sommet retirée (fd8e3b4).
+- « Pourquoi 3001 » à essayer en relief dans les deux thèmes (carte bordée, dans sa colonne, 6d0f570) et/ou ailleurs : section à part avant les licences, sur la même carte, l'ouverture réduite au titre et à sa phrase (b29c639). Romain note que cela se rapproche de la version initiale de la page.
+
 ## Vérifications
 
 - Relecture Opus en contexte neuf des deux demandes (28/11) : #61, trait parasite des `details` du site sous les listes, phrase de `contributing.md` qui citait BrickLink et `access` (catégorie sans `access`), fragment faux pour B, colonne étroite de B à 320 px, cotes illisibles de la brique réduite ; #62, remontée dans `main` sans base commune, aucun garde-fou de durée, chiffre faux de MAINTENANCE.md, tests manquants, tête nommée par un commit de notes : tout corrigé ; laissés : critères du rang écrits sur la page seulement (déjà dans la version publiée), sémantique de tableau sous Safari avec des lignes en flex, contraste des tenons jaunes sur la plaque (chiffres dans le libellé et le texte).
