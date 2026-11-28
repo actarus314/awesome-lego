@@ -31,6 +31,15 @@ Lignes : AL-84 et AL-85 de `dev/registre.md`. Ouvert le 28/11/2026 à 04 h 08 (d
 - **Aperçus par commit** (#62) : chaque commit d'une demande qui change le site garde son aperçu ; pas d'aperçu pour un commit qui ne change pas le site construit (notes, scripts, tests) ; dix au plus par demande, garde-fou qui ne devrait pas jouer ; supprimés à la fermeture comme aujourd'hui.
 - Suite : le même audit pour l'annuaire et l'Observatoire (AL-86), avec la même règle du petit écran.
 
+## Choix de Romain (28/11/2026, vocal de 08 h 50 à 09 h 13, devant les aperçus côte à côte)
+
+- Variante **A** gardée (la brique et les chiffres en gras dans la phrase d'ouverture) ; B retirée.
+- Les **40 pays et 25 langues en gras** aussi dans la phrase d'ouverture.
+- L'**espace vide autour du titre** « À propos de l'annuaire » fait beaucoup pour la facilité de lecture : à garder.
+- « **Participer** » : les quatre encarts retirés, retour aux liens dans le texte, sur le fond de la page.
+- **Fond de carte du tableau et de la plaque en thème sombre seulement** : sur fond clair, ils se lisaient bien sans ; en sombre, la page sans bloc était presque noire. Fait par une couleur `light-dark()` et une ombre autour du bloc, pour que rien ne bouge d'un thème à l'autre.
+- **Cinq étapes** : les cinq points numérotés « ne servent pas à grand-chose » ; deux versions à comparer : la version 1 (c5c30f4), une pile qui gagne une brique à chaque étape (une sous l'autre sur téléphone), et la version 2 (1684e26), sans rangée d'étapes, le paragraphe racontant le chemin d'une fiche (comme la retouche 1).
+
 ## Vérifications
 
 - Relecture Opus en contexte neuf des deux demandes (28/11) : #61, trait parasite des `details` du site sous les listes, phrase de `contributing.md` qui citait BrickLink et `access` (catégorie sans `access`), fragment faux pour B, colonne étroite de B à 320 px, cotes illisibles de la brique réduite ; #62, remontée dans `main` sans base commune, aucun garde-fou de durée, chiffre faux de MAINTENANCE.md, tests manquants, tête nommée par un commit de notes : tout corrigé ; laissés : critères du rang écrits sur la page seulement (déjà dans la version publiée), sémantique de tableau sous Safari avec des lignes en flex, contraste des tenons jaunes sur la plaque (chiffres dans le libellé et le texte).
