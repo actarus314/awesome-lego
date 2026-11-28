@@ -7,7 +7,7 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 ## Savoir
 - Notes du mainteneur dans le dépôt et leurs contrôles (registre, contexte, section « Savoir », carte des fichiers) : `passation.conf`, `dev/outils/passation.sh`, `CLAUDE.md` ; vérifié 27/11/2026
 - Fonctionnement du dépôt, workflows, horaires, tâches du mainteneur : `MAINTENANCE.md` ; vérifié 28/11/2026
-- Règles des données (champs, `audience`, rangs, dates abrégées) : `data/SCHEMA.md` ; règle de sélection : `contributing.md`, `site-src/about.json` ; vérifié 27/11/2026
+- Règles des données (champs, `audience`, rangs, dates abrégées) : `data/SCHEMA.md` ; règle de sélection : `contributing.md`, `site-src/about.json` (compte : une partie utile sans compte suffit, 28/11, AL-84) ; vérifié 28/11/2026
 - Cahiers des lots 2 et 3, tri des audits du 24/11 : projet claude.ai « lego », claude/awesome-lego-lot-2.md, claude/awesome-lego-lot-3.md, claude/audit-24-11-tri.md ; vérifié 26/11/2026
 - Consigne de la revue mensuelle (texte de la tâche planifiée) : `dev/consigne-revue.md` ; vérifié 27/11/2026
 - Publication (fragments, Version, Pages, aperçus, files d'attente des workflows) : `MAINTENANCE.md` (Workflows in detail, Pages, Preview, Version, Versions), `scripts/changes.py`, `dev/lots/publication.md` puis `dev/lots/publication-2.md` (modèle C) ; vérifié 28/11/2026
@@ -75,6 +75,7 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 - Les sous-agents ont l'outil des documents du projet claude.ai (lecture et écriture vues le 26/11).
 
 ## Décisions de Romain (une ligne chacune ; le détail est dans les demandes et l'historique)
+- 28/11, vocal de 05 h 00 à 05 h 50 (AL-84 à AL-86, `dev/lots/a-propos.md`) : synthèse des deux retouches en deux variantes (brique ou quatre rectangles) ; cartes gardées pour ce qui se lit d'un coup d'œil (relief du mode sombre) ; listes d'entrée réduites, règle du compte reformulée ; petit écran conçu à part, sans régression ; aperçus par commit (#62) ; audit de l'annuaire et de l'Observatoire ensuite.
 - 28/11, vocal de 04 h 08 à 04 h 29 (AL-84, #61) : refonte de la page À propos, forme et fond (« fait trop IA généré ») ; arrêtée puis reprise : « allons jusqu'au bout », jugée sur l'aperçu de la demande.
 - 27/11, vocal jusqu'à 23 h 27 (AL-81, `dev/lots/acces-machines.md`) : accès des machines sans refonte du site ; tous les robots autorisés, entraînement compris (« bloquer, c'est encore une fois déclaratif ») ; rendu à l'avance mesuré en comparaison seulement (AL-82) ; générateur de site (Hugo, Astro) regardé seulement pour une page par ressource ou une construction devenue pénible, par comparaison mesurée.
 - 27/11, 23 h 03 (AL-80) : modèle de publication C (chaque fusion devient une version publiée ; plus de demande `vX.Y`) et numérotation à trois niveaux, pour l'annuaire et pour toutes les skills. « Je veux que ce soit vraiment la dernière fois que l'on modifie cette architecture de publication ».
