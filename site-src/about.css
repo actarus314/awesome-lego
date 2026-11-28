@@ -14,7 +14,7 @@
 .ab-intro .free{margin:14px 0 0;font-weight:650}
 .ab-intro .fresh{margin-top:10px}
 /* why 3001: the brick of the name, drawn again with its dimensions (the drawing is the footer's, site-src/footer.html) */
-.b3-why svg{display:block;width:100%;max-width:340px;height:auto;margin:0 auto 6px;--bw:1.6px}
+.b3-why svg{display:block;width:100%;max-width:200px;height:auto;margin:0 auto 6px;--bw:1.6px}
 .b3-why h2{font-size:18px;margin:0 0 6px}.b3-why p{margin:0;font-size:15px;line-height:1.6}.b3-why .note{margin-top:10px;font-size:13px}
 .b3-dim{fill:none;stroke:var(--muted);stroke-width:1px;vector-effect:non-scaling-stroke}.b3-dt text{font:600 4.4px var(--mono);fill:var(--muted);text-anchor:middle;dominant-baseline:middle}.b3-dt .b3-pn{text-anchor:start;dominant-baseline:auto;fill:var(--fg);font-size:5.2px;letter-spacing:.05em}
 /* a section: its heading in the left margin, its body on the right; one column on a phone */
@@ -29,6 +29,20 @@
 .cadence tbody th,.lic th{font-weight:650;white-space:nowrap}
 .cadence .by,.lic .by{color:var(--muted);white-space:nowrap}
 .lic tr:first-child>*{border-top:1px solid var(--line)}
+/* the way of an entry: four small builds in the projection of the brick 3001 (scripts/build.py, way()), side by side;
+   on a phone, one under the other, the drawing beside its text */
+.way{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.way li{position:relative}
+.way li+li::before{content:"";position:absolute;left:-19px;top:34%;width:7px;height:7px;border-top:1.5px solid var(--muted);border-right:1.5px solid var(--muted);transform:rotate(45deg)}
+.way svg{display:block;width:100%;height:auto;margin-bottom:12px}
+.way b{display:block;font-size:15px}
+.way p{margin:4px 0 0;font-size:14px;line-height:1.5;color:var(--muted)}
+.iso{--bw:1px;color:var(--fg)}
+.iso path,.ws{stroke:currentColor;stroke-width:var(--bw);stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.iso g{--t:color-mix(in srgb,var(--c) 62%,var(--card))}
+.iso .ft,.ws{fill:var(--t)}.iso .fl{fill:color-mix(in srgb,var(--t) 86%,var(--fg))}.iso .fr{fill:color-mix(in srgb,var(--t) 74%,var(--fg))}
+.c-y{--c:var(--hi)}.iso .c-y{--t:light-dark(color-mix(in srgb,var(--hi) 62%,var(--card)),color-mix(in srgb,var(--hi) 86%,var(--card)))}.c-n{--c:color-mix(in srgb,var(--other) 45%,var(--card))}.c-w{--c:var(--card)}
+.way+.note{margin-top:22px}
 /* the card of the dark theme: a shadow around the block, so that nothing moves from one theme to the other */
 .night{border-radius:6px;background:light-dark(transparent,var(--card));box-shadow:0 0 0 14px light-dark(transparent,var(--card)),0 0 0 15px light-dark(transparent,var(--line));margin:14px 0}
 /* the plate: one stud per resource (drawn by scripts/build.py, plate()), the best picks first; on a phone, one row in proportion */
@@ -40,7 +54,7 @@
 .band span{min-width:12px;border-radius:2px;background:radial-gradient(circle,var(--stud) 0 3.6px,transparent 4.2px) 0 50%/10px 100% round no-repeat}
 .keys{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px;color:var(--muted)}
 .night+.note,.night+.stages{margin-top:34px}
-.ab h3+.night{margin-top:32px}
+.ab h3+.night,.ab .lead+.night{margin-top:32px}
 .keys li::before{content:"";display:inline-block;width:.8em;height:.8em;border-radius:50%;background:var(--stud);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--fg) 22%,transparent);margin-right:.45em;vertical-align:-.05em}
 /* the three steps under the plate, from the widest to the narrowest */
 .stages{list-style:none;margin:24px 0 0;padding:0}
@@ -64,7 +78,7 @@
 .inout .in li::before{content:"✓";color:var(--ok)}.inout .out li::before{content:"✕";color:var(--bad)}
 /* taking part: four ways, each a link and what it is for, on the background */
 .doors{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 40px}
-.doors li{display:grid;grid-template-columns:22px minmax(0,1fr);column-gap:12px}
+.doors li{display:grid;grid-template-columns:22px minmax(0,1fr);column-gap:12px;align-content:start}
 .doors a{display:grid;grid-template-columns:subgrid;grid-column:1/-1;align-items:center;color:var(--accent);border-radius:4px}
 .doors a:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
 .doors svg{width:22px;height:22px;fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
@@ -77,6 +91,7 @@
  .inout{grid-template-columns:1fr;gap:20px}}
 @media (max-width:640px){.plate,.b3-dt,.b3-dim{display:none}.stages .fig{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:.3em}.band{display:flex}
  .b3-why{grid-template-columns:88px minmax(0,1fr);column-gap:14px;row-gap:0}.b3-why>div{display:contents}.b3-why svg{grid-row:1;max-width:88px}.b3-why h2{grid-column:2;grid-row:1;margin:0}.b3-why p{grid-column:1/-1;margin-top:10px}
+ .way{grid-template-columns:1fr;gap:16px}.way li{display:grid;grid-template-columns:92px minmax(0,1fr);column-gap:16px;align-items:center}.way li::before{display:none}.way svg{grid-row:1/span 2;margin:0}.way b{align-self:end}.way p{align-self:start}
  .doors{grid-template-columns:1fr}.night{box-shadow:0 0 0 8px light-dark(transparent,var(--card)),0 0 0 9px light-dark(transparent,var(--line))}
  .cadence thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
  .cadence tr,.lic tr{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}

@@ -1,5 +1,5 @@
 {
- "measured": "2026-11-27, v4.4 (749 resources); about pages again on 2026-11-28, redesign with the plate of studs and the piles of bricks of the five steps",
+ "measured": "2026-11-27, v4.4 (749 resources); about pages again on 2026-11-28, redesign with the plate of studs and the way of an entry in four small builds, the last a model of nine pieces",
  "margin": "5 %",
  "per_resource": {
   "index.html": 1047,
@@ -8,7 +8,7 @@
   "fr/details.json": 297
  },
  "files": {
-  "about/index.html": 68263,
-  "fr/about/index.html": 69225
+  "about/index.html": 71542,
+  "fr/about/index.html": 72398
  }
 }
