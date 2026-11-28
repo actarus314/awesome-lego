@@ -14,7 +14,7 @@ Lignes : AL-84 et AL-85 de `dev/registre.md`. Ouvert le 28/11/2026 à 04 h 08 (d
 - **Publiée** : v4.10.
 - **Retouche 1** (ec11f33) : plus de cartes, chiffres dans la phrase d'ouverture, tableau quand / par qui / quoi, plaque d'un tenon par ressource. Gardée en artefact : https://claude.ai/artifact/7iyeehCCmA4fUFGeTguyMt.
 - **Retouche 2** (975b03a) : corrections de la relecture Opus (liens de « Participer » hors du clavier, pastilles fausses, faits imprécis).
-- **Synthèse**, en deux variantes à comparer : A (d908d82, brique à côté de l'ouverture) et B (a5e8814, les quatre rectangles de chiffres de l'accueil à côté de l'ouverture, « Pourquoi 3001 » en section à part).
+- **Synthèse**, en deux variantes à comparer : A (d908d82, brique à côté de l'ouverture) et B (a5e8814, les quatre rectangles de chiffres de l'accueil à côté de l'ouverture, « Pourquoi 3001 » en section à part, phrase d'ouverture sans chiffres pour ne pas les redire) ; reprises après la relecture Opus : A en 21c23c7, B en e8be8a0.
 
 ## Décisions de Romain (28/11/2026, vocal)
 
@@ -32,6 +32,8 @@ Lignes : AL-84 et AL-85 de `dev/registre.md`. Ouvert le 28/11/2026 à 04 h 08 (d
 - Suite : le même audit pour l'annuaire et l'Observatoire (AL-86), avec la même règle du petit écran.
 
 ## Vérifications
+
+- Relecture Opus en contexte neuf des deux demandes (28/11) : #61, trait parasite des `details` du site sous les listes, phrase de `contributing.md` qui citait BrickLink et `access` (catégorie sans `access`), fragment faux pour B, colonne étroite de B à 320 px, cotes illisibles de la brique réduite ; #62, remontée dans `main` sans base commune, aucun garde-fou de durée, chiffre faux de MAINTENANCE.md, tests manquants, tête nommée par un commit de notes : tout corrigé ; laissés : critères du rang écrits sur la page seulement (déjà dans la version publiée), sémantique de tableau sous Safari avec des lignes en flex, contraste des tenons jaunes sur la plaque (chiffres dans le libellé et le texte).
 
 - Contrôles du dépôt à chaque commit (`build.py --check`, tests, `hygiene.py`, `check_site.py` avec et sans `--dejavu`) ; captures à 1280 et 390 px, clair et sombre, éléments du téléphone isolés.
 - `--dejavu` a trouvé un débordement de la colonne « Par qui » à 320 px (variante A) : lignes du tableau en flex sur téléphone.
