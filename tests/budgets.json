@@ -1,5 +1,5 @@
 {
- "measured": "2026-11-27, v4.4 (749 resources); about pages again on 2026-11-27, v4.8 with the brick 3001 (+4.7 kB)",
+ "measured": "2026-11-27, v4.4 (749 resources); about pages again on 2026-11-28, redesign with the plate of studs (two drawings, wide and phone, +2.5 kB)",
  "margin": "5 %",
  "per_resource": {
   "index.html": 1047,
@@ -8,7 +8,7 @@
   "fr/details.json": 297
  },
  "files": {
-  "about/index.html": 60161,
-  "fr/about/index.html": 61167
+  "about/index.html": 64142,
+  "fr/about/index.html": 65136
  }
 }

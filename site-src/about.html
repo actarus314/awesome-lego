@@ -30,60 +30,43 @@ try{if('{{LANG}}'==='en'){const l=localStorage.getItem('lang');if(l==='fr'||(!l&
 <a class="skip" href="#about" data-t="skip_content"></a>
 {{HEADER}}
 <main class="wrap ab" id="about">
-<section class="hero ab-hero"><div><h1>{{a:h1}}</h1><p>{{a:lead}}</p><p class="free">{{a:free}}</p><p class="fresh">{{a:figures}}</p></div>
-<div class="kpis"><div class="kpi"><b>{{N}}</b><span>{{a:k_res}}</span></div><div class="kpi"><b>{{COUNTRIES}}</b><span><span class="kl">{{a:k_countries}}</span><span class="ks">{{a:k_countries_short}}</span></span></div><div class="kpi"><b>{{LANGS}}</b><span>{{a:k_langs}}</span></div><div class="kpi"><b>{{SOURCES}}</b><span>{{a:k_sources}}</span></div></div></section>
-
-<section class="b3-why" id="name">
-<svg class="b3001" viewBox="-34 -24 82 64" aria-hidden="true"><use href="#brick-3001" x="-18.82" y="-13.5" width="54.96" height="45"/>
+<section class="ab-top"><div class="ab-intro"><h1>{{a:h1}}</h1><p class="lead">{{a:lead}}</p><p class="free">{{a:free}}</p><p class="fresh">{{a:figures}}</p></div>
+<figure class="b3-why" id="name"><svg class="b3001" viewBox="-34 -24 82 64" aria-hidden="true"><use href="#brick-3001" x="-18.82" y="-13.5" width="54.96" height="45"/>
 <path class="b3-dim" d="M-17.32,10-26.85,15.5M17.32,30 7.79,35.5M-23.82,13.75 10.83,33.75M34.64,20 44.17,25.5M17.32,30 26.85,35.5M41.14,23.75 23.82,33.75M-10.2,-5.6-19,-15H-31"/>
 <g class="b3-dt"><text x="-12.56" y="27.25" transform="rotate(30 -12.56 27.25)">4</text><text x="38.54" y="32.25" transform="rotate(-30 38.54 32.25)">2</text><text class="b3-pn" x="-31" y="-16.6">3001</text></g></svg>
-<div><h2>{{a:n_h}}</h2><p>{{a:n1}}</p><p class="note">{{a:n_src}}</p></div>
+<figcaption><h2>{{a:n_h}}</h2><p>{{a:n1}}</p><p class="note">{{a:n_src}}</p></figcaption></figure>
 </section>
 
-<h2 id="method">{{a:m_h}}</h2>
+<section class="ab-sec" id="method"><h2>{{a:m_h}}</h2><div class="ab-body">
 <p class="lead">{{a:m_lead}}</p>
-<ol class="flow">
-<li><b>{{a:f1}}</b><span>{{a:f1d}}</span></li>
-<li><b>{{a:f2}}</b><span>{{a:f2d}}</span></li>
-<li><b>{{a:f3}}</b><span>{{a:f3d}}</span></li>
-<li><b>{{a:f4}}</b><span>{{a:f4d}}</span></li>
-<li><b>{{a:f5}}</b><span>{{a:f5d}}</span></li>
-</ol>
-<h3 class="sub">{{a:c_h}}</h3>
-<div class="rhythm">
-<div class="beat"><span class="label">{{a:c1}}</span><p>{{a:c1d}}</p></div>
-<div class="beat"><span class="label">{{a:c2}}</span><p>{{a:c2d}}</p></div>
-<div class="beat"><span class="label">{{a:c3}}</span><p>{{a:c3d}}</p></div>
-<div class="beat"><span class="label">{{a:c4}}</span><p>{{a:c4d}}</p></div>
-</div>
+<h3>{{a:c_h}}</h3>
+<table class="cadence"><thead><tr><th scope="col">{{a:t_when}}</th><th scope="col">{{a:t_who}}</th><th scope="col">{{a:t_what}}</th></tr></thead>
+<tbody><tr><th scope="row">{{a:c1}}</th><td class="by">{{a:c1w}}</td><td>{{a:c1d}}</td></tr><tr><th scope="row">{{a:c2}}</th><td class="by">{{a:c2w}}</td><td>{{a:c2d}}</td></tr><tr><th scope="row">{{a:c3}}</th><td class="by">{{a:c3w}}</td><td>{{a:c3d}}</td></tr><tr><th scope="row">{{a:c4}}</th><td class="by">{{a:c4w}}</td><td>{{a:c4d}}</td></tr></tbody></table>
 <p class="note">{{a:who}}</p>
+</div></section>
 
-<h2 id="selection">{{a:s_h}}</h2>
+<section class="ab-sec" id="selection"><h2>{{a:s_h}}</h2><div class="ab-body">
 <p class="lead">{{a:s_lead}}</p>
+{{PLATE}}
+<ul class="keys" aria-hidden="true"><li class="k-sel">{{a:k_sel}}</li><li class="k-rank">{{a:k_rank}}</li><li class="k-list">{{a:k_list}}</li></ul>
 <ol class="stages">
-<li class="stage"><div class="gauge" style="--w:100%"><b>{{N}}</b><span class="unit">{{a:s1}}</span><span class="track"><span class="fill"></span></span></div>
-<div class="why"><h3>{{a:st1}}</h3><p>{{a:st1d}}</p>
-<div class="inout"><div class="in"><h4>{{a:in_h}}</h4><ul>{{a:in}}</ul></div><div class="out"><h4>{{a:out_h}}</h4><ul>{{a:out}}</ul></div></div></div></li>
-<li class="stage"><div class="gauge" style="--w:{{RANKEDW}}"><b>{{RANKED}}</b><span class="unit">{{a:s2}}</span><span class="track"><span class="fill"></span></span></div>
-<div class="why"><h3>{{a:st2}}</h3><p>{{a:st2d}}</p></div></li>
-<li class="stage"><div class="gauge" style="--w:{{SELW}}"><b>{{SEL}}</b><span class="unit">{{a:s3}}</span><span class="track"><span class="fill"></span></span></div>
-<div class="why"><h3>{{a:st3}}</h3><p>{{a:st3d}}</p></div></li>
+<li class="k-list"><p class="fig"><b>{{N}}</b> {{a:s1}}</p><h3>{{a:st1}}</h3><p>{{a:st1d}}</p>
+<div class="inout"><div class="in"><h4>{{a:in_h}}</h4><ul>{{a:in}}</ul></div><div class="out"><h4>{{a:out_h}}</h4><ul>{{a:out}}</ul></div></div></li>
+<li class="k-rank"><p class="fig"><b>{{RANKED}}</b> {{a:s2}}</p><h3>{{a:st2}}</h3><p>{{a:st2d}}</p></li>
+<li class="k-sel"><p class="fig"><b>{{SEL}}</b> {{a:s3}}</p><h3>{{a:st3}}</h3><p>{{a:st3d}}</p></li>
 </ol>
+</div></section>
 
-<h2 id="participate">{{a:x_h}}</h2>
+<section class="ab-sec" id="participate"><h2>{{a:x_h}}</h2><div class="ab-body">
 <p class="lead">{{a:x_lead}}</p>
-<section class="welcome"><h3>{{a:good_h}}</h3><p>{{a:good}}</p></section>
+<ul class="doors"><li><a href="https://github.com/{{REPO}}/issues/new?template=add-resource.yml"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><b>{{a:x1}}</b></a><span>{{a:x1d}}</span></li><li><a href="https://github.com/{{REPO}}/issues/new?template=fix-entry.yml"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg><b>{{a:x2}}</b></a><span>{{a:x2d}}</span></li><li><a href="https://github.com/{{REPO}}/discussions"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><b>{{a:x3}}</b></a><span>{{a:x3d}}</span></li><li><a href="https://github.com/{{REPO}}/security/advisories/new"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><b>{{a:x4}}</b></a><span>{{a:x4d}}</span></li></ul>
 <p class="note">{{a:x_how}}</p>
-<div class="contact">
-<a class="panel act" href="https://github.com/{{REPO}}/issues/new?template=add-resource.yml"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><b>{{a:x1}}</b><span>{{a:x1d}}</span></a>
-<a class="panel act" href="https://github.com/{{REPO}}/issues/new?template=fix-entry.yml"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg><b>{{a:x2}}</b><span>{{a:x2d}}</span></a>
-<a class="panel act" href="https://github.com/{{REPO}}/discussions"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><b>{{a:x3}}</b><span>{{a:x3d}}</span></a>
-<a class="panel act" href="https://github.com/{{REPO}}/security/advisories/new"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><b>{{a:x4}}</b><span>{{a:x4d}}</span></a>
-</div>
+</div></section>
 
-<h2 id="licences">{{a:l_h}}</h2>
-<p class="lead">{{a:l1}}</p>
-<p class="note">{{a:l2}}</p>
+<section class="ab-sec" id="licences"><h2>{{a:l_h}}</h2><div class="ab-body">
+<table class="lic"><tbody><tr><th scope="row">{{a:lt1}}</th><td class="by">{{a:lt1l}}</td><td>{{a:lt1d}}</td></tr><tr><th scope="row">{{a:lt2}}</th><td class="by">{{a:lt2l}}</td><td>{{a:lt2d}}</td></tr><tr><th scope="row">{{a:lt3}}</th><td class="by">{{a:lt3l}}</td><td>{{a:lt3d}}</td></tr></tbody></table>
+<p class="note">{{a:l_src}} {{a:l2}}</p>
+</div></section>
 </main>
 {{FOOTER}}
 <script>

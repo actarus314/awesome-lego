@@ -704,6 +704,35 @@ def csp(doc, rest="; style-src 'unsafe-inline'; img-src 'self'; connect-src 'sel
 
 
 ABOUT_PATH = {"en": "about/", "fr": "fr/about/"}
+PLATE_COLS = {"wide": 50, "narrow": 25}  # studs per row of the baseplate of the about pages: wide screens, phones
+
+
+def plate(counts, label, size):
+    """The baseplate of the about pages: one stud per resource, in rows of PLATE_COLS[size], the best picks first, then the
+    other ranked resources, then the rest (`counts`: studs of each kind, in that order). Each run of studs is at most
+    three rectangles filled with the stud pattern of its kind, so the drawing stays small whatever the number;
+    the stylesheet shows the wide or the narrow plate by the width of the screen."""
+    cols = PLATE_COLS[size]
+    total = sum(counts)
+    rows = -(-total // cols)
+    rects, start = [], 0
+    for kind, k in zip(("sel", "rank", "list"), counts):
+        a, b = start, start + k  # studs [a, b) of the plate, counted row by row
+        while a < b:
+            r, c = divmod(a, cols)
+            if c or b - a < cols:  # a partial row
+                w = min(cols - c, b - a)
+                rects.append(f'<rect fill="url(#stud-{size}-{kind})" x="{c * 10}" y="{r * 10}" width="{w * 10}" height="10"/>')
+                a += w
+            else:  # whole rows at once
+                n = (b - a) // cols
+                rects.append(f'<rect fill="url(#stud-{size}-{kind})" x="0" y="{r * 10}" width="{cols * 10}" height="{n * 10}"/>')
+                a += n * cols
+        start = b
+    pats = "".join(f'<pattern id="stud-{size}-{k}" width="10" height="10" patternUnits="userSpaceOnUse"><circle class="s-{k}" cx="5" cy="5" r="3.6"/></pattern>'
+                   for k in ("sel", "rank", "list"))
+    return (f'<svg class="plate {size}" viewBox="-4 -4 {cols * 10 + 8} {rows * 10 + 8}" role="img" aria-label="{html.escape(label)}">'
+            f'<defs>{pats}</defs><rect class="p-base" x="-4" y="-4" width="{cols * 10 + 8}" height="{rows * 10 + 8}" rx="4"/>{"".join(rects)}</svg>')
 
 
 def about(lang, data):
@@ -720,12 +749,12 @@ def about(lang, data):
     ld = json.dumps({"@context": "https://schema.org", "@type": "AboutPage", "name": A["ptitle"], "description": A["pdesc"], "url": canon,
                      "inLanguage": lang, "dateModified": data["built"], "isPartOf": {"@type": "WebSite", "name": "Awesome LEGO", "url": PAGES + ("fr/" if lang == "fr" else "")}},
                     ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
-    pct = lambda k: f"{max(1, round(100 * k / n))}%"
     values = {"LANG": lang, "PTITLE": html.escape(A["ptitle"]), "PDESC": html.escape(A["pdesc"]), "CANON": canon, "LD": ld,
               "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "", "SITE": PAGES, "ASTYLE": source("about.css"),
               "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": home, "HOME": home, "ABOUT": "./", "ABOUTCUR": ' aria-current="page"', "ROOT": "../../" if lang == "fr" else "../",
               "OTHER": "../fr/about/" if lang == "en" else "../../about/",
-              "N": str(n), "RANKED": str(ranked), "SEL": str(sel), "RANKEDW": pct(ranked), "SELW": pct(sel),
+              "N": str(n), "RANKED": str(ranked), "SEL": str(sel),
+              "PLATE": "".join(plate((sel, ranked - sel, n - ranked), fill(A["plate"]).replace("{{N}}", str(n)).replace("{{RANKED}}", str(ranked)).replace("{{SEL}}", str(sel)), size) for size in PLATE_COLS),
               "COUNTRIES": str(len({c for r in R for c in r.get("countries") or [] if c != "international"})),
               "LANGS": str(len({x for r in R for x in r.get("languages") or []})), "SOURCES": str(sum(len(r["sources"]) for r in R))}
     tpl = static_texts(shared((SRC / "about.html").read_text(encoding="utf-8")), lang)
