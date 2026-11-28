@@ -133,13 +133,14 @@ def digest(site):
 
 def fetch(sha, cwd=ROOT, remote="origin"):
     """main and sha with enough history for their merge base and the branch's commits. On a run started by a push to
-    main, the checkout already holds main one commit deep, and `--depth` does not deepen a commit already there:
-    `--deepen` then does (28 Nov 2026: the merge base was missing, so every preview rebuilt after a merge was built
-    alone, and no earlier commit was found)."""
+    main, the checkout already holds main one commit deep, and `--depth` does not deepen a commit already there: the
+    whole history is fetched then (`--unshallow`: 12 MB, about a second, measured on 28 Nov 2026; `--deepen` behaved
+    differently with git 2.43 and 2.56). Without it, on 28 Nov 2026, the merge base was missing: every preview rebuilt
+    after a merge was built alone, and no earlier commit was found."""
     refs = ["+refs/heads/main:refs/remotes/origin/main", sha]
     subprocess.run(["git", "fetch", "-q", "--depth=200", remote, *refs], cwd=cwd, check=True, timeout=120)
     if subprocess.run(["git", "merge-base", "refs/remotes/origin/main", sha], cwd=cwd, capture_output=True).returncode:
-        subprocess.run(["git", "fetch", "-q", "--deepen=200", remote, *refs], cwd=cwd, check=True, timeout=120)
+        subprocess.run(["git", "fetch", "-q", "--unshallow", remote, *refs], cwd=cwd, check=True, timeout=300)
 
 
 def history(sha, cwd=ROOT, main="refs/remotes/origin/main"):
