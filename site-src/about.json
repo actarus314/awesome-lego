@@ -2,7 +2,7 @@
 "ptitle":{"en": "About Awesome LEGO: how the directory is made and how to take part", "fr": "À propos d'Awesome LEGO : comment l'annuaire est fait et comment participer"},
 "pdesc":{"en": "How Awesome LEGO, a free directory of the brick world, is made: every resource read at its source and dated, links tested and activity read by scripts, a selection by group and country, and how to suggest a resource or report an error.", "fr": "Comment est fait Awesome LEGO, annuaire gratuit du monde de la brique : chaque ressource lue à sa source et datée, liens testés et activité relevée par des scripts, une sélection par groupe et par pays, et comment proposer une ressource ou signaler une erreur."},
 "h1":{"en": "About the directory", "fr": "À propos de l'annuaire"},
-"lead":{"en": "Awesome LEGO lists the brands, shops, communities, videos, places, events and tools that help builders of every age, with official LEGO sets as well as compatible brands. Each resource is read at its source and dated.", "fr": "Awesome LEGO recense les marques, boutiques, communautés, vidéos, lieux, événements et outils utiles pour construire à tout âge, en sets de marque LEGO comme en marques compatibles. Chaque ressource est lue à sa source et datée."},
+"lead":{"en": "Awesome LEGO lists the brands, shops, communities, videos, places, events and tools that help builders of every age, with official LEGO sets as well as compatible brands: <b>{{N}}</b> resources, in {{COUNTRIES}} countries and territories and {{LANGS}} languages. Each is read at its source; the directory cites <b>{{SOURCES}}</b> sources, all dated.", "fr": "Awesome LEGO recense les marques, boutiques, communautés, vidéos, lieux, événements et outils utiles pour construire à tout âge, en sets de marque LEGO comme en marques compatibles : <b>{{N}}</b> ressources, dans {{COUNTRIES}} pays et territoires et {{LANGS}} langues. Chacune est lue à sa source ; l'annuaire cite <b>{{SOURCES}}</b> sources, toutes datées."},
 "free":{"en": "Free, without advertising or affiliate links.", "fr": "Gratuit, sans publicité ni lien d'affiliation."},
 "figures":{"en": "Data as of {date}", "fr": "Données du {date}"},
 "n_h":{"en": "Why 3001", "fr": "Pourquoi 3001"},
@@ -74,12 +74,7 @@
 "f4":{"en": "Check", "fr": "Contrôler"},
 "f5":{"en": "Publish", "fr": "Publier"},
 "crit":{"en": "What gets in, what stays out", "fr": "Ce qui entre, ce qui reste dehors"},
-"st2r":{"en": "A rank weighs what the resource offers that others do not, its recent activity, its reach and how solid its sources are; its reason is in the open data, reviewed every month.", "fr": "Un rang pèse ce que la ressource apporte de propre, son activité récente, sa portée et la solidité de ses sources ; sa raison est dans les données ouvertes, revue chaque mois."},
+"st2r":{"en": "A rank weighs what the resource offers that others do not, its recent activity, its reach and how solid its sources are; it is written with its reason in the open data, and the monthly review revisits it.", "fr": "Un rang pèse ce que la ressource apporte de propre, son activité récente, sa portée et la solidité de ses sources ; il est écrit avec sa raison dans les données ouvertes, et la revue mensuelle le revoit."},
 "pc_w":{"en": "One stud per resource.", "fr": "Un tenon par ressource."},
-"pc_n":{"en": "Lengths in proportion to the number of resources.", "fr": "Longueurs proportionnelles au nombre de ressources."},
-"k_res":{"en": "resources", "fr": "ressources"},
-"k_countries":{"en": "countries and territories", "fr": "pays et territoires"},
-"k_countries_short":{"en": "countries", "fr": "pays"},
-"k_langs":{"en": "languages", "fr": "langues"},
-"k_sources":{"en": "dated sources", "fr": "sources datées"}
+"pc_n":{"en": "Lengths in proportion to the number of resources.", "fr": "Longueurs proportionnelles au nombre de ressources."}
 }
