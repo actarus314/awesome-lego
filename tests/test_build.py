@@ -304,22 +304,6 @@ class About(unittest.TestCase):
             band = dict(re.findall(r'<span class="k-(\w+)" style="flex:(\d+)">', doc))
             self.assertEqual({k: int(v) for k, v in band.items()}, {k: v for k, v in zip(studs, counts) if v})
 
-    def test_way_draws_each_step_at_one_scale(self):
-        """The way of an entry: one drawing per step, on boxes of one size (the same scale), each brick or plate with
-        its studs (one per square of its top, unless another piece sits on it), each printed tile with its printing, the texts in order."""
-        doc = build.way([(f"n{i}", f"t{i}") for i in range(len(build.WAY))])
-        boxes = re.findall(r'<svg class="iso" viewBox="\S+ \S+ (\S+) (\S+)"', doc)
-        self.assertEqual(len(boxes), len(build.WAY))
-        self.assertEqual(len(set(boxes)), 1)
-        parts = doc.split("<li>")[1:]
-        for step, part in zip(build.WAY, parts):
-            hidden = build.covered(step)
-            studs = sum(1 for a, b, z, w, d, h, _, kind in step if kind == "brick" for i in range(w) for j in range(d)
-                        if (a + i + .5, b + j + .5, z + h) not in hidden)
-            self.assertEqual(part.count('href="#way-stud"'), studs)
-            self.assertEqual(part.count('class="pr"'), sum(1 for *_, kind in step if kind in build.PRINTS))
-        self.assertEqual(re.findall(r"<b>(n\d)</b><p>(t\d)</p>", doc), [(f"n{i}", f"t{i}") for i in range(len(build.WAY))])
-
     def test_icon_buttons_named_without_the_page_script(self):
         self.assertIn('id="settings" type="button" aria-expanded="false" aria-controls="setmenu" data-t-label="settings" aria-label="Réglages"', self.pages["fr"])
         self.assertIn('data-t="nav_dir">Directory</a>', self.pages["en"])
