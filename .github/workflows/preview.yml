@@ -3,10 +3,10 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, closed]
     # what changes the website; a closed request matches when it changed one of these, the only case with a preview to remove
-    paths: ["site-src/**", "scripts/build.py", "scripts/previews.py", "media/**", "!media/site-preview*.png", "data/**", "changes/**", "VERSION", "CHANGELOG.md", ".github/workflows/preview.yml"]
+    paths: ["site-src/**", "scripts/build.py", "scripts/previews.py", "scripts/compare.html", "media/**", "!media/site-preview*.png", "data/**", "changes/**", "VERSION", "CHANGELOG.md", ".github/workflows/preview.yml"]
   push:
     branches: [main]   # each preview is the pull request merged with main: rebuilt when main moves
-    paths: ["site-src/**", "scripts/build.py", "scripts/previews.py", "media/**", "!media/site-preview*.png", "data/**", "changes/**", "VERSION", "CHANGELOG.md", ".github/workflows/preview.yml"]   # the same list as above
+    paths: ["site-src/**", "scripts/build.py", "scripts/previews.py", "scripts/compare.html", "media/**", "!media/site-preview*.png", "data/**", "changes/**", "VERSION", "CHANGELOG.md", ".github/workflows/preview.yml"]   # the same list as above
 permissions: {}
 jobs:
   build:
@@ -57,7 +57,7 @@ jobs:
         run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref main -f previews=true
   link:
     needs: build   # the comment says when the pull request changes nothing on the website, which only the build knows
-    if: always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    if: ${{ !cancelled() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
     timeout-minutes: 5   # one comment, a few seconds
     permissions:
@@ -76,6 +76,7 @@ jobs:
           SHA: ${{ github.event.pull_request.head.sha }}
           ACTION: ${{ github.event.action }}
           UNCHANGED: ${{ needs.build.outputs.unchanged }}   # written by the pull request's code: read as numbers only
+          BUILD: ${{ needs.build.result }}   # success, failure, or skipped (a merged pull request)
         run: |
           pages=$(sed -n 's/^PAGES = "\([^"]*\)".*/\1/p' scripts/build.py)   # the address of the website (tests/test_build.py checks this reading)
           [ -n "$pages" ] || { echo "PAGES not found in scripts/build.py"; exit 1; }
@@ -83,6 +84,8 @@ jobs:
           unchanged=" $(printf '%s' "$UNCHANGED" | tr -cd '0-9 ') "
           if [ "$ACTION" = closed ]; then body="<!-- preview -->
           Preview removed: the pull request is closed."
+          elif [ "$BUILD" != success ]; then body="<!-- preview -->
+          The **Preview** run of commit ${SHA:0:7} did not finish (${BUILD}): no new preview; see the run in the Actions tab."
           elif [ "${unchanged#* "$N" }" != "$unchanged" ]; then body="<!-- preview -->
           Commit ${SHA:0:7} changes nothing on the published website: no preview."
           else

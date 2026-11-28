@@ -38,6 +38,7 @@ class Mark(unittest.TestCase):
         out = previews.mark(self.PAGE, 61, "abc1234", "u", commits="https://x/preview/61/c/")
         self.assertIn('Tous les commits de la demande', out)
         self.assertIn('href="https://x/preview/61/c/"', out)
+        self.assertIn('href="https://x/preview/61/compare/" style="color:#fff">Côte à côte</a>', out)
         self.assertNotIn("Tous les commits", previews.mark(self.PAGE, 61, "abc1234", "u"))
 
     def test_commit_list(self):
@@ -203,24 +204,53 @@ class History(unittest.TestCase):
 
 
 class Fetch(unittest.TestCase):
-    """A run started by a push to main holds main one commit deep: the fetch still finds the merge base."""
-    def test_shallow_main_is_deepened(self):
+    """The merge base found in every situation of the workflow, whole history kept."""
+    def setUp(self):
         import subprocess
         import tempfile
         tmp = tempfile.TemporaryDirectory()
         self.addCleanup(tmp.cleanup)
-        up, ci = pathlib.Path(tmp.name) / "up", pathlib.Path(tmp.name) / "ci"
+        self.tmp = pathlib.Path(tmp.name)
+        up = self.tmp / "up"
         up.mkdir()
-        git = lambda d, *a: subprocess.run(["git", "-c", "user.name=t", "-c", "user.email=t@t", *a], cwd=d, check=True, capture_output=True, text=True).stdout.strip()
+        self.git = lambda d, *a: subprocess.run(["git", "-c", "user.name=t", "-c", "user.email=t@t", *a], cwd=d, check=True, capture_output=True, text=True).stdout.strip()
+        git = self.git
         git(up, "init", "-q", "-b", "main"); git(up, "config", "uploadpack.allowReachableSHA1InWant", "true")
         (up / "a").write_text("0\n"); git(up, "add", "-A"); git(up, "commit", "-qm", "base")
-        git(up, "checkout", "-qb", "pr"); (up / "a").write_text("pr\n"); git(up, "commit", "-qam", "pr")
-        pr = git(up, "rev-parse", "HEAD")
+        self.prs = []
+        for name in ("pr", "pr2"):
+            git(up, "checkout", "-q", "-b", name, "main"); (up / name).write_text("x\n"); git(up, "add", "-A"); git(up, "commit", "-qm", name)
+            self.prs.append(git(up, "rev-parse", "HEAD"))
         git(up, "checkout", "-q", "main"); (up / "b").write_text("x\n"); git(up, "add", "-A"); git(up, "commit", "-qm", "main moved")
-        subprocess.run(["git", "clone", "-q", "--depth", "1", "--no-local", "-b", "main", str(up), str(ci)], check=True, capture_output=True)
-        previews.fetch(pr, cwd=ci)
-        self.assertEqual(subprocess.run(["git", "merge-base", "refs/remotes/origin/main", pr], cwd=ci, capture_output=True).returncode, 0)
+        self.up = up
 
+    def clone(self, *args):
+        import subprocess
+        ci = self.tmp / f"ci{len(list(self.tmp.iterdir()))}"
+        subprocess.run(["git", "clone", "-q", "--depth", "1", "--no-local", *args, str(self.up), str(ci)], check=True, capture_output=True)
+        return ci
+
+    def base_found(self, ci, pr):
+        import subprocess
+        return subprocess.run(["git", "merge-base", "refs/remotes/origin/main", pr], cwd=ci, capture_output=True).returncode == 0
+
+    def test_push_to_main(self):  # the checkout holds main one commit deep
+        ci = self.clone("-b", "main")
+        previews.fetch(self.prs[0], cwd=ci)
+        self.assertTrue(self.base_found(ci, self.prs[0]))
+
+    def test_pull_request(self):  # the checkout holds the branch only, no origin/main yet
+        ci = self.clone("-b", "pr", "--single-branch")
+        previews.fetch(self.prs[0], cwd=ci)
+        self.assertTrue(self.base_found(ci, self.prs[0]))
+
+    def test_two_pull_requests_in_a_row(self):  # the second fetch keeps the whole history
+        import subprocess
+        ci = self.clone("-b", "main")
+        for pr in self.prs:
+            previews.fetch(pr, cwd=ci)
+            self.assertTrue(self.base_found(ci, pr))
+        self.assertEqual(subprocess.run(["git", "rev-parse", "--is-shallow-repository"], cwd=ci, capture_output=True, text=True).stdout.strip(), "false")
 
 class Notes(unittest.TestCase):
     """What to compare: trailers Preview-compare of the branch's commits, for their own commit or an earlier one."""
@@ -239,6 +269,62 @@ class Notes(unittest.TestCase):
         b = git("rev-parse", "HEAD")
         (d / "a").write_text("3\n"); git("commit", "-qam", f"notes\n\nPreview-compare: {a[:7]} Variant A, the brick\nCo-Authored-By: x <x@x>")
         self.assertEqual(previews.notes(git("rev-parse", "HEAD"), cwd=d, main="main"), {a: "Variant A, the brick", b: "Variant B, the tiles"})
+        (d / "a").write_text("4\n"); git("commit", "-qam", "more\n\nPreview-compare: a long note\n  folded on two lines\nPreview-compare: " + b[:7])
+        out = previews.notes(git("rev-parse", "HEAD"), cwd=d, main="main")
+        self.assertEqual(out[git("rev-parse", "HEAD")], "a long note folded on two lines")  # unfolded
+        self.assertEqual(out[b], "to compare")  # marked without a note
+        (d / "a").write_text("5\n"); git("commit", "-qam", "defaced\n\nPreview-compare: defaced pages, to look at")
+        self.assertEqual(previews.notes(git("rev-parse", "HEAD"), cwd=d, main="main")[git("rev-parse", "HEAD")], "defaced pages, to look at")  # no commit starts so
+
+
+class Unchanged(unittest.TestCase):
+    """A pull request whose website is main's gets no preview, and the workflow reads its number."""
+    def test_heads_and_output(self):
+        import os
+        import tempfile
+        saved = {k: getattr(previews, k) for k in ("fetch", "history", "notes", "one", "published")}
+        self.addCleanup(lambda: [setattr(previews, k, v) for k, v in saved.items()])
+        previews.fetch = lambda sha: None
+        previews.history = lambda sha: [sha]
+        previews.notes = lambda sha: {}
+        previews.one = lambda p, c, dest, listed, env: (dest.mkdir(parents=True, exist_ok=True), {"same": "M", "new": "X"}[p["title"]])[1]
+        previews.published = lambda env: "M"
+        with tempfile.TemporaryDirectory() as tmp:
+            out = pathlib.Path(tmp)
+            same, new = {"n": 63, "sha": "a" * 40, "title": "same", "url": "u"}, {"n": 61, "sha": "b" * 40, "title": "new", "url": "u"}
+            self.assertTrue(previews.heads(same, out, {}))
+            self.assertTrue(previews.heads(new, out, {}))
+            self.assertTrue(same.get("unchanged"))
+            self.assertFalse((out / "63").exists())
+            self.assertTrue((out / "61").exists() and not new.get("unchanged"))
+            f = out / "output"
+            previews.unchanged_output([same, new, {"n": "7; echo", "unchanged": False}], f)
+            self.assertEqual(f.read_text(), "unchanged=63\n")
+            self.assertFalse(os.path.exists(out / "63" / "c"))
+
+    def test_published_once_and_none_when_main_fails(self):
+        import subprocess
+        saved = previews.site_of, previews.PUBLISHED.copy()
+        def restore():
+            previews.site_of = saved[0]
+            previews.PUBLISHED.clear(); previews.PUBLISHED.update(saved[1])
+        self.addCleanup(restore)
+        calls = []
+        def built(sha, wt, env):
+            calls.append(sha)
+            (wt / "site").mkdir(parents=True)
+            (wt / "site" / "index.html").write_text("main")
+            return True, ""
+        previews.site_of = built
+        previews.PUBLISHED.clear()
+        first = previews.published({})
+        self.assertEqual(first, previews.published({}))
+        self.assertEqual(len(calls), 1)  # once per run
+        previews.PUBLISHED.clear()
+        def broken(sha, wt, env):
+            raise subprocess.CalledProcessError(1, "build")
+        previews.site_of = broken
+        self.assertIsNone(previews.published({}))  # then every pull request gets its preview
 
 
 class Fold(unittest.TestCase):
@@ -256,6 +342,15 @@ class Fold(unittest.TestCase):
         self.assertEqual([r["digest"] for r in kept], ["a", "b"])
         self.assertTrue(kept[-1]["head"])
         self.assertEqual(kept[-1]["made"], "1" * 40)  # the first commit of the run of the same website
+
+    def test_a_note_on_a_folded_commit_is_kept(self):
+        rows = self.rows(["a", "b", "b", "c", "c"])
+        kept = previews.fold(rows)
+        self.assertEqual([r["sha"][0] for r in kept], ["0", "1", "4"])
+        self.assertEqual(kept[1]["folded"], ["2" * 40])
+        self.assertEqual(previews.note_of(kept[1], {"2" * 40: "the note"}), "the note")  # its note on the commit folded away
+        self.assertEqual(kept[2]["made"], "3" * 40)
+        self.assertEqual(previews.note_of(kept[2], {"4" * 40: "own note of the head"}), "own note of the head")
 
     def test_head_alone(self):
         kept = previews.fold(self.rows(["a"]))
@@ -292,7 +387,7 @@ class Paths(unittest.TestCase):
         flow = (pathlib.Path(__file__).resolve().parent.parent / ".github" / "workflows" / "preview.yml").read_text()
         paths = re.findall(r'"([^"]+)"', re.search(r"paths: \[(.*?)\]", flow).group(1))
         for path in paths:
-            if path.startswith("!") or path in ("scripts/previews.py", ".github/workflows/preview.yml"):
+            if path.startswith("!") or path in ("scripts/previews.py", "scripts/compare.html", ".github/workflows/preview.yml"):
                 continue
             self.assertTrue(path.rstrip("*").startswith(previews.SITE), path)
 

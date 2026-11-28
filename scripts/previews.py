@@ -50,6 +50,7 @@ WHAT = {"en": "pull request #{n}", "fr": "la demande de fusion #{n}"}
 LINK = {"en": "Open the pull request", "fr": "Ouvrir la demande"}
 TAB = {"en": "Preview", "fr": "Aperçu"}
 COMMITS = {"en": "Every commit of the pull request", "fr": "Tous les commits de la demande"}
+SIDE = {"en": "Side by side", "fr": "Côte à côte"}
 
 
 def mark(page, n, sha, url, merged=True, version=None, commits=None):
@@ -61,7 +62,8 @@ def mark(page, n, sha, url, merged=True, version=None, commits=None):
     banner = (f'<div role="note" style="position:relative;z-index:100;background:#7a1f1f;color:#fff;font:600 14px system-ui,sans-serif;'
               f'padding:8px 14px;text-align:center">{html.escape(BANNER[lang].format(what=WHAT[lang].format(n=n), sha=sha, merged=MERGED[merged][lang], gives=gives))} '
               f'<a href="{html.escape(url)}" style="color:#fff">{LINK[lang]}</a>'
-              + (f' · <a href="{html.escape(commits)}" style="color:#fff">{COMMITS[lang]}</a>' if commits else "") + '</div>')
+              + (f' · <a href="{html.escape(commits)}" style="color:#fff">{COMMITS[lang]}</a>'
+                 f' · <a href="{html.escape(re.sub(r"c/$", "compare/", commits))}" style="color:#fff">{SIDE[lang]}</a>' if commits else "") + '</div>')
     # the banner scrolls away with the page; the sticky header stays red-tinted with a red band, and the tab title says it
     keep = ('<style>header.top,#vault header{background:color-mix(in srgb,#c62828 16%,color-mix(in srgb,var(--bg) 88%,transparent))!important;'
             'box-shadow:inset 0 -4px 0 #c62828}</style>')
@@ -137,15 +139,14 @@ def digest(site):
 
 
 def fetch(sha, cwd=ROOT, remote="origin"):
-    """main and sha with enough history for their merge base and the branch's commits. On a run started by a push to
-    main, the checkout already holds main one commit deep, and `--depth` does not deepen a commit already there: the
-    whole history is fetched then (`--unshallow`: 12 MB, about a second, measured on 28 Nov 2026; `--deepen` behaved
-    differently with git 2.43 and 2.56). Without it, on 28 Nov 2026, the merge base was missing: every preview rebuilt
-    after a merge was built alone, and no earlier commit was found."""
+    """main and sha with their whole history (12 MB, about a second, measured on 28 Nov 2026): the merge base, the
+    branch's commits and the numbers of `changes.py assemble` then never depend on a depth. The checkout of the job
+    is one commit deep: the first call fetches the rest (`--unshallow`), the next ones only what is new. A depth
+    (`--depth=200`) failed on a run started by a push to main: the checkout holds main one commit deep and a depth
+    does not deepen a commit already there, so every preview rebuilt after a merge was built alone (28 Nov 2026)."""
     refs = ["+refs/heads/main:refs/remotes/origin/main", sha]
-    subprocess.run(["git", "fetch", "-q", "--depth=200", remote, *refs], cwd=cwd, check=True, timeout=120)
-    if subprocess.run(["git", "merge-base", "refs/remotes/origin/main", sha], cwd=cwd, capture_output=True).returncode:
-        subprocess.run(["git", "fetch", "-q", "--unshallow", remote, *refs], cwd=cwd, check=True, timeout=300)
+    shallow = subprocess.run(["git", "rev-parse", "--is-shallow-repository"], cwd=cwd, capture_output=True, text=True).stdout.strip() == "true"
+    subprocess.run(["git", "fetch", "-q", *(["--unshallow"] if shallow else []), remote, *refs], cwd=cwd, check=True, timeout=300)
 
 
 def history(sha, cwd=ROOT, main="refs/remotes/origin/main"):
@@ -166,19 +167,29 @@ def history(sha, cwd=ROOT, main="refs/remotes/origin/main"):
 
 def fold(rows):
     """The commits to keep, oldest first, from the builds of a pull request (rows: sha, digest, head; the head last):
-    a commit whose website is the same as the one kept before it goes; when the head is the same as the earlier commits
-    just before it, they go too, and the head names the first of them as the commit that made its website (made)."""
+    a commit whose website is the same as the one kept before it goes (its sha joins `folded` of the one kept); when
+    the head is the same as the earlier commits just before it, they go too, and the head names the first of them as
+    the commit that made its website (made)."""
     kept = []
     for r in rows:
         if kept and r["digest"] == kept[-1]["digest"]:
             if r["head"]:
                 same = kept.pop()
+                folded = [same["sha"], *same.get("folded", [])]
                 while kept and kept[-1]["digest"] == r["digest"]:
                     same = kept.pop()
-                kept.append({**r, "made": same.get("made", same["sha"])})
+                    folded = [same["sha"], *same.get("folded", []), *folded]
+                kept.append({**r, "made": same.get("made", same["sha"]), "folded": folded})
+            else:
+                kept[-1] = {**kept[-1], "folded": [*kept[-1].get("folded", []), r["sha"]]}
             continue
         kept.append(r)
     return kept
+
+
+def note_of(r, notes_by_sha):
+    """The note of a kept commit: its own, else that of the commit that made its website, else of a commit folded into it."""
+    return next((notes_by_sha[c] for c in [r["sha"], r.get("made"), *r.get("folded", [])] if c and notes_by_sha.get(c)), "")
 
 
 def site_of(sha, wt, env):
@@ -208,24 +219,25 @@ def place(site, dest, n, sha, url, merged, version, commits):
 
 
 def notes(sha, cwd=ROOT, main="refs/remotes/origin/main"):
-    """What to compare, from the trailers `Preview-compare:` of the branch's commit messages: `Preview-compare: <note>`
-    marks its own commit; `Preview-compare: <commit> <note>` marks an earlier commit (pushed commits are never rewritten).
-    {full sha: note}, a later trailer replacing an earlier one."""
+    """What to compare, from the trailers `Preview-compare:` of the branch's commit messages (the last paragraph, with
+    Co-Authored-By): `Preview-compare: <note>` marks its own commit; `Preview-compare: <commit> <note>` marks an earlier
+    commit (pushed commits are never rewritten), by a prefix of at least 7 characters that names one commit only.
+    {full sha: note}, a later trailer replacing an earlier one; a commit marked without a note gets "to compare"."""
     base = subprocess.run(["git", "merge-base", main, sha], cwd=cwd, capture_output=True, text=True).stdout.strip()
-    log = subprocess.run(["git", "log", "--reverse", "--format=%H%x00%(trailers:key=Preview-compare,valueonly,separator=%x01)%x1e",
-                          f"{base}..{sha}" if base else sha, "-n", "200"], cwd=cwd, capture_output=True, text=True).stdout
-    shas = [e.split("\0")[0].strip() for e in log.split("\x1e") if e.strip()]
+    log = subprocess.run(["git", "log", "--reverse", "--first-parent", "-n", "200",
+                          "--format=%H%x00%(trailers:key=Preview-compare,valueonly,unfold,separator=%x01)%x1e",
+                          f"{base}..{sha}" if base else sha], cwd=cwd, capture_output=True, text=True).stdout
+    entries = [e.split("\0", 1) for e in log.split("\x1e") if "\0" in e]
+    shas = [own.strip() for own, _ in entries]
     out = {}
-    for entry in log.split("\x1e"):
-        if "\0" not in entry:
-            continue
-        own, values = entry.split("\0", 1)
+    for own, values in entries:
         for v in (x.strip() for x in values.split("\x01")):
             if not v:
                 continue
-            head, _, rest = v.partition(" ")
-            target = next((c for c in shas if len(head) >= 7 and c.startswith(head.lower())), None) if re.fullmatch(r"[0-9a-fA-F]{7,40}", head) else None
-            out[target or own.strip()] = (rest if target else v).strip()
+            first, _, rest = v.partition(" ")
+            hits = [c for c in shas if c.startswith(first.lower())] if re.fullmatch(r"[0-9a-fA-F]{7,40}", first) else []
+            target, note = (hits[0], rest.strip()) if len(hits) == 1 else (own.strip(), v)
+            out[target] = note or "to compare"
     return out
 
 
@@ -362,7 +374,11 @@ def earlier(p, out, env, left):
         made = r.get("made", r["sha"])
         r["date"], r["subject"] = log_of(made)
         r["href"] = "../" if r["head"] else f'{r["sha"][:7]}/'
-        r["note"] = p.get("notes", {}).get(made, "")
+        r["note"] = note_of(r, p.get("notes", {}))
+    shown = {c for r in kept for c in [r["sha"], r.get("made"), *r.get("folded", [])] if c}
+    for c in p.get("notes", {}):
+        if c not in shown:
+            print(f"::warning::#{n}: a Preview-compare note marks {c[:7]}, which has no preview of its own (it does not change the website)")
     (out / str(n) / "c").mkdir(parents=True, exist_ok=True)
     (out / str(n) / "c" / "index.html").write_text(commit_list(n, p["url"], kept), encoding="utf-8")
     (out / str(n) / "compare").mkdir(parents=True, exist_ok=True)
@@ -378,7 +394,7 @@ def main():
     for p in targets():  # every head first: an earlier commit never costs a pull request its preview
         ok = heads(p, out, env)
         previews.append(p | {"failed": not ok})
-        print(f"{'✓' if ok else '✗'} preview of {p['n']} ({p['sha'][:7]}){' : same website as main, none' if p.get('unchanged') else ''}")
+        print(f"{'✓' if ok else '✗'} preview of {p['n']} ({p['sha'][:7]}){': same website as main, none' if p.get('unchanged') else ''}")
 
     def left():
         built[0] += 1
@@ -386,9 +402,14 @@ def main():
     for p in previews:
         earlier(p, out, env, left)
     (out / "index.html").write_text(index([{**p, "sha": p["sha"][:7]} for p in previews]), encoding="utf-8")
-    if os.environ.get("GITHUB_OUTPUT"):  # the pull requests without a preview, for the comment of the workflow (numbers only)
-        with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
-            f.write("unchanged=" + " ".join(str(int(p["n"])) for p in previews if p.get("unchanged")) + "\n")
+    if os.environ.get("GITHUB_OUTPUT"):
+        unchanged_output(previews, os.environ["GITHUB_OUTPUT"])
+
+
+def unchanged_output(previews, path):
+    """The pull requests without a preview, for the comment of the workflow: numbers only."""
+    with open(path, "a", encoding="utf-8") as f:
+        f.write("unchanged=" + " ".join(str(int(p["n"])) for p in previews if p.get("unchanged")) + "\n")
 
 
 if __name__ == "__main__":
