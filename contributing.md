@@ -26,7 +26,7 @@ This list aims to be accurate and current, and complete where no reference exist
 
 **What gets in:** resources useful to builders of every age (children, their parents and teachers, adults) of official LEGO or compatible bricks, in the 8 mm stud system, a smaller format or a construction system of its own ("Other formats"); resources only about large toddler blocks such as DUPLO stay out; publicly reachable, active or still a reference. Shops must state their delivery terms; brands must have an official site. Each entry needs at least one source with a date.
 
-**What stays out:** affiliate or referral links, link shorteners, pages that require an account to read, copies of copyrighted instructions, sellers of counterfeit sets presented as official LEGO, self-promotion without substance.
+**What stays out:** affiliate or referral links, link shorteners, pages that show nothing useful without an account (a site where an account opens more, such as BrickLink or Brickset, gets in, its `access` saying so), copies of copyrighted instructions, sellers of counterfeit sets presented as official LEGO, self-promotion without substance.
 
 **Links read at the source:** `brands` (alternative brands an entry sells, tracks, reviews or discusses), `funding` (how a comparator, review site or channel earns money), `makers` (who makes a brand's bricks) and `audience` (the public a resource states it is made for: children, adults, or both) are filled only from the resource's own pages or, for makers, from the brand, the maker or two independent sources; leave them out rather than guess. See [`data/SCHEMA.md`](data/SCHEMA.md).
 

@@ -290,17 +290,19 @@ class About(unittest.TestCase):
 
     def test_plate_draws_one_stud_per_resource(self):
         """The plate of the selection: as many studs of each kind as resources of that kind, at most three
-        rectangles per kind, whatever the counts (none of a kind, whole rows, a single stud)."""
+        rectangles per kind, whatever the counts (none of a kind, whole rows, a single stud); the row of phones in proportion."""
+        cols = build.PLATE_COLS
         for counts in ((54, 497, 198), (0, 0, 1), (0, 50, 0), (25, 25, 30), (1, 0, 0), (49, 2, 99)):
-            for size, cols in build.PLATE_COLS.items():
-                doc = build.plate(counts, "label", size)
-                studs = {k: 0 for k in ("sel", "rank", "list")}
-                for kind, w, h in re.findall(rf'fill="url\(#stud-{size}-(\w+)\)" x="\d+" y="\d+" width="(\d+)" height="(\d+)"', doc):
-                    studs[kind] += int(w) // 10 * int(h) // 10
-                    self.assertLessEqual(int(w), cols * 10, (counts, size))
-                self.assertEqual(tuple(studs.values()), counts, size)
-                for kind in studs:
-                    self.assertLessEqual(doc.count(f"url(#stud-{size}-{kind})"), 3, (counts, size, kind))
+            doc = build.plate(counts, "label")
+            studs = {k: 0 for k in ("sel", "rank", "list")}
+            for kind, w, h in re.findall(r'fill="url\(#stud-(\w+)\)" x="\d+" y="\d+" width="(\d+)" height="(\d+)"', doc):
+                studs[kind] += int(w) // 10 * int(h) // 10
+                self.assertLessEqual(int(w), cols * 10, counts)
+            self.assertEqual(tuple(studs.values()), counts)
+            for kind in studs:
+                self.assertLessEqual(doc.count(f"url(#stud-{kind})"), 3, (counts, kind))
+            band = dict(re.findall(r'<span class="k-(\w+)" style="flex:(\d+)">', doc))
+            self.assertEqual({k: int(v) for k, v in band.items()}, {k: v for k, v in zip(studs, counts) if v})
 
     def test_icon_buttons_named_without_the_page_script(self):
         self.assertIn('id="settings" type="button" aria-expanded="false" aria-controls="setmenu" data-t-label="settings" aria-label="Réglages"', self.pages["fr"])

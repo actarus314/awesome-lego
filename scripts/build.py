@@ -704,15 +704,15 @@ def csp(doc, rest="; style-src 'unsafe-inline'; img-src 'self'; connect-src 'sel
 
 
 ABOUT_PATH = {"en": "about/", "fr": "fr/about/"}
-PLATE_COLS = {"wide": 50, "narrow": 30}  # studs per row of the baseplate of the about pages: wide screens, phones
+PLATE_COLS = 50  # studs per row of the baseplate of the about pages
 
 
-def plate(counts, label, size):
-    """The baseplate of the about pages: one stud per resource, in rows of PLATE_COLS[size], the best picks first, then the
+def plate(counts, label):
+    """The baseplate of the about pages: one stud per resource, in rows of PLATE_COLS, the best picks first, then the
     other ranked resources, then the rest (`counts`: studs of each kind, in that order). Each run of studs is at most
-    three rectangles filled with the stud pattern of its kind, so the drawing stays small whatever the number;
-    the stylesheet shows the wide or the narrow plate by the width of the screen."""
-    cols = PLATE_COLS[size]
+    three rectangles filled with the stud pattern of its kind, so the drawing stays small whatever the number. On a
+    phone, where a stud would be too small to see, the stylesheet shows instead one row in three lengths, in proportion."""
+    cols = PLATE_COLS
     total = sum(counts)
     rows = -(-total // cols)
     rects, start = [], 0
@@ -722,17 +722,20 @@ def plate(counts, label, size):
             r, c = divmod(a, cols)
             if c or b - a < cols:  # a partial row
                 w = min(cols - c, b - a)
-                rects.append(f'<rect fill="url(#stud-{size}-{kind})" x="{c * 10}" y="{r * 10}" width="{w * 10}" height="10"/>')
+                rects.append(f'<rect fill="url(#stud-{kind})" x="{c * 10}" y="{r * 10}" width="{w * 10}" height="10"/>')
                 a += w
             else:  # whole rows at once
                 n = (b - a) // cols
-                rects.append(f'<rect fill="url(#stud-{size}-{kind})" x="0" y="{r * 10}" width="{cols * 10}" height="{n * 10}"/>')
+                rects.append(f'<rect fill="url(#stud-{kind})" x="0" y="{r * 10}" width="{cols * 10}" height="{n * 10}"/>')
                 a += n * cols
         start = b
-    pats = "".join(f'<pattern id="stud-{size}-{k}" width="10" height="10" patternUnits="userSpaceOnUse"><circle class="s-{k}" cx="5" cy="5" r="3.6"/></pattern>'
+    pats = "".join(f'<pattern id="stud-{k}" width="10" height="10" patternUnits="userSpaceOnUse"><circle class="s-{k}" cx="5" cy="5" r="3.6"/></pattern>'
                    for k in ("sel", "rank", "list"))
-    return (f'<svg class="plate {size}" viewBox="-4 -4 {cols * 10 + 8} {rows * 10 + 8}" role="img" aria-label="{html.escape(label)}">'
-            f'<defs>{pats}</defs><rect class="p-base" x="-4" y="-4" width="{cols * 10 + 8}" height="{rows * 10 + 8}" rx="4"/>{"".join(rects)}</svg>')
+    lab = html.escape(label)
+    band = "".join(f'<span class="k-{k}" style="flex:{n}"></span>' for k, n in zip(("sel", "rank", "list"), counts) if n)
+    return (f'<svg class="plate" viewBox="-4 -4 {cols * 10 + 8} {rows * 10 + 8}" role="img" aria-label="{lab}">'
+            f'<defs>{pats}</defs><rect class="p-base" x="-4" y="-4" width="{cols * 10 + 8}" height="{rows * 10 + 8}" rx="4"/>{"".join(rects)}</svg>'
+            f'<div class="band" role="img" aria-label="{lab}">{band}</div>')
 
 
 def about(lang, data):
@@ -753,8 +756,8 @@ def about(lang, data):
               "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "", "SITE": PAGES, "ASTYLE": source("about.css"),
               "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": home, "HOME": home, "ABOUT": "./", "ABOUTCUR": ' aria-current="page"', "ROOT": "../../" if lang == "fr" else "../",
               "OTHER": "../fr/about/" if lang == "en" else "../../about/",
-              "N": str(n), "RANKED": str(ranked), "SEL": str(sel), "RANKONLY": str(ranked - sel), "UNRANKED": str(n - ranked),
-              "PLATE": "".join(plate((sel, ranked - sel, n - ranked), fill(A["plate"]).replace("{{N}}", str(n)).replace("{{RANKED}}", str(ranked)).replace("{{SEL}}", str(sel)), size) for size in PLATE_COLS),
+              "N": str(n), "RANKED": str(ranked), "SEL": str(sel),
+              "PLATE": plate((sel, ranked - sel, n - ranked), fill(A["plate"]).replace("{{N}}", str(n)).replace("{{RANKED}}", str(ranked)).replace("{{SEL}}", str(sel))),
               "COUNTRIES": str(len({c for r in R for c in r.get("countries") or [] if c != "international"})),
               "LANGS": str(len({x for r in R for x in r.get("languages") or []})), "SOURCES": str(sum(len(r["sources"]) for r in R))}
     tpl = static_texts(shared((SRC / "about.html").read_text(encoding="utf-8")), lang)
