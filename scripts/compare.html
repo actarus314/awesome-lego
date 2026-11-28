@@ -51,7 +51,8 @@ label{display:inline-flex;align-items:center;gap:6px}
 const V={{DATA}},MAX=5,frames=document.getElementById('frames'),tabs=document.getElementById('tabs');
 const byId=id=>V.find(v=>v.id===id),newest=V[V.length-1];
 const noted=V.filter(v=>v.note);
-const first=noted.length>=2?noted.slice(0,2).map(v=>v.id):noted.length===1?[noted[0].id,noted[0].id===newest.id?'published':newest.id]:[newest.id,'published'];
+// the two latest marked versions: a pull request can ask several questions in turn, the last one is the open one (28 Nov 2026)
+const last=noted.slice(-2),first=last.length===2?last.map(v=>v.id):last.length===1?[last[0].id,last[0].id===newest.id?'published':newest.id]:[newest.id,'published'];
 const st={v:first,w:matchMedia('(max-width:720px)').matches?'390':'1280',s:true,a:true,p:'',t:0};
 const okPath=p=>p===''||(/^([\w.~%-]+(\/[\w.~%-]+)*\/?)?([?#].*)?$/.test(p)&&!p.split(/[?#]/)[0].split('/').some(x=>x==='.'||x==='..'));
 try{const h=new URLSearchParams(location.hash.slice(1));
