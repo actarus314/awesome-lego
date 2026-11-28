@@ -310,8 +310,7 @@ def published(env):
         with tempfile.TemporaryDirectory() as tmp:
             wt = pathlib.Path(tmp) / "main"
             try:
-                main_sha = subprocess.run(["git", "rev-parse", "refs/remotes/origin/main"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
-                site_of(main_sha, wt, env)
+                site_of("refs/remotes/origin/main", wt, env)  # main merged with itself: nothing changes
                 PUBLISHED["main"] = digest(wt / "site")
             except (subprocess.CalledProcessError, subprocess.TimeoutExpired, OSError) as e:
                 print(f"::warning::main not built, every pull request gets its preview: {e}")
