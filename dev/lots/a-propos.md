@@ -48,6 +48,14 @@ Lignes : AL-84 et AL-85 de `dev/registre.md`. Ouvert le 28/11/2026 à 04 h 08 (d
 - **Phrase « L'annuaire renvoie aux listes… » déplacée** sous la plaque, au-dessus des trois blocs chiffrés.
 - Passe sur le texte qui ne sert à rien : les deux légendes ci-dessus et l'ancien paragraphe de méthode ; signalé à Romain, non coupé : la phrase déplacée redit en partie les trois blocs qu'elle annonce.
 
+## Choix de Romain (28/11/2026, 10 h 29 à 16 h 45)
+
+- Phrase de la sélection **retirée** (elle redisait les trois blocs).
+- Constat de Romain : trop de points d'appel en haut (blanc autour du titre, brique 3001, quatre constructions en quatre couleurs). Pistes proposées : 1, pièces neutres et la fiche seule en couleur, suivie d'étape en étape ; 2, brique 3001 réduite (340 à 200 px) ; 3, garder la phrase. Romain demande l'aperçu de 1 + 2 (faf2b37).
+- « Construire » ne doit pas être des tuiles à visuels informatiques : la dernière étape devient une construction de neuf pièces sur la plaque, la fiche dans la première rangée, une tuile au sommet.
+- Participer : liens posés sur la carte du thème sombre comme le tableau, agencement en deux colonnes gardé ; rangées alignées au passage (`align-content:start`, une rangée se décalait quand la voisine était plus haute).
+- Reste ouvert : le jaune de la fiche est aussi celui de « mises en avant » sur la plaque.
+
 ## Vérifications
 
 - Relecture Opus en contexte neuf des deux demandes (28/11) : #61, trait parasite des `details` du site sous les listes, phrase de `contributing.md` qui citait BrickLink et `access` (catégorie sans `access`), fragment faux pour B, colonne étroite de B à 320 px, cotes illisibles de la brique réduite ; #62, remontée dans `main` sans base commune, aucun garde-fou de durée, chiffre faux de MAINTENANCE.md, tests manquants, tête nommée par un commit de notes : tout corrigé ; laissés : critères du rang écrits sur la page seulement (déjà dans la version publiée), sémantique de tableau sous Safari avec des lignes en flex, contraste des tenons jaunes sur la plaque (chiffres dans le libellé et le texte).
