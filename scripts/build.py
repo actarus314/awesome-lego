@@ -704,6 +704,108 @@ def csp(doc, rest="; style-src 'unsafe-inline'; img-src 'self'; connect-src 'sel
 
 
 ABOUT_PATH = {"en": "about/", "fr": "fr/about/"}
+PLATE_COLS = 50  # studs per row of the baseplate of the about pages
+
+
+def plate(counts, label):
+    """The baseplate of the about pages: one stud per resource, in rows of PLATE_COLS, the best picks first, then the
+    other ranked resources, then the rest (`counts`: studs of each kind, in that order). Each run of studs is at most
+    three rectangles filled with the stud pattern of its kind, so the drawing stays small whatever the number. On a
+    phone, where a stud would be too small to see, the stylesheet shows instead one row in three lengths, in proportion."""
+    cols = PLATE_COLS
+    total = sum(counts)
+    rows = -(-total // cols)
+    rects, start = [], 0
+    for kind, k in zip(("sel", "rank", "list"), counts):
+        a, b = start, start + k  # studs [a, b) of the plate, counted row by row
+        while a < b:
+            r, c = divmod(a, cols)
+            if c or b - a < cols:  # a partial row
+                w = min(cols - c, b - a)
+                rects.append(f'<rect fill="url(#stud-{kind})" x="{c * 10}" y="{r * 10}" width="{w * 10}" height="10"/>')
+                a += w
+            else:  # whole rows at once
+                n = (b - a) // cols
+                rects.append(f'<rect fill="url(#stud-{kind})" x="0" y="{r * 10}" width="{cols * 10}" height="{n * 10}"/>')
+                a += n * cols
+        start = b
+    pats = "".join(f'<pattern id="stud-{k}" width="10" height="10" patternUnits="userSpaceOnUse"><circle class="s-{k}" cx="5" cy="5" r="3.6"/></pattern>'
+                   for k in ("sel", "rank", "list"))
+    lab = html.escape(label)
+    band = "".join(f'<span class="k-{k}" style="flex:{n}"></span>' for k, n in zip(("sel", "rank", "list"), counts) if n)
+    return (f'<svg class="plate" viewBox="-4 -4 {cols * 10 + 8} {rows * 10 + 8}" role="img" aria-label="{lab}">'
+            f'<defs>{pats}</defs><rect class="p-base" x="-4" y="-4" width="{cols * 10 + 8}" height="{rows * 10 + 8}" rx="4"/>{"".join(rects)}</svg>'
+            f'<div class="band" role="img" aria-label="{lab}">{band}</div>')
+
+
+# The way of an entry, in four small builds drawn in the projection of the brick 3001 of the footer: a stud is 10 units
+# of the axes a (down to the right) and b (down to the left), a millimetre 1.25 units of height (a brick 9.6 mm, 12 units;
+# a plate or a tile 3.2 mm, 4 units; a stud 4.8 mm wide and 1.7 mm high). A piece: (a, b, z, studs along a, along b,
+# height, colour, kind); its colour is a class of about.css, those of the plate of the selection: "n" listed without rank
+# (grey), "b" ranked (blue), "y" put forward (yellow), and "w" for what holds the entries (sources, the baseplate of a
+# category); its kind "brick" (studs on top) or "tile" (smooth). The entry is the 2×4 brick: found grey among the others,
+# ranked once read, placed among the entries of its category, then in a model with the one put forward on top.
+ISO = 8.66  # the horizontal step of a stud on either axis: 10 × cos 30°
+WAY = (
+    (  # find: loose pieces, nothing ranked yet, the entry among them
+        (-2.5, 1, 0, 1, 2, 12, "n", "brick"), (4.5, 0, 0, 2, 2, 4, "n", "brick"), (1.5, 2, 0, 4, 2, 12, "n", "brick"),
+        (0, 4.5, 0, 3, 1, 4, "n", "tile")),
+    (  # read at the source: the entry, ranked, on its sources, plates (up to 3)
+        (0, 0, 0, 4, 2, 4, "w", "brick"), (0, 0, 4, 4, 2, 4, "w", "brick"), (0, 0, 8, 4, 2, 4, "w", "brick"),
+        (0, 0, 12, 4, 2, 12, "b", "brick")),
+    (  # write the entry: on the baseplate of its category, beside one listed without rank and the one put forward
+        (0, 0, 0, 6, 4, 4, "w", "brick"), (0, 0, 4, 4, 2, 12, "n", "brick"), (0, 2, 4, 4, 2, 12, "b", "brick"),
+        (4, 0, 4, 2, 2, 12, "y", "brick")),
+    (  # build: a model, the entries listed without rank and ranked below, the one put forward on top
+        (0, 0, 0, 6, 4, 4, "w", "brick"), (0, 0, 4, 4, 2, 12, "n", "brick"), (4, 0, 4, 2, 2, 12, "b", "brick"),
+        (0, 2, 4, 4, 2, 12, "b", "brick"), (4, 2, 4, 2, 2, 12, "n", "brick"), (0, 0, 16, 4, 2, 12, "b", "brick"),
+        (4, 0, 16, 2, 2, 12, "b", "brick"), (0, 0, 28, 2, 2, 12, "y", "brick")),
+)
+
+
+def iso(a, b, z):
+    return round(ISO * (a - b), 1), round(5 * (a + b) - z, 1)  # a tenth of a unit: a fraction of a pixel at the sizes drawn
+
+
+def covered(build_):
+    """The studs that another piece of the same build sits on, (a, b, z) of their centres: hidden, so not drawn."""
+    return {(a + i + .5, b + j + .5, z) for a, b, z, w, d, *_ in build_ for i in range(w) for j in range(d)}
+
+
+def piece(a, b, z, w, d, h, colour, kind, hidden=frozenset()):
+    """One piece in the projection of WAY: its left face (b = b + d), its right face (a = a + w), its top, then its studs
+    from the back to the front, except those under another piece (`hidden`)."""
+    pts = lambda *ps: " ".join(f"{x},{y}" for x, y in (iso(*p) for p in ps))
+    t = z + h
+    out = [f'<g class="c-{colour}"><path class="fl" d="M{pts((a, b + d, t), (a + w, b + d, t), (a + w, b + d, z), (a, b + d, z))}Z"/>',
+           f'<path class="fr" d="M{pts((a + w, b, t), (a + w, b + d, t), (a + w, b + d, z), (a + w, b, z))}Z"/>',
+           f'<path class="ft" d="M{pts((a, b, t), (a + w, b, t), (a + w, b + d, t), (a, b + d, t))}Z"/>']
+    if kind == "brick":
+        for i, j in sorted(((i, j) for i in range(w) for j in range(d) if (a + i + .5, b + j + .5, t) not in hidden), key=sum):
+            x, y = iso(a + i + .5, b + j + .5, t)
+            out.append(f'<use href="#way-stud" x="{x}" y="{y}"/>')
+    return "".join(out) + "</g>"
+
+
+def way(titles):
+    """The way of an entry on the about pages: one drawing per step (WAY), all at the same scale on boxes of the same
+    size, each standing at the bottom and centred; `titles`: the (name, description) of each step."""
+    boxes = []
+    for build_ in WAY:
+        ps = [iso(a + da, b + db, z + dz) for a, b, z, w, d, h, _, _ in build_
+              for da in (0, w) for db in (0, d) for dz in (0, h + 2.2)]
+        xs, ys = [p[0] for p in ps], [p[1] for p in ps]
+        boxes.append((min(xs) - 4, max(xs) + 4, min(ys) - 2, max(ys) + 2))
+    width = max(x1 - x0 for x0, x1, _, _ in boxes)
+    height = max(y1 - y0 for _, _, y0, y1 in boxes)
+    items = []
+    stud = ('<defs><g id="way-stud"><path class="ws" d="M-3.67,-2.2V0A3.67,2.12 0 0 0 3.67,0V-2.2Z"/>'
+            '<ellipse class="ws" cy="-2.2" rx="3.67" ry="2.12"/></g></defs>')  # 4.8 mm wide, 1.7 mm high, drawn once
+    for k, (build_, (x0, x1, _, y1), (name, text)) in enumerate(zip(WAY, boxes, titles)):
+        vx, vy = round((x0 + x1 - width) / 2, 2), round(y1 - height, 2)
+        items.append(f'<li><svg class="iso" viewBox="{vx} {vy} {round(width, 2)} {round(height, 2)}" aria-hidden="true">{"" if k else stud}'
+                     f'{"".join(piece(*p, covered(build_)) for p in build_)}</svg><b>{name}</b><p>{text}</p></li>')
+    return f'<ol class="way">{"".join(items)}</ol>'
 
 
 def about(lang, data):
@@ -720,12 +822,13 @@ def about(lang, data):
     ld = json.dumps({"@context": "https://schema.org", "@type": "AboutPage", "name": A["ptitle"], "description": A["pdesc"], "url": canon,
                      "inLanguage": lang, "dateModified": data["built"], "isPartOf": {"@type": "WebSite", "name": "Awesome LEGO", "url": PAGES + ("fr/" if lang == "fr" else "")}},
                     ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
-    pct = lambda k: f"{max(1, round(100 * k / n))}%"
     values = {"LANG": lang, "PTITLE": html.escape(A["ptitle"]), "PDESC": html.escape(A["pdesc"]), "CANON": canon, "LD": ld,
               "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "", "SITE": PAGES, "ASTYLE": source("about.css"),
               "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": home, "HOME": home, "ABOUT": "./", "ABOUTCUR": ' aria-current="page"', "ROOT": "../../" if lang == "fr" else "../",
               "OTHER": "../fr/about/" if lang == "en" else "../../about/",
-              "N": str(n), "RANKED": str(ranked), "SEL": str(sel), "RANKEDW": pct(ranked), "SELW": pct(sel),
+              "N": str(n), "RANKED": str(ranked), "SEL": str(sel),
+              "WAY": way([(A[f"w{i}"], A[f"w{i}d"]) for i in range(1, 5)]),
+              "PLATE": plate((sel, ranked - sel, n - ranked), fill(A["plate"]).replace("{{N}}", str(n)).replace("{{RANKED}}", str(ranked)).replace("{{SEL}}", str(sel))),
               "COUNTRIES": str(len({c for r in R for c in r.get("countries") or [] if c != "international"})),
               "LANGS": str(len({x for r in R for x in r.get("languages") or []})), "SOURCES": str(sum(len(r["sources"]) for r in R))}
     tpl = static_texts(shared((SRC / "about.html").read_text(encoding="utf-8")), lang)

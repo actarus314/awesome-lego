@@ -28,7 +28,7 @@ nav.tabs a[aria-current=page]{color:var(--fg);box-shadow:inset 0 -2px 0 var(--hi
 .pill{font:600 12px var(--mono);color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:3px 9px;white-space:nowrap}.pill:hover{color:var(--fg);border-color:var(--muted)}
 .hero{padding:28px 0 8px;display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:start}
 .hero h1{font-size:clamp(28px,4vw,44px);line-height:1.05;margin:0 0 10px;letter-spacing:-.02em}
-.hero p{margin:0;color:var(--muted);font-size:17px}.hero .fresh{margin-top:12px;font:600 12px var(--mono);letter-spacing:.04em;color:var(--faint)}
+.hero p{margin:0;color:var(--muted);font-size:17px}.hero .fresh,.ab-intro .fresh{margin-top:12px;font:600 12px var(--mono);letter-spacing:.04em;color:var(--faint)}
 .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .kpi{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--r);padding:12px 14px}
 .kpi b{display:block;font:750 28px/1.1 system-ui,sans-serif;font-variant-numeric:tabular-nums}

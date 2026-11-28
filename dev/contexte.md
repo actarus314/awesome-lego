@@ -7,7 +7,7 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 ## Savoir
 - Notes du mainteneur dans le dépôt et leurs contrôles (registre, contexte, section « Savoir », carte des fichiers) : `passation.conf`, `dev/outils/passation.sh`, `CLAUDE.md` ; vérifié 27/11/2026
 - Fonctionnement du dépôt, workflows, horaires, tâches du mainteneur : `MAINTENANCE.md` ; vérifié 28/11/2026
-- Règles des données (champs, `audience`, rangs, dates abrégées) : `data/SCHEMA.md` ; règle de sélection : `contributing.md`, `site-src/about.json` ; vérifié 27/11/2026
+- Règles des données (champs, `audience`, rangs, dates abrégées) : `data/SCHEMA.md` ; règle de sélection : `contributing.md`, `site-src/about.json` (compte : une partie utile sans compte suffit, 28/11, AL-84) ; vérifié 28/11/2026
 - Cahiers des lots 2 et 3, tri des audits du 24/11 : projet claude.ai « lego », claude/awesome-lego-lot-2.md, claude/awesome-lego-lot-3.md, claude/audit-24-11-tri.md ; vérifié 26/11/2026
 - Consigne de la revue mensuelle (texte de la tâche planifiée) : `dev/consigne-revue.md` ; vérifié 27/11/2026
 - Publication (fragments, Version, Pages, aperçus, files d'attente des workflows) : `MAINTENANCE.md` (Workflows in detail, Pages, Preview, Version, Versions), `scripts/changes.py`, `dev/lots/publication.md` puis `dev/lots/publication-2.md` (modèle C) ; vérifié 28/11/2026
@@ -48,7 +48,7 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 
 ## Pièges
 - (28/11) La session refuse la poussée forcée et la fusion d'une demande (classement automatique) : une branche déjà poussée reçoit `main` par une fusion, jamais par un rebase ; une demande prête attend la fusion de Romain.
-- (28/11) Le crochet de commit posé par la mise à jour des outils exige gitleaks, absent de la session distante (installation du binaire refusée par le classement automatique) : commits faits avec `SANS_GITLEAKS=1` ; la protection des poussées de GitHub reste le contrôle côté serveur.
+- (28/11) Le crochet de commit posé par la mise à jour des outils exige gitleaks, absent de la session distante (installation du binaire refusée par le classement automatique) : commits faits avec `SANS_GITLEAKS=1` ; la protection des poussées de GitHub reste le contrôle côté serveur. Depuis le 28/11 (Romain, 04 h 53), un profil d'environnement cloud installe gitleaks : une session démarrée sur ce profil arme les crochets (`passation.sh --maj-outils`) ; la session de la #61, démarrée sans lui, n'a pas gitleaks (vérifié à 04 h 54), et `SANS_GITLEAKS=1` y a été refusé par le classement automatique : commits faits sans crochet armé.
 - (27/11) L'API des artefacts de GitHub ne les liste pas du plus récent au plus ancien : trier par `created_at` (#58 ; l'aperçu d'une demande fusionnée restait en ligne).
 - (27/11) Un groupe de concurrence GitHub ne garde qu'un passage en attente et annule le précédent quand un troisième arrive : sur `main`, une annulation se lit comme un échec, et un passage de Release annulé laisse une version sans étiquette ; `queue: max` (#59, `MAINTENANCE.md`, Workflows in detail).
 - (27/11) Renovate lit `constraints` de `renovate.json` comme une dépendance et propose de la monter (#44, npm 12) : une règle `enabled: false` la tient (#46).
@@ -75,6 +75,8 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 - Les sous-agents ont l'outil des documents du projet claude.ai (lecture et écriture vues le 26/11).
 
 ## Décisions de Romain (une ligne chacune ; le détail est dans les demandes et l'historique)
+- 28/11, vocal de 05 h 00 à 05 h 50 (AL-84 à AL-86, `dev/lots/a-propos.md`) : synthèse des deux retouches en deux variantes (brique ou quatre rectangles) ; cartes gardées pour ce qui se lit d'un coup d'œil (relief du mode sombre) ; listes d'entrée réduites, règle du compte reformulée ; petit écran conçu à part, sans régression ; aperçus par commit (#62) ; audit de l'annuaire et de l'Observatoire ensuite.
+- 28/11, vocal de 04 h 08 à 04 h 29 (AL-84, #61) : refonte de la page À propos, forme et fond (« fait trop IA généré ») ; arrêtée puis reprise : « allons jusqu'au bout », jugée sur l'aperçu de la demande.
 - 27/11, vocal jusqu'à 23 h 27 (AL-81, `dev/lots/acces-machines.md`) : accès des machines sans refonte du site ; tous les robots autorisés, entraînement compris (« bloquer, c'est encore une fois déclaratif ») ; rendu à l'avance mesuré en comparaison seulement (AL-82) ; générateur de site (Hugo, Astro) regardé seulement pour une page par ressource ou une construction devenue pénible, par comparaison mesurée.
 - 27/11, 23 h 03 (AL-80) : modèle de publication C (chaque fusion devient une version publiée ; plus de demande `vX.Y`) et numérotation à trois niveaux, pour l'annuaire et pour toutes les skills. « Je veux que ce soit vraiment la dernière fois que l'on modifie cette architecture de publication ».
 - 27/11, 19 h 41 (AL-79) : page propre aux adresses inconnues ; recherche sans résultat illustrée, par un autre dessin que la brique 3001 ; pastilles de la carte en tenons et brique devant les titres refusées ; indicateur de chargement et rangée de briques en fin de liste abandonnés (19 h 30, vocal).
