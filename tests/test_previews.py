@@ -72,6 +72,12 @@ class Mark(unittest.TestCase):
         self.assertIn('"root": "../../../"', out)  # the published website, from preview/<n>/compare/
         self.assertIn('"note": "the brick"', out)
 
+    def test_compare_opens_on_the_latest_marks(self):
+        """A pull request can ask several questions in turn: the page opens on the two latest marked versions."""
+        src = (pathlib.Path(previews.__file__).resolve().parent / "compare.html").read_text()
+        self.assertIn("const last=noted.slice(-2)", src)
+        self.assertNotIn("noted.slice(0,2)", src)
+
     def test_no_line_length_cap(self):
         """The pages written by this script, like the website's, let text fill its block (rule of the maintainer)."""
         import re
