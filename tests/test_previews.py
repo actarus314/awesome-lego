@@ -34,6 +34,21 @@ class Mark(unittest.TestCase):
         self.assertIn("(commit abc1234, merged with main): not", previews.mark(en, 4, "abc1234", "u"))   # unknown: a failed build
         self.assertIn("sa fusion donne la v4.9.1 : ce n&#x27;est pas le site publié.", previews.mark(self.PAGE, 4, "abc1234", "u", True, "4.9.1"))
 
+    def test_link_to_the_commits(self):
+        out = previews.mark(self.PAGE, 61, "abc1234", "u", commits="https://x/preview/61/c/")
+        self.assertIn('Tous les commits de la demande', out)
+        self.assertIn('href="https://x/preview/61/c/"', out)
+        self.assertNotIn("Tous les commits", previews.mark(self.PAGE, 61, "abc1234", "u"))
+
+    def test_commit_list(self):
+        rows = [{"sha": "a" * 40, "href": "aaaaaaa/", "head": False, "date": "2026-11-28", "subject": "first <b>"},
+                {"sha": "b" * 40, "href": "../", "head": True, "date": "2026-11-28", "subject": "second"}]
+        out = previews.commit_list(61, "u", rows)
+        self.assertLess(out.index('href="../"'), out.index('href="aaaaaaa/"'))  # newest first
+        self.assertIn("first &lt;b&gt;", out)
+        self.assertIn("· latest", out)
+        self.assertIn("noindex", out)
+
     def test_escaped(self):
         out = previews.mark(self.PAGE, 3, "<b>", 'https://x/"y')
         self.assertIn("&lt;b&gt;", out)
@@ -80,6 +95,41 @@ class MergeWithMain(unittest.TestCase):
         git("checkout", "-q", "main"); (d / "a.txt").write_text("main\n"); git("commit", "-qam", "main")
         self.assertFalse(previews.merge_with_main(d, pr))
         self.assertEqual((git("rev-parse", "HEAD"), (d / "a.txt").read_text()), (pr, "branch\n"))
+
+
+class History(unittest.TestCase):
+    """The earlier commits kept for a preview: those that change the website, the head always, MAX_COMMITS at most."""
+    def test_commits_that_change_the_website(self):
+        import subprocess
+        import tempfile
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        d = pathlib.Path(tmp.name)
+        git = lambda *a: subprocess.run(["git", "-c", "user.name=t", "-c", "user.email=t@t", *a], cwd=d, check=True, capture_output=True, text=True).stdout.strip()
+        git("init", "-q", "-b", "main")
+        (d / "site-src").mkdir(); (d / "dev").mkdir()
+        (d / "site-src" / "a.css").write_text("0\n"); git("add", "-A"); git("commit", "-qm", "base")
+        git("checkout", "-qb", "pr")
+        made = []
+        for i, path in enumerate(["site-src/a.css", "dev/notes.md", "site-src/a.css", "dev/notes.md"]):
+            (d / path).write_text(f"v{i}\n"); git("add", "-A"); git("commit", "-qm", f"c{i}")
+            made.append(git("rev-parse", "HEAD"))
+        self.assertEqual(previews.history(made[-1], cwd=d, main="main"), [made[0], made[2], made[3]])  # notes alone: none, but the head
+        for i in range(12):
+            (d / "site-src" / "a.css").write_text(f"x{i}\n"); git("commit", "-qam", f"x{i}")
+        head = git("rev-parse", "HEAD")
+        kept = previews.history(head, cwd=d, main="main")
+        self.assertEqual(len(kept), previews.MAX_COMMITS)
+        self.assertEqual(kept[-1], head)
+
+    def test_digest(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as a, tempfile.TemporaryDirectory() as b:
+            for d in (a, b):
+                (pathlib.Path(d) / "index.html").write_text("x")
+            self.assertEqual(previews.digest(pathlib.Path(a)), previews.digest(pathlib.Path(b)))
+            (pathlib.Path(b) / "about.html").write_text("y")
+            self.assertNotEqual(previews.digest(pathlib.Path(a)), previews.digest(pathlib.Path(b)))
 
 
 if __name__ == "__main__":
