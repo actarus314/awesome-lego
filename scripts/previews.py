@@ -37,7 +37,9 @@ REPO = os.environ.get("GITHUB_REPOSITORY", "actarus314/awesome-lego")
 PAGES = build.PAGES
 MAX = 20   # previews built per run: beyond, the oldest open requests go without
 MAX_COMMITS = 10   # commits kept per pull request, the head included (maintainer, 28 Nov 2026)
-SITE = ("site-src/", "scripts/build.py", "media/", "data/", "changes/", "VERSION", "CHANGELOG.md")   # what a commit changes the website with
+MAX_EARLIER = 50   # earlier commits built per run, all pull requests together: (MAX + MAX_EARLIER) × about 4 MB stays near 300 MB
+BUDGET = 12 * 60   # seconds of the run after which no earlier commit is built (the job stops at 20 minutes; the heads come first)
+SITE = ("site-src/", "scripts/build.py", "scripts/changes.py", "media/", "data/", "changes/", "VERSION", "CHANGELOG.md")   # what a commit changes the website with
 BANNER = {"en": "Preview of {what} (commit {sha}{merged}){gives}: not the published website.",
           "fr": "Aperçu de {what} (commit {sha}{merged}){gives} : ce n'est pas le site publié."}
 GIVES = {"en": ", its merge gives v{v}", "fr": ", sa fusion donne la v{v}"}
@@ -131,16 +133,35 @@ def digest(site):
 
 def history(sha, cwd=ROOT, main="refs/remotes/origin/main"):
     """The commits of the branch since it left main, oldest first, that change the website (SITE), the head always
-    last; at most MAX_COMMITS. Merges of main into the branch are followed on the branch's side only."""
+    last; at most MAX_COMMITS. Merges of main into the branch are followed on the branch's side only. Without a merge
+    base within the commits fetched, the head alone: never commits of main taken for the branch's."""
     base = subprocess.run(["git", "merge-base", main, sha], cwd=cwd, capture_output=True, text=True).stdout.strip()
-    span = f"{base}..{sha}" if base else sha
-    commits = subprocess.run(["git", "rev-list", "--reverse", "--first-parent", span], cwd=cwd, capture_output=True, text=True, check=True).stdout.split()
+    if not base:
+        return [sha]
+    commits = subprocess.run(["git", "rev-list", "--reverse", "--first-parent", f"{base}..{sha}"], cwd=cwd, capture_output=True, text=True, check=True).stdout.split()
     keep = []
     for c in commits[:-1]:
         files = subprocess.run(["git", "diff", "--name-only", f"{c}^1", c], cwd=cwd, capture_output=True, text=True).stdout.split()
         if any(f.startswith(SITE) for f in files):
             keep.append(c)
     return (keep + [sha])[-MAX_COMMITS:]
+
+
+def fold(rows):
+    """The commits to keep, oldest first, from the builds of a pull request (rows: sha, digest, head; the head last):
+    a commit whose website is the same as the one kept before it goes; when the head is the same as the earlier commits
+    just before it, they go too, and the head names the first of them as the commit that made its website (made)."""
+    kept = []
+    for r in rows:
+        if kept and r["digest"] == kept[-1]["digest"]:
+            if r["head"]:
+                same = kept.pop()
+                while kept and kept[-1]["digest"] == r["digest"]:
+                    same = kept.pop()
+                kept.append({**r, "made": same.get("made", same["sha"])})
+            continue
+        kept.append(r)
+    return kept
 
 
 def site_of(sha, wt, env):
@@ -159,82 +180,118 @@ def site_of(sha, wt, env):
 
 
 def place(site, dest, n, sha, url, merged, version, commits):
-    """The built website copied to dest, every page marked."""
+    """The built website copied to dest, every page of it marked (not those already under dest, such as c/)."""
     shutil.copytree(site, dest, symlinks=True, dirs_exist_ok=True)  # the head goes around the folder c/ of the earlier commits
+    pages = [dest / x.relative_to(site) for x in site.rglob("*.html")]
     for f in [f for f in dest.rglob("*") if f.is_symlink()]:
         f.unlink()  # a link would publish a file of the machine
-    for f in (dest / x.relative_to(site) for x in site.rglob("*.html")):  # the pages of this build only, not those of c/
-        f.write_text(mark(f.read_text(encoding="utf-8"), n, sha[:7], url, merged, version, commits), encoding="utf-8")
+    for f in pages:
+        if f.exists():
+            f.write_text(mark(f.read_text(encoding="utf-8"), n, sha[:7], url, merged, version, commits), encoding="utf-8")
 
 
 def commit_list(n, url, rows):
     """OUT/<number>/c/index.html: the commits of the pull request that have a preview, newest first."""
-    items = "".join(f'<li><a href="{html.escape(r["href"])}">{r["sha"][:7]}</a> {html.escape(r["date"])} · {html.escape(r["subject"])}'
-                    f'{" · latest" if r["head"] else ""}</li>' for r in reversed(rows))
+    def line(r):
+        made = r.get("made")
+        what = (f'<a href="{html.escape(r["href"])}">{made[:7]}</a> {html.escape(r["date"])} · {html.escape(r["subject"])} · latest '
+                f'(head {r["sha"][:7]}: same website)') if made else (
+               f'<a href="{html.escape(r["href"])}">{r["sha"][:7]}</a> {html.escape(r["date"])} · {html.escape(r["subject"])}{" · latest" if r["head"] else ""}')
+        return f"<li>{what}</li>"
     return ('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow">'
             f'<meta name="viewport" content="width=device-width"><title>Preview #{n}: commits · Awesome LEGO</title></head>'
             '<body style="font:16px/1.5 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 16px">'
             f'<h1>Pull request #{n}: one preview per commit</h1><p>The commits that change the website, newest first, '
             f'each merged with main as it is now; at most {MAX_COMMITS}. French pages under <code>fr/</code> of each.</p>'
-            f'<ul>{items}</ul><p><a href="{html.escape(url)}">The pull request on GitHub</a> · <a href="../../">All previews</a></p></body></html>')
+            f'<ul>{"".join(line(r) for r in reversed(rows))}</ul><p><a href="{html.escape(url)}">The pull request on GitHub</a> · <a href="../../">All previews</a></p></body></html>')
 
 
-def build(p, out):
-    """The website of one pull request merged with main, and of its earlier commits that change it; True if the head built."""
+def log_of(c):
+    """Date and subject of a commit."""
+    out = subprocess.run(["git", "log", "-1", "--format=%cs%x00%s", c], cwd=ROOT, capture_output=True, text=True).stdout.strip().split("\0")
+    return (out[0], out[1]) if len(out) == 2 else ("", out[-1])
+
+
+def one(p, c, dest, listed, env):
+    """Commit c of pull request p built and placed at dest; its digest, or None if it did not build (nothing left at dest)."""
+    with tempfile.TemporaryDirectory() as tmp:
+        wt = pathlib.Path(tmp) / "branch"
+        try:
+            merged, version = site_of(c, wt, env)
+            d = digest(wt / "site")
+            place(wt / "site", dest, p["n"], c, p["url"], merged, version, listed)
+            return d
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired, OSError) as e:
+            print(f"::warning::preview of #{p['n']} at {c[:7]} not built: {e}")
+            if dest.name != str(p["n"]):
+                shutil.rmtree(dest, ignore_errors=True)  # no unmarked copy of an earlier commit stays
+            return None
+        finally:
+            subprocess.run(["git", "worktree", "remove", "--force", str(wt)], cwd=ROOT, check=False)
+
+
+def heads(p, out, env):
+    """First pass: the head of pull request p, as before; the commits it has to show next. True if the head built."""
     n, sha = p["n"], p["sha"]
-    env = {k: v for k, v in os.environ.items() if k not in ("GH_TOKEN", "GITHUB_TOKEN")}  # the branch's code never sees a token
     try:
         subprocess.run(["git", "fetch", "-q", "--depth=200", "origin", "+refs/heads/main:refs/remotes/origin/main", sha],
                        cwd=ROOT, check=True, timeout=120)  # enough history for their merge base and the branch's commits
-        commits = history(sha)
+        p["commits"] = history(sha)
     except (subprocess.CalledProcessError, subprocess.TimeoutExpired, OSError) as e:
         print(f"::warning::commits of #{n} not read: {e}")
-        commits = [sha]
+        p["commits"] = [sha]
+    listed = f"{PAGES}preview/{n}/c/" if len(p["commits"]) > 1 else None
+    p["digest"] = one(p, sha, out / str(n), listed, env)
+    if p["digest"] is None:
+        dest = out / str(n)
+        dest.mkdir(parents=True, exist_ok=True)
+        (dest / "index.html").write_text(mark(f'<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Preview {n}</title></head>'
+                                              f'<body><p style="padding:20px">The website of this branch did not build: see the run of the Preview workflow.</p></body></html>',
+                                              n, sha[:7], p["url"], commits=listed), encoding="utf-8")
+    return p["digest"] is not None
+
+
+def earlier(p, out, env, left):
+    """Second pass: the earlier commits of pull request p, while `left()` allows; then the list of its commits."""
+    n, sha = p["n"], p["sha"]
     listed = f"{PAGES}preview/{n}/c/"
-    rows, last, ok = [], None, False
-    for c in commits:
-        head = c == sha
-        with tempfile.TemporaryDirectory() as tmp:
-            wt = pathlib.Path(tmp) / "branch"
-            try:
-                merged, version = site_of(c, wt, env)
-                d = digest(wt / "site")
-                if d == last:  # the same website as the commit before: nothing new to see
-                    if not head:
-                        continue
-                    shutil.rmtree(out / str(n) / "c" / rows[-1]["sha"][:7], ignore_errors=True)
-                    rows.pop()  # the head shows it, at the address of the pull request
-                last = d
-                dest = out / str(n) if head else out / str(n) / "c" / c[:7]
-                place(wt / "site", dest, n, c, p["url"], merged, version, listed)
-                ok = ok or head
-                log = subprocess.run(["git", "log", "-1", "--format=%cs%x00%s", c], cwd=ROOT, capture_output=True, text=True).stdout.strip().split("\0")
-                rows.append({"sha": c, "href": "../" if head else f"{c[:7]}/", "head": head,
-                             "date": log[0] if len(log) == 2 else "", "subject": log[-1]})
-            except (subprocess.CalledProcessError, subprocess.TimeoutExpired, OSError) as e:
-                print(f"::warning::preview of #{n} at {c[:7]} not built: {e}")
-                if head:
-                    dest = out / str(n)
-                    dest.mkdir(parents=True, exist_ok=True)
-                    (dest / "index.html").write_text(mark(f'<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Preview {n}</title></head>'
-                                                          f'<body><p style="padding:20px">The website of this branch did not build: see the run of the Preview workflow.</p></body></html>',
-                                                          n, sha[:7], p["url"]), encoding="utf-8")
-            finally:
-                subprocess.run(["git", "worktree", "remove", "--force", str(wt)], cwd=ROOT, check=False)
+    rows = []
+    for c in p["commits"][:-1]:
+        if not left():
+            print(f"::warning::earlier commits of #{n} not all built: budget of the run or of MAX_EARLIER reached")
+            break
+        d = one(p, c, out / str(n) / "c" / c[:7], listed, env)
+        if d is not None:
+            rows.append({"sha": c, "digest": d, "head": False})
+    rows.append({"sha": sha, "digest": p["digest"], "head": True})
+    kept = fold(rows)
+    for r in rows:
+        if not r["head"] and r not in kept:
+            shutil.rmtree(out / str(n) / "c" / r["sha"][:7], ignore_errors=True)
+    for r in kept:
+        r["date"], r["subject"] = log_of(r.get("made", r["sha"]))
+        r["href"] = "../" if r["head"] else f'{r["sha"][:7]}/'
     (out / str(n) / "c").mkdir(parents=True, exist_ok=True)
-    (out / str(n) / "c" / "index.html").write_text(commit_list(n, p["url"], rows), encoding="utf-8")
-    return ok
+    (out / str(n) / "c" / "index.html").write_text(commit_list(n, p["url"], kept), encoding="utf-8")
 
 
 def main():
     out = pathlib.Path(sys.argv[1])
     out.mkdir(parents=True, exist_ok=True)
-    previews = []
-    for p in targets():
-        ok = build(p, out)
-        previews.append({**p, "sha": p["sha"][:7], "failed": not ok})
+    began = time.monotonic()
+    env = {k: v for k, v in os.environ.items() if k not in ("GH_TOKEN", "GITHUB_TOKEN")}  # the branch's code never sees a token
+    previews, built = [], [0]
+    for p in targets():  # every head first: an earlier commit never costs a pull request its preview
+        ok = heads(p, out, env)
+        previews.append(p | {"failed": not ok})
         print(f"{'✓' if ok else '✗'} preview of {p['n']} ({p['sha'][:7]})")
-    (out / "index.html").write_text(index(previews), encoding="utf-8")
+
+    def left():
+        built[0] += 1
+        return built[0] <= MAX_EARLIER and time.monotonic() - began < BUDGET
+    for p in previews:
+        earlier(p, out, env, left)
+    (out / "index.html").write_text(index([{**p, "sha": p["sha"][:7]} for p in previews]), encoding="utf-8")
 
 
 if __name__ == "__main__":
