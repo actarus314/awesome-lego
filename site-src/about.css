@@ -21,10 +21,6 @@
 .ab-sec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:16px 48px;border-top:1px solid var(--line);padding:40px 0 44px}
 .ab-sec>h2{position:sticky;top:72px;align-self:start}
 .ab-sec:last-child{padding-bottom:12px}
-/* how it is made: the five steps, a brick more at each, as the entry is built; one under the other on a phone */
-.steps{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;align-items:start;font-weight:650;font-size:15px}
-.steps li{display:flex;flex-direction:column;gap:8px}
-.pile{display:block;width:56px;height:auto;--bw:1.6px}
 /* what keeps it current, and the licences: tables, a row per line */
 .cadence,.lic{width:100%;border-collapse:collapse;font-size:15px;line-height:1.5}
 .cadence th,.cadence td,.lic th,.lic td{text-align:left;vertical-align:top;padding:11px 16px 11px 0;border-bottom:1px solid var(--line)}
@@ -80,7 +76,6 @@
  .inout{grid-template-columns:1fr;gap:20px}}
 @media (max-width:640px){.plate,.pc-w,.b3-dt,.b3-dim{display:none}.stages .fig{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:.3em}.band{display:flex}.pc-n{display:inline}
  .b3-why{grid-template-columns:88px minmax(0,1fr);column-gap:14px;row-gap:0}.b3-why>div{display:contents}.b3-why svg{grid-row:1;max-width:88px}.b3-why h2{grid-column:2;grid-row:1;margin:0}.b3-why p{grid-column:1/-1;margin-top:10px}
- .steps{grid-template-columns:1fr;gap:2px}.steps li{flex-direction:row;align-items:flex-end;gap:14px}.pile{width:24px}
  .doors{grid-template-columns:1fr}.night{box-shadow:0 0 0 8px light-dark(transparent,var(--card)),0 0 0 9px light-dark(transparent,var(--line))}
  .cadence thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
  .cadence tr,.lic tr{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
