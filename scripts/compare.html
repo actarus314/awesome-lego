@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Preview #{{N}} side by side · Awesome LEGO</title>
+<!-- The versions of a pull request side by side (written by scripts/previews.py, compare_page()): 2 frames at first,
+     5 at most; a simulated width scaled to fit each frame; scrolling and the address followed by the other frames
+     unless turned off; the choice kept in the address. Every frame is a page of the same website: theme and language
+     are shared, as everywhere on it. -->
+<style>
+:root{color-scheme:light dark;--bg:light-dark(#eef3f8,#0b1724);--card:light-dark(#fff,#132538);--fg:light-dark(#0c2640,#e9f2fb);--muted:light-dark(#3d5875,#b3cbe3);--line:light-dark(#c9d9ea,#24425f);--accent:light-dark(#0a6aa1,#7fd4ff)}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{display:grid;grid-template-rows:auto minmax(0,1fr);grid-template-columns:minmax(0,1fr);background:var(--bg);color:var(--fg);font:14px/1.4 system-ui,sans-serif}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:8px 14px;border-bottom:1px solid var(--line);background:var(--card)}
+.bar h1{font-size:15px;margin:0 6px 0 0}
+.bar a{color:var(--accent)}
+button,select{font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:5px 9px;min-height:32px}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button:disabled{opacity:.5}
+label{display:inline-flex;align-items:center;gap:6px}
+.tabs{display:none;gap:6px}
+.tabs button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);font-weight:650}
+.frames{display:flex;gap:8px;padding:8px;min-height:0}
+.col{flex:1 1 0;min-width:0;display:grid;grid-template-rows:auto 24px minmax(0,1fr);grid-template-columns:minmax(0,1fr);gap:4px}
+.head{display:flex;gap:6px}
+.head select{flex:1 1 auto;min-width:0}
+.note{height:24px;line-height:24px;padding:0 8px;border-radius:4px;background:var(--card);border:1px solid var(--line);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.note.on{color:var(--fg);border-color:var(--accent)}
+.note{cursor:pointer;position:relative;z-index:2}.note.open{height:auto;white-space:normal;line-height:1.4;padding:3px 8px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.view{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+.view iframe{position:absolute;top:0;border:0;transform-origin:0 0;background:#fff}
+@media (max-width:720px){.tabs{display:inline-flex}.col{display:none}.col.shown{display:grid}}
+</style>
+</head>
+<body>
+<div class="bar">
+<h1>Pull request #{{N}} side by side</h1>
+<span class="tabs" id="tabs" aria-label="Frame shown"></span>
+<button type="button" id="add">Add a version</button>
+<label>Width <select id="width" aria-label="Simulated width"><option value="390">Phone (390 px)</option><option value="768">Tablet (768 px)</option><option value="1280">Laptop (1280 px)</option><option value="1600">Wide (1600 px)</option><option value="fit">Width of the frame</option></select></label>
+<label><input type="checkbox" id="scroll"> Follow scrolling</label>
+<label><input type="checkbox" id="addr"> Follow the address</label>
+<a href="../c/">List of the commits, oldest first</a>
+</div>
+<div class="frames" id="frames"></div>
+<script>
+{
+const V={{DATA}},MAX=5,frames=document.getElementById('frames'),tabs=document.getElementById('tabs');
+const byId=id=>V.find(v=>v.id===id),newest=V[V.length-1];
+const noted=V.filter(v=>v.note);
+const first=noted.length>=2?noted.slice(0,2).map(v=>v.id):noted.length===1?[noted[0].id,noted[0].id===newest.id?'published':newest.id]:[newest.id,'published'];
+const st={v:first,w:matchMedia('(max-width:720px)').matches?'390':'1280',s:true,a:true,p:'',t:0};
+const okPath=p=>p===''||(/^([\w.~%-]+(\/[\w.~%-]+)*\/?)?([?#].*)?$/.test(p)&&!p.split(/[?#]/)[0].split('/').some(x=>x==='.'||x==='..'));
+try{const h=new URLSearchParams(location.hash.slice(1));
+ const v=(h.get('v')||'').split(',').filter(byId).slice(0,MAX);if(v.length)st.v=v;
+ if(['390','768','1280','1600','fit'].includes(h.get('w')))st.w=h.get('w');
+ if(h.has('s'))st.s=h.get('s')==='1';if(h.has('a'))st.a=h.get('a')==='1';
+ const p=h.get('p')||'';if(okPath(p))st.p=p;}catch(e){}
+let mine='';const save=()=>{mine='#'+new URLSearchParams({v:st.v.join(','),w:st.w,s:st.s?'1':'0',a:st.a?'1':'0',p:st.p}).toString();history.replaceState(null,'',mine)};
+addEventListener('hashchange',()=>{if(location.hash!==mine)location.reload()});  // an address changed by hand: start again from it
+const cols=[];let lock=0;
+function rootOf(c){return new URL(byId(c.id).root,location.href).href}
+function relOf(c){try{const h=c.f.contentWindow.location.href,r=rootOf(c);return h.startsWith(r)?h.slice(r.length):null}catch(e){return null}}
+function fit(c){const w=c.view.clientWidth,h=c.view.clientHeight;if(!w||!h)return;const sim=st.w==='fit'?w:+st.w,k=Math.min(1,w/sim);
+ c.f.style.width=sim+'px';c.f.style.height=(h/k)+'px';c.f.style.transform=`scale(${k})`;c.f.style.left=Math.max(0,(w-sim)/2)+'px'}
+// the other frames open the same address (views, filters and entries change it without a reload: see watch());
+// not an address of the previews themselves, nor one a frame takes while it follows another (versions may write it differently)
+function follow(c){const rel=relOf(c);if(rel===null||!st.a||rel===st.p||Date.now()<(c.quiet||0)||/^(preview|c|compare)\//.test(rel)||!okPath(rel))return;st.p=rel;save();
+ cols.forEach(o=>{if(o!==c&&relOf(o)!==rel){o.quiet=Date.now()+2000;o.f.src=byId(o.id).root+rel}})}
+function watch(c){try{const w=c.f.contentWindow,H=w.history;
+ ['pushState','replaceState'].forEach(k=>{const o=H[k].bind(H);H[k]=(...a)=>{const r=o(...a);clearTimeout(c.tm);c.tm=setTimeout(()=>follow(c),300);return r}});
+ w.addEventListener('scroll',()=>scrolled(c),{passive:true});w.addEventListener('hashchange',()=>follow(c));w.addEventListener('popstate',()=>follow(c))}catch(e){}}
+function scrolled(c){if(!st.s||Date.now()<lock)return;let w;try{w=c.f.contentWindow}catch(e){return}
+ const d=w.document.documentElement,r=w.scrollY/Math.max(1,d.scrollHeight-w.innerHeight);lock=Date.now()+120;
+ cols.forEach(o=>{if(o===c)return;try{const x=o.f.contentWindow,e=x.document.documentElement;x.scrollTo(0,r*Math.max(0,e.scrollHeight-x.innerHeight))}catch(e){}})}
+function setNote(c){const v=byId(c.id);c.note.textContent=v.note?'To compare: '+v.note:v.label;c.note.title=c.note.textContent;c.note.classList.toggle('on',!!v.note);c.f.title=v.label}
+function make(id){const c={id},col=document.createElement('section');col.className='col';
+ const head=document.createElement('div');head.className='head';
+ const sel=document.createElement('select');sel.setAttribute('aria-label','Version');
+ V.forEach(v=>{const o=document.createElement('option');o.value=v.id;o.textContent=v.label;sel.append(o)});sel.value=id;
+ const rm=document.createElement('button');rm.type='button';rm.textContent='Remove';
+ c.note=document.createElement('div');c.note.className='note';c.note.tabIndex=0;c.note.setAttribute('role','button');c.note.setAttribute('aria-label','Note of this version: show it whole');
+ const whole=()=>c.note.classList.toggle('open');c.note.addEventListener('click',whole);c.note.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();whole()}});
+ c.view=document.createElement('div');c.view.className='view';
+ c.f=document.createElement('iframe');c.f.title='Version';c.view.append(c.f);
+ head.append(sel,rm);col.append(head,c.note,c.view);c.col=col;
+ sel.addEventListener('change',()=>{c.id=sel.value;st.v=cols.map(x=>x.id);save();setNote(c);c.f.src=byId(c.id).root+st.p;draw()});
+ rm.addEventListener('click',()=>{if(cols.length<2)return;cols.splice(cols.indexOf(c),1);c.ro.disconnect();col.remove();st.v=cols.map(x=>x.id);st.t=Math.min(st.t,cols.length-1);save();draw()});
+ c.f.addEventListener('load',()=>{follow(c);watch(c)});
+ setNote(c);c.f.src=byId(id).root+st.p;frames.append(col);cols.push(c);c.ro=new ResizeObserver(()=>fit(c));c.ro.observe(c.view);return c}
+// frames in the order of time, the published website first, whatever the order they were chosen in (skill document-versionne,
+// section 3: panes once followed the order of the clicks); by the flex order, which moves no frame, so none reloads
+const at=c=>V.findIndex(v=>v.id===c.id),inTime=()=>[...cols].sort((a,b)=>at(a)-at(b));
+function draw(){document.getElementById('add').disabled=cols.length>=MAX;cols.forEach(c=>c.col.style.order=at(c));
+ cols.forEach(c=>c.col.querySelector('button').disabled=cols.length<2);
+ tabs.replaceChildren(...inTime().map((c,i)=>{const b=document.createElement('button');b.type='button';b.textContent=String(i+1);b.setAttribute('aria-label','Frame '+(i+1)+': '+byId(c.id).label);b.setAttribute('aria-pressed',String(i===st.t));b.addEventListener('click',()=>{st.t=i;draw()});return b}));
+ inTime().forEach((c,i)=>c.col.classList.toggle('shown',i===st.t));cols.forEach(fit)}
+st.v.forEach(make);
+document.getElementById('add').addEventListener('click',()=>{if(cols.length>=MAX)return;const free=V.find(v=>!st.v.includes(v.id))||newest;make(free.id);st.v=cols.map(x=>x.id);st.t=cols.length-1;save();draw()});
+const W=document.getElementById('width'),S=document.getElementById('scroll'),A=document.getElementById('addr');
+W.value=st.w;S.checked=st.s;A.checked=st.a;
+W.addEventListener('change',()=>{st.w=W.value;save();cols.forEach(fit)});
+S.addEventListener('change',()=>{st.s=S.checked;save()});A.addEventListener('change',()=>{st.a=A.checked;save()});
+save();draw();
+}
+</script>
+</body>
+</html>
