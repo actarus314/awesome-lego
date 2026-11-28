@@ -75,6 +75,7 @@ Annuaire public du monde de la brique, né d'une mesure du 23/11/2026 faite pour
 - Les sous-agents ont l'outil des documents du projet claude.ai (lecture et écriture vues le 26/11).
 
 ## Décisions de Romain (une ligne chacune ; le détail est dans les demandes et l'historique)
+- 28/11, vocal de 04 h 08 à 04 h 29 (AL-84, #61) : refonte de la page À propos, forme et fond (« fait trop IA généré ») ; arrêtée puis reprise : « allons jusqu'au bout », jugée sur l'aperçu de la demande.
 - 27/11, vocal jusqu'à 23 h 27 (AL-81, `dev/lots/acces-machines.md`) : accès des machines sans refonte du site ; tous les robots autorisés, entraînement compris (« bloquer, c'est encore une fois déclaratif ») ; rendu à l'avance mesuré en comparaison seulement (AL-82) ; générateur de site (Hugo, Astro) regardé seulement pour une page par ressource ou une construction devenue pénible, par comparaison mesurée.
 - 27/11, 23 h 03 (AL-80) : modèle de publication C (chaque fusion devient une version publiée ; plus de demande `vX.Y`) et numérotation à trois niveaux, pour l'annuaire et pour toutes les skills. « Je veux que ce soit vraiment la dernière fois que l'on modifie cette architecture de publication ».
 - 27/11, 19 h 41 (AL-79) : page propre aux adresses inconnues ; recherche sans résultat illustrée, par un autre dessin que la brique 3001 ; pastilles de la carte en tenons et brique devant les titres refusées ; indicateur de chargement et rangée de briques en fin de liste abandonnés (19 h 30, vocal).

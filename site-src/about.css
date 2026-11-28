@@ -9,11 +9,9 @@
 .ab-top{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:48px;align-items:center;padding:40px 0 48px}
 .ab-intro h1{font-size:clamp(30px,4.2vw,48px);line-height:1.05;letter-spacing:-.02em;margin:0 0 18px}
 .ab-intro .lead{font-size:clamp(17px,1.6vw,20px);line-height:1.55}
-.ab-intro .lead b{font-variant-numeric:tabular-nums}
-.ab-intro .free{margin:14px 0 0;font-weight:650}
+.ab-intro .lead b{font-weight:inherit}
 .ab-intro .fresh{margin:10px 0 0;font-size:13px;color:var(--faint)}
 /* why 3001: the brick of the name, drawn again with its dimensions (the drawing is the footer's, site-src/footer.html) */
-.b3-why{margin:0}
 .b3-why svg{display:block;width:100%;max-width:340px;height:auto;margin:0 auto 6px;--bw:1.6px}
 .b3-why h2{font-size:18px;margin:0 0 6px}.b3-why p{margin:0;font-size:15px;line-height:1.6}.b3-why .note{margin-top:10px;font-size:13px}
 .b3-dim{fill:none;stroke:var(--muted);stroke-width:1px;vector-effect:non-scaling-stroke}.b3-dt text{font:600 4.4px var(--mono);fill:var(--muted);text-anchor:middle;dominant-baseline:middle}.b3-dt .b3-pn{text-anchor:start;dominant-baseline:auto;fill:var(--fg);font-size:5.2px;letter-spacing:.05em}
@@ -31,18 +29,16 @@
 .plate{display:block;width:100%;height:auto;margin:22px 0 0}
 .plate .p-base{fill:var(--sunk);stroke:var(--line)}
 .plate.narrow{display:none}
-.plate circle{stroke:var(--fg);stroke-opacity:.22;stroke-width:.8}
 .s-sel,.k-sel{--stud:var(--hi)}.s-rank,.k-rank{--stud:var(--accent)}.s-list,.k-list{--stud:var(--other)}
-.plate circle{fill:var(--stud)}
+.plate circle{fill:var(--stud);stroke:var(--fg);stroke-opacity:.22;stroke-width:.8}
 .keys{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px;color:var(--muted)}
-.keys li::before,.stages .fig::before{content:"";display:inline-block;width:.8em;height:.8em;border-radius:50%;background:var(--stud);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--fg) 22%,transparent);margin-right:.45em;vertical-align:-.05em}
+.keys li::before{content:"";display:inline-block;width:.8em;height:.8em;border-radius:50%;background:var(--stud);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--fg) 22%,transparent);margin-right:.45em;vertical-align:-.05em}
 /* the three steps under the plate, from the widest to the narrowest */
 .stages{list-style:none;margin:30px 0 0;padding:0}
 .stages>li{display:grid;grid-template-columns:200px minmax(0,1fr);column-gap:32px;padding:22px 0;border-top:1px solid var(--line)}
 .stages>li>*{grid-column:2}
 .stages .fig{grid-column:1;grid-row:1/span 4;margin:0;font-size:14px;line-height:1.4;color:var(--muted)}
 .stages .fig b{display:block;font:750 34px/1.1 system-ui,sans-serif;font-variant-numeric:tabular-nums;color:var(--fg);margin-top:2px}
-.stages .fig::before{width:14px;height:14px}
 .stages h3{margin:0 0 6px}.stages p{margin:0;font-size:15px;line-height:1.6}
 .inout{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:20px}
 .inout h4{margin:0 0 10px;font-size:14px}
@@ -52,7 +48,8 @@
 /* taking part: four ways, each a link and what it is for */
 .doors{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 40px}
 .doors li{display:grid;grid-template-columns:22px minmax(0,1fr);column-gap:12px}
-.doors a{display:contents;color:var(--accent)}
+.doors a{display:grid;grid-template-columns:subgrid;grid-column:1/-1;align-items:center;color:var(--accent);border-radius:4px}
+.doors a:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
 .doors svg{width:22px;height:22px;fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
 .doors b{font-size:16px;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 .doors a:hover b{text-decoration-thickness:2px}
@@ -61,9 +58,11 @@
 @media (max-width:820px){.ab-sec{grid-template-columns:1fr;padding:30px 0 34px}.ab-sec>h2{position:static}
  .stages>li{grid-template-columns:1fr}.stages .fig{grid-row:auto;margin-bottom:8px}.stages .fig b{display:inline;font-size:28px;margin-right:.3em}
  .stages>li>*{grid-column:1}.inout{grid-template-columns:1fr;gap:20px}.doors{grid-template-columns:1fr}}
-@media (max-width:640px){.plate.wide{display:none}.plate.narrow{display:block}.b3-why{grid-template-columns:1fr;gap:10px}.b3-why svg{max-width:240px}
- .cadence thead{display:none}.cadence tr,.lic tr{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
- .lic tr:first-child{border-top:1px solid var(--line)}
+@media (max-width:460px){.plate.wide{display:none}.plate.narrow{display:block}}
+@media (max-width:640px){.b3-why{grid-template-columns:1fr;gap:10px}.b3-why svg{max-width:240px}
+ .cadence thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .cadence tr,.lic tr{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
+ .lic tr:first-child{border-top:1px solid var(--line)}.lic tr:first-child>*{border-top:0}
  .cadence th,.cadence td,.lic th,.lic td{border:0;padding:0}.cadence td:last-child,.lic td:last-child{grid-column:1/-1;margin-top:4px}
  .cadence .by,.lic .by,.cadence tbody th,.lic th{white-space:normal}}
 @media print{header.top,.skip{display:none}.ab-sec>h2{position:static}}

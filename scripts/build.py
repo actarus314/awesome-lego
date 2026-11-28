@@ -704,7 +704,7 @@ def csp(doc, rest="; style-src 'unsafe-inline'; img-src 'self'; connect-src 'sel
 
 
 ABOUT_PATH = {"en": "about/", "fr": "fr/about/"}
-PLATE_COLS = {"wide": 50, "narrow": 25}  # studs per row of the baseplate of the about pages: wide screens, phones
+PLATE_COLS = {"wide": 50, "narrow": 30}  # studs per row of the baseplate of the about pages: wide screens, phones
 
 
 def plate(counts, label, size):
@@ -753,7 +753,7 @@ def about(lang, data):
               "FEEDTITLE": html.escape(FEED_T["title"][lang]), "FEEDPATH": "fr/" if lang == "fr" else "", "SITE": PAGES, "ASTYLE": source("about.css"),
               "REPO": REPO, "VERSION": data["version"], "CSP": "{{CSP}}", "BRAND": home, "HOME": home, "ABOUT": "./", "ABOUTCUR": ' aria-current="page"', "ROOT": "../../" if lang == "fr" else "../",
               "OTHER": "../fr/about/" if lang == "en" else "../../about/",
-              "N": str(n), "RANKED": str(ranked), "SEL": str(sel),
+              "N": str(n), "RANKED": str(ranked), "SEL": str(sel), "RANKONLY": str(ranked - sel), "UNRANKED": str(n - ranked),
               "PLATE": "".join(plate((sel, ranked - sel, n - ranked), fill(A["plate"]).replace("{{N}}", str(n)).replace("{{RANKED}}", str(ranked)).replace("{{SEL}}", str(sel)), size) for size in PLATE_COLS),
               "COUNTRIES": str(len({c for r in R for c in r.get("countries") or [] if c != "international"})),
               "LANGS": str(len({x for r in R for x in r.get("languages") or []})), "SOURCES": str(sum(len(r["sources"]) for r in R))}
