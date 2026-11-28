@@ -171,6 +171,26 @@ class History(unittest.TestCase):
             self.assertNotEqual(previews.digest(pathlib.Path(a)), previews.digest(pathlib.Path(b)))
 
 
+class Fetch(unittest.TestCase):
+    """A run started by a push to main holds main one commit deep: the fetch still finds the merge base."""
+    def test_shallow_main_is_deepened(self):
+        import subprocess
+        import tempfile
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        up, ci = pathlib.Path(tmp.name) / "up", pathlib.Path(tmp.name) / "ci"
+        up.mkdir()
+        git = lambda d, *a: subprocess.run(["git", "-c", "user.name=t", "-c", "user.email=t@t", *a], cwd=d, check=True, capture_output=True, text=True).stdout.strip()
+        git(up, "init", "-q", "-b", "main"); git(up, "config", "uploadpack.allowReachableSHA1InWant", "true")
+        (up / "a").write_text("0\n"); git(up, "add", "-A"); git(up, "commit", "-qm", "base")
+        git(up, "checkout", "-qb", "pr"); (up / "a").write_text("pr\n"); git(up, "commit", "-qam", "pr")
+        pr = git(up, "rev-parse", "HEAD")
+        git(up, "checkout", "-q", "main"); (up / "b").write_text("x\n"); git(up, "add", "-A"); git(up, "commit", "-qm", "main moved")
+        subprocess.run(["git", "clone", "-q", "--depth", "1", "--no-local", "-b", "main", str(up), str(ci)], check=True, capture_output=True)
+        previews.fetch(pr, cwd=ci)
+        self.assertEqual(subprocess.run(["git", "merge-base", "refs/remotes/origin/main", pr], cwd=ci, capture_output=True).returncode, 0)
+
+
 class Fold(unittest.TestCase):
     """Which built commits stay: none the same as the one before; an earlier commit the same as the head goes, the head names it."""
     def rows(self, digests):

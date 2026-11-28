@@ -131,6 +131,17 @@ def digest(site):
     return h.hexdigest()
 
 
+def fetch(sha, cwd=ROOT, remote="origin"):
+    """main and sha with enough history for their merge base and the branch's commits. On a run started by a push to
+    main, the checkout already holds main one commit deep, and `--depth` does not deepen a commit already there:
+    `--deepen` then does (28 Nov 2026: the merge base was missing, so every preview rebuilt after a merge was built
+    alone, and no earlier commit was found)."""
+    refs = ["+refs/heads/main:refs/remotes/origin/main", sha]
+    subprocess.run(["git", "fetch", "-q", "--depth=200", remote, *refs], cwd=cwd, check=True, timeout=120)
+    if subprocess.run(["git", "merge-base", "refs/remotes/origin/main", sha], cwd=cwd, capture_output=True).returncode:
+        subprocess.run(["git", "fetch", "-q", "--deepen=200", remote, *refs], cwd=cwd, check=True, timeout=120)
+
+
 def history(sha, cwd=ROOT, main="refs/remotes/origin/main"):
     """The commits of the branch since it left main, oldest first, that change the website (SITE), the head always
     last; at most MAX_COMMITS. Merges of main into the branch are followed on the branch's side only. Without a merge
@@ -234,8 +245,7 @@ def heads(p, out, env):
     """First pass: the head of pull request p, as before; the commits it has to show next. True if the head built."""
     n, sha = p["n"], p["sha"]
     try:
-        subprocess.run(["git", "fetch", "-q", "--depth=200", "origin", "+refs/heads/main:refs/remotes/origin/main", sha],
-                       cwd=ROOT, check=True, timeout=120)  # enough history for their merge base and the branch's commits
+        fetch(sha)
         p["commits"] = history(sha)
     except (subprocess.CalledProcessError, subprocess.TimeoutExpired, OSError) as e:
         print(f"::warning::commits of #{n} not read: {e}")
